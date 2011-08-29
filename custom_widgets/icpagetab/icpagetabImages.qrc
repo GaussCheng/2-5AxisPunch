@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resource/pageTabBG.png</file>
+        <file>resource/pageTabBGChecked.png</file>
+    </qresource>
+</RCC>

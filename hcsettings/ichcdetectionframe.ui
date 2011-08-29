@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ICHCDetectionFrame</class>
+ <widget class="QFrame" name="ICHCDetectionFrame">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>657</width>
+    <height>330</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Frame</string>
+  </property>
+  <property name="frameShape">
+   <enum>QFrame::NoFrame</enum>
+  </property>
+  <property name="frameShadow">
+   <enum>QFrame::Plain</enum>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Detect fixture 1</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QComboBox" name="detectFixture1ComboBox">
+     <property name="minimumSize">
+      <size>
+       <width>90</width>
+       <height>48</height>
+      </size>
+     </property>
+     <item>
+      <property name="text">
+       <string>Reversed Phase</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Positive Phase</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="0" column="3">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>Detect sucker 1</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="4">
+    <widget class="QComboBox" name="detectSucker1ComboBox">
+     <property name="minimumSize">
+      <size>
+       <width>90</width>
+       <height>48</height>
+      </size>
+     </property>
+     <item>
+      <property name="text">
+       <string>Reversed Phase</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Positive Phase</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Detect fixture 2</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QComboBox" name="detectFixture2ComboBox">
+     <property name="minimumSize">
+      <size>
+       <width>90</width>
+       <height>48</height>
+      </size>
+     </property>
+     <item>
+      <property name="text">
+       <string>Reversed Phase</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Positive Phase</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="1" column="3">
+    <widget class="QLabel" name="label_6">
+     <property name="text">
+      <string>Detect sucker 2</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="4">
+    <widget class="QComboBox" name="detectSucker2ComboBox">
+     <property name="minimumSize">
+      <size>
+       <width>90</width>
+       <height>48</height>
+      </size>
+     </property>
+     <item>
+      <property name="text">
+       <string>Reversed Phase</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Positive Phase</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Detect fixture 3</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QComboBox" name="detectFixture3ComboBox">
+     <property name="minimumSize">
+      <size>
+       <width>90</width>
+       <height>48</height>
+      </size>
+     </property>
+     <item>
+      <property name="text">
+       <string>Reversed Phase</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Positive Phase</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="2" column="3">
+    <widget class="QLabel" name="label_7">
+     <property name="text">
+      <string>Injection</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="4">
+    <widget class="QComboBox" name="injectionComboBox">
+     <property name="minimumSize">
+      <size>
+       <width>90</width>
+       <height>48</height>
+      </size>
+     </property>
+     <item>
+      <property name="text">
+       <string>Reversed Phase</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Positive Phase</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>Detect fixture 4</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QComboBox" name="detectFixture4ComboBox">
+     <property name="minimumSize">
+      <size>
+       <width>90</width>
+       <height>48</height>
+      </size>
+     </property>
+     <item>
+      <property name="text">
+       <string>Reversed Phase</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Positive Phase</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="3" column="3">
+    <widget class="QLabel" name="label_8">
+     <property name="text">
+      <string>Conveyor</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="4">
+    <widget class="QComboBox" name="converyotComboBox">
+     <property name="minimumSize">
+      <size>
+       <width>90</width>
+       <height>48</height>
+      </size>
+     </property>
+     <item>
+      <property name="text">
+       <string>Reversed Phase</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Positive Phase</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="0" column="5">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="0" column="2">
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="6">
+    <widget class="QLabel" name="label_11">
+     <property name="text">
+      <string>Detect Mid Mold</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="7">
+    <widget class="QComboBox" name="detectMidMoldComboBox">
+     <property name="minimumSize">
+      <size>
+       <width>90</width>
+       <height>48</height>
+      </size>
+     </property>
+     <item>
+      <property name="text">
+       <string>Not Use</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Use</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="0" column="6">
+    <widget class="QLabel" name="label_10">
+     <property name="text">
+      <string>Detect Security Door</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="6">
+    <widget class="QLabel" name="label_9">
+     <property name="text">
+      <string>Detect Pressure</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="7">
+    <widget class="QComboBox" name="detectPressureComboBox">
+     <property name="minimumSize">
+      <size>
+       <width>90</width>
+       <height>48</height>
+      </size>
+     </property>
+     <item>
+      <property name="text">
+       <string>Not Use</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Use</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="0" column="7">
+    <widget class="QComboBox" name="detectSecurityComboBox">
+     <property name="minimumSize">
+      <size>
+       <width>90</width>
+       <height>48</height>
+      </size>
+     </property>
+     <item>
+      <property name="text">
+       <string>Not Use</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Use</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

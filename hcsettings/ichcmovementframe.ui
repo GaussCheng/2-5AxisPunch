@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ICHCMovementFrame</class>
+ <widget class="QFrame" name="ICHCMovementFrame">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>679</width>
+    <height>404</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Frame</string>
+  </property>
+  <property name="frameShape">
+   <enum>QFrame::NoFrame</enum>
+  </property>
+  <property name="frameShadow">
+   <enum>QFrame::Plain</enum>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>16</x>
+     <y>61</y>
+     <width>104</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Main arm down</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="mainArmDownomboBox">
+   <property name="geometry">
+    <rect>
+     <x>208</x>
+     <y>61</y>
+     <width>131</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Main forward</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Main backward</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>351</x>
+     <y>61</y>
+     <width>83</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Main arm up</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="mainArmUpComboBox">
+   <property name="geometry">
+    <rect>
+     <x>532</x>
+     <y>61</y>
+     <width>131</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Main forward</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Main backward</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>16</x>
+     <y>145</y>
+     <width>141</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Secondary arm down</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="secondaryArmDownComboBox">
+   <property name="geometry">
+    <rect>
+     <x>208</x>
+     <y>145</y>
+     <width>131</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Main forward</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Main backward</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>351</x>
+     <y>145</y>
+     <width>120</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Secondary arm up</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="secondaryArmUpComboBox">
+   <property name="geometry">
+    <rect>
+     <x>532</x>
+     <y>145</y>
+     <width>131</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Main forward</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Main backward</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>16</x>
+     <y>229</y>
+     <width>149</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Main arm traverse out</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="mainArmTraverseOutComboBox">
+   <property name="geometry">
+    <rect>
+     <x>208</x>
+     <y>229</y>
+     <width>131</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Main forward</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Main backward</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_8">
+   <property name="geometry">
+    <rect>
+     <x>351</x>
+     <y>229</y>
+     <width>138</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Main arm traverse in</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="mainArmTraverseInComboBox">
+   <property name="geometry">
+    <rect>
+     <x>532</x>
+     <y>229</y>
+     <width>131</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Main forward</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Main backward</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>16</x>
+     <y>313</y>
+     <width>186</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Secondary arm traverse out</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="secondaryArmTraverseOutComboBox">
+   <property name="geometry">
+    <rect>
+     <x>208</x>
+     <y>313</y>
+     <width>131</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Main forward</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Main backward</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>351</x>
+     <y>313</y>
+     <width>175</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Secondary arm traverse in</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="secondaryArmTraverseInComboBox">
+   <property name="geometry">
+    <rect>
+     <x>532</x>
+     <y>313</y>
+     <width>131</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Main forward</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Main backward</string>
+    </property>
+   </item>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/meter.png</file>
+        <file>resources/signal.png</file>
+        <file>resources/fixed-program.png</file>
+        <file>resources/system.png</file>
+        <file>resources/special.png</file>
+        <file>resources/security-point.png</file>
+        <file>resources/standby.png</file>
+        <file>resources/product.png</file>
+        <file>resources/instruction.png</file>
+        <file>resources/placement.png</file>
+        <file>resources/stacked.png</file>
+        <file>resources/machine.png</file>
+    </qresource>
+</RCC>

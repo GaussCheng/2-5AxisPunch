@@ -1,0 +1,307 @@
+#include <QDir>
+#include <QFile>
+#include <QDateTime>
+#include <QMessageBox>
+
+#include "moldinformation.h"
+#include "ui_moldinformation.h"
+#include "icparameterssave.h"
+#include "icmold.h"
+#include "icprogramheadframe.h"
+#include "icvirtualhost.h"
+
+#include <QDebug>
+
+MoldInformation * MoldInformation::instance_ = NULL;
+
+MoldInformation::MoldInformation(QWidget *parent) :
+        QFrame(parent),
+        ui(new Ui::MoldInformation),
+        recordFilePath_("./records/")
+{
+    ui->setupUi(this);
+
+    UpdateInformationTable();
+}
+
+MoldInformation::~MoldInformation()
+{
+    delete ui;
+}
+
+void MoldInformation::changeEvent(QEvent *e)
+{
+    QWidget::changeEvent(e);
+    switch (e->type()) {
+    case QEvent::LanguageChange:
+        ui->retranslateUi(this);
+        break;
+    default:
+        break;
+    }
+}
+
+bool MoldInformation::CreateNewSourceFile(const QString & fileName)
+{
+    if(fileName.isEmpty())
+    {
+        QMessageBox::warning(this, tr("warning"),
+                             tr("New file name is empty,\n"
+                                "Please input the file name."),
+                             QMessageBox::Ok);
+        return false;
+    }
+
+    QDir recordFileDir(recordFilePath_);
+    if(!recordFileDir.exists())
+    {
+        recordFileDir.cdUp();
+        qDebug() << recordFileDir.mkpath(recordFilePath_);
+    }
+
+    QString filePathName = recordFilePath_ + fileName;
+    QString fileNameNoExtent = fileName;
+    fileNameNoExtent.chop(3);
+    QFile newFile(filePathName);
+    if(!newFile.exists())
+    {
+        newFile.open(QIODevice::ReadWrite);
+        newFile.write("0 0 255 1 0 0 0 80 0 81\n1 0 255 2 0 0 0 80 0 83\n2 0 255 3 0 0 0 80 0 85\n3 0 255 17 0 0 0 0 0 20\n4 0 255 14 0 0 0 0 0 18\n5 0 255 13 0 0 0 0 0 18\n6 1 255 29 0 0 0 1 0 37\n7 2 255 32 0 0 0 0 5 46");
+        QFile::copy(recordFilePath_ + "/Base.fnc", recordFilePath_ + "/" + fileNameNoExtent + "fnc");
+        newFile.close();
+        QMessageBox::warning(this, tr("Success"),
+                             tr("New file success."),
+                             QMessageBox::Ok);
+        return true;
+    }
+    else
+    {
+        QMessageBox::warning(this, tr("The file has been existing"),
+                             tr("File already exists,\n"
+                                "Please change a new name."),
+                             QMessageBox::Ok);
+    }
+    return false;
+}
+
+void MoldInformation::AddNewInTableWidget(const QString & fileName, const QString & dateTime)
+{
+    QTableWidgetItem * fileNameItem = new QTableWidgetItem(fileName);
+    QTableWidgetItem * createDateTimeItem = new QTableWidgetItem(dateTime);
+    ui->informationTableWidget->insertRow(ui->informationTableWidget->rowCount());
+    ui->informationTableWidget->setItem(ui->informationTableWidget->rowCount() - 1,0,fileNameItem);
+    ui->informationTableWidget->setItem(ui->informationTableWidget->rowCount() - 1,1,createDateTimeItem);
+}
+
+bool MoldInformation::CopySourceFile(const QString & originFileName, const QString & targetFileName)
+{
+    if(originFileName.isEmpty())
+    {
+        QMessageBox::warning(this, tr("warning"),
+                             tr("Source file name is empty,\n"
+                                "Please choose an existing file."),
+                             QMessageBox::Ok);
+        return false;
+    }
+    if(targetFileName.isEmpty())
+    {
+        QMessageBox::warning(this, tr("warning"),
+                             tr("New file name is empty,\n"
+                                "Please write the destination file name."),
+                             QMessageBox::Ok);
+        return false;
+    }
+
+    QString originFilePathName = recordFilePath_ + originFileName;
+    QString targetFilePathName = recordFilePath_ + targetFileName;
+
+    QString originConfigFilePath = originFilePathName;
+    originConfigFilePath.chop(3);
+    originConfigFilePath += "fnc";
+    QString targetConfigFilePath = targetFilePathName;
+    targetConfigFilePath.chop(3);
+    targetConfigFilePath += "fnc";
+//    QFile::copy(originConfigFilePath, targetConfigFilePath);
+    if(QFile::copy(originFilePathName, targetFilePathName))
+    {
+        if(QFile::copy(originConfigFilePath, targetConfigFilePath))
+        {
+            QMessageBox::information(this, tr("Success"),
+                                     tr("Copy file success!"),
+                                     QMessageBox::Ok);
+            return true;
+        }
+        QFile::remove(targetFilePathName);
+    }
+    QMessageBox::information(this, tr("warning"),
+                             tr("Destination file already exists!\n"
+                                "Please try a new name"),
+                             QMessageBox::Ok);
+    return false;
+}
+
+bool MoldInformation::DeleteSourceFile(const QString & fileName)
+{
+    if(fileName.isEmpty())
+    {
+        QMessageBox::warning(this, tr("warning"),
+                             tr("Source file name is empty,\n"
+                                "Please choose an existing file."),
+                             QMessageBox::Ok);
+        return false;
+    }
+
+    QString filePathName = recordFilePath_ + fileName;
+    QString configFile = filePathName;
+    configFile.chop(3);
+    configFile += "fnc";
+    if(QFile::exists(filePathName))
+    {
+        QFile::remove(filePathName);
+        QFile::remove(configFile);
+        //        QFile::remove(ICSettingConfig::ConfigPath() + fileName);
+        QMessageBox::information(this, tr("Success"),
+                                 tr("File deleted success!"),
+                                 QMessageBox::Ok);
+        return true;
+    }
+    else
+    {
+        QMessageBox::warning(this, tr("warning"),
+                             tr("File does not exist!"),
+                             QMessageBox::Ok);
+    }
+    return false;
+}
+
+void MoldInformation::UpdateInformationTable()
+{
+    ui->informationTableWidget->clearContents();
+    ui->informationTableWidget->setRowCount(0);
+
+    fileInfoList_.clear();
+    QDir recordDir(recordFilePath_);
+    fileInfoList_ = recordDir.entryInfoList(QDir::Files);
+
+    QFileInfoList userProgramList;
+    qDebug()<<"start1";
+    foreach(const QFileInfo &fileInfo, fileInfoList_)
+    {
+        if(fileInfo.fileName().right(3) != "fnc")
+        {
+            userProgramList.append(fileInfo);
+        }
+    }
+    qDebug()<<"end1";
+
+    foreach(const QFileInfo &fileiInfo, userProgramList)
+    {
+        AddNewInTableWidget(fileiInfo.fileName(), fileiInfo.created().toString("yyyy-MM-dd"));
+    }
+    qDebug()<<"end2";
+    ui->informationTableWidget->resizeColumnsToContents();
+}
+
+void MoldInformation::on_newToolButton_clicked()
+{
+    if(ui->destinationFileLineEdit->text().isEmpty())
+    {
+        QMessageBox::warning(this, tr("Warning"), tr("file name is empty"));
+        return;
+    }
+    QString fileName = ui->destinationFileLineEdit->text() + ".act";
+    if(CreateNewSourceFile(fileName))
+    {
+        AddNewInTableWidget(fileName, QDateTime::currentDateTime().toString("yyyy-MM-dd"));
+        //        recordNames_->RecurdFileInfoListChanged(ui->destinationFileLineEdit->text(), ICRecordNames::ADDNEW);
+        emit NewFileCreated(fileName);
+        ui->destinationFileLineEdit->clear();
+    }
+}
+
+void MoldInformation::on_copyToolButton_clicked()
+{
+    if(ui->destinationFileLineEdit->text().isEmpty())
+    {
+        QMessageBox::warning(this, tr("Warning"), tr("file name is empty"));
+        return;
+    }
+    QString fileName = ui->destinationFileLineEdit->text() + ".act";
+    if(CopySourceFile(ui->sourceFileNameLabel->text(), fileName))
+    {
+        AddNewInTableWidget(fileName, QDateTime::currentDateTime().toString("yyyy-MM-dd"));
+        //        recordNames_->RecurdFileInfoListChanged(ui->destinationFileLineEdit->text(), ICRecordNames::ARCHIVES_COPY);
+        emit NewFileCreated(fileName);
+        ui->destinationFileLineEdit->clear();
+    }
+}
+
+void MoldInformation::on_loadToolButton_clicked()
+{
+    int currentRow = ui->informationTableWidget->currentRow();
+    if(currentRow != -1)
+    {
+        qDebug("before Load");
+        QString moldName = ui->informationTableWidget->item(currentRow, 0)->text();
+        QString filePathName = "./records/" + moldName;
+        if(QFile::exists(filePathName))
+        {
+            ICMold::CurrentMold()->ReadMoldFile(filePathName);
+            ICVirtualHost::GlobalVirtualHost()->ReConfigure();
+            qDebug("after emit updatehostparam");
+            //        UpdateHostParam();
+
+            ICParametersSave::Instance()->SetMoldName(moldName);
+            ICProgramHeadFrame::Instance()->SetCurrentMoldName(moldName);
+        }
+        qDebug("after load");
+    }
+}
+
+void MoldInformation::on_deleteToolButton_clicked()
+{
+    if(ui->sourceFileNameLabel->text().isEmpty())
+    {
+        return;
+    }
+
+    if(ICParametersSave::Instance()->MoldName(QString()) == ui->sourceFileNameLabel->text())
+    {
+        QMessageBox::warning(this, tr("warning"),
+                                           tr("The mold file ") +
+                                           ui->sourceFileNameLabel->text() +
+                                           tr(" is being used"),
+                                           QMessageBox::Ok,
+                                           QMessageBox::Ok);
+        return;
+    }
+
+    int ret = QMessageBox::warning(this, tr("warning"),
+                                   tr("Are you sure to delete files ") +
+                                   ui->sourceFileNameLabel->text(),
+                                   QMessageBox::Ok | QMessageBox::Cancel,
+                                   QMessageBox::Cancel);
+    if(ret != QMessageBox::Ok)
+    {
+        return;
+    }
+
+    if(DeleteSourceFile(ui->sourceFileNameLabel->text()))
+    {
+        ui->informationTableWidget->removeRow(ui->informationTableWidget->currentRow());
+        emit DeleteFile(ui->sourceFileNameLabel->text());
+        ui->sourceFileNameLabel->clear();
+        if(ui->informationTableWidget->rowCount() != 0)
+        {
+            ui->sourceFileNameLabel->setText(
+                    ui->informationTableWidget->item(ui->informationTableWidget->currentRow(), 0)->text());
+
+        }
+    }
+}
+
+void MoldInformation::on_informationTableWidget_clicked(QModelIndex index)
+{
+    QString fileName =  ui->informationTableWidget->item(index.row(), 0)->text();
+    ui->sourceFileNameLabel->setText(fileName);
+}

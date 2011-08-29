@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>sysconfig/passwdfile</file>
+        <file>sysconfig/alarminfomation-ch</file>
+        <file>sysconfig/alarminfomation-en</file>
+    </qresource>
+</RCC>

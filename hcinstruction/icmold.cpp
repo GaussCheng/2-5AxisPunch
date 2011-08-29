@@ -1,0 +1,646 @@
+#include <QFile>
+#include <QStringList>
+#include <QDebug>
+#include "icmold.h"
+#include "icinstructparam.h"
+
+struct MoldStepData
+{
+    MoldStepData():step(-1), begin(-1), end(-1){}
+    int step;
+    int begin;
+    int end;
+};
+
+static void FindStepPos(int &beg, int &end, int step, const QList<ICMoldItem> &items);
+static void FindStepPos(QList<ICMoldItem>::iterator &beg, QList<ICMoldItem>::iterator &end, int step, QList<ICMoldItem> &items);
+static QList<ICMoldItem>::const_iterator FindG01(QList<ICMoldItem>::const_iterator begin, QList<ICMoldItem>::const_iterator end);
+
+QString ICSubMoldUIItem::ToString() const
+{
+    QString ret;
+    ret += "        " + ICInstructParam::ConvertCommandStr(baseItem_);
+    return ret;
+}
+int ICGroupMoldUIItem::ItemCount() const
+{
+    int count = 0;
+    for(int i = 0; i != topItems_.size(); ++i)
+    {
+        count += topItems_.at(i).ItemCount();
+    }
+    return count;
+}
+
+void ICGroupMoldUIItem::SetStepNum(int stepNum)
+{
+    for(int i = 0; i != topItems_.size(); ++i)
+    {
+        topItems_[i].SetStepNum(stepNum);
+    }
+}
+
+QList<ICMoldItem> ICGroupMoldUIItem::ToMoldItems() const
+{
+    QList<ICMoldItem> ret;
+    for(int i = 0; i != topItems_.size(); ++i)
+    {
+        ret.append(topItems_.at(i).ToMoldItems());
+    }
+    return ret;
+}
+
+QStringList ICGroupMoldUIItem::ToStringList() const
+{
+    QStringList ret;
+    for(int i = 0; i != topItems_.size(); ++i)
+    {
+        ret.append(topItems_.at(i).ToStringList());
+    }
+    return ret;
+}
+
+QList<ICGroupMoldUIItem> ICGroupMoldUIItem::SpliteToTwoGroup(int pos) const
+{
+    QList<ICGroupMoldUIItem> ret;
+    ICGroupMoldUIItem item1;
+    ICGroupMoldUIItem item2;
+    item1.SetStepNum(StepNum());
+    item2.SetStepNum(StepNum() + 1);
+    for(int i = 0; i != pos; ++i)
+    {
+        item1.AddToMoldUIItem(topItems_.at(i));
+    }
+    for(int i = pos; i != topItems_.size(); ++i)
+    {
+        item2.AddToMoldUIItem(topItems_.at(i));
+    }
+    ret<<item1<<item2;
+    return ret;
+}
+void ICGroupMoldUIItem::AddOtherGroup(const ICGroupMoldUIItem &other)
+{
+    for(int i = 0; i != other.ItemCount(); ++i)
+    {
+        AddToMoldUIItem(other.at(i));
+    }
+}
+
+void ICTopMoldUIItem::SetStepNum(int stepNum)
+{
+    baseItem_.SetNum(stepNum);
+    for(int i = 0; i != subItems_.size(); ++i)
+    {
+        subItems_[i].SetStepNum(stepNum);
+    }
+}
+
+QStringList ICTopMoldUIItem::ToStringList() const
+{
+    QStringList ret;
+    ret.append(ICInstructParam::ConvertCommandStr(baseItem_));
+    for(int i = 0; i != subItems_.size(); ++i)
+    {
+        ret.append(subItems_.at(i).ToString());
+    }
+    return ret;
+}
+
+bool ICTopMoldUIItem::IsSyncSubItem(int pos) const
+{
+    if(SubItemCount() == 1)
+    {
+        return false;
+    }
+    else if(pos == 0)
+    {
+        return at(pos + 1).SubNum() == at(pos).SubNum();
+    }
+    else if(pos == SubItemCount() - 1)
+    {
+        return at(pos - 1).SubNum() == at(pos).SubNum();
+    }
+    else
+    {
+        return (at(pos + 1).SubNum() == at(pos).SubNum()) ||
+                at(pos - 1).SubNum() == at(pos).SubNum();
+    }
+}
+//void ICTopMoldUIItem::ReCalSubNum()
+//{
+//    int currentNum = 0;
+//    subItems_[0].SetSubNum(currentNum);
+//    for(int i = 1; i != subItems_.size(); ++i)
+//    {
+//        if(subItems_.at(i).SubNum() == currentNum && subItems_.at(i).IsSyncItem() && subItems_.at(i - 1).IsSyncItem())
+//        {
+//            subItems_[i].SetSubNum(currentNum);
+//        }
+//        else
+//        {
+//            subItems_[i].SetSubNum(++currentNum);
+//        }
+//    }
+//}
+
+QList<ICMoldItem> ICTopMoldUIItem::ToMoldItems() const
+{
+    QList<ICMoldItem> ret;
+    ret.append(baseItem_);
+    for(int i = 0; i != subItems_.size(); ++i)
+    {
+        ret.append(subItems_.at(i).ToMoldItem());
+    }
+    return ret;
+}
+
+ICMold* ICMold::currentMold_ = NULL;
+ICMold::ICMold(QObject *parent) :
+    QObject(parent)
+{
+    ICInstructParam::Instance();
+}
+
+bool ICMold::ReadMoldFile(const QString &fileName, bool isLoadParams)
+{
+    moldContent_.clear();
+    QFile file(fileName);
+    if(!file.open(QFile::ReadOnly | QFile::Text))
+    {
+        return false;
+    }
+    moldName_ = fileName;
+    QString content = file.readAll();
+    file.close();
+    //    content = content.remove('\r');
+
+    if(content.isNull())
+    {
+        qDebug("mold null");
+        return false;
+    }
+    QStringList records = content.split("\n", QString::SkipEmptyParts);
+    if(records.size() < 4)
+    {
+        qDebug("mold less than 4");
+        return false;
+    }
+    QStringList items;
+    ICMoldItem moldItem;
+    qDebug("before read");
+    qDebug()<<"size"<<records.size();
+    for(int i = 0; i != records.size(); ++i)
+    {
+        qDebug()<<"in"<<i;
+        items = records.at(i).split(' ', QString::SkipEmptyParts);
+        if(items.size() != 10)
+        {
+            qDebug()<<i<<"th line size wrong";
+            return false;
+        }
+        moldItem.SetValue(items.at(0).toUInt(),
+                          items.at(1).toUInt(),
+                          items.at(2).toUInt(),
+                          items.at(3).toUInt(),
+                          items.at(4).toUInt(),
+                          items.at(5).toUInt(),
+                          items.at(6).toUInt(),
+                          items.at(7).toUInt(),
+                          items.at(8).toUInt(),
+                          items.at(9).toUInt());
+        moldContent_.append(moldItem);
+    }
+    qDebug("read ok");
+    if(isLoadParams)
+    {
+        QString moldParamFileName = fileName;
+        moldParamFileName.chop(3);
+        moldParamFileName += "fnc";
+        ReadMoldParamsFile(moldParamFileName);
+        emit MoldNumberParamChanged();
+    }
+    return true;
+}
+
+bool ICMold::ReadMoldParamsFile(const QString &fileName)
+{
+    moldParamName_ = fileName;
+    QFile file(fileName);
+    if(!file.open(QFile::ReadOnly | QFile::Text))
+    {
+        return false;
+    }
+    moldParams_.clear();
+    stackParams_.clear();
+    QString fileContent = file.readAll();
+    file.close();
+    //    fileContent = fileContent.remove('\r');
+
+    QStringList items = fileContent.split('\n', QString::SkipEmptyParts);
+    for(int i = 0; i != MoldParamCount; ++i)
+    {
+        moldParams_.append(items.at(i).toUInt());
+    }
+    Q_ASSERT_X(items.size() == 58, "ICMold::ReadMoldParamFile", "fnc file is not correct!");
+
+    QList<int> stackParam;
+    int base;
+    int count;
+    for(int i = 0; i != 4; ++i)
+    {
+        base = MoldParamCount + StackParamCount * i;
+        count = base + StackParamCount;
+        stackParam.clear();
+        for(int j = base; j != count; ++j)
+        {
+            stackParam.append(items.at(j).toUInt());
+        }
+        stackParams_.append(stackParam);
+    }
+    checkSum_ = items.last().toUInt();
+    return true;
+}
+
+bool ICMold::SaveMoldFile(bool isSaveParams)
+{
+    MoldReSum();
+    QByteArray toWrite;
+    if(moldContent_.size() < 4)
+    {
+        qDebug("mold content less than 4 when save");
+        return false;
+    }
+    for(int i = 0; i != moldContent_.size(); ++i)
+    {
+        toWrite += moldContent_.at(i).ToString() + "\n";
+    }
+    QFile file(moldName_);
+    if(!file.open(QFile::WriteOnly | QFile::Text))
+    {
+        return false;
+    }
+    file.write(toWrite);
+    file.close();
+
+    if(isSaveParams)
+    {
+        SaveMoldParamsFile();
+    }
+
+}
+
+bool ICMold::SaveMoldParamsFile()
+{
+    UpdateSyncSum();
+    QByteArray toWrite;
+    QList<int> allParams = AllParams();
+    for(int i = 0; i != allParams.size(); ++i)
+    {
+        toWrite += QByteArray::number(allParams.at(i)) + "\n";
+    }
+    QFile file(moldParamName_);
+    if(!file.open(QFile::WriteOnly | QFile::Text))
+    {
+        return false;
+    }
+    file.write(toWrite);
+    file.close();
+}
+
+uint ICMold::SyncAct() const
+{
+    uint ret = 0;
+    for(int i = 0; i != moldContent_.size(); ++i)
+    {
+        ret += moldContent_.at(i).GMVal();
+    }
+    return ret;
+}
+
+uint ICMold::SyncSum() const
+{
+    uint ret = 0;
+    for(int i = 0; i != moldContent_.size(); ++i)
+    {
+        ret += moldContent_.at(i).Sum();
+    }
+    return ret;
+}
+
+
+void ICMold::Insert(const QList<ICMoldItem> &items, QList<ICMoldItem> &sourceItems)
+{
+    //    Q_ASSERT_X(items.size() > 0, "ICMold::Insert", "items is empty");
+    //    if(items.isEmpty())
+    //    {
+    //        return;
+    //    }
+    //    int beg;
+    //    int end;
+    //    int step = items.at(0).NVal();
+    //    FindStepPos(beg, end, step, sourceItems);
+    //    if(beg < 0)
+    //    {
+    //        return;
+    //    }
+    //    for(int i = 0; i != items.size(); ++i)
+    //    {
+    //        sourceItems.insert(beg++, items.at(i));
+    //    }
+    //    int index = beg;
+    //    int tmpStep;
+    //    while(index < sourceItems.size())
+    //    {
+    //        tmpStep = sourceItems.at(index).NVal();
+    //        do
+    //        {
+    //            sourceItems[index].SetNVal(step + 1);
+    //            ++index;
+    //        }while(index < sourceItems.size() && tmpStep == sourceItems.at(index).NVal());
+    //        ++step;
+    //    }
+    //    MoldReSum(sourceItems);
+}
+
+void ICMold::Modify(const QList<ICMoldItem> &items, QList<ICMoldItem> &sourceItems)
+{
+    //    Q_ASSERT_X(items.size() > 0, "ICMold::Modify", "items is empty");
+    //    if(items.isEmpty())
+    //    {
+    //        return;
+    //    }
+    //    QList<ICMoldItem>::iterator beg;
+    //    QList<ICMoldItem>::iterator end;
+    //    int step = items.at(0).NVal();
+    //    FindStepPos(beg, end, step, sourceItems);
+    //    if(beg == sourceItems.end())
+    //    {
+    //        return;
+    //    }
+    //    QList<ICMoldItem>::const_iterator g01Item =  FindG01(beg, end);
+    //    int lastX = -1;
+    //    int lastY = -1;
+    //    int lastZ = -1;
+    //    if(g01Item != end)
+    //    {
+    //        lastX = (*g01Item).X();
+    //        lastY = (*g01Item).Y();
+    //        lastZ = (*g01Item).Z();
+    //    }
+    //    beg = sourceItems.erase(beg, end);
+    ////    end = beg;
+    //    for(int i = 0; i != items.size(); ++i)
+    //    {
+    //       beg = sourceItems.insert(beg, items.at(i));
+    //       ++beg;
+    //    }
+    ////    beg = end;
+    //    if(lastX != -1)
+    //    {
+    //        QList<ICMoldItem>::const_iterator newG01Item = FindG01(items.constBegin(), items.constEnd());
+    //        if(newG01Item != items.end())
+    //        {
+    //            int newX = newG01Item->X();
+    //            int newY = newG01Item->Y();
+    //            int newZ = newG01Item->Z();
+    //            int action;
+    //            while(beg != sourceItems.end())
+    //            {
+    //                if(lastX == -1 && lastY == -1 && lastZ == -1)
+    //                {
+    //                    break;
+    //                }
+    //                action = beg->GMVal() & 0x7F;
+    //                if(action >= ICMold::GXY && action <= ICMold::GXZ)
+    //                {
+    //                    break;
+    //                }
+    //                if(action == ICMold::G01)
+    //                {
+    //                    if(beg->X() == lastX)
+    //                    {
+    //                        beg->SetX(newX);
+    //                    }
+    //                    else
+    //                    {
+    //                        lastX = -1;
+    //                    }
+    //                    if(beg->Y() == lastY)
+    //                    {
+    //                        beg->SetY(newY);
+    //                    }
+    //                    else
+    //                    {
+    //                        lastY = -1;
+    //                    }
+    //                    if(beg->Z() == lastZ)
+    //                    {
+    //                        beg->SetZ(newZ);
+    //                    }
+    //                    else
+    //                    {
+    //                        lastZ = -1;
+    //                    }
+    //                }
+    //                ++beg;
+    //            }
+    //        }
+    //    }
+    //    MoldReSum(sourceItems);
+}
+
+void ICMold::Delete(int step, QList<ICMoldItem> &sourceItems)
+{
+    //    Q_ASSERT_X(step > 0, "ICMold::Delete", "items is empty");
+    //    if(step <= 0)
+    //    {
+    //        return;
+    //    }
+    //    QList<ICMoldItem>::iterator beg;
+    //    QList<ICMoldItem>::iterator end;
+    //    FindStepPos(beg, end, step, sourceItems);
+    //    if(beg == sourceItems.end())
+    //    {
+    //        return;
+    //    }
+    //    beg = sourceItems.erase(beg, end);
+    //    uint tmpStep;
+    //    while(beg != sourceItems.end())
+    //    {
+    //        tmpStep = beg->NVal();
+    //        do
+    //        {
+    //            beg->SetNVal(step);
+    //            ++beg;
+    //        }while(beg != sourceItems.end() && tmpStep == beg->NVal());
+    //        ++step;
+    //    }
+
+    //    MoldReSum(sourceItems);
+}
+
+void ICMold::MoldReSum(QList<ICMoldItem> &items)
+{
+    for(int i = 0; i != items.size(); ++i)
+    {
+        items[i].SetSeq(i);
+        items[i].ReSum();
+    }
+}
+
+void ICMold::UpdateSyncSum()
+{
+    int sum = 0;
+    for(int i = 0; i != moldParams_.size(); ++i)
+    {
+        sum += moldParams_.at(i);
+    }
+    for(int i = 0; i != stackParams_.size(); ++i)
+    {
+        for(int j = 0; j != stackParams_.at(i).size(); ++j)
+        {
+            sum += stackParams_.at(i).at(j);
+        }
+    }
+    //    sum += checkSum_;
+    checkSum_ = (-sum) & 0xFFFF;
+}
+
+static void FindStepPos(int &beg, int &end, int step, const QList<ICMoldItem> &items)
+{
+    //    ICMoldItem item;
+    //    for(int i = 0; i != items.size(); ++i)
+    //    {
+    //        item = items.at(i);
+    //        if(item.NVal() == step)
+    //        {
+    //            beg = i;
+    //            while(++i != items.size())
+    //            {
+    //                item = items.at(i);
+    //                if(item.NVal() != step)
+    //                {
+    //                    break;
+    //                }
+    //            }
+    //            end = i -1;
+    //            return;
+    //        }
+    //    }
+    //    beg = end = -1;
+}
+
+static void FindStepPos(QList<ICMoldItem>::iterator &beg, QList<ICMoldItem>::iterator &end, int step, QList<ICMoldItem> &items)
+{
+    //    ICMoldItem item;
+    //    QList<ICMoldItem>::iterator p = items.begin();
+    //    while(p != items.end())
+    //    {
+    //        item = *p;
+    //        if(item.NVal() == step)
+    //        {
+    //            beg = p;
+    //            while(++p != items.end())
+    //            {
+    //                item = *p;
+    //                if(item.NVal() != step)
+    //                {
+    //                    break;
+    //                }
+    //            }
+    //            end = p;
+    //            return;
+    //        }
+    //        ++p;
+    //    }
+    //    beg = items.end();
+    //    end = items.end();
+}
+
+//static QList<ICMoldItem>::const_iterator FindG01(QList<ICMoldItem>::const_iterator begin, QList<ICMoldItem>::const_iterator end)
+//{
+//    while(begin != end)
+//    {
+//        if(((*begin).GMVal() & 0x7F) == ICMold::G01)
+//        {
+//            return begin;
+//        }
+//        ++begin;
+//    }
+//    return end;
+//}
+
+QList<ICMoldItem> ICMold::UIItemToMoldItem(const QList<ICGroupMoldUIItem> &items)
+{
+    QList<ICMoldItem> ret;
+    for(int i = 0; i != items.size(); ++i)
+    {
+        ret.append(items.at(i).ToMoldItems());
+    }
+    return ret;
+}
+
+QList<ICGroupMoldUIItem> ICMold::MoldItemToUIItem(const QList<ICMoldItem> &items)
+{
+    QList<ICTopMoldUIItem> ret;
+    QList<ICGroupMoldUIItem> groupRet;
+    ICTopMoldUIItem topItem;
+    ICSubMoldUIItem subItem;
+    ICMoldItem moldItem;
+    for(int i = 0; i != items.size(); ++i)
+    {
+        moldItem = items.at(i);
+        if(moldItem.SubNum() == 255)
+        {
+            topItem.SetBaseItem(moldItem);
+            ret.append(topItem);
+        }
+        else
+        {
+            if(moldItem.SubNum() == items.at(i + 1).SubNum())
+            {
+                subItem.SetSyncItem(true);
+            }
+            subItem.SetBaseItem(moldItem);
+            if(ret.isEmpty())
+            {
+                return groupRet;
+            }
+            ret.last().AddSubMoldUIItem(subItem);
+        }
+    }
+    ICGroupMoldUIItem groupItem;
+    if(ret.isEmpty())
+    {
+        return groupRet;
+    }
+    groupItem.AddToMoldUIItem(ret.first());
+    groupRet.append(groupItem);
+    for(int i = 1; i != ret.size(); ++i)
+    {
+        topItem = ret.at(i);
+        if(topItem.StepNum() == groupRet.last().StepNum())
+        {
+            groupRet.last().AddToMoldUIItem(topItem);
+        }
+        else
+        {
+            ICGroupMoldUIItem newItem;
+            newItem.AddToMoldUIItem(topItem);
+            groupRet.append(newItem);
+        }
+    }
+    return groupRet;
+}
+
+QStringList ICMold::UIItemsToStringList(const QList<ICGroupMoldUIItem> &items)
+{
+    QStringList ret;
+    ICGroupMoldUIItem item;
+    for(int i = 0; i != items.size(); ++i)
+    {
+        item = items.at(i);
+        ret.append(item.ToStringList());
+    }
+    return ret;
+}

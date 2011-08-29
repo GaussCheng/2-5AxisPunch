@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resource/menuBtnBG.png</file>
+        <file>resource/menuBtnDisableBG.png</file>
+        <file>resource/menuBtnCheckedBG.png</file>
+    </qresource>
+</RCC>
