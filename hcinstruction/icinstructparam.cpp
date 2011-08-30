@@ -47,8 +47,18 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
 
         if(action == ACT_Cut)
         {
-            commandStr += tr("Fixture");
-            commandStr += QString::number(moldItem.SVal() + 1);
+            if(moldItem.SVal() < 4)
+            {
+                commandStr += tr("Fixture");
+                commandStr += QString::number(moldItem.SVal() + 1);
+            }
+            else
+            {
+                commandStr += tr("Sucker");
+                commandStr += QString::number(moldItem.SVal() - 3);
+            }
+//            commandStr += tr("Fixture");
+//            commandStr += QString::number(moldItem.SVal() + 1);
             commandStr += " ";
             if(moldItem.IFVal() == 1)
             {

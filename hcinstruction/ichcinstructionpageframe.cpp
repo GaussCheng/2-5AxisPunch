@@ -182,9 +182,9 @@ void ICHCInstructionPageFrame::OptionButtonClicked()
     }
     else if(peripheryPage_ == NULL && optionButton == ui->peripheryButton)
     {
-        pneumaticPage_ = new ICPeripheryPage();
-        optionButtonToPage_.insert(ui->peripheryButton, pneumaticPage_);
-        ui->settingStackedWidget->addWidget(pneumaticPage_);
+        peripheryPage_ = new ICPeripheryPage();
+        optionButtonToPage_.insert(ui->peripheryButton, peripheryPage_);
+        ui->settingStackedWidget->addWidget(peripheryPage_);
     }
     else if(cutPage_ == NULL && optionButton == ui->cutButton)
     {
