@@ -27,6 +27,7 @@ ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     currentAction_(-1)
 {
     ui->setupUi(this);
+    ui->adjustToolButton->hide();
     buttonGroup_ = new QButtonGroup();
     ui->centralFrame->setLayout(centralStackedLayout_);
 
