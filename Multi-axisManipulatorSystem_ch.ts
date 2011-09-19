@@ -1534,8 +1534,8 @@ Reason</source>
         <translation type="obsolete">当前姿势:</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="76"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="92"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="77"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="93"/>
         <source>Other</source>
         <translation>其他</translation>
     </message>
@@ -1544,40 +1544,40 @@ Reason</source>
         <translation type="obsolete">教导</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="77"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="93"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="78"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="94"/>
         <source>Adjust</source>
         <translation>调位</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="177"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="202"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="178"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="203"/>
         <source>Horizontal</source>
         <translation>水平</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="185"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="210"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="186"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="211"/>
         <source>Vertical</source>
         <translation>垂直</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="218"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="219"/>
         <source>Sub Arm Up</source>
         <translation>副臂上升</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="226"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="227"/>
         <source>Sub Arm Down</source>
         <translation>副臂下降</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="234"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="235"/>
         <source>Sub Arm Forward</source>
         <translation>副臂前进</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="242"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="243"/>
         <source>Sub Arm Backward</source>
         <translation>副臂后退</translation>
     </message>
@@ -1590,14 +1590,14 @@ Reason</source>
         <translation type="obsolete">备用I/O</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="74"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="90"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="75"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="91"/>
         <source>Fixture</source>
         <translation>夹具</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="75"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="91"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="76"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="92"/>
         <source>Sucker</source>
         <translation>吸</translation>
     </message>

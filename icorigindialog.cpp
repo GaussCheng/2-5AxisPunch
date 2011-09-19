@@ -38,6 +38,7 @@ void ICOriginDialog::hideEvent(QHideEvent *e)
                SIGNAL(StepChanged(int)),
                this,
                SLOT(StepChanged(int)));
+    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
     QDialog::hideEvent(e);
 }
 

@@ -105,6 +105,7 @@ QVariant ICExectueCommand::Send(modbus_param_t *modbusParam)
                          KeyValue(),
                          SyncAct(),
                          SyncSum());
+        ++tryedTimes;
     }while(ret != 0 && tryedTimes < RetryTimes());
     if(ret < 0)
     {
@@ -130,6 +131,7 @@ QVariant ICModifySysParamCommand::Send(modbus_param_t *modbusParam)
                                       Slave(),
                                       StartAddr(),
                                       ParamValue());
+        ++tryedTimes;
     }while(ret != 0 && tryedTimes < RetryTimes());
     if(ret < 0)
     {
@@ -155,6 +157,7 @@ QVariant ICTeachParamCommand::Send(modbus_param_t *modbusParam)
                                  Slave(),
                                  StartAddr(),
                                  ParamValue());
+        ++tryedTimes;
     }while(ret != 0 && tryedTimes < RetryTimes());
     if(ret < 0)
     {
@@ -188,6 +191,7 @@ QVariant ICTeachStepCommand::Send(modbus_param_t *modbusParam)
                                 Slave(),
                                 step,
                                 dest);
+            ++tryedTimes;
         }while(ret == -1 && tryedTimes < RetryTimes());
         if(ret == -1)
         {
@@ -256,6 +260,7 @@ QVariant ICAutoAdjustCommand::Send(modbus_param_t *modbusParam)
                           DPos(),
                           GMValue(),
                           CheckSum());
+        ++tryedTimes;
     }while(ret != 0 && tryedTimes < RetryTimes());
     if(ret < 0)
     {

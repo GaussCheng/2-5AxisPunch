@@ -186,6 +186,7 @@ void ICVirtualHost::RefreshStatus()
                 qCritical("Connect to host fail!!");
                 statusMap_.insert(ErrCode, 200);
                 tryTimes_ = 0;
+                emit StatusRefreshed();
             }
 //            flag_ =true;
             return;
@@ -357,6 +358,7 @@ void ICVirtualHost::WriteSubTohost_()
             {
                 qCritical("Connect to host fail when init sub");
                 qDebug()<<"init sub fail"<<j;
+                break;
                 //                exit(-1);
             }
 
@@ -482,6 +484,7 @@ void ICVirtualHost::InitSystem_()
         if(!commandProcessor->ExecuteCommand(writeParamtersCommand).toBool())
         {
             qCritical("connect to host fail when init system");
+            break;
         }
         ++startAddr;
     }
@@ -647,6 +650,7 @@ void ICVirtualHost::WriteMoldTohost_()
         if(!commandProcessor->ExecuteCommand(writeParamtersCommand).toBool())
         {
             qCritical("Connect to host fail when init mold");
+            break;
             //            exit(-1);
         }
 
@@ -710,6 +714,7 @@ void ICVirtualHost::InitMoldParam_()
         if(!commandProcessor->ExecuteCommand(writeParamtersCommand).toBool())
         {
             qCritical("connect to host fail when init mold param");
+            break;
         }
         ++startAddr;
     }

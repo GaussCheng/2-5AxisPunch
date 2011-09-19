@@ -3,7 +3,7 @@
 
 ICCommunicationCommandBase::ICCommunicationCommandBase()
     :isSendError_(true),
-    tryTimes_(10)
+    tryTimes_(20)
 {
 //    AddCommandArgFlag("slave");
 //    AddCommandArgFlag("startaddr");

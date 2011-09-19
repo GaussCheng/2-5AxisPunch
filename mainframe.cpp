@@ -655,10 +655,12 @@ void MainFrame::HideOrigin()
 //    if(isOriginShown_)
 //    {
         //        ui->systemStatusFrame->SetSystemStop();
-        isOriginShown_ = false;
+//        isOriginShown_ = false;
+    if(originExecutingPage_->isVisible())
+    {
         originExecutingPage_->accept();
         //        oldRunnigStatus_ = ICVirtualHost::Stop;
-//    }
+    }
 }
 
 void MainFrame::ShowReturn()
