@@ -36,6 +36,8 @@ private slots:
     void MoldNumChanged(int mold);
     void on_singleStepButton_clicked();
 
+    void on_followToolButton_clicked();
+
 private:
     void InitSignal();
     void UpdateUIProgramList_();
@@ -58,5 +60,6 @@ private:
     int startIndex_;
     int currentMoldNum_;
     ICGroupMoldUIItem* currentStepItem_;
+    bool isFollow_;
 };
 #endif // ICHCPROGRAMMONITORFRAME_H

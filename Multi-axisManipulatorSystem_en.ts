@@ -1337,9 +1337,20 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="189"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="195"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="404"/>
+        <source>Follow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="227"/>
         <source>Single Step</source>
         <oldsource>Single Cycle</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="398"/>
+        <source>No Follow</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2634,7 +2645,7 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="60"/>
+        <location filename="icorigindialog.cpp" line="61"/>
         <source>Originning...</source>
         <translation type="unfinished"></translation>
     </message>

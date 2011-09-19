@@ -1771,7 +1771,13 @@ Reason</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="189"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="195"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="404"/>
+        <source>Follow</source>
+        <translation>跟随</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="227"/>
         <source>Single Step</source>
         <oldsource>Single Cycle</oldsource>
         <translation>单步</translation>
@@ -1812,6 +1818,11 @@ Reason</source>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="157"/>
         <source>Edit</source>
         <translation>编辑</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="398"/>
+        <source>No Follow</source>
+        <translation>不跟随</translation>
     </message>
 </context>
 <context>
@@ -3223,7 +3234,7 @@ Please enter an digit between </source>
         <translation>请按启动键执行原点</translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="60"/>
+        <location filename="icorigindialog.cpp" line="61"/>
         <source>Originning...</source>
         <translation>原点执行中</translation>
     </message>

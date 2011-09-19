@@ -47,5 +47,7 @@
         <file>resource/wait(32).png</file>
         <file>resource/Conveyor_Belt(32).png</file>
         <file>resource/insert(32).png</file>
+        <file>resource/stop.png</file>
+        <file>resource/play.png</file>
     </qresource>
 </RCC>

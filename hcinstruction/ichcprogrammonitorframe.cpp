@@ -16,7 +16,8 @@ ICHCProgramMonitorFrame::ICHCProgramMonitorFrame(QWidget *parent) :
     isModify_(false),
     oldTime_(-1),
     currentStepItem_(NULL),
-    currentMoldNum_(8)
+    currentMoldNum_(8),
+    isFollow_(true)
 {
     ui->setupUi(this);
 
@@ -153,6 +154,10 @@ void ICHCProgramMonitorFrame::SelectCurrentStep(int currentStep)
         qDebug()<<"current step wrong"<<currentStep;
         return;
     }
+    if(!isFollow_)
+    {
+        return;
+    }
     ui->moldContentListWidget->clearSelection();
     ICGroupMoldUIItem* gItem = &programList_[currentStep];
     currentStepItem_ = gItem;
@@ -187,6 +192,10 @@ void ICHCProgramMonitorFrame::SelectCurrentStep(int currentStep)
 
 void ICHCProgramMonitorFrame::SubStepChanged(uint8_t* subStep)
 {
+    if(!isFollow_)
+    {
+        return;
+    }
     if(currentStepItem_ == NULL)
     {
         return;
@@ -378,4 +387,20 @@ void ICHCProgramMonitorFrame::MoldNumChanged(int mold)
     currentMoldNum_ = mold;
     UpdateHostParam();
     this->blockSignals(false);
+}
+
+void ICHCProgramMonitorFrame::on_followToolButton_clicked()
+{
+    if(isFollow_)
+    {
+        isFollow_ = false;
+        ui->followToolButton->setIcon(QPixmap(":/resource/stop.png"));
+        ui->followToolButton->setText(tr("No Follow"));
+    }
+    else
+    {
+        isFollow_ = true;
+        ui->followToolButton->setIcon(QPixmap(":/resource/play.png"));
+        ui->followToolButton->setText(tr("Follow"));
+    }
 }
