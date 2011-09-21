@@ -394,13 +394,13 @@ void ICHCProgramMonitorFrame::on_followToolButton_clicked()
     if(isFollow_)
     {
         isFollow_ = false;
-        ui->followToolButton->setIcon(QPixmap(":/resource/stop.png"));
-        ui->followToolButton->setText(tr("No Follow"));
+        ui->followToolButton->setIcon(QPixmap(":/resource/play.png"));
+        ui->followToolButton->setText(tr("Follow"));
     }
     else
     {
         isFollow_ = true;
-        ui->followToolButton->setIcon(QPixmap(":/resource/play.png"));
-        ui->followToolButton->setText(tr("Follow"));
+        ui->followToolButton->setIcon(QPixmap(":/resource/stop.png"));
+        ui->followToolButton->setText(tr("No Follow"));
     }
 }

@@ -192,11 +192,11 @@
         </size>
        </property>
        <property name="text">
-        <string>Follow</string>
+        <string>No Follow</string>
        </property>
        <property name="icon">
         <iconset resource="../resource.qrc">
-         <normaloff>:/resource/play.png</normaloff>:/resource/play.png</iconset>
+         <normaloff>:/resource/stop.png</normaloff>:/resource/stop.png</iconset>
        </property>
        <property name="iconSize">
         <size>
