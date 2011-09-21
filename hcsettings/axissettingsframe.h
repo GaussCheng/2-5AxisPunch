@@ -33,7 +33,7 @@ protected:
 private:
     void InitInterface();
     QList<uint> GetCurrentStatus_(bool isGuild) const;
-    void SetCurrentStatus_(const QList<uint> & status);
+    bool SetCurrentStatus_(const QList<uint> & status);
 
 private:
     Ui::AxisSettingsFrame *ui;

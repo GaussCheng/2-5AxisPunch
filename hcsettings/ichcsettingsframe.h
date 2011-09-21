@@ -26,6 +26,7 @@ signals:
 protected:
     void changeEvent(QEvent *e);
     void showEvent(QShowEvent *e);
+    void hideEvent(QHideEvent *e);
 
 private slots:
     void on_axisZToolButton_clicked();

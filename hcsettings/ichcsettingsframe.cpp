@@ -4,6 +4,7 @@
 
 #include "axissettingsframe.h"
 #include "basicsettingsframe.h"
+#include "icvirtualhost.h"
 
 ICHCSettingsFrame::ICHCSettingsFrame(QWidget *parent) :
     QFrame(parent),
@@ -60,6 +61,12 @@ void ICHCSettingsFrame::showEvent(QShowEvent *e)
 {
     ui->axisXToolButton->click();
     QFrame::showEvent(e);
+}
+
+void ICHCSettingsFrame::hideEvent(QHideEvent *e)
+{
+    ICVirtualHost::GlobalVirtualHost()->ReConfigure();
+    QFrame::hideEvent(e);
 }
 
 //void ICHCSettingsFrame::SettingButtonClicked()

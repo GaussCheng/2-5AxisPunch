@@ -132,6 +132,22 @@ protected:
 
 };
 
+class ICSetAxisConfigsCommand: public ICCommunicationCommandBase
+{
+public:
+    ICSetAxisConfigsCommand();
+    int Axis() const { return FlagValue("Axis");}
+    void SetAxis(int value) { SetFlagValue("Axis", value);}
+    QVector<uint> DataBuffer() const { return dataBuffer_;}
+    void SetDataBuffer(const QVector<uint> & dataBuffer) {dataBuffer_ = dataBuffer;}
+
+
+protected:
+    virtual QVariant Send(modbus_param_t *modbusParam);
+private:
+    QVector<uint> dataBuffer_;
+};
+
 class ICSelecteConfigCommand: public ICCommunicationCommandBase
 {
 public:

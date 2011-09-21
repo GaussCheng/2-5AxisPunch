@@ -152,6 +152,7 @@ extern "C" {
 //#define FC_HC_DOES_NEED_TEACH_STEP  0x45
 #define FC_HC_GET_AXIS_PARA         0x45
 #define FC_HC_SELECT_CONFIG         0x46
+#define FC_HC_SET_AXIS_PARA         0x47
 #endif
 
 /* Protocol exceptions */
@@ -418,6 +419,12 @@ int hc_get_axis_parameter(modbus_param_t *mb_param,
 int hc_select_axis_config(modbus_param_t *mb_param,
                           int slave,
                           int selected);
+
+int hc_set_axis_parameter(modbus_param_t *mb_param,
+                          int slave,
+                          int frame,
+                          int axis,
+                          uint16_t* configs);
 #endif
 
 

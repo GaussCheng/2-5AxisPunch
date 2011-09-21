@@ -320,6 +320,48 @@ QVariant ICGetAxisConfigsCommand::Send(modbus_param_t *modbusParam)
     return vR;
 }
 
+ICSetAxisConfigsCommand::ICSetAxisConfigsCommand()
+{
+    AddCommandArgFlags(QStringList()<<"Axis");
+}
+
+QVariant ICSetAxisConfigsCommand::Send(modbus_param_t *modbusParam)
+{
+    int tryedTimes = 0;
+    int ret;
+    uint16_t sendData[] = {dataBuffer_.at(0),
+                           dataBuffer_.at(1),
+                           dataBuffer_.at(2),
+                           dataBuffer_.at(3)};
+    uint16_t sendData1[] = {dataBuffer_.at(4),
+                            dataBuffer_.at(5),
+                            dataBuffer_.at(6),
+                            0};
+    do
+    {
+        ret = hc_set_axis_parameter(modbusParam,
+                                    Slave(),
+                                    0,
+                                    Axis(),
+                                    sendData);
+//        qDebug()<<"ret="<<ret;
+        if(ret == 1)
+        {
+            ret = hc_set_axis_parameter(modbusParam,
+                                        Slave(),
+                                        1,
+                                        Axis(),
+                                        sendData1);
+        }
+        ++tryedTimes;
+    }while(ret < 0 && tryedTimes < RetryTimes());
+    if(ret < 0)
+    {
+        return false;
+    }
+    return true;
+}
+
 ICSelecteConfigCommand::ICSelecteConfigCommand()
 {
     AddCommandArgFlag("Selected");

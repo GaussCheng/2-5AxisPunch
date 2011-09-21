@@ -200,6 +200,7 @@ static unsigned int compute_response_length(modbus_param_t *mb_param,
         break;
     case FC_HC_TEACH_STEP:
     case FC_HC_GET_AXIS_PARA:
+    case FC_HC_SET_AXIS_PARA:
         {
             return  16;
         }
@@ -815,6 +816,7 @@ static int modbus_receive(modbus_param_t *mb_param,
             break;
         case FC_HC_TEACH_STEP:
         case FC_HC_GET_AXIS_PARA:
+        case FC_HC_SET_AXIS_PARA:
             {
                 query_nb_value = response_nb_value = 16;
             }
@@ -2439,6 +2441,54 @@ int hc_select_axis_config(modbus_param_t *mb_param, int slave, int selected)
             for(int i = 0; i != 7; ++i)
             {
                 if(query[i] != response[i])
+                {
+                    return -1;
+                }
+            }
+            return 1;
+        }
+    }
+    return -1;
+}
+
+int hc_set_axis_parameter(modbus_param_t *mb_param, int slave, int frame, int axis, uint16_t *configs)
+{
+#ifndef NATIVE_WIN32
+    tcflush(mb_param->fd, TCIOFLUSH);
+#endif
+    int ret;
+    int query_length;
+
+    uint8_t query[16];
+
+    query_length = 14;
+//	byte_count = nb * 2;
+//	query[query_length++] = byte_count;
+    query[0] = slave;
+    query[1] = FC_HC_SET_AXIS_PARA;
+    query[2] = frame;
+    query[3] = 0;
+    query[4] = axis;
+    query[5] = 0;
+    query[7] = configs[0] >> 8;
+    query[6] = configs[0] & 0x00FF;
+    query[9] = configs[1] >> 8;
+    query[8] = configs[1] & 0x00FF;
+    query[11] = configs[2] >> 8;
+    query[10] = configs[2] & 0x00FF;
+    query[13] = configs[3] >> 8;
+    query[12] = configs[3] & 0x00FF;
+
+    ret = modbus_send(mb_param, query, query_length);
+    if (ret > 0) {
+        uint8_t response[MAX_MESSAGE_LENGTH];
+        ret = modbus_receive(mb_param, query, response);
+        if(ret == 16)
+        {
+            for(int i = 0; i != 16; ++i)
+            {
+//                printf("axis:%u = %u", response[i], query[i]);
+                if(response[i] != query[i])
                 {
                     return -1;
                 }
