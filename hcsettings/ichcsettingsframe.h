@@ -32,6 +32,7 @@ private slots:
     void on_axisZToolButton_clicked();
     void on_axisYToolButton_clicked();
     void on_axisXToolButton_clicked();
+    void on_structDefButton_clicked();
 //    void SettingButtonClicked();
 
 private:
@@ -43,7 +44,7 @@ private:
 private:
     Ui::ICHCSettingsFrame *ui;
     QWidget * axisSettingsPage_;
-    QWidget * basicSettingsPage_;
+    QWidget * structDefPage_;
     QStackedLayout * centralStackedLayout_;
     QButtonGroup* buttonGroup_;
 };

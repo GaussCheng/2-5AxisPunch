@@ -843,7 +843,11 @@ void ICHCInstructionPageFrame::on_downButton_clicked()
         {
             return;
         }
-        if(gIndex >= programList_.size() - 2) //if is the last two item, do nothing
+        if(gIndex >= programList_.size() - 1) //if is the last two item, do nothing
+        {
+            return;
+        }
+        if(tIndex == 0)
         {
             return;
         }
@@ -874,6 +878,10 @@ void ICHCInstructionPageFrame::on_downButton_clicked()
     }
     else //sub item
     {
+//        if(sIndex == 0) //sub item1 do nothing
+//        {
+//            return;
+//        }
 //        ICTopMoldUIItem *topItem = &programList_[gIndex].at(tIndex);
 //        ICSubMoldUIItem *subItem = topItem->at(sIndex);
 //        if(sIndex == 0 ||

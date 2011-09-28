@@ -17,7 +17,8 @@ ICHCProgramMonitorFrame::ICHCProgramMonitorFrame(QWidget *parent) :
     oldTime_(-1),
     currentStepItem_(NULL),
     currentMoldNum_(8),
-    isFollow_(true)
+    isFollow_(true),
+    oldStep_(-1)
 {
     ui->setupUi(this);
 
@@ -141,7 +142,7 @@ void ICHCProgramMonitorFrame::StatusRefreshed()
 
 void ICHCProgramMonitorFrame::SelectCurrentStep(int currentStep)
 {
-    if(currentStep == 0 && isModify_)
+    if(currentStep < oldStep_ && isModify_)
     {
         ICMold::CurrentMold()->SetMoldContent(ICMold::UIItemToMoldItem(programList_));
         ICMold::CurrentMold()->SaveMoldFile();
@@ -149,6 +150,7 @@ void ICHCProgramMonitorFrame::SelectCurrentStep(int currentStep)
         UpdateHostParam();
         isModify_ = false;
     }
+    oldStep_ = currentStep;
     if(currentStep < 0 || currentStep >= programList_.size())
     {
         qDebug()<<"current step wrong"<<currentStep;

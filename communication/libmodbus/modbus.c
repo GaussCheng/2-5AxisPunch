@@ -2487,7 +2487,6 @@ int hc_set_axis_parameter(modbus_param_t *mb_param, int slave, int frame, int ax
         {
             for(int i = 0; i != 16; ++i)
             {
-//                printf("axis:%u = %u", response[i], query[i]);
                 if(response[i] != query[i])
                 {
                     return -1;

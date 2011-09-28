@@ -45,9 +45,12 @@ public:
 
     inline QMap<int, QString> AlarmInfoMap() { return alarmInfoMap_; }
     inline QString AlarmInfo(int errCode) { return alarmInfoMap_.value(errCode, QString());}
+    QString HintInfo(int hintCode) { return hintInfoMap_.value(hintCode, QString());}
 
     const QString AlarmChineseInfoPathName;
     const QString AlarmEnglishInfoPathName;
+    const QString HintChInfoPathName;
+    const QString HintEnInfoPathName;
 
 signals:
     void CurrentAlarmNumChanged(int currentAlarmNum);
@@ -60,6 +63,7 @@ private:
     static ICAlarmString * instance_;
     int priorAlarmNum_;
     QMap<int, QString> alarmInfoMap_; //int为报警编号
+    QMap<int, QString> hintInfoMap_;
     QFile alarmChInfoFile;
     ICAlarmString();
 };

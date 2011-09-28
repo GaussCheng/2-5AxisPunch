@@ -28,6 +28,13 @@ public:
         G_X20 = 20
     };
 
+    enum HandwheelAxis
+    {
+        Axis_X,
+        Axis_Y,
+        Axis_Z
+    };
+
     static OperatingRatioSetDialog* Instance()
     {
         if(instance_ == NULL)
@@ -41,6 +48,8 @@ public:
 
     PulleySpeed CurrentPulleySpeed() const;
     GlobalSpeedStep CurrentGlobalSpeedStep() const;
+    void SetCurrentHandwheelAxis(HandwheelAxis axis);
+
 
 protected:
     void changeEvent(QEvent *e);
@@ -55,6 +64,9 @@ private:
 
 private slots:
     void on_okToolButton_clicked();
+    void on_xAxisRadioButton_clicked();
+    void on_yAxisRadioButton_clicked();
+    void on_zAxisRadioButton_clicked();
 };
 
 

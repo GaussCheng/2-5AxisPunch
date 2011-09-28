@@ -39,7 +39,7 @@ public:
         SYS_LMT_vX,
         SYS_LMT_vY,
         SYS_LMT_vZ,
-        SYS_XEarlyEnd,
+        SYS_ARM_CONFIG,
         SYS_YEarlyEnd,
         SYS_ZEarlyEnd,
 
@@ -269,7 +269,7 @@ public:
         SM_LMTVX,				//X Max Speed
         SM_LMTVY,				//Y Max Speed
         SM_LMTVZ,				//Z Max Speed
-        SM_XEarlyEnd,
+        SM_ARM_CONFIG,
         SM_YEarlyEnd,
         SM_ZEarlyEnd,
         SM_WaitMoldOpenLimit
@@ -369,6 +369,8 @@ public:
 
     int CurrentStep() const { return (statusMap_.value(Step).toInt() & 0x00FF);}
     int CurrentStatus() const { return (statusMap_.value(Status).toUInt() & 0x0FFF);}
+    int AlarmNum() const { return (statusMap_.value(ErrCode).toUInt() & 0x0FFF);}
+    int HintNum() const { return (statusMap_.value(ErrCode).toUInt() >> 12);}
     bool IsOrigined() const { return (statusMap_.value(Status).toUInt() >> 12) == 1;}
 
     int GlobalSpeed() const {return systemParamMap_.value(SYS_Global_Speed).toInt();}

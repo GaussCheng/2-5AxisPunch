@@ -2,6 +2,7 @@
 #define ICHCSYSTEMSETTINGSFRAME_H
 
 #include <QFrame>
+#include <QMap>
 
 class QTranslator;
 class QDialog;
@@ -44,6 +45,9 @@ private:
     int totalL_;
     int totalH_;
     int xorSum_;
+    QMap<int, QString> armXStructValueToName_;
+    QMap<int, QString> armYStructValueToName_;
+    uint armStruct_;
 private slots:
     void on_languageComboBox_activated(int );
     void on_keyToneButton_toggled(bool checked);
@@ -64,10 +68,12 @@ private slots:
     void on_axisZToolButton_clicked();
     void on_axisYToolButton_clicked();
     void on_axisXToolButton_clicked();
+    void on_structDefButton_clicked();
     void on_seletHmiButton_clicked();
     void on_selectHostButton_clicked();
     void on_saveParaButton_clicked();
     void StatusRefresh();
+    void on_structSelectHostButton_clicked();
 };
 
 #endif // ICHCSYSTEMSETTINGSFRAME_H

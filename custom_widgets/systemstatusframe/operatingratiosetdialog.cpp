@@ -1,6 +1,9 @@
 #include "operatingratiosetdialog.h"
 #include "ui_operatingratiosetdialog.h"
 
+#include "iccommandprocessor.h"
+#include "icvirtualkey.h"
+
 OperatingRatioSetDialog * OperatingRatioSetDialog::instance_ = NULL;
 
 OperatingRatioSetDialog::OperatingRatioSetDialog(QWidget *parent) :
@@ -84,4 +87,38 @@ OperatingRatioSetDialog::GlobalSpeedStep OperatingRatioSetDialog::CurrentGlobalS
     {
         return G_X5;
     }
+}
+
+void OperatingRatioSetDialog::SetCurrentHandwheelAxis(HandwheelAxis axis)
+{
+    switch(axis)
+    {
+    case Axis_X:
+        ui->xAxisRadioButton->setChecked(true);
+        break;
+    case Axis_Y:
+        ui->yAxisRadioButton->setChecked(true);
+        break;
+    case Axis_Z:
+        ui->xAxisRadioButton->setChecked(true);
+        break;
+    default:
+        ui->xAxisRadioButton->setChecked(true);
+        break;
+    }
+}
+
+void OperatingRatioSetDialog::on_xAxisRadioButton_clicked()
+{
+    ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_BIASX);
+}
+
+void OperatingRatioSetDialog::on_yAxisRadioButton_clicked()
+{
+    ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_BIASY);
+}
+
+void OperatingRatioSetDialog::on_zAxisRadioButton_clicked()
+{
+    ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_BIASZ);
 }

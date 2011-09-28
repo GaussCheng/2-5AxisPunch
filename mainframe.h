@@ -116,6 +116,7 @@ private:
     bool isOrigined_;
     bool isDoAction_;
     QPoint mousePoint_;
+    int oldHintCode_;
 
 };
 

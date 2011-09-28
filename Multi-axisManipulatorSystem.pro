@@ -54,4 +54,6 @@ TRANSLATIONS += Multi-axisManipulatorSystem_ch.ts \
 
 OTHER_FILES += \
     sysconfig/alarminfomation-en \
-    sysconfig/alarminfomation-ch
+    sysconfig/alarminfomation-ch \
+    sysconfig/hintinfomation-ch \
+    sysconfig/hintinfomation-en

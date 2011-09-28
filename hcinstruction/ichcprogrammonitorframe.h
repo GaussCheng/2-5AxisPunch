@@ -61,5 +61,6 @@ private:
     int currentMoldNum_;
     ICGroupMoldUIItem* currentStepItem_;
     bool isFollow_;
+    int oldStep_;
 };
 #endif // ICHCPROGRAMMONITORFRAME_H

@@ -344,7 +344,7 @@ QVariant ICSetAxisConfigsCommand::Send(modbus_param_t *modbusParam)
                                     0,
                                     Axis(),
                                     sendData);
-//        qDebug()<<"ret="<<ret;
+        qDebug()<<"ret0="<<ret;
         if(ret == 1)
         {
             ret = hc_set_axis_parameter(modbusParam,
@@ -352,6 +352,7 @@ QVariant ICSetAxisConfigsCommand::Send(modbus_param_t *modbusParam)
                                         1,
                                         Axis(),
                                         sendData1);
+            qDebug()<<"ret1"<<ret;
         }
         ++tryedTimes;
     }while(ret < 0 && tryedTimes < RetryTimes());

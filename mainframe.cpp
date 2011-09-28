@@ -436,19 +436,26 @@ void MainFrame::StatusRefreshed()
     newLedFlags_ |= (virtualHost->IsInputOn(35)? 8 : 0);
     newLedFlags_ |= (virtualHost->IsInputOn(32)? 4 : 0);
     newLedFlags_ |= (virtualHost->IsOutputOn(32)? 2 : 0);
-    newLedFlags_ |= (virtualHost->IsOutputOn(37)? 1 : 0);
+    newLedFlags_ |= (virtualHost->IsOutputOn(33)? 1 : 0);
     if(newLedFlags_ != ledFlags_)
     {
         ledFlags_ = newLedFlags_;
         ioctl(ledFD_, 2, ledFlags_);
     }
-    errCode_ = virtualHost->HostStatus(ICVirtualHost::ErrCode).toUInt();
-    if(alarmString->PriorAlarmNum() != static_cast<int>(errCode_))
+    errCode_ = virtualHost->AlarmNum();
+    int hintCode = virtualHost->HintNum();
+    if(alarmString->PriorAlarmNum() != static_cast<int>(errCode_) || hintCode != oldHintCode_)
     {
+        oldHintCode_ = hintCode;
+        qDebug()<<"hint code"<<hintCode<<alarmString->HintInfo(hintCode);
         alarmString->SetPriorAlarmNum(errCode_);
         if(errCode_ != 0)
         {
             ui->cycleTimeAndFinistWidget->SetAlarmInfo("Err" + QString::number(errCode_) + ":" + alarmString->AlarmInfo(errCode_));
+        }
+        else if(hintCode != 0)
+        {
+            ui->cycleTimeAndFinistWidget->SetHintInfo(tr("Hint") + QString::number(hintCode) + ":" + alarmString->HintInfo(hintCode));
         }
         else
         {

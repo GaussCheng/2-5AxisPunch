@@ -41,10 +41,17 @@ void ICCycleTimeAndFinishedFrame::SetFinished(int finishedCount)
 
 void ICCycleTimeAndFinishedFrame::SetAlarmInfo(const QString & alarmInfo)
 {
+    ui->alarmLabel->setStyleSheet("background-color: rgb(192,192,192); border-radius: 6px; border: 3px solid gray; font-size: 15px; color: red;");
     ui->alarmLabel->setText(alarmInfo);
+}
+
+void ICCycleTimeAndFinishedFrame::SetHintInfo(const QString &hintInfo)
+{
+    ui->alarmLabel->setStyleSheet("background-color: rgb(192,192,192); border-radius: 6px; border: 3px solid gray; font-size: 15px; color: green;");
+    ui->alarmLabel->setText(hintInfo);
 }
 
 void ICCycleTimeAndFinishedFrame::InitInterface()
 {
-    ui->alarmLabel->setStyleSheet("background-color: rgb(192,192,192); border-radius: 6px; border: 3px solid gray; font-size: 15px; color: red;");
+    ui->alarmLabel->setStyleSheet("background-color: rgb(192,192,192); border-radius: 6px; border: 3px solid gray; font-size: 15px;");
 }

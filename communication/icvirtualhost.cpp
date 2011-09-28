@@ -16,6 +16,8 @@
 #include "icmacrosubroutine.h"
 #include "ickeyboardhandler.h"
 #include "ickeyboard.h"
+#include "icvirtualkey.h"
+#include "operatingratiosetdialog.h"
 #include <QDebug>
 
 ICVirtualHost* ICVirtualHost::globalVirtualHost_ = NULL;
@@ -136,6 +138,18 @@ void ICVirtualHost::RefreshStatus()
         if(keyboard->IsPressed())
         {
             (key == -1) ? key = oldKey_ : oldKey_ = key;
+        }
+        if(key == ICKeyboard::VFB_X1Add || key == ICKeyboard::VFB_X1Sub)
+        {
+            OperatingRatioSetDialog::Instance()->SetCurrentHandwheelAxis(OperatingRatioSetDialog::Axis_X);
+        }
+        else if(key == ICKeyboard::VFB_Y1Add || key == ICKeyboard::VFB_Y1Sub)
+        {
+            OperatingRatioSetDialog::Instance()->SetCurrentHandwheelAxis(OperatingRatioSetDialog::Axis_Y);
+        }
+        else if(key == ICKeyboard::VFB_ZAdd || key == ICKeyboard::VFB_ZSub)
+        {
+            OperatingRatioSetDialog::Instance()->SetCurrentHandwheelAxis(OperatingRatioSetDialog::Axis_Z);
         }
         keyboardHandler->SwitchChanged(keyboard->TakeSwitchValue());
         keyboardHandler->Keypressed(key);
@@ -727,6 +741,7 @@ void ICVirtualHost::InitICStatusMap_()
     {
         statusMap_.insert(i, -1);
     }
+    statusMap_.insert(ErrCode, 0);
 }
 
 void ICVirtualHost::InitSystemMap_()
@@ -782,7 +797,7 @@ void ICVirtualHost::InitAddrToSysPosMap_()
     addrToSysPos_.insert(SM_LMTVX, SYS_LMT_vX);
     addrToSysPos_.insert(SM_LMTVY, SYS_LMT_vY);
     addrToSysPos_.insert(SM_LMTVZ, SYS_LMT_vZ);
-    addrToSysPos_.insert(SM_XEarlyEnd, SYS_XEarlyEnd);
+    addrToSysPos_.insert(SM_ARM_CONFIG, SYS_ARM_CONFIG);
     addrToSysPos_.insert(SM_YEarlyEnd, SYS_YEarlyEnd);
     addrToSysPos_.insert(SM_ZEarlyEnd, SYS_ZEarlyEnd);
     addrToSysPos_.insert(SM_WaitMoldOpenLimit, ACT_WaitMoldOpened);

@@ -3,7 +3,7 @@
 #include "ui_ichcsettingsframe.h"
 
 #include "axissettingsframe.h"
-#include "basicsettingsframe.h"
+#include "icstructdefineframe.h"
 #include "icvirtualhost.h"
 
 ICHCSettingsFrame::ICHCSettingsFrame(QWidget *parent) :
@@ -20,10 +20,12 @@ ICHCSettingsFrame::ICHCSettingsFrame(QWidget *parent) :
     ui->axisXToolButton->setText(tr("X Axis"));
     ui->axisYToolButton->setText(tr("Y Axis"));
     ui->axisZToolButton->setText(tr("Z Axis"));
+    ui->structDefButton->setText(tr("Struct Define"));
 //    buttonGroup_->addButton(ui->basicSettingsToolButton);
     buttonGroup_->addButton(ui->axisXToolButton);
     buttonGroup_->addButton(ui->axisYToolButton);
     buttonGroup_->addButton(ui->axisZToolButton);
+    buttonGroup_->addButton(ui->structDefButton);
     buttonGroup_->setExclusive(true);
     QAbstractButton* button;
     foreach(button, buttonGroup_->buttons())
@@ -50,6 +52,7 @@ void ICHCSettingsFrame::changeEvent(QEvent *e)
         ui->axisXToolButton->setText(tr("X Axis"));
         ui->axisYToolButton->setText(tr("Y Axis"));
         ui->axisZToolButton->setText(tr("Z Axis"));
+        ui->structDefButton->setText(tr("Struct Define"));
     }
         break;
     default:
@@ -94,7 +97,8 @@ void ICHCSettingsFrame::InitHCSettingPage()
 
     axisSettingsPage_ = new AxisSettingsFrame;
     centralStackedLayout_->addWidget(axisSettingsPage_);
-
+    structDefPage_ = new ICStructDefineFrame();
+    centralStackedLayout_->addWidget(structDefPage_);
 //    basicSettingsPage_ =  new BasicSettingsFrame;
 //    centralStackedLayout_->addWidget(basicSettingsPage_);
 
@@ -140,6 +144,11 @@ void ICHCSettingsFrame::on_axisYToolButton_clicked()
 void ICHCSettingsFrame::on_axisZToolButton_clicked()
 {
     ShowAxisSettingPage(ui->axisZToolButton->text(), AxisZ);
+}
+
+void ICHCSettingsFrame::on_structDefButton_clicked()
+{
+    centralStackedLayout_->setCurrentWidget(structDefPage_);
 }
 
 void ICHCSettingsFrame::ShowAxisSettingPage(QString currentAxisName, int axis)

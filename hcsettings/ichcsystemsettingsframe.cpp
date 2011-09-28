@@ -25,10 +25,12 @@ ICHCSystemSettingsFrame::ICHCSystemSettingsFrame(QWidget *parent) :
     ui->axisXToolButton->setText(tr("X Axis"));
     ui->axisYToolButton->setText(tr("Y Axis"));
     ui->axisZToolButton->setText(tr("Z Axis"));
+    ui->structDefButton->setText(tr("Struct Define"));
 //    buttonGroup_->addButton(ui->basicSettingsToolButton);
     buttonGroup_->addButton(ui->axisXToolButton);
     buttonGroup_->addButton(ui->axisYToolButton);
     buttonGroup_->addButton(ui->axisZToolButton);
+    buttonGroup_->addButton(ui->structDefButton);
     buttonGroup_->setExclusive(true);
     QAbstractButton* button;
     foreach(button, buttonGroup_->buttons())
@@ -36,10 +38,19 @@ ICHCSystemSettingsFrame::ICHCSystemSettingsFrame(QWidget *parent) :
         button->setCheckable(true);
     }
     ui->axisXToolButton->click();
+    ui->hostStructDefGroup->hide();
+    ui->hmiStructDefGroup->hide();
+    ui->structSelectHostButton->hide();
     connect(ICProgramHeadFrame::Instance(),
             SIGNAL(LevelChanged(int)),
             this,
             SLOT(OnLevelChanged(int)));
+    armXStructValueToName_.insert(0, tr("None"));
+    armXStructValueToName_.insert(1, tr("Only Backward Limit"));
+    armXStructValueToName_.insert(2, tr("Only Forward Limit"));
+    armXStructValueToName_.insert(3, tr("Both"));
+    armYStructValueToName_.insert(1, tr("Only Up Limit"));
+    armYStructValueToName_.insert(3, tr("Up and Donw Limit"));
 }
 
 ICHCSystemSettingsFrame::~ICHCSystemSettingsFrame()
@@ -91,6 +102,7 @@ void ICHCSystemSettingsFrame::changeEvent(QEvent *e)
             ui->axisXToolButton->setText(tr("X Axis"));
             ui->axisYToolButton->setText(tr("Y Axis"));
             ui->axisZToolButton->setText(tr("Z Axis"));
+            ui->structDefButton->setText(tr("Struct Define"));
         }
         break;
     default:
@@ -386,6 +398,12 @@ void ICHCSystemSettingsFrame::OnLevelChanged(int level)
 
 void ICHCSystemSettingsFrame::on_axisXToolButton_clicked()
 {
+    ui->hostGroupBox->show();
+    ui->hmiGroupBox->show();
+    ui->selectHostButton->show();
+    ui->hostStructDefGroup->hide();
+    ui->hmiStructDefGroup->hide();
+    ui->structSelectHostButton->hide();
     currentAxis_ = 0;
     SetConfig(ICVirtualHost::SYS_X_Length,
               ICVirtualHost::SYS_X_Maxium,
@@ -398,6 +416,12 @@ void ICHCSystemSettingsFrame::on_axisXToolButton_clicked()
 
 void ICHCSystemSettingsFrame::on_axisYToolButton_clicked()
 {
+    ui->hostGroupBox->show();
+    ui->hmiGroupBox->show();
+    ui->selectHostButton->show();
+    ui->hostStructDefGroup->hide();
+    ui->hmiStructDefGroup->hide();
+    ui->structSelectHostButton->hide();
     currentAxis_ = 1;
     SetConfig(ICVirtualHost::SYS_Y_Length,
               ICVirtualHost::SYS_Y_Maxium,
@@ -410,6 +434,12 @@ void ICHCSystemSettingsFrame::on_axisYToolButton_clicked()
 
 void ICHCSystemSettingsFrame::on_axisZToolButton_clicked()
 {
+    ui->hostGroupBox->show();
+    ui->hmiGroupBox->show();
+    ui->selectHostButton->show();
+    ui->hostStructDefGroup->hide();
+    ui->hmiStructDefGroup->hide();
+    ui->structSelectHostButton->hide();
     currentAxis_ = 2;
     SetConfig(ICVirtualHost::SYS_Z_Length,
               ICVirtualHost::SYS_Z_Maxium,
@@ -418,6 +448,35 @@ void ICHCSystemSettingsFrame::on_axisZToolButton_clicked()
               tr("Internal security zone"),
               tr("External security zone"),
               "Z");
+}
+
+void ICHCSystemSettingsFrame::on_structDefButton_clicked()
+{
+    ui->hostGroupBox->hide();
+    ui->hmiGroupBox->hide();
+    ui->selectHostButton->hide();
+    ui->hostStructDefGroup->show();
+    ui->hmiStructDefGroup->show();
+    ui->structSelectHostButton->show();
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    armStruct_ = host->SystemParameter(ICVirtualHost::SYS_ARM_CONFIG).toUInt();
+    ui->hmiX1->setText(armXStructValueToName_.value(armStruct_ & 0x0003));
+    ui->hmiY1->setText(armYStructValueToName_.value((armStruct_ & 0x000C) >> 2));
+    ui->hmiX2->setText(armXStructValueToName_.value((armStruct_ & 0x0030) >> 4));
+    ui->hmiY2->setText(armYStructValueToName_.value((armStruct_ & 0x00C0) >> 6));
+    ICGetAxisConfigsCommand command;
+    ICCommandProcessor* processor = ICCommandProcessor::Instance();
+    command.SetAxis(3);
+    command.SetSlave(processor->SlaveID());
+    ICCommunicationCommandBase::ResultVector ret = processor->ExecuteCommand(command).value<ICCommunicationCommandBase::ResultVector>();
+    if(!ret.isEmpty())
+    {
+        armStruct_ = ret.at(0);
+        ui->hostX1->setText(armXStructValueToName_.value(armStruct_ & 0x0003));
+        ui->hostY1->setText(armYStructValueToName_.value((armStruct_ & 0x000C) >> 2));
+        ui->hostX2->setText(armXStructValueToName_.value((armStruct_ & 0x0030) >> 4));
+        ui->hostY2->setText(armYStructValueToName_.value((armStruct_ & 0x00C0) >> 6));
+    }
 }
 
 void ICHCSystemSettingsFrame::SetConfig(int machineLenght,
@@ -565,5 +624,15 @@ void ICHCSystemSettingsFrame::UpdateConfigShow_()
 
 void ICHCSystemSettingsFrame::StatusRefresh()
 {
-    ui->versionLabel->setText("Version: App 1.7.6-na; OS 1.0; Libs:4.7.3; Host:" + ICVirtualHost::GlobalVirtualHost()->HostStatus(ICVirtualHost::Time).toString());
+    ui->versionLabel->setText("Version: App 1.7.7-master; OS 1.0; Libs:4.7.3; Host:" + ICVirtualHost::GlobalVirtualHost()->HostStatus(ICVirtualHost::Time).toString());
+}
+
+void ICHCSystemSettingsFrame::on_structSelectHostButton_clicked()
+{
+    ICVirtualHost::GlobalVirtualHost()->SetSystemParameter(ICVirtualHost::SYS_ARM_CONFIG, armStruct_);
+    ICVirtualHost::GlobalVirtualHost()->SaveSystemConfig();
+    ui->hmiX1->setText(armXStructValueToName_.value(armStruct_ & 0x0003));
+    ui->hmiY1->setText(armYStructValueToName_.value((armStruct_ & 0x000C) >> 2));
+    ui->hmiX2->setText(armXStructValueToName_.value((armStruct_ & 0x0030) >> 4));
+    ui->hmiY2->setText(armYStructValueToName_.value((armStruct_ & 0x00C0) >> 6));
 }

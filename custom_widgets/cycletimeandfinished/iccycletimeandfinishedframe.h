@@ -2,6 +2,7 @@
 #define ICCYCLETIMEANDFINISHEDFRAME_H
 
 #include <QFrame>
+#include <QPalette>
 
 namespace Ui {
     class ICCycleTimeAndFinishedFrame;
@@ -26,6 +27,7 @@ public:
     void SetCycleTime(const QString & cycleTime);
     void SetFinished(int finishedCount);
     void SetAlarmInfo(const QString & alarmInfo);
+    void SetHintInfo(const QString & hintInfo);
 
 protected:
     void changeEvent(QEvent *);

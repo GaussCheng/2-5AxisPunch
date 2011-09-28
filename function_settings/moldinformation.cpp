@@ -65,7 +65,11 @@ bool MoldInformation::CreateNewSourceFile(const QString & fileName)
     QFile newFile(filePathName);
     if(!newFile.exists())
     {
-        newFile.open(QIODevice::ReadWrite);
+        if(!newFile.open(QIODevice::ReadWrite))
+        {
+            QMessageBox::warning(this, tr("Warnning"),tr("This name can't not be accept!"));
+            return false;
+        }
         newFile.write("0 0 255 1 0 0 0 80 0 81\n1 0 255 2 0 0 0 80 0 83\n2 0 255 3 0 0 0 80 0 85\n3 0 255 17 0 0 0 0 0 20\n4 0 255 14 0 0 0 0 0 18\n5 0 255 13 0 0 0 0 0 18\n6 1 255 29 0 0 0 1 0 37\n7 2 255 32 0 0 0 0 5 46");
         QFile::copy(recordFilePath_ + "/Base.fnc", recordFilePath_ + "/" + fileNameNoExtent + "fnc");
         newFile.close();
