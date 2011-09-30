@@ -56,6 +56,14 @@
 127:Y is small when running
 128:Z is large when running
 129:Z is small when running
+130:X Axis save fail
+131:Y Axis save fail
+132:Z Axis save fail
+133:Struct save fail
+134:X axis compare
+135:Y axis compare
+136:Z axis compare
+137:Struct compare
 200:Connect to Host fail
 300:X param error
 301:Y param error
