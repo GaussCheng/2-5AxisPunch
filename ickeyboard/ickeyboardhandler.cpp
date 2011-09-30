@@ -116,6 +116,10 @@ void ICKeyboardHandler::Keypressed(int keyValue)
         if(status == ICVirtualHost::Auto)
         {
             ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+            if(!host->IsSpeedEnable())
+            {
+                return;
+            }
             int currentSpeed =  virtualHost->GlobalSpeed();
             int currentSpeedStep = OperatingRatioSetDialog::Instance()->CurrentGlobalSpeedStep();
             if(keyValue == ICKeyboard::FB_Down)
@@ -136,6 +140,7 @@ void ICKeyboardHandler::Keypressed(int keyValue)
             }
 
             host->SetGlobalSpeed(currentSpeed);
+            host->SetTuneSpeed(true);
         }
         else
         {

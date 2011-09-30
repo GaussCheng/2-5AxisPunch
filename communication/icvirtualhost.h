@@ -380,6 +380,12 @@ public:
     void SaveAxisParam();
     void ReConfigure();
 
+    bool IsSpeedEnable() const { return isSpeedEnable_;}
+    void SetSpeedEnable(bool enble) { isSpeedEnable_ = enble;}
+
+    bool HasTuneSpeed() const { return hasTuneSpeed_;}
+    void SetTuneSpeed(bool tune){ hasTuneSpeed_ = tune;}
+
 public Q_SLOTS:
     void SetMoldParam(int param, int value);
 Q_SIGNALS:
@@ -436,6 +442,8 @@ private:
     uint8_t oldSubStep[8];
     int oldMoldNum_;
     int watchdogFd_;
+    bool isSpeedEnable_;
+    bool hasTuneSpeed_;
     static ICVirtualHost* globalVirtualHost_;
 };
 #define icGlobalVirtuallHost ICVirtualHost::GlobalVirtualHost()

@@ -49,5 +49,7 @@
         <file>resource/insert(32).png</file>
         <file>resource/stop.png</file>
         <file>resource/play.png</file>
+        <file>resource/switch_on.png</file>
+        <file>resource/switch_off.png</file>
     </qresource>
 </RCC>

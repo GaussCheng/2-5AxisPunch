@@ -2,6 +2,7 @@
 #define ICHCPROGRAMMONITORFRAME_H
 
 #include <QFrame>
+#include <QTimer>
 #include "icmold.h"
 
 namespace Ui {
@@ -38,6 +39,10 @@ private slots:
 
     void on_followToolButton_clicked();
 
+    void on_speedEnableButton_clicked();
+
+    void OnTimeOut();
+
 private:
     void InitSignal();
     void UpdateUIProgramList_();
@@ -62,5 +67,8 @@ private:
     ICGroupMoldUIItem* currentStepItem_;
     bool isFollow_;
     int oldStep_;
+    QTimer timer_;
+    QPixmap switchOn_;
+    QPixmap switchOff_;
 };
 #endif // ICHCPROGRAMMONITORFRAME_H
