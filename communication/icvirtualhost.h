@@ -272,7 +272,8 @@ public:
         SM_ARM_CONFIG,
         SM_YEarlyEnd,
         SM_ZEarlyEnd,
-        SM_WaitMoldOpenLimit
+        SM_WaitMoldOpenLimit,
+        SM_ACCTIME
     };
 
     enum ICTeachParamAddr

@@ -1762,6 +1762,16 @@ Reason</source>
         <source>s</source>
         <translation></translation>
     </message>
+    <message>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="147"/>
+        <source>Alarm Times</source>
+        <translation>报警次数</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="154"/>
+        <source>Times</source>
+        <translation>次</translation>
+    </message>
 </context>
 <context>
     <name>ICHCProgramMonitorFrame</name>
@@ -1771,12 +1781,15 @@ Reason</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="401"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="411"/>
         <source>Follow</source>
         <translation>跟随</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="416"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="256"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="60"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="426"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="436"/>
         <source>Speed Disable</source>
         <translation>调速禁止</translation>
     </message>
@@ -1825,13 +1838,12 @@ Reason</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="195"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="407"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="417"/>
         <source>No Follow</source>
         <translation>不跟随</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="256"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="416"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="426"/>
         <source>Speed Enable</source>
         <translation>调速允许</translation>
     </message>

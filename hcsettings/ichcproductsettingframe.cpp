@@ -26,6 +26,12 @@ ICHCProductSettingFrame::ICHCProductSettingFrame(QWidget *parent) :
                                     ICLineEditWrapper::OneFraction);
     wrappers_.append(wrapper);
 
+    wrapper = new ICLineEditWrapper(ui->alarmTimesEdit,
+                                    ICVirtualHost::SM_ACCTIME,
+                                    ICLineEditWrapper::System,
+                                    ICLineEditWrapper::OneFraction);
+    wrappers_.append(wrapper);
+
     int currentPos = ICMold::CurrentMold()->MoldParam(ICMold::PosMainDown);
     if(currentPos > 1)
     {

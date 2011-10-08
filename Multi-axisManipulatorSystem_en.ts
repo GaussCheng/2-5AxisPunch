@@ -1307,6 +1307,16 @@ Infomation</source>
         <source>s</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="147"/>
+        <source>Alarm Times</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="154"/>
+        <source>Times</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ICHCProgramMonitorFrame</name>
@@ -1337,18 +1347,20 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="256"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="416"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="426"/>
         <source>Speed Enable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="401"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="411"/>
         <source>Follow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="416"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="256"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="60"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="426"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="436"/>
         <source>Speed Disable</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1360,7 +1372,7 @@ Infomation</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="195"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="407"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="417"/>
         <source>No Follow</source>
         <translation type="unfinished"></translation>
     </message>

@@ -754,7 +754,7 @@ void ICVirtualHost::InitSystemMap_()
 
 void ICVirtualHost::InitAddrToSysPosMap_()
 {
-    //    addrToSysPos_.insert(SM_ACCTIME, SYS_AccTime);
+    addrToSysPos_.insert(SM_ACCTIME, SYS_AccTime);
     addrToSysPos_.insert(SM_XLMT, SYS_X_Length);			//X极限
     addrToSysPos_.insert(SM_XMAX, SYS_X_Maxium);			//X最大值
     addrToSysPos_.insert(SM_YLMT, SYS_Y_Length);			//Y极限
