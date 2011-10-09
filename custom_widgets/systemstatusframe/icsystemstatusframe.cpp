@@ -50,7 +50,7 @@ void ICSystemStatusFrame::SetAutoStatus(AutoSatus status)
 //    {
 //        return;
 //    }
-    SetSystemStop();
+//    SetSystemStop();
     SetSystemStop();
     if(status == SingleCycle)
     {
@@ -87,12 +87,8 @@ void ICSystemStatusFrame::SetAutoStatus(AutoSatus status)
 
 void ICSystemStatusFrame::SetProgramStatus(const StatusLabel::DisplayStatus & displayStatus)
 {
-    if(currentStatus_ == 2)
-    {
-        return;
-    }
     SetSystemStop();
-    ui->programStatusLabel->SetStatus(StatusLabel::ONSTATUS);
+    ui->programStatusLabel->SetStatus(displayStatus);
     currentStatus_ = 2;
 }
 
@@ -134,8 +130,8 @@ void ICSystemStatusFrame::InitInterface()
     ui->autoStatusLabel->SetOffStatusAttibute(":/resource/auto-stop.png");
     ui->autoStatusLabel->SetStatus(StatusLabel::ONSTATUS);
 
-    ui->programStatusLabel->SetOnStatusAttribute(":/resource/instructioning.png");
-//    ui->programStatusLabel->SetOffStatusAttibute(":/resource/auto-run.png");
+    ui->programStatusLabel->SetOnStatusAttribute(":/resource/close_normal.png");
+    ui->programStatusLabel->SetOffStatusAttibute(":/resource/close_long.png");
     ui->programStatusLabel->SetStatus(StatusLabel::ONSTATUS);
 
     ui->originStatusLabel->SetOnStatusAttribute(":/resource/origin_off.png");

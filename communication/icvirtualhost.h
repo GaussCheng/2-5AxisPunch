@@ -367,6 +367,8 @@ public:
     void SetSecurityCheck(bool isCheck);
     bool IsMidMoldCheck() const {return (SystemParameter(SYS_Function).toInt() & 0x0000000C) != 0;}
     void SetMidMoldCheck(bool isCheck);
+    bool IsCloseMoldPermit() const { return (SystemParameter(SYS_Function).toInt() & 0x000000C0) != 0;}
+    void SetCloseMoldPermit(bool permit);
 
     int CurrentStep() const { return (statusMap_.value(Step).toInt() & 0x00FF);}
     int CurrentStatus() const { return (statusMap_.value(Status).toUInt() & 0x0FFF);}
@@ -386,6 +388,11 @@ public:
 
     bool HasTuneSpeed() const { return hasTuneSpeed_;}
     void SetTuneSpeed(bool tune){ hasTuneSpeed_ = tune;}
+
+    int FinishProductCount() const { return productCount_;}
+    void SetFinishProductCount(int product) { productCount_ = product;}
+
+    bool IsSingleArm() const { return ((systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0300) >> 8) == 0;}
 
 public Q_SLOTS:
     void SetMoldParam(int param, int value);
@@ -445,6 +452,7 @@ private:
     int watchdogFd_;
     bool isSpeedEnable_;
     bool hasTuneSpeed_;
+    int productCount_;
     static ICVirtualHost* globalVirtualHost_;
 };
 #define icGlobalVirtuallHost ICVirtualHost::GlobalVirtualHost()
@@ -601,6 +609,14 @@ inline void ICVirtualHost::SetMidMoldCheck(bool isCheck)
     int val = SystemParameter(SYS_Function).toInt();
     val &= 0xFFFFFFF7;
     (isCheck ? val |= 0x00000004 : val &= 0xFFFFFFFB);
+    systemParamMap_.insert(SYS_Function, val);
+}
+
+inline void ICVirtualHost::SetCloseMoldPermit(bool permit)
+{
+    int val = SystemParameter(SYS_Function).toInt();
+    val &= 0xFFFFFF7F;
+    (permit ? val |= 0x00000040 : val &= 0xFFFFFFBF);
     systemParamMap_.insert(SYS_Function, val);
 }
 

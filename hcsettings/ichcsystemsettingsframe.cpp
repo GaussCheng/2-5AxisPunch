@@ -51,6 +51,8 @@ ICHCSystemSettingsFrame::ICHCSystemSettingsFrame(QWidget *parent) :
     armXStructValueToName_.insert(3, tr("Both"));
     armYStructValueToName_.insert(1, tr("Only Up Limit"));
     armYStructValueToName_.insert(3, tr("Up and Donw Limit"));
+    armValueToName_.insert(0, tr("Single Arm"));
+    armValueToName_.insert(1, tr("Double Arm"));
 }
 
 ICHCSystemSettingsFrame::~ICHCSystemSettingsFrame()
@@ -464,6 +466,7 @@ void ICHCSystemSettingsFrame::on_structDefButton_clicked()
     ui->hmiY1->setText(armYStructValueToName_.value((armStruct_ & 0x000C) >> 2));
     ui->hmiX2->setText(armXStructValueToName_.value((armStruct_ & 0x0030) >> 4));
     ui->hmiY2->setText(armYStructValueToName_.value((armStruct_ & 0x00C0) >> 6));
+    ui->hmiArm->setText(armValueToName_.value((armStruct_ & 0x0300) >> 8));
     ICGetAxisConfigsCommand command;
     ICCommandProcessor* processor = ICCommandProcessor::Instance();
     command.SetAxis(3);
@@ -476,6 +479,7 @@ void ICHCSystemSettingsFrame::on_structDefButton_clicked()
         ui->hostY1->setText(armYStructValueToName_.value((armStruct_ & 0x000C) >> 2));
         ui->hostX2->setText(armXStructValueToName_.value((armStruct_ & 0x0030) >> 4));
         ui->hostY2->setText(armYStructValueToName_.value((armStruct_ & 0x00C0) >> 6));
+        ui->hostArm->setText(armValueToName_.value((armStruct_ & 0x0300) >> 8));
     }
 }
 
@@ -635,4 +639,5 @@ void ICHCSystemSettingsFrame::on_structSelectHostButton_clicked()
     ui->hmiY1->setText(armYStructValueToName_.value((armStruct_ & 0x000C) >> 2));
     ui->hmiX2->setText(armXStructValueToName_.value((armStruct_ & 0x0030) >> 4));
     ui->hmiY2->setText(armYStructValueToName_.value((armStruct_ & 0x00C0) >> 6));
+    ui->hmiArm->setText(armValueToName_.value((armStruct_ & 0x0300) >> 8));
 }

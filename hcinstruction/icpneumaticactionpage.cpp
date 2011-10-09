@@ -33,6 +33,19 @@ void ICPneumaticActionPage::changeEvent(QEvent *e)
     }
 }
 
+void ICPneumaticActionPage::showEvent(QShowEvent *e)
+{
+    if(ICVirtualHost::GlobalVirtualHost()->IsSingleArm())
+    {
+        ui->subArmGroupBox->hide();
+    }
+    else
+    {
+        ui->subArmGroupBox->show();
+    }
+    ICInstructionEditorBase::showEvent(e);
+}
+
 void ICPneumaticActionPage::on_forwardCheckBox_stateChanged(int status)
 {
     if(status == Qt::Checked)

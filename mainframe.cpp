@@ -462,12 +462,12 @@ void MainFrame::StatusRefreshed()
             ui->cycleTimeAndFinistWidget->SetAlarmInfo("");
         }
     }
-    finishCount_ = virtualHost->HostStatus(ICVirtualHost::DbgX1).toUInt();
-    if(finishCount_ != oldFinishCount_)
-    {
-        ui->cycleTimeAndFinistWidget->SetFinished(virtualHost->HostStatus(ICVirtualHost::DbgX1).toUInt());
-        oldFinishCount_ = finishCount_;
-    }
+//    finishCount_ = virtualHost->HostStatus(ICVirtualHost::DbgX1).toUInt();
+//    if(finishCount_ != oldFinishCount_)
+//    {
+//        ui->cycleTimeAndFinistWidget->SetFinished(virtualHost->HostStatus(ICVirtualHost::DbgX1).toUInt());
+//        oldFinishCount_ = finishCount_;
+//    }
     cycleTime_ = virtualHost->HostStatus(ICVirtualHost::DbgY0).toUInt();
     if(cycleTime_ != oldCycleTime_)
     {
@@ -493,9 +493,23 @@ void MainFrame::StatusRefreshed()
     {
         speed_ = "0";
         //        statusStr_ = tr("Stop");
+        finishCount_ = virtualHost->FinishProductCount();
+        if(finishCount_ != oldFinishCount_)
+        {
+            ui->cycleTimeAndFinistWidget->SetFinished(finishCount_);
+            oldFinishCount_ = finishCount_;
+        }
+        ui->systemStatusFrame->SetProgramStatus(virtualHost->IsCloseMoldPermit() ? StatusLabel::ONSTATUS : StatusLabel::OFFSTATUS);
     }
     else if(runningStatus_ == ICVirtualHost::Auto)
     {
+        finishCount_ = virtualHost->HostStatus(ICVirtualHost::DbgX1).toUInt();
+        if(finishCount_ != oldFinishCount_)
+        {
+            ui->cycleTimeAndFinistWidget->SetFinished(finishCount_);
+            virtualHost->SetFinishProductCount(finishCount_);
+            oldFinishCount_ = finishCount_;
+        }
         int speedVal =  virtualHost->GlobalSpeed();
         speed_ = QString::number(speedVal);
         if(virtualHost->HostStatus(ICVirtualHost::DbgX0) == ICVirtualHost::AutoReady)
@@ -573,13 +587,14 @@ void MainFrame::StatusRefreshed()
             ui->functionPageButton->setEnabled(false);
             ui->recordPageButton->setEnabled(false);
         }
-        else if(runningStatus_ == ICVirtualHost::Teach)
-        {
-            ui->systemStatusFrame->SetProgramStatus(StatusLabel::ONSTATUS);
-        }
+//        else if(runningStatus_ == ICVirtualHost::Teach)
+//        {
+//            ui->systemStatusFrame->SetProgramStatus(StatusLabel::ONSTATUS);
+//        }
         else if(runningStatus_ == ICVirtualHost::Stop)
         {
-            ui->systemStatusFrame->SetSystemStop();
+//            ui->systemStatusFrame->SetProgramStatus(virtualHost->IsCloseMoldPermit() ? StatusLabel::ONSTATUS : StatusLabel::OFFSTATUS);
+//            ui->systemStatusFrame->SetSystemStop();
             ui->recordPageButton->setText(tr("Records"));
             LevelChanged(ICProgramHeadFrame::Instance()->CurrentLevel());
 //            ui->functionPageButton->setEnabled(true);

@@ -197,6 +197,21 @@ void ICKeyboardHandler::Keypressed(int keyValue)
 
     }
         break;
+    case ICKeyboard::VFB_X2Add:
+    case ICKeyboard::VFB_X2Sub:
+    case ICKeyboard::VFB_Y2Add:
+    case ICKeyboard::VFB_Y2Sub:
+    {
+        if(!ICVirtualHost::GlobalVirtualHost()->IsSingleArm())
+        {
+            if(status == ICVirtualHost::Stop)
+            {
+                return;
+            }
+            commandProcessor->ExecuteVirtualKeyCommand(virtualKeyMap_.value(keyValue));
+        }
+    }
+    break;
     default:
     {
         if(status == ICVirtualHost::Stop)

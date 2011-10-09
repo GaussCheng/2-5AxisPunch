@@ -32,7 +32,8 @@ ICVirtualHost::ICVirtualHost(QObject *parent) :
     currentStatus_(0),
     freshCount_(0),
     isInitSuccess_(true),
-    oldMoldNum_(8)
+    oldMoldNum_(8),
+    productCount_(0)
 {
     memset(oldSubStep, -1, 8);
     if(GlobalVirtualHost() == NULL)
@@ -200,6 +201,7 @@ void ICVirtualHost::RefreshStatus()
                 qCritical("Connect to host fail!!");
                 statusMap_.insert(ErrCode, 200);
                 tryTimes_ = 0;
+//                statusMap_.insert(Status, ICVirtualHost::Stop);
                 emit StatusRefreshed();
             }
 //            flag_ =true;

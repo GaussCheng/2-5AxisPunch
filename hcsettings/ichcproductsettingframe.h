@@ -26,6 +26,8 @@ private slots:
     void on_posComboBox_activated(int index);
     void OnMoldNumberParamChanged();
 
+    void on_productClearButton_clicked();
+
 private:
     Ui::ICHCProductSettingFrame *ui;
     QList<ICLineEditWrapper*> wrappers_;

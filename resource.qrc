@@ -1,7 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>resource/auto-run.png</file>
-        <file>resource/instructioning.png</file>
         <file>resource/manual-opened.png</file>
         <file>resource/step-running.png</file>
         <file>resource/reference-identified.png</file>
@@ -35,15 +34,12 @@
         <file>resource/key.png</file>
         <file>resource/Linear(32).png</file>
         <file>resource/macro(32).png</file>
-        <file>resource/manual-closed.png</file>
         <file>resource/mergeDown.png</file>
         <file>resource/mergeUp.png</file>
         <file>resource/modify.png</file>
         <file>resource/new.png</file>
-        <file>resource/no-reference.png</file>
         <file>resource/Standby.png</file>
         <file>resource/stepInto.png</file>
-        <file>resource/step-stoped.png</file>
         <file>resource/wait(32).png</file>
         <file>resource/Conveyor_Belt(32).png</file>
         <file>resource/insert(32).png</file>
@@ -51,5 +47,7 @@
         <file>resource/play.png</file>
         <file>resource/switch_on.png</file>
         <file>resource/switch_off.png</file>
+        <file>resource/close_long.png</file>
+        <file>resource/close_normal.png</file>
     </qresource>
 </RCC>

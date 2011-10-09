@@ -18,6 +18,7 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     armTypeMaskMap_.insert("y1", 2);
     armTypeMaskMap_.insert("x2", 4);
     armTypeMaskMap_.insert("y2", 6);
+    armTypeMaskMap_.insert("arm", 8);
     connect(ui->x1Select,
             SIGNAL(currentIndexChanged(int)),
             this,
@@ -34,11 +35,16 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
             SIGNAL(currentIndexChanged(int)),
             this,
             SLOT(OnSelectChanged(int)));
+    connect(ui->armSelect,
+            SIGNAL(currentIndexChanged(int)),
+            this,
+            SLOT(OnSelectChanged(int)));
     armStruct_ = ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::SYS_ARM_CONFIG).toUInt();
     ui->x1Select->setCurrentIndex(armStruct_ & 0x0003);
     ui->y1Select->setCurrentIndex(((armStruct_ & 0x000C) >> 2) == 1 ? 0 : 1);
     ui->x2Select->setCurrentIndex((armStruct_ & 0x0030) >> 4);
     ui->y2Select->setCurrentIndex(((armStruct_ & 0x00C0) >> 6) == 1 ? 0 : 1);
+    ui->armSelect->setCurrentIndex(((armStruct_ & 0x0300) >> 8) == 1 ? 0 : 1);
 }
 
 ICStructDefineFrame::~ICStructDefineFrame()

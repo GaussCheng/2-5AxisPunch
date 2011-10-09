@@ -81,7 +81,7 @@ border-radius: 16px; font-size: 15px; color:rgb(255, 0, 255);</string>
     </widget>
    </item>
    <item>
-    <widget class="StatusLabel" name="autoStatusLabel">
+    <widget class="StatusLabel" name="programStatusLabel">
      <property name="minimumSize">
       <size>
        <width>32</width>
@@ -106,7 +106,7 @@ border-radius: 16px; font-size: 15px; color:rgb(255, 0, 255);</string>
     </widget>
    </item>
    <item>
-    <widget class="StatusLabel" name="programStatusLabel">
+    <widget class="StatusLabel" name="autoStatusLabel">
      <property name="minimumSize">
       <size>
        <width>32</width>

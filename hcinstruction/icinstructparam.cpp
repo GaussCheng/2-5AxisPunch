@@ -32,7 +32,14 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
 {
     QString commandStr;
 //    commandStr += QString::number(moldItem.Seq()) + " ";
-    commandStr += QString::number(moldItem.Num()) + "    " + QString::number(moldItem.SubNum()) + "    ";
+    if(moldItem.SubNum() == 255)
+    {
+        commandStr += QString::number(moldItem.Num()) + "    " + "*" + "    ";
+    }
+    else
+    {
+        commandStr += QString::number(moldItem.Num()) + "    " + QString::number(moldItem.SubNum()) + "    ";
+    }
 //    if(moldItem.GMVal() == 31)
 //    {
 //        return commandStr += actionGroupMap_.value(31);

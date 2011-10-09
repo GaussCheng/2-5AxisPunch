@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>838</width>
+    <width>933</width>
     <height>358</height>
    </rect>
   </property>
@@ -32,7 +32,7 @@
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="systemSettingPage">
       <attribute name="title">
@@ -934,6 +934,20 @@ height: 33px;
               </property>
              </widget>
             </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_28">
+              <property name="text">
+               <string>Arm</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QLabel" name="hostArm">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
            </layout>
           </widget>
          </item>
@@ -1021,6 +1035,20 @@ height: 33px;
             </item>
             <item row="3" column="1">
              <widget class="QLabel" name="hmiY2">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_13">
+              <property name="text">
+               <string>Arm</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QLabel" name="hmiArm">
               <property name="text">
                <string/>
               </property>

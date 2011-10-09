@@ -45,6 +45,7 @@ enum ICVirtualKey
     VKEY_JOG2,
     VKEY_JOG3,
     VKEY_JOG4,
+    VKEY_PRODUCT_CLEAR,
 
     VKEY_INS    = 0x81,
     VKEY_DEL,

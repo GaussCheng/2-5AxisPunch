@@ -4,6 +4,7 @@
 #include "iclineeditwrapper.h"
 #include "icmold.h"
 #include "icvirtualhost.h"
+#include "icvirtualkey.h"
 
 ICHCProductSettingFrame::ICHCProductSettingFrame(QWidget *parent) :
     QFrame(parent),
@@ -12,6 +13,7 @@ ICHCProductSettingFrame::ICHCProductSettingFrame(QWidget *parent) :
     ui->setupUi(this);
 
     ui->productLineEdit->setValidator(new QIntValidator(0, 65535, ui->productLineEdit));
+    ui->alarmTimesEdit->setValidator(new QIntValidator(0, 65535, ui->alarmTimesEdit));
     ui->waitTimeEdit->SetDecimalPlaces(1);
     ui->waitTimeEdit->setValidator(new QIntValidator(0, 6000, ui->waitTimeEdit));
     ICLineEditWrapper *wrapper = new ICLineEditWrapper(ui->productLineEdit,
@@ -29,7 +31,7 @@ ICHCProductSettingFrame::ICHCProductSettingFrame(QWidget *parent) :
     wrapper = new ICLineEditWrapper(ui->alarmTimesEdit,
                                     ICVirtualHost::SM_ACCTIME,
                                     ICLineEditWrapper::System,
-                                    ICLineEditWrapper::OneFraction);
+                                    ICLineEditWrapper::Integer);
     wrappers_.append(wrapper);
 
     int currentPos = ICMold::CurrentMold()->MoldParam(ICMold::PosMainDown);
@@ -84,4 +86,10 @@ void ICHCProductSettingFrame::OnMoldNumberParamChanged()
     {
         wrappers_[i]->UpdateParam();
     }
+}
+
+void ICHCProductSettingFrame::on_productClearButton_clicked()
+{
+    ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_PRODUCT_CLEAR);
+    ICVirtualHost::GlobalVirtualHost()->SetFinishProductCount(0);
 }

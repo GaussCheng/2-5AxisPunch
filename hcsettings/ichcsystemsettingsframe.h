@@ -47,6 +47,7 @@ private:
     int xorSum_;
     QMap<int, QString> armXStructValueToName_;
     QMap<int, QString> armYStructValueToName_;
+    QMap<int, QString> armValueToName_;
     uint armStruct_;
 private slots:
     void on_languageComboBox_activated(int );

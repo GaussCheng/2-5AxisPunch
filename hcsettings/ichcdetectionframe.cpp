@@ -37,6 +37,7 @@ ICHCDetectionFrame::ICHCDetectionFrame(QWidget *parent) :
     ui->detectPressureComboBox->setCurrentIndex(qAbs(host->IsPressureCheck() - 1));
     ui->detectSecurityComboBox->setCurrentIndex(qAbs(host->IsSecurityCheck() - 1));
     ui->detectMidMoldComboBox->setCurrentIndex(qAbs(host->IsMidMoldCheck() - 1));
+    ui->closeMoldStatusComboBox->setCurrentIndex(qAbs(host->IsCloseMoldPermit() - 1));
 
     connect(ICMold::CurrentMold(),
             SIGNAL(MoldNumberParamChanged()),
@@ -97,4 +98,10 @@ void ICHCDetectionFrame::OnMoldNumberParamChanged()
     {
         wrappers_[i]->UpdateParameter();
     }
+}
+
+void ICHCDetectionFrame::on_closeMoldStatusComboBox_activated(int index)
+{
+    bool isCheck = qAbs(index - 1);
+    ICVirtualHost::GlobalVirtualHost()->SetCloseMoldPermit(isCheck);
 }
