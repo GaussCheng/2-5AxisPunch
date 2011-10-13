@@ -88,7 +88,7 @@ void ICSystemStatusFrame::SetAutoStatus(AutoSatus status)
 void ICSystemStatusFrame::SetProgramStatus(const StatusLabel::DisplayStatus & displayStatus)
 {
     SetSystemStop();
-    ui->programStatusLabel->SetStatus(displayStatus);
+    ui->programStatusLabel->SetStatus(StatusLabel::ONSTATUS);
     currentStatus_ = 2;
 }
 
@@ -131,7 +131,7 @@ void ICSystemStatusFrame::InitInterface()
     ui->autoStatusLabel->SetStatus(StatusLabel::ONSTATUS);
 
     ui->programStatusLabel->SetOnStatusAttribute(":/resource/close_normal.png");
-    ui->programStatusLabel->SetOffStatusAttibute(":/resource/close_long.png");
+//    ui->programStatusLabel->SetOffStatusAttibute(":/resource/close_long.png");
     ui->programStatusLabel->SetStatus(StatusLabel::ONSTATUS);
 
     ui->originStatusLabel->SetOnStatusAttribute(":/resource/origin_off.png");

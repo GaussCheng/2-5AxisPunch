@@ -548,6 +548,29 @@
     </message>
 </context>
 <context>
+    <name>ICActionDialog</name>
+    <message>
+        <location filename="icactiondialog.ui" line="14"/>
+        <source>Dialog</source>
+        <translation>提示</translation>
+    </message>
+    <message>
+        <location filename="icactiondialog.ui" line="20"/>
+        <source>Get product fail</source>
+        <translation>取物失败</translation>
+    </message>
+    <message>
+        <location filename="icactiondialog.ui" line="35"/>
+        <source>Go On</source>
+        <translation>继续</translation>
+    </message>
+    <message>
+        <location filename="icactiondialog.ui" line="48"/>
+        <source>Give Up</source>
+        <translation>放弃</translation>
+    </message>
+</context>
+<context>
     <name>ICAdminPasswordDialog</name>
     <message>
         <location filename="hcsettings/icadminpassworddialog.ui" line="14"/>
@@ -1077,19 +1100,16 @@ Reason</source>
         <translation>压力检测</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="349"/>
         <source>Close Mold Status</source>
-        <translation>锁模信号</translation>
+        <translation type="obsolete">锁模信号</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="363"/>
         <source>Dispermit Close Mold</source>
-        <translation>正常锁模</translation>
+        <translation type="obsolete">正常锁模</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="368"/>
         <source>Permit Close Mold</source>
-        <translation>长输出</translation>
+        <translation type="obsolete">长输出</translation>
     </message>
 </context>
 <context>
@@ -3795,6 +3815,34 @@ Please enter an digit between </source>
     </message>
 </context>
 <context>
+    <name>ICTuneMoldDialog</name>
+    <message>
+        <location filename="custom_widgets/systemstatusframe/ictunemolddialog.ui" line="14"/>
+        <source>Dialog</source>
+        <translation>调模中</translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/systemstatusframe/ictunemolddialog.ui" line="20"/>
+        <source>Tunning Mold </source>
+        <translation>调模</translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/systemstatusframe/ictunemolddialog.ui" line="29"/>
+        <source>Long Output</source>
+        <translation>EU信号长输出</translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/systemstatusframe/ictunemolddialog.ui" line="42"/>
+        <source>Start</source>
+        <translation>开始</translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/systemstatusframe/ictunemolddialog.ui" line="58"/>
+        <source>Cancel</source>
+        <translation>取消</translation>
+    </message>
+</context>
+<context>
     <name>ICUpdateSystem</name>
     <message>
         <location filename="hcmaintains/icupdatesystem.ui" line="14"/>
@@ -3955,17 +4003,17 @@ Would you want to restart now?</source>
         <translation>步序</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="379"/>
+        <location filename="mainframe.cpp" line="380"/>
         <source>Function</source>
         <translation>功能</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="380"/>
+        <location filename="mainframe.cpp" line="381"/>
         <source>Monitor</source>
         <translation>监视</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="598"/>
+        <location filename="mainframe.cpp" line="610"/>
         <source>Records</source>
         <translation>档案</translation>
     </message>
@@ -3974,55 +4022,55 @@ Would you want to restart now?</source>
         <translation type="obsolete">报警记录</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="655"/>
+        <location filename="mainframe.cpp" line="667"/>
         <source>Standby</source>
         <translation>欢迎</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="382"/>
+        <location filename="mainframe.cpp" line="383"/>
         <source>Record</source>
         <translation>档案</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="381"/>
+        <location filename="mainframe.cpp" line="382"/>
         <source>Alarm</source>
         <translation>报警</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="383"/>
+        <location filename="mainframe.cpp" line="384"/>
         <source>Return</source>
         <translation>返回</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="458"/>
+        <location filename="mainframe.cpp" line="459"/>
         <source>Hint</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="624"/>
+        <location filename="mainframe.cpp" line="636"/>
         <source>Manual</source>
         <translation>手动</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="628"/>
-        <location filename="mainframe.cpp" line="641"/>
+        <location filename="mainframe.cpp" line="640"/>
+        <location filename="mainframe.cpp" line="653"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="628"/>
-        <location filename="mainframe.cpp" line="641"/>
+        <location filename="mainframe.cpp" line="640"/>
+        <location filename="mainframe.cpp" line="653"/>
         <source>Need to origin!</source>
         <translation>还没进行原点!</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="630"/>
-        <location filename="mainframe.cpp" line="648"/>
+        <location filename="mainframe.cpp" line="642"/>
+        <location filename="mainframe.cpp" line="660"/>
         <source>Instruct</source>
         <translation>教导</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="637"/>
+        <location filename="mainframe.cpp" line="649"/>
         <source>Auto</source>
         <translation>自动</translation>
     </message>

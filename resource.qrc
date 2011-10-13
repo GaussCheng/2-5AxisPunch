@@ -47,7 +47,6 @@
         <file>resource/play.png</file>
         <file>resource/switch_on.png</file>
         <file>resource/switch_off.png</file>
-        <file>resource/close_long.png</file>
         <file>resource/close_normal.png</file>
     </qresource>
 </RCC>

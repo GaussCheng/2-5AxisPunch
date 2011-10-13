@@ -86,6 +86,7 @@ private:
     QWidget * manualPage_;
     QDialog *originExecutingPage_;
     QDialog *returnExecutingPage_;
+    QDialog *actionDialog_;
 
     QMap <QWidget *, QWidget *> functionButtonToPage_;
     QStackedLayout * centerStackedLayout_;

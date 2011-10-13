@@ -14,7 +14,8 @@ SOURCES += main.cpp \
     icsplashscreen.cpp \
     icorigindialog.cpp \
     icreturnpage.cpp \
-    icscreensaver.cpp
+    icscreensaver.cpp \
+    icactiondialog.cpp
 HEADERS += mainframe.h \
     icaxispositionlabel.h \
     #icalarmdescriptiondialog.h \
@@ -25,13 +26,15 @@ HEADERS += mainframe.h \
     icorigindialog.h \
     icreturnpage.h \
     icscreensaver.h \
-    config.h
+    config.h \
+    icactiondialog.h
 
 FORMS    += mainframe.ui \
     #icalarmdescriptiondialog.ui \
     icorigindialog.ui \
     icreturnpage.ui \
-    icscreensaver.ui
+    icscreensaver.ui \
+    icactiondialog.ui
 
 include (./categorypage/categorypage.pri)
 include (custom_widgets/custom_widgets.pri)

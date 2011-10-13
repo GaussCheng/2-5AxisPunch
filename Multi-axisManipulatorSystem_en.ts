@@ -372,6 +372,29 @@
     </message>
 </context>
 <context>
+    <name>ICActionDialog</name>
+    <message>
+        <location filename="icactiondialog.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icactiondialog.ui" line="20"/>
+        <source>Get product fail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icactiondialog.ui" line="35"/>
+        <source>Go On</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icactiondialog.ui" line="48"/>
+        <source>Give Up</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ICAdminPasswordDialog</name>
     <message>
         <location filename="hcsettings/icadminpassworddialog.ui" line="14"/>
@@ -838,21 +861,6 @@ Infomation</source>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="302"/>
         <source>Detect Pressure</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="349"/>
-        <source>Close Mold Status</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="363"/>
-        <source>Dispermit Close Mold</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="368"/>
-        <source>Permit Close Mold</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3129,6 +3137,34 @@ Please enter an digit between </source>
     </message>
 </context>
 <context>
+    <name>ICTuneMoldDialog</name>
+    <message>
+        <location filename="custom_widgets/systemstatusframe/ictunemolddialog.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/systemstatusframe/ictunemolddialog.ui" line="20"/>
+        <source>Tunning Mold </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/systemstatusframe/ictunemolddialog.ui" line="29"/>
+        <source>Long Output</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/systemstatusframe/ictunemolddialog.ui" line="42"/>
+        <source>Start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/systemstatusframe/ictunemolddialog.ui" line="58"/>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ICUpdateSystem</name>
     <message>
         <location filename="hcmaintains/icupdatesystem.ui" line="14"/>
@@ -3287,70 +3323,70 @@ Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="379"/>
+        <location filename="mainframe.cpp" line="380"/>
         <source>Function</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="380"/>
+        <location filename="mainframe.cpp" line="381"/>
         <source>Monitor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="655"/>
+        <location filename="mainframe.cpp" line="667"/>
         <source>Standby</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="382"/>
+        <location filename="mainframe.cpp" line="383"/>
         <source>Record</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="381"/>
+        <location filename="mainframe.cpp" line="382"/>
         <source>Alarm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="383"/>
+        <location filename="mainframe.cpp" line="384"/>
         <source>Return</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="458"/>
+        <location filename="mainframe.cpp" line="459"/>
         <source>Hint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="598"/>
+        <location filename="mainframe.cpp" line="610"/>
         <source>Records</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="624"/>
+        <location filename="mainframe.cpp" line="636"/>
         <source>Manual</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="628"/>
-        <location filename="mainframe.cpp" line="641"/>
+        <location filename="mainframe.cpp" line="640"/>
+        <location filename="mainframe.cpp" line="653"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="628"/>
-        <location filename="mainframe.cpp" line="641"/>
+        <location filename="mainframe.cpp" line="640"/>
+        <location filename="mainframe.cpp" line="653"/>
         <source>Need to origin!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="630"/>
-        <location filename="mainframe.cpp" line="648"/>
+        <location filename="mainframe.cpp" line="642"/>
+        <location filename="mainframe.cpp" line="660"/>
         <source>Instruct</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="637"/>
+        <location filename="mainframe.cpp" line="649"/>
         <source>Auto</source>
         <translation type="unfinished"></translation>
     </message>

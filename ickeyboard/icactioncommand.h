@@ -39,9 +39,9 @@ enum ICActionCommand
     CMD_ZSubLmt         = 0x29,
     CMD_ZAddLmt         = 0x2a,
 
-    CMD_Insert          = 0x31,     //插入
-    CMD_Delete          = 0x32,     //删除
-    CMD_Teach           = 0x33,     //教导回传
+    CMD_TuneMold        = 0x30,
+    CMD_GoOn            = 0x31,
+    CMD_GiveUp          = 0x32,
 
     CMD_PulseA          = 0x60,     //脉冲命令A
     CMD_PulseB          = 0x61,     //脉冲命令B

@@ -15,7 +15,9 @@
   </property>
   <property name="styleSheet">
    <string notr="true">background: gray;
-border-radius: 16px; font-size: 15px; color:rgb(255, 0, 255);</string>
+border-radius: 16px;
+ font-size: 15px; 
+</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::StyledPanel</enum>
@@ -45,7 +47,8 @@ border-radius: 16px; font-size: 15px; color:rgb(255, 0, 255);</string>
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">border: 1px solid rgb(255,255,255); </string>
+      <string notr="true">border: 1px solid rgb(255,255,255); 
+color:rgb(255, 0, 255);</string>
      </property>
      <property name="text">
       <string/>
@@ -81,7 +84,7 @@ border-radius: 16px; font-size: 15px; color:rgb(255, 0, 255);</string>
     </widget>
    </item>
    <item>
-    <widget class="StatusLabel" name="programStatusLabel">
+    <widget class="ICCloseMoldLabel" name="programStatusLabel">
      <property name="minimumSize">
       <size>
        <width>32</width>
@@ -95,7 +98,9 @@ border-radius: 16px; font-size: 15px; color:rgb(255, 0, 255);</string>
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">border: 1px solid rgb(255,255,255); </string>
+      <string notr="true">#programStatusLabel{
+border: 1px solid rgb(255,255,255); 
+}</string>
      </property>
      <property name="text">
       <string/>
@@ -167,6 +172,11 @@ border-radius: 16px; font-size: 15px; color:rgb(255, 0, 255);</string>
    <class>StatusLabel</class>
    <extends>QLabel</extends>
    <header>statuslabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ICCloseMoldLabel</class>
+   <extends>QLabel</extends>
+   <header>icclosemoldlabel.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

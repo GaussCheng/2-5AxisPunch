@@ -44,7 +44,7 @@
 #include "icvirtualhost.h"
 #include "mainframe.h"
 #include "moldinformation.h"
-
+#include "icactiondialog.h"
 
 #include <QDebug>
 
@@ -142,6 +142,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
 //    ui->xPosLabel->hide();
 //    ui->label_3->hide();
 //    ui->label_5->hide();
+    actionDialog_ = new ICActionDialog(this);
     QTimer::singleShot(ICParametersSave::Instance()->BackLightTime() * 60000, this, SLOT(CheckedInput()));
 
     //    QTimer::singleShot(100, this, SLOT(InitHeavyPage()));
@@ -499,10 +500,21 @@ void MainFrame::StatusRefreshed()
             ui->cycleTimeAndFinistWidget->SetFinished(finishCount_);
             oldFinishCount_ = finishCount_;
         }
-        ui->systemStatusFrame->SetProgramStatus(virtualHost->IsCloseMoldPermit() ? StatusLabel::ONSTATUS : StatusLabel::OFFSTATUS);
+        ui->systemStatusFrame->SetProgramStatus(StatusLabel::ONSTATUS);
     }
     else if(runningStatus_ == ICVirtualHost::Auto)
     {
+        if(hintCode == 15)
+        {
+            if(actionDialog_->isHidden())
+            {
+                actionDialog_->show();
+            }
+        }
+        else
+        {
+            actionDialog_->hide();
+        }
         finishCount_ = virtualHost->HostStatus(ICVirtualHost::DbgX1).toUInt();
         if(finishCount_ != oldFinishCount_)
         {

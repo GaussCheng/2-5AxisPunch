@@ -30,7 +30,7 @@ private slots:
     void on_detectMidMoldComboBox_activated(int index);
     void OnMoldNumberParamChanged();
 
-    void on_closeMoldStatusComboBox_activated(int index);
+//    void on_closeMoldStatusComboBox_activated(int index);
 
 private:
     Ui::ICHCDetectionFrame *ui;
