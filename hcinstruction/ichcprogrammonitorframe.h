@@ -3,6 +3,7 @@
 
 #include <QFrame>
 #include <QTimer>
+#include <QMap>
 #include "icmold.h"
 
 namespace Ui {
@@ -70,5 +71,6 @@ private:
     QTimer timer_;
     QPixmap switchOn_;
     QPixmap switchOff_;
+    QMap<ICMoldItem*, ICMoldItem> modifyMap_;
 };
 #endif // ICHCPROGRAMMONITORFRAME_H

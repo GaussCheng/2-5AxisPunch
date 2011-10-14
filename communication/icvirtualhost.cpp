@@ -196,13 +196,16 @@ void ICVirtualHost::RefreshStatus()
         {
             ++tryTimes_;
             //            qCritical()<<"connect to host fail in refresh status"<<tryTimes_;
+//            static int test = 0;
             if(tryTimes_ == 200)
             {
                 qCritical("Connect to host fail!!");
                 statusMap_.insert(ErrCode, 200);
                 tryTimes_ = 0;
-//                statusMap_.insert(Status, ICVirtualHost::Stop);
+//                statusMap_.insert(Status, ICVirtualHost::Auto);
+//                statusMap_.insert(DbgX0, ICVirtualHost::AutoRunning);
                 emit StatusRefreshed();
+//                emit StepChanged(test++ % 10);
             }
 //            flag_ =true;
             return;

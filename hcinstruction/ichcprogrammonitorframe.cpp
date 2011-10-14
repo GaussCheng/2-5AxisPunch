@@ -89,6 +89,7 @@ void ICHCProgramMonitorFrame::hideEvent(QHideEvent *e)
 {
     qDebug("isModify change to false in hide");
     isModify_ = false;
+    modifyMap_.clear();
     QFrame::hideEvent(e);
     disconnect(ICVirtualHost::GlobalVirtualHost(),
                SIGNAL(StepChanged(int)),
@@ -143,23 +144,34 @@ void ICHCProgramMonitorFrame::StatusRefreshed()
     {
         qDebug("isModify change to false in auto");
         isModify_ = false;
+        modifyMap_.clear();
     }
-    if(host->HostStatus(ICVirtualHost::DbgX0) != ICVirtualHost::AutoRunning)
-    {
-        qDebug("isModify change to false in autoRunning");
-        isModify_ = false;
-    }
+//    if(host->HostStatus(ICVirtualHost::DbgX0) != ICVirtualHost::AutoRunning &&
+//            host->HostStatus(ICVirtualHost::DbgX0) != ICVirtualHost::AutoStopping)
+//    {
+//        qDebug("isModify change to false in autoRunning");
+//        isModify_ = false;
+//        modifyMap_.clear();
+//    }
 }
 
 void ICHCProgramMonitorFrame::SelectCurrentStep(int currentStep)
 {
-    if(currentStep < oldStep_ && isModify_)
+    if((currentStep != 0  && currentStep < oldStep_ && isModify_) ||
+       (oldStep_ == 0 && currentStep > oldStep_ && isModify_))
     {
+        QMap<ICMoldItem*, ICMoldItem>::iterator p = modifyMap_.begin();
+        while(p != modifyMap_.end())
+        {
+            *(p.key()) = p.value();
+            ++p;
+        }
         ICMold::CurrentMold()->SetMoldContent(ICMold::UIItemToMoldItem(programList_));
         ICMold::CurrentMold()->SaveMoldFile();
         qDebug("run modify");
         UpdateHostParam();
         isModify_ = false;
+        modifyMap_.clear();
     }
     oldStep_ = currentStep;
     if(currentStep < 0 || currentStep >= programList_.size())
@@ -294,7 +306,9 @@ void ICHCProgramMonitorFrame::on_editToolButton_clicked()
     {
         ICTopMoldUIItem * topItem = &programList_[gIndex].at(tIndex);
         ICMoldItem* item = topItem->BaseItem();
-        bool isM = autoRunRevise_->ShowModifyItem(item,topItem->ToStringList().join("\n"));
+        ICMoldItem modifyItem = *item;
+        bool isM = autoRunRevise_->ShowModifyItem(&modifyItem,topItem->ToStringList().join("\n"));
+        modifyMap_.insert(item, modifyItem);
         qDebug()<<"after show"<<isM;
         isModify_ = isModify_ || isM;
         //        {
@@ -304,7 +318,9 @@ void ICHCProgramMonitorFrame::on_editToolButton_clicked()
     else
     {
         ICSubMoldUIItem *subItem = &programList_[gIndex].at(tIndex).at(sIndex);
-        bool isM = autoRunRevise_->ShowModifyItem(subItem->BaseItem(), subItem->ToString());
+        ICMoldItem modifyItem = *subItem->BaseItem();
+        bool isM = autoRunRevise_->ShowModifyItem(&modifyItem, subItem->ToString());
+        modifyMap_.insert(subItem->BaseItem(), modifyItem);
         qDebug()<<"after show"<<isM;
         isModify_ = isModify_ || isM;//        if(isModify)
         //        {
