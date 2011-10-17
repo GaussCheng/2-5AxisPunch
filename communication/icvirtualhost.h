@@ -367,8 +367,12 @@ public:
     void SetSecurityCheck(bool isCheck);
     bool IsMidMoldCheck() const {return (SystemParameter(SYS_Function).toInt() & 0x0000000C) != 0;}
     void SetMidMoldCheck(bool isCheck);
-    bool IsCloseMoldPermit() const { return (SystemParameter(SYS_Function).toInt() & 0x000000C0) != 0;}
-    void SetCloseMoldPermit(bool permit);
+    bool IsEjectionLink() const { return (SystemParameter(SYS_Function).toInt() & 0x000000C0) != 0;}
+    void SetEjectionLink(bool permit);
+    bool IsAlarmWhenOrigin() const { return (SystemParameter(SYS_Function).toInt() & 0x00000300) != 0;}
+    void SetAlarmWhenOrigin(bool isAlarm);
+    bool IsPositionDetect() const { return (SystemParameter(SYS_Function).toInt() & 0x00000C00) != 0;}
+    void SetPositionDetect(bool detect);
 
     int CurrentStep() const { return (statusMap_.value(Step).toInt() & 0x00FF);}
     int CurrentStatus() const { return (statusMap_.value(Status).toUInt() & 0x0FFF);}
@@ -612,11 +616,27 @@ inline void ICVirtualHost::SetMidMoldCheck(bool isCheck)
     systemParamMap_.insert(SYS_Function, val);
 }
 
-inline void ICVirtualHost::SetCloseMoldPermit(bool permit)
+inline void ICVirtualHost::SetEjectionLink(bool permit)
 {
     int val = SystemParameter(SYS_Function).toInt();
     val &= 0xFFFFFF7F;
     (permit ? val |= 0x00000040 : val &= 0xFFFFFFBF);
+    systemParamMap_.insert(SYS_Function, val);
+}
+
+inline void ICVirtualHost::SetAlarmWhenOrigin(bool isAlarm)
+{
+    int val = SystemParameter(SYS_Function).toInt();
+    val &= 0xFFFFFDFF;
+    (isAlarm ? val |= 0x00000100 : val &= 0xFFFFFEFF);
+    systemParamMap_.insert(SYS_Function, val);
+}
+
+inline void ICVirtualHost::SetPositionDetect(bool detect)
+{
+    int val = SystemParameter(SYS_Function).toInt();
+    val &= 0xFFFFF7FF;
+    (detect ? val |= 0x00000400 : val &= 0xFFFFFBFF);
     systemParamMap_.insert(SYS_Function, val);
 }
 

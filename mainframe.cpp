@@ -102,6 +102,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
             SLOT(showMessage(QString)));
     emit LoadMessage("Connected");
     ui->setupUi(this);
+    ui->infoContainer->hide();
     icMainFrame = this;
     screenSaver_->hide();
     buttonGroup_ = new QButtonGroup();
@@ -801,6 +802,7 @@ bool MainFrame::IsOrigined() const
 void MainFrame::ShowScreenSaver()
 {
 //    screenSaver_->show();
+    ICProgramHeadFrame::Instance()->SetCurrentLevel(ICParametersSave::MachineOperator);
 }
 
 bool MainFrame::IsInput() const

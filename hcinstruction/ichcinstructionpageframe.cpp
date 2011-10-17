@@ -438,7 +438,14 @@ void ICHCInstructionPageFrame::UpdateUIProgramList_()
         topItemRowCount = groupItem.ItemCount();
         for(int j = 0; j != topItemRowCount; ++j)
         {
-            ui->moldContentListWidget->item(j + index)->setBackgroundColor(color);
+            if(groupItem.at(j).BaseItem()->Action() == ICInstructParam::ACT_WaitMoldOpened)
+            {
+                ui->moldContentListWidget->item(j + index)->setBackgroundColor("red");
+            }
+            else
+            {
+                ui->moldContentListWidget->item(j + index)->setBackgroundColor(color);
+            }
         }
         index += topItemRowCount;
     }

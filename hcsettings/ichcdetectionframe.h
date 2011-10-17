@@ -32,6 +32,12 @@ private slots:
 
 //    void on_closeMoldStatusComboBox_activated(int index);
 
+    void on_ejectionLinkLockBox_activated(int index);
+
+    void on_detectPositionBox_activated(int index);
+
+    void on_detectOriginBox_activated(int index);
+
 private:
     Ui::ICHCDetectionFrame *ui;
     QList<ICTwoSelectionComboBoxWrapper*> wrappers_;

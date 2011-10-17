@@ -53,6 +53,8 @@ ICHCSystemSettingsFrame::ICHCSystemSettingsFrame(QWidget *parent) :
     armYStructValueToName_.insert(3, tr("Up and Donw Limit"));
     armValueToName_.insert(0, tr("Single Arm"));
     armValueToName_.insert(1, tr("Double Arm"));
+    ui->backLightTimeEdit->setValidator(new QIntValidator(0, 60, this));
+    ui->backLightTimeEdit->SetThisIntToThisText(ICParametersSave::Instance()->BackLightTime());
 }
 
 ICHCSystemSettingsFrame::~ICHCSystemSettingsFrame()
@@ -143,6 +145,7 @@ void ICHCSystemSettingsFrame::on_saveButton_clicked()
     QString dateTimeCmd = "date -s " + ui->dateTimeEdit->dateTime().toString("yyyy.MM.dd-hh:mm:ss");
     dateTimeCmd += " && hwclock -w";
     ::system(dateTimeCmd.toAscii());
+    ICParametersSave::Instance()->SetBackLightTime(ui->backLightTimeEdit->TransThisTextToThisInt());
 }
 
 void ICHCSystemSettingsFrame::on_keyToneButton_toggled(bool checked)

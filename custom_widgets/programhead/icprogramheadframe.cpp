@@ -69,3 +69,8 @@ int ICProgramHeadFrame::CurrentLevel() const
 {
     return ui->passwdLevelLabel->CurrentLevel();
 }
+
+void ICProgramHeadFrame::SetCurrentLevel(int level)
+{
+    ui->passwdLevelLabel->PasswdLevelChenged(level);
+}

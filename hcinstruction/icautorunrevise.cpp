@@ -28,7 +28,7 @@ ICAutoRunRevise::~ICAutoRunRevise()
     delete ui;
 }
 
-bool ICAutoRunRevise::ShowModifyItem(ICMoldItem *item, const QString &text)
+bool ICAutoRunRevise::ShowModifyItem(const ICMoldItem *item, ICMoldItem* ret, const QString &text)
 {
     ui->currentMoldItemLabel->setText(text);
     if(item->IsAction())
@@ -63,6 +63,7 @@ bool ICAutoRunRevise::ShowModifyItem(ICMoldItem *item, const QString &text)
         tempItem.SetDVal(ui->delayEdit->TransThisTextToThisInt());
         tempItem.SetSVal(ui->speedEdit->TransThisTextToThisInt());
         tempItem.ReSum();
+        *ret = tempItem;
         ICAutoAdjustCommand command;
         ICCommandProcessor* processor = ICCommandProcessor::Instance();
         command.SetSlave(processor->SlaveID());
@@ -73,13 +74,14 @@ bool ICAutoRunRevise::ShowModifyItem(ICMoldItem *item, const QString &text)
         command.SetGMValue(tempItem.GMVal());
         command.SetCheckSum(tempItem.Sum());
         bool isSuccess = processor->ExecuteCommand(command).toBool();
-        if(isSuccess)
-        {
-            item->SetPos(tempItem.Pos());
-            item->SetSVal(tempItem.SVal());
-            item->SetDVal(tempItem.DVal());
-            return true;
-        }
+        return isSuccess;
+//        if(isSuccess)
+//        {
+//            item->SetPos(tempItem.Pos());
+//            item->SetSVal(tempItem.SVal());
+//            item->SetDVal(tempItem.DVal());
+//            return true;
+//        }
     }
     return false;
 }

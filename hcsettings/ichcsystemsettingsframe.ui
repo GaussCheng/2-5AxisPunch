@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>933</width>
-    <height>358</height>
+    <height>400</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -184,6 +184,40 @@
          </item>
          <item>
           <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <widget class="QLabel" name="label_14">
+           <property name="text">
+            <string>Back Light Time:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="ICLineEditWithVirtualNumericKeypad" name="backLightTimeEdit"/>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_15">
+           <property name="text">
+            <string>min</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_4">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
@@ -1089,6 +1123,11 @@ height: 33px;
    <extends>QWidget</extends>
    <header>icpagetab.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ICLineEditWithVirtualNumericKeypad</class>
+   <extends>QLineEdit</extends>
+   <header>iclineeditwithvirtualnumerickeypad.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

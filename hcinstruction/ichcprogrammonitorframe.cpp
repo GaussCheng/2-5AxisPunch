@@ -26,7 +26,7 @@ ICHCProgramMonitorFrame::ICHCProgramMonitorFrame(QWidget *parent) :
 
     autoRunRevise_ = new ICAutoRunRevise();
     InitSignal();
-    UpdateHostParam();
+//    UpdateHostParam();
     //    ICInstructParam::Instance()->UpdateHostParam();
     //    moldContent_ = ICMold::CurrentMold()->MoldContent();
     connect(&timer_,
@@ -60,6 +60,7 @@ void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
     ui->speedEnableButton->setText(tr("Speed Disable"));
     SetProduct(ICMold::CurrentMold()->MoldParam(ICMold::Product));
     UpdateHostParam();
+    programListBackup_ = programList_;
     QFrame::showEvent(e);
     connect(ICVirtualHost::GlobalVirtualHost(),
             SIGNAL(StepChanged(int)),
@@ -88,8 +89,13 @@ void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
 void ICHCProgramMonitorFrame::hideEvent(QHideEvent *e)
 {
     qDebug("isModify change to false in hide");
-    isModify_ = false;
-    modifyMap_.clear();
+    if(isModify_)
+    {
+        ICMold::CurrentMold()->SetMoldContent(ICMold::UIItemToMoldItem(programList_));
+        ICMold::CurrentMold()->SaveMoldFile();
+        isModify_ = false;
+    }
+//    modifyMap_.clear();
     QFrame::hideEvent(e);
     disconnect(ICVirtualHost::GlobalVirtualHost(),
                SIGNAL(StepChanged(int)),
@@ -140,12 +146,12 @@ void ICHCProgramMonitorFrame::StatusRefreshed()
         oldTime_ = newTime_;
         SetTime(newTime_);
     }
-    if(host->CurrentStatus() != ICVirtualHost::Auto)
-    {
-        qDebug("isModify change to false in auto");
-        isModify_ = false;
-        modifyMap_.clear();
-    }
+//    if(host->CurrentStatus() != ICVirtualHost::Auto)
+//    {
+//        qDebug("isModify change to false in auto");
+//        isModify_ = false;
+//        modifyMap_.clear();
+//    }
 //    if(host->HostStatus(ICVirtualHost::DbgX0) != ICVirtualHost::AutoRunning &&
 //            host->HostStatus(ICVirtualHost::DbgX0) != ICVirtualHost::AutoStopping)
 //    {
@@ -160,18 +166,19 @@ void ICHCProgramMonitorFrame::SelectCurrentStep(int currentStep)
     if((currentStep != 0  && currentStep < oldStep_ && isModify_) ||
        (oldStep_ == 0 && currentStep > oldStep_ && isModify_))
     {
-        QMap<ICMoldItem*, ICMoldItem>::iterator p = modifyMap_.begin();
-        while(p != modifyMap_.end())
-        {
-            *(p.key()) = p.value();
-            ++p;
-        }
+//        QMap<ICMoldItem*, ICMoldItem>::iterator p = modifyMap_.begin();
+//        while(p != modifyMap_.end())
+//        {
+//            *(p.key()) = p.value();
+//            ++p;
+//        }
         ICMold::CurrentMold()->SetMoldContent(ICMold::UIItemToMoldItem(programList_));
         ICMold::CurrentMold()->SaveMoldFile();
+        programListBackup_ = programList_;
         qDebug("run modify");
         UpdateHostParam();
         isModify_ = false;
-        modifyMap_.clear();
+//        modifyMap_.clear();
     }
     oldStep_ = currentStep;
     if(currentStep < 0 || currentStep >= programList_.size())
@@ -305,12 +312,18 @@ void ICHCProgramMonitorFrame::on_editToolButton_clicked()
     if(sIndex < 0)
     {
         ICTopMoldUIItem * topItem = &programList_[gIndex].at(tIndex);
+        ICTopMoldUIItem * topItemB = &programListBackup_[gIndex].at(tIndex);
         ICMoldItem* item = topItem->BaseItem();
-        ICMoldItem modifyItem = *item;
-        bool isM = autoRunRevise_->ShowModifyItem(&modifyItem,topItem->ToStringList().join("\n"));
-        modifyMap_.insert(item, modifyItem);
-        qDebug()<<"after show"<<isM;
-        isModify_ = isModify_ || isM;
+        ICMoldItem* itemB = topItemB->BaseItem();
+        ICMoldItem ret;
+        bool isM = autoRunRevise_->ShowModifyItem(itemB, &ret, topItemB->ToStringList().join("\n"));
+        if(isM)
+        {
+            *item = ret;
+            UpdateUIProgramList_();
+            qDebug()<<"after show"<<isM;
+            isModify_ = isModify_ || isM;
+        }
         //        {
         //            ui->moldContentListWidget->item(selectedRow)->setText(topItem->ToStringList().at(0));
         //        }
@@ -318,11 +331,16 @@ void ICHCProgramMonitorFrame::on_editToolButton_clicked()
     else
     {
         ICSubMoldUIItem *subItem = &programList_[gIndex].at(tIndex).at(sIndex);
-        ICMoldItem modifyItem = *subItem->BaseItem();
-        bool isM = autoRunRevise_->ShowModifyItem(&modifyItem, subItem->ToString());
-        modifyMap_.insert(subItem->BaseItem(), modifyItem);
-        qDebug()<<"after show"<<isM;
-        isModify_ = isModify_ || isM;//        if(isModify)
+        ICSubMoldUIItem *subItemB = &programListBackup_[gIndex].at(tIndex).at(sIndex);
+        ICMoldItem ret;
+        bool isM = autoRunRevise_->ShowModifyItem(subItemB->BaseItem(), &ret, subItemB->ToString());
+        if(isM)
+        {
+            *subItem->BaseItem() = ret;
+            UpdateUIProgramList_();
+            qDebug()<<"after show"<<isM;
+            isModify_ = isModify_ || isM;//        if(isModify)
+        }
         //        {
         //            ui->moldContentListWidget->item(selectedRow)->setText(subItem->ToString());
         //        }
@@ -362,7 +380,15 @@ void ICHCProgramMonitorFrame::UpdateUIProgramList_()
         topItemRowCount = groupItem.ItemCount();
         for(int j = 0; j != topItemRowCount; ++j)
         {
-            ui->moldContentListWidget->item(j + index)->setBackgroundColor(color);
+            if(groupItem.at(j).BaseItem()->Action() == ICInstructParam::ACT_WaitMoldOpened)
+            {
+//                ui->moldContentListWidget->item(j + index)->setForeground(QBrush("white"));
+                ui->moldContentListWidget->item(j + index)->setBackgroundColor("red");
+            }
+            else
+            {
+                ui->moldContentListWidget->item(j + index)->setBackgroundColor(color);
+            }
         }
         index += topItemRowCount;
     }

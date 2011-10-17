@@ -29,15 +29,17 @@ ICHCDetectionFrame::ICHCDetectionFrame(QWidget *parent) :
 //    wrappers_.append(wrapper);
 //    wrapper = new ICTwoSelectionComboBoxWrapper(ui->injectionComboBox, ICMold::CheckClip8);
 //    wrappers_.append(wrapper);
-    ui->converyotComboBox->hide();
-    ui->injectionComboBox->hide();
-    ui->label_7->hide();
-    ui->label_8->hide();
+//    ui->converyotComboBox->hide();
+//    ui->injectionComboBox->hide();
+//    ui->label_13->hide();
+//    ui->label_8->hide();
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     ui->detectPressureComboBox->setCurrentIndex(qAbs(host->IsPressureCheck() - 1));
     ui->detectSecurityComboBox->setCurrentIndex(qAbs(host->IsSecurityCheck() - 1));
     ui->detectMidMoldComboBox->setCurrentIndex(qAbs(host->IsMidMoldCheck() - 1));
-//    ui->closeMoldStatusComboBox->setCurrentIndex(qAbs(host->IsCloseMoldPermit() - 1));
+    ui->ejectionLinkLockBox->setCurrentIndex(qAbs(host->IsEjectionLink() - 1));
+    ui->detectOriginBox->setCurrentIndex(qAbs(host->IsAlarmWhenOrigin() - 1));
+    ui->detectPositionBox->setCurrentIndex(qAbs(host->IsPositionDetect() - 1));
 
     connect(ICMold::CurrentMold(),
             SIGNAL(MoldNumberParamChanged()),
@@ -105,3 +107,21 @@ void ICHCDetectionFrame::OnMoldNumberParamChanged()
 //    bool isCheck = qAbs(index - 1);
 //    ICVirtualHost::GlobalVirtualHost()->SetCloseMoldPermit(isCheck);
 //}
+
+void ICHCDetectionFrame::on_ejectionLinkLockBox_activated(int index)
+{
+        bool isCheck = qAbs(index - 1);
+        ICVirtualHost::GlobalVirtualHost()->SetEjectionLink(isCheck);
+}
+
+void ICHCDetectionFrame::on_detectPositionBox_activated(int index)
+{
+    bool isCheck = qAbs(index - 1);
+    ICVirtualHost::GlobalVirtualHost()->SetPositionDetect(isCheck);
+}
+
+void ICHCDetectionFrame::on_detectOriginBox_activated(int index)
+{
+    bool isCheck = qAbs(index - 1);
+    ICVirtualHost::GlobalVirtualHost()->SetAlarmWhenOrigin(isCheck);
+}

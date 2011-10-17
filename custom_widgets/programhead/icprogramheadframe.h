@@ -30,6 +30,7 @@ public:
 
     void SetCurrentCategoryName(const QString & categoryName);
     int CurrentLevel() const;
+    void SetCurrentLevel(int level);
 
 Q_SIGNALS:
     void LevelChanged(int);

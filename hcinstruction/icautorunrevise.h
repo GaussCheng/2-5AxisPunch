@@ -16,7 +16,7 @@ public:
     explicit ICAutoRunRevise(QWidget *parent = 0);
     ~ICAutoRunRevise();
 
-    bool ShowModifyItem(ICMoldItem* item, const QString& text);
+    bool ShowModifyItem(const ICMoldItem* item, ICMoldItem* ret, const QString& text);
 
 Q_SIGNALS:
     void MoldItemChanged();

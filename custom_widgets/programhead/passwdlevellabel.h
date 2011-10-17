@@ -18,12 +18,13 @@ public:
 Q_SIGNALS:
     void Levelchenged(int level);
 
+public slots:
+    void PasswdLevelChenged(int level);
 protected:
     void mouseReleaseEvent(QMouseEvent *ev);
     void changeEvent(QEvent *e);
 
 private slots:
-    void PasswdLevelChenged(int level);
 
 private:
     PasswordDialog* passwordDialog_;

@@ -59,6 +59,7 @@ public Q_SLOTS:
 private:
     Ui::ICHCProgramMonitorFrame *ui;
     QList<ICGroupMoldUIItem> programList_;
+    QList<ICGroupMoldUIItem> programListBackup_;
     ICAutoRunRevise* autoRunRevise_;
     bool isModify_;
     int oldTime_;
@@ -71,6 +72,6 @@ private:
     QTimer timer_;
     QPixmap switchOn_;
     QPixmap switchOff_;
-    QMap<ICMoldItem*, ICMoldItem> modifyMap_;
+//    QMap<ICMoldItem*, ICMoldItem> modifyMap_;
 };
 #endif // ICHCPROGRAMMONITORFRAME_H

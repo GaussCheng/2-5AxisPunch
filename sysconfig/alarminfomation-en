@@ -133,6 +133,8 @@
 1016:Main up and down limit is both on
 1017:Security door is opened when running
 1018:Sub arm action is not depend on the mold
+1019:The mold opened signal is off when origin
+1020:The mid mold signal is off when origin
 1100:Can not check the security zone when Main Arm descend
 1101:Can not check the security zone when Sub Arm descend
 1102:Mold-opened signal is off when Main Arm descend

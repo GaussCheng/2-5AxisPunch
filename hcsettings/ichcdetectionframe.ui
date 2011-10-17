@@ -155,33 +155,6 @@
      </item>
     </widget>
    </item>
-   <item row="2" column="3">
-    <widget class="QLabel" name="label_7">
-     <property name="text">
-      <string>Injection</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="4">
-    <widget class="QComboBox" name="injectionComboBox">
-     <property name="minimumSize">
-      <size>
-       <width>90</width>
-       <height>48</height>
-      </size>
-     </property>
-     <item>
-      <property name="text">
-       <string>Reversed Phase</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Positive Phase</string>
-      </property>
-     </item>
-    </widget>
-   </item>
    <item row="3" column="0">
     <widget class="QLabel" name="label_4">
      <property name="text">
@@ -191,33 +164,6 @@
    </item>
    <item row="3" column="1">
     <widget class="QComboBox" name="detectFixture4ComboBox">
-     <property name="minimumSize">
-      <size>
-       <width>90</width>
-       <height>48</height>
-      </size>
-     </property>
-     <item>
-      <property name="text">
-       <string>Reversed Phase</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Positive Phase</string>
-      </property>
-     </item>
-    </widget>
-   </item>
-   <item row="3" column="3">
-    <widget class="QLabel" name="label_8">
-     <property name="text">
-      <string>Conveyor</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="4">
-    <widget class="QComboBox" name="converyotComboBox">
      <property name="minimumSize">
       <size>
        <width>90</width>
@@ -325,6 +271,87 @@
    </item>
    <item row="0" column="7">
     <widget class="QComboBox" name="detectSecurityComboBox">
+     <property name="minimumSize">
+      <size>
+       <width>90</width>
+       <height>48</height>
+      </size>
+     </property>
+     <item>
+      <property name="text">
+       <string>Not Use</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Use</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="3" column="6">
+    <widget class="QLabel" name="label_12">
+     <property name="text">
+      <string>Ejection Link Lock</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="7">
+    <widget class="QComboBox" name="ejectionLinkLockBox">
+     <property name="minimumSize">
+      <size>
+       <width>90</width>
+       <height>48</height>
+      </size>
+     </property>
+     <item>
+      <property name="text">
+       <string>Not Use</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Use</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="2" column="3">
+    <widget class="QLabel" name="label_13">
+     <property name="text">
+      <string>Detect Postion</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="4">
+    <widget class="QComboBox" name="detectOriginBox">
+     <property name="minimumSize">
+      <size>
+       <width>90</width>
+       <height>48</height>
+      </size>
+     </property>
+     <item>
+      <property name="text">
+       <string>Not Use</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Use</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="3" column="3">
+    <widget class="QLabel" name="label_14">
+     <property name="text">
+      <string>Detect Origin</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="4">
+    <widget class="QComboBox" name="detectPositionBox">
      <property name="minimumSize">
       <size>
        <width>90</width>
