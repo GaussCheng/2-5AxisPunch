@@ -5,6 +5,8 @@
 #include "axissettingsframe.h"
 #include "icstructdefineframe.h"
 #include "icvirtualhost.h"
+#include "icparameterssave.h"
+#include "icprogramheadframe.h"
 
 ICHCSettingsFrame::ICHCSettingsFrame(QWidget *parent) :
     QFrame(parent),
@@ -12,6 +14,7 @@ ICHCSettingsFrame::ICHCSettingsFrame(QWidget *parent) :
     centralStackedLayout_(new QStackedLayout)
 {
     ui->setupUi(this);
+    ui->structDefButton->hide();
     buttonGroup_ = new QButtonGroup();
 
     InitHCSettingPage();
@@ -31,6 +34,14 @@ ICHCSettingsFrame::ICHCSettingsFrame(QWidget *parent) :
     foreach(button, buttonGroup_->buttons())
     {
         button->setCheckable(true);
+    }
+    connect(ICProgramHeadFrame::Instance(),
+            SIGNAL(LevelChanged(int)),
+            this,
+            SLOT(LevelChanged(int)));
+    if(ICProgramHeadFrame::Instance()->CurrentLevel() == ICParametersSave::AdvanceAdmin)
+    {
+        LevelChanged(ICParametersSave::AdvanceAdmin);
     }
 //    ui->axisXToolButton->click();
 //    ui->basicSettingsToolButton->click();
@@ -155,4 +166,16 @@ void ICHCSettingsFrame::ShowAxisSettingPage(QString currentAxisName, int axis)
 {
     centralStackedLayout_->setCurrentWidget(axisSettingsPage_);
     emit CurrentAxisChanged(currentAxisName, axis);
+}
+
+void ICHCSettingsFrame::LevelChanged(int level)
+{
+    if(level == ICParametersSave::AdvanceAdmin)
+    {
+        ui->structDefButton->show();
+    }
+    else
+    {
+        ui->structDefButton->hide();
+    }
 }

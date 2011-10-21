@@ -1016,8 +1016,6 @@ Reason</source>
         <location filename="hcsettings/ichcdetectionframe.ui" line="267"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="287"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="314"/>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="341"/>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="368"/>
         <source>Use</source>
         <translation>使用</translation>
     </message>
@@ -1026,8 +1024,6 @@ Reason</source>
         <location filename="hcsettings/ichcdetectionframe.ui" line="262"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="282"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="309"/>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="336"/>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="363"/>
         <source>Not Use</source>
         <translation>不使用</translation>
     </message>
@@ -1079,27 +1075,47 @@ Reason</source>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="322"/>
         <source>Detect Postion</source>
-        <translation>姿势检测</translation>
+        <translation>横行时治具姿势</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="336"/>
+        <source>Don&apos;t need Mold Opened Signal</source>
+        <translation>必需开模终止</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="341"/>
+        <source>Need Mold Opened Signal</source>
+        <translation>不需开模终止</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="349"/>
         <source>Detect Origin</source>
-        <translation>原点检测</translation>
+        <translation>原点复归</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="363"/>
+        <source>Don&apos;t Limit</source>
+        <translation>不限制</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="368"/>
+        <source>Alia to auto</source>
+        <translation>须同自动一致</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="376"/>
         <source>Orgin Position</source>
-        <translation>原点姿势</translation>
+        <translation>原点复归</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="390"/>
         <source>Horizontal</source>
-        <translation>水平</translation>
+        <translation>治具水平</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="395"/>
         <source>Vertical</source>
-        <translation>垂直</translation>
+        <translation>治具垂直</translation>
     </message>
     <message>
         <source>Injection</source>
@@ -1950,26 +1966,26 @@ Reason</source>
         <translation type="obsolete">设定</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="20"/>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="52"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="23"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="63"/>
         <source>X Axis</source>
         <translation>X轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="21"/>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="53"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="24"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="64"/>
         <source>Y Axis</source>
         <translation>Y轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="22"/>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="54"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="25"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="65"/>
         <source>Z Axis</source>
         <translation>Z轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="23"/>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="55"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="26"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="66"/>
         <source>Struct Define</source>
         <translation>限位</translation>
     </message>
@@ -2551,97 +2567,81 @@ Reason</source>
         <translation>垂直</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="36"/>
         <source>Grip/put-off 1</source>
-        <translation>夹/放1</translation>
+        <translation type="obsolete">夹/放1</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="49"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="36"/>
         <source>Horizontal</source>
         <translation>水平</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="59"/>
         <source>Grip/put-off 2</source>
-        <translation>夹/放2</translation>
+        <translation type="obsolete">夹/放2</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="72"/>
         <source>Grip/put-off 3</source>
-        <translation>夹/放3</translation>
+        <translation type="obsolete">夹/放3</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="85"/>
         <source>Grip/put-off 4</source>
-        <translation>夹/放4</translation>
+        <translation type="obsolete">夹/放4</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="98"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="107"/>
         <source>Secondary arm up</source>
         <translation>副臂上升</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="108"/>
         <source>Suck-in/put-off 1</source>
-        <translation>吸/放1</translation>
+        <translation type="obsolete">吸/放1</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="121"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="124"/>
         <source>Secondary arm down</source>
         <translation>副臂下降</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="131"/>
         <source>Suck-in/put-off 2</source>
-        <translation>吸/放2</translation>
+        <translation type="obsolete">吸/放2</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="144"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="141"/>
         <source>Secondary arm go forward</source>
         <translation>副臂前进</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="154"/>
         <source>Injection</source>
-        <translation>喷油</translation>
+        <translation type="obsolete">喷油</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="167"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="158"/>
         <source>Secondary arm go backward</source>
         <translation>副臂后退</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="177"/>
         <source>Conveyor</source>
-        <translation>传送带</translation>
+        <translation type="obsolete">传送带</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="190"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="46"/>
         <source>Main Arm Forward</source>
         <translation>主臂前进</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="197"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="53"/>
         <source>Main Arm Backward</source>
         <translation>主臂后退</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="210"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="217"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="224"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="231"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="238"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="245"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="252"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="259"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="266"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="273"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="280"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="287"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="294"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="301"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="308"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="315"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="66"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="73"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="80"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="87"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="117"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="134"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="151"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="168"/>
         <source>s</source>
         <translation></translation>
     </message>
@@ -3433,12 +3433,12 @@ Please enter an digit between </source>
     <message>
         <location filename="icorigindialog.cpp" line="31"/>
         <source>Please press the start button to start execute origin action</source>
-        <translation>请按启动键执行原点</translation>
+        <translation>请按启动键执行原点复归</translation>
     </message>
     <message>
         <location filename="icorigindialog.cpp" line="61"/>
         <source>Originning...</source>
-        <translation>原点执行中...</translation>
+        <translation>原点复归中...</translation>
     </message>
     <message>
         <source>Originning</source>
@@ -3447,7 +3447,7 @@ Please enter an digit between </source>
     <message>
         <location filename="icorigindialog.ui" line="14"/>
         <source>Origin</source>
-        <translation>执行原点</translation>
+        <translation>执行原点复归</translation>
     </message>
 </context>
 <context>
@@ -3776,13 +3776,13 @@ Please enter an digit between </source>
         <location filename="hcsettings/icstructdefineframe.ui" line="153"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="189"/>
         <source>Only Up Limit</source>
-        <translation>只有上升限位</translation>
+        <translation>只需上升限位</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="158"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="194"/>
         <source>Up and Down Limit</source>
-        <translation>上升和下降限位</translation>
+        <translation>需上升和下降限位</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="166"/>
@@ -3859,22 +3859,22 @@ Please enter an digit between </source>
     <message>
         <location filename="custom_widgets/systemstatusframe/ictunemolddialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation>调模中</translation>
+        <translation>注塑机信号</translation>
     </message>
     <message>
         <location filename="custom_widgets/systemstatusframe/ictunemolddialog.ui" line="20"/>
         <source>Tunning Mold </source>
-        <translation>调模</translation>
+        <translation>注塑机信号</translation>
     </message>
     <message>
         <location filename="custom_widgets/systemstatusframe/ictunemolddialog.ui" line="29"/>
         <source>Long Output</source>
-        <translation>EU信号长输出</translation>
+        <translation>控制注塑机信号长输出</translation>
     </message>
     <message>
         <location filename="custom_widgets/systemstatusframe/ictunemolddialog.ui" line="42"/>
         <source>Start</source>
-        <translation>开始</translation>
+        <translation>打开</translation>
     </message>
     <message>
         <location filename="custom_widgets/systemstatusframe/ictunemolddialog.ui" line="58"/>

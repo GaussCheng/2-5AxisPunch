@@ -333,12 +333,12 @@
      </property>
      <item>
       <property name="text">
-       <string>Not Use</string>
+       <string>Don't need Mold Opened Signal</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Use</string>
+       <string>Need Mold Opened Signal</string>
       </property>
      </item>
     </widget>
@@ -360,12 +360,12 @@
      </property>
      <item>
       <property name="text">
-       <string>Not Use</string>
+       <string>Don't Limit</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Use</string>
+       <string>Alia to auto</string>
       </property>
      </item>
     </widget>

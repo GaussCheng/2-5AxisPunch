@@ -780,8 +780,6 @@ Infomation</source>
         <location filename="hcsettings/ichcdetectionframe.ui" line="267"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="287"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="314"/>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="341"/>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="368"/>
         <source>Use</source>
         <translation type="unfinished"></translation>
     </message>
@@ -790,8 +788,6 @@ Infomation</source>
         <location filename="hcsettings/ichcdetectionframe.ui" line="262"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="282"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="309"/>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="336"/>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="363"/>
         <source>Not Use</source>
         <translation type="unfinished"></translation>
     </message>
@@ -846,8 +842,28 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="336"/>
+        <source>Don&apos;t need Mold Opened Signal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="341"/>
+        <source>Need Mold Opened Signal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="349"/>
         <source>Detect Origin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="363"/>
+        <source>Don&apos;t Limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="368"/>
+        <source>Alia to auto</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1439,26 +1455,26 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="20"/>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="52"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="23"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="63"/>
         <source>X Axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="21"/>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="53"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="24"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="64"/>
         <source>Y Axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="22"/>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="54"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="25"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="65"/>
         <source>Z Axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="23"/>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="55"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="26"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="66"/>
         <source>Struct Define</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2029,96 +2045,48 @@ Infomation</source>
     </message>
     <message>
         <location filename="hcsettings/ichctimeframe.ui" line="36"/>
-        <source>Grip/put-off 1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="49"/>
         <source>Horizontal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="59"/>
-        <source>Grip/put-off 2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="72"/>
-        <source>Grip/put-off 3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="85"/>
-        <source>Grip/put-off 4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="98"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="107"/>
         <source>Secondary arm up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="108"/>
-        <source>Suck-in/put-off 1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="121"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="124"/>
         <source>Secondary arm down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="131"/>
-        <source>Suck-in/put-off 2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="144"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="141"/>
         <source>Secondary arm go forward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="154"/>
-        <source>Injection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="167"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="158"/>
         <source>Secondary arm go backward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="177"/>
-        <source>Conveyor</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="190"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="46"/>
         <source>Main Arm Forward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="197"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="53"/>
         <source>Main Arm Backward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="210"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="217"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="224"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="231"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="238"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="245"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="252"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="259"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="266"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="273"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="280"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="287"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="294"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="301"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="308"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="315"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="66"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="73"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="80"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="87"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="117"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="134"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="151"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="168"/>
         <source>s</source>
         <translation type="unfinished"></translation>
     </message>
