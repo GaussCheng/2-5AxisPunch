@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ICMachineStructPage</class>
+ <widget class="QWidget" name="ICMachineStructPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>821</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>10</y>
+     <width>826</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="spacing">
+     <number>20</number>
+    </property>
+    <item>
+     <widget class="ICPageTab" name="axisXToolButton" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>67</width>
+        <height>34</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>67</width>
+        <height>34</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="ICPageTab" name="axisYToolButton" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>67</width>
+        <height>34</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>67</width>
+        <height>34</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="ICPageTab" name="axisZToolButton" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>67</width>
+        <height>34</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>67</width>
+        <height>34</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="ICPageTab" name="structDefButton" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>67</width>
+        <height>34</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>67</width>
+        <height>34</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="ICPageTab" name="timeButton" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>67</width>
+        <height>34</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>67</width>
+        <height>34</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>476</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ICPageTab</class>
+   <extends>QWidget</extends>
+   <header>icpagetab.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
