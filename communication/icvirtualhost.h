@@ -9,7 +9,7 @@
 #include <QScopedPointer>
 #include <QApplication>
 //#include <QBitArray>
-
+#include "config.h"
 #include "iccommands.h"
 #include "iccommandprocessor.h"
 #include "icmold.h"
@@ -36,9 +36,23 @@ public:
         SYS_AccTimeX,
         SYS_AccTimeY,
         SYS_AccTimeZ,
+#ifdef HC_8AXIS
+        SYS_AccTimeP,
+        SYS_AccTimeQ,
+        SYS_AccTimeA,
+        SYS_AccTimeB,
+        SYS_AccTimeC,
+#endif
         SYS_LMT_vX,
         SYS_LMT_vY,
         SYS_LMT_vZ,
+#ifdef HC_8AXIS
+        SYS_LMT_vP,
+        SYS_LMT_vQ,
+        SYS_LMT_vA,
+        SYS_LMT_vB,
+        SYS_LMT_vC,
+#endif
         SYS_ARM_CONFIG,
         SYS_YEarlyEnd,
         SYS_ZEarlyEnd,
@@ -66,19 +80,63 @@ public:
         SYS_Z_TotalL,
         SYS_Z_TotalH,
         SYS_Z_XorSum,
+#ifdef HC_8AXIS
+        SYS_P_Length,
+        SYS_P_Maxium,
+        SYS_P_InSafe,
+        SYS_P_OutSafe,
+        SYS_P_TotalL,
+        SYS_P_TotalH,
+        SYS_P_XorSum,
+        SYS_Q_Length,
+        SYS_Q_Maxium,
+        SYS_Q_InSafe,
+        SYS_Q_OutSafe,
+        SYS_Q_TotalL,
+        SYS_Q_TotalH,
+        SYS_Q_XorSum,
+        SYS_A_Length,
+        SYS_A_Maxium,
+        SYS_A_InSafe,
+        SYS_A_OutSafe,
+        SYS_A_TotalL,
+        SYS_A_TotalH,
+        SYS_A_XorSum,
+        SYS_B_Length,
+        SYS_B_Maxium,
+        SYS_B_InSafe,
+        SYS_B_OutSafe,
+        SYS_B_TotalL,
+        SYS_B_TotalH,
+        SYS_B_XorSum,
+        SYS_C_Length,
+        SYS_C_Maxium,
+        SYS_C_InSafe,
+        SYS_C_OutSafe,
+        SYS_C_TotalL,
+        SYS_C_TotalH,
+        SYS_C_XorSum,
+#endif
 
         SYS_X_Origin,
         SYS_Y_Origin,
         SYS_Z_Origin,//40
+#ifdef HC_8AXIS
+        SYS_P_Origin,
+        SYS_Q_Origin,
+        SYS_A_Origin,
+        SYS_B_Origin,
+        SYS_C_Origin,
+#endif
 
-        ACT_STOP,
+        ACT_GC,
         ACT_GX,			//1
         ACT_GY,			//2
         ACT_GZ,			//3
-        ACT_GYZ,			//4
-        ACT_GZY,			//5
-        ACT_GZX,			//6
-        ACT_GXZ,			//7
+        ACT_GP,			//4
+        ACT_GQ,			//5
+        ACT_GA,			//6
+        ACT_GB,			//7
 
         ACT_MainUp,		//8
         ACT_MainDown,	//9
@@ -93,15 +151,15 @@ public:
         ACT_ViceBackward,//17
         ACT_GoOut,		//18
         ACT_ComeIn,		//19
-        ACT_MainMidDown,		//20
+        ACT_PoseHori2,		//20
 
-        ACT_Reserve0,
-        ACT_Reserve1,
-        ACT_Reserve2,
-        ACT_Reserve3,
-        ACT_Reserve4,
-        ACT_Reserve5,
-        ACT_Reserve6,
+        ACT_PoseVert2,
+        ACT_GASUB,
+        ACT_GAADD,
+        ACT_GBSUB,
+        ACT_GBADD,
+        ACT_GCSUB,
+        ACT_GCADD,
 
         ACT_CheckInput,
         ACT_WaitMoldOpened,
@@ -162,6 +220,13 @@ public:
         XPos,
         YPos,
         ZPos,
+#ifdef HC_8AXIS
+        PPos,
+        QPos,
+        APos,
+        BPos,
+        CPos,
+#endif
         S,
         Input0,
         Input1,
@@ -170,12 +235,32 @@ public:
         EuIn,
         EuOut,
         ErrCode,
+#ifdef HC_8AXIS
+        DbgX0,
+        DbgX1,
+        DbgY0,
+        DbgY1,
+        DbgZ0,
+        DbgZ1,
+        DbgP0,
+        DbgP1,
+        DbgQ0,
+        DbgQ1,
+        DbgA0,
+        DbgA1,
+        DbgB0,
+        DbgB1,
+        DbgC0,
+        DbgC1,
+
+#else
         DbgX0,
         DbgY0,
         DbgZ0,
         DbgX1,
         DbgY1,
         DbgZ1,
+#endif
 
         StatusCount
     };

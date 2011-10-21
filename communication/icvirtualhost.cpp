@@ -427,7 +427,11 @@ void ICVirtualHost::InitSystem_()
         tempItemValues.append(items.at(i).toUInt());
         systemParamMap_.insert(static_cast<ICSystemParameter>(i), tempItemValues.last());
     }
-    tempItemValues.append(0);
+    if(tempItemValues.size() < systemParamMap_.size())
+    {
+        tempItemValues.resize(systemParamMap_.size());
+    }
+//    tempItemValues.append(0);
 
     QFile xParam("./sysconfig/paramx.txt");
     if(!xParam.open(QFile::ReadOnly | QFile::Text))
