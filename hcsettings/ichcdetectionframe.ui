@@ -370,6 +370,33 @@
      </item>
     </widget>
    </item>
+   <item row="4" column="3">
+    <widget class="QLabel" name="label_15">
+     <property name="text">
+      <string>Orgin Position</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="4">
+    <widget class="QComboBox" name="originPositionBox">
+     <property name="minimumSize">
+      <size>
+       <width>90</width>
+       <height>48</height>
+      </size>
+     </property>
+     <item>
+      <property name="text">
+       <string>Horizontal</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Vertical</string>
+      </property>
+     </item>
+    </widget>
+   </item>
   </layout>
  </widget>
  <resources/>

@@ -1087,6 +1087,21 @@ Reason</source>
         <translation>原点检测</translation>
     </message>
     <message>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="376"/>
+        <source>Orgin Position</source>
+        <translation>原点姿势</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="390"/>
+        <source>Horizontal</source>
+        <translation>水平</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="395"/>
+        <source>Vertical</source>
+        <translation>垂直</translation>
+    </message>
+    <message>
         <source>Injection</source>
         <translation type="obsolete">喷油</translation>
     </message>
@@ -1840,15 +1855,15 @@ Reason</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="435"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="453"/>
         <source>Follow</source>
         <translation>跟随</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="256"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="60"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="450"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="460"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="468"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="478"/>
         <source>Speed Disable</source>
         <translation>调速禁止</translation>
     </message>
@@ -1897,12 +1912,12 @@ Reason</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="195"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="441"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="459"/>
         <source>No Follow</source>
         <translation>不跟随</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="450"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="468"/>
         <source>Speed Enable</source>
         <translation>调速允许</translation>
     </message>

@@ -40,6 +40,7 @@ ICHCDetectionFrame::ICHCDetectionFrame(QWidget *parent) :
     ui->ejectionLinkLockBox->setCurrentIndex(qAbs(host->IsEjectionLink() - 1));
     ui->detectOriginBox->setCurrentIndex(qAbs(host->IsAlarmWhenOrigin() - 1));
     ui->detectPositionBox->setCurrentIndex(qAbs(host->IsPositionDetect() - 1));
+    ui->originPositionBox->setCurrentIndex(qAbs(host->IsOriginPositionHorizontal() - 1));
 
     connect(ICMold::CurrentMold(),
             SIGNAL(MoldNumberParamChanged()),
@@ -124,4 +125,10 @@ void ICHCDetectionFrame::on_detectOriginBox_activated(int index)
 {
     bool isCheck = qAbs(index - 1);
     ICVirtualHost::GlobalVirtualHost()->SetAlarmWhenOrigin(isCheck);
+}
+
+void ICHCDetectionFrame::on_originPositionBox_activated(int index)
+{
+    bool isCheck = qAbs(index - 1);
+    ICVirtualHost::GlobalVirtualHost()->SetOriginPosition(isCheck);
 }

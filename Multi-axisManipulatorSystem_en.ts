@@ -851,6 +851,21 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="376"/>
+        <source>Orgin Position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="390"/>
+        <source>Horizontal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="395"/>
+        <source>Vertical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="161"/>
         <source>Detect fixture 4</source>
         <translation type="unfinished"></translation>
@@ -1386,20 +1401,20 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="450"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="468"/>
         <source>Speed Enable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="435"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="453"/>
         <source>Follow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="256"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="60"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="450"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="460"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="468"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="478"/>
         <source>Speed Disable</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1411,7 +1426,7 @@ Infomation</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="195"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="441"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="459"/>
         <source>No Follow</source>
         <translation type="unfinished"></translation>
     </message>
