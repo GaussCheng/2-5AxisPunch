@@ -398,9 +398,9 @@ public:
     int FinishProductCount() const { return productCount_;}
     void SetFinishProductCount(int product) { productCount_ = product;}
 
-    bool IsSingleArm() const { return ((systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0300) >> 8) == 0;}
+    bool IsSingleArm() const { return (systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0100) > 0;}
     void SetSingleArm(bool isSingle);
-    bool HasMainArmForwardLimit() const { return (systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0001) == 1; }
+    bool HasMainArmForwardLimit() const { return (systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0001) > 0; }
     void SetMainArmForwardLimit(bool hasForward);
     bool HasMainArmBackwardLimit() const { return (systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0002) > 0;}
     void SetMainArmBackwardLimit(bool hasBackward);

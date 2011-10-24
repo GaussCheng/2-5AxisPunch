@@ -3192,7 +3192,7 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/systemstatusframe/icsystemstatusframe.ui" line="167"/>
+        <location filename="custom_widgets/systemstatusframe/icsystemstatusframe.ui" line="174"/>
         <source>IMM Signal</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3384,70 +3384,70 @@ Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="381"/>
+        <location filename="mainframe.cpp" line="384"/>
         <source>Function</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="382"/>
+        <location filename="mainframe.cpp" line="385"/>
         <source>Monitor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="674"/>
+        <location filename="mainframe.cpp" line="692"/>
         <source>Standby</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="384"/>
+        <location filename="mainframe.cpp" line="387"/>
         <source>Record</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="383"/>
+        <location filename="mainframe.cpp" line="386"/>
         <source>Alarm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="385"/>
+        <location filename="mainframe.cpp" line="388"/>
         <source>Return</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="466"/>
+        <location filename="mainframe.cpp" line="484"/>
         <source>Hint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="617"/>
+        <location filename="mainframe.cpp" line="635"/>
         <source>Records</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="643"/>
+        <location filename="mainframe.cpp" line="661"/>
         <source>Manual</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="647"/>
-        <location filename="mainframe.cpp" line="660"/>
+        <location filename="mainframe.cpp" line="665"/>
+        <location filename="mainframe.cpp" line="678"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="647"/>
-        <location filename="mainframe.cpp" line="660"/>
+        <location filename="mainframe.cpp" line="665"/>
+        <location filename="mainframe.cpp" line="678"/>
         <source>Need to origin!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="649"/>
         <location filename="mainframe.cpp" line="667"/>
+        <location filename="mainframe.cpp" line="685"/>
         <source>Instruct</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="656"/>
+        <location filename="mainframe.cpp" line="674"/>
         <source>Auto</source>
         <translation type="unfinished"></translation>
     </message>

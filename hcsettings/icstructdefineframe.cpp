@@ -14,9 +14,17 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     ui(new Ui::ICStructDefineFrame)
 {
     ui->setupUi(this);
-    on_doubleArmButton_toggled(ui->doubleArmButton->isChecked());
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     armStruct_ = host->SystemParameter(ICVirtualHost::SYS_ARM_CONFIG).toUInt();
+    if(host->IsSingleArm())
+    {
+        ui->singleArmButton->setChecked(true);
+        on_doubleArmButton_toggled(false);
+    }
+    else
+    {
+        ui->doubleArmButton->setChecked(true);
+    }
     ui->mainArmForwardLimitButton->setChecked(host->HasMainArmForwardLimit());
     ui->mainArmBackwardLimitButton->setChecked(host->HasMainArmBackwardLimit());
     ui->mainArmDownLimitButton->setChecked(host->HasMainArmDownLimit());
@@ -77,6 +85,7 @@ void ICStructDefineFrame::on_doubleArmButton_toggled(bool checked)
     {
         ui->subArmBox->setEnabled(false);
     }
+    checked ? armStruct_ &= 0xFEFF : armStruct_ |= 0x100;
 }
 
 void ICStructDefineFrame::on_mainArmDownLimitButton_toggled(bool checked)
@@ -94,7 +103,7 @@ void ICStructDefineFrame::on_mainArmBackwardLimitButton_toggled(bool checked)
 void ICStructDefineFrame::on_mainArmForwardLimitButton_toggled(bool checked)
 {
 //    ICVirtualHost::GlobalVirtualHost()->SetMainArmForwardLimit(checked);
-    checked ? armStruct_ |= 0x0002 : armStruct_ &= 0xFFFD;
+    checked ? armStruct_ |= 0x0001 : armStruct_ &= 0xFFFE;
 }
 
 void ICStructDefineFrame::on_subArmDownLimitButton_toggled(bool checked)

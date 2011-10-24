@@ -3938,7 +3938,7 @@ Please enter an digit between </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="custom_widgets/systemstatusframe/icsystemstatusframe.ui" line="167"/>
+        <location filename="custom_widgets/systemstatusframe/icsystemstatusframe.ui" line="174"/>
         <source>IMM Signal</source>
         <translation>注塑机信号</translation>
     </message>
@@ -4148,17 +4148,17 @@ Would you want to restart now?</source>
         <translation>步序</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="381"/>
+        <location filename="mainframe.cpp" line="384"/>
         <source>Function</source>
         <translation>功能</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="382"/>
+        <location filename="mainframe.cpp" line="385"/>
         <source>Monitor</source>
         <translation>监视</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="617"/>
+        <location filename="mainframe.cpp" line="635"/>
         <source>Records</source>
         <translation>档案</translation>
     </message>
@@ -4167,55 +4167,55 @@ Would you want to restart now?</source>
         <translation type="obsolete">报警记录</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="674"/>
+        <location filename="mainframe.cpp" line="692"/>
         <source>Standby</source>
         <translation>欢迎</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="384"/>
+        <location filename="mainframe.cpp" line="387"/>
         <source>Record</source>
         <translation>档案</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="383"/>
+        <location filename="mainframe.cpp" line="386"/>
         <source>Alarm</source>
         <translation>报警</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="385"/>
+        <location filename="mainframe.cpp" line="388"/>
         <source>Return</source>
         <translation>返回</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="466"/>
+        <location filename="mainframe.cpp" line="484"/>
         <source>Hint</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="643"/>
+        <location filename="mainframe.cpp" line="661"/>
         <source>Manual</source>
         <translation>手动</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="647"/>
-        <location filename="mainframe.cpp" line="660"/>
+        <location filename="mainframe.cpp" line="665"/>
+        <location filename="mainframe.cpp" line="678"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="647"/>
-        <location filename="mainframe.cpp" line="660"/>
+        <location filename="mainframe.cpp" line="665"/>
+        <location filename="mainframe.cpp" line="678"/>
         <source>Need to origin!</source>
         <translation>还没进行原点!</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="649"/>
         <location filename="mainframe.cpp" line="667"/>
+        <location filename="mainframe.cpp" line="685"/>
         <source>Instruct</source>
         <translation>教导</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="656"/>
+        <location filename="mainframe.cpp" line="674"/>
         <source>Auto</source>
         <translation>自动</translation>
     </message>
