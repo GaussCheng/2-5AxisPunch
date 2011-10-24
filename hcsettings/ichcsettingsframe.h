@@ -33,7 +33,6 @@ private slots:
     void on_axisYToolButton_clicked();
     void on_axisXToolButton_clicked();
     void on_structDefButton_clicked();
-    void LevelChanged(int level);
 //    void SettingButtonClicked();
 
 private:

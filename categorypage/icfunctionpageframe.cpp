@@ -8,7 +8,7 @@
 //#include "icstacksettingpageframe.h"
 #include "ichcsystemsettingsframe.h"
 #include "icsystemsettingframe.h"
-#include "ichctimeframe.h"
+#include "icmachinestructpage.h"
 
 #include "ichcsettingsframe.h"
 #include "ichcdetectionframe.h"
@@ -18,6 +18,7 @@
 #include "icmachineconfigpage.h"
 
 #include "icprogramheadframe.h"
+#include "icparameterssave.h"
 
 #include <QDebug>
 
@@ -52,7 +53,7 @@ public:
         }
         else if(clickedButton == functionPage->ui->machineStructConfig)
         {
-            return new ICHCTimeFrame(parent);
+            return new ICMachineStructPage(parent);
         }
         else if(clickedButton == functionPage->ui->machineConfigSettingWidget)
         {
@@ -164,6 +165,10 @@ void ICFunctionPageFrame::InitSignal()
             SIGNAL(clicked()),
             this,
             SLOT(SettingButtonClicked()));
+    connect(ICProgramHeadFrame::Instance(),
+            SIGNAL(LevelChanged(int)),
+            this,
+            SLOT(LevelChanged(int)));
 }
 
 void ICFunctionPageFrame::SettingButtonClicked()
@@ -202,4 +207,16 @@ void ICFunctionPageFrame::UpdateTranslate()
     ui->signalSettingWidget->setText(tr("Signal Settings"));
     ui->productSettingWidget->setText(tr("Product Settings"));
     ui->machineConfigSettingWidget->setText(tr("Machine Configure"));
+}
+
+void ICFunctionPageFrame::LevelChanged(int level)
+{
+    if(level >=  ICParametersSave::AdvanceAdmin)
+    {
+        ui->machineStructConfig->setEnabled(true);
+    }
+    else
+    {
+        ui->machineStructConfig->setEnabled(false);
+    }
 }

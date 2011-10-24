@@ -11,20 +11,21 @@
 AxisSettingsFrame::AxisSettingsFrame(QWidget *parent) :
     QFrame(parent),
     ui(new Ui::AxisSettingsFrame),
-    step_(0),
-    currentAxis_(Hide),
-    isStart_(true)
+    currentAxis_(Hide)
 {
     ui->setupUi(this);
+    ui->label_11->hide();
+    ui->label_8->hide();
+    ui->distanceRotationEdit->hide();
+    ui->label->hide();
+    ui->label_3->hide();
+    ui->mechanicalLengthLineEdit->hide();
 
     InitInterface();
     connect(ICProgramHeadFrame::Instance(),
             SIGNAL(LevelChanged(int)),
             this,
             SLOT(LevelChanged(int)));
-    ui->currentAxisLabel->hide();
-    ui->minPositionToolButton->hide();
-    ui->maxPositionToolButton->hide();
     if(ICProgramHeadFrame::Instance()->CurrentLevel() == ICParametersSave::AdvanceAdmin)
     {
         LevelChanged(ICParametersSave::AdvanceAdmin);
@@ -50,7 +51,6 @@ void AxisSettingsFrame::hideEvent(QHideEvent *e)
 void AxisSettingsFrame::showEvent(QShowEvent *e)
 {
     QFrame::showEvent(e);
-    step_ = 0;
     connect(ICVirtualHost::GlobalVirtualHost(),
             SIGNAL(StatusRefreshed()),
             this,
@@ -59,16 +59,7 @@ void AxisSettingsFrame::showEvent(QShowEvent *e)
 
 void AxisSettingsFrame::SetCurrentAxis(QString currentAxisName, int axis)
 {
-    //    if(currentAxis_ != Hide)
-    //    {
-    //        QList<uint> status = GetCurrentStatus_();
-    //        SetCurrentStatus_(status);
-    //    }
-    isStart_ = false;
-    step_ = -1;
-    ui->minPositionToolButton->setEnabled(true);
-    ui->maxPositionToolButton->setEnabled(false);
-    ui->currentAxisLabel->setText(currentAxisName);
+    Q_UNUSED(currentAxisName)
     currentAxis_ = axis;
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     ICVirtualHost::ICSystemParameter machineLangth;
@@ -121,6 +112,8 @@ void AxisSettingsFrame::SetCurrentAxis(QString currentAxisName, int axis)
     ui->distanceRotationEdit->setText(QString().sprintf("%.2f", total));
     ui->minLabel->setText(minText);
     ui->maxLabel->setText(maxText);
+    maxMoveValidator_->setTop(ui->mechanicalLengthLineEdit->TransThisTextToThisInt());
+//    ui->maximumDisplacementLineEdit->setValidator();
 }
 
 void AxisSettingsFrame::InitInterface()
@@ -129,7 +122,8 @@ void AxisSettingsFrame::InitInterface()
     ui->mechanicalLengthLineEdit->SetDecimalPlaces(1);
     ui->mechanicalLengthLineEdit->setValidator(intValidator);
     ui->maximumDisplacementLineEdit->SetDecimalPlaces(1);
-    ui->maximumDisplacementLineEdit->setValidator(intValidator);
+    maxMoveValidator_ = new QIntValidator(0, 32767, this);
+    ui->maximumDisplacementLineEdit->setValidator(maxMoveValidator_);
     ui->internalSecurityZoneLineEdit->SetDecimalPlaces(1);
     ui->internalSecurityZoneLineEdit->setValidator(intValidator);
     ui->externalSecurityZoneLineEdit->SetDecimalPlaces(1);
@@ -138,9 +132,8 @@ void AxisSettingsFrame::InitInterface()
     ui->distanceRotationEdit->setValidator(intValidator);
 }
 
-QList<uint> AxisSettingsFrame::GetCurrentStatus_(bool isGuild) const
+QList<uint> AxisSettingsFrame::GetCurrentStatus_() const
 {
-    ICVirtualHost *host = ICVirtualHost::GlobalVirtualHost();
     QList<uint> ret;
     double machineLength = ui->mechanicalLengthLineEdit->text().toDouble();
     ret.append(ui->mechanicalLengthLineEdit->TransThisTextToThisInt());
@@ -152,43 +145,6 @@ QList<uint> AxisSettingsFrame::GetCurrentStatus_(bool isGuild) const
     uint total = machineLength * 10000 / ui->distanceRotationEdit->text().toDouble();
     totalH = (total >> 16) & 0XFFFF;
     totalL = total & 0XFFFF;
-    //    if(isGuild)
-    //    {
-    //        if(currentAxis_ == XAxis)
-    //        {
-    //            totalH = host->HostStatus(ICVirtualHost::DbgX1).toUInt() & 0xFFFF;
-    //            totalL = host->HostStatus(ICVirtualHost::DbgX0).toUInt() & 0xFFFF;
-    //        }
-    //        else if(currentAxis_ == YAxis)
-    //        {
-    //            totalH = host->HostStatus(ICVirtualHost::DbgY1).toUInt() & 0xFFFF;
-    //            totalL = host->HostStatus(ICVirtualHost::DbgY0).toUInt() & 0xFFFF;
-    //        }
-    //        else if(currentAxis_ == ZAxis)
-    //        {
-    //            totalH = host->HostStatus(ICVirtualHost::DbgZ1).toUInt() & 0xFFFF;
-    //            totalL = host->HostStatus(ICVirtualHost::DbgZ0).toUInt() & 0xFFFF;
-    //        }
-    //    }
-    //    else
-    //    {
-    ////        host->SetSystemParameter(ICVirtualHost::SYS_Z_TotalL, );
-    //        if(currentAxis_ == XAxis)
-    //        {
-    //            totalH = host->SystemParameter(ICVirtualHost::SYS_X_TotalH).toUInt() & 0xFFFF;
-    //            totalL = host->SystemParameter(ICVirtualHost::SYS_X_TotalL).toUInt() & 0xFFFF;
-    //        }
-    //        else if(currentAxis_ == YAxis)
-    //        {
-    //            totalH = host->SystemParameter(ICVirtualHost::SYS_Y_TotalH).toUInt() & 0xFFFF;
-    //            totalL = host->SystemParameter(ICVirtualHost::SYS_Y_TotalL).toUInt() & 0xFFFF;
-    //        }
-    //        else if(currentAxis_ == ZAxis)
-    //        {
-    //            totalH = host->SystemParameter(ICVirtualHost::SYS_Z_TotalH).toUInt() & 0xFFFF;
-    //            totalL = host->SystemParameter(ICVirtualHost::SYS_Z_TotalL).toUInt() & 0xFFFF;
-    //        }
-    //    }
     ret.append(totalL);
     ret.append(totalH);
     int sum = 0;
@@ -276,56 +232,10 @@ bool AxisSettingsFrame::SetCurrentStatus_(const QList<uint> &status)
     return false;
 }
 
-void AxisSettingsFrame::on_minPositionToolButton_clicked()
-{
-    ICCommandProcessor *processor = ICCommandProcessor::Instance();
-    int subCmd;
-    if(currentAxis_ == XAxis)
-    {
-        subCmd = IC::CMD_X1SubLmt;
-    }
-    else if(currentAxis_ == YAxis)
-    {
-        subCmd = IC::CMD_Y1SubLmt;
-    }
-    else if(currentAxis_ == ZAxis)
-    {
-        subCmd = IC::CMD_ZSubLmt;
-    }
-    processor->ExecuteHCCommand(subCmd, 0);
-
-}
-
-void AxisSettingsFrame::on_maxPositionToolButton_clicked()
-{
-    ICCommandProcessor *processor = ICCommandProcessor::Instance();
-    int addCmd;
-    if(currentAxis_ == XAxis)
-    {
-        addCmd = IC::CMD_X1AddLmt;
-    }
-    else if(currentAxis_ == YAxis)
-    {
-        addCmd = IC::CMD_Y1AddLmt;
-    }
-    else if(currentAxis_ == ZAxis)
-    {
-        addCmd = IC::CMD_ZAddLmt;
-    }
-    processor->ExecuteHCCommand(addCmd, 0);
-}
-
 void AxisSettingsFrame::on_saveToolButton_clicked()
 {
     QList<uint> status;
-    if(isStart_ && step_ == 4)
-    {
-        status = GetCurrentStatus_(true);
-    }
-    else
-    {
-        status = GetCurrentStatus_(false);
-    }
+    status = GetCurrentStatus_();
     if(SetCurrentStatus_(status))
     {
         ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
@@ -363,37 +273,6 @@ void AxisSettingsFrame::StatusRefresh()
     ui->testLineEdit->setText(pos);
     ui->feedbackEdit->setText(feedbackPos);
     ui->zSignalEdit->setText(zSignal);
-
-    //    step_ = host->CurrentStep();
-    //    if(!isStart_)
-    //    {
-    //        ui->minPositionToolButton->setEnabled(true);
-    //        ui->maxPositionToolButton->setEnabled(false);
-    //        isStart_ = true;
-    //        ui->guildLabel->setText(tr("Please press Min button"));
-    //    }
-    //    else if(step_ == 1 )
-    //    {
-    //        ui->guildLabel->setText(tr("When alarmed ,please press stop button"));
-    //    }
-    //    else if(step_ == 2)
-    //    {
-    //        ui->guildLabel->setText(tr("Prease press Max button"));
-    //        ui->minPositionToolButton->setEnabled(false);
-    //        ui->maxPositionToolButton->setEnabled(true);
-    //    }
-    //    else if(step_ == 3)
-    //    {
-    //        ui->guildLabel->setText(tr("When alarmed, please press stop button"));
-    //        ui->minPositionToolButton->setEnabled(true);
-    //        ui->maxPositionToolButton->setEnabled(false);
-    //    }
-    //    else if(step_ == 4)
-    //    {
-    //        ui->guildLabel->setText(tr("Set the machine configure and save"));
-    //        ui->minPositionToolButton->setEnabled(true);
-    //        ui->maxPositionToolButton->setEnabled(false);
-    //    }
 }
 
 void AxisSettingsFrame::on_testPushButton_clicked()
@@ -443,8 +322,16 @@ void AxisSettingsFrame::on_pushButton_clicked()
 
 void AxisSettingsFrame::LevelChanged(int level)
 {
-    if(level == ICParametersSave::AdvanceAdmin)
+    if(level >=  ICParametersSave::MachineAdmin)
     {
+        if(level >= ICParametersSave::AdvanceAdmin)
+        {
+            ui->mechanicalLengthLineEdit->setEnabled(true);
+        }
+        else
+        {
+            ui->mechanicalLengthLineEdit->setEnabled(false);
+        }
         ui->securityPointGroupBox->setEnabled(true);
         ui->saveToolButton->setEnabled(true);
     }

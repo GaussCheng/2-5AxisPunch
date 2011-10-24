@@ -399,6 +399,19 @@ public:
     void SetFinishProductCount(int product) { productCount_ = product;}
 
     bool IsSingleArm() const { return ((systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0300) >> 8) == 0;}
+    void SetSingleArm(bool isSingle);
+    bool HasMainArmForwardLimit() const { return (systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0001) == 1; }
+    void SetMainArmForwardLimit(bool hasForward);
+    bool HasMainArmBackwardLimit() const { return (systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0002) > 0;}
+    void SetMainArmBackwardLimit(bool hasBackward);
+    bool HasMainArmDownLimit() const { return (systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0008) > 0;}
+    void SetMainArmDownLimit(bool hasDown);
+    bool HasSubArmForwardLimit() const { return (systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0010) > 0;}
+    void SetSubArmForwardLimit(bool hasForward);
+    bool HasSubArmBackwardLimit() const { return (systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0020) > 0;}
+    void SetSubArmBackwardLimit(bool hasBackward);
+    bool HasSubArmDownLimit() const { return (systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0080) > 0;}
+    void SetSubArmDownLimit(bool hasDown);
 
 public Q_SLOTS:
     void SetMoldParam(int param, int value);
@@ -648,6 +661,55 @@ inline void ICVirtualHost::SetOriginPosition(bool isHorizontal)
     val &= 0xFFFFDFFF;
     (isHorizontal ? val |= 0x00001000 : val &= 0xFFFFEFFF);
     systemParamMap_.insert(SYS_Function, val);
+}
+
+inline void ICVirtualHost::SetSingleArm(bool isSingle)
+{
+    int val = SystemParameter(SYS_ARM_CONFIG).toInt();
+    isSingle ? val &= 0xFEFF : val |= 0x100;
+    systemParamMap_.insert(SYS_ARM_CONFIG, val);
+}
+
+inline void ICVirtualHost::SetMainArmForwardLimit(bool hasForward)
+{
+    int val = SystemParameter(SYS_ARM_CONFIG).toInt();
+    hasForward ? val |= 0x0001 : val &= 0xFFFE;
+    systemParamMap_.insert(SYS_ARM_CONFIG, val);
+}
+
+inline void ICVirtualHost::SetMainArmBackwardLimit(bool hasBackward)
+{
+    int val = SystemParameter(SYS_ARM_CONFIG).toInt();
+    hasBackward ? val |= 0x0002 : val &= 0xFFFD;
+    systemParamMap_.insert(SYS_ARM_CONFIG, val);
+}
+
+inline void ICVirtualHost::SetMainArmDownLimit(bool hasDown)
+{
+    int val = SystemParameter(SYS_ARM_CONFIG).toInt();
+    hasDown ? val |= 0x0008 : val &= 0xFFF7;
+    systemParamMap_.insert(SYS_ARM_CONFIG, val);
+}
+
+inline void ICVirtualHost::SetSubArmForwardLimit(bool hasForward)
+{
+    int val = SystemParameter(SYS_ARM_CONFIG).toInt();
+    hasForward ? val |= 0x0010 : val &= 0xFFEF;
+    systemParamMap_.insert(SYS_ARM_CONFIG, val);
+}
+
+inline void ICVirtualHost::SetSubArmBackwardLimit(bool hasBackward)
+{
+    int val = SystemParameter(SYS_ARM_CONFIG).toInt();
+    hasBackward ? val |= 0x0020 : val &= 0xFFDF;
+    systemParamMap_.insert(SYS_ARM_CONFIG, val);
+}
+
+inline void ICVirtualHost::SetSubArmDownLimit(bool hasDown)
+{
+    int val = SystemParameter(SYS_ARM_CONFIG).toInt();
+    hasDown ? val |= 0x0080 : val &= 0xFF7F;
+    systemParamMap_.insert(SYS_ARM_CONFIG, val);
 }
 
 #endif // ICVIRTUALHOST_H

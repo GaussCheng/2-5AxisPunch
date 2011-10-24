@@ -5,10 +5,12 @@
 
 ICPageTag::ICPageTag(QWidget *parent) :
     QAbstractButton(parent),
-    leftBackground_(":/resource/leftTagBG.png"),
-    rightBackground_(":/resource/rightTagBG.png"),
-    leftPressBG_(":/resource/leftTagBG_Pressed.png"),
-    rightPressBG_(":/resource/rightTagBG_Pressed.png")
+  leftBackground_(":/resource/leftTagBG.png"),
+  rightBackground_(":/resource/rightTagBG.png"),
+  leftPressBG_(":/resource/leftTagBG_Pressed.png"),
+  rightPressBG_(":/resource/rightTagBG_Pressed.png"),
+  leftDisableBG_(":/resource/leftTagBG_disabled.png"),
+  rightDisableBG_(":/resource/rightTagBG_disabled.png")
 {
     iconSide_ = IconOnLeft;
     setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
@@ -26,7 +28,11 @@ void ICPageTag::paintEvent(QPaintEvent *e)
     if(Direction() == IconOnLeft)
     {
         painter.begin(this);
-        if(!isDown())
+        if(!isEnabled())
+        {
+            painter.drawPixmap(this->rect(), leftDisableBG_);
+        }
+        else if(!isDown())
         {
             painter.drawPixmap(this->rect(), leftBackground_);
         }
@@ -41,7 +47,11 @@ void ICPageTag::paintEvent(QPaintEvent *e)
     else
     {
         painter.begin(this);
-        if(!isDown())
+        if(!isEnabled())
+        {
+            painter.drawPixmap(this->rect(), rightDisableBG_);
+        }
+        else if(!isDown())
         {
             painter.drawPixmap(this->rect(), rightBackground_);
         }

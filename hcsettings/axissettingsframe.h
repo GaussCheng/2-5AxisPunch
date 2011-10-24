@@ -3,6 +3,8 @@
 
 #include <QFrame>
 
+class QIntValidator;
+
 namespace Ui {
     class AxisSettingsFrame;
 }
@@ -32,21 +34,20 @@ protected:
 
 private:
     void InitInterface();
-    QList<uint> GetCurrentStatus_(bool isGuild) const;
+    QList<uint> GetCurrentStatus_() const;
     bool SetCurrentStatus_(const QList<uint> & status);
 
 private:
     Ui::AxisSettingsFrame *ui;
-    int step_;
-    bool isStart_;
     int currentAxis_;
+    QIntValidator* maxMoveValidator_;
+//    QIntValidator* securityMinValidator_;
+//    QIntValidator* securityMinValidator_
 
 private slots:
     void on_pushButton_clicked();
     void on_revTestPushButton_clicked();
     void on_saveToolButton_clicked();
-    void on_maxPositionToolButton_clicked();
-    void on_minPositionToolButton_clicked();
     void on_testPushButton_clicked();
     void StatusRefresh();
     void LevelChanged(int level);

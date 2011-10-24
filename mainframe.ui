@@ -30,18 +30,6 @@
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="ICSystemStatusFrame" name="systemStatusFrame">
-       <property name="minimumSize">
-        <size>
-         <width>246</width>
-         <height>50</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>246</width>
-         <height>50</height>
-        </size>
-       </property>
        <property name="frameShape">
         <enum>QFrame::NoFrame</enum>
        </property>
@@ -230,6 +218,12 @@ border-radius: 6px; border: 3px solid green;
       </property>
       <item>
        <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
         <property name="text">
          <string>Z</string>
         </property>
@@ -263,6 +257,12 @@ border-radius: 6px; border: 3px solid green;
       </item>
       <item>
        <widget class="QLabel" name="label_5">
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
         <property name="text">
          <string>X</string>
         </property>
@@ -296,6 +296,12 @@ border-radius: 6px; border: 3px solid green;
       </item>
       <item>
        <widget class="QLabel" name="label_6">
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
         <property name="text">
          <string>Y</string>
         </property>

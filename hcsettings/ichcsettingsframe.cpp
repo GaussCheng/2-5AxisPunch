@@ -14,7 +14,6 @@ ICHCSettingsFrame::ICHCSettingsFrame(QWidget *parent) :
     centralStackedLayout_(new QStackedLayout)
 {
     ui->setupUi(this);
-    ui->structDefButton->hide();
     buttonGroup_ = new QButtonGroup();
 
     InitHCSettingPage();
@@ -23,25 +22,15 @@ ICHCSettingsFrame::ICHCSettingsFrame(QWidget *parent) :
     ui->axisXToolButton->setText(tr("X Axis"));
     ui->axisYToolButton->setText(tr("Y Axis"));
     ui->axisZToolButton->setText(tr("Z Axis"));
-    ui->structDefButton->setText(tr("Struct Define"));
 //    buttonGroup_->addButton(ui->basicSettingsToolButton);
     buttonGroup_->addButton(ui->axisXToolButton);
     buttonGroup_->addButton(ui->axisYToolButton);
     buttonGroup_->addButton(ui->axisZToolButton);
-    buttonGroup_->addButton(ui->structDefButton);
     buttonGroup_->setExclusive(true);
     QAbstractButton* button;
     foreach(button, buttonGroup_->buttons())
     {
         button->setCheckable(true);
-    }
-    connect(ICProgramHeadFrame::Instance(),
-            SIGNAL(LevelChanged(int)),
-            this,
-            SLOT(LevelChanged(int)));
-    if(ICProgramHeadFrame::Instance()->CurrentLevel() == ICParametersSave::AdvanceAdmin)
-    {
-        LevelChanged(ICParametersSave::AdvanceAdmin);
     }
 //    ui->axisXToolButton->click();
 //    ui->basicSettingsToolButton->click();
@@ -63,7 +52,6 @@ void ICHCSettingsFrame::changeEvent(QEvent *e)
         ui->axisXToolButton->setText(tr("X Axis"));
         ui->axisYToolButton->setText(tr("Y Axis"));
         ui->axisZToolButton->setText(tr("Z Axis"));
-        ui->structDefButton->setText(tr("Struct Define"));
     }
         break;
     default:
@@ -166,16 +154,4 @@ void ICHCSettingsFrame::ShowAxisSettingPage(QString currentAxisName, int axis)
 {
     centralStackedLayout_->setCurrentWidget(axisSettingsPage_);
     emit CurrentAxisChanged(currentAxisName, axis);
-}
-
-void ICHCSettingsFrame::LevelChanged(int level)
-{
-    if(level == ICParametersSave::AdvanceAdmin)
-    {
-        ui->structDefButton->show();
-    }
-    else
-    {
-        ui->structDefButton->hide();
-    }
 }

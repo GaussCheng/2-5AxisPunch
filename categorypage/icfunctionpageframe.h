@@ -33,6 +33,7 @@ private:
 
 private slots:
     void SettingButtonClicked();
+    void LevelChanged(int level);
 
 private:
     Ui::ICFunctionPageFrame *ui;

@@ -20,14 +20,25 @@ protected:
     void changeEvent(QEvent *e);
 
 private slots:
-    void OnSelectChanged(int index);
-
     void on_saveButton_clicked();
+    void on_doubleArmButton_toggled(bool checked);
+
+
+    void on_mainArmDownLimitButton_toggled(bool checked);
+
+    void on_mainArmBackwardLimitButton_toggled(bool checked);
+
+    void on_mainArmForwardLimitButton_toggled(bool checked);
+
+    void on_subArmDownLimitButton_toggled(bool checked);
+
+    void on_subArmBackwardLimitButton_toggled(bool checked);
+
+    void on_subArmForwardLimitButton_toggled(bool checked);
 
 private:
     Ui::ICStructDefineFrame *ui;
     uint armStruct_;
-    QMap<QString, uint> armTypeMaskMap_;
 };
 
 #endif // ICSTRUCTDEFINEFRAME_H
