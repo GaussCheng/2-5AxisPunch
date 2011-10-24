@@ -6,12 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>293</width>
-    <height>50</height>
+    <width>283</width>
+    <height>52</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Frame</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background: gray;
+border-radius:24px;
+border: 2px solid;
+border-color: rgb(255, 255, 255);</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::StyledPanel</enum>
@@ -29,10 +35,7 @@
    <item>
     <widget class="QFrame" name="statusFrame">
      <property name="styleSheet">
-      <string notr="true">background: gray;
-border-radius: 24px;
-font-size: 24px; 
-</string>
+      <string notr="true">border:none;</string>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <property name="spacing">
@@ -43,6 +46,32 @@ font-size: 24px;
       </property>
       <item>
        <widget class="SpeedStatusLabel" name="speedStatusLabel">
+        <property name="minimumSize">
+         <size>
+          <width>48</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>48</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 0);
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="StatusLabel" name="manualStatusLabel">
         <property name="minimumSize">
          <size>
           <width>48</width>
@@ -68,31 +97,6 @@ color:rgb(255, 0, 255);</string>
        </widget>
       </item>
       <item>
-       <widget class="StatusLabel" name="manualStatusLabel">
-        <property name="minimumSize">
-         <size>
-          <width>48</width>
-          <height>48</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>48</width>
-          <height>48</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border: 2px solid rgb(255,255,255); </string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item>
        <widget class="StatusLabel" name="autoStatusLabel">
         <property name="minimumSize">
          <size>
@@ -107,7 +111,8 @@ color:rgb(255, 0, 255);</string>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">border: 2px solid rgb(255,255,255); </string>
+         <string notr="true">border: 2px solid rgb(255,255,255); 
+color:rgb(255, 0, 255);</string>
         </property>
         <property name="text">
          <string/>
@@ -132,7 +137,8 @@ color:rgb(255, 0, 255);</string>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">border: 2px solid rgb(255,255,255); </string>
+         <string notr="true">border: 2px solid rgb(255,255,255); 
+color:rgb(255, 0, 255);</string>
         </property>
         <property name="text">
          <string/>
@@ -146,14 +152,10 @@ color:rgb(255, 0, 255);</string>
     </widget>
    </item>
    <item>
-    <widget class="Line" name="line">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-    </widget>
-   </item>
-   <item>
     <widget class="QToolButton" name="immButton">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
        <horstretch>0</horstretch>
@@ -163,8 +165,16 @@ color:rgb(255, 0, 255);</string>
      <property name="focusPolicy">
       <enum>Qt::NoFocus</enum>
      </property>
+     <property name="styleSheet">
+      <string notr="true">border:none;
+color: rgb(255, 255, 0);
+</string>
+     </property>
      <property name="text">
       <string>IMM Signal</string>
+     </property>
+     <property name="autoRaise">
+      <bool>true</bool>
      </property>
     </widget>
    </item>

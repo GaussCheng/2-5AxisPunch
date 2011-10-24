@@ -94,7 +94,10 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     screenSaver_(new ICScreenSaver()),
     isBackLightOff_(false),
     isOrigined_(false),
-    isDoAction_(false)
+    isDoAction_(false),
+    isXPosChanged_(false),
+    isYPosChanged_(false),
+    isZPosChanged_(false)
 {
     connect(this,
             SIGNAL(LoadMessage(QString)),
@@ -414,15 +417,28 @@ void MainFrame::StatusRefreshed()
 {
     static ICAlarmString* alarmString = ICAlarmString::Instance();
     static ICVirtualHost* virtualHost = ICVirtualHost::GlobalVirtualHost();
-    ui->xPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
-    ui->yPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
-    ui->zPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
+    if(isXPosChanged_)
+    {
+        ui->xPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
+        isXPosChanged_ = false;
+    }
+    if(isYPosChanged_)
+    {
+        ui->yPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
+        isYPosChanged_ = false;
+    }
+    if(isZPosChanged_)
+    {
+        ui->zPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
+        isZPosChanged_ = false;
+    }
     int pos = virtualHost->HostStatus(ICVirtualHost::XPos).toInt();
     if(pos != oldXPos_)
     {
         oldXPos_ = pos;
         ui->xPosLabel->setText(QString().sprintf("%.1f", pos / 10.0));
         ui->xPosLabel->setStyleSheet("color: rgb(0, 0, 127);background-color: rgb(85, 255, 127);");
+        isXPosChanged_ = true;
     }
     pos = virtualHost->HostStatus(ICVirtualHost::YPos).toInt();
     if(pos != oldYPos_)
@@ -430,6 +446,7 @@ void MainFrame::StatusRefreshed()
         oldYPos_ = pos;
         ui->yPosLabel->setText(QString().sprintf("%.1f", pos / 10.0));
         ui->yPosLabel->setStyleSheet("color: rgb(0, 0, 127);background-color: rgb(85, 255, 127);");
+        isYPosChanged_ = true;
     }
 
     pos = virtualHost->HostStatus(ICVirtualHost::ZPos).toInt();
@@ -438,6 +455,7 @@ void MainFrame::StatusRefreshed()
         oldZPos_ = pos;
         ui->zPosLabel->setText(QString().sprintf("%.1f", pos / 10.0));
         ui->zPosLabel->setStyleSheet("color: rgb(0, 0, 127);background-color: rgb(85, 255, 127);");
+        isZPosChanged_ = true;
     }
 
     newLedFlags_ = 0;

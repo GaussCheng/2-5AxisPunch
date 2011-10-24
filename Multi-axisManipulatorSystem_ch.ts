@@ -859,7 +859,7 @@ Reason</source>
     <message>
         <location filename="categorypage/icfunctionpageframe.cpp" line="204"/>
         <source>Struct Settings</source>
-        <translation>结构</translation>
+        <translation>机器参数</translation>
     </message>
     <message>
         <location filename="categorypage/icfunctionpageframe.cpp" line="205"/>

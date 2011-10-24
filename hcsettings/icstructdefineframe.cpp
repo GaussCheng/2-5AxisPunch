@@ -81,30 +81,35 @@ void ICStructDefineFrame::on_doubleArmButton_toggled(bool checked)
 
 void ICStructDefineFrame::on_mainArmDownLimitButton_toggled(bool checked)
 {
-    ICVirtualHost::GlobalVirtualHost()->SetMainArmDownLimit(checked);
+//    ICVirtualHost::GlobalVirtualHost()->SetMainArmDownLimit(checked);
+    checked ? armStruct_ |= 0x0008 : armStruct_ &= 0xFFF7;
 }
 
 void ICStructDefineFrame::on_mainArmBackwardLimitButton_toggled(bool checked)
 {
-    ICVirtualHost::GlobalVirtualHost()->SetMainArmBackwardLimit(checked);
+//    ICVirtualHost::GlobalVirtualHost()->SetMainArmBackwardLimit(checked);
+     checked ? armStruct_ |= 0x0002 : armStruct_ &= 0xFFFD;
 }
 
 void ICStructDefineFrame::on_mainArmForwardLimitButton_toggled(bool checked)
 {
-    ICVirtualHost::GlobalVirtualHost()->SetMainArmForwardLimit(checked);
+//    ICVirtualHost::GlobalVirtualHost()->SetMainArmForwardLimit(checked);
+    checked ? armStruct_ |= 0x0002 : armStruct_ &= 0xFFFD;
 }
 
 void ICStructDefineFrame::on_subArmDownLimitButton_toggled(bool checked)
 {
-    ICVirtualHost::GlobalVirtualHost()->SetSubArmDownLimit(checked);
+//    ICVirtualHost::GlobalVirtualHost()->SetSubArmDownLimit(checked);
+    checked ? armStruct_ |= 0x0080 : armStruct_ &= 0xFF7F;
 }
 
 void ICStructDefineFrame::on_subArmBackwardLimitButton_toggled(bool checked)
 {
-    ICVirtualHost::GlobalVirtualHost()->SetSubArmBackwardLimit(checked);
+//    ICVirtualHost::GlobalVirtualHost()->SetSubArmBackwardLimit(checked);
+    checked ? armStruct_ |= 0x0020 : armStruct_ &= 0xFFDF;
 }
 
 void ICStructDefineFrame::on_subArmForwardLimitButton_toggled(bool checked)
 {
-    ICVirtualHost::GlobalVirtualHost()->SetSubArmForwardLimit(checked);
+   checked ? armStruct_ |= 0x0010 : armStruct_ &= 0xFFEF;
 }

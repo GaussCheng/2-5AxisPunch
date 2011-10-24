@@ -118,6 +118,9 @@ private:
     bool isDoAction_;
     QPoint mousePoint_;
     int oldHintCode_;
+    bool isXPosChanged_;
+    bool isYPosChanged_;
+    bool isZPosChanged_;
 
 };
 
