@@ -86,6 +86,27 @@ void ICGroupMoldUIItem::AddOtherGroup(const ICGroupMoldUIItem &other)
     }
 }
 
+ICMoldItem* ICGroupMoldUIItem::MoldItemAt(int index)
+{
+    const int topItemCount = TopItemCount();
+    for(int i = 0; i != topItemCount; ++i)
+    {
+        if(index < at(i).ItemCount())
+        {
+            if(index == 0)
+            {
+                return at(i).BaseItem();
+            }
+            else
+            {
+                return at(i).at(index - 1).BaseItem();
+            }
+        }
+        index -= at(i).ItemCount();
+    }
+    return NULL;
+}
+
 void ICTopMoldUIItem::SetStepNum(int stepNum)
 {
     baseItem_.SetNum(stepNum);

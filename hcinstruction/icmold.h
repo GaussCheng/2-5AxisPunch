@@ -180,6 +180,7 @@ public:
     int TopItemCount() const { return topItems_.size();}
     const ICTopMoldUIItem& at(int index) const { return topItems_.at(index);}
     ICTopMoldUIItem& at(int index) { return topItems_[index];}
+    ICMoldItem* MoldItemAt(int index);
 
     void InsertTopItem(int pos, const ICTopMoldUIItem &item) { topItems_.insert(pos, item);}
     void RemoveTopItem(int pos) { topItems_.removeAt(pos);}
@@ -191,6 +192,7 @@ public:
 private:
     QList<ICTopMoldUIItem> topItems_;
 };
+
 
 inline QByteArray ICMoldItem::ToString() const
 {
@@ -431,5 +433,6 @@ inline int ICMold::LastStep() const
 {
     return moldContent_.last().Num();
 }
+
 
 #endif // ICMOLD_H
