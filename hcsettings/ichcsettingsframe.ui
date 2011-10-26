@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
+    <width>1192</width>
     <height>460</height>
    </rect>
   </property>
@@ -26,7 +26,7 @@
       <number>20</number>
      </property>
      <item>
-      <widget class="ICPageTab" name="axisXToolButton" native="true">
+      <widget class="ICPageTab" name="axisX1ToolButton" native="true">
        <property name="minimumSize">
         <size>
          <width>67</width>
@@ -42,7 +42,7 @@
       </widget>
      </item>
      <item>
-      <widget class="ICPageTab" name="axisYToolButton" native="true">
+      <widget class="ICPageTab" name="axisY1ToolButton" native="true">
        <property name="minimumSize">
         <size>
          <width>67</width>
@@ -74,7 +74,71 @@
       </widget>
      </item>
      <item>
-      <widget class="ICPageTab" name="structDefButton" native="true">
+      <widget class="ICPageTab" name="axisX2ToolButton" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>67</width>
+         <height>34</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>67</width>
+         <height>34</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="ICPageTab" name="axisY2ToolButton" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>67</width>
+         <height>34</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>67</width>
+         <height>34</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="ICPageTab" name="axisAToolButton" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>67</width>
+         <height>34</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>67</width>
+         <height>34</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="ICPageTab" name="axisBToolButton" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>67</width>
+         <height>34</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>67</width>
+         <height>34</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="ICPageTab" name="axisCToolButton" native="true">
        <property name="minimumSize">
         <size>
          <width>67</width>

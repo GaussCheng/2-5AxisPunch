@@ -70,9 +70,9 @@ private slots:
     void on_axisYToolButton_clicked();
     void on_axisXToolButton_clicked();
     void on_structDefButton_clicked();
-    void on_seletHmiButton_clicked();
+//    void on_seletHmiButton_clicked();
     void on_selectHostButton_clicked();
-    void on_saveParaButton_clicked();
+//    void on_saveParaButton_clicked();
     void StatusRefresh();
     void on_structSelectHostButton_clicked();
 };

@@ -41,7 +41,6 @@ public Q_SLOTS:
     void HideOrigin();
     void ShowReturn();
     void HideReturn();
-    void SetChildPageName(const QString& name);
 
 //    void SetBackLightOff();
 //    void SetBackLightOn();
@@ -118,6 +117,9 @@ private:
     bool isDoAction_;
     QPoint mousePoint_;
     int oldHintCode_;
+    bool isXPosChanged_;
+    bool isYPosChanged_;
+    bool isZPosChanged_;
 
 };
 

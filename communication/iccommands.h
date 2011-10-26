@@ -158,6 +158,53 @@ protected:
     virtual QVariant Send(modbus_param_t *modbusParam);
 };
 
+class ICUpdateHostRequestCommand: public ICCommunicationCommandBase
+{
+public:
+protected:
+    virtual QVariant Send(modbus_param_t *modbusParam);
+};
+
+class ICUpdateHostTransferCommand: public ICCommunicationCommandBase
+{
+public:
+    QByteArray DataBuffer() const { return dataBuffer_;}
+    void SetDataBuffer(const QByteArray& data) { dataBuffer_ = data;}
+protected:
+    virtual QVariant Send(modbus_param_t *modbusParam);
+
+private:
+    QByteArray dataBuffer_;
+};
+
+class ICUpdateHostFinishCommand: public ICCommunicationCommandBase
+{
+public:
+protected:
+    virtual QVariant Send(modbus_param_t *modbusParam);
+};
+
+class ICUpdateHostRestartCommand: public ICCommunicationCommandBase
+{
+public:
+protected:
+    virtual QVariant Send(modbus_param_t *modbusParam);
+};
+
+class ICUpdateHostQueryCommand: public ICCommunicationCommandBase
+{
+public:
+protected:
+    virtual QVariant Send(modbus_param_t *modbusParam);
+};
+
+class ICUpdateHostStart: public ICCommunicationCommandBase
+{
+public:
+protected:
+    virtual QVariant Send(modbus_param_t *modbusParam);
+};
+
 Q_DECLARE_METATYPE(ICTeachStepCommand::ActionItem);
 
 #endif // ICCOMMANDS_H

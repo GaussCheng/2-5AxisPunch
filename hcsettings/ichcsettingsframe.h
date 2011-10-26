@@ -18,8 +18,6 @@ public:
     explicit ICHCSettingsFrame(QWidget *parent = 0);
     ~ICHCSettingsFrame();
 
-    enum AxisSelect{None, AxisX, AxisY, AxisZ };
-
 signals:
     void CurrentAxisChanged(QString currentAxisName, int axis);
 
@@ -30,10 +28,14 @@ protected:
 
 private slots:
     void on_axisZToolButton_clicked();
-    void on_axisYToolButton_clicked();
-    void on_axisXToolButton_clicked();
-    void on_structDefButton_clicked();
-    void LevelChanged(int level);
+    void on_axisY1ToolButton_clicked();
+    void on_axisX1ToolButton_clicked();
+    void on_axisY2ToolButton_clicked();
+    void on_axisX2ToolButton_clicked();
+    void on_axisAToolButton_clicked();
+    void on_axisBToolButton_clicked();
+    void on_axisCToolButton_clicked();
+//    void LevelChanged(int level);
 //    void SettingButtonClicked();
 
 private:

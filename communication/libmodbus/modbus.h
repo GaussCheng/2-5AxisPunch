@@ -153,6 +153,7 @@ extern "C" {
 #define FC_HC_GET_AXIS_PARA         0x45
 #define FC_HC_SELECT_CONFIG         0x46
 #define FC_HC_SET_AXIS_PARA         0x47
+#define FC_HC_UPDATE_START          0x55
 #endif
 
 /* Protocol exceptions */
@@ -425,6 +426,13 @@ int hc_set_axis_parameter(modbus_param_t *mb_param,
                           int frame,
                           int axis,
                           uint16_t* configs);
+
+int hc_update_host_req(modbus_param_t *mb_param);
+int hc_update_host_transfer(modbus_param_t* mb_param, int addr, char* data);
+int hc_update_host_finish(modbus_param_t *mb_param);
+int hc_update_host_restart(modbus_param_t *mb_param);
+int hc_update_host_query(modbus_param_t *mb_param);
+int hc_update_host_start(modbus_param_t *mb_param, int slave);
 #endif
 
 

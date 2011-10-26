@@ -94,7 +94,10 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     screenSaver_(new ICScreenSaver()),
     isBackLightOff_(false),
     isOrigined_(false),
-    isDoAction_(false)
+    isDoAction_(false),
+    isXPosChanged_(false),
+    isYPosChanged_(false),
+    isZPosChanged_(false)
 {
     connect(this,
             SIGNAL(LoadMessage(QString)),
@@ -102,7 +105,6 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
             SLOT(showMessage(QString)));
     emit LoadMessage("Connected");
     ui->setupUi(this);
-    ui->infoContainer->hide();
     icMainFrame = this;
     screenSaver_->hide();
     buttonGroup_ = new QButtonGroup();
@@ -235,7 +237,6 @@ void MainFrame::keyPressEvent(QKeyEvent *e)
         QWidget::keyPressEvent(e);
     }
     }
-    ui->childPageNameLabel->setText("");
 }
 
 void MainFrame::InitCategoryPage()
@@ -354,14 +355,6 @@ void MainFrame::InitSignal()
             this,
             SLOT(ReturnButtonClicked()));
 
-//    connect(recordPage_,
-//            SIGNAL(LoadFileInfoButtonClicked(QString)),
-//            this,
-//            SLOT(ShowFunctionPage()));
-    connect(functionPage_,
-            SIGNAL(SettingPageShown(QString)),
-            this,
-            SLOT(SetChildPageName(QString)));
     connect(ICProgramHeadFrame::Instance(),
             SIGNAL(LevelChanged(int)),
             this,
@@ -370,10 +363,6 @@ void MainFrame::InitSignal()
             SIGNAL(StepChanged(int)),
             this,
             SLOT(StepChanged(int)));
-//    connect(originExecutingPage_,
-//            SIGNAL(OriginStatusChanged(bool)),
-//            this,
-//            SLOT(SetOrigined(bool)));
 }
 
 void MainFrame::UpdateTranslate()
@@ -407,24 +396,42 @@ void MainFrame::CategoryButtonClicked()
     //        centerStackedLayout_->addWidget(monitorPage_);
     //    }
     ICProgramHeadFrame::Instance()->SetCurrentCategoryName(clickedButton->text());
-    ui->childPageNameLabel->setText("");
 }
 
 void MainFrame::StatusRefreshed()
 {
     static ICAlarmString* alarmString = ICAlarmString::Instance();
     static ICVirtualHost* virtualHost = ICVirtualHost::GlobalVirtualHost();
+    if(isXPosChanged_)
+    {
+        ui->xPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
+        isXPosChanged_ = false;
+    }
+    if(isYPosChanged_)
+    {
+        ui->yPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
+        isYPosChanged_ = false;
+    }
+    if(isZPosChanged_)
+    {
+        ui->zPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
+        isZPosChanged_ = false;
+    }
     int pos = virtualHost->HostStatus(ICVirtualHost::XPos).toInt();
     if(pos != oldXPos_)
     {
         oldXPos_ = pos;
         ui->xPosLabel->setText(QString().sprintf("%.1f", pos / 10.0));
+        ui->xPosLabel->setStyleSheet("color: rgb(0, 0, 127);background-color: rgb(85, 255, 127);");
+        isXPosChanged_ = true;
     }
     pos = virtualHost->HostStatus(ICVirtualHost::YPos).toInt();
     if(pos != oldYPos_)
     {
         oldYPos_ = pos;
         ui->yPosLabel->setText(QString().sprintf("%.1f", pos / 10.0));
+        ui->yPosLabel->setStyleSheet("color: rgb(0, 0, 127);background-color: rgb(85, 255, 127);");
+        isYPosChanged_ = true;
     }
 
     pos = virtualHost->HostStatus(ICVirtualHost::ZPos).toInt();
@@ -432,6 +439,8 @@ void MainFrame::StatusRefreshed()
     {
         oldZPos_ = pos;
         ui->zPosLabel->setText(QString().sprintf("%.1f", pos / 10.0));
+        ui->zPosLabel->setStyleSheet("color: rgb(0, 0, 127);background-color: rgb(85, 255, 127);");
+        isZPosChanged_ = true;
     }
 
     newLedFlags_ = 0;
@@ -731,7 +740,6 @@ void MainFrame::ReturnButtonClicked()
     {
         ShowStandbyPage();
     }
-    ui->childPageNameLabel->setText("");
 
 }
 
@@ -746,11 +754,6 @@ void MainFrame::RecordButtonClicked()
     {
         centerStackedLayout_->setCurrentWidget(recordPage_);
     }
-}
-
-void MainFrame::SetChildPageName(const QString &name)
-{
-    ui->childPageNameLabel->setText(name);
 }
 
 void MainFrame::LevelChanged(int level)

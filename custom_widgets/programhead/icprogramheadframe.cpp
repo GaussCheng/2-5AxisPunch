@@ -51,7 +51,8 @@ void ICProgramHeadFrame::SetCurrentCategoryName(const QString & categoryName)
 void ICProgramHeadFrame::UpdateDateTime()
 {
     QDateTime dateTime = QDateTime::currentDateTime();
-    ui->currentDateTimeLabel->setText(dateTime.toString("yyyy/MM/dd  hh:mm"));
+    ui->currentTimeLabel->setText(dateTime.toString("hh:mm"));
+    ui->currentDateLabel->setText(dateTime.toString("yyyy-MM-dd"));
 }
 
 void ICProgramHeadFrame::InitSignal()

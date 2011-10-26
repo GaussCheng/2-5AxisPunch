@@ -4,5 +4,7 @@
         <file>resource/rightTagBG.png</file>
         <file>resource/rightTagBG_Pressed.png</file>
         <file>resource/leftTagBG_Pressed.png</file>
+        <file>resource/leftTagBG_disabled.png</file>
+        <file>resource/rightTagBG_disabled.png</file>
     </qresource>
 </RCC>

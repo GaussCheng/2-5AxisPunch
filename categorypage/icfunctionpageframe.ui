@@ -63,6 +63,20 @@
       </spacer>
      </item>
      <item>
+      <widget class="ICPageTag" name="stackSettingWidget" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>350</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <item>
       <widget class="ICPageTag" name="productSettingWidget" native="true">
        <property name="minimumSize">
         <size>
@@ -72,20 +86,6 @@
        </property>
        <property name="styleSheet">
         <string notr="true">border-color: rgb(0, 0, 115);</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_5">
-     <item>
-      <widget class="ICPageTag" name="timeSettingWidget" native="true">
-       <property name="minimumSize">
-        <size>
-         <width>350</width>
-         <height>0</height>
-        </size>
        </property>
       </widget>
      </item>
@@ -120,7 +120,7 @@
       </spacer>
      </item>
      <item>
-      <widget class="ICPageTag" name="stackSettingWidget" native="true">
+      <widget class="ICPageTag" name="systemSettingWidget" native="true">
        <property name="minimumSize">
         <size>
          <width>350</width>
@@ -130,9 +130,6 @@
       </widget>
      </item>
     </layout>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_9"/>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_10">
@@ -177,7 +174,10 @@
       </spacer>
      </item>
      <item>
-      <widget class="ICPageTag" name="systemSettingWidget" native="true">
+      <widget class="ICPageTag" name="machineStructConfig" native="true">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="minimumSize">
         <size>
          <width>350</width>

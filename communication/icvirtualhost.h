@@ -116,6 +116,13 @@ public:
         SYS_C_TotalL,
         SYS_C_TotalH,
         SYS_C_XorSum,
+        SYS_Config_Signal,
+        SYS_Config_Arm,
+        SYS_Config_Out,
+        SYS_Config_Resv0,
+        SYS_Config_Resv1,
+        SYS_Config_Resv2,
+        SYS_Config_Xorsum,
 #endif
 
         SYS_X_Origin,
@@ -179,11 +186,11 @@ public:
         ACT_CLSMD_On,
         ACT_EJECT_On,
         ACT_LAYOUT_On,
-        ACT_CLIP_12On,
-        ACT_CLIP_13On,
-        ACT_CLIP_14On,
-        ACT_CLIP_15On,
-        ACT_CLIP_16On,
+        ACT_CORE1_ON,
+        ACT_CORE2_ON,
+        ACT_AUX1,
+        ACT_AUX2,
+        ACT_AUX3,
         ACT_CLIP_1Off,
         ACT_CLIP_2Off,
         ACT_CLIP_3Off,
@@ -195,11 +202,11 @@ public:
         ACT_CLSMD_Off,
         ACT_EJECT_Off,
         ACT_LAYOUT_Off,
-        ACT_CLIP_12Off,
-        ACT_CLIP_13Off,
-        ACT_CLIP_14Off,
-        ACT_CLIP_15Off,
-        ACT_CLIP_16Off,
+        ACT_CORE1_OFF,
+        ACT_CORE2_OFF,
+        ACT_AUX4,
+        ACT_AUX5,
+        ACT_AUX6,
         SYS_CheckSum,
         SYS_Param_Count
     };
@@ -277,6 +284,26 @@ public:
         Return          = 0x24,
         Auto            = 0x60,
         Manual          = 0x80
+    };
+
+    enum ICAxisDefine
+    {
+        ICAxisDefine_None,
+        ICAxisDefine_Pneumatic,
+        ICAxisDefine_Reve,
+        ICAxisDefine_Servo
+    };
+
+    enum ICAxis
+    {
+        ICAxis_AxisX1,
+        ICAxis_AxisY1,
+        ICAxis_AxisZ,
+        ICAxis_AxisX2,
+        ICAxis_AxisY2,
+        ICAxis_AxisA,
+        ICAxis_AxisB,
+        ICAxis_AxisC
     };
 
     enum ICSystemParameterAddr
@@ -471,7 +498,7 @@ public:
     void SetGlobalSpeed(int speed);
 
     void SaveSystemConfig();
-    void SaveAxisParam();
+    void SaveAxisParam(int axis);
     void ReConfigure();
 
     bool IsSpeedEnable() const { return isSpeedEnable_;}
@@ -483,8 +510,24 @@ public:
     int FinishProductCount() const { return productCount_;}
     void SetFinishProductCount(int product) { productCount_ = product;}
 
-    bool IsSingleArm() const { return ((systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0300) >> 8) == 0;}
+    bool IsSingleArm() const { return (systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0100) > 0;}
+    void SetSingleArm(bool isSingle);
+    bool HasMainArmForwardLimit() const { return (systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0001) > 0; }
+    void SetMainArmForwardLimit(bool hasForward);
+    bool HasMainArmBackwardLimit() const { return (systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0002) > 0;}
+    void SetMainArmBackwardLimit(bool hasBackward);
+    bool HasMainArmDownLimit() const { return (systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0008) > 0;}
+    void SetMainArmDownLimit(bool hasDown);
+    bool HasSubArmForwardLimit() const { return (systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0010) > 0;}
+    void SetSubArmForwardLimit(bool hasForward);
+    bool HasSubArmBackwardLimit() const { return (systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0020) > 0;}
+    void SetSubArmBackwardLimit(bool hasBackward);
+    bool HasSubArmDownLimit() const { return (systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0080) > 0;}
+    void SetSubArmDownLimit(bool hasDown);
 
+    ICAxisDefine AxisDefine(ICAxis which) const;
+    void CalAxisDefine(int &config, ICAxis which, ICAxisDefine define) const;
+    void SetAxisDefine(int config) { systemParamMap_.insert(SYS_Config_Arm, config);}
 public Q_SLOTS:
     void SetMoldParam(int param, int value);
 Q_SIGNALS:
@@ -508,6 +551,8 @@ private:
     void WriteSubTohost_();
     void WriteSystemTohost_();
     void AppendDWord_(QVector<uint8_t> &datas, uint value) { datas.append(value & 0x00FF); datas.append(value >> 8);}
+    void GetAxisParam_(const QString& file, int start, int end, QVector<uint>& tmp);
+    void SaveAxisParamHelper_(const QString& file, int start, int end);
     ICSystemParameterMap systemParamMap_;
     QScopedPointer<ICMold> currentMold_;
     ICMacroSubroutine* subroutines_;
@@ -733,6 +778,68 @@ inline void ICVirtualHost::SetOriginPosition(bool isHorizontal)
     val &= 0xFFFFDFFF;
     (isHorizontal ? val |= 0x00001000 : val &= 0xFFFFEFFF);
     systemParamMap_.insert(SYS_Function, val);
+}
+
+inline void ICVirtualHost::SetSingleArm(bool isSingle)
+{
+    int val = SystemParameter(SYS_ARM_CONFIG).toInt();
+    isSingle ? val &= 0xFEFF : val |= 0x100;
+    systemParamMap_.insert(SYS_ARM_CONFIG, val);
+}
+
+inline void ICVirtualHost::SetMainArmForwardLimit(bool hasForward)
+{
+    int val = SystemParameter(SYS_ARM_CONFIG).toInt();
+    hasForward ? val |= 0x0001 : val &= 0xFFFE;
+    systemParamMap_.insert(SYS_ARM_CONFIG, val);
+}
+
+inline void ICVirtualHost::SetMainArmBackwardLimit(bool hasBackward)
+{
+    int val = SystemParameter(SYS_ARM_CONFIG).toInt();
+    hasBackward ? val |= 0x0002 : val &= 0xFFFD;
+    systemParamMap_.insert(SYS_ARM_CONFIG, val);
+}
+
+inline void ICVirtualHost::SetMainArmDownLimit(bool hasDown)
+{
+    int val = SystemParameter(SYS_ARM_CONFIG).toInt();
+    hasDown ? val |= 0x0008 : val &= 0xFFF7;
+    systemParamMap_.insert(SYS_ARM_CONFIG, val);
+}
+
+inline void ICVirtualHost::SetSubArmForwardLimit(bool hasForward)
+{
+    int val = SystemParameter(SYS_ARM_CONFIG).toInt();
+    hasForward ? val |= 0x0010 : val &= 0xFFEF;
+    systemParamMap_.insert(SYS_ARM_CONFIG, val);
+}
+
+inline void ICVirtualHost::SetSubArmBackwardLimit(bool hasBackward)
+{
+    int val = SystemParameter(SYS_ARM_CONFIG).toInt();
+    hasBackward ? val |= 0x0020 : val &= 0xFFDF;
+    systemParamMap_.insert(SYS_ARM_CONFIG, val);
+}
+
+inline void ICVirtualHost::SetSubArmDownLimit(bool hasDown)
+{
+    int val = SystemParameter(SYS_ARM_CONFIG).toInt();
+    hasDown ? val |= 0x0080 : val &= 0xFF7F;
+    systemParamMap_.insert(SYS_ARM_CONFIG, val);
+}
+
+inline ICVirtualHost::ICAxisDefine ICVirtualHost::AxisDefine(ICAxis which) const
+{
+    return static_cast<ICAxisDefine>((systemParamMap_.value(SYS_Config_Arm).toInt() >> (which << 1)) & 0x0003);
+}
+
+inline void ICVirtualHost::CalAxisDefine(int &config, ICAxis which, ICAxisDefine define) const
+{
+    int mask = ~(0x003 << (which << 1));
+    config &= mask;
+    mask = define << (which << 1);
+    config |= mask;
 }
 
 #endif // ICVIRTUALHOST_H

@@ -6,6 +6,7 @@
 #include "statuslabel.h"
 
 class QString;
+class ICTuneMoldDialog;
 
 namespace Ui {
     class ICSystemStatusFrame;
@@ -48,6 +49,9 @@ public:
     void SetSystemStop();
     QSize sizeHint() const { return QSize(167, 36);}
 
+private slots:
+    void on_immButton_clicked();
+
 private:
     Ui::ICSystemStatusFrame *ui;
 
@@ -56,6 +60,7 @@ private:
     int currentStatus_;
     QPixmap singleCycle_;
     QPixmap stopping_;
+    ICTuneMoldDialog* tuneMoldDialog_;
 };
 
 

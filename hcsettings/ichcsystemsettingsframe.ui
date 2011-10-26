@@ -32,13 +32,16 @@
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="systemSettingPage">
       <attribute name="title">
        <string>System Settings</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="spacing">
+        <number>20</number>
+       </property>
        <item>
         <widget class="QPushButton" name="keyToneButton">
          <property name="sizePolicy">
@@ -267,6 +270,19 @@
          </item>
         </layout>
        </item>
+       <item>
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="levelManagementPage">
@@ -274,6 +290,9 @@
        <string>Level Management</string>
       </attribute>
       <layout class="QFormLayout" name="formLayout">
+       <property name="fieldGrowthPolicy">
+        <enum>QFormLayout::FieldsStayAtSizeHint</enum>
+       </property>
        <property name="verticalSpacing">
         <number>20</number>
        </property>
@@ -395,6 +414,9 @@
        <string>Admin Settings</string>
       </attribute>
       <layout class="QFormLayout" name="formLayout_2">
+       <property name="fieldGrowthPolicy">
+        <enum>QFormLayout::FieldsStayAtSizeHint</enum>
+       </property>
        <item row="0" column="1">
         <widget class="ICLineEditWithVirtualKeyboard" name="pwdEdit">
          <property name="enabled">
@@ -649,6 +671,86 @@ height: 33px;
          </item>
          <item>
           <widget class="ICPageTab" name="axisZToolButton" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>67</width>
+             <height>34</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>67</width>
+             <height>34</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="ICPageTab" name="axisX2ToolButton" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>67</width>
+             <height>34</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>67</width>
+             <height>34</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="ICPageTab" name="axisY2ToolButton" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>67</width>
+             <height>34</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>67</width>
+             <height>34</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="ICPageTab" name="axisAToolButton" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>67</width>
+             <height>34</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>67</width>
+             <height>34</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="ICPageTab" name="axisBToolButton" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>67</width>
+             <height>34</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>67</width>
+             <height>34</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="ICPageTab" name="axisCToolButton" native="true">
            <property name="minimumSize">
             <size>
              <width>67</width>
@@ -1114,11 +1216,6 @@ height: 33px;
  </widget>
  <customwidgets>
   <customwidget>
-   <class>ICLineEditWithVirtualKeyboard</class>
-   <extends>QLineEdit</extends>
-   <header>iclineeditwithvirtualkeyboard.h</header>
-  </customwidget>
-  <customwidget>
    <class>ICPageTab</class>
    <extends>QWidget</extends>
    <header>icpagetab.h</header>
@@ -1128,6 +1225,11 @@ height: 33px;
    <class>ICLineEditWithVirtualNumericKeypad</class>
    <extends>QLineEdit</extends>
    <header>iclineeditwithvirtualnumerickeypad.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ICLineEditWithVirtualKeyboard</class>
+   <extends>QLineEdit</extends>
+   <header>iclineeditwithvirtualkeyboard.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

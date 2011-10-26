@@ -14,37 +14,23 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     ui(new Ui::ICStructDefineFrame)
 {
     ui->setupUi(this);
-    armTypeMaskMap_.insert("x1", 0);
-    armTypeMaskMap_.insert("y1", 2);
-    armTypeMaskMap_.insert("x2", 4);
-    armTypeMaskMap_.insert("y2", 6);
-    armTypeMaskMap_.insert("arm", 8);
-    connect(ui->x1Select,
-            SIGNAL(currentIndexChanged(int)),
-            this,
-            SLOT(OnSelectChanged(int)));
-    connect(ui->x2Select,
-            SIGNAL(currentIndexChanged(int)),
-            this,
-            SLOT(OnSelectChanged(int)));
-    connect(ui->y1Select,
-            SIGNAL(currentIndexChanged(int)),
-            this,
-            SLOT(OnSelectChanged(int)));
-    connect(ui->y2Select,
-            SIGNAL(currentIndexChanged(int)),
-            this,
-            SLOT(OnSelectChanged(int)));
-    connect(ui->armSelect,
-            SIGNAL(currentIndexChanged(int)),
-            this,
-            SLOT(OnSelectChanged(int)));
-    armStruct_ = ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::SYS_ARM_CONFIG).toUInt();
-    ui->x1Select->setCurrentIndex(armStruct_ & 0x0003);
-    ui->y1Select->setCurrentIndex(((armStruct_ & 0x000C) >> 2) == 1 ? 0 : 1);
-    ui->x2Select->setCurrentIndex((armStruct_ & 0x0030) >> 4);
-    ui->y2Select->setCurrentIndex(((armStruct_ & 0x00C0) >> 6) == 1 ? 0 : 1);
-    ui->armSelect->setCurrentIndex(((armStruct_ & 0x0300) >> 8) == 1 ? 0 : 1);
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    armStruct_ = host->SystemParameter(ICVirtualHost::SYS_ARM_CONFIG).toUInt();
+    if(host->IsSingleArm())
+    {
+        ui->singleArmButton->setChecked(true);
+        on_doubleArmButton_toggled(false);
+    }
+    else
+    {
+        ui->doubleArmButton->setChecked(true);
+    }
+    ui->mainArmForwardLimitButton->setChecked(host->HasMainArmForwardLimit());
+    ui->mainArmBackwardLimitButton->setChecked(host->HasMainArmBackwardLimit());
+    ui->mainArmDownLimitButton->setChecked(host->HasMainArmDownLimit());
+    ui->subArmForwardLimitButton->setChecked(host->HasSubArmForwardLimit());
+    ui->subArmBackwardLimitButton->setChecked(host->HasSubArmBackwardLimit());
+    ui->subArmDownLimitButton->setChecked(host->HasSubArmDownLimit());
 }
 
 ICStructDefineFrame::~ICStructDefineFrame()
@@ -64,24 +50,6 @@ void ICStructDefineFrame::changeEvent(QEvent *e)
     }
 }
 
-void ICStructDefineFrame::OnSelectChanged(int index)
-{
-    QString armType = sender()->property("armType").toString();
-    uint value = 0;
-    if(armType == "y1" || armType == "y2")
-    {
-        value = (index == 0) ? 1 : 3;
-    }
-    else
-    {
-        value = index;
-    }
-    uint mask = ~(3 << (armTypeMaskMap_.value(armType)));
-    qDebug()<<mask;
-    armStruct_ &= mask;
-    armStruct_ |= (value << (armTypeMaskMap_.value(armType)));
-    qDebug()<<armStruct_;
-}
 
 void ICStructDefineFrame::on_saveButton_clicked()
 {
@@ -98,11 +66,59 @@ void ICStructDefineFrame::on_saveButton_clicked()
     dataBuffer[6] = sum;
     command.SetSlave(process->SlaveID());
     command.SetDataBuffer(dataBuffer);
-    command.SetAxis(3);
+    command.SetAxis(8);
     if(process->ExecuteCommand(command).toBool())
     {
         ICVirtualHost::GlobalVirtualHost()->SetSystemParameter(ICVirtualHost::SYS_ARM_CONFIG, armStruct_);
         ICVirtualHost::GlobalVirtualHost()->SaveSystemConfig();
         QMessageBox::information(this, tr("Tips"), tr("Save Sucessfully!"));
     }
+}
+
+void ICStructDefineFrame::on_doubleArmButton_toggled(bool checked)
+{
+    if(checked)
+    {
+        ui->subArmBox->setEnabled(true);
+    }
+    else
+    {
+        ui->subArmBox->setEnabled(false);
+    }
+    checked ? armStruct_ &= 0xFEFF : armStruct_ |= 0x100;
+}
+
+void ICStructDefineFrame::on_mainArmDownLimitButton_toggled(bool checked)
+{
+//    ICVirtualHost::GlobalVirtualHost()->SetMainArmDownLimit(checked);
+    checked ? armStruct_ |= 0x0008 : armStruct_ &= 0xFFF7;
+}
+
+void ICStructDefineFrame::on_mainArmBackwardLimitButton_toggled(bool checked)
+{
+//    ICVirtualHost::GlobalVirtualHost()->SetMainArmBackwardLimit(checked);
+     checked ? armStruct_ |= 0x0002 : armStruct_ &= 0xFFFD;
+}
+
+void ICStructDefineFrame::on_mainArmForwardLimitButton_toggled(bool checked)
+{
+//    ICVirtualHost::GlobalVirtualHost()->SetMainArmForwardLimit(checked);
+    checked ? armStruct_ |= 0x0001 : armStruct_ &= 0xFFFE;
+}
+
+void ICStructDefineFrame::on_subArmDownLimitButton_toggled(bool checked)
+{
+//    ICVirtualHost::GlobalVirtualHost()->SetSubArmDownLimit(checked);
+    checked ? armStruct_ |= 0x0080 : armStruct_ &= 0xFF7F;
+}
+
+void ICStructDefineFrame::on_subArmBackwardLimitButton_toggled(bool checked)
+{
+//    ICVirtualHost::GlobalVirtualHost()->SetSubArmBackwardLimit(checked);
+    checked ? armStruct_ |= 0x0020 : armStruct_ &= 0xFFDF;
+}
+
+void ICStructDefineFrame::on_subArmForwardLimitButton_toggled(bool checked)
+{
+   checked ? armStruct_ |= 0x0010 : armStruct_ &= 0xFFEF;
 }

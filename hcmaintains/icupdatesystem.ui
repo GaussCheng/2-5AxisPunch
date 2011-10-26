@@ -33,7 +33,7 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="0" colspan="5">
+   <item row="1" column="0" colspan="9">
     <widget class="QLabel" name="deviceShowLabel">
      <property name="frameShape">
       <enum>QFrame::Box</enum>
@@ -59,7 +59,7 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="0" colspan="5">
+   <item row="3" column="0" colspan="9">
     <widget class="QLabel" name="versionShowLabel">
      <property name="frameShape">
       <enum>QFrame::Box</enum>
@@ -85,7 +85,7 @@
      </property>
     </widget>
    </item>
-   <item row="5" column="0" colspan="5">
+   <item row="5" column="0" colspan="9">
     <widget class="QLabel" name="copyFilesShowLabel">
      <property name="frameShape">
       <enum>QFrame::Box</enum>
@@ -98,7 +98,7 @@
      </property>
     </widget>
    </item>
-   <item row="6" column="0" colspan="5">
+   <item row="6" column="0" colspan="9">
     <widget class="QProgressBar" name="copyFilesProgressBar">
      <property name="value">
       <number>24</number>
@@ -114,12 +114,12 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>4.Reboot</string>
+      <string>4.Status</string>
      </property>
     </widget>
    </item>
-   <item row="8" column="0" colspan="5">
-    <widget class="QLabel" name="rebootShowLabel">
+   <item row="8" column="0" colspan="9">
+    <widget class="QLabel" name="statusLabel">
      <property name="frameShape">
       <enum>QFrame::Box</enum>
      </property>
@@ -179,11 +179,11 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>Update</string>
+      <string>Update HMI</string>
      </property>
     </widget>
    </item>
-   <item row="9" column="4">
+   <item row="9" column="8">
     <spacer name="horizontalSpacer_3">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -195,6 +195,64 @@
       </size>
      </property>
     </spacer>
+   </item>
+   <item row="9" column="6">
+    <widget class="QToolButton" name="updateHostButton">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Update Host</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="4">
+    <spacer name="horizontalSpacer_4">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="9" column="7">
+    <widget class="QToolButton" name="rebootButton">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Restart</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="5">
+    <widget class="QToolButton" name="connectHostButton">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Connect Host</string>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

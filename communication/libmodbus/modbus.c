@@ -2489,6 +2489,7 @@ int hc_set_axis_parameter(modbus_param_t *mb_param, int slave, int frame, int ax
         {
             for(int i = 0; i != 16; ++i)
             {
+                printf("response[%d] = %d query[%d] = %d \n", i, response[i], i, query[i]);
                 if(response[i] != query[i])
                 {
                     return -1;
@@ -2499,6 +2500,318 @@ int hc_set_axis_parameter(modbus_param_t *mb_param, int slave, int frame, int ax
     }
     return -1;
 }
+
+int hc_update_host_req(modbus_param_t *mb_param)
+{
+#ifndef NATIVE_WIN32
+    tcflush(mb_param->fd, TCIOFLUSH);
+#endif
+    int ret;
+    int query_length;
+
+    uint8_t query[5];
+
+    query_length = 3;
+//	byte_count = nb * 2;
+//	query[query_length++] = byte_count;
+    query[0] = 0x55;
+    query[1] = 0xAA;
+    query[2] = 0x51;
+
+    ret = modbus_send(mb_param, query, query_length);
+    if (ret > 0) {
+        uint8_t response[MAX_MESSAGE_LENGTH];
+        fd_set readFD;
+        FD_ZERO(&readFD);
+        FD_SET(mb_param->fd, &readFD);
+
+        struct timeval tv;
+        tv.tv_sec = 0;
+        tv.tv_usec = 10000;
+        int ret = select(mb_param->fd + 1, &readFD, NULL, NULL, &tv);
+        if(ret == 0)
+        {
+            return -1;
+        }
+        ret = read(mb_param->fd, response, MAX_MESSAGE_LENGTH);
+        if(ret <= 0)
+        {
+            return -1;
+        }
+        uint16_t crcCal = crc16(response, 3);
+        uint16_t crcRec = (response[3] << 8) | response[4];
+        if(crcCal != crcRec)
+        {
+            return -1;
+        }
+        for(int i = 0; i != 5; ++i)
+        {
+            printf("send[%d] = %d  rec[%d] = %d \n", i, query[i], i, response[i]);
+            if(query[i] != response[i])
+            {
+                return -1;
+            }
+        }
+        return 1;
+    }
+    return -1;
+}
+
+int hc_update_host_transfer(modbus_param_t *mb_param, int addr, char *data)
+{
+#ifndef NATIVE_WIN32
+    tcflush(mb_param->fd, TCIOFLUSH);
+#endif
+    int ret;
+    int query_length;
+
+    uint8_t query[39];
+
+    query_length = 37;
+//	byte_count = nb * 2;
+//	query[query_length++] = byte_count;
+    query[0] = 0x55;
+    query[1] = 0xAA;
+    query[2] = 0x52;
+    query[3] = addr & 0X00FF;
+    query[4] = addr >> 8;
+    memcpy(&query[5], data, 32);
+
+    ret = modbus_send(mb_param, query, query_length);
+    if (ret > 0) {
+        uint8_t response[MAX_MESSAGE_LENGTH];
+        fd_set readFD;
+        FD_ZERO(&readFD);
+        FD_SET(mb_param->fd, &readFD);
+
+        struct timeval tv;
+        tv.tv_sec = 0;
+        tv.tv_usec = 10000;
+        int ret = select(mb_param->fd + 1, &readFD, NULL, NULL, &tv);
+        if(ret == 0)
+        {
+            printf("ReadTimeOut\n");
+            return -1;
+        }
+        ret = read(mb_param->fd, response, MAX_MESSAGE_LENGTH);
+        if(ret <= 0)
+        {
+            printf("ReadError\n");
+            return -1;
+        }
+        uint16_t crcCal = crc16(response, 7);
+        uint16_t crcRec = (response[7] << 8) | response[8];
+        printf("crc = %d crcRec = %d\n", crcCal, crcRec);
+        int sum = 0;
+        for(int i = 0; i != 32; ++i)
+        {
+            sum += query[5 + i + 1] << 8 | query[5 + i];
+            ++i;
+        }
+        sum &= 0x0000FFFF;
+        int recSum = (response[6] << 8) | response[5];
+        printf("sum = %d recSum = %d\n", sum, recSum);
+        if(crcCal != crcRec)
+        {
+            return -1;
+        }
+        for(int i = 0; i != 5; ++i)
+        {
+            printf("send[%d] = %d  rec[%d] = %d \n", i, query[i], i, response[i]);
+            if(query[i] != response[i])
+            {
+                return -1;
+            }
+        }
+        return sum == recSum;
+    }
+    return -1;
+}
+
+int hc_update_host_finish(modbus_param_t *mb_param)
+{
+#ifndef NATIVE_WIN32
+    tcflush(mb_param->fd, TCIOFLUSH);
+#endif
+    int ret;
+    int query_length;
+
+    uint8_t query[5];
+
+    query_length = 3;
+//	byte_count = nb * 2;
+//	query[query_length++] = byte_count;
+    query[0] = 0x55;
+    query[1] = 0xAA;
+    query[2] = 0x53;
+
+    ret = modbus_send(mb_param, query, query_length);
+    if (ret > 0) {
+        uint8_t response[MAX_MESSAGE_LENGTH];
+        fd_set readFD;
+        FD_ZERO(&readFD);
+        FD_SET(mb_param->fd, &readFD);
+
+        struct timeval tv;
+        tv.tv_sec = 0;
+        tv.tv_usec = 10000;
+        int ret = select(mb_param->fd + 1, &readFD, NULL, NULL, &tv);
+        if(ret == 0)
+        {
+            return -1;
+        }
+        ret = read(mb_param->fd, response, MAX_MESSAGE_LENGTH);
+        if(ret <= 0)
+        {
+            return -1;
+        }
+        uint16_t crcCal = crc16(response, 3);
+        uint16_t crcRec = (response[3] << 8) | response[4];
+        if(crcCal != crcRec)
+        {
+            return -1;
+        }
+        for(int i = 0; i != 5; ++i)
+        {
+            printf("send[%d] = %d  rec[%d] = %d \n", i, query[i], i, response[i]);
+            if(query[i] != response[i])
+            {
+                return -1;
+            }
+        }
+        return 1;
+    }
+    return -1;
+}
+
+int hc_update_host_restart(modbus_param_t *mb_param)
+{
+#ifndef NATIVE_WIN32
+    tcflush(mb_param->fd, TCIOFLUSH);
+#endif
+    int ret;
+    int query_length;
+
+    uint8_t query[5];
+
+    query_length = 3;
+//	byte_count = nb * 2;
+//	query[query_length++] = byte_count;
+    query[0] = 0x55;
+    query[1] = 0xAA;
+    query[2] = 0x55;
+
+    ret = modbus_send(mb_param, query, query_length);
+    if (ret > 0) {
+        uint8_t response[MAX_MESSAGE_LENGTH];
+        fd_set readFD;
+        FD_ZERO(&readFD);
+        FD_SET(mb_param->fd, &readFD);
+
+        struct timeval tv;
+        tv.tv_sec = 0;
+        tv.tv_usec = 10000;
+        int ret = select(mb_param->fd + 1, &readFD, NULL, NULL, &tv);
+        if(ret == 0)
+        {
+            return -1;
+        }
+        ret = read(mb_param->fd, response, MAX_MESSAGE_LENGTH);
+        if(ret <= 0)
+        {
+            return -1;
+        }
+        uint16_t crcCal = crc16(response, 3);
+        uint16_t crcRec = (response[3] << 8) | response[4];
+        if(crcCal != crcRec)
+        {
+            return -1;
+        }
+        for(int i = 0; i != 5; ++i)
+        {
+            printf("send[%d] = %d  rec[%d] = %d \n", i, query[i], i, response[i]);
+            if(query[i] != response[i])
+            {
+                return -1;
+            }
+        }
+        return 1;
+    }
+    return -1;
+}
+
+int hc_update_host_query(modbus_param_t *mb_param)
+{
+#ifndef NATIVE_WIN32
+    tcflush(mb_param->fd, TCIOFLUSH);
+#endif
+    int ret;
+    int query_length;
+
+    uint8_t query[5];
+
+    query_length = 3;
+//	byte_count = nb * 2;
+//	query[query_length++] = byte_count;
+    query[0] = 0x55;
+    query[1] = 0xAA;
+    query[2] = 0x54;
+
+    ret = modbus_send(mb_param, query, query_length);
+    if (ret > 0) {
+        uint8_t response[MAX_MESSAGE_LENGTH];
+        fd_set readFD;
+        FD_ZERO(&readFD);
+        FD_SET(mb_param->fd, &readFD);
+
+        struct timeval tv;
+        tv.tv_sec = 0;
+        tv.tv_usec = 10000;
+        int ret = select(mb_param->fd + 1, &readFD, NULL, NULL, &tv);
+        if(ret == 0)
+        {
+            return -1;
+        }
+        ret = read(mb_param->fd, response, MAX_MESSAGE_LENGTH);
+        if(ret <= 0)
+        {
+            return -1;
+        }
+        uint16_t crcCal = crc16(response, 4);
+        uint16_t crcRec = (response[4] << 8) | response[5];
+        if(crcCal != crcRec)
+        {
+            return -1;
+        }
+        return response[3];
+    }
+    return -1;
+}
+
+int hc_update_host_start(modbus_param_t *mb_param, int slave)
+{
+#ifndef NATIVE_WIN32
+    tcflush(mb_param->fd, TCIOFLUSH);
+#endif
+    int ret;
+    int query_length;
+
+    uint8_t query[8];
+
+    query_length = 6;
+//	byte_count = nb * 2;
+//	query[query_length++] = byte_count;
+    query[0] = slave;
+    query[1] = 0x55;
+    query[2] = 0x10;
+    query[3] = 0x10;
+    query[4] = 0x11;
+    query[5] = 0x20;
+
+    ret = modbus_send(mb_param, query, query_length);
+    return ret;
+}
+
 
 /* Initializes the modbus_param_t structure for RTU
    - device: "/dev/ttyS0"

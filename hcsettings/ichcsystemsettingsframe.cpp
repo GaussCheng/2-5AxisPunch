@@ -22,14 +22,24 @@ ICHCSystemSettingsFrame::ICHCSystemSettingsFrame(QWidget *parent) :
     InitParameter();
     ui->extentFunctionCheckBox->setChecked(ICParametersSave::Instance()->IsExtentFunctionUsed());
 
-    ui->axisXToolButton->setText(tr("X Axis"));
-    ui->axisYToolButton->setText(tr("Y Axis"));
+    ui->axisXToolButton->setText(tr("X1 Axis"));
+    ui->axisYToolButton->setText(tr("Y1 Axis"));
     ui->axisZToolButton->setText(tr("Z Axis"));
+    ui->axisX2ToolButton->setText(tr("X2 Axis"));
+    ui->axisY2ToolButton->setText(tr("Y2 Axis"));
+    ui->axisAToolButton->setText(tr("A Axis"));
+    ui->axisBToolButton->setText(tr("B Axis"));
+    ui->axisCToolButton->setText(tr("C Axis"));
     ui->structDefButton->setText(tr("Struct Define"));
 //    buttonGroup_->addButton(ui->basicSettingsToolButton);
     buttonGroup_->addButton(ui->axisXToolButton);
     buttonGroup_->addButton(ui->axisYToolButton);
     buttonGroup_->addButton(ui->axisZToolButton);
+    buttonGroup_->addButton(ui->axisX2ToolButton);
+    buttonGroup_->addButton(ui->axisY2ToolButton);
+    buttonGroup_->addButton(ui->axisAToolButton);
+    buttonGroup_->addButton(ui->axisBToolButton);
+    buttonGroup_->addButton(ui->axisCToolButton);
     buttonGroup_->addButton(ui->structDefButton);
     buttonGroup_->setExclusive(true);
     QAbstractButton* button;
@@ -542,15 +552,15 @@ void ICHCSystemSettingsFrame::SetConfig(int machineLenght,
     }
 }
 
-void ICHCSystemSettingsFrame::on_seletHmiButton_clicked()
-{
-    ICCommandProcessor* process = ICCommandProcessor::Instance();
-    ICSelecteConfigCommand command;
-    command.SetSlave(process->SlaveID());
-    command.SetSelected(currentAxis_);
-    process->ExecuteCommand(command);
-    UpdateConfigShow_();
-}
+//void ICHCSystemSettingsFrame::on_seletHmiButton_clicked()
+//{
+//    ICCommandProcessor* process = ICCommandProcessor::Instance();
+//    ICSelecteConfigCommand command;
+//    command.SetSlave(process->SlaveID());
+//    command.SetSelected(currentAxis_);
+//    process->ExecuteCommand(command);
+//    UpdateConfigShow_();
+//}
 
 void ICHCSystemSettingsFrame::on_selectHostButton_clicked()
 {
@@ -604,14 +614,14 @@ void ICHCSystemSettingsFrame::on_selectHostButton_clicked()
     host->SetSystemParameter(totalL, totalL_);
     host->SetSystemParameter(totalH, totalH_);
     host->SetSystemParameter(xorSum, xorSum_);
-    ICVirtualHost::GlobalVirtualHost()->SaveAxisParam();
+    ICVirtualHost::GlobalVirtualHost()->SaveAxisParam(currentAxis_);
     UpdateConfigShow_();
 }
 
-void ICHCSystemSettingsFrame::on_saveParaButton_clicked()
-{
-    ICVirtualHost::GlobalVirtualHost()->ReConfigure();
-}
+//void ICHCSystemSettingsFrame::on_saveParaButton_clicked()
+//{
+//    ICVirtualHost::GlobalVirtualHost()->ReConfigure();
+//}
 
 void ICHCSystemSettingsFrame::UpdateConfigShow_()
 {

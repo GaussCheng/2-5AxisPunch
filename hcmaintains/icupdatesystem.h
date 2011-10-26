@@ -2,6 +2,7 @@
 #define ICUPDATESYSTEM_H
 
 #include <QFrame>
+#include <QTimer>
 
 namespace Ui {
     class ICUpdateSystem;
@@ -18,6 +19,8 @@ public:
 protected:
     void changeEvent(QEvent *e);
     void keyPressEvent(QKeyEvent *e);
+    void showEvent(QShowEvent *e);
+    void hideEvent(QHideEvent *e);
 
 private:
     void InitInterface();
@@ -26,7 +29,12 @@ private:
     Ui::ICUpdateSystem *ui;
 
     const QString updateIniPath_;
+    const QString updateHostPath_;
     QSettings *updateSettings_;
+    QSettings *updateHostSettings_;
+    QTimer timer_;
+    int status_;
+//    QMap<int, int> hostStatusToStringMap_;
 
     void RestartAndUpdateTheProgram();
 
@@ -35,9 +43,14 @@ private slots:
     void on_refreshToolButton_clicked();
     void SystemUpdateStart();
     void RefreshUSBIniInfo();
+    void on_updateHostButton_clicked();
+    void QueryStatus();
+
+    void on_rebootButton_clicked();
+    void on_connectHostButton_clicked();
 };
 
 //TODEBUG
-extern ICUpdateSystem *icUpdateSystem;
+//extern ICUpdateSystem *icUpdateSystem;
 
 #endif // ICUPDATESYSTEM_H

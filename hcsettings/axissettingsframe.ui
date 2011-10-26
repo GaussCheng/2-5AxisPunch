@@ -46,16 +46,6 @@
         <property name="spacing">
          <number>2</number>
         </property>
-        <item row="0" column="0">
-         <widget class="QLabel" name="label">
-          <property name="text">
-           <string>Mechanical length</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="ICLineEditWithVirtualNumericKeypad" name="mechanicalLengthLineEdit"/>
-        </item>
         <item row="1" column="0">
          <widget class="QLabel" name="label_2">
           <property name="text">
@@ -86,23 +76,6 @@
         <item row="3" column="1">
          <widget class="ICLineEditWithVirtualNumericKeypad" name="externalSecurityZoneLineEdit"/>
         </item>
-        <item row="4" column="0">
-         <widget class="QLabel" name="label_8">
-          <property name="text">
-           <string>Distance/Rotation</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="1">
-         <widget class="ICLineEditWithVirtualNumericKeypad" name="distanceRotationEdit"/>
-        </item>
-        <item row="0" column="2">
-         <widget class="QLabel" name="label_3">
-          <property name="text">
-           <string>mm</string>
-          </property>
-         </widget>
-        </item>
         <item row="1" column="2">
          <widget class="QLabel" name="label_4">
           <property name="text">
@@ -128,6 +101,37 @@
          <widget class="QLabel" name="label_11">
           <property name="text">
            <string>mm</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="ICLineEditWithVirtualNumericKeypad" name="distanceRotationEdit"/>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_8">
+          <property name="text">
+           <string>Distance/Rotation</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="ICLineEditWithVirtualNumericKeypad" name="mechanicalLengthLineEdit">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>mm</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Mechanical length</string>
           </property>
          </widget>
         </item>
@@ -260,62 +264,6 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
-      <widget class="QToolButton" name="minPositionToolButton">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>80</width>
-         <height>38</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>80</width>
-         <height>38</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>MIN(-)</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QToolButton" name="maxPositionToolButton">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>80</width>
-         <height>38</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>80</width>
-         <height>38</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>MAX(+)</string>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="QToolButton" name="saveToolButton">
        <property name="enabled">
         <bool>false</bool>
@@ -351,16 +299,6 @@
       </widget>
      </item>
     </layout>
-   </item>
-   <item>
-    <widget class="QLabel" name="currentAxisLabel">
-     <property name="styleSheet">
-      <string notr="true">color: rgb(0, 0, 127);</string>
-     </property>
-     <property name="text">
-      <string>Current Axis</string>
-     </property>
-    </widget>
    </item>
    <item>
     <spacer name="verticalSpacer">

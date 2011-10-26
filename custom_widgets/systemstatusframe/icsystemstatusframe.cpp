@@ -1,6 +1,8 @@
 #include "icsystemstatusframe.h"
 #include "ui_icsystemstatusframe.h"
 
+#include "ictunemolddialog.h"
+
 //ICSystemStatusFrame * ICSystemStatusFrame::instance_ = NULL;
 
 ICSystemStatusFrame::ICSystemStatusFrame(QWidget *parent) :
@@ -11,10 +13,14 @@ ICSystemStatusFrame::ICSystemStatusFrame(QWidget *parent) :
     stopping_(":/resource/auto-stopping.png")
 {
     ui->setupUi(this);
+//    ui->programStatusLabel->hide();
+//    setMinimumWidth(minimumSize().width() - 48);
+
 
 //    this->setStyleSheet("background: gray; border: 1px solid rgb(255,255,255); \
 //                        border-radius: 24px; font-size: 15px; color:rgb(255, 0, 255);");
 
+    tuneMoldDialog_ = new ICTuneMoldDialog();
     InitInterface();
 }
 
@@ -88,7 +94,8 @@ void ICSystemStatusFrame::SetAutoStatus(AutoSatus status)
 void ICSystemStatusFrame::SetProgramStatus(const StatusLabel::DisplayStatus & displayStatus)
 {
     SetSystemStop();
-    ui->programStatusLabel->SetStatus(StatusLabel::ONSTATUS);
+//    ui->programStatusLabel->SetStatus(StatusLabel::ONSTATUS);
+    ui->immButton->setEnabled(true);
     currentStatus_ = 2;
 }
 
@@ -100,7 +107,8 @@ void ICSystemStatusFrame::SetSystemStop()
 //    }
     ui->autoStatusLabel->SetStatus(StatusLabel::CLEAR);
     ui->manualStatusLabel->SetStatus(StatusLabel::CLEAR);
-    ui->programStatusLabel->SetStatus(StatusLabel::CLEAR);
+    ui->immButton->setEnabled(false);
+//    ui->programStatusLabel->SetStatus(StatusLabel::CLEAR);
 //    ui->originStatusLabel->SetStatus(StatusLabel::CLEAR);
     currentStatus_ = 3;
 }
@@ -130,9 +138,9 @@ void ICSystemStatusFrame::InitInterface()
     ui->autoStatusLabel->SetOffStatusAttibute(":/resource/auto-stop.png");
     ui->autoStatusLabel->SetStatus(StatusLabel::ONSTATUS);
 
-    ui->programStatusLabel->SetOnStatusAttribute(":/resource/close_normal.png");
+//    ui->programStatusLabel->SetOnStatusAttribute(":/resource/close_normal.png");
 //    ui->programStatusLabel->SetOffStatusAttibute(":/resource/close_long.png");
-    ui->programStatusLabel->SetStatus(StatusLabel::ONSTATUS);
+//    ui->programStatusLabel->SetStatus(StatusLabel::ONSTATUS);
 
     ui->originStatusLabel->SetOnStatusAttribute(":/resource/origin_off.png");
     ui->originStatusLabel->SetOffStatusAttibute(":/resource/reference-identified.png");
@@ -141,4 +149,9 @@ void ICSystemStatusFrame::InitInterface()
 //    ui->stepStatusLabel->SetOffStatusAttibute(":/resource/step-stoped.png");
 //    ui->stepStatusLabel->SetStatus(StatusLabel::OFFSTATUS);
 //    ui->stepStatusLabel->setText(QString());
+}
+
+void ICSystemStatusFrame::on_immButton_clicked()
+{
+    tuneMoldDialog_->show();
 }

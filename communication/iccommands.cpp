@@ -383,3 +383,92 @@ QVariant ICSelecteConfigCommand::Send(modbus_param_t *modbusParam)
     }
     return true;
 }
+
+QVariant ICUpdateHostRequestCommand::Send(modbus_param_t *modbusParam)
+{
+    int tryedTimes = 0;
+    int ret;
+    do
+    {
+        ret = hc_update_host_req(modbusParam);
+        ++tryedTimes;
+    }while(ret < 0 && tryedTimes < RetryTimes());
+    if(ret < 0)
+    {
+        return false;
+    }
+    return true;
+}
+
+QVariant ICUpdateHostTransferCommand::Send(modbus_param_t *modbusParam)
+{
+    int tryedTimes = 0;
+    int ret;
+//    for(int addr = 0; addr != DataBuffer().size() / 32; ++addr)
+//    {
+        do
+        {
+            ret = hc_update_host_transfer(modbusParam, StartAddr(), DataBuffer().data());
+            ++tryedTimes;
+            qDebug()<<"ICTran ReSend"<<StartAddr()<<tryedTimes;
+        }while(ret < 0 && tryedTimes < RetryTimes());
+        if(ret < 0)
+        {
+            return false;
+        }
+//    }
+    return true;
+}
+
+QVariant ICUpdateHostFinishCommand::Send(modbus_param_t *modbusParam)
+{
+    int tryedTimes = 0;
+    int ret;
+    do
+    {
+        ret = hc_update_host_finish(modbusParam);
+        ++tryedTimes;
+    }while(ret < 0 && tryedTimes < RetryTimes());
+    if(ret < 0)
+    {
+        return false;
+    }
+    return true;
+}
+
+QVariant ICUpdateHostRestartCommand::Send(modbus_param_t *modbusParam)
+{
+    int tryedTimes = 0;
+    int ret;
+    do
+    {
+        ret = hc_update_host_restart(modbusParam);
+        ++tryedTimes;
+    }while(ret < 0 && tryedTimes < RetryTimes());
+    if(ret < 0)
+    {
+        return false;
+    }
+    return true;
+}
+
+QVariant ICUpdateHostQueryCommand::Send(modbus_param_t *modbusParam)
+{
+    int tryedTimes = 0;
+    int ret;
+    do
+    {
+        ret = hc_update_host_query(modbusParam);
+        ++tryedTimes;
+    }while(ret < 0 && tryedTimes < RetryTimes());
+    if(ret < 0)
+    {
+        return -1;
+    }
+    return ret;
+}
+
+QVariant ICUpdateHostStart::Send(modbus_param_t *modbusParam)
+{
+    return hc_update_host_start(modbusParam, Slave()) >= 0;
+}

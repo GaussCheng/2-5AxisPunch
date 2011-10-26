@@ -288,43 +288,52 @@ void ICVirtualHost::SaveSystemConfig()
     file.close();
 }
 
-void ICVirtualHost::SaveAxisParam()
+void ICVirtualHost::SaveAxisParam(int axis)
 {
-    QFile file("./sysconfig/paramx.txt");
-    if(file.open(QFile::WriteOnly | QFile::Text))
+    switch(axis)
     {
-        QByteArray toWrite;
-        for(ICSystemParameter i = SYS_X_Length; i != SYS_Y_Length; i = static_cast<ICSystemParameter>(i + 1))
-        {
-            toWrite += systemParamMap_.value(i).toByteArray() + "\n";
-        }
-        file.write(toWrite);
-        file.close();
+    case ICAxis_AxisX1:
+        SaveAxisParamHelper_("./sysconfig/paramx.txt",
+                             SYS_X_Length,
+                             SYS_Y_Length);
+        break;
+    case ICAxis_AxisY1:
+        SaveAxisParamHelper_("./sysconfig/paramy.txt",
+                             SYS_Y_Length,
+                             SYS_Z_Length);
+        break;
+    case ICAxis_AxisZ:
+        SaveAxisParamHelper_("./sysconfig/paramz.txt",
+                             SYS_Z_Length,
+                             SYS_P_Length);
+        break;
+    case ICAxis_AxisX2:
+        SaveAxisParamHelper_("./sysconfig/paramp.txt",
+                             SYS_P_Length,
+                             SYS_Q_Length);
+        break;
+    case ICAxis_AxisY2:
+        SaveAxisParamHelper_("./sysconfig/paramq.txt",
+                             SYS_Q_Length,
+                             SYS_A_Length);
+        break;
+    case ICAxis_AxisA:
+        SaveAxisParamHelper_("./sysconfig/parama.txt",
+                             SYS_A_Length,
+                             SYS_B_Length);
+        break;
+    case ICAxis_AxisB:
+        SaveAxisParamHelper_("./sysconfig/paramb.txt",
+                             SYS_B_Length,
+                             SYS_C_Length);
+        break;
+    case ICAxis_AxisC:
+        SaveAxisParamHelper_("./sysconfig/paramc.txt",
+                             SYS_C_Length,
+                             SYS_Config_Signal);
+        break;
     }
 
-    file.setFileName("./sysconfig/paramy.txt");
-    if(file.open(QFile::WriteOnly | QFile::Text))
-    {
-        QByteArray toWrite;
-        for(ICSystemParameter i = SYS_Y_Length; i != SYS_Z_Length; i = static_cast<ICSystemParameter>(i + 1))
-        {
-            toWrite += systemParamMap_.value(i).toByteArray() + "\n";
-        }
-        file.write(toWrite);
-        file.close();
-    }
-
-    file.setFileName("./sysconfig/paramz.txt");
-    if(file.open(QFile::WriteOnly | QFile::Text))
-    {
-        QByteArray toWrite;
-        for(ICSystemParameter i = SYS_Z_Length; i != SYS_X_Origin; i = static_cast<ICSystemParameter>(i + 1))
-        {
-            toWrite += systemParamMap_.value(i).toByteArray() + "\n";
-        }
-        file.write(toWrite);
-        file.close();
-    }
 }
 
 //private functions
@@ -433,54 +442,45 @@ void ICVirtualHost::InitSystem_()
     }
 //    tempItemValues.append(0);
 
-    QFile xParam("./sysconfig/paramx.txt");
-    if(!xParam.open(QFile::ReadOnly | QFile::Text))
-    {
-        qCritical("Open PARAMX.TXT fail");
-        //        exit(-1);
-    }
-    fileContent = xParam.readAll();
-    xParam.close();
-    items = fileContent.split('\n', QString::SkipEmptyParts);
-    int itemsIndex = 0;
-    for(int i = SYS_X_Length; i != SYS_Y_Length; ++i)
-    {
-        tempItemValues[i] = items.at(itemsIndex++).toUInt();
-        systemParamMap_.insert(static_cast<ICSystemParameter>(i), tempItemValues.at(i));
-    }
-
-    QFile yParam("./sysconfig/paramy.txt");
-    if(!yParam.open(QFile::ReadOnly | QFile::Text))
-    {
-        qCritical("Open PARAMY.TXT fail");
-        //        exit(-1);
-    }
-    fileContent = yParam.readAll();
-    yParam.close();
-    items = fileContent.split('\n', QString::SkipEmptyParts);
-    itemsIndex = 0;
-    for(int i = SYS_Y_Length; i != SYS_Z_Length; ++i)
-    {
-        tempItemValues[i] = items.at(itemsIndex++).toUInt();
-        systemParamMap_.insert(static_cast<ICSystemParameter>(i), tempItemValues.at(i));
-    }
-
-    QFile zParam("./sysconfig/paramz.txt");
-    if(!zParam.open(QFile::ReadOnly | QFile::Text))
-    {
-        qCritical("Open PARAMZ.TXT fail");
-        //        exit(-1);
-    }
-    fileContent = zParam.readAll();
-    zParam.close();
-    items = fileContent.split('\n', QString::SkipEmptyParts);
-    itemsIndex = 0;
-    for(int i = SYS_Z_Length; i != SYS_X_Origin; ++i)
-    {
-        tempItemValues[i] = items.at(itemsIndex++).toUInt();
-        systemParamMap_.insert(static_cast<ICSystemParameter>(i), tempItemValues.at(i));
-    }
-
+    GetAxisParam_("./sysconfig/paramx.txt",
+                  SYS_X_Length,
+                  SYS_Y_Length,
+                  tempItemValues);
+    GetAxisParam_("./sysconfig/paramy.txt",
+                  SYS_Y_Length,
+                  SYS_Z_Length,
+                  tempItemValues);
+#ifdef HC_8AXIS
+    GetAxisParam_("./sysconfig/paramz.txt",
+                  SYS_Z_Length,
+                  SYS_P_Length,
+                  tempItemValues);
+    GetAxisParam_("./sysconfig/paramp.txt",
+                  SYS_P_Length,
+                  SYS_Q_Length,
+                  tempItemValues);
+    GetAxisParam_("./sysconfig/paramq.txt",
+                  SYS_Q_Length,
+                  SYS_A_Length,
+                  tempItemValues);
+    GetAxisParam_("./sysconfig/parama.txt",
+                  SYS_A_Length,
+                  SYS_B_Length,
+                  tempItemValues);
+    GetAxisParam_("./sysconfig/paramb.txt",
+                  SYS_B_Length,
+                  SYS_C_Length,
+                  tempItemValues);
+    GetAxisParam_("./sysconfig/paramc.txt",
+                  SYS_C_Length,
+                  SYS_Config_Signal,
+                  tempItemValues);
+#else
+    GetAxisParam_("./sysconfig/paramz.txt",
+                  SYS_Z_Length,
+                  SYS_X_Origin,
+                  tempItemValues);
+#endif
     const int count = tempItemValues.size();
     if(count % 4 != 0)
     {
@@ -542,53 +542,45 @@ void ICVirtualHost::WriteSystemTohost_()
     }
     tempItemValues.append(0);
 
-    QFile xParam("./sysconfig/paramx.txt");
-    if(!xParam.open(QFile::ReadOnly | QFile::Text))
-    {
-        qCritical("Open PARAMX.TXT fail");
-        //        exit(-1);
-    }
-    fileContent = xParam.readAll();
-    xParam.close();
-    items = fileContent.split('\n', QString::SkipEmptyParts);
-    int itemsIndex = 0;
-    for(int i = SYS_X_Length; i != SYS_Y_Length; ++i)
-    {
-        tempItemValues[i] = items.at(itemsIndex++).toUInt();
-        systemParamMap_.insert(static_cast<ICSystemParameter>(i), tempItemValues.at(i));
-    }
-
-    QFile yParam("./sysconfig/paramy.txt");
-    if(!yParam.open(QFile::ReadOnly | QFile::Text))
-    {
-        qCritical("Open PARAMY.TXT fail");
-        //        exit(-1);
-    }
-    fileContent = yParam.readAll();
-    yParam.close();
-    items = fileContent.split('\n', QString::SkipEmptyParts);
-    itemsIndex = 0;
-    for(int i = SYS_Y_Length; i != SYS_Z_Length; ++i)
-    {
-        tempItemValues[i] = items.at(itemsIndex++).toUInt();
-        systemParamMap_.insert(static_cast<ICSystemParameter>(i), tempItemValues.at(i));
-    }
-
-    QFile zParam("./sysconfig/paramz.txt");
-    if(!zParam.open(QFile::ReadOnly | QFile::Text))
-    {
-        qCritical("Open PARAMZ.TXT fail");
-        //        exit(-1);
-    }
-    fileContent = zParam.readAll();
-    zParam.close();
-    items = fileContent.split('\n', QString::SkipEmptyParts);
-    itemsIndex = 0;
-    for(int i = SYS_Z_Length; i != SYS_X_Origin; ++i)
-    {
-        tempItemValues[i] = items.at(itemsIndex++).toUInt();
-        systemParamMap_.insert(static_cast<ICSystemParameter>(i), tempItemValues.at(i));
-    }
+    GetAxisParam_("./sysconfig/paramx.txt",
+                  SYS_X_Length,
+                  SYS_Y_Length,
+                  tempItemValues);
+    GetAxisParam_("./sysconfig/paramy.txt",
+                  SYS_Y_Length,
+                  SYS_Z_Length,
+                  tempItemValues);
+#ifdef HC_8AXIS
+    GetAxisParam_("./sysconfig/paramz.txt",
+                  SYS_Z_Length,
+                  SYS_P_Length,
+                  tempItemValues);
+    GetAxisParam_("./sysconfig/parapz.txt",
+                  SYS_P_Length,
+                  SYS_Q_Length,
+                  tempItemValues);
+    GetAxisParam_("./sysconfig/paramq.txt",
+                  SYS_Q_Length,
+                  SYS_A_Length,
+                  tempItemValues);
+    GetAxisParam_("./sysconfig/parama.txt",
+                  SYS_A_Length,
+                  SYS_B_Length,
+                  tempItemValues);
+    GetAxisParam_("./sysconfig/paramb.txt",
+                  SYS_B_Length,
+                  SYS_C_Length,
+                  tempItemValues);
+    GetAxisParam_("./sysconfig/paramc.txt",
+                  SYS_C_Length,
+                  SYS_X_Origin,
+                  tempItemValues);
+#else
+    GetAxisParam_("./sysconfig/paramz.txt",
+                  SYS_Z_Length,
+                  SYS_X_Origin,
+                  tempItemValues);
+#endif
 
     const int count = tempItemValues.size();
     if(count % 4 != 0)
@@ -842,5 +834,38 @@ void ICVirtualHost::InitAddrToSysPosMap_()
     //    SM_LAYZCNT,			//置放计数Z
 }
 
+void ICVirtualHost::GetAxisParam_(const QString &file, int start, int end, QVector<uint> &tmp)
+{
+    QFile paramFile(file);
+    if(!paramFile.open(QFile::ReadOnly | QFile::Text))
+    {
+        qCritical("Open PARAMX.TXT fail");
+        //        exit(-1);
+    }
+    QString fileContent = paramFile.readAll();
+    paramFile.close();
+    QStringList items = fileContent.split('\n', QString::SkipEmptyParts);
+    int itemsIndex = 0;
+    for(int i = start; i != end; ++i)
+    {
+        tmp[i] = items.at(itemsIndex++).toUInt();
+        systemParamMap_.insert(static_cast<ICSystemParameter>(i), tmp.at(i));
+    }
+}
+
+void ICVirtualHost::SaveAxisParamHelper_(const QString &fileName, int start, int end)
+{
+    QFile file(fileName);
+    if(file.open(QFile::WriteOnly | QFile::Text))
+    {
+        QByteArray toWrite;
+        for(ICSystemParameter i = static_cast<ICSystemParameter>(start); i != static_cast<ICSystemParameter>(end); i = static_cast<ICSystemParameter>(i + 1))
+        {
+            toWrite += systemParamMap_.value(i).toByteArray() + "\n";
+        }
+        file.write(toWrite);
+        file.close();
+    }
+}
 
 ICVirtualHost::~ICVirtualHost(){}

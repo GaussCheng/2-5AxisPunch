@@ -431,6 +431,7 @@ void ICHCInstructionPageFrame::UpdateUIProgramList_()
     int topItemRowCount;
     int index = 0;
     QColor color;
+    ICMoldItem* tmp = NULL;
     for(int i = 0; i != programList_.size(); ++i)
     {
         (i % 2 == 0 ? color.setRgb(255,255,154): color.setRgb(154,255,255));
@@ -438,13 +439,17 @@ void ICHCInstructionPageFrame::UpdateUIProgramList_()
         topItemRowCount = groupItem.ItemCount();
         for(int j = 0; j != topItemRowCount; ++j)
         {
-            if(groupItem.at(j).BaseItem()->Action() == ICInstructParam::ACT_WaitMoldOpened)
+            tmp = groupItem.MoldItemAt(j);
+            if(tmp != NULL)
             {
-                ui->moldContentListWidget->item(j + index)->setBackgroundColor("red");
-            }
-            else
-            {
-                ui->moldContentListWidget->item(j + index)->setBackgroundColor(color);
+                if(tmp->Action() == ICInstructParam::ACT_WaitMoldOpened)
+                {
+                    ui->moldContentListWidget->item(j + index)->setBackgroundColor("red");
+                }
+                else
+                {
+                    ui->moldContentListWidget->item(j + index)->setBackgroundColor(color);
+                }
             }
         }
         index += topItemRowCount;

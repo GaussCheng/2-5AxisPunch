@@ -28,6 +28,8 @@ private:
     QPixmap rightBackground_;
     QPixmap leftPressBG_;
     QPixmap rightPressBG_;
+    QPixmap leftDisableBG_;
+    QPixmap rightDisableBG_;
 };
 
 #endif // ICPAGETAG_H

@@ -14,35 +14,43 @@ ICHCSettingsFrame::ICHCSettingsFrame(QWidget *parent) :
     centralStackedLayout_(new QStackedLayout)
 {
     ui->setupUi(this);
-    ui->structDefButton->hide();
+//    ui->structDefButton->hide();
     buttonGroup_ = new QButtonGroup();
 
     InitHCSettingPage();
     InitSignal();
 //    ui->basicSettingsToolButton->setText(tr("Setting"));
-    ui->axisXToolButton->setText(tr("X Axis"));
-    ui->axisYToolButton->setText(tr("Y Axis"));
+    ui->axisX1ToolButton->setText(tr("X1 Axis"));
+    ui->axisY1ToolButton->setText(tr("Y1 Axis"));
     ui->axisZToolButton->setText(tr("Z Axis"));
-    ui->structDefButton->setText(tr("Struct Define"));
+    ui->axisX2ToolButton->setText(tr("X2 Axis"));
+    ui->axisY2ToolButton->setText(tr("Y2 Axis"));
+    ui->axisAToolButton->setText(tr("A Axis"));
+    ui->axisBToolButton->setText(tr("B Axis"));
+    ui->axisCToolButton->setText(tr("C Axis"));
 //    buttonGroup_->addButton(ui->basicSettingsToolButton);
-    buttonGroup_->addButton(ui->axisXToolButton);
-    buttonGroup_->addButton(ui->axisYToolButton);
+    buttonGroup_->addButton(ui->axisX1ToolButton);
+    buttonGroup_->addButton(ui->axisY1ToolButton);
     buttonGroup_->addButton(ui->axisZToolButton);
-    buttonGroup_->addButton(ui->structDefButton);
+    buttonGroup_->addButton(ui->axisX2ToolButton);
+    buttonGroup_->addButton(ui->axisY2ToolButton);
+    buttonGroup_->addButton(ui->axisAToolButton);
+    buttonGroup_->addButton(ui->axisBToolButton);
+    buttonGroup_->addButton(ui->axisCToolButton);
     buttonGroup_->setExclusive(true);
     QAbstractButton* button;
     foreach(button, buttonGroup_->buttons())
     {
         button->setCheckable(true);
     }
-    connect(ICProgramHeadFrame::Instance(),
-            SIGNAL(LevelChanged(int)),
-            this,
-            SLOT(LevelChanged(int)));
-    if(ICProgramHeadFrame::Instance()->CurrentLevel() == ICParametersSave::AdvanceAdmin)
-    {
-        LevelChanged(ICParametersSave::AdvanceAdmin);
-    }
+//    connect(ICProgramHeadFrame::Instance(),
+//            SIGNAL(LevelChanged(int)),
+//            this,
+//            SLOT(LevelChanged(int)));
+//    if(ICProgramHeadFrame::Instance()->CurrentLevel() == ICParametersSave::AdvanceAdmin)
+//    {
+//        LevelChanged(ICParametersSave::AdvanceAdmin);
+//    }
 //    ui->axisXToolButton->click();
 //    ui->basicSettingsToolButton->click();
 }
@@ -60,10 +68,14 @@ void ICHCSettingsFrame::changeEvent(QEvent *e)
     {
         ui->retranslateUi(this);
 //        ui->basicSettingsToolButton->setText(tr("Setting"));
-        ui->axisXToolButton->setText(tr("X Axis"));
-        ui->axisYToolButton->setText(tr("Y Axis"));
+        ui->axisX1ToolButton->setText(tr("X1 Axis"));
+        ui->axisY1ToolButton->setText(tr("Y1 Axis"));
         ui->axisZToolButton->setText(tr("Z Axis"));
-        ui->structDefButton->setText(tr("Struct Define"));
+        ui->axisX2ToolButton->setText(tr("X2 Axis"));
+        ui->axisY2ToolButton->setText(tr("Y2 Axis"));
+        ui->axisAToolButton->setText(tr("A Axis"));
+        ui->axisBToolButton->setText(tr("B Axis"));
+        ui->axisCToolButton->setText(tr("C Axis"));
     }
         break;
     default:
@@ -73,7 +85,7 @@ void ICHCSettingsFrame::changeEvent(QEvent *e)
 
 void ICHCSettingsFrame::showEvent(QShowEvent *e)
 {
-    ui->axisXToolButton->click();
+    ui->axisX1ToolButton->click();
     QFrame::showEvent(e);
 }
 
@@ -142,25 +154,46 @@ void ICHCSettingsFrame::InitSignal()
             SLOT(SettingButtonClicked()));*/
 }
 
-void ICHCSettingsFrame::on_axisXToolButton_clicked()
+void ICHCSettingsFrame::on_axisX1ToolButton_clicked()
 {
-    ShowAxisSettingPage(ui->axisXToolButton->text(), AxisX);
+    ShowAxisSettingPage(ui->axisX1ToolButton->text(), ICVirtualHost::ICAxis_AxisX1);
 }
 
-void ICHCSettingsFrame::on_axisYToolButton_clicked()
+void ICHCSettingsFrame::on_axisY1ToolButton_clicked()
 {
-    ShowAxisSettingPage(ui->axisYToolButton->text(), AxisY);
+    ShowAxisSettingPage(ui->axisY1ToolButton->text(), ICVirtualHost::ICAxis_AxisY1);
 }
 
 void ICHCSettingsFrame::on_axisZToolButton_clicked()
 {
-    ShowAxisSettingPage(ui->axisZToolButton->text(), AxisZ);
+    ShowAxisSettingPage(ui->axisZToolButton->text(), ICVirtualHost::ICAxis_AxisZ);
 }
 
-void ICHCSettingsFrame::on_structDefButton_clicked()
+void ICHCSettingsFrame::on_axisX2ToolButton_clicked()
 {
-    centralStackedLayout_->setCurrentWidget(structDefPage_);
+    ShowAxisSettingPage(ui->axisX2ToolButton->text(), ICVirtualHost::ICAxis_AxisX2);
 }
+
+void ICHCSettingsFrame::on_axisY2ToolButton_clicked()
+{
+    ShowAxisSettingPage(ui->axisY2ToolButton->text(), ICVirtualHost::ICAxis_AxisY2);
+}
+
+void ICHCSettingsFrame::on_axisAToolButton_clicked()
+{
+    ShowAxisSettingPage(ui->axisAToolButton->text(), ICVirtualHost::ICAxis_AxisA);
+}
+
+void ICHCSettingsFrame::on_axisBToolButton_clicked()
+{
+    ShowAxisSettingPage(ui->axisBToolButton->text(), ICVirtualHost::ICAxis_AxisB);
+}
+
+void ICHCSettingsFrame::on_axisCToolButton_clicked()
+{
+    ShowAxisSettingPage(ui->axisCToolButton->text(), ICVirtualHost::ICAxis_AxisC);
+}
+
 
 void ICHCSettingsFrame::ShowAxisSettingPage(QString currentAxisName, int axis)
 {
@@ -168,14 +201,14 @@ void ICHCSettingsFrame::ShowAxisSettingPage(QString currentAxisName, int axis)
     emit CurrentAxisChanged(currentAxisName, axis);
 }
 
-void ICHCSettingsFrame::LevelChanged(int level)
-{
-    if(level == ICParametersSave::AdvanceAdmin)
-    {
-        ui->structDefButton->show();
-    }
-    else
-    {
-        ui->structDefButton->hide();
-    }
-}
+//void ICHCSettingsFrame::LevelChanged(int level)
+//{
+//    if(level == ICParametersSave::AdvanceAdmin)
+//    {
+//        ui->structDefButton->show();
+//    }
+//    else
+//    {
+//        ui->structDefButton->hide();
+//    }
+//}

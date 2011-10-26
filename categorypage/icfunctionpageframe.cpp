@@ -8,7 +8,7 @@
 //#include "icstacksettingpageframe.h"
 #include "ichcsystemsettingsframe.h"
 #include "icsystemsettingframe.h"
-#include "ichctimeframe.h"
+#include "icmachinestructpage.h"
 
 #include "ichcsettingsframe.h"
 #include "ichcdetectionframe.h"
@@ -18,6 +18,7 @@
 #include "icmachineconfigpage.h"
 
 #include "icprogramheadframe.h"
+#include "icparameterssave.h"
 
 #include <QDebug>
 
@@ -50,9 +51,9 @@ public:
 //            return new ICStackSettingPageFrame(parent);
             return new ICHCStackedSettingsFrame(parent);
         }
-        else if(clickedButton == functionPage->ui->timeSettingWidget)
+        else if(clickedButton == functionPage->ui->machineStructConfig)
         {
-            return new ICHCTimeFrame(parent);
+            return new ICMachineStructPage(parent);
         }
         else if(clickedButton == functionPage->ui->machineConfigSettingWidget)
         {
@@ -119,14 +120,14 @@ void ICFunctionPageFrame::InitSettingPage()
     ui->securityPointSettingWidget->setIcon(QIcon(":/resources/security-point.png"));
     ui->stackSettingWidget->setIcon(QIcon(":/resources/stacked.png"));
     ui->systemSettingWidget->setIcon(QIcon(":/resources/system.png"));
-    ui->timeSettingWidget->setIcon(QIcon(":/resource/time.png"));
+    ui->machineStructConfig->setIcon(QIcon(":/resources/machineStruct.png"));
     ui->machineConfigSettingWidget->setIcon(QIcon(":/resources/machine.png"));
 
 //    ui->securityPointSettingWidget->SetDirection(ICPageTag::IconOnRight);
     ui->stackSettingWidget->SetDirection(ICPageTag::IconOnRight);
-    ui->productSettingWidget->SetDirection(ICPageTag::IconOnRight);
     ui->systemSettingWidget->SetDirection(ICPageTag::IconOnRight);
     ui->maintainWidget->SetDirection(ICPageTag::IconOnRight);
+    ui->machineStructConfig->SetDirection(ICPageTag::IconOnRight);
 //    ui->machineConfigSettingWidget->SetDirection(ICPageTag::IconOnRight);
 }
 
@@ -156,7 +157,7 @@ void ICFunctionPageFrame::InitSignal()
             SIGNAL(clicked()),
             this,
             SLOT(SettingButtonClicked()));
-    connect(ui->timeSettingWidget,
+    connect(ui->machineStructConfig,
             SIGNAL(clicked()),
             this,
             SLOT(SettingButtonClicked()));
@@ -164,6 +165,10 @@ void ICFunctionPageFrame::InitSignal()
             SIGNAL(clicked()),
             this,
             SLOT(SettingButtonClicked()));
+    connect(ICProgramHeadFrame::Instance(),
+            SIGNAL(LevelChanged(int)),
+            this,
+            SLOT(LevelChanged(int)));
 }
 
 void ICFunctionPageFrame::SettingButtonClicked()
@@ -196,10 +201,22 @@ void ICFunctionPageFrame::UpdateTranslate()
 {
     ui->securityPointSettingWidget->setText(tr("Security Point Settings"));
     ui->systemSettingWidget->setText(tr("System Settings"));
-    ui->timeSettingWidget->setText(tr("Time Settings"));
+    ui->machineStructConfig->setText(tr("Struct Settings"));
     ui->stackSettingWidget->setText(tr("Stack Settings"));
     ui->maintainWidget->setText(tr("Maintains"));
     ui->signalSettingWidget->setText(tr("Signal Settings"));
     ui->productSettingWidget->setText(tr("Product Settings"));
     ui->machineConfigSettingWidget->setText(tr("Machine Configure"));
+}
+
+void ICFunctionPageFrame::LevelChanged(int level)
+{
+    if(level >=  ICParametersSave::AdvanceAdmin)
+    {
+        ui->machineStructConfig->setEnabled(true);
+    }
+    else
+    {
+        ui->machineStructConfig->setEnabled(false);
+    }
 }

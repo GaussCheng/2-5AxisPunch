@@ -11,20 +11,21 @@
 AxisSettingsFrame::AxisSettingsFrame(QWidget *parent) :
     QFrame(parent),
     ui(new Ui::AxisSettingsFrame),
-    step_(0),
-    currentAxis_(Hide),
-    isStart_(true)
+    currentAxis_(-1)
 {
     ui->setupUi(this);
+    ui->label_11->hide();
+    ui->label_8->hide();
+    ui->distanceRotationEdit->hide();
+    ui->label->hide();
+    ui->label_3->hide();
+    ui->mechanicalLengthLineEdit->hide();
 
     InitInterface();
     connect(ICProgramHeadFrame::Instance(),
             SIGNAL(LevelChanged(int)),
             this,
             SLOT(LevelChanged(int)));
-    ui->currentAxisLabel->hide();
-    ui->minPositionToolButton->hide();
-    ui->maxPositionToolButton->hide();
     if(ICProgramHeadFrame::Instance()->CurrentLevel() == ICParametersSave::AdvanceAdmin)
     {
         LevelChanged(ICParametersSave::AdvanceAdmin);
@@ -50,7 +51,6 @@ void AxisSettingsFrame::hideEvent(QHideEvent *e)
 void AxisSettingsFrame::showEvent(QShowEvent *e)
 {
     QFrame::showEvent(e);
-    step_ = 0;
     connect(ICVirtualHost::GlobalVirtualHost(),
             SIGNAL(StatusRefreshed()),
             this,
@@ -59,16 +59,7 @@ void AxisSettingsFrame::showEvent(QShowEvent *e)
 
 void AxisSettingsFrame::SetCurrentAxis(QString currentAxisName, int axis)
 {
-    //    if(currentAxis_ != Hide)
-    //    {
-    //        QList<uint> status = GetCurrentStatus_();
-    //        SetCurrentStatus_(status);
-    //    }
-    isStart_ = false;
-    step_ = -1;
-    ui->minPositionToolButton->setEnabled(true);
-    ui->maxPositionToolButton->setEnabled(false);
-    ui->currentAxisLabel->setText(currentAxisName);
+    Q_UNUSED(currentAxisName)
     currentAxis_ = axis;
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     ICVirtualHost::ICSystemParameter machineLangth;
@@ -79,7 +70,7 @@ void AxisSettingsFrame::SetCurrentAxis(QString currentAxisName, int axis)
     QString maxText;
 
     double total = 0;
-    if(currentAxis_ == XAxis)
+    if(currentAxis_ == ICVirtualHost::ICAxis_AxisX1)
     {
         machineLangth = ICVirtualHost::SYS_X_Length;
         maxLangth = ICVirtualHost::SYS_X_Maxium;
@@ -90,7 +81,7 @@ void AxisSettingsFrame::SetCurrentAxis(QString currentAxisName, int axis)
         maxText = tr("Max pos inside mold");
 
     }
-    else if(currentAxis_ == YAxis)
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY1)
     {
         machineLangth = ICVirtualHost::SYS_Y_Length;
         maxLangth = ICVirtualHost::SYS_Y_Maxium;
@@ -100,13 +91,63 @@ void AxisSettingsFrame::SetCurrentAxis(QString currentAxisName, int axis)
         minText = tr("Max standby pos");
         maxText = tr("Leave origin pos");
     }
-    else if(currentAxis_ == ZAxis)
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisZ)
     {
         machineLangth = ICVirtualHost::SYS_Z_Length;
         maxLangth = ICVirtualHost::SYS_Z_Maxium;
         iSafe = ICVirtualHost::SYS_Z_InSafe;
         oSafe = ICVirtualHost::SYS_Z_OutSafe;
         total = ICParametersSave::Instance()->DistanceRotation("Z");
+        minText = tr("Internal security zone");
+        maxText = tr("External security zone");
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisX2)
+    {
+        machineLangth = ICVirtualHost::SYS_P_Length;
+        maxLangth = ICVirtualHost::SYS_P_Maxium;
+        iSafe = ICVirtualHost::SYS_P_InSafe;
+        oSafe = ICVirtualHost::SYS_P_OutSafe;
+        total = ICParametersSave::Instance()->DistanceRotation("P");
+        minText = tr("Internal security zone");
+        maxText = tr("External security zone");
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY2)
+    {
+        machineLangth = ICVirtualHost::SYS_Q_Length;
+        maxLangth = ICVirtualHost::SYS_Q_Maxium;
+        iSafe = ICVirtualHost::SYS_Q_InSafe;
+        oSafe = ICVirtualHost::SYS_Q_OutSafe;
+        total = ICParametersSave::Instance()->DistanceRotation("Q");
+        minText = tr("Internal security zone");
+        maxText = tr("External security zone");
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisA)
+    {
+        machineLangth = ICVirtualHost::SYS_A_Length;
+        maxLangth = ICVirtualHost::SYS_A_Maxium;
+        iSafe = ICVirtualHost::SYS_A_InSafe;
+        oSafe = ICVirtualHost::SYS_A_OutSafe;
+        total = ICParametersSave::Instance()->DistanceRotation("A");
+        minText = tr("Internal security zone");
+        maxText = tr("External security zone");
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisB)
+    {
+        machineLangth = ICVirtualHost::SYS_B_Length;
+        maxLangth = ICVirtualHost::SYS_B_Maxium;
+        iSafe = ICVirtualHost::SYS_B_InSafe;
+        oSafe = ICVirtualHost::SYS_B_OutSafe;
+        total = ICParametersSave::Instance()->DistanceRotation("B");
+        minText = tr("Internal security zone");
+        maxText = tr("External security zone");
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisC)
+    {
+        machineLangth = ICVirtualHost::SYS_C_Length;
+        maxLangth = ICVirtualHost::SYS_C_Maxium;
+        iSafe = ICVirtualHost::SYS_C_InSafe;
+        oSafe = ICVirtualHost::SYS_C_OutSafe;
+        total = ICParametersSave::Instance()->DistanceRotation("C");
         minText = tr("Internal security zone");
         maxText = tr("External security zone");
     }
@@ -118,9 +159,12 @@ void AxisSettingsFrame::SetCurrentAxis(QString currentAxisName, int axis)
     ui->maximumDisplacementLineEdit->SetThisIntToThisText(host->SystemParameter(maxLangth).toInt());
     ui->internalSecurityZoneLineEdit->SetThisIntToThisText(host->SystemParameter(iSafe).toInt());
     ui->externalSecurityZoneLineEdit->SetThisIntToThisText(host->SystemParameter(oSafe).toInt());
-    ui->distanceRotationEdit->setText(QString().sprintf("%.2f", total));
+    QString format = QString("%.%1f").arg(ui->distanceRotationEdit->DecimalPlaces());
+    ui->distanceRotationEdit->setText(QString().sprintf(format.toAscii(), total));
     ui->minLabel->setText(minText);
     ui->maxLabel->setText(maxText);
+    maxMoveValidator_->setTop(ui->mechanicalLengthLineEdit->TransThisTextToThisInt());
+//    ui->maximumDisplacementLineEdit->setValidator();
 }
 
 void AxisSettingsFrame::InitInterface()
@@ -129,7 +173,8 @@ void AxisSettingsFrame::InitInterface()
     ui->mechanicalLengthLineEdit->SetDecimalPlaces(1);
     ui->mechanicalLengthLineEdit->setValidator(intValidator);
     ui->maximumDisplacementLineEdit->SetDecimalPlaces(1);
-    ui->maximumDisplacementLineEdit->setValidator(intValidator);
+    maxMoveValidator_ = new QIntValidator(0, 32767, this);
+    ui->maximumDisplacementLineEdit->setValidator(maxMoveValidator_);
     ui->internalSecurityZoneLineEdit->SetDecimalPlaces(1);
     ui->internalSecurityZoneLineEdit->setValidator(intValidator);
     ui->externalSecurityZoneLineEdit->SetDecimalPlaces(1);
@@ -138,9 +183,8 @@ void AxisSettingsFrame::InitInterface()
     ui->distanceRotationEdit->setValidator(intValidator);
 }
 
-QList<uint> AxisSettingsFrame::GetCurrentStatus_(bool isGuild) const
+QList<uint> AxisSettingsFrame::GetCurrentStatus_() const
 {
-    ICVirtualHost *host = ICVirtualHost::GlobalVirtualHost();
     QList<uint> ret;
     double machineLength = ui->mechanicalLengthLineEdit->text().toDouble();
     ret.append(ui->mechanicalLengthLineEdit->TransThisTextToThisInt());
@@ -152,43 +196,6 @@ QList<uint> AxisSettingsFrame::GetCurrentStatus_(bool isGuild) const
     uint total = machineLength * 10000 / ui->distanceRotationEdit->text().toDouble();
     totalH = (total >> 16) & 0XFFFF;
     totalL = total & 0XFFFF;
-    //    if(isGuild)
-    //    {
-    //        if(currentAxis_ == XAxis)
-    //        {
-    //            totalH = host->HostStatus(ICVirtualHost::DbgX1).toUInt() & 0xFFFF;
-    //            totalL = host->HostStatus(ICVirtualHost::DbgX0).toUInt() & 0xFFFF;
-    //        }
-    //        else if(currentAxis_ == YAxis)
-    //        {
-    //            totalH = host->HostStatus(ICVirtualHost::DbgY1).toUInt() & 0xFFFF;
-    //            totalL = host->HostStatus(ICVirtualHost::DbgY0).toUInt() & 0xFFFF;
-    //        }
-    //        else if(currentAxis_ == ZAxis)
-    //        {
-    //            totalH = host->HostStatus(ICVirtualHost::DbgZ1).toUInt() & 0xFFFF;
-    //            totalL = host->HostStatus(ICVirtualHost::DbgZ0).toUInt() & 0xFFFF;
-    //        }
-    //    }
-    //    else
-    //    {
-    ////        host->SetSystemParameter(ICVirtualHost::SYS_Z_TotalL, );
-    //        if(currentAxis_ == XAxis)
-    //        {
-    //            totalH = host->SystemParameter(ICVirtualHost::SYS_X_TotalH).toUInt() & 0xFFFF;
-    //            totalL = host->SystemParameter(ICVirtualHost::SYS_X_TotalL).toUInt() & 0xFFFF;
-    //        }
-    //        else if(currentAxis_ == YAxis)
-    //        {
-    //            totalH = host->SystemParameter(ICVirtualHost::SYS_Y_TotalH).toUInt() & 0xFFFF;
-    //            totalL = host->SystemParameter(ICVirtualHost::SYS_Y_TotalL).toUInt() & 0xFFFF;
-    //        }
-    //        else if(currentAxis_ == ZAxis)
-    //        {
-    //            totalH = host->SystemParameter(ICVirtualHost::SYS_Z_TotalH).toUInt() & 0xFFFF;
-    //            totalL = host->SystemParameter(ICVirtualHost::SYS_Z_TotalL).toUInt() & 0xFFFF;
-    //        }
-    //    }
     ret.append(totalL);
     ret.append(totalH);
     int sum = 0;
@@ -215,7 +222,7 @@ bool AxisSettingsFrame::SetCurrentStatus_(const QList<uint> &status)
     ICVirtualHost::ICSystemParameter sum;
     QString axisName;
     int axis;
-    if(currentAxis_ == XAxis)
+    if(currentAxis_ == ICVirtualHost::ICAxis_AxisX1)
     {
         machineLangth = ICVirtualHost::SYS_X_Length;
         maxLangth = ICVirtualHost::SYS_X_Maxium;
@@ -227,7 +234,7 @@ bool AxisSettingsFrame::SetCurrentStatus_(const QList<uint> &status)
         axisName = "X";
         axis = 0;
     }
-    else if(currentAxis_ == YAxis)
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY1)
     {
         machineLangth = ICVirtualHost::SYS_Y_Length;
         maxLangth = ICVirtualHost::SYS_Y_Maxium;
@@ -239,7 +246,7 @@ bool AxisSettingsFrame::SetCurrentStatus_(const QList<uint> &status)
         axisName = "Y";
         axis = 1;
     }
-    else if(currentAxis_ == ZAxis)
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisZ)
     {
         machineLangth = ICVirtualHost::SYS_Z_Length;
         maxLangth = ICVirtualHost::SYS_Z_Maxium;
@@ -250,6 +257,66 @@ bool AxisSettingsFrame::SetCurrentStatus_(const QList<uint> &status)
         sum = ICVirtualHost::SYS_Z_XorSum;
         axisName = "Z";
         axis = 2;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisX2)
+    {
+        machineLangth = ICVirtualHost::SYS_P_Length;
+        maxLangth = ICVirtualHost::SYS_P_Maxium;
+        iSafe = ICVirtualHost::SYS_P_InSafe;
+        oSafe = ICVirtualHost::SYS_P_OutSafe;
+        tH = ICVirtualHost::SYS_P_TotalH;
+        tL = ICVirtualHost::SYS_P_TotalL;
+        sum = ICVirtualHost::SYS_P_XorSum;
+        axisName = "P";
+        axis = 3;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY2)
+    {
+        machineLangth = ICVirtualHost::SYS_Q_Length;
+        maxLangth = ICVirtualHost::SYS_Q_Maxium;
+        iSafe = ICVirtualHost::SYS_Q_InSafe;
+        oSafe = ICVirtualHost::SYS_Q_OutSafe;
+        tH = ICVirtualHost::SYS_Q_TotalH;
+        tL = ICVirtualHost::SYS_Q_TotalL;
+        sum = ICVirtualHost::SYS_Q_XorSum;
+        axisName = "Q";
+        axis = 4;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisA)
+    {
+        machineLangth = ICVirtualHost::SYS_A_Length;
+        maxLangth = ICVirtualHost::SYS_A_Maxium;
+        iSafe = ICVirtualHost::SYS_A_InSafe;
+        oSafe = ICVirtualHost::SYS_A_OutSafe;
+        tH = ICVirtualHost::SYS_A_TotalH;
+        tL = ICVirtualHost::SYS_A_TotalL;
+        sum = ICVirtualHost::SYS_A_XorSum;
+        axisName = "A";
+        axis = 5;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisB)
+    {
+        machineLangth = ICVirtualHost::SYS_B_Length;
+        maxLangth = ICVirtualHost::SYS_B_Maxium;
+        iSafe = ICVirtualHost::SYS_B_InSafe;
+        oSafe = ICVirtualHost::SYS_B_OutSafe;
+        tH = ICVirtualHost::SYS_B_TotalH;
+        tL = ICVirtualHost::SYS_B_TotalL;
+        sum = ICVirtualHost::SYS_B_XorSum;
+        axisName = "B";
+        axis = 6;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisC)
+    {
+        machineLangth = ICVirtualHost::SYS_C_Length;
+        maxLangth = ICVirtualHost::SYS_C_Maxium;
+        iSafe = ICVirtualHost::SYS_C_InSafe;
+        oSafe = ICVirtualHost::SYS_C_OutSafe;
+        tH = ICVirtualHost::SYS_C_TotalH;
+        tL = ICVirtualHost::SYS_C_TotalL;
+        sum = ICVirtualHost::SYS_C_XorSum;
+        axisName = "C";
+        axis = 7;
     }
     else
     {
@@ -276,60 +343,14 @@ bool AxisSettingsFrame::SetCurrentStatus_(const QList<uint> &status)
     return false;
 }
 
-void AxisSettingsFrame::on_minPositionToolButton_clicked()
-{
-    ICCommandProcessor *processor = ICCommandProcessor::Instance();
-    int subCmd;
-    if(currentAxis_ == XAxis)
-    {
-        subCmd = IC::CMD_X1SubLmt;
-    }
-    else if(currentAxis_ == YAxis)
-    {
-        subCmd = IC::CMD_Y1SubLmt;
-    }
-    else if(currentAxis_ == ZAxis)
-    {
-        subCmd = IC::CMD_ZSubLmt;
-    }
-    processor->ExecuteHCCommand(subCmd, 0);
-
-}
-
-void AxisSettingsFrame::on_maxPositionToolButton_clicked()
-{
-    ICCommandProcessor *processor = ICCommandProcessor::Instance();
-    int addCmd;
-    if(currentAxis_ == XAxis)
-    {
-        addCmd = IC::CMD_X1AddLmt;
-    }
-    else if(currentAxis_ == YAxis)
-    {
-        addCmd = IC::CMD_Y1AddLmt;
-    }
-    else if(currentAxis_ == ZAxis)
-    {
-        addCmd = IC::CMD_ZAddLmt;
-    }
-    processor->ExecuteHCCommand(addCmd, 0);
-}
-
 void AxisSettingsFrame::on_saveToolButton_clicked()
 {
     QList<uint> status;
-    if(isStart_ && step_ == 4)
-    {
-        status = GetCurrentStatus_(true);
-    }
-    else
-    {
-        status = GetCurrentStatus_(false);
-    }
+    status = GetCurrentStatus_();
     if(SetCurrentStatus_(status))
     {
         ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-        host->SaveAxisParam();
+        host->SaveAxisParam(currentAxis_);
 //        host->ReConfigure();
         QMessageBox::information(this, tr("Information"), tr("Save Successfully!"));
     }
@@ -341,74 +362,73 @@ void AxisSettingsFrame::StatusRefresh()
     QString feedbackPos;
     QString zSignal;
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    if(currentAxis_ == XAxis)
+    if(currentAxis_ == ICVirtualHost::ICAxis_AxisX1)
     {
         pos = host->HostStatus(ICVirtualHost::XPos).toString();
         feedbackPos = host->HostStatus(ICVirtualHost::DbgX0).toString();
         zSignal = host->HostStatus(ICVirtualHost::DbgX1).toString();
     }
-    else if(currentAxis_ == YAxis)
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY1)
     {
         pos = host->HostStatus(ICVirtualHost::YPos).toString();
         feedbackPos = host->HostStatus(ICVirtualHost::DbgY0).toString();
         zSignal = host->HostStatus(ICVirtualHost::DbgY1).toString();
     }
-    else if(currentAxis_ == ZAxis)
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisZ)
     {
         pos = host->HostStatus(ICVirtualHost::ZPos).toString();
         feedbackPos = host->HostStatus(ICVirtualHost::DbgZ0).toString();
         zSignal = host->HostStatus(ICVirtualHost::DbgZ1).toString();
     }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisX2)
+    {
+        pos = host->HostStatus(ICVirtualHost::PPos).toString();
+        feedbackPos = host->HostStatus(ICVirtualHost::DbgP0).toString();
+        zSignal = host->HostStatus(ICVirtualHost::DbgP1).toString();
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY2)
+    {
+        pos = host->HostStatus(ICVirtualHost::QPos).toString();
+        feedbackPos = host->HostStatus(ICVirtualHost::DbgQ0).toString();
+        zSignal = host->HostStatus(ICVirtualHost::DbgQ1).toString();
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisA)
+    {
+        pos = host->HostStatus(ICVirtualHost::APos).toString();
+        feedbackPos = host->HostStatus(ICVirtualHost::DbgA0).toString();
+        zSignal = host->HostStatus(ICVirtualHost::DbgA1).toString();
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisB)
+    {
+        pos = host->HostStatus(ICVirtualHost::BPos).toString();
+        feedbackPos = host->HostStatus(ICVirtualHost::DbgB0).toString();
+        zSignal = host->HostStatus(ICVirtualHost::DbgB1).toString();
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisC)
+    {
+        pos = host->HostStatus(ICVirtualHost::CPos).toString();
+        feedbackPos = host->HostStatus(ICVirtualHost::DbgC0).toString();
+        zSignal = host->HostStatus(ICVirtualHost::DbgC1).toString();
+    }
 
     ui->testLineEdit->setText(pos);
     ui->feedbackEdit->setText(feedbackPos);
     ui->zSignalEdit->setText(zSignal);
-
-    //    step_ = host->CurrentStep();
-    //    if(!isStart_)
-    //    {
-    //        ui->minPositionToolButton->setEnabled(true);
-    //        ui->maxPositionToolButton->setEnabled(false);
-    //        isStart_ = true;
-    //        ui->guildLabel->setText(tr("Please press Min button"));
-    //    }
-    //    else if(step_ == 1 )
-    //    {
-    //        ui->guildLabel->setText(tr("When alarmed ,please press stop button"));
-    //    }
-    //    else if(step_ == 2)
-    //    {
-    //        ui->guildLabel->setText(tr("Prease press Max button"));
-    //        ui->minPositionToolButton->setEnabled(false);
-    //        ui->maxPositionToolButton->setEnabled(true);
-    //    }
-    //    else if(step_ == 3)
-    //    {
-    //        ui->guildLabel->setText(tr("When alarmed, please press stop button"));
-    //        ui->minPositionToolButton->setEnabled(true);
-    //        ui->maxPositionToolButton->setEnabled(false);
-    //    }
-    //    else if(step_ == 4)
-    //    {
-    //        ui->guildLabel->setText(tr("Set the machine configure and save"));
-    //        ui->minPositionToolButton->setEnabled(true);
-    //        ui->maxPositionToolButton->setEnabled(false);
-    //    }
 }
 
 void AxisSettingsFrame::on_testPushButton_clicked()
 {
     ICCommandProcessor *processor = ICCommandProcessor::Instance();
     int addCmd;
-    if(currentAxis_ == XAxis)
+    if(currentAxis_ == ICVirtualHost::ICAxis_AxisX1)
     {
         addCmd = IC::CMD_TestX;
     }
-    else if(currentAxis_ == YAxis)
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY1)
     {
         addCmd = IC::CMD_TestY;
     }
-    else if(currentAxis_ == ZAxis)
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisZ)
     {
         addCmd = IC::CMD_TestZ;
     }
@@ -421,15 +441,15 @@ void AxisSettingsFrame::on_revTestPushButton_clicked()
 {
     ICCommandProcessor *processor = ICCommandProcessor::Instance();
     int addCmd;
-    if(currentAxis_ == XAxis)
+    if(currentAxis_ == ICVirtualHost::ICAxis_AxisX1)
     {
         addCmd = IC::CMD_TestxRev;
     }
-    else if(currentAxis_ == YAxis)
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY1)
     {
         addCmd = IC::CMD_TestyRev;
     }
-    else if(currentAxis_ == ZAxis)
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisZ)
     {
         addCmd = IC::CMD_TestzRev;
     }
@@ -443,8 +463,16 @@ void AxisSettingsFrame::on_pushButton_clicked()
 
 void AxisSettingsFrame::LevelChanged(int level)
 {
-    if(level == ICParametersSave::AdvanceAdmin)
+    if(level >=  ICParametersSave::MachineAdmin)
     {
+        if(level >= ICParametersSave::AdvanceAdmin)
+        {
+            ui->mechanicalLengthLineEdit->setEnabled(true);
+        }
+        else
+        {
+            ui->mechanicalLengthLineEdit->setEnabled(false);
+        }
         ui->securityPointGroupBox->setEnabled(true);
         ui->saveToolButton->setEnabled(true);
     }
