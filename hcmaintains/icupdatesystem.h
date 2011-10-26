@@ -48,6 +48,7 @@ private slots:
 
     void on_rebootButton_clicked();
     void on_connectHostButton_clicked();
+    void on_writeHostButton_clicked();
 };
 
 //TODEBUG

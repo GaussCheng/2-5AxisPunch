@@ -266,15 +266,18 @@ void ICUpdateSystem::on_updateHostButton_clicked()
                 }
             }
             qDebug("tran successful");
-            ICUpdateHostFinishCommand finishCommand;
-            if(processor->ExecuteCommand(finishCommand).toBool())
-            {
-                if(QMessageBox::question(this, tr("Congratulations"), tr("Update Host finished!")) == QMessageBox::Ok)
-                {
-                    on_rebootButton_clicked();
-                }
-                return;
-            }
+            QMessageBox::information(this, tr("Congratulations"),
+                                     tr("Send to  Host finished!"));
+            ui->writeHostButton->setEnabled(true);
+            return;
+//            ICUpdateHostFinishCommand finishCommand;
+//            if(processor->ExecuteCommand(finishCommand).toBool())
+//            {
+//                QMessageBox::information(this, tr("Congratulations"),
+//                                         tr("Update Host finished!"));
+
+//                return;
+//            }
 
         }
     }
@@ -313,4 +316,16 @@ void ICUpdateSystem::on_connectHostButton_clicked()
     ICCommandProcessor* processor = ICCommandProcessor::Instance();
     linkCmd.SetSlave(processor->SlaveID());
     processor->ExecuteCommand(linkCmd);
+}
+
+void ICUpdateSystem::on_writeHostButton_clicked()
+{
+    ICUpdateHostFinishCommand finishCommand;
+    if(ICCommandProcessor::Instance()->ExecuteCommand(finishCommand).toBool())
+    {
+        QMessageBox::information(this, tr("Congratulations"),
+                                 tr("Update Host finished!"));
+
+        return;
+    }
 }

@@ -33,7 +33,7 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="0" colspan="9">
+   <item row="1" column="0" colspan="10">
     <widget class="QLabel" name="deviceShowLabel">
      <property name="frameShape">
       <enum>QFrame::Box</enum>
@@ -59,7 +59,7 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="0" colspan="9">
+   <item row="3" column="0" colspan="10">
     <widget class="QLabel" name="versionShowLabel">
      <property name="frameShape">
       <enum>QFrame::Box</enum>
@@ -85,7 +85,7 @@
      </property>
     </widget>
    </item>
-   <item row="5" column="0" colspan="9">
+   <item row="5" column="0" colspan="10">
     <widget class="QLabel" name="copyFilesShowLabel">
      <property name="frameShape">
       <enum>QFrame::Box</enum>
@@ -98,7 +98,7 @@
      </property>
     </widget>
    </item>
-   <item row="6" column="0" colspan="9">
+   <item row="6" column="0" colspan="10">
     <widget class="QProgressBar" name="copyFilesProgressBar">
      <property name="value">
       <number>24</number>
@@ -118,7 +118,7 @@
      </property>
     </widget>
    </item>
-   <item row="8" column="0" colspan="9">
+   <item row="8" column="0" colspan="10">
     <widget class="QLabel" name="statusLabel">
      <property name="frameShape">
       <enum>QFrame::Box</enum>
@@ -183,7 +183,7 @@
      </property>
     </widget>
    </item>
-   <item row="9" column="8">
+   <item row="9" column="9">
     <spacer name="horizontalSpacer_3">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -225,7 +225,7 @@
      </property>
     </spacer>
    </item>
-   <item row="9" column="7">
+   <item row="9" column="8">
     <widget class="QToolButton" name="rebootButton">
      <property name="enabled">
       <bool>false</bool>
@@ -251,6 +251,22 @@
      </property>
      <property name="text">
       <string>Connect Host</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="7">
+    <widget class="QToolButton" name="writeHostButton">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Write</string>
      </property>
     </widget>
    </item>

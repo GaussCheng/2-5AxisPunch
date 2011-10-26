@@ -1,6 +1,7 @@
 #include "icinstructmodifydialog.h"
 #include "ui_icinstructmodifydialog.h"
 #include "icmold.h"
+#include "icvirtualhost.h"
 
 ICInstructModifyDialog::ICInstructModifyDialog(QWidget *parent) :
     QDialog(parent),
@@ -118,4 +119,9 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
 void ICInstructModifyDialog::on_earlyEndCheckBox_toggled(bool checked)
 {
     ui->earlyEndTimeEdit->setEnabled(checked);
+}
+
+void ICInstructModifyDialog::on_setButton_clicked()
+{
+//    ui->posEdit->SetThisIntToThisText();
 }

@@ -25,6 +25,8 @@ protected:
 private slots:
     void on_earlyEndCheckBox_toggled(bool checked);
 
+    void on_setButton_clicked();
+
 private:
     Ui::ICInstructModifyDialog *ui;
 };

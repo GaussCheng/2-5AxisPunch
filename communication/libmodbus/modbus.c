@@ -2617,7 +2617,7 @@ int hc_update_host_transfer(modbus_param_t *mb_param, int addr, char *data)
         }
         for(int i = 0; i != 5; ++i)
         {
-            printf("send[%d] = %d  rec[%d] = %d \n", i, query[i], i, response[i]);
+//            printf("send[%d] = %d  rec[%d] = %d \n", i, query[i], i, response[i]);
             if(query[i] != response[i])
             {
                 return -1;
@@ -2776,6 +2776,10 @@ int hc_update_host_query(modbus_param_t *mb_param)
         if(ret <= 0)
         {
             return -1;
+        }
+        for(int i = 0; i != 6; ++i)
+        {
+            printf("query[%d] = %d\n", i, response[i]);
         }
         uint16_t crcCal = crc16(response, 4);
         uint16_t crcRec = (response[4] << 8) | response[5];
