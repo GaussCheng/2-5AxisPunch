@@ -113,9 +113,14 @@ void ICHCSystemSettingsFrame::changeEvent(QEvent *e)
             int index = (paraSave->Country() == QLocale::China) ? 0 : 1;
             ui->languageComboBox->setCurrentIndex(index);
             ui->dateTimeEdit->setDateTime(QDateTime::currentDateTime());
-            ui->axisXToolButton->setText(tr("X Axis"));
-            ui->axisYToolButton->setText(tr("Y Axis"));
+            ui->axisXToolButton->setText(tr("X1 Axis"));
+            ui->axisYToolButton->setText(tr("Y1 Axis"));
             ui->axisZToolButton->setText(tr("Z Axis"));
+            ui->axisX2ToolButton->setText(tr("X2 Axis"));
+            ui->axisY2ToolButton->setText(tr("Y2 Axis"));
+            ui->axisAToolButton->setText(tr("A Axis"));
+            ui->axisBToolButton->setText(tr("B Axis"));
+            ui->axisCToolButton->setText(tr("C Axis"));
             ui->structDefButton->setText(tr("Struct Define"));
         }
         break;
@@ -465,6 +470,96 @@ void ICHCSystemSettingsFrame::on_axisZToolButton_clicked()
               "Z");
 }
 
+void ICHCSystemSettingsFrame::on_axisX2ToolButton_clicked()
+{
+    ui->hostGroupBox->show();
+    ui->hmiGroupBox->show();
+    ui->selectHostButton->show();
+    ui->hostStructDefGroup->hide();
+    ui->hmiStructDefGroup->hide();
+    ui->structSelectHostButton->hide();
+    currentAxis_ = 3;
+    SetConfig(ICVirtualHost::SYS_P_Length,
+              ICVirtualHost::SYS_P_Maxium,
+              ICVirtualHost::SYS_P_InSafe,
+              ICVirtualHost::SYS_P_OutSafe,
+              tr("Internal security zone"),
+              tr("External security zone"),
+              "P");
+}
+
+void ICHCSystemSettingsFrame::on_axisY2ToolButton_clicked()
+{
+    ui->hostGroupBox->show();
+    ui->hmiGroupBox->show();
+    ui->selectHostButton->show();
+    ui->hostStructDefGroup->hide();
+    ui->hmiStructDefGroup->hide();
+    ui->structSelectHostButton->hide();
+    currentAxis_ = 4;
+    SetConfig(ICVirtualHost::SYS_Q_Length,
+              ICVirtualHost::SYS_Q_Maxium,
+              ICVirtualHost::SYS_Q_InSafe,
+              ICVirtualHost::SYS_Q_OutSafe,
+              tr("Internal security zone"),
+              tr("External security zone"),
+              "Q");
+}
+
+void ICHCSystemSettingsFrame::on_axisAToolButton_clicked()
+{
+    ui->hostGroupBox->show();
+    ui->hmiGroupBox->show();
+    ui->selectHostButton->show();
+    ui->hostStructDefGroup->hide();
+    ui->hmiStructDefGroup->hide();
+    ui->structSelectHostButton->hide();
+    currentAxis_ = 5;
+    SetConfig(ICVirtualHost::SYS_A_Length,
+              ICVirtualHost::SYS_A_Maxium,
+              ICVirtualHost::SYS_A_InSafe,
+              ICVirtualHost::SYS_A_OutSafe,
+              tr("Internal security zone"),
+              tr("External security zone"),
+              "A");
+}
+
+void ICHCSystemSettingsFrame::on_axisBToolButton_clicked()
+{
+    ui->hostGroupBox->show();
+    ui->hmiGroupBox->show();
+    ui->selectHostButton->show();
+    ui->hostStructDefGroup->hide();
+    ui->hmiStructDefGroup->hide();
+    ui->structSelectHostButton->hide();
+    currentAxis_ = 6;
+    SetConfig(ICVirtualHost::SYS_B_Length,
+              ICVirtualHost::SYS_B_Maxium,
+              ICVirtualHost::SYS_B_InSafe,
+              ICVirtualHost::SYS_B_OutSafe,
+              tr("Internal security zone"),
+              tr("External security zone"),
+              "B");
+}
+
+void ICHCSystemSettingsFrame::on_axisCToolButton_clicked()
+{
+    ui->hostGroupBox->show();
+    ui->hmiGroupBox->show();
+    ui->selectHostButton->show();
+    ui->hostStructDefGroup->hide();
+    ui->hmiStructDefGroup->hide();
+    ui->structSelectHostButton->hide();
+    currentAxis_ = 7;
+    SetConfig(ICVirtualHost::SYS_C_Length,
+              ICVirtualHost::SYS_C_Maxium,
+              ICVirtualHost::SYS_C_InSafe,
+              ICVirtualHost::SYS_C_OutSafe,
+              tr("Internal security zone"),
+              tr("External security zone"),
+              "C");
+}
+
 void ICHCSystemSettingsFrame::on_structDefButton_clicked()
 {
     ui->hostGroupBox->hide();
@@ -529,6 +624,26 @@ void ICHCSystemSettingsFrame::SetConfig(int machineLenght,
     else if(axisName == "Z")
     {
         command.SetAxis(2);
+    }
+    else if(axisName == "P")
+    {
+        command.SetAxis(3);
+    }
+    else if(axisName == "Q")
+    {
+        command.SetAxis(4);
+    }
+    else if(axisName == "A")
+    {
+        command.SetAxis(5);
+    }
+    else if(axisName == "B")
+    {
+        command.SetAxis(6);
+    }
+    else if(axisName == "C")
+    {
+        command.SetAxis(7);
     }
     else
     {
@@ -605,6 +720,61 @@ void ICHCSystemSettingsFrame::on_selectHostButton_clicked()
         xorSum = ICVirtualHost::SYS_Z_XorSum;
         axis = "Z";
     }
+    else if(currentAxis_ == 3)
+    {
+        machineL = ICVirtualHost::SYS_P_Length;
+        maxL = ICVirtualHost::SYS_P_Maxium;
+        iSafe = ICVirtualHost::SYS_P_InSafe;
+        oSafe = ICVirtualHost::SYS_P_OutSafe;
+        totalL = ICVirtualHost::SYS_P_TotalL;
+        totalH = ICVirtualHost::SYS_P_TotalH;
+        xorSum = ICVirtualHost::SYS_P_XorSum;
+        axis = "P";
+    }
+    else if(currentAxis_ == 4)
+    {
+        machineL = ICVirtualHost::SYS_Q_Length;
+        maxL = ICVirtualHost::SYS_Q_Maxium;
+        iSafe = ICVirtualHost::SYS_Q_InSafe;
+        oSafe = ICVirtualHost::SYS_Q_OutSafe;
+        totalL = ICVirtualHost::SYS_Q_TotalL;
+        totalH = ICVirtualHost::SYS_Q_TotalH;
+        xorSum = ICVirtualHost::SYS_Q_XorSum;
+        axis = "Q";
+    }
+    else if(currentAxis_ == 5)
+    {
+        machineL = ICVirtualHost::SYS_A_Length;
+        maxL = ICVirtualHost::SYS_A_Maxium;
+        iSafe = ICVirtualHost::SYS_A_InSafe;
+        oSafe = ICVirtualHost::SYS_A_OutSafe;
+        totalL = ICVirtualHost::SYS_A_TotalL;
+        totalH = ICVirtualHost::SYS_A_TotalH;
+        xorSum = ICVirtualHost::SYS_A_XorSum;
+        axis = "A";
+    }
+    else if(currentAxis_ == 6)
+    {
+        machineL = ICVirtualHost::SYS_B_Length;
+        maxL = ICVirtualHost::SYS_B_Maxium;
+        iSafe = ICVirtualHost::SYS_B_InSafe;
+        oSafe = ICVirtualHost::SYS_B_OutSafe;
+        totalL = ICVirtualHost::SYS_B_TotalL;
+        totalH = ICVirtualHost::SYS_B_TotalH;
+        xorSum = ICVirtualHost::SYS_B_XorSum;
+        axis = "B";
+    }
+    else if(currentAxis_ == 7)
+    {
+        machineL = ICVirtualHost::SYS_C_Length;
+        maxL = ICVirtualHost::SYS_C_Maxium;
+        iSafe = ICVirtualHost::SYS_C_InSafe;
+        oSafe = ICVirtualHost::SYS_C_OutSafe;
+        totalL = ICVirtualHost::SYS_C_TotalL;
+        totalH = ICVirtualHost::SYS_C_TotalH;
+        xorSum = ICVirtualHost::SYS_C_XorSum;
+        axis = "C";
+    }
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     ICParametersSave::Instance()->SetDistanceRotation(axis, ui->hostDRLabel->text().toDouble());
     host->SetSystemParameter(machineL, ui->hostMachineLengthLabel->text().toDouble() * (qreal)10);
@@ -636,6 +806,26 @@ void ICHCSystemSettingsFrame::UpdateConfigShow_()
     else if(currentAxis_ == 2)
     {
         ui->axisZToolButton->click();
+    }
+    else if(currentAxis_ == 3)
+    {
+        ui->axisX2ToolButton->click();
+    }
+    else if(currentAxis_ == 4)
+    {
+        ui->axisY2ToolButton->click();
+    }
+    else if(currentAxis_ == 5)
+    {
+        ui->axisAToolButton->click();
+    }
+    else if(currentAxis_ == 6)
+    {
+        ui->axisBToolButton->click();
+    }
+    else if(currentAxis_ == 7)
+    {
+        ui->axisCToolButton->click();
     }
 }
 

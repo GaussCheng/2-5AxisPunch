@@ -69,6 +69,11 @@ private slots:
     void on_axisZToolButton_clicked();
     void on_axisYToolButton_clicked();
     void on_axisXToolButton_clicked();
+    void on_axisX2ToolButton_clicked();
+    void on_axisY2ToolButton_clicked();
+    void on_axisAToolButton_clicked();
+    void on_axisBToolButton_clicked();
+    void on_axisCToolButton_clicked();
     void on_structDefButton_clicked();
 //    void on_seletHmiButton_clicked();
     void on_selectHostButton_clicked();
