@@ -9,23 +9,31 @@ ICParameterConversion::ICParameterConversion()
 
 QString ICParameterConversion::TransThisIntToThisText(int inputNum, int decimals)
 {
-    QString result;
-    switch(decimals)
+//    QString result;
+//    switch(decimals)
+//    {
+//    case 0:
+//        result = QString::number(inputNum);
+//        break;
+//    default:
+//        {
+//            int dividend = Pow(10, decimals);
+//            int intPart = inputNum / dividend;
+//            int decimalPart = inputNum % dividend;
+//            result = QString::number(intPart) + '.' + QString::number(decimalPart);
+//        }
+//        break;
+//    }
+    if(decimals == 0)
     {
-    case 0:
-        result = QString::number(inputNum);
-        break;
-    default:
-        {
-            int dividend = Pow(10, decimals);
-            int intPart = inputNum / dividend;
-            int decimalPart = inputNum % dividend;
-            result = QString::number(intPart) + '.' + QString::number(decimalPart);
-        }
-        break;
+        return QString::number(inputNum);
     }
+    else
+    {
+        QString format = QString("%.%1f").arg(decimals);
+        return QString().sprintf(format.toAscii(), inputNum / static_cast<qreal>(Pow(10, decimals)));
 
-    return result;
+    }
 }
 
 int ICParameterConversion::TransTextToThisInt(const QString &numString, int decimals)

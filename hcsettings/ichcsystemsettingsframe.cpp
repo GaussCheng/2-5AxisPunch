@@ -569,7 +569,7 @@ void ICHCSystemSettingsFrame::on_structDefButton_clicked()
     ui->hmiStructDefGroup->show();
     ui->structSelectHostButton->show();
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    armStruct_ = host->SystemParameter(ICVirtualHost::SYS_ARM_CONFIG).toUInt();
+    armStruct_ = host->SystemParameter(ICVirtualHost::SYS_Config_Signal).toUInt();
     ui->hmiX1->setText(armXStructValueToName_.value(armStruct_ & 0x0003));
     ui->hmiY1->setText(armYStructValueToName_.value((armStruct_ & 0x000C) >> 2));
     ui->hmiX2->setText(armXStructValueToName_.value((armStruct_ & 0x0030) >> 4));

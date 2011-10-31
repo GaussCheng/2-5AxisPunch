@@ -5,7 +5,8 @@
 
 ICInstructModifyDialog::ICInstructModifyDialog(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::ICInstructModifyDialog)
+    ui(new Ui::ICInstructModifyDialog),
+    currentItem(NULL)
 {
     ui->setupUi(this);
     QIntValidator* validator = new QIntValidator(0, 600, this);
@@ -42,6 +43,7 @@ void ICInstructModifyDialog::changeEvent(QEvent *e)
 
 bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
 {
+    currentItem = item;
     ui->positionLabel->hide();
     ui->posEdit->hide();
     ui->mmLabel->hide();
@@ -123,5 +125,23 @@ void ICInstructModifyDialog::on_earlyEndCheckBox_toggled(bool checked)
 
 void ICInstructModifyDialog::on_setButton_clicked()
 {
-//    ui->posEdit->SetThisIntToThisText();
+    if(currentItem == NULL)
+    {
+        return;
+    }
+    int currentPos = 0;
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    if(currentItem->Action() == ICMold::GX)
+    {
+        currentPos = host->HostStatus(ICVirtualHost::XPos).toInt();
+    }
+    else if(currentItem->Action() == ICMold::GY)
+    {
+        currentPos = host->HostStatus(ICVirtualHost::YPos).toInt();
+    }
+    else if(currentItem->Action() == ICMold::GZ)
+    {
+        currentPos = host->HostStatus(ICVirtualHost::ZPos).toInt();
+    }
+    ui->posEdit->SetThisIntToThisText(currentPos);
 }

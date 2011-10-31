@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QMap>
 
+class QComboBox;
 namespace Ui {
     class ICStructDefineFrame;
 }
@@ -36,9 +37,15 @@ private slots:
 
     void on_subArmForwardLimitButton_toggled(bool checked);
 
+    void OnAxisDefineChanged(int index);
+
 private:
     Ui::ICStructDefineFrame *ui;
     uint armStruct_;
+    int axisDefine_;
+    QMap<int, int> defineToIndex_;
+    QMap<QComboBox*, int> boxToAxis_;
+    QMap<int, int> indexToDefine_;
 };
 
 #endif // ICSTRUCTDEFINEFRAME_H

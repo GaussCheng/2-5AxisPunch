@@ -162,7 +162,7 @@ void ICVirtualHost::RefreshStatus()
     {
         //        qDebug()<<"refresh statys start";
         ICCommunicationCommandBase::ResultVector result;
-        currentAddr_ %= 7;
+        currentAddr_ %= 11;
         if(currentAddr_ == 0)
         {
             currentStatus_ = 0;
@@ -181,13 +181,26 @@ void ICVirtualHost::RefreshStatus()
         //            emit NeedToGetTeach();
         //            return;
         //        }
+//        result.append(rand());
+//        result.append(rand());
+//        result.append(rand());
+//        result.append(rand());
         if(!result.isEmpty())
         {
             //                currentStatus_ %= StatusCount;
+            qDebug()<<"status = "<<currentStatus_<<"addr = "<<currentAddr_;
+//            qDebug()<<"rev1 = "<<result.at(0);
+//            qDebug()<<"rev2 = "<<result.at(1);
+//            qDebug()<<"rev3 = "<<result.at(2);
+//            qDebug()<<"rev4 = "<<result.at(3);
             statusMap_.insert(static_cast<ICStatus>(currentStatus_++), result.at(0));
+//             qDebug()<<"status = "<<currentStatus_<<" = "<<result.at(0)<<"addr = "<<currentAddr_;
             statusMap_.insert(static_cast<ICStatus>(currentStatus_++), result.at(1));
+//         qDebug()<<"status = "<<currentStatus_<<" = "<<result.at(1)<<"addr = "<<currentAddr_;
             statusMap_.insert(static_cast<ICStatus>(currentStatus_++), result.at(2));
+//         qDebug()<<"status = "<<currentStatus_<<" = "<<result.at(2)<<"addr = "<<currentAddr_;
             statusMap_.insert(static_cast<ICStatus>(currentStatus_++), result.at(3));
+//         qDebug()<<"status = "<<currentStatus_<<" = "<<result.at(3)<<"addr = "<<currentAddr_;
             tryTimes_ = 0;
             ++currentAddr_;
 
@@ -743,6 +756,7 @@ void ICVirtualHost::InitICStatusMap_()
         statusMap_.insert(i, -1);
     }
     statusMap_.insert(ErrCode, 0);
+    qDebug()<<statusMap_.size();
 }
 
 void ICVirtualHost::InitSystemMap_()

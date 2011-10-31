@@ -180,8 +180,14 @@ border: 3px solid green;
        <widget class="QLabel" name="zPosLabel">
         <property name="minimumSize">
          <size>
-          <width>80</width>
+          <width>60</width>
           <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>60</width>
+          <height>16777215</height>
          </size>
         </property>
         <property name="styleSheet">
@@ -219,8 +225,14 @@ border: 3px solid green;
        <widget class="QLabel" name="xPosLabel">
         <property name="minimumSize">
          <size>
-          <width>80</width>
+          <width>60</width>
           <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>60</width>
+          <height>16777215</height>
          </size>
         </property>
         <property name="styleSheet">
@@ -258,8 +270,14 @@ border: 3px solid green;
        <widget class="QLabel" name="yPosLabel">
         <property name="minimumSize">
          <size>
-          <width>80</width>
+          <width>60</width>
           <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>60</width>
+          <height>16777215</height>
          </size>
         </property>
         <property name="styleSheet">
@@ -297,8 +315,14 @@ border: 3px solid green;
        <widget class="QLabel" name="pPosLabel">
         <property name="minimumSize">
          <size>
-          <width>80</width>
+          <width>60</width>
           <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>60</width>
+          <height>16777215</height>
          </size>
         </property>
         <property name="styleSheet">
@@ -336,8 +360,14 @@ border: 3px solid green;
        <widget class="QLabel" name="qPosLabel">
         <property name="minimumSize">
          <size>
-          <width>80</width>
+          <width>60</width>
           <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>60</width>
+          <height>16777215</height>
          </size>
         </property>
         <property name="styleSheet">
@@ -419,6 +449,9 @@ border-right: 3px solid green;
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
         <property name="sizeHint" stdset="0">
          <size>
           <width>40</width>
@@ -444,8 +477,14 @@ border-right: 3px solid green;
        <widget class="QLabel" name="aPosLabel">
         <property name="minimumSize">
          <size>
-          <width>80</width>
+          <width>60</width>
           <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>60</width>
+          <height>16777215</height>
          </size>
         </property>
         <property name="styleSheet">
@@ -483,8 +522,14 @@ border-right: 3px solid green;
        <widget class="QLabel" name="bPosLabel">
         <property name="minimumSize">
          <size>
-          <width>80</width>
+          <width>60</width>
           <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>60</width>
+          <height>16777215</height>
          </size>
         </property>
         <property name="styleSheet">
@@ -522,8 +567,14 @@ border-right: 3px solid green;
        <widget class="QLabel" name="cPosLabel">
         <property name="minimumSize">
          <size>
-          <width>80</width>
+          <width>60</width>
           <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>60</width>
+          <height>16777215</height>
          </size>
         </property>
         <property name="styleSheet">
@@ -570,6 +621,12 @@ border-right: 3px solid green;
          <size>
           <width>80</width>
           <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
+          <height>16777215</height>
          </size>
         </property>
         <property name="styleSheet">

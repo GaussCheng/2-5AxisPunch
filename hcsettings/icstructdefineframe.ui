@@ -6,20 +6,44 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>516</width>
-    <height>406</height>
+    <width>668</width>
+    <height>472</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_3">
+   <property name="spacing">
+    <number>2</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
    <item>
     <widget class="QGroupBox" name="groupBox">
      <property name="title">
       <string>Arm Select</string>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <property name="leftMargin">
+       <number>9</number>
+      </property>
+      <property name="topMargin">
+       <number>3</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
       <item>
        <widget class="QCheckBox" name="singleArmButton">
         <property name="styleSheet">
@@ -125,12 +149,30 @@ QRadioButton::indicator:unchecked:disabled
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <property name="leftMargin">
+      <number>9</number>
+     </property>
      <item>
       <widget class="QGroupBox" name="mainArmBox">
        <property name="title">
         <string>Main Arm</string>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout">
+        <property name="spacing">
+         <number>3</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>3</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
         <item>
          <widget class="QCheckBox" name="mainArmDownLimitButton">
           <property name="styleSheet">
@@ -251,6 +293,18 @@ QCheckBox::indicator:unchecked:disabled
         <string>Sub Arm</string>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_2">
+        <property name="spacing">
+         <number>3</number>
+        </property>
+        <property name="topMargin">
+         <number>3</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
         <item>
          <widget class="QCheckBox" name="subArmDownLimitButton">
           <property name="text">
@@ -298,6 +352,232 @@ QCheckBox::indicator:unchecked:disabled
       </spacer>
      </item>
     </layout>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="armDefineBox">
+     <property name="title">
+      <string>Arm Define</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <property name="topMargin">
+       <number>3</number>
+      </property>
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
+      <property name="horizontalSpacing">
+       <number>3</number>
+      </property>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="x1Box">
+        <item>
+         <property name="text">
+          <string>None</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Pneumatic</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Servo</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>X1</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="4">
+       <widget class="QLabel" name="label_14">
+        <property name="text">
+         <string>C</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_13">
+        <property name="text">
+         <string>Z</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4">
+       <widget class="QLabel" name="label_15">
+        <property name="text">
+         <string>A</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="y1Box">
+        <item>
+         <property name="text">
+          <string>None</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Pneumatic</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Servo</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="2" column="5">
+       <widget class="QComboBox" name="cBox">
+        <item>
+         <property name="text">
+          <string>None</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Pneumatic</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Servo</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="5">
+       <widget class="QComboBox" name="aBox">
+        <item>
+         <property name="text">
+          <string>None</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Pneumatic</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Servo</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="4">
+       <widget class="QLabel" name="label_16">
+        <property name="text">
+         <string>B</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QComboBox" name="zBox">
+        <item>
+         <property name="text">
+          <string>None</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Pneumatic</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Servo</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string>Y1</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="5">
+       <widget class="QComboBox" name="bBox">
+        <item>
+         <property name="text">
+          <string>None</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Pneumatic</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Servo</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>X2</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QComboBox" name="x2Box">
+        <item>
+         <property name="text">
+          <string>None</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Pneumatic</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Servo</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QLabel" name="label_12">
+        <property name="text">
+         <string>Y2</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QComboBox" name="y2Box">
+        <item>
+         <property name="text">
+          <string>None</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Pneumatic</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Servo</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </item>
    <item>
     <widget class="QPushButton" name="saveButton">

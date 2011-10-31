@@ -66,9 +66,6 @@ QRadioButton::indicator:unchecked:disabled
      <property name="showDropIndicator" stdset="0">
       <bool>false</bool>
      </property>
-     <property name="dragDropOverwriteMode">
-      <bool>false</bool>
-     </property>
      <property name="alternatingRowColors">
       <bool>true</bool>
      </property>

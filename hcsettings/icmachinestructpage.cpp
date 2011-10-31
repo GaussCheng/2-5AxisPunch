@@ -27,7 +27,6 @@ ICMachineStructPage::ICMachineStructPage(QWidget *parent) :
     ui->axisAToolButton->setText(tr("A Axis"));
     ui->axisBToolButton->setText(tr("B Axis"));
     ui->axisCToolButton->setText(tr("C Axis"));
-    ui->axisDefineToolButton->setText(tr("Axis Define"));
     ui->structDefButton->setText(tr("Struct Define"));
     ui->timeLimitButton->setText(tr("Time"));
     buttonGroup_->addButton(ui->axisXToolButton);
@@ -38,7 +37,6 @@ ICMachineStructPage::ICMachineStructPage(QWidget *parent) :
     buttonGroup_->addButton(ui->axisAToolButton);
     buttonGroup_->addButton(ui->axisBToolButton);
     buttonGroup_->addButton(ui->axisCToolButton);
-    buttonGroup_->addButton(ui->axisDefineToolButton);
     buttonGroup_->addButton(ui->structDefButton);
     buttonGroup_->addButton(ui->timeLimitButton);
     buttonGroup_->setExclusive(true);
@@ -49,31 +47,7 @@ ICMachineStructPage::ICMachineStructPage(QWidget *parent) :
     }
 
     ui->axisXToolButton->click();
-    /*axis define*/
-    boxToAxis_.insert(ui->x1Box, ICVirtualHost::ICAxis_AxisX1);
-    boxToAxis_.insert(ui->y1Box, ICVirtualHost::ICAxis_AxisY1);
-    boxToAxis_.insert(ui->x2Box, ICVirtualHost::ICAxis_AxisX2);
-    boxToAxis_.insert(ui->y2Box, ICVirtualHost::ICAxis_AxisY2);
-    boxToAxis_.insert(ui->zBox, ICVirtualHost::ICAxis_AxisZ);
-    boxToAxis_.insert(ui->aBox, ICVirtualHost::ICAxis_AxisA);
-    boxToAxis_.insert(ui->bBox, ICVirtualHost::ICAxis_AxisB);
-    boxToAxis_.insert(ui->cBox, ICVirtualHost::ICAxis_AxisC);
-    defineToIndex_.insert(ICVirtualHost::ICAxisDefine_None, 0);
-    defineToIndex_.insert(ICVirtualHost::ICAxisDefine_Pneumatic, 1);
-    defineToIndex_.insert(ICVirtualHost::ICAxisDefine_Servo, 2);
-    indexToDefine_.insert(0, ICVirtualHost::ICAxisDefine_None);
-    indexToDefine_.insert(1, ICVirtualHost::ICAxisDefine_Pneumatic);
-    indexToDefine_.insert(2, ICVirtualHost::ICAxisDefine_Servo);
-    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    QList<QComboBox*> boxs = findChildren<QComboBox*>();
-    axisDefine_ = host->SystemParameter(ICVirtualHost::SYS_Config_Arm).toInt();
-    for(int i = 0; i != boxs.size(); ++i)
-    {
-        boxs[i]->setCurrentIndex(defineToIndex_.value(host->AxisDefine(static_cast<ICVirtualHost::ICAxis>(boxToAxis_.value(boxs.at(i))))));
-        connect(boxs[i],
-                SIGNAL(currentIndexChanged(int)),
-                SLOT(OnAxisDefineChanged(int)));
-    }
+
 //    ui->x1Box->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisX11)));
 //    ui->y1Box->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisY11)));
 //    ui->zBox->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisZ)));
@@ -104,7 +78,6 @@ void ICMachineStructPage::changeEvent(QEvent *e)
         ui->axisAToolButton->setText(tr("A Axis"));
         ui->axisBToolButton->setText(tr("B Axis"));
         ui->axisCToolButton->setText(tr("C Axis"));
-          ui->axisDefineToolButton->setText(tr("Axis Define"));
         ui->structDefButton->setText(tr("Struct Define"));
         ui->timeLimitButton->setText(tr("Time"));
         break;
@@ -498,19 +471,4 @@ void ICMachineStructPage::InitInterface()
     ui->distanceRotationEdit->SetDecimalPlaces(2);
     rotateValidator_ = new QIntValidator(0, 32767, this);
     ui->distanceRotationEdit->setValidator(rotateValidator_);
-}
-
-void ICMachineStructPage::OnAxisDefineChanged(int index)
-{
-    QComboBox* box = qobject_cast<QComboBox*>(sender());
-    ICVirtualHost::GlobalVirtualHost()->CalAxisDefine(axisDefine_,
-                                                      static_cast<ICVirtualHost::ICAxis>(boxToAxis_.value(box)),
-                                                      static_cast<ICVirtualHost::ICAxisDefine>(indexToDefine_.value(index)));
-    qDebug()<<axisDefine_;
-}
-
-void ICMachineStructPage::on_saveButton_clicked()
-{
-    ICVirtualHost::GlobalVirtualHost()->SetAxisDefine(axisDefine_);
-    QMessageBox::information(this, tr("Tips"), tr("Save Sucessfully!"));
 }

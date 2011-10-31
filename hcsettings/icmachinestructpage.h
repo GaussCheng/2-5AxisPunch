@@ -39,8 +39,6 @@ private Q_SLOTS:
     void on_saveToolButton_clicked();
 
     void SetCurrentAxis(int axis);
-    void OnAxisDefineChanged(int index);
-    void on_saveButton_clicked();
 
 private:
     void InitInterface();
@@ -53,10 +51,6 @@ private:
     QWidget* timePage_;
     QIntValidator* maxMoveValidator_;
     QIntValidator* rotateValidator_;
-    QMap<int, int> defineToIndex_;
-    QMap<QComboBox*, int> boxToAxis_;
-    QMap<int, int> indexToDefine_;
-    int axisDefine_;
 };
 
 #endif // ICMACHINESTRUCTPAGE_H

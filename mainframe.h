@@ -101,6 +101,11 @@ private:
     int oldXPos_;
     int oldYPos_;
     int oldZPos_;
+    int oldX2Pos_;
+    int oldY2Pos_;
+    int oldAPos_;
+    int oldBPos_;
+    int oldCPos_;
     QString speed_;
     QString statusStr_;
     bool isOriginShown_;
@@ -120,6 +125,11 @@ private:
     bool isXPosChanged_;
     bool isYPosChanged_;
     bool isZPosChanged_;
+    bool isX2PosChanged_;
+    bool isY2PosChanged_;
+    bool isAPosChanged_;
+    bool isBPosChanged_;
+    bool isCPosChanged_;
 
 };
 
