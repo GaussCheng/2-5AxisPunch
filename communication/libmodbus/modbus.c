@@ -1817,10 +1817,6 @@ int hc_query_status(modbus_param_t *mb_param, int slave, int start_addr, int nb,
             ret = -1;
             goto Send;
         }
-        for(int i = 0; i != 16; ++i)
-        {
-            printf("recv[%d] = %d \n", i, response[i]);
-        }
         crcCal = crc16(response, 14);
         length = 14;
     }
@@ -1844,14 +1840,13 @@ int hc_query_status(modbus_param_t *mb_param, int slave, int start_addr, int nb,
         ret = response[2];
     }
 
-//#ifdef HC_5AXIS
-//    start_addr = (++start_addr) % 10;
-//#elif define HC_8AXIS
-//    start_addr = (++start_addr) % 11;
-//#else
-//    start_addr = (++start_addr) % 7;
-//#endif
+#ifdef HC_5AXIS
+    start_addr = (++start_addr) % 10;
+#elif defined HC_8AXIS
     start_addr = (++start_addr) % 11;
+#else
+    start_addr = (++start_addr) % 7;
+#endif
 
 #ifndef NATIVE_WIN32
     tcflush(mb_param->fd, TCIOFLUSH);
@@ -1863,7 +1858,6 @@ int hc_query_status(modbus_param_t *mb_param, int slave, int start_addr, int nb,
     query[3] = start_addr >> 8;
     query[4] = nb & 0x00FF;
     query[5] = nb >> 8;
-    printf("query addr = %d\n", query[2]);
     modbus_send(mb_param, query, 6);
     return ret;
 

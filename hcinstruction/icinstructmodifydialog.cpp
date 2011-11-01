@@ -55,7 +55,7 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
     ui->mmLabel_2->hide();
     if(item->IsAction())
     {
-        if(item->Action() == ICMold::GY || item->Action() == ICMold::GZ || item->Action() == ICMold::GX)
+        if(item->Action() >= ICMold::GC && item->Action() <= ICMold::GB)
         {
             ui->positionLabel->show();
             ui->posEdit->show();

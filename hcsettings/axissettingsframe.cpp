@@ -432,6 +432,26 @@ void AxisSettingsFrame::on_testPushButton_clicked()
     {
         addCmd = IC::CMD_TestZ;
     }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisX2)
+    {
+        addCmd = IC::CMD_TestX2;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY2)
+    {
+        addCmd = IC::CMD_TestY2;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisA)
+    {
+        addCmd = IC::CMD_TestA;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisB)
+    {
+        addCmd = IC::CMD_TestB;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisC)
+    {
+        addCmd = IC::CMD_TestC;
+    }
     processor->ExecuteHCCommand(addCmd, 0);
 
 }
@@ -452,6 +472,26 @@ void AxisSettingsFrame::on_revTestPushButton_clicked()
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisZ)
     {
         addCmd = IC::CMD_TestzRev;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisX2)
+    {
+        addCmd = IC::CMD_TestX2Rev;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY2)
+    {
+        addCmd = IC::CMD_TestY2Rev;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisA)
+    {
+        addCmd = IC::CMD_TestARev;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisB)
+    {
+        addCmd = IC::CMD_TestBRev;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisC)
+    {
+        addCmd = IC::CMD_TestCRev;
     }
     processor->ExecuteHCCommand(addCmd, 0);
 }

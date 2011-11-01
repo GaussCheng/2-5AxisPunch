@@ -31,6 +31,12 @@ enum ICVirtualKey
     VKEY_Y2ADD,
     VKEY_ORIGIN,
     VKEY_RETURN,
+    VKEY_ASUB,
+    VKEY_AADD,
+    VKEY_BSUB,
+    VKEY_BADD,
+    VKEY_CSUB,
+    VKEY_CADD,
 
     VKEY_BIASX  = 0xE0,
     VKEY_BIASY,

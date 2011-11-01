@@ -180,6 +180,8 @@ ICMold::ICMold(QObject *parent) :
     QObject(parent)
 {
     ICInstructParam::Instance();
+//    axisActions_.append(GX);
+//    axisActions_.append();
 }
 
 bool ICMold::ReadMoldFile(const QString &fileName, bool isLoadParams)

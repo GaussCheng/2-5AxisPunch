@@ -43,6 +43,25 @@ enum ICActionCommand
     CMD_GoOn            = 0x31,
     CMD_GiveUp          = 0x32,
 
+    CMD_X2SubLmt        = 0x35,
+    CMD_X2AddLmt        = 0x36,
+    CMD_Y2SubLmt        = 0x37,
+    CMD_Y2AddLmt        = 0x38,
+
+    CMD_TestX2          = 0x39,     //测试X轴脉冲
+    CMD_TestY2          = 0x3a,     //测试Y轴脉冲
+    CMD_TestZ2          = 0x3b,     //测试Z轴脉冲
+    CMD_TestX2Rev       = 0x3c,     //测试X轴反向
+    CMD_TestY2Rev       = 0x3d,     //测试Z轴反向
+    CMD_TestZ2Rev       = 0x3e,
+
+    CMD_TestA           = 0x50,     //测试X轴脉冲
+    CMD_TestB           = 0x51,     //测试Y轴脉冲
+    CMD_TestC           = 0x52,     //测试Z轴脉冲
+    CMD_TestARev        = 0x53,     //测试X轴反向
+    CMD_TestBRev        = 0x54,     //测试Z轴反向
+    CMD_TestCRev        = 0x55,
+
     CMD_PulseA          = 0x60,     //脉冲命令A
     CMD_PulseB          = 0x61,     //脉冲命令B
 };

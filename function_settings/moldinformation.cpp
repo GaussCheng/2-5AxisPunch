@@ -9,6 +9,7 @@
 #include "icmold.h"
 #include "icprogramheadframe.h"
 #include "icvirtualhost.h"
+#include "config.h"
 
 #include <QDebug>
 
@@ -70,7 +71,11 @@ bool MoldInformation::CreateNewSourceFile(const QString & fileName)
             QMessageBox::warning(this, tr("Warnning"),tr("This name can't not be accept!"));
             return false;
         }
+#ifdef HC_8AXIS
+        newFile.write("0 0 255 1 0 0 0 80 0 81\n1 1 255 2 0 0 0 80 0 84\n2 2 255 3 0 0 0 80 0 87\n3 3 255 4 0 0 0 80 0 90\n4 4 255 5 0 0 0 80 0 93\n5 5 255 6 0 0 0 80 0 96\n6 6 255 7 0 0 0 80 0 99\n7 7 255 0 0 0 0 80 0 94\n8 8 255 17 0 0 0 0 0 33\n9 8 255 14 0 0 0 0 0 31\n10 8 255 13 0 0 0 0 0 31\n11 9 255 29 0 0 0 1 0 50\n12 10 255 32 0 0 0 0 5 59");
+#else
         newFile.write("0 0 255 1 0 0 0 80 0 81\n1 0 255 2 0 0 0 80 0 83\n2 0 255 3 0 0 0 80 0 85\n3 0 255 17 0 0 0 0 0 20\n4 0 255 14 0 0 0 0 0 18\n5 0 255 13 0 0 0 0 0 18\n6 1 255 29 0 0 0 1 0 37\n7 2 255 32 0 0 0 0 5 46");
+#endif
         QFile::copy(recordFilePath_ + "/Base.fnc", recordFilePath_ + "/" + fileNameNoExtent + "fnc");
         newFile.close();
         QMessageBox::warning(this, tr("Success"),

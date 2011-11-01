@@ -572,12 +572,15 @@ void ICHCSystemSettingsFrame::on_structDefButton_clicked()
     armStruct_ = host->SystemParameter(ICVirtualHost::SYS_Config_Signal).toUInt();
     ui->hmiX1->setText(armXStructValueToName_.value(armStruct_ & 0x0003));
     ui->hmiY1->setText(armYStructValueToName_.value((armStruct_ & 0x000C) >> 2));
-    ui->hmiX2->setText(armXStructValueToName_.value((armStruct_ & 0x0030) >> 4));
-    ui->hmiY2->setText(armYStructValueToName_.value((armStruct_ & 0x00C0) >> 6));
-    ui->hmiArm->setText(armValueToName_.value((armStruct_ & 0x0300) >> 8));
+    ui->hmiX2->setText(armXStructValueToName_.value((armStruct_ & 0x00C0) >> 6));
+    ui->hmiY2->setText(armYStructValueToName_.value((armStruct_ & 0x0100) >> 8));
+    ui->hmiArm->setText(QString::number(host->SystemParameter(ICVirtualHost::SYS_Config_Arm).toUInt()));
+    ui->hmiSignal->setText(QString::number(armStruct_));
+    ui->hmiOut->setText(QString::number(host->SystemParameter(ICVirtualHost::SYS_Config_Out).toUInt()));
+//    ui->hmiArm->setText(armValueToName_.value((armStruct_ & 0x0300) >> 8));
     ICGetAxisConfigsCommand command;
     ICCommandProcessor* processor = ICCommandProcessor::Instance();
-    command.SetAxis(3);
+    command.SetAxis(8);
     command.SetSlave(processor->SlaveID());
     ICCommunicationCommandBase::ResultVector ret = processor->ExecuteCommand(command).value<ICCommunicationCommandBase::ResultVector>();
     if(!ret.isEmpty())
@@ -585,9 +588,12 @@ void ICHCSystemSettingsFrame::on_structDefButton_clicked()
         armStruct_ = ret.at(0);
         ui->hostX1->setText(armXStructValueToName_.value(armStruct_ & 0x0003));
         ui->hostY1->setText(armYStructValueToName_.value((armStruct_ & 0x000C) >> 2));
-        ui->hostX2->setText(armXStructValueToName_.value((armStruct_ & 0x0030) >> 4));
-        ui->hostY2->setText(armYStructValueToName_.value((armStruct_ & 0x00C0) >> 6));
-        ui->hostArm->setText(armValueToName_.value((armStruct_ & 0x0300) >> 8));
+        ui->hostX2->setText(armXStructValueToName_.value((armStruct_ & 0x00C0) >> 6));
+        ui->hostY2->setText(armYStructValueToName_.value((armStruct_ & 0x0300) >> 8));
+        ui->hostSignal->setText(QString::number(armStruct_));
+        ui->hostArm->setText(QString::number(ret.at(2)));
+        ui->hostOut->setText(QString::number(ret.at(3)));
+//        ui->hostArm->setText(armValueToName_.value((armStruct_ & 0x0300) >> 8));
     }
 }
 

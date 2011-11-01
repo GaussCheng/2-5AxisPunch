@@ -67,6 +67,9 @@ public:
     uint BackLightTime() { return GetParameter(ProductConfig, "BackLight", 5).toUInt();}
     void SetBackLightTime(uint time) { SaveParameter(ProductConfig, "BackLight", time);}
 
+    bool IsSingleArm() { return GetParameter(SystemMachine, "ArmNum", false).toBool();}
+    void SetSingleArm(bool isSingle) { SaveParameter(SystemMachine, "ArmNum", isSingle);}
+
 signals:
     void CurrentLanguageChanged();
 

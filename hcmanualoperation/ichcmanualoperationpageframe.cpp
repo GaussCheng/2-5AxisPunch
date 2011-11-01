@@ -4,7 +4,6 @@
 #include <QStackedLayout>
 #include <QButtonGroup>
 
-#include "hcservoarmcontrolframe.h"
 //#include "hcmanualalternateioframe.h"
 #include "hcmanualfixtureframe.h"
 //#include "hcmanualfunctionframe.h"
@@ -22,6 +21,7 @@ ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     manualFixturePage_(NULL),
     manualSuckerPage_(NULL),
     manualAdjustPage_(NULL),
+    serveAxisPage_(NULL),
     centralStackedLayout_(new QStackedLayout),
     currentPose_(-1),
     currentAction_(-1)
@@ -32,7 +32,7 @@ ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     ui->centralFrame->setLayout(centralStackedLayout_);
 
     InitInterface();
-    InitSignal();
+//    InitSignal();
     ui->fixtureToolButton->click();
 }
 
@@ -76,6 +76,16 @@ void ICHCManualOperationPageFrame::changeEvent(QEvent *e)
         ui->suckerToolButton->setText(tr("Sucker"));
         ui->otherToolButton->setText(tr("Other"));
         ui->adjustToolButton->setText(tr("Adjust"));
+#ifdef HC_8AXIS
+        ui->x1AxisButton->setText(tr("X1 Axis"));
+        ui->y1AxisButton->setText(tr("Y1 Axis"));
+        ui->zAxisButton->setText(tr("Z Axis"));
+        ui->x2AxisButton->setText(tr("X2 Axis"));
+        ui->y2AxisButton->setText(tr("Y2 Axis"));
+        ui->aAxisButton->setText(tr("A Axis"));
+        ui->bAxisButton->setText(tr("B Axis"));
+        ui->cAxisButton->setText(tr("C Axis"));
+#endif
     }
         break;
     default:
@@ -92,36 +102,66 @@ void ICHCManualOperationPageFrame::InitInterface()
     ui->suckerToolButton->setText(tr("Sucker"));
     ui->otherToolButton->setText(tr("Other"));
     ui->adjustToolButton->setText(tr("Adjust"));
-    ui->fixtureToolButton->setCheckable(true);
-    ui->suckerToolButton->setCheckable(true);
-    ui->otherToolButton->setCheckable(true);
-    ui->adjustToolButton->setCheckable(true);
+//    ui->fixtureToolButton->setCheckable(true);
+//    ui->suckerToolButton->setCheckable(true);
+//    ui->otherToolButton->setCheckable(true);
+//    ui->adjustToolButton->setCheckable(true);
     buttonGroup_->addButton(ui->fixtureToolButton);
     buttonGroup_->addButton(ui->suckerToolButton);
     buttonGroup_->addButton(ui->otherToolButton);
     buttonGroup_->addButton(ui->adjustToolButton);
+#ifdef HC_8AXIS
+    ui->x1AxisButton->setText(tr("X1 Axis"));
+    ui->y1AxisButton->setText(tr("Y1 Axis"));
+    ui->zAxisButton->setText(tr("Z Axis"));
+    ui->x2AxisButton->setText(tr("X2 Axis"));
+    ui->y2AxisButton->setText(tr("Y2 Axis"));
+    ui->aAxisButton->setText(tr("A Axis"));
+    ui->bAxisButton->setText(tr("B Axis"));
+    ui->cAxisButton->setText(tr("C Axis"));
+    buttonGroup_->addButton(ui->x1AxisButton);
+    buttonGroup_->addButton(ui->y1AxisButton);
+    buttonGroup_->addButton(ui->zAxisButton);
+    buttonGroup_->addButton(ui->x2AxisButton);
+    buttonGroup_->addButton(ui->y2AxisButton);
+    buttonGroup_->addButton(ui->aAxisButton);
+    buttonGroup_->addButton(ui->bAxisButton);
+    buttonGroup_->addButton(ui->cAxisButton);
+    ui->currentPose->hide();
+    ui->currentAction->hide();
+#endif
+    QList<QAbstractButton*> buttons = buttonGroup_->buttons();
+    for(int i = 0; i != buttons.size(); ++i)
+    {
+        buttons[i]->setCheckable(true);
+        connect(buttons.at(i),
+                SIGNAL(clicked()),
+                this,
+                SLOT(ShowOptionPage()));
+    }
     buttonGroup_->setExclusive(true);
+
 
 }
 
 void ICHCManualOperationPageFrame::InitSignal()
 {
-    connect(ui->otherToolButton,
-            SIGNAL(clicked()),
-            this,
-            SLOT(ShowOptionPage()));
-    connect(ui->fixtureToolButton,
-            SIGNAL(clicked()),
-            this,
-            SLOT(ShowOptionPage()));
-    connect(ui->suckerToolButton,
-            SIGNAL(clicked()),
-            this,
-            SLOT(ShowOptionPage()));
-    connect(ui->adjustToolButton,
-            SIGNAL(clicked()),
-            this,
-            SLOT(ShowOptionPage()));
+//    connect(ui->otherToolButton,
+//            SIGNAL(clicked()),
+//            this,
+//            SLOT(ShowOptionPage()));
+//    connect(ui->fixtureToolButton,
+//            SIGNAL(clicked()),
+//            this,
+//            SLOT(ShowOptionPage()));
+//    connect(ui->suckerToolButton,
+//            SIGNAL(clicked()),
+//            this,
+//            SLOT(ShowOptionPage()));
+//    connect(ui->adjustToolButton,
+//            SIGNAL(clicked()),
+//            this,
+//            SLOT(ShowOptionPage()));
 
 }
 
@@ -162,6 +202,31 @@ void ICHCManualOperationPageFrame::ShowOptionPage()
         manualAdjustPage_ = new HCManualAdjustFrame;
         buttonToPage_.insert(ui->adjustToolButton, manualAdjustPage_);
         centralStackedLayout_->addWidget(manualAdjustPage_);
+    }
+    else if(serveAxisPage_ == NULL)
+    {
+        serveAxisPage_ = new HCServoArmControlFrame();
+        centralStackedLayout_->addWidget(serveAxisPage_);
+        buttonToPage_.insert(ui->x1AxisButton, serveAxisPage_);
+        buttonToPage_.insert(ui->y1AxisButton, serveAxisPage_);
+        buttonToPage_.insert(ui->zAxisButton, serveAxisPage_);
+        buttonToPage_.insert(ui->x2AxisButton, serveAxisPage_);
+        buttonToPage_.insert(ui->y2AxisButton, serveAxisPage_);
+        buttonToPage_.insert(ui->aAxisButton, serveAxisPage_);
+        buttonToPage_.insert(ui->bAxisButton, serveAxisPage_);
+        buttonToPage_.insert(ui->cAxisButton, serveAxisPage_);
+        buttonToAxis_.insert(ui->x1AxisButton, ICVirtualHost::ICAxis_AxisX1);
+        buttonToAxis_.insert(ui->y1AxisButton, ICVirtualHost::ICAxis_AxisY1);
+        buttonToAxis_.insert(ui->zAxisButton, ICVirtualHost::ICAxis_AxisZ);
+        buttonToAxis_.insert(ui->x2AxisButton, ICVirtualHost::ICAxis_AxisX2);
+        buttonToAxis_.insert(ui->y2AxisButton, ICVirtualHost::ICAxis_AxisY2);
+        buttonToAxis_.insert(ui->aAxisButton, ICVirtualHost::ICAxis_AxisA);
+        buttonToAxis_.insert(ui->bAxisButton, ICVirtualHost::ICAxis_AxisB);
+        buttonToAxis_.insert(ui->cAxisButton, ICVirtualHost::ICAxis_AxisC);
+    }
+    if(buttonToAxis_.contains(clickedButton))
+    {
+        serveAxisPage_->SetCurrentAxis(static_cast<ICVirtualHost::ICAxis>(buttonToAxis_.value(clickedButton)));
     }
 
     centralStackedLayout_->setCurrentWidget(buttonToPage_.value(clickedButton));

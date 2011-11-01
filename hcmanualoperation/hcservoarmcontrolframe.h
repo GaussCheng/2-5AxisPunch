@@ -2,6 +2,7 @@
 #define HCSERVOARMCONTROLFRAME_H
 
 #include <QFrame>
+#include "icvirtualhost.h"
 
 namespace Ui {
     class HCServoArmControlFrame;
@@ -18,13 +19,15 @@ public:
 protected:
     void changeEvent(QEvent *e);
 public slots:
-    void SetCurrentAxis(const QString & axisName);
+    void SetCurrentAxis(ICVirtualHost::ICAxis axis);
 
 private:
     Ui::HCServoArmControlFrame *ui;
     void RunMinus_();
     void RunPlus_();
     void ChangeSpeed_(int dSpeed);
+
+    ICVirtualHost::ICAxis currentAxis_;
 
 private slots:
 

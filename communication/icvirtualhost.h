@@ -378,9 +378,19 @@ public:
         SM_ACCTIMEX,			//X A&D
         SM_ACCTIMEY,			//Y A&D
         SM_ACCTIMEZ,			//Z A&D
+        SM_ACCTIMEP,
+        SM_ACCTIMEQ,			//X A&D
+        SM_ACCTIMEA,			//Y A&D
+        SM_ACCTIMEB,			//Z A&D
+        SM_ACCTIMEC,
         SM_LMTVX,				//X Max Speed
         SM_LMTVY,				//Y Max Speed
         SM_LMTVZ,				//Z Max Speed
+        SM_LMTVP,
+        SM_LMTVQ,				//X Max Speed
+        SM_LMTVA,				//Y Max Speed
+        SM_LMTVB,				//Z Max Speed
+        SM_LMTVC,
         SM_ARM_CONFIG,
         SM_YEarlyEnd,
         SM_ZEarlyEnd,

@@ -15,6 +15,16 @@ ICMachineConfigPage::ICMachineConfigPage(QWidget *parent) :
     ui->yADEdit->setValidator(validator);
     ui->zADEdit->SetDecimalPlaces(2);
     ui->zADEdit->setValidator(validator);
+    ui->x2ADEdit->SetDecimalPlaces(2);
+    ui->x2ADEdit->setValidator(validator);
+    ui->y2ADEdit->SetDecimalPlaces(2);
+    ui->y2ADEdit->setValidator(validator);
+    ui->aADEdit->SetDecimalPlaces(2);
+    ui->aADEdit->setValidator(validator);
+    ui->bADEdit->SetDecimalPlaces(2);
+    ui->bADEdit->setValidator(validator);
+    ui->cADEdit->SetDecimalPlaces(2);
+    ui->cADEdit->setValidator(validator);
     ui->toleranceLineEdit->SetDecimalPlaces(2);
     ui->toleranceLineEdit->setValidator(validator);
 //    ui->xEarlyEndEdit->SetDecimalPlaces(1);
@@ -28,6 +38,11 @@ ICMachineConfigPage::ICMachineConfigPage(QWidget *parent) :
     ui->xMaxSpeedEdit->setValidator(validator);
     ui->yMaxSpeedEdit->setValidator(validator);
     ui->zMaxSpeedEdit->setValidator(validator);
+    ui->x2MaxSpeedEdit->setValidator(validator);
+    ui->y2MaxSpeedEdit->setValidator(validator);
+    ui->aMaxSpeedEdit->setValidator(validator);
+    ui->bMaxSpeedEdit->setValidator(validator);
+    ui->cMaxSpeedEdit->setValidator(validator);
 
     ICLineEditWrapper* wrapper = new ICLineEditWrapper(ui->xADEdit,
                                                        ICVirtualHost::SM_ACCTIMEX,
@@ -71,23 +86,66 @@ ICMachineConfigPage::ICMachineConfigPage(QWidget *parent) :
                                     ICLineEditWrapper::TwoFraction);
     wrappers_.append(wrapper);
 
-//    wrapper = new ICLineEditWrapper(ui->xEarlyEndEdit,
-//                                    ICVirtualHost::SM_XEarlyEnd,
-//                                    ICLineEditWrapper::System,
-//                                    ICLineEditWrapper::OneFraction);
-//    wrappers_.append(wrapper);
+    wrapper = new ICLineEditWrapper(ui->x2ADEdit,
+                                    ICVirtualHost::SM_ACCTIMEP,
+                                    ICLineEditWrapper::System,
+                                    ICLineEditWrapper::TwoFraction);
+    wrappers_.append(wrapper);
 
-//    wrapper = new ICLineEditWrapper(ui->yEarlyEndEdit,
-//                                    ICVirtualHost::SM_YEarlyEnd,
-//                                    ICLineEditWrapper::System,
-//                                    ICLineEditWrapper::OneFraction);
-//    wrappers_.append(wrapper);
+    wrapper = new ICLineEditWrapper(ui->y2ADEdit,
+                                    ICVirtualHost::SM_ACCTIMEQ,
+                                    ICLineEditWrapper::System,
+                                    ICLineEditWrapper::TwoFraction);
+    wrappers_.append(wrapper);
 
-//    wrapper = new ICLineEditWrapper(ui->zEarlyEndEdit,
-//                                    ICVirtualHost::SM_ZEarlyEnd,
-//                                    ICLineEditWrapper::System,
-//                                    ICLineEditWrapper::OneFraction);
-//    wrappers_.append(wrapper);
+    wrapper = new ICLineEditWrapper(ui->aADEdit,
+                                    ICVirtualHost::SM_ACCTIMEA,
+                                    ICLineEditWrapper::System,
+                                    ICLineEditWrapper::TwoFraction);
+    wrappers_.append(wrapper);
+
+    wrapper = new ICLineEditWrapper(ui->bADEdit,
+                                    ICVirtualHost::SM_ACCTIMEB,
+                                    ICLineEditWrapper::System,
+                                    ICLineEditWrapper::TwoFraction);
+    wrappers_.append(wrapper);
+
+    wrapper = new ICLineEditWrapper(ui->cADEdit,
+                                    ICVirtualHost::SM_ACCTIMEC,
+                                    ICLineEditWrapper::System,
+                                    ICLineEditWrapper::TwoFraction);
+
+    wrappers_.append(wrapper);
+
+    wrapper = new ICLineEditWrapper(ui->x2MaxSpeedEdit,
+                                    ICVirtualHost::SM_LMTVP,
+                                    ICLineEditWrapper::System,
+                                    ICLineEditWrapper::Integer);
+    wrappers_.append(wrapper);
+
+    wrapper = new ICLineEditWrapper(ui->y2MaxSpeedEdit,
+                                    ICVirtualHost::SM_LMTVQ,
+                                    ICLineEditWrapper::System,
+                                    ICLineEditWrapper::Integer);
+    wrappers_.append(wrapper);
+
+    wrapper = new ICLineEditWrapper(ui->aMaxSpeedEdit,
+                                    ICVirtualHost::SM_LMTVA,
+                                    ICLineEditWrapper::System,
+                                    ICLineEditWrapper::Integer);
+    wrappers_.append(wrapper);
+
+    wrapper = new ICLineEditWrapper(ui->bMaxSpeedEdit,
+                                    ICVirtualHost::SM_LMTVB,
+                                    ICLineEditWrapper::System,
+                                    ICLineEditWrapper::Integer);
+    wrappers_.append(wrapper);
+
+    wrapper = new ICLineEditWrapper(ui->cMaxSpeedEdit,
+                                    ICVirtualHost::SM_LMTVC,
+                                    ICLineEditWrapper::System,
+                                    ICLineEditWrapper::Integer);
+    wrappers_.append(wrapper);
 }
 
 ICMachineConfigPage::~ICMachineConfigPage()

@@ -9,14 +9,7 @@
 
 ActionSettingFrame::ActionSettingFrame(QWidget *parent) :
     ICInstructionEditorBase(parent),
-    ui(new Ui::ActionSettingFrame),
-    routeSettingPage_(NULL),
-    poseH(tr("Pose Horizontal")),
-    poseV(tr("Pose Vertial")),
-    sAU(tr("Sub Arm Up")),
-    sAD(tr("Sub Arm Down")),
-    sAF(tr("Sub Arm Forward")),
-    sAB(tr("Sub Arm Backward"))
+    ui(new Ui::ActionSettingFrame)
 {
     ui->setupUi(this);
 
@@ -60,12 +53,49 @@ void ActionSettingFrame::InitInterface()
     ui->zPosLineEdit->SetDecimalPlaces(1);
     ui->zPosLineEdit->setValidator(validator);
 
+#ifdef HC_8AXIS
+    ui->x2DelayLineEdit->SetDecimalPlaces(1);
+    ui->x2DelayLineEdit->setValidator(validator);
+    ui->x2PosLineEdit->SetDecimalPlaces(1);
+    ui->x2PosLineEdit->setValidator(validator);
+
+    ui->y2DelayLineEdit->SetDecimalPlaces(1);
+    ui->y2DelayLineEdit->setValidator(validator);
+    ui->y2PosLineEdit->SetDecimalPlaces(1);
+    ui->y2PosLineEdit->setValidator(validator);
+
+    ui->aDelayLineEdit->SetDecimalPlaces(1);
+    ui->aDelayLineEdit->setValidator(validator);
+    ui->aPosLineEdit->SetDecimalPlaces(1);
+    ui->aPosLineEdit->setValidator(validator);
+
+    ui->bDelayLineEdit->SetDecimalPlaces(1);
+    ui->bDelayLineEdit->setValidator(validator);
+    ui->bPosLineEdit->SetDecimalPlaces(1);
+    ui->bPosLineEdit->setValidator(validator);
+
+    ui->cDelayLineEdit->SetDecimalPlaces(1);
+    ui->cDelayLineEdit->setValidator(validator);
+    ui->cPosLineEdit->SetDecimalPlaces(1);
+    ui->cPosLineEdit->setValidator(validator);
+
     ui->x1SpeedLineEdit->SetDecimalPlaces(0);
     ui->x1SpeedLineEdit->setValidator(validator);
     ui->y1SpeedLineEdit->SetDecimalPlaces(0);
     ui->y1SpeedLineEdit->setValidator(validator);
     ui->zSpeedLineEdit->SetDecimalPlaces(0);
     ui->zSpeedLineEdit->setValidator(validator);
+    ui->x2SpeedLineEdit->SetDecimalPlaces(0);
+    ui->x2SpeedLineEdit->setValidator(validator);
+    ui->y2SpeedLineEdit->SetDecimalPlaces(0);
+    ui->y2SpeedLineEdit->setValidator(validator);
+    ui->aSpeedLineEdit->SetDecimalPlaces(0);
+    ui->aSpeedLineEdit->setValidator(validator);
+    ui->bSpeedLineEdit->SetDecimalPlaces(0);
+    ui->bSpeedLineEdit->setValidator(validator);
+    ui->cSpeedLineEdit->SetDecimalPlaces(0);
+    ui->cSpeedLineEdit->setValidator(validator);
+#endif
 
 
 }
@@ -83,6 +113,14 @@ void ActionSettingFrame::on_inputButton_clicked()
     ui->x1PosLineEdit->setText(QString().sprintf("%.1f", oXP_ / 10.0));
     ui->y1PosLineEdit->setText(QString().sprintf("%.1f", oYP_ / 10.0));
     ui->zPosLineEdit->setText(QString().sprintf("%.1f", oZP_ / 10.0));
+#ifdef HC_8AXIS
+    ui->x2PosLineEdit->setText(QString().sprintf("%.1f", oX2P_ / 10.0));
+    ui->y2PosLineEdit->setText(QString().sprintf("%.1f", oY2P_ / 10.0));
+    ui->aPosLineEdit->setText(QString().sprintf("%.1f", oAP_ / 10.0));
+    ui->bPosLineEdit->setText(QString().sprintf("%.1f", oBP_ / 10.0));
+    ui->cPosLineEdit->setText(QString().sprintf("%.1f", oCP_ / 10.0));
+#endif
+
     //do someting
 }
 
@@ -182,6 +220,37 @@ void ActionSettingFrame::StatusRefresh()
     {
         oXP_ = pos;
     }
+#ifdef HC_8AXIS
+    pos = host->HostStatus(ICVirtualHost::PPos).toInt();
+    if(pos != oX2P_)
+    {
+        oX2P_ = pos;
+    }
+
+    pos = host->HostStatus(ICVirtualHost::QPos).toInt();
+    if(pos != oY2P_)
+    {
+        oY2P_ = pos;
+    }
+
+    pos = host->HostStatus(ICVirtualHost::APos).toInt();
+    if(pos != oAP_)
+    {
+        oAP_ = pos;
+    }
+
+    pos = host->HostStatus(ICVirtualHost::BPos).toInt();
+    if(pos != oBP_)
+    {
+        oBP_ = pos;
+    }
+
+    pos = host->HostStatus(ICVirtualHost::CPos).toInt();
+    if(pos != oCP_)
+    {
+        oCP_ = pos;
+    }
+#endif
 }
 
 QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
@@ -226,6 +295,59 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         item.SetIFPos(0);
         ret.append(item);
     }
+
+#ifdef HC_8AXIS
+    if(ui->gPButton->isChecked())
+    {
+        item.SetAction(ICMold::GP);
+        item.SetPos(ui->x2PosLineEdit->TransThisTextToThisInt());
+        item.SetDVal(ui->x2DelayLineEdit->TransThisTextToThisInt());
+        item.SetSVal(ui->x2SpeedLineEdit->TransThisTextToThisInt());
+        item.SetIFVal(0);
+        item.SetIFPos(0);
+        ret.append(item);
+    }
+    if(ui->gQButton->isChecked())
+    {
+        item.SetAction(ICMold::GQ);
+        item.SetPos(ui->y2PosLineEdit->TransThisTextToThisInt());
+        item.SetDVal(ui->y2DelayLineEdit->TransThisTextToThisInt());
+        item.SetSVal(ui->y2SpeedLineEdit->TransThisTextToThisInt());
+        item.SetIFVal(0);
+        item.SetIFPos(0);
+        ret.append(item);
+    }
+    if(ui->gAButton->isChecked())
+    {
+        item.SetAction(ICMold::GA);
+        item.SetPos(ui->aPosLineEdit->TransThisTextToThisInt());
+        item.SetDVal(ui->aDelayLineEdit->TransThisTextToThisInt());
+        item.SetSVal(ui->aSpeedLineEdit->TransThisTextToThisInt());
+        item.SetIFVal(0);
+        item.SetIFPos(0);
+        ret.append(item);
+    }
+    if(ui->gBButton->isChecked())
+    {
+        item.SetAction(ICMold::GB);
+        item.SetPos(ui->bPosLineEdit->TransThisTextToThisInt());
+        item.SetDVal(ui->bDelayLineEdit->TransThisTextToThisInt());
+        item.SetSVal(ui->bSpeedLineEdit->TransThisTextToThisInt());
+        item.SetIFVal(0);
+        item.SetIFPos(0);
+        ret.append(item);
+    }
+    if(ui->gCButton->isChecked())
+    {
+        item.SetAction(ICMold::GC);
+        item.SetPos(ui->cPosLineEdit->TransThisTextToThisInt());
+        item.SetDVal(ui->cDelayLineEdit->TransThisTextToThisInt());
+        item.SetSVal(ui->cSpeedLineEdit->TransThisTextToThisInt());
+        item.SetIFVal(0);
+        item.SetIFPos(0);
+        ret.append(item);
+    }
+#endif
 
     return ret;
 }
@@ -279,3 +401,85 @@ void ActionSettingFrame::on_gzButton_toggled(bool checked)
         ui->zSpeedLineEdit->setEnabled(false);
     }
 }
+
+#ifdef HC_8AXIS
+void ActionSettingFrame::on_gPButton_toggled(bool checked)
+{
+    if(checked)
+    {
+        ui->x2PosLineEdit->setEnabled(true);
+        ui->x2DelayLineEdit->setEnabled(true);
+        ui->x2SpeedLineEdit->setEnabled(true);
+    }
+    else
+    {
+        ui->x2PosLineEdit->setEnabled(false);
+        ui->x2DelayLineEdit->setEnabled(false);
+        ui->x2SpeedLineEdit->setEnabled(false);
+    }
+}
+
+void ActionSettingFrame::on_gQButton_toggled(bool checked)
+{
+    if(checked)
+    {
+        ui->y2PosLineEdit->setEnabled(true);
+        ui->y2DelayLineEdit->setEnabled(true);
+        ui->y2SpeedLineEdit->setEnabled(true);
+    }
+    else
+    {
+        ui->y2PosLineEdit->setEnabled(false);
+        ui->y2DelayLineEdit->setEnabled(false);
+        ui->y2SpeedLineEdit->setEnabled(false);
+    }
+}
+
+void ActionSettingFrame::on_gAButton_toggled(bool checked)
+{
+    if(checked)
+    {
+        ui->aPosLineEdit->setEnabled(true);
+        ui->aDelayLineEdit->setEnabled(true);
+        ui->aSpeedLineEdit->setEnabled(true);
+    }
+    else
+    {
+        ui->aPosLineEdit->setEnabled(false);
+        ui->aDelayLineEdit->setEnabled(false);
+        ui->aSpeedLineEdit->setEnabled(false);
+    }
+}
+
+void ActionSettingFrame::on_gBButton_toggled(bool checked)
+{
+    if(checked)
+    {
+        ui->bPosLineEdit->setEnabled(true);
+        ui->bDelayLineEdit->setEnabled(true);
+        ui->bSpeedLineEdit->setEnabled(true);
+    }
+    else
+    {
+        ui->bPosLineEdit->setEnabled(false);
+        ui->bDelayLineEdit->setEnabled(false);
+        ui->bSpeedLineEdit->setEnabled(false);
+    }
+}
+
+void ActionSettingFrame::on_gCButton_toggled(bool checked)
+{
+    if(checked)
+    {
+        ui->cPosLineEdit->setEnabled(true);
+        ui->cDelayLineEdit->setEnabled(true);
+        ui->cSpeedLineEdit->setEnabled(true);
+    }
+    else
+    {
+        ui->cPosLineEdit->setEnabled(false);
+        ui->cDelayLineEdit->setEnabled(false);
+        ui->cSpeedLineEdit->setEnabled(false);
+    }
+}
+#endif

@@ -167,14 +167,14 @@ void ICInstructParam::AppendCommandStrList(const QString & commandStr)
 
 void ICInstructParam::InstallMoldInfo()
 {
-    actionGroupMap_[ACTSTOP] = QObject::tr("Stop");
-    actionGroupMap_[GX] = QObject::tr("X");
-    actionGroupMap_[GY] = QObject::tr("Y");
+    actionGroupMap_[GC] = QObject::tr("C");
+    actionGroupMap_[GX] = QObject::tr("X1");
+    actionGroupMap_[GY] = QObject::tr("Y1");
     actionGroupMap_[GZ] = QObject::tr("Z");
-//    actionGroupMap_[GYZ] = QObject::tr("Arc Y to Z");
-    actionGroupMap_[GZY] = QObject::tr("Arc Z to Y");
-    actionGroupMap_[GZX] = QObject::tr("Arc Z to X");
-    actionGroupMap_[GXZ] = QObject::tr("Arc X to Z");
+    actionGroupMap_[GP] = QObject::tr("X2");
+    actionGroupMap_[GQ] = QObject::tr("Y2");
+    actionGroupMap_[GA] = QObject::tr("A");
+    actionGroupMap_[GB] = QObject::tr("B");
 //    actionGroupMap_[ACTMAINUP] = QObject::tr("Main arm up");
 //    actionGroupMap_[ACTMAINDOWN] = QObject::tr("Main arm down");
     actionGroupMap_[ACTMAINFORWARD] = QObject::tr("Main arm forward");
@@ -236,6 +236,11 @@ void ICInstructParam::InitClassesInfo()
     xyzStatusList_.append(GX);
     xyzStatusList_.append(GY);
     xyzStatusList_.append(GZ);
+    xyzStatusList_.append(GP);
+    xyzStatusList_.append(GQ);
+    xyzStatusList_.append(GA);
+    xyzStatusList_.append(GB);
+    xyzStatusList_.append(GC);
 //    xyzStatusList_.append(GYZ);
 //    xyzStatusList_.append(GZY);
 //    xyzStatusList_.append(GZX);

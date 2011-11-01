@@ -4,6 +4,7 @@
 #include "iccommandprocessor.h"
 #include "iccommands.h"
 #include "icvirtualhost.h"
+#include "icparameterssave.h"
 
 #include <QVector>
 #include <QMessageBox>
@@ -14,17 +15,18 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     ui(new Ui::ICStructDefineFrame)
 {
     ui->setupUi(this);
-    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    armStruct_ = host->SystemParameter(ICVirtualHost::SYS_Config_Signal).toUInt();
-    if(host->IsSingleArm())
+    if(ICParametersSave::Instance()->IsSingleArm())
     {
         ui->singleArmButton->setChecked(true);
-        on_doubleArmButton_toggled(false);
     }
     else
     {
         ui->doubleArmButton->setChecked(true);
+//        ui->singleArmButton->setCheckState();
+        on_doubleArmButton_toggled(!ICParametersSave::Instance()->IsSingleArm());
     }
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    armStruct_ = host->SystemParameter(ICVirtualHost::SYS_Config_Signal).toUInt();
     ui->mainArmForwardLimitButton->setChecked(host->HasMainArmForwardLimit());
     ui->mainArmBackwardLimitButton->setChecked(host->HasMainArmBackwardLimit());
     ui->mainArmDownLimitButton->setChecked(host->HasMainArmDownLimit());
@@ -81,7 +83,7 @@ void ICStructDefineFrame::on_saveButton_clicked()
     ICSetAxisConfigsCommand command;
     ICCommandProcessor* process = ICCommandProcessor::Instance();
     int sum = 0;
-    QVector<uint> dataBuffer(8, 0);
+    QVector<uint> dataBuffer(7, 0);
     dataBuffer[0] = armStruct_;
     dataBuffer[1] = axisDefine_;
     for(int i = 0; i != 6; ++i)
@@ -95,10 +97,20 @@ void ICStructDefineFrame::on_saveButton_clicked()
     command.SetAxis(8);
     if(process->ExecuteCommand(command).toBool())
     {
-        ICVirtualHost::GlobalVirtualHost()->SetSystemParameter(ICVirtualHost::SYS_Config_Signal, armStruct_);
-        ICVirtualHost::GlobalVirtualHost()->SaveSystemConfig();
+        ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+        host->SetSystemParameter(ICVirtualHost::SYS_Config_Signal, armStruct_);
+        host->SetAxisDefine(axisDefine_);
+        host->SetSystemParameter(ICVirtualHost::SYS_Config_Out, dataBuffer.at(2));
+        host->SetSystemParameter(ICVirtualHost::SYS_Config_Resv0, dataBuffer.at(3));
+        host->SetSystemParameter(ICVirtualHost::SYS_Config_Resv1, dataBuffer.at(4));
+        host->SetSystemParameter(ICVirtualHost::SYS_Config_Resv2, dataBuffer.at(5));
+        host->SetSystemParameter(ICVirtualHost::SYS_Config_Xorsum, dataBuffer.at(6));
+        host->SaveSystemConfig();
         QMessageBox::information(this, tr("Tips"), tr("Save Sucessfully!"));
     }
+    ICParametersSave::Instance()->SetSingleArm(ui->singleArmButton->isChecked());
+    qDebug()<<"Struct = "<<armStruct_;
+    qDebug()<<"Arm Define"<<axisDefine_;
 }
 
 void ICStructDefineFrame::on_doubleArmButton_toggled(bool checked)
@@ -111,13 +123,13 @@ void ICStructDefineFrame::on_doubleArmButton_toggled(bool checked)
     {
         ui->subArmBox->setEnabled(false);
     }
-    checked ? armStruct_ &= 0xFEFF : armStruct_ |= 0x100;
+//    checked ? armStruct_ &= 0xFEFF : armStruct_ |= 0x100;
 }
 
 void ICStructDefineFrame::on_mainArmDownLimitButton_toggled(bool checked)
 {
 //    ICVirtualHost::GlobalVirtualHost()->SetMainArmDownLimit(checked);
-    checked ? armStruct_ |= 0x0008 : armStruct_ &= 0xFFF7;
+    checked ? armStruct_ |= 0x000C : armStruct_ &= 0xFFF7;
 }
 
 void ICStructDefineFrame::on_mainArmBackwardLimitButton_toggled(bool checked)
@@ -135,18 +147,18 @@ void ICStructDefineFrame::on_mainArmForwardLimitButton_toggled(bool checked)
 void ICStructDefineFrame::on_subArmDownLimitButton_toggled(bool checked)
 {
 //    ICVirtualHost::GlobalVirtualHost()->SetSubArmDownLimit(checked);
-    checked ? armStruct_ |= 0x0080 : armStruct_ &= 0xFF7F;
+    checked ? armStruct_ |= 0x0300 : armStruct_ &= 0xFEFF;
 }
 
 void ICStructDefineFrame::on_subArmBackwardLimitButton_toggled(bool checked)
 {
 //    ICVirtualHost::GlobalVirtualHost()->SetSubArmBackwardLimit(checked);
-    checked ? armStruct_ |= 0x0020 : armStruct_ &= 0xFFDF;
+    checked ? armStruct_ |= 0x0040 : armStruct_ &= 0xFFBF;
 }
 
 void ICStructDefineFrame::on_subArmForwardLimitButton_toggled(bool checked)
 {
-   checked ? armStruct_ |= 0x0010 : armStruct_ &= 0xFFEF;
+   checked ? armStruct_ |= 0x0080 : armStruct_ &= 0xFF7F;
 }
 
 void ICStructDefineFrame::OnAxisDefineChanged(int index)
@@ -155,5 +167,4 @@ void ICStructDefineFrame::OnAxisDefineChanged(int index)
     ICVirtualHost::GlobalVirtualHost()->CalAxisDefine(axisDefine_,
                                                       static_cast<ICVirtualHost::ICAxis>(boxToAxis_.value(box)),
                                                       static_cast<ICVirtualHost::ICAxisDefine>(indexToDefine_.value(index)));
-    qDebug()<<axisDefine_;
 }

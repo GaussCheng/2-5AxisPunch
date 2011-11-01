@@ -4,6 +4,7 @@
 //#include <QFrame>
 //#include "icframe.h"
 #include "icinstructioneditorbase.h"
+#include "config.h"
 
 class ICLabelWrapper;
 
@@ -31,22 +32,19 @@ private:
 
 private:
     Ui::ActionSettingFrame *ui;
-    QDialog * routeSettingPage_;
 //    QString oldXPos_;
 //    QString oldYPos_;
 //    QString oldZPos_;
     int oXP_;
     int oYP_;
     int oZP_;
-    const QString poseH;
-    const QString poseV;
-    const QString sAU;
-    const QString sAD;
-    const QString sAF;
-    const QString sAB;
-    int gestureAction_;
-    bool isSubFarwarded_;
-    bool isSubUpped_;
+#ifdef HC_8AXIS
+    int oX2P_;
+    int oY2P_;
+    int oAP_;
+    int oBP_;
+    int oCP_;
+#endif
 //    QList<ICLabelWrapper*> wrappers_;
 
 private slots:
@@ -55,6 +53,13 @@ private slots:
     void on_gxButton_toggled(bool checked);
     void on_gyButton_toggled(bool checked);
     void on_gzButton_toggled(bool checked);
+#ifdef HC_8AXIS
+    void on_gPButton_toggled(bool checked);
+    void on_gQButton_toggled(bool checked);
+    void on_gAButton_toggled(bool checked);
+    void on_gBButton_toggled(bool checked);
+    void on_gCButton_toggled(bool checked);
+#endif
 };
 
 #endif // ACTIONSETTINGFRAME_H

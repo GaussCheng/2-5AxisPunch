@@ -1073,12 +1073,40 @@ height: 33px;
             <item row="4" column="0">
              <widget class="QLabel" name="label_28">
               <property name="text">
-               <string>Arm</string>
+               <string>Signal</string>
               </property>
              </widget>
             </item>
             <item row="4" column="1">
+             <widget class="QLabel" name="hostSignal">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="label_29">
+              <property name="text">
+               <string>Arm</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1">
              <widget class="QLabel" name="hostArm">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QLabel" name="label_30">
+              <property name="text">
+               <string>Out</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="1">
+             <widget class="QLabel" name="hostOut">
               <property name="text">
                <string/>
               </property>
@@ -1179,12 +1207,40 @@ height: 33px;
             <item row="4" column="0">
              <widget class="QLabel" name="label_13">
               <property name="text">
-               <string>Arm</string>
+               <string>Signal</string>
               </property>
              </widget>
             </item>
             <item row="4" column="1">
+             <widget class="QLabel" name="hmiSignal">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="label_16">
+              <property name="text">
+               <string>Arm</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1">
              <widget class="QLabel" name="hmiArm">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QLabel" name="label_17">
+              <property name="text">
+               <string>Out</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="1">
+             <widget class="QLabel" name="hmiOut">
               <property name="text">
                <string/>
               </property>
@@ -1216,15 +1272,15 @@ height: 33px;
  </widget>
  <customwidgets>
   <customwidget>
+   <class>ICLineEditWithVirtualNumericKeypad</class>
+   <extends>QLineEdit</extends>
+   <header>iclineeditwithvirtualnumerickeypad.h</header>
+  </customwidget>
+  <customwidget>
    <class>ICPageTab</class>
    <extends>QWidget</extends>
    <header>icpagetab.h</header>
    <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>ICLineEditWithVirtualNumericKeypad</class>
-   <extends>QLineEdit</extends>
-   <header>iclineeditwithvirtualnumerickeypad.h</header>
   </customwidget>
   <customwidget>
    <class>ICLineEditWithVirtualKeyboard</class>

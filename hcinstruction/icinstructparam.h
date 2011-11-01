@@ -12,14 +12,14 @@ class ICInstructParam : public QObject
 public:
     enum ACTGROUP
     {
-        ACTSTOP=0,		//0
+        GC          =0,		//0
         GX,			//1
         GY,			//2
         GZ,			//3
-        GXY,			//4
-        GZY,			//5
-        GZX,			//6
-        GXZ,			//7
+        GP,			//4
+        GQ,			//5
+        GA,			//6
+        GB,			//7
 
         ACTMAINUP,		//8
         ACTMAINDOWN,	//9
@@ -35,7 +35,15 @@ public:
         ACTGOOUT,		//18
         ACTCOMEIN,		//19
 
-        ACTMAINMIDDOWN,		//20
+        ACT_PoseHori2,		//20
+
+        ACT_PoseVert2,
+        ACT_GASUB,
+        ACT_GAADD,
+        ACT_GBSUB,
+        ACT_GBADD,
+        ACT_GCSUB,
+        ACT_GCADD,
 
         ACTCHECKINPUT=28,
         ACT_WaitMoldOpened = 29,

@@ -30,26 +30,46 @@ void HCServoArmControlFrame::changeEvent(QEvent *e)
     }
 }
 
-void HCServoArmControlFrame::SetCurrentAxis(const QString & axisName)
+void HCServoArmControlFrame::SetCurrentAxis(ICVirtualHost::ICAxis axis)
 {
-    ui->currentServoArmLabel->setText(axisName);
+    currentAxis_ = axis;
 }
 
 void HCServoArmControlFrame::RunMinus_()
 {
     int key;
-    const QString currentAxis = ui->currentServoArmLabel->text();
-    if(currentAxis == tr("X"))
+//    const QString currentAxis_ = ui->currentServoArmLabel->text();
+    if(currentAxis_ == ICVirtualHost::ICAxis_AxisX1)
     {
         key = ICKeyboard::VFB_X1Sub;
     }
-    else if(currentAxis == tr("Y"))
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY1)
     {
         key = ICKeyboard::VFB_Y1Sub;
     }
-    else if(currentAxis == tr("Z"))
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisZ)
     {
         key = ICKeyboard::VFB_ZSub;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisX2)
+    {
+        key = ICKeyboard::VFB_X2Sub;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY2)
+    {
+        key = ICKeyboard::VFB_Y2Sub;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisA)
+    {
+        key = ICKeyboard::VFB_ASub;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisB)
+    {
+        key = ICKeyboard::VFB_BSub;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisC)
+    {
+        key = ICKeyboard::VFB_CSub;
     }
     ICKeyboard::Instace()->SetKeyValue(key);
     ICKeyboard::Instace()->SetPressed(true);
@@ -58,18 +78,37 @@ void HCServoArmControlFrame::RunMinus_()
 void HCServoArmControlFrame::RunPlus_()
 {
     int key;
-    const QString currentAxis = ui->currentServoArmLabel->text();
-    if(currentAxis == tr("X"))
+    if(currentAxis_ == ICVirtualHost::ICAxis_AxisX1)
     {
         key = ICKeyboard::VFB_X1Add;
     }
-    else if(currentAxis == tr("Y"))
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY1)
     {
         key = ICKeyboard::VFB_Y1Add;
     }
-    else if(currentAxis == tr("Z"))
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisZ)
     {
         key = ICKeyboard::VFB_ZAdd;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisX2)
+    {
+        key = ICKeyboard::VFB_X2Add;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY2)
+    {
+        key = ICKeyboard::VFB_Y2Add;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisA)
+    {
+        key = ICKeyboard::VFB_AAdd;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisB)
+    {
+        key = ICKeyboard::VFB_BAdd;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisC)
+    {
+        key = ICKeyboard::VFB_CAdd;
     }
     ICKeyboard::Instace()->SetKeyValue(key);
     ICKeyboard::Instace()->SetPressed(true);
@@ -99,26 +138,26 @@ void HCServoArmControlFrame::on_minusNormalButton_released()
 
 void HCServoArmControlFrame::on_minusFastButton_pressed()
 {
-    ChangeSpeed_(10);
+//    ChangeSpeed_(10);
     RunMinus_();
 }
 
 void HCServoArmControlFrame::on_minusFastButton_released()
 {
     ICKeyboard::Instace()->SetPressed(false);
-    ChangeSpeed_(-10);
+//    ChangeSpeed_(-10);
 }
 
 void HCServoArmControlFrame::on_minusHighSpeedButton_pressed()
 {
-    ChangeSpeed_(20);
+//    ChangeSpeed_(20);
     RunMinus_();
 }
 
 void HCServoArmControlFrame::on_minusHighSpeedButton_released()
 {
     ICKeyboard::Instace()->SetPressed(false);
-    ChangeSpeed_(-20);
+//    ChangeSpeed_(-20);
 }
 
 void HCServoArmControlFrame::on_plusNormalButton_pressed()
@@ -133,24 +172,24 @@ void HCServoArmControlFrame::on_plusNormalButton_released()
 
 void HCServoArmControlFrame::on_plusFastButton_pressed()
 {
-    ChangeSpeed_(10);
+//    ChangeSpeed_(10);
     RunPlus_();
 }
 
 void HCServoArmControlFrame::on_plusFastButton_released()
 {
     ICKeyboard::Instace()->SetPressed(false);
-    ChangeSpeed_(-10);
+//    ChangeSpeed_(-10);
 }
 
 void HCServoArmControlFrame::on_plusHighSpeedButton_pressed()
 {
-    ChangeSpeed_(20);
+//    ChangeSpeed_(20);
     RunPlus_();
 }
 
 void HCServoArmControlFrame::on_plusHighSpeedButton_released()
 {
     ICKeyboard::Instace()->SetPressed(false);
-    ChangeSpeed_(-20);
+//    ChangeSpeed_(-20);
 }

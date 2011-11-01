@@ -6,6 +6,7 @@
 #include <QMap>
 
 #include "hcmanualadjustframe.h"
+#include "hcservoarmcontrolframe.h"
 
 class HCServoArmControlFrame;
 class QStackedLayout;
@@ -41,12 +42,14 @@ private:
 
 //    HCServoArmControlFrame * servoArmControlPage_;
 //    QWidget * manualFunctionPage_;
-    QWidget * manualOtherIOPage_;
-    QWidget * manualFixturePage_;
-    QWidget * manualSuckerPage_;
+    QWidget *manualOtherIOPage_;
+    QWidget *manualFixturePage_;
+    QWidget *manualSuckerPage_;
+    HCServoArmControlFrame *serveAxisPage_;
     HCManualAdjustFrame * manualAdjustPage_;
 
     QMap<QWidget *, QWidget *> buttonToPage_;
+    QMap<QWidget*, int> buttonToAxis_;
 
     QStackedLayout * centralStackedLayout_;
     QButtonGroup* buttonGroup_;

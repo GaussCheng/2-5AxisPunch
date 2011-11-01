@@ -187,20 +187,10 @@ void ICVirtualHost::RefreshStatus()
 //        result.append(rand());
         if(!result.isEmpty())
         {
-            //                currentStatus_ %= StatusCount;
-            qDebug()<<"status = "<<currentStatus_<<"addr = "<<currentAddr_;
-//            qDebug()<<"rev1 = "<<result.at(0);
-//            qDebug()<<"rev2 = "<<result.at(1);
-//            qDebug()<<"rev3 = "<<result.at(2);
-//            qDebug()<<"rev4 = "<<result.at(3);
             statusMap_.insert(static_cast<ICStatus>(currentStatus_++), result.at(0));
-//             qDebug()<<"status = "<<currentStatus_<<" = "<<result.at(0)<<"addr = "<<currentAddr_;
             statusMap_.insert(static_cast<ICStatus>(currentStatus_++), result.at(1));
-//         qDebug()<<"status = "<<currentStatus_<<" = "<<result.at(1)<<"addr = "<<currentAddr_;
             statusMap_.insert(static_cast<ICStatus>(currentStatus_++), result.at(2));
-//         qDebug()<<"status = "<<currentStatus_<<" = "<<result.at(2)<<"addr = "<<currentAddr_;
             statusMap_.insert(static_cast<ICStatus>(currentStatus_++), result.at(3));
-//         qDebug()<<"status = "<<currentStatus_<<" = "<<result.at(3)<<"addr = "<<currentAddr_;
             tryTimes_ = 0;
             ++currentAddr_;
 
@@ -449,6 +439,7 @@ void ICVirtualHost::InitSystem_()
         tempItemValues.append(items.at(i).toUInt());
         systemParamMap_.insert(static_cast<ICSystemParameter>(i), tempItemValues.last());
     }
+
     if(tempItemValues.size() < systemParamMap_.size())
     {
         tempItemValues.resize(systemParamMap_.size());
@@ -809,9 +800,19 @@ void ICVirtualHost::InitAddrToSysPosMap_()
     addrToSysPos_.insert(SM_ACCTIMEX, SYS_AccTimeX);
     addrToSysPos_.insert(SM_ACCTIMEY, SYS_AccTimeY);
     addrToSysPos_.insert(SM_ACCTIMEZ, SYS_AccTimeZ);
+    addrToSysPos_.insert(SM_ACCTIMEP, SYS_AccTimeP);
+    addrToSysPos_.insert(SM_ACCTIMEQ, SYS_AccTimeQ);
+    addrToSysPos_.insert(SM_ACCTIMEA, SYS_AccTimeA);
+    addrToSysPos_.insert(SM_ACCTIMEB, SYS_AccTimeB);
+    addrToSysPos_.insert(SM_ACCTIMEC, SYS_AccTimeC);
     addrToSysPos_.insert(SM_LMTVX, SYS_LMT_vX);
     addrToSysPos_.insert(SM_LMTVY, SYS_LMT_vY);
     addrToSysPos_.insert(SM_LMTVZ, SYS_LMT_vZ);
+    addrToSysPos_.insert(SM_LMTVP, SYS_LMT_vP);
+    addrToSysPos_.insert(SM_LMTVQ, SYS_LMT_vQ);
+    addrToSysPos_.insert(SM_LMTVA, SYS_LMT_vA);
+    addrToSysPos_.insert(SM_LMTVB, SYS_LMT_vB);
+    addrToSysPos_.insert(SM_LMTVC, SYS_LMT_vC);
     addrToSysPos_.insert(SM_ARM_CONFIG, SYS_ARM_CONFIG);
     addrToSysPos_.insert(SM_YEarlyEnd, SYS_YEarlyEnd);
     addrToSysPos_.insert(SM_ZEarlyEnd, SYS_ZEarlyEnd);
