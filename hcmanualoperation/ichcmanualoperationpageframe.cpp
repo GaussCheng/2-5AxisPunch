@@ -13,6 +13,7 @@
 #include "iccommandprocessor.h"
 #include "icactioncommand.h"
 #include "icvirtualhost.h"
+#include "ickeyboard.h"
 
 ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     QFrame(parent),
@@ -77,14 +78,14 @@ void ICHCManualOperationPageFrame::changeEvent(QEvent *e)
         ui->otherToolButton->setText(tr("Other"));
         ui->adjustToolButton->setText(tr("Adjust"));
 #ifdef HC_8AXIS
-        ui->x1AxisButton->setText(tr("X1 Axis"));
-        ui->y1AxisButton->setText(tr("Y1 Axis"));
-        ui->zAxisButton->setText(tr("Z Axis"));
-        ui->x2AxisButton->setText(tr("X2 Axis"));
-        ui->y2AxisButton->setText(tr("Y2 Axis"));
-        ui->aAxisButton->setText(tr("A Axis"));
-        ui->bAxisButton->setText(tr("B Axis"));
-        ui->cAxisButton->setText(tr("C Axis"));
+//        ui->x1AxisButton->setText(tr("X1 Axis"));
+//        ui->y1AxisButton->setText(tr("Y1 Axis"));
+//        ui->zAxisButton->setText(tr("Z Axis"));
+//        ui->x2AxisButton->setText(tr("X2 Axis"));
+//        ui->y2AxisButton->setText(tr("Y2 Axis"));
+//        ui->aAxisButton->setText(tr("A Axis"));
+//        ui->bAxisButton->setText(tr("B Axis"));
+//        ui->cAxisButton->setText(tr("C Axis"));
 #endif
     }
         break;
@@ -111,24 +112,44 @@ void ICHCManualOperationPageFrame::InitInterface()
     buttonGroup_->addButton(ui->otherToolButton);
     buttonGroup_->addButton(ui->adjustToolButton);
 #ifdef HC_8AXIS
-    ui->x1AxisButton->setText(tr("X1 Axis"));
-    ui->y1AxisButton->setText(tr("Y1 Axis"));
-    ui->zAxisButton->setText(tr("Z Axis"));
-    ui->x2AxisButton->setText(tr("X2 Axis"));
-    ui->y2AxisButton->setText(tr("Y2 Axis"));
-    ui->aAxisButton->setText(tr("A Axis"));
-    ui->bAxisButton->setText(tr("B Axis"));
-    ui->cAxisButton->setText(tr("C Axis"));
-    buttonGroup_->addButton(ui->x1AxisButton);
-    buttonGroup_->addButton(ui->y1AxisButton);
-    buttonGroup_->addButton(ui->zAxisButton);
-    buttonGroup_->addButton(ui->x2AxisButton);
-    buttonGroup_->addButton(ui->y2AxisButton);
-    buttonGroup_->addButton(ui->aAxisButton);
-    buttonGroup_->addButton(ui->bAxisButton);
-    buttonGroup_->addButton(ui->cAxisButton);
-    ui->currentPose->hide();
-    ui->currentAction->hide();
+    ui->x1AxisButton->hide();
+    ui->y1AxisButton->hide();
+    ui->zAxisButton->hide();
+    ui->x2AxisButton->hide();
+    ui->y2AxisButton->hide();
+    ui->aAxisButton->hide();
+    ui->bAxisButton->hide();
+    ui->cAxisButton->hide();
+    connect(ui->aAddButton,
+            SIGNAL(released()),
+            SLOT(OnButtonReleased()));
+    connect(ui->aSubButton,
+            SIGNAL(released()),
+            SLOT(OnButtonReleased()));
+    connect(ui->bAddButton,
+            SIGNAL(released()),
+            SLOT(OnButtonReleased()));
+    connect(ui->bSubButton,
+            SIGNAL(released()),
+            SLOT(OnButtonReleased()));
+//    ui->x1AxisButton->setText(tr("X1 Axis"));
+//    ui->y1AxisButton->setText(tr("Y1 Axis"));
+//    ui->zAxisButton->setText(tr("Z Axis"));
+//    ui->x2AxisButton->setText(tr("X2 Axis"));
+//    ui->y2AxisButton->setText(tr("Y2 Axis"));
+//    ui->aAxisButton->setText(tr("A Axis"));
+//    ui->bAxisButton->setText(tr("B Axis"));
+//    ui->cAxisButton->setText(tr("C Axis"));
+//    buttonGroup_->addButton(ui->x1AxisButton);
+//    buttonGroup_->addButton(ui->y1AxisButton);
+//    buttonGroup_->addButton(ui->zAxisButton);
+//    buttonGroup_->addButton(ui->x2AxisButton);
+//    buttonGroup_->addButton(ui->y2AxisButton);
+//    buttonGroup_->addButton(ui->aAxisButton);
+//    buttonGroup_->addButton(ui->bAxisButton);
+//    buttonGroup_->addButton(ui->cAxisButton);
+//    ui->currentPose->hide();
+//    ui->currentAction->hide();
 #endif
     QList<QAbstractButton*> buttons = buttonGroup_->buttons();
     for(int i = 0; i != buttons.size(); ++i)
@@ -308,4 +329,33 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
             ui->currentAction->setText(tr("Sub Arm Backward"));
         }
     }
+}
+
+void ICHCManualOperationPageFrame::on_aAddButton_pressed()
+{
+    ICKeyboard::Instace()->SetKeyValue(ICKeyboard::VFB_AAdd);
+    ICKeyboard::Instace()->SetPressed(true);
+}
+
+void ICHCManualOperationPageFrame::OnButtonReleased()
+{
+    ICKeyboard::Instace()->SetPressed(false);
+}
+
+void ICHCManualOperationPageFrame::on_aSubButton_pressed()
+{
+    ICKeyboard::Instace()->SetKeyValue(ICKeyboard::VFB_ASub);
+    ICKeyboard::Instace()->SetPressed(true);
+}
+
+void ICHCManualOperationPageFrame::on_bSubButton_pressed()
+{
+    ICKeyboard::Instace()->SetKeyValue(ICKeyboard::VFB_BSub);
+    ICKeyboard::Instace()->SetPressed(true);
+}
+
+void ICHCManualOperationPageFrame::on_bAddButton_pressed()
+{
+    ICKeyboard::Instace()->SetKeyValue(ICKeyboard::VFB_BAdd);
+    ICKeyboard::Instace()->SetPressed(true);
 }

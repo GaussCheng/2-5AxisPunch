@@ -14,6 +14,12 @@
    <string>Form</string>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout_5">
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
    <item>
     <layout class="QVBoxLayout" name="verticalLayout_4">
      <item>
@@ -22,11 +28,17 @@
         <string>Signal Define</string>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_3">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>3</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
         <item>
-         <widget class="QGroupBox" name="groupBox">
-          <property name="title">
-           <string>Arm Select</string>
-          </property>
+         <widget class="QWidget" name="widget" native="true">
           <layout class="QHBoxLayout" name="horizontalLayout">
            <property name="spacing">
             <number>10</number>
@@ -35,7 +47,7 @@
             <number>9</number>
            </property>
            <property name="topMargin">
-            <number>3</number>
+            <number>0</number>
            </property>
            <property name="rightMargin">
             <number>0</number>

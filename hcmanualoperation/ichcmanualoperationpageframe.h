@@ -37,6 +37,16 @@ private slots:
     void ShowOptionPage();
     void StatusRefreshed();
 
+    void on_aAddButton_pressed();
+
+    void OnButtonReleased();
+
+    void on_aSubButton_pressed();
+
+    void on_bSubButton_pressed();
+
+    void on_bAddButton_pressed();
+
 private:
     Ui::ICHCManualOperationPageFrame *ui;
 
