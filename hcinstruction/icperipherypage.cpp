@@ -19,11 +19,24 @@ ICPeripheryPage::ICPeripheryPage(QWidget *parent) :
     QPushButton * button;
     ICPeripheryParameterEditor* editors = new ICPeripheryParameterEditor[ui->tableWidget->rowCount()];
     ICPeripheryParameterEditor *editor;
-    ioNames_<<tr("Injector   ")<<tr("conveyor  ");
+    ioNames_<<tr("Injector   ")<<tr("conveyor  ")<<tr("Reserve1  ")<<tr("Reserve2  ")
+              <<tr("Reserve3  ")<<tr("Reserve4  ")<<tr("Reserve5  ")<<tr("Reserve6  ");
     onClipToOffClip_.insert(ICMold::ACTCLIP7ON, ICMold::ACTCLIP7OFF);
     onClipToOffClip_.insert(ICMold::ACTCLIP8ON, ICMold::ACTCLIP8OFF);
+    onClipToOffClip_.insert(ICMold::ACT_AUX1, ICMold::ACT_AUX1);
+    onClipToOffClip_.insert(ICMold::ACT_AUX2, ICMold::ACT_AUX2);
+    onClipToOffClip_.insert(ICMold::ACT_AUX3, ICMold::ACT_AUX3);
+    onClipToOffClip_.insert(ICMold::ACT_AUX4, ICMold::ACT_AUX4);
+    onClipToOffClip_.insert(ICMold::ACT_AUX5, ICMold::ACT_AUX5);
+    onClipToOffClip_.insert(ICMold::ACT_AUX6, ICMold::ACT_AUX6);
     offClipToOnClip_.insert(ICMold::ACTCLIP7OFF, ICMold::ACTCLIP7ON);
     offClipToOnClip_.insert(ICMold::ACTCLIP8OFF, ICMold::ACTCLIP8ON);
+    offClipToOnClip_.insert(ICMold::ACT_AUX1, ICMold::ACT_AUX1);
+    offClipToOnClip_.insert(ICMold::ACT_AUX2, ICMold::ACT_AUX2);
+    offClipToOnClip_.insert(ICMold::ACT_AUX3, ICMold::ACT_AUX3);
+    offClipToOnClip_.insert(ICMold::ACT_AUX4, ICMold::ACT_AUX4);
+    offClipToOnClip_.insert(ICMold::ACT_AUX5, ICMold::ACT_AUX5);
+    offClipToOnClip_.insert(ICMold::ACT_AUX6, ICMold::ACT_AUX6);
     QList<uint> initStatus = onClipToOffClip_.values();
 //    QIntValidator *validator = new QIntValidator(0, 2000, this);
     for(int i = 0; i != ui->tableWidget->rowCount(); ++i)
@@ -31,7 +44,6 @@ ICPeripheryPage::ICPeripheryPage(QWidget *parent) :
         button = buttons + i;
         button->setIcon(offPixmap_);
         button->setText(ioNames_.at(i));
-
         editor = editors + i;
 //        editor->SetDecimalPlaces(1);
 //        editor->setValidator(validator);
@@ -50,6 +62,10 @@ ICPeripheryPage::ICPeripheryPage(QWidget *parent) :
                 &buttonSignalMapper_,
                 SLOT(map()));
     }
+//    for(int i = 2; i != settingButtons_.size(); ++i)
+//    {
+//        settingButtons_[i]->hide();
+//    }
     ui->tableWidget->resizeColumnsToContents();
 
     commandKeyMap_.insert(settingButtons_.at(0), qMakePair(static_cast<int>(IC::VKEY_CLIP7ON), static_cast<int>(IC::VKEY_CLIP7OFF)));

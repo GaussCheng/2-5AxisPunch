@@ -26,6 +26,18 @@
 26:X over speed
 27:Y over speed
 28:Z over speed
+29:Write memory fail
+30:Debug fail
+60:A over speed
+61:B over speed
+62:C over speed
+63:A is still running when generate action
+64:B is still running when generate action
+65:C is still running when generate action
+70:X2 over speed
+71:Y2 over speed
+72:X2 is still running when generate action
+73:Y2 is still running when generate action
 100:X large warp
 101:Y large warp
 102:Z large warp
@@ -64,6 +76,76 @@
 135:Y axis compare
 136:Z axis compare
 137:Struct compare
+138:X is no servo
+139:Y is no servo
+140:Z is no servo
+160:X2 large warp
+161:Y2 large warp
+162:axial z-pluse error
+163:axial z-pluse error
+164:X2-servo alarm
+165:Y2-servo alarm
+166:X2 missed pos
+167:Y2 missed pos
+168:X2-Max alarm
+169:X2-Min alarm
+170:Y2-Max alarm
+171:Y2-Min alarm
+172:X2-Pos too large
+173:X2-Pos too small
+174:Y2-Pos too large
+175:Y2-Pos too small
+176:X2 is large when running
+177:X2 is small when running
+178:Y2 is large when running
+179:Y2 is small when running
+180:X2 Axis save fail
+181:Y2 Axis save fail
+182:X2 axis compare
+183:Y2 axis compare
+184:X2 is no servo
+185:Y2 is no servo
+200:A large warp
+201:B large warp
+202:C large warp
+203:A axial z-pluse error
+204:B axial z-pluse error
+205:C axial z-pluse error
+206:A-servo alarm
+207:B-servo alarm
+208:C-servo alarm
+209:A missed pos
+210:B missed pos
+211:C missed pos
+212:A-Max alarm
+213:A-Min alarm
+214:B-Max alarm
+215:B-Min alarm
+216:C-Max alarm
+217:C-Min alarm
+218:A-Pos too large
+219:A-Pos too small
+220:B-Pos too large
+221:B-Pos too small
+222:C-Pos too large
+223:C-Pos too small
+224:A is large when running
+225:A is small when running
+226:B is small when running
+227:B is small when running
+228:C is small when running
+229:C is small when running
+230:A Axis save fail
+231:B Axis save fail
+232:C Axis save fail
+233:SPI NULL
+234:A axis compare
+235:B axis compare
+236:C axis compare
+237:COMPARE NULL
+238:A is no servo
+239:B is no servo
+240:C is no servo
 200:Connect to Host fail
 300:X param error
 301:Y param error
@@ -94,6 +176,16 @@
 326:Action is duplicated
 327:Just can call in level one
 328:Check input when running
+329:Fixture parameters is fail
+330:Position is changed, please reboot
+331:Position parameters is fail
+332:Output is changed, please reboot
+360:X2 axis parameters check fail
+361:Y2 axis parameters check fail
+362:A axis parameters check fail
+363:B axis parameters check fail
+364:C axis parameters check fail
+365:Struct parameters check fail
 400:Reading X param error
 401:Reading Y param error
 402:Reading Z param error
@@ -108,12 +200,16 @@
 504:Comm-WatchDog
 505:Sync program list wrong
 506:Time overlay when waiting signal
+507:Modify parameter not in stop status is not premit
+550:X axis conflict
 600:Z move outside, but Z insafe signal ON
 601:Z move outside, but Z insafe signal OFF
 602:Z move inside, but Z outsafe signal ON
 603:Z move inside, but Z outsafe signal OFF
 604:Y descend by Up-lmt On
 605:Y raised by Up-lmt off
+606:B descend by Up-lmt On
+607:B raised by Up-lmt off
 1000:Mid-mold signal is off when Arm descend.
 1001:Mold Opened signal is off when Arm descend.
 1002:Safety door is opened when Arm descend.
@@ -137,6 +233,16 @@
 1020:The mid mold signal is off when origin
 1021: The position is vertical when origin
 1022：The position is horizontal when origin
+1052:Z insafe signal，Z outsafe signal and main up signal is both off
+1053:NULL
+1054:No X axis but has X action
+1055:No Y axis but has Y action
+1056:No Z axis but has Z action
+1057:No X2 axis but has X2 action
+1058:No Y2 axis but has Y2 action
+1059:No A axis but has A action
+1060:No B axis but has B action
+1061:No C axis but has C action
 1100:Can not check the security zone when Main Arm descend
 1101:Can not check the security zone when Sub Arm descend
 1102:Mold-opened signal is off when Main Arm descend
@@ -147,6 +253,7 @@
 1107:Sub descen limit is off after sub arm has descened
 1108:Mid mold signal is off when main arm descen
 1109:Mid mold signal is off when main sub descen
+1194:Y2 data
 1120:Can not check the inner and outter security zone when Main Arm ascend
 1121:Can not check the inner and outter security zone when Sub Arm ascend
 1122:It's too fast when Main Arm ascend
@@ -204,6 +311,11 @@
 1309:Please check Waiting Point Clip 4
 1310:Please check Waiting Point Clip 5
 1311:Please check Waiting Point Clip 6
+1312:Please check Waiting Point A
+1313:Please check Waiting Point B
+1314:Please check Waiting Point C
+1315:Please check Waiting Point X2
+1316:Please check Waiting Point Y2
 1400:Not all up signal on.
 1401:Currnt point and waiting point are not both inside
 1402:Currnt point and waiting point are not both outside

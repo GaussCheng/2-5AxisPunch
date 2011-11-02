@@ -9,7 +9,8 @@ HEADERS += \
     hcmanualoperation/hcservoarmcontrolframe.h \
     #hcmanualoperation/hcmanualfunctionframe.h \
     hcmanualoperation/hcmanualotherioframe.h \
-    hcmanualoperation/hcmanualadjustframe.h
+    hcmanualoperation/hcmanualadjustframe.h \
+    hcmanualoperation/hcmanualreservepage.h
 
 SOURCES += \
     hcmanualoperation/ichcmanualoperationpageframe.cpp \
@@ -20,7 +21,8 @@ SOURCES += \
     hcmanualoperation/hcservoarmcontrolframe.cpp \
     #hcmanualoperation/hcmanualfunctionframe.cpp \
     hcmanualoperation/hcmanualotherioframe.cpp \
-    hcmanualoperation/hcmanualadjustframe.cpp
+    hcmanualoperation/hcmanualadjustframe.cpp \
+    hcmanualoperation/hcmanualreservepage.cpp
 
 FORMS += \
     hcmanualoperation/ichcmanualoperationpageframe.ui \
@@ -31,5 +33,5 @@ FORMS += \
     hcmanualoperation/hcservoarmcontrolframe.ui \
     #hcmanualoperation/hcmanualfunctionframe.ui \
     hcmanualoperation/hcmanualotherioframe.ui \
-    hcmanualoperation/hcmanualadjustframe.ui
-
+    hcmanualoperation/hcmanualadjustframe.ui \
+    hcmanualoperation/hcmanualreservepage.ui

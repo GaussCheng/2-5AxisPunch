@@ -391,6 +391,22 @@ color: rgb(255, 255, 0);</string>
       </widget>
      </item>
      <item>
+      <widget class="ICPageTab" name="reserveToolButton" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>67</width>
+         <height>34</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>67</width>
+         <height>34</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="ICPageTab" name="otherToolButton" native="true">
        <property name="minimumSize">
         <size>

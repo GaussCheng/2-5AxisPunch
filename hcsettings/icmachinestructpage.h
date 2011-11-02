@@ -33,7 +33,7 @@ private Q_SLOTS:
     void on_axisAToolButton_clicked();
     void on_axisBToolButton_clicked();
     void on_axisCToolButton_clicked();
-    void on_axisDefineToolButton_clicked();
+//    void on_axisDefineToolButton_clicked();
     void on_structDefButton_clicked();
     void on_timeLimitButton_clicked();
     void on_saveToolButton_clicked();

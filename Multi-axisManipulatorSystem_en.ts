@@ -867,12 +867,17 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="390"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="395"/>
         <source>Horizontal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="395"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="400"/>
+        <source>No Limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="390"/>
         <source>Vertical</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3384,12 +3389,20 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="hcsettings/icstructdefineframe.cpp" line="100"/>
+=======
+        <location filename="hcsettings/icstructdefineframe.cpp" line="74"/>
+>>>>>>> 7567a64... 1.修复机器参数下修改最大移动的bug
         <source>Tips</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="hcsettings/icstructdefineframe.cpp" line="100"/>
+=======
+        <location filename="hcsettings/icstructdefineframe.cpp" line="74"/>
+>>>>>>> 7567a64... 1.修复机器参数下修改最大移动的bug
         <source>Save Sucessfully!</source>
         <translation type="unfinished"></translation>
     </message>

@@ -132,10 +132,10 @@ void ICMachineStructPage::on_axisCToolButton_clicked()
     SetCurrentAxis(ICVirtualHost::ICAxis_AxisC);
 }
 
-void ICMachineStructPage::on_axisDefineToolButton_clicked()
-{
-    ui->content->setCurrentIndex(1);
-}
+//void ICMachineStructPage::on_axisDefineToolButton_clicked()
+//{
+//    ui->content->setCurrentIndex(1);
+//}
 
 void ICMachineStructPage::on_structDefButton_clicked()
 {

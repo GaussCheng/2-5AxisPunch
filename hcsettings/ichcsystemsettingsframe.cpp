@@ -577,6 +577,10 @@ void ICHCSystemSettingsFrame::on_structDefButton_clicked()
     ui->hmiArm->setText(QString::number(host->SystemParameter(ICVirtualHost::SYS_Config_Arm).toUInt()));
     ui->hmiSignal->setText(QString::number(armStruct_));
     ui->hmiOut->setText(QString::number(host->SystemParameter(ICVirtualHost::SYS_Config_Out).toUInt()));
+    ui->hmiPos->setText(QString::number(host->SystemParameter(ICVirtualHost::SYS_Config_Fixture).toUInt()));
+    ui->hmiRev1->setText(QString::number(host->SystemParameter(ICVirtualHost::SYS_Config_Resv1).toUInt()));
+    ui->hmiRev2->setText(QString::number(host->SystemParameter(ICVirtualHost::SYS_Config_Resv2).toUInt()));
+    ui->hmiSum->setText(QString::number(host->SystemParameter(ICVirtualHost::SYS_Config_Xorsum).toUInt()));
 //    ui->hmiArm->setText(armValueToName_.value((armStruct_ & 0x0300) >> 8));
     ICGetAxisConfigsCommand command;
     ICCommandProcessor* processor = ICCommandProcessor::Instance();
@@ -591,8 +595,12 @@ void ICHCSystemSettingsFrame::on_structDefButton_clicked()
         ui->hostX2->setText(armXStructValueToName_.value((armStruct_ & 0x00C0) >> 6));
         ui->hostY2->setText(armYStructValueToName_.value((armStruct_ & 0x0300) >> 8));
         ui->hostSignal->setText(QString::number(armStruct_));
-        ui->hostArm->setText(QString::number(ret.at(2)));
-        ui->hostOut->setText(QString::number(ret.at(3)));
+        ui->hostArm->setText(QString::number(ret.at(1)));
+        ui->hostOut->setText(QString::number(ret.at(2)));
+        ui->hostPos->setText(QString::number(ret.at(3)));
+        ui->hostRev1->setText(QString::number(ret.at(4)));
+        ui->hostRev2->setText(QString::number(ret.at(5)));
+        ui->hostSum->setText(QString::number(ret.at(6)));
 //        ui->hostArm->setText(armValueToName_.value((armStruct_ & 0x0300) >> 8));
     }
 }

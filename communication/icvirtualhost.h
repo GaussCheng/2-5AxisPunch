@@ -495,8 +495,8 @@ public:
     void SetAlarmWhenOrigin(bool isAlarm);
     bool IsPositionDetect() const { return (SystemParameter(SYS_Function).toInt() & 0x00000C00) != 0;}
     void SetPositionDetect(bool detect);
-    bool IsOriginPositionHorizontal() const { return (SystemParameter(SYS_Function).toInt() & 0x00003000) != 0;}
-    void SetOriginPosition(bool ishorizontal);
+    int OriginPosition() const { return (SystemParameter(SYS_Function).toInt() & 0x00003000) >> 12;}
+    void SetOriginPosition(int position);
 
     int CurrentStep() const { return (statusMap_.value(Step).toInt() & 0x00FF);}
     int CurrentStatus() const { return (statusMap_.value(Status).toUInt() & 0x0FFF);}
@@ -788,11 +788,11 @@ inline void ICVirtualHost::SetPositionDetect(bool detect)
     systemParamMap_.insert(SYS_Function, val);
 }
 
-inline void ICVirtualHost::SetOriginPosition(bool isHorizontal)
+inline void ICVirtualHost::SetOriginPosition(int position)
 {
     int val = SystemParameter(SYS_Function).toInt();
-    val &= 0xFFFFDFFF;
-    (isHorizontal ? val |= 0x00001000 : val &= 0xFFFFEFFF);
+    val &= 0xFFFFCFFF;
+    val |= (position << 12);
     systemParamMap_.insert(SYS_Function, val);
 }
 

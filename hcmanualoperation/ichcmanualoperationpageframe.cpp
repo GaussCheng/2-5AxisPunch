@@ -9,6 +9,7 @@
 //#include "hcmanualfunctionframe.h"
 #include "hcmanualsockerframe.h"
 #include "hcmanualotherioframe.h"
+#include "hcmanualreservepage.h"
 
 #include "iccommandprocessor.h"
 #include "icactioncommand.h"
@@ -22,6 +23,7 @@ ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     manualFixturePage_(NULL),
     manualSuckerPage_(NULL),
     manualAdjustPage_(NULL),
+    reservePage_(NULL),
     serveAxisPage_(NULL),
     centralStackedLayout_(new QStackedLayout),
     currentPose_(-1),
@@ -77,6 +79,7 @@ void ICHCManualOperationPageFrame::changeEvent(QEvent *e)
         ui->suckerToolButton->setText(tr("Sucker"));
         ui->otherToolButton->setText(tr("Other"));
         ui->adjustToolButton->setText(tr("Adjust"));
+        ui->reserveToolButton->setText(tr("Reserve"));
 #ifdef HC_8AXIS
 //        ui->x1AxisButton->setText(tr("X1 Axis"));
 //        ui->y1AxisButton->setText(tr("Y1 Axis"));
@@ -103,6 +106,7 @@ void ICHCManualOperationPageFrame::InitInterface()
     ui->suckerToolButton->setText(tr("Sucker"));
     ui->otherToolButton->setText(tr("Other"));
     ui->adjustToolButton->setText(tr("Adjust"));
+    ui->reserveToolButton->setText(tr("Reserve"));
 //    ui->fixtureToolButton->setCheckable(true);
 //    ui->suckerToolButton->setCheckable(true);
 //    ui->otherToolButton->setCheckable(true);
@@ -111,6 +115,7 @@ void ICHCManualOperationPageFrame::InitInterface()
     buttonGroup_->addButton(ui->suckerToolButton);
     buttonGroup_->addButton(ui->otherToolButton);
     buttonGroup_->addButton(ui->adjustToolButton);
+    buttonGroup_->addButton(ui->reserveToolButton);
 #ifdef HC_8AXIS
     ui->x1AxisButton->hide();
     ui->y1AxisButton->hide();
@@ -223,6 +228,12 @@ void ICHCManualOperationPageFrame::ShowOptionPage()
         manualAdjustPage_ = new HCManualAdjustFrame;
         buttonToPage_.insert(ui->adjustToolButton, manualAdjustPage_);
         centralStackedLayout_->addWidget(manualAdjustPage_);
+    }
+    else if(reservePage_ == NULL && clickedButton == ui->reserveToolButton)
+    {
+        reservePage_ = new HCManualReservePage();
+        buttonToPage_.insert(ui->reserveToolButton, reservePage_);
+        centralStackedLayout_->addWidget(reservePage_);
     }
     else if(serveAxisPage_ == NULL)
     {

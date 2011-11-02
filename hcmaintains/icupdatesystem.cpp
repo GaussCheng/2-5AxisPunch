@@ -68,6 +68,11 @@ void ICUpdateSystem::showEvent(QShowEvent *e)
 void ICUpdateSystem::hideEvent(QHideEvent *e)
 {
     timer_.stop();
+    ui->updateToolButton->setEnabled(false);
+    ui->updateHostButton->setEnabled(false);
+    ui->connectHostButton->setEnabled(false);
+    ui->writeHostButton->setEnabled(false);
+    ui->rebootButton->setEnabled(false);
     QFrame::hideEvent(e);
 }
 
@@ -109,7 +114,6 @@ void ICUpdateSystem::SystemUpdateStart()
         if(!targetFileDir.absolutePath().isEmpty())
         {
             targetFileDir.mkpath(targetFileDir.absolutePath());
-            ui->copyFilesShowLabel->setText(updateFileList.at(i));
             QFile updateFile(targetFileDir.absolutePath() + '/' + updateFileList.at(i));
             if(updateFile.exists())
             {
@@ -161,8 +165,16 @@ void ICUpdateSystem::RefreshUSBIniInfo()
 
     updateSettings_ = new QSettings(updateIniPath_ + "HCUpdate", QSettings::IniFormat);
     updateHostSettings_ = new QSettings(updateHostPath_ + "HCUpdateHost", QSettings::IniFormat);
-    ui->versionShowLabel->setText(tr("HMI Version:") + updateSettings_->value("version", tr("No available HMI version")).toString() +
-                                  tr("Host Version:") + updateHostSettings_->value("version", tr("No available Host version")).toString());
+    ui->hmiVersionShowLabel->setText(updateSettings_->value("version", tr("No available HMI version")).toString());
+    ui->hostVersionShowLabel->setText(updateHostSettings_->value("version", tr("No available Host version")).toString());
+    if(!updateSettings_->value("version","").toString().isEmpty())
+    {
+        ui->updateToolButton->setEnabled(true);
+    }
+    if(!updateHostSettings_->value("version", "").toString().isEmpty())
+    {
+        ui->connectHostButton->setEnabled(true);
+    }
     //    QStringList updateFileList = updateSettings_->childGroups();
 
     //    if(updateFileList.count() > 0)
@@ -193,17 +205,17 @@ void ICUpdateSystem::InitInterface()
 {
     ui->copyFilesProgressBar->setValue(0);
 
-    ui->versionLabel->setEnabled(false);
-    ui->versionShowLabel->setEnabled(false);
-    ui->copyFilesLabel->setEnabled(false);
-    ui->copyFilesShowLabel->setEnabled(false);
-    ui->copyFilesProgressBar->setEnabled(false);
-    ui->rebootLabel->setEnabled(false);
+//    ui->versionLabel->setEnabled(false);
+//    ui->versionShowLabel->setEnabled(false);
+//    ui->copyFilesLabel->setEnabled(false);
+//    ui->copyFilesShowLabel->setEnabled(false);
+//    ui->copyFilesProgressBar->setEnabled(false);
+//    ui->rebootLabel->setEnabled(false);
 //    ui->rebootShowLabel->setEnabled(false);
 
-    ui->deviceShowLabel->setStyleSheet("border: 1px solid rgb(192,192,192);");
-    ui->versionShowLabel->setStyleSheet("border: 1px solid rgb(192,192,192);");
-    ui->copyFilesShowLabel->setStyleSheet("border: 1px solid rgb(192,192,192);");
+//    ui->deviceShowLabel->setStyleSheet("border: 1px solid rgb(192,192,192);");
+//    ui->versionShowLabel->setStyleSheet("border: 1px solid rgb(192,192,192);");
+//    ui->copyFilesShowLabel->setStyleSheet("border: 1px solid rgb(192,192,192);");
 //    ui->rebootShowLabel->setStyleSheet("border: 1px solid rgb(192,192,192);");
 }
 

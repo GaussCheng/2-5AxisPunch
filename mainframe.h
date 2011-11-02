@@ -6,6 +6,7 @@
 #include <QSplashScreen>
 #include <QScopedPointer>
 #include "icscreensaver.h"
+#include "icfunctionpagebackframe.h"
 
 class QStackedLayout;
 class QDialog;
@@ -75,7 +76,7 @@ private:
     Ui::MainFrame *ui;
 
     QWidget * initialPage_;
-    QWidget * functionPage_;
+    ICFunctionPageBackFrame * functionPage_;
     QWidget * alarmPage_;
     QWidget * recordPage_;
     QWidget * monitorPage_;

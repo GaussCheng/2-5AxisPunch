@@ -26,7 +26,6 @@
 #include "icalarmdescriptiondialog.h"
 #include "icalarmframe.h"
 #include "iccycletimeandfinishedframe.h"
-#include "icfunctionpagebackframe.h"
 #include "icfunctionpageframe.h"
 #include "ichcinstructionpageframe.h"
 #include "ichcmanualoperationpageframe.h"
@@ -155,7 +154,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
 
     //    QTimer::singleShot(100, this, SLOT(InitHeavyPage()));
 //    ShowInstructPage();
-    ShowManualPage();
+//    ShowManualPage();
 //    ShowAutoPage();
 
 }
@@ -791,6 +790,7 @@ void MainFrame::ShowReturn()
 {
     if(!isReturnShown_)
     {
+        functionPage_->ShowFunctionSelectPage();
         isReturnShown_ = true;
         returnExecutingPage_->open();
     }

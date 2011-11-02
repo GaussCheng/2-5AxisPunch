@@ -203,7 +203,7 @@ void ICVirtualHost::RefreshStatus()
             if(tryTimes_ == 200)
             {
                 qCritical("Connect to host fail!!");
-                statusMap_.insert(ErrCode, 200);
+                statusMap_.insert(ErrCode, 500);
                 tryTimes_ = 0;
                 statusMap_.insert(Status, ICVirtualHost::Stop);
 //                statusMap_.insert(DbgX0, ICVirtualHost::AutoRunning);

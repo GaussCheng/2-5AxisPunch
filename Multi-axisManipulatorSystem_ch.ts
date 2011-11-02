@@ -1111,12 +1111,17 @@ Reason</source>
         <translation>原点复归</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="390"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="395"/>
         <source>Horizontal</source>
         <translation>治具水平</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="395"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="400"/>
+        <source>No Limit</source>
+        <translation>无限制</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="390"/>
         <source>Vertical</source>
         <translation>治具垂直</translation>
     </message>
@@ -4130,12 +4135,20 @@ Please enter an digit between </source>
         <translation type="obsolete">手臂结构选择</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="hcsettings/icstructdefineframe.cpp" line="100"/>
+=======
+        <location filename="hcsettings/icstructdefineframe.cpp" line="74"/>
+>>>>>>> 7567a64... 1.修复机器参数下修改最大移动的bug
         <source>Tips</source>
         <translation>提示</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="hcsettings/icstructdefineframe.cpp" line="100"/>
+=======
+        <location filename="hcsettings/icstructdefineframe.cpp" line="74"/>
+>>>>>>> 7567a64... 1.修复机器参数下修改最大移动的bug
         <source>Save Sucessfully!</source>
         <translation>保存成功!</translation>
     </message>

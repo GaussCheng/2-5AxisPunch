@@ -67,9 +67,9 @@ public:
         ACTLAYOUTON,
         ACTCLIP12ON,
         ACTCLIP13ON,
-        ACTCLIP14ON,
-        ACTCLIP15ON,
-        ACTCLIP16ON,
+        ACT_AUX1,
+        ACT_AUX2,
+        ACT_AUX3,
         ACTCLIP1OFF,
         ACTCLIP2OFF,
         ACTCLIP3OFF,
@@ -83,9 +83,9 @@ public:
         ACTLAYOUTOFF,
         ACTCLIP12OFF,
         ACTCLIP13OFF,
-        ACTCLIP14OFF,
-        ACTCLIP15OFF,
-        ACTCLIP16OFF,
+        ACT_AUX4,
+        ACT_AUX5,
+        ACT_AUX6,
         ACTCLIPEND
     };
     static ICInstructParam * Instance()

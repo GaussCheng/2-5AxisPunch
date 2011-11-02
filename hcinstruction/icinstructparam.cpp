@@ -224,6 +224,12 @@ void ICInstructParam::InstallMoldInfo()
     clipGroupMap_[ACTLAYOUTOFF] = QObject::tr("Layout OFF");
     clipGroupMap_[ACTCLIP12OFF] = QObject::tr("Core1 OFF");
     clipGroupMap_[ACTCLIP13OFF] = QObject::tr("Core2 OFF");
+    clipGroupMap_[ACT_AUX1] = QObject::tr("Reserve 1");
+    clipGroupMap_[ACT_AUX2] = QObject::tr("Reserve 2");
+    clipGroupMap_[ACT_AUX3] = QObject::tr("Reserve 3");
+    clipGroupMap_[ACT_AUX4] = QObject::tr("Reserve 4");
+    clipGroupMap_[ACT_AUX5] = QObject::tr("Reserve 5");
+    clipGroupMap_[ACT_AUX6] = QObject::tr("Reserve 6");
 //    clipGroupMap_[ACTCLIP14OFF] = QObject::tr("Clip14 OFF");
 //    clipGroupMap_[ACTCLIP15OFF] = QObject::tr("Clip15 OFF");
 //    clipGroupMap_[ACTCLIP16OFF] = QObject::tr("Clip16 OFF");

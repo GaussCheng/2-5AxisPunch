@@ -24,14 +24,14 @@ ICHCInjectionPage::ICHCInjectionPage(QWidget *parent) :
     onClipToOffClip_.insert(ICMold::ACTCLSMDON, ICMold::ACTCLSMDOFF);
     onClipToOffClip_.insert(ICMold::ACTEJECTON, ICMold::ACTEJECTOFF);
     onClipToOffClip_.insert(ICMold::ACTLAYOUTON, ICMold::ACTLAYOUTOFF);
-    onClipToOffClip_.insert(ICMold::ACTCLIP12ON, ICMold::ACTCLIP12OFF);
-    onClipToOffClip_.insert(ICMold::ACTCLIP13ON, ICMold::ACTCLIP13OFF);
+    onClipToOffClip_.insert(ICMold::ACT_CORE1_ON, ICMold::ACT_CORE1_OFF);
+    onClipToOffClip_.insert(ICMold::ACT_CORE2_ON, ICMold::ACT_CORE2_OFF);
 
     offClipToOnClip_.insert(ICMold::ACTCLSMDOFF, ICMold::ACTCLSMDON);
     offClipToOnClip_.insert(ICMold::ACTEJECTOFF, ICMold::ACTEJECTON);
     offClipToOnClip_.insert(ICMold::ACTLAYOUTOFF, ICMold::ACTLAYOUTON);
-    offClipToOnClip_.insert(ICMold::ACTCLIP12OFF, ICMold::ACTCLIP12ON);
-    offClipToOnClip_.insert(ICMold::ACTCLIP13OFF, ICMold::ACTCLIP13ON);
+    offClipToOnClip_.insert(ICMold::ACT_CORE1_OFF, ICMold::ACT_CORE1_ON);
+    offClipToOnClip_.insert(ICMold::ACT_CORE2_OFF, ICMold::ACT_CORE2_ON);
     QList<uint> initStatus = onClipToOffClip_.values();
     QIntValidator *validator = new QIntValidator(0, 2000, this);
     for(int i = 0; i != ui->tableWidget->rowCount(); ++i)

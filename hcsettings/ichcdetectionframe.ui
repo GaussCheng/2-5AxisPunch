@@ -387,12 +387,17 @@
      </property>
      <item>
       <property name="text">
+       <string>Vertical</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
        <string>Horizontal</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Vertical</string>
+       <string>No Limit</string>
       </property>
      </item>
     </widget>
