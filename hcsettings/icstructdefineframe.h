@@ -38,14 +38,18 @@ private slots:
     void on_subArmForwardLimitButton_toggled(bool checked);
 
     void OnAxisDefineChanged(int index);
+    void OnOutputDefineChanged(int index);
 
 private:
     Ui::ICStructDefineFrame *ui;
     uint armStruct_;
     int axisDefine_;
-    QMap<int, int> defineToIndex_;
+    int outDefine_;
+    QMap<int, int> armDefineToIndex_;
     QMap<QComboBox*, int> boxToAxis_;
-    QMap<int, int> indexToDefine_;
+    QMap<int, int> indexToArmDefine_;
+    QMap<QComboBox*, int> outputDefineToNumber_;
+    QMap<int, QComboBox*> numberToOutputDefine_;
 };
 
 #endif // ICSTRUCTDEFINEFRAME_H

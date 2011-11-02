@@ -43,21 +43,49 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     boxToAxis_.insert(ui->aBox, ICVirtualHost::ICAxis_AxisA);
     boxToAxis_.insert(ui->bBox, ICVirtualHost::ICAxis_AxisB);
     boxToAxis_.insert(ui->cBox, ICVirtualHost::ICAxis_AxisC);
-    defineToIndex_.insert(ICVirtualHost::ICAxisDefine_None, 0);
-    defineToIndex_.insert(ICVirtualHost::ICAxisDefine_Pneumatic, 1);
-    defineToIndex_.insert(ICVirtualHost::ICAxisDefine_Servo, 2);
-    indexToDefine_.insert(0, ICVirtualHost::ICAxisDefine_None);
-    indexToDefine_.insert(1, ICVirtualHost::ICAxisDefine_Pneumatic);
-    indexToDefine_.insert(2, ICVirtualHost::ICAxisDefine_Servo);
-    QList<QComboBox*> boxs = findChildren<QComboBox*>();
+    armDefineToIndex_.insert(ICVirtualHost::ICAxisDefine_None, 0);
+    armDefineToIndex_.insert(ICVirtualHost::ICAxisDefine_Pneumatic, 1);
+    armDefineToIndex_.insert(ICVirtualHost::ICAxisDefine_Servo, 2);
+    indexToArmDefine_.insert(0, ICVirtualHost::ICAxisDefine_None);
+    indexToArmDefine_.insert(1, ICVirtualHost::ICAxisDefine_Pneumatic);
+    indexToArmDefine_.insert(2, ICVirtualHost::ICAxisDefine_Servo);
+    QList<QComboBox*> boxs = ui->armDefineBox->findChildren<QComboBox*>();
     axisDefine_ = host->SystemParameter(ICVirtualHost::SYS_Config_Arm).toInt();
     for(int i = 0; i != boxs.size(); ++i)
     {
-        boxs[i]->setCurrentIndex(defineToIndex_.value(host->AxisDefine(static_cast<ICVirtualHost::ICAxis>(boxToAxis_.value(boxs.at(i))))));
+        boxs[i]->setCurrentIndex(armDefineToIndex_.value(host->AxisDefine(static_cast<ICVirtualHost::ICAxis>(boxToAxis_.value(boxs.at(i))))));
         connect(boxs[i],
                 SIGNAL(currentIndexChanged(int)),
                 SLOT(OnAxisDefineChanged(int)));
     }
+
+    outputDefineToNumber_.insert(ui->outABox, 0);
+    outputDefineToNumber_.insert(ui->outBBox, 1);
+    outputDefineToNumber_.insert(ui->outCBox, 2);
+    outputDefineToNumber_.insert(ui->outDBox, 3);
+    outputDefineToNumber_.insert(ui->outEBox, 4);
+    outputDefineToNumber_.insert(ui->outFBox, 5);
+    outputDefineToNumber_.insert(ui->outGBox, 6);
+    outputDefineToNumber_.insert(ui->outHBox, 7);
+    numberToOutputDefine_.insert(0, ui->outABox);
+    numberToOutputDefine_.insert(1, ui->outBBox);
+    numberToOutputDefine_.insert(2, ui->outCBox);
+    numberToOutputDefine_.insert(3, ui->outDBox);
+    numberToOutputDefine_.insert(4, ui->outEBox);
+    numberToOutputDefine_.insert(5, ui->outFBox);
+    numberToOutputDefine_.insert(6, ui->outGBox);
+    numberToOutputDefine_.insert(7, ui->outHBox);
+    outDefine_ = host->SystemParameter(ICVirtualHost::ICVirtualHost::SYS_Config_Out).toInt();
+    boxs = ui->outDefineBox->findChildren<QComboBox*>();
+    for(int i = 0; i != boxs.size(); ++i)
+    {
+        boxs[i]->setCurrentIndex(host->PeripheryOutput(outputDefineToNumber_.value(boxs.at(i))));
+        connect(boxs[i],
+                SIGNAL(currentIndexChanged(int)),
+                SLOT(OnOutputDefineChanged(int)));
+    }
+
+    ui->fixtureSelectBox->setCurrentIndex(host->FixtureDefine());
 }
 
 ICStructDefineFrame::~ICStructDefineFrame()
@@ -86,6 +114,8 @@ void ICStructDefineFrame::on_saveButton_clicked()
     QVector<uint> dataBuffer(7, 0);
     dataBuffer[0] = armStruct_;
     dataBuffer[1] = axisDefine_;
+    dataBuffer[2] = outDefine_;
+    dataBuffer[3] = ICVirtualHost::GlobalVirtualHost()->FixtureDefineSwitch(ui->fixtureSelectBox->currentIndex());
     for(int i = 0; i != 6; ++i)
     {
         sum += dataBuffer.at(i);
@@ -100,8 +130,8 @@ void ICStructDefineFrame::on_saveButton_clicked()
         ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
         host->SetSystemParameter(ICVirtualHost::SYS_Config_Signal, armStruct_);
         host->SetAxisDefine(axisDefine_);
-        host->SetSystemParameter(ICVirtualHost::SYS_Config_Out, dataBuffer.at(2));
-        host->SetSystemParameter(ICVirtualHost::SYS_Config_Resv0, dataBuffer.at(3));
+        host->SetPeripheryOutput(outDefine_);
+        host->SetSystemParameter(ICVirtualHost::SYS_Config_Fixture, dataBuffer.at(3));
         host->SetSystemParameter(ICVirtualHost::SYS_Config_Resv1, dataBuffer.at(4));
         host->SetSystemParameter(ICVirtualHost::SYS_Config_Resv2, dataBuffer.at(5));
         host->SetSystemParameter(ICVirtualHost::SYS_Config_Xorsum, dataBuffer.at(6));
@@ -166,5 +196,13 @@ void ICStructDefineFrame::OnAxisDefineChanged(int index)
     QComboBox* box = qobject_cast<QComboBox*>(sender());
     ICVirtualHost::GlobalVirtualHost()->CalAxisDefine(axisDefine_,
                                                       static_cast<ICVirtualHost::ICAxis>(boxToAxis_.value(box)),
-                                                      static_cast<ICVirtualHost::ICAxisDefine>(indexToDefine_.value(index)));
+                                                      static_cast<ICVirtualHost::ICAxisDefine>(indexToArmDefine_.value(index)));
+}
+
+void ICStructDefineFrame::OnOutputDefineChanged(int index)
+{
+    QComboBox* box = qobject_cast<QComboBox*>(sender());
+    ICVirtualHost::GlobalVirtualHost()->CalPeripheryOutput(outDefine_,
+                                                           outputDefineToNumber_.value(box),
+                                                           index);
 }

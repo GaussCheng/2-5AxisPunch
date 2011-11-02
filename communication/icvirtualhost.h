@@ -119,7 +119,7 @@ public:
         SYS_Config_Signal,
         SYS_Config_Arm,
         SYS_Config_Out,
-        SYS_Config_Resv0,
+        SYS_Config_Fixture,
         SYS_Config_Resv1,
         SYS_Config_Resv2,
         SYS_Config_Xorsum,
@@ -534,6 +534,12 @@ public:
     void SetSubArmBackwardLimit(bool hasBackward);
     bool HasSubArmDownLimit() const { return (systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0080) > 0;}
     void SetSubArmDownLimit(bool hasDown);
+    int PeripheryOutput(int number) const;
+    void CalPeripheryOutput(int & config, int number, int val);
+    void SetPeripheryOutput(int config) { systemParamMap_.insert(SYS_Config_Out, config);}
+    int FixtureDefine() const { return (systemParamMap_.value(SYS_Config_Fixture).toInt()) == 0x0555 ? 1 : 0;}
+    void SetFixtureDefine(int val) { systemParamMap_.insert(SYS_Config_Fixture, val == 0 ? 0x0AAA : 0x0555);}
+    int FixtureDefineSwitch(int index) const {return index == 0 ? 0x0AAA : 0x0555;}
 
     ICAxisDefine AxisDefine(ICAxis which) const;
     void CalAxisDefine(int &config, ICAxis which, ICAxisDefine define) const;
@@ -850,6 +856,18 @@ inline void ICVirtualHost::CalAxisDefine(int &config, ICAxis which, ICAxisDefine
     config &= mask;
     mask = define << (which << 1);
     config |= mask;
+}
+
+inline int ICVirtualHost::PeripheryOutput(int number) const
+{
+    return (systemParamMap_.value(SYS_Config_Out).toInt() >> (number << 1)) & 0x0003;
+}
+
+inline void ICVirtualHost::CalPeripheryOutput(int &config, int number, int val)
+{
+    config &= ~(3 << (number << 1));
+    config |= (val << (number << 1));
+//    systemParamMap_.insert(SYS_Config_Out, current);
 }
 
 #endif // ICVIRTUALHOST_H
