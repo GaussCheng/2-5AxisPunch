@@ -721,6 +721,7 @@ void MainFrame::StatusRefreshed()
 
 void MainFrame::ShowManualPage()
 {
+    functionPage_->ShowFunctionSelectPage();
     centerStackedLayout_->setCurrentWidget(manualPage_);
     ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Manual"));
     nullButton_->click();
@@ -734,6 +735,7 @@ void MainFrame::ShowManualPage()
 
 void MainFrame::ShowAutoPage()
 {
+    functionPage_->ShowFunctionSelectPage();
     centerStackedLayout_->setCurrentWidget(autoPage_);
     ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Auto"));
     nullButton_->click();
@@ -752,6 +754,7 @@ void MainFrame::ShowInstructPage()
 
 void MainFrame::ShowStandbyPage()
 {
+    functionPage_->ShowFunctionSelectPage();
     centerStackedLayout_->setCurrentWidget(initialPage_);
     ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Standby"));
     nullButton_->click();
@@ -790,7 +793,6 @@ void MainFrame::ShowReturn()
 {
     if(!isReturnShown_)
     {
-        functionPage_->ShowFunctionSelectPage();
         isReturnShown_ = true;
         returnExecutingPage_->open();
     }
