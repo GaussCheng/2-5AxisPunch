@@ -3,6 +3,7 @@
 #include "ui_icmonitorpageframe.h"
 #include "iciopoint.h"
 #include "iciomonitorpagebase.h"
+#include "config.h"
 
 ICMonitorPageFrame::ICMonitorPageFrame(QWidget *parent) :
     QFrame(parent),
@@ -104,7 +105,14 @@ void ICMonitorPageFrame::Init_()
     points.append(ICIOPoint("Y035", tr("Go Out"), 21));//4
     points.append(ICIOPoint("Y036", tr("Come In"), 22));//3
     points.append(ICIOPoint("Y037", tr("Transport"), 23));
-
+//#ifdef HC_8AXIS
+//    points.append(ICIOPoint("Y022", tr("Reserve 1"), 10));//1
+//    points.append(ICIOPoint("Y023", tr("Reserve 2"), 11));//2
+//    points.append(ICIOPoint("Y032", tr("Reserve 3"), 18));
+//    points.append(ICIOPoint("Y033", tr("Reserve 4"), 19));
+//    points.append(ICIOPoint("Y035", tr("Reserve 5"), 21));//4
+//    points.append(ICIOPoint("Y036", tr("Reserve 6"), 22));//3
+//#endif
     otherPageLeft_->BindingPointsToOutpuPage(points);
     otherPageRight_->BindingPointsToOutpuPage(points);
 

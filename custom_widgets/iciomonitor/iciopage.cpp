@@ -5,17 +5,21 @@
 #include "icvirtualhost.h"
 
 ICIOPage::ICIOPage(QWidget *parent) :
-        QWidget(parent),
-        inputs_(64, false),
-        outputs_(64, false),
-        offPixmap_(":/resource/ledgray(16).png"),
-        inputOnPixmap_(":/resource/ledred(16).png"),
-        outputOnPixmap_(":/resource/ledgreen(16).png")
+    QWidget(parent),
+    inputs_(64, false),
+    outputs_(64, false),
+    offPixmap_(":/resource/ledgray(16).png"),
+    inputOnPixmap_(":/resource/ledred(16).png"),
+    outputOnPixmap_(":/resource/ledgreen(16).png")
 {
     frameLayout_ = new QVBoxLayout();
     frameLayout_->setContentsMargins(2, 2, 2, 2);
     frameLayout_->setSpacing(15);
     this->setLayout(frameLayout_);
+    for(int i = 0; i != 6; ++i)
+    {
+        recsLabels_.append(NULL);
+    }
 }
 ICIOPage::~ICIOPage()
 {
@@ -50,7 +54,36 @@ void ICIOPage::BindingIOPoints(const QList<ICIOPoint> &points)
             leds->setPixmap(offPixmap_);
             ledToPoint_.insert(leds, point);
             descrLabels_.append(descr);
-
+            if(point.PointNum() == tr("Y022"))
+            {
+                recsLabels_[0] = (descr);
+                backupDescrMap_.insert(0, point);
+            }
+            else if(point.PointNum() == tr("Y023"))
+            {
+                recsLabels_[1] = descr;
+                backupDescrMap_.insert(1, point);
+            }
+            else if(point.PointNum() == tr("Y032"))
+            {
+                recsLabels_[2] = descr;
+                backupDescrMap_.insert(2, point);
+            }
+            else if(point.PointNum() == tr("Y033"))
+            {
+                recsLabels_[3] = descr;
+                backupDescrMap_.insert(3, point);
+            }
+            else if(point.PointNum() == tr("Y035"))
+            {
+                recsLabels_[4] = descr;
+                backupDescrMap_.insert(4, point);
+            }
+            else if(point.PointNum() == tr("Y036"))
+            {
+                recsLabels_[5] = descr;
+                backupDescrMap_.insert(5, point);
+            }
             nums->setFixedWidth(50);
             descr->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
             descr->setFixedWidth(110);
@@ -122,6 +155,21 @@ void ICIOPage::UpdateIO()
 
 void ICIOPage::showEvent(QShowEvent *e)
 {
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    for(int i = 0; i != recsLabels_.size(); ++i)
+    {
+        if(recsLabels_.at(i) != NULL)
+        {
+            if(host->PeripheryOutput(i) == 1)
+            {
+                recsLabels_[i]->setText(tr("Reserve") + QString::number(i));
+            }
+            else
+            {
+                recsLabels_[i]->setText(backupDescrMap_.value(i).PointDescription());
+            }
+        }
+    }
     QWidget::showEvent(e);
     connect(ICVirtualHost::GlobalVirtualHost(),
             SIGNAL(StatusRefreshed()),

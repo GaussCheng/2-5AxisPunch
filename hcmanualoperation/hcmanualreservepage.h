@@ -20,6 +20,11 @@ public:
 
 protected:
     void changeEvent(QEvent *e);
+    void showEvent(QShowEvent *e);
+    void hideEvent(QHideEvent *e);
+
+private Q_SLOTS:
+    void StatusRefreshed();
 
 private:
     Ui::HCManualReservePage *ui;

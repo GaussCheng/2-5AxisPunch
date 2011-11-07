@@ -35,9 +35,11 @@ private:
     QVBoxLayout* frameLayout_;
     IOType type_;
     QMap<QLabel*, ICIOPoint> ledToPoint_;
+    QMap<int, ICIOPoint> backupDescrMap_;
     QBitArray inputs_;
     QBitArray outputs_;
     QList<QLabel*> descrLabels_;
+    QList<QLabel*> recsLabels_;
 
     const QPixmap offPixmap_;
     const QPixmap inputOnPixmap_;

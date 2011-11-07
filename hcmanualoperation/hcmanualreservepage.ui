@@ -129,7 +129,7 @@
     </widget>
    </item>
    <item row="0" column="12">
-    <widget class="QLabel" name="fixture1StatusLabel_7">
+    <widget class="QLabel" name="reserve2StatusLabel">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -195,7 +195,7 @@
     </widget>
    </item>
    <item row="1" column="2">
-    <widget class="QLabel" name="fixture1InLabel_4">
+    <widget class="QLabel" name="reserve3InLabel">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -225,7 +225,7 @@
     </widget>
    </item>
    <item row="2" column="2">
-    <widget class="QLabel" name="fixture1InLabel">
+    <widget class="QLabel" name="reserve5InLabel">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -266,7 +266,7 @@
     </widget>
    </item>
    <item row="1" column="4">
-    <widget class="QLabel" name="fixture1StatusLabel_4">
+    <widget class="QLabel" name="reserve3StatusLabel">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -282,7 +282,7 @@
     </widget>
    </item>
    <item row="2" column="4">
-    <widget class="QLabel" name="fixture1InLabel_3">
+    <widget class="QLabel" name="reserve5StatusLabel">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -348,7 +348,7 @@
     </widget>
    </item>
    <item row="0" column="10">
-    <widget class="QLabel" name="fixture1StatusLabel_8">
+    <widget class="QLabel" name="reserve2InLabel">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -385,7 +385,7 @@
     </widget>
    </item>
    <item row="1" column="10">
-    <widget class="QLabel" name="fixture1StatusLabel">
+    <widget class="QLabel" name="reserve4InLabel">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -426,7 +426,7 @@
     </widget>
    </item>
    <item row="1" column="12">
-    <widget class="QLabel" name="fixture1StatusLabel_3">
+    <widget class="QLabel" name="reserve4StatusLabel">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -467,7 +467,7 @@
     </widget>
    </item>
    <item row="2" column="10">
-    <widget class="QLabel" name="fixture1StatusLabel_5">
+    <widget class="QLabel" name="reserve6InLabel">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -508,7 +508,7 @@
     </widget>
    </item>
    <item row="2" column="12">
-    <widget class="QLabel" name="fixture1StatusLabel_6">
+    <widget class="QLabel" name="reserve6StatusLabel">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
