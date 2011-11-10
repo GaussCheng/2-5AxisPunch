@@ -41,6 +41,12 @@ ICKeyboardHandler::ICKeyboardHandler(QObject *parent) :
     virtualKeyMap_.insert(ICKeyboard::VFB_X2Add, IC::VKEY_X2ADD);
     virtualKeyMap_.insert(ICKeyboard::VFB_SP1, IC::VKEY_SP1);
     virtualKeyMap_.insert(ICKeyboard::VFB_SP2, IC::VKEY_SP2);
+    virtualKeyMap_.insert(ICKeyboard::VFB_AAdd, IC::VKEY_AADD);
+    virtualKeyMap_.insert(ICKeyboard::VFB_ASub, IC::VKEY_ASUB);
+    virtualKeyMap_.insert(ICKeyboard::VFB_BAdd, IC::VKEY_BADD);
+    virtualKeyMap_.insert(ICKeyboard::VFB_BSub, IC::VKEY_BSUB);
+    virtualKeyMap_.insert(ICKeyboard::VFB_CAdd, IC::VKEY_CADD);
+    virtualKeyMap_.insert(ICKeyboard::VFB_CSub, IC::VKEY_CSUB);
     virtualKeyMap_.insert(ICKeyboard::FB_NULL, IC::VKEY_NULL);
 }
 

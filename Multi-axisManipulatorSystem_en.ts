@@ -2408,7 +2408,37 @@ Infomation</source>
 <context>
     <name>ICIOPage</name>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="159"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="57"/>
+        <source>Y022</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="62"/>
+        <source>Y023</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="67"/>
+        <source>Y032</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="72"/>
+        <source>Y033</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="77"/>
+        <source>Y035</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="82"/>
+        <source>Y036</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="165"/>
         <source>Reserve</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4154,7 +4184,7 @@ Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="756"/>
+        <location filename="mainframe.cpp" line="759"/>
         <source>Standby</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4184,30 +4214,30 @@ Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="725"/>
+        <location filename="mainframe.cpp" line="726"/>
         <source>Manual</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="729"/>
-        <location filename="mainframe.cpp" line="742"/>
+        <location filename="mainframe.cpp" line="730"/>
+        <location filename="mainframe.cpp" line="744"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="729"/>
-        <location filename="mainframe.cpp" line="742"/>
+        <location filename="mainframe.cpp" line="730"/>
+        <location filename="mainframe.cpp" line="744"/>
         <source>Need to origin!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="731"/>
-        <location filename="mainframe.cpp" line="749"/>
+        <location filename="mainframe.cpp" line="732"/>
+        <location filename="mainframe.cpp" line="751"/>
         <source>Instruct</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="738"/>
+        <location filename="mainframe.cpp" line="740"/>
         <source>Auto</source>
         <translation type="unfinished"></translation>
     </message>

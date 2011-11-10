@@ -2956,7 +2956,37 @@ Reason</source>
 <context>
     <name>ICIOPage</name>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="159"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="57"/>
+        <source>Y022</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="62"/>
+        <source>Y023</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="67"/>
+        <source>Y032</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="72"/>
+        <source>Y033</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="77"/>
+        <source>Y035</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="82"/>
+        <source>Y036</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="165"/>
         <source>Reserve</source>
         <translation>预留</translation>
     </message>
@@ -4948,7 +4978,7 @@ Would you want to restart now?</source>
         <translation type="obsolete">报警记录</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="756"/>
+        <location filename="mainframe.cpp" line="759"/>
         <source>Standby</source>
         <translation>欢迎</translation>
     </message>
@@ -4973,30 +5003,30 @@ Would you want to restart now?</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="725"/>
+        <location filename="mainframe.cpp" line="726"/>
         <source>Manual</source>
         <translation>手动</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="729"/>
-        <location filename="mainframe.cpp" line="742"/>
+        <location filename="mainframe.cpp" line="730"/>
+        <location filename="mainframe.cpp" line="744"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="729"/>
-        <location filename="mainframe.cpp" line="742"/>
+        <location filename="mainframe.cpp" line="730"/>
+        <location filename="mainframe.cpp" line="744"/>
         <source>Need to origin!</source>
         <translation>还没进行原点!</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="731"/>
-        <location filename="mainframe.cpp" line="749"/>
+        <location filename="mainframe.cpp" line="732"/>
+        <location filename="mainframe.cpp" line="751"/>
         <source>Instruct</source>
         <translation>教导</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="738"/>
+        <location filename="mainframe.cpp" line="740"/>
         <source>Auto</source>
         <translation>自动</translation>
     </message>
