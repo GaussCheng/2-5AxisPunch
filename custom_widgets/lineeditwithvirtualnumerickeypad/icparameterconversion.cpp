@@ -39,32 +39,40 @@ QString ICParameterConversion::TransThisIntToThisText(int inputNum, int decimals
 int ICParameterConversion::TransTextToThisInt(const QString &numString, int decimals)
 {
     int result = -1;
-    switch(decimals)
-    {
-    case 0:
-        bool ok;
-        result = numString.toInt(&ok);
-        if(!ok)
+        switch(decimals)
         {
-            return -1;
-        }
-        break;
-    default:
-        {
+        case 0:
             bool ok;
-            QStringList numList = numString.split('.');
-            int powerResult = Pow(10 ,decimals);
-            result = numList.at(0).toInt(&ok) * powerResult;
+            result = numString.toInt(&ok);
             if(!ok)
             {
                 return -1;
             }
-            if(numList.count() == 2)
-                result += numList.at(1).toInt();
+            break;
+        default:
+            {
+            bool ok;
+            double tmp = numString.toDouble(&ok);
+            if(!ok)
+            {
+                return -1;
+            }
+            int powerResult = Pow(10 ,decimals);
+            result = tmp * powerResult;
+    //        return result;
+    //            bool ok;
+    //            QStringList numList = numString.split('.');
+    //            result = numList.at(0).toInt(&ok) * powerResult;
+    //            if(!ok)
+    //            {
+    //                return -1;
+    //            }
+    //            if(numList.count() == 2)
+    //                result += numList.at(1).toInt();
+            }
         }
-    }
 
-    return result;
+        return result;
 }
 
 int ICParameterConversion::Pow(int variable, int power)
