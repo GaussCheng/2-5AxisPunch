@@ -18,8 +18,9 @@ bool ICMacroSubroutine::ReadMacroSubroutieFiles(const QString &dir)
         return false;
     }
     subsDir_ = dir;
-    QStringList fileList = fileDir.entryList(QStringList()<<"sub*");
-    fileList.removeOne("sub8.prg");
+//    QStringList fileList = fileDir.entryList(QStringList()<<"sub*");
+    QStringList fileList(QStringList()<<"sub0.prg"<<"sub1.prg"<<"sub2.prg"<<"sub3.prg"<<"sub4.prg"<<"sub5.prg"<<"sub6.prg"<<"sub7.prg");
+//    fileList.removeOne("sub8.prg");
     QFile file;
     QString fileContent;
     QStringList records;
