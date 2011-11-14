@@ -18,12 +18,16 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     if(ICParametersSave::Instance()->IsSingleArm())
     {
         ui->singleArmButton->setChecked(true);
+        on_doubleArmButton_toggled(false);
+//        ui->doubleArmButton->toggle();
+//        ui->singleArmButton->click();
     }
     else
     {
-        ui->doubleArmButton->setChecked(true);
-//        ui->singleArmButton->setCheckState();
-        on_doubleArmButton_toggled(!ICParametersSave::Instance()->IsSingleArm());
+        ui->doubleArmButton->click();
+//        ui->doubleArmButton->setChecked(true);
+////        ui->singleArmButton->setCheckState();
+//        on_doubleArmButton_toggled(!ICParametersSave::Instance()->IsSingleArm());
     }
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     armStruct_ = host->SystemParameter(ICVirtualHost::SYS_Config_Signal).toUInt();

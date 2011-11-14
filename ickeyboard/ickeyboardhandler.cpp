@@ -9,6 +9,7 @@
 #include "mainframe.h"
 #include "icvirtualkey.h"
 #include "icactioncommand.h"
+#include "icparameterssave.h"
 //#include "icmold.h"
 //#include "icmacrosubroutine.h"
 #include "operatingratiosetdialog.h"
@@ -208,7 +209,7 @@ void ICKeyboardHandler::Keypressed(int keyValue)
     case ICKeyboard::VFB_Y2Add:
     case ICKeyboard::VFB_Y2Sub:
     {
-        if(!ICVirtualHost::GlobalVirtualHost()->IsSingleArm())
+        if(!ICParametersSave::Instance()->IsSingleArm())
         {
             if(status == ICVirtualHost::Stop)
             {
