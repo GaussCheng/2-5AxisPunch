@@ -19,6 +19,9 @@
 #include "icvirtualkey.h"
 #include "operatingratiosetdialog.h"
 #include <QDebug>
+#include <QTime>
+
+static QTime testTime;
 
 ICVirtualHost* ICVirtualHost::globalVirtualHost_ = NULL;
 ICVirtualHost::ICVirtualHost(QObject *parent) :
@@ -101,9 +104,9 @@ ICVirtualHost::ICVirtualHost(QObject *parent) :
     {
         qWarning("open watchdog fail!");
     }
-    timer_->start(10);
+//    timer_->start(10);
 
-    //    QTimer::singleShot(20, this, SLOT(RefreshStatus()));
+    QTimer::singleShot(20, this, SLOT(RefreshStatus()));
 }
 
 //slots:
@@ -168,23 +171,16 @@ void ICVirtualHost::RefreshStatus()
             currentStatus_ = 0;
         }
         queryStatusCommand_.SetStartAddr(currentAddr_);
+//        qDebug()<<"Query Time:"<<testTime.restart();
         result = commandProcess->ExecuteCommand(queryStatusCommand_).value<ICCommunicationCommandBase::ResultVector>();
         if(queryStatusCommand_.NeedToReconfig())
         {
             qDebug("reconfigure");
             ReConfigure();
             flag_ = true;
+            QTimer::singleShot(5, this, SLOT(RefreshStatus()));
             return;
         }
-        //        else if(queryStatusCommand_.NeedToGetTeach())
-        //        {
-        //            emit NeedToGetTeach();
-        //            return;
-        //        }
-//        result.append(rand());
-//        result.append(rand());
-//        result.append(rand());
-//        result.append(rand());
         if(!result.isEmpty())
         {
             statusMap_.insert(static_cast<ICStatus>(currentStatus_++), result.at(0));
@@ -197,6 +193,7 @@ void ICVirtualHost::RefreshStatus()
         }
         else
         {
+//            qDebug()<<"Resend time:"<<testTime.restart();
             ++tryTimes_;
             //            qCritical()<<"connect to host fail in refresh status"<<tryTimes_;
 //            static int test = 0;
@@ -211,6 +208,7 @@ void ICVirtualHost::RefreshStatus()
 //                emit StepChanged(test++ % 10);
             }
 //            flag_ =true;
+            QTimer::singleShot(5, this, SLOT(RefreshStatus()));
             return;
         }
         freshCount_ = (++freshCount_) % 2;
@@ -264,6 +262,7 @@ void ICVirtualHost::RefreshStatus()
             //            qDebug("Run query");
         }
     }
+    QTimer::singleShot(5, this, SLOT(RefreshStatus()));
 }
 
 void ICVirtualHost::SaveSystemConfig()

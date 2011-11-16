@@ -1860,11 +1860,11 @@ int hc_query_status(modbus_param_t *mb_param, int slave, int start_addr, int nb,
     query[4] = nb & 0x00FF;
     query[5] = nb >> 8;
     modbus_send(mb_param, query, 6);
-    for(int i = 0; i != 8; ++i)
-    {
-        printf("query send[%d]:%d\n", i, query[i]);
-    }
-    printf("Send End *******************\n");
+//    for(int i = 0; i != 8; ++i)
+//    {
+//        printf("query send[%d]:%d\n", i, query[i]);
+//    }
+//    printf("Send End *******************\n");
     return ret;
 
 //    while ((ret = select(mb_param->fd+1, &readFD, NULL, NULL, &tv)) == -1)
