@@ -5,7 +5,7 @@
 
 QScopedPointer<ICCommandProcessor> ICCommandProcessor::instance_;
 ICCommandProcessor::ICCommandProcessor()
-    :modbusParam_(new modbus_param_t()),
+    :/*modbusParam_(new modbus_param_t()),*/
     executeCommand_(new ICExectueCommand()),
     modifySysParamCommand_(new ICModifySysParamCommand()),
     teachParamCommand_(new ICTeachParamCommand()),
