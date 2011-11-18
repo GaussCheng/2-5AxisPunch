@@ -233,6 +233,7 @@
 1020:The mid mold signal is off when origin
 1021: The position is vertical when origin
 1022：The position is horizontal when origin
+<<<<<<< HEAD
 1052:Z insafe signal，Z outsafe signal and main up signal is both off
 1053:NULL
 1054:No X axis but has X action
@@ -243,6 +244,10 @@
 1059:No A axis but has A action
 1060:No B axis but has B action
 1061:No C axis but has C action
+=======
+1023:The position is vertical when traving
+1024:The position is horizontal when traving
+>>>>>>> 18763e6... 1.添加横行姿势
 1100:Can not check the security zone when Main Arm descend
 1101:Can not check the security zone when Sub Arm descend
 1102:Mold-opened signal is off when Main Arm descend

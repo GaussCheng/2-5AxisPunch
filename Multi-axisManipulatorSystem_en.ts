@@ -1022,32 +1022,29 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="363"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="373"/>
         <source>Don&apos;t Limit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="368"/>
-        <source>Alia to auto</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="376"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="381"/>
         <source>Orgin Position</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="395"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="368"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="400"/>
         <source>Horizontal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="400"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="405"/>
         <source>No Limit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="390"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="363"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="395"/>
         <source>Vertical</source>
         <translation type="unfinished"></translation>
     </message>

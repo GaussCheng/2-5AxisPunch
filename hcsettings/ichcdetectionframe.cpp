@@ -39,7 +39,8 @@ ICHCDetectionFrame::ICHCDetectionFrame(QWidget *parent) :
     ui->detectMidMoldComboBox->setCurrentIndex(qAbs(host->IsMidMoldCheck() - 1));
     ui->ejectionLinkLockBox->setCurrentIndex(qAbs(host->IsEjectionLink() - 1));
     ui->detectOriginBox->setCurrentIndex(qAbs(host->IsAlarmWhenOrigin() - 1));
-    ui->detectPositionBox->setCurrentIndex(qAbs(host->IsPositionDetect() - 1));
+//    ui->detectPositionBox->setCurrentIndex(qAbs(host->IsPositionDetect() - 1));
+    ui->detectPositionBox->setCurrentIndex(host->TranserferPosition());
     ui->originPositionBox->setCurrentIndex(host->OriginPosition());
 
     connect(ICMold::CurrentMold(),
@@ -117,8 +118,9 @@ void ICHCDetectionFrame::on_ejectionLinkLockBox_activated(int index)
 
 void ICHCDetectionFrame::on_detectPositionBox_activated(int index)
 {
-    bool isCheck = qAbs(index - 1);
-    ICVirtualHost::GlobalVirtualHost()->SetPositionDetect(isCheck);
+//    bool isCheck = qAbs(index - 1);
+//    ICVirtualHost::GlobalVirtualHost()->SetPositionDetect(isCheck);
+    ICVirtualHost::GlobalVirtualHost()->SetTranserferPosition(index);
 }
 
 void ICHCDetectionFrame::on_detectOriginBox_activated(int index)

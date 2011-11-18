@@ -360,12 +360,17 @@
      </property>
      <item>
       <property name="text">
-       <string>Don't Limit</string>
+       <string>Vertical</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Alia to auto</string>
+       <string>Horizontal</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Don't Limit</string>
       </property>
      </item>
     </widget>

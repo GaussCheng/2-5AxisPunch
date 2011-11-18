@@ -1225,7 +1225,7 @@ Reason</source>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="322"/>
         <source>Detect Postion</source>
-        <translation>横行时治具姿势</translation>
+        <translation>横行姿势</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="336"/>
@@ -1243,32 +1243,33 @@ Reason</source>
         <translation>原点复归</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="363"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="373"/>
         <source>Don&apos;t Limit</source>
         <translation>不限制</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="368"/>
         <source>Alia to auto</source>
-        <translation>须同自动一致</translation>
+        <translation type="obsolete">须同自动一致</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="376"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="381"/>
         <source>Orgin Position</source>
         <translation>原点复归</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="395"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="368"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="400"/>
         <source>Horizontal</source>
         <translation>治具水平</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="400"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="405"/>
         <source>No Limit</source>
         <translation>无限制</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="390"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="363"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="395"/>
         <source>Vertical</source>
         <translation>治具垂直</translation>
     </message>
