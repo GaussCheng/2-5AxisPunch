@@ -497,7 +497,7 @@ public:
     void SetPositionDetect(bool detect);
     int OriginPosition() const { return (SystemParameter(SYS_Function).toInt() & 0x00003000) >> 12;}
     void SetOriginPosition(int position);
-    int TranserferPosition() const { return (SystemParameter(SYS_Function).toInt() & 0x00003000) >> 8;}
+    int TranserferPosition() const { return (SystemParameter(SYS_Function).toInt() & 0x00000C00) >> 10;}
     void SetTranserferPosition(int position);
 
     int CurrentStep() const { return (statusMap_.value(Step).toInt() & 0x00FF);}
@@ -801,8 +801,8 @@ inline void ICVirtualHost::SetOriginPosition(int position)
 inline void ICVirtualHost::SetTranserferPosition(int position)
 {
     int val = SystemParameter(SYS_Function).toInt();
-    val &= 0xFFFFFCFF;
-    val |= (position << 8);
+    val &= 0xFFFFF3FF;
+    val |= (position << 10);
     systemParamMap_.insert(SYS_Function, val);
 }
 

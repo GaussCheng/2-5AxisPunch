@@ -333,12 +333,12 @@
      </property>
      <item>
       <property name="text">
-       <string>Don't need Mold Opened Signal</string>
+       <string>Need Mold Opened Signal</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Need Mold Opened Signal</string>
+       <string>Don't need Mold Opened Signal</string>
       </property>
      </item>
     </widget>

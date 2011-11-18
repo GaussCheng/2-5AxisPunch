@@ -1007,12 +1007,12 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="336"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="341"/>
         <source>Don&apos;t need Mold Opened Signal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="341"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="336"/>
         <source>Need Mold Opened Signal</source>
         <translation type="unfinished"></translation>
     </message>
