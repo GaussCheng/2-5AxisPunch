@@ -61,7 +61,7 @@ void ICUpdateSystem::changeEvent(QEvent *e)
 
 void ICUpdateSystem::showEvent(QShowEvent *e)
 {
-    timer_.start(1000);
+//    timer_.start(1000);
     QFrame::showEvent(e);
 }
 
@@ -328,6 +328,10 @@ void ICUpdateSystem::on_connectHostButton_clicked()
     ICCommandProcessor* processor = ICCommandProcessor::Instance();
     linkCmd.SetSlave(processor->SlaveID());
     processor->ExecuteCommand(linkCmd);
+    if(!timer_.isActive())
+    {
+        timer_.start(1000);
+    }
 }
 
 void ICUpdateSystem::on_writeHostButton_clicked()
