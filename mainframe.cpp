@@ -725,10 +725,10 @@ void MainFrame::ShowManualPage()
     centerStackedLayout_->setCurrentWidget(manualPage_);
     ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Manual"));
     nullButton_->click();
-    if(!IsOrigined())
-    {
-        QMessageBox::warning(this, tr("Warning"), tr("Need to origin!"));
-    }
+//    if(!IsOrigined())
+//    {
+//        QMessageBox::warning(this, tr("Warning"), tr("Need to origin!"));
+//    }
     ui->recordPageButton->setText(tr("Instruct"));
 //    ui->recordPageButton->setEnabled(true);
 }
