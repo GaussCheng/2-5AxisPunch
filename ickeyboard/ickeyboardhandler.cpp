@@ -215,9 +215,18 @@ void ICKeyboardHandler::Keypressed(int keyValue)
             {
                 return;
             }
-            qDebug()<<"X2 Y2********"<<keyValue<<virtualKeyMap_.value(keyValue);
             commandProcessor->ExecuteVirtualKeyCommand(virtualKeyMap_.value(keyValue));
         }
+    }
+    break;
+    case ICKeyboard::VFB_Pose_Horizontal:
+    case ICKeyboard::VFB_Pose_Vertical:
+    {
+        if(status == ICVirtualHost::Stop)
+        {
+            return;
+        }
+        commandProcessor->ExecuteVirtualKeyCommand(virtualKeyMap_.value(keyValue));
     }
     break;
     default:
