@@ -6,7 +6,6 @@
 #include "moldinformation.h"
 #include "ui_moldinformation.h"
 #include "icparameterssave.h"
-#include "icmold.h"
 #include "icprogramheadframe.h"
 #include "icvirtualhost.h"
 #include "config.h"
@@ -16,9 +15,9 @@
 MoldInformation * MoldInformation::instance_ = NULL;
 
 MoldInformation::MoldInformation(QWidget *parent) :
-        QFrame(parent),
-        ui(new Ui::MoldInformation),
-        recordFilePath_("./records/")
+    QFrame(parent),
+    ui(new Ui::MoldInformation),
+    recordFilePath_("./records/")
 {
     ui->setupUi(this);
 
@@ -72,7 +71,33 @@ bool MoldInformation::CreateNewSourceFile(const QString & fileName)
             return false;
         }
 #ifdef HC_8AXIS
-        newFile.write("0 0 255 1 0 0 0 80 0 81\n1 1 255 2 0 0 0 80 0 84\n2 2 255 3 0 0 0 80 0 87\n3 3 255 4 0 0 0 80 0 90\n4 4 255 5 0 0 0 80 0 93\n5 5 255 6 0 0 0 80 0 96\n6 6 255 7 0 0 0 80 0 99\n7 7 255 0 0 0 0 80 0 94\n8 8 255 17 0 0 0 0 0 33\n9 8 255 14 0 0 0 0 0 31\n10 8 255 13 0 0 0 0 0 31\n11 9 255 29 0 0 0 1 0 50\n12 10 255 32 0 0 0 0 5 59");
+        QList<ICMoldItem> items;
+        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisX1, ICMold::GX, ICMold::ACTMAINBACKWARD);
+        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisY1, ICMold::GY, ICMold::ACTMAINUP);
+        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisZ, ICMold::GZ, -1);
+        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisX2, ICMold::GP, ICMold::ACTVICEBACKWARD);
+        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisY2, ICMold::GQ, ICMold::ACTVICEUP);
+        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisA, ICMold::GA, -1);
+        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisB, ICMold::GB, -1);
+        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisC, ICMold::GC, -1);
+        ICMoldItem item;
+        item.SetAction(ICMold::ACT_WaitMoldOpened);
+        item.SetSVal(1);
+        item.SetNum(1);
+        items.append(item);
+        item.SetAction(ICMold::ACTEND);
+        item.SetNum(2);
+        items.append(item);
+        ICMold::MoldReSum(items);
+        QByteArray toWrite;
+        for(int i = 0; i != items.size(); ++i)
+        {
+            toWrite += items.at(i).ToString() + "\n";
+        }
+        newFile.write(toWrite);
+        //        int axisDefine = ICVirtualHost::GlobalVirtualHost()->HostStatus(ICVirtualHost::SYS_Config_Arm).toInt();
+
+        //        newFile.write("0 0 255 1 0 0 0 80 0 81\n1 1 255 2 0 0 0 80 0 84\n2 2 255 3 0 0 0 80 0 87\n3 3 255 4 0 0 0 80 0 90\n4 4 255 5 0 0 0 80 0 93\n5 5 255 6 0 0 0 80 0 96\n6 6 255 7 0 0 0 80 0 99\n7 7 255 0 0 0 0 80 0 94\n8 8 255 17 0 0 0 0 0 33\n9 8 255 14 0 0 0 0 0 31\n10 8 255 13 0 0 0 0 0 31\n11 9 255 29 0 0 0 1 0 50\n12 10 255 32 0 0 0 0 5 59");
 #else
         newFile.write("0 0 255 1 0 0 0 80 0 81\n1 0 255 2 0 0 0 80 0 83\n2 0 255 3 0 0 0 80 0 85\n3 0 255 17 0 0 0 0 0 20\n4 0 255 14 0 0 0 0 0 18\n5 0 255 13 0 0 0 0 0 18\n6 1 255 29 0 0 0 1 0 37\n7 2 255 32 0 0 0 0 5 46");
 #endif
@@ -130,7 +155,7 @@ bool MoldInformation::CopySourceFile(const QString & originFileName, const QStri
     QString targetConfigFilePath = targetFilePathName;
     targetConfigFilePath.chop(3);
     targetConfigFilePath += "fnc";
-//    QFile::copy(originConfigFilePath, targetConfigFilePath);
+    //    QFile::copy(originConfigFilePath, targetConfigFilePath);
     if(QFile::copy(originFilePathName, targetFilePathName))
     {
         if(QFile::copy(originConfigFilePath, targetConfigFilePath))
@@ -277,11 +302,11 @@ void MoldInformation::on_deleteToolButton_clicked()
     if(ICParametersSave::Instance()->MoldName(QString()) == ui->sourceFileNameLabel->text())
     {
         QMessageBox::warning(this, tr("warning"),
-                                           tr("The mold file ") +
-                                           ui->sourceFileNameLabel->text() +
-                                           tr(" is being used"),
-                                           QMessageBox::Ok,
-                                           QMessageBox::Ok);
+                             tr("The mold file ") +
+                             ui->sourceFileNameLabel->text() +
+                             tr(" is being used"),
+                             QMessageBox::Ok,
+                             QMessageBox::Ok);
         return;
     }
 
@@ -303,7 +328,7 @@ void MoldInformation::on_deleteToolButton_clicked()
         if(ui->informationTableWidget->rowCount() != 0)
         {
             ui->sourceFileNameLabel->setText(
-                    ui->informationTableWidget->item(ui->informationTableWidget->currentRow(), 0)->text());
+                        ui->informationTableWidget->item(ui->informationTableWidget->currentRow(), 0)->text());
 
         }
     }
@@ -313,4 +338,24 @@ void MoldInformation::on_informationTableWidget_clicked(QModelIndex index)
 {
     QString fileName =  ui->informationTableWidget->item(index.row(), 0)->text();
     ui->sourceFileNameLabel->setText(fileName);
+}
+
+void MoldInformation::CreateFileHelper_(QList<ICMoldItem> &items, int axis, int servo, int pneumatic)
+{
+    ICMoldItem item;
+    item.SetSVal(80);
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    if(host->AxisDefine(static_cast<ICVirtualHost::ICAxis>(axis)) == ICVirtualHost::ICAxisDefine_Pneumatic)
+    {
+        if(pneumatic > 0)
+        {
+            item.SetAction(pneumatic);
+            items.append(item);
+        }
+    }
+    else if(host->AxisDefine(static_cast<ICVirtualHost::ICAxis>(axis)) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        item.SetAction(servo);
+        items.append(item);
+    }
 }

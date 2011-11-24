@@ -3165,6 +3165,19 @@ Reason</source>
     </message>
 </context>
 <context>
+    <name>ICKeyboardHandler</name>
+    <message>
+        <location filename="ickeyboard/ickeyboardhandler.cpp" line="233"/>
+        <source>Warning</source>
+        <translation type="unfinished">警告</translation>
+    </message>
+    <message>
+        <location filename="ickeyboard/ickeyboardhandler.cpp" line="233"/>
+        <source>Need to origin!</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ICLineEditWithVirtualNumericKeypad</name>
     <message>
         <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="83"/>
@@ -3365,23 +3378,23 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcsettings/icmachinestructpage.ui" line="265"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="205"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="217"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="229"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="241"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="253"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="265"/>
-        <source>Internal security zone</source>
-        <translation>型内安全区</translation>
-    </message>
-    <message>
-        <location filename="hcsettings/icmachinestructpage.ui" line="282"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="206"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="218"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="230"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="242"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="254"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="266"/>
+        <source>Internal security zone</source>
+        <translation>型内安全区</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/icmachinestructpage.ui" line="282"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="207"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="219"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="231"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="243"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="255"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="267"/>
         <source>External security zone</source>
         <translation>型外安全区</translation>
     </message>
@@ -3458,32 +3471,32 @@ Please enter an digit between </source>
         <translation>时间</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="180"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="181"/>
         <source>Min pos inside mold</source>
         <translation>模内最小位置</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="181"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="182"/>
         <source>Max pos inside mold</source>
         <translation>模内最大位置</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="193"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="194"/>
         <source>Max standby pos</source>
         <translation>最大待机位置</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="194"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="195"/>
         <source>Leave origin pos</source>
         <translation>离开原点位置</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="455"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="456"/>
         <source>Information</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="455"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="456"/>
         <source>Save Successfully!</source>
         <translation>保存成功</translation>
     </message>
@@ -4625,12 +4638,12 @@ Please enter an digit between </source>
         <translation type="obsolete">手臂结构选择</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="139"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="143"/>
         <source>Tips</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="139"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="143"/>
         <source>Save Sucessfully!</source>
         <translation>保存成功!</translation>
     </message>
@@ -4786,7 +4799,7 @@ Please enter an digit between </source>
     <message>
         <location filename="hcmaintains/icupdatesystem.cpp" line="136"/>
         <location filename="hcmaintains/icupdatesystem.cpp" line="281"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="338"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="342"/>
         <source>Congratulations</source>
         <translation>提示</translation>
     </message>
@@ -4837,7 +4850,7 @@ Would you want to restart now?</source>
         <translation>保存成功！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="339"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="343"/>
         <source>Update Host finished!</source>
         <translation>更新主机成功！</translation>
     </message>
@@ -4849,7 +4862,7 @@ Would you want to restart now?</source>
 <context>
     <name>ICVirtualHost</name>
     <message>
-        <location filename="communication/icvirtualhost.cpp" line="84"/>
+        <location filename="communication/icvirtualhost.cpp" line="87"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
@@ -5009,13 +5022,11 @@ Would you want to restart now?</source>
         <translation>手动</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="730"/>
         <location filename="mainframe.cpp" line="744"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="730"/>
         <location filename="mainframe.cpp" line="744"/>
         <source>Need to origin!</source>
         <translation>还没进行原点!</translation>

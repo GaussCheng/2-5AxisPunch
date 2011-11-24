@@ -58,7 +58,7 @@ void ICHCTimeFrame::hideEvent(QHideEvent *e)
 {
     qDebug("time hide");
 //    ICMold::CurrentMold()->SaveMoldParamsFile();
-    ICVirtualHost::GlobalVirtualHost()->SaveSystemConfig();
+//    ICVirtualHost::GlobalVirtualHost()->SaveSystemConfig();
 //    ICVirtualHost::GlobalVirtualHost()->ReConfigure();
     QFrame::hideEvent(e);
 }

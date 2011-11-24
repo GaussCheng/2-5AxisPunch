@@ -88,6 +88,7 @@ void ICMachineStructPage::changeEvent(QEvent *e)
 
 void ICMachineStructPage::hideEvent(QHideEvent *e)
 {
+    ICVirtualHost::GlobalVirtualHost()->SaveSystemConfig();
     ICVirtualHost::GlobalVirtualHost()->ReConfigure();
     QWidget::hideEvent(e);
 }

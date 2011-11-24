@@ -4,6 +4,9 @@
 #include <QFrame>
 #include <QModelIndex>
 #include <QFileInfoList>
+#include <QList>
+
+#include "icmold.h"
 
 namespace Ui {
     class MoldInformation;
@@ -40,6 +43,7 @@ private:
     bool DeleteSourceFile(const QString & fileName);
 
     void UpdateInformationTable();
+    void CreateFileHelper_(QList<ICMoldItem> &items, int axis, int servo, int pneumatic);
 
 private:
     Ui::MoldInformation *ui;

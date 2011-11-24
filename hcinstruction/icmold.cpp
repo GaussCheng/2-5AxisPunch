@@ -203,7 +203,7 @@ bool ICMold::ReadMoldFile(const QString &fileName, bool isLoadParams)
         return false;
     }
     QStringList records = content.split("\n", QString::SkipEmptyParts);
-    if(records.size() < 4)
+    if(records.size() < 1)
     {
         qDebug("mold less than 4");
         return false;
