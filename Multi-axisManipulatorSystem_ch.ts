@@ -44,9 +44,9 @@
         <location filename="hcinstruction/actionsettingframe.ui" line="250"/>
         <location filename="hcinstruction/actionsettingframe.ui" line="549"/>
         <location filename="hcinstruction/actionsettingframe.ui" line="675"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="974"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="996"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1018"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="953"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="975"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="997"/>
         <source>80</source>
         <translation></translation>
     </message>
@@ -106,9 +106,6 @@
         <location filename="hcinstruction/actionsettingframe.ui" line="401"/>
         <location filename="hcinstruction/actionsettingframe.ui" line="556"/>
         <location filename="hcinstruction/actionsettingframe.ui" line="653"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="938"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="945"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="952"/>
         <source>s</source>
         <translation></translation>
     </message>
@@ -118,9 +115,6 @@
         <location filename="hcinstruction/actionsettingframe.ui" line="444"/>
         <location filename="hcinstruction/actionsettingframe.ui" line="563"/>
         <location filename="hcinstruction/actionsettingframe.ui" line="682"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1025"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1032"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1039"/>
         <source>%</source>
         <translation></translation>
     </message>
@@ -2167,51 +2161,51 @@ Reason</source>
         <translation type="obsolete">X轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="23"/>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="71"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="26"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="74"/>
         <source>X1 Axis</source>
         <oldsource>Y Axis</oldsource>
         <translation>X1轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="24"/>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="72"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="27"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="75"/>
         <source>Y1 Axis</source>
         <translation>Y1轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="25"/>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="73"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="28"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="76"/>
         <source>Z Axis</source>
         <translation>Z轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="26"/>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="74"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="29"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="77"/>
         <source>X2 Axis</source>
         <translation>X2轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="27"/>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="75"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="30"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="78"/>
         <source>Y2 Axis</source>
         <translation>Y2轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="28"/>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="76"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="31"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="79"/>
         <source>A Axis</source>
         <translation>A轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="29"/>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="77"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="32"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="80"/>
         <source>B Axis</source>
         <translation>B轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="30"/>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="78"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="33"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="81"/>
         <source>C Axis</source>
         <translation>C轴</translation>
     </message>
@@ -3286,34 +3280,28 @@ Please enter an digit between </source>
         <translation>Y2最高速度</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachineconfigpage.ui" line="218"/>
         <source>A Acceleration and Deceleration</source>
-        <translation>A轴加减速时间</translation>
+        <translation type="obsolete">A轴加减速时间</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachineconfigpage.ui" line="238"/>
         <source>A Max Speed</source>
-        <translation>A最高速度</translation>
+        <translation type="obsolete">A最高速度</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachineconfigpage.ui" line="251"/>
         <source>B Acceleration and Deceleration</source>
-        <translation>B轴加减速时间</translation>
+        <translation type="obsolete">B轴加减速时间</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachineconfigpage.ui" line="271"/>
         <source>B Max Speed</source>
-        <translation>B最高速度</translation>
+        <translation type="obsolete">B最高速度</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachineconfigpage.ui" line="284"/>
         <source>C Acceleration and Deceleration</source>
-        <translation>C轴加减速时间</translation>
+        <translation type="obsolete">C轴加减速时间</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachineconfigpage.ui" line="304"/>
         <source>C Max Speed</source>
-        <translation>C最高速度</translation>
+        <translation type="obsolete">C最高速度</translation>
     </message>
     <message>
         <source>X Early End</source>
@@ -3338,9 +3326,6 @@ Please enter an digit between </source>
         <location filename="hcsettings/icmachineconfigpage.ui" line="125"/>
         <location filename="hcsettings/icmachineconfigpage.ui" line="204"/>
         <location filename="hcsettings/icmachineconfigpage.ui" line="211"/>
-        <location filename="hcsettings/icmachineconfigpage.ui" line="231"/>
-        <location filename="hcsettings/icmachineconfigpage.ui" line="264"/>
-        <location filename="hcsettings/icmachineconfigpage.ui" line="297"/>
         <source>s</source>
         <translation></translation>
     </message>
@@ -3378,23 +3363,23 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcsettings/icmachinestructpage.ui" line="265"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="206"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="218"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="230"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="242"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="254"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="266"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="209"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="221"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="233"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="245"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="257"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="269"/>
         <source>Internal security zone</source>
         <translation>型内安全区</translation>
     </message>
     <message>
         <location filename="hcsettings/icmachinestructpage.ui" line="282"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="207"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="219"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="231"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="243"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="255"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="267"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="210"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="222"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="234"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="246"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="258"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="270"/>
         <source>External security zone</source>
         <translation>型外安全区</translation>
     </message>
@@ -3409,94 +3394,94 @@ Please enter an digit between </source>
         <translation>保存</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="22"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="73"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="25"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="76"/>
         <source>X1 Axis</source>
         <oldsource>X Axis</oldsource>
         <translation>X1轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="23"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="74"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="26"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="77"/>
         <source>Y1 Axis</source>
         <oldsource>Y Axis</oldsource>
         <translation>Y1轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="24"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="75"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="27"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="78"/>
         <source>Z Axis</source>
         <translation>Z轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="25"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="76"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="28"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="79"/>
         <source>X2 Axis</source>
         <translation>X2轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="26"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="77"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="29"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="80"/>
         <source>Y2 Axis</source>
         <translation>Y2轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="27"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="78"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="30"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="81"/>
         <source>A Axis</source>
         <translation>A轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="28"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="79"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="31"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="82"/>
         <source>B Axis</source>
         <translation>B轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="29"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="80"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="32"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="83"/>
         <source>C Axis</source>
         <translation>C轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="30"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="81"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="33"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="84"/>
         <source>Struct Define</source>
         <translation>结构</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="31"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="82"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="34"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="85"/>
         <source>Time</source>
         <translation>时间</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="181"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="184"/>
         <source>Min pos inside mold</source>
         <translation>模内最小位置</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="182"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="185"/>
         <source>Max pos inside mold</source>
         <translation>模内最大位置</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="194"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="197"/>
         <source>Max standby pos</source>
         <translation>最大待机位置</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="195"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="198"/>
         <source>Leave origin pos</source>
         <translation>离开原点位置</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="456"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="459"/>
         <source>Information</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="456"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="459"/>
         <source>Save Successfully!</source>
         <translation>保存成功</translation>
     </message>
@@ -3593,12 +3578,12 @@ Please enter an digit between </source>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="47"/>
         <source>X Out Limit</source>
-        <translation>主前进极限</translation>
+        <translation>X轴终点极限</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="48"/>
         <source>X In Limit</source>
-        <translation>主后退极限</translation>
+        <translation>X轴起点极限</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="50"/>
@@ -3613,7 +3598,7 @@ Please enter an digit between </source>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="52"/>
         <source>Y In Limit</source>
-        <translation>主上升极限</translation>
+        <translation>Y轴起点极限</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="53"/>
@@ -3648,12 +3633,12 @@ Please enter an digit between </source>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="60"/>
         <source>Vice Backward</source>
-        <translation>副后退限</translation>
+        <translation>X2轴原点</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="61"/>
         <source>Vice Up</source>
-        <translation>副上升限</translation>
+        <translation>Y2轴原点</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="62"/>
@@ -3672,7 +3657,7 @@ Please enter an digit between </source>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="65"/>
         <source>Y Out Limit</source>
-        <translation>主下降极限</translation>
+        <translation>Y轴终点极限</translation>
     </message>
     <message>
         <source>Main Mid</source>
@@ -3719,133 +3704,153 @@ Please enter an digit between </source>
         <translation>备用输入9</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="76"/>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="77"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="81"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="82"/>
         <source>Other</source>
         <translation>机械手I/O信号</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="82"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="87"/>
         <source>Horizontal Valve</source>
         <translation>水平阀</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="83"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="88"/>
         <source>Vertical Valve</source>
         <translation>垂直阀</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="84"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="89"/>
         <source>Fixture1 Valve</source>
         <translation>夹1阀</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="85"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="90"/>
         <source>Fixture2 Valve</source>
         <translation>夹2阀</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="104"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="109"/>
         <source>Fixture3 Valve</source>
         <oldsource>Fixture6 Valve</oldsource>
         <translation>夹3阀</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="86"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="91"/>
         <source>Sucker2 Valve</source>
         <translation>吸2阀</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="88"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="77"/>
+        <source>X2 Begin Limit</source>
+        <translation>X2轴起点极限</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="78"/>
+        <source>X2 End Limit</source>
+        <translation>X2轴终点极限</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="79"/>
+        <source>Y2 Begin Limit</source>
+        <translation>Y2轴起点极限</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="80"/>
+        <source>Y2 End Limit</source>
+        <translation>Y2轴终点极限</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="93"/>
         <source>Main Forward Valve</source>
         <oldsource>Main Forward</oldsource>
         <translation>主前进阀</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="89"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="94"/>
         <source>Main Backward Valve</source>
         <oldsource>Main Backward</oldsource>
         <translation>主后退阀</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="91"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="96"/>
         <source>Fixture4 Valve</source>
         <translation>夹4阀</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="92"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="97"/>
         <source>Alarm</source>
         <translation>报警</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="93"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="98"/>
         <source>Main Up Valve</source>
         <translation>备用输出1</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="94"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="99"/>
         <source>Main Down Valve</source>
         <oldsource>Main Down</oldsource>
         <translation>备用输出2</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="95"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="100"/>
         <source>Main Slow Dwon</source>
         <translation>备用输出3</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="96"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="101"/>
         <source>Paint Oil</source>
         <translation>备用输出4</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="97"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="102"/>
         <source>Next Cycle Sp</source>
         <translation>备用输出5</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="98"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="103"/>
         <source>Mold Close Sp</source>
         <translation>锁模允许附加</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="100"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="105"/>
         <source>Vice Forward Valve</source>
         <translation>副前进阀</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="101"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="106"/>
         <source>Vice Backward Valve</source>
         <translation>副后退阀</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="102"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="107"/>
         <source>Vice Up Valve</source>
         <translation>副上升阀</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="103"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="108"/>
         <source>Vice Down Valve</source>
         <translation>副下降阀</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="87"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="92"/>
         <source>Sucker1 Valve</source>
         <oldsource>Fixture5 Valve</oldsource>
         <translation>吸1阀</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="105"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="110"/>
         <source>Go Out</source>
         <translation>备用输出6</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="106"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="111"/>
         <source>Come In</source>
         <translation>备用输出7</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="107"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="112"/>
         <source>Transport</source>
         <translation>备用输出8</translation>
     </message>
@@ -3874,93 +3879,93 @@ Please enter an digit between </source>
         <translation type="obsolete">预留6</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="119"/>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="120"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="124"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="125"/>
         <source>EU</source>
         <translation>注塑机I/O信号</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="136"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="141"/>
         <source>Safe Door</source>
         <translation>安全门</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="155"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="160"/>
         <source>En C6</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="156"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="161"/>
         <source>En C7</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="157"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="162"/>
         <source>En A8</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="132"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="137"/>
         <source>IMM Reject</source>
         <translation>不良品</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="124"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="129"/>
         <source>Mold Closed</source>
         <translation>锁模终止</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="123"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="128"/>
         <source>Mold Opened</source>
         <translation>开模终止</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="138"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="143"/>
         <source>Mold Inter</source>
         <translation>中板模</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="139"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="144"/>
         <source>IMM Auto</source>
         <translation>全自动</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="126"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="131"/>
         <source>Eject Backward</source>
         <translation>顶针后退到位</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="125"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="130"/>
         <source>Eject Forward</source>
         <translation>顶针前进到位</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="135"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="140"/>
         <source>ZC7</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="134"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="139"/>
         <source>ZC6</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="133"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="138"/>
         <source>ZC5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="130"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="135"/>
         <source>Core 2 Out</source>
         <translation>出芯2到位</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="129"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="134"/>
         <source>Core 2 In</source>
         <translation>入芯2到位</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="128"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="133"/>
         <source>Core 1 Out</source>
         <translation>出芯1到位</translation>
     </message>
@@ -3975,58 +3980,58 @@ Please enter an digit between </source>
         <translation>主前进限</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="127"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="132"/>
         <source>Core 1 In</source>
         <translation>入芯1到位</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="137"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="142"/>
         <source>ES</source>
         <translation>急停</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="146"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="151"/>
         <source>Mold Close Permit</source>
         <oldsource>Mold Close</oldsource>
         <translation>允许锁模</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="147"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="152"/>
         <source>Eject Forward Permit</source>
         <translation>允许顶进</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="148"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="153"/>
         <source>Eject Backward Permit</source>
         <translation>允许顶退</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="145"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="150"/>
         <source>Mold Open Permit</source>
         <translation>允许开模</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="149"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="154"/>
         <source>Core 1 In Permit</source>
         <translation>允许入芯1</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="151"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="156"/>
         <source>Core 2 In Permit</source>
         <translation>允许入芯2</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="152"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="157"/>
         <source>Core 2 Out Permit</source>
         <translation>允许出芯2</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="150"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="155"/>
         <source>Core 1 Out Permit</source>
         <translation>允许出芯1</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="154"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="159"/>
         <source>Robot</source>
         <translation>机械手模式</translation>
     </message>
@@ -4393,13 +4398,13 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="401"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="454"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="479"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="504"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="536"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="568"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="600"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="632"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="440"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="465"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="490"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="515"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="547"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="579"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="611"/>
         <source>None</source>
         <translation>无</translation>
     </message>
@@ -4428,7 +4433,7 @@ Please enter an digit between </source>
         <translation type="obsolete">需上升和下降限位</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="984"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="976"/>
         <source>Save</source>
         <translation>保存</translation>
     </message>
@@ -4482,25 +4487,25 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="406"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="459"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="484"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="509"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="541"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="573"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="605"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="637"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="445"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="470"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="495"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="520"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="552"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="584"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="616"/>
         <source>Pneumatic</source>
         <translation>气动轴</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="411"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="464"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="489"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="514"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="546"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="578"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="610"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="642"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="450"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="475"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="500"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="525"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="557"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="589"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="621"/>
         <source>Servo</source>
         <translation>伺服轴</translation>
     </message>
@@ -4511,125 +4516,111 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="426"/>
-        <source>C</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="433"/>
         <source>Z</source>
+        <oldsource>C</oldsource>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="440"/>
-        <source>A</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="522"/>
-        <source>B</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="554"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="533"/>
         <source>Y1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="586"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="565"/>
         <source>X2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="618"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="597"/>
         <source>Y2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="657"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="649"/>
         <source>Out Define</source>
         <translation>预留定义</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="663"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="655"/>
         <source>1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="677"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="704"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="731"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="758"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="785"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="812"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="839"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="866"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="669"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="696"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="723"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="750"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="777"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="804"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="831"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="858"/>
         <source>Normal</source>
         <translation>正常</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="682"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="709"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="736"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="763"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="790"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="817"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="844"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="871"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="674"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="701"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="728"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="755"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="782"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="809"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="836"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="863"/>
         <source>Extent</source>
         <translation>扩展</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="690"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="682"/>
         <source>5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="717"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="709"/>
         <source>2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="744"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="736"/>
         <source>6</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="771"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="763"/>
         <source>3</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="798"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="790"/>
         <source>7</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="825"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="817"/>
         <source>4</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="852"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="844"/>
         <source>8</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="908"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="900"/>
         <source>Fixture Define</source>
         <translation>治具定义</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="914"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="906"/>
         <source>Fixture</source>
         <translation>治具</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="928"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="920"/>
         <source>Reversed Phase</source>
         <translation>反相</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="933"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="925"/>
         <source>Positive Phase</source>
         <translation>正相</translation>
     </message>
@@ -4638,12 +4629,12 @@ Please enter an digit between </source>
         <translation type="obsolete">手臂结构选择</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="143"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="146"/>
         <source>Tips</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="143"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="146"/>
         <source>Save Sucessfully!</source>
         <translation>保存成功!</translation>
     </message>
@@ -4973,17 +4964,17 @@ Would you want to restart now?</source>
         <translation>步序</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="374"/>
+        <location filename="mainframe.cpp" line="383"/>
         <source>Function</source>
         <translation>功能</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="375"/>
+        <location filename="mainframe.cpp" line="384"/>
         <source>Monitor</source>
         <translation>监视</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="699"/>
+        <location filename="mainframe.cpp" line="708"/>
         <source>Records</source>
         <translation>档案</translation>
     </message>
@@ -4992,53 +4983,53 @@ Would you want to restart now?</source>
         <translation type="obsolete">报警记录</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="759"/>
+        <location filename="mainframe.cpp" line="768"/>
         <source>Standby</source>
         <translation>欢迎</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="377"/>
+        <location filename="mainframe.cpp" line="386"/>
         <source>Record</source>
         <translation>档案</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="376"/>
+        <location filename="mainframe.cpp" line="385"/>
         <source>Alarm</source>
         <translation>报警</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="378"/>
+        <location filename="mainframe.cpp" line="387"/>
         <source>Return</source>
         <translation>返回</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="548"/>
+        <location filename="mainframe.cpp" line="557"/>
         <source>Hint</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="726"/>
+        <location filename="mainframe.cpp" line="735"/>
         <source>Manual</source>
         <translation>手动</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="744"/>
+        <location filename="mainframe.cpp" line="753"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="744"/>
+        <location filename="mainframe.cpp" line="753"/>
         <source>Need to origin!</source>
         <translation>还没进行原点!</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="732"/>
-        <location filename="mainframe.cpp" line="751"/>
+        <location filename="mainframe.cpp" line="741"/>
+        <location filename="mainframe.cpp" line="760"/>
         <source>Instruct</source>
         <translation>教导</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="740"/>
+        <location filename="mainframe.cpp" line="749"/>
         <source>Auto</source>
         <translation>自动</translation>
     </message>

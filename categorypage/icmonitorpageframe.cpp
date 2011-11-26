@@ -73,6 +73,11 @@ void ICMonitorPageFrame::Init_()
     points.append(ICIOPoint("X045", tr("Watch Dog"), 29));
     points.append(ICIOPoint("X046", tr("Next Cycle App"), 30));
     points.append(ICIOPoint("X047", tr("Mold Close App"), 31));
+
+    points.append(ICIOPoint("X050", tr("X2 Begin Limit"), 48));
+    points.append(ICIOPoint("X051", tr("X2 End Limit"), 49));
+    points.append(ICIOPoint("X052", tr("Y2 Begin Limit"), 50));
+    points.append(ICIOPoint("X053", tr("Y2 End Limit"), 51));
     ui->icMonitorFrameleft->AddPage(otherPageLeft_, tr("Other"));
     ui->icMonitorFrameRight->AddPage(otherPageRight_, tr("Other"));
     otherPageLeft_->BindingPointsToInputPage(points);
