@@ -22,8 +22,14 @@ protected:
     void hideEvent(QHideEvent *e);
 
 private:
+    void UpdateAxisDefine_();
+    void ShowWidgets_(QList<QWidget*>& widgets);
+    void HideWidgets_(QList<QWidget*>& widgets);
     Ui::ICMachineConfigPage *ui;
     QList<ICLineEditWrapper*> wrappers_;
+
+    int axisDefine_;
+    QList<QList<QWidget*> > axisWidgets_;
 };
 
 #endif // ICMACHINECONFIGPAGE_H

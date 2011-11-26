@@ -104,9 +104,9 @@ ICVirtualHost::ICVirtualHost(QObject *parent) :
     {
         qWarning("open watchdog fail!");
     }
-//    timer_->start(10);
+    timer_->start(10);
 
-    QTimer::singleShot(20, this, SLOT(RefreshStatus()));
+//    QTimer::singleShot(20, this, SLOT(RefreshStatus()));
 }
 
 //slots:
@@ -178,7 +178,7 @@ void ICVirtualHost::RefreshStatus()
             qDebug("reconfigure");
             ReConfigure();
             flag_ = true;
-            QTimer::singleShot(5, this, SLOT(RefreshStatus()));
+//            QTimer::singleShot(5, this, SLOT(RefreshStatus()));
             return;
         }
         if(!result.isEmpty())
@@ -208,7 +208,7 @@ void ICVirtualHost::RefreshStatus()
 //                emit StepChanged(test++ % 10);
             }
 //            flag_ =true;
-            QTimer::singleShot(5, this, SLOT(RefreshStatus()));
+//            QTimer::singleShot(5, this, SLOT(RefreshStatus()));
             return;
         }
         freshCount_ = (++freshCount_) % 2;
@@ -262,7 +262,7 @@ void ICVirtualHost::RefreshStatus()
             //            qDebug("Run query");
         }
     }
-    QTimer::singleShot(5, this, SLOT(RefreshStatus()));
+//    QTimer::singleShot(5, this, SLOT(RefreshStatus()));
 }
 
 void ICVirtualHost::SaveSystemConfig()

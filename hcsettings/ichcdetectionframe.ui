@@ -225,12 +225,12 @@
      </property>
      <item>
       <property name="text">
-       <string>Not Use</string>
+       <string>Use</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Use</string>
+       <string>Not Use</string>
       </property>
      </item>
     </widget>

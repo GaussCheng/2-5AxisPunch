@@ -8,6 +8,14 @@ ICMachineConfigPage::ICMachineConfigPage(QWidget *parent) :
     ui(new Ui::ICMachineConfigPage)
 {
     ui->setupUi(this);
+    axisWidgets_.append(QList<QWidget*>()<<ui->x1ALabel<<ui->x1MLabel<<ui->xADEdit<<ui->x1SLabel<<ui->xMaxSpeedEdit);
+    axisWidgets_.append(QList<QWidget*>()<<ui->y1MLabel<<ui->y1ALabel<<ui->y1SLabel<<ui->yADEdit<<ui->yMaxSpeedEdit);
+    axisWidgets_.append(QList<QWidget*>()<<ui->zALabel<<ui->zADEdit<<ui->zMaxSpeedEdit<<ui->zMLabel<<ui->zSLabel);
+    axisWidgets_.append(QList<QWidget*>()<<ui->x2ADEdit<<ui->x2ALabel<<ui->x2MaxSpeedEdit<<ui->x2MLabel<<ui->x2SLabel);
+    axisWidgets_.append(QList<QWidget*>()<<ui->y2ADEdit<<ui->y2ALabel<<ui->y2MaxSpeedEdit<<ui->y2MLabel<<ui->y2SLabel);
+    axisWidgets_.append(QList<QWidget*>()<<ui->aADEdit<<ui->aALabel<<ui->aMaxSpeedEdit<<ui->aMLabel<<ui->aSLabel);
+    axisWidgets_.append(QList<QWidget*>()<<ui->bADEdit<<ui->bALabel<<ui->bMaxSpeedEdit<<ui->bMLabel<<ui->bSLabel);
+    axisWidgets_.append(QList<QWidget*>()<<ui->cADEdit<<ui->cALabel<<ui->cMaxSpeedEdit<<ui->cMLabel<<ui->cSLabel);
     QIntValidator * validator = new QIntValidator(0, 32767, this);
     ui->xADEdit->SetDecimalPlaces(2);
     ui->xADEdit->setValidator(validator);
@@ -173,4 +181,107 @@ void ICMachineConfigPage::hideEvent(QHideEvent *e)
     ICVirtualHost::GlobalVirtualHost()->SaveSystemConfig();
     ICVirtualHost::GlobalVirtualHost()->ReConfigure();
     QWidget::hideEvent(e);
+}
+
+void ICMachineConfigPage::UpdateAxisDefine_()
+{
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    int currentAxis = host->SystemParameter(ICVirtualHost::SYS_Config_Arm).toInt();
+    if(axisDefine_ != currentAxis)
+    {
+        axisDefine_ = currentAxis;
+        for(int i = 0 ; i != axisWidgets_.size(); ++i)
+        {
+            HideWidgets_(axisWidgets_[i]);
+        }
+
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) == ICVirtualHost::ICAxisDefine_None)
+        {
+            HideWidgets_(axisWidgets_[0]);
+        }
+        else
+        {
+            ShowWidgets_(axisWidgets_[0]);
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY1) == ICVirtualHost::ICAxisDefine_None)
+        {
+            HideWidgets_(axisWidgets_[1]);
+        }
+        else
+        {
+            ShowWidgets_(axisWidgets_[1]);
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisZ) == ICVirtualHost::ICAxisDefine_None)
+        {
+            HideWidgets_(axisWidgets_[2]);
+        }
+        else
+        {
+            ShowWidgets_(axisWidgets_[2]);
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) == ICVirtualHost::ICAxisDefine_None)
+        {
+            HideWidgets_(axisWidgets_[3]);
+        }
+        else
+        {
+            ShowWidgets_(axisWidgets_[3]);
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY1) == ICVirtualHost::ICAxisDefine_None)
+        {
+            HideWidgets_(axisWidgets_[4]);
+        }
+        else
+        {
+            ShowWidgets_(axisWidgets_[4]);
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisA) == ICVirtualHost::ICAxisDefine_None)
+        {
+            HideWidgets_(axisWidgets_[5]);
+        }
+        else
+        {
+            ShowWidgets_(axisWidgets_[5]);
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisB) == ICVirtualHost::ICAxisDefine_None)
+        {
+            HideWidgets_(axisWidgets_[6]);
+        }
+        else
+        {
+            ShowWidgets_(axisWidgets_[6]);
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) == ICVirtualHost::ICAxisDefine_None)
+        {
+            HideWidgets_(axisWidgets_[7]);
+        }
+        else
+        {
+            ShowWidgets_(axisWidgets_[7]);
+        }
+    }
+}
+
+void ICMachineConfigPage::ShowWidgets_(QList<QWidget *> &widgets)
+{
+    for(int i = 0; i != widgets.size(); ++i)
+    {
+        widgets[i]->show();
+    }
+}
+
+void ICMachineConfigPage::HideWidgets_(QList<QWidget *> &widgets)
+{
+    for(int i = 0; i != widgets.size(); ++i)
+    {
+        widgets[i]->hide();
+    }
 }

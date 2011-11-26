@@ -28,7 +28,7 @@
     <widget class="ICLineEditWithVirtualNumericKeypad" name="toleranceLineEdit"/>
    </item>
    <item row="1" column="0">
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="x1ALabel">
      <property name="text">
       <string>X1 Acceleration and Deceleration</string>
      </property>
@@ -41,7 +41,7 @@
     <widget class="ICLineEditWithVirtualNumericKeypad" name="xADEdit"/>
    </item>
    <item row="1" column="5">
-    <widget class="QLabel" name="label_5">
+    <widget class="QLabel" name="x1MLabel">
      <property name="text">
       <string>X1 Max Speed</string>
      </property>
@@ -54,7 +54,7 @@
     <widget class="ICLineEditWithVirtualNumericKeypad" name="xMaxSpeedEdit"/>
    </item>
    <item row="2" column="0">
-    <widget class="QLabel" name="label_2">
+    <widget class="QLabel" name="y1ALabel">
      <property name="text">
       <string>Y1 Acceleration and Deceleration</string>
      </property>
@@ -67,7 +67,7 @@
     <widget class="ICLineEditWithVirtualNumericKeypad" name="yADEdit"/>
    </item>
    <item row="2" column="5">
-    <widget class="QLabel" name="label_6">
+    <widget class="QLabel" name="y1MLabel">
      <property name="text">
       <string>Y1 Max Speed</string>
      </property>
@@ -80,7 +80,7 @@
     <widget class="ICLineEditWithVirtualNumericKeypad" name="yMaxSpeedEdit"/>
    </item>
    <item row="3" column="0">
-    <widget class="QLabel" name="label_4">
+    <widget class="QLabel" name="zALabel">
      <property name="text">
       <string>Z Acceleration and Deceleration</string>
      </property>
@@ -93,7 +93,7 @@
     <widget class="ICLineEditWithVirtualNumericKeypad" name="zADEdit"/>
    </item>
    <item row="3" column="5">
-    <widget class="QLabel" name="label_7">
+    <widget class="QLabel" name="zMLabel">
      <property name="text">
       <string>Z Max Speed</string>
      </property>
@@ -106,21 +106,21 @@
     <widget class="ICLineEditWithVirtualNumericKeypad" name="zMaxSpeedEdit"/>
    </item>
    <item row="1" column="3">
-    <widget class="QLabel" name="label_14">
+    <widget class="QLabel" name="x1SLabel">
      <property name="text">
       <string>s</string>
      </property>
     </widget>
    </item>
    <item row="2" column="3">
-    <widget class="QLabel" name="label_15">
+    <widget class="QLabel" name="y1SLabel">
      <property name="text">
       <string>s</string>
      </property>
     </widget>
    </item>
    <item row="3" column="3">
-    <widget class="QLabel" name="label_16">
+    <widget class="QLabel" name="zSLabel">
      <property name="text">
       <string>s</string>
      </property>
@@ -147,7 +147,7 @@
     </widget>
    </item>
    <item row="4" column="0">
-    <widget class="QLabel" name="label_8">
+    <widget class="QLabel" name="x2ALabel">
      <property name="text">
       <string>X2 Acceleration and Deceleration</string>
      </property>
@@ -160,7 +160,7 @@
     <widget class="ICLineEditWithVirtualNumericKeypad" name="x2ADEdit"/>
    </item>
    <item row="4" column="5">
-    <widget class="QLabel" name="label_9">
+    <widget class="QLabel" name="x2MLabel">
      <property name="text">
       <string>X2 Max Speed</string>
      </property>
@@ -173,7 +173,7 @@
     <widget class="ICLineEditWithVirtualNumericKeypad" name="x2MaxSpeedEdit"/>
    </item>
    <item row="5" column="0">
-    <widget class="QLabel" name="label_10">
+    <widget class="QLabel" name="y2ALabel">
      <property name="text">
       <string>Y2 Acceleration and Deceleration</string>
      </property>
@@ -186,7 +186,7 @@
     <widget class="ICLineEditWithVirtualNumericKeypad" name="y2ADEdit"/>
    </item>
    <item row="5" column="5">
-    <widget class="QLabel" name="label_11">
+    <widget class="QLabel" name="y2MLabel">
      <property name="text">
       <string>Y2 Max Speed</string>
      </property>
@@ -199,21 +199,21 @@
     <widget class="ICLineEditWithVirtualNumericKeypad" name="y2MaxSpeedEdit"/>
    </item>
    <item row="4" column="3">
-    <widget class="QLabel" name="label_18">
+    <widget class="QLabel" name="x2SLabel">
      <property name="text">
       <string>s</string>
      </property>
     </widget>
    </item>
    <item row="5" column="3">
-    <widget class="QLabel" name="label_19">
+    <widget class="QLabel" name="y2SLabel">
      <property name="text">
       <string>s</string>
      </property>
     </widget>
    </item>
    <item row="6" column="0">
-    <widget class="QLabel" name="label_12">
+    <widget class="QLabel" name="aALabel">
      <property name="text">
       <string>A Acceleration and Deceleration</string>
      </property>
@@ -226,14 +226,14 @@
     <widget class="ICLineEditWithVirtualNumericKeypad" name="aADEdit"/>
    </item>
    <item row="6" column="3">
-    <widget class="QLabel" name="label_20">
+    <widget class="QLabel" name="aSLabel">
      <property name="text">
       <string>s</string>
      </property>
     </widget>
    </item>
    <item row="6" column="5">
-    <widget class="QLabel" name="label_13">
+    <widget class="QLabel" name="aMLabel">
      <property name="text">
       <string>A Max Speed</string>
      </property>
@@ -246,7 +246,7 @@
     <widget class="ICLineEditWithVirtualNumericKeypad" name="aMaxSpeedEdit"/>
    </item>
    <item row="7" column="0">
-    <widget class="QLabel" name="label_21">
+    <widget class="QLabel" name="bALabel">
      <property name="text">
       <string>B Acceleration and Deceleration</string>
      </property>
@@ -259,14 +259,14 @@
     <widget class="ICLineEditWithVirtualNumericKeypad" name="bADEdit"/>
    </item>
    <item row="7" column="3">
-    <widget class="QLabel" name="label_22">
+    <widget class="QLabel" name="bSLabel">
      <property name="text">
       <string>s</string>
      </property>
     </widget>
    </item>
    <item row="7" column="5">
-    <widget class="QLabel" name="label_23">
+    <widget class="QLabel" name="bMLabel">
      <property name="text">
       <string>B Max Speed</string>
      </property>
@@ -279,7 +279,7 @@
     <widget class="ICLineEditWithVirtualNumericKeypad" name="bMaxSpeedEdit"/>
    </item>
    <item row="8" column="0">
-    <widget class="QLabel" name="label_24">
+    <widget class="QLabel" name="cALabel">
      <property name="text">
       <string>C Acceleration and Deceleration</string>
      </property>
@@ -292,14 +292,14 @@
     <widget class="ICLineEditWithVirtualNumericKeypad" name="cADEdit"/>
    </item>
    <item row="8" column="3">
-    <widget class="QLabel" name="label_25">
+    <widget class="QLabel" name="cSLabel">
      <property name="text">
       <string>s</string>
      </property>
     </widget>
    </item>
    <item row="8" column="5">
-    <widget class="QLabel" name="label_26">
+    <widget class="QLabel" name="cMLabel">
      <property name="text">
       <string>C Max Speed</string>
      </property>
