@@ -9,6 +9,7 @@
 #include <QVector>
 #include <QMessageBox>
 #include <QDebug>
+#include "mainframe.h"
 
 ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     QWidget(parent),
@@ -141,6 +142,8 @@ void ICStructDefineFrame::on_saveButton_clicked()
         host->SetSystemParameter(ICVirtualHost::SYS_Config_Xorsum, dataBuffer.at(6));
         host->SaveSystemConfig();
         QMessageBox::information(this, tr("Tips"), tr("Save Sucessfully!"));
+        emit StructChanged();
+        icMainFrame->UpdateAxisDefine_();
     }
     ICParametersSave::Instance()->SetSingleArm(ui->singleArmButton->isChecked());
     qDebug()<<"Struct = "<<armStruct_;

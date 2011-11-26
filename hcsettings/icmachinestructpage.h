@@ -7,6 +7,7 @@
 class QButtonGroup;
 class QIntValidator;
 class QComboBox;
+class ICStructDefineFrame;
 
 namespace Ui {
     class ICMachineStructPage;
@@ -23,6 +24,7 @@ public:
 protected:
     void changeEvent(QEvent *e);
     void hideEvent(QHideEvent *);
+    void showEvent(QShowEvent *e);
 
 private Q_SLOTS:
     void on_axisXToolButton_clicked();
@@ -39,6 +41,7 @@ private Q_SLOTS:
     void on_saveToolButton_clicked();
 
     void SetCurrentAxis(int axis);
+    void UpdateAxisDefine_();
 
 private:
     void InitInterface();
@@ -47,10 +50,11 @@ private:
     Ui::ICMachineStructPage *ui;
     QButtonGroup* buttonGroup_;
     int currentAxis_;
-    QWidget* structPage_;
+    ICStructDefineFrame* structPage_;
     QWidget* timePage_;
     QIntValidator* maxMoveValidator_;
     QIntValidator* rotateValidator_;
+    int axisDefine_;
 };
 
 #endif // ICMACHINESTRUCTPAGE_H

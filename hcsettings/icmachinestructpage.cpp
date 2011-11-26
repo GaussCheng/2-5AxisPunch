@@ -93,6 +93,12 @@ void ICMachineStructPage::hideEvent(QHideEvent *e)
     QWidget::hideEvent(e);
 }
 
+void ICMachineStructPage::showEvent(QShowEvent *e)
+{
+    UpdateAxisDefine_();
+    QWidget::showEvent(e);
+}
+
 void ICMachineStructPage::on_axisXToolButton_clicked()
 {
     SetCurrentAxis(ICVirtualHost::ICAxis_AxisX1);
@@ -144,6 +150,10 @@ void ICMachineStructPage::on_structDefButton_clicked()
     {
         structPage_ = new ICStructDefineFrame();
         ui->content->addWidget(structPage_);
+        connect(structPage_,
+                SIGNAL(StructChanged()),
+                this,
+                SLOT(UpdateAxisDefine_()));
     }
     ui->content->setCurrentWidget(structPage_);
 }
@@ -454,6 +464,7 @@ void ICMachineStructPage::on_saveToolButton_clicked()
         host->SaveAxisParam(currentAxis_);
 //        host->ReConfigure();
         QMessageBox::information(this, tr("Information"), tr("Save Successfully!"));
+//        UpdateAxisDefine_();
     }
 }
 
@@ -472,4 +483,94 @@ void ICMachineStructPage::InitInterface()
     ui->distanceRotationEdit->SetDecimalPlaces(2);
     rotateValidator_ = new QIntValidator(0, 32767, this);
     ui->distanceRotationEdit->setValidator(rotateValidator_);
+}
+
+void ICMachineStructPage::UpdateAxisDefine_()
+{
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    int tmpAxis = host->SystemParameter(ICVirtualHost::SYS_Config_Arm).toInt();
+    if(axisDefine_ != tmpAxis)
+    {
+        axisDefine_ = tmpAxis;
+        ui->axisXToolButton->hide();
+        ui->axisYToolButton->hide();
+        ui->axisZToolButton->hide();
+        ui->axisPToolButton->hide();
+        ui->axisQToolButton->hide();
+        ui->axisAToolButton->hide();
+        ui->axisBToolButton->hide();
+        ui->axisCToolButton->hide();
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) == ICVirtualHost::ICAxisDefine_None)
+        {
+            ui->axisXToolButton->hide();
+        }
+        else
+        {
+            ui->axisXToolButton->show();
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY1) == ICVirtualHost::ICAxisDefine_None)
+        {
+            ui->axisYToolButton->hide();
+        }
+        else
+        {
+            ui->axisYToolButton->show();
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisZ) == ICVirtualHost::ICAxisDefine_None)
+        {
+            ui->axisZToolButton->hide();
+        }
+        else
+        {
+            ui->axisZToolButton->show();
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) == ICVirtualHost::ICAxisDefine_None)
+        {
+            ui->axisPToolButton->hide();
+        }
+        else
+        {
+            ui->axisPToolButton->show();
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) == ICVirtualHost::ICAxisDefine_None)
+        {
+            ui->axisQToolButton->hide();
+        }
+        else
+        {
+            ui->axisQToolButton->show();
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisA) == ICVirtualHost::ICAxisDefine_None)
+        {
+            ui->axisAToolButton->hide();
+        }
+        else
+        {
+            ui->axisAToolButton->show();
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisB) == ICVirtualHost::ICAxisDefine_None)
+        {
+            ui->axisBToolButton->hide();
+        }
+        else
+        {
+            ui->axisBToolButton->show();
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) == ICVirtualHost::ICAxisDefine_None)
+        {
+            ui->axisCToolButton->hide();
+        }
+        else
+        {
+            ui->axisCToolButton->show();
+        }
+    }
 }

@@ -20,6 +20,7 @@ public:
 protected:
     void changeEvent(QEvent *e);
     void hideEvent(QHideEvent *e);
+    void showEvent(QShowEvent *e);
 
 private:
     void UpdateAxisDefine_();

@@ -85,6 +85,7 @@ void ICHCSettingsFrame::changeEvent(QEvent *e)
 
 void ICHCSettingsFrame::showEvent(QShowEvent *e)
 {
+    UpdateAxisDefine_();
     ui->axisX1ToolButton->click();
     QFrame::showEvent(e);
 }
@@ -199,6 +200,96 @@ void ICHCSettingsFrame::ShowAxisSettingPage(QString currentAxisName, int axis)
 {
     centralStackedLayout_->setCurrentWidget(axisSettingsPage_);
     emit CurrentAxisChanged(currentAxisName, axis);
+}
+
+void ICHCSettingsFrame::UpdateAxisDefine_()
+{
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    int currentAxis = host->SystemParameter(ICVirtualHost::SYS_Config_Arm).toInt();
+    if(axisDefine_ != currentAxis)
+    {
+        axisDefine_ = currentAxis;
+        ui->axisAToolButton->hide();
+        ui->axisBToolButton->hide();
+        ui->axisCToolButton->hide();
+        ui->axisX1ToolButton->hide();
+        ui->axisX2ToolButton->hide();
+        ui->axisY1ToolButton->hide();
+        ui->axisY2ToolButton->hide();
+        ui->axisZToolButton->hide();
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) == ICVirtualHost::ICAxisDefine_None)
+        {
+            ui->axisX1ToolButton->hide();
+        }
+        else
+        {
+            ui->axisX1ToolButton->show();
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY1) == ICVirtualHost::ICAxisDefine_None)
+        {
+            ui->axisY1ToolButton->hide();
+        }
+        else
+        {
+            ui->axisY1ToolButton->show();
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisZ) == ICVirtualHost::ICAxisDefine_None)
+        {
+            ui->axisZToolButton->hide();
+        }
+        else
+        {
+            ui->axisZToolButton->show();
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) == ICVirtualHost::ICAxisDefine_None)
+        {
+            ui->axisX2ToolButton->hide();
+        }
+        else
+        {
+            ui->axisX2ToolButton->show();
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) == ICVirtualHost::ICAxisDefine_None)
+        {
+            ui->axisY2ToolButton->hide();
+        }
+        else
+        {
+            ui->axisY2ToolButton->show();
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisA) == ICVirtualHost::ICAxisDefine_None)
+        {
+            ui->axisAToolButton->hide();
+        }
+        else
+        {
+            ui->axisAToolButton->show();
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisB) == ICVirtualHost::ICAxisDefine_None)
+        {
+            ui->axisBToolButton->hide();
+        }
+        else
+        {
+            ui->axisBToolButton->show();
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) == ICVirtualHost::ICAxisDefine_None)
+        {
+            ui->axisCToolButton->hide();
+        }
+        else
+        {
+            ui->axisCToolButton->show();
+        }
+    }
 }
 
 //void ICHCSettingsFrame::LevelChanged(int level)

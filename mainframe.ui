@@ -164,7 +164,7 @@ border: 3px solid green;
        <number>0</number>
       </property>
       <item>
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="zLabel">
         <property name="font">
          <font>
           <weight>75</weight>
@@ -202,14 +202,14 @@ border: 3px solid green;
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_2">
+       <widget class="QLabel" name="zmmLabel">
         <property name="text">
          <string>mm    </string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_5">
+       <widget class="QLabel" name="x1Label">
         <property name="font">
          <font>
           <weight>75</weight>
@@ -247,14 +247,14 @@ border: 3px solid green;
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_3">
+       <widget class="QLabel" name="x1mmLabel">
         <property name="text">
          <string>mm    </string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_6">
+       <widget class="QLabel" name="y1Label">
         <property name="font">
          <font>
           <weight>75</weight>
@@ -292,14 +292,14 @@ border: 3px solid green;
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_4">
+       <widget class="QLabel" name="y1mmLabel">
         <property name="text">
          <string>mm    </string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_15">
+       <widget class="QLabel" name="x2Label">
         <property name="font">
          <font>
           <weight>75</weight>
@@ -337,14 +337,14 @@ border: 3px solid green;
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_7">
+       <widget class="QLabel" name="x2mmLabel">
         <property name="text">
          <string>mm    </string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_17">
+       <widget class="QLabel" name="y2Label">
         <property name="font">
          <font>
           <weight>75</weight>
@@ -382,7 +382,7 @@ border: 3px solid green;
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_16">
+       <widget class="QLabel" name="y2mmLabel">
         <property name="text">
          <string>mm    </string>
         </property>
@@ -461,7 +461,7 @@ border-right: 3px solid green;
        </spacer>
       </item>
       <item>
-       <widget class="QLabel" name="label_8">
+       <widget class="QLabel" name="aLabel">
         <property name="font">
          <font>
           <weight>75</weight>
@@ -499,14 +499,14 @@ border-right: 3px solid green;
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_9">
+       <widget class="QLabel" name="ammLabel">
         <property name="text">
          <string>mm    </string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_10">
+       <widget class="QLabel" name="bLabel">
         <property name="font">
          <font>
           <weight>75</weight>
@@ -544,14 +544,14 @@ border-right: 3px solid green;
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_11">
+       <widget class="QLabel" name="bmmLabel">
         <property name="text">
          <string>mm    </string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_12">
+       <widget class="QLabel" name="cLabel">
         <property name="font">
          <font>
           <weight>75</weight>
@@ -589,7 +589,7 @@ border-right: 3px solid green;
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_13">
+       <widget class="QLabel" name="cmmLabel">
         <property name="text">
          <string>mm    </string>
         </property>

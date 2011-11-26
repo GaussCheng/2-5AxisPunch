@@ -42,6 +42,7 @@ public Q_SLOTS:
     void HideOrigin();
     void ShowReturn();
     void HideReturn();
+    void UpdateAxisDefine_();
 
 //    void SetBackLightOff();
 //    void SetBackLightOn();
@@ -62,6 +63,7 @@ private slots:
     void RecordButtonClicked();
     void CheckedInput();
 
+
 //    void InitHeavyPage();
 
 private:
@@ -70,6 +72,8 @@ private:
     void InitSignal();
 
     void UpdateTranslate();
+    void ShowWidgets_(QList<QWidget*>& widgets);
+    void HideWidgets_(QList<QWidget*> & widgets);
 
 private:
 
@@ -131,7 +135,8 @@ private:
     bool isAPosChanged_;
     bool isBPosChanged_;
     bool isCPosChanged_;
-
+    int axisDefine_;
+    QList<QList<QWidget*> > axisWidgets_;
 };
 
 extern MainFrame* icMainFrame;

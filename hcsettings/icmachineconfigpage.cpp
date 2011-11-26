@@ -183,6 +183,12 @@ void ICMachineConfigPage::hideEvent(QHideEvent *e)
     QWidget::hideEvent(e);
 }
 
+void ICMachineConfigPage::showEvent(QShowEvent *e)
+{
+    UpdateAxisDefine_();
+    QWidget::showEvent(e);
+}
+
 void ICMachineConfigPage::UpdateAxisDefine_()
 {
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
@@ -232,7 +238,7 @@ void ICMachineConfigPage::UpdateAxisDefine_()
             ShowWidgets_(axisWidgets_[3]);
         }
 
-        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY1) == ICVirtualHost::ICAxisDefine_None)
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) == ICVirtualHost::ICAxisDefine_None)
         {
             HideWidgets_(axisWidgets_[4]);
         }

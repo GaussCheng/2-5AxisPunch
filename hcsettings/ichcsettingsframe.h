@@ -43,6 +43,7 @@ private:
     void InitSignal();
 
     void ShowAxisSettingPage(QString currentAxisName, int axis);
+    void UpdateAxisDefine_();
 
 private:
     Ui::ICHCSettingsFrame *ui;
@@ -50,6 +51,7 @@ private:
     QWidget * structDefPage_;
     QStackedLayout * centralStackedLayout_;
     QButtonGroup* buttonGroup_;
+    int axisDefine_;
 };
 
 #endif // ICHCSETTINGSFRAME_H

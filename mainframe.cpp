@@ -150,6 +150,15 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
 //    ui->label_3->hide();
 //    ui->label_5->hide();
     actionDialog_ = new ICActionDialog(this);
+    axisWidgets_.append(QList<QWidget*>()<<ui->x1Label<<ui->x1mmLabel<<ui->xPosLabel);
+    axisWidgets_.append(QList<QWidget*>()<<ui->y1Label<<ui->y1mmLabel<<ui->yPosLabel);
+    axisWidgets_.append(QList<QWidget*>()<<ui->zLabel<<ui->zmmLabel<<ui->zPosLabel);
+    axisWidgets_.append(QList<QWidget*>()<<ui->x2Label<<ui->x2mmLabel<<ui->pPosLabel);
+    axisWidgets_.append(QList<QWidget*>()<<ui->y2Label<<ui->y2mmLabel<<ui->qPosLabel);
+    axisWidgets_.append(QList<QWidget*>()<<ui->aLabel<<ui->ammLabel<<ui->aPosLabel);
+    axisWidgets_.append(QList<QWidget*>()<<ui->bLabel<<ui->bmmLabel<<ui->bPosLabel);
+    axisWidgets_.append(QList<QWidget*>()<<ui->cLabel<<ui->cmmLabel<<ui->cPosLabel);
+    UpdateAxisDefine_();
     QTimer::singleShot(ICParametersSave::Instance()->BackLightTime() * 60000, this, SLOT(CheckedInput()));
 
     //    QTimer::singleShot(100, this, SLOT(InitHeavyPage()));
@@ -926,4 +935,107 @@ void MainFrame::CheckedInput()
     SetHasInput(false);
     QTimer::singleShot(ICParametersSave::Instance()->BackLightTime() * 60000, this, SLOT(CheckedInput()));
 //    system("reboot");
+}
+
+void MainFrame::ShowWidgets_(QList<QWidget *> &widgets)
+{
+    for(int i = 0; i != widgets.size(); ++i)
+    {
+        widgets[i]->show();
+    }
+}
+
+void MainFrame::HideWidgets_(QList<QWidget *> &widgets)
+{
+    for(int i = 0; i != widgets.size(); ++i)
+    {
+        widgets[i]->hide();
+    }
+}
+
+void MainFrame::UpdateAxisDefine_()
+{
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    int currentAxis = host->SystemParameter(ICVirtualHost::SYS_Config_Arm).toInt();
+    if(axisDefine_ != currentAxis)
+    {
+        axisDefine_ = currentAxis;
+        for(int i = 0 ; i != axisWidgets_.size(); ++i)
+        {
+            HideWidgets_(axisWidgets_[i]);
+        }
+
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) == ICVirtualHost::ICAxisDefine_None)
+        {
+            HideWidgets_(axisWidgets_[0]);
+        }
+        else
+        {
+            ShowWidgets_(axisWidgets_[0]);
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY1) == ICVirtualHost::ICAxisDefine_None)
+        {
+            HideWidgets_(axisWidgets_[1]);
+        }
+        else
+        {
+            ShowWidgets_(axisWidgets_[1]);
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisZ) == ICVirtualHost::ICAxisDefine_None)
+        {
+            HideWidgets_(axisWidgets_[2]);
+        }
+        else
+        {
+            ShowWidgets_(axisWidgets_[2]);
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) == ICVirtualHost::ICAxisDefine_None)
+        {
+            HideWidgets_(axisWidgets_[3]);
+        }
+        else
+        {
+            ShowWidgets_(axisWidgets_[3]);
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) == ICVirtualHost::ICAxisDefine_None)
+        {
+            HideWidgets_(axisWidgets_[4]);
+        }
+        else
+        {
+            ShowWidgets_(axisWidgets_[4]);
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisA) == ICVirtualHost::ICAxisDefine_None)
+        {
+            HideWidgets_(axisWidgets_[5]);
+        }
+        else
+        {
+            ShowWidgets_(axisWidgets_[5]);
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisB) == ICVirtualHost::ICAxisDefine_None)
+        {
+            HideWidgets_(axisWidgets_[6]);
+        }
+        else
+        {
+            ShowWidgets_(axisWidgets_[6]);
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) == ICVirtualHost::ICAxisDefine_None)
+        {
+            HideWidgets_(axisWidgets_[7]);
+        }
+        else
+        {
+            ShowWidgets_(axisWidgets_[7]);
+        }
+    }
 }

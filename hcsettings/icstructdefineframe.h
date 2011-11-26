@@ -19,6 +19,8 @@ public:
 
 protected:
     void changeEvent(QEvent *e);
+signals:
+    void StructChanged();
 
 private slots:
     void on_saveButton_clicked();
