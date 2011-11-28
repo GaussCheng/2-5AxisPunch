@@ -33,7 +33,7 @@ bool ICAutoRunRevise::ShowModifyItem(const ICMoldItem *item, ICMoldItem* ret, co
     ui->currentMoldItemLabel->setText(text);
     if(item->IsAction())
     {
-        if(item->Action() == ICMold::GY || item->Action() == ICMold::GZ)
+        if(item->Action() <= ICMold::GB)
         {
             ui->positionLabel->show();
             ui->posEdit->show();

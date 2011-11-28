@@ -14,6 +14,14 @@ ActionSettingFrame::ActionSettingFrame(QWidget *parent) :
     ui->setupUi(this);
 
     InitInterface();
+    axisWidgets_.append(QList<QWidget*>()<<ui->gxButton<<ui->x1DelayLineEdit<<ui->x1PosLineEdit<<ui->x1pLabel<<ui->x1SLabel<<ui->x1SpeedLineEdit);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gyButton<<ui->y1DelayLineEdit<<ui->y1PosLineEdit<<ui->y1pLabel<<ui->y1SLabel<<ui->y1SpeedLineEdit);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gzButton<<ui->zDelayLineEdit<<ui->zPosLineEdit<<ui->zpLabel<<ui->zSLabel<<ui->zSpeedLineEdit);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gPButton<<ui->x2DelayLineEdit<<ui->x2PosLineEdit<<ui->x2pLabel<<ui->x2SLabel<<ui->zSpeedLineEdit);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gQButton<<ui->y2DelayLineEdit<<ui->y2PosLineEdit<<ui->y2pLabel<<ui->y2SLabel<<ui->y2SpeedLineEdit);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gAButton<<ui->aDelayLineEdit<<ui->aPosLineEdit<<ui->apLabel<<ui->aSLabel<<ui->aSpeedLineEdit);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gBButton<<ui->bDelayLineEdit<<ui->bPosLineEdit<<ui->bpLabel<<ui->bSLabel<<ui->bSpeedLineEdit);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gCButton<<ui->cDelayLineEdit<<ui->cPosLineEdit<<ui->cpLabel<<ui->cSLabel<<ui->cSpeedLineEdit);
 //    ui->x1SpeedLineEdit->hide();
 }
 
@@ -135,6 +143,7 @@ void ActionSettingFrame::hideEvent(QHideEvent *e)
 
 void ActionSettingFrame::showEvent(QShowEvent *e)
 {
+    UpdateAxisDefine_();
     QFrame::showEvent(e);
     connect(ICVirtualHost::GlobalVirtualHost(),
             SIGNAL(StatusRefreshed()),
@@ -482,4 +491,115 @@ void ActionSettingFrame::on_gCButton_toggled(bool checked)
         ui->cSpeedLineEdit->setEnabled(false);
     }
 }
+
+void ActionSettingFrame::ShowWidgets_(QList<QWidget *> &widgets)
+{
+    for(int i = 0; i != widgets.size(); ++i)
+    {
+        widgets[i]->show();;
+    }
+}
+
+void ActionSettingFrame::HideWidgets_(QList<QWidget *> &widgets)
+{
+    for(int i = 0; i != widgets.size(); ++i)
+    {
+        widgets[i]->hide();;
+    }
+}
+
+void ActionSettingFrame::UpdateAxisDefine_()
+{
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    int currentAxis = host->SystemParameter(ICVirtualHost::SYS_Config_Arm).toInt();
+    if(axisDefine_ != currentAxis)
+    {
+        axisDefine_ = currentAxis;
+        for(int i = 0 ; i != axisWidgets_.size(); ++i)
+        {
+            HideWidgets_(axisWidgets_[i]);
+        }
+        ui->gAButton->setChecked(false);
+        ui->gBButton->setChecked(false);
+        ui->gCButton->setChecked(false);
+        ui->gPButton->setChecked(false);
+        ui->gQButton->setChecked(false);
+        ui->gxButton->setChecked(false);
+        ui->gyButton->setChecked(false);
+        ui->gzButton->setChecked(false);
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) == ICVirtualHost::ICAxisDefine_None)
+        {
+            HideWidgets_(axisWidgets_[0]);
+        }
+        else
+        {
+            ShowWidgets_(axisWidgets_[0]);
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY1) == ICVirtualHost::ICAxisDefine_None)
+        {
+            HideWidgets_(axisWidgets_[1]);
+        }
+        else
+        {
+            ShowWidgets_(axisWidgets_[1]);
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisZ) == ICVirtualHost::ICAxisDefine_None)
+        {
+            HideWidgets_(axisWidgets_[2]);
+        }
+        else
+        {
+            ShowWidgets_(axisWidgets_[2]);
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) == ICVirtualHost::ICAxisDefine_None)
+        {
+            HideWidgets_(axisWidgets_[3]);
+        }
+        else
+        {
+            ShowWidgets_(axisWidgets_[3]);
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) == ICVirtualHost::ICAxisDefine_None)
+        {
+            HideWidgets_(axisWidgets_[4]);
+        }
+        else
+        {
+            ShowWidgets_(axisWidgets_[4]);
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisA) == ICVirtualHost::ICAxisDefine_None)
+        {
+            HideWidgets_(axisWidgets_[5]);
+        }
+        else
+        {
+            ShowWidgets_(axisWidgets_[5]);
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisB) == ICVirtualHost::ICAxisDefine_None)
+        {
+            HideWidgets_(axisWidgets_[6]);
+        }
+        else
+        {
+            ShowWidgets_(axisWidgets_[6]);
+        }
+
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) == ICVirtualHost::ICAxisDefine_None)
+        {
+            HideWidgets_(axisWidgets_[7]);
+        }
+        else
+        {
+            ShowWidgets_(axisWidgets_[7]);
+        }
+    }
+}
+
 #endif

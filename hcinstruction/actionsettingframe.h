@@ -29,6 +29,9 @@ protected:
 
 private:
     void InitInterface();
+    void UpdateAxisDefine_();
+    void ShowWidgets_(QList<QWidget*> & widgets);
+    void HideWidgets_(QList<QWidget*> & widgets);
 
 private:
     Ui::ActionSettingFrame *ui;
@@ -45,6 +48,8 @@ private:
     int oBP_;
     int oCP_;
 #endif
+    int axisDefine_;
+    QList<QList<QWidget*> > axisWidgets_;
 //    QList<ICLabelWrapper*> wrappers_;
 
 private slots:
