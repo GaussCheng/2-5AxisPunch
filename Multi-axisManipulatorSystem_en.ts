@@ -2497,12 +2497,17 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="65"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="181"/>
+        <source>Select</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="68"/>
         <source>speed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="82"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="85"/>
         <source>Times</source>
         <translation type="unfinished"></translation>
     </message>

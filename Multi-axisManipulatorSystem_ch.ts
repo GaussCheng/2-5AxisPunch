@@ -3049,12 +3049,17 @@ Reason</source>
         <translation>设入</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="65"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="181"/>
+        <source>Select</source>
+        <translation>选择</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="68"/>
         <source>speed</source>
         <translation>速度</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="82"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="85"/>
         <source>Times</source>
         <translation>间隔模数</translation>
     </message>

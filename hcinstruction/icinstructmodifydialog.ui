@@ -86,7 +86,7 @@
      </property>
     </widget>
    </item>
-   <item row="5" column="0" colspan="3">
+   <item row="6" column="0" colspan="3">
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -109,7 +109,7 @@
      </property>
     </spacer>
    </item>
-   <item row="4" column="0">
+   <item row="5" column="0">
     <widget class="QCheckBox" name="earlyEndCheckBox">
      <property name="styleSheet">
       <string notr="true">::indicator {
@@ -145,7 +145,7 @@ QRadioButton::indicator:unchecked:disabled
      </property>
     </widget>
    </item>
-   <item row="4" column="1">
+   <item row="5" column="1">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="earlyEndTimeEdit">
      <property name="enabled">
       <bool>false</bool>
@@ -161,7 +161,7 @@ QRadioButton::indicator:unchecked:disabled
      </property>
     </widget>
    </item>
-   <item row="4" column="2">
+   <item row="5" column="2">
     <widget class="QLabel" name="mmLabel_2">
      <property name="text">
       <string>mm</string>
@@ -172,6 +172,23 @@ QRadioButton::indicator:unchecked:disabled
     <widget class="QPushButton" name="setButton">
      <property name="text">
       <string>Set</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="selectLabel">
+     <property name="text">
+      <string>Select</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="selectEdit">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>32</height>
+      </size>
      </property>
     </widget>
    </item>

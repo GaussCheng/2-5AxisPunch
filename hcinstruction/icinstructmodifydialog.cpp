@@ -22,6 +22,7 @@ ICInstructModifyDialog::ICInstructModifyDialog(QWidget *parent) :
 
     ui->earlyEndTimeEdit->SetDecimalPlaces(1);
     ui->earlyEndTimeEdit->setValidator(validator);
+    ui->selectEdit->setValidator(new QIntValidator(0, 3, this));
 }
 
 ICInstructModifyDialog::~ICInstructModifyDialog()
@@ -53,6 +54,8 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
     ui->earlyEndCheckBox->hide();
     ui->earlyEndTimeEdit->hide();
     ui->mmLabel_2->hide();
+    ui->selectEdit->hide();
+    ui->selectLabel->hide();
     if(item->IsAction())
     {
         if(item->Action() >= ICMold::GC && item->Action() <= ICMold::GB)
@@ -90,6 +93,12 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
 
 //            ui->precentLabel->show();
     }
+    else if(item->Clip() == ICMold::ACTLAYOUTON)
+    {
+        ui->selectEdit->SetThisIntToThisText(item->SVal());
+        ui->selectEdit->show();
+        ui->selectLabel->show();
+    }
 //    else
 //    {
 //        ui->positionLabel->hide();
@@ -110,7 +119,14 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
     if(isok == QDialog::Accepted)
     {
         item->SetPos(ui->posEdit->TransThisTextToThisInt());
-        item->SetSVal(ui->speedEdit->TransThisTextToThisInt());
+        if(item->Clip() == ICMold::ACTLAYOUTON)
+        {
+            item->SetSVal(ui->selectEdit->TransThisTextToThisInt());
+        }
+        else
+        {
+            item->SetSVal(ui->speedEdit->TransThisTextToThisInt());
+        }
         item->SetDVal(ui->delayTimeEdit->TransThisTextToThisInt());
         item->SetIFVal(ui->earlyEndCheckBox->isChecked());
         item->SetIFPos(ui->earlyEndTimeEdit->TransThisTextToThisInt());
