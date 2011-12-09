@@ -3735,6 +3735,11 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="hcsettings/icstructdefineframe.ui" line="426"/>
+        <source>C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="433"/>
         <source>Z</source>
         <oldsource>C</oldsource>

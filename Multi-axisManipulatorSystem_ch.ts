@@ -1355,7 +1355,7 @@ Reason</source>
     <message>
         <location filename="hcinstruction/ichcfixturepage.ui" line="26"/>
         <source>Fixture</source>
-        <translation>夹具</translation>
+        <translation>喷涂</translation>
     </message>
     <message>
         <source>Set=&gt;</source>
@@ -1385,7 +1385,7 @@ Reason</source>
     <message>
         <location filename="hcinstruction/ichcfixturepage.ui" line="116"/>
         <source>Fixture1</source>
-        <translation>夹具1</translation>
+        <translation>前模脱模剂</translation>
     </message>
     <message>
         <source>Suck1</source>
@@ -1402,17 +1402,17 @@ Reason</source>
     <message>
         <location filename="hcinstruction/ichcfixturepage.ui" line="121"/>
         <source>Fixture2</source>
-        <translation>夹具2</translation>
+        <translation>前模喷气 </translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcfixturepage.ui" line="126"/>
         <source>Fixture3</source>
-        <translation>夹具3</translation>
+        <translation>后模脱模剂</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcfixturepage.ui" line="131"/>
         <source>Fixture4</source>
-        <translation>夹具4</translation>
+        <translation>前模喷气</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcfixturepage.ui" line="136"/>
@@ -1860,7 +1860,7 @@ Reason</source>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="78"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="105"/>
         <source>Fixture</source>
-        <translation>夹具</translation>
+        <translation>喷涂</translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="79"/>
@@ -4533,6 +4533,11 @@ Please enter an digit between </source>
         <location filename="hcsettings/icstructdefineframe.ui" line="419"/>
         <source>X1</source>
         <translation></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/icstructdefineframe.ui" line="426"/>
+        <source>C</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="433"/>
