@@ -152,6 +152,22 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
         {
             commandStr += QObject::tr("Selected:") + QString::number(moldItem.SVal()) + " ";
         }
+        else if(action == ICMold::ACT_AUX1 ||
+                action == ICMold::ACT_AUX2 ||
+                action == ICMold::ACT_AUX3 ||
+                action == ICMold::ACT_AUX4 ||
+                action == ICMold::ACT_AUX5 ||
+                action == ICMold::ACT_AUX6)
+        {
+            if(moldItem.IFVal() == 0)
+            {
+                commandStr += QObject::tr("Off");
+            }
+            else
+            {
+                commandStr += QObject::tr("On");
+            }
+        }
 
     }
 

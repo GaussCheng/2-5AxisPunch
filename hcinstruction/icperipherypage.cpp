@@ -56,6 +56,7 @@ ICPeripheryPage::ICPeripheryPage(QWidget *parent) :
         ui->tableWidget->setCellWidget(i, 2, editor);
 
         buttonToClip_.insert(button, initStatus.at(i));
+        buttonToLight_.insert(button, 0);
         buttonSignalMapper_.setMapping(button, button);
         connect(button,
                 SIGNAL(clicked()),
@@ -70,6 +71,12 @@ ICPeripheryPage::ICPeripheryPage(QWidget *parent) :
 
     commandKeyMap_.insert(settingButtons_.at(0), qMakePair(static_cast<int>(IC::VKEY_CLIP7ON), static_cast<int>(IC::VKEY_CLIP7OFF)));
     commandKeyMap_.insert(settingButtons_.at(1), qMakePair(static_cast<int>(IC::VKEY_CLIP8ON), static_cast<int>(IC::VKEY_CLIP8OFF)));
+    commandKeyMap_.insert(settingButtons_.at(2), qMakePair(static_cast<int>(IC::VKEY_RESERVE1_ON), static_cast<int>(IC::VKEY_RESERVE1_OFF)));
+    commandKeyMap_.insert(settingButtons_.at(3), qMakePair(static_cast<int>(IC::VKEY_RESERVE2_ON), static_cast<int>(IC::VKEY_RESERVE2_OFF)));
+    commandKeyMap_.insert(settingButtons_.at(4), qMakePair(static_cast<int>(IC::VKEY_RESERVE3_ON), static_cast<int>(IC::VKEY_RESERVE3_OFF)));
+    commandKeyMap_.insert(settingButtons_.at(5), qMakePair(static_cast<int>(IC::VKEY_RESERVE4_ON), static_cast<int>(IC::VKEY_RESERVE4_OFF)));
+    commandKeyMap_.insert(settingButtons_.at(6), qMakePair(static_cast<int>(IC::VKEY_RESERVE5_ON), static_cast<int>(IC::VKEY_RESERVE5_OFF)));
+    commandKeyMap_.insert(settingButtons_.at(7), qMakePair(static_cast<int>(IC::VKEY_RESERVE6_ON), static_cast<int>(IC::VKEY_RESERVE6_OFF)));
 
     connect(&buttonSignalMapper_,
             SIGNAL(mapped(QWidget*)),
@@ -123,17 +130,19 @@ void ICPeripheryPage::CommandButtonClicked(QWidget *widget)
     Q_ASSERT_X(button != NULL, "ICPeripheryPage::CommandButtonClicked", "widget is null");
     int key;
     int currentClip = buttonToClip_.value(button);
-    if(onClipToOffClip_.contains(currentClip))
+    if(buttonToLight_.value(button) == 1)
     {
         key = commandKeyMap_.value(button).second;
         buttonToClip_.insert(button, onClipToOffClip_.value(currentClip));
         button->setIcon(offPixmap_);
+        buttonToLight_.insert(button, 0);
     }
     else
     {
         key = commandKeyMap_.value(button).first;
         buttonToClip_.insert(button, offClipToOnClip_.value(currentClip));
         button->setIcon(onPixmap_);
+        buttonToLight_.insert(button, 1);
     }
     ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(key);
 }
@@ -147,6 +156,10 @@ QList<ICMoldItem> ICPeripheryPage::CreateCommandImpl() const
     {
         if(ui->tableWidget->item(i,0)->checkState() == Qt::Checked)
         {
+            if(i > 1)
+            {
+                item.SetIFVal(buttonToLight_.value(qobject_cast<QAbstractButton*>(ui->tableWidget->cellWidget(i, 1))));
+            }
             item.SetClip(buttonToClip_.value(qobject_cast<QAbstractButton*>(ui->tableWidget->cellWidget(i, 1))));
             item.SetDVal(editorVector_.at(i)->Delay());
             item.SetSVal(editorVector_.at(i)->Times());
