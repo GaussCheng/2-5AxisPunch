@@ -138,7 +138,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     emit LoadMessage("Translation Loaded");
     InitSignal();
     emit LoadMessage("Signals is ready");
-    ledFD_ = open("/dev/szhc_leds", O_WRONLY);
+    ledFD_ = open("/dev/szhc_leds_jixieshou", O_WRONLY);
 
 //    QThreadPool::globalInstance()->start(new ICScreenSaverMonitor(this));
 //    connect(screenSaver_.data(),
@@ -532,14 +532,14 @@ void MainFrame::StatusRefreshed()
     }
 
     newLedFlags_ = 0;
-    newLedFlags_ |= (virtualHost->IsInputOn(35)? 8 : 0);
-    newLedFlags_ |= (virtualHost->IsInputOn(32)? 4 : 0);
-    newLedFlags_ |= (virtualHost->IsOutputOn(32)? 2 : 0);
-    newLedFlags_ |= (virtualHost->IsOutputOn(33)? 1 : 0);
+    newLedFlags_ |= (virtualHost->IsInputOn(35)? 4 : 0);
+    newLedFlags_ |= (virtualHost->IsInputOn(32)? 8 : 0);
+    newLedFlags_ |= (virtualHost->IsOutputOn(32)? 1 : 0);
+    newLedFlags_ |= (virtualHost->IsOutputOn(33)? 2 : 0);
     if(newLedFlags_ != ledFlags_)
     {
         ledFlags_ = newLedFlags_;
-        ioctl(ledFD_, 2, ledFlags_);
+        ioctl(ledFD_, 0, ledFlags_);
     }
     errCode_ = virtualHost->AlarmNum();
     int hintCode = virtualHost->HintNum();
