@@ -117,6 +117,40 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1050"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1101"/>
+        <source>Forward</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1055"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1106"/>
+        <source>Backward</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1067"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1118"/>
+        <source>Up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1072"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1123"/>
+        <source>Down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1084"/>
+        <source>Come In</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1089"/>
+        <source>Go Out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="74"/>
         <source>Speed</source>
         <translation type="unfinished"></translation>

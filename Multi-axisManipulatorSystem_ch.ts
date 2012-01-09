@@ -76,6 +76,40 @@
         <translation></translation>
     </message>
     <message>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1050"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1101"/>
+        <source>Forward</source>
+        <translation>前进</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1055"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1106"/>
+        <source>Backward</source>
+        <translation>后退</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1067"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1118"/>
+        <source>Up</source>
+        <translation>上升</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1072"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1123"/>
+        <source>Down</source>
+        <translation>下降</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1084"/>
+        <source>Come In</source>
+        <translation>横入</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1089"/>
+        <source>Go Out</source>
+        <translation>横出</translation>
+    </message>
+    <message>
         <source>Main Arm Forward</source>
         <translation type="obsolete">主臂前进</translation>
     </message>
@@ -1860,7 +1894,7 @@ Reason</source>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="78"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="105"/>
         <source>Fixture</source>
-        <translation>喷涂</translation>
+        <translation>夹具</translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="79"/>
