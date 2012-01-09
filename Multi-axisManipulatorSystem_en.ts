@@ -4641,6 +4641,16 @@ Please try a new name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="hcinstruction/icinstructparam.cpp" line="194"/>
+        <source>Main arm up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icinstructparam.cpp" line="195"/>
+        <source>Main arm down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="196"/>
         <source>Main arm forward</source>
         <translation type="unfinished"></translation>
@@ -4678,6 +4688,16 @@ Please try a new name</source>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="203"/>
         <source>Vice arm backward</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icinstructparam.cpp" line="204"/>
+        <source>Traverse out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icinstructparam.cpp" line="205"/>
+        <source>Traverse in</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

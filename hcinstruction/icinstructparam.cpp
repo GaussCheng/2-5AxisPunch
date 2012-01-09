@@ -191,8 +191,8 @@ void ICInstructParam::InstallMoldInfo()
     actionGroupMap_[GQ] = QObject::tr("Y2");
     actionGroupMap_[GA] = QObject::tr("A");
     actionGroupMap_[GB] = QObject::tr("B");
-//    actionGroupMap_[ACTMAINUP] = QObject::tr("Main arm up");
-//    actionGroupMap_[ACTMAINDOWN] = QObject::tr("Main arm down");
+    actionGroupMap_[ACTMAINUP] = QObject::tr("Main arm up");
+    actionGroupMap_[ACTMAINDOWN] = QObject::tr("Main arm down");
     actionGroupMap_[ACTMAINFORWARD] = QObject::tr("Main arm forward");
     actionGroupMap_[ACTMAINBACKWARD] = QObject::tr("Main arm backward");
     actionGroupMap_[ACTPOSEHORI] = QObject::tr("Horizontal posture");
@@ -201,8 +201,8 @@ void ICInstructParam::InstallMoldInfo()
     actionGroupMap_[ACTVICEDOWN] = QObject::tr("Vice arm down");
     actionGroupMap_[ACTVICEFORWARD] = QObject::tr("Vice arm forward");
     actionGroupMap_[ACTVICEBACKWARD] = QObject::tr("Vice arm backward");
-//    actionGroupMap_[ACTGOOUT] = QObject::tr("Traverse out");
-//    actionGroupMap_[ACTCOMEIN] = QObject::tr("Traverse in");
+    actionGroupMap_[ACTGOOUT] = QObject::tr("Traverse out");
+    actionGroupMap_[ACTCOMEIN] = QObject::tr("Traverse in");
 
 //    actionGroupMap_.insert(ACTMAINMIDDOWN, QObject::tr("Main mid down"));
     actionGroupMap_.insert(ACTCHECKINPUT, QObject::tr("Check"));

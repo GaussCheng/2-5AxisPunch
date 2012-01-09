@@ -4537,7 +4537,7 @@ Please enter an digit between </source>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="426"/>
         <source>C</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="433"/>
@@ -5558,8 +5558,9 @@ Please try a new name</source>
         <translation type="obsolete">X-Z弧</translation>
     </message>
     <message>
+        <location filename="hcinstruction/icinstructparam.cpp" line="195"/>
         <source>Main arm down</source>
-        <translation type="obsolete">主臂下降</translation>
+        <translation>主臂下降</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="196"/>
@@ -5602,12 +5603,14 @@ Please try a new name</source>
         <translation>副臂后退</translation>
     </message>
     <message>
+        <location filename="hcinstruction/icinstructparam.cpp" line="204"/>
         <source>Traverse out</source>
-        <translation type="obsolete">横出</translation>
+        <translation>横出</translation>
     </message>
     <message>
+        <location filename="hcinstruction/icinstructparam.cpp" line="205"/>
         <source>Traverse in</source>
-        <translation type="obsolete">横入</translation>
+        <translation>横入</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="208"/>
@@ -5720,12 +5723,12 @@ Please try a new name</source>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="164"/>
         <source>Off</source>
-        <translation type="unfinished"></translation>
+        <translation>断</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="168"/>
         <source>On</source>
-        <translation type="unfinished"></translation>
+        <translation>通</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="186"/>
@@ -5768,6 +5771,11 @@ Please try a new name</source>
         <location filename="hcinstruction/icinstructparam.cpp" line="193"/>
         <source>B</source>
         <translation></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icinstructparam.cpp" line="194"/>
+        <source>Main arm up</source>
+        <translation>主臂上升</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="210"/>
