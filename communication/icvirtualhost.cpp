@@ -200,7 +200,7 @@ void ICVirtualHost::RefreshStatus()
         {
 //            qDebug()<<"Resend time:"<<testTime.restart();
             ++tryTimes_;
-            //            qCritical()<<"connect to host fail in refresh status"<<tryTimes_;
+                        qCritical()<<"connect to host fail in refresh status"<<tryTimes_;
 //            static int test = 0;
             if(tryTimes_ == 200)
             {

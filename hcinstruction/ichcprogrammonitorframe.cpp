@@ -26,7 +26,7 @@ ICHCProgramMonitorFrame::ICHCProgramMonitorFrame(QWidget *parent) :
 
     autoRunRevise_ = new ICAutoRunRevise();
     InitSignal();
-//    UpdateHostParam();
+    //    UpdateHostParam();
     //    ICInstructParam::Instance()->UpdateHostParam();
     //    moldContent_ = ICMold::CurrentMold()->MoldContent();
     connect(&timer_,
@@ -95,7 +95,7 @@ void ICHCProgramMonitorFrame::hideEvent(QHideEvent *e)
         ICMold::CurrentMold()->SaveMoldFile();
         isModify_ = false;
     }
-//    modifyMap_.clear();
+    //    modifyMap_.clear();
     QFrame::hideEvent(e);
     disconnect(ICVirtualHost::GlobalVirtualHost(),
                SIGNAL(StepChanged(int)),
@@ -146,39 +146,39 @@ void ICHCProgramMonitorFrame::StatusRefreshed()
         oldTime_ = newTime_;
         SetTime(newTime_);
     }
-//    if(host->CurrentStatus() != ICVirtualHost::Auto)
-//    {
-//        qDebug("isModify change to false in auto");
-//        isModify_ = false;
-//        modifyMap_.clear();
-//    }
-//    if(host->HostStatus(ICVirtualHost::DbgX0) != ICVirtualHost::AutoRunning &&
-//            host->HostStatus(ICVirtualHost::DbgX0) != ICVirtualHost::AutoStopping)
-//    {
-//        qDebug("isModify change to false in autoRunning");
-//        isModify_ = false;
-//        modifyMap_.clear();
-//    }
+    //    if(host->CurrentStatus() != ICVirtualHost::Auto)
+    //    {
+    //        qDebug("isModify change to false in auto");
+    //        isModify_ = false;
+    //        modifyMap_.clear();
+    //    }
+    //    if(host->HostStatus(ICVirtualHost::DbgX0) != ICVirtualHost::AutoRunning &&
+    //            host->HostStatus(ICVirtualHost::DbgX0) != ICVirtualHost::AutoStopping)
+    //    {
+    //        qDebug("isModify change to false in autoRunning");
+    //        isModify_ = false;
+    //        modifyMap_.clear();
+    //    }
 }
 
 void ICHCProgramMonitorFrame::SelectCurrentStep(int currentStep)
 {
     if((currentStep != 0  && currentStep < oldStep_ && isModify_) ||
-       (oldStep_ == 0 && currentStep > oldStep_ && isModify_))
+            (oldStep_ == 0 && currentStep > oldStep_ && isModify_))
     {
-//        QMap<ICMoldItem*, ICMoldItem>::iterator p = modifyMap_.begin();
-//        while(p != modifyMap_.end())
-//        {
-//            *(p.key()) = p.value();
-//            ++p;
-//        }
+        //        QMap<ICMoldItem*, ICMoldItem>::iterator p = modifyMap_.begin();
+        //        while(p != modifyMap_.end())
+        //        {
+        //            *(p.key()) = p.value();
+        //            ++p;
+        //        }
         ICMold::CurrentMold()->SetMoldContent(ICMold::UIItemToMoldItem(programList_));
         ICMold::CurrentMold()->SaveMoldFile();
         programListBackup_ = programList_;
         qDebug("run modify");
         UpdateHostParam();
         isModify_ = false;
-//        modifyMap_.clear();
+        //        modifyMap_.clear();
     }
     oldStep_ = currentStep;
     if(currentStep < 0 || currentStep >= programList_.size())
@@ -373,6 +373,7 @@ void ICHCProgramMonitorFrame::UpdateUIProgramList_()
     int topItemRowCount;
     int index = 0;
     QColor color;
+    ICMoldItem *tmp;
     for(int i = 0; i != programList_.size(); ++i)
     {
         (i % 2 == 0 ? color.setRgb(255, 255, 154):color.setRgb(154, 255, 255));
@@ -380,14 +381,18 @@ void ICHCProgramMonitorFrame::UpdateUIProgramList_()
         topItemRowCount = groupItem.ItemCount();
         for(int j = 0; j != topItemRowCount; ++j)
         {
-            if(groupItem.at(j).BaseItem()->Action() == ICInstructParam::ACT_WaitMoldOpened)
+            tmp = groupItem.MoldItemAt(j);
+            if(tmp != NULL)
             {
-//                ui->moldContentListWidget->item(j + index)->setForeground(QBrush("white"));
-                ui->moldContentListWidget->item(j + index)->setBackgroundColor("red");
-            }
-            else
-            {
-                ui->moldContentListWidget->item(j + index)->setBackgroundColor(color);
+                if(tmp->Action() == ICInstructParam::ACT_WaitMoldOpened)
+                {
+                    //                ui->moldContentListWidget->item(j + index)->setForeground(QBrush("white"));
+                    ui->moldContentListWidget->item(j + index)->setBackgroundColor("red");
+                }
+                else
+                {
+                    ui->moldContentListWidget->item(j + index)->setBackgroundColor(color);
+                }
             }
         }
         index += topItemRowCount;
