@@ -62,8 +62,14 @@ private:
     QList<ICGroupMoldUIItem> programListBackup_;
     ICAutoRunRevise* autoRunRevise_;
     bool isModify_;
-    int oldTime_;
-    int newTime_;
+    uint oldTime_;
+    uint newTime_;
+    uint newCycleTimes_;
+    uint oldCycleTimes_;
+    uint newGoodP_;
+    uint oldGoodP_;
+    uint newStackedP_;
+    uint oldStackedP_;
     int startIndex_;
     int currentMoldNum_;
     ICGroupMoldUIItem* currentStepItem_;
@@ -72,6 +78,10 @@ private:
     QTimer timer_;
     QPixmap switchOn_;
     QPixmap switchOff_;
+    QMap<int, int*> fixtureToCountMap_;
+    QMap<int, int> checkToFixtureMap_;
+    QMap<int, QString> checkResultMap_;
+    int fixtureCount_[6];
 //    QMap<ICMoldItem*, ICMoldItem> modifyMap_;
 };
 #endif // ICHCPROGRAMMONITORFRAME_H

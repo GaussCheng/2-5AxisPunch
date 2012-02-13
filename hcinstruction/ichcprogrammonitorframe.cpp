@@ -9,12 +9,12 @@
 #include "icactioncommand.h"
 #include "icmacrosubroutine.h"
 #include "icvirtualkey.h"
+#include <QMessageBox>
 
 ICHCProgramMonitorFrame::ICHCProgramMonitorFrame(QWidget *parent) :
     QFrame(parent),
     ui(new Ui::ICHCProgramMonitorFrame),
     isModify_(false),
-    oldTime_(-1),
     currentStepItem_(NULL),
     currentMoldNum_(8),
     isFollow_(true),
@@ -33,6 +33,24 @@ ICHCProgramMonitorFrame::ICHCProgramMonitorFrame(QWidget *parent) :
             SIGNAL(timeout()),
             this,
             SLOT(OnTimeOut()));
+    fixtureToCountMap_.insert(ICMold::ACTCLIP1ON, fixtureCount_ + 0);
+    fixtureToCountMap_.insert(ICMold::ACTCLIP2ON, fixtureCount_ + 1);
+    fixtureToCountMap_.insert(ICMold::ACTCLIP3ON, fixtureCount_ + 2);
+    fixtureToCountMap_.insert(ICMold::ACTCLIP4ON, fixtureCount_ + 3);
+    fixtureToCountMap_.insert(ICMold::ACTCLIP5ON, fixtureCount_ + 4);
+    fixtureToCountMap_.insert(ICMold::ACTCLIP6ON, fixtureCount_ + 5);
+    checkToFixtureMap_.insert(0, ICMold::ACTCLIP1ON);
+    checkToFixtureMap_.insert(1, ICMold::ACTCLIP2ON);
+    checkToFixtureMap_.insert(2, ICMold::ACTCLIP3ON);
+    checkToFixtureMap_.insert(3, ICMold::ACTCLIP4ON);
+    checkToFixtureMap_.insert(4, ICMold::ACTCLIP5ON);
+    checkToFixtureMap_.insert(5, ICMold::ACTCLIP6ON);
+    checkResultMap_.insert(0, tr("Has not teach check Fixture-1!"));
+    checkResultMap_.insert(1, tr("Has not teach check Fixture-2!"));
+    checkResultMap_.insert(2, tr("Has not teach check Fixture-3!"));
+    checkResultMap_.insert(3, tr("Has not teach check Fixture-4!"));
+    checkResultMap_.insert(4, tr("Has not teach check Sucker-1!"));
+    checkResultMap_.insert(5, tr("Has not teach check Sucker-2!"));
 }
 
 ICHCProgramMonitorFrame::~ICHCProgramMonitorFrame()
@@ -84,6 +102,49 @@ void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
                                                      0,
                                                      ICMold::CurrentMold()->SyncAct() + ICMacroSubroutine::Instance()->SyncAct(),
                                                      ICMold::CurrentMold()->SyncSum() + ICMacroSubroutine::Instance()->SyncSum());
+    memset(fixtureCount_, 0, sizeof(int) * 6);
+    QList<ICMoldItem> moldItems = ICMold::UIItemToMoldItem(programList_);
+    ICMoldItem tmpItem;
+    int tmpClip;
+    int *tmpCount;
+    for(int i = 0; i != moldItems.size(); ++i)
+    {
+        tmpItem = moldItems.at(i);
+        if(tmpItem.Action() == ICMold::ACT_Cut)
+        {
+            if(checkToFixtureMap_.contains(tmpItem.SVal()))
+            {
+                tmpCount = fixtureToCountMap_.value(checkToFixtureMap_.value(tmpItem.SVal()));
+                if(*tmpCount > 0)
+                {
+                    *tmpCount -= 1;
+                }
+            }
+            continue;
+        }
+        if(tmpItem.IsClip())
+        {
+            tmpClip = tmpItem.Clip();
+            if(fixtureToCountMap_.contains(tmpClip))
+            {
+                *(fixtureToCountMap_.value(tmpClip)) += 1;
+            }
+        }
+    }
+    QString checkResult;
+    bool needWarn = false;
+    for(int i = 0; i != 6; ++i)
+    {
+        if(fixtureCount_[i] != 0)
+        {
+            checkResult.append(checkResultMap_.value(i) + "\n");
+            needWarn = true;
+        }
+    }
+    if(needWarn)
+    {
+        QMessageBox::warning(this, tr("Warning"), checkResult);
+    }
 }
 
 void ICHCProgramMonitorFrame::hideEvent(QHideEvent *e)
@@ -119,7 +180,7 @@ void ICHCProgramMonitorFrame::hideEvent(QHideEvent *e)
 
 void ICHCProgramMonitorFrame::SetTime(int time)
 {
-    ui->timeLabel->setText(ICParameterConversion::TransThisIntToThisText(time, 1));
+    ui->timeLabel->setText(ICParameterConversion::TransThisIntToThisText(time, 2));
 }
 
 //void ICHCProgramMonitorFrame::SetFullTime(int fullTime)
@@ -140,11 +201,30 @@ void ICHCProgramMonitorFrame::SetProduct(int product)
 void ICHCProgramMonitorFrame::StatusRefreshed()
 {
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    newTime_ = host->HostStatus(ICVirtualHost::Time).toInt();
+    newTime_ = host->HostStatus(ICVirtualHost::DbgZ0).toUInt();
     if(newTime_ != oldTime_)
     {
         oldTime_ = newTime_;
         SetTime(newTime_);
+    }
+    ui->getTime->setText(ICParameterConversion::TransThisIntToThisText(host->HostStatus(ICVirtualHost::DbgY1).toUInt(), 2));
+    newCycleTimes_ = host->HostStatus(ICVirtualHost::DbgX1).toUInt();
+    if(newCycleTimes_ != oldCycleTimes_)
+    {
+        oldCycleTimes_ = newCycleTimes_;
+        ui->cycleTimes->setText(QString::number(oldCycleTimes_));
+    }
+    newGoodP_ = host->HostStatus(ICVirtualHost::DbgY0).toUInt();
+    if(newGoodP_ != oldGoodP_)
+    {
+        oldGoodP_ = newGoodP_;
+        ui->goodProducts->setText(QString::number(oldGoodP_));
+    }
+    newStackedP_ = host->HostStatus(ICVirtualHost::DbgZ1).toUInt();
+    if(newStackedP_ != oldStackedP_)
+    {
+        oldStackedP_ = newStackedP_;
+        ui->stackedProducts->setText(QString::number(oldStackedP_));
     }
     //    if(host->CurrentStatus() != ICVirtualHost::Auto)
     //    {
@@ -373,7 +453,7 @@ void ICHCProgramMonitorFrame::UpdateUIProgramList_()
     int topItemRowCount;
     int index = 0;
     QColor color;
-    ICMoldItem *tmp;
+    ICMoldItem* tmp = NULL;
     for(int i = 0; i != programList_.size(); ++i)
     {
         (i % 2 == 0 ? color.setRgb(255, 255, 154):color.setRgb(154, 255, 255));
@@ -386,7 +466,6 @@ void ICHCProgramMonitorFrame::UpdateUIProgramList_()
             {
                 if(tmp->Action() == ICInstructParam::ACT_WaitMoldOpened)
                 {
-                    //                ui->moldContentListWidget->item(j + index)->setForeground(QBrush("white"));
                     ui->moldContentListWidget->item(j + index)->setBackgroundColor("red");
                 }
                 else
