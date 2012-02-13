@@ -105,7 +105,7 @@ QCheckBox::indicator:unchecked:disabled
          </size>
         </property>
         <property name="text">
-         <string>0.0</string>
+         <string>0.00</string>
         </property>
        </widget>
       </item>
@@ -131,7 +131,7 @@ QCheckBox::indicator:unchecked:disabled
          </size>
         </property>
         <property name="text">
-         <string>0.0</string>
+         <string>0.00</string>
         </property>
        </widget>
       </item>
@@ -287,7 +287,7 @@ QRadioButton::indicator:unchecked:disabled
          </size>
         </property>
         <property name="text">
-         <string>0.0</string>
+         <string>0.00</string>
         </property>
        </widget>
       </item>

@@ -9,8 +9,8 @@ ICInstructModifyDialog::ICInstructModifyDialog(QWidget *parent) :
     currentItem(NULL)
 {
     ui->setupUi(this);
-    QIntValidator* validator = new QIntValidator(0, 600, this);
-    ui->delayTimeEdit->SetDecimalPlaces(1);
+    QIntValidator* validator = new QIntValidator(0, 6000, this);
+    ui->delayTimeEdit->SetDecimalPlaces(2);
     ui->delayTimeEdit->setValidator(validator);
 
     validator = new QIntValidator(0, 100, this);
@@ -20,7 +20,7 @@ ICInstructModifyDialog::ICInstructModifyDialog(QWidget *parent) :
     ui->posEdit->SetDecimalPlaces(1);
     ui->posEdit->setValidator(validator);
 
-    ui->earlyEndTimeEdit->SetDecimalPlaces(1);
+    ui->earlyEndTimeEdit->SetDecimalPlaces(2);
     ui->earlyEndTimeEdit->setValidator(validator);
     ui->selectEdit->setValidator(new QIntValidator(0, 3, this));
 }

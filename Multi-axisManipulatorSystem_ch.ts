@@ -2102,15 +2102,15 @@ Reason</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="453"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="458"/>
         <source>Follow</source>
         <translation>跟随</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="256"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="60"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="468"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="478"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="473"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="483"/>
         <source>Speed Disable</source>
         <translation>调速禁止</translation>
     </message>
@@ -2159,12 +2159,12 @@ Reason</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="195"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="459"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="464"/>
         <source>No Follow</source>
         <translation>不跟随</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="468"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="473"/>
         <source>Speed Enable</source>
         <translation>调速允许</translation>
     </message>

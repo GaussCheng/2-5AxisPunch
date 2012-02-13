@@ -6,10 +6,11 @@ ICPeripheryParameterEditor::ICPeripheryParameterEditor(QWidget *parent) :
     ui(new Ui::ICPeripheryParameterEditor)
 {
     ui->setupUi(this);
-    QIntValidator *validator = new QIntValidator(0, 1000, this);
-    ui->delayEdit->SetDecimalPlaces(1);
+    QIntValidator *validator = new QIntValidator(0, 10000, this);
+    ui->delayEdit->SetDecimalPlaces(2);
     ui->delayEdit->setValidator(validator);
     ui->timesEdit->setValidator(validator);
+    ui->delayEdit->setText("0.00");
 }
 
 ICPeripheryParameterEditor::~ICPeripheryParameterEditor()

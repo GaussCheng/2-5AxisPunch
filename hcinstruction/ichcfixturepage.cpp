@@ -44,9 +44,9 @@ ICHCFixturePage::ICHCFixturePage(QWidget *parent) :
         button->setText(ioNames_.at(i));
 
         delayEdit = delays + i;
-        delayEdit->SetDecimalPlaces(1);
+        delayEdit->SetDecimalPlaces(2);
         delayEdit->setValidator(validator);
-        delayEdit->setText("0.0");
+        delayEdit->setText("0.00");
 //        delayEdit->setFixedWidth(50);
 
         settingButtons_.append(button);

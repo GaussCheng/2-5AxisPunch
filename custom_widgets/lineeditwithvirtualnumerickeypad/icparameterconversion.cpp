@@ -38,7 +38,7 @@ QString ICParameterConversion::TransThisIntToThisText(int inputNum, int decimals
 
 int ICParameterConversion::TransTextToThisInt(const QString &numString, int decimals)
 {
-    int result = -1;
+    double result = -1;
         switch(decimals)
         {
         case 0:

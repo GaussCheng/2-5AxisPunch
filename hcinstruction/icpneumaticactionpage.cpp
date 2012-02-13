@@ -8,11 +8,11 @@ ICPneumaticActionPage::ICPneumaticActionPage(QWidget *parent) :
 {
     QIntValidator * validator = new QIntValidator(0, 32767, this);
     ui->setupUi(this);
-    ui->fbDelayLineEdit->SetDecimalPlaces(1);
+    ui->fbDelayLineEdit->SetDecimalPlaces(2);
     ui->fbDelayLineEdit->setValidator(validator);
-    ui->udDelayLineEdit->SetDecimalPlaces(1);
+    ui->udDelayLineEdit->SetDecimalPlaces(2);
     ui->udDelayLineEdit->setValidator(validator);
-    ui->posistionDelayLineEdit->SetDecimalPlaces(1);
+    ui->posistionDelayLineEdit->SetDecimalPlaces(2);
     ui->posistionDelayLineEdit->setValidator(validator);
 }
 

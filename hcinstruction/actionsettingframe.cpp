@@ -46,43 +46,43 @@ void ActionSettingFrame::InitInterface()
 {
     QIntValidator * validator = new QIntValidator(0, 32767, this);
 
-    ui->x1DelayLineEdit->SetDecimalPlaces(1);
+    ui->x1DelayLineEdit->SetDecimalPlaces(2);
     ui->x1DelayLineEdit->setValidator(validator);
     ui->x1PosLineEdit->SetDecimalPlaces(1);
     ui->x1PosLineEdit->setValidator(validator);
 
-    ui->y1DelayLineEdit->SetDecimalPlaces(1);
+    ui->y1DelayLineEdit->SetDecimalPlaces(2);
     ui->y1DelayLineEdit->setValidator(validator);
     ui->y1PosLineEdit->SetDecimalPlaces(1);
     ui->y1PosLineEdit->setValidator(validator);
 
-    ui->zDelayLineEdit->SetDecimalPlaces(1);
+    ui->zDelayLineEdit->SetDecimalPlaces(2);
     ui->zDelayLineEdit->setValidator(validator);
     ui->zPosLineEdit->SetDecimalPlaces(1);
     ui->zPosLineEdit->setValidator(validator);
 
 #ifdef HC_8AXIS
-    ui->x2DelayLineEdit->SetDecimalPlaces(1);
+    ui->x2DelayLineEdit->SetDecimalPlaces(2);
     ui->x2DelayLineEdit->setValidator(validator);
     ui->x2PosLineEdit->SetDecimalPlaces(1);
     ui->x2PosLineEdit->setValidator(validator);
 
-    ui->y2DelayLineEdit->SetDecimalPlaces(1);
+    ui->y2DelayLineEdit->SetDecimalPlaces(2);
     ui->y2DelayLineEdit->setValidator(validator);
     ui->y2PosLineEdit->SetDecimalPlaces(1);
     ui->y2PosLineEdit->setValidator(validator);
 
-    ui->aDelayLineEdit->SetDecimalPlaces(1);
+    ui->aDelayLineEdit->SetDecimalPlaces(2);
     ui->aDelayLineEdit->setValidator(validator);
     ui->aPosLineEdit->SetDecimalPlaces(1);
     ui->aPosLineEdit->setValidator(validator);
 
-    ui->bDelayLineEdit->SetDecimalPlaces(1);
+    ui->bDelayLineEdit->SetDecimalPlaces(2);
     ui->bDelayLineEdit->setValidator(validator);
     ui->bPosLineEdit->SetDecimalPlaces(1);
     ui->bPosLineEdit->setValidator(validator);
 
-    ui->cDelayLineEdit->SetDecimalPlaces(1);
+    ui->cDelayLineEdit->SetDecimalPlaces(2);
     ui->cDelayLineEdit->setValidator(validator);
     ui->cPosLineEdit->SetDecimalPlaces(1);
     ui->cPosLineEdit->setValidator(validator);

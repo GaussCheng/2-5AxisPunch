@@ -11,8 +11,8 @@ ICAutoRunRevise::ICAutoRunRevise(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QIntValidator* validator = new QIntValidator(0, 600, this);
-    ui->delayEdit->SetDecimalPlaces(1);
+    QIntValidator* validator = new QIntValidator(0, 6000, this);
+    ui->delayEdit->SetDecimalPlaces(2);
     ui->delayEdit->setValidator(validator);
 
     validator = new QIntValidator(0, 100, this);

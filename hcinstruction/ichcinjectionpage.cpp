@@ -41,9 +41,9 @@ ICHCInjectionPage::ICHCInjectionPage(QWidget *parent) :
         button->setText(ioNames_.at(i));
 
         delayEdit = delays + i;
-        delayEdit->SetDecimalPlaces(1);
+        delayEdit->SetDecimalPlaces(2);
         delayEdit->setValidator(validator);
-        delayEdit->setText("0.5");
+        delayEdit->setText("0.50");
         //        delayEdit->setFixedWidth(50);
 
         settingButtons_.append(button);

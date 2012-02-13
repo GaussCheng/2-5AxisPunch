@@ -1659,20 +1659,20 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="468"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="473"/>
         <source>Speed Enable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="453"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="458"/>
         <source>Follow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="256"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="60"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="468"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="478"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="473"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="483"/>
         <source>Speed Disable</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1684,7 +1684,7 @@ Infomation</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="195"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="459"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="464"/>
         <source>No Follow</source>
         <translation type="unfinished"></translation>
     </message>

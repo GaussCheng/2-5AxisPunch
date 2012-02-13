@@ -78,7 +78,7 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
             commandStr += actionGroupMap_.value(action);
             return commandStr;
         }
-        commandStr += actionGroupMap_.value(action) + " ";
+        commandStr += actionGroupMap_.value(action) + ": ";
 
         if(xyzStatusList_.contains(action))
         {
@@ -94,7 +94,7 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
             if(moldItem.IFVal() == 1)
             {
                 commandStr += tr("Early End:");
-                commandStr += QString().sprintf("%.1f", moldItem.IFPos() / (qreal)10) + " ";
+                commandStr += QString().sprintf("%.2f", moldItem.IFPos() / (qreal)10) + " ";
             }
 //            commandStr += tr("Delay")
         }
@@ -143,7 +143,7 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
     else
     {
         action = moldItem.Clip();
-        commandStr += clipGroupMap_.value(action) + " ";
+        commandStr += clipGroupMap_.value(action) + ": ";
         if(clipStatusList_.contains(action))
         {
             commandStr += QObject::tr("Times:") + QString::number(moldItem.SVal()) + " ";
@@ -171,7 +171,7 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
 
     }
 
-    commandStr += QObject::tr("Delay time:") + ICParameterConversion::TransThisIntToThisText(moldItem.DVal(), 1) + "      ";
+    commandStr += QObject::tr("Delay time:") + ICParameterConversion::TransThisIntToThisText(moldItem.DVal(), 2) + "      ";
 
     return commandStr;
 }
