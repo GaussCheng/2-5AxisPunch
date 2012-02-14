@@ -19,22 +19,14 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="96"/>
         <location filename="hcinstruction/actionsettingframe.ui" line="140"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="162"/>
         <location filename="hcinstruction/actionsettingframe.ui" line="206"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="228"/>
         <location filename="hcinstruction/actionsettingframe.ui" line="437"/>
         <location filename="hcinstruction/actionsettingframe.ui" line="505"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="527"/>
         <location filename="hcinstruction/actionsettingframe.ui" line="624"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="646"/>
         <location filename="hcinstruction/actionsettingframe.ui" line="821"/>
         <location filename="hcinstruction/actionsettingframe.ui" line="843"/>
         <location filename="hcinstruction/actionsettingframe.ui" line="865"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="887"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="909"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="931"/>
         <source>0.0</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1640,6 +1632,11 @@ Infomation</source>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="90"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="126"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="139"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="162"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="195"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="218"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="241"/>
         <source>TextLabel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1654,37 +1651,97 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="157"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="146"/>
+        <source>Get Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="169"/>
+        <source>Auto Start Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="179"/>
+        <source>Good products</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="202"/>
+        <source>Cycle Times</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="225"/>
+        <source>Stacked products</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="272"/>
         <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="473"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="48"/>
+        <source>Has not teach check Fixture-1!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="49"/>
+        <source>Has not teach check Fixture-2!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="50"/>
+        <source>Has not teach check Fixture-3!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="51"/>
+        <source>Has not teach check Fixture-4!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="52"/>
+        <source>Has not teach check Sucker-1!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="53"/>
+        <source>Has not teach check Sucker-2!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="146"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="552"/>
         <source>Speed Enable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="458"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="537"/>
         <source>Follow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="256"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="60"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="473"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="483"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="371"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="78"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="552"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="562"/>
         <source>Speed Disable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="227"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="342"/>
         <source>Single Step</source>
         <oldsource>Single Cycle</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="195"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="464"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="310"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="543"/>
         <source>No Follow</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3598,7 +3655,8 @@ Please enter an digit between </source>
         <location filename="hcinstruction/icpneumaticactionpage.ui" line="108"/>
         <location filename="hcinstruction/icpneumaticactionpage.ui" line="134"/>
         <location filename="hcinstruction/icpneumaticactionpage.ui" line="290"/>
-        <source>0.0</source>
+        <source>0.00</source>
+        <oldsource>0.0</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
