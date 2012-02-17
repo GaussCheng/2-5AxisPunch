@@ -168,6 +168,7 @@ void ICKeyboardHandler::Keypressed(int keyValue)
         {
             commandProcessor->ExecuteVirtualKeyCommand(IC::VKEY_STOP);
         }
+        return;
     }
 
     //    if(status == ICVirtualHost::Auto) //execute Auto status

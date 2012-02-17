@@ -72,6 +72,10 @@ bool MoldInformation::CreateNewSourceFile(const QString & fileName)
         }
 #ifdef HC_8AXIS
         QList<ICMoldItem> items;
+        ICMoldItem item;
+        item.SetAction(ICMold::ACTPOSEVERT);
+        item.SetNum(0);
+        items.append(item);
         CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisX1, ICMold::GX, ICMold::ACTMAINBACKWARD);
         CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisY1, ICMold::GY, ICMold::ACTMAINUP);
         CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisZ, ICMold::GZ, -1);
@@ -80,7 +84,6 @@ bool MoldInformation::CreateNewSourceFile(const QString & fileName)
         CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisA, ICMold::GA, -1);
         CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisB, ICMold::GB, -1);
         CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisC, ICMold::GC, -1);
-        ICMoldItem item;
         item.SetAction(ICMold::ACT_WaitMoldOpened);
         item.SetSVal(1);
         item.SetNum(1);
@@ -194,9 +197,9 @@ bool MoldInformation::DeleteSourceFile(const QString & fileName)
         QFile::remove(filePathName);
         QFile::remove(configFile);
         //        QFile::remove(ICSettingConfig::ConfigPath() + fileName);
-        QMessageBox::information(this, tr("Success"),
-                                 tr("File deleted success!"),
-                                 QMessageBox::Ok);
+//        QMessageBox::information(this, tr("Success"),
+//                                 tr("File deleted success!"),
+//                                 QMessageBox::Ok);
         return true;
     }
     else

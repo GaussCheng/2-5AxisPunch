@@ -466,6 +466,9 @@ public:
     int SlaveID() const { return slaveID_;}
     void SetSlaveID(int id) { slaveID_ = id;}
 
+    void StopRefreshStatus();
+    void RestartRefreshStatus();
+
     QVariant SystemParameter(ICSystemParameter which) const ;
     void SetSystemParameter(ICSystemParameter which, QVariant value);
     void ChangeSystemParameter(ICSystemParameter which, QVariant value);

@@ -12,6 +12,7 @@
 #include "ickeyboard.h"
 #include "iccommandprocessor.h"
 #include "iccommands.h"
+#include "icvirtualhost.h"
 //ICUpdateSystem *icUpdateSystem = NULL;
 
 ICUpdateSystem::ICUpdateSystem(QWidget *parent) :
@@ -62,6 +63,7 @@ void ICUpdateSystem::changeEvent(QEvent *e)
 void ICUpdateSystem::showEvent(QShowEvent *e)
 {
 //    timer_.start(1000);
+    ICVirtualHost::GlobalVirtualHost()->StopRefreshStatus();
     QFrame::showEvent(e);
 }
 
@@ -73,6 +75,7 @@ void ICUpdateSystem::hideEvent(QHideEvent *e)
     ui->connectHostButton->setEnabled(false);
     ui->writeHostButton->setEnabled(false);
     ui->rebootButton->setEnabled(false);
+    ICVirtualHost::GlobalVirtualHost()->RestartRefreshStatus();
     QFrame::hideEvent(e);
 }
 
@@ -309,6 +312,7 @@ void ICUpdateSystem::QueryStatus()
     {
         ui->updateHostButton->setEnabled(false);
         ui->rebootButton->setEnabled(false);
+        timer_.stop();
     }
     ui->statusLabel->setText(QString::number(status_));
 }

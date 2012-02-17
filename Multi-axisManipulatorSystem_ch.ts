@@ -43,6 +43,18 @@
         <translation></translation>
     </message>
     <message>
+        <location filename="hcinstruction/actionsettingframe.ui" line="96"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="162"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="228"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="527"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="646"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="887"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="909"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="931"/>
+        <source>0.00</source>
+        <translation></translation>
+    </message>
+    <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="480"/>
         <source>GX2</source>
         <translation></translation>
@@ -375,7 +387,7 @@
     <message>
         <location filename="hcsettings/axissettingsframe.cpp" line="355"/>
         <source>Save Successfully!</source>
-        <translation>保存成功</translation>
+        <translation>保存成功!</translation>
     </message>
     <message>
         <source>Please press Min button</source>
@@ -2096,37 +2108,37 @@ Reason</source>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="48"/>
         <source>Has not teach check Fixture-1!</source>
-        <translation type="unfinished"></translation>
+        <translation>没有教导夹1检测！</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="49"/>
         <source>Has not teach check Fixture-2!</source>
-        <translation type="unfinished"></translation>
+        <translation>没有教导夹2检测！</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="50"/>
         <source>Has not teach check Fixture-3!</source>
-        <translation type="unfinished"></translation>
+        <translation>没有教导夹3检测！</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="51"/>
         <source>Has not teach check Fixture-4!</source>
-        <translation type="unfinished"></translation>
+        <translation>没有教导夹4检测！</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="52"/>
         <source>Has not teach check Sucker-1!</source>
-        <translation type="unfinished"></translation>
+        <translation>没有教导吸1检测！</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="53"/>
         <source>Has not teach check Sucker-2!</source>
-        <translation type="unfinished"></translation>
+        <translation>没有教导吸2检测！</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="146"/>
         <source>Warning</source>
-        <translation type="unfinished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="537"/>
@@ -2187,27 +2199,27 @@ Reason</source>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="146"/>
         <source>Get Time</source>
-        <translation type="unfinished"></translation>
+        <translation>取物时间</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="169"/>
         <source>Auto Start Time</source>
-        <translation type="unfinished"></translation>
+        <translation>自动运行时间</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="179"/>
         <source>Good products</source>
-        <translation type="unfinished"></translation>
+        <translation>良品数</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="202"/>
         <source>Cycle Times</source>
-        <translation type="unfinished"></translation>
+        <translation>循环次数</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="225"/>
         <source>Stacked products</source>
-        <translation type="unfinished"></translation>
+        <translation>堆叠产品数</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="272"/>
@@ -2900,7 +2912,7 @@ Reason</source>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="353"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="378"/>
         <source>USB is not connected!</source>
-        <translation>没有检测到U盘</translation>
+        <translation>没有检测到U盘！</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="272"/>
@@ -3160,7 +3172,7 @@ Reason</source>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="93"/>
         <source>Speed:</source>
-        <translation>速度</translation>
+        <translation>速度:</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="96"/>
@@ -3594,7 +3606,7 @@ Please enter an digit between </source>
     <message>
         <location filename="hcsettings/icmachinestructpage.cpp" line="466"/>
         <source>Save Successfully!</source>
-        <translation>保存成功</translation>
+        <translation>保存成功!</translation>
     </message>
 </context>
 <context>
@@ -3912,7 +3924,7 @@ Please enter an digit between </source>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="101"/>
         <source>Paint Oil</source>
-        <translation>备用输出4</translation>
+        <translation>喷油</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="102"/>
@@ -3963,7 +3975,7 @@ Please enter an digit between </source>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="112"/>
         <source>Transport</source>
-        <translation>备用输出8</translation>
+        <translation>传送带</translation>
     </message>
     <message>
         <source>Reserve 1</source>
@@ -4338,7 +4350,7 @@ Please enter an digit between </source>
         <location filename="hcinstruction/icpneumaticactionpage.ui" line="290"/>
         <source>0.00</source>
         <oldsource>0.0</oldsource>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icpneumaticactionpage.ui" line="141"/>
@@ -5214,13 +5226,13 @@ Would you want to restart now?</source>
     </message>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="48"/>
-        <location filename="function_settings/moldinformation.cpp" line="134"/>
-        <location filename="function_settings/moldinformation.cpp" line="142"/>
-        <location filename="function_settings/moldinformation.cpp" line="170"/>
-        <location filename="function_settings/moldinformation.cpp" line="181"/>
-        <location filename="function_settings/moldinformation.cpp" line="204"/>
-        <location filename="function_settings/moldinformation.cpp" line="304"/>
-        <location filename="function_settings/moldinformation.cpp" line="313"/>
+        <location filename="function_settings/moldinformation.cpp" line="137"/>
+        <location filename="function_settings/moldinformation.cpp" line="145"/>
+        <location filename="function_settings/moldinformation.cpp" line="173"/>
+        <location filename="function_settings/moldinformation.cpp" line="184"/>
+        <location filename="function_settings/moldinformation.cpp" line="207"/>
+        <location filename="function_settings/moldinformation.cpp" line="307"/>
+        <location filename="function_settings/moldinformation.cpp" line="316"/>
         <source>warning</source>
         <translation>警告</translation>
     </message>
@@ -5242,89 +5254,89 @@ Please input the file name.</source>
         <translation>名子不能用！</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="106"/>
-        <location filename="function_settings/moldinformation.cpp" line="163"/>
-        <location filename="function_settings/moldinformation.cpp" line="197"/>
+        <location filename="function_settings/moldinformation.cpp" line="109"/>
+        <location filename="function_settings/moldinformation.cpp" line="166"/>
+        <location filename="function_settings/moldinformation.cpp" line="200"/>
         <source>Success</source>
         <translation>成功</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="107"/>
+        <location filename="function_settings/moldinformation.cpp" line="110"/>
         <source>New file success.</source>
         <translation>新建文件成功.</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="113"/>
+        <location filename="function_settings/moldinformation.cpp" line="116"/>
         <source>The file has been existing</source>
         <translation>文件已存在</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="114"/>
+        <location filename="function_settings/moldinformation.cpp" line="117"/>
         <source>File already exists,
 Please change a new name.</source>
         <translation>文件已存在，
 请输入一个新的文件名.</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="135"/>
-        <location filename="function_settings/moldinformation.cpp" line="182"/>
+        <location filename="function_settings/moldinformation.cpp" line="138"/>
+        <location filename="function_settings/moldinformation.cpp" line="185"/>
         <source>Source file name is empty,
 Please choose an existing file.</source>
         <translation>源文件名为空，
 请选择一个存在的文件.</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="143"/>
+        <location filename="function_settings/moldinformation.cpp" line="146"/>
         <source>New file name is empty,
 Please write the destination file name.</source>
         <translation>文件名为空，
 请输入文件名.</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="164"/>
+        <location filename="function_settings/moldinformation.cpp" line="167"/>
         <source>Copy file success!</source>
         <translation>复制文件成功!</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="171"/>
+        <location filename="function_settings/moldinformation.cpp" line="174"/>
         <source>Destination file already exists!
 Please try a new name</source>
         <translation>目标文件已存在！请重试</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="198"/>
+        <location filename="function_settings/moldinformation.cpp" line="201"/>
         <source>File deleted success!</source>
         <translation>删除文件成功!</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="205"/>
+        <location filename="function_settings/moldinformation.cpp" line="208"/>
         <source>File does not exist!</source>
         <translation>文件不存在!</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="243"/>
-        <location filename="function_settings/moldinformation.cpp" line="260"/>
+        <location filename="function_settings/moldinformation.cpp" line="246"/>
+        <location filename="function_settings/moldinformation.cpp" line="263"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="243"/>
-        <location filename="function_settings/moldinformation.cpp" line="260"/>
+        <location filename="function_settings/moldinformation.cpp" line="246"/>
+        <location filename="function_settings/moldinformation.cpp" line="263"/>
         <source>file name is empty</source>
         <translation>文件名空</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="305"/>
+        <location filename="function_settings/moldinformation.cpp" line="308"/>
         <source>The mold file </source>
         <translation>模号文件</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="307"/>
+        <location filename="function_settings/moldinformation.cpp" line="310"/>
         <source> is being used</source>
         <translation>正被使用</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="314"/>
+        <location filename="function_settings/moldinformation.cpp" line="317"/>
         <source>Are you sure to delete files </source>
         <translation>确认删除文件</translation>
     </message>

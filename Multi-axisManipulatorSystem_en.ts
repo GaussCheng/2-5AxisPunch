@@ -43,6 +43,18 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="hcinstruction/actionsettingframe.ui" line="96"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="162"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="228"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="527"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="646"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="887"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="909"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="931"/>
+        <source>0.00</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="299"/>
         <source>GY1</source>
         <oldsource>GY</oldsource>
@@ -4417,13 +4429,13 @@ Would you want to restart now?</source>
     </message>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="48"/>
-        <location filename="function_settings/moldinformation.cpp" line="134"/>
-        <location filename="function_settings/moldinformation.cpp" line="142"/>
-        <location filename="function_settings/moldinformation.cpp" line="170"/>
-        <location filename="function_settings/moldinformation.cpp" line="181"/>
-        <location filename="function_settings/moldinformation.cpp" line="204"/>
-        <location filename="function_settings/moldinformation.cpp" line="304"/>
-        <location filename="function_settings/moldinformation.cpp" line="313"/>
+        <location filename="function_settings/moldinformation.cpp" line="137"/>
+        <location filename="function_settings/moldinformation.cpp" line="145"/>
+        <location filename="function_settings/moldinformation.cpp" line="173"/>
+        <location filename="function_settings/moldinformation.cpp" line="184"/>
+        <location filename="function_settings/moldinformation.cpp" line="207"/>
+        <location filename="function_settings/moldinformation.cpp" line="307"/>
+        <location filename="function_settings/moldinformation.cpp" line="316"/>
         <source>warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4444,86 +4456,86 @@ Please input the file name.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="106"/>
-        <location filename="function_settings/moldinformation.cpp" line="163"/>
-        <location filename="function_settings/moldinformation.cpp" line="197"/>
+        <location filename="function_settings/moldinformation.cpp" line="109"/>
+        <location filename="function_settings/moldinformation.cpp" line="166"/>
+        <location filename="function_settings/moldinformation.cpp" line="200"/>
         <source>Success</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="107"/>
+        <location filename="function_settings/moldinformation.cpp" line="110"/>
         <source>New file success.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="113"/>
+        <location filename="function_settings/moldinformation.cpp" line="116"/>
         <source>The file has been existing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="114"/>
+        <location filename="function_settings/moldinformation.cpp" line="117"/>
         <source>File already exists,
 Please change a new name.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="135"/>
-        <location filename="function_settings/moldinformation.cpp" line="182"/>
+        <location filename="function_settings/moldinformation.cpp" line="138"/>
+        <location filename="function_settings/moldinformation.cpp" line="185"/>
         <source>Source file name is empty,
 Please choose an existing file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="143"/>
+        <location filename="function_settings/moldinformation.cpp" line="146"/>
         <source>New file name is empty,
 Please write the destination file name.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="164"/>
+        <location filename="function_settings/moldinformation.cpp" line="167"/>
         <source>Copy file success!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="171"/>
+        <location filename="function_settings/moldinformation.cpp" line="174"/>
         <source>Destination file already exists!
 Please try a new name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="198"/>
+        <location filename="function_settings/moldinformation.cpp" line="201"/>
         <source>File deleted success!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="205"/>
+        <location filename="function_settings/moldinformation.cpp" line="208"/>
         <source>File does not exist!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="243"/>
-        <location filename="function_settings/moldinformation.cpp" line="260"/>
+        <location filename="function_settings/moldinformation.cpp" line="246"/>
+        <location filename="function_settings/moldinformation.cpp" line="263"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="243"/>
-        <location filename="function_settings/moldinformation.cpp" line="260"/>
+        <location filename="function_settings/moldinformation.cpp" line="246"/>
+        <location filename="function_settings/moldinformation.cpp" line="263"/>
         <source>file name is empty</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="305"/>
+        <location filename="function_settings/moldinformation.cpp" line="308"/>
         <source>The mold file </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="307"/>
+        <location filename="function_settings/moldinformation.cpp" line="310"/>
         <source> is being used</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="314"/>
+        <location filename="function_settings/moldinformation.cpp" line="317"/>
         <source>Are you sure to delete files </source>
         <translation type="unfinished"></translation>
     </message>

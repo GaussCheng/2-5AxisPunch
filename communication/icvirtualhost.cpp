@@ -892,4 +892,14 @@ void ICVirtualHost::SaveAxisParamHelper_(const QString &fileName, int start, int
     }
 }
 
+void ICVirtualHost::StopRefreshStatus()
+{
+    this->blockSignals(true);
+}
+
+void ICVirtualHost::RestartRefreshStatus()
+{
+    this->blockSignals(false);
+}
+
 ICVirtualHost::~ICVirtualHost(){}
