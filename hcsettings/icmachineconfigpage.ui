@@ -311,6 +311,26 @@
    <item row="8" column="6">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="cMaxSpeedEdit"/>
    </item>
+   <item row="0" column="5">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>Pull Push Distance</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="6">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="pullPushDistance"/>
+   </item>
+   <item row="0" column="7">
+    <widget class="QLabel" name="label_18">
+     <property name="text">
+      <string>mm</string>
+     </property>
+    </widget>
+   </item>
   </layout>
  </widget>
  <customwidgets>

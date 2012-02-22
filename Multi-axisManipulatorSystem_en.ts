@@ -1432,64 +1432,64 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="80"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="107"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="81"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="108"/>
         <source>Other</source>
         <translation type="unfinished">Manipulator I/O</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="81"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="108"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="82"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="109"/>
         <source>Adjust</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="82"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="109"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="83"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="110"/>
         <source>Reserve</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="275"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="300"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="276"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="301"/>
         <source>Horizontal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="283"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="308"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="284"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="309"/>
         <source>Vertical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="316"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="317"/>
         <source>Sub Arm Up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="324"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="325"/>
         <source>Sub Arm Down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="332"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="333"/>
         <source>Sub Arm Forward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="340"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="341"/>
         <source>Sub Arm Backward</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="78"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="105"/>
-        <source>Fixture</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="79"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="106"/>
+        <source>Fixture</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="80"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="107"/>
         <source>Sucker</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1723,25 +1723,25 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="146"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="147"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="552"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="553"/>
         <source>Speed Enable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="537"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="538"/>
         <source>Follow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="371"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="78"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="552"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="562"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="79"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="553"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="563"/>
         <source>Speed Disable</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1753,7 +1753,7 @@ Infomation</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="310"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="543"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="544"/>
         <source>No Follow</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2555,52 +2555,52 @@ Infomation</source>
     <name>ICInstructModifyDialog</name>
     <message>
         <location filename="hcinstruction/icinstructmodifydialog.ui" line="14"/>
-        <source>Dialog</source>
+        <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="20"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="24"/>
         <source>Position</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="37"/>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="167"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="41"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="171"/>
         <source>mm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="44"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="48"/>
         <source>Speed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="61"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="65"/>
         <source>%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="68"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="72"/>
         <source>Delay Time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="85"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="89"/>
         <source>s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="144"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="148"/>
         <source>Early End</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="174"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="178"/>
         <source>Set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="181"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="185"/>
         <source>Select</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2696,12 +2696,12 @@ Infomation</source>
 <context>
     <name>ICKeyboardHandler</name>
     <message>
-        <location filename="ickeyboard/ickeyboardhandler.cpp" line="242"/>
+        <location filename="ickeyboard/ickeyboardhandler.cpp" line="243"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ickeyboard/ickeyboardhandler.cpp" line="242"/>
+        <location filename="ickeyboard/ickeyboardhandler.cpp" line="243"/>
         <source>Need to origin!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2796,6 +2796,7 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcsettings/icmachineconfigpage.ui" line="145"/>
+        <location filename="hcsettings/icmachineconfigpage.ui" line="330"/>
         <source>mm</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2847,6 +2848,11 @@ Please enter an digit between </source>
     <message>
         <location filename="hcsettings/icmachineconfigpage.ui" line="304"/>
         <source>C Max Speed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/icmachineconfigpage.ui" line="317"/>
+        <source>Pull Push Distance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4144,58 +4150,58 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="136"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="281"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="342"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="139"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="284"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="346"/>
         <source>Congratulations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="137"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="140"/>
         <source>Update finish
 You must restart this program
 Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="168"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="171"/>
         <source>No available HMI version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="169"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="172"/>
         <source>No available Host version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="276"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="296"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="279"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="299"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="276"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="296"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="279"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="299"/>
         <source>Update Host fail!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="282"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="285"/>
         <source>Send to  Host finished!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="321"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="325"/>
         <source>tips</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="321"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="325"/>
         <source>Reboot Successful!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="343"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="347"/>
         <source>Update Host finished!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4458,7 +4464,6 @@ Please input the file name.</source>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="109"/>
         <location filename="function_settings/moldinformation.cpp" line="166"/>
-        <location filename="function_settings/moldinformation.cpp" line="200"/>
         <source>Success</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4500,11 +4505,6 @@ Please write the destination file name.</source>
         <location filename="function_settings/moldinformation.cpp" line="174"/>
         <source>Destination file already exists!
 Please try a new name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="function_settings/moldinformation.cpp" line="201"/>
-        <source>File deleted success!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

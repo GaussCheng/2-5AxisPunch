@@ -824,10 +824,11 @@ void ICVirtualHost::InitAddrToSysPosMap_()
     addrToSysPos_.insert(SM_LMTVC, SYS_LMT_vC);
     addrToSysPos_.insert(SM_ARM_CONFIG, SYS_ARM_CONFIG);
     addrToSysPos_.insert(SM_YEarlyEnd, SYS_YEarlyEnd);
-    addrToSysPos_.insert(SM_ZEarlyEnd, SYS_ZEarlyEnd);
+//    addrToSysPos_.insert(SM_ZEarlyEnd, SYS_ZEarlyEnd);
     addrToSysPos_.insert(SM_WaitMoldOpenLimit, ACT_WaitMoldOpened);
     addrToSysPos_.insert(SM_TIMEMFOR, ACT_MainForward);
     addrToSysPos_.insert(SM_TIMEMBACK, ACT_MainBackward);
+    addrToSysPos_.insert(SM_PullPushDistance, SYS_PullPushDistance);
     moldParamToAddrPos_.insert(ICMold::CheckClip1, SM_CHKCLIP1);
     moldParamToAddrPos_.insert(ICMold::CheckClip2, SM_CHKCLIP2);
     moldParamToAddrPos_.insert(ICMold::CheckClip3, SM_CHKCLIP3);

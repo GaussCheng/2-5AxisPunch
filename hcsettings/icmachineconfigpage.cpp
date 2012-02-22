@@ -35,6 +35,8 @@ ICMachineConfigPage::ICMachineConfigPage(QWidget *parent) :
     ui->cADEdit->setValidator(validator);
     ui->toleranceLineEdit->SetDecimalPlaces(2);
     ui->toleranceLineEdit->setValidator(validator);
+    ui->pullPushDistance->SetDecimalPlaces(1);
+    ui->pullPushDistance->setValidator(new QIntValidator(0, 1000, this));
 //    ui->xEarlyEndEdit->SetDecimalPlaces(1);
 //    ui->xEarlyEndEdit->setValidator(validator);
 //    ui->yEarlyEndEdit->SetDecimalPlaces(1);
@@ -153,6 +155,12 @@ ICMachineConfigPage::ICMachineConfigPage(QWidget *parent) :
                                     ICVirtualHost::SM_LMTVC,
                                     ICLineEditWrapper::System,
                                     ICLineEditWrapper::Integer);
+    wrappers_.append(wrapper);
+
+    wrapper = new ICLineEditWrapper(ui->pullPushDistance,
+                                    ICVirtualHost::SM_PullPushDistance,
+                                    ICLineEditWrapper::System,
+                                    ICLineEditWrapper::OneFraction);
     wrappers_.append(wrapper);
 }
 

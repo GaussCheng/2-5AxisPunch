@@ -1833,8 +1833,8 @@ Reason</source>
         <translation type="obsolete">当前姿势:</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="80"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="107"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="81"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="108"/>
         <source>Other</source>
         <translation>其他</translation>
     </message>
@@ -1843,46 +1843,46 @@ Reason</source>
         <translation type="obsolete">教导</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="81"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="108"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="82"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="109"/>
         <source>Adjust</source>
         <translation>调位</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="82"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="109"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="83"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="110"/>
         <source>Reserve</source>
         <translation>预留</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="275"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="300"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="276"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="301"/>
         <source>Horizontal</source>
         <translation>水平</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="283"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="308"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="284"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="309"/>
         <source>Vertical</source>
         <translation>垂直</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="316"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="317"/>
         <source>Sub Arm Up</source>
         <translation>副臂上升</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="324"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="325"/>
         <source>Sub Arm Down</source>
         <translation>副臂下降</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="332"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="333"/>
         <source>Sub Arm Forward</source>
         <translation>副臂前进</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="340"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="341"/>
         <source>Sub Arm Backward</source>
         <translation>副臂后退</translation>
     </message>
@@ -1895,14 +1895,14 @@ Reason</source>
         <translation type="obsolete">备用I/O</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="78"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="105"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="79"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="106"/>
         <source>Fixture</source>
         <translation>夹具</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="79"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="106"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="80"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="107"/>
         <source>Sucker</source>
         <translation>吸</translation>
     </message>
@@ -2136,20 +2136,20 @@ Reason</source>
         <translation>没有教导吸2检测！</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="146"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="147"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="537"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="538"/>
         <source>Follow</source>
         <translation>跟随</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="371"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="78"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="552"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="562"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="79"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="553"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="563"/>
         <source>Speed Disable</source>
         <translation>调速禁止</translation>
     </message>
@@ -2228,12 +2228,12 @@ Reason</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="310"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="543"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="544"/>
         <source>No Follow</source>
         <translation>不跟随</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="552"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="553"/>
         <source>Speed Enable</source>
         <translation>调速允许</translation>
     </message>
@@ -3106,53 +3106,57 @@ Reason</source>
 <context>
     <name>ICInstructModifyDialog</name>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation>修改</translation>
+        <translation type="obsolete">修改</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="20"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="14"/>
+        <source>Edit</source>
+        <translation>编辑</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="24"/>
         <source>Position</source>
         <translation>位置</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="37"/>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="167"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="41"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="171"/>
         <source>mm</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="44"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="48"/>
         <source>Speed</source>
         <translation>速度</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="61"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="65"/>
         <source>%</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="68"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="72"/>
         <source>Delay Time</source>
         <translation>延迟时间</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="85"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="89"/>
         <source>s</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="144"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="148"/>
         <source>Early End</source>
         <translation>提前结束位置</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="174"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="178"/>
         <source>Set</source>
         <translation>设入</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="181"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="185"/>
         <source>Select</source>
         <translation>选择</translation>
     </message>
@@ -3275,12 +3279,12 @@ Reason</source>
 <context>
     <name>ICKeyboardHandler</name>
     <message>
-        <location filename="ickeyboard/ickeyboardhandler.cpp" line="242"/>
+        <location filename="ickeyboard/ickeyboardhandler.cpp" line="243"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="ickeyboard/ickeyboardhandler.cpp" line="242"/>
+        <location filename="ickeyboard/ickeyboardhandler.cpp" line="243"/>
         <source>Need to origin!</source>
         <translation>还没原点复归！</translation>
     </message>
@@ -3424,6 +3428,11 @@ Please enter an digit between </source>
         <translation>C最高速度</translation>
     </message>
     <message>
+        <location filename="hcsettings/icmachineconfigpage.ui" line="317"/>
+        <source>Pull Push Distance</source>
+        <translation>引拔距离</translation>
+    </message>
+    <message>
         <source>X Early End</source>
         <translation type="obsolete">X提前结束位置</translation>
     </message>
@@ -3437,6 +3446,7 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcsettings/icmachineconfigpage.ui" line="145"/>
+        <location filename="hcsettings/icmachineconfigpage.ui" line="330"/>
         <source>mm</source>
         <translation></translation>
     </message>
@@ -4927,14 +4937,14 @@ Please enter an digit between </source>
         <translation type="obsolete">更新</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="136"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="281"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="342"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="139"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="284"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="346"/>
         <source>Congratulations</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="137"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="140"/>
         <source>Update finish
 You must restart this program
 Would you want to restart now?</source>
@@ -4943,44 +4953,44 @@ Would you want to restart now?</source>
 要现在重启吗?</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="168"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="171"/>
         <source>No available HMI version</source>
         <translation>没有可以用的手控版本</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="169"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="172"/>
         <source>No available Host version</source>
         <translation>没有可以用的主机版本</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="276"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="296"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="279"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="299"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="276"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="296"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="279"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="299"/>
         <source>Update Host fail!</source>
         <translation>更新主机失败！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="282"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="285"/>
         <source>Send to  Host finished!</source>
         <translation>发送到主机成功！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="321"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="325"/>
         <source>tips</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="321"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="325"/>
         <source>Reboot Successful!</source>
         <translation>保存成功！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="343"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="347"/>
         <source>Update Host finished!</source>
         <translation>更新主机成功！</translation>
     </message>
@@ -5256,7 +5266,6 @@ Please input the file name.</source>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="109"/>
         <location filename="function_settings/moldinformation.cpp" line="166"/>
-        <location filename="function_settings/moldinformation.cpp" line="200"/>
         <source>Success</source>
         <translation>成功</translation>
     </message>
@@ -5304,9 +5313,8 @@ Please try a new name</source>
         <translation>目标文件已存在！请重试</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="201"/>
         <source>File deleted success!</source>
-        <translation>删除文件成功!</translation>
+        <translation type="obsolete">删除文件成功!</translation>
     </message>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="208"/>

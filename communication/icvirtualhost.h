@@ -55,7 +55,7 @@ public:
 #endif
         SYS_ARM_CONFIG,
         SYS_YEarlyEnd,
-        SYS_ZEarlyEnd,
+        SYS_PullPushDistance,
 
         SYS_X_Length,
         SYS_X_Maxium,
@@ -395,7 +395,8 @@ public:
         SM_YEarlyEnd,
         SM_ZEarlyEnd,
         SM_WaitMoldOpenLimit,
-        SM_ACCTIME
+        SM_ACCTIME,
+        SM_PullPushDistance
     };
 
     enum ICTeachParamAddr
