@@ -58,7 +58,7 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
     ui->selectLabel->hide();
     if(item->IsAction())
     {
-        if(item->Action() >= ICMold::GC && item->Action() <= ICMold::GB)
+        if( item->Action() <= ICMold::GB)
         {
             ui->positionLabel->show();
             ui->posEdit->show();

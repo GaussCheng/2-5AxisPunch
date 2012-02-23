@@ -13,12 +13,6 @@ ICSystemStatusFrame::ICSystemStatusFrame(QWidget *parent) :
     stopping_(":/resource/auto-stopping.png")
 {
     ui->setupUi(this);
-//    ui->programStatusLabel->hide();
-//    setMinimumWidth(minimumSize().width() - 48);
-
-
-//    this->setStyleSheet("background: gray; border: 1px solid rgb(255,255,255); \
-//                        border-radius: 24px; font-size: 15px; color:rgb(255, 0, 255);");
 
     tuneMoldDialog_ = new ICTuneMoldDialog();
     InitInterface();
@@ -41,6 +35,7 @@ QString ICSystemStatusFrame::CurrentSpeed() const
 
 void ICSystemStatusFrame::SetManualStatus(const StatusLabel::DisplayStatus & displayStatus)
 {
+    Q_UNUSED(displayStatus)
     if(currentStatus_ == 0)
     {
         return;
@@ -93,6 +88,7 @@ void ICSystemStatusFrame::SetAutoStatus(AutoSatus status)
 
 void ICSystemStatusFrame::SetProgramStatus(const StatusLabel::DisplayStatus & displayStatus)
 {
+    Q_UNUSED(displayStatus)
     SetSystemStop();
 //    ui->programStatusLabel->SetStatus(StatusLabel::ONSTATUS);
     ui->immButton->setEnabled(true);

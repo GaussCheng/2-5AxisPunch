@@ -4,6 +4,10 @@
 TARGET = Multi-axisManipulatorSystem
 TEMPLATE = app
 QMAKE_CFLAGS += -std=c99
+
+CONFIG(debug, debug|release) {
+    LIBS += -lprofiler
+}
 SOURCES += main.cpp \
     mainframe.cpp \
     icaxispositionlabel.cpp \
@@ -15,7 +19,8 @@ SOURCES += main.cpp \
     icorigindialog.cpp \
     icreturnpage.cpp \
     icscreensaver.cpp \
-    icactiondialog.cpp
+    icactiondialog.cpp \
+    ictimerpool.cpp
 HEADERS += mainframe.h \
     icaxispositionlabel.h \
     #icalarmdescriptiondialog.h \
@@ -27,7 +32,8 @@ HEADERS += mainframe.h \
     icreturnpage.h \
     icscreensaver.h \
     config.h \
-    icactiondialog.h
+    icactiondialog.h \
+    ictimerpool.h
 
 FORMS    += mainframe.ui \
     #icalarmdescriptiondialog.ui \

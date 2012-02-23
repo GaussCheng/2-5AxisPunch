@@ -110,54 +110,7 @@ void ICHCInjectionPage::hideEvent(QHideEvent *e)
 
 void ICHCInjectionPage::SyncStatusImpl(const QList<ICMoldItem> &items)
 {
-    //    ui->closeMoldSettingLabel->setPixmap(*ui->closeMoldCureentLabel->pixmap());
-    //    ui->ejectPermitSettingLabel->setPixmap(*ui->ejecteCurrentLabel->pixmap());
-    //    ui->placePremitSettingLabel->setPixmap(*ui->placeCurrentLabel->pixmap());
-    //    ICMoldItem item;
-    //    int action;
-    //    foreach(item, items)
-    //    {
-    //        if(item.IsClip())
-    //        {
-    //            action = item.Clip();
-    //            if(action == ICMold::ACTCLSMDON)
-    //            {
-    //                ui->closeMoldSettingLabel->setPixmap(onPixmap_);
-    //                ui->closeMoldlDelayEdit->SetThisIntToThisText(item.DVal());
-    //                ui->closeMoldOtherEdit->SetThisIntToThisText(item.SVal());
-    //            }
-    //            else if(action == ICMold::ACTCLSMDOFF)
-    //            {
-    //                ui->closeMoldSettingLabel->setPixmap(offPixmap_);
-    //                ui->closeMoldlDelayEdit->SetThisIntToThisText(item.DVal());
-    //                ui->closeMoldOtherEdit->SetThisIntToThisText(item.SVal());
-    //            }
-    //            else if(action == ICMold::ACTEJECTON)
-    //            {
-    //                ui->ejectPermitSettingLabel->setPixmap(onPixmap_);
-    //                ui->ejecteDelayEdit->SetThisIntToThisText(item.DVal());
-    //                ui->ejecteOtherEdit->SetThisIntToThisText(item.SVal());
-    //            }
-    //            else if(action == ICMold::ACTEJECTOFF)
-    //            {
-    //                ui->ejectPermitSettingLabel->setPixmap(offPixmap_);
-    //                ui->ejecteDelayEdit->SetThisIntToThisText(item.DVal());
-    //                ui->ejecteOtherEdit->SetThisIntToThisText(item.SVal());
-    //            }
-    //            else if(action == ICMold::ACTLAYOUTON)
-    //            {
-    //                ui->placePremitSettingLabel->setPixmap(onPixmap_);
-    //                ui->placeDelayEdit->SetThisIntToThisText(item.DVal());
-    //                ui->placeOtherEdit->SetThisIntToThisText(item.SVal());
-    //            }
-    //            else if(action == ICMold::ACTLAYOUTOFF)
-    //            {
-    //                ui->placePremitSettingLabel->setPixmap(offPixmap_);
-    //                ui->placeDelayEdit->SetThisIntToThisText(item.DVal());
-    //                ui->placeOtherEdit->SetThisIntToThisText(item.SVal());
-    //            }
-    //        }
-    //    }
+    Q_UNUSED(items)
 }
 
 void ICHCInjectionPage::StatusRefreshed()

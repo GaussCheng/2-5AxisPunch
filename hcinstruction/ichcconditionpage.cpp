@@ -30,6 +30,7 @@ void ICHCConditionPage::changeEvent(QEvent *e)
 
 void ICHCConditionPage::SyncStatusImpl(const QList<ICMoldItem> &items)
 {
+    Q_UNUSED(items)
 }
 
 

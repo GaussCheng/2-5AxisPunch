@@ -120,7 +120,9 @@ void ICPeripheryPage::hideEvent(QHideEvent *e)
 }
 
 void ICPeripheryPage::SyncStatusImpl(const QList<ICMoldItem> &items)
-{}
+{
+    Q_UNUSED(items)
+}
 
 void ICPeripheryPage::StatusRefreshed(){}
 

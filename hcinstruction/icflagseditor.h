@@ -19,7 +19,7 @@ public:
 protected:
     void changeEvent(QEvent *e);
     QList<ICMoldItem> CreateCommandImpl() const;
-    void SyncStatusImpl(const QList<ICMoldItem> &items){};
+    void SyncStatusImpl(const QList<ICMoldItem> &items){Q_UNUSED(items)}
 
 private:
     Ui::ICFlagsEditor *ui;

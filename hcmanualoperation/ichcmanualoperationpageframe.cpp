@@ -15,6 +15,7 @@
 #include "icactioncommand.h"
 #include "icvirtualhost.h"
 #include "ickeyboard.h"
+#include "ictimerpool.h"
 
 ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     QFrame(parent),
@@ -54,19 +55,21 @@ void ICHCManualOperationPageFrame::showEvent(QShowEvent *e)
     }
     QFrame::showEvent(e);
     ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnManual, 0);
-    connect(ICVirtualHost::GlobalVirtualHost(),
-            SIGNAL(StatusRefreshed()),
-            this,
-            SLOT(StatusRefreshed()));
+    timerID_ = ICTimerPool::Instance()->Start(ICTimerPool::RefreshTime, this, SLOT(StatusRefreshed()));
+//    connect(ICVirtualHost::GlobalVirtualHost(),
+//            SIGNAL(StatusRefreshed()),
+//            this,
+//            SLOT(StatusRefreshed()));
 }
 
 void ICHCManualOperationPageFrame::hideEvent(QHideEvent *e)
 {
     QFrame::hideEvent(e);
-    disconnect(ICVirtualHost::GlobalVirtualHost(),
-               SIGNAL(StatusRefreshed()),
-               this,
-               SLOT(StatusRefreshed()));
+    ICTimerPool::Instance()->Stop(timerID_, this, SLOT(StatusRefreshed()));
+//    disconnect(ICVirtualHost::GlobalVirtualHost(),
+//               SIGNAL(StatusRefreshed()),
+//               this,
+//               SLOT(StatusRefreshed()));
 }
 
 void ICHCManualOperationPageFrame::changeEvent(QEvent *e)

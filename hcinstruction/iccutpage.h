@@ -32,6 +32,8 @@ private Q_SLOTS:
     void CommandButtonClicked(QWidget* widget);
 
 private:
+    Ui::ICCutPage *ui;
+private:
     QVector<QAbstractButton*> settingButtons_;
 //    QVector<ICLineEditWithVirtualNumericKeypad*> delayEdits_;
     QMap<QAbstractButton*, uint> buttonToClip_;
@@ -43,8 +45,6 @@ private:
     QPixmap onPixmap_;
     QPixmap offPixmap_;
 
-private:
-    Ui::ICCutPage *ui;
 };
 
 #endif // ICCUTPAGE_H

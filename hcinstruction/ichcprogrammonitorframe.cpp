@@ -16,9 +16,9 @@ ICHCProgramMonitorFrame::ICHCProgramMonitorFrame(QWidget *parent) :
     ui(new Ui::ICHCProgramMonitorFrame),
     isModify_(false),
     currentStepItem_(NULL),
-    currentMoldNum_(8),
     isFollow_(true),
     oldStep_(-1),
+    currentMoldNum_(8),
     switchOn_(":/resource/switch_on.png"),
     switchOff_(":/resource/switch_off.png")
 {
@@ -274,7 +274,7 @@ void ICHCProgramMonitorFrame::SelectCurrentStep(int currentStep)
     ui->moldContentListWidget->clearSelection();
     ICGroupMoldUIItem* gItem = &programList_[currentStep];
     currentStepItem_ = gItem;
-    int selectedCount = gItem->ItemCount();
+//    int selectedCount = gItem->ItemCount();
     startIndex_ = 0;
     for(int i = 0; i != currentStep; ++i)
     {

@@ -71,10 +71,10 @@ private:
     uint newStackedP_;
     uint oldStackedP_;
     int startIndex_;
-    int currentMoldNum_;
     ICGroupMoldUIItem* currentStepItem_;
     bool isFollow_;
     int oldStep_;
+    int currentMoldNum_;
     QTimer timer_;
     QPixmap switchOn_;
     QPixmap switchOff_;

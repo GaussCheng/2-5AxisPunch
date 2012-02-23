@@ -1,7 +1,8 @@
 #include "statuslabel.h"
 
 StatusLabel::StatusLabel(QWidget *parent) :
-    QLabel(parent)
+    QLabel(parent),
+    currentStatus_(OFFSTATUS)
 {
     this->setStyleSheet("border-radius: 20px;");
 }

@@ -20,7 +20,7 @@ protected:
     void changeEvent(QEvent *e);
     void showEvent(QShowEvent *e);
     QList<ICMoldItem> CreateCommandImpl() const;
-    void SyncStatusImpl(const QList<ICMoldItem> &items) {};
+    void SyncStatusImpl(const QList<ICMoldItem> &items) {Q_UNUSED(items)}
 
 private Q_SLOTS:
     void on_forwardCheckBox_stateChanged(int status);

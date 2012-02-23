@@ -153,61 +153,7 @@ void ActionSettingFrame::showEvent(QShowEvent *e)
 
 void ActionSettingFrame::SyncStatusImpl(const QList<ICMoldItem> &items)
 {
-    //    ui->x1PosLineEdit->setText(QString().sprintf("%.1f", oXP_ / 10.0));
-    //    ui->y1PosLineEdit->setText(QString().sprintf("%.1f", oYP_ / 10.0));
-    //    ui->zPosLineEdit->setText(QString().sprintf("%.1f", oZP_ / 10.0));
-    //    ui->settedSpeedLineEdit->setText(ui->speedLabel->text());
-    //    ui->gestrueSettedLabel->setText(ui->gestrueLabel->text());
-    //    ui->x2SettedLabel->setText(ui->x2Label->text());
-    //    ui->y2SettedLabel->setText(ui->y2Label->text());
-    //    ICMoldItem item;
-    //    int action;
-    //    foreach(item, items)
-    //    {
-    //        if(item.IsAction())
-    //        {
-    //            action = item.Action();
-    //            if(action >= ICMold::G01 && action <= ICMold::GXZ)
-    //            {
-    //                ui->x1PosLineEdit->SetThisIntToThisText(item.X());
-    //                ui->y1PosLineEdit->SetThisIntToThisText(item.Y());
-    //                ui->zPosLineEdit->SetThisIntToThisText(item.Z());
-    //                ui->settedSpeedLineEdit->SetThisIntToThisText(item.SVal());
-    //                ui->x1DelayLineEdit->SetThisIntToThisText(item.DVal());
-    //            }
-    //            else if(action == ICMold::ACTPOSEHORI)
-    //            {
-    //                ui->gestrueSettedLabel->setText(poseH);
-    //                ui->gestureDelayLineEdit->SetThisIntToThisText(item.DVal());
-    //            }
-    //            else if(action == ICMold::ACTPOSEVERT)
-    //            {
-    //                ui->gestrueLabel->setText(poseV);
-    //                ui->gestureDelayLineEdit->SetThisIntToThisText(item.DVal());
-    //            }
-    //            else if(action == ICMold::ACTVICEUP)
-    //            {
-    //                ui->y2SettedLabel->setText(sAU);
-    //                ui->y2DelayLineEdit->SetThisIntToThisText(item.DVal());
-    //            }
-    //            else if(action == ICMold::ACTVICEDOWN)
-    //            {
-    //                ui->y2SettedLabel->setText(sAD);
-    //                ui->y2DelayLineEdit->SetThisIntToThisText(item.DVal());
-    //            }
-    //            else if(action == ICMold::ACTVICEFORWARD)
-    //            {
-    //                ui->x2SettedLabel->setText(sAF);
-    //                ui->x2DelayLineEdit->SetThisIntToThisText(item.DVal());
-    //            }
-    //            else if(action == ICMold::ACTVICEBACKWARD)
-    //            {
-    //                ui->x2SettedLabel->setText(sAB);
-    //                ui->x2DelayLineEdit->SetThisIntToThisText(item.DVal());
-    //            }
-    //        }
-    //    }
-    //    ui->
+    Q_UNUSED(items)
 }
 
 void ActionSettingFrame::StatusRefresh()

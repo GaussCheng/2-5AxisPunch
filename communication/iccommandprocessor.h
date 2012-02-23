@@ -4,6 +4,7 @@
 #include <QVariant>
 #include <QScopedPointer>
 #include <QList>
+#include <QQueue>
 #include <QLabel>
 #include <QMutex>
 #include <QMutexLocker>
@@ -78,6 +79,7 @@ private:
     QScopedPointer<ICQueryStatus> queryStatus_;
     QScopedPointer<ICTeachStepCommand> teachStepCommand_;
     QMutex mutex_;
+    QQueue<ICCommunicationCommandBase*> commandQueue_;
     ICCommandProcessor();
 };
 

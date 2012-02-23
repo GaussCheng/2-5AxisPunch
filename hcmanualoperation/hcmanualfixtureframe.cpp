@@ -3,6 +3,7 @@
 #include "iccommandkeywrapper.h"
 #include "icvirtualkey.h"
 #include "icvirtualhost.h"
+#include "ictimerpool.h"
 
 HCManualFixtureFrame::HCManualFixtureFrame(QWidget *parent) :
         QFrame(parent),
@@ -39,19 +40,21 @@ HCManualFixtureFrame::~HCManualFixtureFrame()
 void HCManualFixtureFrame::showEvent(QShowEvent *e)
 {
     QFrame::showEvent(e);
-    connect(ICVirtualHost::GlobalVirtualHost(),
-            SIGNAL(StatusRefreshed()),
-            this,
-            SLOT(StatusRefreshed()));
+//    connect(ICVirtualHost::GlobalVirtualHost(),
+//            SIGNAL(StatusRefreshed()),
+//            this,
+//            SLOT(StatusRefreshed()));
+    timerID_ = ICTimerPool::Instance()->Start(ICTimerPool::RefreshTime, this, SLOT(StatusRefreshed()));
 }
 
 void HCManualFixtureFrame::hideEvent(QHideEvent *e)
 {
     QFrame::hideEvent(e);
-    disconnect(ICVirtualHost::GlobalVirtualHost(),
-               SIGNAL(StatusRefreshed()),
-               this,
-               SLOT(StatusRefreshed()));
+//    disconnect(ICVirtualHost::GlobalVirtualHost(),
+//               SIGNAL(StatusRefreshed()),
+//               this,
+//               SLOT(StatusRefreshed()));
+    ICTimerPool::Instance()->Stop(timerID_, this, SLOT(StatusRefreshed()));
 }
 
 void HCManualFixtureFrame::StatusRefreshed()

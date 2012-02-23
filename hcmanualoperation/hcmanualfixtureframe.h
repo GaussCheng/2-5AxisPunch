@@ -30,6 +30,7 @@ private:
     Ui::HCManualFixtureFrame *ui;
     QList<ICCommandKeyWrapper*> wrappers_;
     QBitArray clips_;
+    int timerID_;
 };
 
 #endif // HCMANUALFIXTUREFRAME_H

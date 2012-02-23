@@ -86,10 +86,20 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     ledFlags_(0),
     errCode_(0),
     oldRunnigStatus_(0),
+    oldXPos_(0),
+    oldYPos_(0),
+    oldZPos_(0),
+    oldX2Pos_(0),
+    oldY2Pos_(0),
+    oldAPos_(0),
+    oldBPos_(0),
+    oldCPos_(0),
     isOriginShown_(false),
     isReturnShown_(false),
     oldFinishCount_(0),
+    cycleTime_(0),
     oldCycleTime_(0),
+    oldStep_(0),
     screenSaver_(new ICScreenSaver()),
     isBackLightOff_(false),
     isOrigined_(false),
@@ -101,7 +111,8 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     isY2PosChanged_(false),
     isAPosChanged_(false),
     isBPosChanged_(false),
-    isCPosChanged_(false)
+    isCPosChanged_(false),
+    axisDefine_(0)
 {
     connect(this,
             SIGNAL(LoadMessage(QString)),
@@ -125,7 +136,9 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
         button->setCheckable(true);
     }
     emit LoadMessage("MainFrame UI Loaded");
+#ifndef Q_WS_X11
     this->setWindowFlags(Qt::FramelessWindowHint);
+#endif
     emit LoadMessage("Reset the window hint");
     connect(ICVirtualHost::GlobalVirtualHost(),
             SIGNAL(StatusRefreshed()),

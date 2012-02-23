@@ -12,10 +12,6 @@ struct MoldStepData
     int end;
 };
 
-static void FindStepPos(int &beg, int &end, int step, const QList<ICMoldItem> &items);
-static void FindStepPos(QList<ICMoldItem>::iterator &beg, QList<ICMoldItem>::iterator &end, int step, QList<ICMoldItem> &items);
-static QList<ICMoldItem>::const_iterator FindG01(QList<ICMoldItem>::const_iterator begin, QList<ICMoldItem>::const_iterator end);
-
 QString ICSubMoldUIItem::ToString() const
 {
     QString ret;
@@ -309,7 +305,7 @@ bool ICMold::SaveMoldFile(bool isSaveParams)
     {
         SaveMoldParamsFile();
     }
-
+    return true;
 }
 
 bool ICMold::SaveMoldParamsFile()
@@ -328,6 +324,7 @@ bool ICMold::SaveMoldParamsFile()
     }
     file.write(toWrite);
     file.close();
+    return true;
 }
 
 uint ICMold::SyncAct() const
@@ -353,153 +350,20 @@ uint ICMold::SyncSum() const
 
 void ICMold::Insert(const QList<ICMoldItem> &items, QList<ICMoldItem> &sourceItems)
 {
-    //    Q_ASSERT_X(items.size() > 0, "ICMold::Insert", "items is empty");
-    //    if(items.isEmpty())
-    //    {
-    //        return;
-    //    }
-    //    int beg;
-    //    int end;
-    //    int step = items.at(0).NVal();
-    //    FindStepPos(beg, end, step, sourceItems);
-    //    if(beg < 0)
-    //    {
-    //        return;
-    //    }
-    //    for(int i = 0; i != items.size(); ++i)
-    //    {
-    //        sourceItems.insert(beg++, items.at(i));
-    //    }
-    //    int index = beg;
-    //    int tmpStep;
-    //    while(index < sourceItems.size())
-    //    {
-    //        tmpStep = sourceItems.at(index).NVal();
-    //        do
-    //        {
-    //            sourceItems[index].SetNVal(step + 1);
-    //            ++index;
-    //        }while(index < sourceItems.size() && tmpStep == sourceItems.at(index).NVal());
-    //        ++step;
-    //    }
-    //    MoldReSum(sourceItems);
+    Q_UNUSED(items)
+    Q_UNUSED(sourceItems)
 }
 
 void ICMold::Modify(const QList<ICMoldItem> &items, QList<ICMoldItem> &sourceItems)
 {
-    //    Q_ASSERT_X(items.size() > 0, "ICMold::Modify", "items is empty");
-    //    if(items.isEmpty())
-    //    {
-    //        return;
-    //    }
-    //    QList<ICMoldItem>::iterator beg;
-    //    QList<ICMoldItem>::iterator end;
-    //    int step = items.at(0).NVal();
-    //    FindStepPos(beg, end, step, sourceItems);
-    //    if(beg == sourceItems.end())
-    //    {
-    //        return;
-    //    }
-    //    QList<ICMoldItem>::const_iterator g01Item =  FindG01(beg, end);
-    //    int lastX = -1;
-    //    int lastY = -1;
-    //    int lastZ = -1;
-    //    if(g01Item != end)
-    //    {
-    //        lastX = (*g01Item).X();
-    //        lastY = (*g01Item).Y();
-    //        lastZ = (*g01Item).Z();
-    //    }
-    //    beg = sourceItems.erase(beg, end);
-    ////    end = beg;
-    //    for(int i = 0; i != items.size(); ++i)
-    //    {
-    //       beg = sourceItems.insert(beg, items.at(i));
-    //       ++beg;
-    //    }
-    ////    beg = end;
-    //    if(lastX != -1)
-    //    {
-    //        QList<ICMoldItem>::const_iterator newG01Item = FindG01(items.constBegin(), items.constEnd());
-    //        if(newG01Item != items.end())
-    //        {
-    //            int newX = newG01Item->X();
-    //            int newY = newG01Item->Y();
-    //            int newZ = newG01Item->Z();
-    //            int action;
-    //            while(beg != sourceItems.end())
-    //            {
-    //                if(lastX == -1 && lastY == -1 && lastZ == -1)
-    //                {
-    //                    break;
-    //                }
-    //                action = beg->GMVal() & 0x7F;
-    //                if(action >= ICMold::GXY && action <= ICMold::GXZ)
-    //                {
-    //                    break;
-    //                }
-    //                if(action == ICMold::G01)
-    //                {
-    //                    if(beg->X() == lastX)
-    //                    {
-    //                        beg->SetX(newX);
-    //                    }
-    //                    else
-    //                    {
-    //                        lastX = -1;
-    //                    }
-    //                    if(beg->Y() == lastY)
-    //                    {
-    //                        beg->SetY(newY);
-    //                    }
-    //                    else
-    //                    {
-    //                        lastY = -1;
-    //                    }
-    //                    if(beg->Z() == lastZ)
-    //                    {
-    //                        beg->SetZ(newZ);
-    //                    }
-    //                    else
-    //                    {
-    //                        lastZ = -1;
-    //                    }
-    //                }
-    //                ++beg;
-    //            }
-    //        }
-    //    }
-    //    MoldReSum(sourceItems);
+    Q_UNUSED(items)
+    Q_UNUSED(sourceItems)
 }
 
 void ICMold::Delete(int step, QList<ICMoldItem> &sourceItems)
 {
-    //    Q_ASSERT_X(step > 0, "ICMold::Delete", "items is empty");
-    //    if(step <= 0)
-    //    {
-    //        return;
-    //    }
-    //    QList<ICMoldItem>::iterator beg;
-    //    QList<ICMoldItem>::iterator end;
-    //    FindStepPos(beg, end, step, sourceItems);
-    //    if(beg == sourceItems.end())
-    //    {
-    //        return;
-    //    }
-    //    beg = sourceItems.erase(beg, end);
-    //    uint tmpStep;
-    //    while(beg != sourceItems.end())
-    //    {
-    //        tmpStep = beg->NVal();
-    //        do
-    //        {
-    //            beg->SetNVal(step);
-    //            ++beg;
-    //        }while(beg != sourceItems.end() && tmpStep == beg->NVal());
-    //        ++step;
-    //    }
-
-    //    MoldReSum(sourceItems);
+    Q_UNUSED(step)
+    Q_UNUSED(sourceItems)
 }
 
 void ICMold::MoldReSum(QList<ICMoldItem> &items)
@@ -528,70 +392,6 @@ void ICMold::UpdateSyncSum()
     //    sum += checkSum_;
     checkSum_ = (-sum) & 0xFFFF;
 }
-
-static void FindStepPos(int &beg, int &end, int step, const QList<ICMoldItem> &items)
-{
-    //    ICMoldItem item;
-    //    for(int i = 0; i != items.size(); ++i)
-    //    {
-    //        item = items.at(i);
-    //        if(item.NVal() == step)
-    //        {
-    //            beg = i;
-    //            while(++i != items.size())
-    //            {
-    //                item = items.at(i);
-    //                if(item.NVal() != step)
-    //                {
-    //                    break;
-    //                }
-    //            }
-    //            end = i -1;
-    //            return;
-    //        }
-    //    }
-    //    beg = end = -1;
-}
-
-static void FindStepPos(QList<ICMoldItem>::iterator &beg, QList<ICMoldItem>::iterator &end, int step, QList<ICMoldItem> &items)
-{
-    //    ICMoldItem item;
-    //    QList<ICMoldItem>::iterator p = items.begin();
-    //    while(p != items.end())
-    //    {
-    //        item = *p;
-    //        if(item.NVal() == step)
-    //        {
-    //            beg = p;
-    //            while(++p != items.end())
-    //            {
-    //                item = *p;
-    //                if(item.NVal() != step)
-    //                {
-    //                    break;
-    //                }
-    //            }
-    //            end = p;
-    //            return;
-    //        }
-    //        ++p;
-    //    }
-    //    beg = items.end();
-    //    end = items.end();
-}
-
-//static QList<ICMoldItem>::const_iterator FindG01(QList<ICMoldItem>::const_iterator begin, QList<ICMoldItem>::const_iterator end)
-//{
-//    while(begin != end)
-//    {
-//        if(((*begin).GMVal() & 0x7F) == ICMold::G01)
-//        {
-//            return begin;
-//        }
-//        ++begin;
-//    }
-//    return end;
-//}
 
 QList<ICMoldItem> ICMold::UIItemToMoldItem(const QList<ICGroupMoldUIItem> &items)
 {

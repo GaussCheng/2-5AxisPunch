@@ -55,9 +55,9 @@ private:
     QWidget *manualOtherIOPage_;
     QWidget *manualFixturePage_;
     QWidget *manualSuckerPage_;
+    HCManualAdjustFrame * manualAdjustPage_;
     QWidget *reservePage_;
     HCServoArmControlFrame *serveAxisPage_;
-    HCManualAdjustFrame * manualAdjustPage_;
 
     QMap<QWidget *, QWidget *> buttonToPage_;
     QMap<QWidget*, int> buttonToAxis_;
@@ -66,6 +66,7 @@ private:
     QButtonGroup* buttonGroup_;
     int currentPose_;
     int currentAction_;
+    int timerID_;
 };
 
 #endif // ICHCMANUALOPERATIONPAGEFRAME_H
