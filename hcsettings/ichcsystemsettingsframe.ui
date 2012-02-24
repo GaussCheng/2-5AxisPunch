@@ -21,7 +21,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QTabWidget" name="machineConfigPage">
+    <widget class="QTabWidget" name="systemConfigPages">
      <property name="minimumSize">
       <size>
        <width>0</width>
@@ -630,7 +630,7 @@ height: 33px;
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="machineConfigPage_2">
+     <widget class="QWidget" name="machineConfigPage">
       <attribute name="title">
        <string>Machine Config</string>
       </attribute>

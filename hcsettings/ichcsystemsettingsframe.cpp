@@ -31,7 +31,7 @@ ICHCSystemSettingsFrame::ICHCSystemSettingsFrame(QWidget *parent) :
     ui->axisBToolButton->setText(tr("B Axis"));
     ui->axisCToolButton->setText(tr("C Axis"));
     ui->structDefButton->setText(tr("Struct Define"));
-//    buttonGroup_->addButton(ui->basicSettingsToolButton);
+    //    buttonGroup_->addButton(ui->basicSettingsToolButton);
     buttonGroup_->addButton(ui->axisXToolButton);
     buttonGroup_->addButton(ui->axisYToolButton);
     buttonGroup_->addButton(ui->axisZToolButton);
@@ -106,24 +106,24 @@ void ICHCSystemSettingsFrame::changeEvent(QEvent *e)
     QFrame::changeEvent(e);
     switch (e->type()) {
     case QEvent::LanguageChange:
-        {
-            ui->retranslateUi(this);
-            ICParametersSave* paraSave = ICParametersSave::Instance();
+    {
+        ui->retranslateUi(this);
+        ICParametersSave* paraSave = ICParametersSave::Instance();
 
-            int index = (paraSave->Country() == QLocale::China) ? 0 : 1;
-            ui->languageComboBox->setCurrentIndex(index);
-            ui->dateTimeEdit->setDateTime(QDateTime::currentDateTime());
-            ui->axisXToolButton->setText(tr("X1 Axis"));
-            ui->axisYToolButton->setText(tr("Y1 Axis"));
-            ui->axisZToolButton->setText(tr("Z Axis"));
-            ui->axisX2ToolButton->setText(tr("X2 Axis"));
-            ui->axisY2ToolButton->setText(tr("Y2 Axis"));
-            ui->axisAToolButton->setText(tr("A Axis"));
-            ui->axisBToolButton->setText(tr("B Axis"));
-            ui->axisCToolButton->setText(tr("C Axis"));
-            ui->structDefButton->setText(tr("Struct Define"));
-        }
-        break;
+        int index = (paraSave->Country() == QLocale::China) ? 0 : 1;
+        ui->languageComboBox->setCurrentIndex(index);
+        ui->dateTimeEdit->setDateTime(QDateTime::currentDateTime());
+        ui->axisXToolButton->setText(tr("X1 Axis"));
+        ui->axisYToolButton->setText(tr("Y1 Axis"));
+        ui->axisZToolButton->setText(tr("Z Axis"));
+        ui->axisX2ToolButton->setText(tr("X2 Axis"));
+        ui->axisY2ToolButton->setText(tr("Y2 Axis"));
+        ui->axisAToolButton->setText(tr("A Axis"));
+        ui->axisBToolButton->setText(tr("B Axis"));
+        ui->axisCToolButton->setText(tr("C Axis"));
+        ui->structDefButton->setText(tr("Struct Define"));
+    }
+    break;
     default:
         break;
     }
@@ -136,21 +136,24 @@ void ICHCSystemSettingsFrame::showEvent(QShowEvent *e)
             this,
             SLOT(StatusRefresh()));
     ui->dateTimeEdit->setDateTime(QDateTime::currentDateTime());
-////    if(ICProgramHeadFrame::Instance()->CurrentLevel() == ICParametersSave::AdvanceAdmin)
-//    {
-////        ui->adminSettingsPage->setEnabled(true);
-////        ui->adminSettingsPage->show();
-//    }
-//    else
-//    {
-////        ui->adminSettingsPage->setEnabled(false);
-////        ui->adminSettingsPage->hide();
-//    }
+    ////    if(ICProgramHeadFrame::Instance()->CurrentLevel() == ICParametersSave::AdvanceAdmin)
+    //    {
+    ////        ui->adminSettingsPage->setEnabled(true);
+    ////        ui->adminSettingsPage->show();
+    //    }
+    //    else
+    //    {
+    ////        ui->adminSettingsPage->setEnabled(false);
+    ////        ui->adminSettingsPage->hide();
+    //    }
     ui->extentLabel->setEnabled(false);
     ui->extentFunctionCheckBox->setEnabled(false);
-    UpdateConfigShow_();
-//    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-//    ui->hmiMachienLenghtLabel->setText(host->SystemParameter(ICVirtualHost::SYS_));
+    if(!ui->machineConfigPage->isHidden())
+    {
+        UpdateConfigShow_();
+    }
+    //    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    //    ui->hmiMachienLenghtLabel->setText(host->SystemParameter(ICVirtualHost::SYS_));
 
     QFrame::showEvent(e);
 }
@@ -215,11 +218,11 @@ void ICHCSystemSettingsFrame::on_changeButton_clicked()
 
 void ICHCSystemSettingsFrame::on_extentFunctionCheckBox_toggled(bool checked)
 {
-//    if(passwordDialog_->exec() != QDialog::Accepted)
-//    {
-//        ui->extentFunctionCheckBox->setChecked(!checked);
-//        return;
-//    }
+    //    if(passwordDialog_->exec() != QDialog::Accepted)
+    //    {
+    //        ui->extentFunctionCheckBox->setChecked(!checked);
+    //        return;
+    //    }
     ICParametersSave::Instance()->SetExtentFunctionUsed(checked);
 }
 
@@ -247,9 +250,9 @@ void ICHCSystemSettingsFrame::on_backupMachineButton_clicked()
         return;
     }
     system("mkdir -p /mnt/udisk/HC2ABackup/sysconfig");
-//    bool isSuccess = QFile::copy("./sysconfig/paramx.txt", "/mnt/udisk/HC2ABackup/sysconfig/paramx.txt");
-//    isSuccess = isSuccess && QFile::copy("./sysconfig/paramy.txt", "/mnt/udisk/HC2ABackup/sysconfig/paramy.txt");
-//    isSuccess = isSuccess && QFile::copy("./sysconfig/paramz.txt", "/mnt/udisk/HC2ABackup/sysconfig/paramz.txt");
+    //    bool isSuccess = QFile::copy("./sysconfig/paramx.txt", "/mnt/udisk/HC2ABackup/sysconfig/paramx.txt");
+    //    isSuccess = isSuccess && QFile::copy("./sysconfig/paramy.txt", "/mnt/udisk/HC2ABackup/sysconfig/paramy.txt");
+    //    isSuccess = isSuccess && QFile::copy("./sysconfig/paramz.txt", "/mnt/udisk/HC2ABackup/sysconfig/paramz.txt");
     Information(system("cp /opt/Qt/bin/sysconfig/param*.txt /mnt/udisk/HC2ABackup/sysconfig/") >= 0 );
 }
 
@@ -261,7 +264,7 @@ void ICHCSystemSettingsFrame::on_backupSystemButton_clicked()
         return;
     }
     system("mkdir -p /mnt/udisk/HC2ABackup/sysconfig");
-//    bool isSuccess = QFile::copy("./sysconfig/system.txt", "/mnt/udisk/HC2ABackup/sysconfig/system.txt");
+    //    bool isSuccess = QFile::copy("./sysconfig/system.txt", "/mnt/udisk/HC2ABackup/sysconfig/system.txt");
     Information(system("cp /opt/Qt/bin/sysconfig/system.txt /mnt/udisk/HC2ABackup/sysconfig/system.txt") >= 0);
 }
 
@@ -285,8 +288,8 @@ void ICHCSystemSettingsFrame::on_backupMoldsButton_clicked()
         return;
     }
     system("mkdir -p /mnt/udisk/HC2ABackup/");
-//    bool isSuccess = QFile::copy("./records", "/mnt/udisk/HC2ABackup/");
-//    isSuccess = isSuccess && QFile::copy("./subs", "/mnt/udisk/HC2ABackup/");
+    //    bool isSuccess = QFile::copy("./records", "/mnt/udisk/HC2ABackup/");
+    //    isSuccess = isSuccess && QFile::copy("./subs", "/mnt/udisk/HC2ABackup/");
     Information(system("cp -R /opt/Qt/bin/records/ /opt/Qt/bin/subs/ /mnt/udisk/HC2ABackup") >= 0);
 }
 
@@ -298,14 +301,14 @@ void ICHCSystemSettingsFrame::on_backupAllButton_clicked()
         return;
     }
     system("mkdir -p /mnt/udisk/HC2ABackup/sysconfig");
-//    bool isSuccess = QFile::copy("./sysconfig/paramx.txt", "/mnt/udisk/HC2ABackup/sysconfig/paramx.txt");
-//    isSuccess = isSuccess && QFile::copy("./sysconfig/paramy.txt", "/mnt/udisk/HC2ABackup/sysconfig/paramy.txt");
-//    isSuccess = isSuccess && QFile::copy("./sysconfig/paramz.txt", "/mnt/udisk/HC2ABackup/sysconfig/paramz.txt");
+    //    bool isSuccess = QFile::copy("./sysconfig/paramx.txt", "/mnt/udisk/HC2ABackup/sysconfig/paramx.txt");
+    //    isSuccess = isSuccess && QFile::copy("./sysconfig/paramy.txt", "/mnt/udisk/HC2ABackup/sysconfig/paramy.txt");
+    //    isSuccess = isSuccess && QFile::copy("./sysconfig/paramz.txt", "/mnt/udisk/HC2ABackup/sysconfig/paramz.txt");
 
-//    isSuccess = isSuccess && QFile::copy("./sysconfig/system.txt", "/mnt/udisk/HC2ABackup/sysconfig/system.txt");
+    //    isSuccess = isSuccess && QFile::copy("./sysconfig/system.txt", "/mnt/udisk/HC2ABackup/sysconfig/system.txt");
 
-//    isSuccess = isSuccess && QFile::copy("./records", "/mnt/udisk/HC2ABackup/");
-//    isSuccess = isSuccess && QFile::copy("./subs", "/mnt/udisk/HC2ABackup/");
+    //    isSuccess = isSuccess && QFile::copy("./records", "/mnt/udisk/HC2ABackup/");
+    //    isSuccess = isSuccess && QFile::copy("./subs", "/mnt/udisk/HC2ABackup/");
 
     Information(system("cp /opt/Qt/bin/sysconfig/param*.txt /opt/Qt/bin/sysconfig/system.txt /mnt/udisk/HC2ABackup/sysconfig/ && cp -R /opt/Qt/bin/records/ /opt/Qt/bin/subs/ /mnt/udisk/HC2ABackup") >= 0);
 }
@@ -581,7 +584,7 @@ void ICHCSystemSettingsFrame::on_structDefButton_clicked()
     ui->hmiRev1->setText(QString::number(host->SystemParameter(ICVirtualHost::SYS_Config_Resv1).toUInt()));
     ui->hmiRev2->setText(QString::number(host->SystemParameter(ICVirtualHost::SYS_Config_Resv2).toUInt()));
     ui->hmiSum->setText(QString::number(host->SystemParameter(ICVirtualHost::SYS_Config_Xorsum).toUInt()));
-//    ui->hmiArm->setText(armValueToName_.value((armStruct_ & 0x0300) >> 8));
+    //    ui->hmiArm->setText(armValueToName_.value((armStruct_ & 0x0300) >> 8));
     ICGetAxisConfigsCommand command;
     ICCommandProcessor* processor = ICCommandProcessor::Instance();
     command.SetAxis(8);
@@ -601,7 +604,7 @@ void ICHCSystemSettingsFrame::on_structDefButton_clicked()
         ui->hostRev1->setText(QString::number(ret.at(4)));
         ui->hostRev2->setText(QString::number(ret.at(5)));
         ui->hostSum->setText(QString::number(ret.at(6)));
-//        ui->hostArm->setText(armValueToName_.value((armStruct_ & 0x0300) >> 8));
+        //        ui->hostArm->setText(armValueToName_.value((armStruct_ & 0x0300) >> 8));
     }
 }
 
@@ -674,10 +677,10 @@ void ICHCSystemSettingsFrame::SetConfig(int machineLenght,
         totalL_ = ret.at(4);
         totalH_ = ret.at(5);
         xorSum_ = ret.at(6);
-//        ui->label_7->setText(QString::number(ret.at(4)));
-//        ui->label_8->setText(QString::number(ret.at(5)));
-//        ui->label_11->setText(QString::number((uint)((ret.at(5) << 16) | ret.at(4))));
-//        ui->label_21->setText(QString::number((qreal)(ret.at(1) * 1000)));
+        //        ui->label_7->setText(QString::number(ret.at(4)));
+        //        ui->label_8->setText(QString::number(ret.at(5)));
+        //        ui->label_11->setText(QString::number((uint)((ret.at(5) << 16) | ret.at(4))));
+        //        ui->label_21->setText(QString::number((qreal)(ret.at(1) * 1000)));
     }
 }
 

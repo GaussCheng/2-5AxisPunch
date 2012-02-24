@@ -86,7 +86,34 @@ void ICHCSettingsFrame::changeEvent(QEvent *e)
 void ICHCSettingsFrame::showEvent(QShowEvent *e)
 {
     UpdateAxisDefine_();
-    ui->axisX1ToolButton->click();
+    if(!ui->axisX1ToolButton->isHidden())
+    {
+        ui->axisX1ToolButton->click();
+    }
+    else if(!ui->axisY1ToolButton->isHidden())
+    {
+        ui->axisY1ToolButton->click();
+    }
+    else if(!ui->axisX2ToolButton->isHidden())
+    {
+        ui->axisX2ToolButton->click();
+    }
+    else if(!ui->axisY2ToolButton->isHidden())
+    {
+        ui->axisY2ToolButton->click();
+    }
+    else if(!ui->axisAToolButton->isHidden())
+    {
+        ui->axisAToolButton->click();
+    }
+    else if(!ui->axisBToolButton->isHidden())
+    {
+        ui->axisBToolButton->click();
+    }
+    else if(!ui->axisCToolButton->isHidden())
+    {
+        ui->axisCToolButton->click();
+    }
     QFrame::showEvent(e);
 }
 

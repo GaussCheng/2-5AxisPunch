@@ -99,6 +99,38 @@ void ICMachineStructPage::hideEvent(QHideEvent *e)
 void ICMachineStructPage::showEvent(QShowEvent *e)
 {
     UpdateAxisDefine_();
+    if(!ui->axisXToolButton->isHidden())
+    {
+        ui->axisXToolButton->click();
+    }
+    else if(!ui->axisYToolButton->isHidden())
+    {
+        ui->axisYToolButton->click();
+    }
+    else if(!ui->axisZToolButton->isHidden())
+    {
+        ui->axisZToolButton->click();
+    }
+    else if(!ui->axisPToolButton->isHidden())
+    {
+        ui->axisPToolButton->click();
+    }
+    else if(!ui->axisQToolButton->isHidden())
+    {
+        ui->axisQToolButton->click();
+    }
+    else if(!ui->axisAToolButton->isHidden())
+    {
+        ui->axisAToolButton->click();
+    }
+    else if(!ui->axisBToolButton->isHidden())
+    {
+        ui->axisBToolButton->click();
+    }
+    else if(!ui->axisCToolButton->isHidden())
+    {
+        ui->axisCToolButton->click();
+    }
     QWidget::showEvent(e);
 }
 
