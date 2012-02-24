@@ -37,12 +37,12 @@ ICMachineConfigPage::ICMachineConfigPage(QWidget *parent) :
     ui->toleranceLineEdit->setValidator(validator);
     ui->pullPushDistance->SetDecimalPlaces(1);
     ui->pullPushDistance->setValidator(new QIntValidator(0, 1000, this));
-//    ui->xEarlyEndEdit->SetDecimalPlaces(1);
-//    ui->xEarlyEndEdit->setValidator(validator);
-//    ui->yEarlyEndEdit->SetDecimalPlaces(1);
-//    ui->yEarlyEndEdit->setValidator(validator);
-//    ui->zEarlyEndEdit->SetDecimalPlaces(1);
-//    ui->zEarlyEndEdit->setValidator(validator);
+    //    ui->xEarlyEndEdit->SetDecimalPlaces(1);
+    //    ui->xEarlyEndEdit->setValidator(validator);
+    //    ui->yEarlyEndEdit->SetDecimalPlaces(1);
+    //    ui->yEarlyEndEdit->setValidator(validator);
+    //    ui->zEarlyEndEdit->SetDecimalPlaces(1);
+    //    ui->zEarlyEndEdit->setValidator(validator);
 
     validator = new QIntValidator(0, 200, this);
     ui->xMaxSpeedEdit->setValidator(validator);
@@ -185,9 +185,12 @@ void ICMachineConfigPage::changeEvent(QEvent *e)
 void ICMachineConfigPage::hideEvent(QHideEvent *e)
 {
     qDebug("machine config hide");
-//    ICMold::CurrentMold()->SaveMoldParamsFile();
-    ICVirtualHost::GlobalVirtualHost()->SaveSystemConfig();
-    ICVirtualHost::GlobalVirtualHost()->ReConfigure();
+    //    ICMold::CurrentMold()->SaveMoldParamsFile();
+    if(ICVirtualHost::GlobalVirtualHost()->IsParamChanged())
+    {
+        ICVirtualHost::GlobalVirtualHost()->SaveSystemConfig();
+        ICVirtualHost::GlobalVirtualHost()->ReConfigure();
+    }
     QWidget::hideEvent(e);
 }
 

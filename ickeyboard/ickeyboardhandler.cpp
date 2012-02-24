@@ -261,7 +261,7 @@ void ICKeyboardHandler::PulleyChanged(int value)
         return;
     }
     qDebug("status is right");
-    pulleyTurn_ = (++pulleyTurn_) % 2;
+    pulleyTurn_ = (pulleyTurn_ + 1) % 2;
     int currentPulleySpeed = OperatingRatioSetDialog::Instance()->CurrentPulleySpeed();
     int cmd;
     if(pulleyTurn_ == 0)

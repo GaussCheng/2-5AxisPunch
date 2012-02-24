@@ -92,7 +92,10 @@ void ICHCSettingsFrame::showEvent(QShowEvent *e)
 
 void ICHCSettingsFrame::hideEvent(QHideEvent *e)
 {
-    ICVirtualHost::GlobalVirtualHost()->ReConfigure();
+    if(ICVirtualHost::GlobalVirtualHost()->IsParamChanged())
+    {
+        ICVirtualHost::GlobalVirtualHost()->ReConfigure();
+    }
     QFrame::hideEvent(e);
 }
 

@@ -550,6 +550,8 @@ public:
     ICAxisDefine AxisDefine(ICAxis which) const;
     void CalAxisDefine(int &config, ICAxis which, ICAxisDefine define) const;
     void SetAxisDefine(int config) { systemParamMap_.insert(SYS_Config_Arm, config);}
+
+    bool IsParamChanged() const { return isParamChanged_;}
 public Q_SLOTS:
     void SetMoldParam(int param, int value);
 Q_SIGNALS:
@@ -611,6 +613,7 @@ private:
     bool isSpeedEnable_;
     bool hasTuneSpeed_;
     int productCount_;
+    bool isParamChanged_;
     static ICVirtualHost* globalVirtualHost_;
 };
 #define icGlobalVirtuallHost ICVirtualHost::GlobalVirtualHost()
@@ -624,6 +627,7 @@ inline void ICVirtualHost::ReConfigure()
     currentMold_->UpdateSyncSum();
     InitMoldParam_();
     InitSystem_();
+    isParamChanged_ = false;
 //    WriteSystemTohost_();
 }
 
@@ -648,6 +652,7 @@ inline void ICVirtualHost::SetSystemParameter(ICSystemParameter which, QVariant 
 //    if(ICCommandProcessor::Instance()->ModifySysParam(which, value.toInt()))
 //    {
         systemParamMap_.insert(which, value);
+        isParamChanged_ = true;
 //    }
 }
 

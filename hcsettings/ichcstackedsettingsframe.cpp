@@ -198,8 +198,8 @@ void ICHCStackedSettingsFrame::hideEvent(QHideEvent *e)
     qDebug("stack hide");
     QList<int> status = GetCurrentStatus_();
     SetStackStatus_(status);
-    ICVirtualHost::GlobalVirtualHost()->ReConfigure();
     ICMold::CurrentMold()->SaveMoldParamsFile();
+    ICVirtualHost::GlobalVirtualHost()->ReConfigure();
     QFrame::hideEvent(e);
 }
 

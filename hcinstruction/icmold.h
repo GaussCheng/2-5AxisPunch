@@ -411,6 +411,7 @@ inline void ICMold::SetStackParam(int group, ICStatckParam param, int value)
     Q_ASSERT_X(group < stackParams_.size(), "ICMold::SetStatckParams", "group is out of range");
     Q_ASSERT_X(param < stackParams_.at(group).size(), "ICMold::SetStatckParams", "param is out of range");
     stackParams_[group][param] = value;
+//    emit MoldPramChanged(param, value);
 }
 
 

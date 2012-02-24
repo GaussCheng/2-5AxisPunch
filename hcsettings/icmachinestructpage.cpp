@@ -48,14 +48,14 @@ ICMachineStructPage::ICMachineStructPage(QWidget *parent) :
 
     ui->axisXToolButton->click();
 
-//    ui->x1Box->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisX11)));
-//    ui->y1Box->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisY11)));
-//    ui->zBox->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisZ)));
-//    ui->x2Box->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisX12)));
-//    ui->y2Box->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisY12)));
-//    ui->aBox->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisA)));
-//    ui->bBox->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisB)));
-//    ui->cBox->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisC)));
+    //    ui->x1Box->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisX11)));
+    //    ui->y1Box->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisY11)));
+    //    ui->zBox->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisZ)));
+    //    ui->x2Box->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisX12)));
+    //    ui->y2Box->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisY12)));
+    //    ui->aBox->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisA)));
+    //    ui->bBox->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisB)));
+    //    ui->cBox->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisC)));
 }
 
 ICMachineStructPage::~ICMachineStructPage()
@@ -88,8 +88,11 @@ void ICMachineStructPage::changeEvent(QEvent *e)
 
 void ICMachineStructPage::hideEvent(QHideEvent *e)
 {
-    ICVirtualHost::GlobalVirtualHost()->SaveSystemConfig();
-    ICVirtualHost::GlobalVirtualHost()->ReConfigure();
+    if(ICVirtualHost::GlobalVirtualHost()->IsParamChanged())
+    {
+        ICVirtualHost::GlobalVirtualHost()->SaveSystemConfig();
+        ICVirtualHost::GlobalVirtualHost()->ReConfigure();
+    }
     QWidget::hideEvent(e);
 }
 
@@ -288,10 +291,10 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
     ui->externalSecurityZoneLineEdit->SetThisIntToThisText(host->SystemParameter(oSafe).toInt());
     QString format = QString("%.%1f").arg(ui->distanceRotationEdit->DecimalPlaces());
     ui->distanceRotationEdit->setText(QString().sprintf(format.toAscii(), total));
-//    ui->distanceRotationEdit->SetThisIntToThisText(total);
+    //    ui->distanceRotationEdit->SetThisIntToThisText(total);
     ui->minLabel->setText(minText);
     ui->maxLabel->setText(maxText);
-//    maxMoveValidator_->setTop(ui->mechanicalLengthLineEdit->TransThisTextToThisInt());
+    //    maxMoveValidator_->setTop(ui->mechanicalLengthLineEdit->TransThisTextToThisInt());
 }
 
 QList<uint> ICMachineStructPage::GetCurrentStatus_() const
@@ -462,9 +465,9 @@ void ICMachineStructPage::on_saveToolButton_clicked()
     {
         ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
         host->SaveAxisParam(currentAxis_);
-//        host->ReConfigure();
+        //        host->ReConfigure();
         QMessageBox::information(this, tr("Information"), tr("Save Successfully!"));
-//        UpdateAxisDefine_();
+        //        UpdateAxisDefine_();
     }
 }
 

@@ -44,6 +44,7 @@
 #include "mainframe.h"
 #include "moldinformation.h"
 #include "icactiondialog.h"
+#include "ictimerpool.h"
 
 #include <QDebug>
 
@@ -140,10 +141,11 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     this->setWindowFlags(Qt::FramelessWindowHint);
 #endif
     emit LoadMessage("Reset the window hint");
-    connect(ICVirtualHost::GlobalVirtualHost(),
-            SIGNAL(StatusRefreshed()),
-            this,
-            SLOT(StatusRefreshed()));
+//    connect(ICVirtualHost::GlobalVirtualHost(),
+//            SIGNAL(StatusRefreshed()),
+//            this,
+//            SLOT(StatusRefreshed()));
+    timerID_ = ICTimerPool::Instance()->Start(ICTimerPool::RefreshTime, this, SLOT(StatusRefreshed()));
     emit LoadMessage("Ready to Refresh");
     InitCategoryPage();
     InitInterface();
@@ -183,6 +185,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
 
 MainFrame::~MainFrame()
 {
+    ICTimerPool::Instance()->Stop(timerID_, this, SLOT(StatusRefreshed()));
     delete nullButton_;
     delete buttonGroup_;
     delete ui;

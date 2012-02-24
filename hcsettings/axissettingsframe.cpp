@@ -493,6 +493,10 @@ void AxisSettingsFrame::on_revTestPushButton_clicked()
     {
         addCmd = IC::CMD_TestCRev;
     }
+    else
+    {
+        return;
+    }
     processor->ExecuteHCCommand(addCmd, 0);
 }
 

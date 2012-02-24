@@ -55,9 +55,12 @@ ICHCProductSettingFrame::~ICHCProductSettingFrame()
 void ICHCProductSettingFrame::hideEvent(QHideEvent *e)
 {
     qDebug("Product hide");
-    ICMold::CurrentMold()->SaveMoldParamsFile();
-    ICVirtualHost::GlobalVirtualHost()->SaveSystemConfig();
-    ICVirtualHost::GlobalVirtualHost()->ReConfigure();
+    if(ICVirtualHost::GlobalVirtualHost()->IsParamChanged())
+    {
+        ICMold::CurrentMold()->SaveMoldParamsFile();
+        ICVirtualHost::GlobalVirtualHost()->SaveSystemConfig();
+        ICVirtualHost::GlobalVirtualHost()->ReConfigure();
+    }
     QFrame::hideEvent(e);
 }
 
@@ -69,7 +72,7 @@ void ICHCProductSettingFrame::changeEvent(QEvent *e)
     {
         ui->retranslateUi(this);
     }
-        break;
+    break;
     default:
         break;
     }

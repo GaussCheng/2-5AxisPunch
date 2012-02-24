@@ -71,6 +71,10 @@ void HCServoArmControlFrame::RunMinus_()
     {
         key = ICKeyboard::VFB_CSub;
     }
+    else
+    {
+        return;
+    }
     ICKeyboard::Instace()->SetKeyValue(key);
     ICKeyboard::Instace()->SetPressed(true);
 }

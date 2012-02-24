@@ -36,7 +36,8 @@ ICVirtualHost::ICVirtualHost(QObject *parent) :
     freshCount_(0),
     isInitSuccess_(true),
     oldMoldNum_(8),
-    productCount_(0)
+    productCount_(0),
+    isParamChanged_(false)
 {
     memset(oldSubStep, -1, 8);
     if(GlobalVirtualHost() == NULL)
@@ -118,7 +119,10 @@ void ICVirtualHost::SetMoldParam(int param, int value)
     Q_ASSERT_X(moldParamToAddrPos_.contains(param),
                "ICVirtualHost::SetMoldParam();",
                (QString::number(param) + " is not a corrent param").toAscii());
-    ICCommandProcessor::Instance()->ModifyMoldParam(moldParamToAddrPos_.value(param), value);
+//    ICCommandProcessor::Instance()->ModifyMoldParam(moldParamToAddrPos_.value(param), value);
+    Q_UNUSED(param)
+    Q_UNUSED(value)
+    isParamChanged_ = true;
 }
 
 void ICVirtualHost::RefreshStatus()
@@ -219,7 +223,7 @@ void ICVirtualHost::RefreshStatus()
 #endif
             return;
         }
-        freshCount_ = (++freshCount_) % 2;
+        freshCount_ = (freshCount_ + 1) % 2;
         input0Bits_ = statusMap_.value(Input0).toUInt();
         input1Bits_ = statusMap_.value(Input1).toUInt();
         output0Bits_ = statusMap_.value(Output0).toUInt();
@@ -345,7 +349,7 @@ void ICVirtualHost::SaveAxisParam(int axis)
                              SYS_Config_Signal);
         break;
     }
-
+    isParamChanged_ = true;
 }
 
 //private functions

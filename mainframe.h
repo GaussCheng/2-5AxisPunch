@@ -136,6 +136,7 @@ private:
     bool isBPosChanged_;
     bool isCPosChanged_;
     int axisDefine_;
+    int timerID_;
     QList<QList<QWidget*> > axisWidgets_;
 };
 
