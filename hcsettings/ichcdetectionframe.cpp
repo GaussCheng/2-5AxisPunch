@@ -57,9 +57,9 @@ ICHCDetectionFrame::~ICHCDetectionFrame()
 
 void ICHCDetectionFrame::hideEvent(QHideEvent *e)
 {
-    qDebug("Detection hide");
     if(ICVirtualHost::GlobalVirtualHost()->IsParamChanged())
     {
+        qDebug("Detection hide");
         ICMold::CurrentMold()->SaveMoldParamsFile();
         ICVirtualHost::GlobalVirtualHost()->SaveSystemConfig();
         ICVirtualHost::GlobalVirtualHost()->ReConfigure();

@@ -2247,15 +2247,16 @@ int hc_auto_adj(modbus_param_t *mb_param, int slave, int seq, int delay, int spe
     query[3] = seq >> 8;
     query[4] = 4;
     query[5] = 0;
-    query[6] = delay;
-    query[7] = speed;
-    query[8] = dpos;
-    query[9] = gmValue;
-    query[10] = sum;
-    query[11] = 0;
+    query[6] = delay & 0x00FF;
+    query[7] = delay >> 8;
+    query[8] = speed;
+    query[9] = dpos;
+    query[10] = gmValue;
+    query[11] = sum;
     query[12] = 0;
     query[13] = 0;
 
+//    printf("delay:%d speed:%d dpos:%d gmvalue:%d sum%d \n", query[6],query[7], query[8], query[9], query[10]);
     ret = modbus_send(mb_param, query, query_length);
     if (ret < 0)
     {

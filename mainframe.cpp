@@ -113,7 +113,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     isAPosChanged_(false),
     isBPosChanged_(false),
     isCPosChanged_(false),
-    axisDefine_(0)
+    axisDefine_(-1)
 {
     connect(this,
             SIGNAL(LoadMessage(QString)),
@@ -685,7 +685,8 @@ void MainFrame::StatusRefreshed()
         if(runningStatus_ == ICVirtualHost::Manual)
         {
             ui->systemStatusFrame->SetManualStatus(StatusLabel::ONSTATUS);
-            ui->functionPageButton->setEnabled(false);
+            LevelChanged(ICProgramHeadFrame::Instance()->CurrentLevel());
+//            ui->functionPageButton->setEnabled(false);
 //            ui->recordPageButton->setText(tr("Instru            ui->recordPageButton->setText(tr("Instruct"));ct"));
 //            ui->recordPageButton->setEnabled(false);
         }

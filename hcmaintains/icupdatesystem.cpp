@@ -343,6 +343,10 @@ void ICUpdateSystem::on_writeHostButton_clicked()
     ICUpdateHostFinishCommand finishCommand;
     if(ICCommandProcessor::Instance()->ExecuteCommand(finishCommand).toBool())
     {
+        if(!timer_.isActive())
+        {
+            timer_.start(50);
+        }
         QMessageBox::information(this, tr("Congratulations"),
                                  tr("Update Host finished!"));
 
