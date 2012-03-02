@@ -429,7 +429,7 @@ void MainFrame::CategoryButtonClicked()
     //        functionButtonToPage_.insert(ui->monitorPageButton, monitorPage_);
     //        centerStackedLayout_->addWidget(monitorPage_);
     //    }
-    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(clickedButton->text());
+//    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(clickedButton->text());
 }
 
 void MainFrame::StatusRefreshed()
@@ -583,10 +583,10 @@ void MainFrame::StatusRefreshed()
 //        ui->cycleTimeAndFinistWidget->SetFinished(virtualHost->HostStatus(ICVirtualHost::DbgX1).toUInt());
 //        oldFinishCount_ = finishCount_;
 //    }
-    cycleTime_ = virtualHost->HostStatus(ICVirtualHost::DbgY0).toUInt();
+    cycleTime_ = virtualHost->HostStatus(ICVirtualHost::Time).toUInt();
     if(cycleTime_ != oldCycleTime_)
     {
-        ui->cycleTimeAndFinistWidget->SetCycleTime(QString().sprintf("%.1f", cycleTime_ / 200.0));
+        ui->cycleTimeAndFinistWidget->SetCycleTime(QString().sprintf("%.2f", cycleTime_ / qreal(100)));
         oldCycleTime_ = cycleTime_;
     }
 
@@ -749,7 +749,8 @@ void MainFrame::ShowManualPage()
 {
     functionPage_->ShowFunctionSelectPage();
     centerStackedLayout_->setCurrentWidget(manualPage_);
-    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Manual"));
+//    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Manual"));
+    ICProgramHeadFrame::Instance()->StopAutoTime();
     nullButton_->click();
 //    if(!IsOrigined())
 //    {
@@ -763,7 +764,8 @@ void MainFrame::ShowAutoPage()
 {
     functionPage_->ShowFunctionSelectPage();
     centerStackedLayout_->setCurrentWidget(autoPage_);
-    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Auto"));
+//    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Auto"));
+    ICProgramHeadFrame::Instance()->StartAutoTime();
     nullButton_->click();
     if(!IsOrigined())
     {
@@ -774,7 +776,7 @@ void MainFrame::ShowAutoPage()
 void MainFrame::ShowInstructPage()
 {
     centerStackedLayout_->setCurrentWidget(instructPage_);
-    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Instruct"));
+//    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Instruct"));
     nullButton_->click();
 }
 
@@ -782,14 +784,15 @@ void MainFrame::ShowStandbyPage()
 {
     functionPage_->ShowFunctionSelectPage();
     centerStackedLayout_->setCurrentWidget(initialPage_);
-    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Standby"));
+//    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Standby"));
+    ICProgramHeadFrame::Instance()->StopAutoTime();
     nullButton_->click();
 }
 
 void MainFrame::ShowFunctionPage()
 {
     centerStackedLayout_->setCurrentWidget(functionPage_);
-    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(ui->functionPageButton->text());
+//    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(ui->functionPageButton->text());
 }
 
 void MainFrame::ShowOrigin()

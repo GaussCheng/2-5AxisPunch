@@ -8,7 +8,8 @@ ICProgramHeadFrame * ICProgramHeadFrame::instance_ = NULL;
 
 ICProgramHeadFrame::ICProgramHeadFrame(QWidget *parent) :
     QFrame(parent),
-    ui(new Ui::ICProgramHeadFrame)
+    ui(new Ui::ICProgramHeadFrame),
+    autoMin_(0)
 {
     ui->setupUi(this);
 
@@ -43,16 +44,22 @@ void ICProgramHeadFrame::SetCurrentMoldName(const QString & moldName)
 }
 
 
-void ICProgramHeadFrame::SetCurrentCategoryName(const QString & categoryName)
-{
-    ui->currentPageLabel->setText(categoryName);
-}
+//void ICProgramHeadFrame::SetCurrentCategoryName(const QString & categoryName)
+//{
+//    ui->currentPageLabel->setText(categoryName);
+//}
 
 void ICProgramHeadFrame::UpdateDateTime()
 {
     QDateTime dateTime = QDateTime::currentDateTime();
     ui->currentTimeLabel->setText(dateTime.toString("hh:mm"));
     ui->currentDateLabel->setText(dateTime.toString("yyyy-MM-dd"));
+}
+
+void ICProgramHeadFrame::UpdateAutoTime()
+{
+    ui->autoTimeLabel->setText(QString(tr("%1 h")).arg(autoMin_ / qreal(60), 0, 'g', 1));
+    ++autoMin_;
 }
 
 void ICProgramHeadFrame::InitSignal()
@@ -64,6 +71,10 @@ void ICProgramHeadFrame::InitSignal()
     connect(ui->passwdLevelLabel,
             SIGNAL(Levelchenged(int)),
             SIGNAL(LevelChanged(int)));
+    connect(&autoTime_,
+            SIGNAL(timeout()),
+            this,
+            SLOT(UpdateAutoTime()));
 }
 
 int ICProgramHeadFrame::CurrentLevel() const

@@ -10,6 +10,7 @@
 #include "icvirtualkey.h"
 #include "icactioncommand.h"
 #include "icparameterssave.h"
+//#include "icprogramheadframe.h"
 //#include "icmold.h"
 //#include "icmacrosubroutine.h"
 #include "operatingratiosetdialog.h"
@@ -74,12 +75,15 @@ void ICKeyboardHandler::SwitchChanged(int value)
     {
 //        if(icInstructionPage != NULL)
 //        {
+        ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
+//        ICProgramHeadFrame::Instance()->StartAutoTime();
             icMainFrame->ShowAutoPage();
 //            icInstructionPage->ShowProgramMonitor();
 //        }
     }
     else if(value == ICKeyboard::KS_ManualStatu)
     {
+        ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
         icMainFrame->ShowManualPage();
     }
     else if(value == ICKeyboard::KS_StopStatu)

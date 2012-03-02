@@ -73,7 +73,7 @@ void ICHCProgramMonitorFrame::changeEvent(QEvent *e)
 
 void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
 {
-    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
+//    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
     ICVirtualHost::GlobalVirtualHost()->SetSpeedEnable(false);
     ui->speedEnableButton->setIcon(switchOff_);
     ui->speedEnableButton->setText(tr("Speed Disable"));

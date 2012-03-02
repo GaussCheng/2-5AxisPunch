@@ -1642,34 +1642,32 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="90"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="126"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="139"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="162"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="195"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="218"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="241"/>
-        <source>TextLabel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="74"/>
         <source>Time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="110"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="90"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="113"/>
+        <source>0.00</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="133"/>
         <source>Setted products</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="146"/>
-        <source>Get Time</source>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="149"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="172"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="195"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="218"/>
+        <source>0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="169"/>
-        <source>Auto Start Time</source>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="97"/>
+        <source>Get Time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1678,17 +1676,17 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="202"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="156"/>
         <source>Cycle Times</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="225"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="202"/>
         <source>Stacked products</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="272"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="249"/>
         <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1738,7 +1736,7 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="371"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="348"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="79"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="553"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="563"/>
@@ -1746,13 +1744,13 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="342"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="319"/>
         <source>Single Step</source>
         <oldsource>Single Cycle</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="310"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="287"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="544"/>
         <source>No Follow</source>
         <translation type="unfinished"></translation>
@@ -2696,12 +2694,12 @@ Infomation</source>
 <context>
     <name>ICKeyboardHandler</name>
     <message>
-        <location filename="ickeyboard/ickeyboardhandler.cpp" line="243"/>
+        <location filename="ickeyboard/ickeyboardhandler.cpp" line="247"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ickeyboard/ickeyboardhandler.cpp" line="243"/>
+        <location filename="ickeyboard/ickeyboardhandler.cpp" line="247"/>
         <source>Need to origin!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3728,30 +3726,40 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="70"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="73"/>
         <source>Mold</source>
         <oldsource>Mold Name</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="90"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="93"/>
         <source>name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="130"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="124"/>
+        <source>Run Time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="138"/>
+        <source>0.0h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="177"/>
         <source>Level</source>
         <oldsource>Passwd Level</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="150"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="197"/>
         <source>Machine Operator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="106"/>
-        <source>Current Page</source>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="62"/>
+        <source>%1 h</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4152,7 +4160,7 @@ Please enter an digit between </source>
     <message>
         <location filename="hcmaintains/icupdatesystem.cpp" line="139"/>
         <location filename="hcmaintains/icupdatesystem.cpp" line="284"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="346"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="350"/>
         <source>Congratulations</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4201,7 +4209,7 @@ Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="347"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="351"/>
         <source>Update Host finished!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4330,11 +4338,6 @@ Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="784"/>
-        <source>Standby</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="mainframe.cpp" line="402"/>
         <source>Record</source>
         <translation type="unfinished"></translation>
@@ -4355,34 +4358,23 @@ Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="724"/>
+        <location filename="mainframe.cpp" line="725"/>
         <source>Records</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="751"/>
-        <source>Manual</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainframe.cpp" line="769"/>
+        <location filename="mainframe.cpp" line="772"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="769"/>
+        <location filename="mainframe.cpp" line="772"/>
         <source>Need to origin!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="757"/>
-        <location filename="mainframe.cpp" line="776"/>
+        <location filename="mainframe.cpp" line="759"/>
         <source>Instruct</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainframe.cpp" line="765"/>
-        <source>Auto</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

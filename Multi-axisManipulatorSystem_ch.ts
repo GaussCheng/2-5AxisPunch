@@ -2146,7 +2146,7 @@ Reason</source>
         <translation>跟随</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="371"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="348"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="79"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="553"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="563"/>
@@ -2154,7 +2154,7 @@ Reason</source>
         <translation>调速禁止</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="342"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="319"/>
         <source>Single Step</source>
         <oldsource>Single Cycle</oldsource>
         <translation>单步</translation>
@@ -2168,17 +2168,6 @@ Reason</source>
         <translation type="obsolete">步序</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="90"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="126"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="139"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="162"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="195"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="218"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="241"/>
-        <source>TextLabel</source>
-        <translation></translation>
-    </message>
-    <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="74"/>
         <source>Time</source>
         <translation>时间</translation>
@@ -2188,7 +2177,7 @@ Reason</source>
         <translation type="obsolete">全部时间</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="110"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="133"/>
         <source>Setted products</source>
         <translation>设定产量</translation>
     </message>
@@ -2197,14 +2186,27 @@ Reason</source>
         <translation type="obsolete">当前产量</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="146"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="90"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="113"/>
+        <source>0.00</source>
+        <translation>0.0</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="149"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="172"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="195"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="218"/>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="97"/>
         <source>Get Time</source>
         <translation>取物时间</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="169"/>
         <source>Auto Start Time</source>
-        <translation>自动运行时间</translation>
+        <translation type="obsolete">自动运行时间</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="179"/>
@@ -2212,22 +2214,22 @@ Reason</source>
         <translation>良品数</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="202"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="156"/>
         <source>Cycle Times</source>
         <translation>循环次数</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="225"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="202"/>
         <source>Stacked products</source>
         <translation>堆叠产品数</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="272"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="249"/>
         <source>Edit</source>
         <translation>编辑</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="310"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="287"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="544"/>
         <source>No Follow</source>
         <translation>不跟随</translation>
@@ -3279,12 +3281,12 @@ Reason</source>
 <context>
     <name>ICKeyboardHandler</name>
     <message>
-        <location filename="ickeyboard/ickeyboardhandler.cpp" line="243"/>
+        <location filename="ickeyboard/ickeyboardhandler.cpp" line="247"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="ickeyboard/ickeyboardhandler.cpp" line="243"/>
+        <location filename="ickeyboard/ickeyboardhandler.cpp" line="247"/>
         <source>Need to origin!</source>
         <translation>还没原点复归！</translation>
     </message>
@@ -4413,31 +4415,45 @@ Please enter an digit between </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="70"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="73"/>
         <source>Mold</source>
         <oldsource>Mold Name</oldsource>
         <translation>当前模号</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="90"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="93"/>
         <source>name</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="130"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="124"/>
+        <source>Run Time:</source>
+        <translation>自动运行：</translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="138"/>
+        <source>0.0h</source>
+        <translation>0.0小时</translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="177"/>
         <source>Level</source>
         <oldsource>Passwd Level</oldsource>
         <translation>权限等级</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="150"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="197"/>
         <source>Machine Operator</source>
         <translation>操作员</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="106"/>
-        <source>Current Page</source>
-        <translation></translation>
+        <source>h</source>
+        <translation type="obsolete">小时</translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="62"/>
+        <source>%1 h</source>
+        <translation>%1 小时</translation>
     </message>
 </context>
 <context>
@@ -4939,7 +4955,7 @@ Please enter an digit between </source>
     <message>
         <location filename="hcmaintains/icupdatesystem.cpp" line="139"/>
         <location filename="hcmaintains/icupdatesystem.cpp" line="284"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="346"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="350"/>
         <source>Congratulations</source>
         <translation>提示</translation>
     </message>
@@ -4990,7 +5006,7 @@ Would you want to restart now?</source>
         <translation>保存成功！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="347"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="351"/>
         <source>Update Host finished!</source>
         <translation>更新主机成功！</translation>
     </message>
@@ -5123,7 +5139,7 @@ Would you want to restart now?</source>
         <translation>监视</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="724"/>
+        <location filename="mainframe.cpp" line="725"/>
         <source>Records</source>
         <translation>档案</translation>
     </message>
@@ -5132,9 +5148,8 @@ Would you want to restart now?</source>
         <translation type="obsolete">报警记录</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="784"/>
         <source>Standby</source>
-        <translation>欢迎</translation>
+        <translation type="obsolete">欢迎</translation>
     </message>
     <message>
         <location filename="mainframe.cpp" line="402"/>
@@ -5157,30 +5172,27 @@ Would you want to restart now?</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="751"/>
         <source>Manual</source>
-        <translation>手动</translation>
+        <translation type="obsolete">手动</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="769"/>
+        <location filename="mainframe.cpp" line="772"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="769"/>
+        <location filename="mainframe.cpp" line="772"/>
         <source>Need to origin!</source>
         <translation>还没进行原点!</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="757"/>
-        <location filename="mainframe.cpp" line="776"/>
+        <location filename="mainframe.cpp" line="759"/>
         <source>Instruct</source>
         <translation>教导</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="765"/>
         <source>Auto</source>
-        <translation>自动</translation>
+        <translation type="obsolete">自动</translation>
     </message>
     <message>
         <source>Welcome</source>

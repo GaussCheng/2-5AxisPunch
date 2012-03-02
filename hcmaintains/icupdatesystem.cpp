@@ -345,7 +345,7 @@ void ICUpdateSystem::on_writeHostButton_clicked()
     {
         if(!timer_.isActive())
         {
-            timer_.start(50);
+            timer_.start(100);
         }
         QMessageBox::information(this, tr("Congratulations"),
                                  tr("Update Host finished!"));

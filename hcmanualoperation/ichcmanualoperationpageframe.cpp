@@ -48,7 +48,7 @@ ICHCManualOperationPageFrame::~ICHCManualOperationPageFrame()
 
 void ICHCManualOperationPageFrame::showEvent(QShowEvent *e)
 {
-    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
+//    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
     if(manualAdjustPage_ != NULL)
     {
         manualAdjustPage_->ClearStatus();

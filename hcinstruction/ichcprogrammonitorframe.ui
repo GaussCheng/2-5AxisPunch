@@ -87,56 +87,7 @@
           <enum>QFrame::Sunken</enum>
          </property>
          <property name="text">
-          <string>TextLabel</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="1">
-        <spacer name="verticalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="5" column="0">
-        <widget class="QLabel" name="label_3">
-         <property name="text">
-          <string>Setted products</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="1">
-        <widget class="QLabel" name="settedProductsLabel">
-         <property name="frameShape">
-          <enum>QFrame::Box</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Sunken</enum>
-         </property>
-         <property name="text">
-          <string>TextLabel</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QLabel" name="getTime">
-         <property name="frameShape">
-          <enum>QFrame::Box</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Sunken</enum>
-         </property>
-         <property name="text">
-          <string>TextLabel</string>
+          <string>0.00</string>
          </property>
         </widget>
        </item>
@@ -150,8 +101,44 @@
          </property>
         </widget>
        </item>
+       <item row="2" column="1">
+        <widget class="QLabel" name="getTime">
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Sunken</enum>
+         </property>
+         <property name="text">
+          <string>0.00</string>
+         </property>
+        </widget>
+       </item>
        <item row="3" column="1">
-        <widget class="QLabel" name="autoStartTime">
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Setted products</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLabel" name="settedProductsLabel">
          <property name="frameShape">
           <enum>QFrame::Box</enum>
          </property>
@@ -159,44 +146,11 @@
           <enum>QFrame::Sunken</enum>
          </property>
          <property name="text">
-          <string>TextLabel</string>
+          <string>0</string>
          </property>
         </widget>
        </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="label_5">
-         <property name="text">
-          <string>Auto Start Time</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="0">
-        <widget class="QLabel" name="label_6">
-         <property name="text">
-          <string>Good products</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="1">
-        <widget class="QLabel" name="goodProducts">
-         <property name="frameShape">
-          <enum>QFrame::Box</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Sunken</enum>
-         </property>
-         <property name="text">
-          <string>TextLabel</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="0">
+       <item row="5" column="0">
         <widget class="QLabel" name="label_7">
          <property name="text">
           <string>Cycle Times</string>
@@ -206,7 +160,7 @@
          </property>
         </widget>
        </item>
-       <item row="6" column="1">
+       <item row="5" column="1">
         <widget class="QLabel" name="cycleTimes">
          <property name="frameShape">
           <enum>QFrame::Box</enum>
@@ -215,11 +169,34 @@
           <enum>QFrame::Sunken</enum>
          </property>
          <property name="text">
-          <string>TextLabel</string>
+          <string>0</string>
          </property>
         </widget>
        </item>
-       <item row="8" column="0">
+       <item row="6" column="0">
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>Good products</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QLabel" name="goodProducts">
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Sunken</enum>
+         </property>
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
         <widget class="QLabel" name="label_8">
          <property name="text">
           <string>Stacked products</string>
@@ -229,7 +206,7 @@
          </property>
         </widget>
        </item>
-       <item row="8" column="1">
+       <item row="7" column="1">
         <widget class="QLabel" name="stackedProducts">
          <property name="frameShape">
           <enum>QFrame::Box</enum>
@@ -238,7 +215,7 @@
           <enum>QFrame::Sunken</enum>
          </property>
          <property name="text">
-          <string>TextLabel</string>
+          <string>0</string>
          </property>
         </widget>
        </item>
@@ -387,7 +364,6 @@
   </layout>
  </widget>
  <resources>
-  <include location="../resource.qrc"/>
   <include location="../resource.qrc"/>
  </resources>
  <connections/>
