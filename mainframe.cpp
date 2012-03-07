@@ -18,6 +18,7 @@
 #include <QStackedLayout>
 #include <QThreadPool>
 #include <QTranslator>
+#include <QDir>
 
 
 #include "ui_mainframe.h"
@@ -121,6 +122,40 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
             SLOT(showMessage(QString)));
     emit LoadMessage("Connected");
     ui->setupUi(this);
+    QDir configDir("./sysconfig");
+    configDir.setFilter(QDir::Files);
+    QStringList backupFiles = configDir.entryList(QStringList()<<"*~");
+    if(!backupFiles.isEmpty())
+    {
+        for(int i = 0; i != backupFiles.size(); ++i)
+        {
+            configDir.remove(backupFiles.at(i).left(backupFiles.at(i).size() - 1));
+            configDir.rename(backupFiles.at(i), backupFiles.at(i).left(backupFiles.at(i).size() - 1));
+        }
+        QMessageBox::critical(this, tr("Warning"), tr("System Configs has been recover, please check the configs first!"));
+    }
+    configDir.cd("../records/");
+    backupFiles = configDir.entryList(QStringList()<<"*~");
+    if(!backupFiles.isEmpty())
+    {
+        for(int i = 0; i != backupFiles.size(); ++i)
+        {
+            configDir.remove(backupFiles.at(i).left(backupFiles.at(i).size() - 1));
+            configDir.rename(backupFiles.at(i), backupFiles.at(i).left(backupFiles.at(i).size() - 1));
+        }
+        QMessageBox::critical(this, tr("Warning"), tr("Record has been recover, please check the record first!"));
+    }
+    configDir.cd("../subs/");
+    backupFiles = configDir.entryList(QStringList()<<"*~");
+    if(!backupFiles.isEmpty())
+    {
+        for(int i = 0; i != backupFiles.size(); ++i)
+        {
+            configDir.remove(backupFiles.at(i).left(backupFiles.at(i).size() - 1));
+            configDir.rename(backupFiles.at(i), backupFiles.at(i).left(backupFiles.at(i).size() - 1));
+        }
+        QMessageBox::critical(this, tr("Warning"), tr("Sub has been recover, please check the sub first!"));
+    }
     icMainFrame = this;
     screenSaver_->hide();
     buttonGroup_ = new QButtonGroup();

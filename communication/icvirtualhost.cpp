@@ -282,6 +282,7 @@ void ICVirtualHost::RefreshStatus()
 void ICVirtualHost::SaveSystemConfig()
 {
     QFile file("./sysconfig/system.txt");
+    file.copy("./sysconfig/system.txt~");
     if(!file.open(QFile::WriteOnly | QFile::Text))
     {
         qCritical("open system file fail when save!");
@@ -302,6 +303,7 @@ void ICVirtualHost::SaveSystemConfig()
     }
     file.write(toWrite);
     file.close();
+    system("rm ./sysconfig/system.txt~");
 }
 
 void ICVirtualHost::SaveAxisParam(int axis)
@@ -309,42 +311,42 @@ void ICVirtualHost::SaveAxisParam(int axis)
     switch(axis)
     {
     case ICAxis_AxisX1:
-        SaveAxisParamHelper_("./sysconfig/paramx.txt",
+        SaveAxisParamHelper_("paramx.txt",
                              SYS_X_Length,
                              SYS_Y_Length);
         break;
     case ICAxis_AxisY1:
-        SaveAxisParamHelper_("./sysconfig/paramy.txt",
+        SaveAxisParamHelper_("paramy.txt",
                              SYS_Y_Length,
                              SYS_Z_Length);
         break;
     case ICAxis_AxisZ:
-        SaveAxisParamHelper_("./sysconfig/paramz.txt",
+        SaveAxisParamHelper_("paramz.txt",
                              SYS_Z_Length,
                              SYS_P_Length);
         break;
     case ICAxis_AxisX2:
-        SaveAxisParamHelper_("./sysconfig/paramp.txt",
+        SaveAxisParamHelper_("paramp.txt",
                              SYS_P_Length,
                              SYS_Q_Length);
         break;
     case ICAxis_AxisY2:
-        SaveAxisParamHelper_("./sysconfig/paramq.txt",
+        SaveAxisParamHelper_("paramq.txt",
                              SYS_Q_Length,
                              SYS_A_Length);
         break;
     case ICAxis_AxisA:
-        SaveAxisParamHelper_("./sysconfig/parama.txt",
+        SaveAxisParamHelper_("parama.txt",
                              SYS_A_Length,
                              SYS_B_Length);
         break;
     case ICAxis_AxisB:
-        SaveAxisParamHelper_("./sysconfig/paramb.txt",
+        SaveAxisParamHelper_("paramb.txt",
                              SYS_B_Length,
                              SYS_C_Length);
         break;
     case ICAxis_AxisC:
-        SaveAxisParamHelper_("./sysconfig/paramc.txt",
+        SaveAxisParamHelper_("paramc.txt",
                              SYS_C_Length,
                              SYS_Config_Signal);
         break;
@@ -884,7 +886,8 @@ void ICVirtualHost::GetAxisParam_(const QString &file, int start, int end, QVect
 
 void ICVirtualHost::SaveAxisParamHelper_(const QString &fileName, int start, int end)
 {
-    QFile file(fileName);
+    QFile file("./sysconfig/" + fileName);
+    file.copy("./sysconfig/" + fileName + "~");
     if(file.open(QFile::WriteOnly | QFile::Text))
     {
         QByteArray toWrite;
@@ -895,6 +898,7 @@ void ICVirtualHost::SaveAxisParamHelper_(const QString &fileName, int start, int
         file.write(toWrite);
         file.close();
     }
+    system(QString("rm ./sysconfig/%1~").arg(fileName).toAscii());
 }
 
 void ICVirtualHost::StopRefreshStatus()

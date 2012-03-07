@@ -294,13 +294,14 @@ bool ICMold::SaveMoldFile(bool isSaveParams)
         toWrite += moldContent_.at(i).ToString() + "\n";
     }
     QFile file(moldName_);
+    file.copy(moldName_ + "~");
     if(!file.open(QFile::WriteOnly | QFile::Text))
     {
         return false;
     }
     file.write(toWrite);
     file.close();
-
+    system(QString("rm %1~").arg(moldName_).toAscii());
     if(isSaveParams)
     {
         SaveMoldParamsFile();
@@ -318,12 +319,14 @@ bool ICMold::SaveMoldParamsFile()
         toWrite += QByteArray::number(allParams.at(i)) + "\n";
     }
     QFile file(moldParamName_);
+    file.copy(moldParamName_ + "~");
     if(!file.open(QFile::WriteOnly | QFile::Text))
     {
         return false;
     }
     file.write(toWrite);
     file.close();
+    system(QString("rm %1~").arg(moldParamName_).toAscii());
     return true;
 }
 

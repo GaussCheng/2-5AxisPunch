@@ -72,6 +72,7 @@ void ICMacroSubroutine::SaveMacroSubroutieFile(int group)
         subsDir_.chop(1);
     }
     QFile file(subsDir_ + "/sub" + QString::number(group) + ".prg");
+    file.copy(file.fileName() + "~");
     if(!file.open(QFile::WriteOnly | QFile::Text))
     {
         return;
@@ -84,6 +85,7 @@ void ICMacroSubroutine::SaveMacroSubroutieFile(int group)
     }
     file.write(toWrite);
     file.close();
+    system(QString("rm %1~").arg(file.fileName()).toAscii());
 }
 
 uint ICMacroSubroutine::SyncAct() const
