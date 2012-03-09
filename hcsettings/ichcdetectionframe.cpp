@@ -42,6 +42,7 @@ ICHCDetectionFrame::ICHCDetectionFrame(QWidget *parent) :
     //    ui->detectPositionBox->setCurrentIndex(qAbs(host->IsPositionDetect() - 1));
     ui->detectPositionBox->setCurrentIndex(host->TranserferPosition());
     ui->originPositionBox->setCurrentIndex(host->OriginPosition());
+    ui->escapeComboBox->setCurrentIndex(host->EscapeWay());
 
     connect(ICMold::CurrentMold(),
             SIGNAL(MoldNumberParamChanged()),
@@ -135,4 +136,9 @@ void ICHCDetectionFrame::on_detectOriginBox_activated(int index)
 void ICHCDetectionFrame::on_originPositionBox_activated(int index)
 {
     ICVirtualHost::GlobalVirtualHost()->SetOriginPosition(index);
+}
+
+void ICHCDetectionFrame::on_escapeComboBox_activated(int index)
+{
+    ICVirtualHost::GlobalVirtualHost()->SetEscapeWay(index);
 }

@@ -1,6 +1,7 @@
 #include "icpneumaticactionpage.h"
 #include "ui_icpneumaticactionpage.h"
 #include "icvirtualhost.h"
+#include "icparameterssave.h"
 
 ICPneumaticActionPage::ICPneumaticActionPage(QWidget *parent) :
     ICInstructionEditorBase(parent),
@@ -35,7 +36,7 @@ void ICPneumaticActionPage::changeEvent(QEvent *e)
 
 void ICPneumaticActionPage::showEvent(QShowEvent *e)
 {
-    if(ICVirtualHost::GlobalVirtualHost()->IsSingleArm())
+    if(ICParametersSave::Instance()->IsSingleArm())
     {
         ui->subArmGroupBox->hide();
     }

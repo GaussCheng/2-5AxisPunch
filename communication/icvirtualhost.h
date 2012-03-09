@@ -503,6 +503,8 @@ public:
     void SetOriginPosition(int position);
     int TranserferPosition() const { return (SystemParameter(SYS_Function).toInt() & 0x00000C00) >> 10;}
     void SetTranserferPosition(int position);
+    int EscapeWay() const { return (SystemParameter(SYS_Function).toInt() & 0x0000C0000) >> 14;}
+    void SetEscapeWay(int way);
 
     int CurrentStep() const { return (statusMap_.value(Step).toInt() & 0x00FF);}
     int CurrentStatus() const { return (statusMap_.value(Status).toUInt() & 0x0FFF);}
@@ -526,19 +528,19 @@ public:
     int FinishProductCount() const { return productCount_;}
     void SetFinishProductCount(int product) { productCount_ = product;}
 
-    bool IsSingleArm() const { return (systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0100) > 0;}
-    void SetSingleArm(bool isSingle);
-    bool HasMainArmForwardLimit() const { return (systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0001) > 0; }
+//    bool IsSingleArm() const { return (systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0100) > 0;}
+//    void SetSingleArm(bool isSingle);
+    bool HasMainArmForwardLimit() const { return (systemParamMap_.value(SYS_Config_Signal).toInt() & 0x0001) > 0; }
     void SetMainArmForwardLimit(bool hasForward);
-    bool HasMainArmBackwardLimit() const { return (systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0002) > 0;}
+    bool HasMainArmBackwardLimit() const { return (systemParamMap_.value(SYS_Config_Signal).toInt() & 0x0002) > 0;}
     void SetMainArmBackwardLimit(bool hasBackward);
-    bool HasMainArmDownLimit() const { return (systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0008) > 0;}
+    bool HasMainArmDownLimit() const { return (systemParamMap_.value(SYS_Config_Signal).toInt() & 0x000C) == 0X000C;}
     void SetMainArmDownLimit(bool hasDown);
-    bool HasSubArmForwardLimit() const { return (systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0010) > 0;}
+    bool HasSubArmForwardLimit() const { return (systemParamMap_.value(SYS_Config_Signal).toInt() & 0x0080) > 0;}
     void SetSubArmForwardLimit(bool hasForward);
-    bool HasSubArmBackwardLimit() const { return (systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0020) > 0;}
+    bool HasSubArmBackwardLimit() const { return (systemParamMap_.value(SYS_Config_Signal).toInt() & 0x0040) > 0;}
     void SetSubArmBackwardLimit(bool hasBackward);
-    bool HasSubArmDownLimit() const { return (systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0080) > 0;}
+    bool HasSubArmDownLimit() const { return (systemParamMap_.value(SYS_Config_Signal).toInt() & 0x0300) == 0x0300;}
     void SetSubArmDownLimit(bool hasDown);
     int PeripheryOutput(int number) const;
     void CalPeripheryOutput(int & config, int number, int val);
@@ -762,6 +764,7 @@ inline void ICVirtualHost::SetPressureCheck(bool isCheck)
     val &= 0xFFFFFFDF;
     (isCheck ? val |= 0x00000010 : val &= 0xFFFFFFEF);
     systemParamMap_.insert(SYS_Function, val);
+    isParamChanged_ = true;
 }
 
 inline void ICVirtualHost::SetSecurityCheck(bool isCheck)
@@ -770,6 +773,7 @@ inline void ICVirtualHost::SetSecurityCheck(bool isCheck)
     val &= 0xFFFFFFFD;
     (isCheck ? val |=0x00000001 : val&= 0xFFFFFFFE);
     systemParamMap_.insert(SYS_Function, val);
+    isParamChanged_ = true;
 }
 
 inline void ICVirtualHost::SetMidMoldCheck(bool isCheck)
@@ -778,6 +782,7 @@ inline void ICVirtualHost::SetMidMoldCheck(bool isCheck)
     val &= 0xFFFFFFF7;
     (isCheck ? val |= 0x00000004 : val &= 0xFFFFFFFB);
     systemParamMap_.insert(SYS_Function, val);
+    isParamChanged_ = true;
 }
 
 inline void ICVirtualHost::SetEjectionLink(bool permit)
@@ -786,6 +791,7 @@ inline void ICVirtualHost::SetEjectionLink(bool permit)
     val &= 0xFFFFFF7F;
     (permit ? val |= 0x00000040 : val &= 0xFFFFFFBF);
     systemParamMap_.insert(SYS_Function, val);
+    isParamChanged_ = true;
 }
 
 inline void ICVirtualHost::SetAlarmWhenOrigin(bool isAlarm)
@@ -794,6 +800,7 @@ inline void ICVirtualHost::SetAlarmWhenOrigin(bool isAlarm)
     val &= 0xFFFFFDFF;
     (isAlarm ? val |= 0x00000100 : val &= 0xFFFFFEFF);
     systemParamMap_.insert(SYS_Function, val);
+    isParamChanged_ = true;
 }
 
 inline void ICVirtualHost::SetPositionDetect(bool detect)
@@ -802,6 +809,7 @@ inline void ICVirtualHost::SetPositionDetect(bool detect)
     val &= 0xFFFFF7FF;
     (detect ? val |= 0x00000400 : val &= 0xFFFFFBFF);
     systemParamMap_.insert(SYS_Function, val);
+    isParamChanged_ = true;
 }
 
 inline void ICVirtualHost::SetOriginPosition(int position)
@@ -810,6 +818,7 @@ inline void ICVirtualHost::SetOriginPosition(int position)
     val &= 0xFFFFCFFF;
     val |= (position << 12);
     systemParamMap_.insert(SYS_Function, val);
+    isParamChanged_ = true;
 }
 
 inline void ICVirtualHost::SetTranserferPosition(int position)
@@ -818,55 +827,65 @@ inline void ICVirtualHost::SetTranserferPosition(int position)
     val &= 0xFFFFF3FF;
     val |= (position << 10);
     systemParamMap_.insert(SYS_Function, val);
+    isParamChanged_ = true;
 }
 
-inline void ICVirtualHost::SetSingleArm(bool isSingle)
+inline void ICVirtualHost::SetEscapeWay(int way)
 {
-    int val = SystemParameter(SYS_ARM_CONFIG).toInt();
-    isSingle ? val &= 0xFEFF : val |= 0x100;
-    systemParamMap_.insert(SYS_ARM_CONFIG, val);
+    int val = SystemParameter(SYS_Function).toInt();
+    val &= 0xFFFF3FFF;
+    val |= (way << 14);
+    systemParamMap_.insert(SYS_Function, val);
+    isParamChanged_ = true;
 }
+
+//inline void ICVirtualHost::SetSingleArm(bool isSingle)
+//{
+//    int val = SystemParameter(SYS_ARM_CONFIG).toInt();
+//    isSingle ? val &= 0xFEFF : val |= 0x100;
+//    systemParamMap_.insert(SYS_ARM_CONFIG, val);
+//}
 
 inline void ICVirtualHost::SetMainArmForwardLimit(bool hasForward)
 {
-    int val = SystemParameter(SYS_ARM_CONFIG).toInt();
+    int val = SystemParameter(SYS_Config_Signal).toInt();
     hasForward ? val |= 0x0001 : val &= 0xFFFE;
-    systemParamMap_.insert(SYS_ARM_CONFIG, val);
+    systemParamMap_.insert(SYS_Config_Signal, val);
 }
 
 inline void ICVirtualHost::SetMainArmBackwardLimit(bool hasBackward)
 {
-    int val = SystemParameter(SYS_ARM_CONFIG).toInt();
+    int val = SystemParameter(SYS_Config_Signal).toInt();
     hasBackward ? val |= 0x0002 : val &= 0xFFFD;
-    systemParamMap_.insert(SYS_ARM_CONFIG, val);
+    systemParamMap_.insert(SYS_Config_Signal, val);
 }
 
 inline void ICVirtualHost::SetMainArmDownLimit(bool hasDown)
 {
-    int val = SystemParameter(SYS_ARM_CONFIG).toInt();
-    hasDown ? val |= 0x0008 : val &= 0xFFF7;
-    systemParamMap_.insert(SYS_ARM_CONFIG, val);
+    int val = SystemParameter(SYS_Config_Signal).toInt();
+    hasDown ? val |= 0x000C : val &= 0xFFF7;
+    systemParamMap_.insert(SYS_Config_Signal, val);
 }
 
 inline void ICVirtualHost::SetSubArmForwardLimit(bool hasForward)
 {
-    int val = SystemParameter(SYS_ARM_CONFIG).toInt();
-    hasForward ? val |= 0x0010 : val &= 0xFFEF;
-    systemParamMap_.insert(SYS_ARM_CONFIG, val);
+    int val = SystemParameter(SYS_Config_Signal).toInt();
+    hasForward ? val |= 0x0080 : val &= 0xFF7F;
+    systemParamMap_.insert(SYS_Config_Signal, val);
 }
 
 inline void ICVirtualHost::SetSubArmBackwardLimit(bool hasBackward)
 {
-    int val = SystemParameter(SYS_ARM_CONFIG).toInt();
-    hasBackward ? val |= 0x0020 : val &= 0xFFDF;
-    systemParamMap_.insert(SYS_ARM_CONFIG, val);
+    int val = SystemParameter(SYS_Config_Signal).toInt();
+    hasBackward ? val |= 0x0040 : val &= 0xFFBF;
+    systemParamMap_.insert(SYS_Config_Signal, val);
 }
 
 inline void ICVirtualHost::SetSubArmDownLimit(bool hasDown)
 {
-    int val = SystemParameter(SYS_ARM_CONFIG).toInt();
-    hasDown ? val |= 0x0080 : val &= 0xFF7F;
-    systemParamMap_.insert(SYS_ARM_CONFIG, val);
+    int val = SystemParameter(SYS_Config_Signal).toInt();
+    hasDown ? val |= 0x0300 : val &= 0xFEFF;
+    systemParamMap_.insert(SYS_Config_Signal, val);
 }
 
 inline ICVirtualHost::ICAxisDefine ICVirtualHost::AxisDefine(ICAxis which) const

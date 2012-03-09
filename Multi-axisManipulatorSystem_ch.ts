@@ -1204,6 +1204,7 @@ Reason</source>
         <location filename="hcsettings/ichcdetectionframe.ui" line="267"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="287"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="314"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="427"/>
         <source>Use</source>
         <translation>使用</translation>
     </message>
@@ -1212,6 +1213,7 @@ Reason</source>
         <location filename="hcsettings/ichcdetectionframe.ui" line="262"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="282"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="309"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="432"/>
         <source>Not Use</source>
         <translation>不使用</translation>
     </message>
@@ -1269,6 +1271,11 @@ Reason</source>
         <location filename="hcsettings/ichcdetectionframe.ui" line="341"/>
         <source>Don&apos;t need Mold Opened Signal</source>
         <translation>必需开模终止</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="413"/>
+        <source>Escape</source>
+        <translation>型内逃跑</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="336"/>
@@ -4451,7 +4458,7 @@ Please enter an digit between </source>
         <translation type="obsolete">小时</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="62"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="61"/>
         <source>%1 h</source>
         <translation>%1 小时</translation>
     </message>
@@ -5129,17 +5136,17 @@ Would you want to restart now?</source>
         <translation>步序</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="399"/>
+        <location filename="mainframe.cpp" line="434"/>
         <source>Function</source>
         <translation>功能</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="400"/>
+        <location filename="mainframe.cpp" line="435"/>
         <source>Monitor</source>
         <translation>监视</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="725"/>
+        <location filename="mainframe.cpp" line="760"/>
         <source>Records</source>
         <translation>档案</translation>
     </message>
@@ -5152,22 +5159,37 @@ Would you want to restart now?</source>
         <translation type="obsolete">欢迎</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="402"/>
+        <location filename="mainframe.cpp" line="437"/>
         <source>Record</source>
         <translation>档案</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="401"/>
+        <location filename="mainframe.cpp" line="436"/>
         <source>Alarm</source>
         <translation>报警</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="403"/>
+        <location filename="mainframe.cpp" line="135"/>
+        <source>System Configs has been recover, please check the configs first!</source>
+        <translation>系统参数从异常中恢复，请先检查系统参数！</translation>
+    </message>
+    <message>
+        <location filename="mainframe.cpp" line="146"/>
+        <source>Record has been recover, please check the record first!</source>
+        <translation>模号参数从异常中恢复，请先检查模号参数！</translation>
+    </message>
+    <message>
+        <location filename="mainframe.cpp" line="157"/>
+        <source>Sub has been recover, please check the sub first!</source>
+        <translation>巨集参数从异常中恢复，请先检查巨集参数！</translation>
+    </message>
+    <message>
+        <location filename="mainframe.cpp" line="438"/>
         <source>Return</source>
         <translation>返回</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="573"/>
+        <location filename="mainframe.cpp" line="608"/>
         <source>Hint</source>
         <translation>提示</translation>
     </message>
@@ -5176,17 +5198,20 @@ Would you want to restart now?</source>
         <translation type="obsolete">手动</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="772"/>
+        <location filename="mainframe.cpp" line="135"/>
+        <location filename="mainframe.cpp" line="146"/>
+        <location filename="mainframe.cpp" line="157"/>
+        <location filename="mainframe.cpp" line="807"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="772"/>
+        <location filename="mainframe.cpp" line="807"/>
         <source>Need to origin!</source>
         <translation>还没进行原点!</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="759"/>
+        <location filename="mainframe.cpp" line="794"/>
         <source>Instruct</source>
         <translation>教导</translation>
     </message>

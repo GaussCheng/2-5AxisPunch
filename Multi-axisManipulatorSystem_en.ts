@@ -983,6 +983,7 @@ Infomation</source>
         <location filename="hcsettings/ichcdetectionframe.ui" line="267"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="287"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="314"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="427"/>
         <source>Use</source>
         <translation type="unfinished"></translation>
     </message>
@@ -991,6 +992,7 @@ Infomation</source>
         <location filename="hcsettings/ichcdetectionframe.ui" line="262"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="282"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="309"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="432"/>
         <source>Not Use</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1047,6 +1049,11 @@ Infomation</source>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="341"/>
         <source>Don&apos;t need Mold Opened Signal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="413"/>
+        <source>Escape</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3758,7 +3765,7 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="62"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="61"/>
         <source>%1 h</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4328,52 +4335,70 @@ Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="399"/>
+        <location filename="mainframe.cpp" line="434"/>
         <source>Function</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="400"/>
+        <location filename="mainframe.cpp" line="435"/>
         <source>Monitor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="402"/>
+        <location filename="mainframe.cpp" line="437"/>
         <source>Record</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="401"/>
+        <location filename="mainframe.cpp" line="436"/>
         <source>Alarm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="403"/>
+        <location filename="mainframe.cpp" line="135"/>
+        <source>System Configs has been recover, please check the configs first!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainframe.cpp" line="146"/>
+        <source>Record has been recover, please check the record first!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainframe.cpp" line="157"/>
+        <source>Sub has been recover, please check the sub first!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainframe.cpp" line="438"/>
         <source>Return</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="573"/>
+        <location filename="mainframe.cpp" line="608"/>
         <source>Hint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="725"/>
+        <location filename="mainframe.cpp" line="760"/>
         <source>Records</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="772"/>
+        <location filename="mainframe.cpp" line="135"/>
+        <location filename="mainframe.cpp" line="146"/>
+        <location filename="mainframe.cpp" line="157"/>
+        <location filename="mainframe.cpp" line="807"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="772"/>
+        <location filename="mainframe.cpp" line="807"/>
         <source>Need to origin!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="759"/>
+        <location filename="mainframe.cpp" line="794"/>
         <source>Instruct</source>
         <translation type="unfinished"></translation>
     </message>
