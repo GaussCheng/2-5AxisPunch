@@ -40,8 +40,6 @@ private slots:
 
     void on_originPositionBox_activated(int index);
 
-    void on_escapeComboBox_activated(int index);
-
 private:
     Ui::ICHCDetectionFrame *ui;
     QList<ICTwoSelectionComboBoxWrapper*> wrappers_;

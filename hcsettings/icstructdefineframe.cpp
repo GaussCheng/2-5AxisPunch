@@ -91,6 +91,7 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     }
 
     ui->fixtureSelectBox->setCurrentIndex(host->FixtureDefine());
+    ui->escapeComboBox->setCurrentIndex(host->EscapeWay());
 }
 
 ICStructDefineFrame::~ICStructDefineFrame()
@@ -212,4 +213,10 @@ void ICStructDefineFrame::OnOutputDefineChanged(int index)
     ICVirtualHost::GlobalVirtualHost()->CalPeripheryOutput(outDefine_,
                                                            outputDefineToNumber_.value(box),
                                                            index);
+}
+
+
+void ICStructDefineFrame::on_escapeComboBox_activated(int index)
+{
+    ICVirtualHost::GlobalVirtualHost()->SetEscapeWay(index);
 }

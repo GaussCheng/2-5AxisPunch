@@ -312,38 +312,38 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
             ui->currentAction->setText(tr("Vertical"));
         }
     }
-    else if(host->IsAction(14))
-    {
-        if(currentAction_ != 14)
-        {
-            currentAction_ = 14;
-            ui->currentAction->setText(tr("Sub Arm Up"));
-        }
-    }
-    else if(host->IsAction(15))
-    {
-        if(currentAction_ != 15)
-        {
-            currentAction_ = 15;
-            ui->currentAction->setText(tr("Sub Arm Down"));
-        }
-    }
-    else if(host->IsAction(16))
-    {
-        if(currentAction_ != 16)
-        {
-            currentAction_ = 16;
-            ui->currentAction->setText(tr("Sub Arm Forward"));
-        }
-    }
-    else if(host->IsAction(17))
-    {
-        if(currentAction_ != 17)
-        {
-            currentAction_ = 17;
-            ui->currentAction->setText(tr("Sub Arm Backward"));
-        }
-    }
+//    else if(host->IsAction(14))
+//    {
+//        if(currentAction_ != 14)
+//        {
+//            currentAction_ = 14;
+//            ui->currentAction->setText(tr("Sub Arm Up"));
+//        }
+//    }
+//    else if(host->IsAction(15))
+//    {
+//        if(currentAction_ != 15)
+//        {
+//            currentAction_ = 15;
+//            ui->currentAction->setText(tr("Sub Arm Down"));
+//        }
+//    }
+//    else if(host->IsAction(16))
+//    {
+//        if(currentAction_ != 16)
+//        {
+//            currentAction_ = 16;
+//            ui->currentAction->setText(tr("Sub Arm Forward"));
+//        }
+//    }
+//    else if(host->IsAction(17))
+//    {
+//        if(currentAction_ != 17)
+//        {
+//            currentAction_ = 17;
+//            ui->currentAction->setText(tr("Sub Arm Backward"));
+//        }
+//    }
 }
 
 void ICHCManualOperationPageFrame::on_aAddButton_pressed()

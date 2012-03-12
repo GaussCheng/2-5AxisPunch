@@ -38,6 +38,7 @@ private slots:
     void on_subArmBackwardLimitButton_toggled(bool checked);
 
     void on_subArmForwardLimitButton_toggled(bool checked);
+    void on_escapeComboBox_activated(int index);
 
     void OnAxisDefineChanged(int index);
     void OnOutputDefineChanged(int index);

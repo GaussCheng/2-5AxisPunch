@@ -214,9 +214,13 @@ void ICFunctionPageFrame::LevelChanged(int level)
     if(level >=  ICParametersSave::AdvanceAdmin)
     {
         ui->machineStructConfig->setEnabled(true);
+        ui->machineConfigSettingWidget->setEnabled(true);
+        ui->maintainWidget->setEnabled(true);
     }
     else
     {
         ui->machineStructConfig->setEnabled(false);
+        ui->machineConfigSettingWidget->setEnabled(false);
+        ui->maintainWidget->setEnabled(false);
     }
 }

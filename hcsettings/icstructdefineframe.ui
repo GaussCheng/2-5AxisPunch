@@ -952,6 +952,55 @@ QCheckBox::indicator:unchecked:disabled
       </widget>
      </item>
      <item>
+      <widget class="QGroupBox" name="fixtureDefineBox_2">
+       <property name="title">
+        <string>Other Define</string>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <widget class="QLabel" name="label_18">
+          <property name="text">
+           <string>Escape</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="escapeComboBox">
+          <property name="minimumSize">
+           <size>
+            <width>90</width>
+            <height>32</height>
+           </size>
+          </property>
+          <item>
+           <property name="text">
+            <string>Use</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>No Use</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_7">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
       <layout class="QHBoxLayout" name="horizontalLayout_4">
        <item>
         <spacer name="horizontalSpacer_5">

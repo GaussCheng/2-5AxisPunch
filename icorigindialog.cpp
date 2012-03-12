@@ -58,10 +58,13 @@ void ICOriginDialog::changeEvent(QEvent *e)
 
 void ICOriginDialog::StepChanged(int step)
 {
-    ui->label->setText(tr("Originning..."));
-    //    emit OriginStatusChanged(false);
+    if(step > 0 && step < 100)
+    {
+        ui->label->setText(tr("Originning..."));
+    }
     if(step == 90)
     {
+    //    emit OriginStatusChanged(false);
         ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
         ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
         host->ChangeSystemParameter(ICVirtualHost::SYS_X_Origin, host->HostStatus(ICVirtualHost::DbgX0).toUInt());

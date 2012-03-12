@@ -411,11 +411,19 @@ void ICHCSystemSettingsFrame::OnLevelChanged(int level)
     {
         ui->hmiGroupBox->setEnabled(true);
         ui->hostGroupBox->setEnabled(true);
+        for(int i = 1; i != ui->systemConfigPages->count(); ++i)
+        {
+            ui->systemConfigPages->setTabEnabled(i, true);
+        }
     }
     else
     {
         ui->hmiGroupBox->setEnabled(false);
         ui->hostGroupBox->setEnabled(false);
+        for(int i = 1; i != ui->systemConfigPages->count(); ++i)
+        {
+            ui->systemConfigPages->setTabEnabled(i, false);
+        }
     }
 }
 
