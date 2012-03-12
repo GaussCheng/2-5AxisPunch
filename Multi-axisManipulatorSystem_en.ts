@@ -155,6 +155,16 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1135"/>
+        <source>Vertical2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1140"/>
+        <source>Horizon2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="74"/>
         <source>Speed</source>
         <translation type="unfinished"></translation>
@@ -2459,12 +2469,14 @@ Infomation</source>
     </message>
     <message>
         <location filename="hcsettings/ichctimeframe.ui" line="26"/>
-        <source>Vertical</source>
+        <source>Vertical-1</source>
+        <oldsource>Vertical</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="36"/>
-        <source>Horizontal</source>
+        <location filename="hcsettings/ichctimeframe.ui" line="171"/>
+        <source>Horizontal-2</source>
+        <oldsource>Horizontal</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2473,17 +2485,27 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="hcsettings/ichctimeframe.ui" line="36"/>
+        <source>Horizontal-1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="hcsettings/ichctimeframe.ui" line="124"/>
         <source>Secondary arm down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="141"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="154"/>
+        <source>Vertical-2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichctimeframe.ui" line="188"/>
         <source>Secondary arm go forward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="158"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="195"/>
         <source>Secondary arm go backward</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2504,8 +2526,10 @@ Infomation</source>
         <location filename="hcsettings/ichctimeframe.ui" line="87"/>
         <location filename="hcsettings/ichctimeframe.ui" line="117"/>
         <location filename="hcsettings/ichctimeframe.ui" line="134"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="151"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="168"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="164"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="181"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="208"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="215"/>
         <source>s</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2695,19 +2719,6 @@ Infomation</source>
     <message>
         <location filename="hcinstruction/icinstructioneditorbase.ui" line="20"/>
         <source>Frame</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ICKeyboardHandler</name>
-    <message>
-        <location filename="ickeyboard/ickeyboardhandler.cpp" line="247"/>
-        <source>Warning</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="ickeyboard/ickeyboardhandler.cpp" line="247"/>
-        <source>Need to origin!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3038,12 +3049,14 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="41"/>
-        <source>Horizontal</source>
+        <source>Horizontal-1</source>
+        <oldsource>Horizontal</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="42"/>
-        <source>Vertical</source>
+        <source>Vertical-1</source>
+        <oldsource>Vertical</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3090,11 +3103,6 @@ Please enter an digit between </source>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="52"/>
         <source>Y In Limit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="53"/>
-        <source>Spare1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3149,6 +3157,11 @@ Please enter an digit between </source>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="65"/>
         <source>Y Out Limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="66"/>
+        <source>Horizontal-2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3219,12 +3232,14 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="87"/>
-        <source>Horizontal Valve</source>
+        <source>Horizontal-1 Valve</source>
+        <oldsource>Horizontal Valve</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="88"/>
-        <source>Vertical Valve</source>
+        <source>Vertical-1 Valve</source>
+        <oldsource>Vertical Valve</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3236,6 +3251,11 @@ Please enter an digit between </source>
         <location filename="categorypage/icmonitorpageframe.cpp" line="90"/>
         <source>Fixture2 Valve</source>
         <translation type="unfinished">Sucker2 {2 ?}</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="100"/>
+        <source>Horizontal-2 Valve</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="109"/>
@@ -3256,8 +3276,8 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="94"/>
-        <source>Main Backward Valve</source>
-        <oldsource>Main Backward</oldsource>
+        <source>Vertical-2 Valve</source>
+        <oldsource>Main Backward Valve</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3279,11 +3299,6 @@ Please enter an digit between </source>
         <location filename="categorypage/icmonitorpageframe.cpp" line="99"/>
         <source>Main Down Valve</source>
         <oldsource>Main Down</oldsource>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="100"/>
-        <source>Main Slow Dwon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3326,6 +3341,11 @@ Please enter an digit between </source>
         <source>Sucker1 Valve</source>
         <oldsource>Fixture5 Valve</oldsource>
         <translation type="unfinished">Sucker2 {5 ?}</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="53"/>
+        <source>Vertical-2</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="110"/>
@@ -3436,11 +3456,6 @@ Please enter an digit between </source>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="46"/>
         <source>Sucker1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="66"/>
-        <source>Main Forward Limit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4355,21 +4370,6 @@ Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="135"/>
-        <source>System Configs has been recover, please check the configs first!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainframe.cpp" line="146"/>
-        <source>Record has been recover, please check the record first!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainframe.cpp" line="157"/>
-        <source>Sub has been recover, please check the sub first!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="mainframe.cpp" line="438"/>
         <source>Return</source>
         <translation type="unfinished"></translation>
@@ -4385,9 +4385,6 @@ Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="135"/>
-        <location filename="mainframe.cpp" line="146"/>
-        <location filename="mainframe.cpp" line="157"/>
         <location filename="mainframe.cpp" line="807"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
@@ -4793,138 +4790,148 @@ Please try a new name</source>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="200"/>
-        <source>Vice arm up</source>
+        <source>Horizontal posture 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="201"/>
-        <source>Vice arm down</source>
+        <source>Vertical posture 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="202"/>
-        <source>Vice arm forward</source>
+        <source>Vice arm up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="203"/>
-        <source>Vice arm backward</source>
+        <source>Vice arm down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="204"/>
-        <source>Traverse out</source>
+        <source>Vice arm forward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="205"/>
+        <source>Vice arm backward</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icinstructparam.cpp" line="206"/>
+        <source>Traverse out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icinstructparam.cpp" line="207"/>
         <source>Traverse in</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="208"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="210"/>
         <source>Check</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="209"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="211"/>
         <source>Mold end</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="210"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="212"/>
         <source>Parallel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="211"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="213"/>
         <source>Wait</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="212"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="214"/>
         <source>Cut</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="214"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="216"/>
         <source>Clip1 ON</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="215"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="217"/>
         <source>Clip2 ON</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="216"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="218"/>
         <source>Clip3 ON</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="217"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="219"/>
         <source>Clip4 ON</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="220"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="222"/>
         <source>Injection ON</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="221"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="223"/>
         <source>Conveyor ON</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="222"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="224"/>
         <source>Lock Mold ON</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="223"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="225"/>
         <source>Eject ON</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="224"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="226"/>
         <source>Layout ON</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="225"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="227"/>
         <source>Core1 Permit</source>
         <oldsource>Core1 Pull Permit</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="226"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="228"/>
         <source>Core2 Permit</source>
         <oldsource>Core2 Pull Permit</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="230"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="232"/>
         <source>Clip1 OFF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="231"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="233"/>
         <source>Clip2 OFF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="232"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="234"/>
         <source>Clip3 OFF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="233"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="235"/>
         <source>Clip4 OFF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="218"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="220"/>
         <source>Sucker1 ON</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4971,89 +4978,89 @@ Please try a new name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="219"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="221"/>
         <source>Sucker2 ON</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="234"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="236"/>
         <source>Sucker1 OFF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="235"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="237"/>
         <source>Sucker2 OFF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="236"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="238"/>
         <source>Injection OFF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="237"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="239"/>
         <source>Conveyor OFF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="238"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="240"/>
         <source>Lock Mold OFF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="239"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="241"/>
         <source>Eject OFF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="240"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="242"/>
         <source>Layout OFF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="241"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="243"/>
         <source>Core1 OFF</source>
         <oldsource>Core1 Pull OFF</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="242"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="244"/>
         <source>Core2 OFF</source>
         <oldsource>Core2 Pull OFF</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="243"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="245"/>
         <source>Reserve 1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="244"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="246"/>
         <source>Reserve 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="245"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="247"/>
         <source>Reserve 3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="246"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="248"/>
         <source>Reserve 4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="247"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="249"/>
         <source>Reserve 5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="248"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="250"/>
         <source>Reserve 6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="252"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="254"/>
         <source>Clip End</source>
         <translation type="unfinished"></translation>
     </message>

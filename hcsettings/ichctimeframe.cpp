@@ -38,6 +38,8 @@ void ICHCTimeFrame::InitInterFace()
 
     BindingParam_(ui->horizontalLineEdit, ICVirtualHost::SM_TIMEHORI);
     BindingParam_(ui->verticalineEdit, ICVirtualHost::SM_TIMEVERT);
+    BindingParam_(ui->horizontal2LineEdit, ICVirtualHost::SM_TIMEHORI2);
+    BindingParam_(ui->vertical2LineEdit, ICVirtualHost::SM_TIMEVERT2);
     BindingParam_(ui->secondaryArmDownLineEdit, ICVirtualHost::SM_TIMEVDOWN);
     BindingParam_(ui->secondaryArmUpLineEdit, ICVirtualHost::SM_TIMEVUP);
     BindingParam_(ui->secondayGoForwardLineEdit, ICVirtualHost::SM_TIMEVFOR);

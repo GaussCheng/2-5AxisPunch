@@ -362,6 +362,8 @@ public:
         SM_TIMEPUT8,
         SM_TIMEHORI,
         SM_TIMEVERT,
+        SM_TIMEHORI2,
+        SM_TIMEVERT2,
         SM_TIMEVUP,
         SM_TIMEVDOWN,
         SM_TIMEVFOR,

@@ -1125,6 +1125,23 @@ QRadioButton::indicator:unchecked:disabled
      </item>
     </widget>
    </item>
+   <item row="6" column="2">
+    <widget class="QComboBox" name="aBox">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <item>
+      <property name="text">
+       <string>Vertical2</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Horizon2</string>
+      </property>
+     </item>
+    </widget>
+   </item>
   </layout>
  </widget>
  <customwidgets>

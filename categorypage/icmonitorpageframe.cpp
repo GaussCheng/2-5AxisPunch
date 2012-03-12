@@ -38,8 +38,8 @@ void ICMonitorPageFrame::changeEvent(QEvent *e)
 void ICMonitorPageFrame::Init_()
 {
     QList<ICIOPoint> points;
-    points.append(ICIOPoint("X010", tr("Horizontal"), 0));
-    points.append(ICIOPoint("X011", tr("Vertical"), 1));
+    points.append(ICIOPoint("X010", tr("Horizontal-1"), 0));
+    points.append(ICIOPoint("X011", tr("Vertical-1"), 1));
     points.append(ICIOPoint("X012", tr("Fixture1"), 2));
     points.append(ICIOPoint("X013", tr("Fixture2"), 3));
     points.append(ICIOPoint("X014", tr("Sucker2"), 4));
@@ -50,7 +50,7 @@ void ICMonitorPageFrame::Init_()
     points.append(ICIOPoint("X020", tr("X Origin"), 8));
     points.append(ICIOPoint("X021", tr("Fixture4"), 9));
     points.append(ICIOPoint("X022", tr("Y In Limit"), 10));
-    points.append(ICIOPoint("X023", tr("Spare1"), 11));
+    points.append(ICIOPoint("X023", tr("Vertical-2"), 11));
     points.append(ICIOPoint("X024", tr("Out Safe Area"), 12));
     points.append(ICIOPoint("X025", tr("Come In Origin"), 13));
     points.append(ICIOPoint("X026", tr("In Safe Area"), 14));
@@ -63,7 +63,7 @@ void ICMonitorPageFrame::Init_()
     points.append(ICIOPoint("X034", tr("Fixture3"), 20));
     points.append(ICIOPoint("X035", tr("Main Up"), 21));
     points.append(ICIOPoint("X036", tr("Y Out Limit"), 22));
-    points.append(ICIOPoint("X037", tr("Main Forward Limit"), 23));
+    points.append(ICIOPoint("X037", tr("Horizontal-2"), 23));
 
     points.append(ICIOPoint("X040", tr("Mid Mold"), 24));
     points.append(ICIOPoint("X041", tr("Z In Limit"), 25));
@@ -84,20 +84,20 @@ void ICMonitorPageFrame::Init_()
     otherPageRight_->BindingPointsToInputPage(points);
     points.clear();
 
-    points.append(ICIOPoint("Y010", tr("Horizontal Valve"), 0));
-    points.append(ICIOPoint("Y011", tr("Vertical Valve"), 1));
+    points.append(ICIOPoint("Y010", tr("Horizontal-1 Valve"), 0));
+    points.append(ICIOPoint("Y011", tr("Vertical-1 Valve"), 1));
     points.append(ICIOPoint("Y012", tr("Fixture1 Valve"), 2));
     points.append(ICIOPoint("Y013", tr("Fixture2 Valve"), 3));
     points.append(ICIOPoint("Y014", tr("Sucker2 Valve"), 4));
     points.append(ICIOPoint("Y015", tr("Sucker1 Valve"), 5));
     points.append(ICIOPoint("Y016", tr("Main Forward Valve"), 6));
-    points.append(ICIOPoint("Y017", tr("Main Backward Valve"), 7));
+    points.append(ICIOPoint("Y017", tr("Vertical-2 Valve"), 7));
 
     points.append(ICIOPoint("Y020", tr("Fixture4 Valve"), 8));
     points.append(ICIOPoint("Y021", tr("Alarm"), 9));
     points.append(ICIOPoint("Y022", tr("Main Up Valve"), 10));//1
     points.append(ICIOPoint("Y023", tr("Main Down Valve"), 11));//2
-    points.append(ICIOPoint("Y024", tr("Main Slow Dwon"), 12));
+    points.append(ICIOPoint("Y024", tr("Horizontal-2 Valve"), 12));
     points.append(ICIOPoint("Y025", tr("Paint Oil"), 13));
     points.append(ICIOPoint("Y026", tr("Next Cycle Sp"), 14));
     points.append(ICIOPoint("Y027", tr("Mold Close Sp"), 15));

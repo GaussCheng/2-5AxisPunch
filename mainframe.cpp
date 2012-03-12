@@ -721,7 +721,7 @@ void MainFrame::StatusRefreshed()
         {
             ui->systemStatusFrame->SetManualStatus(StatusLabel::ONSTATUS);
             LevelChanged(ICProgramHeadFrame::Instance()->CurrentLevel());
-//            ui->functionPageButton->setEnabled(false);
+            ui->functionPageButton->setEnabled(false);
 //            ui->recordPageButton->setText(tr("Instru            ui->recordPageButton->setText(tr("Instruct"));ct"));
 //            ui->recordPageButton->setEnabled(false);
         }

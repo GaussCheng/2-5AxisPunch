@@ -807,6 +807,8 @@ void ICVirtualHost::InitAddrToSysPosMap_()
     addrToSysPos_.insert(SM_TIMEPUT8, ACT_CLIP_8Off);
     addrToSysPos_.insert(SM_TIMEHORI, ACT_PoseHori);
     addrToSysPos_.insert(SM_TIMEVERT, ACT_PoseVert);
+    addrToSysPos_.insert(SM_TIMEVERT2, ACT_PoseVert2);
+    addrToSysPos_.insert(SM_TIMEHORI2, ACT_PoseHori2);
     addrToSysPos_.insert(SM_TIMEVUP, ACT_ViceUp);
     addrToSysPos_.insert(SM_TIMEVDOWN, ACT_ViceDown);
     addrToSysPos_.insert(SM_TIMEVFOR, ACT_ViceForward);

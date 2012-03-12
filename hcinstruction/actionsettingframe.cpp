@@ -19,7 +19,7 @@ ActionSettingFrame::ActionSettingFrame(QWidget *parent) :
     axisWidgets_.append(QList<QWidget*>()<<ui->gzButton<<ui->zDelayLineEdit<<ui->zPosLineEdit<<ui->zpLabel<<ui->zSLabel<<ui->zSpeedLineEdit<<ui->zBox);
     axisWidgets_.append(QList<QWidget*>()<<ui->gPButton<<ui->x2DelayLineEdit<<ui->x2PosLineEdit<<ui->x2pLabel<<ui->x2SLabel<<ui->x2SpeedLineEdit<<ui->x2Box);
     axisWidgets_.append(QList<QWidget*>()<<ui->gQButton<<ui->y2DelayLineEdit<<ui->y2PosLineEdit<<ui->y2pLabel<<ui->y2SLabel<<ui->y2SpeedLineEdit<<ui->y2Box);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gAButton<<ui->aDelayLineEdit<<ui->aPosLineEdit<<ui->apLabel<<ui->aSLabel<<ui->aSpeedLineEdit);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gAButton<<ui->aDelayLineEdit<<ui->aPosLineEdit<<ui->apLabel<<ui->aSLabel<<ui->aSpeedLineEdit<<ui->aBox);
     axisWidgets_.append(QList<QWidget*>()<<ui->gBButton<<ui->bDelayLineEdit<<ui->bPosLineEdit<<ui->bpLabel<<ui->bSLabel<<ui->bSpeedLineEdit);
     axisWidgets_.append(QList<QWidget*>()<<ui->gCButton<<ui->cDelayLineEdit<<ui->cPosLineEdit<<ui->cpLabel<<ui->cSLabel<<ui->cSpeedLineEdit);
     //    ui->x1SpeedLineEdit->hide();
@@ -309,10 +309,17 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
     }
     if(ui->gAButton->isChecked())
     {
-        item.SetAction(ICMold::GA);
-        item.SetPos(ui->aPosLineEdit->TransThisTextToThisInt());
-        item.SetDVal(ui->aDelayLineEdit->TransThisTextToThisInt());
-        item.SetSVal(ui->aSpeedLineEdit->TransThisTextToThisInt());
+        if(ui->aBox->isHidden())
+        {
+            item.SetAction(ICMold::GA);
+            item.SetPos(ui->aPosLineEdit->TransThisTextToThisInt());
+            item.SetDVal(ui->aDelayLineEdit->TransThisTextToThisInt());
+            item.SetSVal(ui->aSpeedLineEdit->TransThisTextToThisInt());
+        }
+        else
+        {
+            item.SetAction(ui->aBox->currentIndex() == 0 ? ICMold::ACT_PoseVert2 : ICMold::ACT_PoseHori2);
+        }
         item.SetIFVal(0);
         item.SetIFPos(0);
         ret.append(item);
@@ -442,6 +449,7 @@ void ActionSettingFrame::on_gAButton_toggled(bool checked)
         ui->aPosLineEdit->setEnabled(true);
         ui->aDelayLineEdit->setEnabled(true);
         ui->aSpeedLineEdit->setEnabled(true);
+        ui->aBox->setEnabled(true);
     }
     else
     {
@@ -608,9 +616,17 @@ void ActionSettingFrame::UpdateAxisDefine_()
         {
             HideWidgets_(axisWidgets_[5]);
         }
+        else if(host->AxisDefine(ICVirtualHost::ICAxis_AxisA) == ICVirtualHost::ICAxisDefine_Pneumatic)
+        {
+            ShowWidgets_(axisWidgets_[5]);
+            ui->aPosLineEdit->hide();
+            ui->aSpeedLineEdit->hide();
+            ui->apLabel->hide();
+        }
         else
         {
             ShowWidgets_(axisWidgets_[5]);
+            ui->aBox->hide();
         }
 
         if(host->AxisDefine(ICVirtualHost::ICAxis_AxisB) == ICVirtualHost::ICAxisDefine_None)

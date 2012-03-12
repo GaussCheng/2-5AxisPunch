@@ -20,7 +20,7 @@ ICInstructModifyDialog::ICInstructModifyDialog(QWidget *parent) :
     ui->posEdit->SetDecimalPlaces(1);
     ui->posEdit->setValidator(validator);
 
-    ui->earlyEndTimeEdit->SetDecimalPlaces(2);
+    ui->earlyEndTimeEdit->SetDecimalPlaces(1);
     ui->earlyEndTimeEdit->setValidator(validator);
     ui->selectEdit->setValidator(new QIntValidator(0, 3, this));
 }

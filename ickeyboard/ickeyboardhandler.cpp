@@ -242,10 +242,10 @@ void ICKeyboardHandler::Keypressed(int keyValue)
         }
         else if(status == ICVirtualHost::Manual)
         {
-            if(!ICVirtualHost::GlobalVirtualHost()->IsOrigined())
-            {
-                QMessageBox::warning(NULL, tr("Warning"), tr("Need to origin!"));
-            }
+//            if(!ICVirtualHost::GlobalVirtualHost()->IsOrigined())
+//            {
+//                QMessageBox::warning(NULL, tr("Warning"), tr("Need to origin!"));
+//            }
         }
         commandProcessor->ExecuteVirtualKeyCommand(virtualKeyMap_.value(keyValue));
     }
