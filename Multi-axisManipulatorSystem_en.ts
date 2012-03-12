@@ -200,8 +200,6 @@
     <message>
         <location filename="hcsettings/axissettingsframe.ui" line="62"/>
         <location filename="hcsettings/axissettingsframe.cpp" line="101"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="111"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="121"/>
         <location filename="hcsettings/axissettingsframe.cpp" line="131"/>
         <location filename="hcsettings/axissettingsframe.cpp" line="141"/>
         <location filename="hcsettings/axissettingsframe.cpp" line="151"/>
@@ -211,8 +209,6 @@
     <message>
         <location filename="hcsettings/axissettingsframe.ui" line="72"/>
         <location filename="hcsettings/axissettingsframe.cpp" line="102"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="112"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="122"/>
         <location filename="hcsettings/axissettingsframe.cpp" line="132"/>
         <location filename="hcsettings/axissettingsframe.cpp" line="142"/>
         <location filename="hcsettings/axissettingsframe.cpp" line="152"/>
@@ -275,21 +271,25 @@
     </message>
     <message>
         <location filename="hcsettings/axissettingsframe.cpp" line="80"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="111"/>
         <source>Min pos inside mold</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/axissettingsframe.cpp" line="81"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="112"/>
         <source>Max pos inside mold</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/axissettingsframe.cpp" line="91"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="121"/>
         <source>Max standby pos</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/axissettingsframe.cpp" line="92"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="122"/>
         <source>Leave origin pos</source>
         <translation type="unfinished"></translation>
     </message>

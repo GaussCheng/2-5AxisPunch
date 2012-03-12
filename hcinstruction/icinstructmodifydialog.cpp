@@ -159,5 +159,25 @@ void ICInstructModifyDialog::on_setButton_clicked()
     {
         currentPos = host->HostStatus(ICVirtualHost::ZPos).toInt();
     }
+    else if(currentItem->Action() == ICMold::GP)
+    {
+        currentPos = host->HostStatus(ICVirtualHost::PPos).toInt();
+    }
+    else if(currentItem->Action() == ICMold::GQ)
+    {
+        currentPos = host->HostStatus(ICVirtualHost::QPos).toInt();
+    }
+    else if(currentItem->Action() == ICMold::GA)
+    {
+        currentPos = host->HostStatus(ICVirtualHost::APos).toInt();
+    }
+    else if(currentItem->Action() == ICMold::GB)
+    {
+        currentPos = host->HostStatus(ICVirtualHost::BPos).toInt();
+    }
+    else if(currentItem->Action() == ICMold::GC)
+    {
+        currentPos = host->HostStatus(ICVirtualHost::CPos).toInt();
+    }
     ui->posEdit->SetThisIntToThisText(currentPos);
 }

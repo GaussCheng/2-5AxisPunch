@@ -268,8 +268,6 @@
     <message>
         <location filename="hcsettings/axissettingsframe.ui" line="62"/>
         <location filename="hcsettings/axissettingsframe.cpp" line="101"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="111"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="121"/>
         <location filename="hcsettings/axissettingsframe.cpp" line="131"/>
         <location filename="hcsettings/axissettingsframe.cpp" line="141"/>
         <location filename="hcsettings/axissettingsframe.cpp" line="151"/>
@@ -279,8 +277,6 @@
     <message>
         <location filename="hcsettings/axissettingsframe.ui" line="72"/>
         <location filename="hcsettings/axissettingsframe.cpp" line="102"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="112"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="122"/>
         <location filename="hcsettings/axissettingsframe.cpp" line="132"/>
         <location filename="hcsettings/axissettingsframe.cpp" line="142"/>
         <location filename="hcsettings/axissettingsframe.cpp" line="152"/>
@@ -371,21 +367,25 @@
     </message>
     <message>
         <location filename="hcsettings/axissettingsframe.cpp" line="80"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="111"/>
         <source>Min pos inside mold</source>
         <translation>模内最小位置</translation>
     </message>
     <message>
         <location filename="hcsettings/axissettingsframe.cpp" line="81"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="112"/>
         <source>Max pos inside mold</source>
         <translation>模内最大位置</translation>
     </message>
     <message>
         <location filename="hcsettings/axissettingsframe.cpp" line="91"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="121"/>
         <source>Max standby pos</source>
         <translation>最大待机位置</translation>
     </message>
     <message>
         <location filename="hcsettings/axissettingsframe.cpp" line="92"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="122"/>
         <source>Leave origin pos</source>
         <translation>离开原点位置</translation>
     </message>
@@ -2180,7 +2180,7 @@ Reason</source>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="77"/>
         <source>Time</source>
-        <translation>注塑机时间</translation>
+        <translation>注塑机周期</translation>
     </message>
     <message>
         <source>Full Time</source>

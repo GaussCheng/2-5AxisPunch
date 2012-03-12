@@ -14,7 +14,7 @@ ICHCProductSettingFrame::ICHCProductSettingFrame(QWidget *parent) :
 
     ui->productLineEdit->setValidator(new QIntValidator(0, 65535, ui->productLineEdit));
     ui->alarmTimesEdit->setValidator(new QIntValidator(0, 65535, ui->alarmTimesEdit));
-    ui->waitTimeEdit->SetDecimalPlaces(2);
+    ui->waitTimeEdit->SetDecimalPlaces(1);
     ui->waitTimeEdit->setValidator(new QIntValidator(0, 60000, ui->waitTimeEdit));
     ICLineEditWrapper *wrapper = new ICLineEditWrapper(ui->productLineEdit,
                                                        ICMold::Product,
@@ -25,7 +25,7 @@ ICHCProductSettingFrame::ICHCProductSettingFrame(QWidget *parent) :
     wrapper = new ICLineEditWrapper(ui->waitTimeEdit,
                                     ICVirtualHost::SM_WaitMoldOpenLimit,
                                     ICLineEditWrapper::System,
-                                    ICLineEditWrapper::TwoFraction);
+                                    ICLineEditWrapper::OneFraction);
     wrappers_.append(wrapper);
 
     wrapper = new ICLineEditWrapper(ui->alarmTimesEdit,

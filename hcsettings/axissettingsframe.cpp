@@ -108,8 +108,8 @@ void AxisSettingsFrame::SetCurrentAxis(QString currentAxisName, int axis)
         iSafe = ICVirtualHost::SYS_P_InSafe;
         oSafe = ICVirtualHost::SYS_P_OutSafe;
         total = ICParametersSave::Instance()->DistanceRotation("P");
-        minText = tr("Internal security zone");
-        maxText = tr("External security zone");
+        minText = tr("Min pos inside mold");
+        maxText = tr("Max pos inside mold");
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY2)
     {
@@ -118,8 +118,8 @@ void AxisSettingsFrame::SetCurrentAxis(QString currentAxisName, int axis)
         iSafe = ICVirtualHost::SYS_Q_InSafe;
         oSafe = ICVirtualHost::SYS_Q_OutSafe;
         total = ICParametersSave::Instance()->DistanceRotation("Q");
-        minText = tr("Internal security zone");
-        maxText = tr("External security zone");
+        minText = tr("Max standby pos");
+        maxText = tr("Leave origin pos");
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisA)
     {
