@@ -127,18 +127,6 @@ void ICVirtualHost::SetMoldParam(int param, int value)
 
 void ICVirtualHost::RefreshStatus()
 {
-    //    qApp->processEvents();
-    //    if(rand() % 10 == 8)
-    //    {
-    //    emit MoldNumChanged(0);
-    //    }
-    //    else if(rand() % 10 == 5)
-    //    {
-    //        emit MoldNumChanged(8);
-    //    }
-    //    emit StepChanged(rand() % 10);
-    //    uint8_t subs[] = {rand() % 10, rand() % 10, rand() % 10, rand() % 10};
-    //    emit SubStepChanged(subs);
     static ICCommandProcessor* commandProcess = ICCommandProcessor::Instance();
     static ICKeyboardHandler* keyboardHandler = ICKeyboardHandler::Instance();
     static ICKeyboard* keyboard = ICKeyboard::Instace();
