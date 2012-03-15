@@ -290,6 +290,7 @@ void MoldInformation::on_loadToolButton_clicked()
 
             ICParametersSave::Instance()->SetMoldName(moldName);
             ICProgramHeadFrame::Instance()->SetCurrentMoldName(moldName);
+            QMessageBox::information(this, tr("Tips"), tr("Load Mold Successful!"));
         }
         qDebug("after load");
     }

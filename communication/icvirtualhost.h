@@ -536,13 +536,13 @@ public:
     void SetMainArmForwardLimit(bool hasForward);
     bool HasMainArmBackwardLimit() const { return (systemParamMap_.value(SYS_Config_Signal).toInt() & 0x0002) > 0;}
     void SetMainArmBackwardLimit(bool hasBackward);
-    bool HasMainArmDownLimit() const { return (systemParamMap_.value(SYS_Config_Signal).toInt() & 0x000C) == 0X000C;}
+    bool HasMainArmDownLimit() const { return (systemParamMap_.value(SYS_Config_Signal).toInt() & 0x000C) >> 3 == 1;}
     void SetMainArmDownLimit(bool hasDown);
     bool HasSubArmForwardLimit() const { return (systemParamMap_.value(SYS_Config_Signal).toInt() & 0x0080) > 0;}
     void SetSubArmForwardLimit(bool hasForward);
     bool HasSubArmBackwardLimit() const { return (systemParamMap_.value(SYS_Config_Signal).toInt() & 0x0040) > 0;}
     void SetSubArmBackwardLimit(bool hasBackward);
-    bool HasSubArmDownLimit() const { return (systemParamMap_.value(SYS_Config_Signal).toInt() & 0x0300) == 0x0300;}
+    bool HasSubArmDownLimit() const { return (systemParamMap_.value(SYS_Config_Signal).toInt() & 0x0300) >> 9 == 1;}
     void SetSubArmDownLimit(bool hasDown);
     int PeripheryOutput(int number) const;
     void CalPeripheryOutput(int & config, int number, int val);
@@ -886,7 +886,7 @@ inline void ICVirtualHost::SetSubArmBackwardLimit(bool hasBackward)
 inline void ICVirtualHost::SetSubArmDownLimit(bool hasDown)
 {
     int val = SystemParameter(SYS_Config_Signal).toInt();
-    hasDown ? val |= 0x0300 : val &= 0xFEFF;
+    hasDown ? val |= 0x0300 : val &= 0xFDFF;
     systemParamMap_.insert(SYS_Config_Signal, val);
 }
 

@@ -624,7 +624,16 @@ void ICVirtualHost::WriteSystemTohost_()
 void ICVirtualHost::InitMold_()
 {
     ICParametersSave* config = ICParametersSave::Instance();
-    QString path = "./records/" + config->MoldName("TEST.act");
+    QString path = "./records/";
+    if(config->MoldName("").isEmpty())
+    {
+        path += "TEST.act";
+        config->SetMoldName("TEST.act");
+    }
+    else
+    {
+        path += config->MoldName("");
+    }
     QString configPath = path;
     configPath.chop(3);
     configPath += "fnc";

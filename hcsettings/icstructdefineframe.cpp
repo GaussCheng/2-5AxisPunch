@@ -185,7 +185,7 @@ void ICStructDefineFrame::on_mainArmForwardLimitButton_toggled(bool checked)
 void ICStructDefineFrame::on_subArmDownLimitButton_toggled(bool checked)
 {
 //    ICVirtualHost::GlobalVirtualHost()->SetSubArmDownLimit(checked);
-    checked ? armStruct_ |= 0x0300 : armStruct_ &= 0xFEFF;
+    checked ? armStruct_ |= 0x0300 : armStruct_ &= 0xFDFF;
 }
 
 void ICStructDefineFrame::on_subArmBackwardLimitButton_toggled(bool checked)
