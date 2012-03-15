@@ -58,8 +58,8 @@ public:
     bool VerifyPassword(OperationLevel level, const QString& password);
     void SetPassword(OperationLevel level, const QString& password);
 
-    double DistanceRotation(const QString& axisName) {return GetParameter("AxisConfig", axisName, 0).toDouble();}
-    void SetDistanceRotation(const QString& axisName, double value) { SaveParameter("AxisConfig", axisName, value);}
+    double DistanceRotation(const QString& axisName);/* {return GetParameter("AxisConfig", axisName, 0).toDouble();}*/
+    void SetDistanceRotation(const QString& axisName, double value);/* { SaveParameter("AxisConfig", axisName, value);}*/
     //    void SetFileName(const QString & fileName);
     bool IsExtentFunctionUsed() {return GetParameter(SystemMachine, "AdminSettings", false).toBool();}
     void SetExtentFunctionUsed(bool isUsed) {SaveParameter(SystemMachine, "AdminSettings", isUsed);}
@@ -86,6 +86,7 @@ public:
 private:
     static ICParametersSave* instance_;
     QTranslator *translator_;
+    QMap<QString, double> axisToRotate_;
 
     ICParametersSave(const QString fileName = QString());
 };

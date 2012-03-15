@@ -473,7 +473,9 @@ bool ICMachineStructPage::SetCurrentStatus_(const QList<uint> &status)
     command.SetSlave(processor->SlaveID());
     command.SetAxis(axis);
     command.SetDataBuffer(status.toVector());
+#ifndef Q_WS_X11
     if(processor->ExecuteCommand(command).toBool())
+#endif
     {
         host->SetSystemParameter(machineLangth, status.at(0));
         host->SetSystemParameter(maxLangth, status.at(1));

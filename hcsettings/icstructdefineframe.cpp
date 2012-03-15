@@ -131,7 +131,9 @@ void ICStructDefineFrame::on_saveButton_clicked()
     command.SetSlave(process->SlaveID());
     command.SetDataBuffer(dataBuffer);
     command.SetAxis(8);
+#ifndef Q_WS_X11
     if(process->ExecuteCommand(command).toBool())
+#endif
     {
         ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
         host->SetSystemParameter(ICVirtualHost::SYS_Config_Signal, armStruct_);

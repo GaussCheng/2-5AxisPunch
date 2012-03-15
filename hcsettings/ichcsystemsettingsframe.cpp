@@ -254,6 +254,7 @@ void ICHCSystemSettingsFrame::on_backupMachineButton_clicked()
     //    isSuccess = isSuccess && QFile::copy("./sysconfig/paramy.txt", "/mnt/udisk/HC2ABackup/sysconfig/paramy.txt");
     //    isSuccess = isSuccess && QFile::copy("./sysconfig/paramz.txt", "/mnt/udisk/HC2ABackup/sysconfig/paramz.txt");
     Information(system("cp /opt/Qt/bin/sysconfig/param*.txt /mnt/udisk/HC2ABackup/sysconfig/") >= 0 );
+    Information(system("cp /opt/Qt/bin/sysconfig/DistanceRotation /mnt/udisk/HC2ABackup/sysconfig/") >= 0);
 }
 
 void ICHCSystemSettingsFrame::on_backupSystemButton_clicked()
@@ -327,6 +328,7 @@ void ICHCSystemSettingsFrame::on_restoreMachineButton_clicked()
         return;
     }
     system("cp /mnt/udisk/HC2ABackup/sysconfig/param* /opt/Qt/bin/sysconfig -f");
+    system("cp /mnt/udisk/HC2ABackup/sysconfig/DistanceRotation /opt/Qt/bin/sysconfig -f");
     Information(true);
     system("reboot");
 }

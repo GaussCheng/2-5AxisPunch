@@ -1,6 +1,8 @@
 #include "icparameterssave.h"
 
 #include <QApplication>
+#include <QFile>
+#include <QTextStream>
 #include <QDebug>
 
 ICParametersSave * ICParametersSave::instance_ = NULL;
@@ -18,6 +20,18 @@ ICParametersSave::ICParametersSave(const QString fileName)
     translator_(new QTranslator())
 {
 //    SetFileName("./sysconfig/systemParameter.hc");
+    QFile file("./sysconfig/DistanceRotation");
+    if(file.open(QFile::ReadOnly | QFile::Text))
+    {
+        QTextStream in(&file);
+        QString tmpAxis;
+        double tmpDR;
+        while(!(in>>tmpAxis>>tmpDR).atEnd())
+        {
+            axisToRotate_.insert(tmpAxis, tmpDR);
+        }
+    }
+    file.close();
 }
 
 ICParametersSave::~ICParametersSave()
@@ -139,6 +153,33 @@ void ICParametersSave::SetPassword(OperationLevel level, const QString &password
     }
 
     SaveParameter("AdminInformation", parameter, password);
+}
+
+double ICParametersSave::DistanceRotation(const QString &axisName)
+{
+    Q_ASSERT_X(axisToRotate_.contains(axisName), "ICParameterSave::DistanceRotation", "no this axis!");
+    return axisToRotate_.value(axisName, 0);
+}
+
+void ICParametersSave::SetDistanceRotation(const QString &axisName, double value)
+{
+    Q_ASSERT_X(axisToRotate_.contains(axisName), "ICParameterSave::SetDistanceRotation", "no this axis!");
+    axisToRotate_.insert(axisName, value);
+    QFile file("./sysconfig/DistanceRotation");
+    file.copy("./sysconfig/DistanceRotation~");
+    if(file.open(QFile::WriteOnly | QFile::Text))
+    {
+        QTextStream out(&file);
+        QMap<QString, double>::iterator p = axisToRotate_.begin();
+        while(p != axisToRotate_.end())
+        {
+            qDebug()<<p.key()<<p.value();
+            out<<p.key()<<" "<<p.value()<<endl;
+            ++p;
+        }
+    }
+    file.close();
+    system("rm ./sysconfig/DistanceRotation~");
 }
 
 //void ICParametersSave::SetFileName(const QString &fileName)
