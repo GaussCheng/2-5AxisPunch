@@ -20,7 +20,17 @@ MoldInformation::MoldInformation(QWidget *parent) :
     recordFilePath_("./records/")
 {
     ui->setupUi(this);
-
+    QFile file("./sysconfig/StandPrograms");
+    if(file.open(QFile::ReadOnly | QFile::Text))
+    {
+        QTextStream in(&file);
+        QString tmp;
+        while(!(in>>tmp).atEnd())
+        {
+            standPrograms_.append(tmp);
+        }
+        file.close();
+    }
     UpdateInformationTable();
 }
 
@@ -222,18 +232,23 @@ void MoldInformation::UpdateInformationTable()
 
     QFileInfoList userProgramList;
     qDebug()<<"start1";
-    foreach(const QFileInfo &fileInfo, fileInfoList_)
+    QFileInfo tmp;
+    foreach(tmp, fileInfoList_)
     {
-        if(fileInfo.fileName().right(3) != "fnc")
+        if(IsStandProgram(tmp.fileName()))
         {
-            userProgramList.append(fileInfo);
+            userProgramList.prepend(tmp);
+        }
+        else if(tmp.fileName().right(3) != "fnc")
+        {
+            userProgramList.append(tmp);
         }
     }
     qDebug()<<"end1";
 
-    foreach(const QFileInfo &fileiInfo, userProgramList)
+    foreach(tmp, userProgramList)
     {
-        AddNewInTableWidget(fileiInfo.fileName(), fileiInfo.created().toString("yyyy-MM-dd"));
+        AddNewInTableWidget(tmp.fileName(), tmp.created().toString("yyyy-MM-dd"));
     }
     qDebug()<<"end2";
     ui->informationTableWidget->resizeColumnsToContents();
@@ -314,6 +329,12 @@ void MoldInformation::on_deleteToolButton_clicked()
         return;
     }
 
+    if(IsStandProgram(ui->sourceFileNameLabel->text()))
+    {
+        QMessageBox::warning(this, tr("warning"),
+                             tr("Stand programs can not be delete!"));
+        return;
+    }
     int ret = QMessageBox::warning(this, tr("warning"),
                                    tr("Are you sure to delete files ") +
                                    ui->sourceFileNameLabel->text(),

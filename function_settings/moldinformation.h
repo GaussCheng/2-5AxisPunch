@@ -26,6 +26,8 @@ public:
         return instance_;
     }
 
+    bool IsStandProgram(const QString& name) const { return standPrograms_.contains(name);}
+
     ~MoldInformation();
 
 protected:
@@ -51,6 +53,7 @@ private:
     explicit MoldInformation(QWidget *parent = 0);
     QString recordFilePath_;
     QFileInfoList fileInfoList_;
+    QStringList standPrograms_;
 
 private slots:
     void on_informationTableWidget_clicked(QModelIndex index);

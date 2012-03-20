@@ -646,6 +646,12 @@ void ICHCInstructionPageFrame::on_deleteToolButton_clicked()
     {
         return;
     }
+    if(MoldInformation::Instance()->IsStandProgram(ICParametersSave::Instance()->MoldName("")))
+    {
+        QMessageBox::warning(this, tr("warning"),
+                             tr("Stand program can not be delete action"));
+        return;
+    }
     int gIndex;
     int tIndex;
     int sIndex;

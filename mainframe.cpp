@@ -212,9 +212,11 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     QTimer::singleShot(ICParametersSave::Instance()->BackLightTime() * 60000, this, SLOT(CheckedInput()));
 
     //    QTimer::singleShot(100, this, SLOT(InitHeavyPage()));
+#ifdef Q_WS_X11
 //    ShowInstructPage();
 //    ShowManualPage();
 //    ShowAutoPage();
+#endif
 
 }
 
