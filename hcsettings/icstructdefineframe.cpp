@@ -175,13 +175,13 @@ void ICStructDefineFrame::on_mainArmDownLimitButton_toggled(bool checked)
 void ICStructDefineFrame::on_mainArmBackwardLimitButton_toggled(bool checked)
 {
 //    ICVirtualHost::GlobalVirtualHost()->SetMainArmBackwardLimit(checked);
-     checked ? armStruct_ |= 0x0002 : armStruct_ &= 0xFFFD;
+    checked ? armStruct_ |= 0x0001 : armStruct_ &= 0xFFFE;
 }
 
 void ICStructDefineFrame::on_mainArmForwardLimitButton_toggled(bool checked)
 {
 //    ICVirtualHost::GlobalVirtualHost()->SetMainArmForwardLimit(checked);
-    checked ? armStruct_ |= 0x0001 : armStruct_ &= 0xFFFE;
+    checked ? armStruct_ |= 0x0002 : armStruct_ &= 0xFFFD;
 }
 
 void ICStructDefineFrame::on_subArmDownLimitButton_toggled(bool checked)

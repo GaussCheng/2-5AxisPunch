@@ -1413,6 +1413,16 @@ Infomation</source>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="651"/>
+        <source>warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="652"/>
+        <source>Stand program can not be delete action</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ICHCManualOperationPageFrame</name>
@@ -1442,44 +1452,54 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="84"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="111"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="85"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="112"/>
         <source>Other</source>
         <translation type="unfinished">Manipulator I/O</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="85"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="112"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="86"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="113"/>
         <source>Adjust</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="86"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="113"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="87"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="114"/>
         <source>Reserve</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="279"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="304"/>
-        <source>Horizontal</source>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="280"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="331"/>
+        <source>Horizontal-1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="287"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="312"/>
-        <source>Vertical</source>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="288"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="339"/>
+        <source>Vertical-1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="82"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="109"/>
-        <source>Fixture</source>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="347"/>
+        <source>Horizontal-2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="355"/>
+        <source>Vertical-2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="83"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="110"/>
+        <source>Fixture</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="84"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="111"/>
         <source>Sucker</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4343,52 +4363,52 @@ Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="434"/>
+        <location filename="mainframe.cpp" line="436"/>
         <source>Function</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="435"/>
+        <location filename="mainframe.cpp" line="437"/>
         <source>Monitor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="437"/>
+        <location filename="mainframe.cpp" line="439"/>
         <source>Record</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="436"/>
+        <location filename="mainframe.cpp" line="438"/>
         <source>Alarm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="438"/>
+        <location filename="mainframe.cpp" line="440"/>
         <source>Return</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="608"/>
+        <location filename="mainframe.cpp" line="610"/>
         <source>Hint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="760"/>
+        <location filename="mainframe.cpp" line="762"/>
         <source>Records</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="807"/>
+        <location filename="mainframe.cpp" line="809"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="807"/>
+        <location filename="mainframe.cpp" line="809"/>
         <source>Need to origin!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="794"/>
+        <location filename="mainframe.cpp" line="796"/>
         <source>Instruct</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4441,118 +4461,124 @@ Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="48"/>
-        <location filename="function_settings/moldinformation.cpp" line="137"/>
-        <location filename="function_settings/moldinformation.cpp" line="145"/>
-        <location filename="function_settings/moldinformation.cpp" line="173"/>
-        <location filename="function_settings/moldinformation.cpp" line="184"/>
-        <location filename="function_settings/moldinformation.cpp" line="207"/>
-        <location filename="function_settings/moldinformation.cpp" line="308"/>
-        <location filename="function_settings/moldinformation.cpp" line="317"/>
+        <location filename="function_settings/moldinformation.cpp" line="58"/>
+        <location filename="function_settings/moldinformation.cpp" line="147"/>
+        <location filename="function_settings/moldinformation.cpp" line="155"/>
+        <location filename="function_settings/moldinformation.cpp" line="183"/>
+        <location filename="function_settings/moldinformation.cpp" line="194"/>
+        <location filename="function_settings/moldinformation.cpp" line="217"/>
+        <location filename="function_settings/moldinformation.cpp" line="323"/>
+        <location filename="function_settings/moldinformation.cpp" line="334"/>
+        <location filename="function_settings/moldinformation.cpp" line="338"/>
         <source>warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="49"/>
+        <location filename="function_settings/moldinformation.cpp" line="59"/>
         <source>New file name is empty,
 Please input the file name.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="70"/>
+        <location filename="function_settings/moldinformation.cpp" line="80"/>
         <source>Warnning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="70"/>
+        <location filename="function_settings/moldinformation.cpp" line="80"/>
         <source>This name can&apos;t not be accept!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="109"/>
-        <location filename="function_settings/moldinformation.cpp" line="166"/>
+        <location filename="function_settings/moldinformation.cpp" line="119"/>
+        <location filename="function_settings/moldinformation.cpp" line="176"/>
         <source>Success</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="110"/>
+        <location filename="function_settings/moldinformation.cpp" line="120"/>
         <source>New file success.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="116"/>
+        <location filename="function_settings/moldinformation.cpp" line="126"/>
         <source>The file has been existing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="117"/>
+        <location filename="function_settings/moldinformation.cpp" line="127"/>
         <source>File already exists,
 Please change a new name.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="138"/>
-        <location filename="function_settings/moldinformation.cpp" line="185"/>
+        <location filename="function_settings/moldinformation.cpp" line="148"/>
+        <location filename="function_settings/moldinformation.cpp" line="195"/>
         <source>Source file name is empty,
 Please choose an existing file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="146"/>
+        <location filename="function_settings/moldinformation.cpp" line="156"/>
         <source>New file name is empty,
 Please write the destination file name.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="167"/>
+        <location filename="function_settings/moldinformation.cpp" line="177"/>
         <source>Copy file success!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="174"/>
+        <location filename="function_settings/moldinformation.cpp" line="184"/>
         <source>Destination file already exists!
 Please try a new name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="208"/>
+        <location filename="function_settings/moldinformation.cpp" line="218"/>
         <source>File does not exist!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="246"/>
-        <location filename="function_settings/moldinformation.cpp" line="263"/>
+        <location filename="function_settings/moldinformation.cpp" line="261"/>
+        <location filename="function_settings/moldinformation.cpp" line="278"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="246"/>
-        <location filename="function_settings/moldinformation.cpp" line="263"/>
+        <location filename="function_settings/moldinformation.cpp" line="261"/>
+        <location filename="function_settings/moldinformation.cpp" line="278"/>
         <source>file name is empty</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="293"/>
+        <location filename="function_settings/moldinformation.cpp" line="308"/>
         <source>Tips</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="293"/>
+        <location filename="function_settings/moldinformation.cpp" line="308"/>
         <source>Load Mold Successful!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="309"/>
+        <location filename="function_settings/moldinformation.cpp" line="324"/>
         <source>The mold file </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="311"/>
+        <location filename="function_settings/moldinformation.cpp" line="326"/>
         <source> is being used</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="318"/>
+        <location filename="function_settings/moldinformation.cpp" line="335"/>
+        <source>Stand programs can not be delete!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.cpp" line="339"/>
         <source>Are you sure to delete files </source>
         <translation type="unfinished"></translation>
     </message>

@@ -213,7 +213,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
 
     //    QTimer::singleShot(100, this, SLOT(InitHeavyPage()));
 #ifdef Q_WS_X11
-//    ShowInstructPage();
+    ShowInstructPage();
 //    ShowManualPage();
 //    ShowAutoPage();
 #endif

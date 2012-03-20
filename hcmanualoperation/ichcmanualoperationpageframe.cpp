@@ -27,7 +27,8 @@ ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     reservePage_(NULL),
     serveAxisPage_(NULL),
     centralStackedLayout_(new QStackedLayout),
-    currentPose_(-1),
+    currentPose1_(-1),
+    currentPose2_(-1),
     currentAction_(-1)
 {
     ui->setupUi(this);
@@ -273,35 +274,61 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     if(host->IsInputOn(0))
     {
-        if(currentPose_ != 0)
+        if(currentPose1_ != 0)
         {
-            currentPose_ = 0;
-            ui->currentPose->setText(tr("Horizontal"));
+            currentPose1_ = 0;
+            ui->currentPose->setText(tr("Horizontal-1"));
         }
     }
     else if(host->IsInputOn(1))
     {
-        if(currentPose_ != 1)
+        if(currentPose1_ != 1)
         {
-            currentPose_ = 1;
-            ui->currentPose->setText(tr("Vertical"));
+            currentPose1_ = 1;
+            ui->currentPose->setText(tr("Vertical-1"));
         }
     }
     else
     {
-        if(currentPose_ != -1)
+        if(currentPose1_ != -1)
         {
-            currentPose_ = -1;
+            currentPose1_ = -1;
             ui->currentPose->setText("");
         }
     }
+
+    if(host->IsInputOn(23))
+    {
+        if(currentPose2_ != 0)
+        {
+            currentPose2_ = 0;
+            ui->currentPose->setText(ui->currentPose->text() + "/Horizontal-2");
+        }
+    }
+    else if(host->IsInputOn(11))
+    {
+        if(currentPose2_ != 1)
+        {
+            currentPose2_ = 1;
+            ui->currentPose->setText(ui->currentPose->text() + "/Vertical-2");
+        }
+    }
+    else
+    {
+        if(currentPose2_ != -1)
+        {
+            currentPose2_ = -1;
+            ui->currentPose->setText(ui->currentPose->text() + "");
+        }
+    }
+
 
     if(host->IsAction(12))
     {
         if(currentAction_ != 12)
         {
             currentAction_ = 12;
-            ui->currentAction->setText(tr("Horizontal"));
+            ui->currentAction->setText(tr("Horizontal-1"));
         }
     }
     else if(host->IsAction(13))
@@ -309,7 +336,23 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
         if(currentAction_ != 13)
         {
             currentAction_ = 13;
-            ui->currentAction->setText(tr("Vertical"));
+            ui->currentAction->setText(tr("Vertical-1"));
+        }
+    }
+    else if(host->IsAction(20))
+    {
+        if(currentAction_ != 20)
+        {
+            currentAction_ = 20;
+            ui->currentAction->setText(tr("Horizontal-2"));
+        }
+    }
+    else if(host->IsAction(21))
+    {
+        if(currentAction_ != 21)
+        {
+            currentAction_ = 21;
+            ui->currentAction->setText(tr("Vertical-2"));
         }
     }
 //    else if(host->IsAction(14))

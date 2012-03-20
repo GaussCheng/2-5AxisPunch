@@ -64,7 +64,8 @@ private:
 
     QStackedLayout * centralStackedLayout_;
     QButtonGroup* buttonGroup_;
-    int currentPose_;
+    int currentPose1_;
+    int currentPose2_;
     int currentAction_;
     int timerID_;
 };
