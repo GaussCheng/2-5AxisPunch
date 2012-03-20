@@ -32,6 +32,12 @@ public:
     void SetGMVal(uint gmVal) { gmVal_ = gmVal; }
     bool IsAction() const { return (!(GMVal() & 0x80));}
     bool IsClip() const { return GMVal() & 0x80;}
+    bool IsEarlyEnd() const { return (IFVal() & 0x80 ) == 0x80;}
+    void SetEarlyEnd(bool earlyEnd) { earlyEnd ? ifVal_ |= 0x80 : ifVal_ &= 0x7F;}
+    bool IsBadProduct() const { return (IFVal() & 0x40) == 0x40;}
+    void SetBadProduct(bool badProduct) { badProduct ? ifVal_ |= 0x40 : ifVal_ &= 0xBF;}
+    uint IFOtherVal() const { return IFVal() & 0x1F;}
+    void SetIFOtherVal(uint val) { ifVal_ &= 0xE0; ifVal_ |= (val & 0x1F);}
     uint Action() const
     {
         if(!IsAction())

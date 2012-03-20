@@ -56,6 +56,7 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
     ui->mmLabel_2->hide();
     ui->selectEdit->hide();
     ui->selectLabel->hide();
+    ui->badProductBox->hide();
     if(item->IsAction())
     {
         if( item->Action() <= ICMold::GB)
@@ -71,6 +72,10 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
             ui->precentLabel->show();
             ui->earlyEndCheckBox->show();
             ui->earlyEndTimeEdit->show();
+        }
+        if( item->Action() == ICMold::GZ)
+        {
+            ui->badProductBox->show();
         }
 //        else if(item->Action() == ICMold::ACTCHECKINPUT)
 //        {
@@ -113,8 +118,9 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
     ui->posEdit->SetThisIntToThisText(item->Pos());
     ui->speedEdit->SetThisIntToThisText(item->SVal());
     ui->delayTimeEdit->SetThisIntToThisText(item->DVal());
-    ui->earlyEndCheckBox->setChecked(item->IFVal() == 1);
+    ui->earlyEndCheckBox->setChecked(item->IsEarlyEnd());
     ui->earlyEndTimeEdit->SetThisIntToThisText(item->IFPos());
+    ui->badProductBox->setChecked(item->IsBadProduct());
     int isok = exec();
     if(isok == QDialog::Accepted)
     {
@@ -128,7 +134,12 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
             item->SetSVal(ui->speedEdit->TransThisTextToThisInt());
         }
         item->SetDVal(ui->delayTimeEdit->TransThisTextToThisInt());
-        item->SetIFVal(ui->earlyEndCheckBox->isChecked());
+        item->SetEarlyEnd(ui->earlyEndCheckBox->isChecked());
+        if(!ui->badProductBox->isHidden())
+        {
+            item->SetBadProduct(ui->badProductBox->isChecked());
+        }
+//        item->SetIFVal(ui->earlyEndCheckBox->isChecked());
         item->SetIFPos(ui->earlyEndTimeEdit->TransThisTextToThisInt());
     }
     return isok;

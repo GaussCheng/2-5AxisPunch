@@ -95,10 +95,14 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
 //                commandStr == QObject::tr("Radius:") + ICParameterConversion::TransThisIntToThisText(moldItem.RVal(), 1);
 //            }
             commandStr += tr("Speed:") + QString::number(moldItem.SVal()) + " ";
-            if(moldItem.IFVal() == 1)
+            if(moldItem.IsEarlyEnd())
             {
                 commandStr += tr("Early End:");
                 commandStr += QString().sprintf("%.1f", moldItem.IFPos() / (qreal)10) + " ";
+            }
+            if(moldItem.IsBadProduct() && moldItem.Action() == GZ)
+            {
+                commandStr += QObject::tr("Bad Product En") + " ";
             }
 //            commandStr += tr("Delay")
         }
@@ -186,6 +190,8 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
     {
         commandStr += QObject::tr("Delay time:") + ICParameterConversion::TransThisIntToThisText(moldItem.DVal(), 2) + "      ";
     }
+
+//    commandStr += QObject::tr("Delay time:") + ICParameterConversion::TransThisIntToThisText(moldItem.DVal(), 2) + "      ";
 
     return commandStr;
 }
