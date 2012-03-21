@@ -532,9 +532,9 @@ public:
 
 //    bool IsSingleArm() const { return (systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0100) > 0;}
 //    void SetSingleArm(bool isSingle);
-    bool HasMainArmForwardLimit() const { return (systemParamMap_.value(SYS_Config_Signal).toInt() & 0x0001) > 0; }
+    bool HasMainArmForwardLimit() const { return (systemParamMap_.value(SYS_Config_Signal).toInt() & 0x0002) > 0; }
     void SetMainArmForwardLimit(bool hasForward);
-    bool HasMainArmBackwardLimit() const { return (systemParamMap_.value(SYS_Config_Signal).toInt() & 0x0002) > 0;}
+    bool HasMainArmBackwardLimit() const { return (systemParamMap_.value(SYS_Config_Signal).toInt() & 0x0001) > 0;}
     void SetMainArmBackwardLimit(bool hasBackward);
     bool HasMainArmDownLimit() const { return (systemParamMap_.value(SYS_Config_Signal).toInt() & 0x000C) >> 3 == 1;}
     void SetMainArmDownLimit(bool hasDown);
@@ -851,14 +851,14 @@ inline void ICVirtualHost::SetEscapeWay(int way)
 inline void ICVirtualHost::SetMainArmForwardLimit(bool hasForward)
 {
     int val = SystemParameter(SYS_Config_Signal).toInt();
-    hasForward ? val |= 0x0001 : val &= 0xFFFE;
+    hasForward ? val |= 0x0002 : val &= 0xFFFD;
     systemParamMap_.insert(SYS_Config_Signal, val);
 }
 
 inline void ICVirtualHost::SetMainArmBackwardLimit(bool hasBackward)
 {
     int val = SystemParameter(SYS_Config_Signal).toInt();
-    hasBackward ? val |= 0x0002 : val &= 0xFFFD;
+    hasBackward ? val |= 0x0001 : val &= 0xFFFE;
     systemParamMap_.insert(SYS_Config_Signal, val);
 }
 
