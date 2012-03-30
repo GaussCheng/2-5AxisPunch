@@ -59,9 +59,12 @@ void ICHCTimeFrame::BindingParam_(QLineEdit *edit, int addr)
 void ICHCTimeFrame::hideEvent(QHideEvent *e)
 {
     qDebug("time hide");
+    if(ICVirtualHost::GlobalVirtualHost()->IsParamChanged())
+    {
+        ICVirtualHost::GlobalVirtualHost()->SaveSystemConfig();
+        ICVirtualHost::GlobalVirtualHost()->ReConfigure();
+    }
 //    ICMold::CurrentMold()->SaveMoldParamsFile();
-//    ICVirtualHost::GlobalVirtualHost()->SaveSystemConfig();
-//    ICVirtualHost::GlobalVirtualHost()->ReConfigure();
     QFrame::hideEvent(e);
 }
 
