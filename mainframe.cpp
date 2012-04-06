@@ -132,7 +132,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
             configDir.remove(backupFiles.at(i).left(backupFiles.at(i).size() - 1));
             configDir.rename(backupFiles.at(i), backupFiles.at(i).left(backupFiles.at(i).size() - 1));
         }
-//        QMessageBox::critical(this, tr("Warning"), tr("System Configs has been recover, please check the configs first!"));
+        //        QMessageBox::critical(this, tr("Warning"), tr("System Configs has been recover, please check the configs first!"));
     }
     configDir.cd("../records/");
     backupFiles = configDir.entryList(QStringList()<<"*~");
@@ -143,7 +143,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
             configDir.remove(backupFiles.at(i).left(backupFiles.at(i).size() - 1));
             configDir.rename(backupFiles.at(i), backupFiles.at(i).left(backupFiles.at(i).size() - 1));
         }
-//        QMessageBox::critical(this, tr("Warning"), tr("Record has been recover, please check the record first!"));
+        //        QMessageBox::critical(this, tr("Warning"), tr("Record has been recover, please check the record first!"));
     }
     configDir.cd("../subs/");
     backupFiles = configDir.entryList(QStringList()<<"*~");
@@ -154,7 +154,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
             configDir.remove(backupFiles.at(i).left(backupFiles.at(i).size() - 1));
             configDir.rename(backupFiles.at(i), backupFiles.at(i).left(backupFiles.at(i).size() - 1));
         }
-//        QMessageBox::critical(this, tr("Warning"), tr("Sub has been recover, please check the sub first!"));
+        //        QMessageBox::critical(this, tr("Warning"), tr("Sub has been recover, please check the sub first!"));
     }
     icMainFrame = this;
     screenSaver_->hide();
@@ -176,10 +176,10 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     this->setWindowFlags(Qt::FramelessWindowHint);
 #endif
     emit LoadMessage("Reset the window hint");
-//    connect(ICVirtualHost::GlobalVirtualHost(),
-//            SIGNAL(StatusRefreshed()),
-//            this,
-//            SLOT(StatusRefreshed()));
+    //    connect(ICVirtualHost::GlobalVirtualHost(),
+    //            SIGNAL(StatusRefreshed()),
+    //            this,
+    //            SLOT(StatusRefreshed()));
     timerID_ = ICTimerPool::Instance()->Start(ICTimerPool::RefreshTime, this, SLOT(StatusRefreshed()));
     emit LoadMessage("Ready to Refresh");
     InitCategoryPage();
@@ -190,15 +190,15 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     emit LoadMessage("Signals is ready");
     ledFD_ = open("/dev/szhc_leds", O_WRONLY);
 
-//    QThreadPool::globalInstance()->start(new ICScreenSaverMonitor(this));
-//    connect(screenSaver_.data(),
-//            SIGNAL(Unlock()),
-//            this,
-//            SLOT(SetBackLightOn()));
+    //    QThreadPool::globalInstance()->start(new ICScreenSaverMonitor(this));
+    //    connect(screenSaver_.data(),
+    //            SIGNAL(Unlock()),
+    //            this,
+    //            SLOT(SetBackLightOn()));
 
-//    ui->xPosLabel->hide();
-//    ui->label_3->hide();
-//    ui->label_5->hide();
+    //    ui->xPosLabel->hide();
+    //    ui->label_3->hide();
+    //    ui->label_5->hide();
     actionDialog_ = new ICActionDialog(this);
     axisWidgets_.append(QList<QWidget*>()<<ui->x1Label<<ui->x1mmLabel<<ui->xPosLabel);
     axisWidgets_.append(QList<QWidget*>()<<ui->y1Label<<ui->y1mmLabel<<ui->yPosLabel);
@@ -213,9 +213,9 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
 
     //    QTimer::singleShot(100, this, SLOT(InitHeavyPage()));
 #ifdef Q_WS_X11
-//    ShowInstructPage();
-//    ShowManualPage();
-//    ShowAutoPage();
+    //    ShowInstructPage();
+    //    ShowManualPage();
+    //    ShowAutoPage();
 #endif
 
 }
@@ -237,7 +237,7 @@ void MainFrame::changeEvent(QEvent *e)
         ui->retranslateUi(this);
         UpdateTranslate();
     }
-        break;
+    break;
     default:
         break;
     }
@@ -249,55 +249,55 @@ void MainFrame::keyPressEvent(QKeyEvent *e)
     {
     case ICKeyboard::FB_F1:
     {
-//        if(ui->functionPageButton->isEnabled())
-//        {
-//            ICFunctionPageBackFrame* page = qobject_cast<ICFunctionPageBackFrame*>(functionPage_);
-//            if(page != NULL)
-//            {
-//                page->ShowFunctionSelectPage();
-//            }
-//            centerStackedLayout_->setCurrentWidget(functionPage_);
-//            ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Function"));
-//            ui->functionPageButton->setChecked(true);
-//        }
+        //        if(ui->functionPageButton->isEnabled())
+        //        {
+        //            ICFunctionPageBackFrame* page = qobject_cast<ICFunctionPageBackFrame*>(functionPage_);
+        //            if(page != NULL)
+        //            {
+        //                page->ShowFunctionSelectPage();
+        //            }
+        //            centerStackedLayout_->setCurrentWidget(functionPage_);
+        //            ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Function"));
+        //            ui->functionPageButton->setChecked(true);
+        //        }
         ui->functionPageButton->click();
     }
-        break;
+    break;
     case ICKeyboard::FB_F2:
     {
-//        centerStackedLayout_->setCurrentWidget(monitorPage_);
-//        ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Monitor"));
-//        ui->monitorPageButton->setChecked(true);
+        //        centerStackedLayout_->setCurrentWidget(monitorPage_);
+        //        ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Monitor"));
+        //        ui->monitorPageButton->setChecked(true);
         ui->monitorPageButton->click();
     }
-        break;
+    break;
     case ICKeyboard::FB_F3:
     {
-//        if(ui->recordPageButton->isEnabled())
-//        {
-//            centerStackedLayout_->setCurrentWidget(recordPage_);
-//            ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Records"));
-//            ui->recordPageButton->setChecked(true);
-//        }
+        //        if(ui->recordPageButton->isEnabled())
+        //        {
+        //            centerStackedLayout_->setCurrentWidget(recordPage_);
+        //            ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Records"));
+        //            ui->recordPageButton->setChecked(true);
+        //        }
         ui->recordPageButton->click();
     }
-        break;
+    break;
     case ICKeyboard::FB_F4:
     {
-//        centerStackedLayout_->setCurrentWidget(alarmPage_);
-//        ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Alarm History"));
-//        ui->alarmPageButton->setChecked(true);
+        //        centerStackedLayout_->setCurrentWidget(alarmPage_);
+        //        ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Alarm History"));
+        //        ui->alarmPageButton->setChecked(true);
         ui->alarmPageButton->click();
     }
-        break;
+    break;
     case ICKeyboard::FB_F5:
     {
-//        centerStackedLayout_->setCurrentWidget(initialPage_);
-//        ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Standby"));
-//        ReturnButtonClicked();
+        //        centerStackedLayout_->setCurrentWidget(initialPage_);
+        //        ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Standby"));
+        //        ReturnButtonClicked();
         ui->returnPageButton->click();
     }
-        break;
+    break;
     default:
     {
         QWidget::keyPressEvent(e);
@@ -333,7 +333,7 @@ void MainFrame::InitCategoryPage()
 
     recordPage_ = MoldInformation::Instance();
     qDebug()<<"recordPage Loaded";
-//    functionButtonToPage_.insert(ui->recordPageButton, recordPage_);
+    //    functionButtonToPage_.insert(ui->recordPageButton, recordPage_);
     qDebug()<<"recordPage Loaded 1";
     centerStackedLayout_->addWidget(recordPage_);
     emit LoadMessage("Records page has been loaded");
@@ -349,12 +349,12 @@ void MainFrame::InitCategoryPage()
 
     originExecutingPage_ = new ICOriginDialog();
     returnExecutingPage_ = new ICReturnPage();
-//    centerStackedLayout_->addWidget(originExecutingPage_);
+    //    centerStackedLayout_->addWidget(originExecutingPage_);
     emit LoadMessage("Origin page has been loaded");
 
-//    centerStackedLayout_->setCurrentWidget(initialPage_);
+    //    centerStackedLayout_->setCurrentWidget(initialPage_);
     emit LoadMessage("End of initialzing category pages");
-//    centerStackedLayout_->setCurrentWidget(instructPage_);
+    //    centerStackedLayout_->setCurrentWidget(instructPage_);
 }
 
 void MainFrame::InitInterface()
@@ -408,10 +408,10 @@ void MainFrame::InitSignal()
     //            SIGNAL(clicked()),
     //            this,
     //            SLOT(CategoryButtonClicked()));
-//    connect(ui->recordPageButton,
-//            SIGNAL(clicked()),
-//            this,
-//            SLOT(CategoryButtonClicked()));
+    //    connect(ui->recordPageButton,
+    //            SIGNAL(clicked()),
+    //            this,
+    //            SLOT(CategoryButtonClicked()));
     connect(ui->recordPageButton,
             SIGNAL(clicked()),
             this,
@@ -466,7 +466,7 @@ void MainFrame::CategoryButtonClicked()
     //        functionButtonToPage_.insert(ui->monitorPageButton, monitorPage_);
     //        centerStackedLayout_->addWidget(monitorPage_);
     //    }
-//    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(clickedButton->text());
+    //    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(clickedButton->text());
 }
 
 void MainFrame::StatusRefreshed()
@@ -591,8 +591,13 @@ void MainFrame::StatusRefreshed()
     newLedFlags_ |= (virtualHost->IsOutputOn(33)? 1 : 0);
     if(newLedFlags_ != ledFlags_)
     {
-        ledFlags_ = newLedFlags_;
+        ledFlags_ = newLedFlags_;	
+
+#ifdef HC_ARMV6
         ioctl(ledFD_, 0, ledFlags_);
+#else
+        ioctl(ledFD_, 2, ledFlags_);
+#endif
     }
     errCode_ = virtualHost->AlarmNum();
     int hintCode = virtualHost->HintNum();
@@ -614,12 +619,12 @@ void MainFrame::StatusRefreshed()
             ui->cycleTimeAndFinistWidget->SetAlarmInfo("");
         }
     }
-//    finishCount_ = virtualHost->HostStatus(ICVirtualHost::DbgX1).toUInt();
-//    if(finishCount_ != oldFinishCount_)
-//    {
-//        ui->cycleTimeAndFinistWidget->SetFinished(virtualHost->HostStatus(ICVirtualHost::DbgX1).toUInt());
-//        oldFinishCount_ = finishCount_;
-//    }
+    //    finishCount_ = virtualHost->HostStatus(ICVirtualHost::DbgX1).toUInt();
+    //    if(finishCount_ != oldFinishCount_)
+    //    {
+    //        ui->cycleTimeAndFinistWidget->SetFinished(virtualHost->HostStatus(ICVirtualHost::DbgX1).toUInt());
+    //        oldFinishCount_ = finishCount_;
+    //    }
     cycleTime_ = virtualHost->HostStatus(ICVirtualHost::Time).toUInt();
     if(cycleTime_ != oldCycleTime_)
     {
@@ -702,14 +707,14 @@ void MainFrame::StatusRefreshed()
     {
         speed_ = "0";
     }
-//    else if(runningStatus_ == ICVirtualHost::Origin)
-//    {
-//        speed_ = virtualHost->HostStatus(ICVirtualHost::S).toString();
-//    }
-//    else if(runningStatus_ == ICVirtualHost::Return)
-//    {
-//        speed_ = virtualHost->HostStatus(ICVirtualHost::S).toString();
-//    }
+    //    else if(runningStatus_ == ICVirtualHost::Origin)
+    //    {
+    //        speed_ = virtualHost->HostStatus(ICVirtualHost::S).toString();
+    //    }
+    //    else if(runningStatus_ == ICVirtualHost::Return)
+    //    {
+    //        speed_ = virtualHost->HostStatus(ICVirtualHost::S).toString();
+    //    }
     if(speed_ != ui->systemStatusFrame->CurrentSpeed())
     {
         //        ui->speedLabel->setText(speed_);
@@ -724,8 +729,8 @@ void MainFrame::StatusRefreshed()
             ui->systemStatusFrame->SetManualStatus(StatusLabel::ONSTATUS);
             LevelChanged(ICProgramHeadFrame::Instance()->CurrentLevel());
             ui->functionPageButton->setEnabled(false);
-//            ui->recordPageButton->setText(tr("Instru            ui->recordPageButton->setText(tr("Instruct"));ct"));
-//            ui->recordPageButton->setEnabled(false);
+            //            ui->recordPageButton->setText(tr("Instru            ui->recordPageButton->setText(tr("Instruct"));ct"));
+            //            ui->recordPageButton->setEnabled(false);
         }
         else if(runningStatus_ == ICVirtualHost::AutoRunning)
         {
@@ -751,19 +756,19 @@ void MainFrame::StatusRefreshed()
             ui->functionPageButton->setEnabled(false);
             ui->recordPageButton->setEnabled(false);
         }
-//        else if(runningStatus_ == ICVirtualHost::Teach)
-//        {
-//            ui->systemStatusFrame->SetProgramStatus(StatusLabel::ONSTATUS);
-//        }
+        //        else if(runningStatus_ == ICVirtualHost::Teach)
+        //        {
+        //            ui->systemStatusFrame->SetProgramStatus(StatusLabel::ONSTATUS);
+        //        }
         else if(runningStatus_ == ICVirtualHost::Stop)
         {
-//            ui->systemStatusFrame->SetProgramStatus(virtualHost->IsCloseMoldPermit() ? StatusLabel::ONSTATUS : StatusLabel::OFFSTATUS);
-//            ui->systemStatusFrame->SetSystemStop();
+            //            ui->systemStatusFrame->SetProgramStatus(virtualHost->IsCloseMoldPermit() ? StatusLabel::ONSTATUS : StatusLabel::OFFSTATUS);
+            //            ui->systemStatusFrame->SetSystemStop();
             ui->recordPageButton->setText(tr("Records"));
             LevelChanged(ICProgramHeadFrame::Instance()->CurrentLevel());
-//            ui->functionPageButton->setEnabled(true);
-//            ui->recordPageButton->setEnabled(true);
-//            HideOrigin();
+            //            ui->functionPageButton->setEnabled(true);
+            //            ui->recordPageButton->setEnabled(true);
+            //            HideOrigin();
             HideReturn();
         }
         else if(runningStatus_ == ICVirtualHost::Origin)
@@ -786,22 +791,22 @@ void MainFrame::ShowManualPage()
 {
     functionPage_->ShowFunctionSelectPage();
     centerStackedLayout_->setCurrentWidget(manualPage_);
-//    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Manual"));
+    //    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Manual"));
     ICProgramHeadFrame::Instance()->StopAutoTime();
     nullButton_->click();
-//    if(!IsOrigined())
-//    {
-//        QMessageBox::warning(this, tr("Warning"), tr("Need to origin!"));
-//    }
+    //    if(!IsOrigined())
+    //    {
+    //        QMessageBox::warning(this, tr("Warning"), tr("Need to origin!"));
+    //    }
     ui->recordPageButton->setText(tr("Instruct"));
-//    ui->recordPageButton->setEnabled(true);
+    //    ui->recordPageButton->setEnabled(true);
 }
 
 void MainFrame::ShowAutoPage()
 {
     functionPage_->ShowFunctionSelectPage();
     centerStackedLayout_->setCurrentWidget(autoPage_);
-//    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Auto"));
+    //    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Auto"));
     ICProgramHeadFrame::Instance()->StartAutoTime();
     nullButton_->click();
     if(!IsOrigined())
@@ -813,7 +818,7 @@ void MainFrame::ShowAutoPage()
 void MainFrame::ShowInstructPage()
 {
     centerStackedLayout_->setCurrentWidget(instructPage_);
-//    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Instruct"));
+    //    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Instruct"));
     nullButton_->click();
 }
 
@@ -821,7 +826,7 @@ void MainFrame::ShowStandbyPage()
 {
     functionPage_->ShowFunctionSelectPage();
     centerStackedLayout_->setCurrentWidget(initialPage_);
-//    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Standby"));
+    //    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Standby"));
     ICProgramHeadFrame::Instance()->StopAutoTime();
     nullButton_->click();
 }
@@ -829,25 +834,25 @@ void MainFrame::ShowStandbyPage()
 void MainFrame::ShowFunctionPage()
 {
     centerStackedLayout_->setCurrentWidget(functionPage_);
-//    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(ui->functionPageButton->text());
+    //    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(ui->functionPageButton->text());
 }
 
 void MainFrame::ShowOrigin()
 {
     if(!originExecutingPage_->isVisible())
     {
-//        ui->systemStatusFrame->SetOriginStatus(StatusLabel::ONSTATUS);
-//        isOriginShown_ = true;
+        //        ui->systemStatusFrame->SetOriginStatus(StatusLabel::ONSTATUS);
+        //        isOriginShown_ = true;
         originExecutingPage_->open();
     }
 }
 
 void MainFrame::HideOrigin()
 {
-//    if(isOriginShown_)
-//    {
-        //        ui->systemStatusFrame->SetSystemStop();
-//        isOriginShown_ = false;
+    //    if(isOriginShown_)
+    //    {
+    //        ui->systemStatusFrame->SetSystemStop();
+    //        isOriginShown_ = false;
     if(originExecutingPage_->isVisible())
     {
         originExecutingPage_->accept();
@@ -893,7 +898,7 @@ void MainFrame::ReturnButtonClicked()
 
 void MainFrame::RecordButtonClicked()
 {
-//    int status = ICVirtualHost::GlobalVirtualHost()->CurrentStatus();
+    //    int status = ICVirtualHost::GlobalVirtualHost()->CurrentStatus();
     if(ICKeyboard::Instace()->CurrentSwitchStatus() == ICKeyboard::KS_ManualStatu)
     {
         centerStackedLayout_->setCurrentWidget(instructPage_);
@@ -914,7 +919,7 @@ void MainFrame::LevelChanged(int level)
         ui->functionPageButton->setEnabled(false);
         ui->recordPageButton->setEnabled(false);
     }
-        break;
+    break;
     case ICParametersSave::MachineAdmin:
     case ICParametersSave::AdvanceAdmin:
     {
@@ -930,7 +935,7 @@ void MainFrame::LevelChanged(int level)
             ui->recordPageButton->setEnabled(true);
         }
     }
-        break;
+    break;
     default:
     {
         ui->functionPageButton->setEnabled(false);
@@ -952,7 +957,7 @@ bool MainFrame::IsOrigined() const
 
 void MainFrame::ShowScreenSaver()
 {
-//    screenSaver_->show();
+    //    screenSaver_->show();
     ICProgramHeadFrame::Instance()->SetCurrentLevel(ICParametersSave::MachineOperator);
 }
 
@@ -991,7 +996,7 @@ void MainFrame::CheckedInput()
     }
     SetHasInput(false);
     QTimer::singleShot(ICParametersSave::Instance()->BackLightTime() * 60000, this, SLOT(CheckedInput()));
-//    system("reboot");
+    //    system("reboot");
 }
 
 void MainFrame::ShowWidgets_(QList<QWidget *> &widgets)
