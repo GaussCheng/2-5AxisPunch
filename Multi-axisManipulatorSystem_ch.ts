@@ -5225,7 +5225,7 @@ Would you want to restart now?</source>
         <translation>监视</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="762"/>
+        <location filename="mainframe.cpp" line="767"/>
         <source>Records</source>
         <translation>档案</translation>
     </message>
@@ -5265,7 +5265,7 @@ Would you want to restart now?</source>
         <translation>返回</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="610"/>
+        <location filename="mainframe.cpp" line="615"/>
         <source>Hint</source>
         <translation>提示</translation>
     </message>
@@ -5274,17 +5274,17 @@ Would you want to restart now?</source>
         <translation type="obsolete">手动</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="809"/>
+        <location filename="mainframe.cpp" line="814"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="809"/>
+        <location filename="mainframe.cpp" line="814"/>
         <source>Need to origin!</source>
         <translation>还没进行原点!</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="796"/>
+        <location filename="mainframe.cpp" line="801"/>
         <source>Instruct</source>
         <translation>教导</translation>
     </message>

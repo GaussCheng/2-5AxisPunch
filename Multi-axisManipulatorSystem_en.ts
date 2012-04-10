@@ -4388,27 +4388,27 @@ Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="610"/>
+        <location filename="mainframe.cpp" line="615"/>
         <source>Hint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="762"/>
+        <location filename="mainframe.cpp" line="767"/>
         <source>Records</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="809"/>
+        <location filename="mainframe.cpp" line="814"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="809"/>
+        <location filename="mainframe.cpp" line="814"/>
         <source>Need to origin!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="796"/>
+        <location filename="mainframe.cpp" line="801"/>
         <source>Instruct</source>
         <translation type="unfinished"></translation>
     </message>
