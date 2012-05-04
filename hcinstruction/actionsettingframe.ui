@@ -20,6 +20,15 @@
    <enum>QFrame::Raised</enum>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>1</number>
+   </property>
+   <property name="rightMargin">
+    <number>1</number>
+   </property>
+   <property name="horizontalSpacing">
+    <number>2</number>
+   </property>
    <property name="verticalSpacing">
     <number>6</number>
    </property>
