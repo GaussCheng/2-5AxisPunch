@@ -156,7 +156,7 @@ public:
     bool IsPressed() const { return isPressed_;}
     void SetPressed(bool isPressed) { isPressed_ = isPressed;}
 
-    int CurrentSwitchStatus() const { return currentSwitchValue_;}
+    int CurrentSwitchStatus() const;
 Q_SIGNALS:
 //    void Keypressed(int);
 //    void KnobSwitched(int);
@@ -175,7 +175,7 @@ private:
     mutable QMutex pulleyMutex_;
     int currentSwitchValue_;
 //    mutable QMutex keyMutex_;
-//    mutable QMutex switchMutex_;
+    mutable QMutex switchMutex_;
 
 };
 

@@ -86,7 +86,7 @@ void ICKeyboardHandler::SwitchChanged(int value)
         ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
         icMainFrame->ShowManualPage();
     }
-    else if(value == ICKeyboard::KS_StopStatu)
+    else
     {
         ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
         icMainFrame->ShowStandbyPage();

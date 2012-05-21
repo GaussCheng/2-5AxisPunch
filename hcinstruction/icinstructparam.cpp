@@ -32,7 +32,11 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
 {
     QString commandStr;
 //    commandStr += QString::number(moldItem.Seq()) + " ";
-    if(moldItem.SubNum() == 255)
+    if(moldItem.Num() == 0)
+    {
+        commandStr += tr("Home") + "    " + "*" + "    ";
+    }
+    else if(moldItem.SubNum() == 255)
     {
         commandStr += QString::number(moldItem.Num()) + "    " + "*" + "    ";
     }
