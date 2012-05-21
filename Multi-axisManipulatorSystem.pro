@@ -6,7 +6,7 @@ TEMPLATE = app
 QMAKE_CFLAGS += -std=c99
 
 CONFIG(debug, debug|release) {
-    LIBS += -lprofiler
+#    LIBS += -lprofiler
 }
 SOURCES += main.cpp \
     mainframe.cpp \
