@@ -1229,33 +1229,28 @@ Infomation</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcinjectionpage.ui" line="138"/>
-        <source>Place Product Permit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/ichcinjectionpage.ui" line="143"/>
         <source>Core1 Permit</source>
         <oldsource>Core1 Pull Permit</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinjectionpage.ui" line="148"/>
+        <location filename="hcinstruction/ichcinjectionpage.ui" line="143"/>
         <source>Core2 Permit</source>
         <oldsource>Core2 Pull Permit</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinjectionpage.ui" line="153"/>
+        <location filename="hcinstruction/ichcinjectionpage.ui" line="148"/>
         <source>En</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinjectionpage.ui" line="158"/>
+        <location filename="hcinstruction/ichcinjectionpage.ui" line="153"/>
         <source>Current/Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinjectionpage.ui" line="163"/>
+        <location filename="hcinstruction/ichcinjectionpage.ui" line="158"/>
         <source>Delay</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1267,11 +1262,6 @@ Infomation</source>
     <message>
         <location filename="hcinstruction/ichcinjectionpage.cpp" line="21"/>
         <source>Ejection Permit  </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/ichcinjectionpage.cpp" line="21"/>
-        <source>Place Product Permit  </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3565,46 +3555,51 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcinstruction/icperipherypage.ui" line="120"/>
-        <source>Reserve1</source>
+        <source>Layout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/icperipherypage.ui" line="125"/>
-        <source>Reserve2</source>
+        <source>Reserve1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/icperipherypage.ui" line="130"/>
-        <source>Reserve3</source>
+        <source>Reserve2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/icperipherypage.ui" line="135"/>
-        <source>Reserve4</source>
+        <source>Reserve3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/icperipherypage.ui" line="140"/>
-        <source>Reserve5</source>
+        <source>Reserve4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/icperipherypage.ui" line="145"/>
-        <source>Reserve6</source>
+        <source>Reserve5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/icperipherypage.ui" line="150"/>
+        <source>Reserve6</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icperipherypage.ui" line="155"/>
         <source>En</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="158"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="163"/>
         <source>Current/Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="163"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="168"/>
         <source>Delay/Times</source>
         <oldsource>Delay</oldsource>
         <translation type="unfinished"></translation>
@@ -3627,6 +3622,11 @@ Please enter an digit between </source>
     <message>
         <location filename="hcinstruction/icperipherypage.cpp" line="22"/>
         <source>Reserve2  </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icperipherypage.cpp" line="22"/>
+        <source>Layout  </source>
         <translation type="unfinished"></translation>
     </message>
     <message>

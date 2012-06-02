@@ -117,6 +117,11 @@ QRadioButton::indicator:unchecked:disabled
      </row>
      <row>
       <property name="text">
+       <string>Layout</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
        <string>Reserve1</string>
       </property>
      </row>
@@ -198,9 +203,6 @@ QRadioButton::indicator:unchecked:disabled
       </property>
      </item>
      <item row="2" column="0">
-      <property name="text">
-       <string/>
-      </property>
       <property name="checkState">
        <enum>Unchecked</enum>
       </property>
@@ -220,6 +222,9 @@ QRadioButton::indicator:unchecked:disabled
       </property>
      </item>
      <item row="3" column="1">
+      <property name="text">
+       <string/>
+      </property>
       <property name="icon">
        <iconset resource="../resource.qrc">
         <normaloff>:/resource/ledgray(16).png</normaloff>:/resource/ledgray(16).png</iconset>
@@ -234,6 +239,9 @@ QRadioButton::indicator:unchecked:disabled
       </property>
      </item>
      <item row="4" column="1">
+      <property name="text">
+       <string/>
+      </property>
       <property name="icon">
        <iconset resource="../resource.qrc">
         <normaloff>:/resource/ledgray(16).png</normaloff>:/resource/ledgray(16).png</iconset>
@@ -248,6 +256,9 @@ QRadioButton::indicator:unchecked:disabled
       </property>
      </item>
      <item row="5" column="1">
+      <property name="text">
+       <string/>
+      </property>
       <property name="icon">
        <iconset resource="../resource.qrc">
         <normaloff>:/resource/ledgray(16).png</normaloff>:/resource/ledgray(16).png</iconset>
@@ -262,6 +273,9 @@ QRadioButton::indicator:unchecked:disabled
       </property>
      </item>
      <item row="6" column="1">
+      <property name="text">
+       <string/>
+      </property>
       <property name="icon">
        <iconset resource="../resource.qrc">
         <normaloff>:/resource/ledgray(16).png</normaloff>:/resource/ledgray(16).png</iconset>
@@ -276,6 +290,26 @@ QRadioButton::indicator:unchecked:disabled
       </property>
      </item>
      <item row="7" column="1">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="../resource.qrc">
+        <normaloff>:/resource/ledgray(16).png</normaloff>:/resource/ledgray(16).png</iconset>
+      </property>
+     </item>
+     <item row="8" column="0">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="checkState">
+       <enum>Unchecked</enum>
+      </property>
+     </item>
+     <item row="8" column="1">
+      <property name="text">
+       <string/>
+      </property>
       <property name="icon">
        <iconset resource="../resource.qrc">
         <normaloff>:/resource/ledgray(16).png</normaloff>:/resource/ledgray(16).png</iconset>

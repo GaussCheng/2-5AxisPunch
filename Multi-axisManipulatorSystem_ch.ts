@@ -1564,29 +1564,28 @@ Reason</source>
         <translation>顶针允许</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinjectionpage.ui" line="138"/>
         <source>Place Product Permit</source>
-        <translation>堆叠允许</translation>
+        <translation type="obsolete">堆叠允许</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinjectionpage.ui" line="143"/>
+        <location filename="hcinstruction/ichcinjectionpage.ui" line="138"/>
         <source>Core1 Permit</source>
         <oldsource>Core1 Pull Permit</oldsource>
         <translation>抽芯1允许</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinjectionpage.ui" line="148"/>
+        <location filename="hcinstruction/ichcinjectionpage.ui" line="143"/>
         <source>Core2 Permit</source>
         <oldsource>Core2 Pull Permit</oldsource>
         <translation>抽芯2允许</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinjectionpage.ui" line="153"/>
+        <location filename="hcinstruction/ichcinjectionpage.ui" line="148"/>
         <source>En</source>
         <translation>使能</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinjectionpage.ui" line="158"/>
+        <location filename="hcinstruction/ichcinjectionpage.ui" line="153"/>
         <source>Current/Setting</source>
         <translation>当前设定</translation>
     </message>
@@ -1607,7 +1606,7 @@ Reason</source>
         <translation type="obsolete">设入状态</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinjectionpage.ui" line="163"/>
+        <location filename="hcinstruction/ichcinjectionpage.ui" line="158"/>
         <source>Delay</source>
         <translation>延时</translation>
     </message>
@@ -1637,11 +1636,6 @@ Reason</source>
         <location filename="hcinstruction/ichcinjectionpage.cpp" line="21"/>
         <source>Ejection Permit  </source>
         <translation>顶针允许</translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/ichcinjectionpage.cpp" line="21"/>
-        <source>Place Product Permit  </source>
-        <translation>堆叠允许</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcinjectionpage.cpp" line="22"/>
@@ -4298,46 +4292,51 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcinstruction/icperipherypage.ui" line="120"/>
+        <source>Layout</source>
+        <translation>堆叠允许</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icperipherypage.ui" line="125"/>
         <source>Reserve1</source>
         <translation>预留1</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="125"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="130"/>
         <source>Reserve2</source>
         <translation>预留2</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="130"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="135"/>
         <source>Reserve3</source>
         <translation>预留3</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="135"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="140"/>
         <source>Reserve4</source>
         <translation>预留4</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="140"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="145"/>
         <source>Reserve5</source>
         <translation>预留5</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="145"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="150"/>
         <source>Reserve6</source>
         <translation>预留6</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="150"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="155"/>
         <source>En</source>
         <translation>使能</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="158"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="163"/>
         <source>Current/Setting</source>
         <translation>当前设定</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="163"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="168"/>
         <source>Delay/Times</source>
         <oldsource>Delay</oldsource>
         <translation>时间/间隔模数</translation>
@@ -4361,6 +4360,11 @@ Please enter an digit between </source>
         <location filename="hcinstruction/icperipherypage.cpp" line="22"/>
         <source>Reserve2  </source>
         <translation>预留2</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icperipherypage.cpp" line="22"/>
+        <source>Layout  </source>
+        <translation>堆叠允许</translation>
     </message>
     <message>
         <location filename="hcinstruction/icperipherypage.cpp" line="23"/>

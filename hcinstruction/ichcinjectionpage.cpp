@@ -18,18 +18,18 @@ ICHCInjectionPage::ICHCInjectionPage(QWidget *parent) :
     QPushButton * button;
     ICLineEditWithVirtualNumericKeypad* delays = new ICLineEditWithVirtualNumericKeypad[ui->tableWidget->rowCount()];
     ICLineEditWithVirtualNumericKeypad *delayEdit;
-    ioNames_<<tr("Close Mold Permit  ")<<tr("Ejection Permit  ")<<tr("Place Product Permit  ")
+    ioNames_<<tr("Close Mold Permit  ")<<tr("Ejection Permit  ")
            <<tr("Core1 Permit  ")
           <<tr("Core2 Permit  ");
     onClipToOffClip_.insert(ICMold::ACTCLSMDON, ICMold::ACTCLSMDOFF);
     onClipToOffClip_.insert(ICMold::ACTEJECTON, ICMold::ACTEJECTOFF);
-    onClipToOffClip_.insert(ICMold::ACTLAYOUTON, ICMold::ACTLAYOUTOFF);
+//    onClipToOffClip_.insert(ICMold::ACTLAYOUTON, ICMold::ACTLAYOUTOFF);
     onClipToOffClip_.insert(ICMold::ACT_CORE1_ON, ICMold::ACT_CORE1_OFF);
     onClipToOffClip_.insert(ICMold::ACT_CORE2_ON, ICMold::ACT_CORE2_OFF);
 
     offClipToOnClip_.insert(ICMold::ACTCLSMDOFF, ICMold::ACTCLSMDON);
     offClipToOnClip_.insert(ICMold::ACTEJECTOFF, ICMold::ACTEJECTON);
-    offClipToOnClip_.insert(ICMold::ACTLAYOUTOFF, ICMold::ACTLAYOUTON);
+//    offClipToOnClip_.insert(ICMold::ACTLAYOUTOFF, ICMold::ACTLAYOUTON);
     offClipToOnClip_.insert(ICMold::ACT_CORE1_OFF, ICMold::ACT_CORE1_ON);
     offClipToOnClip_.insert(ICMold::ACT_CORE2_OFF, ICMold::ACT_CORE2_ON);
     QList<uint> initStatus = onClipToOffClip_.values();
@@ -63,9 +63,9 @@ ICHCInjectionPage::ICHCInjectionPage(QWidget *parent) :
 
     commandKeyMap_.insert(settingButtons_.at(0), qMakePair(static_cast<int>(IC::VKEY_CLSMDON), static_cast<int>(IC::VKEY_CLSMDOFF)));
     commandKeyMap_.insert(settingButtons_.at(1), qMakePair(static_cast<int>(IC::VKEY_EJECTON), static_cast<int>(IC::VKEY_EJECTOFF)));
-    commandKeyMap_.insert(settingButtons_.at(2), qMakePair(static_cast<int>(IC::VKEY_LAYOUTON), static_cast<int>(IC::VKEY_LAYOUTOFF)));
+//    commandKeyMap_.insert(settingButtons_.at(2), qMakePair(static_cast<int>(IC::VKEY_LAYOUTON), static_cast<int>(IC::VKEY_LAYOUTOFF)));
+    commandKeyMap_.insert(settingButtons_.at(2), qMakePair(0, 0));
     commandKeyMap_.insert(settingButtons_.at(3), qMakePair(0, 0));
-    commandKeyMap_.insert(settingButtons_.at(4), qMakePair(0, 0));
 
     connect(&buttonSignalMapper_,
             SIGNAL(mapped(QWidget*)),
