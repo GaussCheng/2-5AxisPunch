@@ -1891,6 +1891,16 @@ Reason</source>
         <translation>垂直1</translation>
     </message>
     <message>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="305"/>
+        <source>/Horizontal-2</source>
+        <translation>/水平2</translation>
+    </message>
+    <message>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="313"/>
+        <source>/Vertical-2</source>
+        <translation>/垂直2</translation>
+    </message>
+    <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="347"/>
         <source>Horizontal-2</source>
         <translation>水平2</translation>

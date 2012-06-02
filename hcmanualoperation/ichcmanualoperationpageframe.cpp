@@ -302,7 +302,7 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
         if(currentPose2_ != 0)
         {
             currentPose2_ = 0;
-            ui->currentPose->setText(ui->currentPose->text() + "/Horizontal-2");
+            ui->currentPose->setText(ui->currentPose->text() + tr("/Horizontal-2"));
         }
     }
     else if(host->IsInputOn(11))
@@ -310,7 +310,7 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
         if(currentPose2_ != 1)
         {
             currentPose2_ = 1;
-            ui->currentPose->setText(ui->currentPose->text() + "/Vertical-2");
+            ui->currentPose->setText(ui->currentPose->text() + tr("/Vertical-2"));
         }
     }
     else

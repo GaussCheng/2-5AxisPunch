@@ -86,8 +86,8 @@ int ICKeyboard::TakeSwitchValue()
         return -1;
     }
     int switchValue = switchValue_;
-    switchMutex_.unlock();
     switchValue_ = -1;
+    switchMutex_.unlock();
 //    isSwitchTaken_ = true;
     return switchValue;
 }
