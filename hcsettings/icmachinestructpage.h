@@ -43,6 +43,14 @@ private Q_SLOTS:
     void SetCurrentAxis(int axis);
     void UpdateAxisDefine_();
 
+    void on_testPushButton_clicked();
+
+    void on_revTestPushButton_clicked();
+
+    void on_pushButton_clicked();
+
+    void StatusRefresh();
+
 private:
     void InitInterface();
     QList<uint> GetCurrentStatus_() const;

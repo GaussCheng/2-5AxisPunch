@@ -117,11 +117,6 @@ QRadioButton::indicator:unchecked:disabled
      </row>
      <row>
       <property name="text">
-       <string>Layout</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
        <string>Reserve1</string>
       </property>
      </row>
@@ -203,11 +198,17 @@ QRadioButton::indicator:unchecked:disabled
       </property>
      </item>
      <item row="2" column="0">
+      <property name="text">
+       <string/>
+      </property>
       <property name="checkState">
        <enum>Unchecked</enum>
       </property>
      </item>
      <item row="2" column="1">
+      <property name="text">
+       <string/>
+      </property>
       <property name="icon">
        <iconset resource="../resource.qrc">
         <normaloff>:/resource/ledgray(16).png</normaloff>:/resource/ledgray(16).png</iconset>
@@ -298,27 +299,117 @@ QRadioButton::indicator:unchecked:disabled
         <normaloff>:/resource/ledgray(16).png</normaloff>:/resource/ledgray(16).png</iconset>
       </property>
      </item>
-     <item row="8" column="0">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="checkState">
-       <enum>Unchecked</enum>
-      </property>
-     </item>
-     <item row="8" column="1">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset resource="../resource.qrc">
-        <normaloff>:/resource/ledgray(16).png</normaloff>:/resource/ledgray(16).png</iconset>
-      </property>
-     </item>
     </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QCheckBox" name="lyCheck">
+       <property name="styleSheet">
+        <string notr="true">::item{
+height: 33px;
+}
+
+::item::QCheckBox{
+	spacing: 24px;
+}
+
+::indicator {
+     width: 32px;
+     height: 32px;
+ }
+
+::indicator:unchecked 
+{
+     image: url(:/resource/check_unchecked.png);
+ }
+::indicator:checked 
+{
+     image: url(:/resource/check_checked.png);
+ }
+
+QRadioButton::indicator:checked:disabled
+{
+ image: url(:/resource/check_checked_disable.png);
+}
+
+QRadioButton::indicator:unchecked:disabled
+{
+ image: url(:/resource/check_unchecked_disable.png);
+}
+
+
+
+</string>
+       </property>
+       <property name="text">
+        <string>Layout</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Group</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="ICLineEditWithVirtualNumericKeypad" name="groupLineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>Delay</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="ICLineEditWithVirtualNumericKeypad" name="lyDelayLineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>0.00</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ICLineEditWithVirtualNumericKeypad</class>
+   <extends>QLineEdit</extends>
+   <header>iclineeditwithvirtualnumerickeypad.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="../resource.qrc"/>
  </resources>

@@ -3532,150 +3532,185 @@ Please enter an digit between </source>
         <translation>组合动作选择</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.ui" line="225"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="213"/>
         <source>Security Point</source>
         <translation>安全点</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.ui" line="231"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="219"/>
         <source>Mechanical length</source>
         <translation>机械长度</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.ui" line="241"/>
-        <location filename="hcsettings/icmachinestructpage.ui" line="258"/>
-        <location filename="hcsettings/icmachinestructpage.ui" line="275"/>
-        <location filename="hcsettings/icmachinestructpage.ui" line="292"/>
-        <location filename="hcsettings/icmachinestructpage.ui" line="309"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="229"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="259"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="276"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="293"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="310"/>
         <source>mm</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.ui" line="248"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="249"/>
         <source>Maximum displacement</source>
         <translation>最大移动</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.ui" line="265"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="251"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="287"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="299"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="311"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="266"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="260"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="296"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="308"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="320"/>
         <source>Internal security zone</source>
         <translation>型内安全区</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.ui" line="282"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="252"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="288"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="300"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="312"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="283"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="261"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="297"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="309"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="321"/>
         <source>External security zone</source>
         <translation>型外安全区</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.ui" line="299"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="300"/>
         <source>Distance/Rotation</source>
         <translation>每转距离</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.ui" line="329"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="317"/>
         <source>Save</source>
         <translation>保存</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="22"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="73"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="346"/>
+        <source>Test Feedback</source>
+        <translation>测试反馈</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/icmachinestructpage.ui" line="355"/>
+        <source>Test</source>
+        <translation>测试</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/icmachinestructpage.ui" line="365"/>
+        <source>Feedback</source>
+        <translation>反馈</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/icmachinestructpage.ui" line="375"/>
+        <source>Z Signal</source>
+        <translation>Z信号</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/icmachinestructpage.ui" line="405"/>
+        <source>+Test</source>
+        <translation>正向测试</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/icmachinestructpage.ui" line="430"/>
+        <source>-Test</source>
+        <translation>反向测试</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/icmachinestructpage.ui" line="455"/>
+        <source>Clear</source>
+        <translation>清除测试</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="23"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="74"/>
         <source>X1 Axis</source>
         <oldsource>X Axis</oldsource>
         <translation>X1轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="23"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="74"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="24"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="75"/>
         <source>Y1 Axis</source>
         <oldsource>Y Axis</oldsource>
         <translation>Y1轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="24"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="75"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="25"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="76"/>
         <source>Z Axis</source>
         <translation>Z轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="25"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="76"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="26"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="77"/>
         <source>X2 Axis</source>
         <translation>X2轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="26"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="77"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="27"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="78"/>
         <source>Y2 Axis</source>
         <translation>Y2轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="27"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="78"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="28"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="79"/>
         <source>A Axis</source>
         <translation>A轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="28"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="79"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="29"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="80"/>
         <source>B Axis</source>
         <translation>B轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="29"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="80"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="30"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="81"/>
         <source>C Axis</source>
         <translation>C轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="30"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="81"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="31"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="82"/>
         <source>Struct Define</source>
         <translation>结构</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="31"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="82"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="32"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="83"/>
         <source>Time</source>
         <translation>时间</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="226"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="263"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="235"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="272"/>
         <source>Min pos inside mold</source>
         <translation>模内最小位置</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="227"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="264"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="236"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="273"/>
         <source>Max pos inside mold</source>
         <translation>模内最大位置</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="239"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="275"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="248"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="284"/>
         <source>Max standby pos</source>
         <translation>最大待机位置</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="240"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="276"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="249"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="285"/>
         <source>Leave origin pos</source>
         <translation>离开原点位置</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="503"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="512"/>
         <source>Information</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="503"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="512"/>
         <source>Save Successfully!</source>
         <translation>保存成功!</translation>
     </message>
@@ -4291,98 +4326,117 @@ Please enter an digit between </source>
         <translation>输送带</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="120"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="346"/>
         <source>Layout</source>
-        <translation>堆叠允许</translation>
+        <translation>堆叠开始</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="125"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="120"/>
         <source>Reserve1</source>
         <translation>预留1</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="130"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="125"/>
         <source>Reserve2</source>
         <translation>预留2</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="135"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="130"/>
         <source>Reserve3</source>
         <translation>预留3</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="140"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="135"/>
         <source>Reserve4</source>
         <translation>预留4</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="145"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="140"/>
         <source>Reserve5</source>
         <translation>预留5</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="150"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="145"/>
         <source>Reserve6</source>
         <translation>预留6</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="155"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="150"/>
         <source>En</source>
         <translation>使能</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="163"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="158"/>
         <source>Current/Setting</source>
         <translation>当前设定</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="168"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="163"/>
         <source>Delay/Times</source>
         <oldsource>Delay</oldsource>
         <translation>时间/间隔模数</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.cpp" line="22"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="353"/>
+        <source>Group</source>
+        <translation>组</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icperipherypage.ui" line="372"/>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icperipherypage.ui" line="379"/>
+        <source>Delay</source>
+        <translation>延时</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icperipherypage.ui" line="398"/>
+        <source>0.00</source>
+        <translation>0.00</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icperipherypage.cpp" line="25"/>
         <source>Injector   </source>
         <translation>喷油</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.cpp" line="22"/>
+        <location filename="hcinstruction/icperipherypage.cpp" line="25"/>
         <source>conveyor  </source>
         <translation>输送带</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.cpp" line="22"/>
+        <location filename="hcinstruction/icperipherypage.cpp" line="25"/>
         <source>Reserve1  </source>
         <translation>预留1</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.cpp" line="22"/>
+        <location filename="hcinstruction/icperipherypage.cpp" line="25"/>
         <source>Reserve2  </source>
         <translation>预留2</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.cpp" line="22"/>
         <source>Layout  </source>
-        <translation>堆叠允许</translation>
+        <translation type="obsolete">堆叠开始</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.cpp" line="23"/>
+        <location filename="hcinstruction/icperipherypage.cpp" line="26"/>
         <source>Reserve3  </source>
         <translation>预留3</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.cpp" line="23"/>
+        <location filename="hcinstruction/icperipherypage.cpp" line="26"/>
         <source>Reserve4  </source>
         <translation>预留4</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.cpp" line="23"/>
+        <location filename="hcinstruction/icperipherypage.cpp" line="26"/>
         <source>Reserve5  </source>
         <translation>预留5</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.cpp" line="23"/>
+        <location filename="hcinstruction/icperipherypage.cpp" line="26"/>
         <source>Reserve6  </source>
         <translation>预留6</translation>
     </message>

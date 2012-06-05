@@ -8,6 +8,7 @@
 #include "icparameterssave.h"
 #include "icstructdefineframe.h"
 #include "ichctimeframe.h"
+#include "icactioncommand.h"
 
 ICMachineStructPage::ICMachineStructPage(QWidget *parent) :
     QWidget(parent),
@@ -93,12 +94,20 @@ void ICMachineStructPage::hideEvent(QHideEvent *e)
         ICVirtualHost::GlobalVirtualHost()->SaveSystemConfig();
         ICVirtualHost::GlobalVirtualHost()->ReConfigure();
     }
+    disconnect(ICVirtualHost::GlobalVirtualHost(),
+            SIGNAL(StatusRefreshed()),
+            this,
+            SLOT(StatusRefresh()));
     QWidget::hideEvent(e);
 }
 
 void ICMachineStructPage::showEvent(QShowEvent *e)
 {
     UpdateAxisDefine_();
+    connect(ICVirtualHost::GlobalVirtualHost(),
+            SIGNAL(StatusRefreshed()),
+            this,
+            SLOT(StatusRefresh()));
     if(!ui->axisXToolButton->isHidden())
     {
         ui->axisXToolButton->click();
@@ -610,4 +619,151 @@ void ICMachineStructPage::UpdateAxisDefine_()
             ui->axisCToolButton->show();
         }
     }
+}
+
+void ICMachineStructPage::on_testPushButton_clicked()
+{
+    ICCommandProcessor *processor = ICCommandProcessor::Instance();
+    int addCmd;
+    if(currentAxis_ == ICVirtualHost::ICAxis_AxisX1)
+    {
+        addCmd = IC::CMD_TestX;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY1)
+    {
+        addCmd = IC::CMD_TestY;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisZ)
+    {
+        addCmd = IC::CMD_TestZ;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisX2)
+    {
+        addCmd = IC::CMD_TestX2;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY2)
+    {
+        addCmd = IC::CMD_TestY2;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisA)
+    {
+        addCmd = IC::CMD_TestA;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisB)
+    {
+        addCmd = IC::CMD_TestB;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisC)
+    {
+        addCmd = IC::CMD_TestC;
+    }
+    processor->ExecuteHCCommand(addCmd, 0);
+}
+
+void ICMachineStructPage::on_revTestPushButton_clicked()
+{
+    ICCommandProcessor *processor = ICCommandProcessor::Instance();
+    int addCmd;
+    if(currentAxis_ == ICVirtualHost::ICAxis_AxisX1)
+    {
+        addCmd = IC::CMD_TestxRev;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY1)
+    {
+        addCmd = IC::CMD_TestyRev;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisZ)
+    {
+        addCmd = IC::CMD_TestzRev;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisX2)
+    {
+        addCmd = IC::CMD_TestX2Rev;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY2)
+    {
+        addCmd = IC::CMD_TestY2Rev;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisA)
+    {
+        addCmd = IC::CMD_TestARev;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisB)
+    {
+        addCmd = IC::CMD_TestBRev;
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisC)
+    {
+        addCmd = IC::CMD_TestCRev;
+    }
+    else
+    {
+        return;
+    }
+    processor->ExecuteHCCommand(addCmd, 0);
+}
+
+void ICMachineStructPage::on_pushButton_clicked()
+{
+     ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TestClr, 0);
+}
+
+void ICMachineStructPage::StatusRefresh()
+{
+    QString pos;
+    QString feedbackPos;
+    QString zSignal;
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    if(currentAxis_ == ICVirtualHost::ICAxis_AxisX1)
+    {
+        pos = host->HostStatus(ICVirtualHost::XPos).toString();
+        feedbackPos = host->HostStatus(ICVirtualHost::DbgX0).toString();
+        zSignal = host->HostStatus(ICVirtualHost::DbgX1).toString();
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY1)
+    {
+        pos = host->HostStatus(ICVirtualHost::YPos).toString();
+        feedbackPos = host->HostStatus(ICVirtualHost::DbgY0).toString();
+        zSignal = host->HostStatus(ICVirtualHost::DbgY1).toString();
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisZ)
+    {
+        pos = host->HostStatus(ICVirtualHost::ZPos).toString();
+        feedbackPos = host->HostStatus(ICVirtualHost::DbgZ0).toString();
+        zSignal = host->HostStatus(ICVirtualHost::DbgZ1).toString();
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisX2)
+    {
+        pos = host->HostStatus(ICVirtualHost::PPos).toString();
+        feedbackPos = host->HostStatus(ICVirtualHost::DbgP0).toString();
+        zSignal = host->HostStatus(ICVirtualHost::DbgP1).toString();
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY2)
+    {
+        pos = host->HostStatus(ICVirtualHost::QPos).toString();
+        feedbackPos = host->HostStatus(ICVirtualHost::DbgQ0).toString();
+        zSignal = host->HostStatus(ICVirtualHost::DbgQ1).toString();
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisA)
+    {
+        pos = host->HostStatus(ICVirtualHost::APos).toString();
+        feedbackPos = host->HostStatus(ICVirtualHost::DbgA0).toString();
+        zSignal = host->HostStatus(ICVirtualHost::DbgA1).toString();
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisB)
+    {
+        pos = host->HostStatus(ICVirtualHost::BPos).toString();
+        feedbackPos = host->HostStatus(ICVirtualHost::DbgB0).toString();
+        zSignal = host->HostStatus(ICVirtualHost::DbgB1).toString();
+    }
+    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisC)
+    {
+        pos = host->HostStatus(ICVirtualHost::CPos).toString();
+        feedbackPos = host->HostStatus(ICVirtualHost::DbgC0).toString();
+        zSignal = host->HostStatus(ICVirtualHost::DbgC1).toString();
+    }
+
+    ui->testLineEdit->setText(pos);
+    ui->feedbackEdit->setText(feedbackPos);
+    ui->zSignalEdit->setText(zSignal);
 }
