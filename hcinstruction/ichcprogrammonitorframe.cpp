@@ -359,7 +359,8 @@ void ICHCProgramMonitorFrame::UpdateHostParam()
     }
     else
     {
-        return;
+        programList_ = ICMold::CurrentMold()->ToUIItems();
+//        return;
     }
     qDebug("after m update");
 
