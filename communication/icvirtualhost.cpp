@@ -150,7 +150,17 @@ void ICVirtualHost::RefreshStatus()
         {
             OperatingRatioSetDialog::Instance()->SetCurrentHandwheelAxis(OperatingRatioSetDialog::Axis_Z);
         }
-        keyboardHandler->SwitchChanged(keyboard->TakeSwitchValue());
+        int swKey = keyboard->TakeSwitchValue();
+        if(swKey == -1)
+        {
+            swKey = keyboard->CurrentSwitchStatus();
+            if(CurrentStatus() == swKey)
+            {
+                swKey = -1;
+            }
+        }
+        keyboardHandler->SwitchChanged(swKey);
+//        keyboardHandler->SwitchChanged(keyboard->TakeSwitchValue());
         keyboardHandler->Keypressed(key);
         keyboardHandler->PulleyChanged(keyboard->TakePulleyValue());
         flag_ = false;
