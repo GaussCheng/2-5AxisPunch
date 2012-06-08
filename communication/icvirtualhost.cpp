@@ -20,6 +20,7 @@
 #include "operatingratiosetdialog.h"
 #include <QDebug>
 #include <QTime>
+#include "icactioncommand.h"
 
 static QTime testTime;
 
@@ -125,6 +126,27 @@ void ICVirtualHost::SetMoldParam(int param, int value)
     isParamChanged_ = true;
 }
 
+static int StatusToKey(int status)
+{
+    switch(status)
+    {
+    case ICVirtualHost::AutoReady:
+    case ICVirtualHost::AutoRunning:
+    case ICVirtualHost::AutoSingleCycle:
+    case ICVirtualHost::AutoStopping:
+    case ICVirtualHost::Auto:
+    {
+        return ICKeyboard::KS_AutoStatu;
+    }
+    case ICVirtualHost::Manual:
+    {
+        return ICKeyboard::KS_ManualStatu;
+    }
+    default:
+        return ICKeyboard::KS_StopStatu;
+    }
+}
+
 void ICVirtualHost::RefreshStatus()
 {
     static ICCommandProcessor* commandProcess = ICCommandProcessor::Instance();
@@ -154,12 +176,34 @@ void ICVirtualHost::RefreshStatus()
         if(swKey == -1)
         {
             swKey = keyboard->CurrentSwitchStatus();
-            if(CurrentStatus() == swKey)
+//            qDebug()<<"swKey"<<swKey<<CurrentStatus();
+            if(StatusToKey(CurrentStatus()) != swKey)
             {
-                swKey = -1;
+                switch(swKey)
+                {
+                case ICKeyboard::KS_AutoStatu:
+                {
+                    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnAuto,
+                                                                     0,
+                                                                     ICMold::CurrentMold()->SyncAct() + ICMacroSubroutine::Instance()->SyncAct(),
+                                                                     ICMold::CurrentMold()->SyncSum() + ICMacroSubroutine::Instance()->SyncSum());
+                }
+                    break;
+                case ICKeyboard::KS_ManualStatu:
+                {
+                    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnManual,
+                                                                     0);
+                }
+                    break;
+                default:
+                    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
+                }
             }
         }
-        keyboardHandler->SwitchChanged(swKey);
+        else
+        {
+            keyboardHandler->SwitchChanged(swKey);
+        }
 //        keyboardHandler->SwitchChanged(keyboard->TakeSwitchValue());
         keyboardHandler->Keypressed(key);
         keyboardHandler->PulleyChanged(keyboard->TakePulleyValue());

@@ -27,6 +27,7 @@ void ICKnobReceiver::run()
         {
             bzero(keyValue, 5);
             read(fd, keyValue, 5);
+            qDebug()<<"Knob"<<keyValue;
 //            system("echo keypress > /dev/fake_keyboard");
 //            write(fakeKeyboard, "keypress", sizeof("keypress"));
             keyboard->SetSwitchValue(QString(keyValue).toInt());

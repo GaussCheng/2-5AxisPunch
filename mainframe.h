@@ -32,6 +32,8 @@ public:
     void SetBackLightOff(bool isOff);
     void ShowScreenSaver();
 
+    bool NoInStop();
+
 public Q_SLOTS:
     void StatusRefreshed();
     void ShowManualPage();
