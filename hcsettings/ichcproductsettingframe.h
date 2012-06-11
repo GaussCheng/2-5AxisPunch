@@ -23,7 +23,6 @@ protected:
     void changeEvent(QEvent *e);
 
 private slots:
-    void on_posComboBox_activated(int index);
     void OnMoldNumberParamChanged();
 
     void on_productClearButton_clicked();

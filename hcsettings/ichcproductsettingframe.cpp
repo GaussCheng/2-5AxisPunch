@@ -39,7 +39,6 @@ ICHCProductSettingFrame::ICHCProductSettingFrame(QWidget *parent) :
     {
         currentPos = 1;
     }
-    ui->posComboBox->setCurrentIndex(currentPos);
     connect(ICMold::CurrentMold(),
             SIGNAL(MoldNumberParamChanged()),
             this,
@@ -76,11 +75,6 @@ void ICHCProductSettingFrame::changeEvent(QEvent *e)
     default:
         break;
     }
-}
-
-void ICHCProductSettingFrame::on_posComboBox_activated(int index)
-{
-    ICMold::CurrentMold()->SetMoldParam(ICMold::PosMainDown, index);
 }
 
 void ICHCProductSettingFrame::OnMoldNumberParamChanged()
