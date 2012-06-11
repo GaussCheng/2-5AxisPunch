@@ -355,6 +355,9 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
             ui->currentAction->setText(tr("Vertical-2"));
         }
     }
+#ifdef Q_WS_X11
+    ui->currentPose->setText(tr("Vertical-1/Vertical-2"));
+#endif
 //    else if(host->IsAction(14))
 //    {
 //        if(currentAction_ != 14)

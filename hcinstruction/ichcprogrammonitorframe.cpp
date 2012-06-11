@@ -213,7 +213,7 @@ void ICHCProgramMonitorFrame::StatusRefreshed()
     if(newCycleTimes_ != oldCycleTimes_)
     {
         oldCycleTimes_ = newCycleTimes_;
-        ui->cycleTimes->setText(QString::number(oldCycleTimes_));
+//        ui->cycleTimes->setText(QString::number(oldCycleTimes_));
     }
     newGoodP_ = host->HostStatus(ICVirtualHost::DbgY0).toUInt();
     if(newGoodP_ != oldGoodP_)

@@ -244,6 +244,27 @@ void ICVirtualHost::RefreshStatus()
         }
         else
         {
+#ifdef Q_WS_X11
+            statusMap_.insert(XPos, 0);
+            statusMap_.insert(YPos, 0);
+            statusMap_.insert(ZPos, 0);
+            statusMap_.insert(PPos, 0);
+            statusMap_.insert(QPos, 0);
+            statusMap_.insert(DbgX0, 10);
+            statusMap_.insert(DbgY0, 148);
+            statusMap_.insert(DbgZ0, 3052);
+            statusMap_.insert(DbgP0, 50);
+            statusMap_.insert(DbgQ0, 60);
+            statusMap_.insert(DbgX1, 150);
+            statusMap_.insert(DbgY1, 123);
+            statusMap_.insert(DbgZ1, 50);
+            statusMap_.insert(DbgP1, 100);
+            statusMap_.insert(DbgQ1, 110);
+            statusMap_.insert(Time, 500);
+#endif
+//            statusMap_.insert(
+//            statusMap_.insert(Input0, 1025);
+//            statusMap_.insert(YPos, 0);
 //            qDebug()<<"Resend time:"<<testTime.restart();
             ++tryTimes_;
 //            qCritical()<<"connect to host fail in refresh status"<<tryTimes_;
@@ -251,7 +272,11 @@ void ICVirtualHost::RefreshStatus()
             if(tryTimes_ == 200)
             {
                 qCritical("Connect to host fail!!");
+#ifdef Q_WS_X11
+                statusMap_.insert(ErrCode, 0);
+#else
                 statusMap_.insert(ErrCode, 500);
+#endif
                 tryTimes_ = 0;
                 statusMap_.insert(Status, ICVirtualHost::Stop);
 //                statusMap_.insert(DbgX0, ICVirtualHost::AutoRunning);

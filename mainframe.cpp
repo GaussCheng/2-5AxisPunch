@@ -213,9 +213,9 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
 
     //    QTimer::singleShot(100, this, SLOT(InitHeavyPage()));
 #ifdef Q_WS_X11
-        ShowInstructPage();
+//        ShowInstructPage();
 //        ShowManualPage();
-//        ShowAutoPage();
+        ShowAutoPage();
 #endif
 
 }
@@ -619,12 +619,12 @@ void MainFrame::StatusRefreshed()
             ui->cycleTimeAndFinistWidget->SetAlarmInfo("");
         }
     }
-    //    finishCount_ = virtualHost->HostStatus(ICVirtualHost::DbgX1).toUInt();
-    //    if(finishCount_ != oldFinishCount_)
-    //    {
-    //        ui->cycleTimeAndFinistWidget->SetFinished(virtualHost->HostStatus(ICVirtualHost::DbgX1).toUInt());
-    //        oldFinishCount_ = finishCount_;
-    //    }
+        finishCount_ = virtualHost->HostStatus(ICVirtualHost::DbgX1).toUInt();
+        if(finishCount_ != oldFinishCount_)
+        {
+            ui->cycleTimeAndFinistWidget->SetFinished(virtualHost->HostStatus(ICVirtualHost::DbgX1).toUInt());
+            oldFinishCount_ = finishCount_;
+        }
     cycleTime_ = virtualHost->HostStatus(ICVirtualHost::Time).toUInt();
     if(cycleTime_ != oldCycleTime_)
     {
@@ -650,12 +650,14 @@ void MainFrame::StatusRefreshed()
     {
         speed_ = "0";
         //        statusStr_ = tr("Stop");
+#ifdef Q_WS_X11
         finishCount_ = virtualHost->FinishProductCount();
         if(finishCount_ != oldFinishCount_)
         {
             ui->cycleTimeAndFinistWidget->SetFinished(finishCount_);
             oldFinishCount_ = finishCount_;
         }
+#endif
         ui->systemStatusFrame->SetProgramStatus(StatusLabel::ONSTATUS);
     }
     else if(runningStatus_ == ICVirtualHost::Auto)

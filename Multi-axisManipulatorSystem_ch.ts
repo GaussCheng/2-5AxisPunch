@@ -57,27 +57,27 @@
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="489"/>
         <source>GX2</source>
-        <translation></translation>
+        <translation>X2</translation>
     </message>
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="608"/>
         <source>GY2</source>
-        <translation></translation>
+        <translation>Y2</translation>
     </message>
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="727"/>
         <source>GA</source>
-        <translation></translation>
+        <translation>A</translation>
     </message>
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="766"/>
         <source>GB</source>
-        <translation></translation>
+        <translation>B</translation>
     </message>
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="805"/>
         <source>GC</source>
-        <translation></translation>
+        <translation>C</translation>
     </message>
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="1059"/>
@@ -135,18 +135,18 @@
         <location filename="hcinstruction/actionsettingframe.ui" line="308"/>
         <source>GY1</source>
         <oldsource>GY</oldsource>
-        <translation></translation>
+        <translation>Y1</translation>
     </message>
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="347"/>
         <source>GZ</source>
-        <translation></translation>
+        <translation>Z</translation>
     </message>
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="386"/>
         <source>GX1</source>
         <oldsource>GX</oldsource>
-        <translation></translation>
+        <translation>X1</translation>
     </message>
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="396"/>
@@ -1905,6 +1905,11 @@ Reason</source>
         <translation>垂直2</translation>
     </message>
     <message>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="358"/>
+        <source>Vertical-1/Vertical-2</source>
+        <translation>垂直1/垂直2</translation>
+    </message>
+    <message>
         <source>Horizontal</source>
         <translation type="obsolete">水平</translation>
     </message>
@@ -2183,15 +2188,15 @@ Reason</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="538"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="539"/>
         <source>Follow</source>
         <translation>跟随</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="387"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="79"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="553"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="563"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="554"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="564"/>
         <source>Speed Disable</source>
         <translation>调速禁止</translation>
     </message>
@@ -2272,12 +2277,12 @@ Reason</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="326"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="544"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="545"/>
         <source>No Follow</source>
         <translation>不跟随</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="553"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="554"/>
         <source>Speed Enable</source>
         <translation>调速允许</translation>
     </message>
@@ -5177,7 +5182,7 @@ Would you want to restart now?</source>
 <context>
     <name>ICVirtualHost</name>
     <message>
-        <location filename="communication/icvirtualhost.cpp" line="88"/>
+        <location filename="communication/icvirtualhost.cpp" line="89"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
@@ -5824,7 +5829,7 @@ Please try a new name</source>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="153"/>
         <source>Times:</source>
-        <translation>计次:</translation>
+        <translation>间隔模数:</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="157"/>
@@ -5969,7 +5974,7 @@ Please try a new name</source>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="227"/>
         <source>Conveyor ON</source>
-        <translation>传送带通</translation>
+        <translation>输送带通</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="228"/>
@@ -6148,7 +6153,7 @@ Please try a new name</source>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="243"/>
         <source>Conveyor OFF</source>
-        <translation>传送带关</translation>
+        <translation>输送带关</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="244"/>

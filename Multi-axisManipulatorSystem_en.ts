@@ -1492,6 +1492,11 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="358"/>
+        <source>Vertical-1/Vertical-2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="83"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="110"/>
         <source>Fixture</source>
@@ -1736,20 +1741,20 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="553"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="554"/>
         <source>Speed Enable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="538"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="539"/>
         <source>Follow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="387"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="79"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="553"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="563"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="554"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="564"/>
         <source>Speed Disable</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1761,7 +1766,7 @@ Infomation</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="326"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="544"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="545"/>
         <source>No Follow</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4317,7 +4322,7 @@ Would you want to restart now?</source>
 <context>
     <name>ICVirtualHost</name>
     <message>
-        <location filename="communication/icvirtualhost.cpp" line="88"/>
+        <location filename="communication/icvirtualhost.cpp" line="89"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
