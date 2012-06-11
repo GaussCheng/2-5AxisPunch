@@ -154,7 +154,7 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
         }
         else if(IsStackedAction(action))
         {
-            commandStr += QObject::tr("Selected:") + QString::number(moldItem.SVal()) + " ";
+            commandStr += QObject::tr("Selected:") + QString::number(moldItem.SVal()) + tr("Group") + " ";
         }
         else if(action == ICMold::ACT_AUX1 ||
                 action == ICMold::ACT_AUX2 ||
@@ -171,11 +171,21 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
             {
                 commandStr += QObject::tr("On");
             }
+            commandStr += " ";
         }
 
     }
-
-    commandStr += QObject::tr("Delay time:") + ICParameterConversion::TransThisIntToThisText(moldItem.DVal(), 2) + "      ";
+    if(moldItem.Clip() == ICMold::ACTCLIP7ON ||
+            moldItem.Clip() == ICMold::ACTCLIP7OFF ||
+            moldItem.Clip() == ICMold::ACTCLIP8ON ||
+            moldItem.Clip() == ICMold::ACTCLIP8OFF)
+    {
+        commandStr += QObject::tr("Action time:") + ICParameterConversion::TransThisIntToThisText(moldItem.DVal(), 2) + "      ";
+    }
+    else
+    {
+        commandStr += QObject::tr("Delay time:") + ICParameterConversion::TransThisIntToThisText(moldItem.DVal(), 2) + "      ";
+    }
 
     return commandStr;
 }

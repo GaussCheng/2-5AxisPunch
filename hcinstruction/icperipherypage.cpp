@@ -18,15 +18,15 @@ ICPeripheryPage::ICPeripheryPage(QWidget *parent) :
     ui->groupLineEdit->setValidator(new QIntValidator(0, 3, this));
     ui->lyDelayLineEdit->setValidator(new QIntValidator(0, 32767, this));
 
-    QPushButton *buttons = new QPushButton[ui->tableWidget->rowCount()];
+    QPushButton *buttons = new QPushButton[ui->tableWidget->rowCount() + ui->actionWidget->rowCount()];
     QPushButton * button;
-    ICPeripheryParameterEditor* editors = new ICPeripheryParameterEditor[ui->tableWidget->rowCount()];
+    ICPeripheryParameterEditor* editors = new ICPeripheryParameterEditor[ui->tableWidget->rowCount() + ui->actionWidget->rowCount()];
     ICPeripheryParameterEditor *editor;
     ioNames_<<tr("Injector   ")<<tr("conveyor  ")<<tr("Reserve1  ")<<tr("Reserve2  ")
-              <<tr("Reserve3  ")<<tr("Reserve4  ")<<tr("Reserve5  ")<<tr("Reserve6  ");
+           <<tr("Reserve3  ")<<tr("Reserve4  ")<<tr("Reserve5  ")<<tr("Reserve6  ");
     onClipToOffClip_.insert(ICMold::ACTCLIP7ON, ICMold::ACTCLIP7OFF);
     onClipToOffClip_.insert(ICMold::ACTCLIP8ON, ICMold::ACTCLIP8OFF);
-//    onClipToOffClip_.insert(ICMold::ACTLAYOUTON, ICMold::ACTLAYOUTOFF);
+    //    onClipToOffClip_.insert(ICMold::ACTLAYOUTON, ICMold::ACTLAYOUTOFF);
     onClipToOffClip_.insert(ICMold::ACT_AUX1, ICMold::ACT_AUX1);
     onClipToOffClip_.insert(ICMold::ACT_AUX2, ICMold::ACT_AUX2);
     onClipToOffClip_.insert(ICMold::ACT_AUX3, ICMold::ACT_AUX3);
@@ -35,7 +35,7 @@ ICPeripheryPage::ICPeripheryPage(QWidget *parent) :
     onClipToOffClip_.insert(ICMold::ACT_AUX6, ICMold::ACT_AUX6);
     offClipToOnClip_.insert(ICMold::ACTCLIP7OFF, ICMold::ACTCLIP7ON);
     offClipToOnClip_.insert(ICMold::ACTCLIP8OFF, ICMold::ACTCLIP8ON);
-//    offClipToOnClip_.insert(ICMold::ACTLAYOUTOFF, ICMold::ACTLAYOUTON);
+    //    offClipToOnClip_.insert(ICMold::ACTLAYOUTOFF, ICMold::ACTLAYOUTON);
     offClipToOnClip_.insert(ICMold::ACT_AUX1, ICMold::ACT_AUX1);
     offClipToOnClip_.insert(ICMold::ACT_AUX2, ICMold::ACT_AUX2);
     offClipToOnClip_.insert(ICMold::ACT_AUX3, ICMold::ACT_AUX3);
@@ -43,22 +43,17 @@ ICPeripheryPage::ICPeripheryPage(QWidget *parent) :
     offClipToOnClip_.insert(ICMold::ACT_AUX5, ICMold::ACT_AUX5);
     offClipToOnClip_.insert(ICMold::ACT_AUX6, ICMold::ACT_AUX6);
     QList<uint> initStatus = onClipToOffClip_.values();
-//    QIntValidator *validator = new QIntValidator(0, 2000, this);
-    for(int i = 0; i != ui->tableWidget->rowCount(); ++i)
+    //    QIntValidator *validator = new QIntValidator(0, 2000, this);
+    for(int i = 0; i != ui->actionWidget->rowCount(); ++i)
     {
         button = buttons + i;
         button->setIcon(offPixmap_);
         button->setText(ioNames_.at(i));
         editor = editors + i;
-//        editor->SetDecimalPlaces(1);
-//        editor->setValidator(validator);
-//        editor->setText("0.0");
-//        delayEdit->setFixedWidth(50);
-
         settingButtons_.append(button);
         editorVector_.append(editor);
-        ui->tableWidget->setCellWidget(i, 1, button);
-        ui->tableWidget->setCellWidget(i, 2, editor);
+        ui->actionWidget->setCellWidget(i, 1, button);
+        ui->actionWidget->setCellWidget(i, 2, editor);
 
         buttonToClip_.insert(button, initStatus.at(i));
         buttonToLight_.insert(button, 0);
@@ -67,16 +62,42 @@ ICPeripheryPage::ICPeripheryPage(QWidget *parent) :
                 SIGNAL(clicked()),
                 &buttonSignalMapper_,
                 SLOT(map()));
+
     }
-//    for(int i = 2; i != settingButtons_.size(); ++i)
-//    {
-//        settingButtons_[i]->hide();
-//    }
+    for(int i = 0; i != ui->tableWidget->rowCount(); ++i)
+    {
+        button = buttons + i + ui->actionWidget->rowCount();
+        button->setIcon(offPixmap_);
+        button->setText(ioNames_.at(i + ui->actionWidget->rowCount()));
+        editor = editors + i + ui->actionWidget->rowCount();
+        //        editor->SetDecimalPlaces(1);
+        //        editor->setValidator(validator);
+        //        editor->setText("0.0");
+        //        delayEdit->setFixedWidth(50);
+
+        settingButtons_.append(button);
+        editorVector_.append(editor);
+        ui->tableWidget->setCellWidget(i, 1, button);
+        ui->tableWidget->setCellWidget(i, 2, editor);
+
+        buttonToClip_.insert(button, initStatus.at(i + ui->actionWidget->rowCount()));
+        buttonToLight_.insert(button, 0);
+        buttonSignalMapper_.setMapping(button, button);
+        connect(button,
+                SIGNAL(clicked()),
+                &buttonSignalMapper_,
+                SLOT(map()));
+    }
+    //    for(int i = 2; i != settingButtons_.size(); ++i)
+    //    {
+    //        settingButtons_[i]->hide();
+    //    }
     ui->tableWidget->resizeColumnsToContents();
+    ui->actionWidget->resizeColumnsToContents();
 
     commandKeyMap_.insert(settingButtons_.at(0), qMakePair(static_cast<int>(IC::VKEY_CLIP7ON), static_cast<int>(IC::VKEY_CLIP7OFF)));
     commandKeyMap_.insert(settingButtons_.at(1), qMakePair(static_cast<int>(IC::VKEY_CLIP8ON), static_cast<int>(IC::VKEY_CLIP8OFF)));
-//    commandKeyMap_.insert(settingButtons_.at(2), qMakePair(static_cast<int>(IC::VKEY_LAYOUTON), static_cast<int>(IC::VKEY_LAYOUTOFF)));
+    //    commandKeyMap_.insert(settingButtons_.at(2), qMakePair(static_cast<int>(IC::VKEY_LAYOUTON), static_cast<int>(IC::VKEY_LAYOUTOFF)));
     commandKeyMap_.insert(settingButtons_.at(2), qMakePair(static_cast<int>(IC::VKEY_RESERVE1_ON), static_cast<int>(IC::VKEY_RESERVE1_OFF)));
     commandKeyMap_.insert(settingButtons_.at(3), qMakePair(static_cast<int>(IC::VKEY_RESERVE2_ON), static_cast<int>(IC::VKEY_RESERVE2_OFF)));
     commandKeyMap_.insert(settingButtons_.at(4), qMakePair(static_cast<int>(IC::VKEY_RESERVE3_ON), static_cast<int>(IC::VKEY_RESERVE3_OFF)));
@@ -160,14 +181,24 @@ QList<ICMoldItem> ICPeripheryPage::CreateCommandImpl() const
 {
     QList<ICMoldItem> ret;
     ICMoldItem item;
+    for(int i = 0; i != ui->actionWidget->rowCount(); ++i)
+    {
+        if(ui->actionWidget->item(i, 0)->checkState() == Qt::Checked)
+        {
+            item.SetClip(buttonToClip_.value(qobject_cast<QAbstractButton*>(ui->actionWidget->cellWidget(i, 1))));
+            item.SetDVal(editorVector_.at(i)->Delay());
+            item.SetSVal(editorVector_.at(i)->Times());
+            ret.append(item);
+        }
+    }
     for(int i = 0; i != ui->tableWidget->rowCount(); ++i)
     {
         if(ui->tableWidget->item(i,0)->checkState() == Qt::Checked)
         {
-            if(i > 1)
-            {
-                item.SetIFVal(buttonToLight_.value(qobject_cast<QAbstractButton*>(ui->tableWidget->cellWidget(i, 1))));
-            }
+            //            if(i > 1)
+            //            {
+            item.SetIFVal(buttonToLight_.value(qobject_cast<QAbstractButton*>(ui->tableWidget->cellWidget(i, 1))));
+            //            }
             item.SetClip(buttonToClip_.value(qobject_cast<QAbstractButton*>(ui->tableWidget->cellWidget(i, 1))));
             item.SetDVal(editorVector_.at(i)->Delay());
             item.SetSVal(editorVector_.at(i)->Times());
