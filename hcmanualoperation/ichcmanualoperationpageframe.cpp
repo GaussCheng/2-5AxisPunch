@@ -50,6 +50,27 @@ ICHCManualOperationPageFrame::~ICHCManualOperationPageFrame()
 void ICHCManualOperationPageFrame::showEvent(QShowEvent *e)
 {
 //    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisA) == ICVirtualHost::ICAxisDefine_None)
+    {
+        ui->aAddButton->hide();
+        ui->aSubButton->hide();
+    }
+    else
+    {
+        ui->aAddButton->show();
+        ui->aSubButton->show();
+    }
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisB) == ICVirtualHost::ICAxisDefine_None)
+    {
+        ui->bAddButton->hide();
+        ui->bSubButton->hide();
+    }
+    else
+    {
+        ui->bAddButton->show();
+        ui->bSubButton->show();
+    }
     if(manualAdjustPage_ != NULL)
     {
         manualAdjustPage_->ClearStatus();
@@ -400,6 +421,7 @@ void ICHCManualOperationPageFrame::on_aAddButton_pressed()
 
 void ICHCManualOperationPageFrame::OnButtonReleased()
 {
+//    ICKeyboard::Instace()->SetKeyValue(ICKeyboard::FB_NULL);
     ICKeyboard::Instace()->SetPressed(false);
 }
 

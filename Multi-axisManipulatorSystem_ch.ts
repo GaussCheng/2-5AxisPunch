@@ -1708,7 +1708,7 @@ Reason</source>
         <translation type="obsolete">下一步</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="745"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="819"/>
         <source>Insert</source>
         <translation>插入</translation>
     </message>
@@ -1788,9 +1788,19 @@ Reason</source>
         <translation>组合</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="720"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="707"/>
+        <source>A+</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="744"/>
+        <source>A-</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="794"/>
         <source>Menu</source>
-        <translation>动作菜单</translation>
+        <translation>主菜单</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1809,12 +1819,12 @@ Reason</source>
         <translation type="obsolete">该模号是当前模号!</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="651"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="662"/>
         <source>warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="652"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="663"/>
         <source>Stand program can not be delete action</source>
         <translation>标准程序不能删除动作</translation>
     </message>
@@ -1851,8 +1861,8 @@ Reason</source>
         <translation type="obsolete">当前姿势:</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="85"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="112"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="106"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="133"/>
         <source>Other</source>
         <translation>其他</translation>
     </message>
@@ -1861,51 +1871,51 @@ Reason</source>
         <translation type="obsolete">教导</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="86"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="113"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="107"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="134"/>
         <source>Adjust</source>
         <translation>调位</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="87"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="114"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="108"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="135"/>
         <source>Reserve</source>
         <translation>预留</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="280"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="331"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="301"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="352"/>
         <source>Horizontal-1</source>
         <translation>水平1</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="288"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="339"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="309"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="360"/>
         <source>Vertical-1</source>
         <translation>垂直1</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="305"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="326"/>
         <source>/Horizontal-2</source>
         <translation>/水平2</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="313"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="334"/>
         <source>/Vertical-2</source>
         <translation>/垂直2</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="347"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="368"/>
         <source>Horizontal-2</source>
         <translation>水平2</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="355"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="376"/>
         <source>Vertical-2</source>
         <translation>垂直2</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="359"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="380"/>
         <source>Vertical-1/Vertical-2</source>
         <translation>垂直1/垂直2</translation>
     </message>
@@ -1942,14 +1952,14 @@ Reason</source>
         <translation type="obsolete">备用I/O</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="83"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="110"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="104"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="131"/>
         <source>Fixture</source>
         <translation>夹具</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="84"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="111"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="105"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="132"/>
         <source>Sucker</source>
         <translation>吸</translation>
     </message>
@@ -3788,7 +3798,7 @@ Please enter an digit between </source>
         <location filename="categorypage/icmonitorpageframe.cpp" line="42"/>
         <source>Vertical-1</source>
         <oldsource>Vertical</oldsource>
-        <translation>垂直1限</translation>
+        <translation>C轴原点</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="43"/>

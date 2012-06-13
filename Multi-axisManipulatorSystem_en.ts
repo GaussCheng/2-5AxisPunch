@@ -1374,12 +1374,22 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="720"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="707"/>
+        <source>A+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="744"/>
+        <source>A-</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="794"/>
         <source>Menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="745"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="819"/>
         <source>Insert</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1404,12 +1414,12 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="651"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="662"/>
         <source>warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="652"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="663"/>
         <source>Stand program can not be delete action</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1442,69 +1452,69 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="85"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="112"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="106"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="133"/>
         <source>Other</source>
         <translation type="unfinished">Manipulator I/O</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="86"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="113"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="107"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="134"/>
         <source>Adjust</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="87"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="114"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="108"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="135"/>
         <source>Reserve</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="280"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="331"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="301"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="352"/>
         <source>Horizontal-1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="288"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="339"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="309"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="360"/>
         <source>Vertical-1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="305"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="326"/>
         <source>/Horizontal-2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="313"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="334"/>
         <source>/Vertical-2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="347"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="368"/>
         <source>Horizontal-2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="355"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="376"/>
         <source>Vertical-2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="359"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="380"/>
         <source>Vertical-1/Vertical-2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="83"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="110"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="104"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="131"/>
         <source>Fixture</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="84"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="111"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="105"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="132"/>
         <source>Sucker</source>
         <translation type="unfinished"></translation>
     </message>

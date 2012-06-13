@@ -83,9 +83,13 @@ bool MoldInformation::CreateNewSourceFile(const QString & fileName)
 #ifdef HC_8AXIS
         QList<ICMoldItem> items;
         ICMoldItem item;
-        item.SetAction(ICMold::ACTPOSEVERT);
-        item.SetNum(0);
-        items.append(item);
+
+        if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis_AxisC) != ICVirtualHost::ICAxisDefine_Servo)
+        {
+            item.SetAction(ICMold::ACTPOSEVERT);
+            item.SetNum(0);
+            items.append(item);
+        }
         CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisX1, ICMold::GX, ICMold::ACTMAINBACKWARD);
         CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisY1, ICMold::GY, ICMold::ACTMAINUP);
         CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisZ, ICMold::GZ, -1);

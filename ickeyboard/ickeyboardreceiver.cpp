@@ -88,7 +88,13 @@ void ICKeyboardReceiver::run()
                     key == ICKeyboard::VFB_X2Add ||
                     key == ICKeyboard::VFB_X2Sub ||
                     key == ICKeyboard::VFB_Y2Add ||
-                    key == ICKeyboard::VFB_Y2Sub)
+                    key == ICKeyboard::VFB_Y2Sub ||
+                    key == ICKeyboard::VFB_AAdd ||
+                    key == ICKeyboard::VFB_ASub ||
+                    key == ICKeyboard::VFB_BSub ||
+                    key == ICKeyboard::VFB_BAdd ||
+                    key == ICKeyboard::VFB_CSub ||
+                    key == ICKeyboard::VFB_CAdd)
             {
                 //                if(time_.restart() > 5)
                 //                {

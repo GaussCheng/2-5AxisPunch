@@ -58,6 +58,11 @@ private slots:
 
     void on_moldComboBox_activated(int index);
 
+    void on_aPlusBtn_pressed();
+
+    void on_aMinusBtn_pressed();
+    void OnActionButtonReleased();
+
 signals:
     void CurrentMoldChanged(QString moldName);
     void CurrentProgramChanged();

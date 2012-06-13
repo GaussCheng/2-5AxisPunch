@@ -858,7 +858,7 @@ void ICHCSystemSettingsFrame::UpdateConfigShow_()
 
 void ICHCSystemSettingsFrame::StatusRefresh()
 {
-    ui->versionLabel->setText("Version: App 2.1.4; OS 1.0; Libs:4.7.3; Host:" + ICVirtualHost::GlobalVirtualHost()->HostStatus(ICVirtualHost::Time).toString());
+    ui->versionLabel->setText("Version: App 2.2.0; OS 1.0; Libs:4.7.3; Host:" + ICVirtualHost::GlobalVirtualHost()->HostStatus(ICVirtualHost::Time).toString());
 }
 
 void ICHCSystemSettingsFrame::on_structSelectHostButton_clicked()

@@ -73,6 +73,17 @@ ICHCInstructionPageFrame::~ICHCInstructionPageFrame()
 
 void ICHCInstructionPageFrame::showEvent(QShowEvent *e)
 {
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisA) == ICVirtualHost::ICAxisDefine_None)
+    {
+        ui->aMinusBtn->hide();
+        ui->aPlusBtn->hide();
+    }
+    else
+    {
+        ui->aMinusBtn->show();
+        ui->aPlusBtn->show();
+    }
     if(ICParametersSave::Instance()->IsExtentFunctionUsed())
     {
         ui->flagsButton->show();
@@ -257,6 +268,12 @@ void ICHCInstructionPageFrame::InitSignal()
             SIGNAL(clicked()),
             this,
             SLOT(OptionButtonClicked()));
+    connect(ui->aMinusBtn,
+            SIGNAL(released()),
+            SLOT(OnActionButtonReleased()));
+    connect(ui->aPlusBtn,
+            SIGNAL(released()),
+            SLOT(OnActionButtonReleased()));
 //    connect(this,
 //            SIGNAL(CurrentProgramChanged()),
 //            ICInstructParam::Instance(),
@@ -933,4 +950,21 @@ void ICHCInstructionPageFrame::SaveCurrentEdit()
         ICMacroSubroutine::Instance()->SetSubRoutine(ICMold::UIItemToMoldItem(programList_), currentEdit_ - 1);
         ICMacroSubroutine::Instance()->SaveMacroSubroutieFile(currentEdit_ - 1);
     }
+}
+
+void ICHCInstructionPageFrame::on_aPlusBtn_pressed()
+{
+    ICKeyboard::Instace()->SetKeyValue(ICKeyboard::VFB_AAdd);
+    ICKeyboard::Instace()->SetPressed(true);
+}
+
+void ICHCInstructionPageFrame::on_aMinusBtn_pressed()
+{
+    ICKeyboard::Instace()->SetKeyValue(ICKeyboard::VFB_ASub);
+    ICKeyboard::Instace()->SetPressed(true);
+}
+
+void ICHCInstructionPageFrame::OnActionButtonReleased()
+{
+    ICKeyboard::Instace()->SetPressed(false);
 }
