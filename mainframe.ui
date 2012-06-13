@@ -501,7 +501,7 @@ border-right: 3px solid green;
       <item>
        <widget class="QLabel" name="ammLabel">
         <property name="text">
-         <string>mm    </string>
+         <string>Degree</string>
         </property>
        </widget>
       </item>
@@ -546,7 +546,7 @@ border-right: 3px solid green;
       <item>
        <widget class="QLabel" name="bmmLabel">
         <property name="text">
-         <string>mm    </string>
+         <string>Degree</string>
         </property>
        </widget>
       </item>
@@ -591,7 +591,7 @@ border-right: 3px solid green;
       <item>
        <widget class="QLabel" name="cmmLabel">
         <property name="text">
-         <string>mm    </string>
+         <string>Degree</string>
         </property>
        </widget>
       </item>

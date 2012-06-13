@@ -5,7 +5,7 @@
 #define HC_8AXIS
 #endif
 
-//#ifndef HC_ARMV6
-//#define HC_ARMV6
-//#endif
+#ifndef HC_ARMV6
+#define HC_ARMV6
+#endif
 #endif // CONFIG_H

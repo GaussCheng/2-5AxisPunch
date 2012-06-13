@@ -2110,19 +2110,16 @@ Reason</source>
         <translation>等待开模时间</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="83"/>
         <source>Position When Arm Down</source>
-        <translation>型内下降姿势</translation>
+        <translation type="obsolete">型内下降姿势</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="97"/>
         <source>Vertical Down</source>
-        <translation>垂直下降</translation>
+        <translation type="obsolete">垂直下降</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="102"/>
         <source>Horizontal Down</source>
-        <translation>水平下降</translation>
+        <translation type="obsolete">水平下降</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcproductsettingframe.ui" line="76"/>
@@ -2130,17 +2127,17 @@ Reason</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="120"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="103"/>
         <source>Alarm Times</source>
         <translation>报警时间</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="110"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="113"/>
         <source>Times</source>
         <translation>s</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="127"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="83"/>
         <source>Product Clear</source>
         <translation>产品清零</translation>
     </message>
@@ -4319,95 +4316,95 @@ Please enter an digit between </source>
         <translation>组合动作选择</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="20"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="26"/>
         <source>Periphery</source>
         <translation>辅助设备</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="116"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="122"/>
         <source>Injector</source>
         <translation>喷油</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="121"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="127"/>
         <source>Conveyor</source>
         <translation>输送带</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="456"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="462"/>
         <source>Layout</source>
         <translation>堆叠开始</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="264"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="270"/>
         <source>Reserve1</source>
         <translation>预留1</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="269"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="275"/>
         <source>Reserve2</source>
         <translation>预留2</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="274"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="280"/>
         <source>Reserve3</source>
         <translation>预留3</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="279"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="285"/>
         <source>Reserve4</source>
         <translation>预留4</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="284"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="290"/>
         <source>Reserve5</source>
         <translation>预留5</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="289"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="295"/>
         <source>Reserve6</source>
         <translation>预留6</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="126"/>
-        <location filename="hcinstruction/icperipherypage.ui" line="294"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="132"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="300"/>
         <source>En</source>
         <translation>使能</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="134"/>
-        <location filename="hcinstruction/icperipherypage.ui" line="302"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="140"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="308"/>
         <source>Current/Setting</source>
         <translation>当前设定</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="139"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="145"/>
         <source>Action Time/Times</source>
-        <translation>动作时间              间隔模数</translation>
+        <translation>动作时间       间隔模数</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="307"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="313"/>
         <source>Delay/Times</source>
         <oldsource>Delay</oldsource>
-        <translation>延时时间               间隔模数</translation>
+        <translation>延时时间      间隔模数</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="463"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="469"/>
         <source>Group</source>
         <translation>组</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="482"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="488"/>
         <source>0</source>
         <translation>0</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="489"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="495"/>
         <source>Delay</source>
         <translation>延时</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="508"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="514"/>
         <source>0.00</source>
         <translation>0.00</translation>
     </message>
@@ -5276,6 +5273,13 @@ Would you want to restart now?</source>
         <translation></translation>
     </message>
     <message>
+        <location filename="mainframe.ui" line="504"/>
+        <location filename="mainframe.ui" line="549"/>
+        <location filename="mainframe.ui" line="594"/>
+        <source>Degree</source>
+        <translation>度</translation>
+    </message>
+    <message>
         <location filename="mainframe.ui" line="517"/>
         <source>B:</source>
         <translation></translation>
@@ -5291,9 +5295,6 @@ Would you want to restart now?</source>
         <location filename="mainframe.ui" line="297"/>
         <location filename="mainframe.ui" line="342"/>
         <location filename="mainframe.ui" line="387"/>
-        <location filename="mainframe.ui" line="504"/>
-        <location filename="mainframe.ui" line="549"/>
-        <location filename="mainframe.ui" line="594"/>
         <source>mm    </source>
         <translation></translation>
     </message>

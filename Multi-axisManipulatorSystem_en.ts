@@ -1614,37 +1614,22 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="83"/>
-        <source>Position When Arm Down</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="97"/>
-        <source>Vertical Down</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="102"/>
-        <source>Horizontal Down</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="hcsettings/ichcproductsettingframe.ui" line="76"/>
         <source>s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="120"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="103"/>
         <source>Alarm Times</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="110"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="113"/>
         <source>Times</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="127"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="83"/>
         <source>Product Clear</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3578,95 +3563,95 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="20"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="26"/>
         <source>Periphery</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="116"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="122"/>
         <source>Injector</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="121"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="127"/>
         <source>Conveyor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="456"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="462"/>
         <source>Layout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="264"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="270"/>
         <source>Reserve1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="269"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="275"/>
         <source>Reserve2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="274"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="280"/>
         <source>Reserve3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="279"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="285"/>
         <source>Reserve4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="284"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="290"/>
         <source>Reserve5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="289"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="295"/>
         <source>Reserve6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="126"/>
-        <location filename="hcinstruction/icperipherypage.ui" line="294"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="132"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="300"/>
         <source>En</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="134"/>
-        <location filename="hcinstruction/icperipherypage.ui" line="302"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="140"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="308"/>
         <source>Current/Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="139"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="145"/>
         <source>Action Time/Times</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="307"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="313"/>
         <source>Delay/Times</source>
         <oldsource>Delay</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="463"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="469"/>
         <source>Group</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="482"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="488"/>
         <source>0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="489"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="495"/>
         <source>Delay</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="508"/>
+        <location filename="hcinstruction/icperipherypage.ui" line="514"/>
         <source>0.00</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4412,6 +4397,13 @@ Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="mainframe.ui" line="504"/>
+        <location filename="mainframe.ui" line="549"/>
+        <location filename="mainframe.ui" line="594"/>
+        <source>Degree</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="mainframe.ui" line="517"/>
         <source>B:</source>
         <translation type="unfinished"></translation>
@@ -4427,9 +4419,6 @@ Would you want to restart now?</source>
         <location filename="mainframe.ui" line="297"/>
         <location filename="mainframe.ui" line="342"/>
         <location filename="mainframe.ui" line="387"/>
-        <location filename="mainframe.ui" line="504"/>
-        <location filename="mainframe.ui" line="549"/>
-        <location filename="mainframe.ui" line="594"/>
         <source>mm    </source>
         <translation type="unfinished"></translation>
     </message>
