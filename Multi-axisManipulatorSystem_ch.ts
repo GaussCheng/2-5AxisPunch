@@ -3995,7 +3995,7 @@ Please enter an digit between </source>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="53"/>
         <source>Vertical-2</source>
-        <translation>垂直2限</translation>
+        <translation>A轴原点</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="66"/>

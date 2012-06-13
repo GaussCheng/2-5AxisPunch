@@ -28,6 +28,8 @@ ICKeyboardHandler::ICKeyboardHandler(QObject *parent) :
     virtualKeyMap_.insert(ICKeyboard::FB_Origin, IC::VKEY_ORIGIN);
     virtualKeyMap_.insert(ICKeyboard::VFB_Pose_Horizontal, IC::VKEY_HORI);
     virtualKeyMap_.insert(ICKeyboard::VFB_Pose_Vertical, IC::VKEY_VERT);
+//    virtualKeyMap_.insert(ICKeyboard::VFB_Pose_Horizontal, IC::VKEY_CADD);
+//    virtualKeyMap_.insert(ICKeyboard::VFB_Pose_Vertical, IC::VKEY_CSUB);
     virtualKeyMap_.insert(ICKeyboard::FB_Reset, IC::VKEY_RETURN);
     virtualKeyMap_.insert(ICKeyboard::VFB_Run, IC::VKEY_START);
     virtualKeyMap_.insert(ICKeyboard::FB_Stop, IC::VKEY_STOP);
