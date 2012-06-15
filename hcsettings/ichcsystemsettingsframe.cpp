@@ -871,3 +871,15 @@ void ICHCSystemSettingsFrame::on_structSelectHostButton_clicked()
     ui->hmiY2->setText(armYStructValueToName_.value((armStruct_ & 0x00C0) >> 6));
     ui->hmiArm->setText(armValueToName_.value((armStruct_ & 0x0300) >> 8));
 }
+
+void ICHCSystemSettingsFrame::on_calibrationBtn_clicked()
+{
+    if(QMessageBox::warning(this,
+                            tr("Warning"),
+                            tr("The system will be reboot to calibrate! Do you want to continue?"),
+                            QMessageBox::Ok | QMessageBox::Cancel) == QMessageBox::Ok)
+    {
+        ::system("cd /home/szhc && echo recal >>recal && reboot");
+    }
+
+}

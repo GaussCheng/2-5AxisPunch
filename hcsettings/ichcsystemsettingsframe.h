@@ -80,6 +80,7 @@ private slots:
 //    void on_saveParaButton_clicked();
     void StatusRefresh();
     void on_structSelectHostButton_clicked();
+    void on_calibrationBtn_clicked();
 };
 
 #endif // ICHCSYSTEMSETTINGSFRAME_H
