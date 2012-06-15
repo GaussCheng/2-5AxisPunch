@@ -174,7 +174,7 @@ private:
     //    bool isPulleyTaken_;
     mutable QMutex pulleyMutex_;
     int currentSwitchValue_;
-//    mutable QMutex keyMutex_;
+    mutable QMutex keyMutex_;
     mutable QMutex switchMutex_;
 
 };

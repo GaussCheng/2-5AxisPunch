@@ -54,28 +54,30 @@ void ICKeyboard::Receive()
 int ICKeyboard::TakeKeyValue()
 {
     //    QMutexLocker locker(&keyMutex_);
-    //    if(keyMutex_.tryLock())
-    //    {
-    if(isTaken_)
+    if(!keyMutex_.tryLock())
     {
         return -1;
     }
+//    if(isTaken_)
+//    {
+//        return -1;
+//    }
     int keyValue = keyValue_;
     keyValue_ = -1;
-    isTaken_ = true;
-    //        keyMutex_.unlock();
+//    isTaken_ = true;
+    keyMutex_.unlock();
     return keyValue;
     //    }
 }
 
 void ICKeyboard::SetKeyValue(int value)
 {
-    //    QMutexLocker locker(&keyMutex_);
-    if(isTaken_)
-    {
-        keyValue_ = value;
-        isTaken_ = false;
-    }
+    QMutexLocker locker(&keyMutex_);
+    //    if(isTaken_)
+    //    {
+    keyValue_ = value;
+    //        isTaken_ = false;
+    //    }
 }
 
 int ICKeyboard::TakeSwitchValue()
@@ -88,7 +90,7 @@ int ICKeyboard::TakeSwitchValue()
     int switchValue = switchValue_;
     switchValue_ = -1;
     switchMutex_.unlock();
-//    isSwitchTaken_ = true;
+    //    isSwitchTaken_ = true;
     return switchValue;
 }
 
@@ -101,12 +103,12 @@ int ICKeyboard::CurrentSwitchStatus() const
 void ICKeyboard::SetSwitchValue(int value)
 {
     QMutexLocker locker(&switchMutex_);
-//    if(isSwitchTaken_)
-//    {
-        switchValue_ = value;
-        currentSwitchValue_ = value;
-//        isSwitchTaken_ = false;
-//    }
+    //    if(isSwitchTaken_)
+    //    {
+    switchValue_ = value;
+    currentSwitchValue_ = value;
+    //        isSwitchTaken_ = false;
+    //    }
 }
 
 int ICKeyboard::TakePulleyValue()
