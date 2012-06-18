@@ -67,6 +67,9 @@ public:
     uint BackLightTime() { return GetParameter(ProductConfig, "BackLight", 5).toUInt();}
     void SetBackLightTime(uint time) { SaveParameter(ProductConfig, "BackLight", time);}
 
+    uint Brightness() { return GetParameter(ProductConfig, "Brightness", 0).toUInt();}
+    void SetBrightness(uint brightness);
+
     bool IsSingleArm() { return GetParameter(SystemMachine, "ArmNum", false).toBool();}
     void SetSingleArm(bool isSingle) { SaveParameter(SystemMachine, "ArmNum", isSingle);}
 
@@ -90,5 +93,7 @@ private:
 
     ICParametersSave(const QString fileName = QString());
 };
+
+
 
 #endif // ICPARAMETERSSAVE_H

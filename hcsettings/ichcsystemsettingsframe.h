@@ -81,6 +81,7 @@ private slots:
     void StatusRefresh();
     void on_structSelectHostButton_clicked();
     void on_calibrationBtn_clicked();
+    void on_brightnessSlider_valueChanged(int value);
 };
 
 #endif // ICHCSYSTEMSETTINGSFRAME_H

@@ -422,6 +422,7 @@ void ICHCManualOperationPageFrame::on_aAddButton_pressed()
 void ICHCManualOperationPageFrame::OnButtonReleased()
 {
 //    ICKeyboard::Instace()->SetKeyValue(ICKeyboard::FB_NULL);
+    qDebug("release");
     ICKeyboard::Instace()->SetPressed(false);
 }
 

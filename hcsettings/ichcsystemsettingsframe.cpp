@@ -65,6 +65,7 @@ ICHCSystemSettingsFrame::ICHCSystemSettingsFrame(QWidget *parent) :
     armValueToName_.insert(1, tr("Double Arm"));
     ui->backLightTimeEdit->setValidator(new QIntValidator(0, 60, this));
     ui->backLightTimeEdit->SetThisIntToThisText(ICParametersSave::Instance()->BackLightTime());
+    ui->brightnessSlider->setValue(qAbs(ui->brightnessSlider->maximum() - ICParametersSave::Instance()->Brightness()));
 }
 
 ICHCSystemSettingsFrame::~ICHCSystemSettingsFrame()
@@ -882,4 +883,10 @@ void ICHCSystemSettingsFrame::on_calibrationBtn_clicked()
         ::system("cd /home/szhc && echo recal >>recal && reboot");
     }
 
+}
+
+void ICHCSystemSettingsFrame::on_brightnessSlider_valueChanged(int value)
+{
+    uint brightness = qAbs(ui->brightnessSlider->maximum() - value);
+    ICParametersSave::Instance()->SetBrightness(brightness);
 }

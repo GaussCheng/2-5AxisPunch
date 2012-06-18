@@ -182,8 +182,10 @@ void ICParametersSave::SetDistanceRotation(const QString &axisName, double value
     system("rm ./sysconfig/DistanceRotation~");
 }
 
-//void ICParametersSave::SetFileName(const QString &fileName)
-//{
-//    setPath(QSettings::IniFormat, QSettings::UserScope, fileName);
-//    qDebug() << this->fileName();
-//}
+void ICParametersSave::SetBrightness(uint brightness)
+{
+    QString cmd("BackLight on ");
+    cmd += QString::number(brightness);
+    ::system(cmd.toAscii());
+    SaveParameter(ProductConfig, "Brightness", brightness);
+}

@@ -122,6 +122,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
             SLOT(showMessage(QString)));
     emit LoadMessage("Connected");
     ui->setupUi(this);
+    ICParametersSave::Instance()->SetBrightness(ICParametersSave::Instance()->Brightness());
     QDir configDir("./sysconfig");
     configDir.setFilter(QDir::Files);
     QStringList backupFiles = configDir.entryList(QStringList()<<"*~");
@@ -214,8 +215,8 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     //    QTimer::singleShot(100, this, SLOT(InitHeavyPage()));
 #ifdef Q_WS_X11
 //        ShowInstructPage();
-        ShowManualPage();
-//        ShowAutoPage();
+//        ShowManualPage();
+        ShowAutoPage();
 #endif
 
 }
@@ -973,7 +974,8 @@ void MainFrame::SetHasInput(bool isInput)
     isDoAction_ = isInput;
     if(isInput && IsBackLightOff())
     {
-        system("BackLight on");
+//        system("BackLight on");
+        ICParametersSave::Instance()->SetBrightness(ICParametersSave::Instance()->Brightness());
         SetBackLightOff(false);
     }
 }

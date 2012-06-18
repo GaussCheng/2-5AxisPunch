@@ -38,7 +38,8 @@ ICVirtualHost::ICVirtualHost(QObject *parent) :
     isInitSuccess_(true),
     oldMoldNum_(8),
     productCount_(0),
-    isParamChanged_(false)
+    isParamChanged_(false),
+    isFixtureCheck_(true)
 {
     memset(oldSubStep, -1, 8);
     if(GlobalVirtualHost() == NULL)

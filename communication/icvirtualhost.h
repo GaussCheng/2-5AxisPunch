@@ -556,6 +556,9 @@ public:
     void SetAxisDefine(int config) { systemParamMap_.insert(SYS_Config_Arm, config);}
 
     bool IsParamChanged() const { return isParamChanged_;}
+
+    bool IsFixtureCheck() const { return isFixtureCheck_;}
+    void SetFixtureCheck(bool isCheck) { isFixtureCheck_ = isCheck;}
 public Q_SLOTS:
     void SetMoldParam(int param, int value);
 Q_SIGNALS:
@@ -618,6 +621,7 @@ private:
     bool hasTuneSpeed_;
     int productCount_;
     bool isParamChanged_;
+    bool isFixtureCheck_;
     static ICVirtualHost* globalVirtualHost_;
 };
 #define icGlobalVirtuallHost ICVirtualHost::GlobalVirtualHost()

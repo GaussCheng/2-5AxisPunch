@@ -103,6 +103,10 @@ void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
                                                      0,
                                                      ICMold::CurrentMold()->SyncAct() + ICMacroSubroutine::Instance()->SyncAct(),
                                                      ICMold::CurrentMold()->SyncSum() + ICMacroSubroutine::Instance()->SyncSum());
+    if(!ICVirtualHost::GlobalVirtualHost()->IsFixtureCheck())
+    {
+        return;
+    }
     memset(fixtureCount_, 0, sizeof(int) * 6);
     QList<ICMoldItem> moldItems = ICMold::UIItemToMoldItem(programList_);
     ICMoldItem tmpItem;
@@ -144,7 +148,13 @@ void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
     }
     if(needWarn)
     {
-        QMessageBox::warning(this, tr("Warning"), checkResult);
+        if(QMessageBox::warning(this,
+                             tr("Warning"),
+                             checkResult + tr("Do you want to ignor this warning?"),
+                             QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes)
+        {
+            ICVirtualHost::GlobalVirtualHost()->SetFixtureCheck(false);
+        }
     }
 }
 
