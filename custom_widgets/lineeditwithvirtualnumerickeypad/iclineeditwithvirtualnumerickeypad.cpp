@@ -41,6 +41,7 @@ void ICLineEditWithVirtualNumericKeypad::mouseReleaseEvent(QMouseEvent *e)
             this,
             SLOT(SetCurrentText(QString)));
 
+    this->setStyleSheet("background:lightgreen;");
     virtualNumericKeypadDialog_->ResetDisplay();
 
     virtualNumericKeypadDialog_->exec();
@@ -49,6 +50,7 @@ void ICLineEditWithVirtualNumericKeypad::mouseReleaseEvent(QMouseEvent *e)
                this,
                SLOT(SetCurrentText(QString)));
     QLineEdit::mouseReleaseEvent(e);
+    this->setStyleSheet("");
 }
 
 void ICLineEditWithVirtualNumericKeypad::wheelEvent(QWheelEvent * wheelEvent)

@@ -92,3 +92,14 @@ QComboBox::down-arrow:on { /* shift the arrow when popup is open */
      top: 1px;
      left: 1px;
 }
+
+QLineEdit {
+     border: 2px solid gray;
+     border-radius: 10px;
+     padding: 0 8px;
+     background: rgb(79, 223, 255);
+     selection-background-color: darkgray;
+}
+QLineEdit::disabled{
+background:lightgray;
+}

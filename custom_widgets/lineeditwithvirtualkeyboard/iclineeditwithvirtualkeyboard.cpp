@@ -22,6 +22,7 @@ void ICLineEditWithVirtualKeyboard::mouseReleaseEvent(QMouseEvent *e)
             this,
             SLOT(SetCurrentText(QString)));
 
+    this->setStyleSheet("background:lightgreen;");
     virtualKeyboardDialog_->ResetDisplay();
 
     virtualKeyboardDialog_->exec();
@@ -30,6 +31,7 @@ void ICLineEditWithVirtualKeyboard::mouseReleaseEvent(QMouseEvent *e)
                this,
                SLOT(SetCurrentText(QString)));
     QLineEdit::mouseReleaseEvent(e);
+    this->setStyleSheet("");
 }
 
 void ICLineEditWithVirtualKeyboard::SetCurrentText(const QString &currentText)
