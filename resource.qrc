@@ -54,5 +54,6 @@
         <file>resource/Medium-speedforward.png</file>
         <file>resource/Traverse-in-fine-tuning.png</file>
         <file>resource/Traverse-out-fine-tuning.png</file>
+        <file>resource/combobox_arrow.png</file>
     </qresource>
 </RCC>
