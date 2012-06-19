@@ -32,6 +32,8 @@ ICParametersSave::ICParametersSave(const QString fileName)
         }
     }
     file.close();
+    beepFD_ = open("/dev/szhc_beep", O_WRONLY);
+    SetKeyTone(KeyTone());
 }
 
 ICParametersSave::~ICParametersSave()

@@ -82,10 +82,12 @@ void ICHCSystemSettingsFrame::InitParameter()
     if(paraSave->KeyTone())
     {
         ui->keyToneButton->setText(tr("Key Tone(ON)"));
+        ui->keyToneButton->setChecked(true);
     }
     else
     {
         ui->keyToneButton->setText(tr("Key Tone(OFF)"));
+        ui->keyToneButton->setChecked(false);
     }
 }
 

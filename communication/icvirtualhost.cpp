@@ -107,10 +107,12 @@ ICVirtualHost::ICVirtualHost(QObject *parent) :
     {
         qWarning("open watchdog fail!");
     }
+#ifndef Q_WS_X11
 #ifdef HC_ARMV6
     QTimer::singleShot(5, this, SLOT(RefreshStatus()));
 #else
     timer_->start(10);
+#endif
 #endif
 
 }

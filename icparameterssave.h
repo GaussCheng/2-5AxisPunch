@@ -5,6 +5,8 @@
 #include <QString>
 #include <QLocale>
 #include <QTranslator>
+#include <fcntl.h>
+#include <sys/ioctl.h>
 
 class ICParametersSave : public QSettings
 {
@@ -53,7 +55,7 @@ public:
     QTranslator* Translator() { return translator_;}
 
     bool KeyTone() { return GetParameter(ProductConfig, "KeyTone", true).toBool();}
-    void SetKeyTone(bool isOn)  {SaveParameter(ProductConfig, "KeyTone", isOn);}
+    void SetKeyTone(bool isOn)  {SaveParameter(ProductConfig, "KeyTone", isOn);ioctl(beepFD_, 0, isOn ? 20 : 10);}
 
     bool VerifyPassword(OperationLevel level, const QString& password);
     void SetPassword(OperationLevel level, const QString& password);
@@ -90,7 +92,7 @@ private:
     static ICParametersSave* instance_;
     QTranslator *translator_;
     QMap<QString, double> axisToRotate_;
-
+    int beepFD_;
     ICParametersSave(const QString fileName = QString());
 };
 
