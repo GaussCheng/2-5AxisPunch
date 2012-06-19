@@ -58,7 +58,9 @@ ICHCInjectionPage::ICHCInjectionPage(QWidget *parent) :
                 &buttonSignalMapper_,
                 SLOT(map()));
     }
-    ui->tableWidget->resizeColumnsToContents();
+//    ui->tableWidget->resizeColumnsToContents();
+    ui->tableWidget->setColumnWidth(0, 50);
+    ui->tableWidget->setColumnWidth(1, 140);
 
 
     commandKeyMap_.insert(settingButtons_.at(0), qMakePair(static_cast<int>(IC::VKEY_CLSMDON), static_cast<int>(IC::VKEY_CLSMDOFF)));

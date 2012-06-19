@@ -92,8 +92,12 @@ ICPeripheryPage::ICPeripheryPage(QWidget *parent) :
     //    {
     //        settingButtons_[i]->hide();
     //    }
-    ui->tableWidget->resizeColumnsToContents();
-    ui->actionWidget->resizeColumnsToContents();
+//    ui->tableWidget->resizeColumnsToContents();
+    ui->tableWidget->setColumnWidth(0, 50);
+    ui->tableWidget->setColumnWidth(1, 140);
+//    ui->actionWidget->resizeColumnsToContents();
+    ui->actionWidget->setColumnWidth(0, 50);
+    ui->actionWidget->setColumnWidth(1, 140);
 
     commandKeyMap_.insert(settingButtons_.at(0), qMakePair(static_cast<int>(IC::VKEY_CLIP7ON), static_cast<int>(IC::VKEY_CLIP7OFF)));
     commandKeyMap_.insert(settingButtons_.at(1), qMakePair(static_cast<int>(IC::VKEY_CLIP8ON), static_cast<int>(IC::VKEY_CLIP8OFF)));

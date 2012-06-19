@@ -312,7 +312,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="singleStepButton">
+      <widget class="QToolButton" name="singleStepButton">
        <property name="minimumSize">
         <size>
          <width>120</width>
@@ -338,10 +338,13 @@
          <height>32</height>
         </size>
        </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonTextBesideIcon</enum>
+       </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="speedEnableButton">
+      <widget class="QToolButton" name="speedEnableButton">
        <property name="minimumSize">
         <size>
          <width>120</width>
@@ -366,6 +369,9 @@
          <width>32</width>
          <height>32</height>
         </size>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonTextBesideIcon</enum>
        </property>
       </widget>
      </item>

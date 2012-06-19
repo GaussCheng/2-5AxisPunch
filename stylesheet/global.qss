@@ -1,12 +1,62 @@
-QToolButton 
-{
-	border: 2px solid #8f8f91;
-	border-radius: 6px;
+#ICHCManualOperationPageFrame QToolButton {
+     border-style: outset;
+     border-width: 2px;
+     border-radius: 10px;
+     border-color: gray;
 	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(63, 174, 247, 255), stop:1 rgba(255, 255, 255, 255));
+    /* background-color: red;*/
+     /*font: bold 14px;*/
+     min-width: 64px;
+     min-height: 48px;
+     /*padding: 6px;*/
 }
-QToolButton:pressed 
-{
-	background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(63, 174, 247, 255), stop:1 rgba(255, 255, 255, 255));
+
+#ICHCManualOperationPageFrame QToolButton:pressed {
+     border-style: inset;
+	background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(38, 146, 218, 255), stop:1 rgba(255, 255, 255, 255));
+    /* background-color: rgb(224, 0, 0);*/
+
+}
+
+QToolButton{
+     border-style: outset;
+     border-width: 2px;
+     border-radius: 10px;
+     border-color: gray;
+	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(63, 174, 247, 255), stop:1 rgba(255, 255, 255, 255));
+    /* background-color: red;*/
+     /*font: bold 14px;*/
+     /*min-width: 64px;*/
+     /*min-height: 48px;*/
+     /*padding: 6px;*/
+}
+
+QToolButton:pressed{
+     border-style: inset;
+	background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(38, 146, 218, 255), stop:1 rgba(255, 255, 255, 255));
+    /* background-color: rgb(224, 0, 0);*/
+
+}
+
+QPushButton{
+     border-style: outset;
+     border-width: 2px;
+     border-radius: 6px;
+     border-color: gray;
+	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(63, 174, 247, 255), stop:1 rgba(255, 255, 255, 255));
+    /* background-color: red;*/
+     /*font: bold 14px;*/
+     /*min-width: 10em;*/
+     /*min-height: 48px;*/
+     /*padding: 6px;*/
+     padding-right: 6px;
+     padding-left:6px;
+}
+
+QPushButton:pressed{
+     border-style: inset;
+	background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(38, 146, 218, 255), stop:1 rgba(255, 255, 255, 255));
+    /* background-color: rgb(224, 0, 0);*/
 
 }
 

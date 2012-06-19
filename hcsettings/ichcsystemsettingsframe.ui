@@ -1456,15 +1456,15 @@ height: 33px;
  </widget>
  <customwidgets>
   <customwidget>
-   <class>ICLineEditWithVirtualNumericKeypad</class>
-   <extends>QLineEdit</extends>
-   <header>iclineeditwithvirtualnumerickeypad.h</header>
-  </customwidget>
-  <customwidget>
    <class>ICPageTab</class>
    <extends>QWidget</extends>
    <header>icpagetab.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ICLineEditWithVirtualNumericKeypad</class>
+   <extends>QLineEdit</extends>
+   <header>iclineeditwithvirtualnumerickeypad.h</header>
   </customwidget>
   <customwidget>
    <class>ICLineEditWithVirtualKeyboard</class>

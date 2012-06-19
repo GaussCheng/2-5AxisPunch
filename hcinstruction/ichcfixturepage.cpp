@@ -40,6 +40,7 @@ ICHCFixturePage::ICHCFixturePage(QWidget *parent) :
     for(int i = 0; i != ui->tableWidget->rowCount(); ++i)
     {
         button = buttons + i;
+//        button->setMinimumWidth(100);
         button->setIcon(offPixmap_);
         button->setText(ioNames_.at(i));
 
@@ -61,7 +62,9 @@ ICHCFixturePage::ICHCFixturePage(QWidget *parent) :
                 &buttonSignalMapper_,
                 SLOT(map()));
     }
-    ui->tableWidget->resizeColumnsToContents();
+//    ui->tableWidget->resizeColumnsToContents();
+    ui->tableWidget->setColumnWidth(0, 50);
+    ui->tableWidget->setColumnWidth(1, 140);
 
 //    currentPosMap_.insert(ui->fixture1CurrentLabel, 0);
 //    currentPosMap_.insert(ui->fixture2CurrentLabel, 1);
