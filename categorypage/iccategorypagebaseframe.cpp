@@ -13,7 +13,7 @@ ICCategoryPageBaseFrame::ICCategoryPageBaseFrame(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->funcShortcutsToolButton->move(800 - ui->funcShortcutsToolButton->width(), 0);
+//    ui->funcShortcutsToolButton->move(800 - ui->funcShortcutsToolButton->width(), 0);
 
     InitSignal();
 }
