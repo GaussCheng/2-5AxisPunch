@@ -790,6 +790,20 @@
          <height>48</height>
         </size>
        </property>
+       <property name="styleSheet">
+        <string notr="true">#commandButton{
+     border-style: outset;
+     border-width: 2px;
+     border-radius: 10px;
+     border-color: gray;
+	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(42, 240, 50, 255), stop:1 rgba(255, 255, 255, 255));
+}
+#commandButton:pressed{
+     border-style: inset;
+	background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(42, 240, 50, 255), stop:1 rgba(255, 255, 255, 255));
+
+}</string>
+       </property>
        <property name="text">
         <string>Menu</string>
        </property>
