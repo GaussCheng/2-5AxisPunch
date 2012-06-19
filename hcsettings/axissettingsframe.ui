@@ -193,12 +193,6 @@
               <height>38</height>
              </size>
             </property>
-            <property name="maximumSize">
-             <size>
-              <width>80</width>
-              <height>38</height>
-             </size>
-            </property>
             <property name="text">
              <string>+Test</string>
             </property>
@@ -218,12 +212,6 @@
               <height>38</height>
              </size>
             </property>
-            <property name="maximumSize">
-             <size>
-              <width>80</width>
-              <height>38</height>
-             </size>
-            </property>
             <property name="text">
              <string>-Test</string>
             </property>
@@ -238,12 +226,6 @@
              </sizepolicy>
             </property>
             <property name="minimumSize">
-             <size>
-              <width>80</width>
-              <height>38</height>
-             </size>
-            </property>
-            <property name="maximumSize">
              <size>
               <width>80</width>
               <height>38</height>

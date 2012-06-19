@@ -230,19 +230,6 @@
             </property>
            </widget>
           </item>
-          <item row="0" column="3">
-           <spacer name="horizontalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
           <item row="1" column="0">
            <widget class="QLabel" name="label_2">
             <property name="text">
@@ -318,6 +305,19 @@
             </property>
            </widget>
           </item>
+          <item row="0" column="3">
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
          </layout>
          <zorder>label</zorder>
          <zorder>mechanicalLengthLineEdit</zorder>
@@ -335,9 +335,7 @@
          <zorder>distanceRotationEdit</zorder>
          <zorder>label_11</zorder>
          <zorder>saveToolButton</zorder>
-         <zorder>testGroupBox</zorder>
          <zorder>horizontalSpacer_2</zorder>
-         <zorder>testGroupBox</zorder>
         </widget>
        </item>
        <item>
@@ -395,12 +393,6 @@
                 <height>38</height>
                </size>
               </property>
-              <property name="maximumSize">
-               <size>
-                <width>80</width>
-                <height>38</height>
-               </size>
-              </property>
               <property name="text">
                <string>+Test</string>
               </property>
@@ -415,12 +407,6 @@
                </sizepolicy>
               </property>
               <property name="minimumSize">
-               <size>
-                <width>80</width>
-                <height>38</height>
-               </size>
-              </property>
-              <property name="maximumSize">
                <size>
                 <width>80</width>
                 <height>38</height>
@@ -445,12 +431,6 @@
                 <height>38</height>
                </size>
               </property>
-              <property name="maximumSize">
-               <size>
-                <width>80</width>
-                <height>38</height>
-               </size>
-              </property>
               <property name="text">
                <string>Clear</string>
               </property>
@@ -469,15 +449,15 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>ICLineEditWithVirtualNumericKeypad</class>
-   <extends>QLineEdit</extends>
-   <header>iclineeditwithvirtualnumerickeypad.h</header>
-  </customwidget>
-  <customwidget>
    <class>ICPageTab</class>
    <extends>QWidget</extends>
    <header>icpagetab.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ICLineEditWithVirtualNumericKeypad</class>
+   <extends>QLineEdit</extends>
+   <header>iclineeditwithvirtualnumerickeypad.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
