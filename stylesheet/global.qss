@@ -3,7 +3,7 @@
      border-width: 2px;
      border-radius: 10px;
      border-color: gray;
-	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(63, 174, 247, 255), stop:1 rgba(255, 255, 255, 255));
+	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(199, 199, 199, 255), stop:1 rgba(255, 255, 255, 255));
     /* background-color: red;*/
      /*font: bold 14px;*/
      min-width: 64px;
@@ -23,7 +23,7 @@ QToolButton{
      border-width: 2px;
      border-radius: 10px;
      border-color: gray;
-	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(63, 174, 247, 255), stop:1 rgba(255, 255, 255, 255));
+	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(199, 199, 199, 255), stop:1 rgba(255, 255, 255, 255));
     /* background-color: red;*/
      /*font: bold 14px;*/
      /*min-width: 64px;*/
@@ -46,7 +46,7 @@ QPushButton{
      border-width: 2px;
      border-radius: 6px;
      border-color: gray;
-	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(63, 174, 247, 255), stop:1 rgba(255, 255, 255, 255));
+	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(199, 199, 199, 255), stop:1 rgba(255, 255, 255, 255));
     /* background-color: red;*/
      /*font: bold 14px;*/
      /*min-width: 10em;*/
@@ -70,7 +70,7 @@ QComboBox {
      border: 2px solid gray;
      border-radius: 10px;
      padding: 1px 18px 1px 3px;
-	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(63, 174, 247, 255), stop:1 rgba(255, 255, 255, 255));
+	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(199, 199, 199, 255), stop:1 rgba(255, 255, 255, 255));
      /*min-width: 6em;*/
 }
 QComboBox::disabled {
@@ -106,8 +106,8 @@ QLineEdit {
      border: 2px solid gray;
      border-radius: 10px;
      padding: 0 8px;
-     background: rgb(79, 223, 255);
-     selection-background-color: darkgray;
+     /*background: rgb(79, 223, 255);*/
+     /*selection-background-color: darkgray;*/
 }
 QLineEdit::disabled{
 background:lightgray;

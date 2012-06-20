@@ -419,13 +419,15 @@ void ICHCInstructionPageFrame::InitParameter()
 //    ui->programSelectedComboBox->setCurrentIndex(ui->programSelectedComboBox->findText(recordName));
 
 //    ICInstructParam::Instance()->UpdateHostParam();
-    //    UpdateHostParam();
+    UpdateHostParam();
     //    LoadMoldFile(recordName);
 }
 
 void ICHCInstructionPageFrame::UpdateHostParam()
 {
     qDebug("update");
+    qDebug()<<"Update"<<currentEdit_;
+    qDebug()<<"UpdateMold size"<<ICMold::CurrentMold()->MoldContent().size();
     if(currentEdit_ == 0)
     {
         programList_ = ICMold::CurrentMold()->ToUIItems();
@@ -930,6 +932,10 @@ void ICHCInstructionPageFrame::on_downButton_clicked()
 
 void ICHCInstructionPageFrame::on_moldComboBox_activated(int index)
 {
+    if(index < 0)
+    {
+        return;
+    }
     SaveCurrentEdit();
     ui->moldContentListWidget->clear();
     programList_.clear();

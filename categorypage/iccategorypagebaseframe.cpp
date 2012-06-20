@@ -34,10 +34,6 @@ void ICCategoryPageBaseFrame::InitSignal()
 //            SLOT(MoveShortCutFrame()));
 }
 
-void ICCategoryPageBaseFrame::on_funcShortcutsToolButton_clicked()
-{
-//    QMessageBox::warning(this, "asdf", "dasf");
-}
 
 void ICCategoryPageBaseFrame::MoveShortCutFrame()
 {

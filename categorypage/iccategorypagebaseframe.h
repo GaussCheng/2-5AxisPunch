@@ -28,7 +28,6 @@ private:
     QTimer *showWindowTimer_;
 
 private slots:
-    void on_funcShortcutsToolButton_clicked();
 
     void MoveShortCutFrame();
 };
