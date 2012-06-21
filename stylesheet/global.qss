@@ -13,7 +13,9 @@
 
 #ICHCManualOperationPageFrame QToolButton:pressed {
      border-style: inset;
-	background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(38, 146, 218, 255), stop:1 rgba(255, 255, 255, 255));
+     /*background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(38, 146, 218, 255), stop:1 rgba(255, 255, 255, 255));*/
+     background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(39, 26, 247, 255), stop:1 rgba(114, 171, 213, 255));
+     color:white;
     /* background-color: rgb(224, 0, 0);*/
 
 }
@@ -36,7 +38,9 @@ background-color:lightgray;
 
 QToolButton:pressed{
      border-style: inset;
-	background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(38, 146, 218, 255), stop:1 rgba(255, 255, 255, 255));
+     /*background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(38, 146, 218, 255), stop:1 rgba(255, 255, 255, 255));*/
+     background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(39, 26, 247, 255), stop:1 rgba(114, 171, 213, 255));
+     color:white;
     /* background-color: rgb(224, 0, 0);*/
 
 }
@@ -61,7 +65,9 @@ background-color:lightgray;
 
 QPushButton:pressed, QPushButton:checked{
      border-style: inset;
-	background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(38, 146, 218, 255), stop:1 rgba(255, 255, 255, 255));
+     /*background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(38, 146, 218, 255), stop:1 rgba(255, 255, 255, 255));*/
+     background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(39, 26, 247, 255), stop:1 rgba(114, 171, 213, 255));
+     color:white;
     /* background-color: rgb(224, 0, 0);*/
 
 }
