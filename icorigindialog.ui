@@ -41,6 +41,12 @@
      </item>
      <item>
       <widget class="QPushButton" name="yesBtn">
+       <property name="minimumSize">
+        <size>
+         <width>48</width>
+         <height>32</height>
+        </size>
+       </property>
        <property name="text">
         <string>Yes</string>
        </property>
@@ -48,6 +54,12 @@
      </item>
      <item>
       <widget class="QPushButton" name="noBtn">
+       <property name="minimumSize">
+        <size>
+         <width>48</width>
+         <height>32</height>
+        </size>
+       </property>
        <property name="text">
         <string>No</string>
        </property>
