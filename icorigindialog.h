@@ -25,8 +25,13 @@ protected:
 
 private Q_SLOTS:
     void StepChanged(int step);
+     void StatusRefreshed();
 
 //    void on_buttonBox_accepted();
+
+     void on_yesBtn_clicked();
+
+     void on_noBtn_clicked();
 
 private:
     Ui::ICOriginDialog *ui;

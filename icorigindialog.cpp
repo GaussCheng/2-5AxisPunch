@@ -28,7 +28,13 @@ void ICOriginDialog::showEvent(QShowEvent *e)
             SIGNAL(StepChanged(int)),
             this,
             SLOT(StepChanged(int)));
+    connect(ICVirtualHost::GlobalVirtualHost(),
+            SIGNAL(StatusRefreshed()),
+            this,
+            SLOT(StatusRefreshed()));
     ui->label->setText(tr("Please press the start button to start execute origin action"));
+    ui->yesBtn->hide();
+    ui->noBtn->hide();
     QDialog::showEvent(e);
 }
 
@@ -38,6 +44,10 @@ void ICOriginDialog::hideEvent(QHideEvent *e)
                SIGNAL(StepChanged(int)),
                this,
                SLOT(StepChanged(int)));
+    disconnect(ICVirtualHost::GlobalVirtualHost(),
+            SIGNAL(StatusRefreshed()),
+            this,
+            SLOT(StatusRefreshed()));
     ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
     QDialog::hideEvent(e);
 }
@@ -79,6 +89,23 @@ void ICOriginDialog::StepChanged(int step)
 //                       .arg(host->HostStatus(ICVirtualHost::DbgZ0).toUInt()));
 }
 
+void ICOriginDialog::StatusRefreshed()
+{
+    int hintcode = ICVirtualHost::GlobalVirtualHost()->HintNum();
+    if(hintcode == 14)
+    {
+        ui->label->setText(tr("Do you need to auto position?"));
+        ui->yesBtn->show();
+        ui->noBtn->show();
+    }
+    else
+    {
+        ui->yesBtn->hide();
+        ui->noBtn->hide();
+    }
+}
+
+
 //void ICOriginDialog::on_buttonBox_accepted()
 //{
 //    //    if(step == 90)
@@ -100,3 +127,15 @@ void ICOriginDialog::StepChanged(int step)
 
 //    //    }
 //}
+
+void ICOriginDialog::on_yesBtn_clicked()
+{
+    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_GoOn, 0);
+    ui->label->setText(tr("Originning"));
+}
+
+void ICOriginDialog::on_noBtn_clicked()
+{
+    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_GiveUp, 0);
+    ui->label->setText(tr("Originning"));
+}

@@ -719,8 +719,8 @@ void ICVirtualHost::InitMold_()
     QString configPath = path;
     configPath.chop(3);
     configPath += "fnc";
-    Q_ASSERT_X(QFile::exists(path), "ICVirtualHost::InitMold_", "act is not exits");
-    Q_ASSERT_X(QFile::exists(configPath), "ICVirtualHost::InitMold_", "fnc is not exits");
+//    Q_ASSERT_X(QFile::exists(path), "ICVirtualHost::InitMold_", "act is not exits");
+//    Q_ASSERT_X(QFile::exists(configPath), "ICVirtualHost::InitMold_", "fnc is not exits");
     if(!QFile::exists(path) || !QFile::exists(configPath))
     {
         path = "./records/ERRRT.act";
