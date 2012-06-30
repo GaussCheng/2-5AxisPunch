@@ -29,6 +29,7 @@ void ICReturnPage::showEvent(QShowEvent *e)
 
 void ICReturnPage::hideEvent(QHideEvent *e)
 {
+    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
     disconnect(ICVirtualHost::GlobalVirtualHost(),
                SIGNAL(StatusRefreshed()),
                this,

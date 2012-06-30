@@ -1794,7 +1794,7 @@ int hc_query_status(modbus_param_t *mb_param, int slave, int start_addr, int nb,
     int ret = select(mb_param->fd + 1, &readFD, NULL, NULL, &tv);
     if(ret == 0)
     {
-        printf("Query Timeout!!\n");
+//        printf("Query Timeout!!\n");
         ret = -1;
         goto Send;
     }
