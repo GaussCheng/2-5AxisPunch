@@ -1831,95 +1831,148 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="51"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="427"/>
+        <source>X</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="434"/>
+        <source>Y</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="441"/>
+        <source>Z</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="481"/>
         <source>Page 0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="57"/>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="379"/>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="410"/>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="441"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="487"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="518"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="549"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="580"/>
         <source>buttonGroup_2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="373"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="574"/>
         <source>Page 1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="404"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="512"/>
         <source>Page 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="435"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="543"/>
         <source>Page 3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="66"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="35"/>
         <source>Sequence</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="94"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="63"/>
         <source>X-Z-Y</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="97"/>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="123"/>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="149"/>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="175"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="66"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="92"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="118"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="144"/>
         <source>buttonGroup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="120"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="89"/>
         <source>Y-X-Z</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="146"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="115"/>
         <source>Z-X-Y</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="172"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="141"/>
         <source>Y-Z-X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="194"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="154"/>
+        <source>Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="188"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="214"/>
+        <source>buttonGroup_3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="211"/>
+        <source>X PP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="240"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="266"/>
+        <source>buttonGroup_4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="263"/>
+        <source>Y PP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="292"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="318"/>
+        <source>buttonGroup_5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="315"/>
+        <source>Z PP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="339"/>
         <source>Step</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="217"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="185"/>
         <source>X RP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="260"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="237"/>
         <source>Y RP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="303"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="289"/>
         <source>Z RP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="330"/>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="337"/>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="344"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="406"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="413"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="420"/>
         <source>mm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="187"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="332"/>
         <source>Lattice</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3572,23 +3625,23 @@ Please enter an digit between </source>
 <context>
     <name>ICOriginDialog</name>
     <message>
-        <location filename="icorigindialog.cpp" line="31"/>
+        <location filename="icorigindialog.cpp" line="35"/>
         <source>Please press the start button to start execute origin action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="65"/>
+        <location filename="icorigindialog.cpp" line="73"/>
         <source>Originning...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="89"/>
+        <location filename="icorigindialog.cpp" line="97"/>
         <source>Do you need to auto position?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="126"/>
-        <location filename="icorigindialog.cpp" line="132"/>
+        <location filename="icorigindialog.cpp" line="134"/>
+        <location filename="icorigindialog.cpp" line="140"/>
         <source>Originning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3598,12 +3651,12 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icorigindialog.ui" line="45"/>
+        <location filename="icorigindialog.ui" line="51"/>
         <source>Yes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icorigindialog.ui" line="52"/>
+        <location filename="icorigindialog.ui" line="64"/>
         <source>No</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3905,7 +3958,7 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icreturnpage.cpp" line="58"/>
+        <location filename="icreturnpage.cpp" line="59"/>
         <source>Returnning</source>
         <translation type="unfinished"></translation>
     </message>
