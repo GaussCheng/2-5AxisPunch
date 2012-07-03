@@ -2397,17 +2397,17 @@ Reason</source>
     <message>
         <location filename="hcsettings/ichcstackedsettingsframe.ui" line="427"/>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation>X轴</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcstackedsettingsframe.ui" line="434"/>
         <source>Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Y轴</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcstackedsettingsframe.ui" line="441"/>
         <source>Z</source>
-        <translation type="unfinished"></translation>
+        <translation>Z轴</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcstackedsettingsframe.ui" line="481"/>
@@ -2445,7 +2445,7 @@ Reason</source>
     <message>
         <location filename="hcsettings/ichcstackedsettingsframe.ui" line="63"/>
         <source>X-Z-Y</source>
-        <translation></translation>
+        <translation>X-&gt;Z-&gt;Y</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcstackedsettingsframe.ui" line="66"/>
@@ -2458,17 +2458,17 @@ Reason</source>
     <message>
         <location filename="hcsettings/ichcstackedsettingsframe.ui" line="89"/>
         <source>Y-X-Z</source>
-        <translation></translation>
+        <translation>Y-&gt;X-&gt;Z</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcstackedsettingsframe.ui" line="115"/>
         <source>Z-X-Y</source>
-        <translation></translation>
+        <translation>Z-&gt;X-&gt;Y</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcstackedsettingsframe.ui" line="141"/>
         <source>Y-Z-X</source>
-        <translation></translation>
+        <translation>Y-&gt;Z-&gt;X</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcstackedsettingsframe.ui" line="154"/>
@@ -2484,7 +2484,7 @@ Reason</source>
     <message>
         <location filename="hcsettings/ichcstackedsettingsframe.ui" line="211"/>
         <source>X PP</source>
-        <translation>X正向</translation>
+        <translation>X轴正向</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcstackedsettingsframe.ui" line="240"/>
@@ -2495,7 +2495,7 @@ Reason</source>
     <message>
         <location filename="hcsettings/ichcstackedsettingsframe.ui" line="263"/>
         <source>Y PP</source>
-        <translation>Y正向</translation>
+        <translation>Y轴正向</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcstackedsettingsframe.ui" line="292"/>
@@ -2506,7 +2506,7 @@ Reason</source>
     <message>
         <location filename="hcsettings/ichcstackedsettingsframe.ui" line="315"/>
         <source>Z PP</source>
-        <translation>Z正向</translation>
+        <translation>Z轴正向</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcstackedsettingsframe.ui" line="339"/>
@@ -2516,17 +2516,17 @@ Reason</source>
     <message>
         <location filename="hcsettings/ichcstackedsettingsframe.ui" line="185"/>
         <source>X RP</source>
-        <translation>X反向</translation>
+        <translation>X轴反向</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcstackedsettingsframe.ui" line="237"/>
         <source>Y RP</source>
-        <translation>Y反向</translation>
+        <translation>Y轴反向</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcstackedsettingsframe.ui" line="289"/>
         <source>Z RP</source>
-        <translation>Z反向</translation>
+        <translation>Z轴反向</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcstackedsettingsframe.ui" line="406"/>
@@ -2538,7 +2538,7 @@ Reason</source>
     <message>
         <location filename="hcsettings/ichcstackedsettingsframe.ui" line="332"/>
         <source>Lattice</source>
-        <translation>点阵</translation>
+        <translation>个数</translation>
     </message>
 </context>
 <context>
