@@ -53,7 +53,7 @@ void ICProgramHeadFrame::UpdateDateTime()
 {
     QDateTime dateTime = QDateTime::currentDateTime();
     ui->currentTimeLabel->setText(dateTime.toString("hh:mm"));
-    ui->currentDateLabel->setText(dateTime.toString("yyyy-MM-dd"));
+    ui->currentDateLabel->setText(dateTime.toString("yyyy/MM/dd"));
 }
 
 void ICProgramHeadFrame::UpdateAutoTime()

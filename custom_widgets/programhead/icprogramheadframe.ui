@@ -36,6 +36,9 @@
        <property name="text">
         <string/>
        </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
       </widget>
      </item>
      <item>
@@ -48,6 +51,9 @@
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -86,8 +92,7 @@
           </sizepolicy>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(125, 125, 125);
-color: rgb(255, 255, 0);</string>
+          <string notr="true">color: rgb(0, 85, 255);</string>
          </property>
          <property name="text">
           <string>name</string>
