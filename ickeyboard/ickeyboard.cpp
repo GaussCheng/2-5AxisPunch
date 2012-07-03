@@ -54,30 +54,30 @@ void ICKeyboard::Receive()
 int ICKeyboard::TakeKeyValue()
 {
     //    QMutexLocker locker(&keyMutex_);
-    if(!keyMutex_.tryLock())
-    {
-        return -1;
-    }
-//    if(isTaken_)
+//    if(!keyMutex_.tryLock())
 //    {
 //        return -1;
 //    }
+    if(isTaken_)
+    {
+        return -1;
+    }
     int keyValue = keyValue_;
     keyValue_ = -1;
-//    isTaken_ = true;
-    keyMutex_.unlock();
+    isTaken_ = true;
+//    keyMutex_.unlock();
     return keyValue;
     //    }
 }
 
 void ICKeyboard::SetKeyValue(int value)
 {
-    QMutexLocker locker(&keyMutex_);
-    //    if(isTaken_)
-    //    {
+//    QMutexLocker locker(&keyMutex_);
+        if(isTaken_)
+        {
     keyValue_ = value;
-    //        isTaken_ = false;
-    //    }
+            isTaken_ = false;
+        }
 }
 
 int ICKeyboard::TakeSwitchValue()
