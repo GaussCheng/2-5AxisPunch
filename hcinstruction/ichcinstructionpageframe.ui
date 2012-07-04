@@ -118,6 +118,14 @@ border-radius: 0px;</string>
            <height>0</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true">QListView{
+background-color: darkgray;
+}
+QListView::item{
+padding:5px;
+}</string>
+         </property>
          <property name="horizontalScrollBarPolicy">
           <enum>Qt::ScrollBarAlwaysOff</enum>
          </property>

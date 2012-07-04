@@ -1122,7 +1122,8 @@ Infomation</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcfixturepage.ui" line="26"/>
-        <source>Fixture</source>
+        <source>Fixture Action</source>
+        <oldsource>Fixture</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1280,142 +1281,112 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="170"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="324"/>
         <source>Injection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="436"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="476"/>
         <source>Flags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="208"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="286"/>
         <source>Fixture</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="246"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="248"/>
         <source>pneumatic</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="398"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="514"/>
         <source>Conditions</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="284"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="362"/>
         <source>Periphery</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="360"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="438"/>
         <source>Cut</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="483"/>
-        <source>Current Mold</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="488"/>
-        <source>Sub0</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="493"/>
-        <source>Sub1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="498"/>
-        <source>Sub2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="503"/>
-        <source>Sub3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="508"/>
-        <source>Sub4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="513"/>
-        <source>Sub5</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="518"/>
-        <source>Sub6</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="523"/>
-        <source>Sub7</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="625"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="636"/>
         <source>Decompose</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="666"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="677"/>
         <source>Compose</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="707"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="731"/>
         <source>A+</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="744"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="768"/>
         <source>A-</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="808"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="832"/>
         <source>Menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="833"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="857"/>
         <source>Insert</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="549"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="560"/>
         <source>Modify</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="132"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="41"/>
+        <source>Editing:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="48"/>
+        <source>Main</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="94"/>
+        <source>Program</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="210"/>
         <source>Line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="322"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="400"/>
         <source>Wait</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="587"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="598"/>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="670"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="694"/>
         <source>warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="671"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="695"/>
         <source>Stand program can not be delete action</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1731,20 +1702,20 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="564"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="569"/>
         <source>Speed Enable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="549"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="554"/>
         <source>Follow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="361"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="79"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="564"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="574"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="569"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="579"/>
         <source>Speed Disable</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1756,7 +1727,7 @@ Infomation</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="297"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="555"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="560"/>
         <source>No Follow</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1851,25 +1822,25 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="487"/>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="518"/>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="549"/>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="580"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="490"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="521"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="552"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="583"/>
         <source>buttonGroup_2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="574"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="515"/>
         <source>Page 1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="512"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="546"/>
         <source>Page 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="543"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="577"/>
         <source>Page 3</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3908,40 +3879,103 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="73"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="79"/>
         <source>Mold</source>
         <oldsource>Mold Name</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="93"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="98"/>
         <source>name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="124"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="116"/>
         <source>Run Time:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="138"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="130"/>
         <source>0.0h</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="177"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="169"/>
         <source>Level</source>
         <oldsource>Passwd Level</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="199"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="191"/>
         <source>Machine Operator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="61"/>
         <source>%1 h</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ICProgramSelector</name>
+    <message>
+        <location filename="hcinstruction/icprogramselector.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icprogramselector.ui" line="20"/>
+        <source>Program</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icprogramselector.ui" line="34"/>
+        <source>Main</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icprogramselector.ui" line="39"/>
+        <source>Sub-1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icprogramselector.ui" line="44"/>
+        <source>Sub-2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icprogramselector.ui" line="49"/>
+        <source>Sub-3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icprogramselector.ui" line="54"/>
+        <source>Sub-4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icprogramselector.ui" line="59"/>
+        <source>Sub-5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icprogramselector.ui" line="64"/>
+        <source>Sub-6</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icprogramselector.ui" line="69"/>
+        <source>Sub-7</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icprogramselector.ui" line="74"/>
+        <source>Sub-8</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icprogramselector.ui" line="97"/>
+        <source>Select</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

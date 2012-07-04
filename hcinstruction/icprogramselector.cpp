@@ -15,5 +15,9 @@ ICProgramSelector::~ICProgramSelector()
 
 void ICProgramSelector::on_selectButton_clicked()
 {
+    if(ui->programList->currentRow() < 0)
+    {
+        return;
+    }
     emit ProgramChanged(ui->programList->currentRow(), ui->programList->item(ui->programList->currentRow())->text());
 }
