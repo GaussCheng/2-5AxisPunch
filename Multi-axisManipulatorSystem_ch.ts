@@ -1139,48 +1139,80 @@ Reason</source>
         <translation>使用巨集</translation>
     </message>
     <message>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="117"/>
+        <source>Sub-1</source>
+        <translation>子程序1</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="122"/>
+        <source>Sub-2</source>
+        <translation>子程序2</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="127"/>
+        <source>Sub-3</source>
+        <translation>子程序3</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="132"/>
+        <source>Sub-4</source>
+        <translation>子程序4</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="137"/>
+        <source>Sub-5</source>
+        <translation>子程序5</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="142"/>
+        <source>Sub-6</source>
+        <translation>子程序6</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="147"/>
+        <source>Sub-7</source>
+        <translation>子程序7</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="152"/>
+        <source>Sub-8</source>
+        <translation>子程序8</translation>
+    </message>
+    <message>
         <source>ON:</source>
         <translation type="obsolete">开:</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="117"/>
         <source>Macro0</source>
-        <translation>巨集0</translation>
+        <translation type="obsolete">巨集0</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="122"/>
         <source>Macro1</source>
-        <translation>巨集1</translation>
+        <translation type="obsolete">巨集1</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="127"/>
         <source>Macro2</source>
-        <translation>巨集2</translation>
+        <translation type="obsolete">巨集2</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="132"/>
         <source>Macro3</source>
-        <translation>巨集3</translation>
+        <translation type="obsolete">巨集3</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="137"/>
         <source>Macro4</source>
-        <translation>巨集4</translation>
+        <translation type="obsolete">巨集4</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="142"/>
         <source>Macro5</source>
-        <translation>巨集5</translation>
+        <translation type="obsolete">巨集5</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="147"/>
         <source>Macro6</source>
-        <translation>巨集6</translation>
+        <translation type="obsolete">巨集6</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="152"/>
         <source>Macro7</source>
-        <translation>巨集7</translation>
+        <translation type="obsolete">巨集7</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcconditionpage.ui" line="160"/>
@@ -1670,7 +1702,7 @@ Reason</source>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.ui" line="94"/>
         <source>Program</source>
-        <translation type="unfinished">教导选择</translation>
+        <translation>教导选择</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.ui" line="218"/>
@@ -2852,24 +2884,24 @@ Reason</source>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.ui" line="929"/>
         <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1038"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="484"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="502"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="520"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="538"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="556"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="574"/>
-        <source>Internal security zone</source>
-        <translation>型内安全区</translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="943"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1052"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="485"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="503"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="521"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="539"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="557"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="575"/>
+        <source>Internal security zone</source>
+        <translation>型内安全区</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="943"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1052"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="486"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="504"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="522"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="540"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="558"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="576"/>
         <source>External security zone</source>
         <translation>型外安全区</translation>
     </message>
@@ -2894,57 +2926,57 @@ Reason</source>
     </message>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="25"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="119"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="120"/>
         <source>X1 Axis</source>
         <oldsource>X Axis</oldsource>
         <translation>X1轴</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="26"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="120"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="121"/>
         <source>Y1 Axis</source>
         <oldsource>Y Axis</oldsource>
         <translation>Y1轴</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="27"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="121"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="122"/>
         <source>Z Axis</source>
         <translation>Z轴</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="28"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="122"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="123"/>
         <source>X2 Axis</source>
         <translation>X2轴</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="29"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="123"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="124"/>
         <source>Y2 Axis</source>
         <translation>Y2轴</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="30"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="124"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="125"/>
         <source>A Axis</source>
         <translation>A轴</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="31"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="125"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="126"/>
         <source>B Axis</source>
         <translation>B轴</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="32"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="126"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="127"/>
         <source>C Axis</source>
         <translation>C轴</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="33"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="127"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="128"/>
         <source>Struct Define</source>
         <translation>限位</translation>
     </message>
@@ -2989,118 +3021,118 @@ Reason</source>
         <translation>双臂</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="84"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="176"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="85"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="177"/>
         <source>Key Tone(ON)</source>
         <translation>按键音(开)</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="89"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="180"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="90"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="181"/>
         <source>Key Tone(OFF)</source>
         <translation>按键音(关)</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="191"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="218"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="279"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="283"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="192"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="219"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="280"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="284"/>
         <source>Information</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="192"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="193"/>
         <source>Please enter the olp password and new password!</source>
         <translation>请输入旧密码和新密码！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="210"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="252"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="267"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="291"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="304"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="324"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="343"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="361"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="386"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="881"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="211"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="253"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="268"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="292"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="305"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="325"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="344"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="362"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="387"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="884"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="211"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="212"/>
         <source>Old password is wrong!</source>
         <translation>旧密码错误！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="219"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="220"/>
         <source>Change password successfully!</source>
         <translation>变更密码成功!</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="252"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="267"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="291"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="304"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="324"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="343"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="361"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="386"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="253"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="268"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="292"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="305"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="325"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="344"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="362"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="387"/>
         <source>USB is not connected!</source>
         <translation>没有检测到U盘！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="279"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="280"/>
         <source>Operation finished!</source>
         <translation>操作完成！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="283"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="284"/>
         <source>Operation fail!</source>
         <translation>操作失败！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="330"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="349"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="367"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="374"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="392"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="400"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="331"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="350"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="368"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="375"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="393"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="401"/>
         <source>Warnning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="330"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="349"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="367"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="374"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="392"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="400"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="331"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="350"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="368"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="375"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="393"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="401"/>
         <source>Backup files is not exists!</source>
         <translation>备份文件不存在！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="448"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="449"/>
         <source>Min pos inside mold</source>
         <translation>模内最小位置</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="449"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="450"/>
         <source>Max pos inside mold</source>
         <translation>模内最大位置</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="466"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="467"/>
         <source>Max standby pos</source>
         <translation>最大待机位置</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="467"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="468"/>
         <source>Leave origin pos</source>
         <translation>离开原点位置</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="882"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="885"/>
         <source>The system will be reboot to calibrate! Do you want to continue?</source>
         <translation>系统需要重启来校准屏幕!要继续吗?</translation>
     </message>
@@ -3343,9 +3375,8 @@ Reason</source>
         <translation>不良品</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="122"/>
         <source>Macro</source>
-        <translation>巨集</translation>
+        <translation type="obsolete">巨集</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="123"/>
@@ -3403,6 +3434,11 @@ Reason</source>
         <location filename="hcinstruction/icinstructparam.cpp" line="142"/>
         <source>X044</source>
         <translation></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icinstructparam.cpp" line="122"/>
+        <source>Sub-</source>
+        <translation>子程序</translation>
     </message>
     <message>
         <source>ON:Macro</source>
@@ -4493,13 +4529,13 @@ Please enter an digit between </source>
     <message>
         <location filename="hcinstruction/icperipherypage.ui" line="145"/>
         <source>Action Time/Times</source>
-        <translation>动作时间       间隔模数</translation>
+        <translation>动作时间/间隔模数</translation>
     </message>
     <message>
         <location filename="hcinstruction/icperipherypage.ui" line="313"/>
         <source>Delay/Times</source>
         <oldsource>Delay</oldsource>
-        <translation>延时时间      间隔模数</translation>
+        <translation>延时/间隔模数</translation>
     </message>
     <message>
         <location filename="hcinstruction/icperipherypage.ui" line="469"/>
@@ -4680,9 +4716,9 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="79"/>
-        <source>Mold</source>
-        <oldsource>Mold Name</oldsource>
-        <translation>当前模号</translation>
+        <source>Mold:</source>
+        <oldsource>Mold</oldsource>
+        <translation>当前模号：</translation>
     </message>
     <message>
         <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="98"/>
@@ -4690,23 +4726,23 @@ Please enter an digit between </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="116"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="112"/>
         <source>Run Time:</source>
         <translation>自动运行：</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="130"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="126"/>
         <source>0.0h</source>
         <translation>0.0小时</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="169"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="165"/>
         <source>Level</source>
         <oldsource>Passwd Level</oldsource>
         <translation>权限等级</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="191"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="187"/>
         <source>Machine Operator</source>
         <translation>操作员</translation>
     </message>
@@ -5480,18 +5516,18 @@ Would you want to restart now?</source>
         <translation>步序</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="437"/>
+        <location filename="mainframe.cpp" line="438"/>
         <source>Function</source>
         <translation>功能</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="438"/>
+        <location filename="mainframe.cpp" line="439"/>
         <source>Monitor</source>
         <translation>监视</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="770"/>
-        <location filename="mainframe.cpp" line="835"/>
+        <location filename="mainframe.cpp" line="771"/>
+        <location filename="mainframe.cpp" line="836"/>
         <source>Records</source>
         <translation>档案</translation>
     </message>
@@ -5504,12 +5540,12 @@ Would you want to restart now?</source>
         <translation type="obsolete">欢迎</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="440"/>
+        <location filename="mainframe.cpp" line="441"/>
         <source>Record</source>
         <translation>档案</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="439"/>
+        <location filename="mainframe.cpp" line="440"/>
         <source>Alarm</source>
         <translation>报警</translation>
     </message>
@@ -5526,12 +5562,12 @@ Would you want to restart now?</source>
         <translation type="obsolete">巨集参数从异常中恢复，请先检查巨集参数！</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="441"/>
+        <location filename="mainframe.cpp" line="442"/>
         <source>Return</source>
         <translation>返回</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="616"/>
+        <location filename="mainframe.cpp" line="617"/>
         <source>Hint</source>
         <translation>提示</translation>
     </message>
@@ -5540,17 +5576,17 @@ Would you want to restart now?</source>
         <translation type="obsolete">手动</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="817"/>
+        <location filename="mainframe.cpp" line="818"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="817"/>
+        <location filename="mainframe.cpp" line="818"/>
         <source>Need to origin!</source>
         <translation>还没进行原点!</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="804"/>
+        <location filename="mainframe.cpp" line="805"/>
         <source>Instruct</source>
         <translation>教导</translation>
     </message>
@@ -5749,90 +5785,90 @@ Please try a new name</source>
     </message>
     <message>
         <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="14"/>
-        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="22"/>
+        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="37"/>
         <source>Handwheel Speed</source>
         <translation>手轮速度</translation>
     </message>
     <message>
-        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="28"/>
-        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="154"/>
+        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="43"/>
+        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="169"/>
         <source>X1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="34"/>
-        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="44"/>
-        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="57"/>
-        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="67"/>
-        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="77"/>
+        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="49"/>
+        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="59"/>
+        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="72"/>
+        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="82"/>
+        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="92"/>
         <source>buttonGroup</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="41"/>
-        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="187"/>
+        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="56"/>
+        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="202"/>
         <source>X20</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="51"/>
-        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="174"/>
+        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="66"/>
+        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="189"/>
         <source>X5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="64"/>
+        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="79"/>
         <source>X50</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="74"/>
-        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="164"/>
+        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="89"/>
+        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="179"/>
         <source>X10</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="100"/>
+        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="115"/>
         <source>Handwheel Axis</source>
         <translation>手轮轴选择</translation>
     </message>
     <message>
-        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="106"/>
+        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="121"/>
         <source>X</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="112"/>
-        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="125"/>
-        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="135"/>
+        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="127"/>
+        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="140"/>
+        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="150"/>
         <source>buttonGroup_3</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="119"/>
+        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="134"/>
         <source>Y</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="132"/>
+        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="147"/>
         <source>Z</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="145"/>
+        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="160"/>
         <source>Global Speed Step</source>
         <translation>全局速度</translation>
     </message>
     <message>
-        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="157"/>
-        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="167"/>
-        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="180"/>
-        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="190"/>
+        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="172"/>
+        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="182"/>
+        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="195"/>
+        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="205"/>
         <source>buttonGroup_2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="221"/>
+        <location filename="custom_widgets/systemstatusframe/operatingratiosetdialog.ui" line="236"/>
         <source>Ok</source>
         <translation>确定</translation>
     </message>
@@ -6670,12 +6706,12 @@ Please try a new name</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1495"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1471"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1447"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1435"/>
         <source>Backspace</source>
         <translation>退格</translation>
     </message>
@@ -6684,7 +6720,7 @@ Please try a new name</source>
         <translation type="obsolete">删除</translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1543"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1507"/>
         <source>OK</source>
         <translation>确定</translation>
     </message>

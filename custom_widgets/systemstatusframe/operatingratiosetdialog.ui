@@ -13,6 +13,21 @@
   <property name="windowTitle">
    <string>Handwheel Speed</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">::indicator {
+     width: 32px;
+     height: 32px;
+ }
+
+::indicator:unchecked 
+{
+     image: url(:/resource/check_unchecked.png);
+ }
+::indicator:checked 
+{
+     image: url(:/resource/check_checked.png);
+ }</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
@@ -228,7 +243,7 @@
  <connections/>
  <buttongroups>
   <buttongroup name="buttonGroup_2"/>
-  <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_3"/>
+  <buttongroup name="buttonGroup"/>
  </buttongroups>
 </ui>

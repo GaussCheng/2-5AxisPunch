@@ -119,7 +119,7 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
             }
             commandStr += " ";
 //            commandStr += " " + tr("ON:Macro") + QString::number(moldItem.RVal()) + " ";
-            commandStr += tr("Macro") + QString::number(moldItem.SVal()) + " ";
+            commandStr += tr("Sub-") + QString::number(moldItem.SVal() + 1) + " ";
             commandStr += tr("Return Line") + QString::number(moldItem.DVal());
             return commandStr;
         }

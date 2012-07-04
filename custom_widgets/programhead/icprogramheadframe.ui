@@ -76,7 +76,7 @@
        <item>
         <widget class="QLabel" name="label">
          <property name="text">
-          <string>Mold</string>
+          <string>Mold:</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -108,10 +108,6 @@
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
         <widget class="QLabel" name="autoTimeLabel_2">
-         <property name="styleSheet">
-          <string notr="true">color: rgb(85, 255, 0);
-color: rgb(0, 85, 255);</string>
-         </property>
          <property name="text">
           <string>Run Time:</string>
          </property>

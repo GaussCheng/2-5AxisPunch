@@ -114,42 +114,42 @@
         </property>
         <item>
          <property name="text">
-          <string>Macro0</string>
+          <string>Sub-1</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Macro1</string>
+          <string>Sub-2</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Macro2</string>
+          <string>Sub-3</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Macro3</string>
+          <string>Sub-4</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Macro4</string>
+          <string>Sub-5</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Macro5</string>
+          <string>Sub-6</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Macro6</string>
+          <string>Sub-7</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Macro7</string>
+          <string>Sub-8</string>
          </property>
         </item>
        </widget>
