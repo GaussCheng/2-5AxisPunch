@@ -21,7 +21,6 @@ VirtualKeyboardDialog::VirtualKeyboardDialog(QWidget *parent) :
     ui->display->setFont(font);
 
     ui->display->setFocus();
-    ui->ok->setDefault(true);
 
     QObjectList objList = ui->buttonBoxWidget->children();
     foreach(QObject *obj,objList)
@@ -75,26 +74,6 @@ void VirtualKeyboardDialog::on_backspace_clicked()
     ui->display->setFocus();
 }
 
-void VirtualKeyboardDialog::on_del_clicked()
-{
-    QString displayString = ui->display->text();
-    int cursorPosition = ui->display->cursorPosition();
-    displayString.remove(cursorPosition, 1);
-    ui->display->setText(displayString);
-    ui->display->setCursorPosition(cursorPosition);
-    ui->display->setFocus();
-}
-//    qDebug("after");
-void VirtualKeyboardDialog::on_space_clicked()
-{
-    QString displayString = ui->display->text();
-    int cursorPosition = ui->display->cursorPosition();
-    displayString.insert(cursorPosition, 0x20);
-    ui->display->setText(displayString);
-    ui->display->setCursorPosition(++cursorPosition);
-    ui->display->setFocus();
-}
-
 void VirtualKeyboardDialog::on_ok_clicked()
 {
     emit EnterComplete(ui->display->text());
@@ -115,29 +94,5 @@ void VirtualKeyboardDialog::KeyboardClicked()
 
     ui->display->setText(disPlayValue);
     ui->display->setCursorPosition(++cursorPosition);
-    ui->display->setFocus();
-}
-
-void VirtualKeyboardDialog::on_prior_clicked()
-{
-    ui->display->cursorBackward(false);
-    ui->display->setFocus();
-}
-
-void VirtualKeyboardDialog::on_next_clicked()
-{
-    ui->display->cursorForward(false);
-    ui->display->setFocus();
-}
-
-void VirtualKeyboardDialog::on_home_clicked()
-{
-    ui->display->setCursorPosition(0);
-    ui->display->setFocus();
-}
-
-void VirtualKeyboardDialog::on_end_clicked()
-{
-    ui->display->setCursorPosition(ui->display->text().length());
     ui->display->setFocus();
 }

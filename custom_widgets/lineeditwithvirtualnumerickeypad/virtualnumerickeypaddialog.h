@@ -49,8 +49,7 @@ private slots:
     void on_backspaceToolButton_clicked();
     void on_okToolButton_clicked();
     void on_clearToolButton_clicked();
-    void on_nextToolButton_clicked();
-    void on_priorToolButton_clicked();
+    void on_addButton_clicked();
 };
 
 #endif // VIRTUALNUMERICKEYPADDIALOG_H

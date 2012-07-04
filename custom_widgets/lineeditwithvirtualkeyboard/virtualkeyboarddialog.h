@@ -34,12 +34,6 @@ signals:
     void EnterComplete(const QString &enterString);
 
 private slots:
-    void on_end_clicked();
-    void on_home_clicked();
-    void on_next_clicked();
-    void on_prior_clicked();
-    void on_space_clicked();
-    void on_del_clicked();
     void on_backspace_clicked();
     void on_cancel_clicked();
     void on_ok_clicked();

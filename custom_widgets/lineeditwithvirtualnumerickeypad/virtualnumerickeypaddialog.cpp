@@ -80,19 +80,6 @@ void VirtualNumericKeypadDialog::KeyboardClicked(QString buttonNum)
     ui->displayLineEdit->setFocus();
 }
 
-
-void VirtualNumericKeypadDialog::on_priorToolButton_clicked()
-{
-    ui->displayLineEdit->cursorBackward(false);
-    ui->displayLineEdit->setFocus();
-}
-
-void VirtualNumericKeypadDialog::on_nextToolButton_clicked()
-{
-    ui->displayLineEdit->cursorForward(false);
-    ui->displayLineEdit->setFocus();
-}
-
 void VirtualNumericKeypadDialog::on_clearToolButton_clicked()
 {
     ui->displayLineEdit->setText(QString());
@@ -142,6 +129,16 @@ void VirtualNumericKeypadDialog::on_minusToolButton_clicked()
     if(displayString.left(1) != "-")
     {
         displayString.prepend("-");
+        ui->displayLineEdit->setText(displayString);
+    }
+}
+
+void VirtualNumericKeypadDialog::on_addButton_clicked()
+{
+    QString displayString = ui->displayLineEdit->text();
+    if(displayString.left(1) != "+")
+    {
+        displayString.prepend("+");
         ui->displayLineEdit->setText(displayString);
     }
 }

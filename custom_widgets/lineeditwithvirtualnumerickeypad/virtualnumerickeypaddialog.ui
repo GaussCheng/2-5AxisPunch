@@ -49,7 +49,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="priorToolButton">
+      <widget class="QPushButton" name="addButton">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -72,35 +72,7 @@
         <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
-        <string>&lt;&lt;</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="nextToolButton">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>60</width>
-         <height>50</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>60</width>
-         <height>50</height>
-        </size>
-       </property>
-       <property name="focusPolicy">
-        <enum>Qt::NoFocus</enum>
-       </property>
-       <property name="text">
-        <string>&gt;&gt;</string>
+        <string>+</string>
        </property>
       </widget>
      </item>
@@ -546,6 +518,20 @@
          <property name="focusPolicy">
           <enum>Qt::NoFocus</enum>
          </property>
+         <property name="styleSheet">
+          <string notr="true">#backspaceToolButton{
+     border-style: outset;
+     border-width: 2px;
+     border-radius: 6px;
+     border-color: gray;
+	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(29, 212, 61, 255), stop:1 rgba(193, 255, 142, 255));
+}
+#backspaceToolButton:pressed{
+     border-style: inset;
+	background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(29, 212, 61, 255), stop:1 rgba(193, 255, 142, 255));
+	color:black;
+}</string>
+         </property>
          <property name="text">
           <string>Backspace</string>
          </property>
@@ -573,6 +559,20 @@
          </property>
          <property name="focusPolicy">
           <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">#delToolButton{
+     border-style: outset;
+     border-width: 2px;
+     border-radius: 6px;
+     border-color: gray;
+	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(29, 212, 61, 255), stop:1 rgba(193, 255, 142, 255));
+}
+#delToolButton:pressed{
+     border-style: inset;
+	background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(29, 212, 61, 255), stop:1 rgba(193, 255, 142, 255));
+	color:black;
+}</string>
          </property>
          <property name="text">
           <string>Del</string>
@@ -602,6 +602,20 @@
          <property name="focusPolicy">
           <enum>Qt::NoFocus</enum>
          </property>
+         <property name="styleSheet">
+          <string notr="true">#cancelToolButton{
+     border-style: outset;
+     border-width: 2px;
+     border-radius: 6px;
+     border-color: gray;
+	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(29, 212, 61, 255), stop:1 rgba(193, 255, 142, 255));
+}
+#cancelToolButton:pressed{
+     border-style: inset;
+	background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(29, 212, 61, 255), stop:1 rgba(193, 255, 142, 255));
+	color:black;
+}</string>
+         </property>
          <property name="text">
           <string>Cancel</string>
          </property>
@@ -629,6 +643,20 @@
          </property>
          <property name="focusPolicy">
           <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">#okToolButton{
+     border-style: outset;
+     border-width: 2px;
+     border-radius: 6px;
+     border-color: gray;
+	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(29, 212, 61, 255), stop:1 rgba(193, 255, 142, 255));
+}
+#okToolButton:pressed{
+     border-style: inset;
+	background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(29, 212, 61, 255), stop:1 rgba(193, 255, 142, 255));
+	color:black;
+}</string>
          </property>
          <property name="text">
           <string>OK</string>
