@@ -1,7 +1,7 @@
 #ICHCManualOperationPageFrame QToolButton {
      border-style: outset;
      border-width: 2px;
-     border-radius: 10px;
+     border-radius: 6px;
      border-color: gray;
 	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(199, 199, 199, 255), stop:1 rgba(255, 255, 255, 255));
     /* background-color: red;*/
@@ -23,7 +23,7 @@
 QToolButton{
      border-style: outset;
      border-width: 2px;
-     border-radius: 10px;
+     border-radius: 6px;
      border-color: gray;
 	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(199, 199, 199, 255), stop:1 rgba(255, 255, 255, 255));
     /* background-color: red;*/
@@ -74,7 +74,7 @@ QPushButton:pressed, QPushButton:checked{
 
 QComboBox {
      border: 2px solid gray;
-     border-radius: 10px;
+     border-radius: 6px;
      padding: 1px 18px 1px 3px;
 	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(199, 199, 199, 255), stop:1 rgba(255, 255, 255, 255));
      /*min-width: 6em;*/
@@ -110,11 +110,18 @@ QComboBox::down-arrow:on { /* shift the arrow when popup is open */
 
 QLineEdit {
      border: 2px solid gray;
-     border-radius: 10px;
+     border-radius: 6px;
      padding: 0 8px;
      /*background: rgb(79, 223, 255);*/
      /*selection-background-color: darkgray;*/
 }
 QLineEdit::disabled{
 background:lightgray;
+}
+
+QListView{
+background-color: darkgray;
+}
+QListView::item{
+padding:5px;
 }

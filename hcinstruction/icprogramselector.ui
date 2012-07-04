@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ICProgramSelector</class>
+ <widget class="QWidget" name="ICProgramSelector">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Program</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QListWidget" name="programList">
+     <property name="alternatingRowColors">
+      <bool>true</bool>
+     </property>
+     <property name="spacing">
+      <number>3</number>
+     </property>
+     <item>
+      <property name="text">
+       <string>Main</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Sub-1</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Sub-2</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Sub-3</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Sub-4</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Sub-5</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Sub-6</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Sub-7</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Sub-8</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="selectButton">
+       <property name="text">
+        <string>Select</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

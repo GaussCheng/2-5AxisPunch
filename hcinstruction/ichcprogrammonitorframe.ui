@@ -46,7 +46,7 @@
         <enum>QAbstractItemView::SelectRows</enum>
        </property>
        <property name="spacing">
-        <number>3</number>
+        <number>1</number>
        </property>
       </widget>
      </item>

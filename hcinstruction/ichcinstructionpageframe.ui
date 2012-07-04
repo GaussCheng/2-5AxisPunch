@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>900</width>
-    <height>402</height>
+    <height>428</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,55 +21,130 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <property name="spacing">
-    <number>0</number>
-   </property>
-   <property name="leftMargin">
-    <number>0</number>
-   </property>
-   <property name="topMargin">
     <number>2</number>
    </property>
-   <property name="rightMargin">
-    <number>0</number>
-   </property>
-   <property name="bottomMargin">
-    <number>0</number>
+   <property name="margin">
+    <number>2</number>
    </property>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
-     <property name="spacing">
-      <number>0</number>
-     </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
-      <widget class="QListWidget" name="moldContentListWidget">
-       <property name="minimumSize">
-        <size>
-         <width>300</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="editTriggers">
-        <set>QAbstractItemView::NoEditTriggers</set>
-       </property>
-       <property name="showDropIndicator" stdset="0">
-        <bool>false</bool>
-       </property>
-       <property name="alternatingRowColors">
-        <bool>true</bool>
-       </property>
-       <property name="selectionMode">
-        <enum>QAbstractItemView::SingleSelection</enum>
-       </property>
-       <property name="selectionBehavior">
-        <enum>QAbstractItemView::SelectRows</enum>
-       </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
        <property name="spacing">
-        <number>3</number>
+        <number>2</number>
        </property>
-       <property name="selectionRectVisible">
-        <bool>false</bool>
-       </property>
-      </widget>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="programLabel_2">
+           <property name="text">
+            <string>Editing:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="programLabel">
+           <property name="text">
+            <string>Main</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="programButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>140</width>
+             <height>24</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>140</width>
+             <height>24</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: gray;
+color:rgb(255, 255, 0);
+border-color: none;
+border-style: outset;
+border-width: 0px;
+border-radius: 0px;</string>
+           </property>
+           <property name="text">
+            <string>Program</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resource.qrc">
+             <normaloff>:/resource/editor.png</normaloff>:/resource/editor.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QListWidget" name="moldContentListWidget">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="horizontalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOff</enum>
+         </property>
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="showDropIndicator" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="alternatingRowColors">
+          <bool>true</bool>
+         </property>
+         <property name="selectionMode">
+          <enum>QAbstractItemView::SingleSelection</enum>
+         </property>
+         <property name="selectionBehavior">
+          <enum>QAbstractItemView::SelectRows</enum>
+         </property>
+         <property name="spacing">
+          <number>1</number>
+         </property>
+         <property name="selectionRectVisible">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item>
       <widget class="QStackedWidget" name="settingStackedWidget">
@@ -99,6 +174,9 @@
        </property>
        <widget class="QWidget" name="actionSelectPage">
         <layout class="QFormLayout" name="formLayout">
+         <property name="fieldGrowthPolicy">
+          <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+         </property>
          <property name="horizontalSpacing">
           <number>20</number>
          </property>
@@ -108,7 +186,7 @@
          <property name="leftMargin">
           <number>23</number>
          </property>
-         <item row="0" column="0">
+         <item row="1" column="0">
           <widget class="QToolButton" name="lineButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -132,7 +210,7 @@
             <string>Line</string>
            </property>
            <property name="icon">
-            <iconset>
+            <iconset resource="../resource.qrc">
              <normaloff>:/resource/Linear(32).png</normaloff>:/resource/Linear(32).png</iconset>
            </property>
            <property name="iconSize">
@@ -147,82 +225,6 @@
           </widget>
          </item>
          <item row="1" column="1">
-          <widget class="QToolButton" name="injectionButton">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>140</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>140</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>Injection</string>
-           </property>
-           <property name="icon">
-            <iconset>
-             <normaloff>:/resource/forming-machine(32).png</normaloff>:/resource/forming-machine(32).png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>32</width>
-             <height>32</height>
-            </size>
-           </property>
-           <property name="toolButtonStyle">
-            <enum>Qt::ToolButtonTextBesideIcon</enum>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QToolButton" name="fixtureButton">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>140</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>140</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>Fixture</string>
-           </property>
-           <property name="icon">
-            <iconset>
-             <normaloff>:/resource/fixture(32).png</normaloff>:/resource/fixture(32).png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>32</width>
-             <height>32</height>
-            </size>
-           </property>
-           <property name="toolButtonStyle">
-            <enum>Qt::ToolButtonTextBesideIcon</enum>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
           <widget class="QToolButton" name="pneumaticButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -246,7 +248,7 @@
             <string>pneumatic</string>
            </property>
            <property name="icon">
-            <iconset>
+            <iconset resource="../resource.qrc">
              <normaloff>:/resource/CommonIO(32).png</normaloff>:/resource/CommonIO(32).png</iconset>
            </property>
            <property name="iconSize">
@@ -261,6 +263,82 @@
           </widget>
          </item>
          <item row="2" column="0">
+          <widget class="QToolButton" name="fixtureButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>140</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>140</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Fixture</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resource.qrc">
+             <normaloff>:/resource/fixture(32).png</normaloff>:/resource/fixture(32).png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QToolButton" name="injectionButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>140</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>140</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Injection</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resource.qrc">
+             <normaloff>:/resource/forming-machine(32).png</normaloff>:/resource/forming-machine(32).png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
           <widget class="QToolButton" name="peripheryButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -284,7 +362,7 @@
             <string>Periphery</string>
            </property>
            <property name="icon">
-            <iconset>
+            <iconset resource="../resource.qrc">
              <normaloff>:/resource/Conveyor_Belt(32).png</normaloff>:/resource/Conveyor_Belt(32).png</iconset>
            </property>
            <property name="iconSize">
@@ -298,7 +376,7 @@
            </property>
           </widget>
          </item>
-         <item row="2" column="1">
+         <item row="3" column="1">
           <widget class="QToolButton" name="waitToolButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -322,7 +400,7 @@
             <string>Wait</string>
            </property>
            <property name="icon">
-            <iconset>
+            <iconset resource="../resource.qrc">
              <normaloff>:/resource/wait(32).png</normaloff>:/resource/wait(32).png</iconset>
            </property>
            <property name="iconSize">
@@ -336,7 +414,7 @@
            </property>
           </widget>
          </item>
-         <item row="3" column="0">
+         <item row="4" column="0">
           <widget class="QToolButton" name="cutButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -360,7 +438,7 @@
             <string>Cut</string>
            </property>
            <property name="icon">
-            <iconset>
+            <iconset resource="../resource.qrc">
              <normaloff>:/resource/Conveyor_Belt(32).png</normaloff>:/resource/Conveyor_Belt(32).png</iconset>
            </property>
            <property name="iconSize">
@@ -374,45 +452,7 @@
            </property>
           </widget>
          </item>
-         <item row="3" column="1">
-          <widget class="QToolButton" name="conditionsToolButton">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>140</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>140</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>Conditions</string>
-           </property>
-           <property name="icon">
-            <iconset>
-             <normaloff>:/resource/jump(32).png</normaloff>:/resource/jump(32).png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>32</width>
-             <height>32</height>
-            </size>
-           </property>
-           <property name="toolButtonStyle">
-            <enum>Qt::ToolButtonTextBesideIcon</enum>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="0">
+         <item row="5" column="0">
           <widget class="QToolButton" name="flagsButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -436,8 +476,46 @@
             <string>Flags</string>
            </property>
            <property name="icon">
-            <iconset>
+            <iconset resource="../resource.qrc">
              <normaloff>:/resource/macro(32).png</normaloff>:/resource/macro(32).png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QToolButton" name="conditionsToolButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>140</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>140</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Conditions</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resource.qrc">
+             <normaloff>:/resource/jump(32).png</normaloff>:/resource/jump(32).png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -458,73 +536,6 @@
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QComboBox" name="moldComboBox">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>48</height>
-        </size>
-       </property>
-       <item>
-        <property name="text">
-         <string>Current Mold</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Sub0</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Sub1</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Sub2</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Sub3</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Sub4</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Sub5</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Sub6</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Sub7</string>
-        </property>
-       </item>
-      </widget>
-     </item>
      <item>
       <widget class="QToolButton" name="modifyToolButton">
        <property name="sizePolicy">
@@ -549,7 +560,7 @@
         <string>Modify</string>
        </property>
        <property name="icon">
-        <iconset>
+        <iconset resource="../resource.qrc">
          <normaloff>:/resource/modify.png</normaloff>:/resource/modify.png</iconset>
        </property>
        <property name="iconSize">
@@ -587,7 +598,7 @@
         <string>Delete</string>
        </property>
        <property name="icon">
-        <iconset>
+        <iconset resource="../resource.qrc">
          <normaloff>:/resource/Delete-icon(32).png</normaloff>:/resource/Delete-icon(32).png</iconset>
        </property>
        <property name="iconSize">
@@ -625,7 +636,7 @@
         <string>Decompose</string>
        </property>
        <property name="icon">
-        <iconset>
+        <iconset resource="../resource.qrc">
          <normaloff>:/resource/mergeDown.png</normaloff>:/resource/mergeDown.png</iconset>
        </property>
        <property name="iconSize">
@@ -666,7 +677,7 @@
         <string>Compose</string>
        </property>
        <property name="icon">
-        <iconset>
+        <iconset resource="../resource.qrc">
          <normaloff>:/resource/mergeUp.png</normaloff>:/resource/mergeUp.png</iconset>
        </property>
        <property name="iconSize">
@@ -682,6 +693,19 @@
         <enum>Qt::NoArrow</enum>
        </property>
       </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
      </item>
      <item>
       <widget class="QToolButton" name="aPlusBtn">
@@ -780,7 +804,7 @@
        </property>
        <property name="minimumSize">
         <size>
-         <width>0</width>
+         <width>100</width>
          <height>48</height>
         </size>
        </property>
@@ -794,13 +818,13 @@
         <string notr="true">#commandButton{
      border-style: outset;
      border-width: 2px;
-     border-radius: 10px;
+     border-radius: 6px;
      border-color: gray;
-	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(42, 240, 50, 255), stop:1 rgba(255, 255, 255, 255));
+	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(29, 212, 61, 255), stop:1 rgba(193, 255, 142, 255));
 }
 #commandButton:pressed{
      border-style: inset;
-	background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(42, 240, 50, 255), stop:1 rgba(255, 255, 255, 255));
+	background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(29, 212, 61, 255), stop:1 rgba(193, 255, 142, 255));
 	color:black;
 }</string>
        </property>
@@ -833,7 +857,7 @@
         <string>Insert</string>
        </property>
        <property name="icon">
-        <iconset>
+        <iconset resource="../resource.qrc">
          <normaloff>:/resource/insert(32).png</normaloff>:/resource/insert(32).png</iconset>
        </property>
        <property name="iconSize">
@@ -851,6 +875,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

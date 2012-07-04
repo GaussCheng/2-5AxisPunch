@@ -16,6 +16,7 @@
 #include "icwaitconditioneditor.h"
 #include "icperipherypage.h"
 #include "iccutpage.h"
+#include "icprogramselector.h"
 #include "icparameterssave.h"
 #include "icinstructparam.h"
 #include "iccommandprocessor.h"
@@ -50,6 +51,7 @@ ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
     waitConditionPage_(NULL),
     peripheryPage_(NULL),
     cutPage_(NULL),
+    programPage_(NULL),
     recordPath_("./records/"),
     currentAction_(None),
     currentEdit_(0)
@@ -58,6 +60,7 @@ ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
 
     InitInterface();
     InitSignal();
+//    ui->moldContentListWidget->setBackgroundRole(QColor("gray"));
 
 //    LoadAllRecordFileInfo();
 
@@ -203,6 +206,16 @@ void ICHCInstructionPageFrame::OptionButtonClicked()
         optionButtonToPage_.insert(ui->cutButton, cutPage_);
         ui->settingStackedWidget->addWidget(cutPage_);
     }
+    else if(programPage_ == NULL && optionButton == ui->programButton)
+    {
+        programPage_ = new ICProgramSelector();
+        optionButtonToPage_.insert(ui->programButton, programPage_);
+        ui->settingStackedWidget->addWidget(programPage_);
+        connect(programPage_,
+                SIGNAL(ProgramChanged(int, QString)),
+                this,
+                SLOT(on_moldComboBox_activated(int, QString)));
+    }
     ui->settingStackedWidget->setCurrentWidget(optionButtonToPage_.value(optionButton));
 }
 
@@ -265,6 +278,10 @@ void ICHCInstructionPageFrame::InitSignal()
             this,
             SLOT(OptionButtonClicked()));
     connect(ui->cutButton,
+            SIGNAL(clicked()),
+            this,
+            SLOT(OptionButtonClicked()));
+    connect(ui->programButton,
             SIGNAL(clicked()),
             this,
             SLOT(OptionButtonClicked()));
@@ -454,6 +471,8 @@ void ICHCInstructionPageFrame::UpdateUIProgramList_()
     for(int i = 0; i != programList_.size(); ++i)
     {
         (i % 2 == 0 ? color.setRgb(255,255,154): color.setRgb(154,255,255));
+//        (i % 2 == 0 ? color.setRgb(191,255,191): color.setRgb(222,255,222));
+//        (i % 2 == 0 ? color.setRgb(255,255,154): color.setRgb(191,255,191));
         groupItem = programList_.at(i);
         topItemRowCount = groupItem.ItemCount();
         for(int j = 0; j != topItemRowCount; ++j)
@@ -461,7 +480,12 @@ void ICHCInstructionPageFrame::UpdateUIProgramList_()
             tmp = groupItem.MoldItemAt(j);
             if(tmp != NULL)
             {
-                if(tmp->Action() == ICInstructParam::ACT_WaitMoldOpened)
+                if(tmp->Num() == 0)
+                {
+                    ui->moldContentListWidget->item(j + index)->setBackgroundColor(QColor("white"));
+//                    ui->moldContentListWidget->item(j + index)->setForeground(QColor("white"));
+                }
+                else if(tmp->Action() == ICInstructParam::ACT_WaitMoldOpened)
                 {
                     ui->moldContentListWidget->item(j + index)->setBackgroundColor("red");
                 }
@@ -930,7 +954,7 @@ void ICHCInstructionPageFrame::on_downButton_clicked()
     UpdateUIProgramList_();
 }
 
-void ICHCInstructionPageFrame::on_moldComboBox_activated(int index)
+void ICHCInstructionPageFrame::on_moldComboBox_activated(int index, QString name)
 {
     if(index < 0)
     {
@@ -940,6 +964,8 @@ void ICHCInstructionPageFrame::on_moldComboBox_activated(int index)
     ui->moldContentListWidget->clear();
     programList_.clear();
     currentEdit_ = index;
+//    ui->moldComboBox->setCurrentIndex(index);
+    ui->programLabel->setText(name);
     UpdateHostParam();
 
 }

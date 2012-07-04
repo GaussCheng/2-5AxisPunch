@@ -23,7 +23,7 @@
    <item>
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>Fixture</string>
+      <string>Fixture Action</string>
      </property>
     </widget>
    </item>

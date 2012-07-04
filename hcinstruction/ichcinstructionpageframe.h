@@ -56,7 +56,7 @@ private slots:
 
     void on_downButton_clicked();
 
-    void on_moldComboBox_activated(int index);
+    void on_moldComboBox_activated(int index, QString name);
 
     void on_aPlusBtn_pressed();
 
@@ -96,6 +96,7 @@ private:
     QWidget * waitConditionPage_;
     QWidget * peripheryPage_;
     QWidget * cutPage_;
+    QWidget * programPage_;
 
     ICInstructModifyDialog *modifyDialog_;
 
