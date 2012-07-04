@@ -17,7 +17,7 @@ public:
 
 protected:
     void SyncStatusImpl(const QList<ICMoldItem> &items){}
-    QList<ICMoldItem> CreateCommandImpl() const{}
+    QList<ICMoldItem> CreateCommandImpl() const{ return QList<ICMoldItem>();}
     
 signals:
     void ProgramChanged(int, QString);

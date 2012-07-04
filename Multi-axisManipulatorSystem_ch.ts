@@ -1670,7 +1670,7 @@ Reason</source>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.ui" line="94"/>
         <source>Program</source>
-        <translation>程序选择</translation>
+        <translation type="unfinished">教导选择</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.ui" line="218"/>
