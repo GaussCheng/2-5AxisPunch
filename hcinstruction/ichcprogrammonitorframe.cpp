@@ -478,7 +478,7 @@ void ICHCProgramMonitorFrame::UpdateUIProgramList_()
             {
                 if(tmp->Num() == 0)
                 {
-                    ui->moldContentListWidget->item(j + index)->setBackgroundColor(QColor("white"));
+                    ui->moldContentListWidget->item(j + index)->setBackgroundColor(QColor(239, 235, 231));
 //                    ui->moldContentListWidget->item(j + index)->setForeground(QColor("white"));
                 }
                 else if(tmp->Action() == ICInstructParam::ACT_WaitMoldOpened)
