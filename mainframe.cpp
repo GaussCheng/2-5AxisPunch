@@ -122,6 +122,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
             SLOT(showMessage(QString)));
     emit LoadMessage("Connected");
     ui->setupUi(this);
+    ui->systemStatusFrame->SetOriginStatus(StatusLabel::OFFSTATUS);
     ICParametersSave::Instance()->SetBrightness(ICParametersSave::Instance()->Brightness());
     QDir configDir("./sysconfig");
     configDir.setFilter(QDir::Files);
@@ -637,7 +638,7 @@ void MainFrame::StatusRefreshed()
     if(getHostOrigin != isOrigined_)
     {
         isOrigined_ = getHostOrigin;
-        isOrigined_ ? ui->systemStatusFrame->SetOriginStatus(StatusLabel::ONSTATUS) :
+        getHostOrigin ? ui->systemStatusFrame->SetOriginStatus(StatusLabel::ONSTATUS) :
                       ui->systemStatusFrame->SetOriginStatus(StatusLabel::OFFSTATUS);
     }
     runningStatus_ = virtualHost->CurrentStatus();

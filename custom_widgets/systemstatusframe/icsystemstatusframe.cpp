@@ -111,10 +111,10 @@ void ICSystemStatusFrame::SetSystemStop()
 
 void ICSystemStatusFrame::SetOriginStatus(const StatusLabel::DisplayStatus &displayStatus)
 {
-    if(currentStatus_ == 4)
-    {
-        return;
-    }
+//    if(currentStatus_ == 4)
+//    {
+//        return;
+//    }
 //    SetSystemStop();
     ui->originStatusLabel->SetStatus(displayStatus);
     currentStatus_ = 4;
@@ -140,7 +140,7 @@ void ICSystemStatusFrame::InitInterface()
 
     ui->originStatusLabel->SetOnStatusAttribute(":/resource/origin_off.png");
     ui->originStatusLabel->SetOffStatusAttibute(":/resource/reference-identified.png");
-    ui->originStatusLabel->SetStatus(StatusLabel::OFFSTATUS);
+    ui->originStatusLabel->SetStatus(StatusLabel::CLEAR);
 //    ui->stepStatusLabel->SetOnStatusAttribute(":/resource/step-running.png");
 //    ui->stepStatusLabel->SetOffStatusAttibute(":/resource/step-stoped.png");
 //    ui->stepStatusLabel->SetStatus(StatusLabel::OFFSTATUS);
