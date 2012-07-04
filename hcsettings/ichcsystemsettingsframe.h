@@ -3,6 +3,7 @@
 
 #include <QFrame>
 #include <QMap>
+#include <sys/utsname.h>
 
 class QTranslator;
 class QDialog;
@@ -49,6 +50,7 @@ private:
     QMap<int, QString> armYStructValueToName_;
     QMap<int, QString> armValueToName_;
     uint armStruct_;
+    utsname osInfo_;
 private slots:
     void on_languageComboBox_activated(int );
     void on_keyToneButton_toggled(bool checked);

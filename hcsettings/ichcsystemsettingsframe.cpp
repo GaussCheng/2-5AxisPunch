@@ -66,6 +66,7 @@ ICHCSystemSettingsFrame::ICHCSystemSettingsFrame(QWidget *parent) :
     ui->backLightTimeEdit->setValidator(new QIntValidator(0, 60, this));
     ui->backLightTimeEdit->SetThisIntToThisText(ICParametersSave::Instance()->BackLightTime());
     ui->brightnessSlider->setValue(qAbs(ui->brightnessSlider->maximum() - ICParametersSave::Instance()->Brightness()));
+    uname(&osInfo_);
 }
 
 ICHCSystemSettingsFrame::~ICHCSystemSettingsFrame()
@@ -861,7 +862,9 @@ void ICHCSystemSettingsFrame::UpdateConfigShow_()
 
 void ICHCSystemSettingsFrame::StatusRefresh()
 {
-    ui->versionLabel->setText("Version: App 2.2.4; OS 1.0; Libs:4.7.3; Host:" + ICVirtualHost::GlobalVirtualHost()->HostStatus(ICVirtualHost::Time).toString());
+    QString os(osInfo_.release);
+    os += "; ";
+    ui->versionLabel->setText("Version: OS:" + os + "App 2.2.4;Libs:4.7.3; Host:" + ICVirtualHost::GlobalVirtualHost()->HostStatus(ICVirtualHost::Time).toString());
 }
 
 void ICHCSystemSettingsFrame::on_structSelectHostButton_clicked()
