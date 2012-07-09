@@ -199,7 +199,11 @@ void ICVirtualHost::RefreshStatus()
                 }
                     break;
                 default:
-                    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
+//                    if(CurrentStatus() != Stop)
+//                    {
+//                        qDebug("Turn Stop Auto");
+                        ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
+//                    }
                 }
             }
         }

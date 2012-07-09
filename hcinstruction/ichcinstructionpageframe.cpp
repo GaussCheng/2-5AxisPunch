@@ -214,7 +214,7 @@ void ICHCInstructionPageFrame::OptionButtonClicked()
         connect(programPage_,
                 SIGNAL(ProgramChanged(int, QString)),
                 this,
-                SLOT(on_moldComboBox_activated(int, QString)));
+                SLOT(OnProgramChanged(int, QString)));
     }
     ui->settingStackedWidget->setCurrentWidget(optionButtonToPage_.value(optionButton));
 }
@@ -954,7 +954,7 @@ void ICHCInstructionPageFrame::on_downButton_clicked()
     UpdateUIProgramList_();
 }
 
-void ICHCInstructionPageFrame::on_moldComboBox_activated(int index, QString name)
+void ICHCInstructionPageFrame::OnProgramChanged(int index, QString name)
 {
     if(index < 0)
     {

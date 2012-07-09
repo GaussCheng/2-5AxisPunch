@@ -22,7 +22,7 @@ VirtualKeyboardDialog::VirtualKeyboardDialog(QWidget *parent) :
 
     ui->display->setFocus();
 
-    QObjectList objList = ui->buttonBoxWidget->children();
+    QList<QPushButton *> objList = ui->buttonBoxWidget->findChildren<QPushButton*>();
     foreach(QObject *obj,objList)
     {
         QPushButton *button = qobject_cast<QPushButton *>(obj);

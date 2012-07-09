@@ -98,7 +98,7 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
             if(moldItem.IFVal() == 1)
             {
                 commandStr += tr("Early End:");
-                commandStr += QString().sprintf("%.2f", moldItem.IFPos() / (qreal)10) + " ";
+                commandStr += QString().sprintf("%.1f", moldItem.IFPos() / (qreal)10) + " ";
             }
 //            commandStr += tr("Delay")
         }

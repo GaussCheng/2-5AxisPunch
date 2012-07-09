@@ -56,7 +56,7 @@ private slots:
 
     void on_downButton_clicked();
 
-    void on_moldComboBox_activated(int index, QString name);
+    void OnProgramChanged(int index, QString name);
 
     void on_aPlusBtn_pressed();
 
@@ -64,8 +64,6 @@ private slots:
     void OnActionButtonReleased();
 
 signals:
-    void CurrentMoldChanged(QString moldName);
-    void CurrentProgramChanged();
 //    void JumpToProgramEditorPage();
 
 private:
