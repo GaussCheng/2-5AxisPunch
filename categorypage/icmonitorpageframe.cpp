@@ -78,6 +78,10 @@ void ICMonitorPageFrame::Init_()
     points.append(ICIOPoint("X051", tr("X2 End Limit"), 49));
     points.append(ICIOPoint("X052", tr("Y2 Begin Limit"), 50));
     points.append(ICIOPoint("X053", tr("Y2 End Limit"), 51));
+    points.append(ICIOPoint("X054", tr("Y2 Servo Alarm"), 52));
+    points.append(ICIOPoint("X055", tr("A Servo Alarm"), 53));
+    points.append(ICIOPoint("X056", tr("B Servo Alarm"), 54));
+    points.append(ICIOPoint("X057", tr("C Servo Alarm"), 55));
     ui->icMonitorFrameleft->AddPage(otherPageLeft_, tr("Other"));
     ui->icMonitorFrameRight->AddPage(otherPageRight_, tr("Other"));
     otherPageLeft_->BindingPointsToInputPage(points);
