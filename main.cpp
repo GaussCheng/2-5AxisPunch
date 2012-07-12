@@ -18,7 +18,6 @@ int main(int argc, char *argv[])
     ICParametersSave* paraSave = ICParametersSave::Instance();
     paraSave->LoadInitLocale();
     ICVirtualHost host;
-    ICKeyboard::Instace()->Receive();
     MainFrame w(splash);
     w.show();
     splash->finish(&w);

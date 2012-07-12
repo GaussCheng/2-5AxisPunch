@@ -211,6 +211,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     axisWidgets_.append(QList<QWidget*>()<<ui->bLabel<<ui->bmmLabel<<ui->bPosLabel);
     axisWidgets_.append(QList<QWidget*>()<<ui->cLabel<<ui->cmmLabel<<ui->cPosLabel);
     UpdateAxisDefine_();
+    ICKeyboard::Instace()->Receive();
     QTimer::singleShot(ICParametersSave::Instance()->BackLightTime() * 60000, this, SLOT(CheckedInput()));
 
     //    QTimer::singleShot(100, this, SLOT(InitHeavyPage()));
