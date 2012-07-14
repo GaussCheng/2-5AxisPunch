@@ -216,9 +216,9 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
 
     //    QTimer::singleShot(100, this, SLOT(InitHeavyPage()));
 #ifdef Q_WS_X11
-        ShowInstructPage();
+//        ShowInstructPage();
 //        ShowManualPage();
-//        ShowAutoPage();
+        ShowAutoPage();
 #endif
 
 }
@@ -814,10 +814,10 @@ void MainFrame::ShowAutoPage()
     //    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Auto"));
     ICProgramHeadFrame::Instance()->StartAutoTime();
     nullButton_->click();
-    if(!IsOrigined())
-    {
-        QMessageBox::warning(this, tr("Warning"), tr("Need to origin!"));
-    }
+//    if(!IsOrigined())
+//    {
+//        QMessageBox::warning(this, tr("Warning"), tr("Need to origin!"));
+//    }
 }
 
 void MainFrame::ShowInstructPage()

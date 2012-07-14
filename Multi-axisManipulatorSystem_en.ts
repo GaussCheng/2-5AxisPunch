@@ -1991,263 +1991,257 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="226"/>
-        <source>yyyy - MM  -  dd   hh : mm</source>
-        <oldsource>dd  -  MM  -   yyyy  hh : mm</oldsource>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="250"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="253"/>
         <source>Back Light Time:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="260"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="263"/>
         <source>min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="267"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="287"/>
         <source>Brightness</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="290"/>
-        <source>%</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="339"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="395"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="362"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="418"/>
         <source>Level Management</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="383"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="439"/>
         <source>Level</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="397"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="453"/>
         <source>Machine Admin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="402"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="458"/>
         <source>Advance Admin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="410"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="466"/>
         <source>Old Password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="433"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="489"/>
         <source>New Password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="462"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="518"/>
         <source>Change</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="475"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="531"/>
         <source>Clear</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="486"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="542"/>
         <source>Admin Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="508"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="564"/>
         <source>Extent Function</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="546"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="602"/>
         <source>Use</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="553"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="609"/>
         <source>Verify</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="561"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="617"/>
         <source>BackUp/Restore</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="569"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="625"/>
         <source>Backup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="581"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="637"/>
         <source>Backup Machine Configures</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="594"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="650"/>
         <source>Backup System Configures</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="607"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="663"/>
         <source>Backup Molds Configures</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="620"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="676"/>
         <source>Backup All</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="630"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="686"/>
         <source>Restore</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="642"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="698"/>
         <source>Restore Machine Configures</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="655"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="711"/>
         <source>Restore System Configures</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="668"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="724"/>
         <source>Restore Molds Configures</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="681"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="737"/>
         <source>Restore All</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="699"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="755"/>
         <source>umount</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="707"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="763"/>
         <source>Machine Config</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="976"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1251"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1032"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1307"/>
         <source>==&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1001"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1057"/>
         <source>HMI Configures</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1083"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1139"/>
         <source>Host Struct Define</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1092"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1282"/>
-        <source>X1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1099"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1289"/>
-        <source>X2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1106"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1296"/>
-        <source>Y1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1113"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1303"/>
-        <source>Y2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1148"/>
         <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1338"/>
-        <source>Signal</source>
+        <source>X1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1155"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1345"/>
+        <source>X2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1162"/>
         <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1352"/>
-        <source>Arm</source>
+        <source>Y1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1176"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1366"/>
-        <source>Out</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1190"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1380"/>
-        <source>Pos</source>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1169"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1359"/>
+        <source>Y2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1204"/>
         <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1394"/>
-        <source>Rev1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1211"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1401"/>
-        <source>Rev2</source>
+        <source>Signal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1218"/>
         <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1408"/>
+        <source>Arm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1232"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1422"/>
+        <source>Out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1246"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1436"/>
+        <source>Pos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1260"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1450"/>
+        <source>Rev1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1267"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1457"/>
+        <source>Rev2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1274"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1464"/>
         <source>Sum</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1273"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1329"/>
         <source>HMI Struct Define</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="901"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1010"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="957"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1066"/>
         <source>Mechanical length</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="915"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1024"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="229"/>
+        <source>yyyy / MM  /  dd   hh : mm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="971"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1080"/>
         <source>Maximum displacement</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="929"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1038"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="985"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1094"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="485"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="503"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="521"/>
@@ -2258,8 +2252,8 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="943"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1052"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="999"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1108"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="486"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="504"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="522"/>
@@ -2270,13 +2264,13 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="957"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1066"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1013"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1122"/>
         <source>Distance/Rotation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="892"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="948"/>
         <source>Host Configures</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2762,6 +2756,19 @@ Infomation</source>
     <message>
         <location filename="hcinstruction/icinstructioneditorbase.ui" line="20"/>
         <source>Frame</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ICKeyboardHandler</name>
+    <message>
+        <location filename="ickeyboard/ickeyboardhandler.cpp" line="126"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ickeyboard/ickeyboardhandler.cpp" line="126"/>
+        <source>Need to origin!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3606,13 +3613,13 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="97"/>
+        <location filename="icorigindialog.cpp" line="102"/>
         <source>Do you need to auto position?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="134"/>
-        <location filename="icorigindialog.cpp" line="140"/>
+        <location filename="icorigindialog.cpp" line="139"/>
+        <location filename="icorigindialog.cpp" line="145"/>
         <source>Originning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4568,53 +4575,43 @@ Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="438"/>
+        <location filename="mainframe.cpp" line="439"/>
         <source>Function</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="439"/>
+        <location filename="mainframe.cpp" line="440"/>
         <source>Monitor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="441"/>
+        <location filename="mainframe.cpp" line="442"/>
         <source>Record</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="440"/>
+        <location filename="mainframe.cpp" line="441"/>
         <source>Alarm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="442"/>
+        <location filename="mainframe.cpp" line="443"/>
         <source>Return</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="617"/>
+        <location filename="mainframe.cpp" line="618"/>
         <source>Hint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="771"/>
-        <location filename="mainframe.cpp" line="836"/>
+        <location filename="mainframe.cpp" line="772"/>
+        <location filename="mainframe.cpp" line="837"/>
         <source>Records</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="818"/>
-        <source>Warning</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainframe.cpp" line="818"/>
-        <source>Need to origin!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainframe.cpp" line="805"/>
+        <location filename="mainframe.cpp" line="806"/>
         <source>Instruct</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4627,164 +4624,164 @@ Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="44"/>
+        <location filename="function_settings/moldinformation.ui" line="41"/>
         <source>Mold Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="49"/>
+        <location filename="function_settings/moldinformation.ui" line="46"/>
         <source>Create Date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="77"/>
+        <location filename="function_settings/moldinformation.ui" line="74"/>
         <source>New</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="102"/>
+        <location filename="function_settings/moldinformation.ui" line="99"/>
         <source>Copy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="127"/>
+        <location filename="function_settings/moldinformation.ui" line="124"/>
         <source>Load</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="152"/>
+        <location filename="function_settings/moldinformation.ui" line="149"/>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="183"/>
+        <location filename="function_settings/moldinformation.ui" line="180"/>
         <source>Source File Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="215"/>
+        <location filename="function_settings/moldinformation.ui" line="212"/>
         <source>New File Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="58"/>
-        <location filename="function_settings/moldinformation.cpp" line="151"/>
-        <location filename="function_settings/moldinformation.cpp" line="159"/>
-        <location filename="function_settings/moldinformation.cpp" line="187"/>
-        <location filename="function_settings/moldinformation.cpp" line="198"/>
-        <location filename="function_settings/moldinformation.cpp" line="221"/>
-        <location filename="function_settings/moldinformation.cpp" line="328"/>
-        <location filename="function_settings/moldinformation.cpp" line="339"/>
-        <location filename="function_settings/moldinformation.cpp" line="343"/>
+        <location filename="function_settings/moldinformation.cpp" line="60"/>
+        <location filename="function_settings/moldinformation.cpp" line="153"/>
+        <location filename="function_settings/moldinformation.cpp" line="161"/>
+        <location filename="function_settings/moldinformation.cpp" line="189"/>
+        <location filename="function_settings/moldinformation.cpp" line="200"/>
+        <location filename="function_settings/moldinformation.cpp" line="223"/>
+        <location filename="function_settings/moldinformation.cpp" line="330"/>
+        <location filename="function_settings/moldinformation.cpp" line="341"/>
+        <location filename="function_settings/moldinformation.cpp" line="345"/>
         <source>warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="59"/>
+        <location filename="function_settings/moldinformation.cpp" line="61"/>
         <source>New file name is empty,
 Please input the file name.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="80"/>
+        <location filename="function_settings/moldinformation.cpp" line="82"/>
         <source>Warnning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="80"/>
+        <location filename="function_settings/moldinformation.cpp" line="82"/>
         <source>This name can&apos;t not be accept!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="123"/>
-        <location filename="function_settings/moldinformation.cpp" line="180"/>
+        <location filename="function_settings/moldinformation.cpp" line="125"/>
+        <location filename="function_settings/moldinformation.cpp" line="182"/>
         <source>Success</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="124"/>
+        <location filename="function_settings/moldinformation.cpp" line="126"/>
         <source>New file success.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="130"/>
+        <location filename="function_settings/moldinformation.cpp" line="132"/>
         <source>The file has been existing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="131"/>
+        <location filename="function_settings/moldinformation.cpp" line="133"/>
         <source>File already exists,
 Please change a new name.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="152"/>
-        <location filename="function_settings/moldinformation.cpp" line="199"/>
+        <location filename="function_settings/moldinformation.cpp" line="154"/>
+        <location filename="function_settings/moldinformation.cpp" line="201"/>
         <source>Source file name is empty,
 Please choose an existing file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="160"/>
+        <location filename="function_settings/moldinformation.cpp" line="162"/>
         <source>New file name is empty,
 Please write the destination file name.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="181"/>
+        <location filename="function_settings/moldinformation.cpp" line="183"/>
         <source>Copy file success!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="188"/>
+        <location filename="function_settings/moldinformation.cpp" line="190"/>
         <source>Destination file already exists!
 Please try a new name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="222"/>
+        <location filename="function_settings/moldinformation.cpp" line="224"/>
         <source>File does not exist!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="265"/>
-        <location filename="function_settings/moldinformation.cpp" line="282"/>
+        <location filename="function_settings/moldinformation.cpp" line="267"/>
+        <location filename="function_settings/moldinformation.cpp" line="284"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="265"/>
-        <location filename="function_settings/moldinformation.cpp" line="282"/>
+        <location filename="function_settings/moldinformation.cpp" line="267"/>
+        <location filename="function_settings/moldinformation.cpp" line="284"/>
         <source>file name is empty</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="312"/>
+        <location filename="function_settings/moldinformation.cpp" line="314"/>
         <source>Tips</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="312"/>
+        <location filename="function_settings/moldinformation.cpp" line="314"/>
         <source>Load Mold Successful!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="329"/>
+        <location filename="function_settings/moldinformation.cpp" line="331"/>
         <source>The mold file </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="331"/>
+        <location filename="function_settings/moldinformation.cpp" line="333"/>
         <source> is being used</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="340"/>
+        <location filename="function_settings/moldinformation.cpp" line="342"/>
         <source>Stand programs can not be delete!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="344"/>
+        <location filename="function_settings/moldinformation.cpp" line="346"/>
         <source>Are you sure to delete files </source>
         <translation type="unfinished"></translation>
     </message>
@@ -5359,171 +5356,185 @@ Please try a new name</source>
     </message>
     <message>
         <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="379"/>
-        <source>/</source>
+        <source>7</source>
+        <oldsource>/</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="413"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="379"/>
         <source>7</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="447"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="413"/>
         <source>A</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="481"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="447"/>
         <source>F</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="515"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="481"/>
         <source>J</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="549"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="515"/>
         <source>Y</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="583"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="549"/>
         <source>2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="617"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="583"/>
         <source>0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="651"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="617"/>
         <source>N</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="685"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="651"/>
         <source>5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="719"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="685"/>
         <source>C</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="753"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="719"/>
         <source>L</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="787"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="753"/>
         <source>S</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="821"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="787"/>
         <source>8</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="855"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="821"/>
         <source>6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="889"/>
-        <source>;</source>
+        <source>Z</source>
+        <oldsource>;</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="923"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1405"/>
+        <source>(</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1439"/>
+        <source>)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="855"/>
         <source>3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="957"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="889"/>
         <source>Z</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="991"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="923"/>
         <source>M</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1025"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="957"/>
         <source>T</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1059"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="991"/>
         <source>1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1093"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1025"/>
         <source>Q</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1127"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1059"/>
         <source>9</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1161"/>
-        <source>.</source>
+        <source>4</source>
+        <oldsource>.</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1195"/>
-        <source>,</source>
+        <source>U</source>
+        <oldsource>,</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1229"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1093"/>
         <source>G</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1263"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1127"/>
         <source>K</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1297"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1161"/>
         <source>4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1331"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1195"/>
         <source>U</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1365"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1229"/>
         <source>X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1399"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1263"/>
         <source>D</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1471"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1335"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1435"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1299"/>
         <source>Backspace</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1507"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1371"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5541,109 +5552,104 @@ Please try a new name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="44"/>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="450"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="45"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="390"/>
         <source>0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="75"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="458"/>
         <source>+</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="103"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="486"/>
         <source>-</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="143"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="83"/>
         <source>7</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="146"/>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="177"/>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="208"/>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="239"/>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="270"/>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="301"/>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="332"/>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="363"/>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="394"/>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="453"/>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="484"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="86"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="117"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="148"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="179"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="210"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="241"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="272"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="303"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="334"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="393"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="424"/>
         <source>numericButtonGroup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="174"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="114"/>
         <source>8</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="205"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="145"/>
         <source>9</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="236"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="176"/>
         <source>4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="267"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="207"/>
         <source>5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="298"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="238"/>
         <source>6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="329"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="269"/>
         <source>1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="360"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="300"/>
         <source>2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="391"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="331"/>
         <source>3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="422"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="362"/>
         <source>CE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="481"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="421"/>
         <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.cpp" line="69"/>
         <source>.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="536"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="516"/>
         <source>Backspace</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="578"/>
-        <source>Del</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="620"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="544"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="662"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="572"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>

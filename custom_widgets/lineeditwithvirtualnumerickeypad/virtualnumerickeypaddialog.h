@@ -45,7 +45,6 @@ private:
 private slots:
     void on_minusToolButton_clicked();
     void on_cancelToolButton_clicked();
-    void on_delToolButton_clicked();
     void on_backspaceToolButton_clicked();
     void on_okToolButton_clicked();
     void on_clearToolButton_clicked();
