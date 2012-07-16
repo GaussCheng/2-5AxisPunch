@@ -31,6 +31,7 @@ public:
     bool IsBackLightOff() const;
     void SetBackLightOff(bool isOff);
     void ShowScreenSaver();
+    bool IsAutoPageShown() const {if(autoPage_ == NULL) return false; return !autoPage_->isHidden();}
 
     bool NoInStop();
 

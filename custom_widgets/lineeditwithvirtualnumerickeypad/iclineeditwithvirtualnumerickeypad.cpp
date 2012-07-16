@@ -149,3 +149,23 @@ void ICLineEditWithVirtualNumericKeypad::SetCurrentText(const QString &currentTe
         this->setText(currentText);
     }
 }
+
+ICIncrementalLineEdit::ICIncrementalLineEdit(QWidget *parent)
+    : ICLineEditWithVirtualNumericKeypad(parent)
+{
+
+}
+
+void ICIncrementalLineEdit::SetCurrentText(const QString &currentText)
+{
+    QString tempText = currentText;
+    if(tempText.isEmpty())
+    {
+        return;
+    }
+    if(tempText.at(0).isDigit() || tempText.at(0) == '.')
+    {
+        tempText.prepend('+');
+    }
+    ICLineEditWithVirtualNumericKeypad::SetCurrentText(tempText);
+}

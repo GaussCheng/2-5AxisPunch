@@ -80,7 +80,7 @@
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="ICLineEditWithVirtualNumericKeypad" name="posEdit"/>
+        <widget class="ICIncrementalLineEdit" name="posEdit"/>
        </item>
        <item row="0" column="2">
         <widget class="QLabel" name="sLabel">
@@ -122,6 +122,11 @@
  <customwidgets>
   <customwidget>
    <class>ICLineEditWithVirtualNumericKeypad</class>
+   <extends>QLineEdit</extends>
+   <header>iclineeditwithvirtualnumerickeypad.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ICIncrementalLineEdit</class>
    <extends>QLineEdit</extends>
    <header>iclineeditwithvirtualnumerickeypad.h</header>
   </customwidget>

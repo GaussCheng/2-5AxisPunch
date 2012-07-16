@@ -26,7 +26,16 @@ private:
     VirtualNumericKeypadDialog * virtualNumericKeypadDialog_;
     int decimalPlaces_;
 
-private slots:
+public slots:
+    void SetCurrentText(const QString &currentText);
+};
+
+class ICIncrementalLineEdit: public ICLineEditWithVirtualNumericKeypad
+{
+    Q_OBJECT
+public:
+    ICIncrementalLineEdit(QWidget * parent = 0);
+public slots:
     void SetCurrentText(const QString &currentText);
 };
 

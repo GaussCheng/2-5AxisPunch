@@ -117,14 +117,12 @@ void ICKeyboardHandler::Keypressed(int keyValue)
     ICCommandProcessor* commandProcessor = ICCommandProcessor::Instance();
     if(keyValue == ICKeyboard::VFB_Run)
     {
-        if(icMainFrame->IsOrigined())
-        {
-            commandProcessor->ExecuteVirtualKeyCommand(virtualKeyMap_.value(keyValue));
-        }
-        else
+        commandProcessor->ExecuteVirtualKeyCommand(virtualKeyMap_.value(keyValue));
+        if((!icMainFrame->IsOrigined()) && icMainFrame->IsAutoPageShown())
         {
             QMessageBox::warning(NULL, tr("Warning"), tr("Need to origin!"));
         }
+
         return;
     }
     if(keyValue == ICKeyboard::FB_NULL)

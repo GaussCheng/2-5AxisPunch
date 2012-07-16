@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>936</width>
-    <height>445</height>
+    <height>463</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -281,6 +281,9 @@
        </item>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <property name="rightMargin">
+          <number>200</number>
+         </property>
          <item>
           <widget class="QLabel" name="label_40">
            <property name="text">
@@ -292,8 +295,8 @@
           <widget class="QPushButton" name="brightMinus">
            <property name="minimumSize">
             <size>
-             <width>48</width>
-             <height>48</height>
+             <width>32</width>
+             <height>32</height>
             </size>
            </property>
            <property name="text">
@@ -305,8 +308,8 @@
            </property>
            <property name="iconSize">
             <size>
-             <width>48</width>
-             <height>48</height>
+             <width>16</width>
+             <height>16</height>
             </size>
            </property>
            <property name="flat">
@@ -319,7 +322,7 @@
            <property name="minimumSize">
             <size>
              <width>0</width>
-             <height>32</height>
+             <height>16</height>
             </size>
            </property>
            <property name="maximum">
@@ -337,8 +340,8 @@
           <widget class="QPushButton" name="brightPlus">
            <property name="minimumSize">
             <size>
-             <width>48</width>
-             <height>48</height>
+             <width>32</width>
+             <height>32</height>
             </size>
            </property>
            <property name="text">
@@ -350,27 +353,14 @@
            </property>
            <property name="iconSize">
             <size>
-             <width>48</width>
-             <height>48</height>
+             <width>24</width>
+             <height>24</height>
             </size>
            </property>
            <property name="flat">
             <bool>true</bool>
            </property>
           </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_7">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
          </item>
         </layout>
        </item>
@@ -1524,6 +1514,12 @@ height: 33px;
  </widget>
  <customwidgets>
   <customwidget>
+   <class>ICPageTab</class>
+   <extends>QWidget</extends>
+   <header>icpagetab.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
    <class>ICLineEditWithVirtualKeyboard</class>
    <extends>QLineEdit</extends>
    <header>iclineeditwithvirtualkeyboard.h</header>
@@ -1532,12 +1528,6 @@ height: 33px;
    <class>ICLineEditWithVirtualNumericKeypad</class>
    <extends>QLineEdit</extends>
    <header>iclineeditwithvirtualnumerickeypad.h</header>
-  </customwidget>
-  <customwidget>
-   <class>ICPageTab</class>
-   <extends>QWidget</extends>
-   <header>icpagetab.h</header>
-   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources>
