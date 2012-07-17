@@ -17,7 +17,8 @@ ICParametersSave::ICParametersSave(const QString fileName)
     InstructMultidotPut("InstructMultidotPut"),
     CommunicationConfig("CommunicationConfig"),
     ProductConfig("ProductConfig"),
-    translator_(new QTranslator())
+    translator_(new QTranslator()),
+      sysTranslator_(new QTranslator())
 {
 //    SetFileName("./sysconfig/systemParameter.hc");
     QFile file("./sysconfig/DistanceRotation");
@@ -75,11 +76,14 @@ void ICParametersSave::SetLanguage(QLocale::Language language)
     case QLocale::Chinese:
         {
             translator_->load("Multi-axisManipulatorSystem_ch");
+            sysTranslator_->load("qt_zh_CN");
+            qApp->installTranslator(sysTranslator_);
         }
         break;
     case QLocale::English:
         {
             translator_->load("Multi-axisManipulatorSystem_en");
+            qApp->removeTranslator(sysTranslator_);
         }
         break;
     default:
@@ -87,6 +91,7 @@ void ICParametersSave::SetLanguage(QLocale::Language language)
             return;
         }
     }
+
 
     qApp->installTranslator(translator_);
     SaveParameter(SystemLocale, "SystemLanguage", static_cast<int>(language));
