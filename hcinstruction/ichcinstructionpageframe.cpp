@@ -517,6 +517,7 @@ void ICHCInstructionPageFrame::on_insertToolButton_clicked()
 
     ICInstructionEditorBase* editor = qobject_cast<ICInstructionEditorBase*>(ui->settingStackedWidget->currentWidget());
     ICFlagsEditor *flagsEditor = qobject_cast<ICFlagsEditor*> (editor);
+    ActionSettingFrame *servoEditor = qobject_cast<ActionSettingFrame*>(editor);
     if(editor == NULL)
     {
         return;
@@ -531,9 +532,14 @@ void ICHCInstructionPageFrame::on_insertToolButton_clicked()
     }
     FindIndex_(index, gIndex, tIndex, sIndex);
     bool isParallel = false;
+    bool isServo = false;
     if(flagsEditor != NULL)
     {
         isParallel = true;
+    }
+    if(servoEditor != NULL)
+    {
+        isServo = true;
     }
     QList<ICMoldItem> items = editor->CreateCommand();
     if(items.isEmpty() && !isParallel)
@@ -550,6 +556,18 @@ void ICHCInstructionPageFrame::on_insertToolButton_clicked()
                 ICGroupMoldUIItem groupItem;
                 ICTopMoldUIItem topItem = flagsEditor->CreateTopUIItem();
                 groupItem.AddToMoldUIItem(topItem);
+                groupItem.SetStepNum(gIndex);
+                insertedGroupItems.append(groupItem);
+            }
+            else if(isServo)
+            {
+                ICTopMoldUIItem topItem;
+                ICGroupMoldUIItem groupItem;
+                for(int i = 0; i != items.size(); ++i)
+                {
+                    topItem.SetBaseItem(items.at(i));
+                    groupItem.AddToMoldUIItem(topItem);
+                }
                 groupItem.SetStepNum(gIndex);
                 insertedGroupItems.append(groupItem);
             }
