@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>447</width>
-    <height>402</height>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,18 +20,6 @@
    <enum>QFrame::Raised</enum>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <property name="leftMargin">
-    <number>1</number>
-   </property>
-   <property name="rightMargin">
-    <number>1</number>
-   </property>
-   <property name="horizontalSpacing">
-    <number>2</number>
-   </property>
-   <property name="verticalSpacing">
-    <number>6</number>
-   </property>
    <item row="0" column="0">
     <widget class="QToolButton" name="inputButton">
      <property name="sizePolicy">
@@ -58,7 +46,14 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="5">
+   <item row="0" column="2">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Delay(s)</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="4">
     <widget class="QLabel" name="label_6">
      <property name="minimumSize">
       <size>
@@ -67,274 +62,7 @@
       </size>
      </property>
      <property name="text">
-      <string>Speed</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="3">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="x1DelayLineEdit">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>70</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>70</width>
-       <height>32</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>0.00</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="5">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="x1SpeedLineEdit">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>60</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>60</width>
-       <height>32</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>80</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="1">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="y1PosLineEdit">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>80</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>80</width>
-       <height>32</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>0.0</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="3">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="y1DelayLineEdit">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>70</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>70</width>
-       <height>32</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>0.00</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="5">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="y1SpeedLineEdit">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>60</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>60</width>
-       <height>32</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>80</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="1">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="zPosLineEdit">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>80</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>80</width>
-       <height>32</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>0.0</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="3">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="zDelayLineEdit">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>70</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>70</width>
-       <height>32</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>0.00</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="5">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="zSpeedLineEdit">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>60</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>60</width>
-       <height>32</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>80</string>
-     </property>
-    </widget>
-   </item>
-   <item row="9" column="1">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="2" column="0">
-    <widget class="QCheckBox" name="gyButton">
-     <property name="styleSheet">
-      <string notr="true">::indicator {
-     width: 32px;
-     height: 32px;
- }
-
-::indicator:unchecked 
-{
-     image: url(:/resource/check_unchecked.png);
- }
-::indicator:checked 
-{
-     image: url(:/resource/check_checked.png);
- }
-
-QRadioButton::indicator:checked:disabled
-{
- image: url(:/resource/check_checked_disable.png);
-}
-
-QRadioButton::indicator:unchecked:disabled
-{
- image: url(:/resource/check_unchecked_disable.png);
-}
-
-
-
-</string>
-     </property>
-     <property name="text">
-      <string>GY1</string>
-     </property>
-     <property name="checkable">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="0">
-    <widget class="QCheckBox" name="gzButton">
-     <property name="styleSheet">
-      <string notr="true">::indicator {
-     width: 32px;
-     height: 32px;
- }
-
-::indicator:unchecked 
-{
-     image: url(:/resource/check_unchecked.png);
- }
-::indicator:checked 
-{
-     image: url(:/resource/check_checked.png);
- }
-
-QRadioButton::indicator:checked:disabled
-{
- image: url(:/resource/check_checked_disable.png);
-}
-
-QRadioButton::indicator:unchecked:disabled
-{
- image: url(:/resource/check_unchecked_disable.png);
-}
-
-
-
-</string>
-     </property>
-     <property name="text">
-      <string>GZ</string>
-     </property>
-     <property name="checkable">
-      <bool>true</bool>
+      <string>Speed(%)</string>
      </property>
     </widget>
    </item>
@@ -378,24 +106,341 @@ QRadioButton::indicator:unchecked:disabled
     </widget>
    </item>
    <item row="1" column="1">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="x1PosLineEdit">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="ICLineEditWithVirtualNumericKeypad" name="x1PosLineEdit">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>0.0</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="x1Box">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <item>
+        <property name="text">
+         <string>Forward</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Backward</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="2">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="x1DelayLineEdit">
      <property name="enabled">
       <bool>false</bool>
      </property>
      <property name="minimumSize">
       <size>
-       <width>80</width>
+       <width>70</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>80</width>
+       <width>70</width>
        <height>32</height>
       </size>
      </property>
      <property name="text">
-      <string>0.0</string>
+      <string>0.00</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="4">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="x1SpeedLineEdit">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>60</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>60</width>
+       <height>32</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>80</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QCheckBox" name="gyButton">
+     <property name="styleSheet">
+      <string notr="true">::indicator {
+     width: 32px;
+     height: 32px;
+ }
+
+::indicator:unchecked 
+{
+     image: url(:/resource/check_unchecked.png);
+ }
+::indicator:checked 
+{
+     image: url(:/resource/check_checked.png);
+ }
+
+QRadioButton::indicator:checked:disabled
+{
+ image: url(:/resource/check_checked_disable.png);
+}
+
+QRadioButton::indicator:unchecked:disabled
+{
+ image: url(:/resource/check_unchecked_disable.png);
+}
+
+
+
+</string>
+     </property>
+     <property name="text">
+      <string>GY1</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="ICLineEditWithVirtualNumericKeypad" name="y1PosLineEdit">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>0.0</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="y1Box">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <item>
+        <property name="text">
+         <string>Up</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Down</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="2">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="y1DelayLineEdit">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>70</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>70</width>
+       <height>32</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>0.00</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="4">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="y1SpeedLineEdit">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>60</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>60</width>
+       <height>32</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>80</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QCheckBox" name="gzButton">
+     <property name="styleSheet">
+      <string notr="true">::indicator {
+     width: 32px;
+     height: 32px;
+ }
+
+::indicator:unchecked 
+{
+     image: url(:/resource/check_unchecked.png);
+ }
+::indicator:checked 
+{
+     image: url(:/resource/check_checked.png);
+ }
+
+QRadioButton::indicator:checked:disabled
+{
+ image: url(:/resource/check_checked_disable.png);
+}
+
+QRadioButton::indicator:unchecked:disabled
+{
+ image: url(:/resource/check_unchecked_disable.png);
+}
+
+
+
+</string>
+     </property>
+     <property name="text">
+      <string>GZ</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="ICLineEditWithVirtualNumericKeypad" name="zPosLineEdit">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>0.0</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="zBox">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <item>
+        <property name="text">
+         <string>Come In</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Go Out</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="3" column="2">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="zDelayLineEdit">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>70</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>70</width>
+       <height>32</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>0.00</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="4">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="zSpeedLineEdit">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>60</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>60</width>
+       <height>32</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>80</string>
      </property>
     </widget>
    </item>
@@ -439,28 +484,49 @@ QRadioButton::indicator:unchecked:disabled
     </widget>
    </item>
    <item row="4" column="1">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="x2PosLineEdit">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>80</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>80</width>
-       <height>32</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>0.0</string>
-     </property>
-    </widget>
+    <layout class="QVBoxLayout" name="verticalLayout_4">
+     <item>
+      <widget class="ICLineEditWithVirtualNumericKeypad" name="x2PosLineEdit">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>0.0</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="x2Box">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <item>
+        <property name="text">
+         <string>Forward</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Backward</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
    </item>
-   <item row="4" column="3">
+   <item row="4" column="2">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="x2DelayLineEdit">
      <property name="enabled">
       <bool>false</bool>
@@ -482,7 +548,7 @@ QRadioButton::indicator:unchecked:disabled
      </property>
     </widget>
    </item>
-   <item row="4" column="5">
+   <item row="4" column="4">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="x2SpeedLineEdit">
      <property name="enabled">
       <bool>false</bool>
@@ -544,28 +610,49 @@ QRadioButton::indicator:unchecked:disabled
     </widget>
    </item>
    <item row="5" column="1">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="y2PosLineEdit">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>80</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>80</width>
-       <height>32</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>0.0</string>
-     </property>
-    </widget>
+    <layout class="QVBoxLayout" name="verticalLayout_5">
+     <item>
+      <widget class="ICLineEditWithVirtualNumericKeypad" name="y2PosLineEdit">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>0.0</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="y2Box">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <item>
+        <property name="text">
+         <string>Up</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Down</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
    </item>
-   <item row="5" column="3">
+   <item row="5" column="2">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="y2DelayLineEdit">
      <property name="enabled">
       <bool>false</bool>
@@ -587,7 +674,14 @@ QRadioButton::indicator:unchecked:disabled
      </property>
     </widget>
    </item>
-   <item row="5" column="5">
+   <item row="5" column="3">
+    <widget class="QLabel" name="y2SLabel">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="4">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="y2SpeedLineEdit">
      <property name="enabled">
       <bool>false</bool>
@@ -648,6 +742,93 @@ QRadioButton::indicator:unchecked:disabled
      </property>
     </widget>
    </item>
+   <item row="6" column="1">
+    <layout class="QVBoxLayout" name="verticalLayout_6">
+     <item>
+      <widget class="ICLineEditWithVirtualNumericKeypad" name="aPosLineEdit">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>0.0</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="aBox">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <item>
+        <property name="text">
+         <string>Vertical2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Horizon2</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="6" column="2">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="aDelayLineEdit">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>70</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>70</width>
+       <height>32</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>0.00</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="4">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="aSpeedLineEdit">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>60</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>60</width>
+       <height>32</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>80</string>
+     </property>
+    </widget>
+   </item>
    <item row="7" column="0">
     <widget class="QCheckBox" name="gBButton">
      <property name="styleSheet">
@@ -684,6 +865,72 @@ QRadioButton::indicator:unchecked:disabled
      </property>
      <property name="checkable">
       <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="bPosLineEdit">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>80</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>80</width>
+       <height>32</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>0.0</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="2">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="bDelayLineEdit">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>70</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>70</width>
+       <height>32</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>0.00</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="4">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="bSpeedLineEdit">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>60</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>60</width>
+       <height>32</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>80</string>
      </property>
     </widget>
    </item>
@@ -726,50 +973,6 @@ QRadioButton::indicator:unchecked:disabled
      </property>
     </widget>
    </item>
-   <item row="6" column="1">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="aPosLineEdit">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>80</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>80</width>
-       <height>32</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>0.0</string>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="1">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="bPosLineEdit">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>80</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>80</width>
-       <height>32</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>0.0</string>
-     </property>
-    </widget>
-   </item>
    <item row="8" column="1">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="cPosLineEdit">
      <property name="enabled">
@@ -792,51 +995,7 @@ QRadioButton::indicator:unchecked:disabled
      </property>
     </widget>
    </item>
-   <item row="6" column="3">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="aDelayLineEdit">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>70</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>70</width>
-       <height>32</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>0.00</string>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="3">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="bDelayLineEdit">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>70</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>70</width>
-       <height>32</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>0.00</string>
-     </property>
-    </widget>
-   </item>
-   <item row="8" column="3">
+   <item row="8" column="2">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="cDelayLineEdit">
      <property name="enabled">
       <bool>false</bool>
@@ -858,51 +1017,7 @@ QRadioButton::indicator:unchecked:disabled
      </property>
     </widget>
    </item>
-   <item row="6" column="5">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="aSpeedLineEdit">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>60</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>60</width>
-       <height>32</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>80</string>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="5">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="bSpeedLineEdit">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>60</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>60</width>
-       <height>32</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>80</string>
-     </property>
-    </widget>
-   </item>
-   <item row="8" column="5">
+   <item row="8" column="4">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="cSpeedLineEdit">
      <property name="enabled">
       <bool>false</bool>
@@ -924,226 +1039,18 @@ QRadioButton::indicator:unchecked:disabled
      </property>
     </widget>
    </item>
-   <item row="1" column="2">
-    <widget class="QComboBox" name="x1Box">
-     <property name="enabled">
-      <bool>false</bool>
+   <item row="9" column="1">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
      </property>
-     <item>
-      <property name="text">
-       <string>Forward</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Backward</string>
-      </property>
-     </item>
-    </widget>
-   </item>
-   <item row="2" column="2">
-    <widget class="QComboBox" name="y1Box">
-     <property name="enabled">
-      <bool>false</bool>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
      </property>
-     <item>
-      <property name="text">
-       <string>Up</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Down</string>
-      </property>
-     </item>
-    </widget>
-   </item>
-   <item row="3" column="2">
-    <widget class="QComboBox" name="zBox">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <item>
-      <property name="text">
-       <string>Come In</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Go Out</string>
-      </property>
-     </item>
-    </widget>
-   </item>
-   <item row="4" column="2">
-    <widget class="QComboBox" name="x2Box">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <item>
-      <property name="text">
-       <string>Forward</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Backward</string>
-      </property>
-     </item>
-    </widget>
-   </item>
-   <item row="5" column="2">
-    <widget class="QComboBox" name="y2Box">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <item>
-      <property name="text">
-       <string>Up</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Down</string>
-      </property>
-     </item>
-    </widget>
-   </item>
-   <item row="6" column="2">
-    <widget class="QComboBox" name="aBox">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <item>
-      <property name="text">
-       <string>Vertical2</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Horizon2</string>
-      </property>
-     </item>
-    </widget>
-   </item>
-   <item row="0" column="3">
-    <widget class="QLabel" name="label_2">
-     <property name="text">
-      <string>Delay    </string>
-     </property>
-    </widget>
-   </item>
-   <item row="8" column="6">
-    <widget class="QLabel" name="cpLabel">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="6">
-    <widget class="QLabel" name="bpLabel">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="6">
-    <widget class="QLabel" name="apLabel">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="6">
-    <widget class="QLabel" name="x2pLabel">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="6">
-    <widget class="QLabel" name="x1pLabel">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="6">
-    <widget class="QLabel" name="zpLabel">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="6">
-    <widget class="QLabel" name="y2pLabel">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="6">
-    <widget class="QLabel" name="y1pLabel">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="4">
-    <widget class="QLabel" name="y1SLabel">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="4">
-    <widget class="QLabel" name="x1SLabel">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="8" column="4">
-    <widget class="QLabel" name="cSLabel">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="4">
-    <widget class="QLabel" name="y2SLabel">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="4">
-    <widget class="QLabel" name="x2SLabel">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="4">
-    <widget class="QLabel" name="zSLabel">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="4">
-    <widget class="QLabel" name="bSLabel">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="4">
-    <widget class="QLabel" name="aSLabel">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
+    </spacer>
    </item>
   </layout>
  </widget>

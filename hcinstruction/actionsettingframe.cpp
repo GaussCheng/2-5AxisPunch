@@ -14,14 +14,14 @@ ActionSettingFrame::ActionSettingFrame(QWidget *parent) :
     ui->setupUi(this);
 
     InitInterface();
-    axisWidgets_.append(QList<QWidget*>()<<ui->gxButton<<ui->x1DelayLineEdit<<ui->x1PosLineEdit<<ui->x1pLabel<<ui->x1SLabel<<ui->x1SpeedLineEdit<<ui->x1Box);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gyButton<<ui->y1DelayLineEdit<<ui->y1PosLineEdit<<ui->y1pLabel<<ui->y1SLabel<<ui->y1SpeedLineEdit<<ui->y1Box);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gzButton<<ui->zDelayLineEdit<<ui->zPosLineEdit<<ui->zpLabel<<ui->zSLabel<<ui->zSpeedLineEdit<<ui->zBox);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gPButton<<ui->x2DelayLineEdit<<ui->x2PosLineEdit<<ui->x2pLabel<<ui->x2SLabel<<ui->x2SpeedLineEdit<<ui->x2Box);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gQButton<<ui->y2DelayLineEdit<<ui->y2PosLineEdit<<ui->y2pLabel<<ui->y2SLabel<<ui->y2SpeedLineEdit<<ui->y2Box);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gAButton<<ui->aDelayLineEdit<<ui->aPosLineEdit<<ui->apLabel<<ui->aSLabel<<ui->aSpeedLineEdit<<ui->aBox);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gBButton<<ui->bDelayLineEdit<<ui->bPosLineEdit<<ui->bpLabel<<ui->bSLabel<<ui->bSpeedLineEdit);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gCButton<<ui->cDelayLineEdit<<ui->cPosLineEdit<<ui->cpLabel<<ui->cSLabel<<ui->cSpeedLineEdit);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gxButton<<ui->x1DelayLineEdit<<ui->x1PosLineEdit<<ui->x1SpeedLineEdit<<ui->x1Box);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gyButton<<ui->y1DelayLineEdit<<ui->y1PosLineEdit<<ui->y1SpeedLineEdit<<ui->y1Box);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gzButton<<ui->zDelayLineEdit<<ui->zPosLineEdit<<ui->zSpeedLineEdit<<ui->zBox);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gPButton<<ui->x2DelayLineEdit<<ui->x2PosLineEdit<<ui->x2SpeedLineEdit<<ui->x2Box);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gQButton<<ui->y2DelayLineEdit<<ui->y2PosLineEdit<<ui->y2SLabel<<ui->y2SpeedLineEdit<<ui->y2Box);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gAButton<<ui->aDelayLineEdit<<ui->aPosLineEdit<<ui->aSpeedLineEdit<<ui->aBox);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gBButton<<ui->bDelayLineEdit<<ui->bPosLineEdit<<ui->bSpeedLineEdit);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gCButton<<ui->cDelayLineEdit<<ui->cPosLineEdit<<ui->cSpeedLineEdit);
     //    ui->x1SpeedLineEdit->hide();
 }
 
@@ -536,7 +536,7 @@ void ActionSettingFrame::UpdateAxisDefine_()
             ShowWidgets_(axisWidgets_[0]);
             ui->x1PosLineEdit->hide();
             ui->x1SpeedLineEdit->hide();
-            ui->x1pLabel->hide();
+//            ui->x1pLabel->hide();
         }
         else
         {
@@ -553,7 +553,7 @@ void ActionSettingFrame::UpdateAxisDefine_()
             ShowWidgets_(axisWidgets_[1]);
             ui->y1PosLineEdit->hide();
             ui->y1SpeedLineEdit->hide();
-            ui->y1pLabel->hide();
+//            ui->y1pLabel->hide();
         }
         else
         {
@@ -570,7 +570,7 @@ void ActionSettingFrame::UpdateAxisDefine_()
             ShowWidgets_(axisWidgets_[2]);
             ui->zPosLineEdit->hide();
             ui->zSpeedLineEdit->hide();
-            ui->zpLabel->hide();
+//            ui->zpLabel->hide();
         }
         else
         {
@@ -587,7 +587,7 @@ void ActionSettingFrame::UpdateAxisDefine_()
             ShowWidgets_(axisWidgets_[3]);
             ui->x2PosLineEdit->hide();
             ui->x2SpeedLineEdit->hide();
-            ui->x2pLabel->hide();
+//            ui->x2pLabel->hide();
         }
         else
         {
@@ -604,7 +604,7 @@ void ActionSettingFrame::UpdateAxisDefine_()
             ShowWidgets_(axisWidgets_[4]);
             ui->y2PosLineEdit->hide();
             ui->y2SpeedLineEdit->hide();
-            ui->y2pLabel->hide();
+//            ui->y2pLabel->hide();
         }
         else
         {
@@ -621,7 +621,7 @@ void ActionSettingFrame::UpdateAxisDefine_()
             ShowWidgets_(axisWidgets_[5]);
             ui->aPosLineEdit->hide();
             ui->aSpeedLineEdit->hide();
-            ui->apLabel->hide();
+//            ui->apLabel->hide();
         }
         else
         {
