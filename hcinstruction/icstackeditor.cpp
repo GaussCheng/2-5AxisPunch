@@ -144,6 +144,7 @@ void ICStackEditor::showEvent(QShowEvent *e)
         //        ui->zRPStepLineEdit->SetThisIntToThisText(stackParams.at(ICMold::Z_Gap));
         group.zStep->setText(QString::number(stackParams.at(ICMold::Z_Gap)));
     }
+    ICInstructionEditorBase::showEvent(e);
 }
 
 QList<ICMoldItem> ICStackEditor::CreateCommandImpl() const

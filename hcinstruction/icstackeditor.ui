@@ -7,13 +7,28 @@
     <x>0</x>
     <y>0</y>
     <width>436</width>
-    <height>448</height>
+    <height>467</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QCheckBox{
+color:yellow;
+	background-color: rgb(125, 125, 125);
+}</string>
+  </property>
   <layout class="QGridLayout" name="gridLayout">
+   <property name="horizontalSpacing">
+    <number>6</number>
+   </property>
+   <property name="verticalSpacing">
+    <number>1</number>
+   </property>
+   <property name="margin">
+    <number>2</number>
+   </property>
    <item row="0" column="1">
     <widget class="QLabel" name="label_14">
      <property name="text">
@@ -25,29 +40,65 @@
     <layout class="QHBoxLayout" name="horizontalLayout_13">
      <item>
       <widget class="QLabel" name="label_13">
+       <property name="maximumSize">
+        <size>
+         <width>24</width>
+         <height>16777215</height>
+        </size>
+       </property>
        <property name="text">
         <string>S:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="label_17">
+       <property name="maximumSize">
+        <size>
+         <width>32</width>
+         <height>16777215</height>
+        </size>
+       </property>
        <property name="text">
-        <string>P</string>
+        <string>Pos</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="label_16">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
         <string>Num</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="label_15">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
         <string>Step</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -57,29 +108,44 @@
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QLabel" name="label">
+       <property name="maximumSize">
+        <size>
+         <width>18</width>
+         <height>16777215</height>
+        </size>
+       </property>
        <property name="text">
         <string>X:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g1XPosition">
-       <property name="text">
-        <string>Position</string>
+       <property name="maximumSize">
+        <size>
+         <width>32</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g1XNum">
-       <property name="text">
-        <string>Num</string>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g1XStep">
-       <property name="text">
-        <string>Step</string>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -88,7 +154,8 @@
    <item row="3" column="0">
     <widget class="QCheckBox" name="g1Check">
      <property name="styleSheet">
-      <string notr="true">::item{
+      <string notr="true">
+::item{
 height: 33px;
 }
 
@@ -110,16 +177,6 @@ height: 33px;
      image: url(:/resource/check_checked.png);
  }
 
-QRadioButton::indicator:checked:disabled
-{
- image: url(:/resource/check_checked_disable.png);
-}
-
-QRadioButton::indicator:unchecked:disabled
-{
- image: url(:/resource/check_unchecked_disable.png);
-}
-
 
 
 </string>
@@ -130,39 +187,50 @@ QRadioButton::indicator:unchecked:disabled
     </widget>
    </item>
    <item row="3" column="1">
-    <widget class="QLabel" name="g1Seq">
-     <property name="text">
-      <string>Seq</string>
-     </property>
-    </widget>
+    <widget class="QLabel" name="g1Seq"/>
    </item>
    <item row="3" column="2">
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="QLabel" name="label_2">
+       <property name="maximumSize">
+        <size>
+         <width>18</width>
+         <height>16777215</height>
+        </size>
+       </property>
        <property name="text">
         <string>Y:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g1YPosition">
-       <property name="text">
-        <string>Position</string>
+       <property name="maximumSize">
+        <size>
+         <width>32</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g1YNum">
-       <property name="text">
-        <string>Num</string>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g1YStep">
-       <property name="text">
-        <string>Step</string>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -172,29 +240,44 @@ QRadioButton::indicator:unchecked:disabled
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
       <widget class="QLabel" name="label_3">
+       <property name="maximumSize">
+        <size>
+         <width>18</width>
+         <height>16777215</height>
+        </size>
+       </property>
        <property name="text">
         <string>Z:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g1ZPosition">
-       <property name="text">
-        <string>Position</string>
+       <property name="maximumSize">
+        <size>
+         <width>32</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g1ZNum">
-       <property name="text">
-        <string>Num</string>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g1ZStep">
-       <property name="text">
-        <string>Step</string>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -204,29 +287,44 @@ QRadioButton::indicator:unchecked:disabled
     <layout class="QHBoxLayout" name="horizontalLayout_4">
      <item>
       <widget class="QLabel" name="label_4">
+       <property name="maximumSize">
+        <size>
+         <width>18</width>
+         <height>16777215</height>
+        </size>
+       </property>
        <property name="text">
         <string>X:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g2XPosition">
-       <property name="text">
-        <string>Position</string>
+       <property name="maximumSize">
+        <size>
+         <width>32</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g2XNum">
-       <property name="text">
-        <string>Num</string>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g2XStep">
-       <property name="text">
-        <string>Step</string>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -277,39 +375,50 @@ QRadioButton::indicator:unchecked:disabled
     </widget>
    </item>
    <item row="8" column="1">
-    <widget class="QLabel" name="g2Seq">
-     <property name="text">
-      <string>Seq</string>
-     </property>
-    </widget>
+    <widget class="QLabel" name="g2Seq"/>
    </item>
    <item row="8" column="2">
     <layout class="QHBoxLayout" name="horizontalLayout_5">
      <item>
       <widget class="QLabel" name="label_5">
+       <property name="maximumSize">
+        <size>
+         <width>18</width>
+         <height>16777215</height>
+        </size>
+       </property>
        <property name="text">
         <string>Y:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g2YPosition">
-       <property name="text">
-        <string>Position</string>
+       <property name="maximumSize">
+        <size>
+         <width>32</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g2YNum">
-       <property name="text">
-        <string>Num</string>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g2YStep">
-       <property name="text">
-        <string>Step</string>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -319,29 +428,44 @@ QRadioButton::indicator:unchecked:disabled
     <layout class="QHBoxLayout" name="horizontalLayout_6">
      <item>
       <widget class="QLabel" name="label_6">
+       <property name="maximumSize">
+        <size>
+         <width>18</width>
+         <height>16777215</height>
+        </size>
+       </property>
        <property name="text">
         <string>Z:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g2ZPosition">
-       <property name="text">
-        <string>Position</string>
+       <property name="maximumSize">
+        <size>
+         <width>32</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g2ZNum">
-       <property name="text">
-        <string>Num</string>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g2ZStep">
-       <property name="text">
-        <string>Step</string>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -351,29 +475,44 @@ QRadioButton::indicator:unchecked:disabled
     <layout class="QHBoxLayout" name="horizontalLayout_7">
      <item>
       <widget class="QLabel" name="label_7">
+       <property name="maximumSize">
+        <size>
+         <width>18</width>
+         <height>16777215</height>
+        </size>
+       </property>
        <property name="text">
         <string>X:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g3XPosition">
-       <property name="text">
-        <string>Position</string>
+       <property name="maximumSize">
+        <size>
+         <width>32</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g3XNum">
-       <property name="text">
-        <string>Num</string>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g3XStep">
-       <property name="text">
-        <string>Step</string>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -424,39 +563,50 @@ QRadioButton::indicator:unchecked:disabled
     </widget>
    </item>
    <item row="13" column="1">
-    <widget class="QLabel" name="g3Seq">
-     <property name="text">
-      <string>Seq</string>
-     </property>
-    </widget>
+    <widget class="QLabel" name="g3Seq"/>
    </item>
    <item row="13" column="2">
     <layout class="QHBoxLayout" name="horizontalLayout_8">
      <item>
       <widget class="QLabel" name="label_8">
+       <property name="maximumSize">
+        <size>
+         <width>18</width>
+         <height>16777215</height>
+        </size>
+       </property>
        <property name="text">
         <string>Y:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g3YPosition">
-       <property name="text">
-        <string>Position</string>
+       <property name="maximumSize">
+        <size>
+         <width>32</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g3YNum">
-       <property name="text">
-        <string>Num</string>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g3YStep">
-       <property name="text">
-        <string>Step</string>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -466,29 +616,44 @@ QRadioButton::indicator:unchecked:disabled
     <layout class="QHBoxLayout" name="horizontalLayout_9">
      <item>
       <widget class="QLabel" name="label_9">
+       <property name="maximumSize">
+        <size>
+         <width>18</width>
+         <height>16777215</height>
+        </size>
+       </property>
        <property name="text">
         <string>Z:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g3ZPosition">
-       <property name="text">
-        <string>Position</string>
+       <property name="maximumSize">
+        <size>
+         <width>32</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g3ZNum">
-       <property name="text">
-        <string>Num</string>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g3ZStep">
-       <property name="text">
-        <string>Step</string>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -498,29 +663,44 @@ QRadioButton::indicator:unchecked:disabled
     <layout class="QHBoxLayout" name="horizontalLayout_10">
      <item>
       <widget class="QLabel" name="label_10">
+       <property name="maximumSize">
+        <size>
+         <width>18</width>
+         <height>16777215</height>
+        </size>
+       </property>
        <property name="text">
         <string>X:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g4XPosition">
-       <property name="text">
-        <string>Position</string>
+       <property name="maximumSize">
+        <size>
+         <width>32</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g4XNum">
-       <property name="text">
-        <string>Num</string>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g4XStep">
-       <property name="text">
-        <string>Step</string>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -530,29 +710,44 @@ QRadioButton::indicator:unchecked:disabled
     <layout class="QHBoxLayout" name="horizontalLayout_11">
      <item>
       <widget class="QLabel" name="label_11">
+       <property name="maximumSize">
+        <size>
+         <width>18</width>
+         <height>16777215</height>
+        </size>
+       </property>
        <property name="text">
         <string>Y:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g4YPosition">
-       <property name="text">
-        <string>Position</string>
+       <property name="maximumSize">
+        <size>
+         <width>32</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g4YNum">
-       <property name="text">
-        <string>Num</string>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g4YStep">
-       <property name="text">
-        <string>Step</string>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -562,40 +757,51 @@ QRadioButton::indicator:unchecked:disabled
     <layout class="QHBoxLayout" name="horizontalLayout_12">
      <item>
       <widget class="QLabel" name="label_12">
+       <property name="maximumSize">
+        <size>
+         <width>18</width>
+         <height>16777215</height>
+        </size>
+       </property>
        <property name="text">
         <string>Z:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g4ZPosition">
-       <property name="text">
-        <string>Position</string>
+       <property name="maximumSize">
+        <size>
+         <width>32</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g4ZNum">
-       <property name="text">
-        <string>Num</string>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="g4ZStep">
-       <property name="text">
-        <string>Step</string>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
     </layout>
    </item>
    <item row="19" column="1">
-    <widget class="QLabel" name="g4Seq">
-     <property name="text">
-      <string>Seq</string>
-     </property>
-    </widget>
+    <widget class="QLabel" name="g4Seq"/>
    </item>
    <item row="19" column="0">
     <widget class="QCheckBox" name="g4Check">
@@ -662,6 +868,13 @@ QRadioButton::indicator:unchecked:disabled
      </property>
     </widget>
    </item>
+   <item row="1" column="0" colspan="3">
+    <widget class="Line" name="line_4">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
    <item row="21" column="2">
     <spacer name="verticalSpacer">
      <property name="orientation">
@@ -674,13 +887,6 @@ QRadioButton::indicator:unchecked:disabled
       </size>
      </property>
     </spacer>
-   </item>
-   <item row="1" column="0" colspan="3">
-    <widget class="Line" name="line_4">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
    </item>
   </layout>
  </widget>
