@@ -253,7 +253,7 @@ padding:5px;
             </size>
            </property>
            <property name="text">
-            <string>pneumatic</string>
+            <string>Reserve</string>
            </property>
            <property name="icon">
             <iconset resource="../resource.qrc">

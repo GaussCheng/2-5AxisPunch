@@ -169,7 +169,8 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
             }
             else
             {
-                commandStr += QObject::tr("On");
+                commandStr += QObject::tr("On") + " ";
+                commandStr += QObject::tr("Times:") + QString::number(moldItem.SVal()) + " ";
             }
             commandStr += " ";
         }
@@ -286,6 +287,12 @@ void ICInstructParam::InitClassesInfo()
 
     clipStatusList_.append(ACTCLIP7ON);
     clipStatusList_.append(ACTCLIP8ON);
+//    clipStatusList_.append(ACT_AUX1);
+//    clipStatusList_.append(ACT_AUX2);
+//    clipStatusList_.append(ACT_AUX3);
+//    clipStatusList_.append(ACT_AUX4);
+//    clipStatusList_.append(ACT_AUX5);
+//    clipStatusList_.append(ACT_AUX6);
 }
 
 bool ICInstructParam::IsStackedAction(int action)
