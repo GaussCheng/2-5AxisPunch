@@ -1108,3 +1108,9 @@ void MainFrame::UpdateAxisDefine_()
         }
     }
 }
+
+void MainFrame::KeyToInstructEditor(int key)
+{
+    Q_UNUSED(key);
+    instructPage_->ShowServoAction(key);
+}

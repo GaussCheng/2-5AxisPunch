@@ -106,7 +106,7 @@
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="1032"/>
         <source>Horizon-1</source>
-        <translation>水平2</translation>
+        <translation>水平1</translation>
     </message>
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="145"/>
@@ -1848,12 +1848,12 @@ Reason</source>
         <translation>组合</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="777"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="814"/>
         <source>A+</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="814"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="777"/>
         <source>A-</source>
         <translation></translation>
     </message>
@@ -4995,45 +4995,45 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcinstruction/icstackeditor.ui" line="118"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="297"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="485"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="673"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="303"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="497"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="691"/>
         <source>X:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="185"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="191"/>
         <source>Group-1</source>
         <translation>第1组</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="203"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="391"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="579"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="720"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="209"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="403"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="597"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="738"/>
         <source>Y:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="250"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="438"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="626"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="767"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="256"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="450"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="644"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="785"/>
         <source>Z:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="373"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="385"/>
         <source>Group-2</source>
         <translation>第2组</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="561"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="579"/>
         <source>Group-3</source>
         <translation>第3组</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="846"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="870"/>
         <source>Group-4</source>
         <translation>第4组</translation>
     </message>

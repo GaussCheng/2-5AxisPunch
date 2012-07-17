@@ -1018,15 +1018,27 @@ void ICHCInstructionPageFrame::on_aPlusBtn_pressed()
 {
     ICKeyboard::Instace()->SetKeyValue(ICKeyboard::VFB_AAdd);
     ICKeyboard::Instace()->SetPressed(true);
+    ShowServoAction(ICKeyboard::VFB_AAdd);
 }
 
 void ICHCInstructionPageFrame::on_aMinusBtn_pressed()
 {
     ICKeyboard::Instace()->SetKeyValue(ICKeyboard::VFB_ASub);
     ICKeyboard::Instace()->SetPressed(true);
+    ShowServoAction(ICKeyboard::VFB_ASub);
 }
 
 void ICHCInstructionPageFrame::OnActionButtonReleased()
 {
     ICKeyboard::Instace()->SetPressed(false);
+}
+
+void ICHCInstructionPageFrame::ShowServoAction(int key)
+{
+    if(!this->isHidden())
+    {
+        ui->lineButton->click();
+        actionPage_->KeyToActionCheck(key);
+    }
+
 }

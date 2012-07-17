@@ -6,6 +6,7 @@
 #include "iccommandprocessor.h"
 #include "icvirtualkey.h"
 #include "icvirtualhost.h"
+#include "ickeyboard.h"
 
 ActionSettingFrame::ActionSettingFrame(QWidget *parent) :
     ICInstructionEditorBase(parent),
@@ -671,5 +672,56 @@ void ActionSettingFrame::UpdateAxisDefine_()
         }
     }
 }
-
 #endif
+
+void ActionSettingFrame::KeyToActionCheck(int key)
+{
+    switch(key)
+    {
+    case ICKeyboard::VFB_X1Add:
+    case ICKeyboard::VFB_X1Sub:
+        ui->x1Box->setCurrentIndex(key == ICKeyboard::VFB_X1Add ? 0:1);
+        ui->gxButton->setChecked(true);
+        break;
+    case ICKeyboard::VFB_Y1Add:
+    case ICKeyboard::VFB_Y1Sub:
+        ui->y1Box->setCurrentIndex(key == ICKeyboard::VFB_Y1Add ? 1:0);
+        ui->gyButton->setChecked(true);
+        break;
+    case ICKeyboard::VFB_ZAdd:
+    case ICKeyboard::VFB_ZSub:
+        ui->zBox->setCurrentIndex(key == ICKeyboard::VFB_ZAdd ? 1:0);
+        ui->gzButton->setChecked(true);
+        break;
+    case ICKeyboard::VFB_X2Add:
+    case ICKeyboard::VFB_X2Sub:
+        ui->x2Box->setCurrentIndex(key == ICKeyboard::VFB_X2Add ? 0:1);
+        ui->gPButton->setChecked(true);
+        break;
+    case ICKeyboard::VFB_Y2Add:
+    case ICKeyboard::VFB_Y2Sub:
+        ui->y2Box->setCurrentIndex(key == ICKeyboard::VFB_Y2Add ?1:0);
+        ui->gQButton->setChecked(true);
+        break;
+    case ICKeyboard::VFB_AAdd:
+    case ICKeyboard::VFB_ASub:
+        ui->aBox->setCurrentIndex(key == ICKeyboard::VFB_AAdd ? 0:1);
+        ui->gAButton->setChecked(true);
+        break;
+    case ICKeyboard::VFB_BAdd:
+    case ICKeyboard::VFB_BSub:
+        ui->bBox->setCurrentIndex(key == ICKeyboard::VFB_BAdd ? 0:1);
+        ui->gBButton->setChecked(true);
+        break;
+    case ICKeyboard::VFB_CAdd:
+    case ICKeyboard::VFB_CSub:
+        ui->cBox->setCurrentIndex(key == ICKeyboard::VFB_CAdd ? 0:1);
+        ui->gCButton->setChecked(true);
+        break;
+    case ICKeyboard::VFB_Pose_Horizontal:
+    case ICKeyboard::VFB_Pose_Vertical:
+        ui->cBox->setCurrentIndex(key == ICKeyboard::VFB_Pose_Horizontal ? 1:0);
+        ui->gCButton->setChecked(true);
+        break;
+    }
+}
