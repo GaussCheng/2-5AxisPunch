@@ -1719,12 +1719,12 @@ Reason</source>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.ui" line="218"/>
         <source>Line</source>
-        <translation>伺服轴动作</translation>
+        <translation>轴动作</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.ui" line="256"/>
         <source>Reserve</source>
-        <translation>预留</translation>
+        <translation>预留动作</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.ui" line="484"/>
@@ -1761,7 +1761,7 @@ Reason</source>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.ui" line="294"/>
         <source>Fixture</source>
-        <translation>治具</translation>
+        <translation>治具动作</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.ui" line="522"/>

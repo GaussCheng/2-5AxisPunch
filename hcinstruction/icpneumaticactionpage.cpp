@@ -56,7 +56,7 @@ ICPneumaticActionPage::ICPneumaticActionPage(QWidget *parent) :
     }
 
     ui->tableWidget->setColumnWidth(0, 50);
-    ui->tableWidget->setColumnWidth(1, 140);
+    ui->tableWidget->setColumnWidth(1, 110);
 
     commandKeyMap_.insert(settingButtons_.at(0), qMakePair(static_cast<int>(IC::VKEY_RESERVE1_ON), static_cast<int>(IC::VKEY_RESERVE1_OFF)));
     commandKeyMap_.insert(settingButtons_.at(1), qMakePair(static_cast<int>(IC::VKEY_RESERVE2_ON), static_cast<int>(IC::VKEY_RESERVE2_OFF)));
