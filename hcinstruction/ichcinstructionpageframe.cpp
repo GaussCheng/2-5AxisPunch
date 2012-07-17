@@ -17,6 +17,7 @@
 #include "icperipherypage.h"
 #include "iccutpage.h"
 #include "icprogramselector.h"
+#include "icstackeditor.h"
 #include "icparameterssave.h"
 #include "icinstructparam.h"
 #include "iccommandprocessor.h"
@@ -52,6 +53,7 @@ ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
     peripheryPage_(NULL),
     cutPage_(NULL),
     programPage_(NULL),
+    stackPage_(NULL),
     recordPath_("./records/"),
     currentAction_(None),
     currentEdit_(0)
@@ -216,6 +218,12 @@ void ICHCInstructionPageFrame::OptionButtonClicked()
                 this,
                 SLOT(OnProgramChanged(int, QString)));
     }
+    else if(stackPage_ == NULL && optionButton == ui->stackButton)
+    {
+        stackPage_ = new ICStackEditor();
+        optionButtonToPage_.insert(ui->stackButton, stackPage_);
+        ui->settingStackedWidget->addWidget(stackPage_);
+    }
     ui->settingStackedWidget->setCurrentWidget(optionButtonToPage_.value(optionButton));
 }
 
@@ -282,6 +290,10 @@ void ICHCInstructionPageFrame::InitSignal()
             this,
             SLOT(OptionButtonClicked()));
     connect(ui->programButton,
+            SIGNAL(clicked()),
+            this,
+            SLOT(OptionButtonClicked()));
+    connect(ui->stackButton,
             SIGNAL(clicked()),
             this,
             SLOT(OptionButtonClicked()));

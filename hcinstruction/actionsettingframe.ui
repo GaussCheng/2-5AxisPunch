@@ -58,13 +58,6 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="3">
-    <widget class="QLabel" name="label_2">
-     <property name="text">
-      <string>Delay            </string>
-     </property>
-    </widget>
-   </item>
    <item row="0" column="5">
     <widget class="QLabel" name="label_6">
      <property name="minimumSize">
@@ -85,13 +78,13 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>80</width>
+       <width>70</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>80</width>
+       <width>70</width>
        <height>32</height>
       </size>
      </property>
@@ -107,13 +100,13 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>80</width>
+       <width>60</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>80</width>
+       <width>60</width>
        <height>32</height>
       </size>
      </property>
@@ -151,13 +144,13 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>80</width>
+       <width>70</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>80</width>
+       <width>70</width>
        <height>32</height>
       </size>
      </property>
@@ -173,13 +166,13 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>80</width>
+       <width>60</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>80</width>
+       <width>60</width>
        <height>32</height>
       </size>
      </property>
@@ -217,13 +210,13 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>80</width>
+       <width>70</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>80</width>
+       <width>70</width>
        <height>32</height>
       </size>
      </property>
@@ -239,13 +232,13 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>80</width>
+       <width>60</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>80</width>
+       <width>60</width>
        <height>32</height>
       </size>
      </property>
@@ -384,41 +377,6 @@ QRadioButton::indicator:unchecked:disabled
      </property>
     </widget>
    </item>
-   <item row="1" column="4">
-    <widget class="QLabel" name="x1SLabel">
-     <property name="text">
-      <string>s</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="4">
-    <widget class="QLabel" name="y1SLabel">
-     <property name="text">
-      <string>s</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="4">
-    <widget class="QLabel" name="zSLabel">
-     <property name="text">
-      <string>s</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="6">
-    <widget class="QLabel" name="y1pLabel">
-     <property name="text">
-      <string>%</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="6">
-    <widget class="QLabel" name="zpLabel">
-     <property name="text">
-      <string>%</string>
-     </property>
-    </widget>
-   </item>
    <item row="1" column="1">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="x1PosLineEdit">
      <property name="enabled">
@@ -438,13 +396,6 @@ QRadioButton::indicator:unchecked:disabled
      </property>
      <property name="text">
       <string>0.0</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="6">
-    <widget class="QLabel" name="x1pLabel">
-     <property name="text">
-      <string>%</string>
      </property>
     </widget>
    </item>
@@ -516,13 +467,13 @@ QRadioButton::indicator:unchecked:disabled
      </property>
      <property name="minimumSize">
       <size>
-       <width>80</width>
+       <width>70</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>80</width>
+       <width>70</width>
        <height>32</height>
       </size>
      </property>
@@ -538,32 +489,18 @@ QRadioButton::indicator:unchecked:disabled
      </property>
      <property name="minimumSize">
       <size>
-       <width>80</width>
+       <width>60</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>80</width>
+       <width>60</width>
        <height>32</height>
       </size>
      </property>
      <property name="text">
       <string>80</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="4">
-    <widget class="QLabel" name="x2SLabel">
-     <property name="text">
-      <string>s</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="6">
-    <widget class="QLabel" name="x2pLabel">
-     <property name="text">
-      <string>%</string>
      </property>
     </widget>
    </item>
@@ -635,25 +572,18 @@ QRadioButton::indicator:unchecked:disabled
      </property>
      <property name="minimumSize">
       <size>
-       <width>80</width>
+       <width>70</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>80</width>
+       <width>70</width>
        <height>32</height>
       </size>
      </property>
      <property name="text">
       <string>0.00</string>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="4">
-    <widget class="QLabel" name="y2SLabel">
-     <property name="text">
-      <string>s</string>
      </property>
     </widget>
    </item>
@@ -664,25 +594,18 @@ QRadioButton::indicator:unchecked:disabled
      </property>
      <property name="minimumSize">
       <size>
-       <width>80</width>
+       <width>60</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>80</width>
+       <width>60</width>
        <height>32</height>
       </size>
      </property>
      <property name="text">
       <string>80</string>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="6">
-    <widget class="QLabel" name="y2pLabel">
-     <property name="text">
-      <string>%</string>
      </property>
     </widget>
    </item>
@@ -876,13 +799,13 @@ QRadioButton::indicator:unchecked:disabled
      </property>
      <property name="minimumSize">
       <size>
-       <width>80</width>
+       <width>70</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>80</width>
+       <width>70</width>
        <height>32</height>
       </size>
      </property>
@@ -898,13 +821,13 @@ QRadioButton::indicator:unchecked:disabled
      </property>
      <property name="minimumSize">
       <size>
-       <width>80</width>
+       <width>70</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>80</width>
+       <width>70</width>
        <height>32</height>
       </size>
      </property>
@@ -920,39 +843,18 @@ QRadioButton::indicator:unchecked:disabled
      </property>
      <property name="minimumSize">
       <size>
-       <width>80</width>
+       <width>70</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>80</width>
+       <width>70</width>
        <height>32</height>
       </size>
      </property>
      <property name="text">
       <string>0.00</string>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="4">
-    <widget class="QLabel" name="aSLabel">
-     <property name="text">
-      <string>s</string>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="4">
-    <widget class="QLabel" name="bSLabel">
-     <property name="text">
-      <string>s</string>
-     </property>
-    </widget>
-   </item>
-   <item row="8" column="4">
-    <widget class="QLabel" name="cSLabel">
-     <property name="text">
-      <string>s</string>
      </property>
     </widget>
    </item>
@@ -963,13 +865,13 @@ QRadioButton::indicator:unchecked:disabled
      </property>
      <property name="minimumSize">
       <size>
-       <width>80</width>
+       <width>60</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>80</width>
+       <width>60</width>
        <height>32</height>
       </size>
      </property>
@@ -985,13 +887,13 @@ QRadioButton::indicator:unchecked:disabled
      </property>
      <property name="minimumSize">
       <size>
-       <width>80</width>
+       <width>60</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>80</width>
+       <width>60</width>
        <height>32</height>
       </size>
      </property>
@@ -1007,39 +909,18 @@ QRadioButton::indicator:unchecked:disabled
      </property>
      <property name="minimumSize">
       <size>
-       <width>80</width>
+       <width>60</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>80</width>
+       <width>60</width>
        <height>32</height>
       </size>
      </property>
      <property name="text">
       <string>80</string>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="6">
-    <widget class="QLabel" name="apLabel">
-     <property name="text">
-      <string>%</string>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="6">
-    <widget class="QLabel" name="bpLabel">
-     <property name="text">
-      <string>%</string>
-     </property>
-    </widget>
-   </item>
-   <item row="8" column="6">
-    <widget class="QLabel" name="cpLabel">
-     <property name="text">
-      <string>%</string>
      </property>
     </widget>
    </item>
@@ -1143,6 +1024,125 @@ QRadioButton::indicator:unchecked:disabled
        <string>Horizon2</string>
       </property>
      </item>
+    </widget>
+   </item>
+   <item row="0" column="3">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Delay    </string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="6">
+    <widget class="QLabel" name="cpLabel">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="6">
+    <widget class="QLabel" name="bpLabel">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="6">
+    <widget class="QLabel" name="apLabel">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="6">
+    <widget class="QLabel" name="x2pLabel">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="6">
+    <widget class="QLabel" name="x1pLabel">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="6">
+    <widget class="QLabel" name="zpLabel">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="6">
+    <widget class="QLabel" name="y2pLabel">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="6">
+    <widget class="QLabel" name="y1pLabel">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="4">
+    <widget class="QLabel" name="y1SLabel">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="4">
+    <widget class="QLabel" name="x1SLabel">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="4">
+    <widget class="QLabel" name="cSLabel">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="4">
+    <widget class="QLabel" name="y2SLabel">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="4">
+    <widget class="QLabel" name="x2SLabel">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="4">
+    <widget class="QLabel" name="zSLabel">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="4">
+    <widget class="QLabel" name="bSLabel">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="4">
+    <widget class="QLabel" name="aSLabel">
+     <property name="text">
+      <string/>
+     </property>
     </widget>
    </item>
   </layout>

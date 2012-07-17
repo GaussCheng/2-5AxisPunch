@@ -23,7 +23,8 @@ HEADERS += \
     hcinstruction/icperipherypage.h \
     hcinstruction/icperipheryparametereditor.h \
     hcinstruction/iccutpage.h \
-    hcinstruction/icprogramselector.h
+    hcinstruction/icprogramselector.h \
+    hcinstruction/icstackeditor.h
 
 SOURCES += \
     hcinstruction/ichcinstructionpageframe.cpp \
@@ -48,7 +49,8 @@ SOURCES += \
     hcinstruction/icperipherypage.cpp \
     hcinstruction/icperipheryparametereditor.cpp \
     hcinstruction/iccutpage.cpp \
-    hcinstruction/icprogramselector.cpp
+    hcinstruction/icprogramselector.cpp \
+    hcinstruction/icstackeditor.cpp
 
 FORMS += \
     hcinstruction/ichcinstructionpageframe.ui \
@@ -70,4 +72,5 @@ FORMS += \
     hcinstruction/icperipherypage.ui \
     hcinstruction/icperipheryparametereditor.ui \
     hcinstruction/iccutpage.ui \
-    hcinstruction/icprogramselector.ui
+    hcinstruction/icprogramselector.ui \
+    hcinstruction/icstackeditor.ui

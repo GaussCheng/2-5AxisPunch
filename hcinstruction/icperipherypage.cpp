@@ -14,9 +14,9 @@ ICPeripheryPage::ICPeripheryPage(QWidget *parent) :
     offPixmap_(":/resource/ledgray(16).png")
 {
     ui->setupUi(this);
-    ui->lyDelayLineEdit->SetDecimalPlaces(2);
-    ui->groupLineEdit->setValidator(new QIntValidator(0, 3, this));
-    ui->lyDelayLineEdit->setValidator(new QIntValidator(0, 32767, this));
+//    ui->lyDelayLineEdit->SetDecimalPlaces(2);
+//    ui->groupLineEdit->setValidator(new QIntValidator(0, 3, this));
+//    ui->lyDelayLineEdit->setValidator(new QIntValidator(0, 32767, this));
 
     QPushButton *buttons = new QPushButton[ui->tableWidget->rowCount() + ui->actionWidget->rowCount()];
     QPushButton * button;
@@ -210,12 +210,12 @@ QList<ICMoldItem> ICPeripheryPage::CreateCommandImpl() const
             ret.append(item);
         }
     }
-    if(ui->lyCheck->isChecked())
-    {
-        item.SetClip(ICMold::ACTLAYOUTON);
-        item.SetDVal(ui->lyDelayLineEdit->TransThisTextToThisInt());
-        item.SetSVal(ui->groupLineEdit->TransThisTextToThisInt());
-        ret.append(item);
-    }
+//    if(ui->lyCheck->isChecked())
+//    {
+//        item.SetClip(ICMold::ACTLAYOUTON);
+//        item.SetDVal(ui->lyDelayLineEdit->TransThisTextToThisInt());
+//        item.SetSVal(ui->groupLineEdit->TransThisTextToThisInt());
+//        ret.append(item);
+//    }
     return ret;
 }

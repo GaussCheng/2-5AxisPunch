@@ -164,13 +164,13 @@ padding:5px;
        </property>
        <property name="minimumSize">
         <size>
-         <width>300</width>
+         <width>350</width>
          <height>0</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>380</width>
+         <width>350</width>
          <height>16777215</height>
         </size>
        </property>
@@ -524,6 +524,44 @@ padding:5px;
            <property name="icon">
             <iconset resource="../resource.qrc">
              <normaloff>:/resource/jump(32).png</normaloff>:/resource/jump(32).png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QToolButton" name="stackButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>140</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>140</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Stack</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resource.qrc">
+             <normaloff>:/resource/macro(32).png</normaloff>:/resource/macro(32).png</iconset>
            </property>
            <property name="iconSize">
             <size>

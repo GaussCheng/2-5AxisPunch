@@ -95,6 +95,7 @@ private:
     QWidget * peripheryPage_;
     QWidget * cutPage_;
     QWidget * programPage_;
+    QWidget * stackPage_;
 
     ICInstructModifyDialog *modifyDialog_;
 
