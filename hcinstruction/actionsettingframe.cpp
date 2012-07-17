@@ -20,8 +20,8 @@ ActionSettingFrame::ActionSettingFrame(QWidget *parent) :
     axisWidgets_.append(QList<QWidget*>()<<ui->gPButton<<ui->x2DelayLineEdit<<ui->x2PosLineEdit<<ui->x2SpeedLineEdit<<ui->x2Box);
     axisWidgets_.append(QList<QWidget*>()<<ui->gQButton<<ui->y2DelayLineEdit<<ui->y2PosLineEdit<<ui->y2SpeedLineEdit<<ui->y2Box);
     axisWidgets_.append(QList<QWidget*>()<<ui->gAButton<<ui->aDelayLineEdit<<ui->aPosLineEdit<<ui->aSpeedLineEdit<<ui->aBox);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gBButton<<ui->bDelayLineEdit<<ui->bPosLineEdit<<ui->bSpeedLineEdit);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gCButton<<ui->cDelayLineEdit<<ui->cPosLineEdit<<ui->cSpeedLineEdit);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gBButton<<ui->bDelayLineEdit<<ui->bPosLineEdit<<ui->bSpeedLineEdit<<ui->bBox);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gCButton<<ui->cDelayLineEdit<<ui->cPosLineEdit<<ui->cSpeedLineEdit<<ui->cBox);
     //    ui->x1SpeedLineEdit->hide();
 }
 
@@ -336,10 +336,17 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
     }
     if(ui->gCButton->isChecked())
     {
-        item.SetAction(ICMold::GC);
-        item.SetPos(ui->cPosLineEdit->TransThisTextToThisInt());
-        item.SetDVal(ui->cDelayLineEdit->TransThisTextToThisInt());
-        item.SetSVal(ui->cSpeedLineEdit->TransThisTextToThisInt());
+        if(ui->cBox->isHidden())
+        {
+            item.SetAction(ICMold::GC);
+            item.SetPos(ui->cPosLineEdit->TransThisTextToThisInt());
+            item.SetDVal(ui->cDelayLineEdit->TransThisTextToThisInt());
+            item.SetSVal(ui->cSpeedLineEdit->TransThisTextToThisInt());
+        }
+        else
+        {
+            item.SetAction(ui->cBox->currentIndex() == 0 ? ICMold::ACTPOSEVERT : ICMold::ACTPOSEHORI);
+        }
         item.SetIFVal(0);
         item.SetIFPos(0);
         ret.append(item);
@@ -466,6 +473,7 @@ void ActionSettingFrame::on_gBButton_toggled(bool checked)
         ui->bPosLineEdit->setEnabled(true);
         ui->bDelayLineEdit->setEnabled(true);
         ui->bSpeedLineEdit->setEnabled(true);
+        ui->bBox->setEnabled(true);
     }
     else
     {
@@ -482,6 +490,7 @@ void ActionSettingFrame::on_gCButton_toggled(bool checked)
         ui->cPosLineEdit->setEnabled(true);
         ui->cDelayLineEdit->setEnabled(true);
         ui->cSpeedLineEdit->setEnabled(true);
+        ui->cBox->setEnabled(true);
     }
     else
     {
@@ -536,7 +545,7 @@ void ActionSettingFrame::UpdateAxisDefine_()
             ShowWidgets_(axisWidgets_[0]);
             ui->x1PosLineEdit->hide();
             ui->x1SpeedLineEdit->hide();
-//            ui->x1pLabel->hide();
+            //            ui->x1pLabel->hide();
         }
         else
         {
@@ -553,7 +562,7 @@ void ActionSettingFrame::UpdateAxisDefine_()
             ShowWidgets_(axisWidgets_[1]);
             ui->y1PosLineEdit->hide();
             ui->y1SpeedLineEdit->hide();
-//            ui->y1pLabel->hide();
+            //            ui->y1pLabel->hide();
         }
         else
         {
@@ -570,7 +579,7 @@ void ActionSettingFrame::UpdateAxisDefine_()
             ShowWidgets_(axisWidgets_[2]);
             ui->zPosLineEdit->hide();
             ui->zSpeedLineEdit->hide();
-//            ui->zpLabel->hide();
+            //            ui->zpLabel->hide();
         }
         else
         {
@@ -587,7 +596,7 @@ void ActionSettingFrame::UpdateAxisDefine_()
             ShowWidgets_(axisWidgets_[3]);
             ui->x2PosLineEdit->hide();
             ui->x2SpeedLineEdit->hide();
-//            ui->x2pLabel->hide();
+            //            ui->x2pLabel->hide();
         }
         else
         {
@@ -604,7 +613,7 @@ void ActionSettingFrame::UpdateAxisDefine_()
             ShowWidgets_(axisWidgets_[4]);
             ui->y2PosLineEdit->hide();
             ui->y2SpeedLineEdit->hide();
-//            ui->y2pLabel->hide();
+            //            ui->y2pLabel->hide();
         }
         else
         {
@@ -621,7 +630,7 @@ void ActionSettingFrame::UpdateAxisDefine_()
             ShowWidgets_(axisWidgets_[5]);
             ui->aPosLineEdit->hide();
             ui->aSpeedLineEdit->hide();
-//            ui->apLabel->hide();
+            //            ui->apLabel->hide();
         }
         else
         {
@@ -633,18 +642,32 @@ void ActionSettingFrame::UpdateAxisDefine_()
         {
             HideWidgets_(axisWidgets_[6]);
         }
+        else if(host->AxisDefine(ICVirtualHost::ICAxis_AxisB) == ICVirtualHost::ICAxisDefine_Pneumatic)
+        {
+            ShowWidgets_(axisWidgets_[6]);
+            ui->bPosLineEdit->hide();
+            ui->bSpeedLineEdit->hide();
+        }
         else
         {
             ShowWidgets_(axisWidgets_[6]);
+            ui->bBox->hide();
         }
 
         if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) == ICVirtualHost::ICAxisDefine_None)
         {
             HideWidgets_(axisWidgets_[7]);
         }
+        else if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) == ICVirtualHost::ICAxisDefine_Pneumatic)
+        {
+            ShowWidgets_(axisWidgets_[7]);
+            ui->cPosLineEdit->hide();
+            ui->cSpeedLineEdit->hide();
+        }
         else
         {
             ShowWidgets_(axisWidgets_[7]);
+            ui->cBox->hide();
         }
     }
 }

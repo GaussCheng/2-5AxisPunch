@@ -9,144 +9,164 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="45"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="51"/>
         <source>Pos                </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="115"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="219"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="323"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="427"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="531"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="635"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="737"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="820"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="134"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="260"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="386"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="512"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="638"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="764"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="890"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1016"/>
         <source>0.0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="890"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="912"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="934"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="956"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="978"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1000"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1022"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1044"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="197"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="323"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="449"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="575"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="701"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="827"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="953"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1079"/>
         <source>80</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="156"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="260"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="364"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="468"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="572"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="676"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="759"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="842"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="175"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="301"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="427"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="553"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="679"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="805"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="931"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1057"/>
         <source>0.00</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="192"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="233"/>
         <source>GY1</source>
         <oldsource>GY</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="296"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="359"/>
         <source>GZ</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="88"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="107"/>
         <source>GX1</source>
         <oldsource>GX</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="400"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="485"/>
         <source>GX2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="504"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="611"/>
         <source>GY2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="608"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="737"/>
         <source>GA</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="712"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="775"/>
+        <source>Vertical-2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/actionsettingframe.ui" line="780"/>
+        <source>Horizon-2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/actionsettingframe.ui" line="863"/>
         <source>GB</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="795"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="901"/>
+        <source>Vertical-3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/actionsettingframe.ui" line="906"/>
+        <source>Horizon-3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/actionsettingframe.ui" line="989"/>
         <source>GC</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="126"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="438"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1027"/>
+        <source>Vertical-1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1032"/>
+        <source>Horizon-1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/actionsettingframe.ui" line="145"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="523"/>
         <source>Forward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="52"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="58"/>
         <source>Delay(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="868"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="71"/>
         <source>Speed(%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="131"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="443"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="150"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="528"/>
         <source>Backward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="230"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="542"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="271"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="649"/>
         <source>Up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="235"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="547"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="276"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="654"/>
         <source>Down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="334"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="397"/>
         <source>Come In</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="339"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="402"/>
         <source>Go Out</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="646"/>
-        <source>Vertical2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="651"/>
-        <source>Horizon2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="38"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="44"/>
         <source>Set=&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1362,12 +1382,12 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="706"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="724"/>
         <source>warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="707"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="725"/>
         <source>Stand program can not be delete action</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4332,12 +4352,12 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="147"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="148"/>
         <source>Tips</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="147"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="148"/>
         <source>Save Sucessfully!</source>
         <translation type="unfinished"></translation>
     </message>

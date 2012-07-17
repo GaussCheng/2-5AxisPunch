@@ -505,7 +505,7 @@ public:
     void SetOriginPosition(int position);
     int TranserferPosition() const { return (SystemParameter(SYS_Function).toInt() & 0x00000C00) >> 10;}
     void SetTranserferPosition(int position);
-    int EscapeWay() const { return (SystemParameter(SYS_Function).toInt() & 0x0000C0000) >> 14;}
+    int EscapeWay() const { return (SystemParameter(SYS_Function).toInt() & 0x0000C000) >> 14;}
     void SetEscapeWay(int way);
 
     int CurrentStep() const { return (statusMap_.value(Step).toInt() & 0x00FF);}
