@@ -1813,17 +1813,17 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="558"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="572"/>
         <source>X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="565"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="579"/>
         <source>Y</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="572"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="586"/>
         <source>Z</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1885,7 +1885,7 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="342"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="316"/>
         <source>X PP</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1896,7 +1896,7 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="394"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="368"/>
         <source>Y PP</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1907,39 +1907,39 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="446"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="420"/>
         <source>Z PP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="470"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="484"/>
         <source>Step</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="316"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="342"/>
         <source>X RP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="368"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="394"/>
         <source>Y RP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="420"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="446"/>
         <source>Z RP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="537"/>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="544"/>
         <location filename="hcsettings/ichcstackedsettingsframe.ui" line="551"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="558"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="565"/>
         <source>mm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="463"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="477"/>
         <source>Lattice</source>
         <translation type="unfinished"></translation>
     </message>

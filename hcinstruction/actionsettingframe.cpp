@@ -138,6 +138,14 @@ void ActionSettingFrame::on_inputButton_clicked()
 
 void ActionSettingFrame::hideEvent(QHideEvent *e)
 {
+    ui->gxButton->setChecked(false);
+    ui->gyButton->setChecked(false);
+    ui->gzButton->setChecked(false);
+    ui->gPButton->setChecked(false);
+    ui->gQButton->setChecked(false);
+    ui->gAButton->setChecked(false);
+    ui->gBButton->setChecked(false);
+    ui->gCButton->setChecked(false);
     QFrame::hideEvent(e);
     disconnect(ICVirtualHost::GlobalVirtualHost(),
                SIGNAL(StatusRefreshed()),
