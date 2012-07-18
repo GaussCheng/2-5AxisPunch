@@ -231,7 +231,7 @@ void ICHCInstructionPageFrame::InitInterface()
 {
     //    ui->settingFrame->setLayout(ui->settingStackedWidget);
 
-    actionPage_ = new ActionSettingFrame;
+    actionPage_ = new ActionSettingFrame(ui->actionSelectPage);
     optionButtonToPage_.insert(ui->lineButton, actionPage_);
     ui->settingStackedWidget->addWidget(actionPage_);
     modifyDialog_ = new ICInstructModifyDialog(this);

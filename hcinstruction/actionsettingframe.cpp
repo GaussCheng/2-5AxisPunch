@@ -23,6 +23,9 @@ ActionSettingFrame::ActionSettingFrame(QWidget *parent) :
     axisWidgets_.append(QList<QWidget*>()<<ui->gAButton<<ui->aDelayLineEdit<<ui->aPosLineEdit<<ui->aSpeedLineEdit<<ui->aBox);
     axisWidgets_.append(QList<QWidget*>()<<ui->gBButton<<ui->bDelayLineEdit<<ui->bPosLineEdit<<ui->bSpeedLineEdit<<ui->bBox);
     axisWidgets_.append(QList<QWidget*>()<<ui->gCButton<<ui->cDelayLineEdit<<ui->cPosLineEdit<<ui->cSpeedLineEdit<<ui->cBox);
+#ifdef Q_WS_X11
+    UpdateAxisDefine_();
+#endif
     //    ui->x1SpeedLineEdit->hide();
 }
 
