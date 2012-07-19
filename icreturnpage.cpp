@@ -69,3 +69,8 @@ void ICReturnPage::StatusRefresh()
         }
     }
 }
+
+void ICReturnPage::on_stopBtn_clicked()
+{
+    this->reject();
+}

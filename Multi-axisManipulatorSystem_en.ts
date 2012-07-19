@@ -2771,40 +2771,40 @@ Infomation</source>
 <context>
     <name>ICLineEditWithVirtualNumericKeypad</name>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="85"/>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="98"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="116"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="129"/>
         <source>Input Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="86"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="117"/>
         <source>There are only </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="88"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="119"/>
         <source> decimal place
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="89"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="120"/>
         <source>Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="99"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="130"/>
         <source>The value must be an integer
 Please enter an integer between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="111"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="142"/>
         <source>Out of range</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="112"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="143"/>
         <source>The value you entered out of range.
 Please enter an digit between </source>
         <translation type="unfinished"></translation>
@@ -3625,12 +3625,17 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icorigindialog.ui" line="51"/>
-        <source>Yes</source>
+        <location filename="icorigindialog.ui" line="38"/>
+        <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="icorigindialog.ui" line="64"/>
+        <source>Yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icorigindialog.ui" line="77"/>
         <source>No</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3907,6 +3912,11 @@ Please enter an digit between </source>
     <message>
         <location filename="icreturnpage.ui" line="14"/>
         <source>Return</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icreturnpage.ui" line="39"/>
+        <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

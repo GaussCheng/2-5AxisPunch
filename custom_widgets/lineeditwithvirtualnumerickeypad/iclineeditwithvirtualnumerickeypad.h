@@ -14,6 +14,8 @@ public:
 
     int DecimalPlaces() const { return decimalPlaces_; }
     void SetDecimalPlaces(int decimalPlaces) { decimalPlaces_ = decimalPlaces; }
+    bool IsModalKeyboard() const { return isModalKeyboard_;}
+    void SetModalKeyboard(bool isModalkeyboard) { isModalKeyboard_ = isModalkeyboard;}
 
     int TransThisTextToThisInt() const;
     void SetThisIntToThisText(int inputNum);
@@ -25,6 +27,7 @@ protected:
 private:
     VirtualNumericKeypadDialog * virtualNumericKeypadDialog_;
     int decimalPlaces_;
+    bool isModalKeyboard_;
 
 public slots:
     void SetCurrentText(const QString &currentText);

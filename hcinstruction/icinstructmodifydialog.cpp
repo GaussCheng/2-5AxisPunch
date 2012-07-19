@@ -23,6 +23,12 @@ ICInstructModifyDialog::ICInstructModifyDialog(QWidget *parent) :
     ui->earlyEndTimeEdit->SetDecimalPlaces(1);
     ui->earlyEndTimeEdit->setValidator(validator);
     ui->selectEdit->setValidator(new QIntValidator(1, 4, this));
+
+    ui->posEdit->SetModalKeyboard(true);
+    ui->speedEdit->SetModalKeyboard(true);
+    ui->delayTimeEdit->SetModalKeyboard(true);
+    ui->selectEdit->SetModalKeyboard(true);
+    ui->earlyEndTimeEdit->SetModalKeyboard(true);
 }
 
 ICInstructModifyDialog::~ICInstructModifyDialog()

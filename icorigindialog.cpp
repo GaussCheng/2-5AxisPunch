@@ -144,3 +144,8 @@ void ICOriginDialog::on_noBtn_clicked()
     ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_GiveUp, 0);
     ui->label->setText(tr("Originning"));
 }
+
+void ICOriginDialog::on_stopBtn_clicked()
+{
+    this->reject();
+}

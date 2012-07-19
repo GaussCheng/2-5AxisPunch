@@ -179,3 +179,9 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical, QScrollBar::add-pa
       background: none;
 }
 
+QDialog{
+     border-style: outset;
+     border-width: 2px;
+     border-radius: 6px;
+     border-color: gray;
+}

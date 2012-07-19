@@ -21,6 +21,10 @@ ICAutoRunRevise::ICAutoRunRevise(QWidget *parent) :
     validator = new QIntValidator(-50, 50, this);
     ui->posEdit->SetDecimalPlaces(1);
     ui->posEdit->setValidator(validator);
+
+    ui->delayEdit->SetModalKeyboard(true);
+    ui->speedEdit->SetModalKeyboard(true);
+    ui->posEdit->SetModalKeyboard(true);
 }
 
 ICAutoRunRevise::~ICAutoRunRevise()
