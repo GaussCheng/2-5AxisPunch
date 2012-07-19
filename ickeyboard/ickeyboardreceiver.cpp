@@ -109,6 +109,7 @@ void ICKeyboardReceiver::run()
                     keyboard->SetPressed(true);
                     oldKeyValue_ = key;
                     keyboard->SetKeyValue(key);
+                    icMainFrame->KeyToInstructEditor(key);
                 }
                 msleep(100);
                 continue;

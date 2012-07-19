@@ -13,7 +13,8 @@
 //public:
 ICLineEditWithVirtualNumericKeypad::ICLineEditWithVirtualNumericKeypad(QWidget * parent)
     : QLineEdit(parent),
-    decimalPlaces_(0)
+    decimalPlaces_(0),
+      isModalKeyboard_(false)
 {
     this->setReadOnly(true);
     virtualNumericKeypadDialog_ = VirtualNumericKeypadDialog::Instance();
@@ -36,15 +37,54 @@ void ICLineEditWithVirtualNumericKeypad::SetThisIntToThisText(int inputNum)
 //protected:
 void ICLineEditWithVirtualNumericKeypad::mouseReleaseEvent(QMouseEvent *e)
 {
+//    virtualNumericKeypadDialog_->disconnect();
     connect(virtualNumericKeypadDialog_,
             SIGNAL(EnterComplete(QString)),
             this,
-            SLOT(SetCurrentText(QString)));
+            SLOT(SetCurrentText(QString)),
+            Qt::UniqueConnection);
 
     this->setStyleSheet("background:lightgreen;");
     virtualNumericKeypadDialog_->ResetDisplay();
-
-    virtualNumericKeypadDialog_->exec();
+    QPoint topLeft = this->mapToGlobal(this->rect().topLeft());
+    QPoint toMove;
+    if(topLeft.x() + virtualNumericKeypadDialog_->width() <= 800)
+    {
+        toMove.setX(topLeft.x());
+    }
+    else if(topLeft.x() + this->width() - virtualNumericKeypadDialog_->width() >= 0)
+    {
+        toMove.setX(topLeft.x() + this->width() - virtualNumericKeypadDialog_->width());
+    }
+    else
+    {
+        toMove.setX(300);
+    }
+    if(topLeft.y() + 48 + virtualNumericKeypadDialog_->height() <= 600)
+    {
+        toMove.setY(topLeft.y() + 48);
+    }
+    else
+    {
+        toMove.setY(600 - virtualNumericKeypadDialog_->height());
+        if(topLeft.x() - virtualNumericKeypadDialog_->width() >= 0)
+        {
+            toMove.setX(topLeft.x() - virtualNumericKeypadDialog_->width());
+        }
+        else if(topLeft.x() + this->width() + virtualNumericKeypadDialog_->width() <= 800)
+        {
+            toMove.setX(topLeft.x() + this->width());
+        }
+    }
+    virtualNumericKeypadDialog_->move(toMove);
+//    if(IsModalKeyboard())
+//    {
+        virtualNumericKeypadDialog_->exec();
+//    }
+//    else
+//    {
+//        virtualNumericKeypadDialog_->show();
+//    }
     disconnect(virtualNumericKeypadDialog_,
                SIGNAL(EnterComplete(QString)),
                this,
@@ -148,4 +188,24 @@ void ICLineEditWithVirtualNumericKeypad::SetCurrentText(const QString &currentTe
     {
         this->setText(currentText);
     }
+}
+
+ICIncrementalLineEdit::ICIncrementalLineEdit(QWidget *parent)
+    : ICLineEditWithVirtualNumericKeypad(parent)
+{
+
+}
+
+void ICIncrementalLineEdit::SetCurrentText(const QString &currentText)
+{
+    QString tempText = currentText;
+    if(tempText.isEmpty())
+    {
+        return;
+    }
+    if(tempText.at(0).isDigit() || tempText.at(0) == '.')
+    {
+        tempText.prepend('+');
+    }
+    ICLineEditWithVirtualNumericKeypad::SetCurrentText(tempText);
 }

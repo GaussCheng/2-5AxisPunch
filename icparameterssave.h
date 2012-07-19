@@ -91,6 +91,7 @@ public:
 private:
     static ICParametersSave* instance_;
     QTranslator *translator_;
+    QTranslator *sysTranslator_;
     QMap<QString, double> axisToRotate_;
     int beepFD_;
     ICParametersSave(const QString fileName = QString());

@@ -20,6 +20,9 @@ public:
     explicit ActionSettingFrame(QWidget *parent = 0);
     ~ActionSettingFrame();
 
+public slots:
+    void KeyToActionCheck(int key);
+
 protected:
     void changeEvent(QEvent *);
     void hideEvent(QHideEvent *e);

@@ -17,6 +17,7 @@ ICLineEditWithVirtualKeyboard::~ICLineEditWithVirtualKeyboard()
 
 void ICLineEditWithVirtualKeyboard::mouseReleaseEvent(QMouseEvent *e)
 {
+//    virtualKeyboardDialog_->disconnect();
     connect(virtualKeyboardDialog_,
             SIGNAL(EnterComplete(QString)),
             this,

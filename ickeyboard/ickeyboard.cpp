@@ -29,7 +29,8 @@ ICKeyboard::ICKeyboard(QObject *parent) :
     pulleyValue_(0),
     isTaken_(true),
     isSwitchTaken_(true),
-    isPressed_(false)
+    isPressed_(false),
+    currentSwitchValue_(KS_StopStatu)
 {
     pimpl_.reset(new ICKeyboardPrivate());
     //    connect(&pimpl_->knobReceiver_,

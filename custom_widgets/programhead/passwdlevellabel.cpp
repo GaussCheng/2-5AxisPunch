@@ -21,7 +21,7 @@ PasswdLevelLabel::~PasswdLevelLabel()
 
 void PasswdLevelLabel::mouseReleaseEvent(QMouseEvent *ev)
 {
-    passwordDialog_->exec();
+    passwordDialog_->show();
     QLabel::mouseReleaseEvent(ev);
 }
 

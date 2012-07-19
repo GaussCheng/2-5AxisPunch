@@ -13,6 +13,8 @@ namespace Ui {
     class ICHCInstructionPageFrame;
 }
 
+class ActionSettingFrame;
+
 class ICHCInstructionPageFrame : public QFrame
 {
     Q_OBJECT
@@ -36,6 +38,7 @@ protected:
 
 public slots:
 //    void SelectCurrentStep(int currentStep);
+    void ShowServoAction(int key);
 
 private slots:
     void on_deleteToolButton_clicked();
@@ -85,7 +88,7 @@ private:
 
 private:
     Ui::ICHCInstructionPageFrame *ui;
-    QWidget * actionPage_;
+    ActionSettingFrame * actionPage_;
     QWidget * injectionPage_;
     QWidget * fixturePage_;
     QWidget * conditionPage_;
@@ -95,6 +98,7 @@ private:
     QWidget * peripheryPage_;
     QWidget * cutPage_;
     QWidget * programPage_;
+    QWidget * stackPage_;
 
     ICInstructModifyDialog *modifyDialog_;
 

@@ -65,7 +65,7 @@ ICHCSystemSettingsFrame::ICHCSystemSettingsFrame(QWidget *parent) :
     armValueToName_.insert(1, tr("Double Arm"));
     ui->backLightTimeEdit->setValidator(new QIntValidator(0, 60, this));
     ui->backLightTimeEdit->SetThisIntToThisText(ICParametersSave::Instance()->BackLightTime());
-    ui->brightnessSlider->setValue(qAbs(ui->brightnessSlider->maximum() - ICParametersSave::Instance()->Brightness()));
+    ui->brightnessBar->setValue((9 - ICParametersSave::Instance()->Brightness()));
     uname(&osInfo_);
 }
 
@@ -864,7 +864,7 @@ void ICHCSystemSettingsFrame::StatusRefresh()
 {
     QString os(osInfo_.release);
     os += "; ";
-    ui->versionLabel->setText("Version: OS:" + os + "App 2.3.0;Libs:4.7.3; Host:" + ICVirtualHost::GlobalVirtualHost()->HostStatus(ICVirtualHost::Time).toString());
+    ui->versionLabel->setText("Version: OS:" + os + "App 2.2.9;Libs:4.7.3; Host:" + ICVirtualHost::GlobalVirtualHost()->HostStatus(ICVirtualHost::Time).toString());
 }
 
 void ICHCSystemSettingsFrame::on_structSelectHostButton_clicked()
@@ -890,8 +890,24 @@ void ICHCSystemSettingsFrame::on_calibrationBtn_clicked()
 
 }
 
-void ICHCSystemSettingsFrame::on_brightnessSlider_valueChanged(int value)
+void ICHCSystemSettingsFrame::on_brightMinus_clicked()
 {
-    uint brightness = qAbs(ui->brightnessSlider->maximum() - value);
-    ICParametersSave::Instance()->SetBrightness(brightness);
+    uint brightness = ui->brightnessBar->value();
+    if(brightness == 0)
+    {
+        return;
+    }
+    ui->brightnessBar->setValue((--brightness));
+    ICParametersSave::Instance()->SetBrightness(9 - brightness);
+}
+
+void ICHCSystemSettingsFrame::on_brightPlus_clicked()
+{
+    uint brightness = ui->brightnessBar->value();
+    if(brightness == ui->brightnessBar->maximum())
+    {
+        return;
+    }
+    ui->brightnessBar->setValue((++brightness));
+    ICParametersSave::Instance()->SetBrightness(9 -brightness);
 }

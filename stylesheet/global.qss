@@ -178,3 +178,10 @@ QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical,QScrollBar::left-
 QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical, QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
       background: none;
 }
+
+QDialog{
+     border-style: outset;
+     border-width: 2px;
+     border-radius: 6px;
+     border-color: gray;
+}

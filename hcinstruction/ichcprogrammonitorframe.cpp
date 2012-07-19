@@ -73,7 +73,7 @@ void ICHCProgramMonitorFrame::changeEvent(QEvent *e)
 
 void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
 {
-//    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
+    //    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
     ICVirtualHost::GlobalVirtualHost()->SetSpeedEnable(false);
     ui->speedEnableButton->setIcon(switchOff_);
     ui->speedEnableButton->setText(tr("Speed Disable"));
@@ -146,16 +146,22 @@ void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
             needWarn = true;
         }
     }
-    if(needWarn)
+    if(!checkResult.isEmpty())
     {
-        if(QMessageBox::warning(this,
+        QMessageBox::warning(this,
                              tr("Warning"),
-                             checkResult + tr("Do you want to ignor this warning?"),
-                             QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes)
-        {
-            ICVirtualHost::GlobalVirtualHost()->SetFixtureCheck(false);
-        }
+                             checkResult);
     }
+    //    if(needWarn)
+    //    {
+    //        if(QMessageBox::warning(this,
+    //                             tr("Warning"),
+    //                             checkResult + tr("Do you want to ignor this warning?"),
+    //                             QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes)
+    //        {
+    //            ICVirtualHost::GlobalVirtualHost()->SetFixtureCheck(false);
+    //        }
+    //    }
 }
 
 void ICHCProgramMonitorFrame::hideEvent(QHideEvent *e)
@@ -223,7 +229,7 @@ void ICHCProgramMonitorFrame::StatusRefreshed()
     if(newCycleTimes_ != oldCycleTimes_)
     {
         oldCycleTimes_ = newCycleTimes_;
-//        ui->cycleTimes->setText(QString::number(oldCycleTimes_));
+        //        ui->cycleTimes->setText(QString::number(oldCycleTimes_));
     }
     newGoodP_ = host->HostStatus(ICVirtualHost::DbgY0).toUInt();
     if(newGoodP_ != oldGoodP_)
@@ -284,7 +290,7 @@ void ICHCProgramMonitorFrame::SelectCurrentStep(int currentStep)
     ui->moldContentListWidget->clearSelection();
     ICGroupMoldUIItem* gItem = &programList_[currentStep];
     currentStepItem_ = gItem;
-//    int selectedCount = gItem->ItemCount();
+    //    int selectedCount = gItem->ItemCount();
     startIndex_ = 0;
     for(int i = 0; i != currentStep; ++i)
     {
@@ -370,7 +376,7 @@ void ICHCProgramMonitorFrame::UpdateHostParam()
     else
     {
         programList_ = ICMold::CurrentMold()->ToUIItems();
-//        return;
+        //        return;
     }
     qDebug("after m update");
 
@@ -479,7 +485,7 @@ void ICHCProgramMonitorFrame::UpdateUIProgramList_()
                 if(tmp->Num() == 0)
                 {
                     ui->moldContentListWidget->item(j + index)->setBackgroundColor(QColor(239, 235, 231));
-//                    ui->moldContentListWidget->item(j + index)->setForeground(QColor("white"));
+                    //                    ui->moldContentListWidget->item(j + index)->setForeground(QColor("white"));
                 }
                 else if(tmp->Action() == ICInstructParam::ACT_WaitMoldOpened)
                 {

@@ -211,6 +211,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     axisWidgets_.append(QList<QWidget*>()<<ui->bLabel<<ui->bmmLabel<<ui->bPosLabel);
     axisWidgets_.append(QList<QWidget*>()<<ui->cLabel<<ui->cmmLabel<<ui->cPosLabel);
     UpdateAxisDefine_();
+    ICKeyboard::Instace()->Receive();
     QTimer::singleShot(ICParametersSave::Instance()->BackLightTime() * 60000, this, SLOT(CheckedInput()));
 
     //    QTimer::singleShot(100, this, SLOT(InitHeavyPage()));
@@ -731,34 +732,34 @@ void MainFrame::StatusRefreshed()
         if(runningStatus_ == ICVirtualHost::Manual)
         {
             ui->systemStatusFrame->SetManualStatus(StatusLabel::ONSTATUS);
-            LevelChanged(ICProgramHeadFrame::Instance()->CurrentLevel());
-            ui->functionPageButton->setEnabled(false);
+//            LevelChanged(ICProgramHeadFrame::Instance()->CurrentLevel());
+//            ui->functionPageButton->setEnabled(false);
             //            ui->recordPageButton->setText(tr("Instru            ui->recordPageButton->setText(tr("Instruct"));ct"));
             //            ui->recordPageButton->setEnabled(false);
         }
         else if(runningStatus_ == ICVirtualHost::AutoRunning)
         {
             ui->systemStatusFrame->SetAutoStatus(ICSystemStatusFrame::Running);
-            ui->functionPageButton->setEnabled(false);
-            ui->recordPageButton->setEnabled(false);
+//            ui->functionPageButton->setEnabled(false);
+//            ui->recordPageButton->setEnabled(false);
         }
         else if(runningStatus_ == ICVirtualHost::AutoReady)
         {
             ui->systemStatusFrame->SetAutoStatus(ICSystemStatusFrame::Ready);
-            ui->functionPageButton->setEnabled(false);
-            ui->recordPageButton->setEnabled(false);
+//            ui->functionPageButton->setEnabled(false);
+//            ui->recordPageButton->setEnabled(false);
         }
         else if(runningStatus_ == ICVirtualHost::AutoSingleCycle)
         {
             ui->systemStatusFrame->SetAutoStatus(ICSystemStatusFrame::SingleCycle);
-            ui->functionPageButton->setEnabled(false);
-            ui->recordPageButton->setEnabled(false);
+//            ui->functionPageButton->setEnabled(false);
+//            ui->recordPageButton->setEnabled(false);
         }
         else if(runningStatus_ == ICVirtualHost::AutoStopping)
         {
             ui->systemStatusFrame->SetAutoStatus(ICSystemStatusFrame::Stopping);
-            ui->functionPageButton->setEnabled(false);
-            ui->recordPageButton->setEnabled(false);
+//            ui->functionPageButton->setEnabled(false);
+//            ui->recordPageButton->setEnabled(false);
         }
         //        else if(runningStatus_ == ICVirtualHost::Teach)
         //        {
@@ -768,8 +769,8 @@ void MainFrame::StatusRefreshed()
         {
             //            ui->systemStatusFrame->SetProgramStatus(virtualHost->IsCloseMoldPermit() ? StatusLabel::ONSTATUS : StatusLabel::OFFSTATUS);
             //            ui->systemStatusFrame->SetSystemStop();
-            ui->recordPageButton->setText(tr("Records"));
-            LevelChanged(ICProgramHeadFrame::Instance()->CurrentLevel());
+//            ui->recordPageButton->setText(tr("Records"));
+//            LevelChanged(ICProgramHeadFrame::Instance()->CurrentLevel());
             //            ui->functionPageButton->setEnabled(true);
             //            ui->recordPageButton->setEnabled(true);
             //            HideOrigin();
@@ -784,6 +785,7 @@ void MainFrame::StatusRefreshed()
             ShowReturn();
         }
     }
+    LevelChanged(ICProgramHeadFrame::Instance()->CurrentLevel());
     if(mousePoint_ != QCursor::pos())
     {
         mousePoint_ = QCursor::pos();
@@ -813,10 +815,10 @@ void MainFrame::ShowAutoPage()
     //    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Auto"));
     ICProgramHeadFrame::Instance()->StartAutoTime();
     nullButton_->click();
-    if(!IsOrigined())
-    {
-        QMessageBox::warning(this, tr("Warning"), tr("Need to origin!"));
-    }
+//    if(!IsOrigined())
+//    {
+//        QMessageBox::warning(this, tr("Warning"), tr("Need to origin!"));
+//    }
 }
 
 void MainFrame::ShowInstructPage()
@@ -885,12 +887,12 @@ void MainFrame::HideReturn()
 
 void MainFrame::ReturnButtonClicked()
 {
-    int status = ICVirtualHost::GlobalVirtualHost()->CurrentStatus();
-    if(status == ICVirtualHost::Manual)
+    int status = ICKeyboard::Instace()->CurrentSwitchStatus();
+    if(status == ICKeyboard::KS_ManualStatu)
     {
         ShowManualPage();
     }
-    else if(status == ICVirtualHost::Auto)
+    else if(status == ICKeyboard::KS_AutoStatu)
     {
         ShowAutoPage();
     }
@@ -928,16 +930,21 @@ void MainFrame::LevelChanged(int level)
     case ICParametersSave::MachineAdmin:
     case ICParametersSave::AdvanceAdmin:
     {
-        if(oldRunnigStatus_ != ICVirtualHost::Manual &&
-                oldRunnigStatus_ != ICVirtualHost::AutoReady
-                && oldRunnigStatus_ != ICVirtualHost::AutoRunning
-                && oldRunnigStatus_ != ICVirtualHost::AutoSingleCycle)
+        if(ICKeyboard::Instace()->CurrentSwitchStatus() == ICKeyboard::KS_StopStatu)
         {
             ui->functionPageButton->setEnabled(true);
         }
-        if(oldRunnigStatus_ == ICVirtualHost::Manual || oldRunnigStatus_ == ICVirtualHost::Stop)
+        else
+        {
+            ui->functionPageButton->setEnabled(false);
+        }
+        if(ICKeyboard::Instace()->CurrentSwitchStatus() != ICKeyboard::KS_AutoStatu)
         {
             ui->recordPageButton->setEnabled(true);
+        }
+        else
+        {
+            ui->recordPageButton->setEnabled(false);
         }
     }
     break;
@@ -1106,4 +1113,10 @@ void MainFrame::UpdateAxisDefine_()
             ShowWidgets_(axisWidgets_[7]);
         }
     }
+}
+
+void MainFrame::KeyToInstructEditor(int key)
+{
+    Q_UNUSED(key);
+    instructPage_->ShowServoAction(key);
 }

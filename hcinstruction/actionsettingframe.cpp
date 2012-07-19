@@ -6,6 +6,7 @@
 #include "iccommandprocessor.h"
 #include "icvirtualkey.h"
 #include "icvirtualhost.h"
+#include "ickeyboard.h"
 
 ActionSettingFrame::ActionSettingFrame(QWidget *parent) :
     ICInstructionEditorBase(parent),
@@ -14,14 +15,17 @@ ActionSettingFrame::ActionSettingFrame(QWidget *parent) :
     ui->setupUi(this);
 
     InitInterface();
-    axisWidgets_.append(QList<QWidget*>()<<ui->gxButton<<ui->x1DelayLineEdit<<ui->x1PosLineEdit<<ui->x1pLabel<<ui->x1SLabel<<ui->x1SpeedLineEdit<<ui->x1Box);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gyButton<<ui->y1DelayLineEdit<<ui->y1PosLineEdit<<ui->y1pLabel<<ui->y1SLabel<<ui->y1SpeedLineEdit<<ui->y1Box);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gzButton<<ui->zDelayLineEdit<<ui->zPosLineEdit<<ui->zpLabel<<ui->zSLabel<<ui->zSpeedLineEdit<<ui->zBox);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gPButton<<ui->x2DelayLineEdit<<ui->x2PosLineEdit<<ui->x2pLabel<<ui->x2SLabel<<ui->x2SpeedLineEdit<<ui->x2Box);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gQButton<<ui->y2DelayLineEdit<<ui->y2PosLineEdit<<ui->y2pLabel<<ui->y2SLabel<<ui->y2SpeedLineEdit<<ui->y2Box);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gAButton<<ui->aDelayLineEdit<<ui->aPosLineEdit<<ui->apLabel<<ui->aSLabel<<ui->aSpeedLineEdit<<ui->aBox);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gBButton<<ui->bDelayLineEdit<<ui->bPosLineEdit<<ui->bpLabel<<ui->bSLabel<<ui->bSpeedLineEdit);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gCButton<<ui->cDelayLineEdit<<ui->cPosLineEdit<<ui->cpLabel<<ui->cSLabel<<ui->cSpeedLineEdit);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gxButton<<ui->x1DelayLineEdit<<ui->x1PosLineEdit<<ui->x1SpeedLineEdit<<ui->x1Box);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gyButton<<ui->y1DelayLineEdit<<ui->y1PosLineEdit<<ui->y1SpeedLineEdit<<ui->y1Box);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gzButton<<ui->zDelayLineEdit<<ui->zPosLineEdit<<ui->zSpeedLineEdit<<ui->zBox);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gPButton<<ui->x2DelayLineEdit<<ui->x2PosLineEdit<<ui->x2SpeedLineEdit<<ui->x2Box);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gQButton<<ui->y2DelayLineEdit<<ui->y2PosLineEdit<<ui->y2SpeedLineEdit<<ui->y2Box);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gAButton<<ui->aDelayLineEdit<<ui->aPosLineEdit<<ui->aSpeedLineEdit<<ui->aBox);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gBButton<<ui->bDelayLineEdit<<ui->bPosLineEdit<<ui->bSpeedLineEdit<<ui->bBox);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gCButton<<ui->cDelayLineEdit<<ui->cPosLineEdit<<ui->cSpeedLineEdit<<ui->cBox);
+#ifdef Q_WS_X11
+    UpdateAxisDefine_();
+#endif
     //    ui->x1SpeedLineEdit->hide();
 }
 
@@ -134,6 +138,14 @@ void ActionSettingFrame::on_inputButton_clicked()
 
 void ActionSettingFrame::hideEvent(QHideEvent *e)
 {
+    ui->gxButton->setChecked(false);
+    ui->gyButton->setChecked(false);
+    ui->gzButton->setChecked(false);
+    ui->gPButton->setChecked(false);
+    ui->gQButton->setChecked(false);
+    ui->gAButton->setChecked(false);
+    ui->gBButton->setChecked(false);
+    ui->gCButton->setChecked(false);
     QFrame::hideEvent(e);
     disconnect(ICVirtualHost::GlobalVirtualHost(),
                SIGNAL(StatusRefreshed()),
@@ -336,10 +348,17 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
     }
     if(ui->gCButton->isChecked())
     {
-        item.SetAction(ICMold::GC);
-        item.SetPos(ui->cPosLineEdit->TransThisTextToThisInt());
-        item.SetDVal(ui->cDelayLineEdit->TransThisTextToThisInt());
-        item.SetSVal(ui->cSpeedLineEdit->TransThisTextToThisInt());
+        if(ui->cBox->isHidden())
+        {
+            item.SetAction(ICMold::GC);
+            item.SetPos(ui->cPosLineEdit->TransThisTextToThisInt());
+            item.SetDVal(ui->cDelayLineEdit->TransThisTextToThisInt());
+            item.SetSVal(ui->cSpeedLineEdit->TransThisTextToThisInt());
+        }
+        else
+        {
+            item.SetAction(ui->cBox->currentIndex() == 0 ? ICMold::ACTPOSEVERT : ICMold::ACTPOSEHORI);
+        }
         item.SetIFVal(0);
         item.SetIFPos(0);
         ret.append(item);
@@ -466,6 +485,7 @@ void ActionSettingFrame::on_gBButton_toggled(bool checked)
         ui->bPosLineEdit->setEnabled(true);
         ui->bDelayLineEdit->setEnabled(true);
         ui->bSpeedLineEdit->setEnabled(true);
+        ui->bBox->setEnabled(true);
     }
     else
     {
@@ -482,6 +502,7 @@ void ActionSettingFrame::on_gCButton_toggled(bool checked)
         ui->cPosLineEdit->setEnabled(true);
         ui->cDelayLineEdit->setEnabled(true);
         ui->cSpeedLineEdit->setEnabled(true);
+        ui->cBox->setEnabled(true);
     }
     else
     {
@@ -536,7 +557,7 @@ void ActionSettingFrame::UpdateAxisDefine_()
             ShowWidgets_(axisWidgets_[0]);
             ui->x1PosLineEdit->hide();
             ui->x1SpeedLineEdit->hide();
-            ui->x1pLabel->hide();
+            //            ui->x1pLabel->hide();
         }
         else
         {
@@ -553,7 +574,7 @@ void ActionSettingFrame::UpdateAxisDefine_()
             ShowWidgets_(axisWidgets_[1]);
             ui->y1PosLineEdit->hide();
             ui->y1SpeedLineEdit->hide();
-            ui->y1pLabel->hide();
+            //            ui->y1pLabel->hide();
         }
         else
         {
@@ -570,7 +591,7 @@ void ActionSettingFrame::UpdateAxisDefine_()
             ShowWidgets_(axisWidgets_[2]);
             ui->zPosLineEdit->hide();
             ui->zSpeedLineEdit->hide();
-            ui->zpLabel->hide();
+            //            ui->zpLabel->hide();
         }
         else
         {
@@ -587,7 +608,7 @@ void ActionSettingFrame::UpdateAxisDefine_()
             ShowWidgets_(axisWidgets_[3]);
             ui->x2PosLineEdit->hide();
             ui->x2SpeedLineEdit->hide();
-            ui->x2pLabel->hide();
+            //            ui->x2pLabel->hide();
         }
         else
         {
@@ -604,7 +625,7 @@ void ActionSettingFrame::UpdateAxisDefine_()
             ShowWidgets_(axisWidgets_[4]);
             ui->y2PosLineEdit->hide();
             ui->y2SpeedLineEdit->hide();
-            ui->y2pLabel->hide();
+            //            ui->y2pLabel->hide();
         }
         else
         {
@@ -621,7 +642,7 @@ void ActionSettingFrame::UpdateAxisDefine_()
             ShowWidgets_(axisWidgets_[5]);
             ui->aPosLineEdit->hide();
             ui->aSpeedLineEdit->hide();
-            ui->apLabel->hide();
+            //            ui->apLabel->hide();
         }
         else
         {
@@ -633,20 +654,85 @@ void ActionSettingFrame::UpdateAxisDefine_()
         {
             HideWidgets_(axisWidgets_[6]);
         }
+        else if(host->AxisDefine(ICVirtualHost::ICAxis_AxisB) == ICVirtualHost::ICAxisDefine_Pneumatic)
+        {
+            ShowWidgets_(axisWidgets_[6]);
+            ui->bPosLineEdit->hide();
+            ui->bSpeedLineEdit->hide();
+        }
         else
         {
             ShowWidgets_(axisWidgets_[6]);
+            ui->bBox->hide();
         }
 
         if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) == ICVirtualHost::ICAxisDefine_None)
         {
             HideWidgets_(axisWidgets_[7]);
         }
+        else if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) == ICVirtualHost::ICAxisDefine_Pneumatic)
+        {
+            ShowWidgets_(axisWidgets_[7]);
+            ui->cPosLineEdit->hide();
+            ui->cSpeedLineEdit->hide();
+        }
         else
         {
             ShowWidgets_(axisWidgets_[7]);
+            ui->cBox->hide();
         }
     }
 }
-
 #endif
+
+void ActionSettingFrame::KeyToActionCheck(int key)
+{
+    switch(key)
+    {
+    case ICKeyboard::VFB_X1Add:
+    case ICKeyboard::VFB_X1Sub:
+        ui->x1Box->setCurrentIndex(key == ICKeyboard::VFB_X1Add ? 0:1);
+        ui->gxButton->setChecked(true);
+        break;
+    case ICKeyboard::VFB_Y1Add:
+    case ICKeyboard::VFB_Y1Sub:
+        ui->y1Box->setCurrentIndex(key == ICKeyboard::VFB_Y1Add ? 1:0);
+        ui->gyButton->setChecked(true);
+        break;
+    case ICKeyboard::VFB_ZAdd:
+    case ICKeyboard::VFB_ZSub:
+        ui->zBox->setCurrentIndex(key == ICKeyboard::VFB_ZAdd ? 1:0);
+        ui->gzButton->setChecked(true);
+        break;
+    case ICKeyboard::VFB_X2Add:
+    case ICKeyboard::VFB_X2Sub:
+        ui->x2Box->setCurrentIndex(key == ICKeyboard::VFB_X2Add ? 0:1);
+        ui->gPButton->setChecked(true);
+        break;
+    case ICKeyboard::VFB_Y2Add:
+    case ICKeyboard::VFB_Y2Sub:
+        ui->y2Box->setCurrentIndex(key == ICKeyboard::VFB_Y2Add ?1:0);
+        ui->gQButton->setChecked(true);
+        break;
+    case ICKeyboard::VFB_AAdd:
+    case ICKeyboard::VFB_ASub:
+        ui->aBox->setCurrentIndex(key == ICKeyboard::VFB_AAdd ? 0:1);
+        ui->gAButton->setChecked(true);
+        break;
+    case ICKeyboard::VFB_BAdd:
+    case ICKeyboard::VFB_BSub:
+        ui->bBox->setCurrentIndex(key == ICKeyboard::VFB_BAdd ? 0:1);
+        ui->gBButton->setChecked(true);
+        break;
+    case ICKeyboard::VFB_CAdd:
+    case ICKeyboard::VFB_CSub:
+        ui->cBox->setCurrentIndex(key == ICKeyboard::VFB_CAdd ? 0:1);
+        ui->gCButton->setChecked(true);
+        break;
+    case ICKeyboard::VFB_Pose_Horizontal:
+    case ICKeyboard::VFB_Pose_Vertical:
+        ui->cBox->setCurrentIndex(key == ICKeyboard::VFB_Pose_Horizontal ? 1:0);
+        ui->gCButton->setChecked(true);
+        break;
+    }
+}

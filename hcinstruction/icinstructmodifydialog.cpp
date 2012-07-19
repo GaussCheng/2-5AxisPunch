@@ -22,7 +22,13 @@ ICInstructModifyDialog::ICInstructModifyDialog(QWidget *parent) :
 
     ui->earlyEndTimeEdit->SetDecimalPlaces(1);
     ui->earlyEndTimeEdit->setValidator(validator);
-    ui->selectEdit->setValidator(new QIntValidator(0, 3, this));
+    ui->selectEdit->setValidator(new QIntValidator(1, 4, this));
+
+    ui->posEdit->SetModalKeyboard(true);
+    ui->speedEdit->SetModalKeyboard(true);
+    ui->delayTimeEdit->SetModalKeyboard(true);
+    ui->selectEdit->SetModalKeyboard(true);
+    ui->earlyEndTimeEdit->SetModalKeyboard(true);
 }
 
 ICInstructModifyDialog::~ICInstructModifyDialog()
@@ -100,7 +106,7 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
     }
     else if(item->Clip() == ICMold::ACTLAYOUTON)
     {
-        ui->selectEdit->SetThisIntToThisText(item->SVal());
+        ui->selectEdit->SetThisIntToThisText(item->SVal() + 1);
         ui->selectEdit->show();
         ui->selectLabel->show();
     }
@@ -127,7 +133,7 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
         item->SetPos(ui->posEdit->TransThisTextToThisInt());
         if(item->Clip() == ICMold::ACTLAYOUTON)
         {
-            item->SetSVal(ui->selectEdit->TransThisTextToThisInt());
+            item->SetSVal(ui->selectEdit->TransThisTextToThisInt() - 1);
         }
         else
         {

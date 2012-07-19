@@ -55,5 +55,7 @@
         <file>resource/Traverse-in-fine-tuning.png</file>
         <file>resource/Traverse-out-fine-tuning.png</file>
         <file>resource/combobox_arrow.png</file>
+        <file>resource/brightness.png</file>
+        <file>resource/brightren.png</file>
     </qresource>
 </RCC>

@@ -115,9 +115,17 @@ void ICKeyboardHandler::Keypressed(int keyValue)
     static ICVirtualHost* virtualHost = ICVirtualHost::GlobalVirtualHost();
     uint status = virtualHost->CurrentStatus();
     ICCommandProcessor* commandProcessor = ICCommandProcessor::Instance();
-    if(keyValue == ICKeyboard::FB_NULL ||
-            keyValue == ICKeyboard::VFB_Run
-            )
+    if(keyValue == ICKeyboard::VFB_Run)
+    {
+        commandProcessor->ExecuteVirtualKeyCommand(virtualKeyMap_.value(keyValue));
+        if((!icMainFrame->IsOrigined()) && icMainFrame->IsAutoPageShown())
+        {
+            QMessageBox::warning(NULL, tr("Warning"), tr("Need to origin!"));
+        }
+
+        return;
+    }
+    if(keyValue == ICKeyboard::FB_NULL)
     {
         commandProcessor->ExecuteVirtualKeyCommand(virtualKeyMap_.value(keyValue));
         return;

@@ -12,6 +12,7 @@ class QStackedLayout;
 class QDialog;
 class QButtonGroup;
 class QAbstractButton;
+class ICHCInstructionPageFrame;
 
 namespace Ui {
     class MainFrame;
@@ -31,6 +32,7 @@ public:
     bool IsBackLightOff() const;
     void SetBackLightOff(bool isOff);
     void ShowScreenSaver();
+    bool IsAutoPageShown() const {if(autoPage_ == NULL) return false; return !autoPage_->isHidden();}
 
     bool NoInStop();
 
@@ -45,6 +47,7 @@ public Q_SLOTS:
     void ShowReturn();
     void HideReturn();
     void UpdateAxisDefine_();
+    void KeyToInstructEditor(int key);
 
 //    void SetBackLightOff();
 //    void SetBackLightOn();
@@ -86,7 +89,7 @@ private:
     QWidget * alarmPage_;
     QWidget * recordPage_;
     QWidget * monitorPage_;
-    QWidget * instructPage_;
+    ICHCInstructionPageFrame * instructPage_;
     QWidget * autoPage_;
 //    QWidget * returnPage_;
     QWidget * manualPage_;

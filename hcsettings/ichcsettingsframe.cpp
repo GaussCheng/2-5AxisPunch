@@ -151,8 +151,8 @@ void ICHCSettingsFrame::InitHCSettingPage()
 
     axisSettingsPage_ = new AxisSettingsFrame;
     centralStackedLayout_->addWidget(axisSettingsPage_);
-    structDefPage_ = new ICStructDefineFrame();
-    centralStackedLayout_->addWidget(structDefPage_);
+//    structDefPage_ = new ICStructDefineFrame();
+//    centralStackedLayout_->addWidget(structDefPage_);
 //    basicSettingsPage_ =  new BasicSettingsFrame;
 //    centralStackedLayout_->addWidget(basicSettingsPage_);
 

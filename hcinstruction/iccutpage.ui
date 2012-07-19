@@ -97,10 +97,10 @@ QRadioButton::indicator:unchecked:disabled
       <bool>false</bool>
      </attribute>
      <attribute name="verticalHeaderDefaultSectionSize">
-      <number>32</number>
+      <number>40</number>
      </attribute>
      <attribute name="verticalHeaderMinimumSectionSize">
-      <number>32</number>
+      <number>40</number>
      </attribute>
      <attribute name="verticalHeaderStretchLastSection">
       <bool>false</bool>

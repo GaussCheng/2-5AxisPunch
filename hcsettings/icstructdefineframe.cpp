@@ -143,6 +143,7 @@ void ICStructDefineFrame::on_saveButton_clicked()
         host->SetSystemParameter(ICVirtualHost::SYS_Config_Resv1, dataBuffer.at(4));
         host->SetSystemParameter(ICVirtualHost::SYS_Config_Resv2, dataBuffer.at(5));
         host->SetSystemParameter(ICVirtualHost::SYS_Config_Xorsum, dataBuffer.at(6));
+//        host->SystemParameter(ICVirtualHost::SYS_Function);
         host->SaveSystemConfig();
         QMessageBox::information(this, tr("Tips"), tr("Save Sucessfully!"));
         emit StructChanged();

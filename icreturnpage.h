@@ -22,6 +22,8 @@ protected:
 
 private Q_SLOTS:
     void StatusRefresh();
+    void on_stopBtn_clicked();
+
 private:
     Ui::ICReturnPage *ui;
     bool isRan_;

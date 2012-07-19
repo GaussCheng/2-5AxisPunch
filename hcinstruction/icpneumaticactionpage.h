@@ -1,13 +1,19 @@
 #ifndef ICPNEUMATICACTIONPAGE_H
 #define ICPNEUMATICACTIONPAGE_H
 
-#include <QWidget>
+#include <QMap>
+#include <QPair>
+#include <QSignalMapper>
+#include <QPixmap>
 #include "icinstructioneditorbase.h"
 
 namespace Ui {
     class ICPneumaticActionPage;
 }
 
+class QAbstractButton;
+class QLabel;
+class ICPeripheryParameterEditor;
 class ICPneumaticActionPage : public ICInstructionEditorBase
 {
     Q_OBJECT
@@ -23,15 +29,21 @@ protected:
     void SyncStatusImpl(const QList<ICMoldItem> &items) {Q_UNUSED(items)}
 
 private Q_SLOTS:
-    void on_forwardCheckBox_stateChanged(int status);
-    void on_backwardCheckBox_stateChanged(int status);
-    void on_upCheckBox_stateChanged(int status);
-    void on_downCheckBox_stateChanged(int status);
-
-    void on_setButton_clicked();
+    void CommandButtonClicked(QWidget* widget);
 
 private:
     Ui::ICPneumaticActionPage *ui;
+    QVector<QAbstractButton*> settingButtons_;
+    QVector<ICPeripheryParameterEditor*> editorVector_;
+    QMap<QAbstractButton*, uint> buttonToClip_;
+    QMap<QAbstractButton*, uint> buttonToLight_;
+    QMap<uint, uint> onClipToOffClip_;
+    QMap<uint, uint> offClipToOnClip_;
+    QStringList ioNames_;
+    QMap<QAbstractButton*, QPair<int, int> > commandKeyMap_;
+    QSignalMapper buttonSignalMapper_;
+    QPixmap onPixmap_;
+    QPixmap offPixmap_;
 };
 
 #endif // ICPNEUMATICACTIONPAGE_H

@@ -17,6 +17,7 @@
 #include "icperipherypage.h"
 #include "iccutpage.h"
 #include "icprogramselector.h"
+#include "icstackeditor.h"
 #include "icparameterssave.h"
 #include "icinstructparam.h"
 #include "iccommandprocessor.h"
@@ -52,6 +53,7 @@ ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
     peripheryPage_(NULL),
     cutPage_(NULL),
     programPage_(NULL),
+    stackPage_(NULL),
     recordPath_("./records/"),
     currentAction_(None),
     currentEdit_(0)
@@ -216,6 +218,12 @@ void ICHCInstructionPageFrame::OptionButtonClicked()
                 this,
                 SLOT(OnProgramChanged(int, QString)));
     }
+    else if(stackPage_ == NULL && optionButton == ui->stackButton)
+    {
+        stackPage_ = new ICStackEditor();
+        optionButtonToPage_.insert(ui->stackButton, stackPage_);
+        ui->settingStackedWidget->addWidget(stackPage_);
+    }
     ui->settingStackedWidget->setCurrentWidget(optionButtonToPage_.value(optionButton));
 }
 
@@ -223,7 +231,7 @@ void ICHCInstructionPageFrame::InitInterface()
 {
     //    ui->settingFrame->setLayout(ui->settingStackedWidget);
 
-    actionPage_ = new ActionSettingFrame;
+    actionPage_ = new ActionSettingFrame(ui->actionSelectPage);
     optionButtonToPage_.insert(ui->lineButton, actionPage_);
     ui->settingStackedWidget->addWidget(actionPage_);
     modifyDialog_ = new ICInstructModifyDialog(this);
@@ -282,6 +290,10 @@ void ICHCInstructionPageFrame::InitSignal()
             this,
             SLOT(OptionButtonClicked()));
     connect(ui->programButton,
+            SIGNAL(clicked()),
+            this,
+            SLOT(OptionButtonClicked()));
+    connect(ui->stackButton,
             SIGNAL(clicked()),
             this,
             SLOT(OptionButtonClicked()));
@@ -505,6 +517,7 @@ void ICHCInstructionPageFrame::on_insertToolButton_clicked()
 
     ICInstructionEditorBase* editor = qobject_cast<ICInstructionEditorBase*>(ui->settingStackedWidget->currentWidget());
     ICFlagsEditor *flagsEditor = qobject_cast<ICFlagsEditor*> (editor);
+    ActionSettingFrame *servoEditor = qobject_cast<ActionSettingFrame*>(editor);
     if(editor == NULL)
     {
         return;
@@ -519,9 +532,14 @@ void ICHCInstructionPageFrame::on_insertToolButton_clicked()
     }
     FindIndex_(index, gIndex, tIndex, sIndex);
     bool isParallel = false;
+    bool isServo = false;
     if(flagsEditor != NULL)
     {
         isParallel = true;
+    }
+    if(servoEditor != NULL)
+    {
+        isServo = true;
     }
     QList<ICMoldItem> items = editor->CreateCommand();
     if(items.isEmpty() && !isParallel)
@@ -538,6 +556,18 @@ void ICHCInstructionPageFrame::on_insertToolButton_clicked()
                 ICGroupMoldUIItem groupItem;
                 ICTopMoldUIItem topItem = flagsEditor->CreateTopUIItem();
                 groupItem.AddToMoldUIItem(topItem);
+                groupItem.SetStepNum(gIndex);
+                insertedGroupItems.append(groupItem);
+            }
+            else if(isServo)
+            {
+                ICTopMoldUIItem topItem;
+                ICGroupMoldUIItem groupItem;
+                for(int i = 0; i != items.size(); ++i)
+                {
+                    topItem.SetBaseItem(items.at(i));
+                    groupItem.AddToMoldUIItem(topItem);
+                }
                 groupItem.SetStepNum(gIndex);
                 insertedGroupItems.append(groupItem);
             }
@@ -988,15 +1018,27 @@ void ICHCInstructionPageFrame::on_aPlusBtn_pressed()
 {
     ICKeyboard::Instace()->SetKeyValue(ICKeyboard::VFB_AAdd);
     ICKeyboard::Instace()->SetPressed(true);
+    ShowServoAction(ICKeyboard::VFB_AAdd);
 }
 
 void ICHCInstructionPageFrame::on_aMinusBtn_pressed()
 {
     ICKeyboard::Instace()->SetKeyValue(ICKeyboard::VFB_ASub);
     ICKeyboard::Instace()->SetPressed(true);
+    ShowServoAction(ICKeyboard::VFB_ASub);
 }
 
 void ICHCInstructionPageFrame::OnActionButtonReleased()
 {
     ICKeyboard::Instace()->SetPressed(false);
+}
+
+void ICHCInstructionPageFrame::ShowServoAction(int key)
+{
+    if(!this->isHidden())
+    {
+        ui->lineButton->click();
+        actionPage_->KeyToActionCheck(key);
+    }
+
 }

@@ -32,6 +32,8 @@ MoldInformation::MoldInformation(QWidget *parent) :
         file.close();
     }
     UpdateInformationTable();
+    ui->informationTableWidget->setColumnWidth(1, 200);
+    ui->informationTableWidget->horizontalHeader()->setResizeMode(0, QHeaderView::Stretch);
 }
 
 MoldInformation::~MoldInformation()
@@ -252,10 +254,10 @@ void MoldInformation::UpdateInformationTable()
 
     foreach(tmp, userProgramList)
     {
-        AddNewInTableWidget(tmp.fileName(), tmp.created().toString("yyyy-MM-dd"));
+        AddNewInTableWidget(tmp.fileName(), tmp.created().toString("yyyy/MM/dd hh:mm:ss"));
     }
     qDebug()<<"end2";
-    ui->informationTableWidget->resizeColumnsToContents();
+//    ui->informationTableWidget->resizeColumnsToContents();
 }
 
 void MoldInformation::on_newToolButton_clicked()

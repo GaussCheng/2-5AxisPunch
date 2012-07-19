@@ -108,15 +108,6 @@ void VirtualNumericKeypadDialog::on_backspaceToolButton_clicked()
     ui->displayLineEdit->setFocus();
 }
 
-void VirtualNumericKeypadDialog::on_delToolButton_clicked()
-{
-    QString displayString = ui->displayLineEdit->text();
-    int cursorPosition = ui->displayLineEdit->cursorPosition();
-    displayString.remove(cursorPosition, 1);
-    ui->displayLineEdit->setText(displayString);
-    ui->displayLineEdit->setCursorPosition(cursorPosition);
-    ui->displayLineEdit->setFocus();
-}
 
 void VirtualNumericKeypadDialog::on_cancelToolButton_clicked()
 {
@@ -126,19 +117,35 @@ void VirtualNumericKeypadDialog::on_cancelToolButton_clicked()
 void VirtualNumericKeypadDialog::on_minusToolButton_clicked()
 {
     QString displayString = ui->displayLineEdit->text();
-    if(displayString.left(1) != "-")
+    if(displayString.isEmpty())
+    {
+        displayString.append('-');
+    }
+    else if(displayString.at(0).isDigit() || displayString.at(0) == '.')
     {
         displayString.prepend("-");
-        ui->displayLineEdit->setText(displayString);
     }
+    else
+    {
+        displayString[0] = '-';
+    }
+    ui->displayLineEdit->setText(displayString);
 }
 
 void VirtualNumericKeypadDialog::on_addButton_clicked()
 {
     QString displayString = ui->displayLineEdit->text();
-    if(displayString.left(1) != "+")
+    if(displayString.isEmpty())
+    {
+        displayString.append('+');
+    }
+    else if(displayString.at(0).isDigit() || displayString.at(0) == '.')
     {
         displayString.prepend("+");
-        ui->displayLineEdit->setText(displayString);
     }
+    else
+    {
+        displayString[0] = '+';
+    }
+    ui->displayLineEdit->setText(displayString);
 }
