@@ -46,6 +46,7 @@
 #include "moldinformation.h"
 #include "icactiondialog.h"
 #include "ictimerpool.h"
+#include "ichostcomparepage.h"
 
 #include <QDebug>
 
@@ -210,6 +211,8 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     axisWidgets_.append(QList<QWidget*>()<<ui->aLabel<<ui->ammLabel<<ui->aPosLabel);
     axisWidgets_.append(QList<QWidget*>()<<ui->bLabel<<ui->bmmLabel<<ui->bPosLabel);
     axisWidgets_.append(QList<QWidget*>()<<ui->cLabel<<ui->cmmLabel<<ui->cPosLabel);
+    compareAlarmNums_<<134<<135<<136<<137<<182<<183<<234<<235<<236<<330<<332<<333;
+    hostCompareDialog_ = new ICHostComparePage(this);
     UpdateAxisDefine_();
     ICKeyboard::Instace()->Receive();
     QTimer::singleShot(ICParametersSave::Instance()->BackLightTime() * 60000, this, SLOT(CheckedInput()));
@@ -603,6 +606,10 @@ void MainFrame::StatusRefreshed()
 #endif
     }
     errCode_ = virtualHost->AlarmNum();
+    if(compareAlarmNums_.indexOf(errCode_) != -1)
+    {
+        hostCompareDialog_->show();
+    }
     int hintCode = virtualHost->HintNum();
     if(alarmString->PriorAlarmNum() != static_cast<int>(errCode_) || hintCode != oldHintCode_)
     {
