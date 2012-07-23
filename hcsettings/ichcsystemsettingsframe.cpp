@@ -257,8 +257,8 @@ void ICHCSystemSettingsFrame::on_backupMachineButton_clicked()
     //    bool isSuccess = QFile::copy("./sysconfig/paramx.txt", "/mnt/udisk/HC2ABackup/sysconfig/paramx.txt");
     //    isSuccess = isSuccess && QFile::copy("./sysconfig/paramy.txt", "/mnt/udisk/HC2ABackup/sysconfig/paramy.txt");
     //    isSuccess = isSuccess && QFile::copy("./sysconfig/paramz.txt", "/mnt/udisk/HC2ABackup/sysconfig/paramz.txt");
-    Information(system("cp /opt/Qt/bin/sysconfig/param*.txt /mnt/udisk/HC2ABackup/sysconfig/") >= 0 );
-    Information(system("cp /opt/Qt/bin/sysconfig/DistanceRotation /mnt/udisk/HC2ABackup/sysconfig/") >= 0);
+    Information(system("cp /opt/Qt/bin/sysconfig/param*.txt /mnt/udisk/HC2ABackup/sysconfig/ -f") >= 0 );
+    Information(system("cp /opt/Qt/bin/sysconfig/DistanceRotation /mnt/udisk/HC2ABackup/sysconfig/ -f") >= 0);
 }
 
 void ICHCSystemSettingsFrame::on_backupSystemButton_clicked()
@@ -270,7 +270,7 @@ void ICHCSystemSettingsFrame::on_backupSystemButton_clicked()
     }
     system("mkdir -p /mnt/udisk/HC2ABackup/sysconfig");
     //    bool isSuccess = QFile::copy("./sysconfig/system.txt", "/mnt/udisk/HC2ABackup/sysconfig/system.txt");
-    Information(system("cp /opt/Qt/bin/sysconfig/system.txt /mnt/udisk/HC2ABackup/sysconfig/system.txt") >= 0);
+    Information(system("cp /opt/Qt/bin/sysconfig/system.txt /mnt/udisk/HC2ABackup/sysconfig/system.txt -f") >= 0);
 }
 
 void ICHCSystemSettingsFrame::Information(bool isSuccess)
@@ -295,7 +295,7 @@ void ICHCSystemSettingsFrame::on_backupMoldsButton_clicked()
     system("mkdir -p /mnt/udisk/HC2ABackup/");
     //    bool isSuccess = QFile::copy("./records", "/mnt/udisk/HC2ABackup/");
     //    isSuccess = isSuccess && QFile::copy("./subs", "/mnt/udisk/HC2ABackup/");
-    Information(system("cp -R /opt/Qt/bin/records/ /opt/Qt/bin/subs/ /mnt/udisk/HC2ABackup") >= 0);
+    Information(system("cp -Rf /opt/Qt/bin/records/ /opt/Qt/bin/subs/ /mnt/udisk/HC2ABackup") >= 0);
 }
 
 void ICHCSystemSettingsFrame::on_backupAllButton_clicked()
@@ -315,7 +315,7 @@ void ICHCSystemSettingsFrame::on_backupAllButton_clicked()
     //    isSuccess = isSuccess && QFile::copy("./records", "/mnt/udisk/HC2ABackup/");
     //    isSuccess = isSuccess && QFile::copy("./subs", "/mnt/udisk/HC2ABackup/");
 
-    Information(system("cp /opt/Qt/bin/sysconfig/param*.txt /opt/Qt/bin/sysconfig/system.txt /mnt/udisk/HC2ABackup/sysconfig/ && cp -R /opt/Qt/bin/records/ /opt/Qt/bin/subs/ /mnt/udisk/HC2ABackup") >= 0);
+    Information(system("cp /opt/Qt/bin/sysconfig/param*.txt /opt/Qt/bin/sysconfig/system.txt /mnt/udisk/HC2ABackup/sysconfig/ -f && cp -Rf /opt/Qt/bin/records/ /opt/Qt/bin/subs/ /mnt/udisk/HC2ABackup") >= 0);
 }
 
 void ICHCSystemSettingsFrame::on_restoreMachineButton_clicked()
