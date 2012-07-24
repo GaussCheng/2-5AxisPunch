@@ -126,8 +126,3 @@ void ICHostComparePage::on_hmiBtn_clicked()
     }
     accepted();
 }
-
-void ICHostComparePage::on_cancelBtn_clicked()
-{
-    rejected();
-}

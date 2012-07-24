@@ -2160,22 +2160,37 @@ Reason</source>
         <translation>产品数</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="36"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="79"/>
         <source>Sampling Count</source>
         <translation>取样模数</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="46"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="89"/>
         <source>Sampling Interval</source>
         <translation>取样间隔</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="56"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="99"/>
         <source>Bad Product</source>
         <translation>不良品数</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="66"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="126"/>
+        <source>Fixture</source>
+        <translation>治具定义</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="140"/>
+        <source>Reversed Phase</source>
+        <translation>反相</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="145"/>
+        <source>Positive Phase</source>
+        <translation>正相</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="49"/>
         <source>Wait Mold Opened Limit Time</source>
         <translation>等待开模时间</translation>
     </message>
@@ -2192,22 +2207,22 @@ Reason</source>
         <translation type="obsolete">水平下降</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="76"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="59"/>
         <source>s</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="103"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="109"/>
         <source>Alarm Times</source>
         <translation>报警时间</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="113"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="119"/>
         <source>Times</source>
         <translation>s</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="83"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="66"/>
         <source>Product Clear</source>
         <translation>产品清零</translation>
     </message>
@@ -3281,28 +3296,27 @@ Reason</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="ichostcomparepage.ui" line="20"/>
+        <location filename="ichostcomparepage.ui" line="23"/>
         <source>Host machine configure is different with HMI.</source>
-        <translation>主机参数与手控参数不匹配。</translation>
+        <translation>主板参数与手控参数不匹配。</translation>
     </message>
     <message>
-        <location filename="ichostcomparepage.ui" line="35"/>
+        <location filename="ichostcomparepage.ui" line="38"/>
         <source>Select Host</source>
-        <translation>全选主机参数</translation>
+        <translation>使用主机参数</translation>
     </message>
     <message>
-        <location filename="ichostcomparepage.ui" line="48"/>
+        <location filename="ichostcomparepage.ui" line="51"/>
         <source>Select HMI</source>
-        <translation>全选手控参数</translation>
+        <translation>使用手控参数</translation>
     </message>
     <message>
-        <location filename="ichostcomparepage.ui" line="61"/>
         <source>Cancel</source>
-        <translation>取消</translation>
+        <translation type="obsolete">取消</translation>
     </message>
     <message>
         <location filename="ichostcomparepage.cpp" line="35"/>
-        <location filename="ichostcomparepage.cpp" line="80"/>
+        <location filename="ichostcomparepage.cpp" line="84"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -3312,19 +3326,19 @@ Reason</source>
         <translation>您确认要全部使用主机的参数吗？</translation>
     </message>
     <message>
-        <location filename="ichostcomparepage.cpp" line="69"/>
-        <location filename="ichostcomparepage.cpp" line="110"/>
+        <location filename="ichostcomparepage.cpp" line="72"/>
+        <location filename="ichostcomparepage.cpp" line="114"/>
         <source>Critical</source>
         <translation>严重</translation>
     </message>
     <message>
-        <location filename="ichostcomparepage.cpp" line="70"/>
-        <location filename="ichostcomparepage.cpp" line="111"/>
+        <location filename="ichostcomparepage.cpp" line="73"/>
+        <location filename="ichostcomparepage.cpp" line="115"/>
         <source>Operator fail! Please reboot system</source>
         <translation>操作失败！请重启系统</translation>
     </message>
     <message>
-        <location filename="ichostcomparepage.cpp" line="81"/>
+        <location filename="ichostcomparepage.cpp" line="85"/>
         <source>Do you really want to rewrite all the machine configures to host?</source>
         <translation>您确认要全部使用手控的参数吗？</translation>
     </message>
@@ -3716,7 +3730,7 @@ Please enter an digit between </source>
     <message>
         <location filename="hcsettings/icmachineconfigpage.ui" line="317"/>
         <source>Pull Push Distance</source>
-        <translation>引拔距离</translation>
+        <translation>引拔最小距离</translation>
     </message>
     <message>
         <source>X Early End</source>
@@ -4541,12 +4555,12 @@ Please enter an digit between </source>
         <translation>中止</translation>
     </message>
     <message>
-        <location filename="icorigindialog.ui" line="64"/>
+        <location filename="icorigindialog.ui" line="77"/>
         <source>Yes</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="icorigindialog.ui" line="77"/>
+        <location filename="icorigindialog.ui" line="64"/>
         <source>No</source>
         <translation></translation>
     </message>
@@ -5193,7 +5207,7 @@ Please enter an digit between </source>
         <translation type="obsolete">需上升和下降限位</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1078"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1017"/>
         <source>Save</source>
         <translation>保存</translation>
     </message>
@@ -5381,41 +5395,34 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="929"/>
-        <source>Fixture Define</source>
-        <translation>治具定义</translation>
+        <source>Other Define</source>
+        <oldsource>Fixture Define</oldsource>
+        <translation>其它定义</translation>
+    </message>
+    <message>
+        <source>Fixture</source>
+        <translation type="obsolete">治具</translation>
+    </message>
+    <message>
+        <source>Reversed Phase</source>
+        <translation type="obsolete">反相</translation>
+    </message>
+    <message>
+        <source>Positive Phase</source>
+        <translation type="obsolete">正相</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="947"/>
-        <source>Fixture</source>
-        <translation>治具</translation>
-    </message>
-    <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="961"/>
-        <source>Reversed Phase</source>
-        <translation>反相</translation>
-    </message>
-    <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="966"/>
-        <source>Positive Phase</source>
-        <translation>正相</translation>
-    </message>
-    <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="990"/>
-        <source>Other Define</source>
-        <translation>其他定义</translation>
-    </message>
-    <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1008"/>
         <source>Escape</source>
         <translation>型内逃跑</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1022"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="961"/>
         <source>Use</source>
         <translation>使用</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1027"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="966"/>
         <source>No Use</source>
         <translation>不使用</translation>
     </message>
@@ -5424,12 +5431,12 @@ Please enter an digit between </source>
         <translation type="obsolete">手臂结构选择</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="148"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="149"/>
         <source>Tips</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="148"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="149"/>
         <source>Save Sucessfully!</source>
         <translation>保存成功!</translation>
     </message>
@@ -5763,17 +5770,17 @@ Would you want to restart now?</source>
         <translation>步序</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="439"/>
+        <location filename="mainframe.cpp" line="442"/>
         <source>Function</source>
         <translation>功能</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="440"/>
+        <location filename="mainframe.cpp" line="443"/>
         <source>Monitor</source>
         <translation>监视</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="838"/>
+        <location filename="mainframe.cpp" line="845"/>
         <source>Records</source>
         <translation>档案</translation>
     </message>
@@ -5786,12 +5793,12 @@ Would you want to restart now?</source>
         <translation type="obsolete">欢迎</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="442"/>
+        <location filename="mainframe.cpp" line="445"/>
         <source>Record</source>
         <translation>档案</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="441"/>
+        <location filename="mainframe.cpp" line="444"/>
         <source>Alarm</source>
         <translation>报警</translation>
     </message>
@@ -5808,12 +5815,12 @@ Would you want to restart now?</source>
         <translation type="obsolete">巨集参数从异常中恢复，请先检查巨集参数！</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="443"/>
+        <location filename="mainframe.cpp" line="446"/>
         <source>Return</source>
         <translation>返回</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="618"/>
+        <location filename="mainframe.cpp" line="625"/>
         <source>Hint</source>
         <translation>提示</translation>
     </message>
@@ -5830,7 +5837,7 @@ Would you want to restart now?</source>
         <translation type="obsolete">还没进行原点!</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="807"/>
+        <location filename="mainframe.cpp" line="814"/>
         <source>Instruct</source>
         <translation>教导</translation>
     </message>

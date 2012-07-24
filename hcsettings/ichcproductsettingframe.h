@@ -27,6 +27,8 @@ private slots:
 
     void on_productClearButton_clicked();
 
+    void on_fixtureSelectBox_currentIndexChanged(int index);
+
 private:
     Ui::ICHCProductSettingFrame *ui;
     QList<ICLineEditWrapper*> wrappers_;

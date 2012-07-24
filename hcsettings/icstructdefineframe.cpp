@@ -90,7 +90,7 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
                 SLOT(OnOutputDefineChanged(int)));
     }
 
-    ui->fixtureSelectBox->setCurrentIndex(host->FixtureDefine());
+//    ui->fixtureSelectBox->setCurrentIndex(host->FixtureDefine());
     ui->escapeComboBox->setCurrentIndex(host->EscapeWay());
 }
 
@@ -121,7 +121,8 @@ void ICStructDefineFrame::on_saveButton_clicked()
     dataBuffer[0] = armStruct_;
     dataBuffer[1] = axisDefine_;
     dataBuffer[2] = outDefine_;
-    dataBuffer[3] = ICVirtualHost::GlobalVirtualHost()->FixtureDefineSwitch(ui->fixtureSelectBox->currentIndex());
+//    dataBuffer[3] = ICVirtualHost::GlobalVirtualHost()->FixtureDefineSwitch(ui->fixtureSelectBox->currentIndex());
+    dataBuffer[3] = ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::SYS_Config_Fixture).toUInt();
     for(int i = 0; i != 6; ++i)
     {
         sum += dataBuffer.at(i);

@@ -1572,42 +1572,57 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="36"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="79"/>
         <source>Sampling Count</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="46"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="89"/>
         <source>Sampling Interval</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="56"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="99"/>
         <source>Bad Product</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="66"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="126"/>
+        <source>Fixture</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="140"/>
+        <source>Reversed Phase</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="145"/>
+        <source>Positive Phase</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="49"/>
         <source>Wait Mold Opened Limit Time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="76"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="59"/>
         <source>s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="103"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="109"/>
         <source>Alarm Times</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="113"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="119"/>
         <source>Times</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="83"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="66"/>
         <source>Product Clear</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2565,28 +2580,23 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ichostcomparepage.ui" line="20"/>
+        <location filename="ichostcomparepage.ui" line="23"/>
         <source>Host machine configure is different with HMI.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ichostcomparepage.ui" line="35"/>
+        <location filename="ichostcomparepage.ui" line="38"/>
         <source>Select Host</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ichostcomparepage.ui" line="48"/>
+        <location filename="ichostcomparepage.ui" line="51"/>
         <source>Select HMI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ichostcomparepage.ui" line="61"/>
-        <source>Cancel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="ichostcomparepage.cpp" line="35"/>
-        <location filename="ichostcomparepage.cpp" line="80"/>
+        <location filename="ichostcomparepage.cpp" line="84"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2596,19 +2606,19 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ichostcomparepage.cpp" line="69"/>
-        <location filename="ichostcomparepage.cpp" line="110"/>
+        <location filename="ichostcomparepage.cpp" line="72"/>
+        <location filename="ichostcomparepage.cpp" line="114"/>
         <source>Critical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ichostcomparepage.cpp" line="70"/>
-        <location filename="ichostcomparepage.cpp" line="111"/>
+        <location filename="ichostcomparepage.cpp" line="73"/>
+        <location filename="ichostcomparepage.cpp" line="115"/>
         <source>Operator fail! Please reboot system</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ichostcomparepage.cpp" line="81"/>
+        <location filename="ichostcomparepage.cpp" line="85"/>
         <source>Do you really want to rewrite all the machine configures to host?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3687,12 +3697,12 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icorigindialog.ui" line="64"/>
+        <location filename="icorigindialog.ui" line="77"/>
         <source>Yes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icorigindialog.ui" line="77"/>
+        <location filename="icorigindialog.ui" line="64"/>
         <source>No</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4276,46 +4286,32 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="929"/>
-        <source>Fixture Define</source>
+        <source>Other Define</source>
+        <oldsource>Fixture Define</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="947"/>
-        <source>Fixture</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="961"/>
-        <source>Reversed Phase</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="966"/>
-        <source>Positive Phase</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="990"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="929"/>
         <source>Other Define</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1008"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="947"/>
         <source>Escape</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1022"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="961"/>
         <source>Use</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1027"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="966"/>
         <source>No Use</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1078"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1017"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4364,12 +4360,12 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="148"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="149"/>
         <source>Tips</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="148"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="149"/>
         <source>Save Sucessfully!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4669,42 +4665,42 @@ Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="439"/>
+        <location filename="mainframe.cpp" line="442"/>
         <source>Function</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="440"/>
+        <location filename="mainframe.cpp" line="443"/>
         <source>Monitor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="442"/>
+        <location filename="mainframe.cpp" line="445"/>
         <source>Record</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="441"/>
+        <location filename="mainframe.cpp" line="444"/>
         <source>Alarm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="443"/>
+        <location filename="mainframe.cpp" line="446"/>
         <source>Return</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="618"/>
+        <location filename="mainframe.cpp" line="625"/>
         <source>Hint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="838"/>
+        <location filename="mainframe.cpp" line="845"/>
         <source>Records</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="807"/>
+        <location filename="mainframe.cpp" line="814"/>
         <source>Instruct</source>
         <translation type="unfinished"></translation>
     </message>

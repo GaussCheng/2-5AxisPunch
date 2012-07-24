@@ -16,6 +16,9 @@
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLabel" name="label">
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 0, 0);</string>
+     </property>
      <property name="text">
       <string>Host machine configure is different with HMI.</string>
      </property>
@@ -46,19 +49,6 @@
        </property>
        <property name="text">
         <string>Select HMI</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="cancelBtn">
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Cancel</string>
        </property>
       </widget>
      </item>

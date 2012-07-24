@@ -30,6 +30,7 @@ private slots:
 private:
     Ui::ICInstructModifyDialog *ui;
     ICMoldItem* currentItem;
+
 };
 
 #endif // ICINSTRUCTMODIFYDIALOG_H

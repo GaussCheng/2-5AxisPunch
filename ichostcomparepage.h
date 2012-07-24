@@ -23,7 +23,6 @@ private slots:
 
     void on_hmiBtn_clicked();
 
-    void on_cancelBtn_clicked();
 
 private:
     Ui::ICHostComparePage *ui;

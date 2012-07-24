@@ -39,6 +39,7 @@ ICHCProductSettingFrame::ICHCProductSettingFrame(QWidget *parent) :
     {
         currentPos = 1;
     }
+    ui->fixtureSelectBox->setCurrentIndex(ICVirtualHost::GlobalVirtualHost()->FixtureDefine());
     connect(ICMold::CurrentMold(),
             SIGNAL(MoldNumberParamChanged()),
             this,
@@ -54,8 +55,41 @@ ICHCProductSettingFrame::~ICHCProductSettingFrame()
 void ICHCProductSettingFrame::hideEvent(QHideEvent *e)
 {
     qDebug("Product hide");
-    if(ICVirtualHost::GlobalVirtualHost()->IsParamChanged())
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    if(host->IsParamChanged())
     {
+        ICSetAxisConfigsCommand command;
+        ICCommandProcessor* process = ICCommandProcessor::Instance();
+        int sum = 0;
+        QVector<uint> dataBuffer(7, 0);
+        dataBuffer[0] = host->SystemParameter(ICVirtualHost::SYS_Config_Signal).toUInt();
+        dataBuffer[1] = host->SystemParameter(ICVirtualHost::SYS_Config_Arm).toUInt();
+        dataBuffer[2] = host->SystemParameter(ICVirtualHost::SYS_Config_Out).toUInt();
+        dataBuffer[3] = host->SystemParameter(ICVirtualHost::SYS_Config_Fixture).toUInt();
+    //    dataBuffer[3] = ICVirtualHost::GlobalVirtualHost()->FixtureDefine();
+        for(int i = 0; i != 6; ++i)
+        {
+            sum += dataBuffer.at(i);
+        }
+        sum = (-sum & 0XFFFF);
+        dataBuffer[6] = sum;
+        qDebug()<<sum;
+        command.SetSlave(process->SlaveID());
+        command.SetDataBuffer(dataBuffer);
+        command.SetAxis(8);
+    #ifndef Q_WS_X11
+        if(process->ExecuteCommand(command).toBool())
+    #endif
+        {
+            ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+            host->SetSystemParameter(ICVirtualHost::SYS_Config_Signal, dataBuffer.at(0));
+            host->SetAxisDefine(dataBuffer.at(1));
+            host->SetPeripheryOutput(dataBuffer.at(2));
+            host->SetSystemParameter(ICVirtualHost::SYS_Config_Fixture, dataBuffer.at(3));
+            host->SetSystemParameter(ICVirtualHost::SYS_Config_Resv1, dataBuffer.at(4));
+            host->SetSystemParameter(ICVirtualHost::SYS_Config_Resv2, dataBuffer.at(5));
+            host->SetSystemParameter(ICVirtualHost::SYS_Config_Xorsum, dataBuffer.at(6));
+        }
         ICMold::CurrentMold()->SaveMoldParamsFile();
         ICVirtualHost::GlobalVirtualHost()->SaveSystemConfig();
         ICVirtualHost::GlobalVirtualHost()->ReConfigure();
@@ -89,4 +123,10 @@ void ICHCProductSettingFrame::on_productClearButton_clicked()
 {
     ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_PRODUCT_CLEAR);
     ICVirtualHost::GlobalVirtualHost()->SetFinishProductCount(0);
+}
+
+void ICHCProductSettingFrame::on_fixtureSelectBox_currentIndexChanged(int index)
+{
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    host->SetSystemParameter(ICVirtualHost::SYS_Config_Fixture, host->FixtureDefineSwitch(index));
 }

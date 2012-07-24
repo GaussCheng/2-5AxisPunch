@@ -30,6 +30,49 @@
    <item row="0" column="1">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="productLineEdit"/>
    </item>
+   <item row="0" column="2">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="0" column="3" colspan="2">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Wait Mold Opened Limit Time</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="5">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="waitTimeEdit"/>
+   </item>
+   <item row="0" column="6">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>s</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="5">
+    <widget class="QPushButton" name="productClearButton">
+     <property name="text">
+      <string>Product Clear</string>
+     </property>
+     <property name="autoRepeat">
+      <bool>true</bool>
+     </property>
+     <property name="autoRepeatDelay">
+      <number>50</number>
+     </property>
+    </widget>
+   </item>
    <item row="1" column="0">
     <widget class="QLabel" name="label_7">
      <property name="text">
@@ -50,58 +93,15 @@
    <item row="2" column="1">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="samplingEdit_2"/>
    </item>
-   <item row="3" column="0">
+   <item row="4" column="0">
     <widget class="QLabel" name="label_9">
      <property name="text">
       <string>Bad Product</string>
      </property>
     </widget>
    </item>
-   <item row="3" column="1">
+   <item row="4" column="1">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="samplingEdit_3"/>
-   </item>
-   <item row="0" column="3">
-    <widget class="QLabel" name="label_2">
-     <property name="text">
-      <string>Wait Mold Opened Limit Time</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="4">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="waitTimeEdit"/>
-   </item>
-   <item row="0" column="5">
-    <widget class="QLabel" name="label_4">
-     <property name="text">
-      <string>s</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="4">
-    <widget class="QPushButton" name="productClearButton">
-     <property name="text">
-      <string>Product Clear</string>
-     </property>
-     <property name="autoRepeat">
-      <bool>true</bool>
-     </property>
-     <property name="autoRepeatDelay">
-      <number>50</number>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="2">
-    <spacer name="horizontalSpacer">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>40</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
    </item>
    <item row="1" column="3">
     <widget class="QLabel" name="label_5">
@@ -110,14 +110,41 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="4">
+   <item row="1" column="5">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="alarmTimesEdit"/>
    </item>
-   <item row="1" column="5">
+   <item row="1" column="6">
     <widget class="QLabel" name="label_6">
      <property name="text">
       <string>Times</string>
      </property>
+    </widget>
+   </item>
+   <item row="2" column="3">
+    <widget class="QLabel" name="label_17">
+     <property name="text">
+      <string>Fixture</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="5">
+    <widget class="QComboBox" name="fixtureSelectBox">
+     <property name="minimumSize">
+      <size>
+       <width>90</width>
+       <height>32</height>
+      </size>
+     </property>
+     <item>
+      <property name="text">
+       <string>Reversed Phase</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Positive Phase</string>
+      </property>
+     </item>
     </widget>
    </item>
   </layout>
