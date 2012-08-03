@@ -112,13 +112,15 @@ void ICHCStackedSettingsFrame::RefreshStackParams_(int group)
         ui->yzxCheckBox->setChecked(true);
     }
     ui->xRPLatticeLineEdit->SetThisIntToThisText(stackParams.at(ICMold::X_Array));
-    ui->xRPCheckBox->setChecked(seqH & 32);
+    seqH & 32 ? ui->xRPCheckBox->click() : ui->xPPCheckBox->click();
     ui->xRPStepLineEdit->SetThisIntToThisText(stackParams.at(ICMold::X_Gap));
     ui->yRPLatticeLineEdit->SetThisIntToThisText(stackParams.at(ICMold::Y_Array));
-    ui->yRPCheckBox->setChecked(seqH & 64);
+    seqH & 64 ? ui->yRPCheckBox->click() : ui->yPPCheckBox->click();
+    ui->yPPCheckBox->setChecked(!ui->yRPCheckBox->isChecked());
     ui->yRPStepLineEdit->SetThisIntToThisText(stackParams.at(ICMold::Y_Gap));
     ui->zRPLatticeLineEdit->SetThisIntToThisText(stackParams.at(ICMold::Z_Array));
-    ui->zRPCheckBox->setChecked(seqH & 128);
+    seqH & 128 ? ui->zRPCheckBox->click() : ui->zPPCheckBox->click();
+    ui->zPPCheckBox->setChecked(!ui->zRPCheckBox->isChecked());
     ui->zRPStepLineEdit->SetThisIntToThisText(stackParams.at(ICMold::Z_Gap));
 //    switch(stackParams.at(ICMold::Seq))
 //    {
@@ -126,13 +128,13 @@ void ICHCStackedSettingsFrame::RefreshStackParams_(int group)
 //        ui->xzyCheckBox->setChecked(true);
 //        break;
 //    case 128:
-//        ui->yxzCheckBox->setChecked(true);
 //        break;
 //    case 2:
 //        ui->zxyCheckBox->setChecked(true);
 //        break;
 //    case 3:
 //        ui->yzxCheckBox->setChecked(true);
+    //        ui->yxzCheckBox->setChecked(true);
 //    }
 }
 
