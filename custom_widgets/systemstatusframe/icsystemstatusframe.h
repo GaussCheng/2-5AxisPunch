@@ -49,6 +49,8 @@ public:
     void SetSystemStop();
     QSize sizeHint() const { return QSize(167, 36);}
 
+protected:
+    void changeEvent(QEvent *e);
 private slots:
     void on_immButton_clicked();
 

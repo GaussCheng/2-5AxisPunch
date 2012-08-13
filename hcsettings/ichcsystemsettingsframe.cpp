@@ -253,12 +253,12 @@ void ICHCSystemSettingsFrame::on_backupMachineButton_clicked()
         QMessageBox::warning(this, tr("Warning"), tr("USB is not connected!"));
         return;
     }
-    system("mkdir -p /mnt/udisk/HC2ABackup/sysconfig");
-    //    bool isSuccess = QFile::copy("./sysconfig/paramx.txt", "/mnt/udisk/HC2ABackup/sysconfig/paramx.txt");
-    //    isSuccess = isSuccess && QFile::copy("./sysconfig/paramy.txt", "/mnt/udisk/HC2ABackup/sysconfig/paramy.txt");
-    //    isSuccess = isSuccess && QFile::copy("./sysconfig/paramz.txt", "/mnt/udisk/HC2ABackup/sysconfig/paramz.txt");
-    Information(system("cp /opt/Qt/bin/sysconfig/param*.txt /mnt/udisk/HC2ABackup/sysconfig/ -f") >= 0 );
-    Information(system("cp /opt/Qt/bin/sysconfig/DistanceRotation /mnt/udisk/HC2ABackup/sysconfig/ -f") >= 0);
+    system("mkdir -p /mnt/udisk/HC5ABackup/sysconfig");
+    //    bool isSuccess = QFile::copy("./sysconfig/paramx.txt", "/mnt/udisk/HC5ABackup/sysconfig/paramx.txt");
+    //    isSuccess = isSuccess && QFile::copy("./sysconfig/paramy.txt", "/mnt/udisk/HC5ABackup/sysconfig/paramy.txt");
+    //    isSuccess = isSuccess && QFile::copy("./sysconfig/paramz.txt", "/mnt/udisk/HC5ABackup/sysconfig/paramz.txt");
+    Information(system("cp /opt/Qt/bin/sysconfig/param*.txt /mnt/udisk/HC5ABackup/sysconfig/ -f") >= 0 );
+    Information(system("cp /opt/Qt/bin/sysconfig/DistanceRotation /mnt/udisk/HC5ABackup/sysconfig/ -f") >= 0);
 }
 
 void ICHCSystemSettingsFrame::on_backupSystemButton_clicked()
@@ -268,9 +268,9 @@ void ICHCSystemSettingsFrame::on_backupSystemButton_clicked()
         QMessageBox::warning(this, tr("Warning"), tr("USB is not connected!"));
         return;
     }
-    system("mkdir -p /mnt/udisk/HC2ABackup/sysconfig");
-    //    bool isSuccess = QFile::copy("./sysconfig/system.txt", "/mnt/udisk/HC2ABackup/sysconfig/system.txt");
-    Information(system("cp /opt/Qt/bin/sysconfig/system.txt /mnt/udisk/HC2ABackup/sysconfig/system.txt -f") >= 0);
+    system("mkdir -p /mnt/udisk/HC5ABackup/sysconfig");
+    //    bool isSuccess = QFile::copy("./sysconfig/system.txt", "/mnt/udisk/HC5ABackup/sysconfig/system.txt");
+    Information(system("cp /opt/Qt/bin/sysconfig/system.txt /mnt/udisk/HC5ABackup/sysconfig/system.txt -f") >= 0);
 }
 
 void ICHCSystemSettingsFrame::Information(bool isSuccess)
@@ -292,10 +292,10 @@ void ICHCSystemSettingsFrame::on_backupMoldsButton_clicked()
         QMessageBox::warning(this, tr("Warning"), tr("USB is not connected!"));
         return;
     }
-    system("mkdir -p /mnt/udisk/HC2ABackup/");
-    //    bool isSuccess = QFile::copy("./records", "/mnt/udisk/HC2ABackup/");
-    //    isSuccess = isSuccess && QFile::copy("./subs", "/mnt/udisk/HC2ABackup/");
-    Information(system("cp -Rf /opt/Qt/bin/records/ /opt/Qt/bin/subs/ /mnt/udisk/HC2ABackup") >= 0);
+    system("mkdir -p /mnt/udisk/HC5ABackup/");
+    //    bool isSuccess = QFile::copy("./records", "/mnt/udisk/HC5ABackup/");
+    //    isSuccess = isSuccess && QFile::copy("./subs", "/mnt/udisk/HC5ABackup/");
+    Information(system("cp -Rf /opt/Qt/bin/records/ /opt/Qt/bin/subs/ /mnt/udisk/HC5ABackup") >= 0);
 }
 
 void ICHCSystemSettingsFrame::on_backupAllButton_clicked()
@@ -305,17 +305,17 @@ void ICHCSystemSettingsFrame::on_backupAllButton_clicked()
         QMessageBox::warning(this, tr("Warning"), tr("USB is not connected!"));
         return;
     }
-    system("mkdir -p /mnt/udisk/HC2ABackup/sysconfig");
-    //    bool isSuccess = QFile::copy("./sysconfig/paramx.txt", "/mnt/udisk/HC2ABackup/sysconfig/paramx.txt");
-    //    isSuccess = isSuccess && QFile::copy("./sysconfig/paramy.txt", "/mnt/udisk/HC2ABackup/sysconfig/paramy.txt");
-    //    isSuccess = isSuccess && QFile::copy("./sysconfig/paramz.txt", "/mnt/udisk/HC2ABackup/sysconfig/paramz.txt");
+    system("mkdir -p /mnt/udisk/HC5ABackup/sysconfig");
+    //    bool isSuccess = QFile::copy("./sysconfig/paramx.txt", "/mnt/udisk/HC5ABackup/sysconfig/paramx.txt");
+    //    isSuccess = isSuccess && QFile::copy("./sysconfig/paramy.txt", "/mnt/udisk/HC5ABackup/sysconfig/paramy.txt");
+    //    isSuccess = isSuccess && QFile::copy("./sysconfig/paramz.txt", "/mnt/udisk/HC5ABackup/sysconfig/paramz.txt");
 
-    //    isSuccess = isSuccess && QFile::copy("./sysconfig/system.txt", "/mnt/udisk/HC2ABackup/sysconfig/system.txt");
+    //    isSuccess = isSuccess && QFile::copy("./sysconfig/system.txt", "/mnt/udisk/HC5ABackup/sysconfig/system.txt");
 
-    //    isSuccess = isSuccess && QFile::copy("./records", "/mnt/udisk/HC2ABackup/");
-    //    isSuccess = isSuccess && QFile::copy("./subs", "/mnt/udisk/HC2ABackup/");
+    //    isSuccess = isSuccess && QFile::copy("./records", "/mnt/udisk/HC5ABackup/");
+    //    isSuccess = isSuccess && QFile::copy("./subs", "/mnt/udisk/HC5ABackup/");
 
-    Information(system("cp /opt/Qt/bin/sysconfig/param*.txt /opt/Qt/bin/sysconfig/system.txt /mnt/udisk/HC2ABackup/sysconfig/ -f && cp -Rf /opt/Qt/bin/records/ /opt/Qt/bin/subs/ /mnt/udisk/HC2ABackup") >= 0);
+    Information(system("cp /opt/Qt/bin/sysconfig/param*.txt /opt/Qt/bin/sysconfig/system.txt /mnt/udisk/HC5ABackup/sysconfig/ -f && cp -Rf /opt/Qt/bin/records/ /opt/Qt/bin/subs/ /mnt/udisk/HC5ABackup") >= 0);
 }
 
 void ICHCSystemSettingsFrame::on_restoreMachineButton_clicked()
@@ -325,14 +325,14 @@ void ICHCSystemSettingsFrame::on_restoreMachineButton_clicked()
         QMessageBox::warning(this, tr("Warning"), tr("USB is not connected!"));
         return;
     }
-    QDir dir("/mnt/udisk/HC2ABackup/sysconfig");
+    QDir dir("/mnt/udisk/HC5ABackup/sysconfig");
     if(!dir.exists())
     {
         QMessageBox::warning(this, tr("Warnning"), tr("Backup files is not exists!"));
         return;
     }
-    system("cp /mnt/udisk/HC2ABackup/sysconfig/param* /opt/Qt/bin/sysconfig -f");
-    system("cp /mnt/udisk/HC2ABackup/sysconfig/DistanceRotation /opt/Qt/bin/sysconfig -f");
+    system("cp /mnt/udisk/HC5ABackup/sysconfig/param* /opt/Qt/bin/sysconfig -f");
+    system("cp /mnt/udisk/HC5ABackup/sysconfig/DistanceRotation /opt/Qt/bin/sysconfig -f");
     Information(true);
     system("reboot");
 }
@@ -344,13 +344,13 @@ void ICHCSystemSettingsFrame::on_restoreSystemButton_clicked()
         QMessageBox::warning(this, tr("Warning"), tr("USB is not connected!"));
         return;
     }
-    QDir dir("/mnt/udisk/HC2ABackup/sysconfig");
+    QDir dir("/mnt/udisk/HC5ABackup/sysconfig");
     if(!dir.exists())
     {
         QMessageBox::warning(this, tr("Warnning"), tr("Backup files is not exists!"));
         return;
     }
-    system("cp /mnt/udisk/HC2ABackup/sysconfig/system.txt /opt/Qt/bin/sysconfig -f");
+    system("cp /mnt/udisk/HC5ABackup/sysconfig/system.txt /opt/Qt/bin/sysconfig -f");
     Information(true);
     system("reboot");
 }
@@ -362,20 +362,34 @@ void ICHCSystemSettingsFrame::on_restoreMoldsButton_clicked()
         QMessageBox::warning(this, tr("Warning"), tr("USB is not connected!"));
         return;
     }
-    QDir dir("/mnt/udisk/HC2ABackup/records");
+    QDir dir("/mnt/udisk/HC5ABackup/records");
     if(!dir.exists())
     {
         QMessageBox::warning(this, tr("Warnning"), tr("Backup files is not exists!"));
         return;
     }
-    system("cp /mnt/udisk/HC2ABackup/records/* /opt/Qt/bin/records -f");
-    dir.setPath("/mnt/udisk/HC2ABackup/subs");
+    QStringList acts = dir.entryList(QStringList()<<"*.act");
+    QStringList fncs = dir.entryList(QStringList()<<"*.fnc");
+    for(int i = 0; i != fncs.size(); ++i)
+    {
+        fncs[i] = fncs.at(i).left(fncs.at(i).size() - 4);
+    }
+    for(int i = 0; i != acts.size(); ++i)
+    {
+        if(!fncs.contains(acts.at(i).left(acts.at(i).size() - 4)))
+        {
+            QMessageBox::warning(this, tr("Warnning"), tr("Backup files is incomplete!"));
+            return;
+        }
+    }
+    system("cp /mnt/udisk/HC5ABackup/records/* /opt/Qt/bin/records -f");
+    dir.setPath("/mnt/udisk/HC5ABackup/subs");
     if(!dir.exists())
     {
         QMessageBox::warning(this, tr("Warnning"), tr("Backup files is not exists!"));
         return;
     }
-    system("cp /mnt/udisk/HC2ABackup/subs/* /opt/Qt/bin/subs -f");
+    system("cp /mnt/udisk/HC5ABackup/subs/* /opt/Qt/bin/subs -f");
     Information(true);
     system("reboot");
 }
@@ -387,21 +401,21 @@ void ICHCSystemSettingsFrame::on_restoreAllButton_clicked()
         QMessageBox::warning(this, tr("Warning"), tr("USB is not connected!"));
         return;
     }
-    QDir dir("/mnt/udisk/HC2ABackup/sysconfig");
+    QDir dir("/mnt/udisk/HC5ABackup/sysconfig");
     if(!dir.exists())
     {
         QMessageBox::warning(this, tr("Warnning"), tr("Backup files is not exists!"));
         return;
     }
-    system("cp /mnt/udisk/HC2ABackup/sysconfig/param* /opt/Qt/bin/sysconfig -f");
+    system("cp /mnt/udisk/HC5ABackup/sysconfig/param* /opt/Qt/bin/sysconfig -f");
 
-    dir.setPath("/mnt/udisk/HC2ABackup/sysconfig");
+    dir.setPath("/mnt/udisk/HC5ABackup/sysconfig");
     if(!dir.exists())
     {
         QMessageBox::warning(this, tr("Warnning"), tr("Backup files is not exists!"));
         return;
     }
-    system("cp /mnt/udisk/HC2ABackup/sysconfig/system.txt /opt/Qt/bin/sysconfig -f");
+    system("cp /mnt/udisk/HC5ABackup/sysconfig/system.txt /opt/Qt/bin/sysconfig -f");
     on_restoreMoldsButton_clicked();
 
 }
