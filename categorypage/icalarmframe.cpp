@@ -15,7 +15,8 @@ ICAlarmFrame::ICAlarmFrame(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->alarmHistoryTableWidget->setColumnWidth(0, 200);
+    ui->alarmHistoryTableWidget->setColumnWidth(2, 200);
+    ui->alarmHistoryTableWidget->horizontalHeader()->setResizeMode(1, QHeaderView::Stretch);
 
     connect(alarmString_,
             SIGNAL(CurrentAlarmNumChanged(int)),
@@ -75,9 +76,9 @@ void ICAlarmFrame::AppendNewLineInTable(int currentAlarmNum, const QString & ala
     QTableWidgetItem * alramInfoItem = new QTableWidgetItem(alarmInfo);
 
     ui->alarmHistoryTableWidget->insertRow(0);
-    ui->alarmHistoryTableWidget->setItem(0, 0, alarmDateTimeItem);
-    ui->alarmHistoryTableWidget->setItem(0, 1, alarmNumItem);
-    ui->alarmHistoryTableWidget->setItem(0, 2, alramInfoItem);
+    ui->alarmHistoryTableWidget->setItem(0, 2, alarmDateTimeItem);
+    ui->alarmHistoryTableWidget->setItem(0, 0, alarmNumItem);
+    ui->alarmHistoryTableWidget->setItem(0, 1, alramInfoItem);
 }
 
 void ICAlarmFrame::RestoreAlarmInfoInLog(int currentAlarmNum, QString alarmDateTime)
@@ -121,7 +122,7 @@ void ICAlarmFrame::OnCurrentAlarmChanged(int currentAlarmNum)
 
     AppendNewLineInTable(currentAlarmNum, alarmDateTime,
                          alarmString_->AlarmInfoMap().value(currentAlarmNum));
-    ui->alarmHistoryTableWidget->resizeColumnsToContents();
+//    ui->alarmHistoryTableWidget->resizeColumnsToContents();
 
     RestoreAlarmInfoInLog(currentAlarmNum, alarmDateTime);
 

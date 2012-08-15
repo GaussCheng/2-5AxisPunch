@@ -20,7 +20,8 @@ SOURCES += main.cpp \
     icreturnpage.cpp \
     icscreensaver.cpp \
     icactiondialog.cpp \
-    ictimerpool.cpp
+    ictimerpool.cpp \
+    ichostcomparepage.cpp
 HEADERS += mainframe.h \
     icaxispositionlabel.h \
     #icalarmdescriptiondialog.h \
@@ -33,14 +34,16 @@ HEADERS += mainframe.h \
     icscreensaver.h \
     config.h \
     icactiondialog.h \
-    ictimerpool.h
+    ictimerpool.h \
+    ichostcomparepage.h
 
 FORMS    += mainframe.ui \
     #icalarmdescriptiondialog.ui \
     icorigindialog.ui \
     icreturnpage.ui \
     icscreensaver.ui \
-    icactiondialog.ui
+    icactiondialog.ui \
+    ichostcomparepage.ui
 
 include (./categorypage/categorypage.pri)
 include (custom_widgets/custom_widgets.pri)

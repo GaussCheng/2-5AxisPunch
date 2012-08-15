@@ -72,6 +72,10 @@ void ICOriginDialog::StepChanged(int step)
     {
         ui->label->setText(tr("Originning..."));
     }
+    else
+    {
+        ui->label->setText(tr("Please press the start button to start execute origin action"));
+    }
     if(step == 90)
     {
     //    emit OriginStatusChanged(false);

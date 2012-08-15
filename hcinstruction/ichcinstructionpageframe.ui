@@ -232,44 +232,6 @@ padding:5px;
            </property>
           </widget>
          </item>
-         <item row="1" column="1">
-          <widget class="QToolButton" name="pneumaticButton">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>140</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>140</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>Reserve</string>
-           </property>
-           <property name="icon">
-            <iconset resource="../resource.qrc">
-             <normaloff>:/resource/CommonIO(32).png</normaloff>:/resource/CommonIO(32).png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>32</width>
-             <height>32</height>
-            </size>
-           </property>
-           <property name="toolButtonStyle">
-            <enum>Qt::ToolButtonTextBesideIcon</enum>
-           </property>
-          </widget>
-         </item>
          <item row="2" column="0">
           <widget class="QToolButton" name="fixtureButton">
            <property name="sizePolicy">
@@ -346,6 +308,82 @@ padding:5px;
            </property>
           </widget>
          </item>
+         <item row="4" column="1">
+          <widget class="QToolButton" name="waitToolButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>140</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>140</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Wait</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resource.qrc">
+             <normaloff>:/resource/wait(32).png</normaloff>:/resource/wait(32).png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QToolButton" name="pneumaticButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>140</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>140</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Reserve</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resource.qrc">
+             <normaloff>:/resource/CommonIO(32).png</normaloff>:/resource/CommonIO(32).png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
          <item row="3" column="0">
           <widget class="QToolButton" name="peripheryButton">
            <property name="sizePolicy">
@@ -384,8 +422,8 @@ padding:5px;
            </property>
           </widget>
          </item>
-         <item row="3" column="1">
-          <widget class="QToolButton" name="waitToolButton">
+         <item row="1" column="1">
+          <widget class="QToolButton" name="stackButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -405,11 +443,11 @@ padding:5px;
             </size>
            </property>
            <property name="text">
-            <string>Wait</string>
+            <string>Stack</string>
            </property>
            <property name="icon">
             <iconset resource="../resource.qrc">
-             <normaloff>:/resource/wait(32).png</normaloff>:/resource/wait(32).png</iconset>
+             <normaloff>:/resource/macro(32).png</normaloff>:/resource/macro(32).png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -524,44 +562,6 @@ padding:5px;
            <property name="icon">
             <iconset resource="../resource.qrc">
              <normaloff>:/resource/jump(32).png</normaloff>:/resource/jump(32).png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>32</width>
-             <height>32</height>
-            </size>
-           </property>
-           <property name="toolButtonStyle">
-            <enum>Qt::ToolButtonTextBesideIcon</enum>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="1">
-          <widget class="QToolButton" name="stackButton">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>140</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>140</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>Stack</string>
-           </property>
-           <property name="icon">
-            <iconset resource="../resource.qrc">
-             <normaloff>:/resource/macro(32).png</normaloff>:/resource/macro(32).png</iconset>
            </property>
            <property name="iconSize">
             <size>

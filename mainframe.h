@@ -96,6 +96,7 @@ private:
     QDialog *originExecutingPage_;
     QDialog *returnExecutingPage_;
     QDialog *actionDialog_;
+    QDialog *hostCompareDialog_;
 
     QMap <QWidget *, QWidget *> functionButtonToPage_;
     QStackedLayout * centerStackedLayout_;
@@ -143,6 +144,8 @@ private:
     int axisDefine_;
     int timerID_;
     QList<QList<QWidget*> > axisWidgets_;
+    QList<uint> compareAlarmNums_;
+
 };
 
 extern MainFrame* icMainFrame;

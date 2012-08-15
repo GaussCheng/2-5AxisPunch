@@ -18,8 +18,8 @@
 ICUpdateSystem::ICUpdateSystem(QWidget *parent) :
     QFrame(parent),
     ui(new Ui::ICUpdateSystem),
-    updateIniPath_("/mnt/udisk/HCUpdate/"),
-    updateHostPath_("/mnt/udisk/HCUpdateHost/"),
+    updateIniPath_("/mnt/udisk/HCUpdate_5A/"),
+    updateHostPath_("/mnt/udisk/HCUpdateHost_5A/"),
     updateSettings_(NULL),
     updateHostSettings_(NULL),
     status_(-1)

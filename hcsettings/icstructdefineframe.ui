@@ -651,12 +651,33 @@ QCheckBox::indicator:unchecked:disabled
    </item>
    <item>
     <layout class="QVBoxLayout" name="verticalLayout_5">
+     <property name="spacing">
+      <number>2</number>
+     </property>
      <item>
       <widget class="QGroupBox" name="outDefineBox">
        <property name="title">
         <string>Out Define</string>
        </property>
        <layout class="QGridLayout" name="gridLayout_2">
+        <property name="leftMargin">
+         <number>2</number>
+        </property>
+        <property name="topMargin">
+         <number>4</number>
+        </property>
+        <property name="rightMargin">
+         <number>2</number>
+        </property>
+        <property name="bottomMargin">
+         <number>2</number>
+        </property>
+        <property name="horizontalSpacing">
+         <number>3</number>
+        </property>
+        <property name="verticalSpacing">
+         <number>6</number>
+        </property>
         <item row="0" column="0">
          <widget class="QLabel" name="label">
           <property name="text">
@@ -903,60 +924,23 @@ QCheckBox::indicator:unchecked:disabled
       </widget>
      </item>
      <item>
-      <widget class="QGroupBox" name="fixtureDefineBox">
-       <property name="title">
-        <string>Fixture Define</string>
-       </property>
-       <layout class="QHBoxLayout" name="horizontalLayout_3">
-        <item>
-         <widget class="QLabel" name="label_17">
-          <property name="text">
-           <string>Fixture</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="fixtureSelectBox">
-          <property name="minimumSize">
-           <size>
-            <width>90</width>
-            <height>32</height>
-           </size>
-          </property>
-          <item>
-           <property name="text">
-            <string>Reversed Phase</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Positive Phase</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item>
-         <spacer name="horizontalSpacer_6">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
-      </widget>
-     </item>
-     <item>
       <widget class="QGroupBox" name="fixtureDefineBox_2">
        <property name="title">
         <string>Other Define</string>
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <property name="leftMargin">
+         <number>2</number>
+        </property>
+        <property name="topMargin">
+         <number>4</number>
+        </property>
+        <property name="rightMargin">
+         <number>2</number>
+        </property>
+        <property name="bottomMargin">
+         <number>2</number>
+        </property>
         <item>
          <widget class="QLabel" name="label_18">
           <property name="text">
@@ -1019,8 +1003,8 @@ QCheckBox::indicator:unchecked:disabled
         <widget class="QPushButton" name="saveButton">
          <property name="minimumSize">
           <size>
-           <width>0</width>
-           <height>32</height>
+           <width>80</width>
+           <height>48</height>
           </size>
          </property>
          <property name="maximumSize">

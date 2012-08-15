@@ -44,15 +44,6 @@ color: rgb(255, 0, 0);</string>
      <property name="selectionBehavior">
       <enum>QAbstractItemView::SelectRows</enum>
      </property>
-     <attribute name="horizontalHeaderStretchLastSection">
-      <bool>true</bool>
-     </attribute>
-     <column>
-      <property name="text">
-       <string>Alarm 
-DateTime</string>
-      </property>
-     </column>
      <column>
       <property name="text">
        <string>Alarm 
@@ -63,6 +54,12 @@ Number</string>
       <property name="text">
        <string>Alarm 
 Infomation</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Alarm 
+DateTime</string>
       </property>
      </column>
     </widget>

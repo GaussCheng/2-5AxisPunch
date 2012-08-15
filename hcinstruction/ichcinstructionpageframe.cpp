@@ -303,24 +303,6 @@ void ICHCInstructionPageFrame::InitSignal()
     connect(ui->aPlusBtn,
             SIGNAL(released()),
             SLOT(OnActionButtonReleased()));
-//    connect(this,
-//            SIGNAL(CurrentProgramChanged()),
-//            ICInstructParam::Instance(),
-//            SLOT(UpdateHostParam()));
-
-//    connect(MoldInformation::Instance(),
-//            SIGNAL(DeleteFile(QString)),
-//            this,
-//            SLOT(DeleteFile(QString)));
-//    connect(MoldInformation::Instance(),
-//            SIGNAL(NewFileCreated(QString)),
-//            this,
-//            SLOT(NewFileCreated(QString)));
-
-//    connect(ICInstructParam::Instance(),
-//            SIGNAL(HostParamChanged()),
-//            this,
-//            SLOT(UpdateHostParam()));
 }
 
 //void ICHCInstructionPageFrame::SelectCurrentStep(int currentStep)
@@ -531,6 +513,13 @@ void ICHCInstructionPageFrame::on_insertToolButton_clicked()
         return;
     }
     FindIndex_(index, gIndex, tIndex, sIndex);
+    if(programList_.at(gIndex).StepNum() == 0)
+    {
+        QMessageBox::warning(this,
+                             tr("Warning"),
+                             tr("Can not add standby position program"));
+        return;
+    }
     bool isParallel = false;
     bool isServo = false;
     if(flagsEditor != NULL)
@@ -729,6 +718,13 @@ void ICHCInstructionPageFrame::on_deleteToolButton_clicked()
     int tIndex;
     int sIndex;
     FindIndex_(currentRow, gIndex, tIndex, sIndex);
+    if(programList_.at(gIndex).StepNum() == 0)
+    {
+        QMessageBox::warning(this,
+                             tr("Warning"),
+                             tr("Can not delete standby position program"));
+        return;
+    }
     if(sIndex == -1)
     {
         if(programList_.at(gIndex).TopItemCount() == 1) //delete Group Item
@@ -861,6 +857,13 @@ void ICHCInstructionPageFrame::on_upButton_clicked()
         return;
     }
     FindIndex_(currentRow, gIndex, tIndex, sIndex);
+    if(programList_.at(gIndex).StepNum() == 1)
+    {
+        QMessageBox::warning(this,
+                             tr("Warning"),
+                             tr("Can not group up to standby position program"));
+        return;
+    }
     if(sIndex == -1)
     {
         if(gIndex == 0)
@@ -928,6 +931,13 @@ void ICHCInstructionPageFrame::on_downButton_clicked()
         return;
     }
     FindIndex_(currentRow, gIndex, tIndex, sIndex);
+    if(programList_.at(gIndex).StepNum() == 0)
+    {
+        QMessageBox::warning(this,
+                             tr("Warning"),
+                             tr("Can not decompose standby position program"));
+        return;
+    }
     if(sIndex == -1)
     {
         if(gIndex == 0 && tIndex == 0)// if is the first TopItem, do nothing

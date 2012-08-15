@@ -53,19 +53,6 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="yesBtn">
-       <property name="minimumSize">
-        <size>
-         <width>64</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Yes</string>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="QPushButton" name="noBtn">
        <property name="minimumSize">
         <size>
@@ -75,6 +62,19 @@
        </property>
        <property name="text">
         <string>No</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="yesBtn">
+       <property name="minimumSize">
+        <size>
+         <width>64</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Yes</string>
        </property>
       </widget>
      </item>
