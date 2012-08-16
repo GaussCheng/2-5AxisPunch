@@ -516,18 +516,18 @@ void ICMachineStructPage::on_saveToolButton_clicked()
 
 void ICMachineStructPage::InitInterface()
 {
-    QIntValidator * intValidator = new QIntValidator(0, 32767, this);
+    QIntValidator * intValidator = new QIntValidator(0, 65530, this);
     ui->mechanicalLengthLineEdit->SetDecimalPlaces(1);
     ui->mechanicalLengthLineEdit->setValidator(intValidator);
     ui->maximumDisplacementLineEdit->SetDecimalPlaces(1);
-    maxMoveValidator_ = new QIntValidator(0, 32767, this);
+    maxMoveValidator_ = new QIntValidator(0, 65530, this);
     ui->maximumDisplacementLineEdit->setValidator(maxMoveValidator_);
     ui->internalSecurityZoneLineEdit->SetDecimalPlaces(1);
     ui->internalSecurityZoneLineEdit->setValidator(intValidator);
     ui->externalSecurityZoneLineEdit->SetDecimalPlaces(1);
     ui->externalSecurityZoneLineEdit->setValidator(intValidator);
     ui->distanceRotationEdit->SetDecimalPlaces(2);
-    rotateValidator_ = new QIntValidator(0, 32767, this);
+    rotateValidator_ = new QIntValidator(0, 65530, this);
     ui->distanceRotationEdit->setValidator(rotateValidator_);
 }
 

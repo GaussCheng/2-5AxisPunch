@@ -169,11 +169,11 @@ void AxisSettingsFrame::SetCurrentAxis(QString currentAxisName, int axis)
 
 void AxisSettingsFrame::InitInterface()
 {
-    QIntValidator * intValidator = new QIntValidator(0, 32767, this);
+    QIntValidator * intValidator = new QIntValidator(0, 65530, this);
     ui->mechanicalLengthLineEdit->SetDecimalPlaces(1);
     ui->mechanicalLengthLineEdit->setValidator(intValidator);
     ui->maximumDisplacementLineEdit->SetDecimalPlaces(1);
-    maxMoveValidator_ = new QIntValidator(0, 32767, this);
+    maxMoveValidator_ = new QIntValidator(0, 65530, this);
     ui->maximumDisplacementLineEdit->setValidator(maxMoveValidator_);
     ui->internalSecurityZoneLineEdit->SetDecimalPlaces(1);
     ui->internalSecurityZoneLineEdit->setValidator(intValidator);

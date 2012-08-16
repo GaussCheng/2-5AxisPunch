@@ -56,12 +56,12 @@
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="58"/>
         <source>Delay(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>延时(s)</translation>
     </message>
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="71"/>
         <source>Speed(%)</source>
-        <translation type="unfinished"></translation>
+        <translation>速度(%)</translation>
     </message>
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="485"/>
@@ -81,12 +81,12 @@
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="775"/>
         <source>Vertical-2</source>
-        <translation type="unfinished"></translation>
+        <translation>垂直2</translation>
     </message>
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="780"/>
         <source>Horizon-2</source>
-        <translation type="unfinished"></translation>
+        <translation>水平2</translation>
     </message>
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="863"/>
@@ -96,12 +96,12 @@
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="901"/>
         <source>Vertical-3</source>
-        <translation type="unfinished">A轴原点 {3?}</translation>
+        <translation>垂直3</translation>
     </message>
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="906"/>
         <source>Horizon-3</source>
-        <translation type="unfinished"></translation>
+        <translation>水平3</translation>
     </message>
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="989"/>
@@ -111,12 +111,12 @@
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="1027"/>
         <source>Vertical-1</source>
-        <translation type="unfinished">A轴原点 {1?}</translation>
+        <translation>垂直1</translation>
     </message>
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="1032"/>
         <source>Horizon-1</source>
-        <translation type="unfinished"></translation>
+        <translation>水平1</translation>
     </message>
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="145"/>
@@ -1724,12 +1724,12 @@ Reason</source>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.ui" line="370"/>
         <source>Reserve</source>
-        <translation type="unfinished">预留</translation>
+        <translation>预留</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.ui" line="446"/>
         <source>Stack</source>
-        <translation type="unfinished"></translation>
+        <translation>堆叠</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.ui" line="522"/>
@@ -1868,7 +1868,7 @@ Reason</source>
         <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="863"/>
         <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="937"/>
         <source>Warning</source>
-        <translation type="unfinished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>Need to origin!</source>
@@ -1885,7 +1885,7 @@ Reason</source>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="520"/>
         <source>Can not add standby position program</source>
-        <translation type="unfinished"></translation>
+        <translation>不能添加待机点步骤</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="713"/>
@@ -1900,17 +1900,17 @@ Reason</source>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="725"/>
         <source>Can not delete standby position program</source>
-        <translation type="unfinished"></translation>
+        <translation>不能删除待机点步骤</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="864"/>
         <source>Can not group up to standby position program</source>
-        <translation type="unfinished"></translation>
+        <translation>不能组合待机点步骤</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="938"/>
         <source>Can not decompose standby position program</source>
-        <translation type="unfinished"></translation>
+        <translation>不能分解待机点步骤</translation>
     </message>
 </context>
 <context>
@@ -2201,17 +2201,17 @@ Reason</source>
     <message>
         <location filename="hcsettings/ichcproductsettingframe.ui" line="126"/>
         <source>Fixture</source>
-        <translation type="unfinished"></translation>
+        <translation>治具定义</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcproductsettingframe.ui" line="140"/>
         <source>Reversed Phase</source>
-        <translation type="unfinished">反相</translation>
+        <translation>反相</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcproductsettingframe.ui" line="145"/>
         <source>Positive Phase</source>
-        <translation type="unfinished">正相</translation>
+        <translation>正相</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcproductsettingframe.ui" line="49"/>
@@ -2495,17 +2495,22 @@ Reason</source>
     <message>
         <location filename="hcsettings/ichcstackedsettingsframe.ui" line="53"/>
         <source>Group-1</source>
-        <translation type="unfinished"></translation>
+        <translation>第1组</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcstackedsettingsframe.ui" line="87"/>
         <source>Group-2</source>
-        <translation type="unfinished"></translation>
+        <translation>第2组</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="118"/>
+        <source>Group-3</source>
+        <translation>第3组</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcstackedsettingsframe.ui" line="149"/>
         <source>Group-4</source>
-        <translation type="unfinished"></translation>
+        <translation>第4组</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcstackedsettingsframe.ui" line="572"/>
@@ -2937,7 +2942,7 @@ Reason</source>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.ui" line="229"/>
         <source>yyyy / MM  /  dd   hh : mm</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.ui" line="973"/>
@@ -3179,7 +3184,7 @@ Reason</source>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="381"/>
         <source>Backup files is incomplete!</source>
-        <translation type="unfinished"></translation>
+        <translation>备份文件不完整！</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="463"/>
@@ -3318,50 +3323,50 @@ Reason</source>
     <message>
         <location filename="ichostcomparepage.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>参数比较</translation>
     </message>
     <message>
         <location filename="ichostcomparepage.ui" line="23"/>
         <source>Host machine configure is different with HMI.</source>
-        <translation type="unfinished"></translation>
+        <translation>主板参数与手控参数不一致.</translation>
     </message>
     <message>
         <location filename="ichostcomparepage.ui" line="38"/>
         <source>Select Host</source>
-        <translation type="unfinished">选择主机参数</translation>
+        <translation>选择主板参数</translation>
     </message>
     <message>
         <location filename="ichostcomparepage.ui" line="51"/>
         <source>Select HMI</source>
-        <translation type="unfinished">选择手控参数</translation>
+        <translation>选择手控参数</translation>
     </message>
     <message>
         <location filename="ichostcomparepage.cpp" line="35"/>
         <location filename="ichostcomparepage.cpp" line="84"/>
         <source>Warning</source>
-        <translation type="unfinished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <location filename="ichostcomparepage.cpp" line="36"/>
         <source>Do you really want to check out all the host machine configures?</source>
-        <translation type="unfinished"></translation>
+        <translation>确定全部选择主机参数吗?</translation>
     </message>
     <message>
         <location filename="ichostcomparepage.cpp" line="72"/>
         <location filename="ichostcomparepage.cpp" line="114"/>
         <source>Critical</source>
-        <translation type="unfinished"></translation>
+        <translation>错误</translation>
     </message>
     <message>
         <location filename="ichostcomparepage.cpp" line="73"/>
         <location filename="ichostcomparepage.cpp" line="115"/>
         <source>Operator fail! Please reboot system</source>
-        <translation type="unfinished"></translation>
+        <translation>操作失败!请重启系统</translation>
     </message>
     <message>
         <location filename="ichostcomparepage.cpp" line="85"/>
         <source>Do you really want to rewrite all the machine configures to host?</source>
-        <translation type="unfinished"></translation>
+        <translation>确定全部选择手控参数吗?</translation>
     </message>
 </context>
 <context>
@@ -3607,12 +3612,12 @@ Reason</source>
     <message>
         <location filename="ickeyboard/ickeyboardhandler.cpp" line="123"/>
         <source>Warning</source>
-        <translation type="unfinished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <location filename="ickeyboard/ickeyboardhandler.cpp" line="123"/>
         <source>Need to origin!</source>
-        <translation type="unfinished">还没原点复归！</translation>
+        <translation>还没原点复归！</translation>
     </message>
 </context>
 <context>
@@ -4048,7 +4053,7 @@ Please enter an digit between </source>
         <location filename="categorypage/icmonitorpageframe.cpp" line="42"/>
         <source>Vertical-1</source>
         <oldsource>Vertical</oldsource>
-        <translation>C轴原点</translation>
+        <translation>垂直1限</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="43"/>
@@ -4059,6 +4064,32 @@ Please enter an digit between </source>
         <location filename="categorypage/icmonitorpageframe.cpp" line="44"/>
         <source>Fixture2</source>
         <translation>夹2确认限</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="56"/>
+        <source>Reserve</source>
+        <translation>预留</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="59"/>
+        <source>X2 In Limit</source>
+        <translation>X2轴起点极限</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="60"/>
+        <source>X2 Origin</source>
+        <translation>X2轴原点</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="61"/>
+        <source>Y2 Origin</source>
+        <translation>Y2轴原点</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="62"/>
+        <source>Y2 In Limit</source>
+        <oldsource>Y2 Out Limit</oldsource>
+        <translation>Y2轴起点极限</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="63"/>
@@ -4073,18 +4104,21 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="47"/>
-        <source>X Out Limit</source>
-        <translation>X轴终点极限</translation>
+        <source>X1 Out Limit</source>
+        <oldsource>X Out Limit</oldsource>
+        <translation>X1轴终点极限</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="48"/>
-        <source>X In Limit</source>
-        <translation>X轴起点极限</translation>
+        <source>X1 In Limit</source>
+        <oldsource>X In Limit</oldsource>
+        <translation>X1轴起点极限</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="50"/>
-        <source>X Origin</source>
-        <translation>X轴原点</translation>
+        <source>X1 Origin</source>
+        <oldsource>X Origin</oldsource>
+        <translation>X1轴原点</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="51"/>
@@ -4093,8 +4127,9 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="52"/>
-        <source>Y In Limit</source>
-        <translation>Y轴起点极限</translation>
+        <source>Y1 In Limit</source>
+        <oldsource>Y In Limit</oldsource>
+        <translation>Y1轴起点极限</translation>
     </message>
     <message>
         <source>Spare1</source>
@@ -4111,9 +4146,8 @@ Please enter an digit between </source>
         <translation>Z轴原点</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="56"/>
         <source>In Safe Area</source>
-        <translation>型内安全区</translation>
+        <translation type="obsolete">型内安全区</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="57"/>
@@ -4121,47 +4155,42 @@ Please enter an digit between </source>
         <translation>气压检测</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="59"/>
         <source>Vice Forward</source>
-        <translation>副前进限</translation>
+        <translation type="obsolete">副前进限</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="60"/>
         <source>Vice Backward</source>
-        <translation>X2轴原点</translation>
+        <translation type="obsolete">X2轴原点</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="61"/>
         <source>Vice Up</source>
-        <translation>Y2轴原点</translation>
+        <translation type="obsolete">Y2轴原点</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="62"/>
         <source>Vice Down</source>
-        <translation>副下降限</translation>
+        <translation type="obsolete">副下降限</translation>
     </message>
     <message>
         <source>Fixture5</source>
         <translation type="obsolete">吸1确认限</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="64"/>
         <source>Main Up</source>
-        <translation>Y轴原点</translation>
+        <translation type="obsolete">Y轴原点</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="65"/>
-        <source>Y Out Limit</source>
-        <translation>Y轴终点极限</translation>
+        <source>Y1 Out Limit</source>
+        <oldsource>Y Out Limit</oldsource>
+        <translation>Y1轴终点极限</translation>
     </message>
     <message>
         <source>Main Mid</source>
         <translation type="obsolete">备用输入3</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="68"/>
         <source>Mid Mold</source>
-        <translation>备用输入4</translation>
+        <translation type="obsolete">备用输入4</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="69"/>
@@ -4199,24 +4228,46 @@ Please enter an digit between </source>
         <translation>备用输入9</translation>
     </message>
     <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="77"/>
+        <source>X1 Servo Alarm</source>
+        <oldsource>X Servo Alarm</oldsource>
+        <translation>X1轴伺服报警</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="78"/>
+        <source>Y1 Servo Alarm</source>
+        <oldsource>Y Servo Alarm</oldsource>
+        <translation>Y1轴伺服报警</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="79"/>
+        <source>Z Servo Alarm</source>
+        <translation>Z轴伺服报警</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="80"/>
+        <source>X2 Servo Alarm</source>
+        <translation>X2轴伺服报警</translation>
+    </message>
+    <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="81"/>
         <source>Y2 Servo Alarm</source>
-        <translation type="unfinished"></translation>
+        <translation>Y2轴伺服报警</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="82"/>
         <source>A Servo Alarm</source>
-        <translation type="unfinished"></translation>
+        <translation>A轴伺服报警</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="83"/>
         <source>B Servo Alarm</source>
-        <translation type="unfinished"></translation>
+        <translation>B轴伺服报警</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="84"/>
         <source>C Servo Alarm</source>
-        <translation type="unfinished"></translation>
+        <translation>C轴伺服报警</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="85"/>
@@ -4252,6 +4303,11 @@ Please enter an digit between </source>
         <translation>水平2阀</translation>
     </message>
     <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="110"/>
+        <source>Run LED</source>
+        <translation>运行指示灯</translation>
+    </message>
+    <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="113"/>
         <source>Fixture3 Valve</source>
         <oldsource>Fixture6 Valve</oldsource>
@@ -4264,33 +4320,31 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="53"/>
-        <source>Vertical-2</source>
-        <translation>A轴原点</translation>
+        <source>A Origin/Vertical-2</source>
+        <oldsource>Vertical-2</oldsource>
+        <translation>A轴原点/垂直2限</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="66"/>
         <source>Horizontal-2</source>
+        <oldsource>Y2 In Limit/Horizontal-2</oldsource>
         <translation>水平2限</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="77"/>
         <source>X2 Begin Limit</source>
-        <translation>X2轴起点极限</translation>
+        <translation type="obsolete">X2轴起点极限</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="78"/>
         <source>X2 End Limit</source>
-        <translation>X2轴终点极限</translation>
+        <translation type="obsolete">X2轴终点极限</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="79"/>
         <source>Y2 Begin Limit</source>
-        <translation>Y2轴起点极限</translation>
+        <translation type="obsolete">Y2轴起点极限</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="80"/>
         <source>Y2 End Limit</source>
-        <translation>Y2轴终点极限</translation>
+        <translation type="obsolete">Y2轴终点极限</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="97"/>
@@ -4316,14 +4370,15 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="102"/>
-        <source>Main Up Valve</source>
-        <translation>备用输出1</translation>
+        <source>Main Up Valve/EX-1</source>
+        <oldsource>Main Up Valve</oldsource>
+        <translation>主上升阀/扩展1</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="103"/>
-        <source>Main Down Valve</source>
-        <oldsource>Main Down</oldsource>
-        <translation>备用输出2</translation>
+        <source>Main Down Valve/EX-2</source>
+        <oldsource>Main Down Valve</oldsource>
+        <translation>主下降阀/扩展2</translation>
     </message>
     <message>
         <source>Main Slow Dwon</source>
@@ -4350,19 +4405,20 @@ Please enter an digit between </source>
         <translation>副前进阀</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="110"/>
         <source>Vice Backward Valve</source>
-        <translation>副后退阀</translation>
+        <translation type="obsolete">副后退阀</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="111"/>
-        <source>Vice Up Valve</source>
-        <translation>副上升阀</translation>
+        <source>Vice Up Valve/EX-3</source>
+        <oldsource>Vice Up Valve</oldsource>
+        <translation>副上升阀/扩展3</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="112"/>
-        <source>Vice Down Valve</source>
-        <translation>副下降阀</translation>
+        <source>Vice Down Valve/EX-4</source>
+        <oldsource>Vice Down Valve</oldsource>
+        <translation>副下降阀/扩展4</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="96"/>
@@ -4371,14 +4427,26 @@ Please enter an digit between </source>
         <translation>吸1阀</translation>
     </message>
     <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="64"/>
+        <source>Y1 Origin</source>
+        <translation>Y1轴原点</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="68"/>
+        <source>B Origin</source>
+        <translation>B轴原点</translation>
+    </message>
+    <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="114"/>
-        <source>Go Out</source>
-        <translation>备用输出6</translation>
+        <source>Go Out/EX-6</source>
+        <oldsource>Go Out</oldsource>
+        <translation>横出阀/扩展6</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="115"/>
-        <source>Come In</source>
-        <translation>备用输出7</translation>
+        <source>Come In/EX-5</source>
+        <oldsource>Come In</oldsource>
+        <translation>横入阀/扩展5</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="116"/>
@@ -4598,7 +4666,7 @@ Please enter an digit between </source>
     <message>
         <location filename="icorigindialog.ui" line="38"/>
         <source>Stop</source>
-        <translation type="unfinished">停止</translation>
+        <translation>停止</translation>
     </message>
     <message>
         <location filename="icorigindialog.ui" line="77"/>
@@ -4663,7 +4731,7 @@ Please enter an digit between </source>
     <message>
         <location filename="hcinstruction/icperipherypage.ui" line="20"/>
         <source>Periphery Action</source>
-        <translation type="unfinished"></translation>
+        <translation>辅助设备</translation>
     </message>
     <message>
         <location filename="hcinstruction/icperipherypage.ui" line="120"/>
@@ -4678,7 +4746,7 @@ Please enter an digit between </source>
     <message>
         <location filename="hcinstruction/icperipherypage.ui" line="133"/>
         <source>Action Time/Times</source>
-        <translation>动作时间/间隔模数</translation>
+        <translation>时间    间隔模数</translation>
     </message>
     <message>
         <source>Delay/Times</source>
@@ -4780,52 +4848,52 @@ Please enter an digit between </source>
     <message>
         <location filename="hcinstruction/icpneumaticactionpage.ui" line="20"/>
         <source>Reserve Action</source>
-        <translation type="unfinished"></translation>
+        <translation>预留</translation>
     </message>
     <message>
         <location filename="hcinstruction/icpneumaticactionpage.ui" line="110"/>
         <source>Reserve1</source>
-        <translation type="unfinished">预留1</translation>
+        <translation>预留1</translation>
     </message>
     <message>
         <location filename="hcinstruction/icpneumaticactionpage.ui" line="115"/>
         <source>Reserve2</source>
-        <translation type="unfinished">预留2</translation>
+        <translation>预留2</translation>
     </message>
     <message>
         <location filename="hcinstruction/icpneumaticactionpage.ui" line="120"/>
         <source>Reserve3</source>
-        <translation type="unfinished">预留3</translation>
+        <translation>预留3</translation>
     </message>
     <message>
         <location filename="hcinstruction/icpneumaticactionpage.ui" line="125"/>
         <source>Reserve4</source>
-        <translation type="unfinished">预留4</translation>
+        <translation>预留4</translation>
     </message>
     <message>
         <location filename="hcinstruction/icpneumaticactionpage.ui" line="130"/>
         <source>Reserve5</source>
-        <translation type="unfinished">预留5</translation>
+        <translation>预留5</translation>
     </message>
     <message>
         <location filename="hcinstruction/icpneumaticactionpage.ui" line="135"/>
         <source>Reserve6</source>
-        <translation type="unfinished">预留6</translation>
+        <translation>预留6</translation>
     </message>
     <message>
         <location filename="hcinstruction/icpneumaticactionpage.ui" line="140"/>
         <source>En</source>
-        <translation type="unfinished">使能</translation>
+        <translation>使能</translation>
     </message>
     <message>
         <location filename="hcinstruction/icpneumaticactionpage.ui" line="148"/>
         <source>Current/Setting</source>
-        <translation type="unfinished">当前设定</translation>
+        <translation>当前设定</translation>
     </message>
     <message>
         <location filename="hcinstruction/icpneumaticactionpage.ui" line="153"/>
         <source>Delay/Times</source>
-        <translation type="unfinished">延时/间隔模数</translation>
+        <translation>延时    间隔模数</translation>
     </message>
     <message>
         <source>Set</source>
@@ -4870,32 +4938,32 @@ Please enter an digit between </source>
     <message>
         <location filename="hcinstruction/icpneumaticactionpage.cpp" line="21"/>
         <source>Reserve1  </source>
-        <translation type="unfinished">预留1</translation>
+        <translation>预留1</translation>
     </message>
     <message>
         <location filename="hcinstruction/icpneumaticactionpage.cpp" line="21"/>
         <source>Reserve2  </source>
-        <translation type="unfinished">预留2</translation>
+        <translation>预留2</translation>
     </message>
     <message>
         <location filename="hcinstruction/icpneumaticactionpage.cpp" line="22"/>
         <source>Reserve3  </source>
-        <translation type="unfinished">预留3</translation>
+        <translation>预留3</translation>
     </message>
     <message>
         <location filename="hcinstruction/icpneumaticactionpage.cpp" line="22"/>
         <source>Reserve4  </source>
-        <translation type="unfinished">预留4</translation>
+        <translation>预留4</translation>
     </message>
     <message>
         <location filename="hcinstruction/icpneumaticactionpage.cpp" line="22"/>
         <source>Reserve5  </source>
-        <translation type="unfinished">预留5</translation>
+        <translation>预留5</translation>
     </message>
     <message>
         <location filename="hcinstruction/icpneumaticactionpage.cpp" line="22"/>
         <source>Reserve6  </source>
-        <translation type="unfinished">预留6</translation>
+        <translation>预留6</translation>
     </message>
 </context>
 <context>
@@ -5020,7 +5088,7 @@ Please enter an digit between </source>
     <message>
         <location filename="icreturnpage.ui" line="39"/>
         <source>Stop</source>
-        <translation type="unfinished">停止</translation>
+        <translation>停止</translation>
     </message>
     <message>
         <location filename="icreturnpage.cpp" line="22"/>
@@ -5086,32 +5154,32 @@ Please enter an digit between </source>
     <message>
         <location filename="hcinstruction/icstackeditor.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished">组合动作选择</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icstackeditor.ui" line="35"/>
         <source>Seq</source>
-        <translation type="unfinished"></translation>
+        <translation>顺序</translation>
     </message>
     <message>
         <location filename="hcinstruction/icstackeditor.ui" line="50"/>
         <source>S:</source>
-        <translation type="unfinished"></translation>
+        <translation>轴:</translation>
     </message>
     <message>
         <location filename="hcinstruction/icstackeditor.ui" line="66"/>
         <source>Pos</source>
-        <translation type="unfinished">姿势</translation>
+        <translation>方向</translation>
     </message>
     <message>
         <location filename="hcinstruction/icstackeditor.ui" line="82"/>
         <source>Num</source>
-        <translation type="unfinished">步号</translation>
+        <translation>个数</translation>
     </message>
     <message>
         <location filename="hcinstruction/icstackeditor.ui" line="98"/>
         <source>Step</source>
-        <translation type="unfinished"></translation>
+        <translation>间距</translation>
     </message>
     <message>
         <location filename="hcinstruction/icstackeditor.ui" line="118"/>
@@ -5119,12 +5187,12 @@ Please enter an digit between </source>
         <location filename="hcinstruction/icstackeditor.ui" line="497"/>
         <location filename="hcinstruction/icstackeditor.ui" line="691"/>
         <source>X:</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icstackeditor.ui" line="191"/>
         <source>Group-1</source>
-        <translation type="unfinished"></translation>
+        <translation>第1组</translation>
     </message>
     <message>
         <location filename="hcinstruction/icstackeditor.ui" line="209"/>
@@ -5132,7 +5200,7 @@ Please enter an digit between </source>
         <location filename="hcinstruction/icstackeditor.ui" line="597"/>
         <location filename="hcinstruction/icstackeditor.ui" line="738"/>
         <source>Y:</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icstackeditor.ui" line="256"/>
@@ -5140,56 +5208,56 @@ Please enter an digit between </source>
         <location filename="hcinstruction/icstackeditor.ui" line="644"/>
         <location filename="hcinstruction/icstackeditor.ui" line="785"/>
         <source>Z:</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icstackeditor.ui" line="385"/>
         <source>Group-2</source>
-        <translation type="unfinished"></translation>
+        <translation>第2组</translation>
     </message>
     <message>
         <location filename="hcinstruction/icstackeditor.ui" line="579"/>
         <source>Group-3</source>
-        <translation type="unfinished"></translation>
+        <translation>第3组</translation>
     </message>
     <message>
         <location filename="hcinstruction/icstackeditor.ui" line="870"/>
         <source>Group-4</source>
-        <translation type="unfinished"></translation>
+        <translation>第4组</translation>
     </message>
     <message>
         <location filename="hcinstruction/icstackeditor.cpp" line="111"/>
         <source>X-&gt;Z-&gt;Y</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icstackeditor.cpp" line="116"/>
         <source>Z-&gt;X-&gt;Y</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icstackeditor.cpp" line="121"/>
         <source>Y-&gt;X-&gt;Z</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icstackeditor.cpp" line="126"/>
         <source>Y-&gt;Z-&gt;X</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icstackeditor.cpp" line="131"/>
         <location filename="hcinstruction/icstackeditor.cpp" line="137"/>
         <location filename="hcinstruction/icstackeditor.cpp" line="143"/>
         <source>RP</source>
-        <translation type="unfinished"></translation>
+        <translation>反向</translation>
     </message>
     <message>
         <location filename="hcinstruction/icstackeditor.cpp" line="131"/>
         <location filename="hcinstruction/icstackeditor.cpp" line="137"/>
         <location filename="hcinstruction/icstackeditor.cpp" line="143"/>
         <source>P</source>
-        <translation type="unfinished"></translation>
+        <translation>正向</translation>
     </message>
 </context>
 <context>
@@ -6860,12 +6928,7 @@ Please try a new name</source>
         <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="379"/>
         <source>7</source>
         <oldsource>/</oldsource>
-        <translation type="unfinished">0.0小时 {7?}</translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="379"/>
-        <source>7</source>
-        <translation></translation>
+        <translation>7</translation>
     </message>
     <message>
         <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="413"/>
@@ -6936,26 +6999,21 @@ Please try a new name</source>
         <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="889"/>
         <source>Z</source>
         <oldsource>;</oldsource>
-        <translation type="unfinished">Z轴</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1405"/>
         <source>(</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1439"/>
         <source>)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="855"/>
         <source>3</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="889"/>
-        <source>Z</source>
         <translation></translation>
     </message>
     <message>
@@ -6987,13 +7045,13 @@ Please try a new name</source>
         <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1161"/>
         <source>4</source>
         <oldsource>.</oldsource>
-        <translation type="unfinished">0.0小时 {4?}</translation>
+        <translation>4</translation>
     </message>
     <message>
         <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1195"/>
         <source>U</source>
         <oldsource>,</oldsource>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1093"/>
@@ -7003,16 +7061,6 @@ Please try a new name</source>
     <message>
         <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1127"/>
         <source>K</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1161"/>
-        <source>4</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1195"/>
-        <source>U</source>
         <translation></translation>
     </message>
     <message>

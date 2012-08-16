@@ -48,7 +48,7 @@ void ActionSettingFrame::changeEvent(QEvent *e)
 
 void ActionSettingFrame::InitInterface()
 {
-    QIntValidator * validator = new QIntValidator(0, 32767, this);
+    QIntValidator * validator = new QIntValidator(0, 65530, this);
 
     ui->x1DelayLineEdit->SetDecimalPlaces(2);
     ui->x1DelayLineEdit->setValidator(validator);
@@ -224,7 +224,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
 {
     QList<ICMoldItem> ret;
     ICMoldItem item;
-    if(ui->gxButton->isChecked())
+    if(ui->gxButton->isChecked() && (!ui->gxButton->isHidden()))
     {
         //        if(ui->gxComboBox->currentIndex() == 0)
         //        {
@@ -249,7 +249,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         item.SetIFPos(0);
         ret.append(item);
     }
-    if(ui->gyButton->isChecked())
+    if(ui->gyButton->isChecked() && (!ui->gyButton->isHidden()))
     {
         if(ui->y1Box->isHidden())
         {
@@ -266,7 +266,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         item.SetIFPos(0);
         ret.append(item);
     }
-    if(ui->gzButton->isChecked())
+    if(ui->gzButton->isChecked() && (!ui->gzButton->isHidden()))
     {
         if(ui->zBox->isHidden())
         {
@@ -285,7 +285,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
     }
 
 #ifdef HC_8AXIS
-    if(ui->gPButton->isChecked())
+    if(ui->gPButton->isChecked() && (!ui->gPButton->isHidden()))
     {
         if(ui->x2Box->isHidden())
         {
@@ -302,7 +302,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         item.SetIFPos(0);
         ret.append(item);
     }
-    if(ui->gQButton->isChecked())
+    if(ui->gQButton->isChecked() && (!ui->gQButton->isHidden()))
     {
         if(ui->y2Box->isHidden())
         {
@@ -319,7 +319,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         item.SetIFPos(0);
         ret.append(item);
     }
-    if(ui->gAButton->isChecked())
+    if(ui->gAButton->isChecked() && (!ui->gAButton->isHidden()))
     {
         if(ui->aBox->isHidden())
         {
@@ -336,7 +336,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         item.SetIFPos(0);
         ret.append(item);
     }
-    if(ui->gBButton->isChecked())
+    if(ui->gBButton->isChecked() && (!ui->gBButton->isHidden()))
     {
         item.SetAction(ICMold::GB);
         item.SetPos(ui->bPosLineEdit->TransThisTextToThisInt());
@@ -346,7 +346,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         item.SetIFPos(0);
         ret.append(item);
     }
-    if(ui->gCButton->isChecked())
+    if(ui->gCButton->isChecked() && (!ui->gCButton->isHidden()))
     {
         if(ui->cBox->isHidden())
         {

@@ -44,28 +44,28 @@ void ICMonitorPageFrame::Init_()
     points.append(ICIOPoint("X013", tr("Fixture2"), 3));
     points.append(ICIOPoint("X014", tr("Sucker2"), 4));
     points.append(ICIOPoint("X015", tr("Sucker1"), 5));
-    points.append(ICIOPoint("X016", tr("X Out Limit"), 6));
-    points.append(ICIOPoint("X017", tr("X In Limit"), 7));
+    points.append(ICIOPoint("X016", tr("X1 Out Limit"), 6));
+    points.append(ICIOPoint("X017", tr("X1 In Limit"), 7));
 
-    points.append(ICIOPoint("X020", tr("X Origin"), 8));
+    points.append(ICIOPoint("X020", tr("X1 Origin"), 8));
     points.append(ICIOPoint("X021", tr("Fixture4"), 9));
-    points.append(ICIOPoint("X022", tr("Y In Limit"), 10));
-    points.append(ICIOPoint("X023", tr("Vertical-2"), 11));
+    points.append(ICIOPoint("X022", tr("Y1 In Limit"), 10));
+    points.append(ICIOPoint("X023", tr("A Origin/Vertical-2"), 11));
     points.append(ICIOPoint("X024", tr("Out Safe Area"), 12));
     points.append(ICIOPoint("X025", tr("Come In Origin"), 13));
-    points.append(ICIOPoint("X026", tr("In Safe Area"), 14));
+    points.append(ICIOPoint("X026", tr("Reserve"), 14));
     points.append(ICIOPoint("X027", tr("Pressure"), 15));
 
-    points.append(ICIOPoint("X030", tr("Vice Forward"), 16));
-    points.append(ICIOPoint("X031", tr("Vice Backward"), 17));
-    points.append(ICIOPoint("X032", tr("Vice Up"), 18));
-    points.append(ICIOPoint("X033", tr("Vice Down"), 19));
+    points.append(ICIOPoint("X030", tr("X2 In Limit"), 16));
+    points.append(ICIOPoint("X031", tr("X2 Origin"), 17));
+    points.append(ICIOPoint("X032", tr("Y2 Origin"), 18));
+    points.append(ICIOPoint("X033", tr("Y2 In Limit"), 19));
     points.append(ICIOPoint("X034", tr("Fixture3"), 20));
-    points.append(ICIOPoint("X035", tr("Main Up"), 21));
-    points.append(ICIOPoint("X036", tr("Y Out Limit"), 22));
+    points.append(ICIOPoint("X035", tr("Y1 Origin"), 21));
+    points.append(ICIOPoint("X036", tr("Y1 Out Limit"), 22));
     points.append(ICIOPoint("X037", tr("Horizontal-2"), 23));
 
-    points.append(ICIOPoint("X040", tr("Mid Mold"), 24));
+    points.append(ICIOPoint("X040", tr("B Origin"), 24));
     points.append(ICIOPoint("X041", tr("Z In Limit"), 25));
     points.append(ICIOPoint("X042", tr("Z Out Limit"), 26));
     points.append(ICIOPoint("X043", tr("Check In0"), 27));
@@ -74,10 +74,10 @@ void ICMonitorPageFrame::Init_()
     points.append(ICIOPoint("X046", tr("Next Cycle App"), 30));
     points.append(ICIOPoint("X047", tr("Mold Close App"), 31));
 
-    points.append(ICIOPoint("X050", tr("X2 Begin Limit"), 48));
-    points.append(ICIOPoint("X051", tr("X2 End Limit"), 49));
-    points.append(ICIOPoint("X052", tr("Y2 Begin Limit"), 50));
-    points.append(ICIOPoint("X053", tr("Y2 End Limit"), 51));
+    points.append(ICIOPoint("X050", tr("X1 Servo Alarm"), 48));
+    points.append(ICIOPoint("X051", tr("Y1 Servo Alarm"), 49));
+    points.append(ICIOPoint("X052", tr("Z Servo Alarm"), 50));
+    points.append(ICIOPoint("X053", tr("X2 Servo Alarm"), 51));
     points.append(ICIOPoint("X054", tr("Y2 Servo Alarm"), 52));
     points.append(ICIOPoint("X055", tr("A Servo Alarm"), 53));
     points.append(ICIOPoint("X056", tr("B Servo Alarm"), 54));
@@ -99,20 +99,20 @@ void ICMonitorPageFrame::Init_()
 
     points.append(ICIOPoint("Y020", tr("Fixture4 Valve"), 8));
     points.append(ICIOPoint("Y021", tr("Alarm"), 9));
-    points.append(ICIOPoint("Y022", tr("Main Up Valve"), 10));//1
-    points.append(ICIOPoint("Y023", tr("Main Down Valve"), 11));//2
+    points.append(ICIOPoint("Y022", tr("Main Up Valve/EX-1"), 10));//1
+    points.append(ICIOPoint("Y023", tr("Main Down Valve/EX-2"), 11));//2
     points.append(ICIOPoint("Y024", tr("Horizontal-2 Valve"), 12));
     points.append(ICIOPoint("Y025", tr("Paint Oil"), 13));
     points.append(ICIOPoint("Y026", tr("Next Cycle Sp"), 14));
     points.append(ICIOPoint("Y027", tr("Mold Close Sp"), 15));
 
     points.append(ICIOPoint("Y030", tr("Vice Forward Valve"), 16));
-    points.append(ICIOPoint("Y031", tr("Vice Backward Valve"), 17));
-    points.append(ICIOPoint("Y032", tr("Vice Up Valve"), 18));
-    points.append(ICIOPoint("Y033", tr("Vice Down Valve"), 19));
+    points.append(ICIOPoint("Y031", tr("Run LED"), 17));
+    points.append(ICIOPoint("Y032", tr("Vice Up Valve/EX-3"), 18));
+    points.append(ICIOPoint("Y033", tr("Vice Down Valve/EX-4"), 19));
     points.append(ICIOPoint("Y034", tr("Fixture3 Valve"), 20));
-    points.append(ICIOPoint("Y035", tr("Go Out"), 21));//4
-    points.append(ICIOPoint("Y036", tr("Come In"), 22));//3
+    points.append(ICIOPoint("Y035", tr("Go Out/EX-6"), 21));//4
+    points.append(ICIOPoint("Y036", tr("Come In/EX-5"), 22));//3
     points.append(ICIOPoint("Y037", tr("Transport"), 23));
 //#ifdef HC_8AXIS
 //    points.append(ICIOPoint("Y022", tr("Reserve 1"), 10));//1

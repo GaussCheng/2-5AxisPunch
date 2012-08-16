@@ -86,7 +86,7 @@ void ICIOPage::BindingIOPoints(const QList<ICIOPoint> &points)
             }
             nums->setFixedWidth(50);
             descr->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-            descr->setFixedWidth(110);
+            descr->setFixedWidth(135);
 
             itemLayout_->addWidget(nums);
             itemLayout_->addWidget(descr);

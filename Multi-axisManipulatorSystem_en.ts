@@ -1879,6 +1879,11 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="118"/>
+        <source>Group-3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="hcsettings/ichcstackedsettingsframe.ui" line="166"/>
         <source>Sequence</source>
         <translation type="unfinished"></translation>
@@ -3263,17 +3268,20 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="47"/>
-        <source>X Out Limit</source>
+        <source>X1 Out Limit</source>
+        <oldsource>X Out Limit</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="48"/>
-        <source>X In Limit</source>
+        <source>X1 In Limit</source>
+        <oldsource>X In Limit</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="50"/>
-        <source>X Origin</source>
+        <source>X1 Origin</source>
+        <oldsource>X Origin</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3283,7 +3291,8 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="52"/>
-        <source>Y In Limit</source>
+        <source>Y1 In Limit</source>
+        <oldsource>Y In Limit</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3297,33 +3306,8 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="56"/>
-        <source>In Safe Area</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="57"/>
         <source>Pressure</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="59"/>
-        <source>Vice Forward</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="60"/>
-        <source>Vice Backward</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="61"/>
-        <source>Vice Up</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="62"/>
-        <source>Vice Down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3331,23 +3315,15 @@ Please enter an digit between </source>
         <translation type="obsolete">Sucker2 {5?}</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="64"/>
-        <source>Main Up</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="65"/>
-        <source>Y Out Limit</source>
+        <source>Y1 Out Limit</source>
+        <oldsource>Y Out Limit</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="66"/>
         <source>Horizontal-2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="68"/>
-        <source>Mid Mold</source>
+        <oldsource>Y2 In Limit/Horizontal-2</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3383,26 +3359,6 @@ Please enter an digit between </source>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="75"/>
         <source>Mold Close App</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="77"/>
-        <source>X2 Begin Limit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="78"/>
-        <source>X2 End Limit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="79"/>
-        <source>Y2 Begin Limit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="80"/>
-        <source>Y2 End Limit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3459,6 +3415,11 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="110"/>
+        <source>Run LED</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="113"/>
         <source>Fixture3 Valve</source>
         <oldsource>Fixture6 Valve</oldsource>
@@ -3467,6 +3428,70 @@ Please enter an digit between </source>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="95"/>
         <source>Sucker2 Valve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="56"/>
+        <source>Reserve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="59"/>
+        <source>X2 In Limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="59"/>
+        <source>X2 In Limit</source>
+        <oldsource>X2 Out Limit</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="60"/>
+        <source>X2 Origin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="61"/>
+        <source>Y2 Origin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="62"/>
+        <source>Y2 In Limit</source>
+        <oldsource>Y2 Out Limit</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="64"/>
+        <source>Y1 Origin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="68"/>
+        <source>B Origin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="77"/>
+        <source>X1 Servo Alarm</source>
+        <oldsource>X Servo Alarm</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="78"/>
+        <source>Y1 Servo Alarm</source>
+        <oldsource>Y Servo Alarm</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="79"/>
+        <source>Z Servo Alarm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="80"/>
+        <source>X2 Servo Alarm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3493,13 +3518,14 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="102"/>
-        <source>Main Up Valve</source>
+        <source>Main Up Valve/EX-1</source>
+        <oldsource>Main Up Valve</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="103"/>
-        <source>Main Down Valve</source>
-        <oldsource>Main Down</oldsource>
+        <source>Main Down Valve/EX-2</source>
+        <oldsource>Main Down Valve</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3523,18 +3549,14 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="110"/>
-        <source>Vice Backward Valve</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="111"/>
-        <source>Vice Up Valve</source>
+        <source>Vice Up Valve/EX-3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="112"/>
-        <source>Vice Down Valve</source>
+        <source>Vice Down Valve/EX-4</source>
+        <oldsource>Vice Down Valve</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3545,17 +3567,20 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="53"/>
-        <source>Vertical-2</source>
+        <source>A Origin/Vertical-2</source>
+        <oldsource>Vertical-2</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="114"/>
-        <source>Go Out</source>
+        <source>Go Out/EX-6</source>
+        <oldsource>Go Out</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="115"/>
-        <source>Come In</source>
+        <source>Come In/EX-5</source>
+        <oldsource>Come In</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5504,11 +5529,6 @@ Please try a new name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="379"/>
-        <source>7</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="413"/>
         <source>A</source>
         <translation type="unfinished"></translation>
@@ -5595,11 +5615,6 @@ Please try a new name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="889"/>
-        <source>Z</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="923"/>
         <source>M</source>
         <translation type="unfinished"></translation>
@@ -5644,16 +5659,6 @@ Please try a new name</source>
     <message>
         <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1127"/>
         <source>K</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1161"/>
-        <source>4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1195"/>
-        <source>U</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
