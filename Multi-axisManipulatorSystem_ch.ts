@@ -4350,7 +4350,7 @@ Please enter an digit between </source>
         <location filename="categorypage/icmonitorpageframe.cpp" line="97"/>
         <source>Main Forward Valve</source>
         <oldsource>Main Forward</oldsource>
-        <translation>主前进阀</translation>
+        <translation>备用输出6</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="98"/>
@@ -4372,13 +4372,13 @@ Please enter an digit between </source>
         <location filename="categorypage/icmonitorpageframe.cpp" line="102"/>
         <source>Main Up Valve/EX-1</source>
         <oldsource>Main Up Valve</oldsource>
-        <translation>主上升阀/扩展1</translation>
+        <translation>扩展1</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="103"/>
         <source>Main Down Valve/EX-2</source>
         <oldsource>Main Down Valve</oldsource>
-        <translation>主下降阀/扩展2</translation>
+        <translation>扩展2</translation>
     </message>
     <message>
         <source>Main Slow Dwon</source>
@@ -4412,7 +4412,7 @@ Please enter an digit between </source>
         <location filename="categorypage/icmonitorpageframe.cpp" line="111"/>
         <source>Vice Up Valve/EX-3</source>
         <oldsource>Vice Up Valve</oldsource>
-        <translation>副上升阀/扩展3</translation>
+        <translation>扩展3</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="112"/>
@@ -4440,13 +4440,13 @@ Please enter an digit between </source>
         <location filename="categorypage/icmonitorpageframe.cpp" line="114"/>
         <source>Go Out/EX-6</source>
         <oldsource>Go Out</oldsource>
-        <translation>横出阀/扩展6</translation>
+        <translation>扩展6</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="115"/>
         <source>Come In/EX-5</source>
         <oldsource>Come In</oldsource>
-        <translation>横入阀/扩展5</translation>
+        <translation>扩展5</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="116"/>
@@ -6483,13 +6483,15 @@ Please try a new name</source>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="219"/>
-        <source>Horizontal posture</source>
-        <translation>姿势水平</translation>
+        <source>Horizontal posture 1</source>
+        <oldsource>Horizontal posture</oldsource>
+        <translation>姿势水平1</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="220"/>
-        <source>Vertical posture</source>
-        <translation>姿势垂直</translation>
+        <source>Vertical posture 1</source>
+        <oldsource>Vertical posture</oldsource>
+        <translation>姿势垂直1</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="223"/>
@@ -6699,12 +6701,12 @@ Please try a new name</source>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="221"/>
         <source>Horizontal posture 2</source>
-        <translation>水平2</translation>
+        <translation>姿势水平2</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="222"/>
         <source>Vertical posture 2</source>
-        <translation>垂直2</translation>
+        <translation>姿势垂直2</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="233"/>

@@ -97,7 +97,7 @@ bool MoldInformation::CreateNewSourceFile(const QString & fileName)
         CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisZ, ICMold::GZ, -1);
         CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisX2, ICMold::GP, ICMold::ACTVICEBACKWARD);
         CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisY2, ICMold::GQ, ICMold::ACTVICEUP);
-        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisA, ICMold::GA, -1);
+        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisA, ICMold::GA, ICMold::ACT_PoseVert2);
         CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisB, ICMold::GB, -1);
         CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisC, ICMold::GC, -1);
         item.SetAction(ICMold::ACT_WaitMoldOpened);

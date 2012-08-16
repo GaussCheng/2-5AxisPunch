@@ -3441,12 +3441,6 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="59"/>
-        <source>X2 In Limit</source>
-        <oldsource>X2 Out Limit</oldsource>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="60"/>
         <source>X2 Origin</source>
         <translation type="unfinished"></translation>
@@ -5180,12 +5174,14 @@ Please try a new name</source>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="219"/>
-        <source>Horizontal posture</source>
+        <source>Horizontal posture 1</source>
+        <oldsource>Horizontal posture</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="220"/>
-        <source>Vertical posture</source>
+        <source>Vertical posture 1</source>
+        <oldsource>Vertical posture</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -216,8 +216,8 @@ void ICInstructParam::InstallMoldInfo()
     actionGroupMap_[ACTMAINDOWN] = QObject::tr("Main arm down");
     actionGroupMap_[ACTMAINFORWARD] = QObject::tr("Main arm forward");
     actionGroupMap_[ACTMAINBACKWARD] = QObject::tr("Main arm backward");
-    actionGroupMap_[ACTPOSEHORI] = QObject::tr("Horizontal posture");
-    actionGroupMap_[ACTPOSEVERT] = QObject::tr("Vertical posture");
+    actionGroupMap_[ACTPOSEHORI] = QObject::tr("Horizontal posture 1");
+    actionGroupMap_[ACTPOSEVERT] = QObject::tr("Vertical posture 1");
     actionGroupMap_[ACT_PoseHori2] = QObject::tr("Horizontal posture 2");
     actionGroupMap_[ACT_PoseVert2] = QObject::tr("Vertical posture 2");
     actionGroupMap_[ACTVICEUP] = QObject::tr("Vice arm up");
