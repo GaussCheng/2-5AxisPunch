@@ -73,6 +73,7 @@ void ICKeyboardHandler::SwitchChanged(int value)
     //                                           ICMold::CurrentMold()->SyncAct() + ICMacroSubroutine::Instance()->SyncAct(),
     //                                           ICMold::CurrentMold()->SyncSum() + ICMacroSubroutine::Instance()->SyncSum());
     //    }
+//    qDebug()<<"swkey:"<<value;
     if(value == ICKeyboard::KS_AutoStatu)
     {
 //        if(icInstructionPage != NULL)

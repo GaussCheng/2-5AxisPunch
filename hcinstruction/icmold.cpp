@@ -284,7 +284,7 @@ bool ICMold::SaveMoldFile(bool isSaveParams)
 {
     MoldReSum();
     QByteArray toWrite;
-    if(moldContent_.size() < 4)
+    if(moldContent_.size() < 1)
     {
         qDebug("mold content less than 4 when save");
         return false;

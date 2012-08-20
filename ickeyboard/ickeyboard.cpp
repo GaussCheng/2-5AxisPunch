@@ -98,7 +98,11 @@ int ICKeyboard::TakeSwitchValue()
 int ICKeyboard::CurrentSwitchStatus() const
 {
     QMutexLocker locker(&switchMutex_);
-    return currentSwitchValue_;
+    if(currentSwitchValue_ == ICKeyboard::KS_AutoStatu || currentSwitchValue_ == ICKeyboard::KS_ManualStatu)
+    {
+        return currentSwitchValue_;
+    }
+    return ICKeyboard::KS_StopStatu;
 }
 
 void ICKeyboard::SetSwitchValue(int value)
