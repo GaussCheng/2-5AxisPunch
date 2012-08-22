@@ -2863,12 +2863,12 @@ Infomation</source>
 <context>
     <name>ICKeyboardHandler</name>
     <message>
-        <location filename="ickeyboard/ickeyboardhandler.cpp" line="123"/>
+        <location filename="ickeyboard/ickeyboardhandler.cpp" line="124"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ickeyboard/ickeyboardhandler.cpp" line="123"/>
+        <location filename="ickeyboard/ickeyboardhandler.cpp" line="124"/>
         <source>Need to origin!</source>
         <translation type="unfinished"></translation>
     </message>

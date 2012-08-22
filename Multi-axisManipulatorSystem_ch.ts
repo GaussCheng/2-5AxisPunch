@@ -3610,12 +3610,12 @@ Reason</source>
 <context>
     <name>ICKeyboardHandler</name>
     <message>
-        <location filename="ickeyboard/ickeyboardhandler.cpp" line="123"/>
+        <location filename="ickeyboard/ickeyboardhandler.cpp" line="124"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="ickeyboard/ickeyboardhandler.cpp" line="123"/>
+        <location filename="ickeyboard/ickeyboardhandler.cpp" line="124"/>
         <source>Need to origin!</source>
         <translation>还没原点复归！</translation>
     </message>
