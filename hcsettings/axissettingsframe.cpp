@@ -70,6 +70,8 @@ void AxisSettingsFrame::SetCurrentAxis(QString currentAxisName, int axis)
     QString maxText;
 
     double total = 0;
+    ui->minUnitLabel->setText(tr("mm"));
+    ui->maxUnitLabel->setText(tr("mm"));
     if(currentAxis_ == ICVirtualHost::ICAxis_AxisX1)
     {
         machineLangth = ICVirtualHost::SYS_X_Length;
@@ -148,8 +150,10 @@ void AxisSettingsFrame::SetCurrentAxis(QString currentAxisName, int axis)
         iSafe = ICVirtualHost::SYS_C_InSafe;
         oSafe = ICVirtualHost::SYS_C_OutSafe;
         total = ICParametersSave::Instance()->DistanceRotation("C");
-        minText = tr("Internal security zone");
-        maxText = tr("External security zone");
+        minText = tr("Transeve security zone(Less)");
+        maxText = tr("Transeve security zone(Lagger)");
+        ui->minUnitLabel->setText(tr("degree"));
+        ui->maxUnitLabel->setText(tr("degree"));
     }
     else
     {

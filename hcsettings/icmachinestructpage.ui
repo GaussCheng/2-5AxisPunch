@@ -213,6 +213,19 @@
           <string>Security Point</string>
          </property>
          <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="3">
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
           <item row="0" column="0">
            <widget class="QLabel" name="label">
             <property name="text">
@@ -258,7 +271,7 @@
            <widget class="ICLineEditWithVirtualNumericKeypad" name="internalSecurityZoneLineEdit"/>
           </item>
           <item row="2" column="2">
-           <widget class="QLabel" name="label_9">
+           <widget class="QLabel" name="minUnitLabel">
             <property name="text">
              <string>mm</string>
             </property>
@@ -275,7 +288,7 @@
            <widget class="ICLineEditWithVirtualNumericKeypad" name="externalSecurityZoneLineEdit"/>
           </item>
           <item row="3" column="2">
-           <widget class="QLabel" name="label_10">
+           <widget class="QLabel" name="maxUnitLabel">
             <property name="text">
              <string>mm</string>
             </property>
@@ -305,36 +318,7 @@
             </property>
            </widget>
           </item>
-          <item row="0" column="3">
-           <spacer name="horizontalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
          </layout>
-         <zorder>label</zorder>
-         <zorder>mechanicalLengthLineEdit</zorder>
-         <zorder>label_3</zorder>
-         <zorder>label_2</zorder>
-         <zorder>maximumDisplacementLineEdit</zorder>
-         <zorder>label_4</zorder>
-         <zorder>minLabel</zorder>
-         <zorder>internalSecurityZoneLineEdit</zorder>
-         <zorder>label_9</zorder>
-         <zorder>maxLabel</zorder>
-         <zorder>externalSecurityZoneLineEdit</zorder>
-         <zorder>label_10</zorder>
-         <zorder>label_8</zorder>
-         <zorder>distanceRotationEdit</zorder>
-         <zorder>label_11</zorder>
-         <zorder>saveToolButton</zorder>
         </widget>
        </item>
        <item>
