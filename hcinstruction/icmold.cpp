@@ -260,7 +260,7 @@ bool ICMold::ReadMoldParamsFile(const QString &fileName)
     {
         moldParams_.append(items.at(i).toUInt());
     }
-    Q_ASSERT_X(items.size() == 58, "ICMold::ReadMoldParamFile", "fnc file is not correct!");
+//    Q_ASSERT_X(items.size() == 58, "ICMold::ReadMoldParamFile", "fnc file is not correct!");
 
     QList<int> stackParam;
     int base;

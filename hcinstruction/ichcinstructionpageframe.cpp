@@ -996,7 +996,7 @@ void ICHCInstructionPageFrame::on_downButton_clicked()
 
 void ICHCInstructionPageFrame::OnProgramChanged(int index, QString name)
 {
-    if(index < 0)
+    if(index < 0 || index > 8)
     {
         return;
     }
