@@ -57,5 +57,6 @@
         <file>resource/combobox_arrow.png</file>
         <file>resource/brightness.png</file>
         <file>resource/brightren.png</file>
+        <file>resource/fixture_check(32).png</file>
     </qresource>
 </RCC>

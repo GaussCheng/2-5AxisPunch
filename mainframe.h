@@ -48,6 +48,7 @@ public Q_SLOTS:
     void HideReturn();
     void UpdateAxisDefine_();
     void KeyToInstructEditor(int key);
+    void ClearPosColor();
 
 //    void SetBackLightOff();
 //    void SetBackLightOn();

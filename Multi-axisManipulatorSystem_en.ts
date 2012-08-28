@@ -4011,7 +4011,7 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="61"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="68"/>
         <source>%1 h</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4764,42 +4764,42 @@ Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="442"/>
+        <location filename="mainframe.cpp" line="443"/>
         <source>Function</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="443"/>
+        <location filename="mainframe.cpp" line="444"/>
         <source>Monitor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="445"/>
+        <location filename="mainframe.cpp" line="446"/>
         <source>Record</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="444"/>
+        <location filename="mainframe.cpp" line="445"/>
         <source>Alarm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="446"/>
+        <location filename="mainframe.cpp" line="447"/>
         <source>Return</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="625"/>
+        <location filename="mainframe.cpp" line="626"/>
         <source>Hint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="845"/>
+        <location filename="mainframe.cpp" line="846"/>
         <source>Records</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="814"/>
+        <location filename="mainframe.cpp" line="815"/>
         <source>Instruct</source>
         <translation type="unfinished"></translation>
     </message>

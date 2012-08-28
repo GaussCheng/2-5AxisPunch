@@ -139,7 +139,7 @@ bool MoldInformation::CreateNewSourceFile(const QString & fileName)
 
 void MoldInformation::AddNewInTableWidget(const QString & fileName, const QString & dateTime)
 {
-    QTableWidgetItem * fileNameItem = new QTableWidgetItem(fileName);
+    QTableWidgetItem * fileNameItem = new QTableWidgetItem(fileName.left(fileName.size() - 4));
     QTableWidgetItem * createDateTimeItem = new QTableWidgetItem(dateTime);
     ui->informationTableWidget->insertRow(ui->informationTableWidget->rowCount());
     ui->informationTableWidget->setItem(ui->informationTableWidget->rowCount() - 1,0,fileNameItem);
@@ -270,7 +270,7 @@ void MoldInformation::on_newToolButton_clicked()
     QString fileName = ui->destinationFileLineEdit->text() + ".act";
     if(CreateNewSourceFile(fileName))
     {
-        AddNewInTableWidget(fileName, QDateTime::currentDateTime().toString("yyyy-MM-dd"));
+        AddNewInTableWidget(fileName, QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss"));
         //        recordNames_->RecurdFileInfoListChanged(ui->destinationFileLineEdit->text(), ICRecordNames::ADDNEW);
         emit NewFileCreated(fileName);
         ui->destinationFileLineEdit->clear();
@@ -287,7 +287,7 @@ void MoldInformation::on_copyToolButton_clicked()
     QString fileName = ui->destinationFileLineEdit->text() + ".act";
     if(CopySourceFile(ui->sourceFileNameLabel->text(), fileName))
     {
-        AddNewInTableWidget(fileName, QDateTime::currentDateTime().toString("yyyy-MM-dd"));
+        AddNewInTableWidget(fileName, QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss"));
         //        recordNames_->RecurdFileInfoListChanged(ui->destinationFileLineEdit->text(), ICRecordNames::ARCHIVES_COPY);
         emit NewFileCreated(fileName);
         ui->destinationFileLineEdit->clear();
@@ -300,7 +300,7 @@ void MoldInformation::on_loadToolButton_clicked()
     if(currentRow != -1)
     {
         qDebug("before Load");
-        QString moldName = ui->informationTableWidget->item(currentRow, 0)->text();
+        QString moldName = ui->informationTableWidget->item(currentRow, 0)->text() + ".act";
         QString filePathName = "./records/" + moldName;
         if(QFile::exists(filePathName))
         {
@@ -360,7 +360,7 @@ void MoldInformation::on_deleteToolButton_clicked()
         if(ui->informationTableWidget->rowCount() != 0)
         {
             ui->sourceFileNameLabel->setText(
-                        ui->informationTableWidget->item(ui->informationTableWidget->currentRow(), 0)->text());
+                        ui->informationTableWidget->item(ui->informationTableWidget->currentRow(), 0)->text() + ".act");
 
         }
     }
@@ -368,7 +368,7 @@ void MoldInformation::on_deleteToolButton_clicked()
 
 void MoldInformation::on_informationTableWidget_clicked(QModelIndex index)
 {
-    QString fileName =  ui->informationTableWidget->item(index.row(), 0)->text();
+    QString fileName =  ui->informationTableWidget->item(index.row(), 0)->text() + ".act";
     ui->sourceFileNameLabel->setText(fileName);
 }
 

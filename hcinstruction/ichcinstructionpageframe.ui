@@ -485,7 +485,7 @@ padding:5px;
            </property>
            <property name="icon">
             <iconset resource="../resource.qrc">
-             <normaloff>:/resource/Conveyor_Belt(32).png</normaloff>:/resource/Conveyor_Belt(32).png</iconset>
+             <normaloff>:/resource/fixture_check(32).png</normaloff>:/resource/fixture_check(32).png</iconset>
            </property>
            <property name="iconSize">
             <size>

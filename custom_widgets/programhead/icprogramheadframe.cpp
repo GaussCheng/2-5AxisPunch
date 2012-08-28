@@ -40,7 +40,14 @@ void ICProgramHeadFrame::changeEvent(QEvent *e)
 void ICProgramHeadFrame::SetCurrentMoldName(const QString & moldName)
 {
     currentMoldName_ = moldName;
-    ui->moldNameLabel->setText(moldName);
+    if(moldName.endsWith(".act"))
+    {
+        ui->moldNameLabel->setText(moldName.left(moldName.size() - 4));
+    }
+    else
+    {
+        ui->moldNameLabel->setText(moldName);
+    }
 }
 
 

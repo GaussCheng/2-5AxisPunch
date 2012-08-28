@@ -26,6 +26,7 @@ public:
     ~ICAlarmFrame();
 
 protected:
+    void showEvent(QShowEvent *e);
     void changeEvent(QEvent *);
 
 private slots:

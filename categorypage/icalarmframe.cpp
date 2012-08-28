@@ -48,6 +48,13 @@ void ICAlarmFrame::changeEvent(QEvent *e)
     }
 }
 
+void ICAlarmFrame::showEvent(QShowEvent *e)
+{
+    ui->alarmHistoryTableWidget->setRowHeight(ui->alarmHistoryTableWidget->currentRow(), 30);
+    ui->alarmHistoryTableWidget->clearSelection();
+    QWidget::showEvent(e);
+}
+
 void ICAlarmFrame::ReadAlarmInfoInFile()
 {
     QFile alarmLogFile(AlarmLogFileName);

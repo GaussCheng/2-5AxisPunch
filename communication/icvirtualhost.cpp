@@ -281,6 +281,7 @@ void ICVirtualHost::RefreshStatus()
 //                qCritical("Connect to host fail!!");
 #ifdef Q_WS_X11
                 statusMap_.insert(ErrCode, 0);
+                statusMap_.insert(XPos, rand());
 #else
                 statusMap_.insert(ErrCode, 500);
 #endif

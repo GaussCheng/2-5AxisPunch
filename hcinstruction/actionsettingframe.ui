@@ -702,7 +702,7 @@ QRadioButton::indicator:unchecked:disabled
      </property>
     </widget>
    </item>
-   <item row="6" column="0">
+   <item row="7" column="0">
     <widget class="QCheckBox" name="gAButton">
      <property name="styleSheet">
       <string notr="true">::indicator {
@@ -741,7 +741,7 @@ QRadioButton::indicator:unchecked:disabled
      </property>
     </widget>
    </item>
-   <item row="6" column="1">
+   <item row="7" column="1">
     <layout class="QVBoxLayout" name="verticalLayout_6">
      <item>
       <widget class="ICLineEditWithVirtualNumericKeypad" name="aPosLineEdit">
@@ -784,7 +784,7 @@ QRadioButton::indicator:unchecked:disabled
      </item>
     </layout>
    </item>
-   <item row="6" column="2">
+   <item row="7" column="2">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="aDelayLineEdit">
      <property name="enabled">
       <bool>false</bool>
@@ -806,7 +806,7 @@ QRadioButton::indicator:unchecked:disabled
      </property>
     </widget>
    </item>
-   <item row="6" column="3">
+   <item row="7" column="3">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="aSpeedLineEdit">
      <property name="enabled">
       <bool>false</bool>
@@ -828,7 +828,7 @@ QRadioButton::indicator:unchecked:disabled
      </property>
     </widget>
    </item>
-   <item row="7" column="0">
+   <item row="8" column="0">
     <widget class="QCheckBox" name="gBButton">
      <property name="styleSheet">
       <string notr="true">::indicator {
@@ -867,7 +867,7 @@ QRadioButton::indicator:unchecked:disabled
      </property>
     </widget>
    </item>
-   <item row="7" column="1">
+   <item row="8" column="1">
     <layout class="QVBoxLayout" name="verticalLayout_7">
      <item>
       <widget class="ICLineEditWithVirtualNumericKeypad" name="bPosLineEdit">
@@ -910,7 +910,7 @@ QRadioButton::indicator:unchecked:disabled
      </item>
     </layout>
    </item>
-   <item row="7" column="2">
+   <item row="8" column="2">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="bDelayLineEdit">
      <property name="enabled">
       <bool>false</bool>
@@ -932,7 +932,7 @@ QRadioButton::indicator:unchecked:disabled
      </property>
     </widget>
    </item>
-   <item row="7" column="3">
+   <item row="8" column="3">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="bSpeedLineEdit">
      <property name="enabled">
       <bool>false</bool>
@@ -954,7 +954,7 @@ QRadioButton::indicator:unchecked:disabled
      </property>
     </widget>
    </item>
-   <item row="8" column="0">
+   <item row="9" column="0">
     <widget class="QCheckBox" name="gCButton">
      <property name="styleSheet">
       <string notr="true">::indicator {
@@ -993,7 +993,7 @@ QRadioButton::indicator:unchecked:disabled
      </property>
     </widget>
    </item>
-   <item row="8" column="1">
+   <item row="9" column="1">
     <layout class="QVBoxLayout" name="verticalLayout_8">
      <item>
       <widget class="ICLineEditWithVirtualNumericKeypad" name="cPosLineEdit">
@@ -1036,7 +1036,7 @@ QRadioButton::indicator:unchecked:disabled
      </item>
     </layout>
    </item>
-   <item row="8" column="2">
+   <item row="9" column="2">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="cDelayLineEdit">
      <property name="enabled">
       <bool>false</bool>
@@ -1058,7 +1058,7 @@ QRadioButton::indicator:unchecked:disabled
      </property>
     </widget>
    </item>
-   <item row="8" column="3">
+   <item row="9" column="3">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="cSpeedLineEdit">
      <property name="enabled">
       <bool>false</bool>
@@ -1080,7 +1080,7 @@ QRadioButton::indicator:unchecked:disabled
      </property>
     </widget>
    </item>
-   <item row="9" column="1">
+   <item row="10" column="1">
     <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -1092,6 +1092,13 @@ QRadioButton::indicator:unchecked:disabled
       </size>
      </property>
     </spacer>
+   </item>
+   <item row="6" column="0" colspan="4">
+    <widget class="Line" name="line">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

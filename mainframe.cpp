@@ -216,6 +216,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     UpdateAxisDefine_();
     ICKeyboard::Instace()->Receive();
     QTimer::singleShot(ICParametersSave::Instance()->BackLightTime() * 60000, this, SLOT(CheckedInput()));
+    QTimer::singleShot(1000, this, SLOT(ClearPosColor()));
 
     //    QTimer::singleShot(100, this, SLOT(InitHeavyPage()));
 #ifdef Q_WS_X11
@@ -479,46 +480,46 @@ void MainFrame::StatusRefreshed()
 {
     static ICAlarmString* alarmString = ICAlarmString::Instance();
     static ICVirtualHost* virtualHost = ICVirtualHost::GlobalVirtualHost();
-    if(isXPosChanged_)
-    {
-        ui->xPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
-        isXPosChanged_ = false;
-    }
-    if(isYPosChanged_)
-    {
-        ui->yPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
-        isYPosChanged_ = false;
-    }
-    if(isZPosChanged_)
-    {
-        ui->zPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
-        isZPosChanged_ = false;
-    }
-    if(isX2PosChanged_)
-    {
-        ui->pPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
-        isX2PosChanged_ = false;
-    }
-    if(isY2PosChanged_)
-    {
-        ui->qPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
-        isY2PosChanged_ = false;
-    }
-    if(isAPosChanged_)
-    {
-        ui->aPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
-        isAPosChanged_ = false;
-    }
-    if(isBPosChanged_)
-    {
-        ui->bPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
-        isBPosChanged_ = false;
-    }
-    if(isCPosChanged_)
-    {
-        ui->cPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
-        isCPosChanged_ = false;
-    }
+//    if(isXPosChanged_)
+//    {
+//        ui->xPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
+//        isXPosChanged_ = false;
+//    }
+//    if(isYPosChanged_)
+//    {
+//        ui->yPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
+//        isYPosChanged_ = false;
+//    }
+//    if(isZPosChanged_)
+//    {
+//        ui->zPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
+//        isZPosChanged_ = false;
+//    }
+//    if(isX2PosChanged_)
+//    {
+//        ui->pPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
+//        isX2PosChanged_ = false;
+//    }
+//    if(isY2PosChanged_)
+//    {
+//        ui->qPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
+//        isY2PosChanged_ = false;
+//    }
+//    if(isAPosChanged_)
+//    {
+//        ui->aPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
+//        isAPosChanged_ = false;
+//    }
+//    if(isBPosChanged_)
+//    {
+//        ui->bPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
+//        isBPosChanged_ = false;
+//    }
+//    if(isCPosChanged_)
+//    {
+//        ui->cPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
+//        isCPosChanged_ = false;
+//    }
     int pos = virtualHost->HostStatus(ICVirtualHost::XPos).toInt();
     if(pos != oldXPos_)
     {
@@ -1126,4 +1127,49 @@ void MainFrame::KeyToInstructEditor(int key)
 {
     Q_UNUSED(key);
     instructPage_->ShowServoAction(key);
+}
+
+void MainFrame::ClearPosColor()
+{
+    if(isXPosChanged_)
+    {
+        ui->xPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
+        isXPosChanged_ = false;
+    }
+    if(isYPosChanged_)
+    {
+        ui->yPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
+        isYPosChanged_ = false;
+    }
+    if(isZPosChanged_)
+    {
+        ui->zPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
+        isZPosChanged_ = false;
+    }
+    if(isX2PosChanged_)
+    {
+        ui->pPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
+        isX2PosChanged_ = false;
+    }
+    if(isY2PosChanged_)
+    {
+        ui->qPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
+        isY2PosChanged_ = false;
+    }
+    if(isAPosChanged_)
+    {
+        ui->aPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
+        isAPosChanged_ = false;
+    }
+    if(isBPosChanged_)
+    {
+        ui->bPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
+        isBPosChanged_ = false;
+    }
+    if(isCPosChanged_)
+    {
+        ui->cPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
+        isCPosChanged_ = false;
+    }
+    QTimer::singleShot(1000, this, SLOT(ClearPosColor()));
 }
