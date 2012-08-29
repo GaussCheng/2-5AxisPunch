@@ -877,7 +877,7 @@ Reason</source>
         <location filename="hcinstruction/icautorunrevise.ui" line="75"/>
         <source>Pos(+/-5):</source>
         <oldsource>Pos:</oldsource>
-        <translation>位置增量(+/-5):</translation>
+        <translation>位置(+/-5):</translation>
     </message>
     <message>
         <location filename="hcinstruction/icautorunrevise.ui" line="88"/>
@@ -6468,7 +6468,7 @@ Please try a new name</source>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="192"/>
         <source>Delay time:</source>
-        <translation>延时时间:</translation>
+        <translation>延时:</translation>
     </message>
     <message>
         <source>Stop</source>
