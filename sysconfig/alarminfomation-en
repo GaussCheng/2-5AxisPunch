@@ -210,6 +210,18 @@
 605:Y raised by Up-lmt off
 606:B descend by Up-lmt On
 607:B raised by Up-lmt off
+700:Time is over while wating for X043
+701:Time is over while wating for X044
+702:Time is over while wating for fixture-1
+703:Time is over while wating for fixture-2
+704:Time is over while wating for fixture-3
+705:Time is over while wating for fixture-4
+706:Time is over while wating for fixture-5
+707:Time is over while wating for fixture-6
+708:Time is over while wating for ejector forward
+709:Time is over while wating for ejector backward
+710:Time is over while wating for core in
+711:Time is over while wating for core out
 1000:Mid-mold signal is off when Arm descend.
 1001:Mold Opened signal is off when Arm descend.
 1002:Safety door is opened when Arm descend.

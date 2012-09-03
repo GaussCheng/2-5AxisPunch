@@ -145,7 +145,48 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
             {
                 commandStr += tr("X044");
             }
-            return commandStr;
+            else if(moldItem.SVal() == 5)
+            {
+                commandStr += tr("CLIP1");
+            }
+            else if(moldItem.SVal() == 6)
+            {
+                commandStr += tr("CLIP2");
+            }
+            else if(moldItem.SVal() == 7)
+            {
+                commandStr += tr("CLIP3");
+            }
+            else if(moldItem.SVal() == 8)
+            {
+                commandStr += tr("CLIP4");
+            }
+            else if(moldItem.SVal() == 9)
+            {
+                commandStr += tr("CLIP5");
+            }
+            else if(moldItem.SVal() == 10)
+            {
+                commandStr += tr("CLIP6");
+            }
+            else if(moldItem.SVal() == 11)
+            {
+                commandStr += tr("EUEJF");
+            }
+            else if(moldItem.SVal() == 12)
+            {
+                commandStr += tr("EUEJB");
+            }
+            else if(moldItem.SVal() == 13)
+            {
+                commandStr += tr("EUCOREIN");
+            }
+            else if(moldItem.SVal() == 14)
+            {
+                commandStr += tr("EUCOREOUT");
+            }
+            commandStr += " ";
+//            return commandStr;
         }
     }
     else
