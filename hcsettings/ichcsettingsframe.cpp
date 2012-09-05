@@ -7,6 +7,7 @@
 #include "icvirtualhost.h"
 #include "icparameterssave.h"
 #include "icprogramheadframe.h"
+#include "icmachinefigure.h"
 
 ICHCSettingsFrame::ICHCSettingsFrame(QWidget *parent) :
     QFrame(parent),
@@ -28,6 +29,7 @@ ICHCSettingsFrame::ICHCSettingsFrame(QWidget *parent) :
     ui->axisAToolButton->setText(tr("A Axis"));
     ui->axisBToolButton->setText(tr("B Axis"));
     ui->axisCToolButton->setText(tr("C Axis"));
+    ui->machineFigureButton->setText(tr("Figure"));
 //    buttonGroup_->addButton(ui->basicSettingsToolButton);
     buttonGroup_->addButton(ui->axisX1ToolButton);
     buttonGroup_->addButton(ui->axisY1ToolButton);
@@ -37,6 +39,7 @@ ICHCSettingsFrame::ICHCSettingsFrame(QWidget *parent) :
     buttonGroup_->addButton(ui->axisAToolButton);
     buttonGroup_->addButton(ui->axisBToolButton);
     buttonGroup_->addButton(ui->axisCToolButton);
+    buttonGroup_->addButton(ui->machineFigureButton);
     buttonGroup_->setExclusive(true);
     QAbstractButton* button;
     foreach(button, buttonGroup_->buttons())
@@ -76,6 +79,7 @@ void ICHCSettingsFrame::changeEvent(QEvent *e)
         ui->axisAToolButton->setText(tr("A Axis"));
         ui->axisBToolButton->setText(tr("B Axis"));
         ui->axisCToolButton->setText(tr("C Axis"));
+        ui->machineFigureButton->setText(tr("Figure"));
     }
         break;
     default:
@@ -114,6 +118,10 @@ void ICHCSettingsFrame::showEvent(QShowEvent *e)
     {
         ui->axisCToolButton->click();
     }
+    else if(!ui->machineFigureButton->isHidden())
+    {
+        ui->machineFigureButton->click();
+    }
     QFrame::showEvent(e);
 }
 
@@ -151,6 +159,8 @@ void ICHCSettingsFrame::InitHCSettingPage()
 
     axisSettingsPage_ = new AxisSettingsFrame;
     centralStackedLayout_->addWidget(axisSettingsPage_);
+    machineFigure_ = new ICMachineFigure;
+    centralStackedLayout_->addWidget(machineFigure_);
 //    structDefPage_ = new ICStructDefineFrame();
 //    centralStackedLayout_->addWidget(structDefPage_);
 //    basicSettingsPage_ =  new BasicSettingsFrame;
@@ -225,6 +235,10 @@ void ICHCSettingsFrame::on_axisCToolButton_clicked()
     ShowAxisSettingPage(ui->axisCToolButton->text(), ICVirtualHost::ICAxis_AxisC);
 }
 
+void ICHCSettingsFrame::on_machineFigureButton_clicked()
+{
+    centralStackedLayout_->setCurrentWidget(machineFigure_);
+}
 
 void ICHCSettingsFrame::ShowAxisSettingPage(QString currentAxisName, int axis)
 {

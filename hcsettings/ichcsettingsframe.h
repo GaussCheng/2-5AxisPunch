@@ -35,6 +35,7 @@ private slots:
     void on_axisAToolButton_clicked();
     void on_axisBToolButton_clicked();
     void on_axisCToolButton_clicked();
+    void on_machineFigureButton_clicked();
 //    void LevelChanged(int level);
 //    void SettingButtonClicked();
 
@@ -48,7 +49,7 @@ private:
 private:
     Ui::ICHCSettingsFrame *ui;
     QWidget * axisSettingsPage_;
-    QWidget * structDefPage_;
+    QWidget * machineFigure_;
     QStackedLayout * centralStackedLayout_;
     QButtonGroup* buttonGroup_;
     int axisDefine_;

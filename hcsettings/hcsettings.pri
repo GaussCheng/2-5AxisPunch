@@ -14,7 +14,8 @@ HEADERS += \
     hcsettings/icmachineconfigpage.h \
     hcsettings/icadminpassworddialog.h \
     hcsettings/icstructdefineframe.h \
-    hcsettings/icmachinestructpage.h
+    hcsettings/icmachinestructpage.h \
+    hcsettings/icmachinefigure.h
 
 SOURCES += \
     #hcsettings/basicsettingsframe.cpp \
@@ -29,7 +30,8 @@ SOURCES += \
     hcsettings/icmachineconfigpage.cpp \
     hcsettings/icadminpassworddialog.cpp \
     hcsettings/icstructdefineframe.cpp \
-    hcsettings/icmachinestructpage.cpp
+    hcsettings/icmachinestructpage.cpp \
+    hcsettings/icmachinefigure.cpp
 
 FORMS += \
     #hcsettings/basicsettingsframe.ui \
@@ -44,4 +46,5 @@ FORMS += \
     hcsettings/icmachineconfigpage.ui \
     hcsettings/icadminpassworddialog.ui \
     hcsettings/icstructdefineframe.ui \
-    hcsettings/icmachinestructpage.ui
+    hcsettings/icmachinestructpage.ui \
+    hcsettings/icmachinefigure.ui

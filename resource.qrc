@@ -58,5 +58,6 @@
         <file>resource/brightness.png</file>
         <file>resource/brightren.png</file>
         <file>resource/fixture_check(32).png</file>
+        <file>resource/machine_struct.png</file>
     </qresource>
 </RCC>

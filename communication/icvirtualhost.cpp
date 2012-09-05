@@ -873,22 +873,6 @@ void ICVirtualHost::InitAddrToSysPosMap_()
     addrToSysPos_.insert(SM_YINSAFE, SYS_Y_InSafe);
     addrToSysPos_.insert(SM_YOUTSAFE, SYS_Y_OutSafe);
     addrToSysPos_.insert(SM_ALLOWANCE, SYS_ElapseTol);			//容差
-    addrToSysPos_.insert(SM_TIMECLIP1, ACT_CLIP_1On);		//夹限时1
-    addrToSysPos_.insert(SM_TIMECLIP2, ACT_CLIP_2On);	//夹限时2
-    addrToSysPos_.insert(SM_TIMECLIP3, ACT_CLIP_3On);
-    addrToSysPos_.insert(SM_TIMECLIP4, ACT_CLIP_4On);
-    addrToSysPos_.insert(SM_TIMECLIP5, ACT_CLIP_5On);
-    addrToSysPos_.insert(SM_TIMECLIP6, ACT_CLIP_6On);
-    addrToSysPos_.insert(SM_TIMECLIP7, ACT_CLIP_7On);
-    addrToSysPos_.insert(SM_TIMECLIP8, ACT_CLIP_8On);
-    addrToSysPos_.insert(SM_TIMEPUT1, ACT_CLIP_1Off);		//放限时1
-    addrToSysPos_.insert(SM_TIMEPUT2, ACT_CLIP_2Off);
-    addrToSysPos_.insert(SM_TIMEPUT3, ACT_CLIP_3Off);
-    addrToSysPos_.insert(SM_TIMEPUT4, ACT_CLIP_4Off);
-    addrToSysPos_.insert(SM_TIMEPUT5, ACT_CLIP_5Off);
-    addrToSysPos_.insert(SM_TIMEPUT6, ACT_CLIP_6Off);
-    addrToSysPos_.insert(SM_TIMEPUT7, ACT_CLIP_7Off);
-    addrToSysPos_.insert(SM_TIMEPUT8, ACT_CLIP_8Off);
     addrToSysPos_.insert(SM_TIMEHORI, ACT_PoseHori);
     addrToSysPos_.insert(SM_TIMEVERT, ACT_PoseVert);
     addrToSysPos_.insert(SM_TIMEVERT2, ACT_PoseVert2);
@@ -921,6 +905,38 @@ void ICVirtualHost::InitAddrToSysPosMap_()
     addrToSysPos_.insert(SM_TIMEMFOR, ACT_MainForward);
     addrToSysPos_.insert(SM_TIMEMBACK, ACT_MainBackward);
     addrToSysPos_.insert(SM_PullPushDistance, SYS_PullPushDistance);
+    addrToSysPos_.insert(SM_X_SEC1, ACT_X_Sec1);
+    addrToSysPos_.insert(SM_X_SEC2, ACT_X_Sec2);
+    addrToSysPos_.insert(SM_X_SEC3, ACT_X_Sec3);
+    addrToSysPos_.insert(SM_X_SEC4, ACT_X_Sec4);
+    addrToSysPos_.insert(SM_Y_SEC1, ACT_Y_Sec1);
+    addrToSysPos_.insert(SM_Y_SEC2, ACT_Y_Sec2);
+    addrToSysPos_.insert(SM_Y_SEC3, ACT_Y_Sec3);
+    addrToSysPos_.insert(SM_Y_SEC4, ACT_Y_Sec4);
+    addrToSysPos_.insert(SM_Z_SEC1, ACT_Z_Sec1);
+    addrToSysPos_.insert(SM_Z_SEC2, ACT_Z_Sec2);
+    addrToSysPos_.insert(SM_Z_SEC3, ACT_Z_Sec3);
+    addrToSysPos_.insert(SM_Z_SEC4, ACT_Z_Sec4);
+    addrToSysPos_.insert(SM_P_SEC1, ACT_P_Sec1);
+    addrToSysPos_.insert(SM_P_SEC2, ACT_P_Sec2);
+    addrToSysPos_.insert(SM_P_SEC3, ACT_P_Sec3);
+    addrToSysPos_.insert(SM_P_SEC4, ACT_P_Sec4);
+    addrToSysPos_.insert(SM_Q_SEC1, ACT_Q_Sec1);
+    addrToSysPos_.insert(SM_Q_SEC2, ACT_Q_Sec2);
+    addrToSysPos_.insert(SM_Q_SEC3, ACT_Q_Sec3);
+    addrToSysPos_.insert(SM_Q_SEC4, ACT_Q_Sec4);
+    addrToSysPos_.insert(SM_A_SEC1, ACT_A_Sec1);
+    addrToSysPos_.insert(SM_A_SEC2, ACT_A_Sec2);
+    addrToSysPos_.insert(SM_A_SEC3, ACT_A_Sec3);
+    addrToSysPos_.insert(SM_A_SEC4, ACT_A_Sec4);
+    addrToSysPos_.insert(SM_B_SEC1, ACT_B_Sec1);
+    addrToSysPos_.insert(SM_B_SEC2, ACT_B_Sec2);
+    addrToSysPos_.insert(SM_B_SEC3, ACT_B_Sec3);
+    addrToSysPos_.insert(SM_B_SEC4, ACT_B_Sec4);
+    addrToSysPos_.insert(SM_C_SEC1, ACT_C_Sec1);
+    addrToSysPos_.insert(SM_C_SEC2, ACT_C_Sec2);
+    addrToSysPos_.insert(SM_C_SEC3, ACT_C_Sec3);
+    addrToSysPos_.insert(SM_C_SEC4, ACT_C_Sec4);
     moldParamToAddrPos_.insert(ICMold::CheckClip1, SM_CHKCLIP1);
     moldParamToAddrPos_.insert(ICMold::CheckClip2, SM_CHKCLIP2);
     moldParamToAddrPos_.insert(ICMold::CheckClip3, SM_CHKCLIP3);
