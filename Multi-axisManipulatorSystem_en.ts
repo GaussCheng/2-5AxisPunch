@@ -1795,52 +1795,58 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="23"/>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="71"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="24"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="74"/>
         <source>X1 Axis</source>
         <oldsource>Y Axis</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="24"/>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="72"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="25"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="75"/>
         <source>Y1 Axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="25"/>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="73"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="26"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="76"/>
         <source>Z Axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="26"/>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="74"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="27"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="77"/>
         <source>X2 Axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="27"/>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="75"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="28"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="78"/>
         <source>Y2 Axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="28"/>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="76"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="29"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="79"/>
         <source>A Axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="29"/>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="77"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="30"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="80"/>
         <source>B Axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="30"/>
-        <location filename="hcsettings/ichcsettingsframe.cpp" line="78"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="31"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="81"/>
         <source>C Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="32"/>
+        <location filename="hcsettings/ichcsettingsframe.cpp" line="82"/>
+        <source>Figure</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3098,6 +3104,35 @@ Please enter an digit between </source>
         <location filename="hcsettings/icmachineconfigpage.ui" line="264"/>
         <location filename="hcsettings/icmachineconfigpage.ui" line="297"/>
         <source>s</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ICMachineFigure</name>
+    <message>
+        <location filename="hcsettings/icmachinefigure.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/icmachinefigure.ui" line="85"/>
+        <location filename="hcsettings/icmachinefigure.ui" line="98"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/icmachinefigure.ui" line="111"/>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/icmachinefigure.cpp" line="78"/>
+        <source>Tips</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/icmachinefigure.cpp" line="78"/>
+        <source>Save successfully!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

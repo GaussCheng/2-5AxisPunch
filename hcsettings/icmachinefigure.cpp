@@ -2,6 +2,7 @@
 #include "ui_icmachinefigure.h"
 #include "icvirtualhost.h"
 #include "iclineeditwrapper.h"
+#include <QMessageBox>
 
 ICMachineFigure::ICMachineFigure(QWidget *parent) :
     QWidget(parent),
@@ -64,6 +65,7 @@ void ICMachineFigure::showEvent(QShowEvent *e)
 {
     ui->xmin->setText(QString("%1").arg(ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::SYS_X_InSafe).toUInt() / 10.0));
     ui->xmax->setText(QString("%1").arg(ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::SYS_X_OutSafe).toUInt() / 10.0));
+    QWidget::showEvent(e);
 }
 
 void ICMachineFigure::hideEvent(QHideEvent *e)
@@ -74,4 +76,5 @@ void ICMachineFigure::hideEvent(QHideEvent *e)
 void ICMachineFigure::on_saveButton_clicked()
 {
     ICVirtualHost::GlobalVirtualHost()->SaveSystemConfig();
+    QMessageBox::information(this, tr("Tips"), tr("Save successfully!"));
 }
