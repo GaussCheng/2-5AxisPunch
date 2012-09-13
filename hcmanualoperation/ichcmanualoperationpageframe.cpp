@@ -27,8 +27,6 @@ ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     reservePage_(NULL),
     serveAxisPage_(NULL),
     centralStackedLayout_(new QStackedLayout),
-    currentPose1_(-1),
-    currentPose2_(-1),
     currentAction_(-1)
 {
     ui->setupUi(this);
@@ -143,14 +141,14 @@ void ICHCManualOperationPageFrame::InitInterface()
     buttonGroup_->addButton(ui->adjustToolButton);
     buttonGroup_->addButton(ui->reserveToolButton);
 #ifdef HC_8AXIS
-    ui->x1AxisButton->hide();
-    ui->y1AxisButton->hide();
-    ui->zAxisButton->hide();
-    ui->x2AxisButton->hide();
-    ui->y2AxisButton->hide();
-    ui->aAxisButton->hide();
-    ui->bAxisButton->hide();
-    ui->cAxisButton->hide();
+//    ui->x1AxisButton->hide();
+//    ui->y1AxisButton->hide();
+//    ui->zAxisButton->hide();
+//    ui->x2AxisButton->hide();
+//    ui->y2AxisButton->hide();
+//    ui->aAxisButton->hide();
+//    ui->bAxisButton->hide();
+//    ui->cAxisButton->hide();
     connect(ui->aAddButton,
             SIGNAL(released()),
             SLOT(OnButtonReleased()));
@@ -265,22 +263,22 @@ void ICHCManualOperationPageFrame::ShowOptionPage()
     {
         serveAxisPage_ = new HCServoArmControlFrame();
         centralStackedLayout_->addWidget(serveAxisPage_);
-        buttonToPage_.insert(ui->x1AxisButton, serveAxisPage_);
-        buttonToPage_.insert(ui->y1AxisButton, serveAxisPage_);
-        buttonToPage_.insert(ui->zAxisButton, serveAxisPage_);
-        buttonToPage_.insert(ui->x2AxisButton, serveAxisPage_);
-        buttonToPage_.insert(ui->y2AxisButton, serveAxisPage_);
-        buttonToPage_.insert(ui->aAxisButton, serveAxisPage_);
-        buttonToPage_.insert(ui->bAxisButton, serveAxisPage_);
-        buttonToPage_.insert(ui->cAxisButton, serveAxisPage_);
-        buttonToAxis_.insert(ui->x1AxisButton, ICVirtualHost::ICAxis_AxisX1);
-        buttonToAxis_.insert(ui->y1AxisButton, ICVirtualHost::ICAxis_AxisY1);
-        buttonToAxis_.insert(ui->zAxisButton, ICVirtualHost::ICAxis_AxisZ);
-        buttonToAxis_.insert(ui->x2AxisButton, ICVirtualHost::ICAxis_AxisX2);
-        buttonToAxis_.insert(ui->y2AxisButton, ICVirtualHost::ICAxis_AxisY2);
-        buttonToAxis_.insert(ui->aAxisButton, ICVirtualHost::ICAxis_AxisA);
-        buttonToAxis_.insert(ui->bAxisButton, ICVirtualHost::ICAxis_AxisB);
-        buttonToAxis_.insert(ui->cAxisButton, ICVirtualHost::ICAxis_AxisC);
+//        buttonToPage_.insert(ui->x1AxisButton, serveAxisPage_);
+//        buttonToPage_.insert(ui->y1AxisButton, serveAxisPage_);
+//        buttonToPage_.insert(ui->zAxisButton, serveAxisPage_);
+//        buttonToPage_.insert(ui->x2AxisButton, serveAxisPage_);
+//        buttonToPage_.insert(ui->y2AxisButton, serveAxisPage_);
+//        buttonToPage_.insert(ui->aAxisButton, serveAxisPage_);
+//        buttonToPage_.insert(ui->bAxisButton, serveAxisPage_);
+//        buttonToPage_.insert(ui->cAxisButton, serveAxisPage_);
+//        buttonToAxis_.insert(ui->x1AxisButton, ICVirtualHost::ICAxis_AxisX1);
+//        buttonToAxis_.insert(ui->y1AxisButton, ICVirtualHost::ICAxis_AxisY1);
+//        buttonToAxis_.insert(ui->zAxisButton, ICVirtualHost::ICAxis_AxisZ);
+//        buttonToAxis_.insert(ui->x2AxisButton, ICVirtualHost::ICAxis_AxisX2);
+//        buttonToAxis_.insert(ui->y2AxisButton, ICVirtualHost::ICAxis_AxisY2);
+//        buttonToAxis_.insert(ui->aAxisButton, ICVirtualHost::ICAxis_AxisA);
+//        buttonToAxis_.insert(ui->bAxisButton, ICVirtualHost::ICAxis_AxisB);
+//        buttonToAxis_.insert(ui->cAxisButton, ICVirtualHost::ICAxis_AxisC);
     }
     if(buttonToAxis_.contains(clickedButton))
     {
@@ -292,56 +290,34 @@ void ICHCManualOperationPageFrame::ShowOptionPage()
 
 void ICHCManualOperationPageFrame::StatusRefreshed()
 {
-    bool isAxisOn = !ui->aAxisButton->isHidden();
+    bool isAxisOn = !ui->aAddButton->isHidden();
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    QString temp;
     if(host->IsInputOn(0))
     {
-        if(currentPose1_ != 0)
-        {
-            currentPose1_ = 0;
-            ui->currentPose->setText(tr("Horizontal-1 Limit On"));
-        }
+        temp = tr("Horizontal-1 Limit On");
     }
     else if(host->IsInputOn(1))
     {
-        if(currentPose1_ != 1)
-        {
-            currentPose1_ = 1;
-            ui->currentPose->setText(tr("Vertical-1 Limit On"));
-        }
+        temp = tr("Vertical-1 Limit On");
     }
     else
     {
-        if(currentPose1_ != -1)
-        {
-            currentPose1_ = -1;
-            ui->currentPose->setText("");
-        }
+        temp.clear();
     }
 
     if(host->IsInputOn(23) && isAxisOn)
     {
-        if(currentPose2_ != 0)
-        {
-            currentPose2_ = 0;
-            ui->currentPose->setText(ui->currentPose->text() + tr("/Horizontal-2 Limit On"));
-        }
+        temp += tr("/Horizontal-2 Limit On");
     }
     else if(host->IsInputOn(11) && isAxisOn)
     {
-        if(currentPose2_ != 1)
-        {
-            currentPose2_ = 1;
-            ui->currentPose->setText(ui->currentPose->text() + tr("/Vertical-2 Limit On"));
-        }
+        temp += tr("/Vertical-2 Limit On");
     }
-    else
+
+    if(ui->currentPose->text() != temp)
     {
-        if(currentPose2_ != -1)
-        {
-            currentPose2_ = -1;
-            ui->currentPose->setText(ui->currentPose->text() + "");
-        }
+        ui->currentPose->setText(temp);
     }
 
 

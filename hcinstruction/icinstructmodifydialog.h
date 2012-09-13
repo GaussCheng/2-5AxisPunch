@@ -4,6 +4,7 @@
 #include <QDialog>
 
 class ICMoldItem;
+class QIntValidator;
 
 namespace Ui {
     class ICInstructModifyDialog;
@@ -30,6 +31,7 @@ private slots:
 private:
     Ui::ICInstructModifyDialog *ui;
     ICMoldItem* currentItem;
+    QIntValidator* posValidator_;
 
 };
 
