@@ -16,6 +16,7 @@ Q_SIGNALS:
     void Keypressed(int);
 
 public slots:
+    void on_finished();
 protected:
     virtual void run();
 

@@ -5871,105 +5871,105 @@ Would you want to restart now?</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="49"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="55"/>
         <source>Wait Condition</source>
         <translation>等待条件</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="55"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="67"/>
         <source>Wait Mold Opened</source>
         <translation>等待开模完</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="58"/>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="68"/>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="78"/>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="88"/>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="98"/>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="108"/>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="118"/>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="128"/>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="138"/>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="148"/>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="158"/>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="168"/>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="178"/>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="188"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="70"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="80"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="90"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="100"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="110"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="120"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="130"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="140"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="150"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="160"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="170"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="180"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="190"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="200"/>
         <source>buttonGroup</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="65"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="77"/>
         <source>Wait Security Door Closed</source>
         <translation>等待安全门关</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="75"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="87"/>
         <source>Wait X043</source>
         <translation>等待X043</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="85"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="97"/>
         <source>Wait X044</source>
         <oldsource>Wati X044</oldsource>
         <translation>等待X044</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="95"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="107"/>
         <source>Wait XCLIP1</source>
         <oldsource>XCLIP1</oldsource>
         <translation>等待夹1确认</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="105"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="117"/>
         <source>Wait XCLIP2</source>
         <oldsource>XCLIP2</oldsource>
         <translation>等待夹2确认</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="115"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="127"/>
         <source>Wait XCLIP3</source>
         <oldsource>XCLIP3</oldsource>
         <translation>等待夹3确认</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="125"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="137"/>
         <source>Wait XCLIP4</source>
         <oldsource>XCLIP4</oldsource>
         <translation>等待夹4确认</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="135"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="147"/>
         <source>Wait XCLIP5</source>
         <oldsource>XCLIP5</oldsource>
         <translation>等待夹5确认</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="145"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="157"/>
         <source>Wait XCLIP6</source>
         <oldsource>XCLIP6</oldsource>
         <translation>等待夹6确认</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="155"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="167"/>
         <source>Wait EUEJF</source>
         <oldsource>EUEJF</oldsource>
         <translation>等待顶针进到位</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="165"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="177"/>
         <source>Wait EUEJB</source>
         <oldsource>EUEJB</oldsource>
         <translation>等待顶针退到位</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="175"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="187"/>
         <source>Wait EUCOREIN</source>
         <oldsource>EUCOREIN</oldsource>
         <translation>等待入芯到位</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="185"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="197"/>
         <source>Wait EUCOREOUT</source>
         <oldsource>EUCOREOUT</oldsource>
         <translation>等待出芯到位</translation>
