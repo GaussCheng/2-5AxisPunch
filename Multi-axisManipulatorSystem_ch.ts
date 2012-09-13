@@ -1987,39 +1987,55 @@ Reason</source>
         <translation>预留</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="301"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="352"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="302"/>
+        <source>Horizontal-1 Limit On</source>
+        <translation>水平1限通</translation>
+    </message>
+    <message>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="310"/>
+        <source>Vertical-1 Limit On</source>
+        <translation>垂直1限通</translation>
+    </message>
+    <message>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="327"/>
+        <source>/Horizontal-2 Limit On</source>
+        <translation>/水平2限通</translation>
+    </message>
+    <message>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="335"/>
+        <source>/Vertical-2 Limit On</source>
+        <translation>垂直2限通</translation>
+    </message>
+    <message>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="353"/>
         <source>Horizontal-1</source>
         <translation>水平1</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="309"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="360"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="361"/>
         <source>Vertical-1</source>
         <translation>垂直1</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="326"/>
         <source>/Horizontal-2</source>
-        <translation>/水平2</translation>
+        <translation type="obsolete">/水平2</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="334"/>
         <source>/Vertical-2</source>
-        <translation>/垂直2</translation>
+        <translation type="obsolete">/垂直2</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="368"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="369"/>
         <source>Horizontal-2</source>
         <translation>水平2</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="376"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="377"/>
         <source>Vertical-2</source>
         <translation>垂直2</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="380"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="381"/>
         <source>Vertical-1/Vertical-2</source>
         <translation>垂直1/垂直2</translation>
     </message>

@@ -145,10 +145,6 @@ QRadioButton::indicator:unchecked:disabled
       <property name="text">
        <string/>
       </property>
-      <property name="icon">
-       <iconset resource="../resource.qrc">
-        <normaloff>:/resource/ledgray(16).png</normaloff>:/resource/ledgray(16).png</iconset>
-      </property>
      </item>
      <item row="1" column="0">
       <property name="text">
@@ -162,17 +158,11 @@ QRadioButton::indicator:unchecked:disabled
       <property name="text">
        <string/>
       </property>
-      <property name="icon">
-       <iconset resource="../resource.qrc">
-        <normaloff>:/resource/ledgray(16).png</normaloff>:/resource/ledgray(16).png</iconset>
-      </property>
      </item>
     </widget>
    </item>
   </layout>
  </widget>
- <resources>
-  <include location="../resource.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

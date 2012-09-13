@@ -6,6 +6,7 @@
 #include "icinstructioneditorbase.h"
 #include "config.h"
 
+#include <QIntValidator>
 class ICLabelWrapper;
 
 namespace Ui {
@@ -51,6 +52,8 @@ private:
     int oBP_;
     int oCP_;
 #endif
+    QIntValidator posValidators_[8];
+    int posMaxs_[8];
     int axisDefine_;
     QList<QList<QWidget*> > axisWidgets_;
 //    QList<ICLabelWrapper*> wrappers_;

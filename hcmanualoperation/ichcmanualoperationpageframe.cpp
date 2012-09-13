@@ -292,13 +292,14 @@ void ICHCManualOperationPageFrame::ShowOptionPage()
 
 void ICHCManualOperationPageFrame::StatusRefreshed()
 {
+    bool isAxisOn = !ui->aAxisButton->isHidden();
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     if(host->IsInputOn(0))
     {
         if(currentPose1_ != 0)
         {
             currentPose1_ = 0;
-            ui->currentPose->setText(tr("Horizontal-1"));
+            ui->currentPose->setText(tr("Horizontal-1 Limit On"));
         }
     }
     else if(host->IsInputOn(1))
@@ -306,7 +307,7 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
         if(currentPose1_ != 1)
         {
             currentPose1_ = 1;
-            ui->currentPose->setText(tr("Vertical-1"));
+            ui->currentPose->setText(tr("Vertical-1 Limit On"));
         }
     }
     else
@@ -318,20 +319,20 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
         }
     }
 
-    if(host->IsInputOn(23))
+    if(host->IsInputOn(23) && isAxisOn)
     {
         if(currentPose2_ != 0)
         {
             currentPose2_ = 0;
-            ui->currentPose->setText(ui->currentPose->text() + tr("/Horizontal-2"));
+            ui->currentPose->setText(ui->currentPose->text() + tr("/Horizontal-2 Limit On"));
         }
     }
-    else if(host->IsInputOn(11))
+    else if(host->IsInputOn(11) && isAxisOn)
     {
         if(currentPose2_ != 1)
         {
             currentPose2_ = 1;
-            ui->currentPose->setText(ui->currentPose->text() + tr("/Vertical-2"));
+            ui->currentPose->setText(ui->currentPose->text() + tr("/Vertical-2 Limit On"));
         }
     }
     else
@@ -360,7 +361,7 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
             ui->currentAction->setText(tr("Vertical-1"));
         }
     }
-    else if(host->IsAction(20))
+    else if(host->IsAction(20) && isAxisOn)
     {
         if(currentAction_ != 20)
         {
@@ -368,7 +369,7 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
             ui->currentAction->setText(tr("Horizontal-2"));
         }
     }
-    else if(host->IsAction(21))
+    else if(host->IsAction(21) && isAxisOn)
     {
         if(currentAction_ != 21)
         {
