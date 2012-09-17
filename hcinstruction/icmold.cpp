@@ -301,7 +301,9 @@ bool ICMold::SaveMoldFile(bool isSaveParams)
     }
     file.write(toWrite);
     file.close();
-    system(QString("rm %1~").arg(moldName_).toAscii());
+//    QDir dir(file.parent())
+//    system(QString("rm %1~").arg(moldName_).toAscii());
+    QFile::remove(moldName_ + "~");
     if(isSaveParams)
     {
         SaveMoldParamsFile();
@@ -326,7 +328,8 @@ bool ICMold::SaveMoldParamsFile()
     }
     file.write(toWrite);
     file.close();
-    system(QString("rm %1~").arg(moldParamName_).toAscii());
+//    system(QString("rm %1~").arg(moldParamName_).toAscii());
+    QFile::remove(moldParamName_ + "~");
     return true;
 }
 

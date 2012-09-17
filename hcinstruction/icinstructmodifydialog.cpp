@@ -16,12 +16,12 @@ ICInstructModifyDialog::ICInstructModifyDialog(QWidget *parent) :
     validator = new QIntValidator(0, 100, this);
     ui->speedEdit->setValidator(validator);
 
-    validator = new QIntValidator(0, 65530, this);
+    posValidator_ = new QIntValidator(0, 65530, this);
     ui->posEdit->SetDecimalPlaces(1);
-    ui->posEdit->setValidator(validator);
+    ui->posEdit->setValidator(posValidator_);
 
     ui->earlyEndTimeEdit->SetDecimalPlaces(1);
-    ui->earlyEndTimeEdit->setValidator(validator);
+    ui->earlyEndTimeEdit->setValidator(posValidator_);
     ui->selectEdit->setValidator(new QIntValidator(1, 4, this));
 
     ui->posEdit->SetModalKeyboard(true);
@@ -67,6 +67,38 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
     {
         if( item->Action() <= ICMold::GB)
         {
+            ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+            ICVirtualHost::ICSystemParameter addr;
+            switch(item->Action())
+            {
+            case ICMold::GX:
+                addr = ICVirtualHost::SYS_X_Maxium;
+                break;
+            case ICMold::GY:
+                addr = ICVirtualHost::SYS_Y_Maxium;
+                break;
+            case ICMold::GZ:
+                addr = ICVirtualHost::SYS_Z_Maxium;
+                break;
+            case ICMold::GP:
+                addr = ICVirtualHost::SYS_P_Maxium;
+                break;
+            case ICMold::GQ:
+                addr = ICVirtualHost::SYS_Q_Maxium;
+                break;
+            case ICMold::GA:
+                addr = ICVirtualHost::SYS_A_Maxium;
+                break;
+            case ICMold::GB:
+                addr = ICVirtualHost::SYS_B_Maxium;
+                break;
+            case ICMold::GC:
+                addr = ICVirtualHost::SYS_C_Maxium;
+                break;
+            }
+
+            posValidator_->setTop(host->SystemParameter(addr).toInt());
+
             ui->positionLabel->show();
             ui->posEdit->show();
             ui->mmLabel->show();

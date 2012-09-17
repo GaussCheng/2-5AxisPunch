@@ -64,10 +64,9 @@ private:
 
     QStackedLayout * centralStackedLayout_;
     QButtonGroup* buttonGroup_;
-    int currentPose1_;
-    int currentPose2_;
     int currentAction_;
     int timerID_;
+    QString positionText_;
 };
 
 #endif // ICHCMANUALOPERATIONPAGEFRAME_H

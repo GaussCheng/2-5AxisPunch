@@ -38,6 +38,8 @@ ICKeyboardReceiver::ICKeyboardReceiver(QObject *parent) :
     }
     timer_.setSingleShot(true);
     connect(&timer_, SIGNAL(timeout()), this, SLOT(BeepStop()));
+    connect(this, SIGNAL(finished()), SLOT(on_finished()));
+    connect(this, SIGNAL(terminated()), SLOT(on_finished()));
 #endif
 }
 ICKeyboardReceiver::~ICKeyboardReceiver()
@@ -207,4 +209,9 @@ void ICKeyboardReceiver::BeepStop()
 #ifndef NATIVE_WIN32
     ioctl(beepFD_, BEEP_OFF, NULL);
 #endif
+}
+
+void ICKeyboardReceiver::on_finished()
+{
+    ::system("touch key_finished");
 }
