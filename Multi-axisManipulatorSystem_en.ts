@@ -2792,12 +2792,12 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="75"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="107"/>
         <source>speed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="96"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="128"/>
         <source>Times</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3123,23 +3123,23 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinefigure.ui" line="85"/>
-        <location filename="hcsettings/icmachinefigure.ui" line="98"/>
+        <location filename="hcsettings/icmachinefigure.ui" line="115"/>
+        <location filename="hcsettings/icmachinefigure.ui" line="134"/>
         <source>TextLabel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinefigure.ui" line="111"/>
+        <location filename="hcsettings/icmachinefigure.ui" line="147"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinefigure.cpp" line="78"/>
+        <location filename="hcsettings/icmachinefigure.cpp" line="79"/>
         <source>Tips</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinefigure.cpp" line="78"/>
+        <location filename="hcsettings/icmachinefigure.cpp" line="79"/>
         <source>Save successfully!</source>
         <translation type="unfinished"></translation>
     </message>
