@@ -182,13 +182,12 @@ ICMold::ICMold(QObject *parent) :
 
 bool ICMold::ReadMoldFile(const QString &fileName, bool isLoadParams)
 {
-    moldContent_.clear();
     QFile file(fileName);
     if(!file.open(QFile::ReadOnly | QFile::Text))
     {
         return false;
     }
-    moldName_ = fileName;
+//    moldName_ = fileName;
     QString content = file.readAll();
     file.close();
     //    content = content.remove('\r');
@@ -208,6 +207,7 @@ bool ICMold::ReadMoldFile(const QString &fileName, bool isLoadParams)
     ICMoldItem moldItem;
     qDebug("before read");
     qDebug()<<"size"<<records.size();
+    QList<ICMoldItem> tempmoldContent;
     for(int i = 0; i != records.size(); ++i)
     {
         qDebug()<<"in"<<i;
@@ -227,7 +227,7 @@ bool ICMold::ReadMoldFile(const QString &fileName, bool isLoadParams)
                           items.at(7).toUInt(),
                           items.at(8).toUInt(),
                           items.at(9).toUInt());
-        moldContent_.append(moldItem);
+        tempmoldContent.append(moldItem);
     }
     qDebug("read ok");
     bool ret = true;
@@ -239,12 +239,17 @@ bool ICMold::ReadMoldFile(const QString &fileName, bool isLoadParams)
         ret = ReadMoldParamsFile(moldParamFileName);
         emit MoldNumberParamChanged();
     }
+    if(ret == true)
+    {
+        moldContent_ = tempmoldContent;
+        moldName_ = fileName;
+    }
     return ret;
 }
 
 bool ICMold::ReadMoldParamsFile(const QString &fileName)
 {
-    moldParamName_ = fileName;
+//    moldParamName_ = fileName;
     QFile file(fileName);
     if(!file.open(QFile::ReadOnly | QFile::Text))
     {
@@ -282,6 +287,7 @@ bool ICMold::ReadMoldParamsFile(const QString &fileName)
         stackParams_.append(stackParam);
     }
     checkSum_ = items.last().toUInt();
+    moldParamName_ = fileName;
     return true;
 }
 

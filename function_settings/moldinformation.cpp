@@ -307,6 +307,7 @@ void MoldInformation::on_loadToolButton_clicked()
             if(!ICMold::CurrentMold()->ReadMoldFile(filePathName))
             {
                 QMessageBox::critical(this, tr("critical"), tr("Read mold or mold para fail! Please change other mold!"));
+//                ICMold::CurrentMold()->ReadMoldFile(
                 return;
             }
             ICVirtualHost::GlobalVirtualHost()->ReConfigure();
