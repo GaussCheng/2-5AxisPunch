@@ -183,7 +183,7 @@ QDialog{
      border-style: outset;
      border-width: 2px;
      border-radius: 6px;
-     border-color: gray;
+     border-color: darkgray;
 }
 
 QAbstractItemView::item{

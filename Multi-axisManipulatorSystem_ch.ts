@@ -6229,9 +6229,9 @@ Would you want to restart now?</source>
         <location filename="function_settings/moldinformation.cpp" line="189"/>
         <location filename="function_settings/moldinformation.cpp" line="200"/>
         <location filename="function_settings/moldinformation.cpp" line="223"/>
-        <location filename="function_settings/moldinformation.cpp" line="330"/>
-        <location filename="function_settings/moldinformation.cpp" line="341"/>
+        <location filename="function_settings/moldinformation.cpp" line="334"/>
         <location filename="function_settings/moldinformation.cpp" line="345"/>
+        <location filename="function_settings/moldinformation.cpp" line="349"/>
         <source>warning</source>
         <translation>警告</translation>
     </message>
@@ -6323,32 +6323,42 @@ Please try a new name</source>
         <translation>文件名空</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="314"/>
+        <location filename="function_settings/moldinformation.cpp" line="309"/>
+        <source>critical</source>
+        <translation>错误</translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.cpp" line="309"/>
+        <source>Read mold or mold para fail! Please change other mold!</source>
+        <translation>模组数据已损坏，请更换其它模组!</translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.cpp" line="318"/>
         <source>Tips</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="314"/>
+        <location filename="function_settings/moldinformation.cpp" line="318"/>
         <source>Load Mold Successful!</source>
         <translation>装载模号成功！</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="331"/>
+        <location filename="function_settings/moldinformation.cpp" line="335"/>
         <source>The mold file </source>
         <translation>模号文件</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="333"/>
+        <location filename="function_settings/moldinformation.cpp" line="337"/>
         <source> is being used</source>
         <translation>正被使用</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="342"/>
+        <location filename="function_settings/moldinformation.cpp" line="346"/>
         <source>Stand programs can not be delete!</source>
         <translation>标准程序不能删除！</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="346"/>
+        <location filename="function_settings/moldinformation.cpp" line="350"/>
         <source>Are you sure to delete files </source>
         <translation>确认删除文件</translation>
     </message>

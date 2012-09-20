@@ -35,6 +35,12 @@ ICAutoRunRevise::~ICAutoRunRevise()
 bool ICAutoRunRevise::ShowModifyItem(const ICMoldItem *item, ICMoldItem* ret, const QString &text)
 {
     ui->currentMoldItemLabel->setText(text);
+    ui->positionLabel->hide();
+    ui->posEdit->hide();
+    ui->speedLabel->hide();
+    ui->speedEdit->hide();
+    ui->mmLabel->hide();
+    ui->precentLabel->hide();
     if(item->IsAction())
     {
         if(item->Action() <= ICMold::GB)
@@ -46,15 +52,6 @@ bool ICAutoRunRevise::ShowModifyItem(const ICMoldItem *item, ICMoldItem* ret, co
             ui->mmLabel->show();
             ui->precentLabel->show();
         }
-    }
-    else
-    {
-        ui->positionLabel->hide();
-        ui->posEdit->hide();
-        ui->speedLabel->hide();
-        ui->speedEdit->hide();
-        ui->mmLabel->hide();
-        ui->precentLabel->hide();
     }
     ui->posEdit->SetThisIntToThisText(0);
     ui->speedEdit->SetThisIntToThisText(item->SVal());

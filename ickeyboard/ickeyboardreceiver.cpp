@@ -64,7 +64,9 @@ void ICKeyboardReceiver::run()
         while(1)
         {
             bzero(keyValue, 5);
+//            ::system("echo before readkey >> keylog");
             read(fd, keyValue, 5);
+//            ::system("echo after readkey >> keylog");
             key = QString(keyValue).toInt();
             qDebug()<<"key"<<key;
             if(config->KeyTone())
@@ -113,7 +115,8 @@ void ICKeyboardReceiver::run()
                     keyboard->SetKeyValue(key);
                     icMainFrame->KeyToInstructEditor(key);
                 }
-                msleep(100);
+//                msleep(100);
+//                ::system("echo after readkey--VFB_X-P >> keylog");
                 continue;
             }
             if(key != oldKeyValue_)
@@ -122,6 +125,7 @@ void ICKeyboardReceiver::run()
                 if(key == ICKeyboard::FB_NULL)
                 {
                     keyboard->SetPressed(false);
+//                    ::system("echo after readkey--NULL >> keylog");
                     continue;
                 }
                 if(key >= ICKeyboard::FB_F1 && key <= ICKeyboard::FB_F5)
@@ -133,7 +137,8 @@ void ICKeyboardReceiver::run()
                         QKeyEvent *event = new QKeyEvent(QEvent::KeyPress, key, Qt::NoModifier);
                         qApp->postEvent(icMainFrame, event);
                     }
-                    msleep(100);
+//                    msleep(100);
+//                    ::system("echo after readkey-F1--F5 >> keylog");
                     continue;
                 }
                 //                if(key == ICKeyboard::FB_Down || key == ICKeyboard::FB_Up)
@@ -157,7 +162,8 @@ void ICKeyboardReceiver::run()
                     }
                 }
             }
-            msleep(100);
+//            ::system("echo end readkey >> keylog");
+//            msleep(100);
         }
     }
     ::close(fd);

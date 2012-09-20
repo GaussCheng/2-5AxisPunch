@@ -5022,9 +5022,9 @@ Would you want to restart now?</source>
         <location filename="function_settings/moldinformation.cpp" line="189"/>
         <location filename="function_settings/moldinformation.cpp" line="200"/>
         <location filename="function_settings/moldinformation.cpp" line="223"/>
-        <location filename="function_settings/moldinformation.cpp" line="330"/>
-        <location filename="function_settings/moldinformation.cpp" line="341"/>
+        <location filename="function_settings/moldinformation.cpp" line="334"/>
         <location filename="function_settings/moldinformation.cpp" line="345"/>
+        <location filename="function_settings/moldinformation.cpp" line="349"/>
         <source>warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5108,32 +5108,42 @@ Please try a new name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="314"/>
+        <location filename="function_settings/moldinformation.cpp" line="309"/>
+        <source>critical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.cpp" line="309"/>
+        <source>Read mold or mold para fail! Please change other mold!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.cpp" line="318"/>
         <source>Tips</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="314"/>
+        <location filename="function_settings/moldinformation.cpp" line="318"/>
         <source>Load Mold Successful!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="331"/>
+        <location filename="function_settings/moldinformation.cpp" line="335"/>
         <source>The mold file </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="333"/>
+        <location filename="function_settings/moldinformation.cpp" line="337"/>
         <source> is being used</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="342"/>
+        <location filename="function_settings/moldinformation.cpp" line="346"/>
         <source>Stand programs can not be delete!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="346"/>
+        <location filename="function_settings/moldinformation.cpp" line="350"/>
         <source>Are you sure to delete files </source>
         <translation type="unfinished"></translation>
     </message>

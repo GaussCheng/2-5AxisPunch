@@ -230,15 +230,16 @@ bool ICMold::ReadMoldFile(const QString &fileName, bool isLoadParams)
         moldContent_.append(moldItem);
     }
     qDebug("read ok");
+    bool ret = true;
     if(isLoadParams)
     {
         QString moldParamFileName = fileName;
         moldParamFileName.chop(3);
         moldParamFileName += "fnc";
-        ReadMoldParamsFile(moldParamFileName);
+        ret = ReadMoldParamsFile(moldParamFileName);
         emit MoldNumberParamChanged();
     }
-    return true;
+    return ret;
 }
 
 bool ICMold::ReadMoldParamsFile(const QString &fileName)
@@ -256,6 +257,10 @@ bool ICMold::ReadMoldParamsFile(const QString &fileName)
     //    fileContent = fileContent.remove('\r');
 
     QStringList items = fileContent.split('\n', QString::SkipEmptyParts);
+    if(items.size() != MoldParamCount + StackParamCount * 4 + 1)
+    {
+        return false;
+    }
     for(int i = 0; i != MoldParamCount; ++i)
     {
         moldParams_.append(items.at(i).toUInt());

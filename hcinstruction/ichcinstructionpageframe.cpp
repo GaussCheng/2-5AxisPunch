@@ -363,28 +363,28 @@ void ICHCInstructionPageFrame::InitSignal()
 //                ui->programSelectedComboBox->findText(ICParametersSave::Instance()->MoldName(QString())));
 //}
 
-void ICHCInstructionPageFrame::LoadMoldFile(const QString & moldName)
-{
-    qDebug("Load mold file");
-    QString filePathName = recordPath_ + moldName;
-    if(QFile::exists(filePathName))
-    {
-        ICMold::CurrentMold()->ReadMoldFile(filePathName);
-        ICVirtualHost::GlobalVirtualHost()->ReConfigure();
-//        emit CurrentProgramChanged();
-        qDebug("after emit updatehostparam");
-        //        UpdateHostParam();
+//void ICHCInstructionPageFrame::LoadMoldFile(const QString & moldName)
+//{
+//    qDebug("Load mold file");
+//    QString filePathName = recordPath_ + moldName;
+//    if(QFile::exists(filePathName))
+//    {
+//        ICMold::CurrentMold()->ReadMoldFile(filePathName);
+//        ICVirtualHost::GlobalVirtualHost()->ReConfigure();
+////        emit CurrentProgramChanged();
+//        qDebug("after emit updatehostparam");
+//        //        UpdateHostParam();
 
-        ICParametersSave::Instance()->SetMoldName(moldName);
-        ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnTeach,
-                                                         0,
-                                                         ICMold::CurrentMold()->SyncAct() + ICMacroSubroutine::Instance()->SyncAct(),
-                                                         ICMold::CurrentMold()->SyncSum() + ICMacroSubroutine::Instance()->SyncSum());
+//        ICParametersSave::Instance()->SetMoldName(moldName);
+//        ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnTeach,
+//                                                         0,
+//                                                         ICMold::CurrentMold()->SyncAct() + ICMacroSubroutine::Instance()->SyncAct(),
+//                                                         ICMold::CurrentMold()->SyncSum() + ICMacroSubroutine::Instance()->SyncSum());
 
-        ICProgramHeadFrame::Instance()->SetCurrentMoldName(moldName);
-        //        emit CurrentMoldChanged(moldName);
-    }
-}
+//        ICProgramHeadFrame::Instance()->SetCurrentMoldName(moldName);
+//        //        emit CurrentMoldChanged(moldName);
+//    }
+//}
 
 //void ICHCInstructionPageFrame::LoadAllRecordFileInfo()
 //{

@@ -81,7 +81,7 @@ private:
 
 //    void AddCommandStr(const QString & commandStr);
 
-    void LoadMoldFile(const QString & moldName);
+//    void LoadMoldFile(const QString & moldName);
     void CurrentMoldFileChanged(const QString & moldName);
 
     void SaveCurrentEdit();

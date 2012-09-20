@@ -304,7 +304,11 @@ void MoldInformation::on_loadToolButton_clicked()
         QString filePathName = "./records/" + moldName;
         if(QFile::exists(filePathName))
         {
-            ICMold::CurrentMold()->ReadMoldFile(filePathName);
+            if(!ICMold::CurrentMold()->ReadMoldFile(filePathName))
+            {
+                QMessageBox::critical(this, tr("critical"), tr("Read mold or mold para fail! Please change other mold!"));
+                return;
+            }
             ICVirtualHost::GlobalVirtualHost()->ReConfigure();
             qDebug("after emit updatehostparam");
             //        UpdateHostParam();
