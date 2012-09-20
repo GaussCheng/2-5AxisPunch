@@ -84,7 +84,7 @@ private:
 //    void LoadMoldFile(const QString & moldName);
     void CurrentMoldFileChanged(const QString & moldName);
 
-    void SaveCurrentEdit();
+    bool SaveCurrentEdit();
 
 private:
     Ui::ICHCInstructionPageFrame *ui;
@@ -109,6 +109,7 @@ private:
 
     QList<ICGroupMoldUIItem> programList_;
     int currentEdit_;
+    bool isProgramChanged_;
 };
 
 #endif // ICHCINSTRUCTIONPAGEFRAME_H

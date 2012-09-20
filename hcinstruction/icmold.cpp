@@ -176,8 +176,8 @@ ICMold::ICMold(QObject *parent) :
     QObject(parent)
 {
     ICInstructParam::Instance();
-//    axisActions_.append(GX);
-//    axisActions_.append();
+    //    axisActions_.append(GX);
+    //    axisActions_.append();
 }
 
 bool ICMold::ReadMoldFile(const QString &fileName, bool isLoadParams)
@@ -265,7 +265,7 @@ bool ICMold::ReadMoldParamsFile(const QString &fileName)
     {
         moldParams_.append(items.at(i).toUInt());
     }
-//    Q_ASSERT_X(items.size() == 58, "ICMold::ReadMoldParamFile", "fnc file is not correct!");
+    //    Q_ASSERT_X(items.size() == 58, "ICMold::ReadMoldParamFile", "fnc file is not correct!");
 
     QList<int> stackParam;
     int base;
@@ -287,6 +287,7 @@ bool ICMold::ReadMoldParamsFile(const QString &fileName)
 
 bool ICMold::SaveMoldFile(bool isSaveParams)
 {
+    bool ret = false;
     MoldReSum();
     QByteArray toWrite;
     if(moldContent_.size() < 1)
@@ -299,25 +300,31 @@ bool ICMold::SaveMoldFile(bool isSaveParams)
         toWrite += moldContent_.at(i).ToString() + "\n";
     }
     QFile file(moldName_);
-    file.copy(moldName_ + "~");
-    if(!file.open(QFile::WriteOnly | QFile::Text))
+    if(!file.open(QFile::ReadWrite | QFile::Text))
     {
         return false;
     }
-    file.write(toWrite);
-    file.close();
-//    QDir dir(file.parent())
-//    system(QString("rm %1~").arg(moldName_).toAscii());
-    QFile::remove(moldName_ + "~");
+    if(file.readAll() != toWrite)
+    {
+        QFile::copy(moldName_, moldName_ + "~");
+        file.resize(0);
+        file.write(toWrite);
+        file.close();
+        //    QDir dir(file.parent())
+        //    system(QString("rm %1~").arg(moldName_).toAscii());
+        QFile::remove(moldName_ + "~");
+        ret = true;
+    }
     if(isSaveParams)
     {
         SaveMoldParamsFile();
     }
-    return true;
+    return ret;
 }
 
 bool ICMold::SaveMoldParamsFile()
 {
+    bool ret = false;
     UpdateSyncSum();
     QByteArray toWrite;
     QList<int> allParams = AllParams();
@@ -326,16 +333,20 @@ bool ICMold::SaveMoldParamsFile()
         toWrite += QByteArray::number(allParams.at(i)) + "\n";
     }
     QFile file(moldParamName_);
-    file.copy(moldParamName_ + "~");
-    if(!file.open(QFile::WriteOnly | QFile::Text))
+    if(!file.open(QFile::ReadWrite | QFile::Text))
     {
         return false;
     }
-    file.write(toWrite);
-    file.close();
-//    system(QString("rm %1~").arg(moldParamName_).toAscii());
-    QFile::remove(moldParamName_ + "~");
-    return true;
+    if(file.readAll() != toWrite)
+    {
+        QFile::copy(moldParamName_, moldParamName_ + "~");
+        file.write(toWrite);
+        file.close();
+        //    system(QString("rm %1~").arg(moldParamName_).toAscii());
+        QFile::remove(moldParamName_ + "~");
+        ret = true;
+    }
+    return ret;
 }
 
 uint ICMold::SyncAct() const

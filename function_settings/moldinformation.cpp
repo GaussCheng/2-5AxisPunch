@@ -254,7 +254,7 @@ void MoldInformation::UpdateInformationTable()
 
     foreach(tmp, userProgramList)
     {
-        AddNewInTableWidget(tmp.fileName(), tmp.created().toString("yyyy/MM/dd hh:mm:ss"));
+        AddNewInTableWidget(tmp.fileName(), tmp.lastModified().toString("yyyy/MM/dd hh:mm:ss"));
     }
     qDebug()<<"end2";
 //    ui->informationTableWidget->resizeColumnsToContents();

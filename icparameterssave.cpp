@@ -173,7 +173,7 @@ void ICParametersSave::SetDistanceRotation(const QString &axisName, double value
     Q_ASSERT_X(axisToRotate_.contains(axisName), "ICParameterSave::SetDistanceRotation", "no this axis!");
     axisToRotate_.insert(axisName, value);
     QFile file("./sysconfig/DistanceRotation");
-    file.copy("./sysconfig/DistanceRotation~");
+    QFile::copy("./sysconfig/DistanceRotation", "./sysconfig/DistanceRotation~");
     if(file.open(QFile::WriteOnly | QFile::Text))
     {
         QTextStream out(&file);
@@ -186,7 +186,8 @@ void ICParametersSave::SetDistanceRotation(const QString &axisName, double value
         }
     }
     file.close();
-    system("rm ./sysconfig/DistanceRotation~");
+//    system("rm ./sysconfig/DistanceRotation~");
+    QFile::remove("./sysconfig/DistanceRotation~");
 }
 
 void ICParametersSave::SetBrightness(uint brightness)

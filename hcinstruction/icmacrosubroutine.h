@@ -72,7 +72,7 @@ public:
     }
 
     bool ReadMacroSubroutieFiles(const QString& dir);
-    void SaveMacroSubroutieFile(int group);
+    bool SaveMacroSubroutieFile(int group);
     void SaveMacroSubroutieFiles();
 
     ICMacroAllSubroutine SubRoutines() const { return subroutines_;}

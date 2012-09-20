@@ -56,7 +56,8 @@ ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
     stackPage_(NULL),
     recordPath_("./records/"),
     currentAction_(None),
-    currentEdit_(0)
+    currentEdit_(0),
+    isProgramChanged_(false)
 {
     ui->setupUi(this);
 
@@ -133,8 +134,11 @@ void ICHCInstructionPageFrame::hideEvent(QHideEvent *e)
 //               SLOT(GetTeachContent()));
 //    ICMold::CurrentMold()->SetMoldContent(ICMold::UIItemToMoldItem(programList_));
 //    ICMold::CurrentMold()->SaveMoldFile();
-    SaveCurrentEdit();
-    ICVirtualHost::GlobalVirtualHost()->ReConfigure();
+    if(SaveCurrentEdit() == true || isProgramChanged_)
+    {
+        ICVirtualHost::GlobalVirtualHost()->ReConfigure();
+        isProgramChanged_ = false;
+    }
     if(ICKeyboard::Instace()->CurrentSwitchStatus() == ICKeyboard::KS_ManualStatu)
     {
         ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnManual, 0);
@@ -1000,7 +1004,7 @@ void ICHCInstructionPageFrame::OnProgramChanged(int index, QString name)
     {
         return;
     }
-    SaveCurrentEdit();
+    isProgramChanged_ = SaveCurrentEdit();
     ui->moldContentListWidget->clear();
     programList_.clear();
     currentEdit_ = index;
@@ -1010,17 +1014,17 @@ void ICHCInstructionPageFrame::OnProgramChanged(int index, QString name)
 
 }
 
-void ICHCInstructionPageFrame::SaveCurrentEdit()
+bool ICHCInstructionPageFrame::SaveCurrentEdit()
 {
     if(currentEdit_ == 0)
     {
         ICMold::CurrentMold()->SetMoldContent(ICMold::UIItemToMoldItem(programList_));
-        ICMold::CurrentMold()->SaveMoldFile();
+        return ICMold::CurrentMold()->SaveMoldFile();
     }
     else
     {
         ICMacroSubroutine::Instance()->SetSubRoutine(ICMold::UIItemToMoldItem(programList_), currentEdit_ - 1);
-        ICMacroSubroutine::Instance()->SaveMacroSubroutieFile(currentEdit_ - 1);
+        return ICMacroSubroutine::Instance()->SaveMacroSubroutieFile(currentEdit_ - 1);
     }
 }
 

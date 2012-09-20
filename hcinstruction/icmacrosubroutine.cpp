@@ -63,19 +63,14 @@ bool ICMacroSubroutine::ReadMacroSubroutieFiles(const QString &dir)
     return true;
 }
 
-void ICMacroSubroutine::SaveMacroSubroutieFile(int group)
+bool ICMacroSubroutine::SaveMacroSubroutieFile(int group)
 {
     Q_ASSERT_X(group < subroutines_.size(), "ICMacroSubroutine::SaveMacroSubRoutineFile", "group is out of range");
+    bool ret = false;
     ICMold::MoldReSum(subroutines_[group]);
     if(subsDir_.right(1) == "/")
     {
         subsDir_.chop(1);
-    }
-    QFile file(subsDir_ + "/sub" + QString::number(group) + ".prg");
-    file.copy(file.fileName() + "~");
-    if(!file.open(QFile::WriteOnly | QFile::Text))
-    {
-        return;
     }
     QByteArray toWrite;
     QList<ICMoldItem> items = subroutines_.at(group);
@@ -83,9 +78,20 @@ void ICMacroSubroutine::SaveMacroSubroutieFile(int group)
     {
         toWrite += items.at(i).ToString() + "\n";
     }
-    file.write(toWrite);
-    file.close();
-    system(QString("rm %1~").arg(file.fileName()).toAscii());
+    QFile file(subsDir_ + "/sub" + QString::number(group) + ".prg");
+    if(!file.open(QFile::ReadWrite | QFile::Text))
+    {
+        return false;
+    }
+    if(file.readAll() != toWrite)
+    {
+        QFile::copy(file.fileName(), file.fileName() + "~");
+        file.write(toWrite);
+        file.close();
+        QFile::remove(file.fileName() + "~");
+        ret = true;
+    }
+    return ret;
 }
 
 uint ICMacroSubroutine::SyncAct() const
