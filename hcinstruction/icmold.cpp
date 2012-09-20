@@ -340,6 +340,7 @@ bool ICMold::SaveMoldParamsFile()
     if(file.readAll() != toWrite)
     {
         QFile::copy(moldParamName_, moldParamName_ + "~");
+        file.resize(0);
         file.write(toWrite);
         file.close();
         //    system(QString("rm %1~").arg(moldParamName_).toAscii());

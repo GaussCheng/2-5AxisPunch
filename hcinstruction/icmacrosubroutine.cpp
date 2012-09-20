@@ -86,6 +86,7 @@ bool ICMacroSubroutine::SaveMacroSubroutieFile(int group)
     if(file.readAll() != toWrite)
     {
         QFile::copy(file.fileName(), file.fileName() + "~");
+        file.resize(0);
         file.write(toWrite);
         file.close();
         QFile::remove(file.fileName() + "~");
