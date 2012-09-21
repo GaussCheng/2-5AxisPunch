@@ -23,7 +23,7 @@ ICHCTimeFrame::~ICHCTimeFrame()
 
 void ICHCTimeFrame::InitInterFace()
 {
-    QIntValidator * validator = new QIntValidator(0, 32767, this);
+    QIntValidator * validator = new QIntValidator(0, 3000, this);
     QLayout * layout = ui->gridLayout;
     ICLineEditWithVirtualNumericKeypad *lineEdit;
     for(int i = 0; i != layout->count(); ++i)

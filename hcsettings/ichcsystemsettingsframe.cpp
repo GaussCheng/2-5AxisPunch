@@ -388,7 +388,7 @@ void ICHCSystemSettingsFrame::on_restoreMoldsButton_clicked()
             return;
         }
     }
-    system("cp /mnt/udisk/HC5ABackup/records/* /opt/Qt/bin/records -f");
+    system("cp /mnt/udisk/HC5ABackup/records/*.act /mnt/udisk/HC5ABackup/records/*.fnc /opt/Qt/bin/records -f");
     dir.setPath("/mnt/udisk/HC5ABackup/subs");
     if(!dir.exists())
     {
