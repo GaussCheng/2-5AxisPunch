@@ -1883,10 +1883,10 @@ Reason</source>
         <translation>主菜单</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="519"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="724"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="863"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="937"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="523"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="728"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="867"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="941"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -1903,32 +1903,32 @@ Reason</source>
         <translation type="obsolete">该模号是当前模号!</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="520"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="524"/>
         <source>Can not add standby position program</source>
         <translation>不能添加待机点步骤</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="713"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="717"/>
         <source>warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="714"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="718"/>
         <source>Stand program can not be delete action</source>
         <translation>标准程序不能删除动作</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="725"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="729"/>
         <source>Can not delete standby position program</source>
         <translation>不能删除待机点步骤</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="864"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="868"/>
         <source>Can not group up to standby position program</source>
         <translation>不能组合待机点步骤</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="938"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="942"/>
         <source>Can not decompose standby position program</source>
         <translation>不能分解待机点步骤</translation>
     </message>
@@ -6190,7 +6190,7 @@ Would you want to restart now?</source>
     <message>
         <location filename="function_settings/moldinformation.ui" line="46"/>
         <source>Create Date</source>
-        <translation>创建日期</translation>
+        <translation>最后修改日期</translation>
     </message>
     <message>
         <location filename="function_settings/moldinformation.ui" line="74"/>
@@ -6229,9 +6229,9 @@ Would you want to restart now?</source>
         <location filename="function_settings/moldinformation.cpp" line="189"/>
         <location filename="function_settings/moldinformation.cpp" line="200"/>
         <location filename="function_settings/moldinformation.cpp" line="223"/>
-        <location filename="function_settings/moldinformation.cpp" line="334"/>
-        <location filename="function_settings/moldinformation.cpp" line="345"/>
-        <location filename="function_settings/moldinformation.cpp" line="349"/>
+        <location filename="function_settings/moldinformation.cpp" line="335"/>
+        <location filename="function_settings/moldinformation.cpp" line="346"/>
+        <location filename="function_settings/moldinformation.cpp" line="350"/>
         <source>warning</source>
         <translation>警告</translation>
     </message>
@@ -6333,32 +6333,32 @@ Please try a new name</source>
         <translation>模组数据已损坏，请更换其它模组!</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="318"/>
+        <location filename="function_settings/moldinformation.cpp" line="319"/>
         <source>Tips</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="318"/>
+        <location filename="function_settings/moldinformation.cpp" line="319"/>
         <source>Load Mold Successful!</source>
         <translation>装载模号成功！</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="335"/>
+        <location filename="function_settings/moldinformation.cpp" line="336"/>
         <source>The mold file </source>
         <translation>模号文件</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="337"/>
+        <location filename="function_settings/moldinformation.cpp" line="338"/>
         <source> is being used</source>
         <translation>正被使用</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="346"/>
+        <location filename="function_settings/moldinformation.cpp" line="347"/>
         <source>Stand programs can not be delete!</source>
         <translation>标准程序不能删除！</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="350"/>
+        <location filename="function_settings/moldinformation.cpp" line="351"/>
         <source>Are you sure to delete files </source>
         <translation>确认删除文件</translation>
     </message>

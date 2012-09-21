@@ -1398,40 +1398,40 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="519"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="724"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="863"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="937"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="523"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="728"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="867"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="941"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="520"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="524"/>
         <source>Can not add standby position program</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="713"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="717"/>
         <source>warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="714"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="718"/>
         <source>Stand program can not be delete action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="725"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="729"/>
         <source>Can not delete standby position program</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="864"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="868"/>
         <source>Can not group up to standby position program</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="938"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="942"/>
         <source>Can not decompose standby position program</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5022,9 +5022,9 @@ Would you want to restart now?</source>
         <location filename="function_settings/moldinformation.cpp" line="189"/>
         <location filename="function_settings/moldinformation.cpp" line="200"/>
         <location filename="function_settings/moldinformation.cpp" line="223"/>
-        <location filename="function_settings/moldinformation.cpp" line="334"/>
-        <location filename="function_settings/moldinformation.cpp" line="345"/>
-        <location filename="function_settings/moldinformation.cpp" line="349"/>
+        <location filename="function_settings/moldinformation.cpp" line="335"/>
+        <location filename="function_settings/moldinformation.cpp" line="346"/>
+        <location filename="function_settings/moldinformation.cpp" line="350"/>
         <source>warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5118,32 +5118,32 @@ Please try a new name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="318"/>
+        <location filename="function_settings/moldinformation.cpp" line="319"/>
         <source>Tips</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="318"/>
+        <location filename="function_settings/moldinformation.cpp" line="319"/>
         <source>Load Mold Successful!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="335"/>
+        <location filename="function_settings/moldinformation.cpp" line="336"/>
         <source>The mold file </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="337"/>
+        <location filename="function_settings/moldinformation.cpp" line="338"/>
         <source> is being used</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="346"/>
+        <location filename="function_settings/moldinformation.cpp" line="347"/>
         <source>Stand programs can not be delete!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="350"/>
+        <location filename="function_settings/moldinformation.cpp" line="351"/>
         <source>Are you sure to delete files </source>
         <translation type="unfinished"></translation>
     </message>

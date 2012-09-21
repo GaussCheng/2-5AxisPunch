@@ -155,7 +155,7 @@ void ICKeyboardReceiver::run()
                 if(key == ICKeyboard::FB_F5)
                 {
                     ++specialKeyCount_;
-                    if(specialKeyCount_ == 100)
+                    if(specialKeyCount_ == 500)
                     {
                         ::system("cd /home/szhc && echo recal >>recal");
                         specialKeyCount_ = 0;

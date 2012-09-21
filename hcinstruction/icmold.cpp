@@ -255,8 +255,6 @@ bool ICMold::ReadMoldParamsFile(const QString &fileName)
     {
         return false;
     }
-    moldParams_.clear();
-    stackParams_.clear();
     QString fileContent = file.readAll();
     file.close();
     //    fileContent = fileContent.remove('\r');
@@ -266,6 +264,8 @@ bool ICMold::ReadMoldParamsFile(const QString &fileName)
     {
         return false;
     }
+    moldParams_.clear();
+    stackParams_.clear();
     for(int i = 0; i != MoldParamCount; ++i)
     {
         moldParams_.append(items.at(i).toUInt());
