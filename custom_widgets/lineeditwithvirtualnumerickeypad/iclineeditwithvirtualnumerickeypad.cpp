@@ -35,14 +35,8 @@ void ICLineEditWithVirtualNumericKeypad::SetThisIntToThisText(int inputNum)
 }
 
 //protected:
-void ICLineEditWithVirtualNumericKeypad::mouseReleaseEvent(QMouseEvent *e)
+void ICLineEditWithVirtualNumericKeypad::mousePressEvent(QMouseEvent *e)
 {
-    //    virtualNumericKeypadDialog_->disconnect();
-    //    connect(virtualNumericKeypadDialog_,
-    //            SIGNAL(EnterComplete(QString)),
-    //            this,
-    //            SLOT(SetCurrentText(QString)));
-
     this->setStyleSheet("background:lightgreen;");
     virtualNumericKeypadDialog_->ResetDisplay();
     QPoint topLeft = this->mapToGlobal(this->rect().topLeft());
@@ -76,49 +70,39 @@ void ICLineEditWithVirtualNumericKeypad::mouseReleaseEvent(QMouseEvent *e)
         }
     }
     virtualNumericKeypadDialog_->move(toMove);
-    //    if(IsModalKeyboard())
-    //    {
-    virtualNumericKeypadDialog_->exec();
-    //    }
-    //    else
-    //    {
-    //        virtualNumericKeypadDialog_->show();
-    //    }
-    //    disconnect(virtualNumericKeypadDialog_,
-    //               SIGNAL(EnterComplete(QString)),
-    //               this,
-    //               SLOT(SetCurrentText(QString)));
-    SetCurrentText(virtualNumericKeypadDialog_->GetCurrentText());
-//    QLineEdit::mouseReleaseEvent(e);
+    do
+    {
+        virtualNumericKeypadDialog_->exec();
+
+    }while(!SetCurrentText(virtualNumericKeypadDialog_->GetCurrentText()));
     this->setStyleSheet("");
     e->accept();
 }
 
-void ICLineEditWithVirtualNumericKeypad::wheelEvent(QWheelEvent * wheelEvent)
-{
-    int num = ICParameterConversion::TransTextToThisInt(this->text(), this->DecimalPlaces());
-    QIntValidator * intValidator = (QIntValidator *)this->validator();
-    if(intValidator != NULL)
-    {
-        num += wheelEvent->delta();
-        if(num < intValidator->bottom())
-        {
-            num = intValidator->bottom();
-        }
-        else if(num > intValidator->top())
-        {
-            num = intValidator->top();
-        }
-        this->setText(ICParameterConversion::TransThisIntToThisText(num, this->DecimalPlaces()));
-    }
-}
+//void ICLineEditWithVirtualNumericKeypad::wheelEvent(QWheelEvent * wheelEvent)
+//{
+//    int num = ICParameterConversion::TransTextToThisInt(this->text(), this->DecimalPlaces());
+//    QIntValidator * intValidator = (QIntValidator *)this->validator();
+//    if(intValidator != NULL)
+//    {
+//        num += wheelEvent->delta();
+//        if(num < intValidator->bottom())
+//        {
+//            num = intValidator->bottom();
+//        }
+//        else if(num > intValidator->top())
+//        {
+//            num = intValidator->top();
+//        }
+//        this->setText(ICParameterConversion::TransThisIntToThisText(num, this->DecimalPlaces()));
+//    }
+//}
 
-//private slots:
-void ICLineEditWithVirtualNumericKeypad::SetCurrentText(const QString &currentText)
+bool ICLineEditWithVirtualNumericKeypad::SetCurrentText(const QString &currentText)
 {
     if(currentText.isEmpty())
     {
-        return;
+        return true;
     }
     QIntValidator * intValidator = (QIntValidator *)this->validator();
     if(intValidator != NULL)
@@ -136,7 +120,7 @@ void ICLineEditWithVirtualNumericKeypad::SetCurrentText(const QString &currentTe
                                  + ICParameterConversion::TransThisIntToThisText(intValidator->top(), this->DecimalPlaces()),
                                  QMessageBox::Ok,
                                  QMessageBox::Ok);
-            return;
+            return false;
         }
         else if(this->DecimalPlaces() == 0 && currentText.contains(QChar('.')) )
         {
@@ -147,7 +131,7 @@ void ICLineEditWithVirtualNumericKeypad::SetCurrentText(const QString &currentTe
                                  + ICParameterConversion::TransThisIntToThisText(intValidator->top(), this->DecimalPlaces()),
                                  QMessageBox::Ok,
                                  QMessageBox::Ok);
-            return;
+            return false;
         }
 
         int currentValue = ICParameterConversion::TransTextToThisInt(currentText, this->DecimalPlaces());
@@ -160,7 +144,7 @@ void ICLineEditWithVirtualNumericKeypad::SetCurrentText(const QString &currentTe
                                  + ICParameterConversion::TransThisIntToThisText(intValidator->top(), this->DecimalPlaces()),
                                  QMessageBox::Ok,
                                  QMessageBox::Ok);
-            return;
+            return false;
         }
 
         QString valueStr = currentText;
@@ -193,6 +177,7 @@ void ICLineEditWithVirtualNumericKeypad::SetCurrentText(const QString &currentTe
     {
         this->setText(currentText);
     }
+    return true;
 }
 
 ICIncrementalLineEdit::ICIncrementalLineEdit(QWidget *parent)

@@ -4,6 +4,7 @@
 #include <QFrame>
 #include <QTimer>
 #include <QMap>
+#include <QTimer>
 #include "icmold.h"
 
 namespace Ui {
@@ -82,6 +83,7 @@ private:
     QMap<int, int> checkToFixtureMap_;
     QMap<int, QString> checkResultMap_;
     int fixtureCount_[6];
+    QTimer refreshTimer_;
 //    QMap<ICMoldItem*, ICMoldItem> modifyMap_;
 };
 #endif // ICHCPROGRAMMONITORFRAME_H

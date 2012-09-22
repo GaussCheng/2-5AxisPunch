@@ -33,6 +33,9 @@ ICHCProgramMonitorFrame::ICHCProgramMonitorFrame(QWidget *parent) :
             SIGNAL(timeout()),
             this,
             SLOT(OnTimeOut()));
+    connect(&refreshTimer_,
+            SIGNAL(timeout()),
+            SLOT(StatusRefreshed()));
     fixtureToCountMap_.insert(ICMold::ACTCLIP1ON, fixtureCount_ + 0);
     fixtureToCountMap_.insert(ICMold::ACTCLIP2ON, fixtureCount_ + 1);
     fixtureToCountMap_.insert(ICMold::ACTCLIP3ON, fixtureCount_ + 2);
@@ -86,10 +89,6 @@ void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
             this,
             SLOT(SelectCurrentStep(int)));
     connect(ICVirtualHost::GlobalVirtualHost(),
-            SIGNAL(StatusRefreshed()),
-            this,
-            SLOT(StatusRefreshed()));
-    connect(ICVirtualHost::GlobalVirtualHost(),
             SIGNAL(SubStepChanged(uint8_t*)),
             this,
             SLOT(SubStepChanged(uint8_t*)));
@@ -97,6 +96,7 @@ void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
             SIGNAL(MoldNumChanged(int)),
             this,
             SLOT(MoldNumChanged(int)));
+    refreshTimer_.start(20);
     timer_.start(30000);
 
     ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnAuto,
@@ -180,10 +180,6 @@ void ICHCProgramMonitorFrame::hideEvent(QHideEvent *e)
                this,
                SLOT(SelectCurrentStep(int)));
     disconnect(ICVirtualHost::GlobalVirtualHost(),
-               SIGNAL(StatusRefreshed()),
-               this,
-               SLOT(StatusRefreshed()));
-    disconnect(ICVirtualHost::GlobalVirtualHost(),
                SIGNAL(SubStepChanged(uint8_t*)),
                this,
                SLOT(SubStepChanged(uint8_t*)));
@@ -192,6 +188,10 @@ void ICHCProgramMonitorFrame::hideEvent(QHideEvent *e)
                this,
                SLOT(MoldNumChanged(int)));
     timer_.stop();
+    refreshTimer_.stop();
+    ICVirtualHost::GlobalVirtualHost()->SetSpeedEnable(false);
+    ui->speedEnableButton->setIcon(switchOff_);
+    ui->speedEnableButton->setText(tr("Speed Disable"));
     //    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop,0);
 }
 

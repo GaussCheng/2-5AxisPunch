@@ -49,6 +49,9 @@ ICMachineStructPage::ICMachineStructPage(QWidget *parent) :
 
     ui->axisXToolButton->click();
 
+    connect(&refreshTimer_,
+            SIGNAL(timeout()),
+            SLOT(StatusRefresh()));
     //    ui->x1Box->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisX11)));
     //    ui->y1Box->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisY11)));
     //    ui->zBox->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisZ)));
@@ -94,20 +97,21 @@ void ICMachineStructPage::hideEvent(QHideEvent *e)
         ICVirtualHost::GlobalVirtualHost()->SaveSystemConfig();
         ICVirtualHost::GlobalVirtualHost()->ReConfigure();
     }
-    disconnect(ICVirtualHost::GlobalVirtualHost(),
-            SIGNAL(StatusRefreshed()),
-            this,
-            SLOT(StatusRefresh()));
+    refreshTimer_.stop();
+//    disconnect(ICVirtualHost::GlobalVirtualHost(),
+//            SIGNAL(StatusRefreshed()),
+//            this,
+//            SLOT(StatusRefresh()));
     QWidget::hideEvent(e);
 }
 
 void ICMachineStructPage::showEvent(QShowEvent *e)
 {
     UpdateAxisDefine_();
-    connect(ICVirtualHost::GlobalVirtualHost(),
-            SIGNAL(StatusRefreshed()),
-            this,
-            SLOT(StatusRefresh()));
+//    connect(ICVirtualHost::GlobalVirtualHost(),
+//            SIGNAL(StatusRefreshed()),
+//            this,
+//            SLOT(StatusRefresh()));
     if(!ui->axisXToolButton->isHidden())
     {
         ui->axisXToolButton->click();
@@ -140,6 +144,7 @@ void ICMachineStructPage::showEvent(QShowEvent *e)
     {
         ui->axisCToolButton->click();
     }
+    refreshTimer_.start(20);
     QWidget::showEvent(e);
 }
 

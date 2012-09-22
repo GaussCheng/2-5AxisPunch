@@ -30,6 +30,9 @@ AxisSettingsFrame::AxisSettingsFrame(QWidget *parent) :
     {
         LevelChanged(ICParametersSave::AdvanceAdmin);
     }
+    connect(&refreshTimer_,
+            SIGNAL(timeout()),
+            SLOT(StatusRefresh()));
 }
 
 AxisSettingsFrame::~AxisSettingsFrame()
@@ -39,22 +42,14 @@ AxisSettingsFrame::~AxisSettingsFrame()
 
 void AxisSettingsFrame::hideEvent(QHideEvent *e)
 {
-    qDebug("Axis Setting hide");
-    //    currentAxis_ = Hide;
-    disconnect(ICVirtualHost::GlobalVirtualHost(),
-               SIGNAL(StatusRefreshed()),
-               this,
-               SLOT(StatusRefresh()));
+    refreshTimer_.stop();
     QFrame::hideEvent(e);
 }
 
 void AxisSettingsFrame::showEvent(QShowEvent *e)
 {
+    refreshTimer_.start(20);
     QFrame::showEvent(e);
-    connect(ICVirtualHost::GlobalVirtualHost(),
-            SIGNAL(StatusRefreshed()),
-            this,
-            SLOT(StatusRefresh()));
 }
 
 void AxisSettingsFrame::SetCurrentAxis(QString currentAxisName, int axis)

@@ -19,10 +19,12 @@ public:
 
     int TransThisTextToThisInt() const;
     void SetThisIntToThisText(int inputNum);
+    bool SetCurrentText(const QString &currentText);
 
 protected:
-    void mouseReleaseEvent(QMouseEvent *);
-    void wheelEvent(QWheelEvent *);
+//    void mouseReleaseEvent(QMouseEvent *);
+    void mousePressEvent(QMouseEvent *);
+//    void wheelEvent(QWheelEvent *);
 
 private:
     VirtualNumericKeypadDialog * virtualNumericKeypadDialog_;
@@ -30,7 +32,6 @@ private:
     bool isModalKeyboard_;
 
 public slots:
-    void SetCurrentText(const QString &currentText);
 };
 
 class ICIncrementalLineEdit: public ICLineEditWithVirtualNumericKeypad

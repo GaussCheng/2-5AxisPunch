@@ -62,7 +62,8 @@ void VirtualKeyboardDialog::ResetDisplay()
 //private slots
 void VirtualKeyboardDialog::on_cancel_clicked()
 {
-    this->accept();
+    ui->display->clear();
+    this->reject();
 }
 
 void VirtualKeyboardDialog::on_backspace_clicked()

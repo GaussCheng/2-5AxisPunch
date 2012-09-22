@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QMap>
+#include <QTimer>
 
 class QButtonGroup;
 class QIntValidator;
@@ -65,6 +66,7 @@ private:
     QIntValidator* maxMoveValidator_;
     QIntValidator* rotateValidator_;
     int axisDefine_;
+    QTimer refreshTimer_;
 };
 
 #endif // ICMACHINESTRUCTPAGE_H

@@ -27,12 +27,14 @@ void ICLineEditWithVirtualKeyboard::mouseReleaseEvent(QMouseEvent *e)
     this->setStyleSheet("background:lightgreen;");
     virtualKeyboardDialog_->ResetDisplay();
 
-    virtualKeyboardDialog_->exec();
+    if(virtualKeyboardDialog_->exec() == QDialog::Accepted)
+    {
 //    disconnect(virtualKeyboardDialog_,
 //               SIGNAL(EnterComplete(QString)),
 //               this,
 //               SLOT(SetCurrentText(QString)));
-    SetCurrentText(virtualKeyboardDialog_->GetCurrentText());
+        SetCurrentText(virtualKeyboardDialog_->GetCurrentText());
+    }
 //    QLineEdit::mouseReleaseEvent(e);
     this->setStyleSheet("");
     e->accept();

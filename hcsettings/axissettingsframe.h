@@ -2,6 +2,7 @@
 #define AXISSETTINGSFRAME_H
 
 #include <QFrame>
+#include <QTimer>
 
 class QIntValidator;
 
@@ -29,11 +30,12 @@ private:
     void InitInterface();
     QList<uint> GetCurrentStatus_() const;
     bool SetCurrentStatus_(const QList<uint> & status);
-
+    QTimer refreshTimer_;
 private:
     Ui::AxisSettingsFrame *ui;
     int currentAxis_;
     QIntValidator* maxMoveValidator_;
+
 //    QIntValidator* securityMinValidator_;
 //    QIntValidator* securityMinValidator_
 

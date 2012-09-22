@@ -933,6 +933,14 @@ void MainFrame::LevelChanged(int level)
     {
         ui->functionPageButton->setEnabled(false);
         ui->recordPageButton->setEnabled(false);
+#ifndef Q_WS_X11
+        if(!functionPage_->isHidden() ||
+                !instructPage_->isHidden() ||
+                !recordPage_->isHidden())
+        {
+            ui->returnPageButton->click();
+        }
+#endif
     }
     break;
     case ICParametersSave::MachineAdmin:
