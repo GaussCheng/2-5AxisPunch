@@ -51,6 +51,8 @@ private Q_SLOTS:
 
     void StatusRefresh();
 
+    void on_mechanicalLengthLineEdit_textChanged(const QString &arg1);
+
 private:
     void InitInterface();
     QList<uint> GetCurrentStatus_() const;

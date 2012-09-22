@@ -3589,12 +3589,12 @@ Reason</source>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="166"/>
         <source>CLIP5</source>
-        <translation>夹5确认</translation>
+        <translation>吸1确认</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="170"/>
         <source>CLIP6</source>
-        <translation>夹6确认</translation>
+        <translation>吸2确认</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="174"/>
@@ -5993,13 +5993,13 @@ Would you want to restart now?</source>
         <location filename="hcinstruction/icwaitconditioneditor.ui" line="147"/>
         <source>Wait XCLIP5</source>
         <oldsource>XCLIP5</oldsource>
-        <translation>等待夹5确认</translation>
+        <translation>等待吸1确认</translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitconditioneditor.ui" line="157"/>
         <source>Wait XCLIP6</source>
         <oldsource>XCLIP6</oldsource>
-        <translation>等待夹6确认</translation>
+        <translation>等待吸2确认</translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitconditioneditor.ui" line="167"/>

@@ -339,7 +339,7 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
     //    ui->distanceRotationEdit->SetThisIntToThisText(total);
     ui->minLabel->setText(minText);
     ui->maxLabel->setText(maxText);
-    //    maxMoveValidator_->setTop(ui->mechanicalLengthLineEdit->TransThisTextToThisInt());
+    maxMoveValidator_->setTop(ui->mechanicalLengthLineEdit->TransThisTextToThisInt());
 }
 
 QList<uint> ICMachineStructPage::GetCurrentStatus_() const
@@ -770,4 +770,10 @@ void ICMachineStructPage::StatusRefresh()
     ui->testLineEdit->setText(pos);
     ui->feedbackEdit->setText(feedbackPos);
     ui->zSignalEdit->setText(zSignal);
+}
+
+void ICMachineStructPage::on_mechanicalLengthLineEdit_textChanged(const QString &arg1)
+{
+    Q_UNUSED(arg1);
+    maxMoveValidator_->setTop(ui->mechanicalLengthLineEdit->TransThisTextToThisInt());
 }

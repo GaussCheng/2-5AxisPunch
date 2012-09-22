@@ -24,6 +24,7 @@ public:
     ~VirtualNumericKeypadDialog();
 
     void ResetDisplay();
+    QString GetCurrentText() const;
 
 protected:
     void changeEvent(QEvent *e);

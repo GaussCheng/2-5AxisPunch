@@ -13,7 +13,7 @@
 //public:
 ICLineEditWithVirtualNumericKeypad::ICLineEditWithVirtualNumericKeypad(QWidget * parent)
     : QLineEdit(parent),
-    decimalPlaces_(0),
+      decimalPlaces_(0),
       isModalKeyboard_(false)
 {
     this->setReadOnly(true);
@@ -37,12 +37,11 @@ void ICLineEditWithVirtualNumericKeypad::SetThisIntToThisText(int inputNum)
 //protected:
 void ICLineEditWithVirtualNumericKeypad::mouseReleaseEvent(QMouseEvent *e)
 {
-//    virtualNumericKeypadDialog_->disconnect();
-    connect(virtualNumericKeypadDialog_,
-            SIGNAL(EnterComplete(QString)),
-            this,
-            SLOT(SetCurrentText(QString)),
-            Qt::UniqueConnection);
+    //    virtualNumericKeypadDialog_->disconnect();
+    //    connect(virtualNumericKeypadDialog_,
+    //            SIGNAL(EnterComplete(QString)),
+    //            this,
+    //            SLOT(SetCurrentText(QString)));
 
     this->setStyleSheet("background:lightgreen;");
     virtualNumericKeypadDialog_->ResetDisplay();
@@ -77,20 +76,22 @@ void ICLineEditWithVirtualNumericKeypad::mouseReleaseEvent(QMouseEvent *e)
         }
     }
     virtualNumericKeypadDialog_->move(toMove);
-//    if(IsModalKeyboard())
-//    {
-        virtualNumericKeypadDialog_->exec();
-//    }
-//    else
-//    {
-//        virtualNumericKeypadDialog_->show();
-//    }
-    disconnect(virtualNumericKeypadDialog_,
-               SIGNAL(EnterComplete(QString)),
-               this,
-               SLOT(SetCurrentText(QString)));
-    QLineEdit::mouseReleaseEvent(e);
+    //    if(IsModalKeyboard())
+    //    {
+    virtualNumericKeypadDialog_->exec();
+    //    }
+    //    else
+    //    {
+    //        virtualNumericKeypadDialog_->show();
+    //    }
+    //    disconnect(virtualNumericKeypadDialog_,
+    //               SIGNAL(EnterComplete(QString)),
+    //               this,
+    //               SLOT(SetCurrentText(QString)));
+    SetCurrentText(virtualNumericKeypadDialog_->GetCurrentText());
+//    QLineEdit::mouseReleaseEvent(e);
     this->setStyleSheet("");
+    e->accept();
 }
 
 void ICLineEditWithVirtualNumericKeypad::wheelEvent(QWheelEvent * wheelEvent)
@@ -115,13 +116,17 @@ void ICLineEditWithVirtualNumericKeypad::wheelEvent(QWheelEvent * wheelEvent)
 //private slots:
 void ICLineEditWithVirtualNumericKeypad::SetCurrentText(const QString &currentText)
 {
+    if(currentText.isEmpty())
+    {
+        return;
+    }
     QIntValidator * intValidator = (QIntValidator *)this->validator();
     if(intValidator != NULL)
     {
         if(this->DecimalPlaces() > 0
-           && currentText.contains(QChar('.'))
-            && currentText.split(".").at(1).count() > this->DecimalPlaces())
-            {
+                && currentText.contains(QChar('.'))
+                && currentText.split(".").at(1).count() > this->DecimalPlaces())
+        {
             QMessageBox::warning(this, tr("Input Error"),
                                  tr("There are only ")
                                  + QString::number(this->DecimalPlaces())

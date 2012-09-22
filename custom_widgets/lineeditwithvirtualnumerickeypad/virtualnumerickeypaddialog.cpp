@@ -13,6 +13,7 @@ VirtualNumericKeypadDialog::VirtualNumericKeypadDialog(QWidget *parent) :
     ui(new Ui::VirtualNumericKeypadDialog)
 {
     ui->setupUi(this);
+//    this->setAttribute(Qt::WA_NoSystemBackground);
 
     QFont font = ui->displayLineEdit->font();
     font.setPointSize(font.pointSize() + 8);
@@ -36,7 +37,7 @@ VirtualNumericKeypadDialog::VirtualNumericKeypadDialog(QWidget *parent) :
             this,
             SLOT(KeyboardClicked(QString)));
 
-    ui->displayLineEdit->setValidator(new QDoubleValidator(ui->displayLineEdit));
+//    ui->displayLineEdit->setValidator(new QDoubleValidator(ui->displayLineEdit));
 }
 
 VirtualNumericKeypadDialog::~VirtualNumericKeypadDialog()
@@ -60,7 +61,7 @@ void VirtualNumericKeypadDialog::ResetDisplay()
 {
 //    ui->displayLineEdit->setText(displayValue);
     ui->displayLineEdit->clear();
-    ui->displayLineEdit->setFocus();
+//    ui->displayLineEdit->setFocus();
 }
 
 void VirtualNumericKeypadDialog::KeyboardClicked(QString buttonNum)
@@ -71,46 +72,42 @@ void VirtualNumericKeypadDialog::KeyboardClicked(QString buttonNum)
         return;
     }
 
-    int cursorPosition = ui->displayLineEdit->cursorPosition();
-    QString displayValue = ui->displayLineEdit->text();
-    displayValue.insert(cursorPosition, buttonNum);
+//    int cursorPosition = ui->displayLineEdit->cursorPosition();
+//    QString displayValue = ui->displayLineEdit->text();
+//    displayValue.insert(cursorPosition, buttonNum);
 
-    ui->displayLineEdit->setText(displayValue);
-    ui->displayLineEdit->setCursorPosition(++cursorPosition);
-    ui->displayLineEdit->setFocus();
+//    ui->displayLineEdit->setText(displayValue);
+    ui->displayLineEdit->insert(buttonNum);
+//    ui->displayLineEdit->setCursorPosition(++cursorPosition);
+//    ui->displayLineEdit->setFocus();
 }
 
 void VirtualNumericKeypadDialog::on_clearToolButton_clicked()
 {
-    ui->displayLineEdit->setText(QString());
+    ui->displayLineEdit->clear();
 }
 
-void VirtualNumericKeypadDialog::on_okToolButton_clicked()
-{
-    if(!ui->displayLineEdit->text().isEmpty())
-    {
-        emit EnterComplete(ui->displayLineEdit->text());
-    }
-    else
-    {
-        emit EnterComplete("0");
-    }
-    this->accept();
-}
 
 void VirtualNumericKeypadDialog::on_backspaceToolButton_clicked()
 {
-    QString displayString = ui->displayLineEdit->text();
-    int cursorPosition = ui->displayLineEdit->cursorPosition() - 1;
-    displayString.remove(cursorPosition, 1);
-    ui->displayLineEdit->setText(displayString);
-    ui->displayLineEdit->setCursorPosition(cursorPosition);
-    ui->displayLineEdit->setFocus();
+//    QString displayString = ui->displayLineEdit->text();
+//    int cursorPosition = ui->displayLineEdit->cursorPosition() - 1;
+//    displayString.remove(cursorPosition, 1);
+//    ui->displayLineEdit->setText(displayString);
+//    ui->displayLineEdit->setCursorPosition(cursorPosition);
+//    ui->displayLineEdit->setFocus();
+    ui->displayLineEdit->backspace();
 }
 
 
+void VirtualNumericKeypadDialog::on_okToolButton_clicked()
+{
+    this->accept();
+}
+
 void VirtualNumericKeypadDialog::on_cancelToolButton_clicked()
 {
+    ui->displayLineEdit->clear();
     this->accept();
 }
 
@@ -148,4 +145,9 @@ void VirtualNumericKeypadDialog::on_addButton_clicked()
         displayString[0] = '+';
     }
     ui->displayLineEdit->setText(displayString);
+}
+
+QString VirtualNumericKeypadDialog::GetCurrentText() const
+{
+    return ui->displayLineEdit->text();
 }

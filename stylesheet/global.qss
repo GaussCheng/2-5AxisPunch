@@ -181,9 +181,9 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical, QScrollBar::add-pa
 
 QDialog{
      border-style: outset;
-     border-width: 2px;
+     border-width: 4px;
      border-radius: 6px;
-     border-color: darkgray;
+     border-color:darkgray;
 }
 
 QAbstractItemView::item{

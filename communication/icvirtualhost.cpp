@@ -22,6 +22,7 @@
 #include <QTime>
 #include "icactioncommand.h"
 
+#define REFRESH_TIME 10
 static QTime testTime;
 
 ICVirtualHost* ICVirtualHost::globalVirtualHost_ = NULL;
@@ -109,7 +110,7 @@ ICVirtualHost::ICVirtualHost(QObject *parent) :
     }
 #ifndef Q_WS_X11
 #ifdef HC_ARMV6
-    QTimer::singleShot(5, this, SLOT(RefreshStatus()));
+    QTimer::singleShot(REFRESH_TIME, this, SLOT(RefreshStatus()));
 #else
     timer_->start(10);
 #endif
@@ -235,7 +236,7 @@ void ICVirtualHost::RefreshStatus()
             ReConfigure();
             flag_ = true;
 #ifdef HC_ARMV6
-            QTimer::singleShot(2, this, SLOT(RefreshStatus()));
+            QTimer::singleShot(REFRESH_TIME, this, SLOT(RefreshStatus()));
 #endif
             return;
         }
@@ -294,7 +295,7 @@ void ICVirtualHost::RefreshStatus()
 //            flag_ =true;
 //            QTimer::singleShot(5, this, SLOT(RefreshStatus()));
 #ifdef HC_ARMV6
-            QTimer::singleShot(2, this, SLOT(RefreshStatus()));
+            QTimer::singleShot(REFRESH_TIME, this, SLOT(RefreshStatus()));
 #endif
             return;
         }
@@ -350,7 +351,7 @@ void ICVirtualHost::RefreshStatus()
         }
     }
 #ifdef HC_ARMV6
-            QTimer::singleShot(2, this, SLOT(RefreshStatus()));
+            QTimer::singleShot(REFRESH_TIME, this, SLOT(RefreshStatus()));
 #endif
 }
 

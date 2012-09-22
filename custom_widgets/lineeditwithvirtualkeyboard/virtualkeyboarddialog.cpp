@@ -14,6 +14,7 @@ VirtualKeyboardDialog::VirtualKeyboardDialog(QWidget *parent) :
 {
     ui->setupUi(this);
 
+//    this->setAttribute(Qt::WA_OpaquePaintEvent);
     this->setWindowTitle(tr("VirtualKeyboard"));
 
     QFont font = ui->display->font();
@@ -55,7 +56,7 @@ void VirtualKeyboardDialog::ResetDisplay()
 {
     //qDebug()<<(ui->display == NULL);
     ui->display->clear();
-    ui->display->setFocus();
+//    ui->display->setFocus();
 }
 
 //private slots
@@ -66,17 +67,18 @@ void VirtualKeyboardDialog::on_cancel_clicked()
 
 void VirtualKeyboardDialog::on_backspace_clicked()
 {
-    QString displayString = ui->display->text();
-    int cursorPosition = ui->display->cursorPosition() - 1;
-    displayString.remove(cursorPosition, 1);
-    ui->display->setText(displayString);
-    ui->display->setCursorPosition(cursorPosition);
-    ui->display->setFocus();
+//    QString displayString = ui->display->text();
+//    int cursorPosition = ui->display->cursorPosition() - 1;
+//    displayString.remove(cursorPosition, 1);
+//    ui->display->setText(displayString);
+//    ui->display->setCursorPosition(cursorPosition);
+//    ui->display->setFocus();
+    ui->display->backspace();
 }
 
 void VirtualKeyboardDialog::on_ok_clicked()
 {
-    emit EnterComplete(ui->display->text());
+//    emit EnterComplete(ui->display->text());
     this->accept();
 }
 
@@ -88,11 +90,17 @@ void VirtualKeyboardDialog::KeyboardClicked()
     {
         addedValue = addedValue.toAscii() + 0x20;
     }
-    int cursorPosition = ui->display->cursorPosition();
-    QString disPlayValue = ui->display->text();
-    disPlayValue.insert(cursorPosition, addedValue);
+    ui->display->insert(addedValue);
+//    int cursorPosition = ui->display->cursorPosition();
+//    QString disPlayValue = ui->display->text();
+//    disPlayValue.insert(cursorPosition, addedValue);
 
-    ui->display->setText(disPlayValue);
-    ui->display->setCursorPosition(++cursorPosition);
-    ui->display->setFocus();
+//    ui->display->setText(disPlayValue);
+//    ui->display->setCursorPosition(++cursorPosition);
+//    ui->display->setFocus();
+}
+
+QString VirtualKeyboardDialog::GetCurrentText() const
+{
+    return ui->display->text();
 }
