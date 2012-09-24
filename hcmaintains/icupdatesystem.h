@@ -34,6 +34,7 @@ private:
     QSettings *updateHostSettings_;
     QTimer timer_;
     int status_;
+    QDialog* updateDialog_;
 //    QMap<int, int> hostStatusToStringMap_;
 
     void RestartAndUpdateTheProgram();
@@ -49,6 +50,7 @@ private slots:
     void on_rebootButton_clicked();
     void on_connectHostButton_clicked();
     void on_writeHostButton_clicked();
+    void on_updateLogoButton_clicked();
 };
 
 //TODEBUG

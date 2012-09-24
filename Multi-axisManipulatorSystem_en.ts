@@ -195,17 +195,17 @@
     </message>
     <message>
         <location filename="hcsettings/axissettingsframe.ui" line="62"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="103"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="133"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="143"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="98"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="128"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="138"/>
         <source>Internal security zone</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/axissettingsframe.ui" line="72"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="104"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="134"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="144"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="99"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="129"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="139"/>
         <source>External security zone</source>
         <translation type="unfinished"></translation>
     </message>
@@ -230,8 +230,8 @@
         <location filename="hcsettings/axissettingsframe.ui" line="96"/>
         <location filename="hcsettings/axissettingsframe.ui" line="103"/>
         <location filename="hcsettings/axissettingsframe.ui" line="127"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="73"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="74"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="68"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="69"/>
         <source>mm</source>
         <translation type="unfinished"></translation>
     </message>
@@ -266,52 +266,52 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.cpp" line="82"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="113"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="77"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="108"/>
         <source>Min pos inside mold</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.cpp" line="83"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="114"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="78"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="109"/>
         <source>Max pos inside mold</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.cpp" line="93"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="123"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="88"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="118"/>
         <source>Max standby pos</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.cpp" line="94"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="124"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="89"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="119"/>
         <source>Leave origin pos</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.cpp" line="153"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="148"/>
         <source>Transeve security zone(Less)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.cpp" line="154"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="149"/>
         <source>Transeve security zone(Lagger)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.cpp" line="155"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="156"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="150"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="151"/>
         <source>degree</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.cpp" line="359"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="354"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.cpp" line="359"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="354"/>
         <source>Save Successfully!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1730,32 +1730,32 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="48"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="51"/>
         <source>Has not teach check Fixture-1!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="49"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="52"/>
         <source>Has not teach check Fixture-2!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="50"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="53"/>
         <source>Has not teach check Fixture-3!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="51"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="54"/>
         <source>Has not teach check Fixture-4!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="52"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="55"/>
         <source>Has not teach check Sucker-1!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="53"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="56"/>
         <source>Has not teach check Sucker-2!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1776,7 +1776,8 @@ Infomation</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="369"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="79"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="82"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="194"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="575"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="585"/>
         <source>Speed Disable</source>
@@ -2956,40 +2957,40 @@ Infomation</source>
 <context>
     <name>ICLineEditWithVirtualNumericKeypad</name>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="125"/>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="138"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="114"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="127"/>
         <source>Input Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="126"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="115"/>
         <source>There are only </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="128"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="117"/>
         <source> decimal place
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="129"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="118"/>
         <source>Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="139"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="128"/>
         <source>The value must be an integer
 Please enter an integer between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="151"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="140"/>
         <source>Out of range</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="152"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="141"/>
         <source>The value you entered out of range.
 Please enter an digit between </source>
         <translation type="unfinished"></translation>
@@ -3167,8 +3168,8 @@ Please enter an digit between </source>
         <location filename="hcsettings/icmachinestructpage.ui" line="276"/>
         <location filename="hcsettings/icmachinestructpage.ui" line="293"/>
         <location filename="hcsettings/icmachinestructpage.ui" line="310"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="228"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="229"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="233"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="234"/>
         <source>mm</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3179,17 +3180,17 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcsettings/icmachinestructpage.ui" line="266"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="262"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="298"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="310"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="267"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="303"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="315"/>
         <source>Internal security zone</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/icmachinestructpage.ui" line="283"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="263"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="299"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="311"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="268"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="304"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="316"/>
         <source>External security zone</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3240,113 +3241,113 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcsettings/icmachinestructpage.cpp" line="23"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="74"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="77"/>
         <source>X1 Axis</source>
         <oldsource>X Axis</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/icmachinestructpage.cpp" line="24"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="75"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="78"/>
         <source>Y1 Axis</source>
         <oldsource>Y Axis</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/icmachinestructpage.cpp" line="25"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="76"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="79"/>
         <source>Z Axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/icmachinestructpage.cpp" line="26"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="77"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="80"/>
         <source>X2 Axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/icmachinestructpage.cpp" line="27"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="78"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="81"/>
         <source>Y2 Axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/icmachinestructpage.cpp" line="28"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="79"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="82"/>
         <source>A Axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/icmachinestructpage.cpp" line="29"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="80"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="83"/>
         <source>B Axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/icmachinestructpage.cpp" line="30"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="81"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="84"/>
         <source>C Axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/icmachinestructpage.cpp" line="31"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="82"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="85"/>
         <source>Struct Define</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/icmachinestructpage.cpp" line="32"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="83"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="86"/>
         <source>Time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="237"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="274"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="242"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="279"/>
         <source>Min pos inside mold</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="238"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="275"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="243"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="280"/>
         <source>Max pos inside mold</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="250"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="286"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="255"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="291"/>
         <source>Max standby pos</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="251"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="287"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="256"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="292"/>
         <source>Leave origin pos</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="322"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="327"/>
         <source>Transever security zone(Less)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="323"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="328"/>
         <source>Transever security zone(Lagger)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="326"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="327"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="331"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="332"/>
         <source>degree</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="516"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="521"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="516"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="521"/>
         <source>Save Successfully!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3973,6 +3974,14 @@ Please enter an digit between </source>
     <message>
         <location filename="hcinstruction/icperipheryparametereditor.ui" line="37"/>
         <source>0</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ICPictureView</name>
+    <message>
+        <location filename="custom_widgets/icpictureview/icpictureview.ui" line="14"/>
+        <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4604,6 +4613,39 @@ Please enter an digit between </source>
     </message>
 </context>
 <context>
+    <name>ICUpdateLogoDialog</name>
+    <message>
+        <location filename="hcmaintains/icupdatelogodialog.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcmaintains/icupdatelogodialog.ui" line="44"/>
+        <source>Set to Startup Page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcmaintains/icupdatelogodialog.ui" line="74"/>
+        <source>Set to Standby Page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcmaintains/icupdatelogodialog.ui" line="111"/>
+        <source>Scan Pictures</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcmaintains/icupdatelogodialog.ui" line="137"/>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcmaintains/icupdatelogodialog.ui" line="163"/>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ICUpdateSystem</name>
     <message>
         <location filename="hcmaintains/icupdatesystem.ui" line="14"/>
@@ -4683,58 +4725,63 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="139"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="284"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="350"/>
+        <location filename="hcmaintains/icupdatesystem.ui" line="359"/>
+        <source>Update Logo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="141"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="286"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="352"/>
         <source>Congratulations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="140"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="142"/>
         <source>Update finish
 You must restart this program
 Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="171"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="173"/>
         <source>No available HMI version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="172"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="174"/>
         <source>No available Host version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="279"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="299"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="281"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="301"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="279"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="299"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="281"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="301"/>
         <source>Update Host fail!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="285"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="287"/>
         <source>Send to  Host finished!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="325"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="327"/>
         <source>tips</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="325"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="327"/>
         <source>Reboot Successful!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="351"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="353"/>
         <source>Update Host finished!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4742,7 +4789,7 @@ Would you want to restart now?</source>
 <context>
     <name>ICVirtualHost</name>
     <message>
-        <location filename="communication/icvirtualhost.cpp" line="90"/>
+        <location filename="communication/icvirtualhost.cpp" line="91"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5889,7 +5936,7 @@ Please try a new name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.cpp" line="17"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.cpp" line="18"/>
         <source>VirtualKeyboard</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5984,7 +6031,7 @@ Please try a new name</source>
     </message>
     <message>
         <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="421"/>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.cpp" line="69"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.cpp" line="70"/>
         <source>.</source>
         <translation type="unfinished"></translation>
     </message>

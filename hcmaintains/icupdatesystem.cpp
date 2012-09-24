@@ -13,6 +13,7 @@
 #include "iccommandprocessor.h"
 #include "iccommands.h"
 #include "icvirtualhost.h"
+#include "icupdatelogodialog.h"
 //ICUpdateSystem *icUpdateSystem = NULL;
 
 ICUpdateSystem::ICUpdateSystem(QWidget *parent) :
@@ -22,7 +23,8 @@ ICUpdateSystem::ICUpdateSystem(QWidget *parent) :
     updateHostPath_("/mnt/udisk/HCUpdateHost_5A/"),
     updateSettings_(NULL),
     updateHostSettings_(NULL),
-    status_(-1)
+    status_(-1),
+    updateDialog_(NULL)
 {
     ui->setupUi(this);
 
@@ -352,4 +354,13 @@ void ICUpdateSystem::on_writeHostButton_clicked()
 
         return;
     }
+}
+
+void ICUpdateSystem::on_updateLogoButton_clicked()
+{
+    if(updateDialog_ == NULL)
+    {
+        updateDialog_ = new ICUpdateLogoDialog(this);
+    }
+    updateDialog_->exec();
 }
