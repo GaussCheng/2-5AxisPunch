@@ -25,6 +25,7 @@ public slots:
 protected:
     void hideEvent(QHideEvent *e);
     void showEvent(QShowEvent *e);
+    void changeEvent(QEvent *e);
 
 private:
     void InitInterface();

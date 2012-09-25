@@ -13,6 +13,18 @@ ICProgramSelector::~ICProgramSelector()
     delete ui;
 }
 
+void ICProgramSelector::changeEvent(QEvent *e)
+{
+    QWidget::changeEvent(e);
+    switch (e->type()) {
+    case QEvent::LanguageChange:
+        ui->retranslateUi(this);
+        break;
+    default:
+        break;
+    }
+}
+
 void ICProgramSelector::on_selectButton_clicked()
 {
     if(ui->programList->currentRow() < 0)

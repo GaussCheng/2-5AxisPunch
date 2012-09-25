@@ -16,6 +16,7 @@ public:
     ~ICProgramSelector();
 
 protected:
+    void changeEvent(QEvent *e);
     void SyncStatusImpl(const QList<ICMoldItem> &items){}
     QList<ICMoldItem> CreateCommandImpl() const{ return QList<ICMoldItem>();}
     

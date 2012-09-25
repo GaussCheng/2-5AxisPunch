@@ -46,6 +46,20 @@ void HCManualSockerFrame::hideEvent(QHideEvent *e)
                SLOT(StatusRefreshed()));
 }
 
+void HCManualSockerFrame::changeEvent(QEvent *e)
+{
+    QFrame::changeEvent(e);
+    switch (e->type()) {
+    case QEvent::LanguageChange:
+    {
+        ui->retranslateUi(this);
+    }
+        break;
+    default:
+        break;
+    }
+}
+
 void HCManualSockerFrame::StatusRefreshed()
 {
     static QPixmap off(":/resource/ledgray(16).png");

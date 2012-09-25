@@ -73,6 +73,12 @@ void ICPeripheryPage::changeEvent(QEvent *e)
     switch (e->type()) {
     case QEvent::LanguageChange:
         ui->retranslateUi(this);
+        ioNames_.clear();
+        ioNames_<<tr("Injector   ")<<tr("conveyor  ");
+        for(int i = 0; i != settingButtons_.size(); ++i)
+        {
+            settingButtons_[i]->setText(ioNames_.at(i));
+        }
         break;
     default:
         break;

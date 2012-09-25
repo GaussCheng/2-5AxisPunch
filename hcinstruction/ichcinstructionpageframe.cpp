@@ -153,6 +153,7 @@ void ICHCInstructionPageFrame::changeEvent(QEvent *e)
     switch (e->type()) {
     case QEvent::LanguageChange:
         ui->retranslateUi(this);
+        ICInstructParam::Instance()->UpdateTranslate();
         break;
     default:
         break;

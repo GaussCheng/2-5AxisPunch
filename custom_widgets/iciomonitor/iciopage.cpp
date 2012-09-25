@@ -39,6 +39,30 @@ void ICIOPage::BindingIOPoints(const QList<ICIOPoint> &points)
     {
         for(int i = 0; i != size; ++i)
         {
+            if(points.at(i).PointNum() == tr("Y022"))
+            {
+                backupDescrMap_.insert(0, points.at(i));
+            }
+            else if(points.at(i).PointNum() == tr("Y023"))
+            {
+                backupDescrMap_.insert(1, points.at(i));
+            }
+            else if(points.at(i).PointNum() == tr("Y032"))
+            {
+                backupDescrMap_.insert(2, points.at(i));
+            }
+            else if(points.at(i).PointNum() == tr("Y033"))
+            {
+                backupDescrMap_.insert(3, points.at(i));
+            }
+            else if(points.at(i).PointNum() == tr("Y035"))
+            {
+                backupDescrMap_.insert(4, points.at(i));
+            }
+            else if(points.at(i).PointNum() == tr("Y036"))
+            {
+                backupDescrMap_.insert(5, points.at(i));
+            }
             descrLabels_.at(i)->setText(points.at(i).PointDescription());
         }
     }

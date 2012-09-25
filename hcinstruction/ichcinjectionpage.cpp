@@ -86,6 +86,14 @@ void ICHCInjectionPage::changeEvent(QEvent *e)
     switch (e->type()) {
     case QEvent::LanguageChange:
         ui->retranslateUi(this);
+        ioNames_.clear();
+        ioNames_<<tr("Close Mold Permit  ")<<tr("Ejection Permit  ")
+               <<tr("Core1 Permit  ")
+              <<tr("Core2 Permit  ");
+        for(int i = 0; i != settingButtons_.size(); ++i)
+        {
+            settingButtons_[i]->setText(ioNames_.at(i));
+        }
         break;
     default:
         break;

@@ -58,6 +58,20 @@ void HCManualAdjustFrame::showEvent(QShowEvent *e)
     QWidget::showEvent(e);
 }
 
+void HCManualAdjustFrame::changeEvent(QEvent *e)
+{
+    QWidget::changeEvent(e);
+    switch (e->type()) {
+    case QEvent::LanguageChange:
+    {
+        ui->retranslateUi(this);
+    }
+        break;
+    default:
+        break;
+    }
+}
+
 void HCManualAdjustFrame::ClearStatus()
 {
     ui->jogSWButton->setChecked(false);

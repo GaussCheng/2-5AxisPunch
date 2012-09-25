@@ -52,6 +52,20 @@ void AxisSettingsFrame::showEvent(QShowEvent *e)
     QFrame::showEvent(e);
 }
 
+void AxisSettingsFrame::changeEvent(QEvent *e)
+{
+    QFrame::changeEvent(e);
+    switch (e->type()) {
+    case QEvent::LanguageChange:
+    {
+        ui->retranslateUi(this);
+    }
+        break;
+    default:
+        break;
+    }
+}
+
 void AxisSettingsFrame::SetCurrentAxis(QString currentAxisName, int axis)
 {
     Q_UNUSED(currentAxisName)

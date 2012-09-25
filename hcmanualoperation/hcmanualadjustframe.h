@@ -22,6 +22,7 @@ public:
 protected:
     void showEvent(QShowEvent *e);
     void hideEvent(QHideEvent *e);
+    void changeEvent(QEvent *e);
 private slots:
     void OnJogToolButtonClicked(int key);
 

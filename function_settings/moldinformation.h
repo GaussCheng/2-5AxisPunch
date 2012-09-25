@@ -8,6 +8,8 @@
 
 #include "icmold.h"
 
+class QTableWidgetItem;
+
 namespace Ui {
     class MoldInformation;
 }
@@ -32,6 +34,7 @@ public:
 
 protected:
     void changeEvent(QEvent *);
+    void showEvent(QShowEvent *e);
 
 signals:
     void NewFileCreated(const QString & moldName);
@@ -56,11 +59,12 @@ private:
     QStringList standPrograms_;
 
 private slots:
-    void on_informationTableWidget_clicked(QModelIndex index);
+//    void on_informationTableWidget_clicked(QModelIndex index);
     void on_deleteToolButton_clicked();
     void on_loadToolButton_clicked();
     void on_copyToolButton_clicked();
     void on_newToolButton_clicked();
+    void on_informationTableWidget_itemSelectionChanged();
 };
 
 #endif // MOLDINFORMATION_H

@@ -82,6 +82,13 @@ void ICPneumaticActionPage::changeEvent(QEvent *e)
     switch (e->type()) {
     case QEvent::LanguageChange:
         ui->retranslateUi(this);
+        ioNames_.clear();
+        ioNames_<<tr("Reserve1  ")<<tr("Reserve2  ")
+               <<tr("Reserve3  ")<<tr("Reserve4  ")<<tr("Reserve5  ")<<tr("Reserve6  ");
+        for(int i = 0; i != settingButtons_.size(); ++i)
+        {
+            settingButtons_[i]->setText(ioNames_.at(i));
+        }
         break;
     default:
         break;

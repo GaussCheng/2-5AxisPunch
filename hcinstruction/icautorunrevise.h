@@ -18,6 +18,9 @@ public:
 
     bool ShowModifyItem(const ICMoldItem* item, ICMoldItem* ret, const QString& text);
 
+protected:
+    void changeEvent(QEvent *e);
+
 Q_SIGNALS:
     void MoldItemChanged();
 private:

@@ -104,16 +104,6 @@ void ICHCManualOperationPageFrame::changeEvent(QEvent *e)
         ui->otherToolButton->setText(tr("Other"));
         ui->adjustToolButton->setText(tr("Adjust"));
         ui->reserveToolButton->setText(tr("Reserve"));
-#ifdef HC_8AXIS
-//        ui->x1AxisButton->setText(tr("X1 Axis"));
-//        ui->y1AxisButton->setText(tr("Y1 Axis"));
-//        ui->zAxisButton->setText(tr("Z Axis"));
-//        ui->x2AxisButton->setText(tr("X2 Axis"));
-//        ui->y2AxisButton->setText(tr("Y2 Axis"));
-//        ui->aAxisButton->setText(tr("A Axis"));
-//        ui->bAxisButton->setText(tr("B Axis"));
-//        ui->cAxisButton->setText(tr("C Axis"));
-#endif
     }
         break;
     default:

@@ -32,6 +32,20 @@ ICAutoRunRevise::~ICAutoRunRevise()
     delete ui;
 }
 
+void ICAutoRunRevise::changeEvent(QEvent *e)
+{
+    QWidget::changeEvent(e);
+    switch (e->type()) {
+    case QEvent::LanguageChange:
+    {
+        ui->retranslateUi(this);
+    }
+        break;
+    default:
+        break;
+    }
+}
+
 bool ICAutoRunRevise::ShowModifyItem(const ICMoldItem *item, ICMoldItem* ret, const QString &text)
 {
     ui->currentMoldItemLabel->setText(text);
@@ -76,13 +90,13 @@ bool ICAutoRunRevise::ShowModifyItem(const ICMoldItem *item, ICMoldItem* ret, co
         command.SetCheckSum(tempItem.Sum());
         bool isSuccess = processor->ExecuteCommand(command).toBool();
         return isSuccess;
-//        if(isSuccess)
-//        {
-//            item->SetPos(tempItem.Pos());
-//            item->SetSVal(tempItem.SVal());
-//            item->SetDVal(tempItem.DVal());
-//            return true;
-//        }
+        //        if(isSuccess)
+        //        {
+        //            item->SetPos(tempItem.Pos());
+        //            item->SetSVal(tempItem.SVal());
+        //            item->SetDVal(tempItem.DVal());
+        //            return true;
+        //        }
     }
     return false;
 }

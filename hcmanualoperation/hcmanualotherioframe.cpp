@@ -45,6 +45,20 @@ void HCManualOtherIOFrame::hideEvent(QHideEvent *e)
                SLOT(StatusRefreshed()));
 }
 
+void HCManualOtherIOFrame::changeEvent(QEvent *e)
+{
+    QWidget::changeEvent(e);
+    switch (e->type()) {
+    case QEvent::LanguageChange:
+    {
+        ui->retranslateUi(this);
+    }
+        break;
+    default:
+        break;
+    }
+}
+
 void HCManualOtherIOFrame::StatusRefreshed()
 {
     static QPixmap off(":/resource/ledgray(16).png");

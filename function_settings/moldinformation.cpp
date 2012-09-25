@@ -53,6 +53,12 @@ void MoldInformation::changeEvent(QEvent *e)
     }
 }
 
+void MoldInformation::showEvent(QShowEvent *e)
+{
+//    UpdateInformationTable();
+    QWidget::showEvent(e);
+}
+
 bool MoldInformation::CreateNewSourceFile(const QString & fileName)
 {
     if(fileName.isEmpty())
@@ -245,7 +251,7 @@ void MoldInformation::UpdateInformationTable()
         {
             userProgramList.prepend(tmp);
         }
-        else if(tmp.fileName().right(3) != "fnc")
+        else if(tmp.fileName().right(4) != ".fnc")
         {
             userProgramList.append(tmp);
         }
@@ -330,18 +336,19 @@ void MoldInformation::on_deleteToolButton_clicked()
         return;
     }
 
-    if(ICParametersSave::Instance()->MoldName(QString()) == ui->sourceFileNameLabel->text())
+    QString selectedItem = ui->sourceFileNameLabel->text();
+    if(ICParametersSave::Instance()->MoldName(QString()) == selectedItem)
     {
         QMessageBox::warning(this, tr("warning"),
                              tr("The mold file ") +
-                             ui->sourceFileNameLabel->text() +
+                             selectedItem +
                              tr(" is being used"),
                              QMessageBox::Ok,
                              QMessageBox::Ok);
         return;
     }
 
-    if(IsStandProgram(ui->sourceFileNameLabel->text()))
+    if(IsStandProgram(selectedItem))
     {
         QMessageBox::warning(this, tr("warning"),
                              tr("Stand programs can not be delete!"));
@@ -349,7 +356,7 @@ void MoldInformation::on_deleteToolButton_clicked()
     }
     int ret = QMessageBox::warning(this, tr("warning"),
                                    tr("Are you sure to delete files ") +
-                                   ui->sourceFileNameLabel->text(),
+                                   selectedItem,
                                    QMessageBox::Ok | QMessageBox::Cancel,
                                    QMessageBox::Cancel);
     if(ret != QMessageBox::Ok)
@@ -357,10 +364,11 @@ void MoldInformation::on_deleteToolButton_clicked()
         return;
     }
 
-    if(DeleteSourceFile(ui->sourceFileNameLabel->text()))
+    if(DeleteSourceFile(selectedItem))
     {
         ui->informationTableWidget->removeRow(ui->informationTableWidget->currentRow());
-        emit DeleteFile(ui->sourceFileNameLabel->text());
+//        ui->informationTableWidget->removeRow(ui->informationTableWidget->row(selectedItems.at(0)));
+//        emit DeleteFile(ui->sourceFileNameLabel->text());
         ui->sourceFileNameLabel->clear();
         if(ui->informationTableWidget->rowCount() != 0)
         {
@@ -371,11 +379,11 @@ void MoldInformation::on_deleteToolButton_clicked()
     }
 }
 
-void MoldInformation::on_informationTableWidget_clicked(QModelIndex index)
-{
-    QString fileName =  ui->informationTableWidget->item(index.row(), 0)->text() + ".act";
-    ui->sourceFileNameLabel->setText(fileName);
-}
+//void MoldInformation::on_informationTableWidget_clicked(QModelIndex index)
+//{
+//    QString fileName =  ui->informationTableWidget->item(index.row(), 0)->text() + ".act";
+//    ui->sourceFileNameLabel->setText(fileName);
+//}
 
 void MoldInformation::CreateFileHelper_(QList<ICMoldItem> &items, int axis, int servo, int pneumatic)
 {
@@ -395,4 +403,19 @@ void MoldInformation::CreateFileHelper_(QList<ICMoldItem> &items, int axis, int 
         item.SetAction(servo);
         items.append(item);
     }
+}
+
+void MoldInformation::on_informationTableWidget_itemSelectionChanged()
+{
+    QList<QTableWidgetItem*> items = ui->informationTableWidget->selectedItems();
+    if(items.isEmpty())
+    {
+        return;
+    }
+    int row = ui->informationTableWidget->row(items.at(0));
+//    ui->informationTableWidget->selectRow(row);
+    //    ui->informationTableWidget->setCurrentCell(row, 0);
+    ui->informationTableWidget->setCurrentItem(ui->informationTableWidget->item(row, 0));
+    ui->sourceFileNameLabel->setText(ui->informationTableWidget->currentItem()->text() + ".act");
+//    on_informationTableWidget_itemEntered(items[0]);
 }
