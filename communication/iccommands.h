@@ -170,11 +170,16 @@ class ICUpdateHostTransferCommand: public ICCommunicationCommandBase
 public:
     QByteArray DataBuffer() const { return dataBuffer_;}
     void SetDataBuffer(const QByteArray& data) { dataBuffer_ = data;}
+
+    QByteArray SentBuffer() const { return sentBuffer_;}
+    QByteArray RecvBuffer() const { return recvBuffer_;}
 protected:
     virtual QVariant Send(modbus_param_t *modbusParam);
 
 private:
     QByteArray dataBuffer_;
+    QByteArray sentBuffer_;
+    QByteArray recvBuffer_;
 };
 
 class ICUpdateHostFinishCommand: public ICCommunicationCommandBase

@@ -243,7 +243,23 @@ void ICHCSystemSettingsFrame::on_verifyButton_clicked()
 bool ICHCSystemSettingsFrame::CheckIsUsbAttached() const
 {
     QDir dir("/proc/scsi/usb-storage");
-    return !dir.entryList().isEmpty();
+    if(!dir.exists())
+    {
+        return false;
+    }
+    if(dir.entryList(QStringList(), QDir::Files).isEmpty())
+    {
+        return false;
+    }
+    QFile file("/proc/mounts");
+    if(!file.open(QFile::ReadOnly))
+    {
+        return false;
+    }
+    QString content = file.readAll();
+    file.close();
+    return content.contains(QRegExp("/dev/sd[a-z]*[1-9]*"));
+
 }
 
 void ICHCSystemSettingsFrame::on_backupMachineButton_clicked()
@@ -259,8 +275,7 @@ void ICHCSystemSettingsFrame::on_backupMachineButton_clicked()
     //    bool isSuccess = QFile::copy("./sysconfig/paramx.txt", "/mnt/udisk/HC5ABackup/sysconfig/paramx.txt");
     //    isSuccess = isSuccess && QFile::copy("./sysconfig/paramy.txt", "/mnt/udisk/HC5ABackup/sysconfig/paramy.txt");
     //    isSuccess = isSuccess && QFile::copy("./sysconfig/paramz.txt", "/mnt/udisk/HC5ABackup/sysconfig/paramz.txt");
-    Information(system("cp /opt/Qt/bin/sysconfig/param*.txt /mnt/udisk/HC5ABackup/sysconfig/ -f") >= 0 );
-    Information(system("cp /opt/Qt/bin/sysconfig/DistanceRotation /mnt/udisk/HC5ABackup/sysconfig/ -f") >= 0);
+    Information(system("cp /opt/Qt/bin/sysconfig/param*.txt /opt/Qt/bin/sysconfig/DistanceRotation /mnt/udisk/HC5ABackup/sysconfig/ -f") >= 0 );
 }
 
 void ICHCSystemSettingsFrame::on_backupSystemButton_clicked()
@@ -885,7 +900,7 @@ void ICHCSystemSettingsFrame::StatusRefresh()
 {
     QString os(osInfo_.release);
     os += "; ";
-    ui->versionLabel->setText("Version: OS:" + os + "App 3.0.6;Libs:4.7.3; Host:" + ICVirtualHost::GlobalVirtualHost()->HostStatus(ICVirtualHost::Time).toString());
+    ui->versionLabel->setText("Version: OS:" + os + "App 3.1.0;Libs:4.7.3; Host:" + ICVirtualHost::GlobalVirtualHost()->HostStatus(ICVirtualHost::Time).toString());
 }
 
 void ICHCSystemSettingsFrame::on_structSelectHostButton_clicked()

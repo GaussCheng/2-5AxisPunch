@@ -5,12 +5,16 @@ TARGET = Multi-axisManipulatorSystem
 TEMPLATE = app
 QMAKE_CFLAGS += -std=c99
 
-OBJECTS_DIR = temp
-UI_DIR = temp
-MOC_DIR = temp
-RCC_DIR = temp
+OBJECTS_DIR = temp_8
+UI_DIR = temp_8
+MOC_DIR = temp_8
+RCC_DIR = temp_8
 CONFIG(debug, debug|release) {
 #    LIBS += -lprofiler
+OBJECTS_DIR = temp_8_d
+UI_DIR = temp_8_d
+MOC_DIR = temp_8_d
+RCC_DIR = temp_8_d
 }
 SOURCES += main.cpp \
     mainframe.cpp \
