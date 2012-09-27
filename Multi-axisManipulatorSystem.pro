@@ -29,7 +29,9 @@ SOURCES += main.cpp \
     icscreensaver.cpp \
     icactiondialog.cpp \
     ictimerpool.cpp \
-    ichostcomparepage.cpp
+    ichostcomparepage.cpp \
+    icbackuputility.cpp \
+    ictipswidget.cpp
 HEADERS += mainframe.h \
     icaxispositionlabel.h \
     #icalarmdescriptiondialog.h \
@@ -43,7 +45,9 @@ HEADERS += mainframe.h \
     config.h \
     icactiondialog.h \
     ictimerpool.h \
-    ichostcomparepage.h
+    ichostcomparepage.h \
+    icbackuputility.h \
+    ictipswidget.h
 
 FORMS    += mainframe.ui \
     #icalarmdescriptiondialog.ui \
@@ -51,7 +55,8 @@ FORMS    += mainframe.ui \
     icreturnpage.ui \
     icscreensaver.ui \
     icactiondialog.ui \
-    ichostcomparepage.ui
+    ichostcomparepage.ui \
+    ictipswidget.ui
 
 include (./categorypage/categorypage.pri)
 include (custom_widgets/custom_widgets.pri)

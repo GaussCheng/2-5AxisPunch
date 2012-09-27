@@ -28,7 +28,7 @@ protected:
 private:
     void InitParameter();
     bool CheckIsUsbAttached() const;
-    void Information(bool isSuccess);
+    void Information(bool isSuccess, const QString &msg = QString());
     void SetConfig(int machineLenght,
                    int maxLength,
                    int iSafe,

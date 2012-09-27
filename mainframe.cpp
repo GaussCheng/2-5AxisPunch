@@ -844,6 +844,7 @@ void MainFrame::ShowStandbyPage()
     ICProgramHeadFrame::Instance()->StopAutoTime();
     nullButton_->click();
     ui->recordPageButton->setText(tr("Records"));
+//    qApp->processEvents();
 }
 
 void MainFrame::ShowFunctionPage()

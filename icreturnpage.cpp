@@ -59,7 +59,7 @@ void ICReturnPage::StatusRefresh()
         ui->label->setText(tr("Returnning"));
         isRan_ = true;
     }
-    else if(isReturn == 0)
+    else if(isReturn == 0 || ICVirtualHost::GlobalVirtualHost()->CurrentStatus() != ICVirtualHost::Return)
     {
         if(isRan_)
         {

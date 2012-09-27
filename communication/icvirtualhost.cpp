@@ -229,6 +229,7 @@ void ICVirtualHost::RefreshStatus()
         }
         queryStatusCommand_.SetStartAddr(currentAddr_);
 //        qDebug()<<"Query Time:"<<testTime.restart();
+        qApp->processEvents();
         result = commandProcess->ExecuteCommand(queryStatusCommand_).value<ICCommunicationCommandBase::ResultVector>();
         if(queryStatusCommand_.NeedToReconfig())
         {

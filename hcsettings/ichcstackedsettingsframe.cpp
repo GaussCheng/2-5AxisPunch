@@ -3,6 +3,7 @@
 
 #include "icmold.h"
 #include "icvirtualhost.h"
+#include <QTimer>
 
 #include <QDebug>
 
@@ -197,12 +198,14 @@ void ICHCStackedSettingsFrame::SetStackStatus_(const QList<int> &status)
 
 void ICHCStackedSettingsFrame::hideEvent(QHideEvent *e)
 {
+    QFrame::hideEvent(e);
     qDebug("stack hide");
     QList<int> status = GetCurrentStatus_();
     SetStackStatus_(status);
     ICMold::CurrentMold()->SaveMoldParamsFile();
+//    qApp->processEvents(QEventLoop::WaitForMoreEvents);
+//    QTimer::singleShot(5, this, SLOT(TimeOutToReconfig()));
     ICVirtualHost::GlobalVirtualHost()->ReConfigure();
-    QFrame::hideEvent(e);
 }
 
 void ICHCStackedSettingsFrame::changeEvent(QEvent *e)
@@ -222,4 +225,9 @@ void ICHCStackedSettingsFrame::changeEvent(QEvent *e)
 void ICHCStackedSettingsFrame::OnMoldNumberParamChanged()
 {
     RefreshStackParams_(currentPage_);
+}
+
+void ICHCStackedSettingsFrame::TimeOutToReconfig()
+{
+    ICVirtualHost::GlobalVirtualHost()->ReConfigure();
 }
