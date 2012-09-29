@@ -6324,80 +6324,80 @@ Would you want to restart now?</source>
         <translation>新文件名</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="66"/>
-        <location filename="function_settings/moldinformation.cpp" line="159"/>
-        <location filename="function_settings/moldinformation.cpp" line="167"/>
-        <location filename="function_settings/moldinformation.cpp" line="195"/>
-        <location filename="function_settings/moldinformation.cpp" line="206"/>
-        <location filename="function_settings/moldinformation.cpp" line="229"/>
-        <location filename="function_settings/moldinformation.cpp" line="342"/>
-        <location filename="function_settings/moldinformation.cpp" line="353"/>
-        <location filename="function_settings/moldinformation.cpp" line="357"/>
+        <location filename="function_settings/moldinformation.cpp" line="67"/>
+        <location filename="function_settings/moldinformation.cpp" line="160"/>
+        <location filename="function_settings/moldinformation.cpp" line="168"/>
+        <location filename="function_settings/moldinformation.cpp" line="196"/>
+        <location filename="function_settings/moldinformation.cpp" line="207"/>
+        <location filename="function_settings/moldinformation.cpp" line="230"/>
+        <location filename="function_settings/moldinformation.cpp" line="345"/>
+        <location filename="function_settings/moldinformation.cpp" line="356"/>
+        <location filename="function_settings/moldinformation.cpp" line="360"/>
         <source>warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="67"/>
+        <location filename="function_settings/moldinformation.cpp" line="68"/>
         <source>New file name is empty,
 Please input the file name.</source>
         <translation>新文件名为空
 请输入文件名.</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="88"/>
+        <location filename="function_settings/moldinformation.cpp" line="89"/>
         <source>Warnning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="88"/>
+        <location filename="function_settings/moldinformation.cpp" line="89"/>
         <source>This name can&apos;t not be accept!</source>
         <translation>名子不能用！</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="131"/>
-        <location filename="function_settings/moldinformation.cpp" line="188"/>
+        <location filename="function_settings/moldinformation.cpp" line="132"/>
+        <location filename="function_settings/moldinformation.cpp" line="189"/>
         <source>Success</source>
         <translation>成功</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="132"/>
+        <location filename="function_settings/moldinformation.cpp" line="133"/>
         <source>New file success.</source>
         <translation>新建文件成功.</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="138"/>
+        <location filename="function_settings/moldinformation.cpp" line="139"/>
         <source>The file has been existing</source>
         <translation>文件已存在</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="139"/>
+        <location filename="function_settings/moldinformation.cpp" line="140"/>
         <source>File already exists,
 Please change a new name.</source>
         <translation>文件已存在，
 请输入一个新的文件名.</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="160"/>
-        <location filename="function_settings/moldinformation.cpp" line="207"/>
+        <location filename="function_settings/moldinformation.cpp" line="161"/>
+        <location filename="function_settings/moldinformation.cpp" line="208"/>
         <source>Source file name is empty,
 Please choose an existing file.</source>
         <translation>源文件名为空，
 请选择一个存在的文件.</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="168"/>
+        <location filename="function_settings/moldinformation.cpp" line="169"/>
         <source>New file name is empty,
 Please write the destination file name.</source>
         <translation>文件名为空，
 请输入文件名.</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="189"/>
+        <location filename="function_settings/moldinformation.cpp" line="190"/>
         <source>Copy file success!</source>
         <translation>复制文件成功!</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="196"/>
+        <location filename="function_settings/moldinformation.cpp" line="197"/>
         <source>Destination file already exists!
 Please try a new name</source>
         <translation>目标文件已存在！请重试</translation>
@@ -6407,59 +6407,64 @@ Please try a new name</source>
         <translation type="obsolete">删除文件成功!</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="230"/>
+        <location filename="function_settings/moldinformation.cpp" line="231"/>
         <source>File does not exist!</source>
         <translation>文件不存在!</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="273"/>
-        <location filename="function_settings/moldinformation.cpp" line="290"/>
+        <location filename="function_settings/moldinformation.cpp" line="274"/>
+        <location filename="function_settings/moldinformation.cpp" line="291"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="273"/>
-        <location filename="function_settings/moldinformation.cpp" line="290"/>
+        <location filename="function_settings/moldinformation.cpp" line="274"/>
+        <location filename="function_settings/moldinformation.cpp" line="291"/>
         <source>file name is empty</source>
         <translation>文件名空</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="315"/>
+        <location filename="function_settings/moldinformation.cpp" line="316"/>
         <source>critical</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="315"/>
+        <location filename="function_settings/moldinformation.cpp" line="316"/>
         <source>Read mold or mold para fail! Please change other mold!</source>
         <translation>模组数据已损坏，请更换其它模组!</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="325"/>
+        <location filename="function_settings/moldinformation.cpp" line="320"/>
+        <source>Loading...</source>
+        <translation>载入中...</translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.cpp" line="328"/>
         <source>Tips</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="325"/>
+        <location filename="function_settings/moldinformation.cpp" line="328"/>
         <source>Load Mold Successful!</source>
         <translation>装载模号成功！</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="343"/>
+        <location filename="function_settings/moldinformation.cpp" line="346"/>
         <source>The mold file </source>
         <translation>模号文件</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="345"/>
+        <location filename="function_settings/moldinformation.cpp" line="348"/>
         <source> is being used</source>
         <translation>正被使用</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="354"/>
+        <location filename="function_settings/moldinformation.cpp" line="357"/>
         <source>Stand programs can not be delete!</source>
         <translation>标准程序不能删除！</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="358"/>
+        <location filename="function_settings/moldinformation.cpp" line="361"/>
         <source>Are you sure to delete files </source>
         <translation>确认删除文件</translation>
     </message>

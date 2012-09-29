@@ -28,7 +28,6 @@ private slots:
     void on_page2ToolButton_clicked();
     void on_page3ToolButton_clicked();
     void OnMoldNumberParamChanged();
-    void TimeOutToReconfig();
 
 private:
     void InitInterface();

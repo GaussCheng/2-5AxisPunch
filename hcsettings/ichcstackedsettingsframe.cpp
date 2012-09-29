@@ -226,8 +226,3 @@ void ICHCStackedSettingsFrame::OnMoldNumberParamChanged()
 {
     RefreshStackParams_(currentPage_);
 }
-
-void ICHCStackedSettingsFrame::TimeOutToReconfig()
-{
-    ICVirtualHost::GlobalVirtualHost()->ReConfigure();
-}

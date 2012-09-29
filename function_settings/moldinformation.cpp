@@ -9,6 +9,7 @@
 #include "icprogramheadframe.h"
 #include "icvirtualhost.h"
 #include "config.h"
+#include "ictipswidget.h"
 
 #include <QDebug>
 
@@ -278,7 +279,7 @@ void MoldInformation::on_newToolButton_clicked()
     {
         AddNewInTableWidget(fileName, QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss"));
         //        recordNames_->RecurdFileInfoListChanged(ui->destinationFileLineEdit->text(), ICRecordNames::ADDNEW);
-        emit NewFileCreated(fileName);
+//        emit NewFileCreated(fileName);
         ui->destinationFileLineEdit->clear();
     }
 }
@@ -295,7 +296,7 @@ void MoldInformation::on_copyToolButton_clicked()
     {
         AddNewInTableWidget(fileName, QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss"));
         //        recordNames_->RecurdFileInfoListChanged(ui->destinationFileLineEdit->text(), ICRecordNames::ARCHIVES_COPY);
-        emit NewFileCreated(fileName);
+//        emit NewFileCreated(fileName);
         ui->destinationFileLineEdit->clear();
     }
 }
@@ -316,6 +317,8 @@ void MoldInformation::on_loadToolButton_clicked()
 //                ICMold::CurrentMold()->ReadMoldFile(
                 return;
             }
+            ICTipsWidget tipsWidget(tr("Loading..."));
+            tipsWidget.show();qApp->processEvents();
             ICVirtualHost::GlobalVirtualHost()->ReConfigure();
             qDebug("after emit updatehostparam");
             //        UpdateHostParam();
