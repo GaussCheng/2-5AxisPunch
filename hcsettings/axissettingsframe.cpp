@@ -26,10 +26,11 @@ AxisSettingsFrame::AxisSettingsFrame(QWidget *parent) :
             SIGNAL(LevelChanged(int)),
             this,
             SLOT(LevelChanged(int)));
-    if(ICProgramHeadFrame::Instance()->CurrentLevel() == ICParametersSave::AdvanceAdmin)
-    {
-        LevelChanged(ICParametersSave::AdvanceAdmin);
-    }
+//    if(ICProgramHeadFrame::Instance()->CurrentLevel() == ICParametersSave::AdvanceAdmin)
+//    {
+//        LevelChanged(ICParametersSave::AdvanceAdmin);
+//    }
+    LevelChanged(ICProgramHeadFrame::Instance()->CurrentLevel());
     connect(&refreshTimer_,
             SIGNAL(timeout()),
             SLOT(StatusRefresh()));
