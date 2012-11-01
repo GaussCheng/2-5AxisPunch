@@ -14,6 +14,7 @@ namespace Ui {
 }
 
 class ActionSettingFrame;
+class ICProgramGuidePage;
 
 class ICHCInstructionPageFrame : public QFrame
 {
@@ -65,6 +66,7 @@ private slots:
 
     void on_aMinusBtn_pressed();
     void OnActionButtonReleased();
+    void OnGuideFinished();
 
 signals:
 //    void JumpToProgramEditorPage();
@@ -99,6 +101,7 @@ private:
     QWidget * cutPage_;
     QWidget * programPage_;
     QWidget * stackPage_;
+    ICProgramGuidePage * guidePage_;
 
     ICInstructModifyDialog *modifyDialog_;
 

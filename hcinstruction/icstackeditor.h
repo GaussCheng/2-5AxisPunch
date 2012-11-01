@@ -18,7 +18,7 @@ public:
 protected:
     void showEvent(QShowEvent *e);
     void changeEvent(QEvent *);
-    void SyncStatusImpl(const QList<ICMoldItem> &items){}
+    void SyncStatusImpl(const QList<ICMoldItem> &items){Q_UNUSED(items)}
     QList<ICMoldItem> CreateCommandImpl() const;
 
 private:

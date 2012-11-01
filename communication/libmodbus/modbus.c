@@ -2318,7 +2318,7 @@ int hc_does_need_teach_step(modbus_param_t *mb_param, int slave, int start_addr,
             {
                 return 1;
             }
-            ret == -1;
+            ret = -1;
         }
     }
 
@@ -2363,7 +2363,7 @@ int hc_does_need_reconfig(modbus_param_t *mb_param, int slave, int start_addr, i
             {
                 return 1;
             }
-            ret == -1;
+            ret = -1;
         }
     }
 

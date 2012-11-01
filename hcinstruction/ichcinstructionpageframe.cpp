@@ -31,6 +31,7 @@
 #include "mainframe.h"
 #include "ickeyboard.h"
 #include "icactioncommand.h"
+#include "icprogramguidepage.h"
 
 #include <QDebug>
 #include <QMessageBox>
@@ -54,6 +55,7 @@ ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
     cutPage_(NULL),
     programPage_(NULL),
     stackPage_(NULL),
+    guidePage_(NULL),
     recordPath_("./records/"),
     currentAction_(None),
     currentEdit_(0),
@@ -229,6 +231,15 @@ void ICHCInstructionPageFrame::OptionButtonClicked()
         optionButtonToPage_.insert(ui->stackButton, stackPage_);
         ui->settingStackedWidget->addWidget(stackPage_);
     }
+    else if(guidePage_ == NULL && optionButton == ui->guideButton)
+    {
+        guidePage_ = new ICProgramGuidePage();
+        optionButtonToPage_.insert(ui->guideButton, guidePage_);
+        ui->settingStackedWidget->addWidget(guidePage_);
+        connect(guidePage_,
+                SIGNAL(GuideFinished()),
+                SLOT(OnGuideFinished()));
+    }
     ui->settingStackedWidget->setCurrentWidget(optionButtonToPage_.value(optionButton));
 }
 
@@ -308,125 +319,10 @@ void ICHCInstructionPageFrame::InitSignal()
     connect(ui->aPlusBtn,
             SIGNAL(released()),
             SLOT(OnActionButtonReleased()));
+    connect(ui->guideButton,
+            SIGNAL(clicked()),
+            SLOT(OptionButtonClicked()));
 }
-
-//void ICHCInstructionPageFrame::SelectCurrentStep(int currentStep)
-//{
-//    ui->moldContentListWidget->clearSelection();
-//    QList<ICMoldItem> moldContent = ICMold::CurrentMold()->MoldContent();
-//    QList<ICMoldItem> stepContent;
-//    bool isFoundFirst = false;
-//    int i;
-//    for(i = 0; i != moldContent.size(); ++i)
-//    {
-//        if(moldContent.at(i).Num() == currentStep)
-//        {
-//            isFoundFirst = true;
-//            ui->moldContentListWidget->item(i)->setSelected(true);
-//            stepContent.append(moldContent.at(i));
-//        }
-//        else if(isFoundFirst)
-//        {
-//            break;
-//        }
-//    }
-//    ui->moldContentListWidget->scrollToItem(ui->moldContentListWidget->item(i));
-
-//    ICInstructionEditorBase* editor;
-//    for(int i = 0; i != ui->settingStackedWidget->count(); ++i)
-//    {
-//        editor = qobject_cast<ICInstructionEditorBase*>(ui->settingStackedWidget->widget(i));
-//        editor->SyncStatus(stepContent);
-//    }
-//}
-
-//void ICHCInstructionPageFrame::LoadProgram(const QString & moldName)
-//{
-//}
-
-//void ICHCInstructionPageFrame::LoadMacro(const QString & macroName)
-//{
-//}
-
-//void ICHCInstructionPageFrame::on_programSelectedComboBox_activated(QString moldName)
-//{
-//    if(ICParametersSave::Instance()->MoldName(QString()) == moldName)
-//    {
-//        return;
-//    }
-
-//    int ret = QMessageBox::warning(this, tr("Warning"),
-//                                   tr("Do you want to change current mold to ")
-//                                   + moldName,
-//                                   QMessageBox::Yes | QMessageBox::Cancel,
-//                                   QMessageBox::Yes);
-//    if(ret == QMessageBox::Yes)
-//    {
-//        LoadMoldFile(moldName);
-//    }
-//    ui->programSelectedComboBox->setCurrentIndex(
-//                ui->programSelectedComboBox->findText(ICParametersSave::Instance()->MoldName(QString())));
-//}
-
-//void ICHCInstructionPageFrame::LoadMoldFile(const QString & moldName)
-//{
-//    qDebug("Load mold file");
-//    QString filePathName = recordPath_ + moldName;
-//    if(QFile::exists(filePathName))
-//    {
-//        ICMold::CurrentMold()->ReadMoldFile(filePathName);
-//        ICVirtualHost::GlobalVirtualHost()->ReConfigure();
-////        emit CurrentProgramChanged();
-//        qDebug("after emit updatehostparam");
-//        //        UpdateHostParam();
-
-//        ICParametersSave::Instance()->SetMoldName(moldName);
-//        ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnTeach,
-//                                                         0,
-//                                                         ICMold::CurrentMold()->SyncAct() + ICMacroSubroutine::Instance()->SyncAct(),
-//                                                         ICMold::CurrentMold()->SyncSum() + ICMacroSubroutine::Instance()->SyncSum());
-
-//        ICProgramHeadFrame::Instance()->SetCurrentMoldName(moldName);
-//        //        emit CurrentMoldChanged(moldName);
-//    }
-//}
-
-//void ICHCInstructionPageFrame::LoadAllRecordFileInfo()
-//{
-//    ui->programSelectedComboBox->clear();
-
-//    //    ICStandardProgram* standardPrograms = ICStandardProgram::Instance();
-//    QDir recordDir(recordPath_);
-//    QFileInfoList fileInfoList = recordDir.entryInfoList(QDir::Files);
-//    //    QFileInfoList standardProgramList;
-//    QFileInfoList userProgramList;
-//    foreach(const QFileInfo &fileInfo, fileInfoList)
-//    {
-//        /*if(standardPrograms->IsStandardProgram(fileInfo.fileName()))
-//        {
-//            standardProgramList.append(fileInfo);
-//        }
-//        else
-//        {*/
-//        if(fileInfo.fileName().right(3) != "fnc")
-//        {
-//            userProgramList.append(fileInfo);
-//        }
-//        //}
-//    }
-
-//    /*foreach(QFileInfo fileInfo, standardProgramList)
-//    {
-//        ui->programSelectedComboBox->addItem(fileInfo.fileName());
-//    }*/
-//    foreach(const QFileInfo &fileInfo, userProgramList)
-//    {
-//        ui->programSelectedComboBox->addItem(fileInfo.fileName());
-//    }
-//    ui->programSelectedComboBox->setCurrentIndex(-1);
-//    //    ui->instructTableWidget->clearContents();
-//    //    ui->instructTableWidget->setRowCount(0);
-//}
 
 void ICHCInstructionPageFrame::InitParameter()
 {
@@ -1056,4 +952,10 @@ void ICHCInstructionPageFrame::ShowServoAction(int key)
         actionPage_->KeyToActionCheck(key);
     }
 
+}
+
+void  ICHCInstructionPageFrame::OnGuideFinished()
+{
+    ICMold::CurrentMold()->SetMoldContent(guidePage_->CreateCommand());
+    UpdateHostParam();
 }

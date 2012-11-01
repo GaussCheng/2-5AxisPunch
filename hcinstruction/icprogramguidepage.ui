@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ICProgramGuidePage</class>
+ <widget class="ICInstructionEditorBase" name="ICProgramGuidePage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>398</width>
+    <height>739</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>StackedWidget</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QCheckBox::indicator {
+     width: 32px;
+     height: 32px;
+ }
+
+QCheckBox::indicator:unchecked 
+{
+     image: url(:/resource/check_unchecked.png);
+ }
+QCheckBox::indicator:checked 
+{
+     image: url(:/resource/check_checked.png);
+ }</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="topMargin">
+    <number>2</number>
+   </property>
+   <property name="bottomMargin">
+    <number>2</number>
+   </property>
+   <item>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="page1">
+      <layout class="QVBoxLayout" name="verticalLayout_13">
+       <item>
+        <widget class="QGroupBox" name="groupBox">
+         <property name="title">
+          <string>Select Arm</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_15">
+          <item>
+           <widget class="QCheckBox" name="usedMainArmBox">
+            <property name="text">
+             <string>Main Arm</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="usedSubArmBox">
+            <property name="text">
+             <string>Sub Arm</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="productFixtureGroup">
+         <property name="title">
+          <string>Get Product Fixture</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Use Fixture:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="productFixtureBox">
+            <item>
+             <property name="text">
+              <string>Fixture-1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Fixture-2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Fixture-3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Fixture-4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Sucker-1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Sucker-2</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="productCheck">
+            <property name="text">
+             <string>Check Fixture</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="outletFixtureGroup">
+         <property name="title">
+          <string>Get Outlet Fixture</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Use Fixture:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="outletFixtureBox">
+            <property name="currentIndex">
+             <number>1</number>
+            </property>
+            <item>
+             <property name="text">
+              <string>Fixture-1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Fixture-2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Fixture-3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Fixture-4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Sucker-1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Sucker-2</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="outletCheck">
+            <property name="text">
+             <string>Check Fixture</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page2">
+      <layout class="QGridLayout" name="gridLayout">
+       <property name="topMargin">
+        <number>2</number>
+       </property>
+       <property name="bottomMargin">
+        <number>2</number>
+       </property>
+       <property name="verticalSpacing">
+        <number>3</number>
+       </property>
+       <item row="0" column="0" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="descrLabel">
+           <property name="text">
+            <string>Standby Settings</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="setInButton">
+           <property name="text">
+            <string>Set In</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="gx1Label">
+         <property name="text">
+          <string>GX1:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="QLabel" name="gy1Label">
+         <property name="text">
+          <string>GY1:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="0">
+        <widget class="QLabel" name="gx2Label">
+         <property name="text">
+          <string>GX2:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="0">
+        <widget class="QLabel" name="gy2Label">
+         <property name="text">
+          <string>GY2:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="ICLineEditWithVirtualNumericKeypad" name="x1Edit">
+           <property name="text">
+            <string>0.0</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="x1Box">
+           <item>
+            <property name="text">
+             <string>Forward</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Backward</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="9" column="1">
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="ICLineEditWithVirtualNumericKeypad" name="y1Edit">
+           <property name="text">
+            <string>0.0</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="y1Box">
+           <item>
+            <property name="text">
+             <string>Up</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Down</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="12" column="1">
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <widget class="ICLineEditWithVirtualNumericKeypad" name="x2Edit">
+           <property name="text">
+            <string>0.0</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="x2Box">
+           <item>
+            <property name="text">
+             <string>Forward</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Backward</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="13" column="1">
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <item>
+          <widget class="ICLineEditWithVirtualNumericKeypad" name="y2Edit">
+           <property name="text">
+            <string>0.0</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="y2Box">
+           <item>
+            <property name="text">
+             <string>Up</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Down</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="17" column="0">
+        <widget class="QLabel" name="releaseOutletLabel">
+         <property name="text">
+          <string>Release Outlet:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="17" column="1">
+        <widget class="QComboBox" name="outletBox">
+         <item>
+          <property name="text">
+           <string>Come Out</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Come In</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>In Mold</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="gzLabel">
+         <property name="text">
+          <string>GZ:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <widget class="ICLineEditWithVirtualNumericKeypad" name="zEdit">
+           <property name="text">
+            <string>0.0</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="zBox">
+           <item>
+            <property name="text">
+             <string>Come In</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Go Out</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="gaLabel">
+         <property name="text">
+          <string>GA:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <layout class="QVBoxLayout" name="verticalLayout_8">
+         <item>
+          <widget class="ICLineEditWithVirtualNumericKeypad" name="aEdit">
+           <property name="text">
+            <string>0.0</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="aBox">
+           <item>
+            <property name="text">
+             <string>Horizontal</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Vertical</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="gbLabel">
+         <property name="text">
+          <string>GB:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <layout class="QVBoxLayout" name="verticalLayout_7">
+         <item>
+          <widget class="ICLineEditWithVirtualNumericKeypad" name="bEdit">
+           <property name="text">
+            <string>0.0</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="bBox">
+           <item>
+            <property name="text">
+             <string>Horizontal</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Vertical</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="gcLabel">
+         <property name="text">
+          <string>GC:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <layout class="QVBoxLayout" name="verticalLayout_10">
+         <item>
+          <widget class="ICLineEditWithVirtualNumericKeypad" name="cEdit">
+           <property name="text">
+            <string>0.0</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cBox">
+           <item>
+            <property name="text">
+             <string>Horizontal</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Vertical</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="5" column="0" colspan="2">
+        <widget class="Line" name="line">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0" colspan="2">
+        <widget class="Line" name="line_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="productLabel">
+         <property name="text">
+          <string>Product</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="0">
+        <widget class="QLabel" name="outletLabel">
+         <property name="text">
+          <string>Outlet</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page3">
+      <layout class="QVBoxLayout" name="verticalLayout_14">
+       <item>
+        <widget class="QGroupBox" name="groupBox_4">
+         <property name="title">
+          <string>Come Out Position</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_11">
+          <item>
+           <widget class="QCheckBox" name="outHorizontalBox">
+            <property name="text">
+             <string>Horizontal</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+            <attribute name="buttonGroup">
+             <string>buttonGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="outVerticalBox">
+            <property name="text">
+             <string>Vertical</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string>buttonGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="outRunningHorizonBox">
+            <property name="text">
+             <string>Running Horizon</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string>buttonGroup</string>
+            </attribute>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_5">
+         <property name="title">
+          <string>Come In Position</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_12">
+          <item>
+           <widget class="QCheckBox" name="inHorizontalBox">
+            <property name="text">
+             <string>Horizontal</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+            <attribute name="buttonGroup">
+             <string>buttonGroup_2</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="inVerticalBox">
+            <property name="text">
+             <string>Vertical</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string>buttonGroup_2</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="inRunningHorizonBox">
+            <property name="text">
+             <string>Running Horizon</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string>buttonGroup_2</string>
+            </attribute>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QCheckBox" name="checkBox_7">
+           <property name="text">
+            <string>Stacked En</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_10">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>0</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="preButton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>Pre</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="nextButton">
+       <property name="text">
+        <string>Next</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="finishButton">
+       <property name="text">
+        <string>Finish</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ICInstructionEditorBase</class>
+   <extends>QWidget</extends>
+   <header>icinstructioneditorbase.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ICLineEditWithVirtualNumericKeypad</class>
+   <extends>QLineEdit</extends>
+   <header>iclineeditwithvirtualnumerickeypad.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup_2"/>
+  <buttongroup name="buttonGroup"/>
+ </buttongroups>
+</ui>
