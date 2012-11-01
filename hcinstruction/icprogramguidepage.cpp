@@ -218,23 +218,9 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
         item.SetClip(fixtureOnAction_.at(ui->outletFixtureBox->currentIndex()));
         ret.append(item);
     }
-    item.SetAction(ICMold::ACT_Cut);
-    item.SetIFVal(1);
-    if(isMainArmUsed && ui->productCheck->isChecked())
-    {
-        tempStep = stepNum;
-        item.SetNum(stepNum++);
-        item.SetSVal(ui->productFixtureBox->currentIndex());
-        ret.append(item);
-    }
-    if(isSubArmUsed && ui->outletCheck->isChecked())
-    {
-        item.SetNum(tempStep);
-        item.SetSVal(ui->outletFixtureBox->currentIndex());
-        ret.append(item);
-    }
 
-    /*go up*/
+
+    /*X axis backward*/
     item.SetDVal(0);
     item.SetSVal(80);
     if(isMainArmUsed)
@@ -254,6 +240,65 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             ret.append(item);
         }
     }
+
+    /*fixture check*/
+    item.SetAction(ICMold::ACT_Cut);
+    item.SetIFVal(1);
+    if(isMainArmUsed && ui->productCheck->isChecked())
+    {
+        tempStep = stepNum;
+        item.SetNum(stepNum++);
+        item.SetSVal(ui->productFixtureBox->currentIndex());
+        ret.append(item);
+    }
+    if(isSubArmUsed && ui->outletCheck->isChecked())
+    {
+        item.SetNum(tempStep);
+        item.SetSVal(ui->outletFixtureBox->currentIndex());
+        ret.append(item);
+    }
+
+    /*go up*/
+    item.SetSVal(80);
+    item.SetDVal(0);
+    if(isMainArmUsed)
+    {
+        tempStep = stepNum;
+        item.SetNum(stepNum++);
+        if(SetAxisICMoldItem_(&item, axis_ + Y1_AXIS, STANDBY_SETTING))
+        {
+            ret.append(item);
+        }
+    }
+    if(isSubArmUsed)
+    {
+        item.SetNum(tempStep);
+        if(SetAxisICMoldItem_(&item, axis_ + Y2_AXIS, STANDBY_SETTING))
+        {
+            ret.append(item);
+        }
+    }
+
+    /*go out*/
+    item.SetNum(stepNum++);
+    if(ui->outHorizontalBox->isChecked())
+    {
+        tempStep = stepNum;
+        item.SetAction(ICMold::ACTPOSEHORI);
+    }
+    else if(ui->outVerticalBox->isChecked())
+    {
+        tempStep = stepNum;
+        item.SetAction(ICMold::ACTPOSEVERT);
+    }
+    else if(ui->outRunningHorizonBox->isChecked())
+    {
+        tempStep = item.Num();
+        item.SetAction(ICMold::ACTPOSEHORI);
+    }
+    ret.append(item);
+
+//    int pos = qMin(axis_[Z_AXIS].)
 
     return ret;
 
