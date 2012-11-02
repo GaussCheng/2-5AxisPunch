@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>398</width>
-    <height>764</height>
+    <height>853</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -38,12 +38,12 @@ QCheckBox::indicator:checked
    <item>
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="page1">
       <layout class="QVBoxLayout" name="verticalLayout_13">
        <item>
-        <widget class="QGroupBox" name="groupBox">
+        <widget class="QGroupBox" name="selectArmBox">
          <property name="title">
           <string>Select Arm</string>
          </property>
@@ -207,17 +207,17 @@ QCheckBox::indicator:checked
       </layout>
      </widget>
      <widget class="QWidget" name="page2">
-      <layout class="QGridLayout" name="gridLayout">
-       <property name="topMargin">
+      <layout class="QVBoxLayout" name="verticalLayout_16">
+       <property name="spacing">
         <number>2</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
        </property>
        <property name="bottomMargin">
-        <number>2</number>
+        <number>0</number>
        </property>
-       <property name="verticalSpacing">
-        <number>3</number>
-       </property>
-       <item row="0" column="0" colspan="2">
+       <item>
         <layout class="QHBoxLayout" name="horizontalLayout_4">
          <item>
           <widget class="QLabel" name="descrLabel">
@@ -235,320 +235,362 @@ QCheckBox::indicator:checked
          </item>
         </layout>
        </item>
-       <item row="7" column="0">
-        <widget class="QLabel" name="gx1Label">
-         <property name="text">
-          <string>GX1:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="0">
-        <widget class="QLabel" name="gy1Label">
-         <property name="text">
-          <string>GY1:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="12" column="0">
-        <widget class="QLabel" name="gx2Label">
-         <property name="text">
-          <string>GX2:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="13" column="0">
-        <widget class="QLabel" name="gy2Label">
-         <property name="text">
-          <string>GY2:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="1">
-        <layout class="QVBoxLayout" name="verticalLayout_2">
-         <item>
-          <widget class="ICLineEditWithVirtualNumericKeypad" name="x1Edit">
-           <property name="text">
-            <string>0.0</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="x1Box">
-           <item>
-            <property name="text">
-             <string>Forward</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Backward</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item row="9" column="1">
-        <layout class="QVBoxLayout" name="verticalLayout_3">
-         <item>
-          <widget class="ICLineEditWithVirtualNumericKeypad" name="y1Edit">
-           <property name="text">
-            <string>0.0</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="y1Box">
-           <item>
-            <property name="text">
-             <string>Up</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Down</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item row="12" column="1">
-        <layout class="QVBoxLayout" name="verticalLayout_5">
-         <item>
-          <widget class="ICLineEditWithVirtualNumericKeypad" name="x2Edit">
-           <property name="text">
-            <string>0.0</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="x2Box">
-           <item>
-            <property name="text">
-             <string>Forward</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Backward</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item row="13" column="1">
-        <layout class="QVBoxLayout" name="verticalLayout_6">
-         <item>
-          <widget class="ICLineEditWithVirtualNumericKeypad" name="y2Edit">
-           <property name="text">
-            <string>0.0</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="y2Box">
-           <item>
-            <property name="text">
-             <string>Up</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Down</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item row="17" column="0">
-        <widget class="QLabel" name="releaseOutletLabel">
-         <property name="text">
-          <string>Release Outlet:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="17" column="1">
-        <widget class="QComboBox" name="outletBox">
-         <item>
-          <property name="text">
-           <string>Come Out</string>
+       <item>
+        <widget class="QGroupBox" name="commonGroupBox">
+         <layout class="QFormLayout" name="formLayout_3">
+          <property name="verticalSpacing">
+           <number>4</number>
           </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Come In</string>
+          <property name="topMargin">
+           <number>0</number>
           </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>In Mold</string>
+          <property name="bottomMargin">
+           <number>0</number>
           </property>
-         </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="gzLabel">
+            <property name="text">
+             <string>GZ:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <widget class="ICLineEditWithVirtualNumericKeypad" name="zEdit">
+              <property name="text">
+               <string>0.0</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="zBox">
+              <item>
+               <property name="text">
+                <string>Come In</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Go Out</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="gaLabel">
+            <property name="text">
+             <string>GA:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <layout class="QVBoxLayout" name="verticalLayout_8">
+            <item>
+             <widget class="ICLineEditWithVirtualNumericKeypad" name="aEdit">
+              <property name="text">
+               <string>0.0</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="aBox">
+              <item>
+               <property name="text">
+                <string>Horizontal</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Vertical</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="gbLabel">
+            <property name="text">
+             <string>GB:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <layout class="QVBoxLayout" name="verticalLayout_7">
+            <item>
+             <widget class="ICLineEditWithVirtualNumericKeypad" name="bEdit">
+              <property name="text">
+               <string>0.0</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="bBox">
+              <item>
+               <property name="text">
+                <string>Horizontal</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Vertical</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="gcLabel">
+            <property name="text">
+             <string>GC:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <layout class="QVBoxLayout" name="verticalLayout_10">
+            <item>
+             <widget class="ICLineEditWithVirtualNumericKeypad" name="cEdit">
+              <property name="text">
+               <string>0.0</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="cBox">
+              <item>
+               <property name="text">
+                <string>Horizontal</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Vertical</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
         </widget>
        </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="gzLabel">
-         <property name="text">
-          <string>GZ:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <layout class="QVBoxLayout" name="verticalLayout_4">
-         <item>
-          <widget class="ICLineEditWithVirtualNumericKeypad" name="zEdit">
-           <property name="text">
-            <string>0.0</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="zBox">
-           <item>
-            <property name="text">
-             <string>Come In</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Go Out</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="gaLabel">
-         <property name="text">
-          <string>GA:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <layout class="QVBoxLayout" name="verticalLayout_8">
-         <item>
-          <widget class="ICLineEditWithVirtualNumericKeypad" name="aEdit">
-           <property name="text">
-            <string>0.0</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="aBox">
-           <item>
-            <property name="text">
-             <string>Horizontal</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Vertical</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="gbLabel">
-         <property name="text">
-          <string>GB:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <layout class="QVBoxLayout" name="verticalLayout_7">
-         <item>
-          <widget class="ICLineEditWithVirtualNumericKeypad" name="bEdit">
-           <property name="text">
-            <string>0.0</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="bBox">
-           <item>
-            <property name="text">
-             <string>Horizontal</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Vertical</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="gcLabel">
-         <property name="text">
-          <string>GC:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="1">
-        <layout class="QVBoxLayout" name="verticalLayout_10">
-         <item>
-          <widget class="ICLineEditWithVirtualNumericKeypad" name="cEdit">
-           <property name="text">
-            <string>0.0</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="cBox">
-           <item>
-            <property name="text">
-             <string>Horizontal</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Vertical</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item row="5" column="0" colspan="2">
-        <widget class="Line" name="line">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="0" colspan="2">
-        <widget class="Line" name="line_2">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="0">
-        <widget class="QLabel" name="productLabel">
-         <property name="text">
+       <item>
+        <widget class="QGroupBox" name="productGroupBox">
+         <property name="title">
           <string>Product</string>
          </property>
+         <layout class="QFormLayout" name="formLayout">
+          <property name="verticalSpacing">
+           <number>4</number>
+          </property>
+          <property name="topMargin">
+           <number>4</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="gx1Label">
+            <property name="text">
+             <string>GX1:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+             <widget class="ICLineEditWithVirtualNumericKeypad" name="x1Edit">
+              <property name="text">
+               <string>0.0</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="x1Box">
+              <item>
+               <property name="text">
+                <string>Forward</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Backward</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="gy1Label">
+            <property name="text">
+             <string>GY1:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <widget class="ICLineEditWithVirtualNumericKeypad" name="y1Edit">
+              <property name="text">
+               <string>0.0</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="y1Box">
+              <item>
+               <property name="text">
+                <string>Up</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Down</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
         </widget>
        </item>
-       <item row="11" column="0">
-        <widget class="QLabel" name="outletLabel">
-         <property name="text">
+       <item>
+        <widget class="QGroupBox" name="outletGroupBox">
+         <property name="title">
           <string>Outlet</string>
          </property>
+         <layout class="QFormLayout" name="formLayout_2">
+          <property name="verticalSpacing">
+           <number>4</number>
+          </property>
+          <property name="topMargin">
+           <number>4</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="gx2Label">
+            <property name="text">
+             <string>GX2:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <item>
+             <widget class="ICLineEditWithVirtualNumericKeypad" name="x2Edit">
+              <property name="text">
+               <string>0.0</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="x2Box">
+              <item>
+               <property name="text">
+                <string>Forward</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Backward</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="gy2Label">
+            <property name="text">
+             <string>GY2:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <layout class="QVBoxLayout" name="verticalLayout_6">
+            <item>
+             <widget class="ICLineEditWithVirtualNumericKeypad" name="y2Edit">
+              <property name="text">
+               <string>0.0</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="y2Box">
+              <item>
+               <property name="text">
+                <string>Up</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Down</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="releaseOutletLabel">
+            <property name="text">
+             <string>Release Outlet:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QComboBox" name="outletBox">
+            <item>
+             <property name="text">
+              <string>Come Out</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Come In</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>In Mold</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
         </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
        </item>
       </layout>
      </widget>
      <widget class="QWidget" name="page3">
       <layout class="QVBoxLayout" name="verticalLayout_14">
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
        <item>
         <widget class="QGroupBox" name="groupBox_4">
          <property name="title">
@@ -636,19 +678,19 @@ QCheckBox::indicator:checked
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
-          <widget class="QCheckBox" name="checkBox_7">
+          <widget class="QCheckBox" name="stackedEn">
            <property name="text">
             <string>Stacked En</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_10">
+          <widget class="ICLineEditWithVirtualNumericKeypad" name="stackGroup">
            <property name="enabled">
             <bool>false</bool>
            </property>
            <property name="text">
-            <string>0</string>
+            <string>1</string>
            </property>
           </widget>
          </item>
@@ -657,19 +699,6 @@ QCheckBox::indicator:checked
       </layout>
      </widget>
     </widget>
-   </item>
-   <item>
-    <spacer name="verticalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">

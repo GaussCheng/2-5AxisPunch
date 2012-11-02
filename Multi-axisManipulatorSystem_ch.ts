@@ -1750,7 +1750,7 @@ Reason</source>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.ui" line="94"/>
         <source>Guide</source>
-        <translation type="unfinished">向导</translation>
+        <translation>程序快速设定</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.ui" line="140"/>
@@ -1904,10 +1904,10 @@ Reason</source>
         <translation>主菜单</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="535"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="740"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="879"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="953"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="420"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="625"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="764"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="838"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -1924,32 +1924,32 @@ Reason</source>
         <translation type="obsolete">该模号是当前模号!</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="536"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="421"/>
         <source>Can not add standby position program</source>
         <translation>不能添加待机点步骤</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="729"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="614"/>
         <source>warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="730"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="615"/>
         <source>Stand program can not be delete action</source>
         <translation>标准程序不能删除动作</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="741"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="626"/>
         <source>Can not delete standby position program</source>
         <translation>不能删除待机点步骤</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="880"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="765"/>
         <source>Can not group up to standby position program</source>
         <translation>不能组合待机点步骤</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="954"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="839"/>
         <source>Can not decompose standby position program</source>
         <translation>不能分解待机点步骤</translation>
     </message>
@@ -5168,282 +5168,304 @@ Please enter an digit between </source>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="14"/>
         <source>StackedWidget</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="48"/>
         <source>Select Arm</source>
-        <translation type="unfinished"></translation>
+        <translation>手臂选择</translation>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="54"/>
         <source>Main Arm</source>
-        <translation type="unfinished">主臂</translation>
+        <translation>主臂</translation>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="64"/>
         <source>Sub Arm</source>
-        <translation type="unfinished">副臂</translation>
+        <translation>副臂</translation>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="74"/>
         <source>Get Product Fixture</source>
-        <translation type="unfinished"></translation>
+        <translation>取成品治具</translation>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="80"/>
         <location filename="hcinstruction/icprogramguidepage.ui" line="140"/>
         <source>Use Fixture:</source>
-        <translation type="unfinished"></translation>
+        <translation>使用治具:</translation>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="88"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="148"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="151"/>
         <source>Fixture-1</source>
-        <translation type="unfinished"></translation>
+        <translation>夹1</translation>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="93"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="153"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="156"/>
         <source>Fixture-2</source>
-        <translation type="unfinished"></translation>
+        <translation>夹2</translation>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="98"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="158"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="161"/>
         <source>Fixture-3</source>
-        <translation type="unfinished"></translation>
+        <translation>夹3</translation>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="103"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="163"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="166"/>
         <source>Fixture-4</source>
-        <translation type="unfinished"></translation>
+        <translation>夹4</translation>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="108"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="168"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="171"/>
         <source>Sucker-1</source>
-        <translation type="unfinished"></translation>
+        <translation>吸1</translation>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="113"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="173"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="176"/>
         <source>Sucker-2</source>
-        <translation type="unfinished"></translation>
+        <translation>吸2</translation>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="121"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="181"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="184"/>
         <source>Check Fixture</source>
-        <translation type="unfinished"></translation>
+        <translation>治具确认</translation>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="134"/>
         <source>Get Outlet Fixture</source>
-        <translation type="unfinished"></translation>
+        <translation>取水口治具</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="213"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="216"/>
         <source>Standby Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>待机点设定</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="220"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="223"/>
         <source>Set In</source>
-        <translation type="unfinished">保存</translation>
+        <translation>设入</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="229"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="366"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="742"/>
+        <source>Product</source>
+        <translation>成品位置设定</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="372"/>
         <source>GX1:</source>
-        <translation type="unfinished">X1:</translation>
+        <translation>X1:</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="236"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="404"/>
         <source>GY1:</source>
-        <translation type="unfinished">Y1:</translation>
+        <translation>Y1:</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="243"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="651"/>
+        <source>1</source>
+        <translation>1</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="235"/>
         <source>GZ:</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="250"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="445"/>
         <source>GX2:</source>
-        <translation type="unfinished">X2:</translation>
+        <translation>X2:</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="477"/>
+        <source>GY2:</source>
+        <translation>Y2:</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="267"/>
+        <source>GA:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="299"/>
+        <source>GB:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="331"/>
+        <source>GC:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="244"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="276"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="308"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="340"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="381"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="413"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="454"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="486"/>
+        <source>0.0</source>
+        <translation>0.0</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="389"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="462"/>
+        <source>Forward</source>
+        <translation>前进</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="394"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="467"/>
+        <source>Backward</source>
+        <translation>后退</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="421"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="494"/>
+        <source>Up</source>
+        <translation>上升</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="426"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="499"/>
+        <source>Down</source>
+        <translation>下降</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="252"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="522"/>
+        <source>Come In</source>
+        <translation>横入</translation>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="257"/>
-        <source>GY2:</source>
-        <translation type="unfinished">Y2:</translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="264"/>
-        <source>GA:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="271"/>
-        <source>GB:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="278"/>
-        <source>GC:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="287"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="312"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="337"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="362"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="387"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="412"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="437"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="462"/>
-        <source>0.0</source>
-        <translation type="unfinished">0.0</translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="295"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="370"/>
-        <source>Forward</source>
-        <translation type="unfinished">前进</translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="300"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="375"/>
-        <source>Backward</source>
-        <translation type="unfinished">后退</translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="320"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="395"/>
-        <source>Up</source>
-        <translation type="unfinished">上升</translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="325"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="400"/>
-        <source>Down</source>
-        <translation type="unfinished">下降</translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="345"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="498"/>
-        <source>Come In</source>
-        <translation type="unfinished">横入</translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="350"/>
         <source>Go Out</source>
-        <translation type="unfinished">横出</translation>
+        <translation>横出</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="420"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="445"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="470"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="521"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="563"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="284"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="316"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="348"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="561"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="603"/>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>水平</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="425"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="450"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="475"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="534"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="576"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="289"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="321"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="353"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="574"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="616"/>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>垂直</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="485"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="439"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="743"/>
+        <source>Outlet</source>
+        <translation>水口位置设定</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="509"/>
         <source>Release Outlet:</source>
-        <translation type="unfinished"></translation>
+        <translation>放水口设定:</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="493"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="517"/>
         <source>Come Out</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="503"/>
-        <source>In Mold</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="515"/>
-        <source>Come Out Position</source>
-        <translation type="unfinished"></translation>
+        <translation>横出</translation>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="527"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="537"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="547"/>
+        <source>In Mold</source>
+        <translation>模内</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="555"/>
+        <source>Come Out Position</source>
+        <translation>横出姿势</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="567"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="577"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="587"/>
         <source>buttonGroup</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="544"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="586"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="584"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="626"/>
         <source>Running Horizon</source>
-        <translation type="unfinished"></translation>
+        <translation>横出水平</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="557"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="597"/>
         <source>Come In Position</source>
-        <translation type="unfinished"></translation>
+        <translation>横入姿势</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="569"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="579"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="589"/>
-        <source>buttonGroup_2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="601"/>
-        <source>Stacked En</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="611"/>
-        <source>0</source>
-        <translation type="unfinished">0</translation>
-    </message>
-    <message>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="609"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="619"/>
         <location filename="hcinstruction/icprogramguidepage.ui" line="629"/>
+        <source>buttonGroup_2</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="641"/>
+        <source>Stacked En</source>
+        <translation>堆叠使用</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation type="obsolete">0</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="669"/>
         <source>Pre</source>
-        <translation type="unfinished"></translation>
+        <translation>上一页</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="636"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="676"/>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>下一页</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="643"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="683"/>
         <source>Finish</source>
-        <translation type="unfinished">完成</translation>
+        <translation>完成</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="287"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="312"/>
-        <source>Get Product Position Settings</source>
-        <translation type="unfinished"></translation>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="739"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="786"/>
+        <source>Get Position Settings</source>
+        <translation>取物位置设定</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="292"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="317"/>
-        <source>Get Outlet Position Settings</source>
-        <translation type="unfinished"></translation>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="750"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="794"/>
+        <source>Release Product Position Settings</source>
+        <translation>放成品位置设定</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="345"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="759"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="803"/>
+        <source>Release Outlet Position Settings</source>
+        <translation>放水口位置设定</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="837"/>
         <source>Stanby Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>待机点设定</translation>
     </message>
 </context>
 <context>

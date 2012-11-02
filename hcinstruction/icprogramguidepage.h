@@ -18,6 +18,7 @@ class ICLineEditWithVirtualNumericKeypad;
 #define STANDBY_SETTING 1
 #define GET_PRODUCT_SETTING 2
 #define RELEASE_PRODUCT_SETTING 3
+#define RELEASE_OUTLET_SETTING 4
 
 #define X1_AXIS 0
 #define Y1_AXIS 1
@@ -56,6 +57,10 @@ private slots:
 
     void on_usedSubArmBox_toggled(bool checked);
 
+    void on_stackedEn_toggled(bool checked);
+
+    void on_setInButton_clicked();
+
 private:
     struct _ICAxis_
     {
@@ -73,8 +78,13 @@ private:
         };
         union
         {
-            int releasePos;
-            int releaseLimit;
+            int releaseProductPos;
+            int releaseProductLimit;
+        };
+        union
+        {
+            int releaseOutletPos;
+            int releaseOutletLimit;
         };
     };
 
@@ -82,6 +92,8 @@ private:
     void UpdateAxisDefine_();
     void UpdatePageButton_();
     void ShowForStandby_();
+//    void ShowForProduct_();
+//    void ShowForOutlet_();
     void SetAxis_(_ICAxis_* axis, int pos, int setting);
     void SetAxisPosEdit_(ICLineEditWithVirtualNumericKeypad* edit, _ICAxis_ *axis, int setting);
     void SetAxisLimitEdit_(QComboBox* edit, _ICAxis_ *axis, int setting);

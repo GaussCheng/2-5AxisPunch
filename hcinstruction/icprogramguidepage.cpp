@@ -28,7 +28,8 @@ ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
         axis_[i].mode = 0;
         axis_[i].standbyPos = 0;
         axis_[i].getPos = 0;
-        axis_[i].releasePos = 0;
+        axis_[i].releaseProductPos = 0;
+        axis_[i].releaseOutletPos = 0;
     }
     for(int i = 0; i != posEdits_.size(); ++i)
     {
@@ -68,7 +69,9 @@ ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
 
     on_usedMainArmBox_toggled(ui->usedMainArmBox->isChecked());
     on_usedSubArmBox_toggled(ui->usedSubArmBox->isChecked());
-
+    HideWidgets_(axisWidgets_[8]);
+    ui->outRunningHorizonBox->hide();
+    ui->inRunningHorizonBox->hide();
 
 #ifdef Q_WS_X11
     UpdateAxisDefine_();
@@ -97,6 +100,7 @@ void ICProgramGuidePage::showEvent(QShowEvent *e)
     pageIndex_ = 0;
     ui->stackedWidget->setCurrentIndex(0);
     UpdateAxisDefine_();
+    UpdatePageButton_();
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     posMaxs_[0] = host->SystemParameter(ICVirtualHost::SYS_X_Maxium).toInt();
     posMaxs_[1] = host->SystemParameter(ICVirtualHost::SYS_Y_Maxium).toInt();
@@ -146,22 +150,24 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
     /*donw to get product*/
     item.SetSVal(80);
     item.SetDVal(0);
-    int tempStep;
     bool isMainArmUsed = ui->usedMainArmBox->isChecked();
     bool isSubArmUsed = ui->usedSubArmBox->isChecked();
+    if(!isMainArmUsed && !isSubArmUsed)
+    {
+        return ret;
+    }
     if(axis_[Z_AXIS].mode == AXIS_SERVO)
     {
-        item.SetNum(stepNum++);
         if(axis_[Z_AXIS].standbyPos != axis_[Z_AXIS].getPos)
         {
+            item.SetNum(stepNum++);
             item.SetAction(axis_[Z_AXIS].action);
             ret.append(item);
         }
     }
+    item.SetNum(stepNum++);
     if(isMainArmUsed)
     {
-        tempStep = stepNum;
-        item.SetNum(stepNum++);
         if(SetAxisICMoldItem_(&item, axis_ + Y1_AXIS, GET_PRODUCT_SETTING))
         {
             ret.append(item);
@@ -169,7 +175,6 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
     }
     if(isSubArmUsed)
     {
-        item.SetNum(tempStep);
         if(SetAxisICMoldItem_(&item, axis_ + Y2_AXIS, GET_PRODUCT_SETTING))
         {
             ret.append(item);
@@ -185,10 +190,9 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
     /*x axis forward to get product*/
     item.SetDVal(0);
     item.SetSVal(80);
+    item.SetNum(stepNum++);
     if(isMainArmUsed)
     {
-        tempStep = stepNum;
-        item.SetNum(stepNum++);
         if(SetAxisICMoldItem_(&item, axis_ + X1_AXIS, GET_PRODUCT_SETTING))
         {
             ret.append(item);
@@ -196,7 +200,6 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
     }
     if(isSubArmUsed)
     {
-        item.SetNum(tempStep);
         if(SetAxisICMoldItem_(&item, axis_ + X2_AXIS, GET_PRODUCT_SETTING))
         {
             ret.append(item);
@@ -205,16 +208,14 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
 
     /*clip product*/
     item.SetDVal(10);
+    item.SetNum(stepNum++);
     if(isMainArmUsed)
     {
-        tempStep = stepNum;
-        item.SetNum(stepNum++);
         item.SetClip(fixtureOnAction_.at(ui->productFixtureBox->currentIndex()));
         ret.append(item);
     }
     if(isSubArmUsed)
     {
-        item.SetNum(tempStep);
         item.SetClip(fixtureOnAction_.at(ui->outletFixtureBox->currentIndex()));
         ret.append(item);
     }
@@ -223,10 +224,9 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
     /*X axis backward*/
     item.SetDVal(0);
     item.SetSVal(80);
+    item.SetNum(stepNum++);
     if(isMainArmUsed)
     {
-        tempStep = stepNum;
-        item.SetNum(stepNum++);
         if(SetAxisICMoldItem_(&item, axis_ + X1_AXIS, STANDBY_SETTING))
         {
             ret.append(item);
@@ -234,7 +234,6 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
     }
     if(isSubArmUsed)
     {
-        item.SetNum(tempStep);
         if(SetAxisICMoldItem_(&item, axis_ + X2_AXIS, STANDBY_SETTING))
         {
             ret.append(item);
@@ -244,16 +243,14 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
     /*fixture check*/
     item.SetAction(ICMold::ACT_Cut);
     item.SetIFVal(1);
+    item.SetNum(stepNum++);
     if(isMainArmUsed && ui->productCheck->isChecked())
     {
-        tempStep = stepNum;
-        item.SetNum(stepNum++);
         item.SetSVal(ui->productFixtureBox->currentIndex());
         ret.append(item);
     }
     if(isSubArmUsed && ui->outletCheck->isChecked())
     {
-        item.SetNum(tempStep);
         item.SetSVal(ui->outletFixtureBox->currentIndex());
         ret.append(item);
     }
@@ -261,10 +258,9 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
     /*go up*/
     item.SetSVal(80);
     item.SetDVal(0);
+    item.SetNum(stepNum++);
     if(isMainArmUsed)
     {
-        tempStep = stepNum;
-        item.SetNum(stepNum++);
         if(SetAxisICMoldItem_(&item, axis_ + Y1_AXIS, STANDBY_SETTING))
         {
             ret.append(item);
@@ -272,7 +268,6 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
     }
     if(isSubArmUsed)
     {
-        item.SetNum(tempStep);
         if(SetAxisICMoldItem_(&item, axis_ + Y2_AXIS, STANDBY_SETTING))
         {
             ret.append(item);
@@ -283,22 +278,18 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
     item.SetNum(stepNum++);
     if(ui->outHorizontalBox->isChecked())
     {
-        tempStep = stepNum;
         item.SetAction(ICMold::ACTPOSEHORI);
     }
     else if(ui->outVerticalBox->isChecked())
     {
-        tempStep = stepNum;
         item.SetAction(ICMold::ACTPOSEVERT);
     }
     else if(ui->outRunningHorizonBox->isChecked())
     {
-        tempStep = item.Num();
         item.SetAction(ICMold::ACTPOSEHORI);
     }
     ret.append(item);
 
-//    int pos = qMin(axis_[Z_AXIS].)
 
     return ret;
 
@@ -490,8 +481,6 @@ void ICProgramGuidePage::HideWidgets_(QList<QWidget *> &widgets)
 void ICProgramGuidePage::on_nextButton_clicked()
 {
     ++pageIndex_;
-    ui->productLabel->show();
-    ui->outletLabel->show();
     if(pageIndex_ == 1) //show for standby settings
     {
         ui->stackedWidget->setCurrentIndex(1);
@@ -502,22 +491,50 @@ void ICProgramGuidePage::on_nextButton_clicked()
     {
         ui->stackedWidget->setCurrentIndex(1);
         ui->descrLabel->setText(tr("Get Position Settings"));
-        HideWidgets_(axisWidgets_[8]);
+        on_usedMainArmBox_toggled(ui->usedMainArmBox->isChecked());
+        on_usedSubArmBox_toggled(ui->usedSubArmBox->isChecked());
+        ui->commonGroupBox->show();
         SaveAxis_(STANDBY_SETTING);
         UpdateAxisShow(GET_PRODUCT_SETTING);
     }
     else if(pageIndex_ == 3)
     {
         ui->stackedWidget->setCurrentIndex(1);
-        ui->descrLabel->setText(tr("Release Position Settings"));
-        ShowWidgets_(axisWidgets_[8]);
+        ui->descrLabel->setText(tr("Release Product Position Settings"));
+        on_usedMainArmBox_toggled(ui->usedMainArmBox->isChecked());
+        ui->outletGroupBox->hide();
+        if(!ui->usedMainArmBox->isChecked())
+        {
+            ui->commonGroupBox->hide();
+        }
+        else
+        {
+            ui->commonGroupBox->show();
+        }
         SaveAxis_(GET_PRODUCT_SETTING);
         UpdateAxisShow(RELEASE_PRODUCT_SETTING);
     }
     else if(pageIndex_ == 4)
     {
-        ui->stackedWidget->setCurrentIndex(2);
+        ui->stackedWidget->setCurrentIndex(1);
+        ui->descrLabel->setText(tr("Release Outlet Position Settings"));
+        on_usedSubArmBox_toggled(ui->usedSubArmBox->isChecked());
+        ui->productGroupBox->hide();
+        if(!ui->usedSubArmBox->isChecked())
+        {
+            ui->commonGroupBox->hide();
+        }
+        else
+        {
+            ui->commonGroupBox->show();
+        }
         SaveAxis_(RELEASE_PRODUCT_SETTING);
+        UpdateAxisShow(RELEASE_PRODUCT_SETTING);
+    }
+    else if(pageIndex_ == 5)
+    {
+        ui->stackedWidget->setCurrentIndex(2);
+        SaveAxis_(RELEASE_OUTLET_SETTING);
     }
     UpdatePageButton_();
 }
@@ -525,8 +542,6 @@ void ICProgramGuidePage::on_nextButton_clicked()
 void ICProgramGuidePage::on_preButton_clicked()
 {
     --pageIndex_;
-    ui->productLabel->show();
-    ui->outletLabel->show();
     if(pageIndex_ == 1) //show for standby settings
     {
         ui->stackedWidget->setCurrentIndex(1);
@@ -538,20 +553,50 @@ void ICProgramGuidePage::on_preButton_clicked()
     {
         ui->stackedWidget->setCurrentIndex(1);
         ui->descrLabel->setText(tr("Get Position Settings"));
-        HideWidgets_(axisWidgets_[8]);
-        SaveAxis_(REPORT_SLAVE_ID_LENGTH);
+        on_usedMainArmBox_toggled(ui->usedMainArmBox->isChecked());
+        on_usedSubArmBox_toggled(ui->usedSubArmBox->isChecked());
+        ui->commonGroupBox->show();
+        SaveAxis_(RELEASE_PRODUCT_SETTING);
         UpdateAxisShow(GET_PRODUCT_SETTING);
     }
     else if(pageIndex_ == 3)
     {
         ui->stackedWidget->setCurrentIndex(1);
-        ui->descrLabel->setText(tr("Release Position Settings"));
-        ShowWidgets_(axisWidgets_[8]);
+        ui->descrLabel->setText(tr("Release Product Position Settings"));
+        on_usedMainArmBox_toggled(ui->usedMainArmBox->isChecked());
+        ui->outletGroupBox->hide();
+        if(!ui->usedMainArmBox->isChecked())
+        {
+            ui->commonGroupBox->hide();
+        }
+        else
+        {
+            ui->commonGroupBox->show();
+        }
+        SaveAxis_(RELEASE_OUTLET_SETTING);
         UpdateAxisShow(RELEASE_PRODUCT_SETTING);
+    }
+    else if(pageIndex_ == 4)
+    {
+        ui->stackedWidget->setCurrentIndex(1);
+        ui->descrLabel->setText(tr("Release Outlet Position Settings"));
+        on_usedSubArmBox_toggled(ui->usedSubArmBox->isChecked());
+        ui->productGroupBox->hide();
+        if(!ui->usedSubArmBox->isChecked())
+        {
+            ui->commonGroupBox->hide();
+        }
+        else
+        {
+            ui->commonGroupBox->show();
+        }
+        UpdateAxisShow(RELEASE_OUTLET_SETTING);
     }
     else if(pageIndex_ == 0)
     {
         ui->stackedWidget->setCurrentIndex(0);
+        on_usedMainArmBox_toggled(ui->usedMainArmBox->isChecked());
+        on_usedSubArmBox_toggled(ui->usedSubArmBox->isChecked());
         SaveAxis_(STANDBY_SETTING);
     }
     UpdatePageButton_();
@@ -577,7 +622,7 @@ void ICProgramGuidePage::UpdatePageButton_()
 void ICProgramGuidePage::ShowForStandby_()
 {
     ui->descrLabel->setText(tr("Stanby Settings"));
-    HideWidgets_(axisWidgets_[8]);
+    ui->commonGroupBox->show();
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) == ICVirtualHost::ICAxisDefine_Pneumatic)
     {
@@ -619,8 +664,8 @@ void ICProgramGuidePage::ShowForStandby_()
         HideWidgets_(axisWidgets_[7]);
         ui->cEdit->SetThisIntToThisText(0);
     }
-    ui->productLabel->hide();
-    ui->outletLabel->hide();
+    on_usedMainArmBox_toggled(true);
+    on_usedSubArmBox_toggled(true);
 }
 
 void ICProgramGuidePage::SetAxis_(_ICAxis_ *axis, int pos, int setting)
@@ -635,7 +680,11 @@ void ICProgramGuidePage::SetAxis_(_ICAxis_ *axis, int pos, int setting)
     }
     else if(setting == RELEASE_PRODUCT_SETTING)
     {
-        axis->releasePos = pos;
+        axis->releaseProductPos = pos;
+    }
+    else if(setting == RELEASE_OUTLET_SETTING)
+    {
+        axis->releaseOutletPos = pos;
     }
 }
 
@@ -666,7 +715,11 @@ void ICProgramGuidePage::SetAxisPosEdit_(ICLineEditWithVirtualNumericKeypad *edi
     }
     else if(setting == RELEASE_PRODUCT_SETTING)
     {
-        edit->SetThisIntToThisText(axis->releasePos);
+        edit->SetThisIntToThisText(axis->releaseProductPos);
+    }
+    else if(setting == RELEASE_OUTLET_SETTING)
+    {
+        edit->SetThisIntToThisText(axis->releaseOutletPos);
     }
 }
 
@@ -682,7 +735,11 @@ void ICProgramGuidePage::SetAxisLimitEdit_(QComboBox *edit, _ICAxis_ *axis, int 
     }
     else if(setting == RELEASE_PRODUCT_SETTING)
     {
-        edit->setCurrentIndex(axis->releaseLimit);
+        edit->setCurrentIndex(axis->releaseProductLimit);
+    }
+    else if(setting == RELEASE_OUTLET_SETTING)
+    {
+        edit->setCurrentIndex(axis->releaseOutletLimit);
     }
 }
 
@@ -716,7 +773,11 @@ bool ICProgramGuidePage::SetAxisICMoldItem_(ICMoldItem *item, const _ICAxis_ *ax
         }
         else if(setting == RELEASE_PRODUCT_SETTING)
         {
-            item->SetPos(axis->releasePos);
+            item->SetPos(axis->releaseProductPos);
+        }
+        else if(setting == RELEASE_OUTLET_SETTING)
+        {
+            item->SetPos(axis->releaseOutletPos);
         }
         return true;
     }
@@ -740,20 +801,44 @@ void ICProgramGuidePage::on_finishButton_clicked()
 
 void ICProgramGuidePage::on_usedMainArmBox_toggled(bool checked)
 {
-    ui->productLabel->setEnabled(checked);
-    ui->x1Box->setEnabled(checked);
-    ui->x1Edit->setEnabled(checked);
-    ui->y1Box->setEnabled(checked);
-    ui->y1Edit->setEnabled(checked);
+    if(checked)
+    {
+        ui->productGroupBox->show();
+    }
+    else
+    {
+        ui->productGroupBox->hide();
+    }
     ui->productFixtureGroup->setEnabled(checked);
 }
 
 void ICProgramGuidePage::on_usedSubArmBox_toggled(bool checked)
 {
-    ui->outletLabel->setEnabled(checked);
-    ui->x2Box->setEnabled(checked);
-    ui->x2Edit->setEnabled(checked);
-    ui->y2Box->setEnabled(checked);
-    ui->y2Edit->setEnabled(checked);
+    if(checked)
+    {
+        ui->outletGroupBox->show();
+    }
+    else
+    {
+        ui->outletGroupBox->hide();
+    }
     ui->outletFixtureGroup->setEnabled(checked);
+}
+
+void ICProgramGuidePage::on_stackedEn_toggled(bool checked)
+{
+    ui->stackGroup->setEnabled(checked);
+}
+
+void ICProgramGuidePage::on_setInButton_clicked()
+{
+    ICVirtualHost *host = ICVirtualHost::GlobalVirtualHost();
+    ui->x1Edit->SetThisIntToThisText(host->HostStatus(ICVirtualHost::XPos).toInt());
+    ui->y1Edit->SetThisIntToThisText(host->HostStatus(ICVirtualHost::YPos).toInt());
+    ui->zEdit->SetThisIntToThisText(host->HostStatus(ICVirtualHost::ZPos).toInt());
+    ui->x2Edit->SetThisIntToThisText(host->HostStatus(ICVirtualHost::PPos).toInt());
+    ui->y2Edit->SetThisIntToThisText(host->HostStatus(ICVirtualHost::QPos).toInt());
+    ui->aEdit->SetThisIntToThisText(host->HostStatus(ICVirtualHost::APos).toInt());
+    ui->bEdit->SetThisIntToThisText(host->HostStatus(ICVirtualHost::BPos).toInt());
+    ui->cEdit->SetThisIntToThisText(host->HostStatus(ICVirtualHost::CPos).toInt());
 }
