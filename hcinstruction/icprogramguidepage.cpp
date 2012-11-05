@@ -31,6 +31,7 @@ ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
         axis_[i].releaseProductPos = 0;
         axis_[i].releaseOutletPos = 0;
     }
+    axis_[7].standbyPos = 1;
     for(int i = 0; i != posEdits_.size(); ++i)
     {
         posEdits_[i]->SetDecimalPlaces(1);
@@ -146,6 +147,14 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
     item.SetPos(0);
     item.SetAction(ICMold::ACT_WaitMoldOpened);
     ret.append(item);
+
+    if(!ui->cBox->isHidden() && ui->cBox->currentIndex() == 0)
+    {
+        item.SetNum(stepNum++);
+        item.SetSVal(0);
+        item.SetAction(ICMold::ACTPOSEVERT);
+        ret.append(item);
+    }
 
     /*donw to get product*/
     item.SetSVal(80);
@@ -290,7 +299,266 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
     }
     ret.append(item);
 
+    item.SetNum(stepNum++);
+    item.SetClip(ICMold::ACTCLSMDON);
+    item.SetDVal(10);
+    ret.append(item);
 
+    item.SetNum(stepNum++);
+    item.SetAction(ICMold::GZ);
+    item.SetSVal(80);
+    item.SetDVal(0);
+    if(isMainArmUsed && isSubArmUsed)
+    {
+        if(axis_[Z_AXIS].releaseProductPos < axis_[Z_AXIS].releaseOutletPos)
+        {
+            /*to release product pos*/
+            SetAxisICMoldItem_(&item, axis_ + Z_AXIS, RELEASE_PRODUCT_SETTING);
+            ret.append(item);
+            SetAxisICMoldItem_(&item, axis_ + X1_AXIS, RELEASE_PRODUCT_SETTING);
+            ret.append(item);
+            if(ui->stackedEn->isChecked())
+            {
+                item.SetSVal(ui->stackGroup->TransThisTextToThisInt() - 1);
+                item.SetClip(ICMold::ACTLAYOUTON);
+                ret.append(item);
+                item.SetSVal(80);
+            }
+            item.SetNum(stepNum++);
+            SetAxisICMoldItem_(&item, axis_ + Y1_AXIS, RELEASE_PRODUCT_SETTING);
+            ret.append(item);
+
+            /*release product*/
+            item.SetNum(stepNum++);
+            item.SetSVal(0);
+            item.SetDVal(10);
+            item.SetClip(fixtureOffAction_.at(ui->productFixtureBox->currentIndex()));
+            ret.append(item);
+
+            /*Y1, back to standby*/
+            item.SetNum(stepNum++);
+            item.SetSVal(80);
+            item.SetDVal(0);
+            SetAxisICMoldItem_(&item, axis_ + Y1_AXIS, STANDBY_SETTING);
+            ret.append(item);
+
+            /*to release outlet pos*/
+            item.SetNum(stepNum++);
+            SetAxisICMoldItem_(&item, axis_ + X1_AXIS, STANDBY_SETTING);
+            ret.append(item);
+            SetAxisICMoldItem_(&item, axis_ + Z_AXIS, RELEASE_OUTLET_SETTING);
+            ret.append(item);
+            SetAxisICMoldItem_(&item, axis_ + X2_AXIS, RELEASE_OUTLET_SETTING);
+            ret.append(item);
+            item.SetNum(stepNum++);
+            SetAxisICMoldItem_(&item, axis_ + Y2_AXIS, RELEASE_OUTLET_SETTING);
+            ret.append(item);
+
+            /*release outlet*/
+            item.SetNum(stepNum++);
+            item.SetSVal(0);
+            item.SetDVal(10);
+            item.SetClip(fixtureOffAction_.at(ui->outletFixtureBox->currentIndex()));
+            ret.append(item);
+
+            /*X2, Y2, back to standby*/
+            item.SetNum(stepNum++);
+            item.SetSVal(80);
+            item.SetDVal(0);
+            SetAxisICMoldItem_(&item, axis_ + Y2_AXIS, STANDBY_SETTING);
+            ret.append(item);
+            item.SetNum(stepNum++);
+            SetAxisICMoldItem_(&item, axis_ + X2_AXIS, STANDBY_SETTING);
+            ret.append(item);
+        }
+        else if(axis_[Z_AXIS].releaseProductPos > axis_[Z_AXIS].releaseOutletPos)
+        {
+            /*to release outlet pos*/
+            SetAxisICMoldItem_(&item, axis_ + Z_AXIS, RELEASE_OUTLET_SETTING);
+            ret.append(item);
+            SetAxisICMoldItem_(&item, axis_ + X2_AXIS, RELEASE_OUTLET_SETTING);
+            ret.append(item);
+            item.SetNum(stepNum++);
+            SetAxisICMoldItem_(&item, axis_ + Y2_AXIS, RELEASE_OUTLET_SETTING);
+            ret.append(item);
+
+            /*release outlet*/
+            item.SetNum(stepNum++);
+            item.SetSVal(0);
+            item.SetDVal(10);
+            item.SetClip(fixtureOffAction_.at(ui->outletFixtureBox->currentIndex()));
+            ret.append(item);
+
+            /*Y2, back to standby*/
+            item.SetNum(stepNum++);
+            item.SetSVal(80);
+            item.SetDVal(0);
+            SetAxisICMoldItem_(&item, axis_ + Y2_AXIS, STANDBY_SETTING);
+            ret.append(item);
+
+
+            /*to release product pos*/
+            item.SetNum(stepNum++);
+            SetAxisICMoldItem_(&item, axis_ + X2_AXIS, STANDBY_SETTING);
+            ret.append(item);
+            SetAxisICMoldItem_(&item, axis_ + Z_AXIS, RELEASE_PRODUCT_SETTING);
+            ret.append(item);
+            SetAxisICMoldItem_(&item, axis_ + X1_AXIS, RELEASE_PRODUCT_SETTING);
+            ret.append(item);
+            if(ui->stackedEn->isChecked())
+            {
+                item.SetSVal(ui->stackGroup->TransThisTextToThisInt() - 1);
+                item.SetClip(ICMold::ACTLAYOUTON);
+                ret.append(item);
+                item.SetSVal(80);
+            }
+            item.SetNum(stepNum++);
+            SetAxisICMoldItem_(&item, axis_ + Y1_AXIS, RELEASE_PRODUCT_SETTING);
+            ret.append(item);
+
+            /*release product*/
+            item.SetNum(stepNum++);
+            item.SetSVal(0);
+            item.SetDVal(10);
+            item.SetClip(fixtureOffAction_.at(ui->productFixtureBox->currentIndex()));
+            ret.append(item);
+
+
+            /*X2, Y2, back to standby*/
+            item.SetNum(stepNum++);
+            item.SetSVal(80);
+            item.SetDVal(0);
+            SetAxisICMoldItem_(&item, axis_ + Y1_AXIS, STANDBY_SETTING);
+            ret.append(item);
+            item.SetNum(stepNum++);
+            SetAxisICMoldItem_(&item, axis_ + X1_AXIS, STANDBY_SETTING);
+            ret.append(item);
+        }
+        else
+        {
+            SetAxisICMoldItem_(&item, axis_ + Z_AXIS, RELEASE_PRODUCT_SETTING);
+            ret.append(item);
+            SetAxisICMoldItem_(&item, axis_ + X1_AXIS, RELEASE_PRODUCT_SETTING);
+            ret.append(item);
+            SetAxisICMoldItem_(&item, axis_ + X2_AXIS, RELEASE_OUTLET_SETTING);
+            ret.append(item);
+            if(ui->stackedEn->isChecked())
+            {
+                item.SetSVal(ui->stackGroup->TransThisTextToThisInt() - 1);
+                item.SetClip(ICMold::ACTLAYOUTON);
+                ret.append(item);
+                item.SetSVal(80);
+            }
+            item.SetNum(stepNum++);
+            SetAxisICMoldItem_(&item, axis_ + Y1_AXIS, RELEASE_PRODUCT_SETTING);
+            ret.append(item);
+            SetAxisICMoldItem_(&item, axis_ + Y2_AXIS, RELEASE_OUTLET_SETTING);
+            ret.append(item);
+
+            item.SetNum(stepNum++);
+            item.SetSVal(0);
+            item.SetDVal(10);
+            item.SetClip(fixtureOffAction_.at(ui->productFixtureBox->currentIndex()));
+            ret.append(item);
+            item.SetClip(fixtureOffAction_.at(ui->outletFixtureBox->currentIndex()));
+            ret.append(item);
+
+            item.SetNum(stepNum++);
+            item.SetSVal(80);
+            item.SetDVal(0);
+            SetAxisICMoldItem_(&item, axis_ + Y1_AXIS, STANDBY_SETTING);
+            ret.append(item);
+            SetAxisICMoldItem_(&item, axis_ + Y2_AXIS, STANDBY_SETTING);
+            ret.append(item);
+            item.SetNum(stepNum++);
+            SetAxisICMoldItem_(&item, axis_ + X1_AXIS, STANDBY_SETTING);
+            ret.append(item);
+            SetAxisICMoldItem_(&item, axis_ + X2_AXIS, STANDBY_SETTING);
+            ret.append(item);
+        }
+
+    }
+    else if(isMainArmUsed)
+    {
+        /*to release product pos*/
+        SetAxisICMoldItem_(&item, axis_ + Z_AXIS, RELEASE_PRODUCT_SETTING);
+        ret.append(item);
+        SetAxisICMoldItem_(&item, axis_ + X1_AXIS, RELEASE_PRODUCT_SETTING);
+        ret.append(item);
+        if(ui->stackedEn->isChecked())
+        {
+            item.SetSVal(ui->stackGroup->TransThisTextToThisInt() - 1);
+            item.SetClip(ICMold::ACTLAYOUTON);
+            ret.append(item);
+            item.SetSVal(80);
+        }
+        item.SetNum(stepNum++);
+        SetAxisICMoldItem_(&item, axis_ + Y1_AXIS, RELEASE_PRODUCT_SETTING);
+        ret.append(item);
+
+        /*release product*/
+        item.SetNum(stepNum++);
+        item.SetSVal(0);
+        item.SetDVal(10);
+        item.SetClip(fixtureOffAction_.at(ui->productFixtureBox->currentIndex()));
+        ret.append(item);
+
+
+        /*X1, Y1, back to standby*/
+        item.SetNum(stepNum++);
+        item.SetSVal(80);
+        item.SetDVal(0);
+        SetAxisICMoldItem_(&item, axis_ + Y1_AXIS, STANDBY_SETTING);
+        ret.append(item);
+        item.SetNum(stepNum++);
+        SetAxisICMoldItem_(&item, axis_ + X1_AXIS, STANDBY_SETTING);
+        ret.append(item);
+    }
+    else if(isSubArmUsed)
+    {
+        /*to release outlet pos*/
+        SetAxisICMoldItem_(&item, axis_ + Z_AXIS, RELEASE_OUTLET_SETTING);
+        ret.append(item);
+        SetAxisICMoldItem_(&item, axis_ + X2_AXIS, RELEASE_OUTLET_SETTING);
+        ret.append(item);
+        item.SetNum(stepNum++);
+        SetAxisICMoldItem_(&item, axis_ + Y2_AXIS, RELEASE_OUTLET_SETTING);
+        ret.append(item);
+
+        /*release outlet*/
+        item.SetNum(stepNum++);
+        item.SetSVal(0);
+        item.SetDVal(10);
+        item.SetClip(fixtureOffAction_.at(ui->outletFixtureBox->currentIndex()));
+        ret.append(item);
+
+        /*X2, Y2, back to standby*/
+        item.SetNum(stepNum++);
+        item.SetSVal(80);
+        item.SetDVal(0);
+        SetAxisICMoldItem_(&item, axis_ + Y2_AXIS, STANDBY_SETTING);
+        ret.append(item);
+        item.SetNum(stepNum++);
+        SetAxisICMoldItem_(&item, axis_ + X2_AXIS, STANDBY_SETTING);
+        ret.append(item);
+    }
+    if(ui->inHorizontalBox->isChecked() && !ui->outHorizontalBox->isChecked())
+    {
+        item.SetNum(stepNum++);
+        item.SetAction(ICMold::ACTPOSEHORI);
+        ret.append(item);
+    }
+    else if(ui->inVerticalBox->isChecked() && !ui->outVerticalBox->isChecked())
+    {
+        item.SetNum(stepNum++);
+        item.SetAction(ICMold::ACTPOSEVERT);
+        ret.append(item);
+    }
+    item.SetNum(stepNum++);
+    item.SetSVal(0);
+    item.SetDVal(0);
+    item.SetAction(ICMold::ACTEND);
+    ret.append(item);
     return ret;
 
 }
@@ -529,7 +797,7 @@ void ICProgramGuidePage::on_nextButton_clicked()
             ui->commonGroupBox->show();
         }
         SaveAxis_(RELEASE_PRODUCT_SETTING);
-        UpdateAxisShow(RELEASE_PRODUCT_SETTING);
+        UpdateAxisShow(RELEASE_OUTLET_SETTING);
     }
     else if(pageIndex_ == 5)
     {
