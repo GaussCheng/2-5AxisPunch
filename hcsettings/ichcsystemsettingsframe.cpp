@@ -12,6 +12,8 @@
 #include "iccommands.h"
 #include "icbackuputility.h"
 #include "ictipswidget.h"
+#include "icprogramformatchecker.h"
+#include "icconfigformatchecker.h"
 #include <QDebug>
 
 ICHCSystemSettingsFrame::ICHCSystemSettingsFrame(QWidget *parent) :
@@ -65,7 +67,7 @@ ICHCSystemSettingsFrame::ICHCSystemSettingsFrame(QWidget *parent) :
     armYStructValueToName_.insert(3, tr("Up and Donw Limit"));
     armValueToName_.insert(0, tr("Single Arm"));
     armValueToName_.insert(1, tr("Double Arm"));
-    ui->backLightTimeEdit->setValidator(new QIntValidator(0, 60, this));
+    ui->backLightTimeEdit->setValidator(new QIntValidator(1, 60, this));
     ui->backLightTimeEdit->SetThisIntToThisText(ICParametersSave::Instance()->BackLightTime());
     ui->brightnessBar->setValue((9 - ICParametersSave::Instance()->Brightness()));
     uname(&osInfo_);
@@ -389,23 +391,28 @@ void ICHCSystemSettingsFrame::on_restoreMachineButton_clicked()
     }
     ICTipsWidget tipsWidget(tr("Restoring, please wait..."));
     tipsWidget.show();qApp->processEvents();
-    ICBackupUtility backupUtility;
-    bool ret = (backupUtility.RestoreDir("/mnt/udisk/HC5ABackup/sysconfig",
-                                         "/opt/Qt/bin/sysconfig",
-                                         QStringList()<<"param*.txt"<<"DistanceRotation"));
-    Information(ret, tr("Backup files is broken!"));
-    //    QDir dir("/mnt/udisk/HC5ABackup/sysconfig");
-    //    if(!dir.exists())
-    //    {
-    //        QMessageBox::warning(this, tr("Warnning"), tr("Backup files is not exists!"));
-    //        return;
-    //    }
-    //    system("cp /mnt/udisk/HC5ABackup/sysconfig/param* /opt/Qt/bin/sysconfig -f");
-    //    system("cp /mnt/udisk/HC5ABackup/sysconfig/DistanceRotation /opt/Qt/bin/sysconfig -f");
-    //    Information(true);
-    if(ret)
+
+    if(CheckRestoreMachineFiles_())
     {
-        system("reboot");
+
+        ICBackupUtility backupUtility;
+        bool ret = (backupUtility.RestoreDir("/mnt/udisk/HC5ABackup/sysconfig",
+                                             "/opt/Qt/bin/sysconfig",
+                                             QStringList()<<"param*.txt"<<"DistanceRotation"));
+        Information(ret, tr("Backup files is broken!"));
+        //    QDir dir("/mnt/udisk/HC5ABackup/sysconfig");
+        //    if(!dir.exists())
+        //    {
+        //        QMessageBox::warning(this, tr("Warnning"), tr("Backup files is not exists!"));
+        //        return;
+        //    }
+        //    system("cp /mnt/udisk/HC5ABackup/sysconfig/param* /opt/Qt/bin/sysconfig -f");
+        //    system("cp /mnt/udisk/HC5ABackup/sysconfig/DistanceRotation /opt/Qt/bin/sysconfig -f");
+        //    Information(true);
+        if(ret)
+        {
+            system("reboot");
+        }
     }
 }
 
@@ -418,22 +425,25 @@ void ICHCSystemSettingsFrame::on_restoreSystemButton_clicked()
     }
     ICTipsWidget tipsWidget(tr("Restoring, please wait..."));
     tipsWidget.show();qApp->processEvents();
-    ICBackupUtility backupUtility;
-    bool ret = (backupUtility.RestoreDir("/mnt/udisk/HC5ABackup/sysconfig",
-                                         "/opt/Qt/bin/sysconfig",
-                                         QStringList()<<"system.txt"));
-    Information(ret, tr("Backup files is broken!"));
-    //    QDir dir("/mnt/udisk/HC5ABackup/sysconfig");
-    //    if(!dir.exists())
-    //    {
-    //        QMessageBox::warning(this, tr("Warnning"), tr("Backup files is not exists!"));
-    //        return;
-    //    }
-    //    system("cp /mnt/udisk/HC5ABackup/sysconfig/system.txt /opt/Qt/bin/sysconfig -f");
-    //    Information(true);
-    if(ret)
+    if(CheckRestoreSystemFiles_())
     {
-        system("reboot");
+        ICBackupUtility backupUtility;
+        bool ret = (backupUtility.RestoreDir("/mnt/udisk/HC5ABackup/sysconfig",
+                                             "/opt/Qt/bin/sysconfig",
+                                             QStringList()<<"system.txt"));
+        Information(ret, tr("Backup files is broken!"));
+        //    QDir dir("/mnt/udisk/HC5ABackup/sysconfig");
+        //    if(!dir.exists())
+        //    {
+        //        QMessageBox::warning(this, tr("Warnning"), tr("Backup files is not exists!"));
+        //        return;
+        //    }
+        //    system("cp /mnt/udisk/HC5ABackup/sysconfig/system.txt /opt/Qt/bin/sysconfig -f");
+        //    Information(true);
+        if(ret)
+        {
+            system("reboot");
+        }
     }
 }
 
@@ -475,10 +485,61 @@ void ICHCSystemSettingsFrame::on_restoreMoldsButton_clicked()
             return;
         }
     }
+    QFile file;
+    QString actContent;
+    ICProgramFormatChecker programChecker;
+    for(int i = 0; i != acts.size(); ++i)
+    {
+        file.setFileName(dir.absoluteFilePath(acts.at(i)));
+        actContent.clear();
+        file.open(QFile::ReadOnly | QFile::Text);
+        actContent = file.readAll();
+        file.close();
+        if(!programChecker.Check(actContent))
+        {
+            QMessageBox::warning(this, tr("Warnning"), tr("Wrong program format!"));
+            return;
+        }
+    }
+    ICConfigFormatChecker configFormatChecker;
+    for(int i = 0; i != fncs.size(); ++i)
+    {
+        file.setFileName(dir.absoluteFilePath(fncs.at(i) + ".fnc"));
+        actContent.clear();
+        file.open(QFile::ReadOnly | QFile::Text);
+        actContent = file.readAll();
+        file.close();
+        if(!configFormatChecker.CheckRowCount(actContent, 58,ICDataFormatChecker::kCompareEqual))
+        {
+            QMessageBox::warning(this, tr("Warnning"), tr("Wrong config format!"));
+            return;
+        }
+        if(!configFormatChecker.Check(actContent))
+        {
+            QMessageBox::warning(this, tr("Warnning"), tr("Wrong config format!"));
+            return;
+        }
+    }
     ICBackupUtility backupUtility;
     bool ret = backupUtility.RestoreDir("/mnt/udisk/HC5ABackup/records",
                                         "/opt/Qt/bin/records",
                                         QStringList()<<"*.act"<<"*.fnc");
+    dir.cdUp();
+    dir.cd("subs");
+    QStringList subs = dir.entryList(QStringList()<<"sub[0-7]");
+    for(int i = 0; i != subs.size(); ++i)
+    {
+        file.setFileName(dir.absoluteFilePath(subs.at(i)));
+        actContent.clear();
+        file.open(QFile::ReadOnly | QFile::Text);
+        actContent = file.readAll();
+        file.close();
+        if(!programChecker.Check(actContent))
+        {
+            QMessageBox::warning(this, tr("Warnning"), tr("Wrong program format!"));
+            return;
+        }
+    }
     if(ret)
     {
         ret = ret && backupUtility.RestoreDir("/mnt/udisk/HC5ABackup/subs",
@@ -510,21 +571,26 @@ void ICHCSystemSettingsFrame::on_restoreAllButton_clicked()
     }
     ICTipsWidget tipsWidget(tr("Restoring, please wait..."));
     tipsWidget.show();qApp->processEvents();
-    ICBackupUtility backupUtility;
-    bool ret = backupUtility.RestoreDir("/mnt/udisk/HC5ABackup/sysconfig",
-                                        "/opt/Qt/bin/sysconfig",
-                                        QStringList()<<"param*.txt"<<"DistanceRotation");
-    ret = ret && backupUtility.RestoreDir("/mnt/udisk/HC5ABackup/sysconfig",
-                                          "/opt/Qt/bin/sysconfig",
-                                          QStringList()<<"system.txt");
+    bool ret = CheckRestoreSystemFiles_();
+    ret = ret && CheckRestoreMachineFiles_();
     if(ret)
     {
-        on_restoreMoldsButton_clicked();
+        ICBackupUtility backupUtility;
+        ret = backupUtility.RestoreDir("/mnt/udisk/HC5ABackup/sysconfig",
+                                       "/opt/Qt/bin/sysconfig",
+                                       QStringList()<<"param*.txt"<<"DistanceRotation");
+        ret = ret && backupUtility.RestoreDir("/mnt/udisk/HC5ABackup/sysconfig",
+                                              "/opt/Qt/bin/sysconfig",
+                                              QStringList()<<"system.txt");
+        if(ret)
+        {
+            on_restoreMoldsButton_clicked();
+
+            system("reboot");
+        }
+
     }
-    else
-    {
-        Information(ret, tr("Backup files is broken!"));
-    }
+    Information(false, tr("Backup files is broken!"));
 
 }
 
@@ -986,7 +1052,7 @@ void ICHCSystemSettingsFrame::StatusRefresh()
 {
     QString os(osInfo_.release);
     os += "; ";
-    ui->versionLabel->setText("Version: OS:" + os + "App 3.1.3;Libs:4.7.3; Host:" + ICVirtualHost::GlobalVirtualHost()->HostStatus(ICVirtualHost::Time).toString());
+    ui->versionLabel->setText("Version: OS:" + os + "App 3.1.4;Libs:4.7.3; Host:" + ICVirtualHost::GlobalVirtualHost()->HostStatus(ICVirtualHost::Time).toString());
 }
 
 void ICHCSystemSettingsFrame::on_structSelectHostButton_clicked()
@@ -1032,4 +1098,93 @@ void ICHCSystemSettingsFrame::on_brightPlus_clicked()
     }
     ui->brightnessBar->setValue((++brightness));
     ICParametersSave::Instance()->SetBrightness(9 -brightness);
+}
+
+bool ICHCSystemSettingsFrame::CheckRestoreSystemFiles_()
+{
+
+    ICConfigFormatChecker configChecker;
+    QFile file("/mnt/udisk/HC5ABackup/sysconfig/system.txt");
+    if(file.open(QFile::ReadOnly | QFile::Text))
+    {
+        QString sysContent = file.readAll();
+        file.close();
+        if(!configChecker.CheckRowCount(sysContent, 162, ICDataFormatChecker::kCompareEqual))
+        {
+            QMessageBox::warning(this, tr("Warnning"), tr("Wrong system config format!"));
+            return false;
+        }
+        if(!configChecker.Check(sysContent))
+        {
+            QMessageBox::warning(this, tr("Warnning"), tr("Wrong system config format!"));
+            return false;
+        }
+    }
+    return true;
+}
+
+bool ICHCSystemSettingsFrame::CheckRestoreMachineFiles_()
+{
+    QFile file;
+    QString configContent;
+    QDir dir("/mnt/udisk/HC5ABackup/sysconfig");
+    QStringList configs = dir.entryList( QStringList()<<"param*.txt");
+    ICConfigFormatChecker configChecker;
+    for(int i = 0; i != configs.size(); ++i)
+    {
+        file.setFileName(dir.absoluteFilePath(configs.at(i)));
+        file.open(QFile::ReadOnly | QFile::Text);
+        configContent = file.readAll();
+        file.close();
+        if(!configChecker.CheckRowCount(configContent, 7, ICDataFormatChecker::kCompareEqual))
+        {
+            QMessageBox::warning(this, tr("Warnning"), tr("Wrong Axis config format!"));
+            return false;
+        }
+        if(!configChecker.Check(configContent))
+        {
+            QMessageBox::warning(this, tr("Warnning"), tr("Wrong Axis config format!"));
+            return false;
+        }
+    }
+    file.setFileName(dir.absoluteFilePath("DistanceRotation"));
+    if(file.open(QFile::ReadOnly | QFile::Text))
+    {
+        configContent = file.readAll();
+        file.close();
+        QStringList rows = configContent.split("\n", QString::SkipEmptyParts);
+        if(rows.size() != 8)
+        {
+            QMessageBox::warning(this, tr("Warnning"), tr("Wrong Rotation config format!"));
+            return false;
+        }
+        QStringList cols;
+        QStringList axisName;
+        axisName<<"X"<<"Y"<<"Z"<<"P"<<"Q"<<"A"<<"B"<<"C";
+        for(int i = 0; i != rows.size(); ++i)
+        {
+            cols = rows.at(i).split(" ", QString::SkipEmptyParts);
+            if(cols.size() != 2)
+            {
+                QMessageBox::warning(this, tr("Warnning"), tr("Wrong Rotation config format!"));
+                return false;
+            }
+            if(cols.at(0) != axisName.at(i))
+            {
+                QMessageBox::warning(this, tr("Warnning"), tr("Wrong Rotation config format!"));
+                return false;
+            }
+            for(int j = 0; j != cols.at(1).size(); ++j)
+            {
+                if(!cols.at(1).at(j).isDigit())
+                {
+                    QMessageBox::warning(this, tr("Warnning"), tr("Wrong Rotation config format!"));
+                    return false;
+                }
+            }
+
+        }
+    }
+    return true;
+
 }

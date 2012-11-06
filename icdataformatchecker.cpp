@@ -1,5 +1,6 @@
 #include "icdataformatchecker.h"
 #include <QStringList>
+#include <QDebug>
 
 ICDataFormatChecker::ICDataFormatChecker()
 {
@@ -31,6 +32,10 @@ bool ICDataFormatChecker::CheckColumCount(const QString &dataStream, int row, co
     QStringList colList;
     if(row < 0)
     {
+        if(dataList.isEmpty())
+        {
+            return false;
+        }
         for(int i = 0; i != dataList.size(); ++i)
         {
             colList = dataList.at(i).split(spliter, QString::SkipEmptyParts);
@@ -102,4 +107,27 @@ bool ICDataFormatChecker::CheckColumCount(const QString &dataStream, int row, co
             return false;
         }
     }
+}
+
+bool ICDataFormatChecker::CheckDataVal(const QString &dataStream, int row, int col, const QString &spliter, const QString &val)
+{
+    QStringList dataList = dataStream.split("\n", QString::SkipEmptyParts);
+    if(row < 0)
+    {
+        row = dataList.size() - 1;
+    }
+    if(dataList.size() <= row)
+    {
+        return false;
+    }
+    QStringList colList = dataList.at(row).split(spliter, QString::SkipEmptyParts);
+    if(col < 0)
+    {
+        col = colList.size() - 1;
+    }
+    if(colList.size() <= col)
+    {
+        return false;
+    }
+    return colList.at(col) == val;
 }

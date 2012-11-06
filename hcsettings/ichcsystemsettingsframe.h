@@ -85,6 +85,10 @@ private slots:
     void on_calibrationBtn_clicked();
     void on_brightMinus_clicked();
     void on_brightPlus_clicked();
+
+private:
+    bool CheckRestoreSystemFiles_();
+    bool CheckRestoreMachineFiles_();
 };
 
 #endif // ICHCSYSTEMSETTINGSFRAME_H

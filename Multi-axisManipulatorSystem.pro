@@ -32,7 +32,9 @@ SOURCES += main.cpp \
     ichostcomparepage.cpp \
     icbackuputility.cpp \
     ictipswidget.cpp \
-    icdataformatchecker.cpp
+    icdataformatchecker.cpp \
+    icprogramformatchecker.cpp \
+    icconfigformatchecker.cpp
 HEADERS += mainframe.h \
     icaxispositionlabel.h \
     #icalarmdescriptiondialog.h \
@@ -49,7 +51,9 @@ HEADERS += mainframe.h \
     ichostcomparepage.h \
     icbackuputility.h \
     ictipswidget.h \
-    icdataformatchecker.h
+    icdataformatchecker.h \
+    icprogramformatchecker.h \
+    icconfigformatchecker.h
 
 FORMS    += mainframe.ui \
     #icalarmdescriptiondialog.ui \
