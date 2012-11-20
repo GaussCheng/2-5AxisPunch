@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TestKeyboardPage</class>
+ <widget class="QWidget" name="TestKeyboardPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>628</width>
+    <height>624</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>90</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>按键测试</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="manualSW">
+   <property name="geometry">
+    <rect>
+     <x>31</x>
+     <y>1</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>手动</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="stopSW">
+   <property name="geometry">
+    <rect>
+     <x>101</x>
+     <y>1</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>停止</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="autoSW">
+   <property name="geometry">
+    <rect>
+     <x>171</x>
+     <y>1</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>自动</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="startButton">
+   <property name="geometry">
+    <rect>
+     <x>41</x>
+     <y>71</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>启动</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="stopButton">
+   <property name="geometry">
+    <rect>
+     <x>41</x>
+     <y>137</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>停止</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="originButton">
+   <property name="geometry">
+    <rect>
+     <x>41</x>
+     <y>203</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>原点</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="returnButton">
+   <property name="geometry">
+    <rect>
+     <x>41</x>
+     <y>269</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>复归</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="upButton">
+   <property name="geometry">
+    <rect>
+     <x>41</x>
+     <y>335</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
+   </property>
+   <property name="arrowType">
+    <enum>Qt::UpArrow</enum>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="downButton">
+   <property name="geometry">
+    <rect>
+     <x>41</x>
+     <y>401</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
+   </property>
+   <property name="arrowType">
+    <enum>Qt::DownArrow</enum>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="scrollUp">
+   <property name="geometry">
+    <rect>
+     <x>261</x>
+     <y>171</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>旋钮顺
+时针</string>
+   </property>
+   <property name="arrowType">
+    <enum>Qt::NoArrow</enum>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="scrollDown">
+   <property name="geometry">
+    <rect>
+     <x>261</x>
+     <y>241</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>旋钮
+逆时针</string>
+   </property>
+   <property name="arrowType">
+    <enum>Qt::NoArrow</enum>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="x1MinusButton">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>74</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>X1-</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="y1MinusButton">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>30</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Y1-</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="x1PlusButton">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>74</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>X1+</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="y1PlusButton">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>120</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Y1+</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="zMinusButton">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>200</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Z-</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="zPlusButton">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>200</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Z+</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="cMinusButton">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>280</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>C-</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="cPlusButton">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>280</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>C+</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="x2MinusButton">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>387</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>X2-</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="x2PlusButton">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>387</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>X2+</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="y2PlusButton">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>429</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Y2+</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="y2MinusButton">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>349</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Y2-</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="f1Button">
+   <property name="geometry">
+    <rect>
+     <x>61</x>
+     <y>471</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>F1</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="f2Button">
+   <property name="geometry">
+    <rect>
+     <x>131</x>
+     <y>471</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>F2</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="f3Button">
+   <property name="geometry">
+    <rect>
+     <x>201</x>
+     <y>471</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>F3</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="f4Button">
+   <property name="geometry">
+    <rect>
+     <x>271</x>
+     <y>470</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>F4</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="f5Button">
+   <property name="geometry">
+    <rect>
+     <x>341</x>
+     <y>470</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>F5</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
