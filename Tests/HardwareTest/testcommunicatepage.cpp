@@ -15,8 +15,10 @@ TestCommunicatePage::TestCommunicatePage(QWidget *parent) :
     connect(&timer_,
             SIGNAL(timeout()),
             SLOT(OnTimerOut()));
+    sentCount_ = -1;
+    succeesfulCount_ = -1;
 
-    serialFD_ = open("/dev/ttyUSB0", O_RDWR | O_NOCTTY | O_NDELAY);
+    serialFD_ = open("/dev/ttyS0", O_RDWR | O_NOCTTY | O_NDELAY);
     if(serialFD_ < 0)
     {
         perror("open");
@@ -51,8 +53,6 @@ TestCommunicatePage::TestCommunicatePage(QWidget *parent) :
     }
 
     memset(sentBuf, 0, kSentSize);
-    sentCount_ = -1;
-    succeesfulCount_ = -1;
 
 }
 

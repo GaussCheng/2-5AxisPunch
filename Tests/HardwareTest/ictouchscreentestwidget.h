@@ -29,9 +29,10 @@ private:
     QPolygon leftPolygon_;
     QPolygon rightPolygon_;
 
-    const static int kLineWidth = 10;
+    const static int kLineWidth = 5;
 
     QList<QPolygon>  lines_;
+    QPoint mousePos_;
     bool isPressed_;
 };
 

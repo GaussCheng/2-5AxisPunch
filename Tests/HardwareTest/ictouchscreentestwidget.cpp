@@ -23,14 +23,21 @@ void ICTouchScreenTestWidget::paintEvent(QPaintEvent *e)
 {
     QPainter painter(this);
     painter.save();
-    painter.setBrush(Qt::green);
-    painter.drawPolygon(leftPolygon_);
-    painter.drawPolygon(rightPolygon_);
+    painter.setBrush(Qt::black);
+    painter.drawRect(this->rect());
+    painter.setPen(QPen(QBrush(Qt::green), kLineWidth));
+    const int offset = kLineWidth >> 1;
+    painter.drawLine(QPoint(mousePos_.x() - offset, 0),
+                     QPoint(mousePos_.x() - offset, height()));
+    painter.drawLine(QPoint(0, mousePos_.y() + offset),
+                     QPoint(width(), mousePos_.y() + offset));
+//    painter.drawPolygon(leftPolygon_);
+//    painter.drawPolygon(rightPolygon_);
     painter.restore();
-    for(int i = 0; i != lines_.size(); ++i)
-    {
-        painter.drawPolyline(lines_.at(i));
-    }
+//    for(int i = 0; i != lines_.size(); ++i)
+//    {
+//        painter.drawPolyline(lines_.at(i));
+//    }
     QWidget::paintEvent(e);
 }
 
@@ -39,7 +46,9 @@ void ICTouchScreenTestWidget::mousePressEvent(QMouseEvent *e)
     if(e->button() & Qt::LeftButton)
     {
         isPressed_ = true;
-        lines_.append(QPolygon()<<e->pos());
+//        lines_.append(QPolygon()<<e->pos());
+        mousePos_ = e->pos();
+        update();
     }
     QWidget::mousePressEvent(e);
 }
@@ -54,7 +63,8 @@ void ICTouchScreenTestWidget::mouseMoveEvent(QMouseEvent *e)
 {
     if(isPressed_)
     {
-        lines_.last().append(e->pos());
+//        lines_.last().append(e->pos());
+        mousePos_ = e->pos();
         update();
     }
     QWidget::mouseMoveEvent(e);

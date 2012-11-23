@@ -1,6 +1,7 @@
 #include "testlcdcolorpage.h"
 #include "ui_testlcdcolorpage.h"
-#include "QMessageBox"
+#include <QMessageBox>
+#include <QPushButton>
 
 TestLCDColorPage::TestLCDColorPage(QWidget *parent) :
     TestPageBase(parent),
@@ -53,18 +54,36 @@ void TestLCDColorPage::ChangeColor()
     if(currentColorIndex_ == colors_.size())
     {
         timer_.stop();
-        if(QMessageBox::information(this,
-                                 QString::fromUtf8("测试结果"),
-                                 QString::fromUtf8("颜色正常吗？"),
-                                 QMessageBox::Yes | QMessageBox::No) == QMessageBox::No)
+        QMessageBox info(this);
+        info.setWindowTitle(QString::fromUtf8("测试结果"));
+        info.setText(QString::fromUtf8("颜色正常吗？"));
+        QPushButton* yes = info.addButton(QMessageBox::Yes);
+        QPushButton* no  = info.addButton(QMessageBox::No);
+        QPushButton* retry = info.addButton(QMessageBox::Retry);
+        yes->setText(QString::fromUtf8("正常"));
+        no->setText(QString::fromUtf8("不正常"));
+        retry->setText(QString::fromUtf8("重测"));
+        yes->setFixedHeight(64);
+        no->setFixedHeight(64);
+        retry->setFixedHeight(64);
+
+        int ret = info.exec();
+        if(ret == QMessageBox::No)
         {
             isTestPassed_ = false;
             testDescription_ = QString::fromUtf8("颜色不正常");
         }
-        else
+        else if(ret == QMessageBox::Yes)
         {
             isTestPassed_ = true;
             testDescription_ = QString::fromUtf8("颜色正常");
+        }
+        else
+        {
+            timer_.start(2000);
+            ui->info->setText(QString::fromUtf8("2秒钟后开始LCD 颜色测试，请注意观察"));
+            currentColorIndex_ = 0;
+            return;
         }
         TestFinished();
     }

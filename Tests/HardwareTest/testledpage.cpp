@@ -7,6 +7,7 @@
 
 #include <QTimer>
 #include <QMessageBox>
+#include <QPushButton>
 
 TestLedPage::TestLedPage(QWidget *parent) :
     TestPageBase(parent),
@@ -40,10 +41,18 @@ void TestLedPage::changeEvent(QEvent *e)
 
 static bool IsQuestionYes(const QString& question)
 {
-    return QMessageBox::question(NULL,
-                                 QString::fromUtf8("LED 测试"),
-                                 question,
-                                 QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes;
+    QMessageBox info(NULL);
+    info.setWindowTitle(QString::fromUtf8("LED 测试"));
+    info.setText(question);
+    QPushButton* yes = info.addButton(QMessageBox::Yes);
+    QPushButton* no  = info.addButton(QMessageBox::No);
+    yes->setText(QString::fromUtf8("是"));
+    no->setText(QString::fromUtf8("否"));
+    yes->setFixedHeight(64);
+    no->setFixedHeight(64);
+
+    int ret = info.exec();
+    return ret == QMessageBox::Yes;
 }
 
 void TestLedPage::Question()
@@ -56,51 +65,42 @@ void TestLedPage::Question()
     {
         ret |= 8;
     }
-    ioctl(ledFD_, 0, 12);
+    ioctl(ledFD_, 0, 0);
+    if(IsQuestionYes(QString::fromUtf8("开模完灭吗？")))
+    {
+        ret &= 0x7;
+    }
+    ioctl(ledFD_, 0, 4);
     if(IsQuestionYes(QString::fromUtf8("安全门亮吗?")))
     {
         ret |= 4;
     }
-    ioctl(ledFD_, 0, 14);
+    ioctl(ledFD_, 0, 0);
+    if(IsQuestionYes(QString::fromUtf8("安全门灭吗？")))
+    {
+        ret &= 0xB;
+    }
+    ioctl(ledFD_, 0, 2);
     if(IsQuestionYes(QString::fromUtf8("可关模亮吗?")))
     {
         ret |= 2;
     }
-    ioctl(ledFD_, 0, 15);
+    ioctl(ledFD_, 0, 0);
+    if(IsQuestionYes(QString::fromUtf8("可关模灭吗？")))
+    {
+        ret &= 0xD;
+    }
+    ioctl(ledFD_, 0, 1);
     if(IsQuestionYes(QString::fromUtf8("可顶针亮吗?")))
     {
         ret |= 1;
     }
-    if(ret != 0xF)
-    {
-        isTestPassed_ = false;
-        testDescription_  = QString::fromUtf8("测试不通过");
-        emit TestFinished();
-        return;
-    }
-
-    ret = 0;
-    ioctl(ledFD_, 0, 7);
-    if(IsQuestionYes(QString::fromUtf8("开模完灭吗?")))
-    {
-        ret |= 8;
-    }
-    ioctl(ledFD_, 0, 3);
-    if(IsQuestionYes(QString::fromUtf8("安全门灭吗?")))
-    {
-        ret |= 4;
-    }
-    ioctl(ledFD_, 0, 1);
-    if(IsQuestionYes(QString::fromUtf8("可关模灭吗?")))
-    {
-        ret |= 2;
-    }
     ioctl(ledFD_, 0, 0);
-    if(IsQuestionYes(QString::fromUtf8("可顶针灭吗?")))
+    if(IsQuestionYes(QString::fromUtf8("可顶针灭吗？")))
     {
-        ret |= 1;
+        ret &= 0xE;
     }
-    if(ret != 0xF)
+    if(ret != 0)
     {
         isTestPassed_ = false;
         testDescription_  = QString::fromUtf8("测试不通过");
