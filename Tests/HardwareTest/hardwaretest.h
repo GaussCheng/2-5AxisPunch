@@ -31,6 +31,7 @@ private:
     TestPageBase* keyboardWidget_;
     TestPageBase* colorWidget_;
     TestPageBase* brightnessWidget_;
+    TestPageBase* backlightWidget_;
     TestPageBase* soundWidget_;
     TestPageBase* touchScreenWidget_;
     TestPageBase* testLedWidget_;

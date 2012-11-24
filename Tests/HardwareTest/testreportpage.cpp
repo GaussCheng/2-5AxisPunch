@@ -6,6 +6,7 @@ TestReportPage::TestReportPage(QWidget *parent) :
     ui(new Ui::TestReportPage)
 {
     ui->setupUi(this);
+    ui->commWidget->SetTestTimes(9999999);
 }
 
 TestReportPage::~TestReportPage()
@@ -63,4 +64,9 @@ void TestReportPage::SetLEDTestResult(const QString &desc)
 void TestReportPage::SetCommunicateTestResult(const QString &desc)
 {
     ui->communicate->setText(desc);
+}
+
+void TestReportPage::SetBacklightResult(const QString &desc)
+{
+    ui->backlight->setText(desc);
 }

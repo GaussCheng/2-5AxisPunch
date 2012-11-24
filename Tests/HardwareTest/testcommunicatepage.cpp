@@ -17,6 +17,7 @@ TestCommunicatePage::TestCommunicatePage(QWidget *parent) :
             SLOT(OnTimerOut()));
     sentCount_ = -1;
     succeesfulCount_ = -1;
+    testTimes_ = 100;
 
     serialFD_ = open("/dev/ttyS0", O_RDWR | O_NOCTTY | O_NDELAY);
     if(serialFD_ < 0)
@@ -109,7 +110,7 @@ void TestCommunicatePage::OnTimerOut()
     ++sentCount_;
     ui->sentCount->setText(QString::number(sentCount_));
 
-    if(sentCount_ >= 100)
+    if(sentCount_ >= testTimes_)
     {
         if(succeesfulCount_ >= 90)
         {

@@ -3,6 +3,7 @@
 #include "testkeyboardpage.h"
 #include "testlcdcolorpage.h"
 #include "testbrightnesspage.h"
+#include "testbacklightpage.h"
 #include "testsoundpage.h"
 #include "testtouchscreenpage.h"
 #include "testledpage.h"
@@ -17,6 +18,7 @@ HardwareTest::HardwareTest(QWidget *parent) :
     keyboardWidget_ = new TestKeyboardPage();
     colorWidget_ = new TestLCDColorPage(ui->centerWidget);
     brightnessWidget_ = new TestBrightnessPage();
+    backlightWidget_ = new TestBacklightPage();
     soundWidget_ = new TestSoundPage();
     touchScreenWidget_ = new TestTouchScreenPage();
     testLedWidget_ = new TestLedPage();
@@ -25,6 +27,7 @@ HardwareTest::HardwareTest(QWidget *parent) :
     AddTestPageHelper_(keyboardWidget_);
     AddTestPageHelper_(colorWidget_);
     AddTestPageHelper_(brightnessWidget_);
+    AddTestPageHelper_(backlightWidget_);
     AddTestPageHelper_(soundWidget_);
     AddTestPageHelper_(touchScreenWidget_);
     AddTestPageHelper_(testLedWidget_);
@@ -59,6 +62,7 @@ void HardwareTest::OnSingleTestFinish()
         reportPage_->SetKeyTestResult(keyboardWidget_->TestDescription());
         reportPage_->SetColorTestResult(colorWidget_->TestDescription());
         reportPage_->SetBrightnessTestResult(brightnessWidget_->TestDescription());
+        reportPage_->SetBacklightResult(backlightWidget_->TestDescription());
         reportPage_->SetSoundTestResult(soundWidget_->TestDescription());
         reportPage_->SetTouchScreenTestResult(touchScreenWidget_->TestDescription());
         reportPage_->SetLEDTestResult(testLedWidget_->TestDescription());

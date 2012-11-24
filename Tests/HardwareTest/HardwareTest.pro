@@ -21,7 +21,8 @@ SOURCES += main.cpp\
     testtouchscreenpage.cpp \
     testcommunicatepage.cpp \
     testreportpage.cpp \
-    testledpage.cpp
+    testledpage.cpp \
+    testbacklightpage.cpp
 
 HEADERS  += hardwaretest.h \
     testkeyboardpage.h \
@@ -33,7 +34,8 @@ HEADERS  += hardwaretest.h \
     testtouchscreenpage.h \
     testcommunicatepage.h \
     testreportpage.h \
-    testledpage.h
+    testledpage.h \
+    testbacklightpage.h
 
 FORMS    += hardwaretest.ui \
     testkeyboardpage.ui \
@@ -43,4 +45,5 @@ FORMS    += hardwaretest.ui \
     testtouchscreenpage.ui \
     testcommunicatepage.ui \
     testreportpage.ui \
-    testledpage.ui
+    testledpage.ui \
+    testbacklightpage.ui

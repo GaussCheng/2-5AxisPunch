@@ -19,6 +19,8 @@ public:
 
     bool IsTestPassed() const { return isTestPassed_;}
     QString TestDescription() const { return testDescription_;}
+
+    void SetTestTimes(int times) { testTimes_ = times;}
     
 protected:
     void changeEvent(QEvent *e);
@@ -40,6 +42,7 @@ private:
     int sentCount_;
     int succeesfulCount_;
     termios oldTios_;
+    int testTimes_;
 
 };
 

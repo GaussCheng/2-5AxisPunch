@@ -22,6 +22,7 @@ public:
     void SetTouchScreenTestResult(const QString& desc);
     void SetLEDTestResult(const QString& desc);
     void SetCommunicateTestResult(const QString& desc);
+    void SetBacklightResult(const QString& desc);
     
 protected:
     void changeEvent(QEvent *e);
