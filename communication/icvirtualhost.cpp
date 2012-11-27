@@ -108,13 +108,13 @@ ICVirtualHost::ICVirtualHost(QObject *parent) :
     {
         qWarning("open watchdog fail!");
     }
-#ifndef Q_WS_X11
+//#ifndef Q_WS_X11
 //#ifdef HC_ARMV6
 //    QTimer::singleShot(REFRESH_TIME, this, SLOT(RefreshStatus()));
 //#else
     timer_->start(15);
 //#endif
-#endif
+//#endif
 
 }
 
@@ -254,11 +254,12 @@ void ICVirtualHost::RefreshStatus()
         else
         {
 #ifdef Q_WS_X11
-            statusMap_.insert(XPos, 0);
-            statusMap_.insert(YPos, 0);
-            statusMap_.insert(ZPos, 0);
-            statusMap_.insert(PPos, 0);
-            statusMap_.insert(QPos, 0);
+            statusMap_.insert(XPos, 10);
+            statusMap_.insert(YPos, 10);
+            statusMap_.insert(ZPos, 10);
+            statusMap_.insert(PPos, 10);
+            statusMap_.insert(QPos, 10);
+            statusMap_.insert(CPos, 10);
             statusMap_.insert(DbgX0, 10);
             statusMap_.insert(DbgY0, 148);
             statusMap_.insert(DbgZ0, 3052);
