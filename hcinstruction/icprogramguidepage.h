@@ -92,6 +92,7 @@ private:
     void UpdateAxisDefine_();
     void UpdatePageButton_();
     void ShowForStandby_();
+    void SetAxisBoxEnabled_(bool en);
 //    void ShowForProduct_();
 //    void ShowForOutlet_();
     void SetAxis_(_ICAxis_* axis, int pos, int setting);

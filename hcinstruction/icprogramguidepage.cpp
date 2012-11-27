@@ -764,6 +764,9 @@ void ICProgramGuidePage::on_nextButton_clicked()
         ui->commonGroupBox->show();
         SaveAxis_(STANDBY_SETTING);
         UpdateAxisShow(GET_PRODUCT_SETTING);
+        SetAxisBoxEnabled_(true);
+        ui->productGroupBox->setTitle(tr("Product"));
+        ui->outletGroupBox->setTitle(tr("Outlet"));
     }
     else if(pageIndex_ == 3)
     {
@@ -891,31 +894,35 @@ void ICProgramGuidePage::ShowForStandby_()
 {
     ui->descrLabel->setText(tr("Stanby Settings"));
     ui->commonGroupBox->show();
+    ui->productGroupBox->setTitle("");
+    ui->outletGroupBox->setTitle("");
+    SetAxisBoxEnabled_(false);
+    ui->cBox->setEnabled(true);
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) == ICVirtualHost::ICAxisDefine_Pneumatic)
     {
-        HideWidgets_(axisWidgets_[0]);
         ui->x1Box->setCurrentIndex(1);
+        SetAxis_(axis_, ui->x1Box->currentIndex(), STANDBY_SETTING);
     }
     if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY1) == ICVirtualHost::ICAxisDefine_Pneumatic)
     {
-        HideWidgets_(axisWidgets_[1]);
         ui->y1Box->setCurrentIndex(0);
+        SetAxis_(axis_ + 1, ui->y1Box->currentIndex(), STANDBY_SETTING);
     }
     if(host->AxisDefine(ICVirtualHost::ICAxis_AxisZ) == ICVirtualHost::ICAxisDefine_Pneumatic)
     {
-        HideWidgets_(axisWidgets_[2]);
         ui->zBox->setCurrentIndex(0);
+        SetAxis_(axis_ + 2, ui->zBox->currentIndex(), STANDBY_SETTING);
     }
     if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) == ICVirtualHost::ICAxisDefine_Pneumatic)
     {
-        HideWidgets_(axisWidgets_[3]);
         ui->x2Box->setCurrentIndex(1);
+        SetAxis_(axis_ + 3, ui->x2Box->currentIndex(), STANDBY_SETTING);
     }
     if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) == ICVirtualHost::ICAxisDefine_Pneumatic)
     {
-        HideWidgets_(axisWidgets_[4]);
         ui->y2Box->setCurrentIndex(0);
+        SetAxis_(axis_ + 4, ui->y2Box->currentIndex(), STANDBY_SETTING);
     }
     if(host->AxisDefine(ICVirtualHost::ICAxis_AxisA) == ICVirtualHost::ICAxisDefine_Servo)
     {
@@ -934,6 +941,18 @@ void ICProgramGuidePage::ShowForStandby_()
     }
     on_usedMainArmBox_toggled(true);
     on_usedSubArmBox_toggled(true);
+}
+
+void ICProgramGuidePage::SetAxisBoxEnabled_(bool en)
+{
+    ui->x1Box->setEnabled(en);
+    ui->y1Box->setEnabled(en);
+    ui->zBox->setEnabled(en);
+    ui->x2Box->setEnabled(en);
+    ui->y2Box->setEnabled(en);
+    ui->aBox->setEnabled(en);
+    ui->bBox->setEnabled(en);
+    ui->cBox->setEnabled(en);
 }
 
 void ICProgramGuidePage::SetAxis_(_ICAxis_ *axis, int pos, int setting)
@@ -1051,8 +1070,23 @@ bool ICProgramGuidePage::SetAxisICMoldItem_(ICMoldItem *item, const _ICAxis_ *ax
     }
     else if(axis->mode == AXIS_PNEUMATIC)
     {
-        item->SetAction(limitActionMap_.value(axis).at(axis->standbyLimit));
         item->SetPos(0);
+        if(setting == STANDBY_SETTING)
+        {
+            item->SetAction(limitActionMap_.value(axis).at(axis->standbyLimit));
+        }
+        else if(setting == GET_PRODUCT_SETTING)
+        {
+            item->SetAction(limitActionMap_.value(axis).at(axis->getLimit));
+        }
+        else if(setting == RELEASE_PRODUCT_SETTING)
+        {
+            item->SetAction(limitActionMap_.value(axis).at(axis->releaseProductLimit));
+        }
+        else if(setting == RELEASE_OUTLET_SETTING)
+        {
+            item->SetAction(limitActionMap_.value(axis).at(axis->releaseOutletLimit));
+        }
         return true;
     }
     return false;
@@ -1110,3 +1144,4 @@ void ICProgramGuidePage::on_setInButton_clicked()
     ui->bEdit->SetThisIntToThisText(host->HostStatus(ICVirtualHost::BPos).toInt());
     ui->cEdit->SetThisIntToThisText(host->HostStatus(ICVirtualHost::CPos).toInt());
 }
+
