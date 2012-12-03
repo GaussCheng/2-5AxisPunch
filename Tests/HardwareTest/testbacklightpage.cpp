@@ -4,6 +4,8 @@
 #include <QMessageBox>
 #include <QPushButton>
 
+#include "conf.h"
+
 TestBacklightPage::TestBacklightPage(QWidget *parent) :
     TestPageBase(parent),
     ui(new Ui::TestBacklightPage)
@@ -46,7 +48,11 @@ void TestBacklightPage::OnTimeOut()
     }
     else
     {
+#ifdef HC_3AXIS
+        ::system("BackLight on");
+#else
         ::system("BackLight on 0");
+#endif
         isOn_ = true;
     }
     if(count_ >= 3 && isOn_)

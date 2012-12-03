@@ -8,6 +8,7 @@
 #include "testtouchscreenpage.h"
 #include "testledpage.h"
 #include "testcommunicatepage.h"
+#include "conf.h"
 
 
 HardwareTest::HardwareTest(QWidget *parent) :
@@ -26,7 +27,9 @@ HardwareTest::HardwareTest(QWidget *parent) :
     reportPage_ = new TestReportPage();
     AddTestPageHelper_(keyboardWidget_);
     AddTestPageHelper_(colorWidget_);
+#ifndef HC_3AXIS
     AddTestPageHelper_(brightnessWidget_);
+#endif
     AddTestPageHelper_(backlightWidget_);
     AddTestPageHelper_(soundWidget_);
     AddTestPageHelper_(touchScreenWidget_);
@@ -61,7 +64,11 @@ void HardwareTest::OnSingleTestFinish()
     {
         reportPage_->SetKeyTestResult(keyboardWidget_->TestDescription());
         reportPage_->SetColorTestResult(colorWidget_->TestDescription());
+#ifdef HC_3AXIS
+        reportPage_->SetBrightnessTestResult(QString::fromUtf8("不需测试"));
+#else
         reportPage_->SetBrightnessTestResult(brightnessWidget_->TestDescription());
+#endif
         reportPage_->SetBacklightResult(backlightWidget_->TestDescription());
         reportPage_->SetSoundTestResult(soundWidget_->TestDescription());
         reportPage_->SetTouchScreenTestResult(touchScreenWidget_->TestDescription());

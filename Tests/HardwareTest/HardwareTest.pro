@@ -35,7 +35,8 @@ HEADERS  += hardwaretest.h \
     testcommunicatepage.h \
     testreportpage.h \
     testledpage.h \
-    testbacklightpage.h
+    testbacklightpage.h \
+    conf.h
 
 FORMS    += hardwaretest.ui \
     testkeyboardpage.ui \

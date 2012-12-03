@@ -5,6 +5,7 @@
 #include "sys/ioctl.h"
 #include <QMessageBox>
 #include <QTimer>
+#include "conf.h"
 
 TestSoundPage::TestSoundPage(QWidget *parent) :
     TestPageBase(parent),
@@ -13,14 +14,19 @@ TestSoundPage::TestSoundPage(QWidget *parent) :
     count_(0)
 {
     ui->setupUi(this);
-//    beepFD_ = open("/dev/szhc_beep/", O_WRONLY);
-//    ioctl(beepFD_, 0,  20);
+#ifdef HC_3AXIS
+    beepFD_ = open("/dev/szhc_beep", O_WRONLY);
+#endif
+#ifndef HC_3AXIS
     ::system("szhc-any-char /dev/szhc_beep 0 20");
+#endif
 }
 
 TestSoundPage::~TestSoundPage()
 {
-//    ::close(beepFD_);
+#ifdef HC_3AXIS
+    ::close(beepFD_);
+#endif
     delete ui;
 }
 
@@ -39,6 +45,10 @@ void TestSoundPage::changeEvent(QEvent *e)
 void TestSoundPage::on_soundButton_clicked()
 {
     ++count_;
+#ifdef HC_3AXIS
+    ioctl(beepFD_, 0, NULL);
+    QTimer::singleShot(200, this, SLOT(BeepStop()));
+#endif
     if(count_ >= 3)
     {
         QMessageBox info(this);
@@ -67,12 +77,11 @@ void TestSoundPage::on_soundButton_clicked()
         }
         else
         {
+            ++count_ = 0;
             return;
         }
         emit TestFinished();
     }
-//    ioctl(beepFD_, 0, NULL);
-//    QTimer::singleShot(200, this, SLOT(BeepStop()));
 
 }
 

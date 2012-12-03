@@ -9,6 +9,8 @@
 #include <QMessageBox>
 #include <QPushButton>
 
+#include "conf.h"
+
 TestLedPage::TestLedPage(QWidget *parent) :
     TestPageBase(parent),
     ui(new Ui::TestLedPage)
@@ -59,43 +61,48 @@ void TestLedPage::Question()
 {
     int ledFD_ = open("/dev/szhc_leds", O_WRONLY);
 
-    ioctl(ledFD_, 0, 8);
+#ifdef HC_3AXIS
+    int cmd = 2;
+#else
+    int cmd = 0;
+#endif
+    ioctl(ledFD_, cmd, 8);
     int ret = 0;
     if(IsQuestionYes(QString::fromUtf8("开模完亮吗?")))
     {
         ret |= 8;
     }
-    ioctl(ledFD_, 0, 0);
+    ioctl(ledFD_, cmd, 0);
     if(IsQuestionYes(QString::fromUtf8("开模完灭吗？")))
     {
         ret &= 0x7;
     }
-    ioctl(ledFD_, 0, 4);
+    ioctl(ledFD_, cmd, 4);
     if(IsQuestionYes(QString::fromUtf8("安全门亮吗?")))
     {
         ret |= 4;
     }
-    ioctl(ledFD_, 0, 0);
+    ioctl(ledFD_, cmd, 0);
     if(IsQuestionYes(QString::fromUtf8("安全门灭吗？")))
     {
         ret &= 0xB;
     }
-    ioctl(ledFD_, 0, 2);
+    ioctl(ledFD_, cmd, 2);
     if(IsQuestionYes(QString::fromUtf8("可关模亮吗?")))
     {
         ret |= 2;
     }
-    ioctl(ledFD_, 0, 0);
+    ioctl(ledFD_, cmd, 0);
     if(IsQuestionYes(QString::fromUtf8("可关模灭吗？")))
     {
         ret &= 0xD;
     }
-    ioctl(ledFD_, 0, 1);
+    ioctl(ledFD_, cmd, 1);
     if(IsQuestionYes(QString::fromUtf8("可顶针亮吗?")))
     {
         ret |= 1;
     }
-    ioctl(ledFD_, 0, 0);
+    ioctl(ledFD_, cmd, 0);
     if(IsQuestionYes(QString::fromUtf8("可顶针灭吗？")))
     {
         ret &= 0xE;
