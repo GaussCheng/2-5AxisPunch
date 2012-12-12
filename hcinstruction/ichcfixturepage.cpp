@@ -36,7 +36,7 @@ ICHCFixturePage::ICHCFixturePage(QWidget *parent) :
     offClipToOnClip_.insert(ICMold::ACTCLIP5OFF, ICMold::ACTCLIP5ON);
     offClipToOnClip_.insert(ICMold::ACTCLIP6OFF, ICMold::ACTCLIP6ON);
     QList<uint> initStatus = onClipToOffClip_.values();
-    QIntValidator *validator = new QIntValidator(0, 2000, this);
+    QIntValidator *validator = new QIntValidator(0, 30000, this);
     for(int i = 0; i != ui->tableWidget->rowCount(); ++i)
     {
         button = buttons + i;

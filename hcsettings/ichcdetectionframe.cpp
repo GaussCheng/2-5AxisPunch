@@ -137,3 +137,101 @@ void ICHCDetectionFrame::on_originPositionBox_activated(int index)
 {
     ICVirtualHost::GlobalVirtualHost()->SetOriginPosition(index);
 }
+
+void ICHCDetectionFrame::RetranslateUi_()
+{
+//    label->setText(QApplication::translate("ICHCDetectionFrame", "Detect fixture 1", 0, QApplication::UnicodeUTF8));
+//    ui->label->setText(tr("Detect fixture 1"))
+//    detectFixture1ComboBox->clear();
+//    detectFixture1ComboBox->insertItems(0, QStringList()
+//     << QApplication::translate("ICHCDetectionFrame", "Reversed Phase", 0, QApplication::UnicodeUTF8)
+//     << QApplication::translate("ICHCDetectionFrame", "Positive Phase", 0, QApplication::UnicodeUTF8)
+//    );
+//    label_5->setText(QApplication::translate("ICHCDetectionFrame", "Detect sucker 1", 0, QApplication::UnicodeUTF8));
+//    detectSucker1ComboBox->clear();
+//    detectSucker1ComboBox->insertItems(0, QStringList()
+//     << QApplication::translate("ICHCDetectionFrame", "Reversed Phase", 0, QApplication::UnicodeUTF8)
+//     << QApplication::translate("ICHCDetectionFrame", "Positive Phase", 0, QApplication::UnicodeUTF8)
+//    );
+//    label_2->setText(QApplication::translate("ICHCDetectionFrame", "Detect fixture 2", 0, QApplication::UnicodeUTF8));
+//    detectFixture2ComboBox->clear();
+//    detectFixture2ComboBox->insertItems(0, QStringList()
+//     << QApplication::translate("ICHCDetectionFrame", "Reversed Phase", 0, QApplication::UnicodeUTF8)
+//     << QApplication::translate("ICHCDetectionFrame", "Positive Phase", 0, QApplication::UnicodeUTF8)
+//    );
+//    label_6->setText(QApplication::translate("ICHCDetectionFrame", "Detect sucker 2", 0, QApplication::UnicodeUTF8));
+//    detectSucker2ComboBox->clear();
+//    detectSucker2ComboBox->insertItems(0, QStringList()
+//     << QApplication::translate("ICHCDetectionFrame", "Reversed Phase", 0, QApplication::UnicodeUTF8)
+//     << QApplication::translate("ICHCDetectionFrame", "Positive Phase", 0, QApplication::UnicodeUTF8)
+//    );
+//    label_3->setText(QApplication::translate("ICHCDetectionFrame", "Detect fixture 3", 0, QApplication::UnicodeUTF8));
+//    detectFixture3ComboBox->clear();
+//    detectFixture3ComboBox->insertItems(0, QStringList()
+//     << QApplication::translate("ICHCDetectionFrame", "Reversed Phase", 0, QApplication::UnicodeUTF8)
+//     << QApplication::translate("ICHCDetectionFrame", "Positive Phase", 0, QApplication::UnicodeUTF8)
+//    );
+//    label_4->setText(QApplication::translate("ICHCDetectionFrame", "Detect fixture 4", 0, QApplication::UnicodeUTF8));
+//    detectFixture4ComboBox->clear();
+//    detectFixture4ComboBox->insertItems(0, QStringList()
+//     << QApplication::translate("ICHCDetectionFrame", "Reversed Phase", 0, QApplication::UnicodeUTF8)
+//     << QApplication::translate("ICHCDetectionFrame", "Positive Phase", 0, QApplication::UnicodeUTF8)
+//    );
+//    label_11->setText(QApplication::translate("ICHCDetectionFrame", "Detect Mid Mold", 0, QApplication::UnicodeUTF8));
+//    detectMidMoldComboBox->clear();
+//    detectMidMoldComboBox->insertItems(0, QStringList()
+//     << QApplication::translate("ICHCDetectionFrame", "Use", 0, QApplication::UnicodeUTF8)
+//     << QApplication::translate("ICHCDetectionFrame", "Not Use", 0, QApplication::UnicodeUTF8)
+//    );
+//    label_10->setText(QApplication::translate("ICHCDetectionFrame", "Detect Security Door", 0, QApplication::UnicodeUTF8));
+//    label_9->setText(QApplication::translate("ICHCDetectionFrame", "Detect Pressure", 0, QApplication::UnicodeUTF8));
+//    detectPressureComboBox->clear();
+//    detectPressureComboBox->insertItems(0, QStringList()
+//     << QApplication::translate("ICHCDetectionFrame", "Not Use", 0, QApplication::UnicodeUTF8)
+//     << QApplication::translate("ICHCDetectionFrame", "Use", 0, QApplication::UnicodeUTF8)
+//    );
+//    detectSecurityComboBox->clear();
+//    detectSecurityComboBox->insertItems(0, QStringList()
+//     << QApplication::translate("ICHCDetectionFrame", "Not Use", 0, QApplication::UnicodeUTF8)
+//     << QApplication::translate("ICHCDetectionFrame", "Use", 0, QApplication::UnicodeUTF8)
+//    );
+//    label_12->setText(QApplication::translate("ICHCDetectionFrame", "Ejection Link Lock", 0, QApplication::UnicodeUTF8));
+//    ejectionLinkLockBox->clear();
+//    ejectionLinkLockBox->insertItems(0, QStringList()
+//     << QApplication::translate("ICHCDetectionFrame", "Not Use", 0, QApplication::UnicodeUTF8)
+//     << QApplication::translate("ICHCDetectionFrame", "Use", 0, QApplication::UnicodeUTF8)
+//    );
+//    label_13->setText(QApplication::translate("ICHCDetectionFrame", "Detect Postion", 0, QApplication::UnicodeUTF8));
+//    detectOriginBox->clear();
+//    detectOriginBox->insertItems(0, QStringList()
+//     << QApplication::translate("ICHCDetectionFrame", "Need Mold Opened Signal", 0, QApplication::UnicodeUTF8)
+//     << QApplication::translate("ICHCDetectionFrame", "Don't need Mold Opened Signal", 0, QApplication::UnicodeUTF8)
+//    );
+//    label_14->setText(QApplication::translate("ICHCDetectionFrame", "Detect Origin", 0, QApplication::UnicodeUTF8));
+//    detectPositionBox->clear();
+//    detectPositionBox->insertItems(0, QStringList()
+//     << QApplication::translate("ICHCDetectionFrame", "Vertical", 0, QApplication::UnicodeUTF8)
+//     << QApplication::translate("ICHCDetectionFrame", "Horizontal", 0, QApplication::UnicodeUTF8)
+//     << QApplication::translate("ICHCDetectionFrame", "Don't Limit", 0, QApplication::UnicodeUTF8)
+//    );
+//    label_15->setText(QApplication::translate("ICHCDetectionFrame", "Orgin Position", 0, QApplication::UnicodeUTF8));
+//    originPositionBox->clear();
+//    originPositionBox->insertItems(0, QStringList()
+//     << QApplication::translate("ICHCDetectionFrame", "Vertical", 0, QApplication::UnicodeUTF8)
+//     << QApplication::translate("ICHCDetectionFrame", "Horizontal", 0, QApplication::UnicodeUTF8)
+//     << QApplication::translate("ICHCDetectionFrame", "No Limit", 0, QApplication::UnicodeUTF8)
+//    );
+//    label_7->setText(QApplication::translate("ICHCDetectionFrame", "IMM Emergency", 0, QApplication::UnicodeUTF8));
+//    detectSecurityComboBox_2->clear();
+//    detectSecurityComboBox_2->insertItems(0, QStringList()
+//     << QApplication::translate("ICHCDetectionFrame", "Not Use", 0, QApplication::UnicodeUTF8)
+//     << QApplication::translate("ICHCDetectionFrame", "Use", 0, QApplication::UnicodeUTF8)
+//    );
+//    label_16->setText(QApplication::translate("ICHCDetectionFrame", "Down Position", 0, QApplication::UnicodeUTF8));
+//    originPositionBox_2->clear();
+//    originPositionBox_2->insertItems(0, QStringList()
+//     << QApplication::translate("ICHCDetectionFrame", "Vertical", 0, QApplication::UnicodeUTF8)
+//     << QApplication::translate("ICHCDetectionFrame", "Horizontal", 0, QApplication::UnicodeUTF8)
+//     << QApplication::translate("ICHCDetectionFrame", "No Limit", 0, QApplication::UnicodeUTF8)
+//    );
+}

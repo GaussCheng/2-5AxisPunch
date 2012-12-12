@@ -11,7 +11,7 @@ ICAutoRunRevise::ICAutoRunRevise(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QIntValidator* validator = new QIntValidator(0, 6000, this);
+    QIntValidator* validator = new QIntValidator(0, 30000, this);
     ui->delayEdit->SetDecimalPlaces(2);
     ui->delayEdit->setValidator(validator);
 
@@ -75,6 +75,10 @@ bool ICAutoRunRevise::ShowModifyItem(const ICMoldItem *item, ICMoldItem* ret, co
     {
         ICMoldItem tempItem = *item;
         tempItem.SetPos(tempItem.Pos() + ui->posEdit->TransThisTextToThisInt());
+        if(tempItem.Pos() < 0)
+        {
+            tempItem.SetPos(0);
+        }
         tempItem.SetDVal(ui->delayEdit->TransThisTextToThisInt());
         tempItem.SetSVal(ui->speedEdit->TransThisTextToThisInt());
         tempItem.ReSum();

@@ -41,6 +41,7 @@ private slots:
     void on_originPositionBox_activated(int index);
 
 private:
+    void RetranslateUi_();
     Ui::ICHCDetectionFrame *ui;
     QList<ICTwoSelectionComboBoxWrapper*> wrappers_;
 };

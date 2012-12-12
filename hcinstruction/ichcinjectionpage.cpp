@@ -33,7 +33,7 @@ ICHCInjectionPage::ICHCInjectionPage(QWidget *parent) :
     offClipToOnClip_.insert(ICMold::ACT_CORE1_OFF, ICMold::ACT_CORE1_ON);
     offClipToOnClip_.insert(ICMold::ACT_CORE2_OFF, ICMold::ACT_CORE2_ON);
     QList<uint> initStatus = onClipToOffClip_.values();
-    QIntValidator *validator = new QIntValidator(0, 2000, this);
+    QIntValidator *validator = new QIntValidator(0, 30000, this);
     for(int i = 0; i != ui->tableWidget->rowCount(); ++i)
     {
         button = buttons + i;

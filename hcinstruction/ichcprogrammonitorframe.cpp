@@ -68,6 +68,12 @@ void ICHCProgramMonitorFrame::changeEvent(QEvent *e)
     switch (e->type()) {
     case QEvent::LanguageChange:
         ui->retranslateUi(this);
+        checkResultMap_.insert(0, tr("Has not teach check Fixture-1!"));
+        checkResultMap_.insert(1, tr("Has not teach check Fixture-2!"));
+        checkResultMap_.insert(2, tr("Has not teach check Fixture-3!"));
+        checkResultMap_.insert(3, tr("Has not teach check Fixture-4!"));
+        checkResultMap_.insert(4, tr("Has not teach check Sucker-1!"));
+        checkResultMap_.insert(5, tr("Has not teach check Sucker-2!"));
         break;
     default:
         break;
