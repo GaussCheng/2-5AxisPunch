@@ -65,8 +65,8 @@ public:
         gmVal_ |= 0x80;
     }
 
-    uint Pos() const { return pos_;}    //X位置
-    void SetPos(uint pos) { pos_ = pos; }
+    int Pos() const { return pos_;}    //X位置
+    void SetPos(int pos) { pos_ = pos; }
     uint IFVal() const { return ifVal_;}
     void SetIFVal(uint val) { ifVal_ = val; }
     uint IFPos() const { return ifPos_;}
@@ -107,7 +107,7 @@ private:
     uint num_;
     uint8_t subNum_;
     uint gmVal_;
-    uint pos_;
+    int pos_;
     uint ifVal_;
     uint ifPos_;
     uint sVal_;

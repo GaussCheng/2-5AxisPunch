@@ -415,7 +415,7 @@
     </widget>
    </item>
    <item row="4" column="1">
-    <widget class="QComboBox" name="detectSecurityComboBox_2">
+    <widget class="QComboBox" name="detectIMMComboBox">
      <property name="minimumSize">
       <size>
        <width>90</width>
@@ -442,7 +442,7 @@
     </widget>
    </item>
    <item row="4" column="7">
-    <widget class="QComboBox" name="originPositionBox_2">
+    <widget class="QComboBox" name="downPositionBox">
      <property name="minimumSize">
       <size>
        <width>90</width>

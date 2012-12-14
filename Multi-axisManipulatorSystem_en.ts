@@ -999,6 +999,7 @@ Infomation</source>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="26"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="147"/>
         <source>Detect fixture 1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1008,6 +1009,7 @@ Infomation</source>
         <location filename="hcsettings/ichcdetectionframe.ui" line="287"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="314"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="432"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="145"/>
         <source>Use</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1017,6 +1019,7 @@ Infomation</source>
         <location filename="hcsettings/ichcdetectionframe.ui" line="282"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="309"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="427"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="146"/>
         <source>Not Use</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1027,6 +1030,7 @@ Infomation</source>
         <location filename="hcsettings/ichcdetectionframe.ui" line="121"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="148"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="175"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="143"/>
         <source>Reversed Phase</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1037,71 +1041,85 @@ Infomation</source>
         <location filename="hcsettings/ichcdetectionframe.ui" line="126"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="153"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="180"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="144"/>
         <source>Positive Phase</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="53"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="150"/>
         <source>Detect sucker 1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="80"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="153"/>
         <source>Detect fixture 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="107"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="156"/>
         <source>Detect sucker 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="134"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="159"/>
         <source>Detect fixture 3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="295"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="174"/>
         <source>Ejection Link Lock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="322"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="177"/>
         <source>Detect Postion</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="341"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="179"/>
         <source>Don&apos;t need Mold Opened Signal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="413"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="188"/>
         <source>IMM Emergency</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="440"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="191"/>
         <source>Down Position</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="336"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="178"/>
         <source>Need Mold Opened Signal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="349"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="180"/>
         <source>Detect Origin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="373"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="183"/>
         <source>Don&apos;t Limit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="381"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="184"/>
         <source>Orgin Position</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1109,12 +1127,17 @@ Infomation</source>
         <location filename="hcsettings/ichcdetectionframe.ui" line="368"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="400"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="459"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="182"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="186"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="193"/>
         <source>Horizontal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="405"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="464"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="187"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="194"/>
         <source>No Limit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1122,26 +1145,33 @@ Infomation</source>
         <location filename="hcsettings/ichcdetectionframe.ui" line="363"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="395"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="454"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="181"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="185"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="192"/>
         <source>Vertical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="161"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="162"/>
         <source>Detect fixture 4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="214"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="165"/>
         <source>Detect Mid Mold</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="241"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="168"/>
         <source>Detect Security Door</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="248"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="169"/>
         <source>Detect Pressure</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1767,55 +1797,61 @@ Infomation</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="51"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="71"/>
         <source>Has not teach check Fixture-1!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="52"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="72"/>
         <source>Has not teach check Fixture-2!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="53"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="73"/>
         <source>Has not teach check Fixture-3!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="54"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="74"/>
         <source>Has not teach check Fixture-4!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="55"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="75"/>
         <source>Has not teach check Sucker-1!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="56"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="76"/>
         <source>Has not teach check Sucker-2!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="152"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="161"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="575"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="584"/>
         <source>Speed Enable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="560"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="569"/>
         <source>Follow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="369"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="82"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="194"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="575"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="585"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="88"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="203"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="584"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="594"/>
         <source>Speed Disable</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1827,7 +1863,7 @@ Infomation</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="305"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="566"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="575"/>
         <source>No Follow</source>
         <translation type="unfinished"></translation>
     </message>

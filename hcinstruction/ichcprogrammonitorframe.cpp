@@ -105,10 +105,13 @@ void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
     refreshTimer_.start(20);
     timer_.start(30000);
 
-    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnAuto,
-                                                     0,
-                                                     ICMold::CurrentMold()->SyncAct() + ICMacroSubroutine::Instance()->SyncAct(),
-                                                     ICMold::CurrentMold()->SyncSum() + ICMacroSubroutine::Instance()->SyncSum());
+    if(ICVirtualHost::GlobalVirtualHost()->CurrentStatus() != ICVirtualHost::Auto)
+    {
+        ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnAuto,
+                                                         0,
+                                                         ICMold::CurrentMold()->SyncAct() + ICMacroSubroutine::Instance()->SyncAct(),
+                                                         ICMold::CurrentMold()->SyncSum() + ICMacroSubroutine::Instance()->SyncSum());
+    }
     if(!ICVirtualHost::GlobalVirtualHost()->IsFixtureCheck())
     {
         return;
