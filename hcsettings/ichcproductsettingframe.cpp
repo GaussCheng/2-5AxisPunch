@@ -103,12 +103,30 @@ void ICHCProductSettingFrame::changeEvent(QEvent *e)
     switch (e->type()) {
     case QEvent::LanguageChange:
     {
-        ui->retranslateUi(this);
+      // ui->retranslateUi();
+        retranslateUi_();
     }
     break;
     default:
         break;
     }
+}
+//////////////////////////////////
+void ICHCProductSettingFrame::retranslateUi_()
+{
+    this->setWindowTitle(tr("Frame"));
+    ui->label->setText(tr("Product"));
+    ui->label_2->setText(tr("Wait Mold Opened Limit Time"));
+    ui->label_4->setText(tr("s"));
+    ui->productClearButton->setText(tr("Product Clear"));
+    ui->label_7->setText(tr("Sampling Count"));
+    ui->label_8->setText(tr("Sampling Interval"));
+    ui->label_9->setText(tr("Bad Product"));
+    ui->label_5->setText(tr("Alarm Times"));
+    ui->label_6->setText(tr("Times"));
+    ui->label_17->setText(tr("Fixture"));
+    ui->fixtureSelectBox->setItemText(0,tr("Reversed Phase"));
+    ui->fixtureSelectBox->setItemText(1,tr("Positive Phase"));
 }
 
 void ICHCProductSettingFrame::OnMoldNumberParamChanged()

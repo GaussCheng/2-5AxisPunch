@@ -12,6 +12,5 @@
         <file>resources/placement.png</file>
         <file>resources/stacked.png</file>
         <file>resources/machine.png</file>
-        <file>resources/machineStruct.png</file>
     </qresource>
 </RCC>

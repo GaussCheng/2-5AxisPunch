@@ -16,6 +16,7 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     ui(new Ui::ICStructDefineFrame)
 {
     ui->setupUi(this);
+
     if(ICParametersSave::Instance()->IsSingleArm())
     {
         ui->singleArmButton->setChecked(true);
@@ -104,13 +105,92 @@ void ICStructDefineFrame::changeEvent(QEvent *e)
     QWidget::changeEvent(e);
     switch (e->type()) {
     case QEvent::LanguageChange:
-        ui->retranslateUi(this);
+     //  ui->retranslateUi(this);
+       retranslateUi_();
         break;
     default:
         break;
     }
 }
 
+void ICStructDefineFrame::retranslateUi_()
+{
+    this->setWindowTitle(tr("Form"));
+    ui->signalDefineBox->setTitle(tr("Signal Define"));
+    ui->singleArmButton->setText(tr("Single Arm"));
+    ui->doubleArmButton->setText(tr("Double Arm"));
+    ui->mainArmBox->setTitle(tr("Main Arm"));
+    ui->mainArmDownLimitButton->setText(tr("Down Limit"));
+    ui->mainArmBackwardLimitButton->setText(tr("Backword Limit"));
+    ui->mainArmForwardLimitButton->setText(tr("Forward Limit"));
+    ui->subArmBox->setTitle(tr("Sub Arm"));
+    ui->subArmDownLimitButton->setText(tr("Down Limit"));
+    ui->subArmBackwardLimitButton->setText(tr("Backword Limit"));
+    ui->subArmForwardLimitButton->setText(tr("Forward Limit"));
+    ui->armDefineBox->setTitle(tr("Arm Define"));
+    ui->label_5->setText(tr("X1"));
+    ui->x1Box->setItemText(0,tr("None"));
+    ui->x1Box->setItemText(1,tr("Pneumatic"));
+    ui->x1Box->setItemText(2,tr("Servo"));
+    ui->label_14->setText(tr("C"));
+    ui->y1Box->setItemText(0,tr("None"));
+    ui->y1Box->setItemText(1,tr("Pneumatic"));
+    ui->y1Box->setItemText(2,tr("Servo"));
+    ui->label_13->setText(tr("Z"));
+    ui->cBox->setItemText(0,tr("None"));
+    ui->cBox->setItemText(1,tr("Pneumatic"));
+    ui->cBox->setItemText(2,tr("Servo"));
+    ui->label_15->setText(tr("A"));
+    ui->aBox->setItemText(0,tr("None"));
+    ui->aBox->setItemText(1,tr("Pneumatic"));
+    ui->aBox->setItemText(2,tr("Servo"));
+    ui->label_16->setText(tr("B"));
+    ui->zBox->setItemText(0,tr("None"));
+    ui->zBox->setItemText(1,tr("Pneumatic"));
+    ui->zBox->setItemText(2,tr("Servo"));
+    ui->label_7->setText(tr("Y1"));
+    ui->bBox->setItemText(0,tr("None"));
+    ui->bBox->setItemText(1,tr("Pneumatic"));
+    ui->bBox->setItemText(2,tr("Servo"));
+    ui->label_6->setText(tr("X2"));
+    ui->x2Box->setItemText(0,tr("None"));
+    ui->x2Box->setItemText(1,tr("Pneumatic"));
+    ui->x2Box->setItemText(2,tr("Servo"));
+    ui->label_12->setText(tr("Y2"));
+    ui->y2Box->setItemText(0,tr("None"));
+    ui->y2Box->setItemText(1,tr("Pneumatic"));
+    ui->y2Box->setItemText(2,tr("Servo"));
+    ui->outDefineBox->setTitle(tr("Out Define"));
+    ui->label->setText(tr("1"));
+    ui->outABox->setItemText(0,tr("Normal"));
+    ui->outABox->setItemText(1,tr("Extent"));
+    ui->label_8->setText(tr("5"));
+    ui->outEBox->setItemText(0,tr("Normal"));
+    ui->outEBox->setItemText(1,tr("Extent"));
+    ui->label_2->setText(tr("2"));
+    ui->outBBox->setItemText(0,tr("Normal"));
+    ui->outBBox->setItemText(1,tr("Extent"));
+    ui->label_9->setText(tr("6"));
+    ui->outFBox->setItemText(0,tr("Normal"));
+    ui->outFBox->setItemText(1,tr("Extent"));
+    ui->label_3->setText(tr("3"));
+    ui->outCBox->setItemText(0,tr("Normal"));
+    ui->outCBox->setItemText(1,tr("Extent"));
+    ui->label_11->setText(tr("7"));
+    ui->outGBox->setItemText(0,tr("Normal"));
+    ui->outGBox->setItemText(1,tr("Extent"));
+    ui->label_4->setText(tr("4"));
+    ui->outDBox->setItemText(0,tr("Normal"));
+    ui->outDBox->setItemText(1,tr("Extent"));
+    ui->label_10->setText(tr("8"));
+    ui->outHBox->setItemText(0,tr("Normal"));
+    ui->outHBox->setItemText(1,tr("Extent"));
+    ui->fixtureDefineBox_2->setTitle(tr("Other Define"));
+    ui->label_18->setText(tr("Escape"));
+    ui->escapeComboBox->setItemText(0,tr("Use"));
+    ui->escapeComboBox->setItemText(1,tr("No Use"));
+    ui->saveButton->setText(tr("Save"));
+}
 
 void ICStructDefineFrame::on_saveButton_clicked()
 {

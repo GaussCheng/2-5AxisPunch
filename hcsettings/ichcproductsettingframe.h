@@ -3,7 +3,6 @@
 
 #include <QFrame>
 #include <QList>
-
 class ICLineEditWrapper;
 
 namespace Ui {
@@ -28,6 +27,7 @@ private slots:
     void on_productClearButton_clicked();
 
     void on_fixtureSelectBox_currentIndexChanged(int index);
+    void retranslateUi_();
 
 private:
     Ui::ICHCProductSettingFrame *ui;

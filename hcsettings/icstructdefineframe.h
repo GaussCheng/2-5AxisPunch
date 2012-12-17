@@ -17,6 +17,7 @@ public:
     explicit ICStructDefineFrame(QWidget *parent = 0);
     ~ICStructDefineFrame();
 
+
 protected:
     void changeEvent(QEvent *e);
 signals:
@@ -43,6 +44,8 @@ private slots:
     void OnAxisDefineChanged(int index);
     void OnOutputDefineChanged(int index);
 
+    void retranslateUi_();
+
 private:
     Ui::ICStructDefineFrame *ui;
     uint armStruct_;
@@ -53,6 +56,9 @@ private:
     QMap<int, int> indexToArmDefine_;
     QMap<QComboBox*, int> outputDefineToNumber_;
     QMap<int, QComboBox*> numberToOutputDefine_;
+
+
+
 };
 
 #endif // ICSTRUCTDEFINEFRAME_H
