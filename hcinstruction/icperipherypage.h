@@ -33,7 +33,7 @@ protected:
 private Q_SLOTS:
     void StatusRefreshed();
     void CommandButtonClicked(QWidget* widget);
-
+///////////////
 private:
     Ui::ICPeripheryPage *ui;
     QVector<QAbstractButton*> settingButtons_;

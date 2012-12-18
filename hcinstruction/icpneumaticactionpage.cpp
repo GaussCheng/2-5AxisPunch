@@ -138,9 +138,9 @@ QList<ICMoldItem> ICPneumaticActionPage::CreateCommandImpl() const
     ICMoldItem item;
     for(int i = 0; i != ui->tableWidget->rowCount(); ++i)
     {
-        if(ui->tableWidget->item(i,0)->checkState() == Qt::Checked)
+        if(ui->tableWidget->item(i, 0)->checkState() == Qt::Checked)
         {
-            item.SetIFVal(buttonToLight_.value(qobject_cast<QAbstractButton*>(ui->tableWidget->cellWidget(i, 1))));
+         //   item.SetIFVal(buttonToLight_.value(qobject_cast<QAbstractButton*>(ui->tableWidget->cellWidget(i, 1))));
             item.SetClip(buttonToClip_.value(qobject_cast<QAbstractButton*>(ui->tableWidget->cellWidget(i, 1))));
             item.SetDVal(editorVector_.at(i)->Delay());
             item.SetSVal(editorVector_.at(i)->Times());
@@ -149,3 +149,4 @@ QList<ICMoldItem> ICPneumaticActionPage::CreateCommandImpl() const
     }
     return ret;
 }
+

@@ -71,10 +71,14 @@ public:
     void SetIFVal(uint val) { ifVal_ = val; }
     uint IFPos() const { return ifPos_;}
     void SetIFPos(uint pos) { ifPos_ = pos; }
+
+
     uint SVal() const { return sVal_;}  //速度，在clip中是次数，堆叠中是选择
     void SetSVal(uint sVal) { sVal_ = sVal; }
     uint DVal() const { return dVal_;}  //延时
     void SetDVal(uint dVal) { dVal_ = dVal; }
+
+
     uint Sum() const { return sum_;}  //
     uint ReSum() const;
 
@@ -150,7 +154,7 @@ public:
         SingleSubItem,
         SyncSubItem
     };
-
+///////////////////////////////
     ICMoldItem* BaseItem() { return &baseItem_;}
     void SetBaseItem(const ICMoldItem& item) {baseItem_ = item;}
     void AddSubMoldUIItem(const ICSubMoldUIItem& item){subItems_.append(item);}
@@ -177,7 +181,7 @@ private:
 
 class ICGroupMoldUIItem
 {
-public:
+public://ICTopMoldUIItem * topItem = &programList_[gIndex].at(tIndex);
     void AddToMoldUIItem(const ICTopMoldUIItem &item) { topItems_.append(item);}
 
     int StepNum() const { return topItems_.first().StepNum();}

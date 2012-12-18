@@ -17,7 +17,7 @@ ICPeripheryParameterEditor::~ICPeripheryParameterEditor()
 {
     delete ui;
 }
-
+/***********************/
 int ICPeripheryParameterEditor::Delay() const
 {
     return ui->delayEdit->TransThisTextToThisInt();

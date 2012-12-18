@@ -52,16 +52,25 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
 {
     currentItem = item;
     ui->positionLabel->hide();
+
     ui->posEdit->hide();
-    ui->mmLabel->hide();
+
+    ui->mmLabel->hide();   
     ui->speedLabel->hide();
+
     ui->speedEdit->hide();
+
     ui->precentLabel->hide();
+
     ui->earlyEndCheckBox->hide();
+
     ui->earlyEndTimeEdit->hide();
+
     ui->mmLabel_2->hide();
+
     ui->selectEdit->hide();
     ui->selectLabel->hide();
+
     ui->badProductBox->hide();
     if(item->IsAction())
     {
@@ -115,50 +124,40 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
         {
             ui->badProductBox->show();
         }
-//        else if(item->Action() == ICMold::ACTCHECKINPUT)
-//        {
-//            ui->positionLabel->setText(tr("Check Point"));
-//            ui->positionLabel->show();
-//            ui->speedLabel->setText(tr("Use Sub"));
-//        }
+
     }
-    else if(item->Clip() == ICMold::ACTCLIP7ON
-            || item->Clip() == ICMold::ACTCLIP8ON)
+   else if(item->Clip() == ICMold::ACTCLIP7ON
+           || item->Clip() == ICMold::ACTCLIP8ON
+           || item->Clip() == ICMold:: ACT_AUX1
+           || item->Clip() == ICMold:: ACT_AUX2
+           || item->Clip() == ICMold:: ACT_AUX3
+           || item->Clip() == ICMold:: ACT_AUX4
+           || item->Clip() == ICMold:: ACT_AUX5
+           || item->Clip() == ICMold:: ACT_AUX6 )
+
     {
         ui->speedLabel->setText(tr("Times"));
         ui->speedLabel->show();
         ui->speedEdit->show();
-//        ui->positionLabel->hide();
-//        ui->posEdit->hide();
-//        ui->mmLabel->hide();
-//        ui->precentLabel->hide();
-//        ui->mmLabel_2->hide();
 
-//            ui->precentLabel->show();
     }
     else if(item->Clip() == ICMold::ACTLAYOUTON)
     {
         ui->selectEdit->SetThisIntToThisText(item->SVal() + 1);
         ui->selectEdit->show();
         ui->selectLabel->show();
+
     }
-//    else
-//    {
-//        ui->positionLabel->hide();
-//        ui->posEdit->hide();
-//        ui->mmLabel->hide();
-//        ui->speedLabel->hide();
-//        ui->speedEdit->hide();
-//        ui->precentLabel->hide();
-//        ui->earlyEndCheckBox->hide();
-//        ui->earlyEndTimeEdit->hide();
-//    }
+
     ui->posEdit->SetThisIntToThisText(item->Pos());
+
     ui->speedEdit->SetThisIntToThisText(item->SVal());
     ui->delayTimeEdit->SetThisIntToThisText(item->DVal());
+
     ui->earlyEndCheckBox->setChecked(item->IsEarlyEnd());
     ui->earlyEndTimeEdit->SetThisIntToThisText(item->IFPos());
     ui->badProductBox->setChecked(item->IsBadProduct());
+
     int isok = exec();
     if(isok == QDialog::Accepted)
     {
@@ -171,6 +170,7 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
         {
             item->SetSVal(ui->speedEdit->TransThisTextToThisInt());
         }
+
         item->SetDVal(ui->delayTimeEdit->TransThisTextToThisInt());
         item->SetEarlyEnd(ui->earlyEndCheckBox->isChecked());
         if(!ui->badProductBox->isHidden())
