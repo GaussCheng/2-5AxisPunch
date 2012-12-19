@@ -965,8 +965,7 @@ inline void ICVirtualHost::SetSubArmDownLimit(bool hasDown)
 inline ICVirtualHost::ICAxisDefine ICVirtualHost::AxisDefine(ICAxis which) const
 {
     return static_cast<ICAxisDefine>((systemParamMap_.value(SYS_Config_Arm).toInt() >> (which << 1)) & 0x0003);
-}
-
+} 
 inline void ICVirtualHost::CalAxisDefine(int &config, ICAxis which, ICAxisDefine define) const
 {
     int mask = ~(0x003 << (which << 1));

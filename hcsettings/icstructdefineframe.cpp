@@ -21,21 +21,17 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     {
         ui->singleArmButton->setChecked(true);
         on_doubleArmButton_toggled(false);
-//        ui->doubleArmButton->toggle();
-//        ui->singleArmButton->click();
     }
     else
     {
         ui->doubleArmButton->click();
-//        ui->doubleArmButton->setChecked(true);
-////        ui->singleArmButton->setCheckState();
-//        on_doubleArmButton_toggled(!ICParametersSave::Instance()->IsSingleArm());
     }
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     armStruct_ = host->SystemParameter(ICVirtualHost::SYS_Config_Signal).toUInt();
     ui->mainArmForwardLimitButton->setChecked(host->HasMainArmForwardLimit());
     ui->mainArmBackwardLimitButton->setChecked(host->HasMainArmBackwardLimit());
     ui->mainArmDownLimitButton->setChecked(host->HasMainArmDownLimit());
+
     ui->subArmForwardLimitButton->setChecked(host->HasSubArmForwardLimit());
     ui->subArmBackwardLimitButton->setChecked(host->HasSubArmBackwardLimit());
     ui->subArmDownLimitButton->setChecked(host->HasSubArmDownLimit());
@@ -49,12 +45,14 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     boxToAxis_.insert(ui->aBox, ICVirtualHost::ICAxis_AxisA);
     boxToAxis_.insert(ui->bBox, ICVirtualHost::ICAxis_AxisB);
     boxToAxis_.insert(ui->cBox, ICVirtualHost::ICAxis_AxisC);
+
     armDefineToIndex_.insert(ICVirtualHost::ICAxisDefine_None, 0);
     armDefineToIndex_.insert(ICVirtualHost::ICAxisDefine_Pneumatic, 1);
     armDefineToIndex_.insert(ICVirtualHost::ICAxisDefine_Servo, 2);
     indexToArmDefine_.insert(0, ICVirtualHost::ICAxisDefine_None);
     indexToArmDefine_.insert(1, ICVirtualHost::ICAxisDefine_Pneumatic);
     indexToArmDefine_.insert(2, ICVirtualHost::ICAxisDefine_Servo);
+
     QList<QComboBox*> boxs = ui->armDefineBox->findChildren<QComboBox*>();
     axisDefine_ = host->SystemParameter(ICVirtualHost::SYS_Config_Arm).toInt();
     for(int i = 0; i != boxs.size(); ++i)

@@ -8,9 +8,12 @@
 #include "icvirtualhost.h"
 #include "ickeyboard.h"
 
+#include "icparameterssave.h"
+
 ActionSettingFrame::ActionSettingFrame(QWidget *parent) :
     ICInstructionEditorBase(parent),
-    ui(new Ui::ActionSettingFrame)
+    ui(new Ui::ActionSettingFrame),
+    axisDefine_(-1)
 {
     ui->setupUi(this);
 
@@ -550,6 +553,13 @@ void ActionSettingFrame::UpdateAxisDefine_()
 {
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     int currentAxis = host->SystemParameter(ICVirtualHost::SYS_Config_Arm).toInt();
+/*********************BUG#125*********************************/
+        if(ICParametersSave::Instance()->IsSingleArm())
+        {
+            ui->gPButton->setCheckable(false);
+            ui->gQButton->setCheckable(false);
+        }
+/*************************************************************/
     if(axisDefine_ != currentAxis)
     {
         axisDefine_ = currentAxis;
@@ -700,6 +710,7 @@ void ActionSettingFrame::UpdateAxisDefine_()
             ui->cBox->hide();
         }
     }
+
 }
 #endif
 
