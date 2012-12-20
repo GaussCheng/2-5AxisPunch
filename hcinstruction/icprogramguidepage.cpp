@@ -754,6 +754,7 @@ void ICProgramGuidePage::on_nextButton_clicked()
         ui->stackedWidget->setCurrentIndex(1);
         ShowForStandby_();
         UpdateAxisShow(STANDBY_SETTING);
+//        UpdateAxisShow(RELEASE_PRODUCT_SETTING);
     }
     else if(pageIndex_ == 2)
     {
@@ -939,8 +940,8 @@ void ICProgramGuidePage::ShowForStandby_()
         HideWidgets_(axisWidgets_[7]);
         ui->cEdit->SetThisIntToThisText(0);
     }
-    on_usedMainArmBox_toggled(true);
-    on_usedSubArmBox_toggled(true);
+  //  on_usedMainArmBox_toggled(true);
+   // on_usedSubArmBox_toggled(true);
 }
 
 void ICProgramGuidePage::SetAxisBoxEnabled_(bool en)
