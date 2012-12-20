@@ -12,7 +12,6 @@
 namespace Ui {
     class ICHCInstructionPageFrame;
 }
-
 class ActionSettingFrame;
 class ICProgramGuidePage;
 

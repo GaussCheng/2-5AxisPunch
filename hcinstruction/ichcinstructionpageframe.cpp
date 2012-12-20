@@ -946,10 +946,13 @@ void ICHCInstructionPageFrame::OnActionButtonReleased()
 
 void ICHCInstructionPageFrame::ShowServoAction(int key)
 {
+    QAbstractButton * optionButton = qobject_cast<QAbstractButton *>(sender());
     if(!this->isHidden())
     {
+        if(guidePage_ ->isHidden()){
         ui->lineButton->click();
         actionPage_->KeyToActionCheck(key);
+        }
     }
 
 }
