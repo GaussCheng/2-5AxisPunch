@@ -876,19 +876,22 @@ void ICProgramGuidePage::on_preButton_clicked()
 
 void ICProgramGuidePage::UpdatePageButton_()
 {
-    if(pageIndex_ != 0)
+    switch(pageIndex_)
     {
-        ui->preButton->setEnabled(true);
-        ui->nextButton->setEnabled(true);
+        case 0: ui->preButton->setEnabled(false);
+                ui->nextButton->setEnabled(true);
+                break;
+        case 1:
+        case 2:
+        case 3:
+        case 4: ui->preButton->setEnabled(true);
+                ui->nextButton->setEnabled(true);
+                break;
+        case 5: ui->nextButton->setEnabled(false);break;
+        default:break;
+
     }
-    else
-    {
-        ui->preButton->setEnabled(false);
-    }
-    if(ui->stackedWidget->currentIndex() == 2)
-    {
-        ui->nextButton->setEnabled(false);
-    }
+
 }
 
 void ICProgramGuidePage::ShowForStandby_()
