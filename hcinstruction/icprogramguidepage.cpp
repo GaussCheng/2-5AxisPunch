@@ -171,6 +171,8 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
         {
             item.SetNum(stepNum++);
             item.SetAction(axis_[Z_AXIS].action);
+             /*BUG#132*/
+            item.SetPos(axis_[Z_AXIS].getPos);
             ret.append(item);
         }
     }
@@ -754,7 +756,6 @@ void ICProgramGuidePage::on_nextButton_clicked()
         ui->stackedWidget->setCurrentIndex(1);
         ShowForStandby_();
         UpdateAxisShow(STANDBY_SETTING);
-//        UpdateAxisShow(RELEASE_PRODUCT_SETTING);
     }
     else if(pageIndex_ == 2)
     {
@@ -978,7 +979,6 @@ void ICProgramGuidePage::SetAxis_(_ICAxis_ *axis, int pos, int setting)
         axis->releaseOutletPos = pos;
     }
 }
-
 void ICProgramGuidePage::SaveAxis_(int setting)
 {
     for(int i = 0; i != posEdits_.size(); ++i)
@@ -1033,7 +1033,6 @@ void ICProgramGuidePage::SetAxisLimitEdit_(QComboBox *edit, _ICAxis_ *axis, int 
         edit->setCurrentIndex(axis->releaseOutletLimit);
     }
 }
-
 void ICProgramGuidePage::UpdateAxisShow(int setting)
 {
     for(int i = 0; i != posEdits_.size(); ++i)
