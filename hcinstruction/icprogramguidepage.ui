@@ -38,7 +38,7 @@ QCheckBox::indicator:checked
    <item>
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="page1">
       <layout class="QVBoxLayout" name="verticalLayout_13">
@@ -609,7 +609,7 @@ QCheckBox::indicator:checked
              <bool>true</bool>
             </property>
             <attribute name="buttonGroup">
-             <string>buttonGroup</string>
+             <string notr="true">buttonGroup</string>
             </attribute>
            </widget>
           </item>
@@ -619,7 +619,7 @@ QCheckBox::indicator:checked
              <string>Vertical</string>
             </property>
             <attribute name="buttonGroup">
-             <string>buttonGroup</string>
+             <string notr="true">buttonGroup</string>
             </attribute>
            </widget>
           </item>
@@ -629,7 +629,7 @@ QCheckBox::indicator:checked
              <string>Running Horizon</string>
             </property>
             <attribute name="buttonGroup">
-             <string>buttonGroup</string>
+             <string notr="true">buttonGroup</string>
             </attribute>
            </widget>
           </item>
@@ -651,7 +651,7 @@ QCheckBox::indicator:checked
              <bool>true</bool>
             </property>
             <attribute name="buttonGroup">
-             <string>buttonGroup_2</string>
+             <string notr="true">buttonGroup_2</string>
             </attribute>
            </widget>
           </item>
@@ -661,7 +661,7 @@ QCheckBox::indicator:checked
              <string>Vertical</string>
             </property>
             <attribute name="buttonGroup">
-             <string>buttonGroup_2</string>
+             <string notr="true">buttonGroup_2</string>
             </attribute>
            </widget>
           </item>
@@ -671,7 +671,7 @@ QCheckBox::indicator:checked
              <string>Running Horizon</string>
             </property>
             <attribute name="buttonGroup">
-             <string>buttonGroup_2</string>
+             <string notr="true">buttonGroup_2</string>
             </attribute>
            </widget>
           </item>
