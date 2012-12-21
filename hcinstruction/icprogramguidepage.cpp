@@ -265,6 +265,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
         item.SetSVal(ui->productFixtureBox->currentIndex());
         ret.append(item);
     }
+    item.SetNum(stepNum++);
     if(isSubArmUsed && ui->outletCheck->isChecked())
     {
         item.SetSVal(ui->outletFixtureBox->currentIndex());
@@ -569,7 +570,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
     {
         /*to release outlet pos*/
         if(SetAxisICMoldItem_(&item, axis_ + Z_AXIS, RELEASE_OUTLET_SETTING))
-        ret.append(item);
+            ret.append(item);
 
         if( SetAxisICMoldItem_(&item, axis_ + X2_AXIS, RELEASE_OUTLET_SETTING))
             ret.append(item);
