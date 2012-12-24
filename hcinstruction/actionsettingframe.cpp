@@ -496,6 +496,8 @@ void ActionSettingFrame::on_gAButton_toggled(bool checked)
         ui->aPosLineEdit->setEnabled(false);
         ui->aDelayLineEdit->setEnabled(false);
         ui->aSpeedLineEdit->setEnabled(false);
+        ui->aBox->setEnabled(false);
+
     }
 }
 
@@ -513,6 +515,8 @@ void ActionSettingFrame::on_gBButton_toggled(bool checked)
         ui->bPosLineEdit->setEnabled(false);
         ui->bDelayLineEdit->setEnabled(false);
         ui->bSpeedLineEdit->setEnabled(false);
+        ui->bBox->setEnabled(false);
+
     }
 }
 
@@ -530,6 +534,8 @@ void ActionSettingFrame::on_gCButton_toggled(bool checked)
         ui->cPosLineEdit->setEnabled(false);
         ui->cDelayLineEdit->setEnabled(false);
         ui->cSpeedLineEdit->setEnabled(false);
+        ui->cBox->setEnabled(false);
+
     }
 }
 
@@ -563,10 +569,10 @@ void ActionSettingFrame::UpdateAxisDefine_()
     if(axisDefine_ != currentAxis)
     {
         axisDefine_ = currentAxis;
-//        for(int i = 0 ; i != axisWidgets_.size(); ++i)
-//        {
-//            HideWidgets_(axisWidgets_[i]);
-//        }
+        for(int i = 0 ; i != axisWidgets_.size(); ++i)
+        {
+            HideWidgets_(axisWidgets_[i]);
+        }
 
         if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) == ICVirtualHost::ICAxisDefine_None)
         {
@@ -755,7 +761,7 @@ void ActionSettingFrame::KeyToActionCheck(int key)
         break;
     case ICKeyboard::VFB_CAdd:
     case ICKeyboard::VFB_CSub:
-        ui->cBox->setCurrentIndex(key == ICKeyboard::VFB_CAdd ? 0:1);
+        ui->cBox->setCurrentIndex(key == ICKeyboard::VFB_CAdd ? 1:0);
         ui->gCButton->setChecked(true);
         break;
     case ICKeyboard::VFB_Pose_Horizontal:
@@ -763,6 +769,6 @@ void ActionSettingFrame::KeyToActionCheck(int key)
         ui->cBox->setCurrentIndex(key == ICKeyboard::VFB_Pose_Horizontal ? 1:0);
         ui->gCButton->setChecked(true);
         break;
-    default:QMessageBox::information(this,"hello","world");break;
+//    default:QMessageBox::information(this,"hello","world");break;
     }
 }
