@@ -563,21 +563,14 @@ void ActionSettingFrame::UpdateAxisDefine_()
     if(axisDefine_ != currentAxis)
     {
         axisDefine_ = currentAxis;
-        for(int i = 0 ; i != axisWidgets_.size(); ++i)
-        {
-            HideWidgets_(axisWidgets_[i]);
-        }
-        ui->gAButton->setChecked(false);
-        ui->gBButton->setChecked(false);
-        ui->gCButton->setChecked(false);
-        ui->gPButton->setChecked(false);
-        ui->gQButton->setChecked(false);
-        ui->gxButton->setChecked(false);
-        ui->gyButton->setChecked(false);
-        ui->gzButton->setChecked(false);
+//        for(int i = 0 ; i != axisWidgets_.size(); ++i)
+//        {
+//            HideWidgets_(axisWidgets_[i]);
+//        }
 
         if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) == ICVirtualHost::ICAxisDefine_None)
         {
+            ui->gxButton->setChecked(false);
             HideWidgets_(axisWidgets_[0]);
         }
         else if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) == ICVirtualHost::ICAxisDefine_Pneumatic)
@@ -595,6 +588,7 @@ void ActionSettingFrame::UpdateAxisDefine_()
 
         if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY1) == ICVirtualHost::ICAxisDefine_None)
         {
+            ui->gyButton->setChecked(false);
             HideWidgets_(axisWidgets_[1]);
         }
         else if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY1) == ICVirtualHost::ICAxisDefine_Pneumatic)
@@ -612,6 +606,7 @@ void ActionSettingFrame::UpdateAxisDefine_()
 
         if(host->AxisDefine(ICVirtualHost::ICAxis_AxisZ) == ICVirtualHost::ICAxisDefine_None)
         {
+            ui->gzButton->setChecked(false);
             HideWidgets_(axisWidgets_[2]);
         }
         else if(host->AxisDefine(ICVirtualHost::ICAxis_AxisZ) == ICVirtualHost::ICAxisDefine_Pneumatic)
@@ -629,6 +624,7 @@ void ActionSettingFrame::UpdateAxisDefine_()
 
         if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) == ICVirtualHost::ICAxisDefine_None)
         {
+            ui->gPButton->setChecked(false);
             HideWidgets_(axisWidgets_[3]);
         }
         else if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) == ICVirtualHost::ICAxisDefine_Pneumatic)
@@ -646,6 +642,7 @@ void ActionSettingFrame::UpdateAxisDefine_()
 
         if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) == ICVirtualHost::ICAxisDefine_None)
         {
+            ui->gQButton->setChecked(false);
             HideWidgets_(axisWidgets_[4]);
         }
         else if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) == ICVirtualHost::ICAxisDefine_Pneumatic)
@@ -663,6 +660,7 @@ void ActionSettingFrame::UpdateAxisDefine_()
 
         if(host->AxisDefine(ICVirtualHost::ICAxis_AxisA) == ICVirtualHost::ICAxisDefine_None)
         {
+            ui->gAButton->setChecked(false);
             HideWidgets_(axisWidgets_[5]);
         }
         else if(host->AxisDefine(ICVirtualHost::ICAxis_AxisA) == ICVirtualHost::ICAxisDefine_Pneumatic)
@@ -680,6 +678,7 @@ void ActionSettingFrame::UpdateAxisDefine_()
 
         if(host->AxisDefine(ICVirtualHost::ICAxis_AxisB) == ICVirtualHost::ICAxisDefine_None)
         {
+            ui->gBButton->setChecked(false);
             HideWidgets_(axisWidgets_[6]);
         }
         else if(host->AxisDefine(ICVirtualHost::ICAxis_AxisB) == ICVirtualHost::ICAxisDefine_Pneumatic)
@@ -696,6 +695,7 @@ void ActionSettingFrame::UpdateAxisDefine_()
 
         if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) == ICVirtualHost::ICAxisDefine_None)
         {
+            ui->gCButton->setChecked(false);
             HideWidgets_(axisWidgets_[7]);
         }
         else if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) == ICVirtualHost::ICAxisDefine_Pneumatic)
@@ -763,5 +763,6 @@ void ActionSettingFrame::KeyToActionCheck(int key)
         ui->cBox->setCurrentIndex(key == ICKeyboard::VFB_Pose_Horizontal ? 1:0);
         ui->gCButton->setChecked(true);
         break;
+    default:QMessageBox::information(this,"hello","world");break;
     }
 }

@@ -35,8 +35,6 @@ public:
         VFB_ZAdd    = 26,
         VFB_Pose_Horizontal  = 17,
         VFB_Pose_Vertical   = 27,
-        VFB_SP1 = 19,
-        VFB_SP2 = 23,
         VFB_X2Sub   = 37,
         VFB_X2Add   = 28,
         VFB_Y2Sub   = 15,
@@ -47,6 +45,8 @@ public:
         VFB_BAdd    = 43,
         VFB_CSub    = 44,
         VFB_CAdd    = 45,
+        VFB_SP1 = 19,
+        VFB_SP2 = 23,
         FB_F1       = 29, //29
         FB_F2       = 30,
         FB_F3       = 31,

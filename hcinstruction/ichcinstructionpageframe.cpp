@@ -949,9 +949,18 @@ void ICHCInstructionPageFrame::ShowServoAction(int key)
     QAbstractButton * optionButton = qobject_cast<QAbstractButton *>(sender());
     if(!this->isHidden())
     {
-        if(guidePage_ ->isHidden()){
-        ui->lineButton->click();
-        actionPage_->KeyToActionCheck(key);
+        if(guidePage_)
+        {
+            if(guidePage_->isHidden())
+            {
+                ui->lineButton->click();
+                actionPage_->KeyToActionCheck(key);
+            }
+        }
+       else
+        {
+            ui->lineButton->click();
+            actionPage_->KeyToActionCheck(key);
         }
     }
 
