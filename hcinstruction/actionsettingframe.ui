@@ -26,6 +26,49 @@
    <property name="bottomMargin">
     <number>2</number>
    </property>
+   <item row="3" column="1">
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="ICLineEditWithVirtualNumericKeypad" name="zPosLineEdit">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>0.0</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="zBox">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <item>
+        <property name="text">
+         <string>Come In</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Go Out</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
    <item row="0" column="0">
     <widget class="QToolButton" name="inputButton">
      <property name="sizePolicy">
@@ -161,13 +204,13 @@ QRadioButton::indicator:unchecked:disabled
      </property>
      <property name="minimumSize">
       <size>
-       <width>70</width>
+       <width>80</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>70</width>
+       <width>80</width>
        <height>32</height>
       </size>
      </property>
@@ -287,13 +330,13 @@ QRadioButton::indicator:unchecked:disabled
      </property>
      <property name="minimumSize">
       <size>
-       <width>70</width>
+       <width>80</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>70</width>
+       <width>80</width>
        <height>32</height>
       </size>
      </property>
@@ -363,10 +406,10 @@ QRadioButton::indicator:unchecked:disabled
      </property>
     </widget>
    </item>
-   <item row="3" column="1">
-    <layout class="QVBoxLayout" name="verticalLayout_3">
+   <item row="8" column="1">
+    <layout class="QVBoxLayout" name="verticalLayout_7">
      <item>
-      <widget class="ICLineEditWithVirtualNumericKeypad" name="zPosLineEdit">
+      <widget class="ICLineEditWithVirtualNumericKeypad" name="bPosLineEdit">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -388,18 +431,18 @@ QRadioButton::indicator:unchecked:disabled
       </widget>
      </item>
      <item>
-      <widget class="QComboBox" name="zBox">
+      <widget class="QComboBox" name="bBox">
        <property name="enabled">
         <bool>false</bool>
        </property>
        <item>
         <property name="text">
-         <string>Come In</string>
+         <string>Vertical-3</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Go Out</string>
+         <string>Horizon-3</string>
         </property>
        </item>
       </widget>
@@ -413,13 +456,13 @@ QRadioButton::indicator:unchecked:disabled
      </property>
      <property name="minimumSize">
       <size>
-       <width>70</width>
+       <width>80</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>70</width>
+       <width>80</width>
        <height>32</height>
       </size>
      </property>
@@ -539,13 +582,13 @@ QRadioButton::indicator:unchecked:disabled
      </property>
      <property name="minimumSize">
       <size>
-       <width>70</width>
+       <width>80</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>70</width>
+       <width>80</width>
        <height>32</height>
       </size>
      </property>
@@ -665,13 +708,13 @@ QRadioButton::indicator:unchecked:disabled
      </property>
      <property name="minimumSize">
       <size>
-       <width>70</width>
+       <width>80</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>70</width>
+       <width>80</width>
        <height>32</height>
       </size>
      </property>
@@ -791,13 +834,13 @@ QRadioButton::indicator:unchecked:disabled
      </property>
      <property name="minimumSize">
       <size>
-       <width>70</width>
+       <width>80</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>70</width>
+       <width>80</width>
        <height>32</height>
       </size>
      </property>
@@ -867,49 +910,6 @@ QRadioButton::indicator:unchecked:disabled
      </property>
     </widget>
    </item>
-   <item row="8" column="1">
-    <layout class="QVBoxLayout" name="verticalLayout_7">
-     <item>
-      <widget class="ICLineEditWithVirtualNumericKeypad" name="bPosLineEdit">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>80</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>80</width>
-         <height>32</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>0.0</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QComboBox" name="bBox">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <item>
-        <property name="text">
-         <string>Vertical-3</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Horizon-3</string>
-        </property>
-       </item>
-      </widget>
-     </item>
-    </layout>
-   </item>
    <item row="8" column="2">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="bDelayLineEdit">
      <property name="enabled">
@@ -917,13 +917,13 @@ QRadioButton::indicator:unchecked:disabled
      </property>
      <property name="minimumSize">
       <size>
-       <width>70</width>
+       <width>80</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>70</width>
+       <width>80</width>
        <height>32</height>
       </size>
      </property>
@@ -1036,25 +1036,10 @@ QRadioButton::indicator:unchecked:disabled
      </item>
     </layout>
    </item>
-   <item row="9" column="2">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="cDelayLineEdit">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>70</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>70</width>
-       <height>32</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>0.00</string>
+   <item row="6" column="0" colspan="4">
+    <widget class="Line" name="line">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
      </property>
     </widget>
    </item>
@@ -1093,10 +1078,25 @@ QRadioButton::indicator:unchecked:disabled
      </property>
     </spacer>
    </item>
-   <item row="6" column="0" colspan="4">
-    <widget class="Line" name="line">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+   <item row="9" column="2">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="cDelayLineEdit">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>80</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>80</width>
+       <height>32</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>0.00</string>
      </property>
     </widget>
    </item>
