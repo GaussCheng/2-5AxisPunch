@@ -220,9 +220,9 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
 
     //    QTimer::singleShot(100, this, SLOT(InitHeavyPage()));
 #ifdef Q_WS_X11
-        ShowInstructPage();
-//        ShowManualPage();
-//        ShowAutoPage();
+ //       ShowInstructPage();
+ //       ShowManualPage();
+        ShowAutoPage();
 #endif
 
 }
@@ -478,6 +478,7 @@ void MainFrame::CategoryButtonClicked()
 
 void MainFrame::StatusRefreshed()
 {
+
     static ICAlarmString* alarmString = ICAlarmString::Instance();
     static ICVirtualHost* virtualHost = ICVirtualHost::GlobalVirtualHost();
 //    if(isXPosChanged_)

@@ -26,6 +26,8 @@ public:
 //    void SetFullTime(int fullTime);
     void SetProduct(int product);
 //    void SetCurrentFinished(int currentFinished);
+/***************************************************/
+    bool isM;
 
 protected:
     void changeEvent(QEvent *);
