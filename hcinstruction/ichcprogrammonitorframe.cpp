@@ -90,6 +90,7 @@ void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
     SetProduct(ICMold::CurrentMold()->MoldParam(ICMold::Product));
     UpdateHostParam();
     programListBackup_ = programList_;
+    qDebug("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxxXX");
     QFrame::showEvent(e);
     connect(ICVirtualHost::GlobalVirtualHost(),
             SIGNAL(StepChanged(int)),
@@ -427,64 +428,98 @@ void ICHCProgramMonitorFrame::on_editToolButton_clicked()
         ICTopMoldUIItem * topItem = &programList_[gIndex].at(tIndex);
         ICTopMoldUIItem * topItemB = &programListBackup_[gIndex].at(tIndex);
         ICMoldItem* item = topItem->BaseItem();
-   //     ICMoldItem* itemB = topItemB->BaseItem();
-        ICMoldItem ret;
-      //  bool isM = autoRunRevise_->ShowModifyItem(itemB, &ret, topItemB->ToStringList().join("\n"));
+        ICMoldItem * currentBackup;
 
-//        bool isM = autoRunRevise_->ShowModifyItem(item, &ret, topItem->ToStringList().join("\n"));
-         isM = autoRunRevise_->ShowModifyItem(item, &ret, topItem->ToStringList().join("\n"));
+        ICAutoAdjustCommand command;
+        ICCommandProcessor* processor;
+        ICMoldItem ret;
+        bool isM = autoRunRevise_->ShowModifyItem(item, &ret, topItem->ToStringList().join("\n"));
         if(isM)
         {          
-         //   *item = ret;
-            ICMoldItem * currentBackup = programListBackup_[gIndex].at(tIndex).BaseItem();
-            item->SetDVal(ret.DVal());
-            item->SetSVal(ret.SVal());
-            item->SetPos(currentBackup->Pos() + ret.Pos());
-            item->ReSum();
-            UpdateUIProgramList_();
-            ICAutoAdjustCommand command;
-            ICCommandProcessor* processor = ICCommandProcessor::Instance();
-            command.SetSlave(processor->SlaveID());
-            command.SetSequence(item->Seq());
-            command.SetDelayTime(item->DVal());
-            command.SetSpeed(item->SVal());
-            command.SetDPos(ret.Pos());
-            command.SetGMValue(item->GMVal());
-            command.SetCheckSum(item->Sum());
+          if(isModify_)
+            {
+                currentBackup = programListBackup_[gIndex].at(tIndex).BaseItem();
+                item->SetDVal(ret.DVal());
+                item->SetSVal(ret.SVal());
+                item->SetPos(currentBackup->Pos() + ret.Pos());
+                item->ReSum();
+                UpdateUIProgramList_();
+                processor = ICCommandProcessor::Instance();
+                command.SetSlave(processor->SlaveID());
+                command.SetSequence(item->Seq());
+                command.SetDelayTime(item->DVal());
+                command.SetSpeed(item->SVal());
+                command.SetDPos(ret.Pos());
+                command.SetGMValue(item->GMVal());
+                command.SetCheckSum(item->Sum());
+            }
+            else
+            {
+                currentBackup = programList_[gIndex].at(tIndex).BaseItem();
+                currentBackup->SetDVal(ret.DVal());
+                currentBackup->SetSVal(ret.SVal());
+                currentBackup->SetPos(currentBackup->Pos() + ret.Pos());
+                currentBackup->ReSum();
+                processor = ICCommandProcessor::Instance();
+                command.SetSlave(processor->SlaveID());
+                command.SetSequence(currentBackup->Seq());
+                command.SetDelayTime(currentBackup->DVal());
+                command.SetSpeed(currentBackup->SVal());
+                command.SetDPos(ret.Pos());
+                command.SetGMValue(currentBackup->GMVal());
+                command.SetCheckSum(currentBackup->Sum());
+            }
             isM = processor->ExecuteCommand(command).toBool();
             qDebug()<<"after show"<<isM;
             isModify_ = isModify_ || isM;
         }
-        //        {
-        //            ui->moldContentListWidget->item(selectedRow)->setText(topItem->ToStringList().at(0));
-        //        }
     }
     else
     {
         ICSubMoldUIItem *subItem = &programList_[gIndex].at(tIndex).at(sIndex);
         ICSubMoldUIItem *subItemB = &programListBackup_[gIndex].at(tIndex).at(sIndex);
         ICMoldItem* item = subItem->BaseItem();
+        ICMoldItem * currentBackup;
         ICMoldItem ret;
-     //   bool isM = autoRunRevise_->ShowModifyItem(subItemB->BaseItem(), &ret, subItemB->ToString());
+        ICAutoAdjustCommand command;
+        ICCommandProcessor* processor;
         bool isM = autoRunRevise_->ShowModifyItem(subItem->BaseItem(), &ret, subItem->ToString());
         if(isM)
         {
-        //    *subItem->BaseItem() = ret;
-            ICMoldItem * currentBackup = programListBackup_[gIndex].at(tIndex).BaseItem();
-            item->SetDVal(ret.DVal());
-            item->SetSVal(ret.SVal());
-            item->SetPos(currentBackup->Pos() + ret.Pos());
-            item->ReSum();
-            UpdateUIProgramList_();
-            ICAutoAdjustCommand command;
-            ICCommandProcessor* processor = ICCommandProcessor::Instance();
-            command.SetSlave(processor->SlaveID());
-            command.SetSequence(item->Seq());
-            command.SetDelayTime(item->DVal());
-            command.SetSpeed(item->SVal());
-            command.SetDPos(ret.Pos());
-            command.SetGMValue(item->GMVal());
-            command.SetCheckSum(item->Sum());
+            if(isModify_)
+            {
+               currentBackup = programListBackup_[gIndex].at(tIndex).BaseItem();
+               item->SetDVal(ret.DVal());
+               item->SetSVal(ret.SVal());
+               item->SetPos(currentBackup->Pos() + ret.Pos());
+               item->ReSum();
+               UpdateUIProgramList_();
+               processor = ICCommandProcessor::Instance();
+               command.SetSlave(processor->SlaveID());
+               command.SetSequence(item->Seq());
+               command.SetDelayTime(item->DVal());
+               command.SetSpeed(item->SVal());
+               command.SetDPos(ret.Pos());
+               command.SetGMValue(item->GMVal());
+               command.SetCheckSum(item->Sum());
+            }
+            else
+            {
+               currentBackup = programList_[gIndex].at(tIndex).BaseItem();
+               currentBackup->SetDVal(ret.DVal());
+               currentBackup->SetSVal(ret.SVal());
+               currentBackup->SetPos(currentBackup->Pos() + ret.Pos());
+               currentBackup->ReSum();
+               UpdateUIProgramList_();
+               processor = ICCommandProcessor::Instance();
+               command.SetSlave(processor->SlaveID());
+               command.SetSequence(currentBackup->Seq());
+               command.SetDelayTime(currentBackup->DVal());
+               command.SetSpeed(currentBackup->SVal());
+               command.SetDPos(ret.Pos());
+               command.SetGMValue(currentBackup->GMVal());
+               command.SetCheckSum(currentBackup->Sum());
+            }
             isM = processor->ExecuteCommand(command).toBool();
             qDebug()<<"after show"<<isM;
             isModify_ = isModify_ || isM;

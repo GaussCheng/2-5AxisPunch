@@ -220,25 +220,19 @@ void ICVirtualHost::RefreshStatus()
     }
     else
     {
-        qDebug("TTTTTTTTTTTTTTTTTTTTTTTTt");
         //        qDebug()<<"refresh statys start";
         ICCommunicationCommandBase::ResultVector result;
         currentAddr_ %= 11;
-        qDebug("AAAAAAAAAAAAAAAAAAAAAa");
         if(currentAddr_ == 0)
         {
             currentStatus_ = 0;
         }
-        qDebug("CCCCCCCCCCCCCCCCCCCCCCCC");
         queryStatusCommand_.SetStartAddr(currentAddr_);
-        qDebug("RRRRRRRRRRRRRRRRRRRRR");
 //        qDebug()<<"Query Time:"<<testTime.restart();
 
    //     qApp->processEvents();
 
-        qDebug("DDDDDDDDDDDDDDDDDDDD");
         result = commandProcess->ExecuteCommand(queryStatusCommand_).value<ICCommunicationCommandBase::ResultVector>();
-        qDebug("FFFFFFFFFFFFFFFFFFFFFFF");
         if(queryStatusCommand_.NeedToReconfig())
         {
             qDebug("reconfigure");
@@ -249,10 +243,8 @@ void ICVirtualHost::RefreshStatus()
 //#endif
             return;
         }
-        qDebug("GGGGGGGGGGGGGGGGGG");
         if(!result.isEmpty())  //Success,return to status
         {
-            qDebug("HHHHHHHHHHHHHHHHHHHHHHHHHHH");
             statusMap_.insert(static_cast<ICStatus>(currentStatus_++), result.at(0));
             statusMap_.insert(static_cast<ICStatus>(currentStatus_++), result.at(1));
             statusMap_.insert(static_cast<ICStatus>(currentStatus_++), result.at(2));
@@ -309,10 +301,8 @@ void ICVirtualHost::RefreshStatus()
 //#ifdef HC_ARMV6
 //            QTimer::singleShot(REFRESH_TIME, this, SLOT(RefreshStatus()));
 //#endif
-            qDebug("VVVVVVVVVVVVVVVVVVVVVVVV");
             return;
         }
-        qDebug("JJJJJJJJJJJJJJJJJJJJJJJJ");
         freshCount_ = (freshCount_ + 1) % 2;
         input0Bits_ = statusMap_.value(Input0).toUInt();
         input1Bits_ = statusMap_.value(Input1).toUInt();
@@ -324,10 +314,8 @@ void ICVirtualHost::RefreshStatus()
         clipHBits_ = statusMap_.value(ClipH).toUInt();
         actionLBits_ = statusMap_.value(ActL).toUInt();
         actionHBits_ = statusMap_.value(ActH).toUInt();
-        qDebug("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
         if(freshCount_)
         {
-            qDebug("RRRRRRRRRRRRRRRRRRRRRRRRRRRR");
             int moldNum = HostStatus(S).toInt();
             if(moldNum != oldMoldNum_)
             {
@@ -352,17 +340,13 @@ void ICVirtualHost::RefreshStatus()
             {
                 statusMap_.insert(Step, tmpStep);
                 oldStep_ = tmpStep;
-                qDebug("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
                 emit StepChanged(tmpStep);
-                qDebug("YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY");
             }
 
             if(memcmp(oldSubStep, tmpSubStep, 8) != 0)
             {
                 memcpy(oldSubStep, tmpSubStep, 8);
-                qDebug("LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL");
                 emit SubStepChanged(tmpSubStep);
-                qDebug("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
             }
 
 
@@ -371,7 +355,6 @@ void ICVirtualHost::RefreshStatus()
             flag_ = true;
             //            qDebug("Run query");
         }
-        qDebug("PPPPPPPPPPPPPPPPPPP");
     }
 
 //#ifdef HC_ARMV6
