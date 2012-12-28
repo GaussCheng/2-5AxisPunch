@@ -73,6 +73,9 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
     ui->selectLabel->hide();
 
     ui->badProductBox->hide();
+
+    ui->horizontalBox->hide();
+    ui->verticalBox->hide();
     if(item->IsAction())
     {
         if( item->Action() <= ICMold::GB)
@@ -124,6 +127,20 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
         if( item->Action() == ICMold::GZ)
         {
             ui->badProductBox->show();
+        }
+/************任务：待机点姿势可以修改**********************************/
+        if(item->Action() == ICMold::ACTPOSEHORI || item->Action() == ICMold::ACT_PoseHori2)
+        {
+            ui->horizontalBox->show();
+            ui->verticalBox->show();
+            ui->horizontalBox->setChecked(true);
+        }
+
+        else if(item->Action() == ICMold::ACTPOSEVERT || item->Action() == ICMold::ACT_PoseVert2)
+        {
+            ui->horizontalBox->show();
+            ui->verticalBox->show();
+            ui->verticalBox->setChecked(true);
         }
 
     }
@@ -181,7 +198,28 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
         }
 //        item->SetIFVal(ui->earlyEndCheckBox->isChecked());
         item->SetIFPos(ui->earlyEndTimeEdit->TransThisTextToThisInt());
-    }
+
+/**********************接以上任务****************************/
+        if(ui->verticalBox->isChecked() && !ui->verticalBox->isHidden())
+        {
+            if(item->Action() == ICMold::ACTPOSEHORI)
+               item->SetAction(ICMold::ACTPOSEVERT);
+            else
+               item->SetAction(ICMold::ACT_PoseVert2);
+        }
+
+        if(ui->horizontalBox->isChecked() && !ui->horizontalBox->isHidden())
+        {
+            if(item->Action() == ICMold::ACTPOSEVERT)
+               item->SetAction(ICMold::ACTPOSEHORI);
+            else
+               item->SetAction(ICMold::ACT_PoseHori2);
+        }
+
+
+
+
+   }
     return isok;
 }
 
