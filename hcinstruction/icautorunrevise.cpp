@@ -73,27 +73,35 @@ bool ICAutoRunRevise::ShowModifyItem(const ICMoldItem *item, ICMoldItem* ret, co
     int isok = exec();
     if(isok == QDialog::Accepted)
     {
-        ICMoldItem tempItem = *item;
-        tempItem.SetPos(tempItem.Pos() + ui->posEdit->TransThisTextToThisInt());
-        if(tempItem.Pos() < 0)
-        {
-            tempItem.SetPos(0);
-        }
-        tempItem.SetDVal(ui->delayEdit->TransThisTextToThisInt());
-        tempItem.SetSVal(ui->speedEdit->TransThisTextToThisInt());
-        tempItem.ReSum();
-        *ret = tempItem;
-        ICAutoAdjustCommand command;
-        ICCommandProcessor* processor = ICCommandProcessor::Instance();
-        command.SetSlave(processor->SlaveID());
-        command.SetSequence(tempItem.Seq());
-        command.SetDelayTime(tempItem.DVal());
-        command.SetSpeed(tempItem.SVal());
-        command.SetDPos(ui->posEdit->TransThisTextToThisInt());
-        command.SetGMValue(tempItem.GMVal());
-        command.SetCheckSum(tempItem.Sum());
-        bool isSuccess = processor->ExecuteCommand(command).toBool();
-        return isSuccess;
+        ret->SetPos(ui->posEdit->TransThisTextToThisInt());
+        ret->SetDVal(ui->delayEdit->TransThisTextToThisInt());
+        ret->SetSVal(ui->speedEdit->TransThisTextToThisInt());
+//        ICMoldItem tempItem = *item;
+
+//        tempItem.SetPos(tempItem.Pos() + ui->posEdit->TransThisTextToThisInt());
+//        if(tempItem.Pos() < 0)
+//        {
+//            tempItem.SetPos(0);
+//        }
+//        tempItem.SetDVal(ui->delayEdit->TransThisTextToThisInt());
+//        tempItem.SetSVal(ui->speedEdit->TransThisTextToThisInt());
+//        tempItem.ReSum();
+//        *ret = tempItem;
+
+//        ICAutoAdjustCommand command;
+//        ICCommandProcessor* processor = ICCommandProcessor::Instance();
+//        command.SetSlave(processor->SlaveID());
+//        command.SetSequence(tempItem.Seq());
+//        command.SetDelayTime(tempItem.DVal());
+//        command.SetSpeed(tempItem.SVal());
+//        command.SetDPos(ui->posEdit->TransThisTextToThisInt());
+//        command.SetGMValue(tempItem.GMVal());
+//        command.SetCheckSum(tempItem.Sum());
+//        bool isSuccess = processor->ExecuteCommand(command).toBool();
+//#ifdef Q_WS_X11
+        return true;
+//#endif
+        //return isSuccess;
         //        if(isSuccess)
         //        {
         //            item->SetPos(tempItem.Pos());

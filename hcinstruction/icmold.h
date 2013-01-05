@@ -281,8 +281,9 @@ public:
         ACTMAINDOWN,	//9
         ACTMAINFORWARD,	//10
         ACTMAINBACKWARD,//11
-        ACTPOSEHORI,	//12
-        ACTPOSEVERT,	//13
+
+        ACTPOSEHORI,	//12   水平1
+        ACTPOSEVERT,	//13   垂直1
         ACTVICEUP,		//14
         ACTVICEDOWN,	//15
 
@@ -291,9 +292,9 @@ public:
         ACTGOOUT,		//18
         ACTCOMEIN,		//19
 
-        ACT_PoseHori2,		//20
+        ACT_PoseHori2,		//20  水平2
+        ACT_PoseVert2,   //21  垂直2
 
-        ACT_PoseVert2,
         ACT_GASUB,
         ACT_GAADD,
         ACT_GBSUB,

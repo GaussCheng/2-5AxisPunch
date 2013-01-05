@@ -27,6 +27,7 @@ public:
     void SetProduct(int product);
 //    void SetCurrentFinished(int currentFinished);
 
+
 protected:
     void changeEvent(QEvent *);
     void showEvent(QShowEvent *e);

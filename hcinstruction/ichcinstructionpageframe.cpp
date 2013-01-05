@@ -397,7 +397,13 @@ void ICHCInstructionPageFrame::UpdateUIProgramList_()
 
 void ICHCInstructionPageFrame::on_insertToolButton_clicked()
 {
-
+    if(guidePage_)  //限制在教导页面点击插入的时候出现错误
+    {
+        if(!guidePage_->isHidden())
+        {
+            return;  //教导页面点插入无任何动作
+        }
+    }
     ICInstructionEditorBase* editor = qobject_cast<ICInstructionEditorBase*>(ui->settingStackedWidget->currentWidget());
     ICFlagsEditor *flagsEditor = qobject_cast<ICFlagsEditor*> (editor);
     ActionSettingFrame *servoEditor = qobject_cast<ActionSettingFrame*>(editor);

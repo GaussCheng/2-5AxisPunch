@@ -437,12 +437,12 @@ QRadioButton::indicator:unchecked:disabled
        </property>
        <item>
         <property name="text">
-         <string>Vertical-3</string>
+         <string>Horizon-3</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Horizon-3</string>
+         <string>Vertical-3</string>
         </property>
        </item>
       </widget>
@@ -815,12 +815,12 @@ QRadioButton::indicator:unchecked:disabled
        </property>
        <item>
         <property name="text">
-         <string>Vertical-2</string>
+         <string>Horizon-2</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Horizon-2</string>
+         <string>Vertical-2</string>
         </property>
        </item>
       </widget>

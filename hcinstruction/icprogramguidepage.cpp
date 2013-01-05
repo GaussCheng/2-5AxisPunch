@@ -850,7 +850,7 @@ void ICProgramGuidePage::on_nextButton_clicked()
         on_usedSubArmBox_toggled(ui->usedSubArmBox->isChecked());
         ui->productGroupBox->hide();
 
-        SetAxisBoxEnabled_(false);
+        ui->cBox->setEnabled(false);
         if(!ui->usedSubArmBox->isChecked())
         {
             ui->commonGroupBox->hide();
@@ -918,7 +918,7 @@ void ICProgramGuidePage::on_preButton_clicked()
         on_usedSubArmBox_toggled(ui->usedSubArmBox->isChecked());
         ui->productGroupBox->hide();
 
-        SetAxisBoxEnabled_(false);
+        ui->cBox->setEnabled(false);
         if(!ui->usedSubArmBox->isChecked())
         {
             ui->commonGroupBox->hide();

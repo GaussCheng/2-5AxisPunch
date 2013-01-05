@@ -615,6 +615,9 @@ QCheckBox::indicator:checked
           </item>
           <item>
            <widget class="QCheckBox" name="outVerticalBox">
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
             <property name="text">
              <string>Vertical</string>
             </property>
@@ -735,15 +738,15 @@ QCheckBox::indicator:checked
  </widget>
  <customwidgets>
   <customwidget>
+   <class>ICLineEditWithVirtualNumericKeypad</class>
+   <extends>QLineEdit</extends>
+   <header>iclineeditwithvirtualnumerickeypad.h</header>
+  </customwidget>
+  <customwidget>
    <class>ICInstructionEditorBase</class>
    <extends>QWidget</extends>
    <header>icinstructioneditorbase.h</header>
    <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>ICLineEditWithVirtualNumericKeypad</class>
-   <extends>QLineEdit</extends>
-   <header>iclineeditwithvirtualnumerickeypad.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

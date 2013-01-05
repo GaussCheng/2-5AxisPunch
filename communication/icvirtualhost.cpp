@@ -229,7 +229,9 @@ void ICVirtualHost::RefreshStatus()
         }
         queryStatusCommand_.SetStartAddr(currentAddr_);
 //        qDebug()<<"Query Time:"<<testTime.restart();
-        qApp->processEvents();
+
+   //     qApp->processEvents();
+
         result = commandProcess->ExecuteCommand(queryStatusCommand_).value<ICCommunicationCommandBase::ResultVector>();
         if(queryStatusCommand_.NeedToReconfig())
         {
@@ -241,7 +243,7 @@ void ICVirtualHost::RefreshStatus()
 //#endif
             return;
         }
-        if(!result.isEmpty())
+        if(!result.isEmpty())  //Success,return to status
         {
             statusMap_.insert(static_cast<ICStatus>(currentStatus_++), result.at(0));
             statusMap_.insert(static_cast<ICStatus>(currentStatus_++), result.at(1));
@@ -333,6 +335,7 @@ void ICVirtualHost::RefreshStatus()
                                     queriedSubStep[2] >> 8,
                                     queriedSubStep[3] & 0x00FF,
                                     queriedSubStep[3] >> 8};
+
             if(tmpStep != oldStep_)
             {
                 statusMap_.insert(Step, tmpStep);
@@ -346,12 +349,14 @@ void ICVirtualHost::RefreshStatus()
                 emit SubStepChanged(tmpSubStep);
             }
 
+
             emit StatusRefreshed();
             ioctl(watchdogFd_, WDIOC_KEEPALIVE);
             flag_ = true;
             //            qDebug("Run query");
         }
     }
+
 //#ifdef HC_ARMV6
 //            QTimer::singleShot(REFRESH_TIME, this, SLOT(RefreshStatus()));
 //#endif

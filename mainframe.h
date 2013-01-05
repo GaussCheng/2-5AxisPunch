@@ -8,6 +8,8 @@
 #include "icscreensaver.h"
 #include "icfunctionpagebackframe.h"
 
+#include "ichcprogrammonitorframe.h"
+
 class QStackedLayout;
 class QDialog;
 class QButtonGroup;

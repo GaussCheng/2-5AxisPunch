@@ -351,8 +351,9 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         }
         else
         {
-            item.SetAction(ui->aBox->currentIndex() == 0 ? ICMold::ACT_PoseVert2 : ICMold::ACT_PoseHori2);
+            item.SetAction(ui->aBox->currentIndex() == 1 ? ICMold::ACT_PoseVert2 : ICMold::ACT_PoseHori2);
         }
+        item.SetDVal(ui->aDelayLineEdit->TransThisTextToThisInt());
         item.SetIFVal(0);
         item.SetIFPos(0);
         ret.append(item);
@@ -378,8 +379,9 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         }
         else
         {
-            item.SetAction(ui->cBox->currentIndex() == 0 ? ICMold::ACTPOSEVERT : ICMold::ACTPOSEHORI);
+            item.SetAction(ui->cBox->currentIndex() == 1 ? ICMold::ACTPOSEVERT : ICMold::ACTPOSEHORI);
         }
+        item.SetDVal(ui->cDelayLineEdit->TransThisTextToThisInt());
         item.SetIFVal(0);
         item.SetIFPos(0);
         ret.append(item);
@@ -756,7 +758,7 @@ void ActionSettingFrame::KeyToActionCheck(int key)
         break;
     case ICKeyboard::VFB_BAdd:
     case ICKeyboard::VFB_BSub:
-        ui->bBox->setCurrentIndex(key == ICKeyboard::VFB_BAdd ? 0:1);
+        ui->bBox->setCurrentIndex(key == ICKeyboard::VFB_BAdd ? 1:0);
         ui->gBButton->setChecked(true);
         break;
     case ICKeyboard::VFB_CAdd:

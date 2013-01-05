@@ -2374,43 +2374,43 @@ Reason</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="51"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="71"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="52"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="72"/>
         <source>Has not teach check Fixture-1!</source>
         <translation>没有教导夹1检测！</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="52"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="72"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="53"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="73"/>
         <source>Has not teach check Fixture-2!</source>
         <translation>没有教导夹2检测！</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="53"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="73"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="54"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="74"/>
         <source>Has not teach check Fixture-3!</source>
         <translation>没有教导夹3检测！</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="54"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="74"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="55"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="75"/>
         <source>Has not teach check Fixture-4!</source>
         <translation>没有教导夹4检测！</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="55"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="75"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="56"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="76"/>
         <source>Has not teach check Sucker-1!</source>
         <translation>没有教导吸1检测！</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="56"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="76"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="57"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="77"/>
         <source>Has not teach check Sucker-2!</source>
         <translation>没有教导吸2检测！</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="161"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="163"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -2419,16 +2419,16 @@ Reason</source>
         <translation type="obsolete">需要忽略这个警告吗?</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="569"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="636"/>
         <source>Follow</source>
         <translation>跟随</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="369"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="88"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="203"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="584"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="594"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="89"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="205"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="651"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="661"/>
         <source>Speed Disable</source>
         <translation>调速禁止</translation>
     </message>
@@ -2507,12 +2507,12 @@ Reason</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="305"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="575"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="642"/>
         <source>No Follow</source>
         <translation>不跟随</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="584"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="651"/>
         <source>Speed Enable</source>
         <translation>调速允许</translation>
     </message>
@@ -3633,63 +3633,73 @@ Reason</source>
         <translation>编辑</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="24"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="127"/>
         <source>Position</source>
         <translation>位置</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="41"/>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="171"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="257"/>
+        <source>vertical</source>
+        <translation>垂直</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="293"/>
+        <source>Horizontal</source>
+        <translation>水平</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="86"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="103"/>
         <source>mm</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="48"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="185"/>
         <source>Speed</source>
         <translation>速度</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="65"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="110"/>
         <source>%</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="72"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="178"/>
         <source>Delay Time</source>
         <translation>延迟时间</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="89"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="148"/>
         <source>s</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="148"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="221"/>
         <source>Early End</source>
         <translation>提前结束位置</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="178"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="141"/>
         <source>Set</source>
         <translation>设入</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="185"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="134"/>
         <source>Select</source>
         <translation>选择</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="231"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="53"/>
         <source>Bad Product</source>
         <translation>不良品使能</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="117"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="120"/>
         <source>speed</source>
         <translation>速度</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="141"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="166"/>
         <source>Times</source>
         <translation>间隔模数</translation>
     </message>
@@ -6697,7 +6707,7 @@ Would you want to restart now?</source>
         <translation>监视</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="846"/>
+        <location filename="mainframe.cpp" line="847"/>
         <source>Records</source>
         <translation>档案</translation>
     </message>
@@ -6737,7 +6747,7 @@ Would you want to restart now?</source>
         <translation>返回</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="626"/>
+        <location filename="mainframe.cpp" line="627"/>
         <source>Hint</source>
         <translation>提示</translation>
     </message>
@@ -6754,7 +6764,7 @@ Would you want to restart now?</source>
         <translation type="obsolete">还没进行原点!</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="815"/>
+        <location filename="mainframe.cpp" line="816"/>
         <source>Instruct</source>
         <translation>教导</translation>
     </message>
