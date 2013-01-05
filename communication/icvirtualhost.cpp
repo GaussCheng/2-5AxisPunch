@@ -908,6 +908,8 @@ void ICVirtualHost::InitAddrToSysPosMap_()
     addrToSysPos_.insert(SM_WaitMoldOpenLimit, ACT_WaitMoldOpened);
     addrToSysPos_.insert(SM_TIMEMFOR, ACT_MainForward);
     addrToSysPos_.insert(SM_TIMEMBACK, ACT_MainBackward);
+    addrToSysPos_.insert(SM_TIMEMUP, ACT_MainUp);
+    addrToSysPos_.insert(SM_TIMEMDOWN, ACT_MainDown);
     addrToSysPos_.insert(SM_PullPushDistance, SYS_PullPushDistance);
     addrToSysPos_.insert(SM_X_SEC1, ACT_X_Sec1);
     addrToSysPos_.insert(SM_X_SEC2, ACT_X_Sec2);

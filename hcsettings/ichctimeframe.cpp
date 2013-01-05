@@ -46,6 +46,8 @@ void ICHCTimeFrame::InitInterFace()
     BindingParam_(ui->secondayGoBackwardLineEdit, ICVirtualHost::SM_TIMEVBACK);
     BindingParam_(ui->mainArmForwardEdit, ICVirtualHost::SM_TIMEMFOR);
     BindingParam_(ui->mainArmBackwardEdit, ICVirtualHost::SM_TIMEMBACK);
+    BindingParam_(ui->mainArmUpEdit, ICVirtualHost::SM_TIMEMUP);
+    BindingParam_(ui->mainArmDownEdit, ICVirtualHost::SM_TIMEMDOWN);
 }
 
 void ICHCTimeFrame::BindingParam_(QLineEdit *edit, int addr)
