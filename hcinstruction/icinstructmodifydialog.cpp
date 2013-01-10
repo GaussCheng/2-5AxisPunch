@@ -146,19 +146,27 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
     }
  /******************BUG#117****************************/
    else if(item->Clip() == ICMold::ACTCLIP7ON
-           || item->Clip() == ICMold::ACTCLIP8ON
-           || item->Clip() == ICMold:: ACT_AUX1
-           || item->Clip() == ICMold:: ACT_AUX2
-           || item->Clip() == ICMold:: ACT_AUX3
-           || item->Clip() == ICMold:: ACT_AUX4
-           || item->Clip() == ICMold:: ACT_AUX5
-           || item->Clip() == ICMold:: ACT_AUX6 )
+           || item->Clip() == ICMold::ACTCLIP8ON )
 
     {
         ui->speedLabel->setText(tr("Times"));
         ui->speedLabel->show();
         ui->speedEdit->show();
 
+    }
+    else if(item->Clip() == ICMold:: ACT_AUX1
+            || item->Clip() == ICMold:: ACT_AUX2
+            || item->Clip() == ICMold:: ACT_AUX3
+            || item->Clip() == ICMold:: ACT_AUX4
+            || item->Clip() == ICMold:: ACT_AUX5
+            || item->Clip() == ICMold:: ACT_AUX6 )
+    {
+        if(item->IFVal() != 0)
+        {
+            ui->speedLabel->setText(tr("Times"));
+            ui->speedLabel->show();
+            ui->speedEdit->show();
+        }
     }
     else if(item->Clip() == ICMold::ACTLAYOUTON)
     {
