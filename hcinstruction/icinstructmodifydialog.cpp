@@ -135,7 +135,6 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
             ui->verticalBox->show();
             ui->horizontalBox->setChecked(true);
         }
-
         else if(item->Action() == ICMold::ACTPOSEVERT || item->Action() == ICMold::ACT_PoseVert2)
         {
             ui->horizontalBox->show();
@@ -202,22 +201,27 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
 /**********************接以上任务****************************/
         if(ui->verticalBox->isChecked() && !ui->verticalBox->isHidden())
         {
-            if(item->Action() == ICMold::ACTPOSEHORI)
+            if(item->Action() == ICMold::ACTPOSEHORI || item->Action() == ICMold::ACTPOSEVERT)
+            {
                item->SetAction(ICMold::ACTPOSEVERT);
+            }
             else
+            {
                item->SetAction(ICMold::ACT_PoseVert2);
+            }
         }
 
         if(ui->horizontalBox->isChecked() && !ui->horizontalBox->isHidden())
         {
-            if(item->Action() == ICMold::ACTPOSEVERT)
+            if(item->Action() == ICMold::ACTPOSEVERT || item->Action() == ICMold::ACTPOSEHORI)
+            {
                item->SetAction(ICMold::ACTPOSEHORI);
+            }
             else
+            {
                item->SetAction(ICMold::ACT_PoseHori2);
+            }
         }
-
-
-
 
    }
     return isok;

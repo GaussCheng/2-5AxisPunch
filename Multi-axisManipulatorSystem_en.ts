@@ -82,12 +82,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="818"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="823"/>
         <source>Vertical-2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="823"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="818"/>
         <source>Horizon-2</source>
         <translation type="unfinished"></translation>
     </message>
@@ -97,12 +97,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="440"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="445"/>
         <source>Vertical-3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="445"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="440"/>
         <source>Horizon-3</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1394,12 +1394,12 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="860"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="823"/>
         <source>A+</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="823"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="860"/>
         <source>A-</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1464,40 +1464,40 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="420"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="625"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="764"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="838"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="426"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="631"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="770"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="844"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="421"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="427"/>
         <source>Can not add standby position program</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="614"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="620"/>
         <source>warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="615"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="621"/>
         <source>Stand program can not be delete action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="626"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="632"/>
         <source>Can not delete standby position program</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="765"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="771"/>
         <source>Can not group up to standby position program</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="839"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="845"/>
         <source>Can not decompose standby position program</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2905,17 +2905,17 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="127"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="166"/>
         <source>Position</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="257"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="236"/>
         <source>vertical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="293"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="146"/>
         <source>Horizontal</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2926,7 +2926,7 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="185"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="282"/>
         <source>Speed</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2936,27 +2936,27 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="178"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="265"/>
         <source>Delay Time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="148"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="187"/>
         <source>s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="221"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="318"/>
         <source>Early End</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="141"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="180"/>
         <source>Set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="134"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="173"/>
         <source>Select</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2971,7 +2971,7 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="166"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="157"/>
         <source>Times</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4361,7 +4361,7 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="696"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="699"/>
         <source>1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4447,7 +4447,7 @@ Please enter an digit between </source>
         <location filename="hcinstruction/icprogramguidepage.ui" line="334"/>
         <location filename="hcinstruction/icprogramguidepage.ui" line="369"/>
         <location filename="hcinstruction/icprogramguidepage.ui" line="606"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="648"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="651"/>
         <source>Horizontal</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4455,8 +4455,8 @@ Please enter an digit between </source>
         <location filename="hcinstruction/icprogramguidepage.ui" line="307"/>
         <location filename="hcinstruction/icprogramguidepage.ui" line="339"/>
         <location filename="hcinstruction/icprogramguidepage.ui" line="374"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="619"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="661"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="622"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="664"/>
         <source>Vertical</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4487,33 +4487,33 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="629"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="671"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="632"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="674"/>
         <source>Running Horizon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="642"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="645"/>
         <source>Come In Position</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="686"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="689"/>
         <source>Stacked En</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="714"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="717"/>
         <source>Pre</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="721"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="724"/>
         <source>Next</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="728"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="731"/>
         <source>Finish</source>
         <translation type="unfinished"></translation>
     </message>
