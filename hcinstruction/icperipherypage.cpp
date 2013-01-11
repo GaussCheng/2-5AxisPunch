@@ -51,7 +51,7 @@ ICPeripheryPage::ICPeripheryPage(QWidget *parent) :
 
     }
     ui->actionWidget->setColumnWidth(0, 50);
-    ui->actionWidget->setColumnWidth(1, 110);
+    ui->actionWidget->setColumnWidth(1, 97);
 
     commandKeyMap_.insert(settingButtons_.at(0), qMakePair(static_cast<int>(IC::VKEY_CLIP7ON), static_cast<int>(IC::VKEY_CLIP7OFF)));
     commandKeyMap_.insert(settingButtons_.at(1), qMakePair(static_cast<int>(IC::VKEY_CLIP8ON), static_cast<int>(IC::VKEY_CLIP8OFF)));
