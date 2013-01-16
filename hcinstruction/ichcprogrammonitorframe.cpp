@@ -460,6 +460,7 @@ void ICHCProgramMonitorFrame::on_editToolButton_clicked()
                 currentBackup->SetSVal(ret.SVal());
                 currentBackup->SetPos(currentBackup->Pos() + ret.Pos());
                 currentBackup->ReSum();
+                UpdateUIProgramList_();
                 processor = ICCommandProcessor::Instance();
                 command.SetSlave(processor->SlaveID());
                 command.SetSequence(currentBackup->Seq());
@@ -469,7 +470,11 @@ void ICHCProgramMonitorFrame::on_editToolButton_clicked()
                 command.SetGMValue(currentBackup->GMVal());
                 command.SetCheckSum(currentBackup->Sum());
             }
+#ifdef Q_WS_X11
+          isM = true ;
+#else
             isM = processor->ExecuteCommand(command).toBool();
+#endif
             qDebug()<<"after show"<<isM;
             isModify_ = isModify_ || isM;
         }

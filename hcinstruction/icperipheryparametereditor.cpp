@@ -6,7 +6,8 @@ ICPeripheryParameterEditor::ICPeripheryParameterEditor(QWidget *parent) :
     ui(new Ui::ICPeripheryParameterEditor)
 {
     ui->setupUi(this);
-    QIntValidator *validator = new QIntValidator(0, 30000, this);
+    /*********BUG#179.180*************/
+    QIntValidator *validator = new QIntValidator(0, 255, this);
     ui->delayEdit->SetDecimalPlaces(2);
     ui->delayEdit->setValidator(validator);
     ui->timesEdit->setValidator(validator);
@@ -17,7 +18,6 @@ ICPeripheryParameterEditor::~ICPeripheryParameterEditor()
 {
     delete ui;
 }
-/***********************/
 int ICPeripheryParameterEditor::Delay() const
 {
     return ui->delayEdit->TransThisTextToThisInt();

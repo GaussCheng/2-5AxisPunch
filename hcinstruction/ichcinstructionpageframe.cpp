@@ -420,7 +420,8 @@ void ICHCInstructionPageFrame::on_insertToolButton_clicked()
         return;
     }
     FindIndex_(index, gIndex, tIndex, sIndex);
-    if(programList_.at(gIndex).StepNum() == 0)
+    /***********currentEdit_标记为0表示为主程序（主程序时不能删除待机点）**********/
+    if(programList_.at(gIndex).StepNum() == 0 && currentEdit_ == 0)
     {
         QMessageBox::warning(this,
                              tr("Warning"),
@@ -625,7 +626,8 @@ void ICHCInstructionPageFrame::on_deleteToolButton_clicked()
     int tIndex;
     int sIndex;
     FindIndex_(currentRow, gIndex, tIndex, sIndex);
-    if(programList_.at(gIndex).StepNum() == 0)
+    /************BUG:子程序去不位置插入后不能删除******************/
+    if(programList_.at(gIndex).StepNum() == 0 && currentEdit_ == 0)
     {
         QMessageBox::warning(this,
                              tr("Warning"),

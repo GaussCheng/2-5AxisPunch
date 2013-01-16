@@ -54,6 +54,8 @@ private Q_SLOTS:
 
     void on_mechanicalLengthLineEdit_textChanged(const QString &arg1);
 
+    void on_maximumDisplacementLineEdit_textChanged(const QString &arg1);
+
 private:
     void InitInterface();
     QList<uint> GetCurrentStatus_() const;
@@ -65,6 +67,8 @@ private:
     QWidget* timePage_;
     QIntValidator* maxMoveValidator_;
     QIntValidator* rotateValidator_;
+    QIntValidator* intValidator;
+
     int axisDefine_;
     QTimer refreshTimer_;
 };

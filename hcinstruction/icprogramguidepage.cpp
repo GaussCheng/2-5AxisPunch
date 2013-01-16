@@ -64,9 +64,9 @@ ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
     temp.clear();
 
     fixtureOnAction_<<ICMold::ACTCLIP1ON<<ICMold::ACTCLIP2ON<<ICMold::ACTCLIP3ON
-                      <<ICMold::ACTCLIP4ON<<ICMold::ACTCLIP5ON<<ICMold::ACTCLIP6ON;
+                   <<ICMold::ACTCLIP4ON<<ICMold::ACTCLIP5ON<<ICMold::ACTCLIP6ON;
     fixtureOffAction_<<ICMold::ACTCLIP1OFF<<ICMold::ACTCLIP2OFF<<ICMold::ACTCLIP3OFF
-                   <<ICMold::ACTCLIP4OFF<<ICMold::ACTCLIP5OFF<<ICMold::ACTCLIP6OFF;
+                    <<ICMold::ACTCLIP4OFF<<ICMold::ACTCLIP5OFF<<ICMold::ACTCLIP6OFF;
 
     on_usedMainArmBox_toggled(ui->usedMainArmBox->isChecked());
     on_usedSubArmBox_toggled(ui->usedSubArmBox->isChecked());
@@ -128,6 +128,8 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
 {
     ICMoldItem item;
     QList<ICMoldItem> ret;
+    bool isMainArmUsed = ui->usedMainArmBox->isChecked();
+    bool isSubArmUsed = ui->usedSubArmBox->isChecked();
     int stepNum = 0;
     item.SetSVal(80);
     item.SetDVal(0);
@@ -150,25 +152,36 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
 
 
     /*donw to get product*/
-   /*****************BUG#133*******************/
+    /*****************BUG#133*******************/
     if(!ui->cBox->isHidden())
     {
-        item.SetNum(stepNum++);
-        item.SetSVal(0);
-        if(axis_[C_AXIS].getLimit == 0)
-            item.SetAction(ICMold::ACTPOSEHORI);
+        /***************NIG#182******************/
+        if(!isMainArmUsed && !isSubArmUsed)
+        {
+        }
         else
-            item.SetAction(ICMold::ACTPOSEVERT);
+        {
+            item.SetNum(stepNum++);
+            item.SetSVal(0);
+            if(axis_[C_AXIS].getLimit == 0)
+                item.SetAction(ICMold::ACTPOSEHORI);
+            else
+                item.SetAction(ICMold::ACTPOSEVERT);
 
-        ret.append(item);
+            ret.append(item);
+        }
     }
     /*******************************************/
     item.SetSVal(80);
     item.SetDVal(0);
-    bool isMainArmUsed = ui->usedMainArmBox->isChecked();
-    bool isSubArmUsed = ui->usedSubArmBox->isChecked();
     if(!isMainArmUsed && !isSubArmUsed)
     {
+  /**********BUG#182**主副臂都不选择时，应出现模组结束（原来没有）*******/
+        item.SetNum(stepNum++);
+        item.SetSVal(0);
+        item.SetDVal(0);
+        item.SetAction(ICMold::ACTEND);
+        ret.append(item);
         return ret;
     }
     if(axis_[Z_AXIS].mode == AXIS_SERVO)
@@ -177,7 +190,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
         {
             item.SetNum(stepNum++);
             item.SetAction(axis_[Z_AXIS].action);
-             /*BUG#132*/
+            /*BUG#132*/
             item.SetPos(axis_[Z_AXIS].getPos);
             ret.append(item);
         }
@@ -202,7 +215,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
     item.SetNum(stepNum++);
     item.SetClip(ICMold::ACTEJECTON);
     item.SetDVal(10);
-    ret.append(item);     
+    ret.append(item);
     /*x axis forward to get product*/
     item.SetDVal(0);
     item.SetSVal(80);
@@ -340,7 +353,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             item.SetSVal(0);
             item.SetDVal(10);
             item.SetClip(fixtureOffAction_.at(ui->productFixtureBox->currentIndex()));
-                ret.append(item);
+            ret.append(item);
 
             /*Y1, back to standby*/
             item.SetNum(stepNum++);
@@ -376,7 +389,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             item.SetSVal(0);
             item.SetDVal(10);
             item.SetClip(fixtureOffAction_.at(ui->outletFixtureBox->currentIndex()));
-                ret.append(item);
+            ret.append(item);
 
             /*X2, Y2, back to standby*/
             item.SetNum(stepNum++);
@@ -405,7 +418,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             item.SetSVal(0);
             item.SetDVal(10);
             item.SetClip(fixtureOffAction_.at(ui->outletFixtureBox->currentIndex()));
-                ret.append(item);
+            ret.append(item);
 
             /*Y2, back to standby*/
             item.SetNum(stepNum++);
@@ -449,7 +462,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             item.SetSVal(0);
             item.SetDVal(10);
             item.SetClip(fixtureOffAction_.at(ui->productFixtureBox->currentIndex()));
-                ret.append(item);
+            ret.append(item);
 
 
             /*X2, Y2, back to standby*/
@@ -500,9 +513,9 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             item.SetSVal(0);
             item.SetDVal(10);
             item.SetClip(fixtureOffAction_.at(ui->productFixtureBox->currentIndex()));
-                ret.append(item);
+            ret.append(item);
             item.SetClip(fixtureOffAction_.at(ui->outletFixtureBox->currentIndex()));
-                ret.append(item);
+            ret.append(item);
 
             item.SetNum(stepNum++);
             item.SetSVal(80);
@@ -553,7 +566,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
         item.SetSVal(0);
         item.SetDVal(10);
         item.SetClip(fixtureOffAction_.at(ui->productFixtureBox->currentIndex()));
-            ret.append(item);
+        ret.append(item);
 
 
         /*X1, Y1, back to standby*/
@@ -583,7 +596,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
         item.SetSVal(0);
         item.SetDVal(10);
         item.SetClip(fixtureOffAction_.at(ui->outletFixtureBox->currentIndex()));
-            ret.append(item);
+        ret.append(item);
 
         /*X2, Y2, back to standby*/
         item.SetNum(stepNum++);
@@ -787,7 +800,7 @@ void ICProgramGuidePage::ShowWidgets_(QList<QWidget *> &widgets)
 {
     for(int i = 0; i != widgets.size(); ++i)
     {
-        widgets[i]->show();;
+        widgets[i]->show();
     }
 }
 
@@ -802,13 +815,12 @@ void ICProgramGuidePage::HideWidgets_(QList<QWidget *> &widgets)
 void ICProgramGuidePage::on_nextButton_clicked()
 {
     ++pageIndex_;
+    ShowForStandby_();
     if(pageIndex_ == 1) //show for standby settings
     {
         ui->stackedWidget->setCurrentIndex(1);
-
-        ShowForStandby_();
+    //    ShowForStandby_();
         UpdateAxisShow(STANDBY_SETTING);
-     /////////
         SetAxisBoxEnabled_(true);
     }
     else if(pageIndex_ == 2)
@@ -873,13 +885,19 @@ void ICProgramGuidePage::on_nextButton_clicked()
 void ICProgramGuidePage::on_preButton_clicked()
 {
     --pageIndex_;
-    if(pageIndex_ == 1) //show for standby settings
+    if(pageIndex_ == 0)
+        {
+            ui->stackedWidget->setCurrentIndex(0);
+            on_usedMainArmBox_toggled(ui->usedMainArmBox->isChecked());
+            on_usedSubArmBox_toggled(ui->usedSubArmBox->isChecked());
+           SaveAxis_(STANDBY_SETTING);
+        }
+    else if(pageIndex_ == 1) //show for standby settings
     {
         ui->stackedWidget->setCurrentIndex(1);
-        ShowForStandby_();
+      //  ShowForStandby_();
         SaveAxis_(GET_PRODUCT_SETTING);
         UpdateAxisShow(STANDBY_SETTING);
-///////
         SetAxisBoxEnabled_(true);
     }
     else if(pageIndex_ == 2)
@@ -916,7 +934,7 @@ void ICProgramGuidePage::on_preButton_clicked()
         ui->stackedWidget->setCurrentIndex(1);
         ui->descrLabel->setText(tr("Release Outlet Position Settings"));
         on_usedSubArmBox_toggled(ui->usedSubArmBox->isChecked());
-        ui->productGroupBox->hide();
+    //    ui->productGroupBox->hide();
 
         ui->cBox->setEnabled(false);
         if(!ui->usedSubArmBox->isChecked())
@@ -929,13 +947,7 @@ void ICProgramGuidePage::on_preButton_clicked()
         }
         UpdateAxisShow(RELEASE_OUTLET_SETTING);
     }
-    else if(pageIndex_ == 0)
-    {
-        ui->stackedWidget->setCurrentIndex(0);
-        on_usedMainArmBox_toggled(ui->usedMainArmBox->isChecked());
-        on_usedSubArmBox_toggled(ui->usedSubArmBox->isChecked());
-        SaveAxis_(STANDBY_SETTING);
-    }
+
     UpdatePageButton_();
 }
 
@@ -943,17 +955,17 @@ void ICProgramGuidePage::UpdatePageButton_()
 {
     switch(pageIndex_)
     {
-        case 0: ui->preButton->setEnabled(false);
-                ui->nextButton->setEnabled(true);
-                break;
-        case 1:
-        case 2:
-        case 3:
-        case 4: ui->preButton->setEnabled(true);
-                ui->nextButton->setEnabled(true);
-                break;
-        case 5: ui->nextButton->setEnabled(false);break;
-        default:break;
+    case 0: ui->preButton->setEnabled(false);
+        ui->nextButton->setEnabled(true);
+        break;
+    case 1:
+    case 2:
+    case 3:
+    case 4: ui->preButton->setEnabled(true);
+        ui->nextButton->setEnabled(true);
+        break;
+    case 5: ui->nextButton->setEnabled(false);break;
+    default:break;
 
     }
 
@@ -1008,8 +1020,8 @@ void ICProgramGuidePage::ShowForStandby_()
         HideWidgets_(axisWidgets_[7]);
         ui->cEdit->SetThisIntToThisText(0);
     }
-  //  on_usedMainArmBox_toggled(true);
-   // on_usedSubArmBox_toggled(true);
+    //  on_usedMainArmBox_toggled(true);
+    // on_usedSubArmBox_toggled(true);
 }
 
 void ICProgramGuidePage::SetAxisBoxEnabled_(bool en)
@@ -1211,4 +1223,3 @@ void ICProgramGuidePage::on_setInButton_clicked()
     ui->bEdit->SetThisIntToThisText(host->HostStatus(ICVirtualHost::BPos).toInt());
     ui->cEdit->SetThisIntToThisText(host->HostStatus(ICVirtualHost::CPos).toInt());
 }
-

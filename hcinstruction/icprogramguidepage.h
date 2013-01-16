@@ -2,6 +2,7 @@
 #define ICPROGRAMGUIDEPAGE_H
 
 #include "icinstructioneditorbase.h"
+//#include "actionsettingframe.h"
 #include <QIntValidator>
 #include <QMap>
 namespace Ui {
@@ -115,6 +116,7 @@ private:
     QIntValidator posValidators_[8];
     int posMaxs_[8];
     _ICAxis_ axis_[8];
+    ICProgramGuidePage * actionGuidPage_;
 };
 
 #endif // ICPROGRAMGUIDEPAGE_H
