@@ -964,6 +964,10 @@ void ICHCInstructionPageFrame::ShowServoAction(int key)
                 ui->lineButton->click();
                 actionPage_->KeyToActionCheck(key);
             }
+            else
+            {
+                guidePage_->GuideKeyToActionCheck(key);
+            }
         }
        else
         {

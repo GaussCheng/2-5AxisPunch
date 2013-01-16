@@ -101,7 +101,6 @@ private:
     QWidget * programPage_;
     QWidget * stackPage_;
     ICProgramGuidePage * guidePage_;
-
     ICInstructModifyDialog *modifyDialog_;
 
     QString recordPath_;

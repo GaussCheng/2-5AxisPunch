@@ -532,15 +532,16 @@ void ICMachineStructPage::InitInterface()
     ui->mechanicalLengthLineEdit->SetDecimalPlaces(1);
     intValidator = new QIntValidator(0, 65530, this);
     ui->mechanicalLengthLineEdit->setValidator(intValidator);
-    ui->maximumDisplacementLineEdit->SetDecimalPlaces(1);
     maxMoveValidator_ = new QIntValidator(0, 65530, this);
+    ui->maximumDisplacementLineEdit->SetDecimalPlaces(1);
     ui->maximumDisplacementLineEdit->setValidator(maxMoveValidator_);
+  //  externalValidator_ = new QIntValidator(0, 65530, this);
     ui->internalSecurityZoneLineEdit->SetDecimalPlaces(1);
-    ui->internalSecurityZoneLineEdit->setValidator(intValidator);
+    ui->internalSecurityZoneLineEdit->setValidator(maxMoveValidator_);
     ui->externalSecurityZoneLineEdit->SetDecimalPlaces(1);
-    ui->externalSecurityZoneLineEdit->setValidator(intValidator);
-    ui->distanceRotationEdit->SetDecimalPlaces(2);
+    ui->externalSecurityZoneLineEdit->setValidator(maxMoveValidator_);
     rotateValidator_ = new QIntValidator(0, 65530, this);
+    ui->distanceRotationEdit->SetDecimalPlaces(2);
     ui->distanceRotationEdit->setValidator(rotateValidator_);
 }
 
@@ -785,6 +786,7 @@ void ICMachineStructPage::on_mechanicalLengthLineEdit_textChanged(const QString 
 {
     Q_UNUSED(arg1);
     maxMoveValidator_->setTop(ui->mechanicalLengthLineEdit->TransThisTextToThisInt());
+ //   externalValidator_->setTop(ui->mechanicalLengthLineEdit->TransThisTextToThisInt());
 }
 
 /********************BUG#186*当maximumDisplacementLine内容改变时设置范围的最低值***************/

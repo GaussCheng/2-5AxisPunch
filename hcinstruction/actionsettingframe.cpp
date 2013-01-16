@@ -771,6 +771,6 @@ void ActionSettingFrame::KeyToActionCheck(int key)
         ui->cBox->setCurrentIndex(key == ICKeyboard::VFB_Pose_Horizontal ? 1:0);
         ui->gCButton->setChecked(true);
         break;
-//    default:QMessageBox::information(this,"hello","world");break;
+
     }
 }

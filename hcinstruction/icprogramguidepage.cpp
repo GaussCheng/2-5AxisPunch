@@ -1,6 +1,8 @@
 #include "icprogramguidepage.h"
 #include "ui_icprogramguidepage.h"
 #include "icvirtualhost.h"
+#include "ickeyboard.h"
+
 
 ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
     ICInstructionEditorBase(parent),
@@ -73,6 +75,8 @@ ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
     HideWidgets_(axisWidgets_[8]);
     ui->outRunningHorizonBox->hide();
     ui->inRunningHorizonBox->hide();
+    ui->x2Box->setCurrentIndex(1);
+    ui->y2Box->setCurrentIndex(1);
 
 #ifdef Q_WS_X11
     UpdateAxisDefine_();
@@ -819,6 +823,7 @@ void ICProgramGuidePage::on_nextButton_clicked()
     {
         ui->stackedWidget->setCurrentIndex(1);
         ShowForStandby_();
+        SaveAxis_(STANDBY_SETTING);
         UpdateAxisShow(STANDBY_SETTING);
         SetAxisBoxEnabled_(true);
     }
@@ -894,9 +899,9 @@ void ICProgramGuidePage::on_preButton_clicked()
     else if(pageIndex_ == 1) //show for standby settings
     {
         ui->stackedWidget->setCurrentIndex(1);
-        ShowForStandby_();
         SaveAxis_(GET_PRODUCT_SETTING);
         UpdateAxisShow(STANDBY_SETTING);
+        ShowForStandby_();
         SetAxisBoxEnabled_(true);
     }
     else if(pageIndex_ == 2)
@@ -991,7 +996,7 @@ void ICProgramGuidePage::ShowForStandby_()
     }
     if(host->AxisDefine(ICVirtualHost::ICAxis_AxisZ) == ICVirtualHost::ICAxisDefine_Pneumatic)
     {
-        ui->zBox->setCurrentIndex(0);
+      //  ui->zBox->setCurrentIndex(0);
         SetAxis_(axis_ + 2, ui->zBox->currentIndex(), STANDBY_SETTING);
     }
     if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) == ICVirtualHost::ICAxisDefine_Pneumatic)
@@ -1221,4 +1226,49 @@ void ICProgramGuidePage::on_setInButton_clicked()
     ui->aEdit->SetThisIntToThisText(host->HostStatus(ICVirtualHost::APos).toInt());
     ui->bEdit->SetThisIntToThisText(host->HostStatus(ICVirtualHost::BPos).toInt());
     ui->cEdit->SetThisIntToThisText(host->HostStatus(ICVirtualHost::CPos).toInt());
+}
+
+//void ICProgramGuidePage::FunKeyToAction()
+//{
+
+//}
+
+void ICProgramGuidePage::KeyToActionCheck(int key)
+{
+    switch(key)
+    {
+    case ICKeyboard::VFB_X1Add:
+    case ICKeyboard::VFB_X1Sub:
+        ui->x1Box->setCurrentIndex(key == ICKeyboard::VFB_X1Add ? 0:1);
+        break;
+    case ICKeyboard::VFB_Y1Add:
+    case ICKeyboard::VFB_Y1Sub:
+        ui->y1Box->setCurrentIndex(key == ICKeyboard::VFB_Y1Add ? 1:0);
+        break;
+    case ICKeyboard::VFB_ZAdd:
+    case ICKeyboard::VFB_ZSub:
+        ui->zBox->setCurrentIndex(key == ICKeyboard::VFB_ZAdd ? 1:0);
+        break;
+    case ICKeyboard::VFB_X2Add:
+    case ICKeyboard::VFB_X2Sub:
+        ui->x2Box->setCurrentIndex(key == ICKeyboard::VFB_X2Add ? 0:1);
+        break;
+    case ICKeyboard::VFB_Y2Add:
+    case ICKeyboard::VFB_Y2Sub:
+        ui->y2Box->setCurrentIndex(key == ICKeyboard::VFB_Y2Add ?0:1);
+        break;
+    case ICKeyboard::VFB_AAdd:
+    case ICKeyboard::VFB_ASub:
+        ui->aBox->setCurrentIndex(key == ICKeyboard::VFB_AAdd ? 0:1);
+        break;
+    case ICKeyboard::VFB_BAdd:
+    case ICKeyboard::VFB_BSub:
+        ui->bBox->setCurrentIndex(key == ICKeyboard::VFB_BAdd ? 1:0);
+        break;
+    case ICKeyboard::VFB_Pose_Horizontal:
+    case ICKeyboard::VFB_Pose_Vertical:
+        ui->cBox->setCurrentIndex(key == ICKeyboard::VFB_Pose_Horizontal ? 1:0);
+        break;
+
+    }
 }

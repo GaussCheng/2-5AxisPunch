@@ -45,7 +45,11 @@ protected:
     void showEvent(QShowEvent *e);
     void SyncStatusImpl(const QList<ICMoldItem> &items);
     QList<ICMoldItem> CreateCommandImpl() const;
-    
+
+public slots:
+    void KeyToActionCheck(int key);
+
+
 private slots:
     void on_nextButton_clicked();
 
@@ -116,7 +120,6 @@ private:
     QIntValidator posValidators_[8];
     int posMaxs_[8];
     _ICAxis_ axis_[8];
-    ICProgramGuidePage * actionGuidPage_;
 };
 
 #endif // ICPROGRAMGUIDEPAGE_H
