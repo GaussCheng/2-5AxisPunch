@@ -815,7 +815,7 @@ void ICProgramGuidePage::HideWidgets_(QList<QWidget *> &widgets)
 void ICProgramGuidePage::on_nextButton_clicked()
 {
     ++pageIndex_;
-    ShowForStandby_();
+
     if(pageIndex_ == 1) //show for standby settings
     {
         ui->stackedWidget->setCurrentIndex(1);
