@@ -50,7 +50,7 @@ ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
     temp<<ICMold::ACTVICEFORWARD<<ICMold::ACTVICEBACKWARD;
     limitActionMap_.insert(axis_ + 3, temp);
     temp.clear();
-    temp<<ICMold::ACTVICEUP<<ICMold::ACTVICEDOWN;
+    temp<<ICMold::ACTVICEDOWN<<ICMold::ACTVICEUP;
     limitActionMap_.insert(axis_ + 4, temp);
     temp.clear();
     temp<<ICMold::ACT_PoseHori2<<ICMold::ACT_PoseVert2;
@@ -815,11 +815,10 @@ void ICProgramGuidePage::HideWidgets_(QList<QWidget *> &widgets)
 void ICProgramGuidePage::on_nextButton_clicked()
 {
     ++pageIndex_;
-
     if(pageIndex_ == 1) //show for standby settings
     {
         ui->stackedWidget->setCurrentIndex(1);
-    //    ShowForStandby_();
+        ShowForStandby_();
         UpdateAxisShow(STANDBY_SETTING);
         SetAxisBoxEnabled_(true);
     }
@@ -895,7 +894,7 @@ void ICProgramGuidePage::on_preButton_clicked()
     else if(pageIndex_ == 1) //show for standby settings
     {
         ui->stackedWidget->setCurrentIndex(1);
-      //  ShowForStandby_();
+        ShowForStandby_();
         SaveAxis_(GET_PRODUCT_SETTING);
         UpdateAxisShow(STANDBY_SETTING);
         SetAxisBoxEnabled_(true);
@@ -982,12 +981,12 @@ void ICProgramGuidePage::ShowForStandby_()
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) == ICVirtualHost::ICAxisDefine_Pneumatic)
     {
-        ui->x1Box->setCurrentIndex(1);
+     //   ui->x1Box->setCurrentIndex(1);
         SetAxis_(axis_, ui->x1Box->currentIndex(), STANDBY_SETTING);
     }
     if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY1) == ICVirtualHost::ICAxisDefine_Pneumatic)
     {
-        ui->y1Box->setCurrentIndex(0);
+      //  ui->y1Box->setCurrentIndex(0);
         SetAxis_(axis_ + 1, ui->y1Box->currentIndex(), STANDBY_SETTING);
     }
     if(host->AxisDefine(ICVirtualHost::ICAxis_AxisZ) == ICVirtualHost::ICAxisDefine_Pneumatic)
@@ -997,12 +996,12 @@ void ICProgramGuidePage::ShowForStandby_()
     }
     if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) == ICVirtualHost::ICAxisDefine_Pneumatic)
     {
-        ui->x2Box->setCurrentIndex(1);
+       // ui->x2Box->setCurrentIndex(1);
         SetAxis_(axis_ + 3, ui->x2Box->currentIndex(), STANDBY_SETTING);
     }
     if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) == ICVirtualHost::ICAxisDefine_Pneumatic)
     {
-        ui->y2Box->setCurrentIndex(0);
+      //  ui->y2Box->setCurrentIndex(1);
         SetAxis_(axis_ + 4, ui->y2Box->currentIndex(), STANDBY_SETTING);
     }
     if(host->AxisDefine(ICVirtualHost::ICAxis_AxisA) == ICVirtualHost::ICAxisDefine_Servo)

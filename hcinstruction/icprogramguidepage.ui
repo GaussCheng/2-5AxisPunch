@@ -530,12 +530,12 @@ QCheckBox::indicator:checked
              <widget class="QComboBox" name="y2Box">
               <item>
                <property name="text">
-                <string>Up</string>
+                <string>Down</string>
                </property>
               </item>
               <item>
                <property name="text">
-                <string>Down</string>
+                <string>Up</string>
                </property>
               </item>
              </widget>

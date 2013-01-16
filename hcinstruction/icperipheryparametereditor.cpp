@@ -6,12 +6,14 @@ ICPeripheryParameterEditor::ICPeripheryParameterEditor(QWidget *parent) :
     ui(new Ui::ICPeripheryParameterEditor)
 {
     ui->setupUi(this);
-    /*********BUG#179.180*************/
-    QIntValidator *validator = new QIntValidator(0, 255, this);
+    QIntValidator *validator = new QIntValidator(0, 30000, this);
     ui->delayEdit->SetDecimalPlaces(2);
     ui->delayEdit->setValidator(validator);
-    ui->timesEdit->setValidator(validator);
+ //   ui->timesEdit->setValidator(validator);
     ui->delayEdit->setText("0.00");
+    /*************BUG#179.180  添加代码********/
+    validator = new QIntValidator(0, 255, this);
+    ui->timesEdit->setValidator(validator);
 }
 
 ICPeripheryParameterEditor::~ICPeripheryParameterEditor()
