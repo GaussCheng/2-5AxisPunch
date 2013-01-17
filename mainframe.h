@@ -15,7 +15,7 @@ class QDialog;
 class QButtonGroup;
 class QAbstractButton;
 class ICHCInstructionPageFrame;
-#ifdef Q_WS_WIN32
+#if defined(Q_WS_WIN32) || defined(Q_WS_X11)
 class SimulateKnob;
 #endif
 
@@ -152,7 +152,7 @@ private:
     int timerID_;
     QList<QList<QWidget*> > axisWidgets_;
     QList<uint> compareAlarmNums_;
-#ifdef Q_WS_WIN32
+#if defined(Q_WS_WIN32) || defined(Q_WS_X11)
     SimulateKnob* simulateKnob_;
 #endif
 

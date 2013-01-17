@@ -47,7 +47,7 @@
 #include "icactiondialog.h"
 #include "ictimerpool.h"
 #include "ichostcomparepage.h"
-#ifdef Q_WS_WIN32
+#if defined(Q_WS_WIN32) || defined(Q_WS_X11)
 #include "simulateknob.h"
 #endif
 
@@ -228,7 +228,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     QTimer::singleShot(1000, this, SLOT(ClearPosColor()));
 
     //    QTimer::singleShot(100, this, SLOT(InitHeavyPage()));
-#ifdef Q_WS_WIN32
+#if defined(Q_WS_WIN32) || defined(Q_WS_X11)
     simulateKnob_ = new SimulateKnob();
     simulateKnob_->show();
     connect(simulateKnob_,
@@ -243,7 +243,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     this->setFixedSize(800, 600);
 #endif
 #ifdef Q_WS_X11
-        ShowInstructPage();
+//        ShowInstructPage();
  //       ShowManualPage();
    //     ShowAutoPage();
 #endif
