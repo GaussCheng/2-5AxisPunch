@@ -1,14 +1,17 @@
-#include <unistd.h>
-#include <fcntl.h>
-#include <linux/watchdog.h>
-#include <sys/ioctl.h>
-#include <cstring>
-
 #include <QDir>
 #include <QString>
 #include <QStringList>
 #include <QTimer>
 #include <QMessageBox>
+
+#ifndef Q_WS_WIN32
+#include <unistd.h>
+#include <fcntl.h>
+#include <linux/watchdog.h>
+#include <sys/ioctl.h>
+#endif
+#include <cstring>
+
 
 #include "icvirtualhost.h"
 #include "icparameterssave.h"
@@ -103,7 +106,11 @@ ICVirtualHost::ICVirtualHost(QObject *parent) :
     //    RefreshStatus();
     //    RefreshStatus();
     //    RefreshStatus();
+#ifndef Q_WS_WIN32
     watchdogFd_ = open("/dev/watchdog",O_RDONLY );
+#else
+    watchdogFd_ = 0;
+#endif
     if(watchdogFd_ < 0)
     {
         qWarning("open watchdog fail!");
@@ -351,7 +358,9 @@ void ICVirtualHost::RefreshStatus()
 
 
             emit StatusRefreshed();
+#ifndef Q_WS_WIN32
             ioctl(watchdogFd_, WDIOC_KEEPALIVE);
+#endif
             flag_ = true;
             //            qDebug("Run query");
         }

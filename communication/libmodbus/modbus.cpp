@@ -274,7 +274,11 @@ static int build_query_basis_tcp(int slave, int function,
 	static uint16_t t_id = 0;
 
 	/* Transaction ID */
+#ifndef NATIVE_WIN32
 	if (t_id < UINT16_MAX)
+#else
+    if (t_id < 65535)
+#endif
 		t_id++;
 	else
 		t_id = 0;
@@ -659,7 +663,7 @@ static int receive_msg(modbus_param_t *mb_param,
 	while (select_ret) {
 		if (mb_param->type_com == RTU)
 #ifdef NATIVE_WIN32
-						read_ret = win32_ser_read(&mb_param->w_ser, p_msg, length_to_read);
+                        read_ret = win32_ser_read(&mb_param->w_ser, (char*)p_msg, length_to_read);
 #else /* NATIVE_WIN32 */
 			read_ret = read(mb_param->fd, p_msg, length_to_read);
 #endif /* NATIVE_WIN32 */
@@ -884,7 +888,12 @@ static int modbus_receive(modbus_param_t *mb_param,
 		if (query_nb_value == response_nb_value) {
 			ret = response_nb_value;
 		} else {
+#ifndef NATIVE_WIN32
 			char *s_error = malloc(64 * sizeof(char));
+#else
+            char *s_error = (char*)malloc(64 * sizeof(char));
+
+#endif
 			sprintf(s_error, "Quantity (%d) not corresponding to the query (%d)",
 				response_nb_value, query_nb_value);
 			ret = ILLEGAL_DATA_VALUE;
@@ -929,8 +938,12 @@ static int modbus_receive(modbus_param_t *mb_param,
 					/* The chances are low to hit this
 					   case but it can avoid a vicious
 					   segfault */
-					char *s_error = malloc(64 * sizeof(char));
-					sprintf(s_error,
+#ifndef NATIVE_WIN32
+                    char *s_error = malloc(64 * sizeof(char));
+#else
+                    char *s_error = (char*)malloc(64 * sizeof(char));
+#endif
+                    sprintf(s_error,
 						"Invalid exception code %d",
 						response[offset + 2]);
 					error_treat(mb_param, INVALID_EXCEPTION_CODE,
@@ -1782,6 +1795,7 @@ int hc_init_parameters(modbus_param_t *mb_param, int slave, int start_addr, int 
 
 int hc_query_status(modbus_param_t *mb_param, int slave, int start_addr, int nb, uint16_t *dest)
 {
+#ifndef NATIVE_WIN32
     uint8_t response[MAX_MESSAGE_LENGTH];
     uint8_t query[8];
     fd_set readFD;
@@ -1866,6 +1880,9 @@ int hc_query_status(modbus_param_t *mb_param, int slave, int start_addr, int nb,
 //    }
 //    printf("Send End *******************\n");
     return ret;
+#else
+    return 0;
+#endif
 
 //    while ((ret = select(mb_param->fd+1, &readFD, NULL, NULL, &tv)) == -1)
 //    {
@@ -2512,7 +2529,6 @@ int hc_update_host_req(modbus_param_t *mb_param)
 {
 #ifndef NATIVE_WIN32
     tcflush(mb_param->fd, TCIOFLUSH);
-#endif
     int ret;
     int query_length;
 
@@ -2562,13 +2578,15 @@ int hc_update_host_req(modbus_param_t *mb_param)
         return 1;
     }
     return -1;
+#else
+    return -1;
+#endif
 }
 
 int hc_update_host_transfer(modbus_param_t *mb_param, int addr, char *data)
 {
 #ifndef NATIVE_WIN32
     tcflush(mb_param->fd, TCIOFLUSH);
-#endif
     int ret;
     int query_length;
 
@@ -2633,13 +2651,15 @@ int hc_update_host_transfer(modbus_param_t *mb_param, int addr, char *data)
         return sum == recSum;
     }
     return -1;
+#else
+    return -1;
+#endif
 }
 
 int hc_update_host_finish(modbus_param_t *mb_param)
 {
 #ifndef NATIVE_WIN32
     tcflush(mb_param->fd, TCIOFLUSH);
-#endif
     int ret;
     int query_length;
 
@@ -2689,13 +2709,15 @@ int hc_update_host_finish(modbus_param_t *mb_param)
         return 1;
     }
     return -1;
+#else
+    return -1;
+#endif
 }
 
 int hc_update_host_restart(modbus_param_t *mb_param)
 {
 #ifndef NATIVE_WIN32
     tcflush(mb_param->fd, TCIOFLUSH);
-#endif
     int ret;
     int query_length;
 
@@ -2745,13 +2767,15 @@ int hc_update_host_restart(modbus_param_t *mb_param)
         return 1;
     }
     return -1;
+#else
+    return -1;
+#endif
 }
 
 int hc_update_host_query(modbus_param_t *mb_param)
 {
 #ifndef NATIVE_WIN32
     tcflush(mb_param->fd, TCIOFLUSH);
-#endif
     int ret;
     int query_length;
 
@@ -2797,6 +2821,9 @@ int hc_update_host_query(modbus_param_t *mb_param)
         return response[3];
     }
     return -1;
+#else
+    return -1;
+#endif
 }
 
 int hc_update_host_start(modbus_param_t *mb_param, int slave)

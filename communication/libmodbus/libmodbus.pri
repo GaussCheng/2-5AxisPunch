@@ -1,4 +1,6 @@
 INCLUDEPATH += $$PWD
 
 HEADERS += $$PWD/modbus.h
-SOURCES += $$PWD/modbus.c
+
+win32{SOURCES += $$PWD/modbus.cpp}
+!win32{SOURCES += $$PWD/modbus.c}

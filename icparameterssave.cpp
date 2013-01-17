@@ -33,7 +33,11 @@ ICParametersSave::ICParametersSave(const QString fileName)
         }
     }
     file.close();
+#ifndef Q_WS_WIN32
     beepFD_ = open("/dev/szhc_beep", O_WRONLY);
+#else
+    beepFD_ = 0;
+#endif
     SetKeyTone(KeyTone());
 }
 

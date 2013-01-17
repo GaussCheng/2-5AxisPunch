@@ -16,6 +16,7 @@ UI_DIR = temp_8_d
 MOC_DIR = temp_8_d
 RCC_DIR = temp_8_d
 }
+win32{INCLUDEPATH += ./}
 SOURCES += main.cpp \
     mainframe.cpp \
     icaxispositionlabel.cpp \

@@ -176,7 +176,9 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     }
     emit LoadMessage("MainFrame UI Loaded");
 #ifndef Q_WS_X11
+#ifndef Q_WS_WIN32
     this->setWindowFlags(Qt::FramelessWindowHint);
+#endif
 #endif
     emit LoadMessage("Reset the window hint");
     //    connect(ICVirtualHost::GlobalVirtualHost(),
@@ -191,7 +193,11 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     emit LoadMessage("Translation Loaded");
     InitSignal();
     emit LoadMessage("Signals is ready");
+#ifndef Q_WS_WIN32
     ledFD_ = open("/dev/szhc_leds", O_WRONLY);
+#else
+    ledFD_ = 0;
+#endif
 
     //    QThreadPool::globalInstance()->start(new ICScreenSaverMonitor(this));
     //    connect(screenSaver_.data(),
@@ -601,10 +607,12 @@ void MainFrame::StatusRefreshed()
     {
         ledFlags_ = newLedFlags_;	
 
+#ifndef Q_WS_WIN32
 #ifdef HC_ARMV6
         ioctl(ledFD_, 0, ledFlags_);
 #else
         ioctl(ledFD_, 2, ledFlags_);
+#endif
 #endif
     }
     errCode_ = virtualHost->AlarmNum();

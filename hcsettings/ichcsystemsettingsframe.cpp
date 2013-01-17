@@ -70,7 +70,9 @@ ICHCSystemSettingsFrame::ICHCSystemSettingsFrame(QWidget *parent) :
     ui->backLightTimeEdit->setValidator(new QIntValidator(1, 60, this));
     ui->backLightTimeEdit->SetThisIntToThisText(ICParametersSave::Instance()->BackLightTime());
     ui->brightnessBar->setValue((9 - ICParametersSave::Instance()->Brightness()));
+#ifndef Q_WS_WIN32
     uname(&osInfo_);
+#endif
 }
 
 ICHCSystemSettingsFrame::~ICHCSystemSettingsFrame()
@@ -1050,7 +1052,11 @@ void ICHCSystemSettingsFrame::UpdateConfigShow_()
 
 void ICHCSystemSettingsFrame::StatusRefresh()
 {
+#ifdef Q_WS_WIN32
+    QString os("1.0");
+#else
     QString os(osInfo_.release);
+#endif
     os += "; ";
     ui->versionLabel->setText("Version: OS:" + os + "App 3.1.5;Libs:4.7.3; Host:" + ICVirtualHost::GlobalVirtualHost()->HostStatus(ICVirtualHost::Time).toString());
 }

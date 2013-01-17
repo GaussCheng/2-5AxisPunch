@@ -5,8 +5,10 @@
 #include <QString>
 #include <QLocale>
 #include <QTranslator>
+#ifndef Q_WS_WIN32
 #include <fcntl.h>
 #include <sys/ioctl.h>
+#endif
 
 class ICParametersSave : public QSettings
 {
@@ -55,7 +57,11 @@ public:
     QTranslator* Translator() { return translator_;}
 
     bool KeyTone() { return GetParameter(ProductConfig, "KeyTone", true).toBool();}
+#ifndef Q_WS_WIN32
     void SetKeyTone(bool isOn)  {SaveParameter(ProductConfig, "KeyTone", isOn);ioctl(beepFD_, 0, isOn ? 20 : 10);}
+#else
+    void SetKeyTone(bool isOn)  {SaveParameter(ProductConfig, "KeyTone", isOn);}
+#endif
 
     bool VerifyPassword(OperationLevel level, const QString& password);
     void SetPassword(OperationLevel level, const QString& password);

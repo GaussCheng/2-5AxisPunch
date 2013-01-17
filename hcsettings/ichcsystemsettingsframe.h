@@ -3,7 +3,9 @@
 
 #include <QFrame>
 #include <QMap>
+#ifndef Q_WS_WIN32
 #include <sys/utsname.h>
+#endif
 
 class QTranslator;
 class QDialog;
@@ -50,7 +52,9 @@ private:
     QMap<int, QString> armYStructValueToName_;
     QMap<int, QString> armValueToName_;
     uint armStruct_;
+#ifndef Q_WS_WIN32
     utsname osInfo_;
+#endif
 private slots:
     void on_languageComboBox_activated(int );
     void on_keyToneButton_toggled(bool checked);
