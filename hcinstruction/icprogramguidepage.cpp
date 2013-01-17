@@ -1,6 +1,8 @@
 #include "icprogramguidepage.h"
 #include "ui_icprogramguidepage.h"
 #include "icvirtualhost.h"
+#include "ickeyboard.h"
+
 
 ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
     ICInstructionEditorBase(parent),
@@ -50,7 +52,7 @@ ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
     temp<<ICMold::ACTVICEFORWARD<<ICMold::ACTVICEBACKWARD;
     limitActionMap_.insert(axis_ + 3, temp);
     temp.clear();
-    temp<<ICMold::ACTVICEUP<<ICMold::ACTVICEDOWN;
+    temp<<ICMold::ACTVICEDOWN<<ICMold::ACTVICEUP;
     limitActionMap_.insert(axis_ + 4, temp);
     temp.clear();
     temp<<ICMold::ACT_PoseHori2<<ICMold::ACT_PoseVert2;
@@ -64,15 +66,17 @@ ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
     temp.clear();
 
     fixtureOnAction_<<ICMold::ACTCLIP1ON<<ICMold::ACTCLIP2ON<<ICMold::ACTCLIP3ON
-                      <<ICMold::ACTCLIP4ON<<ICMold::ACTCLIP5ON<<ICMold::ACTCLIP6ON;
+                   <<ICMold::ACTCLIP4ON<<ICMold::ACTCLIP5ON<<ICMold::ACTCLIP6ON;
     fixtureOffAction_<<ICMold::ACTCLIP1OFF<<ICMold::ACTCLIP2OFF<<ICMold::ACTCLIP3OFF
-                   <<ICMold::ACTCLIP4OFF<<ICMold::ACTCLIP5OFF<<ICMold::ACTCLIP6OFF;
+                    <<ICMold::ACTCLIP4OFF<<ICMold::ACTCLIP5OFF<<ICMold::ACTCLIP6OFF;
 
     on_usedMainArmBox_toggled(ui->usedMainArmBox->isChecked());
     on_usedSubArmBox_toggled(ui->usedSubArmBox->isChecked());
     HideWidgets_(axisWidgets_[8]);
     ui->outRunningHorizonBox->hide();
     ui->inRunningHorizonBox->hide();
+    ui->x2Box->setCurrentIndex(1);
+    ui->y2Box->setCurrentIndex(1);
 
 #ifdef Q_WS_X11
     UpdateAxisDefine_();
@@ -128,6 +132,8 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
 {
     ICMoldItem item;
     QList<ICMoldItem> ret;
+    bool isMainArmUsed = ui->usedMainArmBox->isChecked();
+    bool isSubArmUsed = ui->usedSubArmBox->isChecked();
     int stepNum = 0;
     item.SetSVal(80);
     item.SetDVal(0);
@@ -150,25 +156,36 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
 
 
     /*donw to get product*/
-   /*****************BUG#133*******************/
+    /*****************BUG#133*******************/
     if(!ui->cBox->isHidden())
     {
-        item.SetNum(stepNum++);
-        item.SetSVal(0);
-        if(axis_[C_AXIS].getLimit == 0)
-            item.SetAction(ICMold::ACTPOSEHORI);
+        /***************NIG#182******************/
+        if(!isMainArmUsed && !isSubArmUsed)
+        {
+        }
         else
-            item.SetAction(ICMold::ACTPOSEVERT);
+        {
+            item.SetNum(stepNum++);
+            item.SetSVal(0);
+            if(axis_[C_AXIS].getLimit == 0)
+                item.SetAction(ICMold::ACTPOSEHORI);
+            else
+                item.SetAction(ICMold::ACTPOSEVERT);
 
-        ret.append(item);
+            ret.append(item);
+        }
     }
     /*******************************************/
     item.SetSVal(80);
     item.SetDVal(0);
-    bool isMainArmUsed = ui->usedMainArmBox->isChecked();
-    bool isSubArmUsed = ui->usedSubArmBox->isChecked();
     if(!isMainArmUsed && !isSubArmUsed)
     {
+  /**********BUG#182**主副臂都不选择时，应出现模组结束（原来没有）*******/
+        item.SetNum(stepNum++);
+        item.SetSVal(0);
+        item.SetDVal(0);
+        item.SetAction(ICMold::ACTEND);
+        ret.append(item);
         return ret;
     }
     if(axis_[Z_AXIS].mode == AXIS_SERVO)
@@ -177,7 +194,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
         {
             item.SetNum(stepNum++);
             item.SetAction(axis_[Z_AXIS].action);
-             /*BUG#132*/
+            /*BUG#132*/
             item.SetPos(axis_[Z_AXIS].getPos);
             ret.append(item);
         }
@@ -202,7 +219,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
     item.SetNum(stepNum++);
     item.SetClip(ICMold::ACTEJECTON);
     item.SetDVal(10);
-    ret.append(item);     
+    ret.append(item);
     /*x axis forward to get product*/
     item.SetDVal(0);
     item.SetSVal(80);
@@ -340,7 +357,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             item.SetSVal(0);
             item.SetDVal(10);
             item.SetClip(fixtureOffAction_.at(ui->productFixtureBox->currentIndex()));
-                ret.append(item);
+            ret.append(item);
 
             /*Y1, back to standby*/
             item.SetNum(stepNum++);
@@ -376,7 +393,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             item.SetSVal(0);
             item.SetDVal(10);
             item.SetClip(fixtureOffAction_.at(ui->outletFixtureBox->currentIndex()));
-                ret.append(item);
+            ret.append(item);
 
             /*X2, Y2, back to standby*/
             item.SetNum(stepNum++);
@@ -405,7 +422,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             item.SetSVal(0);
             item.SetDVal(10);
             item.SetClip(fixtureOffAction_.at(ui->outletFixtureBox->currentIndex()));
-                ret.append(item);
+            ret.append(item);
 
             /*Y2, back to standby*/
             item.SetNum(stepNum++);
@@ -449,7 +466,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             item.SetSVal(0);
             item.SetDVal(10);
             item.SetClip(fixtureOffAction_.at(ui->productFixtureBox->currentIndex()));
-                ret.append(item);
+            ret.append(item);
 
 
             /*X2, Y2, back to standby*/
@@ -500,9 +517,9 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             item.SetSVal(0);
             item.SetDVal(10);
             item.SetClip(fixtureOffAction_.at(ui->productFixtureBox->currentIndex()));
-                ret.append(item);
+            ret.append(item);
             item.SetClip(fixtureOffAction_.at(ui->outletFixtureBox->currentIndex()));
-                ret.append(item);
+            ret.append(item);
 
             item.SetNum(stepNum++);
             item.SetSVal(80);
@@ -553,7 +570,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
         item.SetSVal(0);
         item.SetDVal(10);
         item.SetClip(fixtureOffAction_.at(ui->productFixtureBox->currentIndex()));
-            ret.append(item);
+        ret.append(item);
 
 
         /*X1, Y1, back to standby*/
@@ -583,7 +600,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
         item.SetSVal(0);
         item.SetDVal(10);
         item.SetClip(fixtureOffAction_.at(ui->outletFixtureBox->currentIndex()));
-            ret.append(item);
+        ret.append(item);
 
         /*X2, Y2, back to standby*/
         item.SetNum(stepNum++);
@@ -787,7 +804,7 @@ void ICProgramGuidePage::ShowWidgets_(QList<QWidget *> &widgets)
 {
     for(int i = 0; i != widgets.size(); ++i)
     {
-        widgets[i]->show();;
+        widgets[i]->show();
     }
 }
 
@@ -805,10 +822,9 @@ void ICProgramGuidePage::on_nextButton_clicked()
     if(pageIndex_ == 1) //show for standby settings
     {
         ui->stackedWidget->setCurrentIndex(1);
-
         ShowForStandby_();
+        SaveAxis_(STANDBY_SETTING);
         UpdateAxisShow(STANDBY_SETTING);
-     /////////
         SetAxisBoxEnabled_(true);
     }
     else if(pageIndex_ == 2)
@@ -873,13 +889,19 @@ void ICProgramGuidePage::on_nextButton_clicked()
 void ICProgramGuidePage::on_preButton_clicked()
 {
     --pageIndex_;
-    if(pageIndex_ == 1) //show for standby settings
+    if(pageIndex_ == 0)
+        {
+            ui->stackedWidget->setCurrentIndex(0);
+            on_usedMainArmBox_toggled(ui->usedMainArmBox->isChecked());
+            on_usedSubArmBox_toggled(ui->usedSubArmBox->isChecked());
+           SaveAxis_(STANDBY_SETTING);
+        }
+    else if(pageIndex_ == 1) //show for standby settings
     {
         ui->stackedWidget->setCurrentIndex(1);
-        ShowForStandby_();
         SaveAxis_(GET_PRODUCT_SETTING);
         UpdateAxisShow(STANDBY_SETTING);
-///////
+        ShowForStandby_();
         SetAxisBoxEnabled_(true);
     }
     else if(pageIndex_ == 2)
@@ -916,7 +938,7 @@ void ICProgramGuidePage::on_preButton_clicked()
         ui->stackedWidget->setCurrentIndex(1);
         ui->descrLabel->setText(tr("Release Outlet Position Settings"));
         on_usedSubArmBox_toggled(ui->usedSubArmBox->isChecked());
-        ui->productGroupBox->hide();
+    //    ui->productGroupBox->hide();
 
         ui->cBox->setEnabled(false);
         if(!ui->usedSubArmBox->isChecked())
@@ -929,13 +951,7 @@ void ICProgramGuidePage::on_preButton_clicked()
         }
         UpdateAxisShow(RELEASE_OUTLET_SETTING);
     }
-    else if(pageIndex_ == 0)
-    {
-        ui->stackedWidget->setCurrentIndex(0);
-        on_usedMainArmBox_toggled(ui->usedMainArmBox->isChecked());
-        on_usedSubArmBox_toggled(ui->usedSubArmBox->isChecked());
-        SaveAxis_(STANDBY_SETTING);
-    }
+
     UpdatePageButton_();
 }
 
@@ -943,17 +959,17 @@ void ICProgramGuidePage::UpdatePageButton_()
 {
     switch(pageIndex_)
     {
-        case 0: ui->preButton->setEnabled(false);
-                ui->nextButton->setEnabled(true);
-                break;
-        case 1:
-        case 2:
-        case 3:
-        case 4: ui->preButton->setEnabled(true);
-                ui->nextButton->setEnabled(true);
-                break;
-        case 5: ui->nextButton->setEnabled(false);break;
-        default:break;
+    case 0: ui->preButton->setEnabled(false);
+        ui->nextButton->setEnabled(true);
+        break;
+    case 1:
+    case 2:
+    case 3:
+    case 4: ui->preButton->setEnabled(true);
+        ui->nextButton->setEnabled(true);
+        break;
+    case 5: ui->nextButton->setEnabled(false);break;
+    default:break;
 
     }
 
@@ -970,27 +986,27 @@ void ICProgramGuidePage::ShowForStandby_()
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) == ICVirtualHost::ICAxisDefine_Pneumatic)
     {
-        ui->x1Box->setCurrentIndex(1);
+     //   ui->x1Box->setCurrentIndex(1);
         SetAxis_(axis_, ui->x1Box->currentIndex(), STANDBY_SETTING);
     }
     if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY1) == ICVirtualHost::ICAxisDefine_Pneumatic)
     {
-        ui->y1Box->setCurrentIndex(0);
+      //  ui->y1Box->setCurrentIndex(0);
         SetAxis_(axis_ + 1, ui->y1Box->currentIndex(), STANDBY_SETTING);
     }
     if(host->AxisDefine(ICVirtualHost::ICAxis_AxisZ) == ICVirtualHost::ICAxisDefine_Pneumatic)
     {
-        ui->zBox->setCurrentIndex(0);
+      //  ui->zBox->setCurrentIndex(0);
         SetAxis_(axis_ + 2, ui->zBox->currentIndex(), STANDBY_SETTING);
     }
     if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) == ICVirtualHost::ICAxisDefine_Pneumatic)
     {
-        ui->x2Box->setCurrentIndex(1);
+       // ui->x2Box->setCurrentIndex(1);
         SetAxis_(axis_ + 3, ui->x2Box->currentIndex(), STANDBY_SETTING);
     }
     if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) == ICVirtualHost::ICAxisDefine_Pneumatic)
     {
-        ui->y2Box->setCurrentIndex(0);
+      //  ui->y2Box->setCurrentIndex(1);
         SetAxis_(axis_ + 4, ui->y2Box->currentIndex(), STANDBY_SETTING);
     }
     if(host->AxisDefine(ICVirtualHost::ICAxis_AxisA) == ICVirtualHost::ICAxisDefine_Servo)
@@ -1008,8 +1024,8 @@ void ICProgramGuidePage::ShowForStandby_()
         HideWidgets_(axisWidgets_[7]);
         ui->cEdit->SetThisIntToThisText(0);
     }
-  //  on_usedMainArmBox_toggled(true);
-   // on_usedSubArmBox_toggled(true);
+    //  on_usedMainArmBox_toggled(true);
+    // on_usedSubArmBox_toggled(true);
 }
 
 void ICProgramGuidePage::SetAxisBoxEnabled_(bool en)
@@ -1212,3 +1228,47 @@ void ICProgramGuidePage::on_setInButton_clicked()
     ui->cEdit->SetThisIntToThisText(host->HostStatus(ICVirtualHost::CPos).toInt());
 }
 
+//void ICProgramGuidePage::FunKeyToAction()
+//{
+
+//}
+
+void ICProgramGuidePage::KeyToActionCheck(int key)
+{
+    switch(key)
+    {
+    case ICKeyboard::VFB_X1Add:
+    case ICKeyboard::VFB_X1Sub:
+        ui->x1Box->setCurrentIndex(key == ICKeyboard::VFB_X1Add ? 0:1);
+        break;
+    case ICKeyboard::VFB_Y1Add:
+    case ICKeyboard::VFB_Y1Sub:
+        ui->y1Box->setCurrentIndex(key == ICKeyboard::VFB_Y1Add ? 1:0);
+        break;
+    case ICKeyboard::VFB_ZAdd:
+    case ICKeyboard::VFB_ZSub:
+        ui->zBox->setCurrentIndex(key == ICKeyboard::VFB_ZAdd ? 1:0);
+        break;
+    case ICKeyboard::VFB_X2Add:
+    case ICKeyboard::VFB_X2Sub:
+        ui->x2Box->setCurrentIndex(key == ICKeyboard::VFB_X2Add ? 0:1);
+        break;
+    case ICKeyboard::VFB_Y2Add:
+    case ICKeyboard::VFB_Y2Sub:
+        ui->y2Box->setCurrentIndex(key == ICKeyboard::VFB_Y2Add ?0:1);
+        break;
+    case ICKeyboard::VFB_AAdd:
+    case ICKeyboard::VFB_ASub:
+        ui->aBox->setCurrentIndex(key == ICKeyboard::VFB_AAdd ? 0:1);
+        break;
+    case ICKeyboard::VFB_BAdd:
+    case ICKeyboard::VFB_BSub:
+        ui->bBox->setCurrentIndex(key == ICKeyboard::VFB_BAdd ? 1:0);
+        break;
+    case ICKeyboard::VFB_Pose_Horizontal:
+    case ICKeyboard::VFB_Pose_Vertical:
+        ui->cBox->setCurrentIndex(key == ICKeyboard::VFB_Pose_Horizontal ? 1:0);
+        break;
+
+    }
+}

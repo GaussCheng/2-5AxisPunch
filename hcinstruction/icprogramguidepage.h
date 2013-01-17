@@ -2,6 +2,7 @@
 #define ICPROGRAMGUIDEPAGE_H
 
 #include "icinstructioneditorbase.h"
+//#include "actionsettingframe.h"
 #include <QIntValidator>
 #include <QMap>
 namespace Ui {
@@ -44,7 +45,11 @@ protected:
     void showEvent(QShowEvent *e);
     void SyncStatusImpl(const QList<ICMoldItem> &items);
     QList<ICMoldItem> CreateCommandImpl() const;
-    
+
+public slots:
+    void KeyToActionCheck(int key);
+
+
 private slots:
     void on_nextButton_clicked();
 

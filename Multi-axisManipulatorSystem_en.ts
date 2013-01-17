@@ -1464,40 +1464,40 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="426"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="631"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="770"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="844"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="427"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="633"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="772"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="846"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="427"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="428"/>
         <source>Can not add standby position program</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="620"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="621"/>
         <source>warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="621"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="622"/>
         <source>Stand program can not be delete action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="632"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="634"/>
         <source>Can not delete standby position program</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="771"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="773"/>
         <source>Can not group up to standby position program</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="845"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="847"/>
         <source>Can not decompose standby position program</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1850,12 +1850,12 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="651"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="656"/>
         <source>Speed Enable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="636"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="641"/>
         <source>Follow</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1863,8 +1863,8 @@ Infomation</source>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="369"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="89"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="205"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="651"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="661"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="656"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="666"/>
         <source>Speed Disable</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1876,7 +1876,7 @@ Infomation</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="305"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="642"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="647"/>
         <source>No Follow</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2971,7 +2971,8 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="157"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="151"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="165"/>
         <source>Times</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4346,7 +4347,7 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="387"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="824"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="838"/>
         <source>Product</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4462,7 +4463,7 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="469"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="825"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="839"/>
         <source>Outlet</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4518,25 +4519,25 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="817"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="888"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="831"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="909"/>
         <source>Get Position Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="830"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="899"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="844"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="920"/>
         <source>Release Product Position Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="849"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="917"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="863"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="938"/>
         <source>Release Outlet Position Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="964"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="979"/>
         <source>Stanby Settings</source>
         <translation type="unfinished"></translation>
     </message>
