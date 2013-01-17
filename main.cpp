@@ -8,6 +8,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+//    qApp->setStyleSheet("./stylesheet/global.qss");
 
     QPixmap splashPixmap("resource/startup_page.png");
     ICSplashScreen *splash= new ICSplashScreen(splashPixmap);

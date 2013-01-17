@@ -5526,42 +5526,42 @@ Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="449"/>
+        <location filename="mainframe.cpp" line="476"/>
         <source>Function</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="450"/>
+        <location filename="mainframe.cpp" line="477"/>
         <source>Monitor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="452"/>
+        <location filename="mainframe.cpp" line="479"/>
         <source>Record</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="451"/>
+        <location filename="mainframe.cpp" line="478"/>
         <source>Alarm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="453"/>
+        <location filename="mainframe.cpp" line="480"/>
         <source>Return</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="635"/>
+        <location filename="mainframe.cpp" line="662"/>
         <source>Hint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="855"/>
+        <location filename="mainframe.cpp" line="882"/>
         <source>Records</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="824"/>
+        <location filename="mainframe.cpp" line="851"/>
         <source>Instruct</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6272,6 +6272,29 @@ Please try a new name</source>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="316"/>
         <source>Clip End</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SimulateKnob</name>
+    <message>
+        <location filename="simulateknob.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="simulateknob.ui" line="26"/>
+        <source>Manual</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="simulateknob.ui" line="39"/>
+        <source>Stop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="simulateknob.ui" line="52"/>
+        <source>Auto</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

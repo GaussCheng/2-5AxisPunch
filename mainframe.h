@@ -15,6 +15,9 @@ class QDialog;
 class QButtonGroup;
 class QAbstractButton;
 class ICHCInstructionPageFrame;
+#ifdef Q_WS_WIN32
+class SimulateKnob;
+#endif
 
 namespace Ui {
     class MainFrame;
@@ -58,6 +61,7 @@ public Q_SLOTS:
 protected:
     void changeEvent(QEvent *e);
     void keyPressEvent(QKeyEvent *e);
+    void closeEvent(QCloseEvent *e);
 
 Q_SIGNALS:
     void LoadMessage(const QString&);
@@ -148,6 +152,9 @@ private:
     int timerID_;
     QList<QList<QWidget*> > axisWidgets_;
     QList<uint> compareAlarmNums_;
+#ifdef Q_WS_WIN32
+    SimulateKnob* simulateKnob_;
+#endif
 
 };
 

@@ -35,7 +35,8 @@ SOURCES += main.cpp \
     ictipswidget.cpp \
     icdataformatchecker.cpp \
     icprogramformatchecker.cpp \
-    icconfigformatchecker.cpp
+    icconfigformatchecker.cpp \
+    simulateknob.cpp
 HEADERS += mainframe.h \
     icaxispositionlabel.h \
     #icalarmdescriptiondialog.h \
@@ -54,7 +55,8 @@ HEADERS += mainframe.h \
     ictipswidget.h \
     icdataformatchecker.h \
     icprogramformatchecker.h \
-    icconfigformatchecker.h
+    icconfigformatchecker.h \
+    simulateknob.h
 
 FORMS    += mainframe.ui \
     #icalarmdescriptiondialog.ui \
@@ -63,7 +65,8 @@ FORMS    += mainframe.ui \
     icscreensaver.ui \
     icactiondialog.ui \
     ichostcomparepage.ui \
-    ictipswidget.ui
+    ictipswidget.ui \
+    simulateknob.ui
 
 include (./categorypage/categorypage.pri)
 include (custom_widgets/custom_widgets.pri)

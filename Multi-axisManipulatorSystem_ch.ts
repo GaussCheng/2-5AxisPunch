@@ -6697,17 +6697,17 @@ Would you want to restart now?</source>
         <translation>步序</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="449"/>
+        <location filename="mainframe.cpp" line="476"/>
         <source>Function</source>
         <translation>功能</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="450"/>
+        <location filename="mainframe.cpp" line="477"/>
         <source>Monitor</source>
         <translation>监视</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="855"/>
+        <location filename="mainframe.cpp" line="882"/>
         <source>Records</source>
         <translation>档案</translation>
     </message>
@@ -6720,12 +6720,12 @@ Would you want to restart now?</source>
         <translation type="obsolete">欢迎</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="452"/>
+        <location filename="mainframe.cpp" line="479"/>
         <source>Record</source>
         <translation>档案</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="451"/>
+        <location filename="mainframe.cpp" line="478"/>
         <source>Alarm</source>
         <translation>报警</translation>
     </message>
@@ -6742,12 +6742,12 @@ Would you want to restart now?</source>
         <translation type="obsolete">巨集参数从异常中恢复，请先检查巨集参数！</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="453"/>
+        <location filename="mainframe.cpp" line="480"/>
         <source>Return</source>
         <translation>返回</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="635"/>
+        <location filename="mainframe.cpp" line="662"/>
         <source>Hint</source>
         <translation>提示</translation>
     </message>
@@ -6764,7 +6764,7 @@ Would you want to restart now?</source>
         <translation type="obsolete">还没进行原点!</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="824"/>
+        <location filename="mainframe.cpp" line="851"/>
         <source>Instruct</source>
         <translation>教导</translation>
     </message>
@@ -7693,6 +7693,29 @@ Please try a new name</source>
     <message>
         <source>OK</source>
         <translation type="obsolete">确定</translation>
+    </message>
+</context>
+<context>
+    <name>SimulateKnob</name>
+    <message>
+        <location filename="simulateknob.ui" line="14"/>
+        <source>Dialog</source>
+        <translation>旋钮模拟</translation>
+    </message>
+    <message>
+        <location filename="simulateknob.ui" line="26"/>
+        <source>Manual</source>
+        <translation>手动</translation>
+    </message>
+    <message>
+        <location filename="simulateknob.ui" line="39"/>
+        <source>Stop</source>
+        <translation>停止</translation>
+    </message>
+    <message>
+        <location filename="simulateknob.ui" line="52"/>
+        <source>Auto</source>
+        <translation>自动</translation>
     </message>
 </context>
 <context>

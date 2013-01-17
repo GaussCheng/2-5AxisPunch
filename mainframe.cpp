@@ -47,6 +47,9 @@
 #include "icactiondialog.h"
 #include "ictimerpool.h"
 #include "ichostcomparepage.h"
+#ifdef Q_WS_WIN32
+#include "simulateknob.h"
+#endif
 
 #include <QDebug>
 
@@ -225,6 +228,20 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     QTimer::singleShot(1000, this, SLOT(ClearPosColor()));
 
     //    QTimer::singleShot(100, this, SLOT(InitHeavyPage()));
+#ifdef Q_WS_WIN32
+    simulateKnob_ = new SimulateKnob();
+    simulateKnob_->show();
+    connect(simulateKnob_,
+            SIGNAL(manualButtonClicked()),
+            SLOT(ShowManualPage()));
+    connect(simulateKnob_,
+            SIGNAL(stopButtonClicked()),
+            SLOT(ShowStandbyPage()));
+    connect(simulateKnob_,
+            SIGNAL(autoButtonClicked()),
+            SLOT(ShowAutoPage()));
+    this->setFixedSize(800, 600);
+#endif
 #ifdef Q_WS_X11
         ShowInstructPage();
  //       ShowManualPage();
@@ -239,6 +256,16 @@ MainFrame::~MainFrame()
     delete nullButton_;
     delete buttonGroup_;
     delete ui;
+
+}
+
+void MainFrame::closeEvent(QCloseEvent *e)
+{
+#ifdef Q_WS_WIN32
+    simulateKnob_->close();
+    delete simulateKnob_;
+#endif
+    QWidget::closeEvent(e);
 }
 
 void MainFrame::changeEvent(QEvent *e)
@@ -924,7 +951,11 @@ void MainFrame::ReturnButtonClicked()
 void MainFrame::RecordButtonClicked()
 {
     //    int status = ICVirtualHost::GlobalVirtualHost()->CurrentStatus();
+#ifndef Q_WS_WIN32
     if(ICKeyboard::Instace()->CurrentSwitchStatus() == ICKeyboard::KS_ManualStatu)
+#else
+    if(!manualPage_->isHidden())
+#endif
     {
         centerStackedLayout_->setCurrentWidget(instructPage_);
     }
