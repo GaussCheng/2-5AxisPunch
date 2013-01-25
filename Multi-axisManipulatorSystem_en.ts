@@ -3516,12 +3516,12 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="521"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="524"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="521"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="524"/>
         <source>Save Successfully!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4347,7 +4347,7 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="387"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="838"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="840"/>
         <source>Product</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4422,13 +4422,13 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="451"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="533"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="538"/>
         <source>Up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="456"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="538"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="533"/>
         <source>Down</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4463,7 +4463,7 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="469"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="839"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="841"/>
         <source>Outlet</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4519,25 +4519,25 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="831"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="909"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="833"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="910"/>
         <source>Get Position Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="844"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="920"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="846"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="921"/>
         <source>Release Product Position Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="863"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="938"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="865"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="939"/>
         <source>Release Outlet Position Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="979"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="980"/>
         <source>Stanby Settings</source>
         <translation type="unfinished"></translation>
     </message>
