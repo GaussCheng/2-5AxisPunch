@@ -29,6 +29,9 @@ QCheckBox::indicator:checked
  }</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>2</number>
+   </property>
    <property name="topMargin">
     <number>2</number>
    </property>
@@ -38,7 +41,7 @@ QCheckBox::indicator:checked
    <item>
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="page1">
       <layout class="QVBoxLayout" name="verticalLayout_13">
@@ -239,7 +242,7 @@ QCheckBox::indicator:checked
         <widget class="QGroupBox" name="commonGroupBox">
          <layout class="QFormLayout" name="formLayout_3">
           <property name="verticalSpacing">
-           <number>4</number>
+           <number>2</number>
           </property>
           <property name="topMargin">
            <number>0</number>
@@ -405,6 +408,9 @@ QCheckBox::indicator:checked
           </item>
           <item row="0" column="1">
            <layout class="QVBoxLayout" name="verticalLayout_2">
+            <property name="spacing">
+             <number>2</number>
+            </property>
             <item>
              <widget class="ICLineEditWithVirtualNumericKeypad" name="x1Edit">
               <property name="text">
@@ -437,6 +443,9 @@ QCheckBox::indicator:checked
           </item>
           <item row="1" column="1">
            <layout class="QVBoxLayout" name="verticalLayout_3">
+            <property name="spacing">
+             <number>2</number>
+            </property>
             <item>
              <widget class="ICLineEditWithVirtualNumericKeypad" name="y1Edit">
               <property name="text">

@@ -9,7 +9,7 @@
 #include "icactioncommand.h"
 #include "icmacrosubroutine.h"
 #include "icvirtualkey.h"
-#include "qmessagebox.h"
+#include "ickeyboard.h"
 #include <QMessageBox>
 
 ICHCProgramMonitorFrame::ICHCProgramMonitorFrame(QWidget *parent) :
@@ -583,10 +583,10 @@ void ICHCProgramMonitorFrame::UpdateUIProgramList_()
     qDebug("updatge end");
 }
 
-void ICHCProgramMonitorFrame::on_singleStepButton_clicked()
-{
-    ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_F6);
-}
+//void ICHCProgramMonitorFrame::on_singleStepButton_clicked()
+//{
+//    ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_F6);
+//}
 
 void ICHCProgramMonitorFrame::FindIndex_(int currentIndex, int& groupItemIndex, int &topItemIndex, int &subItemIndex)
 {
@@ -666,4 +666,15 @@ void ICHCProgramMonitorFrame::OnTimeOut()
         ui->speedEnableButton->setText(tr("Speed Disable"));
     }
     host->SetTuneSpeed(false);
+}
+
+void ICHCProgramMonitorFrame::on_singleStepButton_pressed()
+{
+    ICKeyboard::Instace()->SetKeyValue(ICKeyboard::VFB_SingleStep);
+    ICKeyboard::Instace()->SetPressed(true);
+}
+
+void ICHCProgramMonitorFrame::on_singleStepButton_released()
+{
+    ICKeyboard::Instace()->SetPressed(false);
 }

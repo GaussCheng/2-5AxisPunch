@@ -567,6 +567,11 @@ void ActionSettingFrame::UpdateAxisDefine_()
             ui->gPButton->setCheckable(false);
             ui->gQButton->setCheckable(false);
         }
+        else
+        {
+            ui->gPButton->setCheckable(true);
+            ui->gQButton->setCheckable(true);
+        }
 /*************************************************************/
     if(axisDefine_ != currentAxis)
     {

@@ -75,6 +75,7 @@ ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
     HideWidgets_(axisWidgets_[8]);
     ui->outRunningHorizonBox->hide();
     ui->inRunningHorizonBox->hide();
+    /****将快速设定页面的待机点起始位置初始化为后退上升**********/
     ui->x2Box->setCurrentIndex(1);
     ui->y2Box->setCurrentIndex(1);
 
@@ -1228,12 +1229,7 @@ void ICProgramGuidePage::on_setInButton_clicked()
     ui->cEdit->SetThisIntToThisText(host->HostStatus(ICVirtualHost::CPos).toInt());
 }
 
-//void ICProgramGuidePage::FunKeyToAction()
-//{
-
-//}
-
-void ICProgramGuidePage::KeyToActionCheck(int key)
+void ICProgramGuidePage::GuideKeyToActionCheck(int key)
 {
     switch(key)
     {

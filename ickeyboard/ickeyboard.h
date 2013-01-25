@@ -45,6 +45,7 @@ public:
         VFB_BAdd    = 43,
         VFB_CSub    = 44,
         VFB_CAdd    = 45,
+        VFB_SingleStep = 46,
         VFB_SP1 = 19,
         VFB_SP2 = 23,
         FB_F1       = 29, //29

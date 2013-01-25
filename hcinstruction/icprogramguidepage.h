@@ -47,7 +47,7 @@ protected:
     QList<ICMoldItem> CreateCommandImpl() const;
 
 public slots:
-    void KeyToActionCheck(int key);
+    void GuideKeyToActionCheck(int key);
 
 
 private slots:

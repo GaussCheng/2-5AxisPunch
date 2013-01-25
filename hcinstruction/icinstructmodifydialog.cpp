@@ -10,7 +10,7 @@ ICInstructModifyDialog::ICInstructModifyDialog(QWidget *parent) :
 {
     ui->setupUi(this);
     /*****************BUG#120********************************/
-    QIntValidator* validator = new QIntValidator(0, 30000, this);
+    validator = new QIntValidator(0, 30000, this);
     ui->delayTimeEdit->SetDecimalPlaces(2);
     ui->delayTimeEdit->setValidator(validator);
 /*****************BUG177，178*******************************/
@@ -111,6 +111,7 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
             }
 
             posValidator_->setTop(host->SystemParameter(addr).toInt());
+            validator->setTop(100);
 
             ui->positionLabel->show();
             ui->posEdit->show();
@@ -148,6 +149,7 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
            || item->Clip() == ICMold::ACTCLIP8ON )
 
     {
+        validator->setTop(255);
         ui->speedLabel->setText(tr("Times"));
         ui->speedLabel->show();
         ui->speedEdit->show();
@@ -162,6 +164,7 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
     {
         if(item->IFVal() != 0)
         {
+            validator->setTop(255);
             ui->speedLabel->setText(tr("Times"));
             ui->speedLabel->show();
             ui->speedEdit->show();

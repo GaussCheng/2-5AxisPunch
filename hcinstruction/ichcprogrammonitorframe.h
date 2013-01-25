@@ -38,13 +38,17 @@ private slots:
     void UpdateHostParam();
     void StatusRefreshed();
     void MoldNumChanged(int mold);
-    void on_singleStepButton_clicked();
+//    void on_singleStepButton_clicked();
 
     void on_followToolButton_clicked();
 
     void on_speedEnableButton_clicked();
 
     void OnTimeOut();
+
+    void on_singleStepButton_pressed();
+
+    void on_singleStepButton_released();
 
 private:
     void InitSignal();
