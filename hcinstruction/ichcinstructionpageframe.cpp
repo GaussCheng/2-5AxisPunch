@@ -965,7 +965,7 @@ void ICHCInstructionPageFrame::ShowServoAction(int key)
             }
             else
             {
-                guidePage_->KeyToActionCheck(key);
+                guidePage_->GuideKeyToActionCheck(key);
             }
         }
        else
