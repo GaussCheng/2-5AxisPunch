@@ -90,7 +90,6 @@ void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
     SetProduct(ICMold::CurrentMold()->MoldParam(ICMold::Product));
     UpdateHostParam();
     programListBackup_ = programList_;
-    qDebug("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxxXX");
     QFrame::showEvent(e);
     connect(ICVirtualHost::GlobalVirtualHost(),
             SIGNAL(StepChanged(int)),
@@ -423,6 +422,15 @@ void ICHCProgramMonitorFrame::on_editToolButton_clicked()
     int tIndex;
     int sIndex;
     FindIndex_(selectedRow, gIndex, tIndex, sIndex);
+    /************BUG#201***********************************/
+    if(programList_.at(gIndex).StepNum() == 0)  //表示待机点位置（自动运行时待机点位置不能删除）
+    {
+        QMessageBox::warning(this,
+                             tr("Warning"),
+                             tr("Can not edit standby position program"));
+        return;
+    }
+    /******************************************************/
     if(sIndex < 0)
     {
         ICTopMoldUIItem * topItem = &programList_[gIndex].at(tIndex);
