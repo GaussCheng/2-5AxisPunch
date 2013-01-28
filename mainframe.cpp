@@ -951,7 +951,7 @@ void MainFrame::ReturnButtonClicked()
 void MainFrame::RecordButtonClicked()
 {
     //    int status = ICVirtualHost::GlobalVirtualHost()->CurrentStatus();
-#ifndef Q_WS_WIN32
+#if !defined(Q_WS_WIN32) &&  !defined(Q_WS_X11)
     if(ICKeyboard::Instace()->CurrentSwitchStatus() == ICKeyboard::KS_ManualStatu)
 #else
     if(!manualPage_->isHidden())
