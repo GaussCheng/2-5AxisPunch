@@ -1362,7 +1362,7 @@ Reason</source>
         <location filename="hcsettings/ichcdetectionframe.ui" line="341"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="179"/>
         <source>Don&apos;t need Mold Opened Signal</source>
-        <translation>必需开模终止</translation>
+        <translation>不需开模终止</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="413"/>
@@ -1384,7 +1384,7 @@ Reason</source>
         <location filename="hcsettings/ichcdetectionframe.ui" line="336"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="178"/>
         <source>Need Mold Opened Signal</source>
-        <translation>不需开模终止</translation>
+        <translation>必须开模终止</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="349"/>

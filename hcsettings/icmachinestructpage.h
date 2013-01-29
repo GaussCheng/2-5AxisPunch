@@ -68,7 +68,7 @@ private:
     QIntValidator* maxMoveValidator_;
     QIntValidator* rotateValidator_;
     QIntValidator* intValidator;
-  //  QIntValidator* externalValidator_;
+    QIntValidator* externalValidator_;
 
     int axisDefine_;
     QTimer refreshTimer_;

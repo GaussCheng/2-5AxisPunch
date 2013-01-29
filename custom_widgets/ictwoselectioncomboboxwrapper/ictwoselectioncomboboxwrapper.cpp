@@ -12,6 +12,7 @@ ICTwoSelectionComboBoxWrapper::ICTwoSelectionComboBoxWrapper(QComboBox *comboBox
             SIGNAL(currentIndexChanged(int)),
             this,
             SLOT(IndexChanged(int)));
+    comboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents); //调整QComboBox适合的宽度
 }
 
 void ICTwoSelectionComboBoxWrapper::IndexChanged(int index)

@@ -60,6 +60,8 @@ ICMachineStructPage::ICMachineStructPage(QWidget *parent) :
     //    ui->aBox->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisA)));
     //    ui->bBox->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisB)));
     //    ui->cBox->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisC)));
+
+
 }
 
 ICMachineStructPage::~ICMachineStructPage()

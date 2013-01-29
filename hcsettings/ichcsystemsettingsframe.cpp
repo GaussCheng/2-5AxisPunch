@@ -1194,3 +1194,9 @@ bool ICHCSystemSettingsFrame::CheckRestoreMachineFiles_()
     return true;
 
 }
+
+void ICHCSystemSettingsFrame::on_clearButton_clicked()
+{
+    ui->newPwdEdit->clear();
+    ui->oldPwdEdit->clear();
+}

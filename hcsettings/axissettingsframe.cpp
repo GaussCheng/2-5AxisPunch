@@ -190,9 +190,9 @@ void AxisSettingsFrame::InitInterface()
     maxMoveValidator_ = new QIntValidator(0, 65530, this);
     ui->maximumDisplacementLineEdit->setValidator(maxMoveValidator_);
     ui->internalSecurityZoneLineEdit->SetDecimalPlaces(1);
-    ui->internalSecurityZoneLineEdit->setValidator(intValidator);
+    ui->internalSecurityZoneLineEdit->setValidator(maxMoveValidator_);
     ui->externalSecurityZoneLineEdit->SetDecimalPlaces(1);
-    ui->externalSecurityZoneLineEdit->setValidator(intValidator);
+    ui->externalSecurityZoneLineEdit->setValidator(maxMoveValidator_);
     ui->distanceRotationEdit->SetDecimalPlaces(2);
     ui->distanceRotationEdit->setValidator(intValidator);
 }

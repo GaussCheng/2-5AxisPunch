@@ -175,8 +175,8 @@ void ICHCDetectionFrame::RetranslateUi_()
     ui->ejectionLinkLockBox->setItemText(0, noUse);
     ui->ejectionLinkLockBox->setItemText(1, use);
     ui->label_13->setText(tr("Detect Postion"));
-    ui->detectOriginBox->setItemText(0, tr("Need Mold Opened Signal"));
-    ui->detectOriginBox->setItemText(1, tr("Don't need Mold Opened Signal"));
+    ui->detectOriginBox->setItemText(1, tr("Need Mold Opened Signal"));
+    ui->detectOriginBox->setItemText(0, tr("Don't need Mold Opened Signal"));
     ui->label_14->setText(tr("Detect Origin"));
     ui->detectPositionBox->setItemText(0, tr("Vertical"));
     ui->detectPositionBox->setItemText(1, tr("Horizontal"));

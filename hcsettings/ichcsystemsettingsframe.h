@@ -90,6 +90,8 @@ private slots:
     void on_brightMinus_clicked();
     void on_brightPlus_clicked();
 
+    void on_clearButton_clicked();
+
 private:
     bool CheckRestoreSystemFiles_();
     bool CheckRestoreMachineFiles_();

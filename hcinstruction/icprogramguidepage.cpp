@@ -160,7 +160,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
     /*****************BUG#133*******************/
     if(!ui->cBox->isHidden())
     {
-        /***************NIG#182******************/
+        /***************BUG#182******************/
         if(!isMainArmUsed && !isSubArmUsed)
         {
         }
@@ -175,6 +175,14 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
 
             ret.append(item);
         }
+    }
+    /*************BUG205*即使C 轴隐藏了也必须在起步位置显示其状态***/
+    else if(ui->cBox->isHidden())
+    {
+        item.SetNum(stepNum++);
+        item.SetSVal(0);
+        item.SetAction(ICMold::ACTPOSEVERT);
+        ret.append(item);
     }
     /*******************************************/
     item.SetSVal(80);
