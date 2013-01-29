@@ -146,6 +146,11 @@ void ICMachineStructPage::showEvent(QShowEvent *e)
     {
         ui->axisCToolButton->click();
     }
+    /***********BUG#202***************************/
+    else
+    {
+        ui->structDefButton->click() ;
+    }
     refreshTimer_.start(20);
     QWidget::showEvent(e);
 }

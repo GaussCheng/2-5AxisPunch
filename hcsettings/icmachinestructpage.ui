@@ -87,6 +87,22 @@
       </widget>
      </item>
      <item>
+      <widget class="ICPageTab" name="axisQToolButton" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>67</width>
+         <height>34</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>67</width>
+         <height>34</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="ICPageTab" name="axisAToolButton" native="true">
        <property name="minimumSize">
         <size>
@@ -100,6 +116,7 @@
          <height>34</height>
         </size>
        </property>
+       <zorder>axisQToolButton</zorder>
       </widget>
      </item>
      <item>
@@ -311,6 +328,9 @@
           <string>Test Feedback</string>
          </property>
          <layout class="QFormLayout" name="formLayout_2">
+          <property name="fieldGrowthPolicy">
+           <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+          </property>
           <property name="bottomMargin">
            <number>0</number>
           </property>
@@ -404,22 +424,6 @@
              </widget>
             </item>
            </layout>
-          </item>
-          <item row="0" column="1">
-           <widget class="ICPageTab" name="axisQToolButton" native="true">
-            <property name="minimumSize">
-             <size>
-              <width>67</width>
-              <height>34</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>67</width>
-              <height>34</height>
-             </size>
-            </property>
-           </widget>
           </item>
          </layout>
         </widget>
