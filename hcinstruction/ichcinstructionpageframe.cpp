@@ -626,7 +626,7 @@ void ICHCInstructionPageFrame::on_deleteToolButton_clicked()
     int tIndex;
     int sIndex;
     FindIndex_(currentRow, gIndex, tIndex, sIndex);
-    /************BUG:子程序去不位置插入后不能删除******************/
+    /************BUG181:子程序位置插入后不能删除******************/
     if(programList_.at(gIndex).StepNum() == 0 && currentEdit_ == 0)
     {
         QMessageBox::warning(this,

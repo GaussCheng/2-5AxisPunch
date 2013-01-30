@@ -150,6 +150,7 @@ bool ICParametersSave::VerifyPassword(OperationLevel level, const QString &passw
 void ICParametersSave::SetPassword(OperationLevel level, const QString &password)
 {
     QString parameter;
+    qDebug() << "the level is : " << level;
     if(level == MachineOperator)
     {
         return;
@@ -160,7 +161,7 @@ void ICParametersSave::SetPassword(OperationLevel level, const QString &password
     }
     else if(level == AdvanceAdmin)
     {
-        parameter == "AdvanceAdmin";
+        parameter = "AdvanceAdmin";
     }
 
     SaveParameter("AdminInformation", parameter, password);

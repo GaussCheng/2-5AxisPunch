@@ -147,6 +147,16 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             ret.append(item);
         }
     }
+    /**************BUG#205**C轴选无，也必须在起点位置显示姿势垂直1********/
+    if(axis_[7].mode == AXIS_NONE)
+    {
+        item.SetNum(stepNum++);
+        item.SetSVal(0);
+        item.SetDVal(0);
+        item.SetAction(ICMold::ACTPOSEVERT);
+        ret.append(item);
+    }
+    /*****************************************/
     /*add wait for mold-open step*/
     item.SetNum(stepNum++);
     item.SetSVal(1);
@@ -180,7 +190,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
     item.SetDVal(0);
     if(!isMainArmUsed && !isSubArmUsed)
     {
-  /**********BUG#182**主副臂都不选择时，应出现模组结束（原来没有）*******/
+  /***BUG#182**主副臂都不选择时，应出现模组结束（原来没有）*/
         item.SetNum(stepNum++);
         item.SetSVal(0);
         item.SetDVal(0);

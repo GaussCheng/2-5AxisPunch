@@ -196,7 +196,7 @@ void ICHCSystemSettingsFrame::on_changeButton_clicked()
     {
         QMessageBox::information(this,
                                  tr("Information"),
-                                 tr("Please enter the olp password and new password!"));
+                                 tr("Please enter the old password and new password!"));
         return;
     }
     ICParametersSave* config = ICParametersSave::Instance();
