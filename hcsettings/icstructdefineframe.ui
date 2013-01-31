@@ -99,7 +99,7 @@ QRadioButton::indicator:unchecked:disabled
               <bool>true</bool>
              </property>
              <attribute name="buttonGroup">
-              <string>buttonGroup</string>
+              <string notr="true">buttonGroup</string>
              </attribute>
             </widget>
            </item>
@@ -144,7 +144,7 @@ QRadioButton::indicator:unchecked:disabled
               <bool>true</bool>
              </property>
              <attribute name="buttonGroup">
-              <string>buttonGroup</string>
+              <string notr="true">buttonGroup</string>
              </attribute>
             </widget>
            </item>
@@ -238,7 +238,7 @@ QRadioButton::indicator:unchecked:disabled
 </string>
                </property>
                <property name="text">
-                <string>Backword Limit</string>
+                <string>Backward Limit</string>
                </property>
                <property name="checkable">
                 <bool>true</bool>
@@ -265,7 +265,7 @@ QRadioButton::indicator:unchecked:disabled
 </string>
                </property>
                <property name="text">
-                <string>Forward Limit</string>
+                <string>Forword Limit</string>
                </property>
                <property name="checkable">
                 <bool>true</bool>

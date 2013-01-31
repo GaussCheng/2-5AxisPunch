@@ -150,9 +150,6 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
     /**************BUG#205**C轴选无，也必须在起点位置显示姿势垂直1********/
     if(axis_[7].mode == AXIS_NONE)
     {
-        item.SetNum(stepNum++);
-        item.SetSVal(0);
-        item.SetDVal(0);
         item.SetAction(ICMold::ACTPOSEVERT);
         ret.append(item);
     }
