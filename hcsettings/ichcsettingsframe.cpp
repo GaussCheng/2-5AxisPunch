@@ -129,6 +129,8 @@ void ICHCSettingsFrame::hideEvent(QHideEvent *e)
 {
     if(ICVirtualHost::GlobalVirtualHost()->IsParamChanged())
     {
+        /***********BUG#200**********************/
+        ICVirtualHost::GlobalVirtualHost()->SaveSystemConfig();
         ICVirtualHost::GlobalVirtualHost()->ReConfigure();
     }
     QFrame::hideEvent(e);

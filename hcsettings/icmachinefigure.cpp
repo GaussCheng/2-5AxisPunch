@@ -73,8 +73,9 @@ void ICMachineFigure::hideEvent(QHideEvent *e)
     QWidget::hideEvent(e);
 }
 
-void ICMachineFigure::on_saveButton_clicked()
-{
-    ICVirtualHost::GlobalVirtualHost()->SaveSystemConfig();
-    QMessageBox::information(this, tr("Tips"), tr("Save successfully!"));
-}
+/***BUG#200**去掉save按钮，将保存步骤添加到icmachinefigure.cpp文件中hideEvent函数133行****/
+//void ICMachineFigure::on_saveButton_clicked()
+//{
+//    ICVirtualHost::GlobalVirtualHost()->SaveSystemConfig();
+//    QMessageBox::information(this, tr("Tips"), tr("Save successfully!"));
+//}

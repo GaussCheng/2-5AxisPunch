@@ -22,8 +22,8 @@ protected:
     void showEvent(QShowEvent *e);
     void hideEvent(QHideEvent *e);
     
-private slots:
-    void on_saveButton_clicked();
+//private slots:
+//    void on_saveButton_clicked();
 
 private:
     Ui::ICMachineFigure *ui;
