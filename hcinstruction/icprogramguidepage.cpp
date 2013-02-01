@@ -568,6 +568,15 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
                 item.SetAction(ICMold::ACTPOSEVERT);
             ret.append(item);
         }
+        /*****************************************/
+        if(!ui->cEdit->isHidden())
+        {
+            item.SetSVal(80);
+            item.SetDVal(0);
+            if(SetAxisICMoldItem_(&item, axis_ + C_AXIS, RELEASE_PRODUCT_SETTING))
+                ret.append(item);
+        }
+        /*****************************************/
         if(ui->stackedEn->isChecked())
         {
             item.SetSVal(ui->stackGroup->TransThisTextToThisInt() - 1);
@@ -919,9 +928,9 @@ void ICProgramGuidePage::on_preButton_clicked()
     else if(pageIndex_ == 1) //show for standby settings
     {
         ui->stackedWidget->setCurrentIndex(1);
+        ShowForStandby_();
         SaveAxis_(GET_PRODUCT_SETTING);
         UpdateAxisShow(STANDBY_SETTING);
-        ShowForStandby_();
         SetAxisBoxEnabled_(true);
     }
     else if(pageIndex_ == 2)
@@ -1003,49 +1012,51 @@ void ICProgramGuidePage::ShowForStandby_()
     ui->outletGroupBox->setTitle("");
     SetAxisBoxEnabled_(false);
     ui->cBox->setEnabled(true);
-    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) == ICVirtualHost::ICAxisDefine_Pneumatic)
-    {
-     //   ui->x1Box->setCurrentIndex(1);
-        SetAxis_(axis_, ui->x1Box->currentIndex(), STANDBY_SETTING);
-    }
-    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY1) == ICVirtualHost::ICAxisDefine_Pneumatic)
-    {
-      //  ui->y1Box->setCurrentIndex(0);
-        SetAxis_(axis_ + 1, ui->y1Box->currentIndex(), STANDBY_SETTING);
-    }
-    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisZ) == ICVirtualHost::ICAxisDefine_Pneumatic)
-    {
-      //  ui->zBox->setCurrentIndex(0);
-        SetAxis_(axis_ + 2, ui->zBox->currentIndex(), STANDBY_SETTING);
-    }
-    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) == ICVirtualHost::ICAxisDefine_Pneumatic)
-    {
-       // ui->x2Box->setCurrentIndex(1);
-        SetAxis_(axis_ + 3, ui->x2Box->currentIndex(), STANDBY_SETTING);
-    }
-    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) == ICVirtualHost::ICAxisDefine_Pneumatic)
-    {
-      //  ui->y2Box->setCurrentIndex(1);
-        SetAxis_(axis_ + 4, ui->y2Box->currentIndex(), STANDBY_SETTING);
-    }
-    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisA) == ICVirtualHost::ICAxisDefine_Servo)
-    {
-        HideWidgets_(axisWidgets_[5]);
-        ui->aEdit->SetThisIntToThisText(0);
-    }
-    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisB) == ICVirtualHost::ICAxisDefine_Servo)
-    {
-        HideWidgets_(axisWidgets_[6]);
-        ui->bEdit->SetThisIntToThisText(0);
-    }
-    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) == ICVirtualHost::ICAxisDefine_Servo)
-    {
-        HideWidgets_(axisWidgets_[7]);
-        ui->cEdit->SetThisIntToThisText(0);
-    }
-    //  on_usedMainArmBox_toggled(true);
-    // on_usedSubArmBox_toggled(true);
+//    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+//    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) == ICVirtualHost::ICAxisDefine_Pneumatic)
+//    {
+//     //   ui->x1Box->setCurrentIndex(1);
+//        SetAxis_(axis_, ui->x1Box->currentIndex(), STANDBY_SETTING);
+//    }
+//    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY1) == ICVirtualHost::ICAxisDefine_Pneumatic)
+//    {
+//      //  ui->y1Box->setCurrentIndex(0);
+//        SetAxis_(axis_ + 1, ui->y1Box->currentIndex(), STANDBY_SETTING);
+//    }
+//    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisZ) == ICVirtualHost::ICAxisDefine_Pneumatic)
+//    {
+//      //  ui->zBox->setCurrentIndex(0);
+//        SetAxis_(axis_ + 2, ui->zBox->currentIndex(), STANDBY_SETTING);
+//    }
+//    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) == ICVirtualHost::ICAxisDefine_Pneumatic)
+//    {
+//       // ui->x2Box->setCurrentIndex(1);
+//        SetAxis_(axis_ + 3, ui->x2Box->currentIndex(), STANDBY_SETTING);
+//    }
+//    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) == ICVirtualHost::ICAxisDefine_Pneumatic)
+//    {
+//      //  ui->y2Box->setCurrentIndex(1);
+//        SetAxis_(axis_ + 4, ui->y2Box->currentIndex(), STANDBY_SETTING);
+//    }
+//    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisA) == ICVirtualHost::ICAxisDefine_Servo)
+//    {
+////        HideWidgets_(axisWidgets_[5]);
+////        ui->aEdit->SetThisIntToThisText(0);
+//    }
+//    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisB) == ICVirtualHost::ICAxisDefine_Servo)
+//    {
+////        HideWidgets_(axisWidgets_[6]);
+////        ui->bEdit->SetThisIntToThisText(0);
+//    }
+//    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) == ICVirtualHost::ICAxisDefine_Servo)
+//    {
+////        HideWidgets_(axisWidgets_[7]);
+////        ui->cEdit->SetThisIntToThisText(0);
+//    }
+    if(ui->usedMainArmBox->isChecked())
+        on_usedMainArmBox_toggled(true);
+    if(ui->usedMainArmBox->isChecked())
+        on_usedSubArmBox_toggled(true);
 }
 
 void ICProgramGuidePage::SetAxisBoxEnabled_(bool en)
