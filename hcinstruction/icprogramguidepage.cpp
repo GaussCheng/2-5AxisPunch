@@ -75,9 +75,8 @@ ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
     HideWidgets_(axisWidgets_[8]);
     ui->outRunningHorizonBox->hide();
     ui->inRunningHorizonBox->hide();
-    /****将快速设定页面的待机点起始位置初始化为后退上升**********/
-    ui->x2Box->setCurrentIndex(1);
-    ui->y2Box->setCurrentIndex(1);
+//    ui->x2Box->setCurrentIndex(1);
+//    ui->y2Box->setCurrentIndex(1);
 
 #ifdef Q_WS_X11
     UpdateAxisDefine_();
@@ -347,6 +346,18 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             /*to release product pos*/
             if(SetAxisICMoldItem_(&item, axis_ + Z_AXIS, RELEASE_PRODUCT_SETTING))
                 ret.append(item);
+            if(!ui->cBox->isHidden())
+            {
+                item.SetSVal(0);
+                if(axis_[C_AXIS].releaseProductLimit == 0)
+                    item.SetAction(ICMold::ACTPOSEHORI);
+                else
+                    item.SetAction(ICMold::ACTPOSEVERT);
+                ret.append(item);
+            }
+            item.SetNum(stepNum++);
+            item.SetSVal(80);
+            item.SetDVal(0);
             if(SetAxisICMoldItem_(&item, axis_ + X1_AXIS, RELEASE_PRODUCT_SETTING))
                 ret.append(item);
             if(ui->stackedEn->isChecked())
@@ -385,15 +396,6 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             if(SetAxisICMoldItem_(&item, axis_ + Y2_AXIS, RELEASE_OUTLET_SETTING))
                 ret.append(item);
 
-            if(!ui->cBox->isHidden())
-            {
-                item.SetSVal(0);
-                if(axis_[C_AXIS].releaseProductLimit == 0)
-                    item.SetAction(ICMold::ACTPOSEHORI);
-                else
-                    item.SetAction(ICMold::ACTPOSEVERT);
-                ret.append(item);
-            }
 
             /*release outlet*/
             item.SetNum(stepNum++);
@@ -445,7 +447,21 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             if(SetAxisICMoldItem_(&item, axis_ + X2_AXIS, STANDBY_SETTING))
                 ret.append(item);
             if(SetAxisICMoldItem_(&item, axis_ + Z_AXIS, RELEASE_PRODUCT_SETTING))
+                ret.append(item);         
+
+            if(!ui->cBox->isHidden())
+            {
+                item.SetSVal(0);
+                if(axis_[C_AXIS].releaseProductLimit == 0)
+                    item.SetAction(ICMold::ACTPOSEHORI);
+                else
+                    item.SetAction(ICMold::ACTPOSEVERT);
                 ret.append(item);
+            }
+
+            item.SetNum(stepNum++);
+            item.SetSVal(80);
+            item.SetDVal(0);
             if(SetAxisICMoldItem_(&item, axis_ + X1_AXIS, RELEASE_PRODUCT_SETTING))
                 ret.append(item);
             if(ui->stackedEn->isChecked())
@@ -459,15 +475,6 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             if(SetAxisICMoldItem_(&item, axis_ + Y1_AXIS, RELEASE_PRODUCT_SETTING))
                 ret.append(item);
 
-            if(!ui->cBox->isHidden())
-            {
-                item.SetSVal(0);
-                if(axis_[C_AXIS].releaseProductLimit == 0)
-                    item.SetAction(ICMold::ACTPOSEHORI);
-                else
-                    item.SetAction(ICMold::ACTPOSEVERT);
-                ret.append(item);
-            }
             /*release product*/
             item.SetNum(stepNum++);
             item.SetSVal(0);
@@ -492,7 +499,19 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             if(SetAxisICMoldItem_(&item, axis_ + Z_AXIS, RELEASE_PRODUCT_SETTING))
                 ret.append(item);
 
+            if(!ui->cBox->isHidden())
+            {
+                item.SetSVal(0);
+                if(axis_[C_AXIS].releaseProductLimit == 0)
+                    item.SetAction(ICMold::ACTPOSEHORI);
+                else
+                    item.SetAction(ICMold::ACTPOSEVERT);
+                ret.append(item);
+            }
 
+            item.SetNum(stepNum++);
+            item.SetSVal(80);
+            item.SetDVal(0);
             if(SetAxisICMoldItem_(&item, axis_ + X1_AXIS, RELEASE_PRODUCT_SETTING))
                 ret.append(item);
             if(SetAxisICMoldItem_(&item, axis_ + X2_AXIS, RELEASE_OUTLET_SETTING))
@@ -510,15 +529,6 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             if(SetAxisICMoldItem_(&item, axis_ + Y2_AXIS, RELEASE_OUTLET_SETTING))
                 ret.append(item);
 
-            if(!ui->cBox->isHidden())
-            {
-                item.SetSVal(0);
-                if(axis_[C_AXIS].releaseProductLimit == 0)
-                    item.SetAction(ICMold::ACTPOSEHORI);
-                else
-                    item.SetAction(ICMold::ACTPOSEVERT);
-                ret.append(item);
-            }
 
             item.SetNum(stepNum++);
             item.SetSVal(0);
@@ -549,19 +559,6 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
         /*to release product pos*/
         if(SetAxisICMoldItem_(&item, axis_ + Z_AXIS, RELEASE_PRODUCT_SETTING))
             ret.append(item);
-        if(SetAxisICMoldItem_(&item, axis_ + X1_AXIS, RELEASE_PRODUCT_SETTING))
-            ret.append(item);
-        if(ui->stackedEn->isChecked())
-        {
-            item.SetSVal(ui->stackGroup->TransThisTextToThisInt() - 1);
-            item.SetClip(ICMold::ACTLAYOUTON);
-            ret.append(item);
-            item.SetSVal(80);
-        }
-        item.SetNum(stepNum++);
-        if(SetAxisICMoldItem_(&item, axis_ + Y1_AXIS, RELEASE_PRODUCT_SETTING))
-            ret.append(item);
-
         if(!ui->cBox->isHidden())
         {
             item.SetSVal(0);
@@ -571,6 +568,22 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
                 item.SetAction(ICMold::ACTPOSEVERT);
             ret.append(item);
         }
+        if(ui->stackedEn->isChecked())
+        {
+            item.SetSVal(ui->stackGroup->TransThisTextToThisInt() - 1);
+            item.SetClip(ICMold::ACTLAYOUTON);
+            ret.append(item);
+            item.SetSVal(80);
+        }
+        item.SetNum(stepNum++);
+        item.SetSVal(80);
+        item.SetDVal(0);
+        if(SetAxisICMoldItem_(&item, axis_ + X1_AXIS, RELEASE_PRODUCT_SETTING))
+            ret.append(item);
+        item.SetNum(stepNum++);
+        if(SetAxisICMoldItem_(&item, axis_ + Y1_AXIS, RELEASE_PRODUCT_SETTING))
+            ret.append(item);
+
 
         /*release product*/
         item.SetNum(stepNum++);
@@ -619,13 +632,13 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
         if(SetAxisICMoldItem_(&item, axis_ + X2_AXIS, STANDBY_SETTING))
             ret.append(item);
     }
-    if(ui->inHorizontalBox->isChecked() && !ui->outHorizontalBox->isChecked())
+    if(ui->inHorizontalBox->isChecked())
     {
         item.SetNum(stepNum++);
         item.SetAction(ICMold::ACTPOSEHORI);
         ret.append(item);
     }
-    else if(ui->inVerticalBox->isChecked() && !ui->outVerticalBox->isChecked())
+    else if(ui->inVerticalBox->isChecked())
     {
         item.SetNum(stepNum++);
         item.SetAction(ICMold::ACTPOSEVERT);

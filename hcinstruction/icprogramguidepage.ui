@@ -420,6 +420,9 @@ QCheckBox::indicator:checked
             </item>
             <item>
              <widget class="QComboBox" name="x1Box">
+              <property name="currentIndex">
+               <number>1</number>
+              </property>
               <item>
                <property name="text">
                 <string>Forward</string>
@@ -455,14 +458,17 @@ QCheckBox::indicator:checked
             </item>
             <item>
              <widget class="QComboBox" name="y1Box">
+              <property name="currentIndex">
+               <number>1</number>
+              </property>
               <item>
                <property name="text">
-                <string>Up</string>
+                <string>Down</string>
                </property>
               </item>
               <item>
                <property name="text">
-                <string>Down</string>
+                <string>Up</string>
                </property>
               </item>
              </widget>
@@ -505,6 +511,9 @@ QCheckBox::indicator:checked
             </item>
             <item>
              <widget class="QComboBox" name="x2Box">
+              <property name="currentIndex">
+               <number>1</number>
+              </property>
               <item>
                <property name="text">
                 <string>Forward</string>
@@ -537,6 +546,9 @@ QCheckBox::indicator:checked
             </item>
             <item>
              <widget class="QComboBox" name="y2Box">
+              <property name="currentIndex">
+               <number>1</number>
+              </property>
               <item>
                <property name="text">
                 <string>Down</string>
