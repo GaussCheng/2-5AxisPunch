@@ -33,7 +33,21 @@ ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
         axis_[i].releaseProductPos = 0;
         axis_[i].releaseOutletPos = 0;
     }
-    axis_[7].standbyPos = 1;
+    /*
+    * 当x2y2c轴选择为气动时初始化起点位置的值为后退上升垂直
+    */
+    if(axis_[C_AXIS].mode == AXIS_PNEUMATIC)
+    {
+        axis_[C_AXIS].standbyPos = 1;
+    }
+    if(axis_[X2_AXIS].mode == AXIS_PNEUMATIC)
+    {
+        axis_[X2_AXIS].standbyPos = 1 ;
+    }
+    if(axis_[Y2_AXIS].mode == AXIS_PNEUMATIC)
+    {
+        axis_[Y2_AXIS].standbyPos = 1 ;
+    }
     for(int i = 0; i != posEdits_.size(); ++i)
     {
         posEdits_[i]->SetDecimalPlaces(1);
@@ -75,8 +89,6 @@ ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
     HideWidgets_(axisWidgets_[8]);
     ui->outRunningHorizonBox->hide();
     ui->inRunningHorizonBox->hide();
-//    ui->x2Box->setCurrentIndex(1);
-//    ui->y2Box->setCurrentIndex(1);
 
 #ifdef Q_WS_X11
     UpdateAxisDefine_();
@@ -146,7 +158,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             ret.append(item);
         }
     }
-    /**************BUG#205**C轴选无，也必须在起点位置显示姿势垂直1********/
+    /********BUG#205**C轴选无，也必须在起点位置显示姿势垂直1********/
     if(axis_[7].mode == AXIS_NONE)
     {
         item.SetAction(ICMold::ACTPOSEVERT);
@@ -194,6 +206,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
         ret.append(item);
         return ret;
     }
+    /*****当z轴为伺服******************/
     if(axis_[Z_AXIS].mode == AXIS_SERVO)
     {
         if(axis_[Z_AXIS].standbyPos != axis_[Z_AXIS].getPos)
@@ -220,6 +233,14 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             ret.append(item);
         }
     }
+//    if(axis_[C_AXIS].mode == AXIS_SERVO)
+//    {
+//        item.SetNum(stepNum++);
+//        item.SetSVal(80);
+//        item.SetDVal(0);
+//        if(SetAxisICMoldItem_(&item, axis_ + C_AXIS, GET_PRODUCT_SETTING))
+//            ret.append(item);
+//    }
 
     /*Ejector on*/
     item.SetNum(stepNum++);
@@ -314,6 +335,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
         }
     }
 
+
     /*go out*/
     item.SetNum(stepNum++);
     if(ui->outHorizontalBox->isChecked())
@@ -346,6 +368,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             /*to release product pos*/
             if(SetAxisICMoldItem_(&item, axis_ + Z_AXIS, RELEASE_PRODUCT_SETTING))
                 ret.append(item);
+            /******************************************/
             if(!ui->cBox->isHidden())
             {
                 item.SetSVal(0);
@@ -355,6 +378,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
                     item.SetAction(ICMold::ACTPOSEVERT);
                 ret.append(item);
             }
+            /******************************************/
             item.SetNum(stepNum++);
             item.SetSVal(80);
             item.SetDVal(0);
@@ -370,6 +394,15 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             item.SetNum(stepNum++);
             if(SetAxisICMoldItem_(&item, axis_ + Y1_AXIS, RELEASE_PRODUCT_SETTING))
                 ret.append(item);
+
+            if(!ui->cEdit->isHidden())
+            {
+                item.SetNum(stepNum++);
+                item.SetSVal(80);
+                item.SetDVal(0);
+                if(SetAxisICMoldItem_(&item, axis_ + C_AXIS, RELEASE_PRODUCT_SETTING))
+                    ret.append(item);
+            }
             /*release product*/
             item.SetNum(stepNum++);
             item.SetSVal(0);
@@ -420,12 +453,23 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             /*to release outlet pos*/
             if(SetAxisICMoldItem_(&item, axis_ + Z_AXIS, RELEASE_OUTLET_SETTING))
                 ret.append(item);
+            /******************************************/
+            if(!ui->cBox->isHidden())
+            {
+                item.SetSVal(0);
+                if(axis_[C_AXIS].releaseProductLimit == 0)
+                    item.SetAction(ICMold::ACTPOSEHORI);
+                else
+                    item.SetAction(ICMold::ACTPOSEVERT);
+                ret.append(item);
+            }
+            /******************************************/
+
             if(SetAxisICMoldItem_(&item, axis_ + X2_AXIS, RELEASE_OUTLET_SETTING))
                 ret.append(item);
             item.SetNum(stepNum++);
             if(SetAxisICMoldItem_(&item, axis_ + Y2_AXIS, RELEASE_OUTLET_SETTING))
                 ret.append(item);
-
             /*release outlet*/
             item.SetNum(stepNum++);
             item.SetSVal(0);
@@ -448,17 +492,17 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
                 ret.append(item);
             if(SetAxisICMoldItem_(&item, axis_ + Z_AXIS, RELEASE_PRODUCT_SETTING))
                 ret.append(item);         
-
-            if(!ui->cBox->isHidden())
-            {
-                item.SetSVal(0);
-                if(axis_[C_AXIS].releaseProductLimit == 0)
-                    item.SetAction(ICMold::ACTPOSEHORI);
-                else
-                    item.SetAction(ICMold::ACTPOSEVERT);
-                ret.append(item);
-            }
-
+//            /******************************************/
+//            if(!ui->cBox->isHidden())
+//            {
+//                item.SetSVal(0);
+//                if(axis_[C_AXIS].releaseProductLimit == 0)
+//                    item.SetAction(ICMold::ACTPOSEHORI);
+//                else
+//                    item.SetAction(ICMold::ACTPOSEVERT);
+//                ret.append(item);
+//            }
+//            /******************************************/
             item.SetNum(stepNum++);
             item.SetSVal(80);
             item.SetDVal(0);
@@ -475,6 +519,14 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             if(SetAxisICMoldItem_(&item, axis_ + Y1_AXIS, RELEASE_PRODUCT_SETTING))
                 ret.append(item);
 
+            if(!ui->cEdit->isHidden())
+            {
+                item.SetNum(stepNum++);
+                item.SetSVal(80);
+                item.SetDVal(0);
+                if(SetAxisICMoldItem_(&item, axis_ + C_AXIS, RELEASE_PRODUCT_SETTING))
+                    ret.append(item);
+            }
             /*release product*/
             item.SetNum(stepNum++);
             item.SetSVal(0);
@@ -498,7 +550,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
         {
             if(SetAxisICMoldItem_(&item, axis_ + Z_AXIS, RELEASE_PRODUCT_SETTING))
                 ret.append(item);
-
+            /******************************************/
             if(!ui->cBox->isHidden())
             {
                 item.SetSVal(0);
@@ -508,7 +560,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
                     item.SetAction(ICMold::ACTPOSEVERT);
                 ret.append(item);
             }
-
+            /******************************************/
             item.SetNum(stepNum++);
             item.SetSVal(80);
             item.SetDVal(0);
@@ -529,6 +581,14 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             if(SetAxisICMoldItem_(&item, axis_ + Y2_AXIS, RELEASE_OUTLET_SETTING))
                 ret.append(item);
 
+            if(!ui->cEdit->isHidden())
+            {
+                item.SetNum(stepNum++);
+                item.SetSVal(80);
+                item.SetDVal(0);
+                if(SetAxisICMoldItem_(&item, axis_ + C_AXIS, RELEASE_PRODUCT_SETTING))
+                    ret.append(item);
+            }
 
             item.SetNum(stepNum++);
             item.SetSVal(0);
@@ -559,6 +619,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
         /*to release product pos*/
         if(SetAxisICMoldItem_(&item, axis_ + Z_AXIS, RELEASE_PRODUCT_SETTING))
             ret.append(item);
+        /*****************************************/
         if(!ui->cBox->isHidden())
         {
             item.SetSVal(0);
@@ -567,14 +628,6 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             else
                 item.SetAction(ICMold::ACTPOSEVERT);
             ret.append(item);
-        }
-        /*****************************************/
-        if(!ui->cEdit->isHidden())
-        {
-            item.SetSVal(80);
-            item.SetDVal(0);
-            if(SetAxisICMoldItem_(&item, axis_ + C_AXIS, RELEASE_PRODUCT_SETTING))
-                ret.append(item);
         }
         /*****************************************/
         if(ui->stackedEn->isChecked())
@@ -593,6 +646,14 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
         if(SetAxisICMoldItem_(&item, axis_ + Y1_AXIS, RELEASE_PRODUCT_SETTING))
             ret.append(item);
 
+        if(!ui->cEdit->isHidden())
+        {
+            item.SetNum(stepNum++);
+            item.SetSVal(80);
+            item.SetDVal(0);
+            if(SetAxisICMoldItem_(&item, axis_ + C_AXIS, RELEASE_PRODUCT_SETTING))
+                ret.append(item);
+        }
 
         /*release product*/
         item.SetNum(stepNum++);
@@ -617,7 +678,6 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
         /*to release outlet pos*/
         if(SetAxisICMoldItem_(&item, axis_ + Z_AXIS, RELEASE_OUTLET_SETTING))
             ret.append(item);
-
         if( SetAxisICMoldItem_(&item, axis_ + X2_AXIS, RELEASE_OUTLET_SETTING))
             ret.append(item);
         item.SetNum(stepNum++);
@@ -863,6 +923,8 @@ void ICProgramGuidePage::on_nextButton_clicked()
         on_usedMainArmBox_toggled(ui->usedMainArmBox->isChecked());
         on_usedSubArmBox_toggled(ui->usedSubArmBox->isChecked());
         ui->commonGroupBox->show();
+        ui->cBox->setEnabled(false);
+        ui->cEdit->setEnabled(false);
         SaveAxis_(STANDBY_SETTING);
         UpdateAxisShow(GET_PRODUCT_SETTING);
         SetAxisBoxEnabled_(true);
@@ -875,7 +937,8 @@ void ICProgramGuidePage::on_nextButton_clicked()
         ui->descrLabel->setText(tr("Release Product Position Settings"));
         on_usedMainArmBox_toggled(ui->usedMainArmBox->isChecked());
         ui->outletGroupBox->hide();
-
+        ui->cBox->setEnabled(true);
+        ui->cEdit->setEnabled(true);
         SetAxisBoxEnabled_(true);
         if(!ui->usedMainArmBox->isChecked())
         {
@@ -928,6 +991,8 @@ void ICProgramGuidePage::on_preButton_clicked()
     else if(pageIndex_ == 1) //show for standby settings
     {
         ui->stackedWidget->setCurrentIndex(1);
+        ui->cBox->setEnabled(true);
+        ui->cEdit->setEnabled(true);
         ShowForStandby_();
         SaveAxis_(GET_PRODUCT_SETTING);
         UpdateAxisShow(STANDBY_SETTING);
@@ -940,6 +1005,8 @@ void ICProgramGuidePage::on_preButton_clicked()
         on_usedMainArmBox_toggled(ui->usedMainArmBox->isChecked());
         on_usedSubArmBox_toggled(ui->usedSubArmBox->isChecked());
         ui->commonGroupBox->show();
+        ui->cBox->setEnabled(false);
+        ui->cEdit->setEnabled(false);
         SetAxisBoxEnabled_(true);
         SaveAxis_(RELEASE_PRODUCT_SETTING);
         UpdateAxisShow(GET_PRODUCT_SETTING);
@@ -1089,6 +1156,25 @@ void ICProgramGuidePage::SetAxis_(_ICAxis_ *axis, int pos, int setting)
     {
         axis->releaseOutletPos = pos;
     }
+    /*BUG*第一次进入系统，点击快速设定页面然后完成，
+     *左边起点位置副臂姿势变为前进下降水平
+     */
+    else if(setting == 0)
+    {
+        if(axis_[X2_AXIS].mode == AXIS_PNEUMATIC)
+        {
+            axis_[X2_AXIS].standbyPos = 1 ;
+        }
+        if(axis_[Y2_AXIS].mode == AXIS_PNEUMATIC)
+        {
+            axis_[Y2_AXIS].standbyPos = 1 ;
+        }
+        if(axis_[C_AXIS].mode == AXIS_PNEUMATIC)
+        {
+            axis_[C_AXIS].standbyPos = 1;
+        }
+    }
+    /**************************************/
 }
 void ICProgramGuidePage::SaveAxis_(int setting)
 {
@@ -1208,7 +1294,7 @@ bool ICProgramGuidePage::SetAxisICMoldItem_(ICMoldItem *item, const _ICAxis_ *ax
 
 void ICProgramGuidePage::on_finishButton_clicked()
 {
-    if(ui->stackedWidget->currentIndex() == 1)
+  //  if(ui->stackedWidget->currentIndex() == 1)
     {
         SaveAxis_(pageIndex_);
     }
