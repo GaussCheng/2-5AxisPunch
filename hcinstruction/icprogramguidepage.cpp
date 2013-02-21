@@ -41,6 +41,10 @@ ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
     {
         axis_[C_AXIS].standbyPos = 1;
     }
+    if(axis_[C_AXIS].mode == AXIS_SERVO)
+    {
+        axis_[C_AXIS].standbyPos = 0 ;
+    }
     if(axis_[X2_AXIS].mode == AXIS_PNEUMATIC)
     {
         axis_[X2_AXIS].standbyPos = 1 ;
@@ -926,11 +930,13 @@ void ICProgramGuidePage::on_nextButton_clicked()
         on_usedMainArmBox_toggled(ui->usedMainArmBox->isChecked());
         on_usedSubArmBox_toggled(ui->usedSubArmBox->isChecked());
         ui->commonGroupBox->show();
-        ui->cBox->setEnabled(false);
-        ui->cEdit->setEnabled(false);
+        SetAxisBoxEnabled_(true);
+        if(axis_[C_AXIS].mode == AXIS_SERVO)
+            ui->cEdit->setEnabled(false);
+        if(axis_[C_AXIS].mode == AXIS_PNEUMATIC)
+            ui->cBox->setEnabled(false);
         SaveAxis_(STANDBY_SETTING);
         UpdateAxisShow(GET_PRODUCT_SETTING);
-        SetAxisBoxEnabled_(true);
         ui->productGroupBox->setTitle(tr("Product"));
         ui->outletGroupBox->setTitle(tr("Outlet"));
     }
@@ -960,7 +966,7 @@ void ICProgramGuidePage::on_nextButton_clicked()
         ui->descrLabel->setText(tr("Release Outlet Position Settings"));
         on_usedSubArmBox_toggled(ui->usedSubArmBox->isChecked());
         ui->productGroupBox->hide();
-
+        ui->cEdit->setEnabled(false);
         ui->cBox->setEnabled(false);
         if(!ui->usedSubArmBox->isChecked())
         {
@@ -1008,9 +1014,11 @@ void ICProgramGuidePage::on_preButton_clicked()
         on_usedMainArmBox_toggled(ui->usedMainArmBox->isChecked());
         on_usedSubArmBox_toggled(ui->usedSubArmBox->isChecked());
         ui->commonGroupBox->show();
-        ui->cBox->setEnabled(false);
-        ui->cEdit->setEnabled(false);
         SetAxisBoxEnabled_(true);
+        if(axis_[C_AXIS].mode == AXIS_SERVO)
+            ui->cEdit->setEnabled(false);
+        if(axis_[C_AXIS].mode == AXIS_PNEUMATIC)
+            ui->cBox->setEnabled(false);
         SaveAxis_(RELEASE_PRODUCT_SETTING);
         UpdateAxisShow(GET_PRODUCT_SETTING);
     }
@@ -1020,7 +1028,8 @@ void ICProgramGuidePage::on_preButton_clicked()
         ui->descrLabel->setText(tr("Release Product Position Settings"));
         on_usedMainArmBox_toggled(ui->usedMainArmBox->isChecked());
         ui->outletGroupBox->hide();
-        SetAxisBoxEnabled_(true);
+        ui->cEdit->setEnabled(true);
+        ui->cBox->setEnabled(true);
         if(!ui->usedMainArmBox->isChecked())
         {
             ui->commonGroupBox->hide();
@@ -1031,6 +1040,7 @@ void ICProgramGuidePage::on_preButton_clicked()
         }
         SaveAxis_(RELEASE_OUTLET_SETTING);
         UpdateAxisShow(RELEASE_PRODUCT_SETTING);
+        SetAxisBoxEnabled_(true);
     }
     else if(pageIndex_ == 4)
     {
@@ -1038,8 +1048,10 @@ void ICProgramGuidePage::on_preButton_clicked()
         ui->descrLabel->setText(tr("Release Outlet Position Settings"));
         on_usedSubArmBox_toggled(ui->usedSubArmBox->isChecked());
     //    ui->productGroupBox->hide();
-
-        ui->cBox->setEnabled(false);
+        if(axis_[C_AXIS].mode == AXIS_SERVO)
+            ui->cEdit->setEnabled(false);
+        if(axis_[C_AXIS].mode == AXIS_PNEUMATIC)
+            ui->cBox->setEnabled(false);
         if(!ui->usedSubArmBox->isChecked())
         {
             ui->commonGroupBox->hide();
