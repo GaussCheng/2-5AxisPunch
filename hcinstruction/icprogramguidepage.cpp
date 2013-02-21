@@ -36,6 +36,7 @@ ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
     /*
     * 当x2y2c轴选择为气动时初始化起点位置的值为后退上升垂直
     */
+    UpdateAxisDefine_();
     if(axis_[C_AXIS].mode == AXIS_PNEUMATIC)
     {
         axis_[C_AXIS].standbyPos = 1;
@@ -90,9 +91,9 @@ ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
     ui->outRunningHorizonBox->hide();
     ui->inRunningHorizonBox->hide();
 
-#ifdef Q_WS_X11
-    UpdateAxisDefine_();
-#endif
+//#ifdef Q_WS_X11
+//    UpdateAxisDefine_();
+//#endif
 }
 
 ICProgramGuidePage::~ICProgramGuidePage()
@@ -901,7 +902,7 @@ void ICProgramGuidePage::HideWidgets_(QList<QWidget *> &widgets)
 {
     for(int i = 0; i != widgets.size(); ++i)
     {
-        widgets[i]->hide();;
+        widgets[i]->hide();
     }
 }
 
@@ -912,8 +913,10 @@ void ICProgramGuidePage::on_nextButton_clicked()
     {
         ui->stackedWidget->setCurrentIndex(1);
         ShowForStandby_();
-        SaveAxis_(STANDBY_SETTING);
+       // SaveAxis_(STANDBY_SETTING);
         UpdateAxisShow(STANDBY_SETTING);
+        ui->cBox->setEnabled(true);
+        ui->cEdit->setEnabled(true);
         SetAxisBoxEnabled_(true);
     }
     else if(pageIndex_ == 2)
@@ -1156,25 +1159,6 @@ void ICProgramGuidePage::SetAxis_(_ICAxis_ *axis, int pos, int setting)
     {
         axis->releaseOutletPos = pos;
     }
-    /*BUG*第一次进入系统，点击快速设定页面然后完成，
-     *左边起点位置副臂姿势变为前进下降水平
-     */
-    else if(setting == 0)
-    {
-        if(axis_[X2_AXIS].mode == AXIS_PNEUMATIC)
-        {
-            axis_[X2_AXIS].standbyPos = 1 ;
-        }
-        if(axis_[Y2_AXIS].mode == AXIS_PNEUMATIC)
-        {
-            axis_[Y2_AXIS].standbyPos = 1 ;
-        }
-        if(axis_[C_AXIS].mode == AXIS_PNEUMATIC)
-        {
-            axis_[C_AXIS].standbyPos = 1;
-        }
-    }
-    /**************************************/
 }
 void ICProgramGuidePage::SaveAxis_(int setting)
 {
@@ -1294,7 +1278,7 @@ bool ICProgramGuidePage::SetAxisICMoldItem_(ICMoldItem *item, const _ICAxis_ *ax
 
 void ICProgramGuidePage::on_finishButton_clicked()
 {
-  //  if(ui->stackedWidget->currentIndex() == 1)
+    if(ui->stackedWidget->currentIndex() == 1)
     {
         SaveAxis_(pageIndex_);
     }
