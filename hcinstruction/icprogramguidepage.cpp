@@ -238,14 +238,6 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             ret.append(item);
         }
     }
-//    if(axis_[C_AXIS].mode == AXIS_SERVO)
-//    {
-//        item.SetNum(stepNum++);
-//        item.SetSVal(80);
-//        item.SetDVal(0);
-//        if(SetAxisICMoldItem_(&item, axis_ + C_AXIS, GET_PRODUCT_SETTING))
-//            ret.append(item);
-//    }
 
     /*Ejector on*/
     item.SetNum(stepNum++);
