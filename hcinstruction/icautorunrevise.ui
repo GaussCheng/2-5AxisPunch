@@ -107,6 +107,9 @@
      </item>
      <item>
       <widget class="QDialogButtonBox" name="buttonBox">
+       <property name="styleSheet">
+        <string notr="true">height:30px ;</string>
+       </property>
        <property name="orientation">
         <enum>Qt::Vertical</enum>
        </property>

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>998</width>
+    <width>1045</width>
     <height>395</height>
    </rect>
   </property>
@@ -215,97 +215,191 @@ color: rgb(255, 255, 0);</string>
       </spacer>
      </item>
      <item>
-      <widget class="ICPageTab" name="fixtureToolButton" native="true">
+      <widget class="QPushButton" name="fixtureToolButton">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="minimumSize">
         <size>
-         <width>67</width>
-         <height>34</height>
+         <width>64</width>
+         <height>0</height>
         </size>
        </property>
-       <property name="maximumSize">
-        <size>
-         <width>67</width>
-         <height>34</height>
-        </size>
+       <property name="mouseTracking">
+        <bool>false</bool>
        </property>
+       <property name="acceptDrops">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>false</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup</string>
+       </attribute>
       </widget>
      </item>
      <item>
-      <widget class="ICPageTab" name="suckerToolButton" native="true">
+      <widget class="QPushButton" name="suckerToolButton">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="minimumSize">
         <size>
-         <width>67</width>
-         <height>34</height>
+         <width>64</width>
+         <height>0</height>
         </size>
        </property>
-       <property name="maximumSize">
-        <size>
-         <width>67</width>
-         <height>34</height>
-        </size>
+       <property name="mouseTracking">
+        <bool>false</bool>
        </property>
+       <property name="acceptDrops">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>false</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup</string>
+       </attribute>
       </widget>
      </item>
      <item>
-      <widget class="ICPageTab" name="adjustToolButton" native="true">
+      <widget class="QPushButton" name="adjustToolButton">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="minimumSize">
         <size>
-         <width>67</width>
-         <height>34</height>
+         <width>64</width>
+         <height>0</height>
         </size>
        </property>
-       <property name="maximumSize">
-        <size>
-         <width>67</width>
-         <height>34</height>
-        </size>
+       <property name="acceptDrops">
+        <bool>false</bool>
        </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>false</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup</string>
+       </attribute>
       </widget>
      </item>
      <item>
-      <widget class="ICPageTab" name="reserveToolButton" native="true">
+      <widget class="QPushButton" name="reserveToolButton">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="minimumSize">
         <size>
-         <width>67</width>
-         <height>34</height>
+         <width>64</width>
+         <height>0</height>
         </size>
        </property>
-       <property name="maximumSize">
-        <size>
-         <width>67</width>
-         <height>34</height>
-        </size>
+       <property name="text">
+        <string/>
        </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup</string>
+       </attribute>
       </widget>
      </item>
      <item>
-      <widget class="ICPageTab" name="otherToolButton" native="true">
+      <widget class="QPushButton" name="otherToolButton">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="minimumSize">
         <size>
-         <width>67</width>
-         <height>34</height>
+         <width>64</width>
+         <height>0</height>
         </size>
        </property>
-       <property name="maximumSize">
-        <size>
-         <width>67</width>
-         <height>34</height>
-        </size>
+       <property name="text">
+        <string/>
        </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup</string>
+       </attribute>
       </widget>
      </item>
     </layout>
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>ICPageTab</class>
-   <extends>QWidget</extends>
-   <header>icpagetab.h</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup"/>
+ </buttongroups>
 </ui>
