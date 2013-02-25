@@ -23,164 +23,133 @@
       <number>5</number>
      </property>
      <item>
-      <widget class="ICPageTab" name="axisXToolButton" native="true">
-       <property name="minimumSize">
-        <size>
-         <width>67</width>
-         <height>34</height>
-        </size>
+      <widget class="QPushButton" name="axisXToolButton">
+       <property name="text">
+        <string/>
        </property>
-       <property name="maximumSize">
-        <size>
-         <width>67</width>
-         <height>34</height>
-        </size>
+       <property name="checkable">
+        <bool>true</bool>
        </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup</string>
+       </attribute>
       </widget>
      </item>
      <item>
-      <widget class="ICPageTab" name="axisYToolButton" native="true">
-       <property name="minimumSize">
-        <size>
-         <width>67</width>
-         <height>34</height>
-        </size>
+      <widget class="QPushButton" name="axisYToolButton">
+       <property name="text">
+        <string/>
        </property>
-       <property name="maximumSize">
-        <size>
-         <width>67</width>
-         <height>34</height>
-        </size>
+       <property name="checkable">
+        <bool>true</bool>
        </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup</string>
+       </attribute>
       </widget>
      </item>
      <item>
-      <widget class="ICPageTab" name="axisZToolButton" native="true">
-       <property name="minimumSize">
-        <size>
-         <width>67</width>
-         <height>34</height>
-        </size>
+      <widget class="QPushButton" name="axisZToolButton">
+       <property name="text">
+        <string/>
        </property>
-       <property name="maximumSize">
-        <size>
-         <width>67</width>
-         <height>34</height>
-        </size>
+       <property name="checkable">
+        <bool>true</bool>
        </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup</string>
+       </attribute>
       </widget>
      </item>
      <item>
-      <widget class="ICPageTab" name="axisPToolButton" native="true">
-       <property name="minimumSize">
-        <size>
-         <width>67</width>
-         <height>34</height>
-        </size>
+      <widget class="QPushButton" name="axisPToolButton">
+       <property name="text">
+        <string/>
        </property>
-       <property name="maximumSize">
-        <size>
-         <width>67</width>
-         <height>34</height>
-        </size>
+       <property name="checkable">
+        <bool>true</bool>
        </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup</string>
+       </attribute>
       </widget>
      </item>
      <item>
-      <widget class="ICPageTab" name="axisQToolButton" native="true">
-       <property name="minimumSize">
-        <size>
-         <width>67</width>
-         <height>34</height>
-        </size>
+      <widget class="QPushButton" name="axisQToolButton">
+       <property name="text">
+        <string/>
        </property>
-       <property name="maximumSize">
-        <size>
-         <width>67</width>
-         <height>34</height>
-        </size>
+       <property name="checkable">
+        <bool>true</bool>
        </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup</string>
+       </attribute>
       </widget>
      </item>
      <item>
-      <widget class="ICPageTab" name="axisAToolButton" native="true">
-       <property name="minimumSize">
-        <size>
-         <width>67</width>
-         <height>34</height>
-        </size>
+      <widget class="QPushButton" name="axisAToolButton">
+       <property name="text">
+        <string/>
        </property>
-       <property name="maximumSize">
-        <size>
-         <width>67</width>
-         <height>34</height>
-        </size>
+       <property name="checkable">
+        <bool>true</bool>
        </property>
-       <zorder>axisQToolButton</zorder>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup</string>
+       </attribute>
       </widget>
      </item>
      <item>
-      <widget class="ICPageTab" name="axisBToolButton" native="true">
-       <property name="minimumSize">
-        <size>
-         <width>67</width>
-         <height>34</height>
-        </size>
+      <widget class="QPushButton" name="axisBToolButton">
+       <property name="text">
+        <string/>
        </property>
-       <property name="maximumSize">
-        <size>
-         <width>67</width>
-         <height>34</height>
-        </size>
+       <property name="checkable">
+        <bool>true</bool>
        </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup</string>
+       </attribute>
       </widget>
      </item>
      <item>
-      <widget class="ICPageTab" name="axisCToolButton" native="true">
-       <property name="minimumSize">
-        <size>
-         <width>67</width>
-         <height>34</height>
-        </size>
+      <widget class="QPushButton" name="axisCToolButton">
+       <property name="text">
+        <string/>
        </property>
-       <property name="maximumSize">
-        <size>
-         <width>67</width>
-         <height>34</height>
-        </size>
+       <property name="checkable">
+        <bool>true</bool>
        </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup</string>
+       </attribute>
       </widget>
      </item>
      <item>
-      <widget class="ICPageTab" name="structDefButton" native="true">
-       <property name="minimumSize">
-        <size>
-         <width>67</width>
-         <height>34</height>
-        </size>
+      <widget class="QPushButton" name="structDefButton">
+       <property name="text">
+        <string/>
        </property>
-       <property name="maximumSize">
-        <size>
-         <width>67</width>
-         <height>34</height>
-        </size>
+       <property name="checkable">
+        <bool>true</bool>
        </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup</string>
+       </attribute>
       </widget>
      </item>
      <item>
-      <widget class="ICPageTab" name="timeLimitButton" native="true">
-       <property name="minimumSize">
-        <size>
-         <width>67</width>
-         <height>34</height>
-        </size>
+      <widget class="QPushButton" name="timeLimitButton">
+       <property name="text">
+        <string/>
        </property>
-       <property name="maximumSize">
-        <size>
-         <width>67</width>
-         <height>34</height>
-        </size>
+       <property name="checkable">
+        <bool>true</bool>
        </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup</string>
+       </attribute>
       </widget>
      </item>
      <item>
@@ -440,13 +409,10 @@
    <extends>QLineEdit</extends>
    <header>iclineeditwithvirtualnumerickeypad.h</header>
   </customwidget>
-  <customwidget>
-   <class>ICPageTab</class>
-   <extends>QWidget</extends>
-   <header>icpagetab.h</header>
-   <container>1</container>
-  </customwidget>
  </customwidgets>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup"/>
+ </buttongroups>
 </ui>

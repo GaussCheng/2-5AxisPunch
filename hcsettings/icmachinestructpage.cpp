@@ -143,8 +143,7 @@ void ICMachineStructPage::showEvent(QShowEvent *e)
         ui->axisBToolButton->click();
     }
     else if(!ui->axisCToolButton->isHidden())
-    {
-        ui->axisCToolButton->click();
+    {        ui->axisCToolButton->click();
     }
     /***********BUG#202***************************/
     else
