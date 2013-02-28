@@ -795,7 +795,7 @@ void ICMachineStructPage::on_mechanicalLengthLineEdit_textChanged(const QString 
  //   externalValidator_->setTop(ui->mechanicalLengthLineEdit->TransThisTextToThisInt());
 }
 
-/********************BUG#186*当maximumDisplacementLine内容改变时设置范围的最低值***************/
+/*********BUG#186*当maximumDisplacementLine内容改变时设置范围的最低值******/
 void ICMachineStructPage::on_maximumDisplacementLineEdit_textChanged(const QString &arg1)
 {
     Q_UNUSED(arg1);

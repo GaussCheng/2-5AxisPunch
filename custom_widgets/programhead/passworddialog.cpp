@@ -8,6 +8,8 @@ PasswordDialog::PasswordDialog(QWidget *parent) :
     ui(new Ui::PasswordDialog)
 {
     ui->setupUi(this);
+    buttonGroup_ = new QButtonGroup();
+    InitButton();
 }
 
 PasswordDialog::~PasswordDialog()
@@ -17,9 +19,9 @@ PasswordDialog::~PasswordDialog()
 
 void PasswordDialog::on_buttonBox_accepted()
 {
-    if(ICParametersSave::Instance()->VerifyPassword(static_cast<ICParametersSave::OperationLevel>(ui->levelComboBox->currentIndex()), ui->pwdEdit->text()))
+    if(ICParametersSave::Instance()->VerifyPassword(static_cast<ICParametersSave::OperationLevel>(buttonGroup_->checkedId()), ui->pwdEdit->text()))
     {
-        emit LevelChanged(ui->levelComboBox->currentIndex());
+        emit LevelChanged(buttonGroup_->checkedId());
         ui->pwdEdit->clear();
     }
     else
@@ -28,9 +30,9 @@ void PasswordDialog::on_buttonBox_accepted()
     }
 }
 
-void PasswordDialog::on_levelComboBox_currentIndexChanged(int index)
+void PasswordDialog::ShowPwdEdit()
 {
-    switch(index)
+    switch(buttonGroup_->checkedId())
     {
     case 0:
         ui->pwdEdit->setEnabled(false);
@@ -58,4 +60,23 @@ void PasswordDialog::changeEvent(QEvent *e)
     default:
         break;
     }
+}
+
+void PasswordDialog::InitButton()
+{
+    buttonGroup_->addButton(ui->MachineOperatorPushButton,0);
+    buttonGroup_->addButton(ui->MachineAdminPushButton,1);
+    buttonGroup_->addButton(ui->AdvanceAdminPushButton,2);
+
+    QList<QAbstractButton*> buttons = buttonGroup_->buttons();
+    for(int i = 0; i != buttons.size(); ++i)
+    {
+        buttons[i]->setCheckable(true);
+        connect(buttons.at(i),
+                SIGNAL(clicked()),
+                this,
+                SLOT(ShowPwdEdit()));
+    }
+    buttonGroup_->setExclusive(true);
+    ui->MachineOperatorPushButton->click();
 }

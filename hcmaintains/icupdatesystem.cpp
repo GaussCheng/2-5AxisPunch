@@ -24,10 +24,10 @@ ICUpdateSystem::ICUpdateSystem(QWidget *parent) :
     updateSettings_(NULL),
     updateHostSettings_(NULL),
     status_(-1),
-    updateDialog_(NULL)
+    updateDialog_(NULL),
+    flag(FALSE)
 {
     ui->setupUi(this);
-
     InitInterface();
 //    icUpdateSystem = this;
 //    hostStatusToStringMap_.insert(-1, "Connect Host Fail");
@@ -73,10 +73,10 @@ void ICUpdateSystem::hideEvent(QHideEvent *e)
 {
     timer_.stop();
     ui->updateToolButton->setEnabled(false);
-    ui->updateHostButton->setEnabled(false);
+//    ui->updateHostButton->setEnabled(false);
     ui->connectHostButton->setEnabled(false);
-    ui->writeHostButton->setEnabled(false);
-    ui->rebootButton->setEnabled(false);
+//    ui->writeHostButton->setEnabled(false);
+//    ui->rebootButton->setEnabled(false);
     ICVirtualHost::GlobalVirtualHost()->RestartRefreshStatus();
     QFrame::hideEvent(e);
 }
@@ -180,13 +180,13 @@ void ICUpdateSystem::RefreshUSBIniInfo()
     {
         ui->connectHostButton->setEnabled(true);
     }
-    //    QStringList updateFileList = updateSettings_->childGroups();
+        QStringList updateFileList = updateSettings_->childGroups();
 
-    //    if(updateFileList.count() > 0)
-    //    {
-    //        ui->copyFilesProgressBar->setRange(0, updateFileList.count());
-    //        ui->copyFilesProgressBar->setValue(0);
-    //    }
+        if(updateFileList.count() > 0)
+        {
+            ui->copyFilesProgressBar->setRange(0, updateFileList.count());
+            ui->copyFilesProgressBar->setValue(0);
+        }
 }
 
 void ICUpdateSystem::RestartAndUpdateTheProgram()
@@ -242,7 +242,7 @@ void ICUpdateSystem::keyPressEvent(QKeyEvent *e)
     QFrame::keyPressEvent(e);
 }
 
-void ICUpdateSystem::on_updateHostButton_clicked()
+void ICUpdateSystem::updateHostButton()
 {
     if(updateHostSettings_ == NULL)
     {
@@ -285,7 +285,8 @@ void ICUpdateSystem::on_updateHostButton_clicked()
             qDebug("tran successful");
             QMessageBox::information(this, tr("Congratulations"),
                                      tr("Send to  Host finished!"));
-            ui->writeHostButton->setEnabled(true);
+//            ui->writeHostButton->setEnabled(true);
+             writeHostButton();
             return;
 //            ICUpdateHostFinishCommand finishCommand;
 //            if(processor->ExecuteCommand(finishCommand).toBool())
@@ -307,19 +308,21 @@ void ICUpdateSystem::QueryStatus()
     status_ = ICCommandProcessor::Instance()->ExecuteCommand(command).toInt();
     if(status_ >= 0)
     {
-        ui->updateHostButton->setEnabled(true);
-        ui->rebootButton->setEnabled(true);
+//        ui->updateHostButton->setEnabled(true);
+//        ui->rebootButton->setEnabled(true);
+        if(!flag)
+            updateHostButton();
     }
     else
     {
-        ui->updateHostButton->setEnabled(false);
-        ui->rebootButton->setEnabled(false);
+//        ui->updateHostButton->setEnabled(false);
+//        ui->rebootButton->setEnabled(false);
         timer_.stop();
     }
     ui->statusLabel->setText(QString::number(status_));
 }
 
-void ICUpdateSystem::on_rebootButton_clicked()
+void ICUpdateSystem::rebootButton()
 {
     ICUpdateHostRestartCommand rebootCommand;
     if(ICCommandProcessor::Instance()->ExecuteCommand(rebootCommand).toBool())
@@ -338,20 +341,24 @@ void ICUpdateSystem::on_connectHostButton_clicked()
     {
         timer_.start(1000);
     }
+//    updateHostButton();
+//    writeHostButton();
+//    rebootButton();
 }
 
-void ICUpdateSystem::on_writeHostButton_clicked()
+void ICUpdateSystem::writeHostButton()
 {
     ICUpdateHostFinishCommand finishCommand;
     if(ICCommandProcessor::Instance()->ExecuteCommand(finishCommand).toBool())
     {
+        flag = true ;
         if(!timer_.isActive())
         {
             timer_.start(100);
         }
         QMessageBox::information(this, tr("Congratulations"),
                                  tr("Update Host finished!"));
-
+        rebootButton();
         return;
     }
 }

@@ -11,7 +11,8 @@ ICHCProductSettingFrame::ICHCProductSettingFrame(QWidget *parent) :
     ui(new Ui::ICHCProductSettingFrame)
 {
     ui->setupUi(this);
-
+    buttongroup_ = new QButtonGroup ;
+    InitCheckBox();
     ui->productLineEdit->setValidator(new QIntValidator(0, 65535, ui->productLineEdit));
     ui->alarmTimesEdit->setValidator(new QIntValidator(0, 65535, ui->alarmTimesEdit));
     ui->waitTimeEdit->SetDecimalPlaces(1);
@@ -39,7 +40,11 @@ ICHCProductSettingFrame::ICHCProductSettingFrame(QWidget *parent) :
     {
         currentPos = 1;
     }
-    ui->fixtureSelectBox->setCurrentIndex(ICVirtualHost::GlobalVirtualHost()->FixtureDefine());
+//    buttongroup_->setId(ICVirtualHost::GlobalVirtualHost()->FixtureDefine());
+    if(ICVirtualHost::GlobalVirtualHost()->FixtureDefine() == 0)
+        ui->reversedCheckBox->click();
+    if(ICVirtualHost::GlobalVirtualHost()->FixtureDefine() == 1)
+        ui->positiveCheckBox->click();
     connect(ICMold::CurrentMold(),
             SIGNAL(MoldNumberParamChanged()),
             this,
@@ -125,8 +130,10 @@ void ICHCProductSettingFrame::retranslateUi_()
     ui->label_5->setText(tr("Alarm Times"));
     ui->label_6->setText(tr("Times"));
     ui->label_17->setText(tr("Fixture"));
-    ui->fixtureSelectBox->setItemText(0,tr("Reversed Phase"));
-    ui->fixtureSelectBox->setItemText(1,tr("Positive Phase"));
+//    ui->fixtureSelectBox->setItemText(0,tr("Reversed Phase"));
+//    ui->fixtureSelectBox->setItemText(1,tr("Positive Phase"));
+    ui->reversedCheckBox->setText(tr("Reversed Phase"));
+    ui->positiveCheckBox->setText(tr("Positive Phase"));
 }
 
 void ICHCProductSettingFrame::OnMoldNumberParamChanged()
@@ -143,8 +150,25 @@ void ICHCProductSettingFrame::on_productClearButton_clicked()
     ICVirtualHost::GlobalVirtualHost()->SetFinishProductCount(0);
 }
 
-void ICHCProductSettingFrame::on_fixtureSelectBox_currentIndexChanged(int index)
+void ICHCProductSettingFrame::FixtureBoxChange()
 {
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    host->SetSystemParameter(ICVirtualHost::SYS_Config_Fixture, host->FixtureDefineSwitch(index));
+    host->SetSystemParameter(ICVirtualHost::SYS_Config_Fixture, host->FixtureDefineSwitch(buttongroup_->checkedId()));
+}
+
+void ICHCProductSettingFrame::InitCheckBox()
+{
+    buttongroup_->addButton(ui->reversedCheckBox,0);
+    buttongroup_->addButton(ui->positiveCheckBox,1);
+
+    QList<QAbstractButton*> buttons = buttongroup_->buttons();
+    for(int i = 0; i != buttons.size(); ++i)
+    {
+        buttons[i]->setCheckable(true);
+        connect(buttons.at(i),
+                SIGNAL(clicked()),
+                this,
+                SLOT(FixtureBoxChange()));
+    }
+    buttongroup_->setExclusive(true);
 }

@@ -10,19 +10,38 @@ ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
     pageIndex_(0)
 {
     ui->setupUi(this);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gx1Label<<ui->x1Edit<<ui->x1Box);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gy1Label<<ui->y1Edit<<ui->y1Box);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gzLabel<<ui->zEdit<<ui->zBox);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gx2Label<<ui->x2Edit<<ui->x2Box);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gy2Label<<ui->y2Edit<<ui->y2Box);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gaLabel<<ui->aEdit<<ui->aBox);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gbLabel<<ui->bEdit<<ui->bBox);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gcLabel<<ui->cEdit<<ui->cBox);
-    axisWidgets_.append(QList<QWidget*>()<<ui->releaseOutletLabel<<ui->outletBox);
+    ui->buttonGroupZ->setId(ui->zBoxComeIn,0);
+    ui->buttonGroupZ->setId(ui->zBoxComeOut,1);
+    ui->buttonGroupA->setId(ui->aBoxHorizontal,0);
+    ui->buttonGroupA->setId(ui->aBoxVertical,1);
+    ui->buttonGroupB->setId(ui->bBoxHorizontal,0);
+    ui->buttonGroupB->setId(ui->bBoxVertical,1);
+    ui->buttonGroupC->setId(ui->cBoxVertical,0);
+    ui->buttonGroupC->setId(ui->cBoxHorizontal,1);
+    ui->buttonGroupX1->setId(ui->x1BoxBackward,0);
+    ui->buttonGroupX1->setId(ui->x1BoxForward,1);
+    ui->buttonGroupY1->setId(ui->y1BoxUp,0);
+    ui->buttonGroupY1->setId(ui->y1BoxDown,1);
+    ui->buttonGroupX2->setId(ui->x2BoxBackward,0);
+    ui->buttonGroupX2->setId(ui->x2BoxForward,1);
+    ui->buttonGroupY2->setId(ui->y2BoxUp,0);
+    ui->buttonGroupY2->setId(ui->y2BoxDown,1);
+    ui->buttonGroupOutlet->setId(ui->outletBoxComeOut,0);
+    ui->buttonGroupOutlet->setId(ui->outletBoxComeIn,1);
+
+    axisWidgets_.append(QList<QWidget*>()<<ui->gx1Label<<ui->x1Edit<<ui->x1BoxBackward<<ui->x1BoxForward);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gy1Label<<ui->y1Edit<<ui->y1BoxDown<<ui->y1BoxUp);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gzLabel<<ui->zEdit<<ui->zBoxComeIn<<ui->zBoxComeOut);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gx2Label<<ui->x2Edit<<ui->x2BoxBackward<<ui->x2BoxForward);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gy2Label<<ui->y2Edit<<ui->y2BoxDown<<ui->y2BoxUp);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gaLabel<<ui->aEdit<<ui->aBoxHorizontal<<ui->aBoxVertical);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gbLabel<<ui->bEdit<<ui->bBoxHorizontal<<ui->bBoxVertical);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gcLabel<<ui->cEdit<<ui->cBoxHorizontal<<ui->cBoxVertical);
+    axisWidgets_.append(QList<QWidget*>()<<ui->releaseOutletLabel<<ui->outletBoxComeIn<<ui->outletBoxComeOut);
     posEdits_<<ui->x1Edit<<ui->y1Edit<<ui->zEdit<<ui->x2Edit<<ui->y2Edit
             <<ui->aEdit<<ui->bEdit<<ui->cEdit;
-    limitEdits_<<ui->x1Box<<ui->y1Box<<ui->zBox<<ui->x2Box<<ui->y2Box
-              <<ui->aBox<<ui->bBox<<ui->cBox;
+    limitEdits_<<ui->buttonGroupX1<<ui->buttonGroupY1<<ui->buttonGroupZ<<ui->buttonGroupX2<<ui->buttonGroupY2
+              <<ui->buttonGroupA<<ui->buttonGroupB<<ui->buttonGroupC;
 
     for(int i = 0; i != 8; ++i)
     {
@@ -181,7 +200,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
 
     /*donw to get product*/
     /*****************BUG#133*******************/
-    if(!ui->cBox->isHidden())
+    if(!ui->cBoxHorizontal->isHidden() && !ui->cBoxVertical->isHidden())
     {
         /***************BUG#182******************/
         if(!isMainArmUsed && !isSubArmUsed)
@@ -366,7 +385,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             if(SetAxisICMoldItem_(&item, axis_ + Z_AXIS, RELEASE_PRODUCT_SETTING))
                 ret.append(item);
             /******************************************/
-            if(!ui->cBox->isHidden())
+            if(!ui->cBoxHorizontal->isHidden() && !ui->cBoxVertical->isHidden())
             {
                 item.SetSVal(0);
                 if(axis_[C_AXIS].releaseProductLimit == 0)
@@ -451,7 +470,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             if(SetAxisICMoldItem_(&item, axis_ + Z_AXIS, RELEASE_OUTLET_SETTING))
                 ret.append(item);
             /******************************************/
-            if(!ui->cBox->isHidden())
+            if(!ui->cBoxHorizontal->isHidden() && !ui->cBoxVertical->isHidden())
             {
                 item.SetSVal(0);
                 if(axis_[C_AXIS].releaseProductLimit == 0)
@@ -548,7 +567,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             if(SetAxisICMoldItem_(&item, axis_ + Z_AXIS, RELEASE_PRODUCT_SETTING))
                 ret.append(item);
             /******************************************/
-            if(!ui->cBox->isHidden())
+            if(!ui->cBoxHorizontal->isHidden() && !ui->cBoxVertical->isHidden())
             {
                 item.SetSVal(0);
                 if(axis_[C_AXIS].releaseProductLimit == 0)
@@ -617,7 +636,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
         if(SetAxisICMoldItem_(&item, axis_ + Z_AXIS, RELEASE_PRODUCT_SETTING))
             ret.append(item);
         /*****************************************/
-        if(!ui->cBox->isHidden())
+        if(!ui->cBoxHorizontal->isHidden() && !ui->cBoxVertical->isHidden())
         {
             item.SetSVal(0);
             if(axis_[C_AXIS].releaseProductLimit == 0)
@@ -746,7 +765,8 @@ void ICProgramGuidePage::UpdateAxisDefine_()
         else
         {
             ShowWidgets_(axisWidgets_[0]);
-            ui->x1Box->hide();
+            ui->x1BoxBackward->hide();
+            ui->x1BoxForward->hide();
             axis_[0].mode = AXIS_SERVO;
             axis_[0].action = ICMold::GX;
         }
@@ -765,7 +785,8 @@ void ICProgramGuidePage::UpdateAxisDefine_()
         else
         {
             ShowWidgets_(axisWidgets_[1]);
-            ui->y1Box->hide();
+            ui->y1BoxUp->hide();
+            ui->y1BoxDown->hide();
             axis_[1].mode = AXIS_SERVO;
             axis_[1].action = ICMold::GY;
         }
@@ -784,7 +805,8 @@ void ICProgramGuidePage::UpdateAxisDefine_()
         else
         {
             ShowWidgets_(axisWidgets_[2]);
-            ui->zBox->hide();
+            ui->zBoxComeOut->hide();
+            ui->zBoxComeIn->hide();
             axis_[2].mode = AXIS_SERVO;
             axis_[2].action = ICMold::GZ;
         }
@@ -803,7 +825,8 @@ void ICProgramGuidePage::UpdateAxisDefine_()
         else
         {
             ShowWidgets_(axisWidgets_[3]);
-            ui->x2Box->hide();
+            ui->x2BoxBackward->hide();
+            ui->x2BoxForward->hide();
             axis_[3].mode = AXIS_SERVO;
             axis_[3].action = ICMold::GP;
         }
@@ -822,7 +845,8 @@ void ICProgramGuidePage::UpdateAxisDefine_()
         else
         {
             ShowWidgets_(axisWidgets_[4]);
-            ui->y2Box->hide();
+            ui->y2BoxUp->hide();
+            ui->y2BoxDown->hide();
             axis_[4].mode = AXIS_SERVO;
             axis_[4].action = ICMold::GQ;
         }
@@ -841,7 +865,8 @@ void ICProgramGuidePage::UpdateAxisDefine_()
         else
         {
             ShowWidgets_(axisWidgets_[5]);
-            ui->aBox->hide();
+            ui->aBoxVertical->hide();
+            ui->aBoxHorizontal->hide();
             axis_[5].mode = AXIS_SERVO;
             axis_[5].action = ICMold::GA;
         }
@@ -860,7 +885,8 @@ void ICProgramGuidePage::UpdateAxisDefine_()
         else
         {
             ShowWidgets_(axisWidgets_[6]);
-            ui->bBox->hide();
+            ui->bBoxVertical->hide();
+            ui->bBoxHorizontal->hide();
             axis_[6].mode = AXIS_SERVO;
             axis_[6].action = ICMold::GB;
         }
@@ -879,7 +905,8 @@ void ICProgramGuidePage::UpdateAxisDefine_()
         else
         {
             ShowWidgets_(axisWidgets_[7]);
-            ui->cBox->hide();
+            ui->cBoxVertical->hide();
+            ui->cBoxHorizontal->hide();
             axis_[7].mode = AXIS_SERVO;
             axis_[7].action = ICMold::GC;
         }
@@ -911,7 +938,9 @@ void ICProgramGuidePage::on_nextButton_clicked()
         ShowForStandby_();
        // SaveAxis_(STANDBY_SETTING);
         UpdateAxisShow(STANDBY_SETTING);
-        ui->cBox->setEnabled(true);
+//        ui->cBox->setEnabled(true);
+        ui->cBoxHorizontal->setEnabled(true);
+        ui->cBoxVertical->setEnabled(true);
         ui->cEdit->setEnabled(true);
         SetAxisBoxEnabled_(true);
     }
@@ -926,7 +955,10 @@ void ICProgramGuidePage::on_nextButton_clicked()
         if(axis_[C_AXIS].mode == AXIS_SERVO)
             ui->cEdit->setEnabled(false);
         if(axis_[C_AXIS].mode == AXIS_PNEUMATIC)
-            ui->cBox->setEnabled(false);
+        {
+            ui->cBoxHorizontal->setEnabled(false);
+            ui->cBoxVertical->setEnabled(false);
+        }
         SaveAxis_(STANDBY_SETTING);
         UpdateAxisShow(GET_PRODUCT_SETTING);
         ui->productGroupBox->setTitle(tr("Product"));
@@ -938,7 +970,8 @@ void ICProgramGuidePage::on_nextButton_clicked()
         ui->descrLabel->setText(tr("Release Product Position Settings"));
         on_usedMainArmBox_toggled(ui->usedMainArmBox->isChecked());
         ui->outletGroupBox->hide();
-        ui->cBox->setEnabled(true);
+        ui->cBoxHorizontal->setEnabled(true);
+        ui->cBoxVertical->setEnabled(true);
         ui->cEdit->setEnabled(true);
         SetAxisBoxEnabled_(true);
         if(!ui->usedMainArmBox->isChecked())
@@ -959,7 +992,8 @@ void ICProgramGuidePage::on_nextButton_clicked()
         on_usedSubArmBox_toggled(ui->usedSubArmBox->isChecked());
         ui->productGroupBox->hide();
         ui->cEdit->setEnabled(false);
-        ui->cBox->setEnabled(false);
+        ui->cBoxHorizontal->setEnabled(false);
+        ui->cBoxVertical->setEnabled(false);
         if(!ui->usedSubArmBox->isChecked())
         {
             ui->commonGroupBox->hide();
@@ -992,7 +1026,8 @@ void ICProgramGuidePage::on_preButton_clicked()
     else if(pageIndex_ == 1) //show for standby settings
     {
         ui->stackedWidget->setCurrentIndex(1);
-        ui->cBox->setEnabled(true);
+        ui->cBoxVertical->setEnabled(true);
+        ui->cBoxHorizontal->setEnabled(true);
         ui->cEdit->setEnabled(true);
         ShowForStandby_();
         SaveAxis_(GET_PRODUCT_SETTING);
@@ -1010,7 +1045,10 @@ void ICProgramGuidePage::on_preButton_clicked()
         if(axis_[C_AXIS].mode == AXIS_SERVO)
             ui->cEdit->setEnabled(false);
         if(axis_[C_AXIS].mode == AXIS_PNEUMATIC)
-            ui->cBox->setEnabled(false);
+        {
+            ui->cBoxHorizontal->setEnabled(false);
+            ui->cBoxVertical->setEnabled(false);
+        }
         SaveAxis_(RELEASE_PRODUCT_SETTING);
         UpdateAxisShow(GET_PRODUCT_SETTING);
     }
@@ -1021,7 +1059,8 @@ void ICProgramGuidePage::on_preButton_clicked()
         on_usedMainArmBox_toggled(ui->usedMainArmBox->isChecked());
         ui->outletGroupBox->hide();
         ui->cEdit->setEnabled(true);
-        ui->cBox->setEnabled(true);
+        ui->cBoxHorizontal->setEnabled(true);
+        ui->cBoxVertical->setEnabled(true);
         if(!ui->usedMainArmBox->isChecked())
         {
             ui->commonGroupBox->hide();
@@ -1043,7 +1082,10 @@ void ICProgramGuidePage::on_preButton_clicked()
         if(axis_[C_AXIS].mode == AXIS_SERVO)
             ui->cEdit->setEnabled(false);
         if(axis_[C_AXIS].mode == AXIS_PNEUMATIC)
-            ui->cBox->setEnabled(false);
+        {
+            ui->cBoxHorizontal->setEnabled(false);
+            ui->cBoxVertical->setEnabled(false);
+        }
         if(!ui->usedSubArmBox->isChecked())
         {
             ui->commonGroupBox->hide();
@@ -1085,7 +1127,8 @@ void ICProgramGuidePage::ShowForStandby_()
     ui->productGroupBox->setTitle("");
     ui->outletGroupBox->setTitle("");
     SetAxisBoxEnabled_(false);
-    ui->cBox->setEnabled(true);
+    ui->cBoxHorizontal->setEnabled(true);
+    ui->cBoxVertical->setEnabled(true);
 //    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
 //    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) == ICVirtualHost::ICAxisDefine_Pneumatic)
 //    {
@@ -1135,14 +1178,22 @@ void ICProgramGuidePage::ShowForStandby_()
 
 void ICProgramGuidePage::SetAxisBoxEnabled_(bool en)
 {
-    ui->x1Box->setEnabled(en);
-    ui->y1Box->setEnabled(en);
-    ui->zBox->setEnabled(en);
-    ui->x2Box->setEnabled(en);
-    ui->y2Box->setEnabled(en);
-    ui->aBox->setEnabled(en);
-    ui->bBox->setEnabled(en);
-    ui->cBox->setEnabled(en);
+    ui->x1BoxBackward->setEnabled(en);
+    ui->x1BoxForward->setEnabled(en);
+    ui->y1BoxUp->setEnabled(en);
+    ui->y1BoxDown->setEnabled(en);
+    ui->zBoxComeIn->setEnabled(en);
+    ui->zBoxComeOut->setEnabled(en);
+    ui->x2BoxBackward->setEnabled(en);
+    ui->x2BoxForward->setEnabled(en);
+    ui->y2BoxDown->setEnabled(en);
+    ui->y2BoxUp->setEnabled(en);
+    ui->aBoxHorizontal->setEnabled(en);
+    ui->aBoxVertical->setEnabled(en);
+    ui->bBoxVertical->setEnabled(en);
+    ui->bBoxHorizontal->setEnabled(en);
+    ui->cBoxVertical->setEnabled(en);
+    ui->cBoxHorizontal->setEnabled(en);
 }
 
 void ICProgramGuidePage::SetAxis_(_ICAxis_ *axis, int pos, int setting)
@@ -1174,7 +1225,7 @@ void ICProgramGuidePage::SaveAxis_(int setting)
         }
         else if(axis_[i].mode == AXIS_PNEUMATIC)
         {
-            SetAxis_(axis_ + i, limitEdits_.at(i)->currentIndex(), setting);
+            SetAxis_(axis_ + i, limitEdits_.at(i)->checkedId(), setting);
         }
     }
 }
@@ -1199,23 +1250,282 @@ void ICProgramGuidePage::SetAxisPosEdit_(ICLineEditWithVirtualNumericKeypad *edi
     }
 }
 
-void ICProgramGuidePage::SetAxisLimitEdit_(QComboBox *edit, _ICAxis_ *axis, int setting)
+//void ICProgramGuidePage::SetAxisLimitEdit_(QButtonGroup *edit, _ICAxis_ *axis, int setting, int i)
+void ICProgramGuidePage::SetAxisLimitEdit_(_ICAxis_ *axis, int setting, int i)
 {
-    if(setting == STANDBY_SETTING)
-    {
-        edit->setCurrentIndex(axis->standbyLimit);
-    }
-    else if(setting == GET_PRODUCT_SETTING)
-    {
-        edit->setCurrentIndex(axis->getLimit);
-    }
-    else if(setting == RELEASE_PRODUCT_SETTING)
-    {
-        edit->setCurrentIndex(axis->releaseProductLimit);
-    }
-    else if(setting == RELEASE_OUTLET_SETTING)
-    {
-        edit->setCurrentIndex(axis->releaseOutletLimit);
+    switch(i){
+    case 0:
+        if(setting == STANDBY_SETTING)
+        {
+        //        edit->setCurrentIndex(axis->standbyLimit);
+            if(axis->standbyLimit == 0)
+                ui->x1BoxBackward->setChecked(true);
+            else if(axis->standbyLimit == 1)
+                ui->x1BoxForward->setChecked(true);
+        }
+        else if(setting == GET_PRODUCT_SETTING)
+        {
+        //        edit->setCurrentIndex(axis->getLimit);
+            if(axis->getLimit == 0)
+                ui->x1BoxBackward->setChecked(true);
+            else if(axis->getLimit == 1)
+                ui->x1BoxForward->setChecked(true);
+        }
+        else if(setting == RELEASE_PRODUCT_SETTING)
+        {
+//            edit->setCurrentIndex(axis->releaseProductLimit);
+            if(axis->releaseProductLimit == 0)
+                ui->x1BoxBackward->setChecked(true);
+            else if(axis->releaseProductLimit == 1)
+                ui->x1BoxForward->setChecked(true);
+        }
+        else if(setting == RELEASE_OUTLET_SETTING)
+        {
+//            edit->setCurrentIndex(axis->releaseOutletLimit);
+            if(axis->releaseProductLimit == 0)
+                ui->x1BoxBackward->setChecked(true);
+            else if(axis->releaseProductLimit == 1)
+                ui->x1BoxForward->setChecked(true);
+        }
+        break ;
+    case 1:
+        if(setting == STANDBY_SETTING)
+        {
+        //        edit->setCurrentIndex(axis->standbyLimit);
+            if(axis->standbyLimit == 0)
+                ui->y1BoxUp->setChecked(true);
+            else if(axis->standbyLimit == 1)
+                ui->y1BoxDown->setChecked(true);
+        }
+        else if(setting == GET_PRODUCT_SETTING)
+        {
+        //        edit->setCurrentIndex(axis->getLimit);
+            if(axis->getLimit == 0)
+                ui->y1BoxUp->setChecked(true);
+            else if(axis->getLimit == 1)
+                ui->y1BoxDown->setChecked(true);
+        }
+        else if(setting == RELEASE_PRODUCT_SETTING)
+        {
+//            edit->setCurrentIndex(axis->releaseProductLimit);
+            if(axis->releaseProductLimit == 0)
+                ui->y1BoxUp->setChecked(true);
+            else if(axis->releaseProductLimit == 1)
+                ui->y1BoxDown->setChecked(true);
+        }
+        else if(setting == RELEASE_OUTLET_SETTING)
+        {
+//            edit->setCurrentIndex(axis->releaseOutletLimit);
+            if(axis->releaseProductLimit == 0)
+                ui->y1BoxUp->setChecked(true);
+            else if(axis->releaseProductLimit == 1)
+                ui->y1BoxDown->setChecked(true);
+        }
+        break ;
+    case 2:
+        if(setting == STANDBY_SETTING)
+        {
+            //        edit->setCurrentIndex(axis->standbyLimit);
+            if(axis->standbyLimit == 0)
+                ui->zBoxComeIn->setChecked(true);
+            else if(axis->standbyLimit == 1)
+                ui->zBoxComeOut->setChecked(true);
+        }
+        else if(setting == GET_PRODUCT_SETTING)
+        {
+            //        edit->setCurrentIndex(axis->getLimit);
+            if(axis->getLimit == 0)
+                ui->zBoxComeIn->setChecked(true);
+            else if(axis->getLimit == 1)
+                ui->zBoxComeOut->setChecked(true);
+        }
+        else if(setting == RELEASE_PRODUCT_SETTING)
+        {
+            //            edit->setCurrentIndex(axis->releaseProductLimit);
+            if(axis->releaseProductLimit == 0)
+                ui->zBoxComeIn->setChecked(true);
+            else if(axis->releaseProductLimit == 1)
+                ui->zBoxComeOut->setChecked(true);
+        }
+        else if(setting == RELEASE_OUTLET_SETTING)
+        {
+            //            edit->setCurrentIndex(axis->releaseOutletLimit);
+            if(axis->releaseProductLimit == 0)
+                ui->zBoxComeIn->setChecked(true);
+            else if(axis->releaseProductLimit == 1)
+                ui->zBoxComeOut->setChecked(true);
+        }
+        break ;
+    case 3:
+        if(setting == STANDBY_SETTING)
+        {
+        //        edit->setCurrentIndex(axis->standbyLimit);
+            if(axis->standbyLimit == 0)
+                ui->x2BoxBackward->setChecked(true);
+            else if(axis->standbyLimit == 1)
+                ui->x2BoxForward->setChecked(true);
+        }
+        else if(setting == GET_PRODUCT_SETTING)
+        {
+        //        edit->setCurrentIndex(axis->getLimit);
+            if(axis->getLimit == 0)
+                ui->x2BoxBackward->setChecked(true);
+            else if(axis->getLimit == 1)
+                ui->x2BoxForward->setChecked(true);
+        }
+        else if(setting == RELEASE_PRODUCT_SETTING)
+        {
+//            edit->setCurrentIndex(axis->releaseProductLimit);
+            if(axis->releaseProductLimit == 0)
+                ui->x2BoxBackward->setChecked(true);
+            else if(axis->releaseProductLimit == 1)
+                ui->x2BoxForward->setChecked(true);
+        }
+        else if(setting == RELEASE_OUTLET_SETTING)
+        {
+//            edit->setCurrentIndex(axis->releaseOutletLimit);
+            if(axis->releaseProductLimit == 0)
+                ui->x2BoxBackward->setChecked(true);
+            else if(axis->releaseProductLimit == 1)
+                ui->x2BoxForward->setChecked(true);
+        }
+        break ;
+    case 4:
+        if(setting == STANDBY_SETTING)
+        {
+        //        edit->setCurrentIndex(axis->standbyLimit);
+            if(axis->standbyLimit == 0)
+                ui->y2BoxUp->setChecked(true);
+            else if(axis->standbyLimit == 1)
+                ui->y2BoxDown->setChecked(true);
+        }
+        else if(setting == GET_PRODUCT_SETTING)
+        {
+        //        edit->setCurrentIndex(axis->getLimit);
+            if(axis->getLimit == 0)
+                ui->y2BoxUp->setChecked(true);
+            else if(axis->getLimit == 1)
+                ui->y2BoxDown->setChecked(true);
+        }
+        else if(setting == RELEASE_PRODUCT_SETTING)
+        {
+//            edit->setCurrentIndex(axis->releaseProductLimit);
+            if(axis->releaseProductLimit == 0)
+                ui->y2BoxUp->setChecked(true);
+            else if(axis->releaseProductLimit == 1)
+                ui->y2BoxDown->setChecked(true);
+        }
+        else if(setting == RELEASE_OUTLET_SETTING)
+        {
+//            edit->setCurrentIndex(axis->releaseOutletLimit);
+            if(axis->releaseProductLimit == 0)
+                ui->y2BoxUp->setChecked(true);
+            else if(axis->releaseProductLimit == 1)
+                ui->y2BoxDown->setChecked(true);
+        }
+        break ;
+    case 5:
+        if(setting == STANDBY_SETTING)
+        {
+        //        edit->setCurrentIndex(axis->standbyLimit);
+            if(axis->standbyLimit == 0)
+                ui->aBoxHorizontal->setChecked(true);
+            else if(axis->standbyLimit == 1)
+                ui->aBoxVertical->setChecked(true);
+        }
+        else if(setting == GET_PRODUCT_SETTING)
+        {
+        //        edit->setCurrentIndex(axis->getLimit);
+            if(axis->getLimit == 0)
+                ui->aBoxHorizontal->setChecked(true);
+            else if(axis->getLimit == 1)
+                ui->aBoxVertical->setChecked(true);
+        }
+        else if(setting == RELEASE_PRODUCT_SETTING)
+        {
+//            edit->setCurrentIndex(axis->releaseProductLimit);
+            if(axis->releaseProductLimit == 0)
+                ui->aBoxHorizontal->setChecked(true);
+            else if(axis->releaseProductLimit == 1)
+                ui->aBoxVertical->setChecked(true);
+        }
+        else if(setting == RELEASE_OUTLET_SETTING)
+        {
+//            edit->setCurrentIndex(axis->releaseOutletLimit);
+            if(axis->releaseProductLimit == 0)
+                ui->aBoxHorizontal->setChecked(true);
+            else if(axis->releaseProductLimit == 1)
+                ui->aBoxVertical->setChecked(true);
+        }
+        break ;
+    case 6:
+        if(setting == STANDBY_SETTING)
+        {
+        //        edit->setCurrentIndex(axis->standbyLimit);
+            if(axis->standbyLimit == 0)
+                ui->bBoxHorizontal->setChecked(true);
+            else if(axis->standbyLimit == 1)
+                ui->bBoxVertical->setChecked(true);
+        }
+        else if(setting == GET_PRODUCT_SETTING)
+        {
+        //        edit->setCurrentIndex(axis->getLimit);
+            if(axis->getLimit == 0)
+                ui->bBoxHorizontal->setChecked(true);
+            else if(axis->getLimit == 1)
+                ui->bBoxVertical->setChecked(true);
+        }
+        else if(setting == RELEASE_PRODUCT_SETTING)
+        {
+//            edit->setCurrentIndex(axis->releaseProductLimit);
+            if(axis->releaseProductLimit == 0)
+                ui->bBoxHorizontal->setChecked(true);
+            else if(axis->releaseProductLimit == 1)
+                ui->bBoxVertical->setChecked(true);
+        }
+        else if(setting == RELEASE_OUTLET_SETTING)
+        {
+//            edit->setCurrentIndex(axis->releaseOutletLimit);
+            if(axis->releaseProductLimit == 0)
+                ui->bBoxHorizontal->setChecked(true);
+            else if(axis->releaseProductLimit == 1)
+                ui->bBoxVertical->setChecked(true);
+        }
+        break ;
+    case 7:
+        if(setting == STANDBY_SETTING)
+        {
+        //        edit->setCurrentIndex(axis->standbyLimit);
+            if(axis->standbyLimit == 1)
+                ui->cBoxHorizontal->setChecked(true);
+            else if(axis->standbyLimit == 0)
+                ui->cBoxVertical->setChecked(true);
+        }
+        else if(setting == GET_PRODUCT_SETTING)
+        {
+        //        edit->setCurrentIndex(axis->getLimit);
+            if(axis->getLimit == 1)
+                ui->cBoxHorizontal->setChecked(true);
+            else if(axis->getLimit == 0)
+                ui->cBoxVertical->setChecked(true);
+        }
+        else if(setting == RELEASE_PRODUCT_SETTING)
+        {
+//            edit->setCurrentIndex(axis->releaseProductLimit);
+            if(axis->releaseProductLimit == 1)
+                ui->cBoxHorizontal->setChecked(true);
+            else if(axis->releaseProductLimit == 0)
+                ui->cBoxVertical->setChecked(true);
+        }
+        else if(setting == RELEASE_OUTLET_SETTING)
+        {
+//            edit->setCurrentIndex(axis->releaseOutletLimit);
+            if(axis->releaseProductLimit == 1)
+                ui->cBoxHorizontal->setChecked(true);
+            else if(axis->releaseProductLimit == 0)
+                ui->cBoxVertical->setChecked(true);
+        }
+        break ;
     }
 }
 void ICProgramGuidePage::UpdateAxisShow(int setting)
@@ -1228,7 +1538,8 @@ void ICProgramGuidePage::UpdateAxisShow(int setting)
         }
         else if(axis_[i].mode == AXIS_PNEUMATIC)
         {
-            SetAxisLimitEdit_(limitEdits_[i], axis_ + i, setting);
+            SetAxisLimitEdit_(axis_ + i, setting, i);
+//            SetAxisLimitEdit_(limitEdits_[i], axis_ + i, setting, i);
         }
     }
 }
@@ -1339,35 +1650,67 @@ void ICProgramGuidePage::GuideKeyToActionCheck(int key)
     {
     case ICKeyboard::VFB_X1Add:
     case ICKeyboard::VFB_X1Sub:
-        ui->x1Box->setCurrentIndex(key == ICKeyboard::VFB_X1Add ? 0:1);
+//        ui->x1Box->setCurrentIndex(key == ICKeyboard::VFB_X1Add ? 0:1);
+        if((key == ICKeyboard::VFB_X1Add ? 0:1) == 0)
+            ui->x1BoxBackward->setChecked(true);
+        else if((key == ICKeyboard::VFB_X1Add ? 0:1) == 1)
+            ui->x1BoxForward->setChecked(true);
         break;
     case ICKeyboard::VFB_Y1Add:
     case ICKeyboard::VFB_Y1Sub:
-        ui->y1Box->setCurrentIndex(key == ICKeyboard::VFB_Y1Add ? 1:0);
+//        ui->y1Box->setCurrentIndex(key == ICKeyboard::VFB_Y1Add ? 1:0);
+        if((key == ICKeyboard::VFB_Y1Add ? 0:1) == 1)
+            ui->y1BoxUp->setChecked(true);
+        else if((key == ICKeyboard::VFB_Y1Add ? 0:1) == 0)
+            ui->y1BoxDown->setChecked(true);
         break;
     case ICKeyboard::VFB_ZAdd:
     case ICKeyboard::VFB_ZSub:
-        ui->zBox->setCurrentIndex(key == ICKeyboard::VFB_ZAdd ? 1:0);
+//        ui->zBox->setCurrentIndex(key == ICKeyboard::VFB_ZAdd ? 1:0);
+        if((key == ICKeyboard::VFB_ZAdd ? 0:1) == 1)
+            ui->zBoxComeIn->setChecked(true);
+        else if((key == ICKeyboard::VFB_ZAdd ? 0:1) == 0)
+            ui->zBoxComeOut->setChecked(true);
         break;
     case ICKeyboard::VFB_X2Add:
     case ICKeyboard::VFB_X2Sub:
-        ui->x2Box->setCurrentIndex(key == ICKeyboard::VFB_X2Add ? 0:1);
+//        ui->x2Box->setCurrentIndex(key == ICKeyboard::VFB_X2Add ? 0:1);
+        if((key == ICKeyboard::VFB_X2Add ? 0:1) == 0)
+            ui->x2BoxBackward->setChecked(true);
+        else if((key == ICKeyboard::VFB_X2Add ? 0:1) == 1)
+            ui->x2BoxForward->setChecked(true);
         break;
     case ICKeyboard::VFB_Y2Add:
     case ICKeyboard::VFB_Y2Sub:
-        ui->y2Box->setCurrentIndex(key == ICKeyboard::VFB_Y2Add ?0:1);
+//        ui->y2Box->setCurrentIndex(key == ICKeyboard::VFB_Y2Add ?0:1);
+        if((key == ICKeyboard::VFB_Y2Add ? 0:1) == 0)
+            ui->y2BoxUp->setChecked(true);
+        else if((key == ICKeyboard::VFB_Y2Add ? 0:1) == 1)
+            ui->y2BoxDown->setChecked(true);
         break;
     case ICKeyboard::VFB_AAdd:
     case ICKeyboard::VFB_ASub:
-        ui->aBox->setCurrentIndex(key == ICKeyboard::VFB_AAdd ? 0:1);
+//        ui->aBox->setCurrentIndex(key == ICKeyboard::VFB_AAdd ? 0:1);
+        if((key == ICKeyboard::VFB_AAdd ? 0:1) == 0)
+            ui->aBoxHorizontal->setChecked(true);
+        else if((key == ICKeyboard::VFB_AAdd ? 0:1) == 1)
+            ui->aBoxVertical->setChecked(true);
         break;
     case ICKeyboard::VFB_BAdd:
     case ICKeyboard::VFB_BSub:
-        ui->bBox->setCurrentIndex(key == ICKeyboard::VFB_BAdd ? 1:0);
+//        ui->bBox->setCurrentIndex(key == ICKeyboard::VFB_BAdd ? 1:0);
+        if((key == ICKeyboard::VFB_BAdd ? 0:1) == 1)
+            ui->bBoxHorizontal->setChecked(true);
+        else if((key == ICKeyboard::VFB_BAdd ? 0:1) == 0)
+            ui->bBoxVertical->setChecked(true);
         break;
     case ICKeyboard::VFB_Pose_Horizontal:
     case ICKeyboard::VFB_Pose_Vertical:
-        ui->cBox->setCurrentIndex(key == ICKeyboard::VFB_Pose_Horizontal ? 1:0);
+//        ui->cBox->setCurrentIndex(key == ICKeyboard::VFB_Pose_Horizontal ? 1:0);
+        if((key == ICKeyboard::VFB_Pose_Horizontal ? 0:1) == 1)
+            ui->cBoxVertical->setChecked(true);
+        else if((key == ICKeyboard::VFB_Pose_Horizontal ? 0:1) == 0)
+            ui->cBoxHorizontal->setChecked(true);
         break;
 
     }

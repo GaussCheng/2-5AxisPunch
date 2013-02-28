@@ -24,6 +24,10 @@
      </property>
      <item>
       <widget class="QPushButton" name="axisXToolButton">
+       <property name="styleSheet">
+        <string notr="true">width:60px ;
+height:30px;</string>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -37,6 +41,10 @@
      </item>
      <item>
       <widget class="QPushButton" name="axisYToolButton">
+       <property name="styleSheet">
+        <string notr="true">width:60px ;
+height:30px;</string>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -50,6 +58,10 @@
      </item>
      <item>
       <widget class="QPushButton" name="axisZToolButton">
+       <property name="styleSheet">
+        <string notr="true">width:60px ;
+height:30px;</string>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -63,6 +75,10 @@
      </item>
      <item>
       <widget class="QPushButton" name="axisPToolButton">
+       <property name="styleSheet">
+        <string notr="true">width:60px ;
+height:30px;</string>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -76,6 +92,10 @@
      </item>
      <item>
       <widget class="QPushButton" name="axisQToolButton">
+       <property name="styleSheet">
+        <string notr="true">width:60px ;
+height:30px;</string>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -89,6 +109,10 @@
      </item>
      <item>
       <widget class="QPushButton" name="axisAToolButton">
+       <property name="styleSheet">
+        <string notr="true">width:60px ;
+height:30px;</string>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -102,6 +126,10 @@
      </item>
      <item>
       <widget class="QPushButton" name="axisBToolButton">
+       <property name="styleSheet">
+        <string notr="true">width:60px ;
+height:30px;</string>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -115,6 +143,10 @@
      </item>
      <item>
       <widget class="QPushButton" name="axisCToolButton">
+       <property name="styleSheet">
+        <string notr="true">width:60px ;
+height:30px;</string>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -128,6 +160,10 @@
      </item>
      <item>
       <widget class="QPushButton" name="structDefButton">
+       <property name="styleSheet">
+        <string notr="true">width:60px ;
+height:30px;</string>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -141,6 +177,10 @@
      </item>
      <item>
       <widget class="QPushButton" name="timeLimitButton">
+       <property name="styleSheet">
+        <string notr="true">width:60px ;
+height:30px;</string>
+       </property>
        <property name="text">
         <string/>
        </property>

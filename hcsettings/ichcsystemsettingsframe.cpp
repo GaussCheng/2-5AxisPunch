@@ -23,6 +23,8 @@ ICHCSystemSettingsFrame::ICHCSystemSettingsFrame(QWidget *parent) :
     ui->setupUi(this);
     buttonGroup_ = new QButtonGroup();
 
+    ui->languageButtonGroup->setId(ui->chineseBox,0);
+    ui->languageButtonGroup->setId(ui->englishBox,1);
     InitParameter();
     ui->extentFunctionCheckBox->setChecked(ICParametersSave::Instance()->IsExtentFunctionUsed());
 
@@ -70,9 +72,21 @@ ICHCSystemSettingsFrame::ICHCSystemSettingsFrame(QWidget *parent) :
     ui->backLightTimeEdit->setValidator(new QIntValidator(1, 60, this));
     ui->backLightTimeEdit->SetThisIntToThisText(ICParametersSave::Instance()->BackLightTime());
     ui->brightnessBar->setValue((9 - ICParametersSave::Instance()->Brightness()));
+
+    QList<QAbstractButton*> buttons_ = ui->languageButtonGroup->buttons();
+    for(int i = 0; i != buttons_.size(); ++i)
+    {
+        buttons_[i]->setCheckable(true);
+        connect(buttons_.at(i),
+                SIGNAL(clicked()),
+                this,
+                SLOT(languageBoxChange()));
+    }
 #ifndef Q_WS_WIN32
     uname(&osInfo_);
 #endif
+
+    testvalue = FALSE;
 }
 
 ICHCSystemSettingsFrame::~ICHCSystemSettingsFrame()
@@ -85,7 +99,11 @@ void ICHCSystemSettingsFrame::InitParameter()
     ui->dateTimeEdit->setDateTime(QDateTime::currentDateTime());
     ICParametersSave* paraSave = ICParametersSave::Instance();
     int index = (paraSave->Country() == QLocale::China) ? 0 : 1;
-    ui->languageComboBox->setCurrentIndex(index);
+    if(index == 0)
+        ui->chineseBox->setChecked(true);
+    else if(index == 1)
+        ui->englishBox->setChecked(true);
+    // ui->languageComboBox->setCurrentIndex(index);
     if(paraSave->KeyTone())
     {
         ui->keyToneButton->setText(tr("Key Tone(ON)"));
@@ -98,14 +116,14 @@ void ICHCSystemSettingsFrame::InitParameter()
     }
 }
 
-void ICHCSystemSettingsFrame::on_languageComboBox_activated(int index)
+void ICHCSystemSettingsFrame::languageBoxChange()
 {
     ICParametersSave* paraSave = ICParametersSave::Instance();
-    if(index == 0)
+    if(ui->languageButtonGroup->checkedId()== 0)
     {
         paraSave->SetCountry(QLocale::China);
     }
-    else if(index == 1)
+    else if(ui->languageButtonGroup->checkedId() == 1)
     {
         paraSave->SetCountry(QLocale::UnitedStates);
     }
@@ -121,7 +139,11 @@ void ICHCSystemSettingsFrame::changeEvent(QEvent *e)
         ICParametersSave* paraSave = ICParametersSave::Instance();
 
         int index = (paraSave->Country() == QLocale::China) ? 0 : 1;
-        ui->languageComboBox->setCurrentIndex(index);
+        if(index == 0)
+            ui->chineseBox->setChecked(true);
+        else if(index == 1)
+            ui->englishBox->setChecked(true);
+    //    ui->languageComboBox->setCurrentIndex(index);
         ui->dateTimeEdit->setDateTime(QDateTime::currentDateTime());
         ui->axisXToolButton->setText(tr("X1 Axis"));
         ui->axisYToolButton->setText(tr("Y1 Axis"));
@@ -132,6 +154,7 @@ void ICHCSystemSettingsFrame::changeEvent(QEvent *e)
         ui->axisBToolButton->setText(tr("B Axis"));
         ui->axisCToolButton->setText(tr("C Axis"));
         ui->structDefButton->setText(tr("Struct Define"));
+        on_keyToneButton_toggled(ui->keyToneButton->isChecked());
     }
         break;
     default:
@@ -201,11 +224,11 @@ void ICHCSystemSettingsFrame::on_changeButton_clicked()
     }
     ICParametersSave* config = ICParametersSave::Instance();
     ICParametersSave::OperationLevel level;
-    if(ui->levelComboBox->currentIndex() == 0)
+    if(ui->machineAdminBox->isChecked())
     {
         level = ICParametersSave::MachineAdmin;
     }
-    else
+    else if(ui->advanceAdminBox->isChecked())
     {
         level = ICParametersSave::AdvanceAdmin;
     }
@@ -321,30 +344,30 @@ void ICHCSystemSettingsFrame::Information(bool isSuccess, const QString &msg)
     }
 }
 
-void ICHCSystemSettingsFrame::on_backupMoldsButton_clicked()
-{
-    if(!CheckIsUsbAttached())
-    {
-        QMessageBox::warning(this, tr("Warning"), tr("USB is not connected!"));
-        return;
-    }
-    ICTipsWidget tipsWidget(tr("Backuping, please wait..."));
-    tipsWidget.show();qApp->processEvents();
-    ICBackupUtility backupUtility;
-    bool ret = backupUtility.BackupDir("/opt/Qt/bin/records",
-                                       "/mnt/udisk/HC5ABackup/records",
-                                       QStringList()<<"*.act"<<"*.fnc");
-    ret = ret && backupUtility.BackupDir("/opt/Qt/bin/subs",
-                                         "/mnt/udisk/HC5ABackup/subs",
-                                         QStringList()<<"sub[0-7].prg");
-    Information(ret);
-    //    system("rm -R /mnt/udisk/HC5ABackup/records");
-    //    system("rm -R /mnt/udisk/HC5ABackup/subs");
-    //    system("mkdir -p /mnt/udisk/HC5ABackup/");
-    //    //    bool isSuccess = QFile::copy("./records", "/mnt/udisk/HC5ABackup/");
-    //    //    isSuccess = isSuccess && QFile::copy("./subs", "/mnt/udisk/HC5ABackup/");
-    //    Information(system("cp -Rf /opt/Qt/bin/records/ /opt/Qt/bin/subs/ /mnt/udisk/HC5ABackup") >= 0);
-}
+//void ICHCSystemSettingsFrame::on_backupMoldsButton_clicked()
+//{
+//    if(!CheckIsUsbAttached())
+//    {
+//        QMessageBox::warning(this, tr("Warning"), tr("USB is not connected!"));
+//        return;
+//    }
+//    ICTipsWidget tipsWidget(tr("Backuping, please wait..."));
+//    tipsWidget.show();qApp->processEvents();
+//    ICBackupUtility backupUtility;
+//    bool ret = backupUtility.BackupDir("/opt/Qt/bin/records",
+//                                       "/mnt/udisk/HC5ABackup/records",
+//                                       QStringList()<<"*.act"<<"*.fnc");
+//    ret = ret && backupUtility.BackupDir("/opt/Qt/bin/subs",
+//                                         "/mnt/udisk/HC5ABackup/subs",
+//                                         QStringList()<<"sub[0-7].prg");
+//    Information(ret);
+//    //    system("rm -R /mnt/udisk/HC5ABackup/records");
+//    //    system("rm -R /mnt/udisk/HC5ABackup/subs");
+//    //    system("mkdir -p /mnt/udisk/HC5ABackup/");
+//    //    //    bool isSuccess = QFile::copy("./records", "/mnt/udisk/HC5ABackup/");
+//    //    //    isSuccess = isSuccess && QFile::copy("./subs", "/mnt/udisk/HC5ABackup/");
+//    //    Information(system("cp -Rf /opt/Qt/bin/records/ /opt/Qt/bin/subs/ /mnt/udisk/HC5ABackup") >= 0);
+//}
 
 void ICHCSystemSettingsFrame::on_backupAllButton_clicked()
 {
@@ -449,120 +472,120 @@ void ICHCSystemSettingsFrame::on_restoreSystemButton_clicked()
     }
 }
 
-void ICHCSystemSettingsFrame::on_restoreMoldsButton_clicked()
-{
-    if(!CheckIsUsbAttached())
-    {
-        QMessageBox::warning(this, tr("Warning"), tr("USB is not connected!"));
-        return;
-    }
-    ICTipsWidget tipsWidget(tr("Restoring, please wait..."));
-    tipsWidget.show();qApp->processEvents();
-    QDir dir("/mnt/udisk/HC5ABackup/records");
-    if(!dir.exists())
-    {
-        QMessageBox::warning(this, tr("Warnning"), tr("Backup files is not exists!"));
-        return;
-    }
-    QStringList acts = dir.entryList(QStringList()<<"*.act");
-    QStringList fncs = dir.entryList(QStringList()<<"*.fnc");
-    if(fncs.contains("Base.fnc"))
-    {
-        fncs.removeOne("Base.fnc");
-    }
-    if(acts.size() != fncs.size())
-    {
-        QMessageBox::warning(this, tr("Warnning"), tr("Backup files is incomplete!"));
-        return;
-    }
-    for(int i = 0; i != fncs.size(); ++i)
-    {
-        fncs[i] = fncs.at(i).left(fncs.at(i).size() - 4);
-    }
-    for(int i = 0; i != acts.size(); ++i)
-    {
-        if(!fncs.contains(acts.at(i).left(acts.at(i).size() - 4)))
-        {
-            QMessageBox::warning(this, tr("Warnning"), tr("Backup files is incomplete!"));
-            return;
-        }
-    }
-    QFile file;
-    QString actContent;
-    ICProgramFormatChecker programChecker;
-    for(int i = 0; i != acts.size(); ++i)
-    {
-        file.setFileName(dir.absoluteFilePath(acts.at(i)));
-        actContent.clear();
-        file.open(QFile::ReadOnly | QFile::Text);
-        actContent = file.readAll();
-        file.close();
-        if(!programChecker.Check(actContent))
-        {
-            QMessageBox::warning(this, tr("Warnning"), tr("Wrong program format!"));
-            return;
-        }
-    }
-    ICConfigFormatChecker configFormatChecker;
-    for(int i = 0; i != fncs.size(); ++i)
-    {
-        file.setFileName(dir.absoluteFilePath(fncs.at(i) + ".fnc"));
-        actContent.clear();
-        file.open(QFile::ReadOnly | QFile::Text);
-        actContent = file.readAll();
-        file.close();
-        if(!configFormatChecker.CheckRowCount(actContent, 58,ICDataFormatChecker::kCompareEqual))
-        {
-            QMessageBox::warning(this, tr("Warnning"), tr("Wrong config format!"));
-            return;
-        }
-        if(!configFormatChecker.Check(actContent))
-        {
-            QMessageBox::warning(this, tr("Warnning"), tr("Wrong config format!"));
-            return;
-        }
-    }
-    ICBackupUtility backupUtility;
-    bool ret = backupUtility.RestoreDir("/mnt/udisk/HC5ABackup/records",
-                                        "/opt/Qt/bin/records",
-                                        QStringList()<<"*.act"<<"*.fnc");
-    dir.cdUp();
-    dir.cd("subs");
-    QStringList subs = dir.entryList(QStringList()<<"sub[0-7]");
-    for(int i = 0; i != subs.size(); ++i)
-    {
-        file.setFileName(dir.absoluteFilePath(subs.at(i)));
-        actContent.clear();
-        file.open(QFile::ReadOnly | QFile::Text);
-        actContent = file.readAll();
-        file.close();
-        if(!programChecker.Check(actContent))
-        {
-            QMessageBox::warning(this, tr("Warnning"), tr("Wrong program format!"));
-            return;
-        }
-    }
-    if(ret)
-    {
-        ret = ret && backupUtility.RestoreDir("/mnt/udisk/HC5ABackup/subs",
-                                              "/opt/Qt/bin/subs",
-                                              QStringList()<<"sub[0-7].prg");
-    }
-    Information(ret, tr("Backup files is broken!"));
-    //    system("cp /mnt/udisk/HC5ABackup/records/*.act /mnt/udisk/HC5ABackup/records/*.fnc /opt/Qt/bin/records -f");
-    //    dir.setPath("/mnt/udisk/HC5ABackup/subs");
-    //    if(!dir.exists())
-    //    {
-    //        QMessageBox::warning(this, tr("Warnning"), tr("Backup files is not exists!"));
-    //        return;
-    //    }
-    //    system("cp /mnt/udisk/HC5ABackup/subs/* /opt/Qt/bin/subs -f");
-    //    Information(true);
-    if(ret)
-    {
-        system("reboot");
-    }
-}
+//void ICHCSystemSettingsFrame::on_restoreMoldsButton_clicked()
+//{
+//    if(!CheckIsUsbAttached())
+//    {
+//        QMessageBox::warning(this, tr("Warning"), tr("USB is not connected!"));
+//        return;
+//    }
+//    ICTipsWidget tipsWidget(tr("Restoring, please wait..."));
+//    tipsWidget.show();qApp->processEvents();
+//    QDir dir("/mnt/udisk/HC5ABackup/records");
+//    if(!dir.exists())
+//    {
+//        QMessageBox::warning(this, tr("Warnning"), tr("Backup files is not exists!"));
+//        return;
+//    }
+//    QStringList acts = dir.entryList(QStringList()<<"*.act");
+//    QStringList fncs = dir.entryList(QStringList()<<"*.fnc");
+//    if(fncs.contains("Base.fnc"))
+//    {
+//        fncs.removeOne("Base.fnc");
+//    }
+//    if(acts.size() != fncs.size())
+//    {
+//        QMessageBox::warning(this, tr("Warnning"), tr("Backup files is incomplete!"));
+//        return;
+//    }
+//    for(int i = 0; i != fncs.size(); ++i)
+//    {
+//        fncs[i] = fncs.at(i).left(fncs.at(i).size() - 4);
+//    }
+//    for(int i = 0; i != acts.size(); ++i)
+//    {
+//        if(!fncs.contains(acts.at(i).left(acts.at(i).size() - 4)))
+//        {
+//            QMessageBox::warning(this, tr("Warnning"), tr("Backup files is incomplete!"));
+//            return;
+//        }
+//    }
+//    QFile file;
+//    QString actContent;
+//    ICProgramFormatChecker programChecker;
+//    for(int i = 0; i != acts.size(); ++i)
+//    {
+//        file.setFileName(dir.absoluteFilePath(acts.at(i)));
+//        actContent.clear();
+//        file.open(QFile::ReadOnly | QFile::Text);
+//        actContent = file.readAll();
+//        file.close();
+//        if(!programChecker.Check(actContent))
+//        {
+//            QMessageBox::warning(this, tr("Warnning"), tr("Wrong program format!"));
+//            return;
+//        }
+//    }
+//    ICConfigFormatChecker configFormatChecker;
+//    for(int i = 0; i != fncs.size(); ++i)
+//    {
+//        file.setFileName(dir.absoluteFilePath(fncs.at(i) + ".fnc"));
+//        actContent.clear();
+//        file.open(QFile::ReadOnly | QFile::Text);
+//        actContent = file.readAll();
+//        file.close();
+//        if(!configFormatChecker.CheckRowCount(actContent, 58,ICDataFormatChecker::kCompareEqual))
+//        {
+//            QMessageBox::warning(this, tr("Warnning"), tr("Wrong config format!"));
+//            return;
+//        }
+//        if(!configFormatChecker.Check(actContent))
+//        {
+//            QMessageBox::warning(this, tr("Warnning"), tr("Wrong config format!"));
+//            return;
+//        }
+//    }
+//    ICBackupUtility backupUtility;
+//    bool ret = backupUtility.RestoreDir("/mnt/udisk/HC5ABackup/records",
+//                                        "/opt/Qt/bin/records",
+//                                        QStringList()<<"*.act"<<"*.fnc");
+//    dir.cdUp();
+//    dir.cd("subs");
+//    QStringList subs = dir.entryList(QStringList()<<"sub[0-7]");
+//    for(int i = 0; i != subs.size(); ++i)
+//    {
+//        file.setFileName(dir.absoluteFilePath(subs.at(i)));
+//        actContent.clear();
+//        file.open(QFile::ReadOnly | QFile::Text);
+//        actContent = file.readAll();
+//        file.close();
+//        if(!programChecker.Check(actContent))
+//        {
+//            QMessageBox::warning(this, tr("Warnning"), tr("Wrong program format!"));
+//            return;
+//        }
+//    }
+//    if(ret)
+//    {
+//        ret = ret && backupUtility.RestoreDir("/mnt/udisk/HC5ABackup/subs",
+//                                              "/opt/Qt/bin/subs",
+//                                              QStringList()<<"sub[0-7].prg");
+//    }
+//    Information(ret, tr("Backup files is broken!"));
+//    //    system("cp /mnt/udisk/HC5ABackup/records/*.act /mnt/udisk/HC5ABackup/records/*.fnc /opt/Qt/bin/records -f");
+//    //    dir.setPath("/mnt/udisk/HC5ABackup/subs");
+//    //    if(!dir.exists())
+//    //    {
+//    //        QMessageBox::warning(this, tr("Warnning"), tr("Backup files is not exists!"));
+//    //        return;
+//    //    }
+//    //    system("cp /mnt/udisk/HC5ABackup/subs/* /opt/Qt/bin/subs -f");
+//    //    Information(true);
+//    if(ret)
+//    {
+//        system("reboot");
+//    }
+//}
 
 void ICHCSystemSettingsFrame::on_restoreAllButton_clicked()
 {
@@ -584,12 +607,12 @@ void ICHCSystemSettingsFrame::on_restoreAllButton_clicked()
         ret = ret && backupUtility.RestoreDir("/mnt/udisk/HC5ABackup/sysconfig",
                                               "/opt/Qt/bin/sysconfig",
                                               QStringList()<<"system.txt");
-        if(ret)
-        {
-            on_restoreMoldsButton_clicked();
+//        if(ret)
+//        {
+//            on_restoreMoldsButton_clicked();
 
-            system("reboot");
-        }
+//            system("reboot");
+//        }
 
     }
     Information(false, tr("Backup files is broken!"));

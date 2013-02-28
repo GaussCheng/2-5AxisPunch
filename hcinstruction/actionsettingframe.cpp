@@ -22,14 +22,32 @@ ActionSettingFrame::ActionSettingFrame(QWidget *parent) :
         posValidators_[i].setBottom(0);
     }
     InitInterface();
-    axisWidgets_.append(QList<QWidget*>()<<ui->gxButton<<ui->x1DelayLineEdit<<ui->x1PosLineEdit<<ui->x1SpeedLineEdit<<ui->x1Box);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gyButton<<ui->y1DelayLineEdit<<ui->y1PosLineEdit<<ui->y1SpeedLineEdit<<ui->y1Box);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gzButton<<ui->zDelayLineEdit<<ui->zPosLineEdit<<ui->zSpeedLineEdit<<ui->zBox);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gPButton<<ui->x2DelayLineEdit<<ui->x2PosLineEdit<<ui->x2SpeedLineEdit<<ui->x2Box);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gQButton<<ui->y2DelayLineEdit<<ui->y2PosLineEdit<<ui->y2SpeedLineEdit<<ui->y2Box);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gAButton<<ui->aDelayLineEdit<<ui->aPosLineEdit<<ui->aSpeedLineEdit<<ui->aBox);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gBButton<<ui->bDelayLineEdit<<ui->bPosLineEdit<<ui->bSpeedLineEdit<<ui->bBox);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gCButton<<ui->cDelayLineEdit<<ui->cPosLineEdit<<ui->cSpeedLineEdit<<ui->cBox);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gxButton<<ui->x1DelayLineEdit<<ui->x1PosLineEdit<<ui->x1SpeedLineEdit<<ui->x1ForwardBox<<ui->x1BackwardBox);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gyButton<<ui->y1DelayLineEdit<<ui->y1PosLineEdit<<ui->y1SpeedLineEdit<<ui->y1UpBox<<ui->y1DownBox);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gzButton<<ui->zDelayLineEdit<<ui->zPosLineEdit<<ui->zSpeedLineEdit<<ui->zComeInBox<<ui->zComeOutBox);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gPButton<<ui->x2DelayLineEdit<<ui->x2PosLineEdit<<ui->x2SpeedLineEdit<<ui->x2ForwardBox<<ui->x2BackwardBox);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gQButton<<ui->y2DelayLineEdit<<ui->y2PosLineEdit<<ui->y2SpeedLineEdit<<ui->y2UpBox<<ui->y2DownBox);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gAButton<<ui->aDelayLineEdit<<ui->aPosLineEdit<<ui->aSpeedLineEdit<<ui->aHorizonBox<<ui->aVerticalBox);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gBButton<<ui->bDelayLineEdit<<ui->bPosLineEdit<<ui->bSpeedLineEdit<<ui->bHorizonBox<<ui->bVerticalBox);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gCButton<<ui->cDelayLineEdit<<ui->cPosLineEdit<<ui->cSpeedLineEdit<<ui->cHorizonBox<<ui->cVerticalBox);
+
+    ui->x1BoxbuttonGroup->setId(ui->x1ForwardBox,0);
+    ui->x1BoxbuttonGroup->setId(ui->x1BackwardBox,1);
+    ui->y1BoxbuttonGroup->setId(ui->y1UpBox,0);
+    ui->y1BoxbuttonGroup->setId(ui->y1DownBox,1);
+    ui->zBoxbuttonGroup->setId(ui->zComeInBox,0);
+    ui->zBoxbuttonGroup->setId(ui->zComeOutBox,1);
+    ui->x2BoxbuttonGroup->setId(ui->x2ForwardBox,0);
+    ui->x2BoxbuttonGroup->setId(ui->x2BackwardBox,1);
+    ui->y2BoxbuttonGroup->setId(ui->y2UpBox,0);
+    ui->y2BoxbuttonGroup->setId(ui->y2DownBox,1);
+    ui->aBoxbuttonGroup->setId(ui->aHorizonBox,0);
+    ui->aBoxbuttonGroup->setId(ui->aVerticalBox,1);
+    ui->bBoxbuttonGroup->setId(ui->bHorizonBox,0);
+    ui->bBoxbuttonGroup->setId(ui->bVerticalBox,1);
+    ui->cBoxbuttonGroup->setId(ui->cHorizonBox,0);
+    ui->cBoxbuttonGroup->setId(ui->cVerticalBox,1);
+
 #ifdef Q_WS_X11
     UpdateAxisDefine_();
 #endif
@@ -54,7 +72,7 @@ void ActionSettingFrame::changeEvent(QEvent *e)
 }
 
 void ActionSettingFrame::InitInterface()
-{     /************************BUG#119*******************************/
+{     /*******BUG#119**********/
     QIntValidator * validator = new QIntValidator(0, 30000, this);
 
     ui->x1DelayLineEdit->SetDecimalPlaces(2);
@@ -255,7 +273,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         //        {
         //            item.SetAction(ICMold::ACTMAINBACKWARD);
         //        }
-        if(ui->x1Box->isHidden())
+        if(ui->x1ForwardBox->isHidden() && ui->x1BackwardBox->isHidden())
         {
             item.SetAction(ICMold::GX);
             item.SetPos(ui->x1PosLineEdit->TransThisTextToThisInt());
@@ -263,7 +281,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         }
         else
         {
-            item.SetAction(ui->x1Box->currentIndex() == 0 ? ICMold::ACTMAINFORWARD : ICMold::ACTMAINBACKWARD);
+            item.SetAction(ui->x1BoxbuttonGroup->checkedId() == 0 ? ICMold::ACTMAINFORWARD : ICMold::ACTMAINBACKWARD);
         }
         item.SetDVal(ui->x1DelayLineEdit->TransThisTextToThisInt());
         item.SetIFVal(0);
@@ -272,7 +290,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
     }
     if(ui->gyButton->isChecked() && (!ui->gyButton->isHidden()))
     {
-        if(ui->y1Box->isHidden())
+        if(ui->y1UpBox->isHidden() && ui->y1DownBox->isHidden())
         {
             item.SetAction(ICMold::GY);
             item.SetPos(ui->y1PosLineEdit->TransThisTextToThisInt());
@@ -280,7 +298,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         }
         else
         {
-            item.SetAction(ui->y1Box->currentIndex() == 0 ? ICMold::ACTMAINUP : ICMold::ACTMAINDOWN);
+            item.SetAction(ui->y1BoxbuttonGroup->checkedId() == 0 ? ICMold::ACTMAINUP : ICMold::ACTMAINDOWN);
         }
         item.SetDVal(ui->y1DelayLineEdit->TransThisTextToThisInt());
         item.SetIFVal(0);
@@ -289,7 +307,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
     }
     if(ui->gzButton->isChecked() && (!ui->gzButton->isHidden()))
     {
-        if(ui->zBox->isHidden())
+        if(ui->zComeInBox->isHidden() && ui->zComeOutBox->isHidden())
         {
             item.SetAction(ICMold::GZ);
             item.SetPos(ui->zPosLineEdit->TransThisTextToThisInt());
@@ -297,7 +315,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         }
         else
         {
-            item.SetAction(ui->zBox->currentIndex() == 0 ? ICMold::ACTCOMEIN : ICMold::ACTGOOUT);
+            item.SetAction(ui->zBoxbuttonGroup->checkedId() == 0 ? ICMold::ACTCOMEIN : ICMold::ACTGOOUT);
         }
         item.SetDVal(ui->zDelayLineEdit->TransThisTextToThisInt());
         item.SetIFVal(0);
@@ -308,7 +326,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
 #ifdef HC_8AXIS
     if(ui->gPButton->isChecked() && (!ui->gPButton->isHidden()))
     {
-        if(ui->x2Box->isHidden())
+        if(ui->x2BackwardBox->isHidden() && ui->x2ForwardBox->isHidden())
         {
             item.SetAction(ICMold::GP);
             item.SetPos(ui->x2PosLineEdit->TransThisTextToThisInt());
@@ -316,7 +334,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         }
         else
         {
-            item.SetAction(ui->x2Box->currentIndex() == 0 ? ICMold::ACTVICEFORWARD : ICMold::ACTVICEBACKWARD);
+            item.SetAction(ui->x2BoxbuttonGroup->checkedId() == 0 ? ICMold::ACTVICEFORWARD : ICMold::ACTVICEBACKWARD);
         }
         item.SetDVal(ui->x2DelayLineEdit->TransThisTextToThisInt());
         item.SetIFVal(0);
@@ -325,7 +343,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
     }
     if(ui->gQButton->isChecked() && (!ui->gQButton->isHidden()))
     {
-        if(ui->y2Box->isHidden())
+        if(ui->y2UpBox->isHidden() && ui->y2DownBox->isHidden())
         {
             item.SetAction(ICMold::GQ);
             item.SetPos(ui->y2PosLineEdit->TransThisTextToThisInt());
@@ -333,7 +351,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         }
         else
         {
-            item.SetAction(ui->y2Box->currentIndex() == 0 ? ICMold::ACTVICEUP : ICMold::ACTVICEDOWN);
+            item.SetAction(ui->y2BoxbuttonGroup->checkedId() == 0 ? ICMold::ACTVICEUP : ICMold::ACTVICEDOWN);
         }
         item.SetDVal(ui->y2DelayLineEdit->TransThisTextToThisInt());
         item.SetIFVal(0);
@@ -342,7 +360,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
     }
     if(ui->gAButton->isChecked() && (!ui->gAButton->isHidden()))
     {
-        if(ui->aBox->isHidden())
+        if(ui->aHorizonBox->isHidden() && ui->aVerticalBox->isHidden())
         {
             item.SetAction(ICMold::GA);
             item.SetPos(ui->aPosLineEdit->TransThisTextToThisInt());
@@ -351,13 +369,14 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         }
         else
         {
-            item.SetAction(ui->aBox->currentIndex() == 1 ? ICMold::ACT_PoseVert2 : ICMold::ACT_PoseHori2);
+            item.SetAction(ui->aBoxbuttonGroup->checkedId() == 1 ? ICMold::ACT_PoseVert2 : ICMold::ACT_PoseHori2);
         }
         item.SetDVal(ui->aDelayLineEdit->TransThisTextToThisInt());
         item.SetIFVal(0);
         item.SetIFPos(0);
         ret.append(item);
     }
+    /**********好像有问题*****************/
     if(ui->gBButton->isChecked() && (!ui->gBButton->isHidden()))
     {
         item.SetAction(ICMold::GB);
@@ -370,7 +389,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
     }
     if(ui->gCButton->isChecked() && (!ui->gCButton->isHidden()))
     {
-        if(ui->cBox->isHidden())
+        if(ui->cHorizonBox->isHidden() && ui->cVerticalBox->isHidden())
         {
             item.SetAction(ICMold::GC);
             item.SetPos(ui->cPosLineEdit->TransThisTextToThisInt());
@@ -379,7 +398,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         }
         else
         {
-            item.SetAction(ui->cBox->currentIndex() == 1 ? ICMold::ACTPOSEVERT : ICMold::ACTPOSEHORI);
+            item.SetAction(ui->cBoxbuttonGroup->checkedId() == 1 ? ICMold::ACTPOSEVERT : ICMold::ACTPOSEHORI);
         }
         item.SetDVal(ui->cDelayLineEdit->TransThisTextToThisInt());
         item.SetIFVal(0);
@@ -399,7 +418,8 @@ void ActionSettingFrame::on_gxButton_toggled(bool checked)
         ui->x1PosLineEdit->setEnabled(true);
         ui->x1DelayLineEdit->setEnabled(true);
         ui->x1SpeedLineEdit->setEnabled(true);
-        ui->x1Box->setEnabled(true);
+        ui->x1ForwardBox->setEnabled(true);
+        ui->x1BackwardBox->setEnabled(true);
     }
     else
     {
@@ -407,7 +427,8 @@ void ActionSettingFrame::on_gxButton_toggled(bool checked)
         ui->x1PosLineEdit->setEnabled(false);
         ui->x1DelayLineEdit->setEnabled(false);
         ui->x1SpeedLineEdit->setEnabled(false);
-        ui->x1Box->setEnabled(false);
+        ui->x1ForwardBox->setEnabled(false);
+        ui->x1BackwardBox->setEnabled(false);
     }
 }
 
@@ -418,14 +439,16 @@ void ActionSettingFrame::on_gyButton_toggled(bool checked)
         ui->y1PosLineEdit->setEnabled(true);
         ui->y1DelayLineEdit->setEnabled(true);
         ui->y1SpeedLineEdit->setEnabled(true);
-        ui->y1Box->setEnabled(true);
+        ui->y1DownBox->setEnabled(true);
+        ui->y1UpBox->setEnabled(true);
     }
     else
     {
         ui->y1PosLineEdit->setEnabled(false);
         ui->y1DelayLineEdit->setEnabled(false);
         ui->y1SpeedLineEdit->setEnabled(false);
-        ui->y1Box->setEnabled(false);
+        ui->y1DownBox->setEnabled(false);
+        ui->y1UpBox->setEnabled(false);
     }
 }
 
@@ -436,14 +459,16 @@ void ActionSettingFrame::on_gzButton_toggled(bool checked)
         ui->zPosLineEdit->setEnabled(true);
         ui->zDelayLineEdit->setEnabled(true);
         ui->zSpeedLineEdit->setEnabled(true);
-        ui->zBox->setEnabled(true);
+        ui->zComeInBox->setEnabled(true);
+        ui->zComeOutBox->setEnabled(true);
     }
     else
     {
         ui->zPosLineEdit->setEnabled(false);
         ui->zDelayLineEdit->setEnabled(false);
         ui->zSpeedLineEdit->setEnabled(false);
-        ui->zBox->setEnabled(false);
+        ui->zComeInBox->setEnabled(false);
+        ui->zComeOutBox->setEnabled(false);
     }
 }
 
@@ -455,14 +480,16 @@ void ActionSettingFrame::on_gPButton_toggled(bool checked)
         ui->x2PosLineEdit->setEnabled(true);
         ui->x2DelayLineEdit->setEnabled(true);
         ui->x2SpeedLineEdit->setEnabled(true);
-        ui->x2Box->setEnabled(true);
+        ui->x2BackwardBox->setEnabled(true);
+        ui->x2ForwardBox->setEnabled(true);
     }
     else
     {
         ui->x2PosLineEdit->setEnabled(false);
         ui->x2DelayLineEdit->setEnabled(false);
         ui->x2SpeedLineEdit->setEnabled(false);
-        ui->x2Box->setEnabled(false);
+        ui->x2BackwardBox->setEnabled(false);
+        ui->x2ForwardBox->setEnabled(false);
     }
 }
 
@@ -473,14 +500,16 @@ void ActionSettingFrame::on_gQButton_toggled(bool checked)
         ui->y2PosLineEdit->setEnabled(true);
         ui->y2DelayLineEdit->setEnabled(true);
         ui->y2SpeedLineEdit->setEnabled(true);
-        ui->y2Box->setEnabled(true);
+        ui->y2DownBox->setEnabled(true);
+        ui->y2UpBox->setEnabled(true);
     }
     else
     {
         ui->y2PosLineEdit->setEnabled(false);
         ui->y2DelayLineEdit->setEnabled(false);
         ui->y2SpeedLineEdit->setEnabled(false);
-        ui->y2Box->setEnabled(false);
+        ui->y2DownBox->setEnabled(false);
+        ui->y2UpBox->setEnabled(false);
     }
 }
 
@@ -491,14 +520,16 @@ void ActionSettingFrame::on_gAButton_toggled(bool checked)
         ui->aPosLineEdit->setEnabled(true);
         ui->aDelayLineEdit->setEnabled(true);
         ui->aSpeedLineEdit->setEnabled(true);
-        ui->aBox->setEnabled(true);
+        ui->aHorizonBox->setEnabled(true);
+        ui->aVerticalBox->setEnabled(true);
     }
     else
     {
         ui->aPosLineEdit->setEnabled(false);
         ui->aDelayLineEdit->setEnabled(false);
         ui->aSpeedLineEdit->setEnabled(false);
-        ui->aBox->setEnabled(false);
+        ui->aHorizonBox->setEnabled(false);
+        ui->aVerticalBox->setEnabled(false);
 
     }
 }
@@ -510,14 +541,16 @@ void ActionSettingFrame::on_gBButton_toggled(bool checked)
         ui->bPosLineEdit->setEnabled(true);
         ui->bDelayLineEdit->setEnabled(true);
         ui->bSpeedLineEdit->setEnabled(true);
-        ui->bBox->setEnabled(true);
+        ui->bHorizonBox->setEnabled(true);
+        ui->bVerticalBox->setEnabled(true);
     }
     else
     {
         ui->bPosLineEdit->setEnabled(false);
         ui->bDelayLineEdit->setEnabled(false);
         ui->bSpeedLineEdit->setEnabled(false);
-        ui->bBox->setEnabled(false);
+        ui->bHorizonBox->setEnabled(false);
+        ui->bVerticalBox->setEnabled(false);
 
     }
 }
@@ -529,14 +562,16 @@ void ActionSettingFrame::on_gCButton_toggled(bool checked)
         ui->cPosLineEdit->setEnabled(true);
         ui->cDelayLineEdit->setEnabled(true);
         ui->cSpeedLineEdit->setEnabled(true);
-        ui->cBox->setEnabled(true);
+        ui->cHorizonBox->setEnabled(true);
+        ui->cVerticalBox->setEnabled(true);
     }
     else
     {
         ui->cPosLineEdit->setEnabled(false);
         ui->cDelayLineEdit->setEnabled(false);
         ui->cSpeedLineEdit->setEnabled(false);
-        ui->cBox->setEnabled(false);
+        ui->cHorizonBox->setEnabled(false);
+        ui->cVerticalBox->setEnabled(false);
 
     }
 }
@@ -596,7 +631,8 @@ void ActionSettingFrame::UpdateAxisDefine_()
         else
         {
             ShowWidgets_(axisWidgets_[0]);
-            ui->x1Box->hide();
+            ui->x1BackwardBox->hide();
+            ui->x1ForwardBox->hide();
         }
 
         if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY1) == ICVirtualHost::ICAxisDefine_None)
@@ -614,7 +650,8 @@ void ActionSettingFrame::UpdateAxisDefine_()
         else
         {
             ShowWidgets_(axisWidgets_[1]);
-            ui->y1Box->hide();
+            ui->y1DownBox->hide();
+            ui->y1UpBox->hide();
         }
 
         if(host->AxisDefine(ICVirtualHost::ICAxis_AxisZ) == ICVirtualHost::ICAxisDefine_None)
@@ -632,7 +669,8 @@ void ActionSettingFrame::UpdateAxisDefine_()
         else
         {
             ShowWidgets_(axisWidgets_[2]);
-            ui->zBox->hide();
+            ui->zComeInBox->hide();
+            ui->zComeOutBox->hide();
         }
 
         if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) == ICVirtualHost::ICAxisDefine_None)
@@ -650,7 +688,8 @@ void ActionSettingFrame::UpdateAxisDefine_()
         else
         {
             ShowWidgets_(axisWidgets_[3]);
-            ui->x2Box->hide();
+            ui->x2BackwardBox->hide();
+            ui->x2ForwardBox->hide();
         }
 
         if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) == ICVirtualHost::ICAxisDefine_None)
@@ -668,7 +707,8 @@ void ActionSettingFrame::UpdateAxisDefine_()
         else
         {
             ShowWidgets_(axisWidgets_[4]);
-            ui->y2Box->hide();
+            ui->y2DownBox->hide();
+            ui->y2UpBox->hide();
         }
 
         if(host->AxisDefine(ICVirtualHost::ICAxis_AxisA) == ICVirtualHost::ICAxisDefine_None)
@@ -686,7 +726,8 @@ void ActionSettingFrame::UpdateAxisDefine_()
         else
         {
             ShowWidgets_(axisWidgets_[5]);
-            ui->aBox->hide();
+            ui->aHorizonBox->hide();
+            ui->aVerticalBox->hide();
         }
 
         if(host->AxisDefine(ICVirtualHost::ICAxis_AxisB) == ICVirtualHost::ICAxisDefine_None)
@@ -703,7 +744,8 @@ void ActionSettingFrame::UpdateAxisDefine_()
         else
         {
             ShowWidgets_(axisWidgets_[6]);
-            ui->bBox->hide();
+            ui->bHorizonBox->hide();
+            ui->bVerticalBox->hide();
         }
 
         if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) == ICVirtualHost::ICAxisDefine_None)
@@ -720,7 +762,8 @@ void ActionSettingFrame::UpdateAxisDefine_()
         else
         {
             ShowWidgets_(axisWidgets_[7]);
-            ui->cBox->hide();
+            ui->cHorizonBox->hide();
+            ui->cVerticalBox->hide();
         }
     }
 
@@ -733,47 +776,83 @@ void ActionSettingFrame::KeyToActionCheck(int key)
     {
     case ICKeyboard::VFB_X1Add:
     case ICKeyboard::VFB_X1Sub:
-        ui->x1Box->setCurrentIndex(key == ICKeyboard::VFB_X1Add ? 0:1);
+//        ui->x1Box->setCurrentIndex(key == ICKeyboard::VFB_X1Add ? 0:1);
+        if((key == ICKeyboard::VFB_X1Add ? 0:1) == 0)
+            ui->x1ForwardBox->setChecked(true);
+        else if((key == ICKeyboard::VFB_X1Add ? 0:1) == 1)
+            ui->x1BackwardBox->setChecked(true);
         ui->gxButton->setChecked(true);
         break;
     case ICKeyboard::VFB_Y1Add:
     case ICKeyboard::VFB_Y1Sub:
-        ui->y1Box->setCurrentIndex(key == ICKeyboard::VFB_Y1Add ? 1:0);
+//        ui->y1Box->setCurrentIndex(key == ICKeyboard::VFB_Y1Add ? 1:0);
+        if((key == ICKeyboard::VFB_Y1Add ? 0:1) == 1)
+            ui->y1UpBox->setChecked(true);
+        else if((key == ICKeyboard::VFB_Y1Add ? 0:1) == 0)
+            ui->y1DownBox->setChecked(true);
         ui->gyButton->setChecked(true);
         break;
     case ICKeyboard::VFB_ZAdd:
     case ICKeyboard::VFB_ZSub:
-        ui->zBox->setCurrentIndex(key == ICKeyboard::VFB_ZAdd ? 1:0);
+//        ui->zBox->setCurrentIndex(key == ICKeyboard::VFB_ZAdd ? 1:0);
+        if((key == ICKeyboard::VFB_ZAdd ? 0:1) == 1)
+            ui->zComeInBox->setChecked(true);
+        else if((key == ICKeyboard::VFB_ZAdd ? 0:1) == 0)
+            ui->zComeOutBox->setChecked(true);
         ui->gzButton->setChecked(true);
         break;
     case ICKeyboard::VFB_X2Add:
     case ICKeyboard::VFB_X2Sub:
-        ui->x2Box->setCurrentIndex(key == ICKeyboard::VFB_X2Add ? 0:1);
+//        ui->x2Box->setCurrentIndex(key == ICKeyboard::VFB_X2Add ? 0:1);
+        if((key == ICKeyboard::VFB_X2Add ? 0:1) == 0)
+            ui->x2ForwardBox->setChecked(true);
+        else if((key == ICKeyboard::VFB_X2Add ? 0:1) == 1)
+            ui->x2BackwardBox->setChecked(true);
         ui->gPButton->setChecked(true);
         break;
     case ICKeyboard::VFB_Y2Add:
     case ICKeyboard::VFB_Y2Sub:
-        ui->y2Box->setCurrentIndex(key == ICKeyboard::VFB_Y2Add ?1:0);
+//        ui->y2Box->setCurrentIndex(key == ICKeyboard::VFB_Y2Add ?1:0);
+        if((key == ICKeyboard::VFB_Y2Add ? 0:1) == 1)
+            ui->y2UpBox->setChecked(true);
+        else if((key == ICKeyboard::VFB_Y2Add ? 0:1) == 0)
+            ui->y2DownBox->setChecked(true);
         ui->gQButton->setChecked(true);
         break;
     case ICKeyboard::VFB_AAdd:
     case ICKeyboard::VFB_ASub:
-        ui->aBox->setCurrentIndex(key == ICKeyboard::VFB_AAdd ? 0:1);
+//        ui->aBox->setCurrentIndex(key == ICKeyboard::VFB_AAdd ? 0:1);
+        if((key == ICKeyboard::VFB_AAdd ? 0:1) == 0)
+            ui->aHorizonBox->setChecked(true);
+        else if((key == ICKeyboard::VFB_AAdd ? 0:1) == 1)
+            ui->aVerticalBox->setChecked(true);
         ui->gAButton->setChecked(true);
         break;
     case ICKeyboard::VFB_BAdd:
     case ICKeyboard::VFB_BSub:
-        ui->bBox->setCurrentIndex(key == ICKeyboard::VFB_BAdd ? 1:0);
+//        ui->bBox->setCurrentIndex(key == ICKeyboard::VFB_BAdd ? 1:0);
+        if((key == ICKeyboard::VFB_BAdd ? 0:1) == 1)
+            ui->bHorizonBox->setChecked(true);
+        else if((key == ICKeyboard::VFB_BAdd ? 0:1) == 0)
+            ui->bVerticalBox->setChecked(true);
         ui->gBButton->setChecked(true);
         break;
     case ICKeyboard::VFB_CAdd:
     case ICKeyboard::VFB_CSub:
-        ui->cBox->setCurrentIndex(key == ICKeyboard::VFB_CAdd ? 1:0);
+//        ui->cBox->setCurrentIndex(key == ICKeyboard::VFB_CAdd ? 1:0);
+        if((key == ICKeyboard::VFB_CAdd ? 0:1) == 1)
+            ui->cHorizonBox->setChecked(true);
+        else if((key == ICKeyboard::VFB_CAdd ? 0:1) == 0)
+            ui->cVerticalBox->setChecked(true);
         ui->gCButton->setChecked(true);
         break;
     case ICKeyboard::VFB_Pose_Horizontal:
     case ICKeyboard::VFB_Pose_Vertical:
-        ui->cBox->setCurrentIndex(key == ICKeyboard::VFB_Pose_Horizontal ? 1:0);
+//        ui->cBox->setCurrentIndex(key == ICKeyboard::VFB_Pose_Horizontal ? 1:0);
+        if((key == ICKeyboard::VFB_Pose_Horizontal ? 0:1) == 1)
+            ui->cHorizonBox->setChecked(true);
+        else if((key == ICKeyboard::VFB_Pose_Horizontal ? 0:1) == 0)
+            ui->cVerticalBox->setChecked(true);
         ui->gCButton->setChecked(true);
         break;
 

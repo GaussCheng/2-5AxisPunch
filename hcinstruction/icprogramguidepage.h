@@ -5,6 +5,7 @@
 //#include "actionsettingframe.h"
 #include <QIntValidator>
 #include <QMap>
+#include <QButtonGroup>
 namespace Ui {
 class ICProgramGuidePage;
 }
@@ -102,7 +103,8 @@ private:
 //    void ShowForOutlet_();
     void SetAxis_(_ICAxis_* axis, int pos, int setting);
     void SetAxisPosEdit_(ICLineEditWithVirtualNumericKeypad* edit, _ICAxis_ *axis, int setting);
-    void SetAxisLimitEdit_(QComboBox* edit, _ICAxis_ *axis, int setting);
+//    void SetAxisLimitEdit_(QComboBox* edit, _ICAxis_ *axis, int setting);
+    void SetAxisLimitEdit_(_ICAxis_ *axis, int setting ,int i);
     void SaveAxis_(int setting);
     bool SetAxisICMoldItem_(ICMoldItem* item, const _ICAxis_* axis, int setting) const;
     void UpdateAxisShow(int setting);
@@ -111,7 +113,8 @@ private:
     Ui::ICProgramGuidePage *ui;
     QList<QList<QWidget*> > axisWidgets_;
     QList<ICLineEditWithVirtualNumericKeypad*> posEdits_;
-    QList<QComboBox*> limitEdits_;
+    QList<QButtonGroup*> limitEdits_;
+//    QList<QComboBox*> limitEdits_;
     QMap<const _ICAxis_*, QList<int> > limitActionMap_;
     QList<int> fixtureOnAction_;
     QList<int> fixtureOffAction_;

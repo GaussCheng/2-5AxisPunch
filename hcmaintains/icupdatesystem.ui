@@ -20,19 +20,6 @@
    <enum>QFrame::Raised</enum>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
-    <widget class="QLabel" name="deviceLabel">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string>1.Verify the device</string>
-     </property>
-    </widget>
-   </item>
    <item row="2" column="0">
     <widget class="QLabel" name="versionLabel">
      <property name="sizePolicy">
@@ -46,14 +33,14 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="0">
-    <widget class="QLabel" name="label">
+   <item row="4" column="0">
+    <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>HML Version</string>
+      <string>Host Version</string>
      </property>
     </widget>
    </item>
-   <item row="3" column="1" colspan="5">
+   <item row="3" column="1" colspan="4">
     <widget class="QLabel" name="hmiVersionShowLabel">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -72,41 +59,14 @@
      </property>
     </widget>
    </item>
-   <item row="5" column="0">
-    <widget class="QLabel" name="copyFilesLabel">
+   <item row="4" column="1" colspan="4">
+    <widget class="QLabel" name="hostVersionShowLabel">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <property name="text">
-      <string>3.Copy files</string>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="0" colspan="7">
-    <widget class="QProgressBar" name="copyFilesProgressBar">
-     <property name="value">
-      <number>24</number>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="0">
-    <widget class="QLabel" name="rebootLabel">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string>4.Status</string>
-     </property>
-    </widget>
-   </item>
-   <item row="8" column="0" colspan="7">
-    <widget class="QLabel" name="statusLabel">
      <property name="frameShape">
       <enum>QFrame::Box</enum>
      </property>
@@ -114,104 +74,14 @@
       <enum>QFrame::Sunken</enum>
      </property>
      <property name="text">
-      <string>Reboot</string>
+      <string>Version</string>
      </property>
     </widget>
    </item>
-   <item row="11" column="3">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="10" column="5">
-    <widget class="QToolButton" name="rebootButton">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>100</width>
-       <height>48</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>100</width>
-       <height>16777215</height>
-      </size>
-     </property>
+   <item row="3" column="0">
+    <widget class="QLabel" name="label">
      <property name="text">
-      <string>Restart</string>
-     </property>
-    </widget>
-   </item>
-   <item row="10" column="4">
-    <widget class="QToolButton" name="writeHostButton">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>100</width>
-       <height>48</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>100</width>
-       <height>16777215</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>Write</string>
-     </property>
-    </widget>
-   </item>
-   <item row="10" column="3">
-    <widget class="QToolButton" name="updateHostButton">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>100</width>
-       <height>48</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>100</width>
-       <height>16777215</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>Update Host</string>
+      <string>HML Version</string>
      </property>
     </widget>
    </item>
@@ -240,37 +110,21 @@
      </property>
     </widget>
    </item>
-   <item row="4" column="0">
-    <widget class="QLabel" name="label_2">
-     <property name="text">
-      <string>Host Version</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="1" colspan="5">
-    <widget class="QLabel" name="hostVersionShowLabel">
+   <item row="7" column="0">
+    <widget class="QLabel" name="rebootLabel">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Sunken</enum>
-     </property>
      <property name="text">
-      <string>Version</string>
+      <string>4.Status</string>
      </property>
     </widget>
    </item>
-   <item row="3" column="6">
-    <widget class="QToolButton" name="updateToolButton">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
+   <item row="1" column="5">
+    <widget class="QToolButton" name="updateLogoButton">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
        <horstretch>0</horstretch>
@@ -290,11 +144,37 @@
       </size>
      </property>
      <property name="text">
-      <string>Update HMI</string>
+      <string>Update Logo</string>
      </property>
     </widget>
    </item>
-   <item row="4" column="6">
+   <item row="0" column="0">
+    <widget class="QLabel" name="deviceLabel">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>1.Verify the device</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0" colspan="6">
+    <widget class="QLabel" name="statusLabel">
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <property name="text">
+      <string>Reboot</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="5">
     <widget class="QToolButton" name="connectHostButton">
      <property name="enabled">
       <bool>false</bool>
@@ -322,21 +202,18 @@
      </property>
     </widget>
    </item>
-   <item row="9" column="0">
-    <spacer name="verticalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
+   <item row="6" column="0" colspan="6">
+    <widget class="QProgressBar" name="copyFilesProgressBar">
+     <property name="value">
+      <number>24</number>
      </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
+    </widget>
    </item>
-   <item row="1" column="6">
-    <widget class="QToolButton" name="updateLogoButton">
+   <item row="3" column="5">
+    <widget class="QToolButton" name="updateToolButton">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
        <horstretch>0</horstretch>
@@ -356,9 +233,35 @@
       </size>
      </property>
      <property name="text">
-      <string>Update Logo</string>
+      <string>Update HMI</string>
      </property>
     </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="copyFilesLabel">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>3.Copy files</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="3">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
    </item>
   </layout>
  </widget>

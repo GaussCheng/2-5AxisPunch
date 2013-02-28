@@ -32,7 +32,7 @@
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>4</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="systemSettingPage">
       <attribute name="title">
@@ -122,35 +122,76 @@
           </widget>
          </item>
          <item>
-          <widget class="QComboBox" name="languageComboBox">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
+          <widget class="QCheckBox" name="chineseBox">
+           <property name="styleSheet">
+            <string notr="true">::indicator {
+     width: 32px;
+     height: 32px;
+ }
+
+::indicator:unchecked 
+{
+     image: url(:/resource/check_unchecked.png);
+ }
+::indicator:checked 
+{
+     image: url(:/resource/check_checked.png);
+ }
+
+QRadioButton::indicator:checked:disabled
+{
+ image: url(:/resource/check_checked_disable.png);
+}
+
+QRadioButton::indicator:unchecked:disabled
+{
+ image: url(:/resource/check_unchecked_disable.png);
+}</string>
            </property>
-           <property name="minimumSize">
-            <size>
-             <width>150</width>
-             <height>32</height>
-            </size>
+           <property name="text">
+            <string>Chinese</string>
            </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>32</height>
-            </size>
+           <property name="checked">
+            <bool>true</bool>
            </property>
-           <item>
-            <property name="text">
-             <string>Chinese</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>English</string>
-            </property>
-           </item>
+           <attribute name="buttonGroup">
+            <string notr="true">languageButtonGroup</string>
+           </attribute>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="englishBox">
+           <property name="styleSheet">
+            <string notr="true">::indicator {
+     width: 32px;
+     height: 32px;
+ }
+
+::indicator:unchecked 
+{
+     image: url(:/resource/check_unchecked.png);
+ }
+::indicator:checked 
+{
+     image: url(:/resource/check_checked.png);
+ }
+
+QRadioButton::indicator:checked:disabled
+{
+ image: url(:/resource/check_checked_disable.png);
+}
+
+QRadioButton::indicator:unchecked:disabled
+{
+ image: url(:/resource/check_unchecked_disable.png);
+}</string>
+           </property>
+           <property name="text">
+            <string>English</string>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">languageButtonGroup</string>
+           </attribute>
           </widget>
          </item>
          <item>
@@ -443,33 +484,89 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QComboBox" name="levelComboBox">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>32</height>
-          </size>
+        <widget class="QCheckBox" name="machineAdminBox">
+         <property name="styleSheet">
+          <string notr="true">::indicator {
+     width: 32px;
+     height: 32px;
+ }
+
+::indicator:unchecked 
+{
+     image: url(:/resource/check_unchecked.png);
+ }
+::indicator:checked 
+{
+     image: url(:/resource/check_checked.png);
+ }
+
+QRadioButton::indicator:checked:disabled
+{
+ image: url(:/resource/check_checked_disable.png);
+}
+
+QRadioButton::indicator:unchecked:disabled
+{
+ image: url(:/resource/check_unchecked_disable.png);
+}</string>
          </property>
-         <item>
-          <property name="text">
-           <string>Machine Admin</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Advance Admin</string>
-          </property>
-         </item>
+         <property name="text">
+          <string>Machine Admin</string>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">buttonGroup_2</string>
+         </attribute>
         </widget>
        </item>
-       <item row="1" column="0">
+       <item row="1" column="1">
+        <widget class="QCheckBox" name="advanceAdminBox">
+         <property name="styleSheet">
+          <string notr="true">::indicator {
+     width: 32px;
+     height: 32px;
+ }
+
+::indicator:unchecked 
+{
+     image: url(:/resource/check_unchecked.png);
+ }
+::indicator:checked 
+{
+     image: url(:/resource/check_checked.png);
+ }
+
+QRadioButton::indicator:checked:disabled
+{
+ image: url(:/resource/check_checked_disable.png);
+}
+
+QRadioButton::indicator:unchecked:disabled
+{
+ image: url(:/resource/check_unchecked_disable.png);
+}</string>
+         </property>
+         <property name="text">
+          <string>Advance Admin</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">buttonGroup_2</string>
+         </attribute>
+        </widget>
+       </item>
+       <item row="3" column="0">
         <widget class="QLabel" name="label_5">
          <property name="text">
           <string>Old Password</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="1">
+       <item row="3" column="1">
         <widget class="ICLineEditWithVirtualKeyboard" name="oldPwdEdit">
          <property name="enabled">
           <bool>true</bool>
@@ -485,14 +582,14 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
+       <item row="4" column="0">
         <widget class="QLabel" name="label_6">
          <property name="text">
           <string>New Password</string>
          </property>
         </widget>
        </item>
-       <item row="2" column="1">
+       <item row="4" column="1">
         <widget class="ICLineEditWithVirtualKeyboard" name="newPwdEdit">
          <property name="enabled">
           <bool>true</bool>
@@ -508,7 +605,7 @@
          </property>
         </widget>
        </item>
-       <item row="3" column="0">
+       <item row="5" column="0">
         <widget class="QPushButton" name="changeButton">
          <property name="maximumSize">
           <size>
@@ -521,7 +618,7 @@
          </property>
         </widget>
        </item>
-       <item row="3" column="1">
+       <item row="5" column="1">
         <widget class="QPushButton" name="clearButton">
          <property name="maximumSize">
           <size>
@@ -654,19 +751,6 @@ height: 33px;
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="backupMoldsButton">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>32</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>Backup Molds Configures</string>
-              </property>
-             </widget>
-            </item>
-            <item>
              <widget class="QPushButton" name="backupAllButton">
               <property name="minimumSize">
                <size>
@@ -715,19 +799,6 @@ height: 33px;
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="restoreMoldsButton">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>32</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>Restore Molds Configures</string>
-              </property>
-             </widget>
-            </item>
-            <item>
              <widget class="QPushButton" name="restoreAllButton">
               <property name="minimumSize">
                <size>
@@ -769,6 +840,10 @@ height: 33px;
         <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
           <widget class="QPushButton" name="axisXToolButton">
+           <property name="styleSheet">
+            <string notr="true">width:60px ;
+height:30px;</string>
+           </property>
            <property name="text">
             <string/>
            </property>
@@ -782,6 +857,10 @@ height: 33px;
          </item>
          <item>
           <widget class="QPushButton" name="axisYToolButton">
+           <property name="styleSheet">
+            <string notr="true">width:60px ;
+height:30px;</string>
+           </property>
            <property name="text">
             <string/>
            </property>
@@ -795,6 +874,10 @@ height: 33px;
          </item>
          <item>
           <widget class="QPushButton" name="axisZToolButton">
+           <property name="styleSheet">
+            <string notr="true">width:60px ;
+height:30px;</string>
+           </property>
            <property name="text">
             <string/>
            </property>
@@ -808,6 +891,10 @@ height: 33px;
          </item>
          <item>
           <widget class="QPushButton" name="axisX2ToolButton">
+           <property name="styleSheet">
+            <string notr="true">width:60px ;
+height:30px;</string>
+           </property>
            <property name="text">
             <string/>
            </property>
@@ -821,6 +908,10 @@ height: 33px;
          </item>
          <item>
           <widget class="QPushButton" name="axisY2ToolButton">
+           <property name="styleSheet">
+            <string notr="true">width:60px ;
+height:30px;</string>
+           </property>
            <property name="text">
             <string/>
            </property>
@@ -834,6 +925,10 @@ height: 33px;
          </item>
          <item>
           <widget class="QPushButton" name="axisAToolButton">
+           <property name="styleSheet">
+            <string notr="true">width:60px ;
+height:30px;</string>
+           </property>
            <property name="text">
             <string/>
            </property>
@@ -847,6 +942,10 @@ height: 33px;
          </item>
          <item>
           <widget class="QPushButton" name="axisBToolButton">
+           <property name="styleSheet">
+            <string notr="true">width:60px ;
+height:30px;</string>
+           </property>
            <property name="text">
             <string/>
            </property>
@@ -860,6 +959,10 @@ height: 33px;
          </item>
          <item>
           <widget class="QPushButton" name="axisCToolButton">
+           <property name="styleSheet">
+            <string notr="true">width:60px ;
+height:30px;</string>
+           </property>
            <property name="text">
             <string/>
            </property>
@@ -873,6 +976,10 @@ height: 33px;
          </item>
          <item>
           <widget class="QPushButton" name="structDefButton">
+           <property name="styleSheet">
+            <string notr="true">width:60px ;
+height:30px;</string>
+           </property>
            <property name="text">
             <string/>
            </property>
@@ -1487,14 +1594,14 @@ height: 33px;
  </widget>
  <customwidgets>
   <customwidget>
-   <class>ICLineEditWithVirtualKeyboard</class>
-   <extends>QLineEdit</extends>
-   <header>iclineeditwithvirtualkeyboard.h</header>
-  </customwidget>
-  <customwidget>
    <class>ICLineEditWithVirtualNumericKeypad</class>
    <extends>QLineEdit</extends>
    <header>iclineeditwithvirtualnumerickeypad.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ICLineEditWithVirtualKeyboard</class>
+   <extends>QLineEdit</extends>
+   <header>iclineeditwithvirtualkeyboard.h</header>
   </customwidget>
  </customwidgets>
  <resources>
@@ -1502,6 +1609,8 @@ height: 33px;
  </resources>
  <connections/>
  <buttongroups>
+  <buttongroup name="buttonGroup_2"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="languageButtonGroup"/>
  </buttongroups>
 </ui>

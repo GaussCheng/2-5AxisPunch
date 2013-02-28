@@ -35,8 +35,12 @@ private:
     QTimer timer_;
     int status_;
     QDialog* updateDialog_;
+    bool flag;
 //    QMap<int, int> hostStatusToStringMap_;
 
+    void updateHostButton();
+    void writeHostButton();
+    void rebootButton();
     void RestartAndUpdateTheProgram();
 
 private slots:
@@ -44,12 +48,9 @@ private slots:
     void on_refreshToolButton_clicked();
     void SystemUpdateStart();
     void RefreshUSBIniInfo();
-    void on_updateHostButton_clicked();
     void QueryStatus();
 
-    void on_rebootButton_clicked();
     void on_connectHostButton_clicked();
-    void on_writeHostButton_clicked();
     void on_updateLogoButton_clicked();
 };
 

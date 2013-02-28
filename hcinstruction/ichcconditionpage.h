@@ -3,6 +3,7 @@
 
 #include <QFrame>
 #include "icinstructioneditorbase.h"
+#include <QButtonGroup>
 
 namespace Ui {
     class ICHCConditionPage;
@@ -23,6 +24,8 @@ protected:
 
 private:
     Ui::ICHCConditionPage *ui;
+    QButtonGroup* buttonGroup;
+    void InitCheckPointBox();
 
 private slots:
 };

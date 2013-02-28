@@ -5,6 +5,7 @@
 #include <QMap>
 #ifndef Q_WS_WIN32
 #include <sys/utsname.h>
+#include <QButtonGroup>
 #endif
 
 class QTranslator;
@@ -51,12 +52,15 @@ private:
     QMap<int, QString> armXStructValueToName_;
     QMap<int, QString> armYStructValueToName_;
     QMap<int, QString> armValueToName_;
+
+    bool testvalue;
+
     uint armStruct_;
 #ifndef Q_WS_WIN32
     utsname osInfo_;
 #endif
 private slots:
-    void on_languageComboBox_activated(int );
+    void languageBoxChange();
     void on_keyToneButton_toggled(bool checked);
     void on_saveButton_clicked();
     void on_changeButton_clicked();
@@ -64,11 +68,11 @@ private slots:
     void on_verifyButton_clicked();
     void on_backupMachineButton_clicked();
     void on_backupSystemButton_clicked();
-    void on_backupMoldsButton_clicked();
+//    void on_backupMoldsButton_clicked();
     void on_backupAllButton_clicked();
     void on_restoreMachineButton_clicked();
     void on_restoreSystemButton_clicked();
-    void on_restoreMoldsButton_clicked();
+//    void on_restoreMoldsButton_clicked();
     void on_restoreAllButton_clicked();
     void on_umountButton_clicked();
     void OnLevelChanged(int level);
@@ -95,6 +99,7 @@ private slots:
 private:
     bool CheckRestoreSystemFiles_();
     bool CheckRestoreMachineFiles_();
+//    void InitLanguageBox();
 };
 
 #endif // ICHCSYSTEMSETTINGSFRAME_H

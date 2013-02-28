@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QMap>
+#include <QButtonGroup>
 
 class QComboBox;
 namespace Ui {
@@ -39,7 +40,7 @@ private slots:
     void on_subArmBackwardLimitButton_toggled(bool checked);
 
     void on_subArmForwardLimitButton_toggled(bool checked);
-    void on_escapeComboBox_activated(int index);
+    void escapeBoxChange();
 
     void OnAxisDefineChanged(int index);
     void OnOutputDefineChanged(int index);
@@ -54,9 +55,12 @@ private:
     QMap<int, int> armDefineToIndex_;
     QMap<QComboBox*, int> boxToAxis_;
     QMap<int, int> indexToArmDefine_;
-    QMap<QComboBox*, int> outputDefineToNumber_;
-    QMap<int, QComboBox*> numberToOutputDefine_;
+    QMap<QButtonGroup*, int> outputDefineToNumber_;
+    QList<QButtonGroup*>buttongrouplist ;
+    QButtonGroup* buttongroup_ ;
 
+    QList<QList<QAbstractButton*> >buttonslist_ ;
+    void InitEscapeBox() ;
 
 
 };

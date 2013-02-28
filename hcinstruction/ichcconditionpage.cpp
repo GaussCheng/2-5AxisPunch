@@ -9,6 +9,8 @@ ICHCConditionPage::ICHCConditionPage(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->returnLineEdit->setValidator(new QIntValidator(0, 1000, this));
+    buttonGroup = new QButtonGroup ;
+    InitCheckPointBox();
 }
 
 ICHCConditionPage::~ICHCConditionPage()
@@ -39,9 +41,23 @@ QList<ICMoldItem> ICHCConditionPage::CreateCommandImpl() const
     QList<ICMoldItem> ret;
     ICMoldItem item;
     item.SetAction(ICMold::ACTCHECKINPUT);
-    item.SetIFVal(ui->checkPointComboBox->currentIndex());
+    item.SetIFVal(buttonGroup->checkedId());
     item.SetSVal(ui->subComboBox->currentIndex());
     item.SetDVal(ui->returnLineEdit->TransThisTextToThisInt());
     ret.append(item);
     return ret;
+}
+
+void ICHCConditionPage::InitCheckPointBox()
+{
+    buttonGroup->addButton(ui->defectiveProductsBox,0);
+    buttonGroup->addButton(ui->x043checkBox,1);
+    buttonGroup->addButton(ui->x044checkBox,2);
+
+    QList<QAbstractButton*> buttons = buttonGroup->buttons();
+    for(int i = 0; i != buttons.size(); ++i)
+    {
+        buttons[i]->setCheckable(true);
+    }
+    buttonGroup->setExclusive(true);
 }

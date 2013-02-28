@@ -105,7 +105,7 @@
    </item>
    <item row="9" column="0" colspan="3">
     <layout class="QHBoxLayout" name="horizontalLayout">
-     <item alignment="Qt::AlignLeft">
+     <item>
       <widget class="QCheckBox" name="verticalBox">
        <property name="layoutDirection">
         <enum>Qt::LeftToRight</enum>
@@ -153,7 +153,7 @@ QRadioButton::indicator:unchecked:disabled
        </attribute>
       </widget>
      </item>
-     <item alignment="Qt::AlignLeft">
+     <item>
       <widget class="QCheckBox" name="horizontalBox">
        <property name="styleSheet">
         <string notr="true">::indicator {

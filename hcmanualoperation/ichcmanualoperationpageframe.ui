@@ -237,6 +237,9 @@ color: rgb(255, 255, 0);</string>
        <property name="acceptDrops">
         <bool>false</bool>
        </property>
+       <property name="styleSheet">
+        <string notr="true">height:48px;</string>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -277,6 +280,9 @@ color: rgb(255, 255, 0);</string>
        <property name="acceptDrops">
         <bool>false</bool>
        </property>
+       <property name="styleSheet">
+        <string notr="true">height:48px</string>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -314,6 +320,9 @@ color: rgb(255, 255, 0);</string>
        <property name="acceptDrops">
         <bool>false</bool>
        </property>
+       <property name="styleSheet">
+        <string notr="true">height:48px</string>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -348,6 +357,9 @@ color: rgb(255, 255, 0);</string>
          <height>0</height>
         </size>
        </property>
+       <property name="styleSheet">
+        <string notr="true">height:48px</string>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -378,6 +390,9 @@ color: rgb(255, 255, 0);</string>
          <width>64</width>
          <height>0</height>
         </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">height:48px</string>
        </property>
        <property name="text">
         <string/>

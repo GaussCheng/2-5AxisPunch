@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>692</width>
+    <width>750</width>
     <height>198</height>
    </rect>
   </property>
@@ -20,15 +20,42 @@
    <enum>QFrame::Plain</enum>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
-    <widget class="QLabel" name="label">
+   <item row="4" column="1">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="samplingEdit_3"/>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="label_9">
      <property name="text">
-      <string>Product</string>
+      <string>Bad Product</string>
      </property>
     </widget>
    </item>
-   <item row="0" column="1">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="productLineEdit"/>
+   <item row="1" column="6">
+    <widget class="QLabel" name="label_6">
+     <property name="text">
+      <string>Times</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="3">
+    <widget class="QLabel" name="label_17">
+     <property name="styleSheet">
+      <string notr="true">height:27px ;</string>
+     </property>
+     <property name="text">
+      <string>Fixture</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="5">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="waitTimeEdit"/>
+   </item>
+   <item row="0" column="6">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>s</string>
+     </property>
+    </widget>
    </item>
    <item row="0" column="2">
     <spacer name="horizontalSpacer">
@@ -42,23 +69,6 @@
       </size>
      </property>
     </spacer>
-   </item>
-   <item row="0" column="3" colspan="2">
-    <widget class="QLabel" name="label_2">
-     <property name="text">
-      <string>Wait Mold Opened Limit Time</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="5">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="waitTimeEdit"/>
-   </item>
-   <item row="0" column="6">
-    <widget class="QLabel" name="label_4">
-     <property name="text">
-      <string>s</string>
-     </property>
-    </widget>
    </item>
    <item row="5" column="5">
     <widget class="QPushButton" name="productClearButton">
@@ -80,6 +90,23 @@
      </property>
     </widget>
    </item>
+   <item row="0" column="3" colspan="2">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Wait Mold Opened Limit Time</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="3">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>Alarm Times</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="5">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="alarmTimesEdit"/>
+   </item>
    <item row="1" column="1">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="samplingEdit"/>
    </item>
@@ -93,59 +120,98 @@
    <item row="2" column="1">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="samplingEdit_2"/>
    </item>
-   <item row="4" column="0">
-    <widget class="QLabel" name="label_9">
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
      <property name="text">
-      <string>Bad Product</string>
+      <string>Product</string>
      </property>
     </widget>
    </item>
-   <item row="4" column="1">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="samplingEdit_3"/>
-   </item>
-   <item row="1" column="3">
-    <widget class="QLabel" name="label_5">
-     <property name="text">
-      <string>Alarm Times</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="5">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="alarmTimesEdit"/>
-   </item>
-   <item row="1" column="6">
-    <widget class="QLabel" name="label_6">
-     <property name="text">
-      <string>Times</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="3">
-    <widget class="QLabel" name="label_17">
-     <property name="text">
-      <string>Fixture</string>
-     </property>
-    </widget>
+   <item row="0" column="1">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="productLineEdit"/>
    </item>
    <item row="2" column="5">
-    <widget class="QComboBox" name="fixtureSelectBox">
-     <property name="minimumSize">
-      <size>
-       <width>90</width>
-       <height>32</height>
-      </size>
-     </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
-      <property name="text">
-       <string>Reversed Phase</string>
-      </property>
+      <widget class="QCheckBox" name="reversedCheckBox">
+       <property name="acceptDrops">
+        <bool>false</bool>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">::indicator {
+     width: 32px;
+     height: 32px;
+ }
+
+::indicator:unchecked 
+{
+     image: url(:/resource/check_unchecked.png);
+ }
+::indicator:checked 
+{
+     image: url(:/resource/check_checked.png);
+ }
+
+QRadioButton::indicator:checked:disabled
+{
+ image: url(:/resource/check_checked_disable.png);
+}
+
+QRadioButton::indicator:unchecked:disabled
+{
+ image: url(:/resource/check_unchecked_disable.png);
+}</string>
+       </property>
+       <property name="text">
+        <string>Positive Phase</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup</string>
+       </attribute>
+      </widget>
      </item>
      <item>
-      <property name="text">
-       <string>Positive Phase</string>
-      </property>
+      <widget class="QCheckBox" name="positiveCheckBox">
+       <property name="styleSheet">
+        <string notr="true">::indicator {
+     width: 32px;
+     height: 32px;
+ }
+
+::indicator:unchecked 
+{
+     image: url(:/resource/check_unchecked.png);
+ }
+::indicator:checked 
+{
+     image: url(:/resource/check_checked.png);
+ }
+
+QRadioButton::indicator:checked:disabled
+{
+ image: url(:/resource/check_checked_disable.png);
+}
+
+QRadioButton::indicator:unchecked:disabled
+{
+ image: url(:/resource/check_unchecked_disable.png);
+}</string>
+       </property>
+       <property name="text">
+        <string>Reversed Phase</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup</string>
+       </attribute>
+      </widget>
      </item>
-    </widget>
+    </layout>
    </item>
   </layout>
  </widget>
@@ -158,4 +224,7 @@
  </customwidgets>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup"/>
+ </buttongroups>
 </ui>
