@@ -768,7 +768,7 @@ void ActionSettingFrame::KeyToActionCheck(int key)
         break;
     case ICKeyboard::VFB_CAdd:
     case ICKeyboard::VFB_CSub:
-        ui->cBox->setCurrentIndex(key == ICKeyboard::VFB_CAdd ? 1:0);
+        ui->cBox->setCurrentIndex(key == ICKeyboard::VFB_CAdd ? 0:1);
         ui->gCButton->setChecked(true);
         break;
     case ICKeyboard::VFB_Pose_Horizontal:

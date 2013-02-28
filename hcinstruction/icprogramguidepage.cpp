@@ -1367,7 +1367,7 @@ void ICProgramGuidePage::GuideKeyToActionCheck(int key)
         break;
     case ICKeyboard::VFB_Pose_Horizontal:
     case ICKeyboard::VFB_Pose_Vertical:
-        ui->cBox->setCurrentIndex(key == ICKeyboard::VFB_Pose_Horizontal ? 1:0);
+        ui->cBox->setCurrentIndex(key == ICKeyboard::VFB_Pose_Horizontal ? 0:1);
         break;
 
     }

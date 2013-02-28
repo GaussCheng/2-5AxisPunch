@@ -120,7 +120,7 @@ void ICFunctionPageFrame::InitSettingPage()
     ui->securityPointSettingWidget->setIcon(QIcon(":/resources/security-point.png"));
     ui->stackSettingWidget->setIcon(QIcon(":/resources/stacked.png"));
     ui->systemSettingWidget->setIcon(QIcon(":/resources/system.png"));
-    ui->machineStructConfig->setIcon(QIcon(":/resources/machineStruct.png"));
+    ui->machineStructConfig->setIcon(QIcon(":/resources/CommonIO.png"));
     ui->machineConfigSettingWidget->setIcon(QIcon(":/resources/machine.png"));
 
 //    ui->securityPointSettingWidget->SetDirection(ICPageTag::IconOnRight);

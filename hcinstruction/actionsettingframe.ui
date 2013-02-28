@@ -1024,12 +1024,12 @@ QRadioButton::indicator:unchecked:disabled
        </property>
        <item>
         <property name="text">
-         <string>Horizon-1</string>
+         <string>Vertical-1</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Vertical-1</string>
+         <string>Horizon-1</string>
         </property>
        </item>
       </widget>

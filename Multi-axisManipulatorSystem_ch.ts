@@ -4082,19 +4082,16 @@ Please enter an digit between </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinefigure.ui" line="147"/>
         <source>Save</source>
-        <translation>保存</translation>
+        <translation type="obsolete">保存</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinefigure.cpp" line="79"/>
         <source>Tips</source>
-        <translation>提示</translation>
+        <translation type="obsolete">提示</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinefigure.cpp" line="79"/>
         <source>Save successfully!</source>
-        <translation>保存成功!</translation>
+        <translation type="obsolete">保存成功!</translation>
     </message>
 </context>
 <context>
@@ -5393,7 +5390,7 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="390"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="847"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="932"/>
         <source>Product</source>
         <translation>成品位置设定</translation>
     </message>
@@ -5403,12 +5400,12 @@ Please enter an digit between </source>
         <translation>X1:</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="440"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="443"/>
         <source>GY1:</source>
         <translation>Y1:</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="708"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="720"/>
         <source>1</source>
         <translation>1</translation>
     </message>
@@ -5418,12 +5415,12 @@ Please enter an digit between </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="493"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="499"/>
         <source>GX2:</source>
         <translation>X2:</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="525"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="534"/>
         <source>GY2:</source>
         <translation>Y2:</translation>
     </message>
@@ -5448,39 +5445,39 @@ Please enter an digit between </source>
         <location filename="hcinstruction/icprogramguidepage.ui" line="329"/>
         <location filename="hcinstruction/icprogramguidepage.ui" line="361"/>
         <location filename="hcinstruction/icprogramguidepage.ui" line="417"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="452"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="502"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="534"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="455"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="508"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="543"/>
         <source>0.0</source>
         <translation>0.0</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="425"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="510"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="428"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="519"/>
         <source>Forward</source>
         <translation>前进</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="430"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="515"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="433"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="524"/>
         <source>Backward</source>
         <translation>后退</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="460"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="547"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="471"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="559"/>
         <source>Up</source>
         <translation>上升</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="465"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="542"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="466"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="554"/>
         <source>Down</source>
         <translation>下降</translation>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="273"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="570"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="582"/>
         <source>Come In</source>
         <translation>横入</translation>
     </message>
@@ -5493,8 +5490,8 @@ Please enter an digit between </source>
         <location filename="hcinstruction/icprogramguidepage.ui" line="305"/>
         <location filename="hcinstruction/icprogramguidepage.ui" line="337"/>
         <location filename="hcinstruction/icprogramguidepage.ui" line="372"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="615"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="660"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="627"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="672"/>
         <source>Horizontal</source>
         <translation>水平</translation>
     </message>
@@ -5502,50 +5499,50 @@ Please enter an digit between </source>
         <location filename="hcinstruction/icprogramguidepage.ui" line="310"/>
         <location filename="hcinstruction/icprogramguidepage.ui" line="342"/>
         <location filename="hcinstruction/icprogramguidepage.ui" line="377"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="631"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="673"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="643"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="685"/>
         <source>Vertical</source>
         <translation>垂直</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="478"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="848"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="484"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="933"/>
         <source>Outlet</source>
         <translation>水口位置设定</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="557"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="569"/>
         <source>Release Outlet:</source>
         <translation>放水口设定:</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="565"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="577"/>
         <source>Come Out</source>
         <translation>横出</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="575"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="587"/>
         <source>In Mold</source>
         <translation>模内</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="609"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="621"/>
         <source>Come Out Position</source>
         <translation>横出姿势</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="641"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="683"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="653"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="695"/>
         <source>Running Horizon</source>
         <translation>横出水平</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="654"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="666"/>
         <source>Come In Position</source>
         <translation>横入姿势</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="698"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="710"/>
         <source>Stacked En</source>
         <translation>堆叠使用</translation>
     </message>
@@ -5554,40 +5551,40 @@ Please enter an digit between </source>
         <translation type="obsolete">0</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="726"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="738"/>
         <source>Pre</source>
         <translation>上一页</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="733"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="745"/>
         <source>Next</source>
         <translation>下一页</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="740"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="752"/>
         <source>Finish</source>
         <translation>完成</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="840"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="917"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="921"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="1005"/>
         <source>Get Position Settings</source>
         <translation>取物位置设定</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="853"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="928"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="938"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="1020"/>
         <source>Release Product Position Settings</source>
         <translation>放成品位置设定</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="872"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="946"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="958"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="1040"/>
         <source>Release Outlet Position Settings</source>
         <translation>放水口位置设定</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="987"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="1083"/>
         <source>Stanby Settings</source>
         <translation>待机点设定</translation>
     </message>
