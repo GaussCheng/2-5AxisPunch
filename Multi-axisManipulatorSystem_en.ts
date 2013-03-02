@@ -112,12 +112,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1032"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1027"/>
         <source>Vertical-1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1027"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1032"/>
         <source>Horizon-1</source>
         <translation type="unfinished"></translation>
     </message>
