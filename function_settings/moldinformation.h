@@ -5,6 +5,7 @@
 #include <QModelIndex>
 #include <QFileInfoList>
 #include <QList>
+#include "ichcsystemsettingsframe.h"
 
 #include "icmold.h"
 
@@ -49,6 +50,8 @@ private:
 
     void UpdateInformationTable();
     void CreateFileHelper_(QList<ICMoldItem> &items, int axis, int servo, int pneumatic);
+    void RefreshFileList();
+    void switchPushButton();
 
 private:
     Ui::MoldInformation *ui;
@@ -57,6 +60,9 @@ private:
     QString recordFilePath_;
     QFileInfoList fileInfoList_;
     QStringList standPrograms_;
+    QStringList selectedItemName_;
+    ICHCSystemSettingsFrame ichcsystemsettingsframe_ ;
+//    QList<QTableWidgetItem *>itemSelectedList ;
 
 private slots:
 //    void on_informationTableWidget_clicked(QModelIndex index);
@@ -65,6 +71,8 @@ private slots:
     void on_copyToolButton_clicked();
     void on_newToolButton_clicked();
     void on_informationTableWidget_itemSelectionChanged();
+    void on_importToolButton_clicked();
+    void on_exportToolButton_clicked();
 };
 
 #endif // MOLDINFORMATION_H

@@ -9,7 +9,12 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="94"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1151"/>
+        <source>Come Out</source>
+        <translation type="unfinished">横出</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1165"/>
         <source>Pos                </source>
         <translation>位置</translation>
     </message>
@@ -18,139 +23,138 @@
         <translation type="obsolete">延时</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="49"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="177"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="303"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="429"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="555"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="681"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="807"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1016"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="188"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="410"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="593"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="702"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="833"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="942"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1073"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1393"/>
         <source>0.0</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="240"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="366"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="492"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="618"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="744"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="870"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="953"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1064"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="334"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="809"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1194"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1223"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1286"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1544"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1566"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1588"/>
         <source>80</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="218"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="344"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="470"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="596"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="722"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="848"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="931"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1099"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="86"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="517"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1049"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1245"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1308"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1369"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1500"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1522"/>
         <source>0.00</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="101"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1172"/>
         <source>Delay(s)</source>
         <translation>延时(s)</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="114"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="347"/>
         <source>Speed(%)</source>
         <translation>速度(%)</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="528"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="122"/>
         <source>GX2</source>
         <translation>X2</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="654"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="383"/>
         <source>GY2</source>
         <translation>Y2</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="780"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="161"/>
         <source>GA</source>
         <translation>A</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="823"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1471"/>
         <source>Vertical-2</source>
         <translation>垂直2</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="818"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1430"/>
         <source>Horizon-2</source>
         <translation>水平2</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="906"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1344"/>
         <source>GB</source>
         <translation>B</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="445"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="266"/>
         <source>Vertical-3</source>
         <translation>垂直3</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="440"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="225"/>
         <source>Horizon-3</source>
         <translation>水平3</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="989"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="61"/>
         <source>GC</source>
         <translation>C</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1032"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="488"/>
         <source>Vertical-1</source>
         <translation>垂直1</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1027"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="447"/>
         <source>Horizon-1</source>
         <translation>水平1</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="188"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="566"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="870"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="979"/>
         <source>Forward</source>
         <translation>前进</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="193"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="571"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="911"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1020"/>
         <source>Backward</source>
         <translation>后退</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="314"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="692"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="630"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="739"/>
         <source>Up</source>
         <translation>上升</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="319"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="697"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="671"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="780"/>
         <source>Down</source>
         <translation>下降</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="60"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1110"/>
         <source>Come In</source>
         <translation>横入</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="65"/>
         <source>Go Out</source>
-        <translation>横出</translation>
+        <translation type="obsolete">横出</translation>
     </message>
     <message>
         <source>Vertical2</source>
@@ -169,18 +173,18 @@
         <translation type="obsolete">主臂后退</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="276"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="553"/>
         <source>GY1</source>
         <oldsource>GY</oldsource>
         <translation>Y1</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="402"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="309"/>
         <source>GZ</source>
         <translation>Z</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="150"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1624"/>
         <source>GX1</source>
         <oldsource>GX</oldsource>
         <translation>X1</translation>
@@ -222,7 +226,7 @@
         <translation type="obsolete">姿势</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="87"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1264"/>
         <source>Set=&gt;</source>
         <translation>设入</translation>
     </message>
@@ -1157,62 +1161,62 @@ Reason</source>
         <translation>检查输入点</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="67"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="156"/>
         <source>Defective Products</source>
         <translation>不良品</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="72"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="191"/>
         <source>X043</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="77"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="223"/>
         <source>X044</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="85"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="42"/>
         <source>Use Macro</source>
         <translation>使用子程序</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="117"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="74"/>
         <source>Sub-1</source>
         <translation>子程序1</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="122"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="79"/>
         <source>Sub-2</source>
         <translation>子程序2</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="127"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="84"/>
         <source>Sub-3</source>
         <translation>子程序3</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="132"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="89"/>
         <source>Sub-4</source>
         <translation>子程序4</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="137"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="94"/>
         <source>Sub-5</source>
         <translation>子程序5</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="142"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="99"/>
         <source>Sub-6</source>
         <translation>子程序6</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="147"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="104"/>
         <source>Sub-7</source>
         <translation>子程序7</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="152"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="109"/>
         <source>Sub-8</source>
         <translation>子程序8</translation>
     </message>
@@ -1253,12 +1257,12 @@ Reason</source>
         <translation type="obsolete">巨集7</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="160"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="117"/>
         <source>Return Step</source>
         <translation>返回步号</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="167"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="124"/>
         <source>0</source>
         <translation></translation>
     </message>
@@ -2282,19 +2286,19 @@ Reason</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="205"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="126"/>
         <location filename="hcsettings/ichcproductsettingframe.cpp" line="123"/>
         <source>Product</source>
         <translation>产品数</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="168"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="89"/>
         <location filename="hcsettings/ichcproductsettingframe.cpp" line="127"/>
         <source>Sampling Count</source>
         <translation>取样模数</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="195"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="116"/>
         <location filename="hcsettings/ichcproductsettingframe.cpp" line="128"/>
         <source>Sampling Interval</source>
         <translation>取样间隔</translation>
@@ -2306,23 +2310,25 @@ Reason</source>
         <translation>不良品数</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="90"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="46"/>
         <location filename="hcsettings/ichcproductsettingframe.cpp" line="132"/>
         <source>Fixture</source>
         <translation>治具定义</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="132"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="207"/>
+        <location filename="hcsettings/ichcproductsettingframe.cpp" line="135"/>
         <source>Reversed Phase</source>
         <translation>反相</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="67"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="169"/>
+        <location filename="hcsettings/ichcproductsettingframe.cpp" line="136"/>
         <source>Positive Phase</source>
         <translation>正相</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="175"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="96"/>
         <location filename="hcsettings/ichcproductsettingframe.cpp" line="124"/>
         <source>Wait Mold Opened Limit Time</source>
         <translation>等待开模时间</translation>
@@ -2340,25 +2346,25 @@ Reason</source>
         <translation type="obsolete">水平下降</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="100"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="56"/>
         <location filename="hcsettings/ichcproductsettingframe.cpp" line="125"/>
         <source>s</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="182"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="103"/>
         <location filename="hcsettings/ichcproductsettingframe.cpp" line="130"/>
         <source>Alarm Times</source>
         <translation>报警时间</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="80"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="36"/>
         <location filename="hcsettings/ichcproductsettingframe.cpp" line="131"/>
         <source>Times</source>
         <translation>s</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="155"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="76"/>
         <location filename="hcsettings/ichcproductsettingframe.cpp" line="126"/>
         <source>Product Clear</source>
         <translation>产品清零</translation>
@@ -2819,296 +2825,294 @@ Reason</source>
         <translation>语言:</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="146"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="152"/>
         <source>Chinese</source>
         <translation>中文</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="151"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="190"/>
         <source>English</source>
         <translation>英文</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="176"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="217"/>
         <source>Data Time:</source>
         <translation>日期与时间:</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="253"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="294"/>
         <source>Back Light Time:</source>
         <translation>背光时间：</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="263"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="304"/>
         <source>min</source>
         <translation>分</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="290"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="331"/>
         <source>Brightness</source>
         <translation>屏幕亮度</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="397"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="438"/>
         <source>Save</source>
         <translation>保存</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="420"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="461"/>
         <source>Level Management</source>
         <translation>权限管理</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="441"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="482"/>
         <source>Level</source>
         <translation>权限</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="455"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="514"/>
         <source>Machine Admin</source>
         <translation>管理员</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="460"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="552"/>
         <source>Advance Admin</source>
         <translation>高级管理员</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="468"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="565"/>
         <source>Old Password</source>
         <translation>旧密码</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="491"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="588"/>
         <source>New Password</source>
         <translation>新密码</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="520"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="617"/>
         <source>Change</source>
         <translation>变更</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="533"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="630"/>
         <source>Clear</source>
         <translation>清除</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="544"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="641"/>
         <source>Admin Settings</source>
         <translation>高级管理员选项</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="566"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="663"/>
         <source>Extent Function</source>
         <translation>功能扩展</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="604"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="701"/>
         <source>Use</source>
         <translation>使用</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="611"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="708"/>
         <source>Verify</source>
         <translation>验证</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="619"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="716"/>
         <source>BackUp/Restore</source>
         <translation>备份/还原</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="627"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="724"/>
         <source>Backup</source>
         <translation>备份</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="639"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="736"/>
         <source>Backup Machine Configures</source>
         <translation>备份机器参数</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="652"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="749"/>
         <source>Backup System Configures</source>
         <translation>备份系统参数</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="665"/>
         <source>Backup Molds Configures</source>
-        <translation>备份模号参数</translation>
+        <translation type="obsolete">备份模号参数</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="678"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="762"/>
         <source>Backup All</source>
         <translation>全部备份</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="688"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="772"/>
         <source>Restore</source>
         <translation>还原</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="700"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="784"/>
         <source>Restore Machine Configures</source>
         <translation>还原机器参数</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="713"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="797"/>
         <source>Restore System Configures</source>
         <translation>还原系统参数</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="726"/>
         <source>Restore Molds Configures</source>
-        <translation>还原模号参数</translation>
+        <translation type="obsolete">还原模号参数</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="739"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="810"/>
         <source>Restore All</source>
         <translation>全部还原</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="757"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="828"/>
         <source>umount</source>
         <translation>弹出U盘</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="765"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="836"/>
         <source>Machine Config</source>
         <translation>机械参数</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1007"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1282"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1114"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1389"/>
         <source>==&gt;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1032"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1139"/>
         <source>HMI Configures</source>
         <translation>手控参数</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1114"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1221"/>
         <source>Host Struct Define</source>
         <translation>主机结构定义</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1123"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1313"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1230"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1420"/>
         <source>X1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1130"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1320"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1237"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1427"/>
         <source>X2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1137"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1327"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1244"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1434"/>
         <source>Y1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1144"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1334"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1251"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1441"/>
         <source>Y2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1179"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1369"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1286"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1476"/>
         <source>Signal</source>
         <translation>限位</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1193"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1383"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1300"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1490"/>
         <source>Arm</source>
         <translation>手臂结构选择</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1207"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1397"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1314"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1504"/>
         <source>Out</source>
         <translation>预留</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1221"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1411"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1328"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1518"/>
         <source>Pos</source>
         <translation>姿势</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1235"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1425"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1342"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1532"/>
         <source>Rev1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1242"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1432"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1349"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1539"/>
         <source>Rev2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1249"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1439"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1356"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1546"/>
         <source>Sum</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1304"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1411"/>
         <source>HMI Struct Define</source>
         <translation>手控结构定义</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="932"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1041"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1039"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1148"/>
         <source>Mechanical length</source>
         <translation>机械长度</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="229"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="270"/>
         <source>yyyy / MM  /  dd   hh : mm</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="946"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1055"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1053"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1162"/>
         <source>Maximum displacement</source>
         <translation>最大移动</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="960"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1069"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="675"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="693"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="711"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="729"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="747"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="765"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1067"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1176"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="698"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="716"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="734"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="752"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="770"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="788"/>
         <source>Internal security zone</source>
         <translation>型内安全区</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="974"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1083"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="676"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="694"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="712"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="730"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="748"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="766"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1081"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1190"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="699"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="717"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="735"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="753"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="771"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="789"/>
         <source>External security zone</source>
         <translation>型外安全区</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="988"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1097"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1095"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1204"/>
         <source>Distance/Rotation</source>
         <translation>每转距离</translation>
     </message>
@@ -3117,7 +3121,7 @@ Reason</source>
         <translation type="obsolete">选择手控参数</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="923"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1030"/>
         <source>Host Configures</source>
         <translation>主机参数</translation>
     </message>
@@ -3126,281 +3130,260 @@ Reason</source>
         <translation type="obsolete">选择主机参数</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="29"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="126"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="31"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="148"/>
         <source>X1 Axis</source>
         <oldsource>X Axis</oldsource>
         <translation>X1轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="30"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="127"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="32"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="149"/>
         <source>Y1 Axis</source>
         <oldsource>Y Axis</oldsource>
         <translation>Y1轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="31"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="128"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="33"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="150"/>
         <source>Z Axis</source>
         <translation>Z轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="32"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="129"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="34"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="151"/>
         <source>X2 Axis</source>
         <translation>X2轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="33"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="130"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="35"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="152"/>
         <source>Y2 Axis</source>
         <translation>Y2轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="34"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="131"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="36"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="153"/>
         <source>A Axis</source>
         <translation>A轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="35"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="132"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="37"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="154"/>
         <source>B Axis</source>
         <translation>B轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="36"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="133"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="38"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="155"/>
         <source>C Axis</source>
         <translation>C轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="37"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="134"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="39"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="156"/>
         <source>Struct Define</source>
         <translation>限位</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="62"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="64"/>
         <source>None</source>
         <translation>无</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="63"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="65"/>
         <source>Only Backward Limit</source>
         <translation>只有后退限</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="64"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="66"/>
         <source>Only Forward Limit</source>
         <translation>只有前进限</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="65"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="67"/>
         <source>Both</source>
         <translation>全部都有</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="66"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="68"/>
         <source>Only Up Limit</source>
         <translation>只有上升限</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="67"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="69"/>
         <source>Up and Donw Limit</source>
         <translation>上升和下降限</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="68"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="70"/>
         <source>Single Arm</source>
         <translation>单臂</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="69"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="71"/>
         <source>Double Arm</source>
         <translation>双臂</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="91"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="183"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="109"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="206"/>
         <source>Key Tone(ON)</source>
         <translation>按键音(开)</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="96"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="187"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="114"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="210"/>
         <source>Key Tone(OFF)</source>
         <translation>按键音(关)</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="198"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="225"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="316"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="320"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="221"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="248"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="339"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="343"/>
         <source>Information</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="199"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="222"/>
         <source>Please enter the old password and new password!</source>
         <oldsource>Please enter the olp password and new password!</oldsource>
         <translation>请输入旧密码和新密码！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="217"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="275"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="297"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="328"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="353"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="391"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="425"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="456"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="571"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1078"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="240"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="298"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="320"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="376"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="414"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="448"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="594"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1101"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="218"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="241"/>
         <source>Old password is wrong!</source>
         <translation>旧密码错误！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="226"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="249"/>
         <source>Change password successfully!</source>
         <translation>变更密码成功!</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="275"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="297"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="328"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="353"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="391"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="425"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="456"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="571"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="298"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="320"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="376"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="414"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="448"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="594"/>
         <source>USB is not connected!</source>
         <translation>没有检测到U盘！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="278"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="300"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="331"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="356"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="301"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="323"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="379"/>
         <source>Backuping, please wait...</source>
         <translation>备份中，请稍后...</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="316"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="339"/>
         <source>Operation finished!</source>
         <translation>操作完成！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="320"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="343"/>
         <source>Operation fail!</source>
         <translation>操作失败！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="394"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="428"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="459"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="574"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="417"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="451"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="597"/>
         <source>Restoring, please wait...</source>
         <translation>还原中，请稍后...</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="404"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="436"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="551"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="595"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="427"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="459"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="618"/>
         <source>Backup files is broken!</source>
         <translation>备份文件不完整！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="464"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="475"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="486"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="502"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="516"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="521"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="541"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1120"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1125"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1147"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1152"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1164"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1143"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1148"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1170"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1175"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1180"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1187"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1198"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1203"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1210"/>
         <source>Warnning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="464"/>
         <source>Backup files is not exists!</source>
-        <translation>备份文件不存在！</translation>
+        <translation type="obsolete">备份文件不存在！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="475"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="486"/>
         <source>Backup files is incomplete!</source>
-        <translation>备份文件不完整！</translation>
+        <translation type="obsolete">备份文件不完整！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="502"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="541"/>
         <source>Wrong program format!</source>
-        <translation>错误的程序格式！</translation>
+        <translation type="obsolete">错误的程序格式！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="516"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="521"/>
         <source>Wrong config format!</source>
-        <translation>错误的模组参数格式！</translation>
+        <translation type="obsolete">错误的模组参数格式！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="639"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="662"/>
         <source>Min pos inside mold</source>
         <translation>模内最小位置</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="640"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="663"/>
         <source>Max pos inside mold</source>
         <translation>模内最大位置</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="657"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="680"/>
         <source>Max standby pos</source>
         <translation>最大待机位置</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="658"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="681"/>
         <source>Leave origin pos</source>
         <translation>离开原点位置</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1079"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1102"/>
         <source>The system will be reboot to calibrate! Do you want to continue?</source>
         <translation>系统需要重启来校准屏幕!要继续吗?</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1120"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1125"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1143"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1148"/>
         <source>Wrong system config format!</source>
         <translation>错误的系统参数格式！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1147"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1152"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1170"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1175"/>
         <source>Wrong Axis config format!</source>
         <translation>错误的轴参数格式！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1164"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1175"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1180"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1187"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1198"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1203"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1210"/>
         <source>Wrong Rotation config format!</source>
         <translation>错误的每转距离参数格式！</translation>
     </message>
@@ -4100,33 +4083,33 @@ Please enter an digit between </source>
         <translation>组合动作选择</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.ui" line="183"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="223"/>
         <source>Security Point</source>
         <translation>安全点</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.ui" line="202"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="242"/>
         <source>Mechanical length</source>
         <translation>机械长度</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.ui" line="212"/>
-        <location filename="hcsettings/icmachinestructpage.ui" line="229"/>
-        <location filename="hcsettings/icmachinestructpage.ui" line="246"/>
-        <location filename="hcsettings/icmachinestructpage.ui" line="263"/>
-        <location filename="hcsettings/icmachinestructpage.ui" line="280"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="252"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="269"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="286"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="303"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="320"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="239"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="240"/>
         <source>mm</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.ui" line="219"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="259"/>
         <source>Maximum displacement</source>
         <translation>最大移动</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.ui" line="236"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="276"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="273"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="309"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="321"/>
@@ -4134,7 +4117,7 @@ Please enter an digit between </source>
         <translation>型内安全区</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.ui" line="253"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="293"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="274"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="310"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="322"/>
@@ -4142,47 +4125,47 @@ Please enter an digit between </source>
         <translation>型外安全区</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.ui" line="270"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="310"/>
         <source>Distance/Rotation</source>
         <translation>每转距离</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.ui" line="287"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="327"/>
         <source>Save</source>
         <translation>保存</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.ui" line="297"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="337"/>
         <source>Test Feedback</source>
         <translation>测试反馈</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.ui" line="309"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="349"/>
         <source>Test</source>
         <translation>测试</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.ui" line="319"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="359"/>
         <source>Feedback</source>
         <translation>反馈</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.ui" line="329"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="369"/>
         <source>Z Signal</source>
         <translation>Z信号</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.ui" line="353"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="393"/>
         <source>+Test</source>
         <translation>正向测试</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.ui" line="372"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="412"/>
         <source>-Test</source>
         <translation>反向测试</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.ui" line="391"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="431"/>
         <source>Clear</source>
         <translation>清除测试</translation>
     </message>
@@ -5387,23 +5370,23 @@ Please enter an digit between </source>
         <translation>设入</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="390"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="932"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="439"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="964"/>
         <source>Product</source>
         <translation>成品位置设定</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="405"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="454"/>
         <source>GX1:</source>
         <translation>X1:</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="443"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="502"/>
         <source>GY1:</source>
         <translation>Y1:</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="720"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="817"/>
         <source>1</source>
         <translation>1</translation>
     </message>
@@ -5413,134 +5396,133 @@ Please enter an digit between </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="499"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="568"/>
         <source>GX2:</source>
         <translation>X2:</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="534"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="613"/>
         <source>GY2:</source>
         <translation>Y2:</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="288"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="301"/>
         <source>GA:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="320"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="346"/>
         <source>GB:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="352"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="391"/>
         <source>GC:</source>
         <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="265"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="297"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="329"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="361"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="417"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="455"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="508"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="543"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="310"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="355"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="400"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="466"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="514"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="577"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="622"/>
         <source>0.0</source>
         <translation>0.0</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="428"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="519"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="475"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="586"/>
         <source>Forward</source>
         <translation>前进</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="433"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="524"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="488"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="599"/>
         <source>Backward</source>
         <translation>后退</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="471"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="559"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="536"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="644"/>
         <source>Up</source>
         <translation>上升</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="466"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="554"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="523"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="631"/>
         <source>Down</source>
         <translation>下降</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="273"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="582"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="274"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="680"/>
         <source>Come In</source>
         <translation>横入</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="278"/>
         <source>Go Out</source>
-        <translation>横出</translation>
+        <translation type="obsolete">横出</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="305"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="337"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="372"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="627"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="672"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="319"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="364"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="409"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="724"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="769"/>
         <source>Horizontal</source>
         <translation>水平</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="310"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="342"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="332"/>
         <location filename="hcinstruction/icprogramguidepage.ui" line="377"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="643"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="685"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="422"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="740"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="782"/>
         <source>Vertical</source>
         <translation>垂直</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="484"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="933"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="553"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="965"/>
         <source>Outlet</source>
         <translation>水口位置设定</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="569"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="658"/>
         <source>Release Outlet:</source>
         <translation>放水口设定:</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="577"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="287"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="667"/>
         <source>Come Out</source>
         <translation>横出</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="587"/>
         <source>In Mold</source>
-        <translation>模内</translation>
+        <translation type="obsolete">模内</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="621"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="718"/>
         <source>Come Out Position</source>
         <translation>横出姿势</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="653"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="695"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="750"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="792"/>
         <source>Running Horizon</source>
         <translation>横出水平</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="666"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="763"/>
         <source>Come In Position</source>
         <translation>横入姿势</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="710"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="807"/>
         <source>Stacked En</source>
         <translation>堆叠使用</translation>
     </message>
@@ -5549,40 +5531,40 @@ Please enter an digit between </source>
         <translation type="obsolete">0</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="738"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="835"/>
         <source>Pre</source>
         <translation>上一页</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="745"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="842"/>
         <source>Next</source>
         <translation>下一页</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="752"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="849"/>
         <source>Finish</source>
         <translation>完成</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="921"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="1005"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="950"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="1040"/>
         <source>Get Position Settings</source>
         <translation>取物位置设定</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="938"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="1020"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="970"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="1058"/>
         <source>Release Product Position Settings</source>
         <translation>放成品位置设定</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="958"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="1040"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="991"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="1079"/>
         <source>Release Outlet Position Settings</source>
         <translation>放水口位置设定</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="1083"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="1125"/>
         <source>Stanby Settings</source>
         <translation>待机点设定</translation>
     </message>
@@ -5892,19 +5874,19 @@ Please enter an digit between </source>
     <name>ICStructDefineFrame</name>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="14"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="116"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="173"/>
         <source>Form</source>
         <translation>组合动作选择</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="28"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="117"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="174"/>
         <source>Signal Define</source>
         <translation>限位定义</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="379"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="128"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="185"/>
         <source>Arm Define</source>
         <translation>轴定义</translation>
     </message>
@@ -5917,14 +5899,14 @@ Please enter an digit between </source>
         <location filename="hcsettings/icstructdefineframe.ui" line="568"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="600"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="632"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="130"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="134"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="138"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="142"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="146"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="150"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="154"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="158"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="187"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="191"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="195"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="199"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="203"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="207"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="211"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="215"/>
         <source>None</source>
         <translation>无</translation>
     </message>
@@ -5953,8 +5935,8 @@ Please enter an digit between </source>
         <translation type="obsolete">需上升和下降限位</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1017"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="190"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1488"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="265"/>
         <source>Save</source>
         <translation>保存</translation>
     </message>
@@ -5964,47 +5946,47 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="90"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="118"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="175"/>
         <source>Single Arm</source>
         <translation>单臂</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="138"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="119"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="176"/>
         <source>Double Arm</source>
         <translation>双臂</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="175"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="120"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="177"/>
         <source>Main Arm</source>
         <translation>主臂</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="215"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="328"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="121"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="125"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="178"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="182"/>
         <source>Down Limit</source>
         <translation>下降限</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="338"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="122"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="126"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="179"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="183"/>
         <source>Backword Limit</source>
         <translation>后退限</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="348"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="123"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="127"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="180"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="184"/>
         <source>Forward Limit</source>
         <translation>前进限</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="310"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="124"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="181"/>
         <source>Sub Arm</source>
         <translation>副臂</translation>
     </message>
@@ -6027,14 +6009,14 @@ Please enter an digit between </source>
         <location filename="hcsettings/icstructdefineframe.ui" line="573"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="605"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="637"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="131"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="135"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="139"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="143"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="147"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="151"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="155"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="159"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="188"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="192"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="196"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="200"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="204"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="208"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="212"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="216"/>
         <source>Pneumatic</source>
         <translation>气动轴</translation>
     </message>
@@ -6047,157 +6029,150 @@ Please enter an digit between </source>
         <location filename="hcsettings/icstructdefineframe.ui" line="578"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="610"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="642"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="132"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="136"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="140"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="144"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="148"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="152"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="156"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="160"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="189"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="193"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="197"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="201"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="205"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="209"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="213"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="217"/>
         <source>Servo</source>
         <translation>伺服轴</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="419"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="129"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="186"/>
         <source>X1</source>
         <translation></translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="426"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="133"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="190"/>
         <source>C</source>
         <translation></translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="433"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="137"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="194"/>
         <source>Z</source>
         <oldsource>C</oldsource>
         <translation></translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="440"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="141"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="198"/>
         <source>A</source>
         <translation></translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="522"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="145"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="202"/>
         <source>B</source>
         <translation></translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="554"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="149"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="206"/>
         <source>Y1</source>
         <translation></translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="586"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="153"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="210"/>
         <source>X2</source>
         <translation></translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="618"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="157"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="214"/>
         <source>Y2</source>
         <translation></translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="660"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="161"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="218"/>
         <source>Out Define</source>
         <translation>预留定义</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="684"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="162"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="789"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="219"/>
         <source>1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="698"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="725"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="752"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="779"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="806"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="833"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="860"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="887"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="163"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="166"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="169"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="172"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="175"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="178"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="181"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="184"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="896"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="934"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="972"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1010"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1048"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1156"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1194"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1232"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="243"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="245"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="247"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="249"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="251"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="253"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="255"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="257"/>
         <source>Normal</source>
         <translation>正常</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="703"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="730"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="757"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="784"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="811"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="838"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="865"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="892"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="164"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="167"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="170"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="173"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="176"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="179"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="182"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="185"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="709"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="744"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="779"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1086"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1121"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1270"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1305"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1340"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="244"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="246"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="248"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="250"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="252"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="254"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="256"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="258"/>
         <source>Extent</source>
         <translation>扩展</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="711"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="165"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="796"/>
         <source>5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="738"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="168"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="803"/>
         <source>2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="765"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="171"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="843"/>
         <source>6</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="792"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="174"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="850"/>
         <source>3</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="819"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="177"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="857"/>
         <source>7</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="846"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="180"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="864"/>
         <source>4</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="873"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="183"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="810"/>
         <source>8</source>
         <translation></translation>
     </message>
@@ -6218,26 +6193,26 @@ Please enter an digit between </source>
         <translation type="obsolete">正相</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="929"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="186"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1353"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="259"/>
         <source>Other Define</source>
         <translation>其他定义</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="947"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="187"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1371"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="260"/>
         <source>Escape</source>
         <translation>型内逃跑</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="961"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="188"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1403"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="263"/>
         <source>Use</source>
         <translation>使用</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="966"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="189"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1438"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="264"/>
         <source>No Use</source>
         <translation>不使用</translation>
     </message>
@@ -6246,12 +6221,12 @@ Please enter an digit between </source>
         <translation type="obsolete">手臂结构选择</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="227"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="302"/>
         <source>Tips</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="227"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="302"/>
         <source>Save Sucessfully!</source>
         <translation>保存成功!</translation>
     </message>
@@ -6362,7 +6337,7 @@ Please enter an digit between </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.ui" line="32"/>
+        <location filename="hcmaintains/icupdatesystem.ui" line="160"/>
         <source>1.Verify the device</source>
         <translation>1.确认设备</translation>
     </message>
@@ -6371,28 +6346,28 @@ Please enter an digit between </source>
         <translation type="obsolete">设备</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.ui" line="45"/>
+        <location filename="hcmaintains/icupdatesystem.ui" line="32"/>
         <source>2.Verify the update version</source>
         <translation>2.确认更新版本</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.ui" line="52"/>
+        <location filename="hcmaintains/icupdatesystem.ui" line="84"/>
         <source>HML Version</source>
         <translation>手控版本</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.ui" line="71"/>
-        <location filename="hcmaintains/icupdatesystem.ui" line="265"/>
+        <location filename="hcmaintains/icupdatesystem.ui" line="58"/>
+        <location filename="hcmaintains/icupdatesystem.ui" line="77"/>
         <source>Version</source>
         <translation>版本</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.ui" line="84"/>
+        <location filename="hcmaintains/icupdatesystem.ui" line="249"/>
         <source>3.Copy files</source>
         <translation>3.复制文件</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.ui" line="104"/>
+        <location filename="hcmaintains/icupdatesystem.ui" line="122"/>
         <source>4.Status</source>
         <translation>主机状态</translation>
     </message>
@@ -6401,48 +6376,45 @@ Please enter an digit between </source>
         <translation type="obsolete">复制文件中</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.ui" line="117"/>
+        <location filename="hcmaintains/icupdatesystem.ui" line="173"/>
         <source>Reboot</source>
         <oldsource>4.Reboot</oldsource>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.ui" line="158"/>
         <source>Restart</source>
-        <translation>重启主机</translation>
+        <translation type="obsolete">重启主机</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.ui" line="186"/>
         <source>Write</source>
-        <translation>写入主机</translation>
+        <translation type="obsolete">写入主机</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.ui" line="214"/>
         <source>Update Host</source>
-        <translation>更新主机</translation>
+        <translation type="obsolete">更新主机</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.ui" line="239"/>
+        <location filename="hcmaintains/icupdatesystem.ui" line="109"/>
         <source>Refresh</source>
         <translation>刷新</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.ui" line="246"/>
+        <location filename="hcmaintains/icupdatesystem.ui" line="39"/>
         <source>Host Version</source>
         <translation>主机版本</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.ui" line="293"/>
+        <location filename="hcmaintains/icupdatesystem.ui" line="236"/>
         <source>Update HMI</source>
         <translation>更新手控</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.ui" line="321"/>
+        <location filename="hcmaintains/icupdatesystem.ui" line="201"/>
         <source>Connect Host</source>
         <translation>连接主机</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.ui" line="359"/>
+        <location filename="hcmaintains/icupdatesystem.ui" line="147"/>
         <source>Update Logo</source>
         <translation>更新图片</translation>
     </message>
@@ -6453,7 +6425,7 @@ Please enter an digit between </source>
     <message>
         <location filename="hcmaintains/icupdatesystem.cpp" line="141"/>
         <location filename="hcmaintains/icupdatesystem.cpp" line="286"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="352"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="359"/>
         <source>Congratulations</source>
         <translation>提示</translation>
     </message>
@@ -6478,13 +6450,13 @@ Would you want to restart now?</source>
     </message>
     <message>
         <location filename="hcmaintains/icupdatesystem.cpp" line="281"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="301"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="302"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
         <location filename="hcmaintains/icupdatesystem.cpp" line="281"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="301"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="302"/>
         <source>Update Host fail!</source>
         <translation>更新主机失败！</translation>
     </message>
@@ -6494,17 +6466,17 @@ Would you want to restart now?</source>
         <translation>发送到主机成功！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="327"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="330"/>
         <source>tips</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="327"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="330"/>
         <source>Reboot Successful!</source>
         <translation>保存成功！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="353"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="360"/>
         <source>Update Host finished!</source>
         <translation>更新主机成功！</translation>
     </message>

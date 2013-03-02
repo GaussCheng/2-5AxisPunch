@@ -35,8 +35,8 @@ private:
     QTimer timer_;
     int status_;
     QDialog* updateDialog_;
-    bool flag;
 //    QMap<int, int> hostStatusToStringMap_;
+    bool connectHostFlag;
 
     void updateHostButton();
     void writeHostButton();

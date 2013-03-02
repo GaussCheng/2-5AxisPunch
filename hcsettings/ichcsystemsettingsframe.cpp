@@ -352,7 +352,8 @@ void ICHCSystemSettingsFrame::Information(bool isSuccess, const QString &msg)
 //        return;
 //    }
 //    ICTipsWidget tipsWidget(tr("Backuping, please wait..."));
-//    tipsWidget.show();qApp->processEvents();
+//    tipsWidget.show();
+//    qApp->processEvents();
 //    ICBackupUtility backupUtility;
 //    bool ret = backupUtility.BackupDir("/opt/Qt/bin/records",
 //                                       "/mnt/udisk/HC5ABackup/records",

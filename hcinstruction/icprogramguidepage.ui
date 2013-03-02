@@ -41,7 +41,7 @@ QCheckBox::indicator:checked
    <item>
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="page1">
       <layout class="QVBoxLayout" name="verticalLayout_13">
@@ -870,16 +870,16 @@ QCheckBox::indicator:checked
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="buttonGroup_2"/>
-  <buttongroup name="buttonGroup"/>
-  <buttongroup name="buttonGroupZ"/>
   <buttongroup name="buttonGroupA"/>
+  <buttongroup name="buttonGroup_2"/>
   <buttongroup name="buttonGroupB"/>
   <buttongroup name="buttonGroupC"/>
   <buttongroup name="buttonGroupX1"/>
-  <buttongroup name="buttonGroupY1"/>
-  <buttongroup name="buttonGroupX2"/>
-  <buttongroup name="buttonGroupY2"/>
   <buttongroup name="buttonGroupOutlet"/>
+  <buttongroup name="buttonGroupX2"/>
+  <buttongroup name="buttonGroupY1"/>
+  <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroupZ"/>
+  <buttongroup name="buttonGroupY2"/>
  </buttongroups>
 </ui>

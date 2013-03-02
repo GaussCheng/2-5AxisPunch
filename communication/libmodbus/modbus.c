@@ -2721,17 +2721,20 @@ int hc_update_host_restart(modbus_param_t *mb_param)
         int ret = select(mb_param->fd + 1, &readFD, NULL, NULL, &tv);
         if(ret == 0)
         {
+            printf("111111111111111\n");
             return -1;
         }
         ret = read(mb_param->fd, response, MAX_MESSAGE_LENGTH);
         if(ret <= 0)
         {
+            printf("222222222222222\n");
             return -1;
         }
         uint16_t crcCal = crc16(response, 3);
         uint16_t crcRec = (response[3] << 8) | response[4];
         if(crcCal != crcRec)
         {
+            printf("333333333333\n");
             return -1;
         }
         for(int i = 0; i != 5; ++i)
@@ -2739,11 +2742,13 @@ int hc_update_host_restart(modbus_param_t *mb_param)
             printf("send[%d] = %d  rec[%d] = %d \n", i, query[i], i, response[i]);
             if(query[i] != response[i])
             {
+                printf("4444444444444\n");
                 return -1;
             }
         }
         return 1;
     }
+    printf("555555555555\n");
     return -1;
 }
 

@@ -1707,9 +1707,9 @@ void ICProgramGuidePage::GuideKeyToActionCheck(int key)
     case ICKeyboard::VFB_Pose_Horizontal:
     case ICKeyboard::VFB_Pose_Vertical:
 //        ui->cBox->setCurrentIndex(key == ICKeyboard::VFB_Pose_Horizontal ? 1:0);
-        if((key == ICKeyboard::VFB_Pose_Horizontal ? 0:1) == 1)
+        if((key == ICKeyboard::VFB_Pose_Horizontal ? 0:1) == 0)
             ui->cBoxVertical->setChecked(true);
-        else if((key == ICKeyboard::VFB_Pose_Horizontal ? 0:1) == 0)
+        else if((key == ICKeyboard::VFB_Pose_Horizontal ? 0:1) == 1)
             ui->cBoxHorizontal->setChecked(true);
         break;
 

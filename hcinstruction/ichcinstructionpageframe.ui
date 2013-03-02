@@ -226,6 +226,9 @@ padding:5px;
        <property name="frameShadow">
         <enum>QFrame::Sunken</enum>
        </property>
+       <property name="midLineWidth">
+        <number>0</number>
+       </property>
        <widget class="QWidget" name="actionSelectPage">
         <layout class="QFormLayout" name="formLayout">
          <property name="fieldGrowthPolicy">

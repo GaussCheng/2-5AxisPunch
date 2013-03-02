@@ -22,6 +22,8 @@ class ICHCSystemSettingsFrame : public QFrame
 
 public:
     explicit ICHCSystemSettingsFrame(QWidget *parent = 0);
+    bool CheckIsUsbAttached() const;
+    void Information(bool isSuccess, const QString &msg = QString());
     ~ICHCSystemSettingsFrame();
 
 protected:
@@ -30,8 +32,6 @@ protected:
 
 private:
     void InitParameter();
-    bool CheckIsUsbAttached() const;
-    void Information(bool isSuccess, const QString &msg = QString());
     void SetConfig(int machineLenght,
                    int maxLength,
                    int iSafe,
