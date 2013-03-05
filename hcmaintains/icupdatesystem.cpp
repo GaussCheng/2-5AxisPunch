@@ -14,6 +14,8 @@
 #include "iccommands.h"
 #include "icvirtualhost.h"
 #include "icupdatelogodialog.h"
+#include <QDateTime>
+#include "icparameterssave.h"
 //ICUpdateSystem *icUpdateSystem = NULL;
 
 ICUpdateSystem::ICUpdateSystem(QWidget *parent) :
@@ -403,3 +405,109 @@ void ICUpdateSystem::on_updateLogoButton_clicked()
     }
     updateDialog_->exec();
 }
+
+
+void ICUpdateSystem::on_generateBtn_clicked()
+{
+    QString ret;
+    qsrand(QDateTime::currentDateTime().toMSecsSinceEpoch());
+    for(int i = 0; i != 10; ++i)
+    {
+        ret.append(QString::number(qrand() % 10));
+    }
+    ui->machineCode->setText(ret);
+}
+
+int ICUpdateSystem::Register(const QString& code, const QString& machineCode)
+{
+    int pMap[10];
+    for(int i = 0; i != 10; ++i)
+    {
+        pMap[i] = i;
+    }
+    int sortMap[16];
+    sortMap[0] = 1;
+    sortMap[1] = 2;
+    sortMap[2] = 3;
+    sortMap[3] = 5;
+    sortMap[4] = 7;
+    sortMap[5] = 11;
+    sortMap[6] = 13;
+    sortMap[7] = 0;
+    sortMap[8] = 4;
+    sortMap[9] = 6;
+    sortMap[10] = 8;
+    sortMap[11] = 10;
+    sortMap[12] = 12;
+    sortMap[13] = 14;
+    sortMap[14] = 9;
+    sortMap[15] = 15;
+    QString rC = code;
+    QString sortRet(16, '0');
+    int beg;
+    if(rC.size() != 16)
+    {
+        return - 1;
+    }
+    for(int i = 0; i != sortRet.size(); ++i)
+    {
+        sortRet[sortMap[i]] = rC.at(i);
+    }
+    qDebug()<<sortRet;
+    QString mCode = machineCode.simplified();
+    mCode = mCode.remove(" ");
+    beg = 0;
+    for(int i = 0; i != mCode.size(); ++i)
+    {
+        if(!mCode.at(i).isDigit())
+        {
+            return -1;
+        }
+        beg += mCode.at(i).digitValue();
+    }
+    beg /= mCode.size();
+    beg %= 10;
+    for(int i = 0; i != sortRet.size(); ++i)
+    {
+        for(int j = 0; j != 10; ++j)
+        {
+            if(((pMap[j] + beg) % 10) == sortRet.at(i).digitValue())
+            {
+                sortRet[i] = QString::number(pMap[j]).at(0);
+                break;
+            }
+        }
+    }
+    if(sortRet.left(10) != mCode)
+    {
+        return -1;
+    }
+    return sortRet.right(6).toInt();
+}
+
+void ICUpdateSystem::on_registerBtn_clicked()
+{
+    int hour = Register(ui->registerCode->text(), ui->machineCode->text());
+    if(hour == -1)
+    {
+        ui->tipLabel->setText(tr("Wrong Register Code!"));
+    }
+    else
+    {
+//        ICAppSettings().SetUsedTime(hour);
+        ICParametersSave::Instance()->SetRestTime(hour);
+        ui->tipLabel->setText(tr("Register Success!"));
+        if(hour == 0)
+        {
+            ui->restTime->setText(tr("No Limit"));
+        }
+        else
+        {
+            ui->restTime->setText(QString::number(hour) + tr("hour"));
+        }
+//        ICDALHelper::UpdateConfigValue(ICAddr_System_OtherUsedTime, hour);
+    }
+}
+
+//int pMap_[10];
+//int sortMap_[16] = {1,2,3,5,7,11,13,0,4,6,8,10,12,14,9,15};

@@ -1354,67 +1354,67 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="340"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="343"/>
         <source>Injection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="568"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="571"/>
         <source>Flags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="302"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="305"/>
         <source>Fixture</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="606"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="609"/>
         <source>Conditions</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="454"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="457"/>
         <source>Periphery</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="530"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="533"/>
         <source>Cut</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="728"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="731"/>
         <source>Decompose</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="769"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="772"/>
         <source>Compose</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="823"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="826"/>
         <source>A+</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="860"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="863"/>
         <source>A-</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="924"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="927"/>
         <source>Menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="949"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="952"/>
         <source>Insert</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="652"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="655"/>
         <source>Modify</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1439,27 +1439,27 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="264"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="267"/>
         <source>Line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="378"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="381"/>
         <source>Wait</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="416"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="419"/>
         <source>Reserve</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="492"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="495"/>
         <source>Stack</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="690"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="693"/>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2393,24 +2393,24 @@ Infomation</source>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1067"/>
         <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1176"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="698"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="716"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="734"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="752"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="770"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="788"/>
-        <source>Internal security zone</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1081"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1190"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="699"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="717"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="735"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="753"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="771"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="789"/>
+        <source>Internal security zone</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1081"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1190"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="700"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="718"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="736"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="754"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="772"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="790"/>
         <source>External security zone</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2551,11 +2551,11 @@ Infomation</source>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="240"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="298"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="320"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="376"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="414"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="448"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="594"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1101"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="377"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="415"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="449"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="595"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1102"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2572,17 +2572,17 @@ Infomation</source>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="298"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="320"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="376"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="414"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="448"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="594"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="377"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="415"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="449"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="595"/>
         <source>USB is not connected!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="301"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="323"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="379"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="380"/>
         <source>Backuping, please wait...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2597,73 +2597,73 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="417"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="451"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="597"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="418"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="452"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="598"/>
         <source>Restoring, please wait...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="427"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="459"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="618"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="428"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="460"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="619"/>
         <source>Backup files is broken!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1143"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1148"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1170"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1175"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1187"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1198"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1203"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1210"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1144"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1149"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1171"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1176"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1188"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1199"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1204"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1211"/>
         <source>Warnning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="662"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="663"/>
         <source>Min pos inside mold</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="663"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="664"/>
         <source>Max pos inside mold</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="680"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="681"/>
         <source>Max standby pos</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="681"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="682"/>
         <source>Leave origin pos</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1102"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1103"/>
         <source>The system will be reboot to calibrate! Do you want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1143"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1148"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1144"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1149"/>
         <source>Wrong system config format!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1170"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1175"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1171"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1176"/>
         <source>Wrong Axis config format!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1187"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1198"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1203"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1210"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1188"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1199"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1204"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1211"/>
         <source>Wrong Rotation config format!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4507,19 +4507,26 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="165"/>
-        <source>Level</source>
-        <oldsource>Passwd Level</oldsource>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="187"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="190"/>
         <source>Machine Operator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="68"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="20"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="76"/>
+        <source>Spare Time: %1 h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="72"/>
         <source>%1 h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="20"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="76"/>
+        <source>Spare Time: %1 h</source>
+        <oldsource>reset time: %1 h</oldsource>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5136,121 +5143,159 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.ui" line="160"/>
+        <location filename="hcmaintains/icupdatesystem.ui" line="145"/>
+        <source>RestTime:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcmaintains/icupdatesystem.ui" line="247"/>
         <source>1.Verify the device</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.ui" line="32"/>
+        <location filename="hcmaintains/icupdatesystem.ui" line="113"/>
         <source>2.Verify the update version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.ui" line="84"/>
+        <location filename="hcmaintains/icupdatesystem.ui" line="32"/>
+        <source>RegisterCode:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcmaintains/icupdatesystem.ui" line="100"/>
         <source>HML Version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.ui" line="58"/>
-        <location filename="hcmaintains/icupdatesystem.ui" line="77"/>
+        <location filename="hcmaintains/icupdatesystem.ui" line="132"/>
+        <location filename="hcmaintains/icupdatesystem.ui" line="209"/>
         <source>Version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.ui" line="249"/>
+        <location filename="hcmaintains/icupdatesystem.ui" line="289"/>
+        <source>Generate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcmaintains/icupdatesystem.ui" line="296"/>
+        <source>Register</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcmaintains/icupdatesystem.ui" line="45"/>
         <source>3.Copy files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.ui" line="122"/>
+        <location filename="hcmaintains/icupdatesystem.ui" line="190"/>
         <source>4.Status</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.ui" line="173"/>
+        <location filename="hcmaintains/icupdatesystem.ui" line="93"/>
         <source>Reboot</source>
         <oldsource>4.Reboot</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.ui" line="109"/>
+        <location filename="hcmaintains/icupdatesystem.ui" line="234"/>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.ui" line="39"/>
+        <location filename="hcmaintains/icupdatesystem.ui" line="177"/>
         <source>Host Version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.ui" line="236"/>
+        <location filename="hcmaintains/icupdatesystem.ui" line="273"/>
+        <source>MachineCode:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcmaintains/icupdatesystem.ui" line="326"/>
         <source>Update HMI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.ui" line="201"/>
+        <location filename="hcmaintains/icupdatesystem.ui" line="346"/>
+        <source>5.Register</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcmaintains/icupdatesystem.ui" line="73"/>
         <source>Connect Host</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.ui" line="147"/>
+        <location filename="hcmaintains/icupdatesystem.ui" line="170"/>
         <source>Update Logo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="141"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="286"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="359"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="142"/>
         <source>Congratulations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="142"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="143"/>
         <source>Update finish
 You must restart this program
 Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="173"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="174"/>
         <source>No available HMI version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="174"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="175"/>
         <source>No available Host version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="281"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="302"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="283"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="304"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="281"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="302"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="283"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="304"/>
         <source>Update Host fail!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="287"/>
-        <source>Send to  Host finished!</source>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="331"/>
+        <source>Update Host Successful!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="330"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="331"/>
         <source>tips</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="330"/>
-        <source>Reboot Successful!</source>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="493"/>
+        <source>Wrong Register Code!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="360"/>
-        <source>Update Host finished!</source>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="499"/>
+        <source>Register Success!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="502"/>
+        <source>No Limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="506"/>
+        <source>hour</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5382,103 +5427,127 @@ Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="175"/>
+        <location filename="mainframe.ui" line="176"/>
         <source>Z:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="220"/>
+        <location filename="mainframe.ui" line="221"/>
         <source>X1:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="265"/>
+        <location filename="mainframe.ui" line="266"/>
         <source>Y1:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="310"/>
+        <location filename="mainframe.ui" line="311"/>
         <source>X2:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="355"/>
+        <location filename="mainframe.ui" line="356"/>
         <source>Y2:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="472"/>
+        <location filename="mainframe.ui" line="473"/>
         <source>A:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="504"/>
-        <location filename="mainframe.ui" line="549"/>
-        <location filename="mainframe.ui" line="594"/>
+        <location filename="mainframe.ui" line="505"/>
+        <location filename="mainframe.ui" line="550"/>
+        <location filename="mainframe.ui" line="595"/>
         <source>Degree</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="517"/>
+        <location filename="mainframe.ui" line="518"/>
         <source>B:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="562"/>
+        <location filename="mainframe.ui" line="563"/>
         <source>C:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="207"/>
-        <location filename="mainframe.ui" line="252"/>
-        <location filename="mainframe.ui" line="297"/>
-        <location filename="mainframe.ui" line="342"/>
-        <location filename="mainframe.ui" line="387"/>
+        <location filename="mainframe.ui" line="208"/>
+        <location filename="mainframe.ui" line="253"/>
+        <location filename="mainframe.ui" line="298"/>
+        <location filename="mainframe.ui" line="343"/>
+        <location filename="mainframe.ui" line="388"/>
         <source>mm    </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="614"/>
+        <location filename="mainframe.ui" line="615"/>
         <source>Step</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="476"/>
+        <location filename="mainframe.cpp" line="130"/>
+        <source>Spare Time %1 Hour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainframe.cpp" line="136"/>
+        <location filename="mainframe.cpp" line="888"/>
+        <source>No Register</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainframe.cpp" line="497"/>
         <source>Function</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="477"/>
+        <location filename="mainframe.cpp" line="498"/>
         <source>Monitor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="479"/>
+        <location filename="mainframe.cpp" line="500"/>
         <source>Record</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="478"/>
+        <location filename="mainframe.cpp" line="499"/>
         <source>Alarm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="480"/>
+        <location filename="mainframe.cpp" line="130"/>
+        <location filename="mainframe.cpp" line="136"/>
+        <location filename="mainframe.cpp" line="884"/>
+        <location filename="mainframe.cpp" line="888"/>
+        <source>tips</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainframe.cpp" line="501"/>
         <source>Return</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="662"/>
+        <location filename="mainframe.cpp" line="683"/>
         <source>Hint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="882"/>
+        <location filename="mainframe.cpp" line="884"/>
+        <source>Spear Time %1 Hour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainframe.cpp" line="916"/>
         <source>Records</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="851"/>
+        <location filename="mainframe.cpp" line="872"/>
         <source>Instruct</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5491,180 +5560,296 @@ Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="41"/>
+        <location filename="function_settings/moldinformation.ui" line="62"/>
+        <source>All seclect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.ui" line="90"/>
+        <source>All unselect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.ui" line="118"/>
+        <source>Inverse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.ui" line="159"/>
+        <source>USB Export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.ui" line="187"/>
+        <source>USB Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.ui" line="226"/>
         <source>Mold Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="46"/>
+        <location filename="function_settings/moldinformation.ui" line="231"/>
         <source>Create Date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="74"/>
+        <location filename="function_settings/moldinformation.ui" line="259"/>
         <source>New</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="99"/>
+        <location filename="function_settings/moldinformation.ui" line="284"/>
         <source>Copy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="124"/>
+        <location filename="function_settings/moldinformation.ui" line="309"/>
         <source>Load</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="149"/>
+        <location filename="function_settings/moldinformation.ui" line="334"/>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="180"/>
+        <location filename="function_settings/moldinformation.ui" line="359"/>
+        <source>Export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.ui" line="384"/>
+        <source>Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.ui" line="415"/>
         <source>Source File Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="212"/>
+        <location filename="function_settings/moldinformation.ui" line="447"/>
         <source>New File Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="67"/>
-        <location filename="function_settings/moldinformation.cpp" line="160"/>
-        <location filename="function_settings/moldinformation.cpp" line="168"/>
-        <location filename="function_settings/moldinformation.cpp" line="196"/>
-        <location filename="function_settings/moldinformation.cpp" line="207"/>
-        <location filename="function_settings/moldinformation.cpp" line="230"/>
-        <location filename="function_settings/moldinformation.cpp" line="345"/>
-        <location filename="function_settings/moldinformation.cpp" line="356"/>
-        <location filename="function_settings/moldinformation.cpp" line="360"/>
+        <location filename="function_settings/moldinformation.cpp" line="83"/>
+        <location filename="function_settings/moldinformation.cpp" line="176"/>
+        <location filename="function_settings/moldinformation.cpp" line="184"/>
+        <location filename="function_settings/moldinformation.cpp" line="212"/>
+        <location filename="function_settings/moldinformation.cpp" line="223"/>
+        <location filename="function_settings/moldinformation.cpp" line="246"/>
+        <location filename="function_settings/moldinformation.cpp" line="365"/>
+        <location filename="function_settings/moldinformation.cpp" line="377"/>
+        <location filename="function_settings/moldinformation.cpp" line="381"/>
         <source>warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="68"/>
+        <location filename="function_settings/moldinformation.cpp" line="84"/>
         <source>New file name is empty,
 Please input the file name.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="89"/>
+        <location filename="function_settings/moldinformation.cpp" line="105"/>
+        <location filename="function_settings/moldinformation.cpp" line="516"/>
+        <location filename="function_settings/moldinformation.cpp" line="557"/>
+        <location filename="function_settings/moldinformation.cpp" line="571"/>
+        <location filename="function_settings/moldinformation.cpp" line="576"/>
+        <location filename="function_settings/moldinformation.cpp" line="614"/>
+        <location filename="function_settings/moldinformation.cpp" line="766"/>
+        <location filename="function_settings/moldinformation.cpp" line="778"/>
+        <location filename="function_settings/moldinformation.cpp" line="789"/>
         <source>Warnning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="89"/>
+        <location filename="function_settings/moldinformation.cpp" line="105"/>
         <source>This name can&apos;t not be accept!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="132"/>
-        <location filename="function_settings/moldinformation.cpp" line="189"/>
+        <location filename="function_settings/moldinformation.cpp" line="148"/>
+        <location filename="function_settings/moldinformation.cpp" line="205"/>
         <source>Success</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="133"/>
+        <location filename="function_settings/moldinformation.cpp" line="149"/>
         <source>New file success.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="139"/>
+        <location filename="function_settings/moldinformation.cpp" line="155"/>
         <source>The file has been existing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="140"/>
+        <location filename="function_settings/moldinformation.cpp" line="156"/>
         <source>File already exists,
 Please change a new name.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="161"/>
-        <location filename="function_settings/moldinformation.cpp" line="208"/>
+        <location filename="function_settings/moldinformation.cpp" line="177"/>
+        <location filename="function_settings/moldinformation.cpp" line="224"/>
         <source>Source file name is empty,
 Please choose an existing file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="169"/>
+        <location filename="function_settings/moldinformation.cpp" line="185"/>
         <source>New file name is empty,
 Please write the destination file name.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="190"/>
+        <location filename="function_settings/moldinformation.cpp" line="206"/>
         <source>Copy file success!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="197"/>
+        <location filename="function_settings/moldinformation.cpp" line="213"/>
         <source>Destination file already exists!
 Please try a new name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="231"/>
+        <location filename="function_settings/moldinformation.cpp" line="247"/>
         <source>File does not exist!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="274"/>
-        <location filename="function_settings/moldinformation.cpp" line="291"/>
+        <location filename="function_settings/moldinformation.cpp" line="290"/>
+        <location filename="function_settings/moldinformation.cpp" line="307"/>
+        <location filename="function_settings/moldinformation.cpp" line="637"/>
+        <location filename="function_settings/moldinformation.cpp" line="761"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="274"/>
-        <location filename="function_settings/moldinformation.cpp" line="291"/>
+        <location filename="function_settings/moldinformation.cpp" line="290"/>
+        <location filename="function_settings/moldinformation.cpp" line="307"/>
         <source>file name is empty</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="316"/>
+        <location filename="function_settings/moldinformation.cpp" line="332"/>
         <source>critical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="316"/>
+        <location filename="function_settings/moldinformation.cpp" line="332"/>
         <source>Read mold or mold para fail! Please change other mold!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="320"/>
+        <location filename="function_settings/moldinformation.cpp" line="336"/>
         <source>Loading...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="328"/>
+        <location filename="function_settings/moldinformation.cpp" line="344"/>
         <source>Tips</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="328"/>
+        <location filename="function_settings/moldinformation.cpp" line="344"/>
         <source>Load Mold Successful!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="346"/>
+        <location filename="function_settings/moldinformation.cpp" line="366"/>
         <source>The mold file </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="348"/>
+        <location filename="function_settings/moldinformation.cpp" line="368"/>
         <source> is being used</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="357"/>
+        <location filename="function_settings/moldinformation.cpp" line="378"/>
         <source>Stand programs can not be delete!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="361"/>
+        <location filename="function_settings/moldinformation.cpp" line="382"/>
         <source>Are you sure to delete files </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.cpp" line="508"/>
+        <source>Restoring, please wait...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.cpp" line="557"/>
+        <source>Wrong program format!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.cpp" line="571"/>
+        <source>Wrong config format!!!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.cpp" line="576"/>
+        <source>Wrong config format!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.cpp" line="590"/>
+        <location filename="function_settings/moldinformation.cpp" line="661"/>
+        <source>tips</source>
+        <oldsource>t1ips</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.cpp" line="590"/>
+        <location filename="function_settings/moldinformation.cpp" line="661"/>
+        <source>%1 is exist,replace it?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.cpp" line="614"/>
+        <source>Wrong program format!!!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.cpp" line="625"/>
+        <source>Backup files is broken!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.cpp" line="637"/>
+        <location filename="function_settings/moldinformation.cpp" line="761"/>
+        <source>USB is not connected!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.cpp" line="645"/>
+        <source>Backuping, please wait...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.cpp" line="750"/>
+        <source>Refresh File List, please wait...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.cpp" line="778"/>
+        <location filename="function_settings/moldinformation.cpp" line="789"/>
+        <source>Backup files is incomplete!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.cpp" line="516"/>
+        <location filename="function_settings/moldinformation.cpp" line="766"/>
+        <source>Backup files is not exists!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

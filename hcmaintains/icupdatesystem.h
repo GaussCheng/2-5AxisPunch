@@ -24,6 +24,7 @@ protected:
 
 private:
     void InitInterface();
+    int Register(const QString& , const QString& );
 
 private:
     Ui::ICUpdateSystem *ui;
@@ -52,6 +53,8 @@ private slots:
 
     void on_connectHostButton_clicked();
     void on_updateLogoButton_clicked();
+    void on_registerBtn_clicked();
+    void on_generateBtn_clicked();
 };
 
 //TODEBUG

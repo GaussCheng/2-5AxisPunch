@@ -113,6 +113,7 @@
      <property name="frameShadow">
       <enum>QFrame::Plain</enum>
      </property>
+     <zorder>programHeadWidget</zorder>
     </widget>
    </item>
    <item>

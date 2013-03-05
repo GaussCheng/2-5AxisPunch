@@ -16,6 +16,11 @@ ICProgramHeadFrame::ICProgramHeadFrame(QWidget *parent) :
     pageTimer_.start(60000);
     UpdateDateTime();
     InitSignal();
+    restTime_.start(1000*60);
+    int rest_time = ICParametersSave::Instance()->RestTime(-1);
+    if(rest_time <= 7*24)
+        ui->restTimeLabel->setText(QString(tr("Spare Time: %1 h").arg(rest_time)));
+
 }
 
 ICProgramHeadFrame::~ICProgramHeadFrame()
@@ -61,6 +66,7 @@ void ICProgramHeadFrame::UpdateDateTime()
     QDateTime dateTime = QDateTime::currentDateTime();
     ui->currentTimeLabel->setText(dateTime.toString("hh:mm"));
     ui->currentDateLabel->setText(dateTime.toString("yyyy/MM/dd"));
+
 }
 
 void ICProgramHeadFrame::UpdateAutoTime()
@@ -82,6 +88,10 @@ void ICProgramHeadFrame::InitSignal()
             SIGNAL(timeout()),
             this,
             SLOT(UpdateAutoTime()));
+    connect(&restTime_,
+            SIGNAL(timeout()),
+            this,
+            SLOT(ReashRestTime()));
 }
 
 int ICProgramHeadFrame::CurrentLevel() const
@@ -92,4 +102,10 @@ int ICProgramHeadFrame::CurrentLevel() const
 void ICProgramHeadFrame::SetCurrentLevel(int level)
 {
     ui->passwdLevelLabel->PasswdLevelChenged(level);
+}
+void ICProgramHeadFrame::ReashRestTime()
+{
+    int rest_time = ICParametersSave::Instance()->RestTime(-1);
+    if(rest_time <= 7*24)
+        ui->restTimeLabel->setText(QString(tr("Spare Time: %1 h").arg(rest_time)));
 }

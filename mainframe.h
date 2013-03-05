@@ -74,6 +74,8 @@ private slots:
     void StepChanged(int step);
     void RecordButtonClicked();
     void CheckedInput();
+    void Register();
+    void CountRestTime();
 
 
 //    void InitHeavyPage();
@@ -109,6 +111,8 @@ private:
     QStackedLayout * centerStackedLayout_;
     QButtonGroup* buttonGroup_;
     QAbstractButton* nullButton_;
+    QTimer *registe_timer;
+    int resetTime;
 
     int ledFD_;
     int ledFlags_;

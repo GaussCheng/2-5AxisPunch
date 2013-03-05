@@ -48,6 +48,9 @@ public:
     QString MoldName(const QString & defaultMoldName) { return GetParameter("BootParameter", "moldName", defaultMoldName).toString(); }
     void SetMoldName(const QString & moldName) { SaveParameter("BootParameter", "moldName", moldName); }
 
+    int RestTime(const int defaultHour_){return GetParameter("BootParameter", "hour_", defaultHour_).toInt(); }
+    void SetRestTime(const int & hour_){SaveParameter("BootParameter", "hour_", hour_); }
+
     QLocale::Language Language(){ return static_cast<QLocale::Language>(GetParameter(SystemLocale, "SystemLanguage", QLocale::Chinese).toInt());}
     void SetLanguage(QLocale::Language language);
     void LoadInitLocale() { SetCountry(Country());}

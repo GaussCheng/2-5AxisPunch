@@ -47,12 +47,14 @@ private:
 private slots:
     void UpdateDateTime();
     void UpdateAutoTime();
+    void ReashRestTime();
 
 private:
     Ui::ICProgramHeadFrame *ui;
     static ICProgramHeadFrame * instance_;
     QTimer pageTimer_;
     QTimer autoTime_;
+    QTimer restTime_;
     int autoMin_;
     QString currentMoldName_;
     explicit ICProgramHeadFrame(QWidget *parent = 0);

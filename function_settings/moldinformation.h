@@ -51,7 +51,6 @@ private:
     void UpdateInformationTable();
     void CreateFileHelper_(QList<ICMoldItem> &items, int axis, int servo, int pneumatic);
     void RefreshFileList();
-    void switchPushButton();
 
 private:
     Ui::MoldInformation *ui;
@@ -60,7 +59,9 @@ private:
     QString recordFilePath_;
     QFileInfoList fileInfoList_;
     QStringList standPrograms_;
-    QStringList selectedItemName_;
+    QStringList selectedExportItemName_;
+    QStringList selectedImportItemName_;
+    QStringList acts_ ;
     ICHCSystemSettingsFrame ichcsystemsettingsframe_ ;
 //    QList<QTableWidgetItem *>itemSelectedList ;
 
@@ -73,6 +74,11 @@ private slots:
     void on_informationTableWidget_itemSelectionChanged();
     void on_importToolButton_clicked();
     void on_exportToolButton_clicked();
+    void switchPushButton();
+    void on_allToolButton_clicked();
+    void on_InverseToolButton_clicked();
+    void on_unselectToolButton_clicked();
+
 };
 
 #endif // MOLDINFORMATION_H

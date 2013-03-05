@@ -15,6 +15,7 @@
 #include "icprogramformatchecker.h"
 #include "icconfigformatchecker.h"
 #include <QDebug>
+#include "mainframe.h"
 
 ICHCSystemSettingsFrame::ICHCSystemSettingsFrame(QWidget *parent) :
     QFrame(parent),
