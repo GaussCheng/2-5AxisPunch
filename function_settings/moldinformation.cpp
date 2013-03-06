@@ -388,32 +388,32 @@ void MoldInformation::on_deleteToolButton_clicked()
 
 
 
-        int ret = QMessageBox::warning(this, tr("warning"),
-                                       tr("Are you sure to delete the selected files?"),
-                                       QMessageBox::Ok | QMessageBox::Cancel,
-                                       QMessageBox::Cancel);
-        if(ret != QMessageBox::Ok)
-        {
-            return ;
-        }
+    int ret = QMessageBox::warning(this, tr("warning"),
+                                   tr("Are you sure to delete the selected files?"),
+                                   QMessageBox::Ok | QMessageBox::Cancel,
+                                   QMessageBox::Cancel);
+    if(ret != QMessageBox::Ok)
+    {
+        return ;
+    }
 
-        for(int i = 0 ; i < selectedItemNumberList.size() ; ++i)
+    for(int i = 0 ; i < selectedItemNumberList.size() ; ++i)
+    {
+        if(DeleteSourceFile(selectedItemStringList[i]))
         {
-            if(DeleteSourceFile(selectedItemStringList[i]))
+            if(i == 0)
+                ui->informationTableWidget->removeRow(selectedItemNumberList[i]);
+            else
+                ui->informationTableWidget->removeRow(selectedItemNumberList[i] - i);
+
+            ui->sourceFileNameLabel->clear();
+            if(ui->informationTableWidget->rowCount() != 0)
             {
-                if(i == 0)
-                    ui->informationTableWidget->removeRow(selectedItemNumberList[i]);
-                else
-                    ui->informationTableWidget->removeRow(selectedItemNumberList[i] - i);
-
-                ui->sourceFileNameLabel->clear();
-                if(ui->informationTableWidget->rowCount() != 0)
-                {
-                    ui->sourceFileNameLabel->setText(
-                                ui->informationTableWidget->item(0,0)->text() + ".act");
-                }
+                ui->sourceFileNameLabel->setText(
+                            ui->informationTableWidget->item(0,0)->text() + ".act");
             }
         }
+    }
 
 
 }
@@ -662,9 +662,22 @@ void MoldInformation::on_importToolButton_clicked()
 
             if(acts_.contains(item_text+".act"))
             {
-                if(QMessageBox::question(this,tr("tips"),tr( "%1 is exist,replace it?").arg(item_text),
-                                      QMessageBox::Cancel,QMessageBox::Ok) == QMessageBox::Cancel)
+                if(ICParametersSave::Instance()->MoldName(QString()) == item_text + ".act")
+                {
+                    QMessageBox::warning(this, tr("warning"),
+                                         tr("The mold file ") +
+                                         item_text +
+                                         tr(" is being used"),
+                                         QMessageBox::Ok,
+                                         QMessageBox::Ok);
                     continue;
+                }
+                else
+                {
+                    if(QMessageBox::question(this,tr("tips"),tr( "%1 is exist,replace it?").arg(item_text),
+                                             QMessageBox::Cancel,QMessageBox::Ok) == QMessageBox::Cancel)
+                        continue;
+                }
             }
             selectedImportItemName_.append(item_text + ".act");
             selectedImportItemName_.append(item_text + ".fnc");
@@ -780,7 +793,7 @@ void MoldInformation::on_exportToolButton_clicked()
                                        selectedExportItemName_);
     ret = ret && backupUtility.BackupDir("./subs",
                                          getFileDir + "/HC5ABackup/subs",
-                                        selectedExportItemName_<<"sub[0-7].prg");
+                                         selectedExportItemName_<<"sub[0-7].prg");
 
 #else
 
@@ -789,7 +802,7 @@ void MoldInformation::on_exportToolButton_clicked()
                                        selectedExportItemName_);
     ret = ret && backupUtility.BackupDir("/opt/Qt/bin/subs",
                                          "/mnt/udisk/HC5ABackup/subs",
-                                        selectedExportItemName_<<"sub[0-7].prg");
+                                         selectedExportItemName_<<"sub[0-7].prg");
 #endif
     if(!flagItem)
     {
