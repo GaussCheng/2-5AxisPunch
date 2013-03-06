@@ -123,21 +123,32 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
 {
     resetTime = ICParametersSave::Instance()->RestTime(-1);
 
+
     if(resetTime <= 7*24 )
     {
         if(resetTime > 0)
         {
             QMessageBox::information(NULL,tr("tips"),tr("Spare Time %1 Hour").arg(resetTime));
             connect(registe_timer,SIGNAL(timeout()),this,SLOT(CountRestTime()));
-            registe_timer->start(1000*60*60);
+            registe_timer->start(1000*3600);
+
+            //            registe_timer->start(1000*60*60);
         }
         else if(resetTime < 0)
         {
-            QMessageBox::information(NULL,tr("tips"),tr("No Register"));
+            QMessageBox::information(NULL,tr("tips"),tr("No Register,The System Will Reboot after 10 minutes"));
             connect(registe_timer,SIGNAL(timeout()),this,SLOT(Register()));
-            registe_timer->start(1000*60*10);
+            //            registe_timer->start(1000*60*10);
+            registe_timer->start(1000*600);
+
         }
     }
+    else
+    {
+        connect(registe_timer,SIGNAL(timeout()),this,SLOT(CountRestTime()));
+        registe_timer->start(1000*3600);
+    }
+
 
     connect(this,
             SIGNAL(LoadMessage(QString)),
@@ -875,9 +886,9 @@ void MainFrame::ShowManualPage()
 
 void MainFrame::ShowAutoPage()
 {
-    resetTime = ICParametersSave::Instance()->RestTime(7*24);
+    resetTime = ICParametersSave::Instance()->RestTime(-1);
 
-    if(resetTime < 7*24 )
+    if(resetTime <= 7*24 )
     {
         if(resetTime > 0)
         {
@@ -890,7 +901,7 @@ void MainFrame::ShowAutoPage()
     }
     functionPage_->ShowFunctionSelectPage();
     centerStackedLayout_->setCurrentWidget(autoPage_);
-    //    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Auto"));
+    //    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Auto")) ;
     ICProgramHeadFrame::Instance()->StartAutoTime();
     nullButton_->click();
     //    if(!IsOrigined())
@@ -1262,17 +1273,18 @@ void MainFrame::Register()
     resetTime = ICParametersSave::Instance()->RestTime(-1);
     if(resetTime < 0)
     {
-        QMessageBox::information(NULL,"tips","No Register. System Will Restart...");
-        //    system("reboot");
+        QMessageBox::information(NULL,tr("tips"),tr("No Register. System Restart Now..."));
+        //            system("reboot");
     }
 }
 
 void MainFrame::CountRestTime()
 {
-    resetTime--;
+    resetTime-- ;
     if(resetTime == 0)
     {
         resetTime = -1;
+        ICParametersSave::Instance()->SetRestTime(resetTime);
         Register();
     }
     ICParametersSave::Instance()->SetRestTime(resetTime);

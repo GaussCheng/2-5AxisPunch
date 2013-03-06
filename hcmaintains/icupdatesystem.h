@@ -3,6 +3,7 @@
 
 #include <QFrame>
 #include <QTimer>
+#include "icprogramheadframe.h"
 
 namespace Ui {
     class ICUpdateSystem;
@@ -33,7 +34,9 @@ private:
     const QString updateHostPath_;
     QSettings *updateSettings_;
     QSettings *updateHostSettings_;
+
     QTimer timer_;
+//    QTimer *refresh_restTimer;
     int status_;
     QDialog* updateDialog_;
 //    QMap<int, int> hostStatusToStringMap_;
@@ -43,6 +46,7 @@ private:
     void writeHostButton();
     void rebootButton();
     void RestartAndUpdateTheProgram();
+
 
 private slots:
     void on_updateToolButton_clicked();
@@ -55,6 +59,7 @@ private slots:
     void on_updateLogoButton_clicked();
     void on_registerBtn_clicked();
     void on_generateBtn_clicked();
+    void RefreshRestTime();
 };
 
 //TODEBUG

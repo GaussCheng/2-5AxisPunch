@@ -22,8 +22,6 @@ class ICHCSystemSettingsFrame : public QFrame
 
 public:
     explicit ICHCSystemSettingsFrame(QWidget *parent = 0);
-    bool CheckIsUsbAttached() const;
-    void Information(bool isSuccess, const QString &msg = QString());
     ~ICHCSystemSettingsFrame();
 
 protected:
@@ -41,6 +39,8 @@ private:
                    QString axisName);
 
 private:
+    void Information(bool isSuccess, const QString &msg = QString());
+    bool CheckIsUsbAttached() const;
     void UpdateConfigShow_();
     Ui::ICHCSystemSettingsFrame *ui;
     QDialog *passwordDialog_;

@@ -35,6 +35,12 @@ ICUpdateSystem::ICUpdateSystem(QWidget *parent) :
     connect(&timer_,
             SIGNAL(timeout()),
             SLOT(QueryStatus()));
+    RefreshRestTime();
+    connect(&(ICProgramHeadFrame::Instance()->restTime_),
+            SIGNAL(timeout()),
+            this,
+            SLOT(RefreshRestTime()));
+//    refresh_restTimer->start(1000*60*60);
 }
 
 ICUpdateSystem::~ICUpdateSystem()
@@ -507,6 +513,18 @@ void ICUpdateSystem::on_registerBtn_clicked()
         }
 //        ICDALHelper::UpdateConfigValue(ICAddr_System_OtherUsedTime, hour);
     }
+    ICProgramHeadFrame::Instance()->ReashRestTime();
+}
+
+void ICUpdateSystem::RefreshRestTime()
+{
+    int rest_time = ICParametersSave::Instance()->RestTime(-1);
+    if(rest_time == 0)
+        ui->restTime->setText(tr("No Limit"));
+    else if(rest_time > 0)
+        ui->restTime->setText(QString::number(rest_time) + tr("hour"));
+    else
+        ui->restTime->setText(tr("No Register!!"));
 }
 
 //int pMap_[10];

@@ -30,6 +30,7 @@ public:
 
 //    void SetCurrentCategoryName(const QString & categoryName);
     int CurrentLevel() const;
+    QTimer restTime_;
     void SetCurrentLevel(int level);
 
     void StartAutoTime(){if(!autoTime_.isActive()) autoTime_.start(60000);}
@@ -47,14 +48,17 @@ private:
 private slots:
     void UpdateDateTime();
     void UpdateAutoTime();
+
+public slots:
     void ReashRestTime();
+
 
 private:
     Ui::ICProgramHeadFrame *ui;
     static ICProgramHeadFrame * instance_;
     QTimer pageTimer_;
     QTimer autoTime_;
-    QTimer restTime_;
+//    QTimer restTime_;
     int autoMin_;
     QString currentMoldName_;
     explicit ICProgramHeadFrame(QWidget *parent = 0);

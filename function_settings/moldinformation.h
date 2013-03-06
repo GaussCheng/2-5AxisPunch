@@ -51,6 +51,7 @@ private:
     void UpdateInformationTable();
     void CreateFileHelper_(QList<ICMoldItem> &items, int axis, int servo, int pneumatic);
     void RefreshFileList();
+    bool CheckIsUsbAttached() const ;
 
 private:
     Ui::MoldInformation *ui;
@@ -62,7 +63,8 @@ private:
     QStringList selectedExportItemName_;
     QStringList selectedImportItemName_;
     QStringList acts_ ;
-    ICHCSystemSettingsFrame ichcsystemsettingsframe_ ;
+    QString getFileDir_ ;
+//    ICHCSystemSettingsFrame ichcsystemsettingsframe_ ;
 //    QList<QTableWidgetItem *>itemSelectedList ;
 
 private slots:

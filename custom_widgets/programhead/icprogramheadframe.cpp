@@ -1,6 +1,7 @@
 #include <QDateTime>
 #include "icprogramheadframe.h"
 #include "ui_icprogramheadframe.h"
+#include <QMessageBox>
 
 #include "icparameterssave.h"
 
@@ -12,15 +13,19 @@ ICProgramHeadFrame::ICProgramHeadFrame(QWidget *parent) :
     autoMin_(0)
 {
     ui->setupUi(this);
-
     pageTimer_.start(60000);
     UpdateDateTime();
     InitSignal();
-    restTime_.start(1000*60);
+//    restTime_.start(1000*60);
+    restTime_.start(1000*3600);
     int rest_time = ICParametersSave::Instance()->RestTime(-1);
     if(rest_time <= 7*24)
+    {
+        if(rest_time > 0)
         ui->restTimeLabel->setText(QString(tr("Spare Time: %1 h").arg(rest_time)));
-
+        else if(rest_time < 0)
+        ui->restTimeLabel->setText(QString(tr("No Register!")));
+    }
 }
 
 ICProgramHeadFrame::~ICProgramHeadFrame()
@@ -107,5 +112,16 @@ void ICProgramHeadFrame::ReashRestTime()
 {
     int rest_time = ICParametersSave::Instance()->RestTime(-1);
     if(rest_time <= 7*24)
+    {
+        if(rest_time > 0)
         ui->restTimeLabel->setText(QString(tr("Spare Time: %1 h").arg(rest_time)));
+        else if(rest_time < 0)
+        ui->restTimeLabel->setText(QString(tr("No Register!")));
+    }
+    else
+    {
+        ui->restTimeLabel->clear();
+    }
 }
+
+
