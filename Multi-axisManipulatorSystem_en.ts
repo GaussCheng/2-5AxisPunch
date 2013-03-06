@@ -2912,74 +2912,81 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="166"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="67"/>
         <source>Position</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="236"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="261"/>
         <source>vertical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="146"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="110"/>
         <source>Horizontal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="86"/>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="103"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="195"/>
+        <source>Early Speed-Down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="202"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="284"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="315"/>
         <source>mm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="282"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="209"/>
         <source>Speed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="110"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="277"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="458"/>
         <source>%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="265"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="127"/>
         <source>Delay Time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="187"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="120"/>
         <source>s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="318"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="53"/>
         <source>Early End</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="180"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="60"/>
         <source>Set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="173"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="74"/>
         <source>Select</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="53"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="413"/>
         <source>Bad Product</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="121"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="132"/>
         <source>speed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="153"/>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="168"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="167"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="182"/>
         <source>Times</source>
         <translation type="unfinished"></translation>
     </message>

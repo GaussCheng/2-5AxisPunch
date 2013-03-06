@@ -68,6 +68,13 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
     ui->earlyEndTimeEdit->hide();
 
     ui->mmLabel_2->hide();
+    ui->earlySpeedDownCheckBox->hide();
+
+    ui->earlySpeedDownTimeEdit->hide();
+    ui->earlyDownSpeedTimeEdit->hide();
+
+    ui->mmLabel_3->hide();
+    ui->mmLabel_4->hide();
 
     ui->selectEdit->hide();
     ui->selectLabel->hide();
@@ -76,6 +83,8 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
 
     ui->horizontalBox->hide();
     ui->verticalBox->hide();
+
+
     if(item->IsAction())
     {
         if( item->Action() <= ICMold::GB)
@@ -117,6 +126,8 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
             ui->posEdit->show();
             ui->mmLabel->show();
             ui->mmLabel_2->show();
+            ui->mmLabel_3->show();
+            ui->mmLabel_4->show();
 
             ui->speedLabel->setText(tr("speed"));
             ui->speedLabel->show();
@@ -124,6 +135,9 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
             ui->precentLabel->show();
             ui->earlyEndCheckBox->show();
             ui->earlyEndTimeEdit->show();
+            ui->earlySpeedDownTimeEdit->show();
+            ui->earlySpeedDownCheckBox->show();
+            ui->earlyDownSpeedTimeEdit->show();
         }
         if( item->Action() == ICMold::GZ)
         {
@@ -184,7 +198,11 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
     ui->delayTimeEdit->SetThisIntToThisText(item->DVal());
 
     ui->earlyEndCheckBox->setChecked(item->IsEarlyEnd());
+    ui->earlySpeedDownCheckBox->setChecked(item->IsEarlySpeedDown());
+
     ui->earlyEndTimeEdit->SetThisIntToThisText(item->IFPos());
+    ui->earlySpeedDownTimeEdit->SetThisIntToThisText(item->IFPos());
+    ui->earlyDownSpeedTimeEdit->SetThisIntToThisText(item->GetEarlyDownSpeed());
     ui->badProductBox->setChecked(item->IsBadProduct());
 
     int isok = exec();
@@ -202,12 +220,21 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
 
         item->SetDVal(ui->delayTimeEdit->TransThisTextToThisInt());
         item->SetEarlyEnd(ui->earlyEndCheckBox->isChecked());
+        item->SetEarlySpeedDown(ui->earlySpeedDownCheckBox->isChecked());
         if(!ui->badProductBox->isHidden())
         {
             item->SetBadProduct(ui->badProductBox->isChecked());
         }
+
 //        item->SetIFVal(ui->earlyEndCheckBox->isChecked());
-        item->SetIFPos(ui->earlyEndTimeEdit->TransThisTextToThisInt());
+        if(ui->earlyEndCheckBox->isChecked())
+            item->SetIFPos(ui->earlyEndTimeEdit->TransThisTextToThisInt());
+        else if(ui->earlySpeedDownCheckBox->isChecked())
+        {
+            item->SetIFPos(ui->earlySpeedDownTimeEdit->TransThisTextToThisInt());
+            item->SetEarlyDownSpeed(ui->earlyDownSpeedTimeEdit->TransThisTextToThisInt());
+        }
+
 
 /**********************接以上任务****************************/
         if(ui->verticalBox->isChecked() && !ui->verticalBox->isHidden())
@@ -236,11 +263,6 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
 
    }
     return isok;
-}
-
-void ICInstructModifyDialog::on_earlyEndCheckBox_toggled(bool checked)
-{
-    ui->earlyEndTimeEdit->setEnabled(checked);
 }
 
 void ICInstructModifyDialog::on_setButton_clicked()
@@ -284,4 +306,26 @@ void ICInstructModifyDialog::on_setButton_clicked()
         currentPos = host->HostStatus(ICVirtualHost::CPos).toInt();
     }
     ui->posEdit->SetThisIntToThisText(currentPos);
+}
+
+void ICInstructModifyDialog::on_earlyEndCheckBox_clicked(bool checked)
+{
+    if(checked)
+    {
+        ui->earlySpeedDownCheckBox->setCheckState(Qt::Unchecked);
+        ui->earlySpeedDownTimeEdit->setEnabled(false);
+        ui->earlyDownSpeedTimeEdit->setEnabled(false);
+    }
+    ui->earlyEndTimeEdit->setEnabled(checked);
+}
+
+void ICInstructModifyDialog::on_earlySpeedDownCheckBox_clicked(bool checked)
+{
+    if(checked)
+    {
+        ui->earlyEndCheckBox->setCheckState(Qt::Unchecked);
+        ui->earlyEndTimeEdit->setEnabled(false);
+    }
+    ui->earlySpeedDownTimeEdit->setEnabled(checked);
+    ui->earlyDownSpeedTimeEdit->setEnabled(checked);
 }
