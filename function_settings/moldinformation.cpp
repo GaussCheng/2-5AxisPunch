@@ -826,6 +826,7 @@ void MoldInformation::switchPushButton()
         UpdateInformationTable();
         break;
     case 1:
+        ui->sourceFileNameLabel->clear();
         ui->newToolButton->setEnabled(false);
         ui->copyToolButton->setEnabled(false);
         ui->loadToolButton->setEnabled(false);
