@@ -24,14 +24,21 @@ protected:
     void changeEvent(QEvent *e);
 
 private slots:
-    void on_earlyEndCheckBox_toggled(bool checked);
+
 
     void on_setButton_clicked();
+
+
+    void on_earlyEndCheckBox_clicked(bool checked);
+
+    void on_earlySpeedDownCheckBox_clicked(bool checked);
 
 private:
     Ui::ICInstructModifyDialog *ui;
     ICMoldItem* currentItem;
     QIntValidator* posValidator_;
+    QIntValidator* esdValidator_;
+
      QIntValidator* validator ;
 
 };

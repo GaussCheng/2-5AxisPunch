@@ -839,11 +839,13 @@ void ActionSettingFrame::KeyToActionCheck(int key)
         break;
     case ICKeyboard::VFB_CAdd:
     case ICKeyboard::VFB_CSub:
+
 //        ui->cBox->setCurrentIndex(key == ICKeyboard::VFB_CAdd ? 1:0);
         if((key == ICKeyboard::VFB_CAdd ? 0:1) == 1)
             ui->cHorizonBox->setChecked(true);
         else if((key == ICKeyboard::VFB_CAdd ? 0:1) == 0)
             ui->cVerticalBox->setChecked(true);
+
         ui->gCButton->setChecked(true);
         break;
     case ICKeyboard::VFB_Pose_Horizontal:

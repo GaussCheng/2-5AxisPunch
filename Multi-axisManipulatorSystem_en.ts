@@ -2857,74 +2857,80 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="51"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="209"/>
         <source>Position</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="143"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="317"/>
+        <source>Early Speed-Down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="386"/>
         <source>vertical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="188"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="252"/>
         <source>Horizontal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="272"/>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="299"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="340"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="409"/>
         <source>mm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="102"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="347"/>
         <source>Speed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="88"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="159"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="402"/>
         <source>%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="65"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="40"/>
         <source>Delay Time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="95"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="262"/>
         <source>s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="229"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="195"/>
         <source>Early End</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="58"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="202"/>
         <source>Set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="34"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="216"/>
         <source>Select</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.ui" line="265"/>
+        <location filename="hcinstruction/icinstructmodifydialog.ui" line="114"/>
         <source>Bad Product</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="121"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="137"/>
         <source>speed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="153"/>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="168"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="172"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="187"/>
         <source>Times</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5669,9 +5675,9 @@ Please input the file name.</source>
         <location filename="function_settings/moldinformation.cpp" line="646"/>
         <location filename="function_settings/moldinformation.cpp" line="651"/>
         <location filename="function_settings/moldinformation.cpp" line="716"/>
-        <location filename="function_settings/moldinformation.cpp" line="861"/>
-        <location filename="function_settings/moldinformation.cpp" line="875"/>
-        <location filename="function_settings/moldinformation.cpp" line="886"/>
+        <location filename="function_settings/moldinformation.cpp" line="862"/>
+        <location filename="function_settings/moldinformation.cpp" line="876"/>
+        <location filename="function_settings/moldinformation.cpp" line="887"/>
         <source>Warnning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5735,7 +5741,7 @@ Please try a new name</source>
         <location filename="function_settings/moldinformation.cpp" line="290"/>
         <location filename="function_settings/moldinformation.cpp" line="307"/>
         <location filename="function_settings/moldinformation.cpp" line="750"/>
-        <location filename="function_settings/moldinformation.cpp" line="856"/>
+        <location filename="function_settings/moldinformation.cpp" line="857"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5845,7 +5851,7 @@ Please try a new name</source>
     </message>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="750"/>
-        <location filename="function_settings/moldinformation.cpp" line="856"/>
+        <location filename="function_settings/moldinformation.cpp" line="857"/>
         <source>USB is not connected!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5855,19 +5861,19 @@ Please try a new name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="849"/>
+        <location filename="function_settings/moldinformation.cpp" line="850"/>
         <source>Refresh File List, please wait...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="875"/>
-        <location filename="function_settings/moldinformation.cpp" line="886"/>
+        <location filename="function_settings/moldinformation.cpp" line="876"/>
+        <location filename="function_settings/moldinformation.cpp" line="887"/>
         <source>Backup files is incomplete!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="590"/>
-        <location filename="function_settings/moldinformation.cpp" line="861"/>
+        <location filename="function_settings/moldinformation.cpp" line="862"/>
         <source>Backup files is not exists!</source>
         <translation type="unfinished"></translation>
     </message>
