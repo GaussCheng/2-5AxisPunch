@@ -202,29 +202,6 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
     ui->speedEdit->SetThisIntToThisText(item->SVal());
     ui->delayTimeEdit->SetThisIntToThisText(item->DVal());
     
-    //    ui->earlyEndCheckBox->setChecked(item->IsEarlyEnd());
-    //    ui->earlySpeedDownCheckBox->setChecked(item->IsEarlySpeedDown());
-
-    //    if(item->IsEarlyEnd())  // is early end checked?
-    //    {
-    //        ui->earlyEndTimeEdit->setEnabled(true);
-    //        ui->earlyEndCheckBox->setChecked(true);
-    //        ui->earlySpeedDownCheckBox->setChecked(false);
-    //    }
-    //    else if(item->IsEarlySpeedDown())   // is early speed down checked?
-    //    {
-    //        ui->earlyEndTimeEdit->setEnabled(true);
-    //        ui->earlyDownSpeedTimeEdit->setEnabled(true);
-    //        ui->earlySpeedDownCheckBox->setChecked(true);
-    //        ui->earlyEndCheckBox->setChecked(false);
-    //    }
-    //    else // early end and early speed down unchecked.
-    //    {
-    //        ui->earlyEndTimeEdit->setEnabled(false);
-    //        ui->earlyDownSpeedTimeEdit->setEnabled(false);
-    //        ui->earlySpeedDownCheckBox->setChecked(false);
-    //        ui->earlyEndCheckBox->setChecked(false);
-    //    }
     if(item->IsEarlyEnd())  // is early end checked?
     {
         ui->earlyEndTimeEdit->setEnabled(true);
