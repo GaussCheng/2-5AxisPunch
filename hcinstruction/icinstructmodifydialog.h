@@ -37,6 +37,8 @@ private:
     Ui::ICInstructModifyDialog *ui;
     ICMoldItem* currentItem;
     QIntValidator* posValidator_;
+    QIntValidator* esdValidator_;
+
      QIntValidator* validator ;
 
 };

@@ -13,18 +13,21 @@ ICInstructModifyDialog::ICInstructModifyDialog(QWidget *parent) :
     validator = new QIntValidator(0, 30000, this);
     ui->delayTimeEdit->SetDecimalPlaces(2);
     ui->delayTimeEdit->setValidator(validator);
-/*****************BUG177，178*******************************/
+    /*****************BUG177，178*******************************/
     validator = new QIntValidator(0, 255, this);
     ui->speedEdit->setValidator(validator);
-
+    
     posValidator_ = new QIntValidator(0, 65530, this);
     ui->posEdit->SetDecimalPlaces(1);
     ui->posEdit->setValidator(posValidator_);
 
+    esdValidator_ = new QIntValidator(1, 30, this);
+    ui->earlyDownSpeedTimeEdit->setValidator(esdValidator_);
+    
     ui->earlyEndTimeEdit->SetDecimalPlaces(1);
     ui->earlyEndTimeEdit->setValidator(posValidator_);
     ui->selectEdit->setValidator(new QIntValidator(1, 4, this));
-
+    
     ui->posEdit->SetModalKeyboard(true);
     ui->speedEdit->SetModalKeyboard(true);
     ui->delayTimeEdit->SetModalKeyboard(true);
@@ -53,38 +56,40 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
 {
     currentItem = item;
     ui->positionLabel->hide();
-
+    
     ui->posEdit->hide();
-
-    ui->mmLabel->hide();   
+    
+    ui->mmLabel->hide();
     ui->speedLabel->hide();
-
+    
     ui->speedEdit->hide();
-
+    
     ui->precentLabel->hide();
-
+    
     ui->earlyEndCheckBox->hide();
-
+    
     ui->earlyEndTimeEdit->hide();
-
+    
     ui->mmLabel_2->hide();
     ui->earlySpeedDownCheckBox->hide();
-
-    ui->earlySpeedDownTimeEdit->hide();
+    
+    
+    
+    
     ui->earlyDownSpeedTimeEdit->hide();
-
-    ui->mmLabel_3->hide();
+    
+    
     ui->mmLabel_4->hide();
-
+    
     ui->selectEdit->hide();
     ui->selectLabel->hide();
-
+    
     ui->badProductBox->hide();
-
+    
     ui->horizontalBox->hide();
     ui->verticalBox->hide();
-
-
+    
+    
     if(item->IsAction())
     {
         if( item->Action() <= ICMold::GB)
@@ -118,24 +123,24 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
                 addr = ICVirtualHost::SYS_C_Maxium;
                 break;
             }
-
+            
             posValidator_->setTop(host->SystemParameter(addr).toInt());
             validator->setTop(100);
-
+            
             ui->positionLabel->show();
             ui->posEdit->show();
             ui->mmLabel->show();
             ui->mmLabel_2->show();
-            ui->mmLabel_3->show();
+            
             ui->mmLabel_4->show();
-
+            
             ui->speedLabel->setText(tr("speed"));
             ui->speedLabel->show();
             ui->speedEdit->show();
             ui->precentLabel->show();
             ui->earlyEndCheckBox->show();
             ui->earlyEndTimeEdit->show();
-            ui->earlySpeedDownTimeEdit->show();
+            
             ui->earlySpeedDownCheckBox->show();
             ui->earlyDownSpeedTimeEdit->show();
         }
@@ -143,7 +148,7 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
         {
             ui->badProductBox->show();
         }
-/************任务：待机点姿势可以修改**********************************/
+        /************任务：待机点姿势可以修改**********************************/
         if(item->Action() == ICMold::ACTPOSEHORI || item->Action() == ICMold::ACT_PoseHori2)
         {
             ui->horizontalBox->show();
@@ -156,18 +161,18 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
             ui->verticalBox->show();
             ui->verticalBox->setChecked(true);
         }
-
+        
     }
- /******************BUG#117****************************/
-   else if(item->Clip() == ICMold::ACTCLIP7ON
-           || item->Clip() == ICMold::ACTCLIP8ON )
-
+    /******************BUG#117****************************/
+    else if(item->Clip() == ICMold::ACTCLIP7ON
+            || item->Clip() == ICMold::ACTCLIP8ON )
+        
     {
         validator->setTop(255);
         ui->speedLabel->setText(tr("Times"));
         ui->speedLabel->show();
         ui->speedEdit->show();
-
+        
     }
     else if(item->Clip() == ICMold:: ACT_AUX1
             || item->Clip() == ICMold:: ACT_AUX2
@@ -189,22 +194,61 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
         ui->selectEdit->SetThisIntToThisText(item->SVal() + 1);
         ui->selectEdit->show();
         ui->selectLabel->show();
-
+        
     }
-
+    
     ui->posEdit->SetThisIntToThisText(item->Pos());
-
+    
     ui->speedEdit->SetThisIntToThisText(item->SVal());
     ui->delayTimeEdit->SetThisIntToThisText(item->DVal());
+    
+    //    ui->earlyEndCheckBox->setChecked(item->IsEarlyEnd());
+    //    ui->earlySpeedDownCheckBox->setChecked(item->IsEarlySpeedDown());
 
-    ui->earlyEndCheckBox->setChecked(item->IsEarlyEnd());
-    ui->earlySpeedDownCheckBox->setChecked(item->IsEarlySpeedDown());
-
+    //    if(item->IsEarlyEnd())  // is early end checked?
+    //    {
+    //        ui->earlyEndTimeEdit->setEnabled(true);
+    //        ui->earlyEndCheckBox->setChecked(true);
+    //        ui->earlySpeedDownCheckBox->setChecked(false);
+    //    }
+    //    else if(item->IsEarlySpeedDown())   // is early speed down checked?
+    //    {
+    //        ui->earlyEndTimeEdit->setEnabled(true);
+    //        ui->earlyDownSpeedTimeEdit->setEnabled(true);
+    //        ui->earlySpeedDownCheckBox->setChecked(true);
+    //        ui->earlyEndCheckBox->setChecked(false);
+    //    }
+    //    else // early end and early speed down unchecked.
+    //    {
+    //        ui->earlyEndTimeEdit->setEnabled(false);
+    //        ui->earlyDownSpeedTimeEdit->setEnabled(false);
+    //        ui->earlySpeedDownCheckBox->setChecked(false);
+    //        ui->earlyEndCheckBox->setChecked(false);
+    //    }
+    if(item->IsEarlyEnd())  // is early end checked?
+    {
+        ui->earlyEndTimeEdit->setEnabled(true);
+        ui->earlyEndCheckBox->setChecked(true);
+    }
+    if(item->IsEarlySpeedDown())   // is early speed down checked?
+    {
+        ui->earlyEndTimeEdit->setEnabled(true);
+        ui->earlyDownSpeedTimeEdit->setEnabled(true);
+        ui->earlySpeedDownCheckBox->setChecked(true);
+    }
+    if(item->IsEarlyEnd() == false && item->IsEarlySpeedDown() == false)
+    {
+        ui->earlyEndTimeEdit->setEnabled(false);
+        ui->earlyDownSpeedTimeEdit->setEnabled(false);
+        ui->earlySpeedDownCheckBox->setChecked(false);
+        ui->earlyEndCheckBox->setChecked(false);
+    }
+    
     ui->earlyEndTimeEdit->SetThisIntToThisText(item->IFPos());
-    ui->earlySpeedDownTimeEdit->SetThisIntToThisText(item->IFPos());
-    ui->earlyDownSpeedTimeEdit->SetThisIntToThisText(item->GetEarlyDownSpeed());
+    ui->earlyDownSpeedTimeEdit->SetThisIntToThisText(item->GetEarlyDownSpeed());    ///
+    
     ui->badProductBox->setChecked(item->IsBadProduct());
-
+    
     int isok = exec();
     if(isok == QDialog::Accepted)
     {
@@ -217,7 +261,7 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
         {
             item->SetSVal(ui->speedEdit->TransThisTextToThisInt());
         }
-
+        
         item->SetDVal(ui->delayTimeEdit->TransThisTextToThisInt());
         item->SetEarlyEnd(ui->earlyEndCheckBox->isChecked());
         item->SetEarlySpeedDown(ui->earlySpeedDownCheckBox->isChecked());
@@ -225,43 +269,53 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
         {
             item->SetBadProduct(ui->badProductBox->isChecked());
         }
-
-//        item->SetIFVal(ui->earlyEndCheckBox->isChecked());
-        if(ui->earlyEndCheckBox->isChecked())
-            item->SetIFPos(ui->earlyEndTimeEdit->TransThisTextToThisInt());
-        else if(ui->earlySpeedDownCheckBox->isChecked())
+        
+        if(ui->earlySpeedDownCheckBox->isChecked())
         {
-            item->SetIFPos(ui->earlySpeedDownTimeEdit->TransThisTextToThisInt());
-            item->SetEarlyDownSpeed(ui->earlyDownSpeedTimeEdit->TransThisTextToThisInt());
+            item->SetIFPos(ui->earlyEndTimeEdit->TransThisTextToThisInt());
+            item->SetEarlyDownSpeed(ui->earlyDownSpeedTimeEdit->TransThisTextToThisInt());   ///
         }
-
-
-/**********************接以上任务****************************/
+        else if(ui->earlyEndCheckBox->isChecked())
+        {
+            item->SetIFPos(ui->earlyEndTimeEdit->TransThisTextToThisInt());
+        }
+        
+        //        item->SetIFVal(ui->earlyEndCheckBox->isChecked());
+        //        if(ui->earlyEndCheckBox->isChecked())
+        //            item->SetIFPos(ui->earlyEndTimeEdit->TransThisTextToThisInt());
+        // if(ui->earlySpeedDownCheckBox->isChecked())
+        //   {
+        //            item->SetESVal(ui->earlyDownSpeedTimeEdit->TransThisTextToThisInt());   ///
+        //            item->SetEarlyDownSpeed(ui->earlyDownSpeedTimeEdit->TransThisTextToThisInt());
+        //    }
+        
+        
+        /**********************接以上任务****************************/
         if(ui->verticalBox->isChecked() && !ui->verticalBox->isHidden())
         {
             if(item->Action() == ICMold::ACTPOSEHORI || item->Action() == ICMold::ACTPOSEVERT)
             {
-               item->SetAction(ICMold::ACTPOSEVERT);
+                item->SetAction(ICMold::ACTPOSEVERT);
             }
             else
             {
-               item->SetAction(ICMold::ACT_PoseVert2);
+                item->SetAction(ICMold::ACT_PoseVert2);
             }
         }
-
+        
         if(ui->horizontalBox->isChecked() && !ui->horizontalBox->isHidden())
         {
             if(item->Action() == ICMold::ACTPOSEVERT || item->Action() == ICMold::ACTPOSEHORI)
             {
-               item->SetAction(ICMold::ACTPOSEHORI);
+                item->SetAction(ICMold::ACTPOSEHORI);
             }
             else
             {
-               item->SetAction(ICMold::ACT_PoseHori2);
+                item->SetAction(ICMold::ACT_PoseHori2);
             }
         }
-
-   }
+        
+    }
     return isok;
 }
 
@@ -312,20 +366,29 @@ void ICInstructModifyDialog::on_earlyEndCheckBox_clicked(bool checked)
 {
     if(checked)
     {
-        ui->earlySpeedDownCheckBox->setCheckState(Qt::Unchecked);
-        ui->earlySpeedDownTimeEdit->setEnabled(false);
-        ui->earlyDownSpeedTimeEdit->setEnabled(false);
+        ui->earlyEndTimeEdit->setEnabled(checked);
+//        ui->earlySpeedDownCheckBox->setCheckState(Qt::Unchecked);
+//        ui->earlyDownSpeedTimeEdit->setEnabled(false);
     }
-    ui->earlyEndTimeEdit->setEnabled(checked);
+    else if(!ui->earlySpeedDownCheckBox->isChecked())
+    {
+        ui->earlyEndTimeEdit->setEnabled(false);
+    }
 }
 
 void ICInstructModifyDialog::on_earlySpeedDownCheckBox_clicked(bool checked)
 {
+//    if(checked)
+//    {
+//        ui->earlyEndCheckBox->setCheckState(Qt::Unchecked);
+//    }
+    ui->earlyDownSpeedTimeEdit->setEnabled(checked);
     if(checked)
     {
-        ui->earlyEndCheckBox->setCheckState(Qt::Unchecked);
+        ui->earlyEndTimeEdit->setEnabled(true);
+    }
+    else if(!ui->earlyEndCheckBox->isChecked())
+    {
         ui->earlyEndTimeEdit->setEnabled(false);
     }
-    ui->earlySpeedDownTimeEdit->setEnabled(checked);
-    ui->earlyDownSpeedTimeEdit->setEnabled(checked);
 }
