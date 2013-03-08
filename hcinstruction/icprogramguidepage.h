@@ -120,6 +120,7 @@ private:
     QIntValidator posValidators_[8];
     int posMaxs_[8];
     _ICAxis_ axis_[8];
+    QIntValidator* validator ;
 };
 
 #endif // ICPROGRAMGUIDEPAGE_H

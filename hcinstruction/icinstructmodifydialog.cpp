@@ -71,6 +71,7 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
     ui->earlyEndTimeEdit->hide();
     
     ui->mmLabel_2->hide();
+    ui->label->hide();
     ui->earlySpeedDownCheckBox->hide();
     
     
@@ -133,7 +134,7 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
             ui->mmLabel_2->show();
             
             ui->mmLabel_4->show();
-            
+            ui->label->show();
             ui->speedLabel->setText(tr("speed"));
             ui->speedLabel->show();
             ui->speedEdit->show();
