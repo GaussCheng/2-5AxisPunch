@@ -45,13 +45,17 @@ enum ICVirtualKey
     VKEY_CURVEY,
     VKEY_CURVEZ,
 
-    VKEY_JOGINC = 0xE6,
-    VKEY_JOGDEC,
-    VKEY_JOG1,
-    VKEY_JOG2,
-    VKEY_JOG3,
-    VKEY_JOG4,
+    VKEY_JOGEn = 0xE6,  //使能
+    VKEY_JOG0,        //AubBack+
+    VKEY_JOG1,      //AubBack-
+    VKEY_JOG2,      //Forward+
+    VKEY_JOG3,      //Forward-
+    VKEY_JOG4,      //Up+
     VKEY_PRODUCT_CLEAR,
+    VKEY_JOG5,      //Up-
+    VKEY_JOG6,      //Down+
+    VKEY_JOG7,      //Down-
+
 
     VKEY_RESERVE1_ON = 0xF0,
     VKEY_RESERVE2_ON,

@@ -3,132 +3,99 @@
 #include "iccommandprocessor.h"
 #include "icvirtualkey.h"
 #include "icvirtualhost.h"
+#include "iccommandkeywrapper.h"
+#include "ictimerpool.h"
 
 HCManualAdjustFrame::HCManualAdjustFrame(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::HCManualAdjustFrame),
-    plusPic_(":/resource/plus(64).png"),
-    minsPic_(":/resource/minus(64).png"),
-    statusOnPix_(":/resource/ledgreen(16).png"),
-    statusOffPix_(":/resource/ledgray(16).png"),
-    currentStatus_(4, false)
+//    plusPic_(":/resource/plus(64).png"),
+//    minsPic_(":/resource/minus(64).png"),
+    offPixmap_(":/resource/ledgray(16).png"),
+    inputOnPixmap_(":/resource/ledred(16).png"),
+    outputOnPixmap_(":/resource/ledgreen(16).png"),
+    currentStatus_(9, false)
 {
     ui->setupUi(this);
-//    signalMapper_.setMapping(ui->jog1ToolButton, IC::VKEY_JOG1);
-//    signalMapper_.setMapping(ui->jog2ToolButton, IC::VKEY_JOG2);
-//    signalMapper_.setMapping(ui->jog3ToolButton, IC::VKEY_JOG3);
-//    signalMapper_.setMapping(ui->jog4ToolButton, IC::VKEY_JOG4);
-//    connect(ui->jog1ToolButton,
-//            SIGNAL(clicked()),
-//            &signalMapper_,
-//            SLOT(map()));
-//    connect(ui->jog2ToolButton,
-//            SIGNAL(clicked()),
-//            &signalMapper_,
-//            SLOT(map()));
-//    connect(ui->jog3ToolButton,
-//            SIGNAL(clicked()),
-//            &signalMapper_,
-//            SLOT(map()));
-//    connect(ui->jog4ToolButton,
-//            SIGNAL(clicked()),
-//            &signalMapper_,
-//            SLOT(map()));
-//    connect(&signalMapper_,
-//            SIGNAL(mapped(int)),
-//            this,
-//            SLOT(OnJogToolButtonClicked(int)));
+    ICCommandKeyWrapper *wrapper;
+    wrapper = new ICCommandKeyWrapper(ui->subArmAdvanceButton1, IC::VKEY_JOG2);
+    wrappers_.append(wrapper);
+    wrapper = new ICCommandKeyWrapper(ui->subArmAdvanceButton2, IC::VKEY_JOG3);
+    wrappers_.append(wrapper);
+    wrapper = new ICCommandKeyWrapper(ui->subArmBackButton1, IC::VKEY_JOG0);
+    wrappers_.append(wrapper);
+    wrapper = new ICCommandKeyWrapper(ui->subArmBackButton2, IC::VKEY_JOG1);
+    wrappers_.append(wrapper);
+    wrapper = new ICCommandKeyWrapper(ui->subArmUpButton1, IC::VKEY_JOG4);
+    wrappers_.append(wrapper);
+    wrapper = new ICCommandKeyWrapper(ui->subArmUpButton2, IC::VKEY_JOG5);
+    wrappers_.append(wrapper);
+    wrapper = new ICCommandKeyWrapper(ui->subArmDownButton1, IC::VKEY_JOG6);
+    wrappers_.append(wrapper);
+    wrapper = new ICCommandKeyWrapper(ui->subArmDownButton2, IC::VKEY_JOG7);
+    wrappers_.append(wrapper);
+    wrapper = new ICCommandKeyWrapper(ui->AdjustForbidButton, IC::VKEY_JOGEn);
+    wrappers_.append(wrapper);
 
 }
 
 HCManualAdjustFrame::~HCManualAdjustFrame()
 {
     delete ui;
+    qDeleteAll(wrappers_);
 }
 
 void HCManualAdjustFrame::showEvent(QShowEvent *e)
 {
-
-//    connect(ICVirtualHost::GlobalVirtualHost(),
-//            SIGNAL(StatusRefreshed()),
-//            this,
-//            SLOT(StatusRefreshed()));
-//    QWidget::showEvent(e);
-}
-
-void HCManualAdjustFrame::changeEvent(QEvent *e)
-{
-//    QWidget::changeEvent(e);
-//    switch (e->type()) {
-//    case QEvent::LanguageChange:
-//    {
-//        ui->retranslateUi(this);
-//    }
-//        break;
-//    default:
-//        break;
-//    }
-}
-
-void HCManualAdjustFrame::ClearStatus()
-{/*
-    ui->jogSWButton->setChecked(false);
-    ui->jogSWButton->setIcon(QPixmap()); //must behide the checked*/
+    QWidget::showEvent(e);
+    timerID_ = ICTimerPool::Instance()->Start(ICTimerPool::RefreshTime, this, SLOT(StatusRefreshed()));
 }
 
 void HCManualAdjustFrame::hideEvent(QHideEvent *e)
 {
-//    disconnect(ICVirtualHost::GlobalVirtualHost(),
-//               SIGNAL(StatusRefreshed()),
-//               this,
-//               SLOT(StatusRefreshed()));
-//    QWidget::hideEvent(e);
+    QWidget::hideEvent(e);
+    ICTimerPool::Instance()->Stop(timerID_, this, SLOT(StatusRefreshed()));
 }
-
-void HCManualAdjustFrame::OnJogToolButtonClicked(int key)
+void HCManualAdjustFrame::changeEvent(QEvent *e)
 {
-//    ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(key);
-}
-
-void HCManualAdjustFrame::on_jogSWButton_toggled(bool checked)
-{/*
-    if(checked)
+    QWidget::changeEvent(e);
+    switch (e->type()) {
+    case QEvent::LanguageChange:
     {
-        ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_JOGINC);
-        ui->jogSWButton->setIcon(plusPic_);
+        ui->retranslateUi(this);
     }
-    else
-    {
-        ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_JOGDEC);
-        ui->jogSWButton->setIcon(minsPic_);
-    }*/
+        break;
+    default:
+        break;
+    }
 }
 
 void HCManualAdjustFrame::StatusRefreshed()
-{/*
+{
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    if(host->IsOutputOn(10))
+
+    if(host->IsInputOn(11))
     {
         if(!currentStatus_.at(0))
         {
             currentStatus_.setBit(0);
-            ui->jog1Status->setPixmap(statusOnPix_);
+            ui->x023Status->setPixmap(inputOnPixmap_);
         }
     }
     else
     {
         if(currentStatus_.at(0))
         {
-            currentStatus_.clearBit(0);;
-            ui->jog1Status->setPixmap(statusOffPix_);
+            currentStatus_.clearBit(0);
+            ui->x023Status->setPixmap(offPixmap_);
         }
     }
-    if(host->IsOutputOn(11))
+    if(host->IsInputOn(14))
     {
         if(!currentStatus_.at(1))
         {
             currentStatus_.setBit(1);
-            ui->jog2Status->setPixmap(statusOnPix_);
+            ui->x026Status->setPixmap(inputOnPixmap_);
         }
     }
     else
@@ -136,16 +103,15 @@ void HCManualAdjustFrame::StatusRefreshed()
         if(currentStatus_.at(1))
         {
             currentStatus_.clearBit(1);
-            ui->jog2Status->setPixmap(statusOffPix_);
+            ui->x026Status->setPixmap(offPixmap_);
         }
     }
-
-    if(host->IsOutputOn(22))
+    if(host->IsInputOn(16))
     {
         if(!currentStatus_.at(2))
         {
             currentStatus_.setBit(2);
-            ui->jog3Status->setPixmap(statusOnPix_);
+            ui->x030Status->setPixmap(inputOnPixmap_);
         }
     }
     else
@@ -153,16 +119,15 @@ void HCManualAdjustFrame::StatusRefreshed()
         if(currentStatus_.at(2))
         {
             currentStatus_.clearBit(2);
-            ui->jog3Status->setPixmap(statusOffPix_);
+            ui->x030Status->setPixmap(offPixmap_);
         }
     }
-
-    if(host->IsOutputOn(21))
+    if(host->IsInputOn(19))
     {
         if(!currentStatus_.at(3))
         {
             currentStatus_.setBit(3);
-            ui->jog4Status->setPixmap(statusOnPix_);
+            ui->x033Status->setPixmap(inputOnPixmap_);
         }
     }
     else
@@ -170,7 +135,89 @@ void HCManualAdjustFrame::StatusRefreshed()
         if(currentStatus_.at(3))
         {
             currentStatus_.clearBit(3);
-            ui->jog4Status->setPixmap(statusOffPix_);
+            ui->x033Status->setPixmap(offPixmap_);
         }
-    }*/
+    }
+
+    if(host->IsOutputOn(11))
+    {
+        if(!currentStatus_.at(4))
+        {
+            currentStatus_.setBit(4);
+            ui->y023Status->setPixmap(outputOnPixmap_);
+        }
+    }
+    else
+    {
+        if(currentStatus_.at(4))
+        {
+            currentStatus_.clearBit(4);
+            ui->y023Status->setPixmap(offPixmap_);
+        }
+    }
+
+    if(host->IsOutputOn(10))
+    {
+        if(!currentStatus_.at(5))
+        {
+            currentStatus_.setBit(5);
+            ui->y022Status->setPixmap(outputOnPixmap_);
+        }
+    }
+    else
+    {
+        if(currentStatus_.at(5))
+        {
+            currentStatus_.clearBit(5);
+            ui->y022Status->setPixmap(offPixmap_);
+        }
+    }
+    if(host->IsOutputOn(17))
+    {
+        if(!currentStatus_.at(6))
+        {
+            currentStatus_.setBit(6);
+            ui->y031Status->setPixmap(outputOnPixmap_);
+        }
+    }
+    else
+    {
+        if(currentStatus_.at(6))
+        {
+            currentStatus_.clearBit(6);
+            ui->y031Status->setPixmap(offPixmap_);
+        }
+    }
+    if(host->IsOutputOn(19))
+    {
+        if(!currentStatus_.at(7))
+        {
+            currentStatus_.setBit(7);
+            ui->y033Status->setPixmap(outputOnPixmap_);
+        }
+    }
+    else
+    {
+        if(currentStatus_.at(7))
+        {
+            currentStatus_.clearBit(7);
+            ui->y033Status->setPixmap(offPixmap_);
+        }
+    }
+    if(host->IsOutputOn(21))
+    {
+        if(!currentStatus_.at(8))
+        {
+            currentStatus_.setBit(8);
+            ui->y035Status->setPixmap(outputOnPixmap_);
+        }
+    }
+    else
+    {
+        if(currentStatus_.at(8))
+        {
+            currentStatus_.clearBit(8);
+            ui->y035Status->setPixmap(offPixmap_);
+        }
+    }
 }
