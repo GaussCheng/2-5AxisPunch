@@ -564,13 +564,13 @@ void ActionSettingFrame::UpdateAxisDefine_()
 /*********************BUG#125*********************************/
         if(ICParametersSave::Instance()->IsSingleArm())
         {
-            ui->gPButton->setCheckable(false);
-            ui->gQButton->setCheckable(false);
-        }
+            ui->gQButton->setEnabled(false);
+            ui->gPButton->setEnabled(false);
+                    }
         else
         {
-            ui->gPButton->setCheckable(true);
-            ui->gQButton->setCheckable(true);
+            ui->gQButton->setEnabled(true);
+            ui->gPButton->setEnabled(true);
         }
 /*************************************************************/
     if(axisDefine_ != currentAxis)

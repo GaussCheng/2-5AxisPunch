@@ -21,7 +21,7 @@ ICInstructModifyDialog::ICInstructModifyDialog(QWidget *parent) :
     ui->posEdit->SetDecimalPlaces(1);
     ui->posEdit->setValidator(posValidator_);
 
-    esdValidator_ = new QIntValidator(1, 30, this);
+    esdValidator_ = new QIntValidator(0, 30, this);
     ui->earlyDownSpeedTimeEdit->setValidator(esdValidator_);
     
     ui->earlyEndTimeEdit->SetDecimalPlaces(1);

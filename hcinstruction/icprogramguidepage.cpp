@@ -2,6 +2,7 @@
 #include "ui_icprogramguidepage.h"
 #include "icvirtualhost.h"
 #include "ickeyboard.h"
+#include "icparameterssave.h"
 
 
 ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
@@ -45,6 +46,16 @@ ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
     {
         axis_[C_AXIS].standbyPos = 0 ;
     }
+    /*主副臂都为气动时，让二者动作同步*/
+    if(axis_[X1_AXIS].mode == AXIS_PNEUMATIC)
+    {
+        axis_[X1_AXIS].standbyPos = 1 ;
+    }
+    if(axis_[Y1_AXIS].mode == AXIS_PNEUMATIC)
+    {
+        axis_[Y1_AXIS].getPos = 1 ;
+        axis_[Y1_AXIS].releaseProductPos = 1 ;
+    }
     if(axis_[X2_AXIS].mode == AXIS_PNEUMATIC)
     {
         axis_[X2_AXIS].standbyPos = 1 ;
@@ -53,6 +64,7 @@ ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
     {
         axis_[Y2_AXIS].standbyPos = 1 ;
     }
+
     for(int i = 0; i != posEdits_.size(); ++i)
     {
         posEdits_[i]->SetDecimalPlaces(1);
@@ -98,6 +110,7 @@ ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
     validator = new QIntValidator(0, 4, this);
     ui->stackGroup->setValidator(validator);
 
+
 //#ifdef Q_WS_X11
 //    UpdateAxisDefine_();
 //#endif
@@ -126,6 +139,7 @@ void ICProgramGuidePage::showEvent(QShowEvent *e)
     ui->stackedWidget->setCurrentIndex(0);
     UpdateAxisDefine_();
     UpdatePageButton_();
+
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     posMaxs_[0] = host->SystemParameter(ICVirtualHost::SYS_X_Maxium).toInt();
     posMaxs_[1] = host->SystemParameter(ICVirtualHost::SYS_Y_Maxium).toInt();
@@ -361,6 +375,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
     item.SetAction(ICMold::GZ);
     item.SetSVal(80);
     item.SetDVal(0);
+
     if(isMainArmUsed && isSubArmUsed)
     {
         if(axis_[Z_AXIS].releaseProductPos < axis_[Z_AXIS].releaseOutletPos)
@@ -718,6 +733,16 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
 
 void ICProgramGuidePage::UpdateAxisDefine_()
 {
+    if(ICParametersSave::Instance()->IsSingleArm())
+    {
+        if(ui->usedSubArmBox->isChecked())
+        {
+            ui->usedSubArmBox->setChecked(false);
+        }
+        ui->usedSubArmBox->setEnabled(false);
+    }
+    else
+        ui->usedSubArmBox->setEnabled(true);
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     int currentAxis = host->SystemParameter(ICVirtualHost::SYS_Config_Arm).toInt();
     if(axisDefine_ != currentAxis)

@@ -101,8 +101,13 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
                 commandStr += QString().sprintf("%.1f", moldItem.IFPos() / (qreal)10) + " ";
             }
 
-            if(moldItem.GetEarlyDownSpeed())
+            if(moldItem.IsEarlySpeedDown())
             {
+                if(!moldItem.IsEarlyEnd())
+                {
+                    commandStr += tr("Early End:");
+                    commandStr += QString().sprintf("%.1f", moldItem.IFPos() / (qreal)10) + " ";
+                }
                 commandStr += tr("Early Speed-Down:") + QString::number(moldItem.GetEarlyDownSpeed()) + " ";
             }
 
