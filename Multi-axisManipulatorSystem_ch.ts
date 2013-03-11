@@ -471,97 +471,97 @@
         <translation>组合动作选择</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="32"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="38"/>
         <source>SubArm Advance +</source>
         <translation>副臂前进+</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="82"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="88"/>
         <source>X023</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="98"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="104"/>
         <source>Y023</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="145"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="157"/>
         <source>SubArm Advance -</source>
         <translation>副臂前进-</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="170"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="188"/>
         <source>Machine Reverse</source>
         <translation>电机反转</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="186"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="204"/>
         <source>Y035</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="233"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="251"/>
         <source>Adjust Forbid</source>
         <translation>禁止调速</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="258"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="282"/>
         <source>SubArm Back -</source>
         <translation>副臂后退-</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="280"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="304"/>
         <source>Y022</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="327"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="357"/>
         <source>SubArm Back + </source>
         <translation>副臂后退+</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="352"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="388"/>
         <source>SubArm Up + </source>
         <translation>副臂上升+</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="377"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="419"/>
         <source>SubArm Down + </source>
         <translation>副臂下降+</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="402"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="450"/>
         <source>SubArm Up -</source>
         <translation>副臂上升-</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="427"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="481"/>
         <source>SubArm Down -</source>
         <translation>副臂下降-</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="477"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="531"/>
         <source>Y031</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="521"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="575"/>
         <source>Y033</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="565"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="619"/>
         <source>X026</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="581"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="635"/>
         <source>X030</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="653"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="707"/>
         <source>X033</source>
         <translation></translation>
     </message>
