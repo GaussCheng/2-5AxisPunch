@@ -3579,45 +3579,80 @@ Reason</source>
 <context>
     <name>ICIOPage</name>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="42"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="81"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="46"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="85"/>
         <source>Y022</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="46"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="86"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="50"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="90"/>
         <source>Y023</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="50"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="91"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="54"/>
         <source>Y032</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="54"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="96"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="58"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="100"/>
         <source>Y033</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="58"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="101"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="62"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="105"/>
         <source>Y035</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="62"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="106"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="66"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="110"/>
         <source>Y036</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="189"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="115"/>
+        <source>Y010</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="119"/>
+        <source>Y011</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="123"/>
+        <source>X010</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="127"/>
+        <source>X011</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="210"/>
         <source>Reserve</source>
         <translation>预留</translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="223"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="227"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="257"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="261"/>
+        <source>Horizon-1</source>
+        <translation>水平1</translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="235"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="239"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="246"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="250"/>
+        <source>Vertical-1</source>
+        <translation>垂直1</translation>
     </message>
 </context>
 <context>
@@ -4630,14 +4665,23 @@ Please enter an digit between </source>
         <translation>夹2阀</translation>
     </message>
     <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="102"/>
+        <source>Adjust Sub Back</source>
+        <translation>调位副后退</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="103"/>
+        <source>Adjust Sub Forward</source>
+        <translation>调位副前进</translation>
+    </message>
+    <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="104"/>
         <source>Horizontal-2 Valve</source>
         <translation>水平2阀</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="110"/>
         <source>Run LED</source>
-        <translation>运行指示灯</translation>
+        <translation type="obsolete">运行指示灯</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="113"/>
@@ -4701,16 +4745,14 @@ Please enter an digit between </source>
         <translation>报警</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="102"/>
         <source>Main Up Valve/EX-1</source>
         <oldsource>Main Up Valve</oldsource>
-        <translation>扩展1</translation>
+        <translation type="obsolete">扩展1</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="103"/>
         <source>Main Down Valve/EX-2</source>
         <oldsource>Main Down Valve</oldsource>
-        <translation>扩展2</translation>
+        <translation type="obsolete">扩展2</translation>
     </message>
     <message>
         <source>Main Slow Dwon</source>
@@ -4747,10 +4789,9 @@ Please enter an digit between </source>
         <translation>扩展3</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="112"/>
         <source>Vice Down Valve/EX-4</source>
         <oldsource>Vice Down Valve</oldsource>
-        <translation>副下降阀/扩展4</translation>
+        <translation type="obsolete">副下降阀/扩展4</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="96"/>
@@ -4769,10 +4810,9 @@ Please enter an digit between </source>
         <translation>B轴原点</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="114"/>
         <source>Go Out/EX-6</source>
         <oldsource>Go Out</oldsource>
-        <translation>扩展6</translation>
+        <translation type="obsolete">扩展6</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="115"/>
@@ -4939,6 +4979,21 @@ Please enter an digit between </source>
         <location filename="categorypage/icmonitorpageframe.cpp" line="154"/>
         <source>Mold Open Permit</source>
         <translation>允许开模</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="110"/>
+        <source>Adjust Sub Up</source>
+        <translation>调位副上升</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="112"/>
+        <source>Adjust Sub Down</source>
+        <translation>调位副下降</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="114"/>
+        <source>Machine Reversal</source>
+        <translation>电机反转</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="158"/>

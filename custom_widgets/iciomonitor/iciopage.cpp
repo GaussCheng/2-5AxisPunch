@@ -20,6 +20,10 @@ ICIOPage::ICIOPage(QWidget *parent) :
     {
         recsLabels_.append(NULL);
     }
+    for(int i = 0; i != 4; ++i)
+    {
+        ioLabels_.append(NULL);
+    }
 }
 ICIOPage::~ICIOPage()
 {
@@ -88,7 +92,7 @@ void ICIOPage::BindingIOPoints(const QList<ICIOPoint> &points)
                 recsLabels_[1] = descr;
                 backupDescrMap_.insert(1, point);
             }
-            else if(point.PointNum() == tr("Y032"))
+            else if(point.PointNum() == tr("Y031"))
             {
                 recsLabels_[2] = descr;
                 backupDescrMap_.insert(2, point);
@@ -108,6 +112,23 @@ void ICIOPage::BindingIOPoints(const QList<ICIOPoint> &points)
                 recsLabels_[5] = descr;
                 backupDescrMap_.insert(5, point);
             }
+            else if(point.PointNum() == tr("Y010"))
+            {
+                ioLabels_[0] = descr ;
+            }
+            else if(point.PointNum() == tr("Y011"))
+            {
+                ioLabels_[1] = descr ;
+            }
+            else if(point.PointNum() == tr("X010"))
+            {
+                ioLabels_[2] = descr ;
+            }
+            else if(point.PointNum() == tr("X011"))
+            {
+                ioLabels_[3] = descr ;
+            }
+
             nums->setFixedWidth(50);
             descr->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
             descr->setFixedWidth(135);
@@ -194,6 +215,55 @@ void ICIOPage::showEvent(QShowEvent *e)
             }
         }
     }
+
+        if(ICVirtualHost::GlobalVirtualHost()->FixtureDefine() == 1)
+        {
+            if(ioLabels_.at(0) != NULL)
+            {
+                ioLabels_[0]->setText(tr("Horizon-1"));
+            }
+            if(ioLabels_.at(2) != NULL)
+            {
+                ioLabels_[2]->setText(tr("Horizon-1"));
+            }
+
+        }
+        else
+        {
+            if(ioLabels_.at(0) != NULL)
+            {
+                ioLabels_[0]->setText(tr("Vertical-1"));
+            }
+            if(ioLabels_.at(2) != NULL)
+            {
+                ioLabels_[2]->setText(tr("Vertical-1"));
+            }
+        }
+        if(ICVirtualHost::GlobalVirtualHost()->FixtureDefine() == 1)
+        {
+            if(ioLabels_.at(1) != NULL)
+            {
+                ioLabels_[1]->setText(tr("Vertical-1"));
+            }
+            if(ioLabels_.at(3) != NULL)
+            {
+                ioLabels_[3]->setText(tr("Vertical-1"));
+            }
+        }
+        else
+        {
+            if(ioLabels_.at(1) != NULL)
+            {
+                ioLabels_[1]->setText(tr("Horizon-1"));
+            }
+            if(ioLabels_.at(3) != NULL)
+            {
+                ioLabels_[3]->setText(tr("Horizon-1"));
+            }
+
+        }
+
+
     QWidget::showEvent(e);
     connect(ICVirtualHost::GlobalVirtualHost(),
             SIGNAL(StatusRefreshed()),

@@ -14,30 +14,30 @@ HCManualAdjustFrame::HCManualAdjustFrame(QWidget *parent) :
     currentStatus_(4, false)
 {
     ui->setupUi(this);
-    signalMapper_.setMapping(ui->jog1ToolButton, IC::VKEY_JOG1);
-    signalMapper_.setMapping(ui->jog2ToolButton, IC::VKEY_JOG2);
-    signalMapper_.setMapping(ui->jog3ToolButton, IC::VKEY_JOG3);
-    signalMapper_.setMapping(ui->jog4ToolButton, IC::VKEY_JOG4);
-    connect(ui->jog1ToolButton,
-            SIGNAL(clicked()),
-            &signalMapper_,
-            SLOT(map()));
-    connect(ui->jog2ToolButton,
-            SIGNAL(clicked()),
-            &signalMapper_,
-            SLOT(map()));
-    connect(ui->jog3ToolButton,
-            SIGNAL(clicked()),
-            &signalMapper_,
-            SLOT(map()));
-    connect(ui->jog4ToolButton,
-            SIGNAL(clicked()),
-            &signalMapper_,
-            SLOT(map()));
-    connect(&signalMapper_,
-            SIGNAL(mapped(int)),
-            this,
-            SLOT(OnJogToolButtonClicked(int)));
+//    signalMapper_.setMapping(ui->jog1ToolButton, IC::VKEY_JOG1);
+//    signalMapper_.setMapping(ui->jog2ToolButton, IC::VKEY_JOG2);
+//    signalMapper_.setMapping(ui->jog3ToolButton, IC::VKEY_JOG3);
+//    signalMapper_.setMapping(ui->jog4ToolButton, IC::VKEY_JOG4);
+//    connect(ui->jog1ToolButton,
+//            SIGNAL(clicked()),
+//            &signalMapper_,
+//            SLOT(map()));
+//    connect(ui->jog2ToolButton,
+//            SIGNAL(clicked()),
+//            &signalMapper_,
+//            SLOT(map()));
+//    connect(ui->jog3ToolButton,
+//            SIGNAL(clicked()),
+//            &signalMapper_,
+//            SLOT(map()));
+//    connect(ui->jog4ToolButton,
+//            SIGNAL(clicked()),
+//            &signalMapper_,
+//            SLOT(map()));
+//    connect(&signalMapper_,
+//            SIGNAL(mapped(int)),
+//            this,
+//            SLOT(OnJogToolButtonClicked(int)));
 
 }
 
@@ -48,52 +48,50 @@ HCManualAdjustFrame::~HCManualAdjustFrame()
 
 void HCManualAdjustFrame::showEvent(QShowEvent *e)
 {
-//    ui->jogSWButton->setIcon(QPixmap());
-    //    ui->jogSWButton->setText("");
-//    ui->jogSWButton->setChecked(false);
-    connect(ICVirtualHost::GlobalVirtualHost(),
-            SIGNAL(StatusRefreshed()),
-            this,
-            SLOT(StatusRefreshed()));
-    QWidget::showEvent(e);
+
+//    connect(ICVirtualHost::GlobalVirtualHost(),
+//            SIGNAL(StatusRefreshed()),
+//            this,
+//            SLOT(StatusRefreshed()));
+//    QWidget::showEvent(e);
 }
 
 void HCManualAdjustFrame::changeEvent(QEvent *e)
 {
-    QWidget::changeEvent(e);
-    switch (e->type()) {
-    case QEvent::LanguageChange:
-    {
-        ui->retranslateUi(this);
-    }
-        break;
-    default:
-        break;
-    }
+//    QWidget::changeEvent(e);
+//    switch (e->type()) {
+//    case QEvent::LanguageChange:
+//    {
+//        ui->retranslateUi(this);
+//    }
+//        break;
+//    default:
+//        break;
+//    }
 }
 
 void HCManualAdjustFrame::ClearStatus()
-{
+{/*
     ui->jogSWButton->setChecked(false);
-    ui->jogSWButton->setIcon(QPixmap()); //must behide the checked
+    ui->jogSWButton->setIcon(QPixmap()); //must behide the checked*/
 }
 
 void HCManualAdjustFrame::hideEvent(QHideEvent *e)
 {
-    disconnect(ICVirtualHost::GlobalVirtualHost(),
-               SIGNAL(StatusRefreshed()),
-               this,
-               SLOT(StatusRefreshed()));
-    QWidget::hideEvent(e);
+//    disconnect(ICVirtualHost::GlobalVirtualHost(),
+//               SIGNAL(StatusRefreshed()),
+//               this,
+//               SLOT(StatusRefreshed()));
+//    QWidget::hideEvent(e);
 }
 
 void HCManualAdjustFrame::OnJogToolButtonClicked(int key)
 {
-    ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(key);
+//    ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(key);
 }
 
 void HCManualAdjustFrame::on_jogSWButton_toggled(bool checked)
-{
+{/*
     if(checked)
     {
         ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_JOGINC);
@@ -103,11 +101,11 @@ void HCManualAdjustFrame::on_jogSWButton_toggled(bool checked)
     {
         ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_JOGDEC);
         ui->jogSWButton->setIcon(minsPic_);
-    }
+    }*/
 }
 
 void HCManualAdjustFrame::StatusRefreshed()
-{
+{/*
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     if(host->IsOutputOn(10))
     {
@@ -174,5 +172,5 @@ void HCManualAdjustFrame::StatusRefreshed()
             currentStatus_.clearBit(3);
             ui->jog4Status->setPixmap(statusOffPix_);
         }
-    }
+    }*/
 }
