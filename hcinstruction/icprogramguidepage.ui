@@ -459,16 +459,16 @@ QCheckBox::indicator:checked
             <item>
              <widget class="QComboBox" name="y1Box">
               <property name="currentIndex">
-               <number>1</number>
+               <number>0</number>
               </property>
               <item>
                <property name="text">
-                <string>Down</string>
+                <string>Up</string>
                </property>
               </item>
               <item>
                <property name="text">
-                <string>Up</string>
+                <string>Down</string>
                </property>
               </item>
              </widget>

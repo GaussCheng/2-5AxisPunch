@@ -140,8 +140,12 @@ void AxisSettingsFrame::SetCurrentAxis(QString currentAxisName, int axis)
         iSafe = ICVirtualHost::SYS_A_InSafe;
         oSafe = ICVirtualHost::SYS_A_OutSafe;
         total = ICParametersSave::Instance()->DistanceRotation("A");
-        minText = tr("Internal security zone");
-        maxText = tr("External security zone");
+//        minText = tr("Internal security zone");
+//        maxText = tr("External security zone");
+        minText = tr("Transeve security zone(Less)");
+        maxText = tr("Transeve security zone(Lagger)");
+        ui->minUnitLabel->setText(tr("degree"));
+        ui->maxUnitLabel->setText(tr("degree"));
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisB)
     {
@@ -150,8 +154,12 @@ void AxisSettingsFrame::SetCurrentAxis(QString currentAxisName, int axis)
         iSafe = ICVirtualHost::SYS_B_InSafe;
         oSafe = ICVirtualHost::SYS_B_OutSafe;
         total = ICParametersSave::Instance()->DistanceRotation("B");
-        minText = tr("Internal security zone");
-        maxText = tr("External security zone");
+//        minText = tr("Internal security zone");
+//        maxText = tr("External security zone");
+        minText = tr("Transeve security zone(Less)");
+        maxText = tr("Transeve security zone(Lagger)");
+        ui->minUnitLabel->setText(tr("degree"));
+        ui->maxUnitLabel->setText(tr("degree"));
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisC)
     {

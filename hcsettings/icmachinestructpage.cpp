@@ -307,8 +307,12 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         iSafe = ICVirtualHost::SYS_A_InSafe;
         oSafe = ICVirtualHost::SYS_A_OutSafe;
         total = ICParametersSave::Instance()->DistanceRotation("A");
-        minText = tr("Internal security zone");
-        maxText = tr("External security zone");
+//        minText = tr("Internal security zone");
+//        maxText = tr("External security zone");
+        minText = tr("Transever security zone(Less)");
+        maxText = tr("Transever security zone(Lagger)");
+        ui->minUnitLabel->setText(tr("degree"));
+        ui->maxUnitLabel->setText(tr("degree"));
         ui->distanceRotationEdit->SetDecimalPlaces(1);
         rotateValidator_->setTop(3600);
     }
@@ -319,8 +323,12 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         iSafe = ICVirtualHost::SYS_B_InSafe;
         oSafe = ICVirtualHost::SYS_B_OutSafe;
         total = ICParametersSave::Instance()->DistanceRotation("B");
-        minText = tr("Internal security zone");
-        maxText = tr("External security zone");
+//        minText = tr("Internal security zone");
+//        maxText = tr("External security zone");
+        minText = tr("Transever security zone(Less)");
+        maxText = tr("Transever security zone(Lagger)");
+        ui->minUnitLabel->setText(tr("degree"));
+        ui->maxUnitLabel->setText(tr("degree"));
         ui->distanceRotationEdit->SetDecimalPlaces(1);
         rotateValidator_->setTop(3600);
     }
