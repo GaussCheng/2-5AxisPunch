@@ -748,13 +748,19 @@ void ActionSettingFrame::KeyToActionCheck(int key)
         break;
     case ICKeyboard::VFB_X2Add:
     case ICKeyboard::VFB_X2Sub:
-        ui->x2Box->setCurrentIndex(key == ICKeyboard::VFB_X2Add ? 0:1);
-        ui->gPButton->setChecked(true);
+        if(!ICParametersSave::Instance()->IsSingleArm())
+        {
+            ui->x2Box->setCurrentIndex(key == ICKeyboard::VFB_X2Add ? 0:1);
+            ui->gPButton->setChecked(true);
+        }
         break;
     case ICKeyboard::VFB_Y2Add:
     case ICKeyboard::VFB_Y2Sub:
-        ui->y2Box->setCurrentIndex(key == ICKeyboard::VFB_Y2Add ?1:0);
-        ui->gQButton->setChecked(true);
+        if(!ICParametersSave::Instance()->IsSingleArm())
+        {
+            ui->y2Box->setCurrentIndex(key == ICKeyboard::VFB_Y2Add ?1:0);
+            ui->gQButton->setChecked(true);
+        }
         break;
     case ICKeyboard::VFB_AAdd:
     case ICKeyboard::VFB_ASub:

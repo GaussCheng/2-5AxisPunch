@@ -874,6 +874,10 @@ void MainFrame::ShowInstructPage()
 
 void MainFrame::ShowStandbyPage()
 {
+    if(manualPage_ != NULL)
+    {
+        manualPage_->AdjustFrameTransfer();
+    }
     functionPage_->ShowFunctionSelectPage();
     centerStackedLayout_->setCurrentWidget(initialPage_);
     //    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Standby"));

@@ -5,6 +5,7 @@
 #include "icvirtualhost.h"
 #include "iccommandkeywrapper.h"
 #include "ictimerpool.h"
+#include <QMessageBox>
 
 HCManualAdjustFrame::HCManualAdjustFrame(QWidget *parent) :
     QWidget(parent),
@@ -36,7 +37,6 @@ HCManualAdjustFrame::HCManualAdjustFrame(QWidget *parent) :
     wrappers_.append(wrapper);
     wrapper = new ICCommandKeyWrapper(ui->AdjustForbidButton, IC::VKEY_JOGEn);
     wrappers_.append(wrapper);
-
 }
 
 HCManualAdjustFrame::~HCManualAdjustFrame()
@@ -68,6 +68,11 @@ void HCManualAdjustFrame::changeEvent(QEvent *e)
     default:
         break;
     }
+}
+
+void HCManualAdjustFrame::ChangeButtonColor()
+{
+    ui->AdjustForbidButton->setStyleSheet("color:red;");
 }
 
 void HCManualAdjustFrame::StatusRefreshed()
@@ -220,4 +225,9 @@ void HCManualAdjustFrame::StatusRefreshed()
             ui->y035Status->setPixmap(offPixmap_);
         }
     }
+}
+
+void HCManualAdjustFrame::on_AdjustForbidButton_clicked()
+{
+    ui->AdjustForbidButton->setStyleSheet("color:green;");
 }

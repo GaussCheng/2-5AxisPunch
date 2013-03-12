@@ -1370,11 +1370,17 @@ void ICProgramGuidePage::GuideKeyToActionCheck(int key)
         break;
     case ICKeyboard::VFB_X2Add:
     case ICKeyboard::VFB_X2Sub:
-        ui->x2Box->setCurrentIndex(key == ICKeyboard::VFB_X2Add ? 0:1);
+        if(!ICParametersSave::Instance()->IsSingleArm())
+        {
+            ui->x2Box->setCurrentIndex(key == ICKeyboard::VFB_X2Add ? 0:1);
+        }
         break;
     case ICKeyboard::VFB_Y2Add:
     case ICKeyboard::VFB_Y2Sub:
-        ui->y2Box->setCurrentIndex(key == ICKeyboard::VFB_Y2Add ?0:1);
+        if(!ICParametersSave::Instance()->IsSingleArm())
+        {
+            ui->y2Box->setCurrentIndex(key == ICKeyboard::VFB_Y2Add ?0:1);
+        }
         break;
     case ICKeyboard::VFB_AAdd:
     case ICKeyboard::VFB_ASub:

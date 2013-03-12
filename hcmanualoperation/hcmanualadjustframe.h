@@ -16,6 +16,7 @@ class HCManualAdjustFrame : public QWidget
 
 public:
     explicit HCManualAdjustFrame(QWidget *parent = 0);
+    void ChangeButtonColor();
     ~HCManualAdjustFrame();
 
     void ClearStatus();
@@ -26,6 +27,11 @@ protected:
     void changeEvent(QEvent *e);
 private slots:
     void StatusRefreshed();
+
+//    void on_AdjustForbidButton_clicked();
+public slots:
+
+    void on_AdjustForbidButton_clicked();
 
 private:
     Ui::HCManualAdjustFrame *ui;

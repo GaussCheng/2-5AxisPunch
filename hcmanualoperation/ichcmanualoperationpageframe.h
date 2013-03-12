@@ -22,6 +22,7 @@ class ICHCManualOperationPageFrame : public QFrame
 
 public:
     explicit ICHCManualOperationPageFrame(QWidget *parent = 0);
+    void AdjustFrameTransfer();
     ~ICHCManualOperationPageFrame();
 
 protected:

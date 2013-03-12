@@ -410,3 +410,10 @@ void ICHCManualOperationPageFrame::on_bAddButton_pressed()
     ICKeyboard::Instace()->SetKeyValue(ICKeyboard::VFB_BAdd);
     ICKeyboard::Instace()->SetPressed(true);
 }
+void ICHCManualOperationPageFrame::AdjustFrameTransfer()
+{
+    if(manualAdjustPage_ != NULL)
+    {
+        manualAdjustPage_->ChangeButtonColor();
+    }
+}

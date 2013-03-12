@@ -507,7 +507,7 @@
     <message>
         <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="251"/>
         <source>Adjust Forbid</source>
-        <translation>禁止调速</translation>
+        <translation>禁止调位</translation>
     </message>
     <message>
         <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="282"/>
