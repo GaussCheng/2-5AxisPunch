@@ -107,7 +107,7 @@ ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
     ui->outRunningHorizonBox->hide();
     ui->inRunningHorizonBox->hide();
 
-    validator = new QIntValidator(0, 4, this);
+    validator = new QIntValidator(1, 4, this);
     ui->stackGroup->setValidator(validator);
 
 
