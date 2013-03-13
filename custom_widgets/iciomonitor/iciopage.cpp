@@ -3,6 +3,7 @@
 #include <QHBoxLayout>
 #include "iciopage.h"
 #include "icvirtualhost.h"
+#include "icvirtualhost.h"
 
 ICIOPage::ICIOPage(QWidget *parent) :
     QWidget(parent),
@@ -23,6 +24,7 @@ ICIOPage::ICIOPage(QWidget *parent) :
     for(int i = 0; i != 4; ++i)
     {
         ioLabels_.append(NULL);
+        adjustLabels_.append(NULL);
     }
 }
 ICIOPage::~ICIOPage()
@@ -43,11 +45,11 @@ void ICIOPage::BindingIOPoints(const QList<ICIOPoint> &points)
     {
         for(int i = 0; i != size; ++i)
         {
-            if(points.at(i).PointNum() == tr("Y022"))
+            if(points.at(i).PointNum() == tr("Y017"))
             {
                 backupDescrMap_.insert(0, points.at(i));
             }
-            else if(points.at(i).PointNum() == tr("Y023"))
+            else if(points.at(i).PointNum() == tr("Y022"))
             {
                 backupDescrMap_.insert(1, points.at(i));
             }
@@ -67,6 +69,7 @@ void ICIOPage::BindingIOPoints(const QList<ICIOPoint> &points)
             {
                 backupDescrMap_.insert(5, points.at(i));
             }
+
             descrLabels_.at(i)->setText(points.at(i).PointDescription());
         }
     }
@@ -82,12 +85,12 @@ void ICIOPage::BindingIOPoints(const QList<ICIOPoint> &points)
             leds->setPixmap(offPixmap_);
             ledToPoint_.insert(leds, point);
             descrLabels_.append(descr);
-            if(point.PointNum() == tr("Y022"))
+            if(point.PointNum() == tr("Y017"))
             {
                 recsLabels_[0] = (descr);
                 backupDescrMap_.insert(0, point);
             }
-            else if(point.PointNum() == tr("Y023"))
+            else if(point.PointNum() == tr("Y022"))
             {
                 recsLabels_[1] = descr;
                 backupDescrMap_.insert(1, point);
@@ -97,7 +100,7 @@ void ICIOPage::BindingIOPoints(const QList<ICIOPoint> &points)
                 recsLabels_[2] = descr;
                 backupDescrMap_.insert(2, point);
             }
-            else if(point.PointNum() == tr("Y033"))
+            else if(point.PointNum() == tr("Y032"))
             {
                 recsLabels_[3] = descr;
                 backupDescrMap_.insert(3, point);
@@ -129,6 +132,22 @@ void ICIOPage::BindingIOPoints(const QList<ICIOPoint> &points)
                 ioLabels_[3] = descr ;
             }
 
+            else if(point.PointNum() == tr("X023"))
+            {
+                adjustLabels_[0] = descr;
+            }
+            else if(point.PointNum() == tr("X026"))
+            {
+                adjustLabels_[1] = descr;
+            }
+            else if(point.PointNum() == tr("X030"))
+            {
+                adjustLabels_[2] = descr;
+            }
+            else if(point.PointNum() == tr("X033"))
+            {
+                adjustLabels_[3] = descr;
+            }
             nums->setFixedWidth(50);
             descr->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
             descr->setFixedWidth(135);
@@ -262,7 +281,50 @@ void ICIOPage::showEvent(QShowEvent *e)
             }
 
         }
-
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) == ICVirtualHost::ICAxisDefine_Pneumatic)
+        {
+            if(adjustLabels_.at(0) != NULL)
+            {
+                adjustLabels_[0]->setText(tr("Adjust Sub Forward"));
+            }
+            if(adjustLabels_.at(1) != NULL)
+            {
+                adjustLabels_[1]->setText(tr("Adjust Sub Down"));
+            }
+        }
+        else
+        {
+            if(adjustLabels_.at(0) != NULL)
+            {
+                adjustLabels_[0]->setText(tr("A Origin/Vertical-2"));
+            }
+            if(adjustLabels_.at(1) != NULL)
+            {
+                adjustLabels_[1]->setText(tr("Reserve"));
+            }
+        }
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) == ICVirtualHost::ICAxisDefine_Pneumatic)
+        {
+            if(adjustLabels_.at(2) != NULL)
+            {
+                adjustLabels_[2]->setText(tr("Adjust Sub Backward"));
+            }
+            if(adjustLabels_.at(3) != NULL)
+            {
+                adjustLabels_[3]->setText(tr("Adjust Sub Up"));
+            }
+        }
+        else
+        {
+            if(adjustLabels_.at(2) != NULL)
+            {
+                adjustLabels_[2]->setText(tr("X2 In Limit"));
+            }
+            if(adjustLabels_.at(3) != NULL)
+            {
+                adjustLabels_[3]->setText(tr("Y2 In Limit"));
+            }
+        }
 
     QWidget::showEvent(e);
     connect(ICVirtualHost::GlobalVirtualHost(),

@@ -79,7 +79,7 @@ void HCManualAdjustFrame::StatusRefreshed()
 {
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
 
-    if(host->IsInputOn(11))
+    if(host->IsInputOn(11))  //x023
     {
         if(!currentStatus_.at(0))
         {
@@ -95,7 +95,7 @@ void HCManualAdjustFrame::StatusRefreshed()
             ui->x023Status->setPixmap(offPixmap_);
         }
     }
-    if(host->IsInputOn(14))
+    if(host->IsInputOn(14))  //x026
     {
         if(!currentStatus_.at(1))
         {
@@ -111,7 +111,7 @@ void HCManualAdjustFrame::StatusRefreshed()
             ui->x026Status->setPixmap(offPixmap_);
         }
     }
-    if(host->IsInputOn(16))
+    if(host->IsInputOn(16))  //x030
     {
         if(!currentStatus_.at(2))
         {
@@ -127,7 +127,7 @@ void HCManualAdjustFrame::StatusRefreshed()
             ui->x030Status->setPixmap(offPixmap_);
         }
     }
-    if(host->IsInputOn(19))
+    if(host->IsInputOn(19))   //x033
     {
         if(!currentStatus_.at(3))
         {
@@ -144,12 +144,12 @@ void HCManualAdjustFrame::StatusRefreshed()
         }
     }
 
-    if(host->IsOutputOn(11))
+    if(host->IsOutputOn(7))   //y017
     {
         if(!currentStatus_.at(4))
         {
             currentStatus_.setBit(4);
-            ui->y023Status->setPixmap(outputOnPixmap_);
+            ui->y017Status->setPixmap(outputOnPixmap_);
         }
     }
     else
@@ -157,11 +157,11 @@ void HCManualAdjustFrame::StatusRefreshed()
         if(currentStatus_.at(4))
         {
             currentStatus_.clearBit(4);
-            ui->y023Status->setPixmap(offPixmap_);
+            ui->y017Status->setPixmap(offPixmap_);
         }
     }
 
-    if(host->IsOutputOn(10))
+    if(host->IsOutputOn(10))   //y022
     {
         if(!currentStatus_.at(5))
         {
@@ -177,7 +177,7 @@ void HCManualAdjustFrame::StatusRefreshed()
             ui->y022Status->setPixmap(offPixmap_);
         }
     }
-    if(host->IsOutputOn(17))
+    if(host->IsOutputOn(17))    //y031
     {
         if(!currentStatus_.at(6))
         {
@@ -193,12 +193,12 @@ void HCManualAdjustFrame::StatusRefreshed()
             ui->y031Status->setPixmap(offPixmap_);
         }
     }
-    if(host->IsOutputOn(19))
+    if(host->IsOutputOn(18))  //y032
     {
         if(!currentStatus_.at(7))
         {
             currentStatus_.setBit(7);
-            ui->y033Status->setPixmap(outputOnPixmap_);
+            ui->y032Status->setPixmap(outputOnPixmap_);
         }
     }
     else
@@ -206,10 +206,10 @@ void HCManualAdjustFrame::StatusRefreshed()
         if(currentStatus_.at(7))
         {
             currentStatus_.clearBit(7);
-            ui->y033Status->setPixmap(offPixmap_);
+            ui->y032Status->setPixmap(offPixmap_);
         }
     }
-    if(host->IsOutputOn(21))
+    if(host->IsOutputOn(21))   //y035
     {
         if(!currentStatus_.at(8))
         {
