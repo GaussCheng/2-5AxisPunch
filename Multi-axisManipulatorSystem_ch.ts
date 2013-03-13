@@ -481,97 +481,97 @@
     <message>
         <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="41"/>
         <source>SubArm Advance +</source>
-        <translation type="unfinished"></translation>
+        <translation>副臂前进+</translation>
     </message>
     <message>
         <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="91"/>
         <source>X023</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="107"/>
         <source>Y023</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="160"/>
         <source>SubArm Advance -</source>
-        <translation type="unfinished"></translation>
+        <translation>副臂向前-</translation>
     </message>
     <message>
         <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="191"/>
         <source>Machine Reverse</source>
-        <translation type="unfinished"></translation>
+        <translation>电机反转</translation>
     </message>
     <message>
         <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="207"/>
         <source>Y035</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="257"/>
         <source>Adjust Forbid</source>
-        <translation type="unfinished"></translation>
+        <translation>禁止调位</translation>
     </message>
     <message>
         <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="288"/>
         <source>SubArm Back -</source>
-        <translation type="unfinished"></translation>
+        <translation>副臂后退-</translation>
     </message>
     <message>
         <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="310"/>
         <source>Y022</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="363"/>
         <source>SubArm Back + </source>
-        <translation type="unfinished"></translation>
+        <translation>副臂后退+</translation>
     </message>
     <message>
         <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="394"/>
         <source>SubArm Up + </source>
-        <translation type="unfinished"></translation>
+        <translation>副臂上升+</translation>
     </message>
     <message>
         <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="425"/>
         <source>SubArm Down + </source>
-        <translation type="unfinished"></translation>
+        <translation>副臂下降+</translation>
     </message>
     <message>
         <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="456"/>
         <source>SubArm Up -</source>
-        <translation type="unfinished"></translation>
+        <translation>副臂上升-</translation>
     </message>
     <message>
         <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="487"/>
         <source>SubArm Down -</source>
-        <translation type="unfinished"></translation>
+        <translation>副臂下降-</translation>
     </message>
     <message>
         <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="537"/>
         <source>Y031</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="581"/>
         <source>Y033</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="625"/>
         <source>X026</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="641"/>
         <source>X030</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="713"/>
         <source>X033</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -3789,7 +3789,7 @@ Reason</source>
     <message>
         <location filename="hcinstruction/icinstructmodifydialog.ui" line="394"/>
         <source>End Position</source>
-        <translation type="unfinished"></translation>
+        <translation>结束位置</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructmodifydialog.ui" line="484"/>
@@ -3941,24 +3941,24 @@ Reason</source>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="102"/>
         <source>Early End,Early Position:</source>
-        <translation type="unfinished"></translation>
+        <translation>提前结束使能，结束位置:</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="111"/>
         <location filename="hcinstruction/icinstructparam.cpp" line="117"/>
         <source>Early Speed-Down:</source>
-        <translation type="unfinished"></translation>
+        <translation>提前减速使能:</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="112"/>
         <location filename="hcinstruction/icinstructparam.cpp" line="118"/>
         <source>Early Position:</source>
-        <translation type="unfinished"></translation>
+        <translation>结束位置:</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="116"/>
         <source>Early End,</source>
-        <translation type="unfinished"></translation>
+        <translation>提前结束使能,</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="138"/>
@@ -4752,12 +4752,12 @@ Please enter an digit between </source>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="102"/>
         <source>Adjust Sub Back</source>
-        <translation type="unfinished"></translation>
+        <translation>调位副臂后退</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="103"/>
         <source>Adjust Sub Forward</source>
-        <translation type="unfinished"></translation>
+        <translation>调位副臂前进</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="104"/>
@@ -5068,17 +5068,17 @@ Please enter an digit between </source>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="110"/>
         <source>Adjust Sub Up</source>
-        <translation type="unfinished"></translation>
+        <translation>调位副臂上升</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="112"/>
         <source>Adjust Sub Down</source>
-        <translation type="unfinished"></translation>
+        <translation>调位副臂下降</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="114"/>
         <source>Machine Reversal</source>
-        <translation type="unfinished"></translation>
+        <translation>电机反转</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="158"/>
@@ -5546,7 +5546,7 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="439"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="996"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="993"/>
         <source>Product</source>
         <translation>成品位置设定</translation>
     </message>
@@ -5661,7 +5661,7 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="553"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="997"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="994"/>
         <source>Outlet</source>
         <translation>水口位置设定</translation>
     </message>
@@ -5721,25 +5721,25 @@ Please enter an digit between </source>
         <translation>完成</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="982"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="1072"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="979"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="1069"/>
         <source>Get Position Settings</source>
         <translation>取物位置设定</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="1002"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="1090"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="999"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="1087"/>
         <source>Release Product Position Settings</source>
         <translation>放成品位置设定</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="1023"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="1111"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="1020"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="1108"/>
         <source>Release Outlet Position Settings</source>
         <translation>放水口位置设定</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="1157"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="1154"/>
         <source>Stanby Settings</source>
         <translation>待机点设定</translation>
     </message>

@@ -4431,7 +4431,7 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="439"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="996"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="993"/>
         <source>Product</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4542,7 +4542,7 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="553"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="997"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="994"/>
         <source>Outlet</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4594,25 +4594,25 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="982"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="1072"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="979"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="1069"/>
         <source>Get Position Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="1002"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="1090"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="999"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="1087"/>
         <source>Release Product Position Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="1023"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="1111"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="1020"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="1108"/>
         <source>Release Outlet Position Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="1157"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="1154"/>
         <source>Stanby Settings</source>
         <translation type="unfinished"></translation>
     </message>
