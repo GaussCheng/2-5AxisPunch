@@ -97,9 +97,29 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
             commandStr += tr("Speed:") + QString::number(moldItem.SVal()) + " ";
             if(moldItem.IsEarlyEnd())
             {
-                commandStr += tr("Early End:");
-                commandStr += QString().sprintf("%.1f", moldItem.IFPos() / (qreal)10) + " ";
+                if(!moldItem.IsEarlySpeedDown())
+                {
+                    commandStr += tr("Early End,Early Position:");
+                    commandStr += QString().sprintf("%.1f", moldItem.IFPos() / (qreal)10) + " ";
+                }
+
             }
+            if(moldItem.IsEarlySpeedDown())
+            {
+                if(!moldItem.IsEarlyEnd())
+                {
+                    commandStr += tr("Early Speed-Down:") + QString::number(moldItem.GetEarlyDownSpeed()) + " ";
+                    commandStr += tr("Early Position:") + QString().sprintf("%.1f", moldItem.IFPos() / (qreal)10) + " ";
+                }
+                else
+                {
+                    commandStr += tr("Early End,");
+                    commandStr += tr("Early Speed-Down:") + QString::number(moldItem.GetEarlyDownSpeed()) + " ";
+                    commandStr += tr("Early Position:") + QString().sprintf("%.1f", moldItem.IFPos() / (qreal)10) + " ";
+                }
+            }
+
+
             if(moldItem.IsBadProduct() && moldItem.Action() == GZ)
             {
                 commandStr += QObject::tr("Bad Product En") + " ";

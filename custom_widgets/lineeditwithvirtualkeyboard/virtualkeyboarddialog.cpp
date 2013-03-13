@@ -22,7 +22,6 @@ VirtualKeyboardDialog::VirtualKeyboardDialog(QWidget *parent) :
     ui->display->setFont(font);
 
     ui->display->setFocus();
-
     QList<QPushButton *> objList = ui->buttonBoxWidget->findChildren<QPushButton*>();
     foreach(QObject *obj,objList)
     {

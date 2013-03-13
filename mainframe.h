@@ -7,7 +7,7 @@
 #include <QScopedPointer>
 #include "icscreensaver.h"
 #include "icfunctionpagebackframe.h"
-
+#include "ichcmanualoperationpageframe.h"
 #include "ichcprogrammonitorframe.h"
 
 class QStackedLayout;
@@ -101,7 +101,7 @@ private:
     ICHCInstructionPageFrame * instructPage_;
     QWidget * autoPage_;
 //    QWidget * returnPage_;
-    QWidget * manualPage_;
+    ICHCManualOperationPageFrame * manualPage_;
     QDialog *originExecutingPage_;
     QDialog *returnExecutingPage_;
     QDialog *actionDialog_;

@@ -48,6 +48,9 @@ ICHCDetectionFrame::ICHCDetectionFrame(QWidget *parent) :
             SIGNAL(MoldNumberParamChanged()),
             this,
             SLOT(OnMoldNumberParamChanged()));
+
+    ui->downPositionBox->hide();
+    ui->label_16->hide();
 }
 
 ICHCDetectionFrame::~ICHCDetectionFrame()

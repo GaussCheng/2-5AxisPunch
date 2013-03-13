@@ -420,7 +420,7 @@ void ICHCInstructionPageFrame::on_insertToolButton_clicked()
         return;
     }
     FindIndex_(index, gIndex, tIndex, sIndex);
-    /***********currentEdit_标记为0表示为主程序（主程序时不能删除待机点）**********/
+    /******currentEdit_标记为0表示为主程序（主程序时不能删除待机点）*****/
     if(programList_.at(gIndex).StepNum() == 0 && currentEdit_ == 0)
     {
         QMessageBox::warning(this,

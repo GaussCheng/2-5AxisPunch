@@ -30,7 +30,7 @@ ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     currentAction_(-1)
 {
     ui->setupUi(this);
-    ui->adjustToolButton->hide();
+//    ui->adjustToolButton->hide();
     buttonGroup_ = new QButtonGroup();
     ui->centralFrame->setLayout(centralStackedLayout_);
 
@@ -69,10 +69,10 @@ void ICHCManualOperationPageFrame::showEvent(QShowEvent *e)
         ui->bAddButton->show();
         ui->bSubButton->show();
     }
-    if(manualAdjustPage_ != NULL)
-    {
-        manualAdjustPage_->ClearStatus();
-    }
+//  //  if(manualAdjustPage_ != NULL)
+//  //  {
+//   //     manualAdjustPage_->ClearStatus();
+//  //  }
     QFrame::showEvent(e);
     ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnManual, 0);
     timerID_ = ICTimerPool::Instance()->Start(ICTimerPool::RefreshTime, this, SLOT(StatusRefreshed()));
@@ -409,4 +409,11 @@ void ICHCManualOperationPageFrame::on_bAddButton_pressed()
 {
     ICKeyboard::Instace()->SetKeyValue(ICKeyboard::VFB_BAdd);
     ICKeyboard::Instace()->SetPressed(true);
+}
+void ICHCManualOperationPageFrame::AdjustFrameTransfer()
+{
+    if(manualAdjustPage_ != NULL)
+    {
+        manualAdjustPage_->ChangeButtonColor();
+    }
 }

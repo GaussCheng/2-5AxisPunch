@@ -599,13 +599,13 @@ void ActionSettingFrame::UpdateAxisDefine_()
 /*********************BUG#125*********************************/
         if(ICParametersSave::Instance()->IsSingleArm())
         {
-            ui->gPButton->setCheckable(false);
-            ui->gQButton->setCheckable(false);
-        }
+            ui->gQButton->setEnabled(false);
+            ui->gPButton->setEnabled(false);
+                    }
         else
         {
-            ui->gPButton->setCheckable(true);
-            ui->gQButton->setCheckable(true);
+            ui->gQButton->setEnabled(true);
+            ui->gPButton->setEnabled(true);
         }
 /*************************************************************/
     if(axisDefine_ != currentAxis)
@@ -804,20 +804,26 @@ void ActionSettingFrame::KeyToActionCheck(int key)
     case ICKeyboard::VFB_X2Add:
     case ICKeyboard::VFB_X2Sub:
 //        ui->x2Box->setCurrentIndex(key == ICKeyboard::VFB_X2Add ? 0:1);
-        if((key == ICKeyboard::VFB_X2Add ? 0:1) == 0)
-            ui->x2ForwardBox->setChecked(true);
-        else if((key == ICKeyboard::VFB_X2Add ? 0:1) == 1)
-            ui->x2BackwardBox->setChecked(true);
-        ui->gPButton->setChecked(true);
+        if(!ICParametersSave::Instance()->IsSingleArm())
+        {
+            if((key == ICKeyboard::VFB_X2Add ? 0:1) == 0)
+                ui->x2ForwardBox->setChecked(true);
+            else if((key == ICKeyboard::VFB_X2Add ? 0:1) == 1)
+                ui->x2BackwardBox->setChecked(true);
+            ui->gPButton->setChecked(true);
+        }
         break;
     case ICKeyboard::VFB_Y2Add:
     case ICKeyboard::VFB_Y2Sub:
 //        ui->y2Box->setCurrentIndex(key == ICKeyboard::VFB_Y2Add ?1:0);
-        if((key == ICKeyboard::VFB_Y2Add ? 0:1) == 1)
-            ui->y2UpBox->setChecked(true);
-        else if((key == ICKeyboard::VFB_Y2Add ? 0:1) == 0)
-            ui->y2DownBox->setChecked(true);
-        ui->gQButton->setChecked(true);
+        if(!ICParametersSave::Instance()->IsSingleArm())
+        {
+            if((key == ICKeyboard::VFB_Y2Add ? 0:1) == 1)
+                ui->y2UpBox->setChecked(true);
+            else if((key == ICKeyboard::VFB_Y2Add ? 0:1) == 0)
+                ui->y2DownBox->setChecked(true);
+            ui->gQButton->setChecked(true);
+        }
         break;
     case ICKeyboard::VFB_AAdd:
     case ICKeyboard::VFB_ASub:
@@ -845,7 +851,6 @@ void ActionSettingFrame::KeyToActionCheck(int key)
             ui->cHorizonBox->setChecked(true);
         else if((key == ICKeyboard::VFB_CAdd ? 0:1) == 0)
             ui->cVerticalBox->setChecked(true);
-
         ui->gCButton->setChecked(true);
         break;
     case ICKeyboard::VFB_Pose_Horizontal:

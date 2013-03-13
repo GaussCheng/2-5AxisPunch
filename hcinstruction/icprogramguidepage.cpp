@@ -2,6 +2,7 @@
 #include "ui_icprogramguidepage.h"
 #include "icvirtualhost.h"
 #include "ickeyboard.h"
+#include "icparameterssave.h"
 
 
 ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
@@ -64,6 +65,17 @@ ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
     {
         axis_[C_AXIS].standbyPos = 0 ;
     }
+    /*主副臂都为气动时，让二者动作同步*/
+    if(axis_[X1_AXIS].mode == AXIS_PNEUMATIC)
+    {
+        axis_[X1_AXIS].standbyPos = 1 ;
+    }
+    if(axis_[Y1_AXIS].mode == AXIS_PNEUMATIC)
+    {
+        axis_[Y1_AXIS].getPos = 1 ;
+        axis_[Y1_AXIS].releaseProductPos = 1 ;
+    }
+
     if(axis_[X2_AXIS].mode == AXIS_PNEUMATIC)
     {
         axis_[X2_AXIS].standbyPos = 1 ;
@@ -72,6 +84,7 @@ ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
     {
         axis_[Y2_AXIS].standbyPos = 1 ;
     }
+
     for(int i = 0; i != posEdits_.size(); ++i)
     {
         posEdits_[i]->SetDecimalPlaces(1);
@@ -114,6 +127,10 @@ ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
     ui->outRunningHorizonBox->hide();
     ui->inRunningHorizonBox->hide();
 
+    validator = new QIntValidator(1, 4, this);
+    ui->stackGroup->setValidator(validator);
+
+
 //#ifdef Q_WS_X11
 //    UpdateAxisDefine_();
 //#endif
@@ -142,6 +159,7 @@ void ICProgramGuidePage::showEvent(QShowEvent *e)
     ui->stackedWidget->setCurrentIndex(0);
     UpdateAxisDefine_();
     UpdatePageButton_();
+
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     posMaxs_[0] = host->SystemParameter(ICVirtualHost::SYS_X_Maxium).toInt();
     posMaxs_[1] = host->SystemParameter(ICVirtualHost::SYS_Y_Maxium).toInt();
@@ -210,11 +228,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
         {
             item.SetNum(stepNum++);
             item.SetSVal(0);
-            if(axis_[C_AXIS].getLimit == 0)
-                item.SetAction(ICMold::ACTPOSEHORI);
-            else
-                item.SetAction(ICMold::ACTPOSEVERT);
-
+            item.SetAction(ICMold::ACTPOSEVERT);
             ret.append(item);
         }
     }
@@ -377,6 +391,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
     item.SetAction(ICMold::GZ);
     item.SetSVal(80);
     item.SetDVal(0);
+
     if(isMainArmUsed && isSubArmUsed)
     {
         if(axis_[Z_AXIS].releaseProductPos < axis_[Z_AXIS].releaseOutletPos)
@@ -387,6 +402,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             /******************************************/
             if(!ui->cBoxHorizontal->isHidden() && !ui->cBoxVertical->isHidden())
             {
+                item.SetNum(stepNum++);
                 item.SetSVal(0);
                 if(axis_[C_AXIS].releaseProductLimit == 0)
                     item.SetAction(ICMold::ACTPOSEHORI);
@@ -407,10 +423,6 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
                 ret.append(item);
                 item.SetSVal(80);
             }
-            item.SetNum(stepNum++);
-            if(SetAxisICMoldItem_(&item, axis_ + Y1_AXIS, RELEASE_PRODUCT_SETTING))
-                ret.append(item);
-
             if(!ui->cEdit->isHidden())
             {
                 item.SetNum(stepNum++);
@@ -419,6 +431,10 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
                 if(SetAxisICMoldItem_(&item, axis_ + C_AXIS, RELEASE_PRODUCT_SETTING))
                     ret.append(item);
             }
+            item.SetNum(stepNum++);
+            if(SetAxisICMoldItem_(&item, axis_ + Y1_AXIS, RELEASE_PRODUCT_SETTING))
+                ret.append(item);
+
             /*release product*/
             item.SetNum(stepNum++);
             item.SetSVal(0);
@@ -508,17 +524,18 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
                 ret.append(item);
             if(SetAxisICMoldItem_(&item, axis_ + Z_AXIS, RELEASE_PRODUCT_SETTING))
                 ret.append(item);         
-//            /******************************************/
-//            if(!ui->cBox->isHidden())
-//            {
-//                item.SetSVal(0);
-//                if(axis_[C_AXIS].releaseProductLimit == 0)
-//                    item.SetAction(ICMold::ACTPOSEHORI);
-//                else
-//                    item.SetAction(ICMold::ACTPOSEVERT);
-//                ret.append(item);
-//            }
-//            /******************************************/
+            /******************************************/
+            if(!ui->cBoxHorizontal->isHidden() && !ui->cBoxVertical->isHidden())
+            {
+                item.SetNum(stepNum++);
+                item.SetSVal(0);
+                if(axis_[C_AXIS].releaseProductLimit == 0)
+                    item.SetAction(ICMold::ACTPOSEHORI);
+                else
+                    item.SetAction(ICMold::ACTPOSEVERT);
+                ret.append(item);
+            }
+            /******************************************/
             item.SetNum(stepNum++);
             item.SetSVal(80);
             item.SetDVal(0);
@@ -531,10 +548,6 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
                 ret.append(item);
                 item.SetSVal(80);
             }
-            item.SetNum(stepNum++);
-            if(SetAxisICMoldItem_(&item, axis_ + Y1_AXIS, RELEASE_PRODUCT_SETTING))
-                ret.append(item);
-
             if(!ui->cEdit->isHidden())
             {
                 item.SetNum(stepNum++);
@@ -543,6 +556,10 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
                 if(SetAxisICMoldItem_(&item, axis_ + C_AXIS, RELEASE_PRODUCT_SETTING))
                     ret.append(item);
             }
+            item.SetNum(stepNum++);
+            if(SetAxisICMoldItem_(&item, axis_ + Y1_AXIS, RELEASE_PRODUCT_SETTING))
+                ret.append(item);
+
             /*release product*/
             item.SetNum(stepNum++);
             item.SetSVal(0);
@@ -569,6 +586,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             /******************************************/
             if(!ui->cBoxHorizontal->isHidden() && !ui->cBoxVertical->isHidden())
             {
+                item.SetNum(stepNum++);
                 item.SetSVal(0);
                 if(axis_[C_AXIS].releaseProductLimit == 0)
                     item.SetAction(ICMold::ACTPOSEHORI);
@@ -591,12 +609,6 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
                 ret.append(item);
                 item.SetSVal(80);
             }
-            item.SetNum(stepNum++);
-            if(SetAxisICMoldItem_(&item, axis_ + Y1_AXIS, RELEASE_PRODUCT_SETTING))
-                ret.append(item);
-            if(SetAxisICMoldItem_(&item, axis_ + Y2_AXIS, RELEASE_OUTLET_SETTING))
-                ret.append(item);
-
             if(!ui->cEdit->isHidden())
             {
                 item.SetNum(stepNum++);
@@ -605,6 +617,12 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
                 if(SetAxisICMoldItem_(&item, axis_ + C_AXIS, RELEASE_PRODUCT_SETTING))
                     ret.append(item);
             }
+            item.SetNum(stepNum++);
+            if(SetAxisICMoldItem_(&item, axis_ + Y1_AXIS, RELEASE_PRODUCT_SETTING))
+                ret.append(item);
+            if(SetAxisICMoldItem_(&item, axis_ + Y2_AXIS, RELEASE_OUTLET_SETTING))
+                ret.append(item);
+
 
             item.SetNum(stepNum++);
             item.SetSVal(0);
@@ -638,6 +656,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
         /*****************************************/
         if(!ui->cBoxHorizontal->isHidden() && !ui->cBoxVertical->isHidden())
         {
+            item.SetNum(stepNum++);
             item.SetSVal(0);
             if(axis_[C_AXIS].releaseProductLimit == 0)
                 item.SetAction(ICMold::ACTPOSEHORI);
@@ -658,10 +677,6 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
         item.SetDVal(0);
         if(SetAxisICMoldItem_(&item, axis_ + X1_AXIS, RELEASE_PRODUCT_SETTING))
             ret.append(item);
-        item.SetNum(stepNum++);
-        if(SetAxisICMoldItem_(&item, axis_ + Y1_AXIS, RELEASE_PRODUCT_SETTING))
-            ret.append(item);
-
         if(!ui->cEdit->isHidden())
         {
             item.SetNum(stepNum++);
@@ -670,6 +685,10 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             if(SetAxisICMoldItem_(&item, axis_ + C_AXIS, RELEASE_PRODUCT_SETTING))
                 ret.append(item);
         }
+        item.SetNum(stepNum++);
+        if(SetAxisICMoldItem_(&item, axis_ + Y1_AXIS, RELEASE_PRODUCT_SETTING))
+            ret.append(item);
+
 
         /*release product*/
         item.SetNum(stepNum++);
@@ -740,6 +759,16 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
 
 void ICProgramGuidePage::UpdateAxisDefine_()
 {
+    if(ICParametersSave::Instance()->IsSingleArm())
+    {
+        if(ui->usedSubArmBox->isChecked())
+        {
+            ui->usedSubArmBox->setChecked(false);
+        }
+        ui->usedSubArmBox->setEnabled(false);
+    }
+    else
+        ui->usedSubArmBox->setEnabled(true);
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     int currentAxis = host->SystemParameter(ICVirtualHost::SYS_Config_Arm).toInt();
     if(axisDefine_ != currentAxis)
@@ -1605,10 +1634,7 @@ void ICProgramGuidePage::on_usedMainArmBox_toggled(bool checked)
     if(checked)
     {
         ui->productGroupBox->show();
-    }
-    else
-    {
-        ui->productGroupBox->hide();
+        ui->productGroupBox->show();
     }
     ui->productFixtureGroup->setEnabled(checked);
 }
@@ -1675,18 +1701,24 @@ void ICProgramGuidePage::GuideKeyToActionCheck(int key)
     case ICKeyboard::VFB_X2Add:
     case ICKeyboard::VFB_X2Sub:
 //        ui->x2Box->setCurrentIndex(key == ICKeyboard::VFB_X2Add ? 0:1);
-        if((key == ICKeyboard::VFB_X2Add ? 0:1) == 0)
-            ui->x2BoxBackward->setChecked(true);
-        else if((key == ICKeyboard::VFB_X2Add ? 0:1) == 1)
-            ui->x2BoxForward->setChecked(true);
+        if(!ICParametersSave::Instance()->IsSingleArm())
+        {
+            if((key == ICKeyboard::VFB_X2Add ? 0:1) == 0)
+                ui->x2BoxBackward->setChecked(true);
+            else if((key == ICKeyboard::VFB_X2Add ? 0:1) == 1)
+                ui->x2BoxForward->setChecked(true);
+        }
         break;
     case ICKeyboard::VFB_Y2Add:
     case ICKeyboard::VFB_Y2Sub:
 //        ui->y2Box->setCurrentIndex(key == ICKeyboard::VFB_Y2Add ?0:1);
-        if((key == ICKeyboard::VFB_Y2Add ? 0:1) == 0)
-            ui->y2BoxUp->setChecked(true);
-        else if((key == ICKeyboard::VFB_Y2Add ? 0:1) == 1)
-            ui->y2BoxDown->setChecked(true);
+        if(!ICParametersSave::Instance()->IsSingleArm())
+        {
+            if((key == ICKeyboard::VFB_Y2Add ? 0:1) == 0)
+                ui->y2BoxUp->setChecked(true);
+            else if((key == ICKeyboard::VFB_Y2Add ? 0:1) == 1)
+                ui->y2BoxDown->setChecked(true);
+        }
         break;
     case ICKeyboard::VFB_AAdd:
     case ICKeyboard::VFB_ASub:
