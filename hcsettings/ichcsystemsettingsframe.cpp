@@ -1058,7 +1058,7 @@ void ICHCSystemSettingsFrame::StatusRefresh()
     QString os(osInfo_.release);
 #endif
     os += "; ";
-    ui->versionLabel->setText("Version: OS:" + os + "App 3.1.6;Libs:4.7.3; Host:" + ICVirtualHost::GlobalVirtualHost()->HostStatus(ICVirtualHost::Time).toString());
+    ui->versionLabel->setText("Version: OS:" + os + "App 3.1.7;Libs:4.7.3; Host:" + ICVirtualHost::GlobalVirtualHost()->HostStatus(ICVirtualHost::Time).toString());
 }
 
 void ICHCSystemSettingsFrame::on_structSelectHostButton_clicked()
@@ -1175,11 +1175,11 @@ bool ICHCSystemSettingsFrame::CheckRestoreMachineFiles_()
                 QMessageBox::warning(this, tr("Warnning"), tr("Wrong Rotation config format!"));
                 return false;
             }
-            if(cols.at(0) != axisName.at(i))
-            {
-                QMessageBox::warning(this, tr("Warnning"), tr("Wrong Rotation config format!"));
-                return false;
-            }
+//            if(cols.at(0) != axisName.at(i))
+//            {
+//                QMessageBox::warning(this, tr("Warnning"), tr("Wrong Rotation config format!"));
+//                return false;
+//            }
             for(int j = 0; j != cols.at(1).size(); ++j)
             {
                 if(!cols.at(1).at(j).isDigit())

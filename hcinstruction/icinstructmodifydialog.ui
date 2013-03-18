@@ -391,7 +391,7 @@ QRadioButton::indicator:unchecked:disabled
       <enum>Qt::RightToLeft</enum>
      </property>
      <property name="text">
-      <string>End Position</string>
+      <string>           End Position</string>
      </property>
     </widget>
    </item>

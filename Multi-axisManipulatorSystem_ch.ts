@@ -3412,7 +3412,6 @@ Reason</source>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1152"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1164"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1175"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1180"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1187"/>
         <source>Warnning</source>
         <translation>警告</translation>
@@ -3480,7 +3479,6 @@ Reason</source>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1164"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1175"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1180"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1187"/>
         <source>Wrong Rotation config format!</source>
         <translation>错误的每转距离参数格式！</translation>
@@ -3868,8 +3866,9 @@ Reason</source>
     </message>
     <message>
         <location filename="hcinstruction/icinstructmodifydialog.ui" line="394"/>
-        <source>End Position</source>
-        <translation>结束位置</translation>
+        <source>           End Position</source>
+        <oldsource>End Position</oldsource>
+        <translation>       提前位置</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructmodifydialog.ui" line="321"/>

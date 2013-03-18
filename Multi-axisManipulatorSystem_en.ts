@@ -2720,7 +2720,6 @@ Infomation</source>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1152"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1164"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1175"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1180"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1187"/>
         <source>Warnning</source>
         <translation type="unfinished"></translation>
@@ -2788,7 +2787,6 @@ Infomation</source>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1164"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1175"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1180"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1187"/>
         <source>Wrong Rotation config format!</source>
         <translation type="unfinished"></translation>
@@ -3140,7 +3138,8 @@ Infomation</source>
     </message>
     <message>
         <location filename="hcinstruction/icinstructmodifydialog.ui" line="394"/>
-        <source>End Position</source>
+        <source>           End Position</source>
+        <oldsource>End Position</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
