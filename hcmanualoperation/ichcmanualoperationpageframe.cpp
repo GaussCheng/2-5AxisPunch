@@ -181,7 +181,6 @@ void ICHCManualOperationPageFrame::InitInterface()
     }
     buttonGroup_->setExclusive(true);
 
-
 }
 
 void ICHCManualOperationPageFrame::InitSignal()

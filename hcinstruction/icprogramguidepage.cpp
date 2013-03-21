@@ -768,7 +768,9 @@ void ICProgramGuidePage::UpdateAxisDefine_()
         ui->usedSubArmBox->setEnabled(false);
     }
     else
+    {
         ui->usedSubArmBox->setEnabled(true);
+    }
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     int currentAxis = host->SystemParameter(ICVirtualHost::SYS_Config_Arm).toInt();
     if(axisDefine_ != currentAxis)

@@ -320,97 +320,94 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="41"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="469"/>
         <source>SubArm Advance +</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="91"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="669"/>
         <source>X023</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="107"/>
-        <source>Y023</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="160"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="147"/>
         <source>SubArm Advance -</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="191"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="178"/>
         <source>Machine Reverse</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="207"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="372"/>
         <source>Y035</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="257"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="200"/>
         <source>Adjust Forbid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="288"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="531"/>
         <source>SubArm Back -</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="310"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="32"/>
         <source>Y022</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="363"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="500"/>
         <source>SubArm Back + </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="394"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="85"/>
         <source>SubArm Up + </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="425"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="116"/>
         <source>SubArm Down + </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="456"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="259"/>
         <source>SubArm Up -</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="487"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="290"/>
         <source>SubArm Down -</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="537"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="312"/>
         <source>Y031</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="356"/>
+        <source>Y032</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="581"/>
-        <source>Y033</source>
+        <source>Y017</source>
+        <oldsource>Y033</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="625"/>
-        <source>X026</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="641"/>
         <source>X030</source>
+        <oldsource>X026</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="713"/>
+        <location filename="hcmanualoperation/hcmanualadjustframe.ui" line="444"/>
         <source>X033</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1619,47 +1616,47 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="288"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="287"/>
         <source>Horizontal-1 Limit On</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="292"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="291"/>
         <source>Vertical-1 Limit On</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="301"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="300"/>
         <source>/Horizontal-2 Limit On</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="305"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="304"/>
         <source>/Vertical-2 Limit On</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="319"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="318"/>
         <source>Horizontal-1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="327"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="326"/>
         <source>Vertical-1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="335"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="334"/>
         <source>Horizontal-2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="343"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="342"/>
         <source>Vertical-2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="347"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="346"/>
         <source>Vertical-1/Vertical-2</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2688,7 +2685,6 @@ Infomation</source>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1177"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1189"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1200"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1205"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1212"/>
         <source>Warnning</source>
         <translation type="unfinished"></translation>
@@ -2733,7 +2729,6 @@ Infomation</source>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1189"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1200"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1205"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1212"/>
         <source>Wrong Rotation config format!</source>
         <translation type="unfinished"></translation>
@@ -2879,84 +2874,141 @@ Infomation</source>
 <context>
     <name>ICIOPage</name>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="46"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="85"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="52"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="93"/>
         <source>Y022</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="50"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="90"/>
-        <source>Y023</source>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="48"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="88"/>
+        <source>Y017</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="54"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="56"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="103"/>
         <source>Y032</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="58"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="100"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="60"/>
         <source>Y033</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="62"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="105"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="64"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="108"/>
         <source>Y035</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="66"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="110"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="68"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="113"/>
         <source>Y036</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="95"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="98"/>
         <source>Y031</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="115"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="118"/>
         <source>Y010</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="119"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="122"/>
         <source>Y011</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="123"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="126"/>
         <source>X010</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="127"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="130"/>
         <source>X011</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="210"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="135"/>
+        <source>X023</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="143"/>
+        <source>X030</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="147"/>
+        <source>X033</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="229"/>
         <source>Reserve</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="223"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="227"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="257"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="261"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="242"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="248"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="297"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="303"/>
         <source>Horizon-1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="235"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="239"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="246"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="250"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="252"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="271"/>
+        <source>C Origin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="261"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="267"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="279"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="285"/>
         <source>Vertical-1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="289"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="307"/>
+        <source>C Origin Limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="317"/>
+        <source>Adjust Sub Forward</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="328"/>
+        <source>A Origin/Horizon-2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="339"/>
+        <source>Adjust Sub Backward</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="343"/>
+        <source>Adjust Sub Up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="350"/>
+        <source>X2 In Limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="354"/>
+        <source>Y2 In Limit</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3024,7 +3076,8 @@ Infomation</source>
     </message>
     <message>
         <location filename="hcinstruction/icinstructmodifydialog.ui" line="394"/>
-        <source>End Position</source>
+        <source>           End Position</source>
+        <oldsource>End Position</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3644,7 +3697,7 @@ Please enter an digit between </source>
         <translation type="unfinished">Sucker2 {2?}</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="63"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="64"/>
         <source>Fixture3</source>
         <oldsource>Fixture6</oldsource>
         <translation type="unfinished">Sucker2</translation>
@@ -3694,7 +3747,7 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="57"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="58"/>
         <source>Pressure</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3703,102 +3756,96 @@ Please enter an digit between </source>
         <translation type="obsolete">Sucker2 {5?}</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="65"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="66"/>
         <source>Y1 Out Limit</source>
         <oldsource>Y Out Limit</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="66"/>
-        <source>Horizontal-2</source>
-        <oldsource>Y2 In Limit/Horizontal-2</oldsource>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="69"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="70"/>
         <source>Z In Limit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="70"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="71"/>
         <source>Z Out Limit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="71"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="72"/>
         <source>Check In0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="72"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="73"/>
         <source>Check In1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="73"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="74"/>
         <source>Watch Dog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="74"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="75"/>
         <source>Next Cycle App</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="75"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="76"/>
         <source>Mold Close App</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="81"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="82"/>
         <source>Y2 Servo Alarm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="82"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="83"/>
         <source>A Servo Alarm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="83"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="84"/>
         <source>B Servo Alarm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="84"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="85"/>
         <source>C Servo Alarm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="85"/>
         <location filename="categorypage/icmonitorpageframe.cpp" line="86"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="87"/>
         <source>Other</source>
         <translation>Manipulator I/O</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="91"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="92"/>
         <source>Horizontal-1 Valve</source>
         <oldsource>Horizontal Valve</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="92"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="93"/>
         <source>Vertical-1 Valve</source>
         <oldsource>Vertical Valve</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="93"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="94"/>
         <source>Fixture1 Valve</source>
         <translation type="unfinished">Sucker2 {1 ?}</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="94"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="95"/>
         <source>Fixture2 Valve</source>
         <translation type="unfinished">Sucker2 {2 ?}</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="102"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="99"/>
         <source>Adjust Sub Back</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3809,236 +3856,229 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="104"/>
+        <source>Next Cycle Sp2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="105"/>
         <source>Horizontal-2 Valve</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="113"/>
+        <source>Vice Sub Down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="114"/>
         <source>Fixture3 Valve</source>
         <oldsource>Fixture6 Valve</oldsource>
         <translation type="unfinished">Sucker2</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="95"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="96"/>
         <source>Sucker2 Valve</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="56"/>
-        <source>Reserve</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="59"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="60"/>
         <source>X2 In Limit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="60"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="61"/>
         <source>X2 Origin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="61"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="62"/>
         <source>Y2 Origin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="62"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="63"/>
         <source>Y2 In Limit</source>
         <oldsource>Y2 Out Limit</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="64"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="65"/>
         <source>Y1 Origin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="68"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="67"/>
+        <source>Vertical-2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="69"/>
         <source>B Origin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="77"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="78"/>
         <source>X1 Servo Alarm</source>
         <oldsource>X Servo Alarm</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="78"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="79"/>
         <source>Y1 Servo Alarm</source>
         <oldsource>Y Servo Alarm</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="79"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="80"/>
         <source>Z Servo Alarm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="80"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="81"/>
         <source>X2 Servo Alarm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="97"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="98"/>
         <source>Main Forward Valve</source>
         <oldsource>Main Forward</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="98"/>
-        <source>Vertical-2 Valve</source>
-        <oldsource>Main Backward Valve</oldsource>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="100"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="101"/>
         <source>Fixture4 Valve</source>
         <translation type="unfinished">Sucker2 {4 ?}</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="101"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="102"/>
         <source>Alarm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="105"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="106"/>
         <source>Paint Oil</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="106"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="107"/>
         <source>Next Cycle Sp</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="107"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="108"/>
         <source>Mold Close Sp</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="109"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="110"/>
         <source>Vice Forward Valve</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="111"/>
-        <source>Vice Up Valve/EX-3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="96"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="97"/>
         <source>Sucker1 Valve</source>
         <oldsource>Fixture5 Valve</oldsource>
         <translation type="unfinished">Sucker2 {5 ?}</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="53"/>
-        <source>A Origin/Vertical-2</source>
-        <oldsource>Vertical-2</oldsource>
+        <source>A Origin/Horizontal-2</source>
+        <oldsource>A Origin/Vertical-2</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="115"/>
-        <source>Come In/EX-5</source>
-        <oldsource>Come In</oldsource>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="116"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="117"/>
         <source>Transport</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="128"/>
         <location filename="categorypage/icmonitorpageframe.cpp" line="129"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="130"/>
         <source>EU</source>
         <translation>Injection Machine I/O</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="145"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="146"/>
         <source>Safe Door</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="164"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="165"/>
         <source>En C6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="165"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="166"/>
         <source>En C7</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="166"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="167"/>
         <source>En A8</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="141"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="142"/>
         <source>IMM Reject</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="133"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="134"/>
         <source>Mold Closed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="132"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="133"/>
         <source>Mold Opened</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="147"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="148"/>
         <source>Mold Inter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="148"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="149"/>
         <source>IMM Auto</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="135"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="136"/>
         <source>Eject Backward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="134"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="135"/>
         <source>Eject Forward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="144"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="145"/>
         <source>ZC7</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="143"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="144"/>
         <source>ZC6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="142"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="143"/>
         <source>ZC5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="139"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="140"/>
         <source>Core 2 Out</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="138"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="139"/>
         <source>Core 2 In</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="137"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="138"/>
         <source>Core 1 Out</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4048,7 +4088,12 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="110"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="57"/>
+        <source>B Origin Limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="111"/>
         <source>Adjust Sub Up</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4058,63 +4103,68 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="114"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="115"/>
         <source>Machine Reversal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="136"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="116"/>
+        <source>Run Led</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="137"/>
         <source>Core 1 In</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="146"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="147"/>
         <source>ES</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="155"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="156"/>
         <source>Mold Close Permit</source>
         <oldsource>Mold Close</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="156"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="157"/>
         <source>Eject Forward Permit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="157"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="158"/>
         <source>Eject Backward Permit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="154"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="155"/>
         <source>Mold Open Permit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="158"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="159"/>
         <source>Core 1 In Permit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="160"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="161"/>
         <source>Core 2 In Permit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="161"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="162"/>
         <source>Core 2 Out Permit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="159"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="160"/>
         <source>Core 1 Out Permit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="163"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="164"/>
         <source>Robot</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4431,7 +4481,7 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="439"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="993"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="995"/>
         <source>Product</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4542,7 +4592,7 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcinstruction/icprogramguidepage.ui" line="553"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="994"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="996"/>
         <source>Outlet</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4594,25 +4644,25 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="979"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="1069"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="981"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="1071"/>
         <source>Get Position Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="999"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="1087"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="1001"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="1089"/>
         <source>Release Product Position Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="1020"/>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="1108"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="1022"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="1110"/>
         <source>Release Outlet Position Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.cpp" line="1154"/>
+        <location filename="hcinstruction/icprogramguidepage.cpp" line="1156"/>
         <source>Stanby Settings</source>
         <translation type="unfinished"></translation>
     </message>
