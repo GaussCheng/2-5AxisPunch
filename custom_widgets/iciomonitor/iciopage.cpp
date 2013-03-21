@@ -136,17 +136,17 @@ void ICIOPage::BindingIOPoints(const QList<ICIOPoint> &points)
             {
                 adjustLabels_[0] = descr;
             }
-            else if(point.PointNum() == tr("X026"))
+//            else if(point.PointNum() == tr("X026"))
+//            {
+//                adjustLabels_[1] = descr;
+//            }
+            else if(point.PointNum() == tr("X030"))
             {
                 adjustLabels_[1] = descr;
             }
-            else if(point.PointNum() == tr("X030"))
-            {
-                adjustLabels_[2] = descr;
-            }
             else if(point.PointNum() == tr("X033"))
             {
-                adjustLabels_[3] = descr;
+                adjustLabels_[2] = descr;
             }
             nums->setFixedWidth(50);
             descr->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
@@ -243,7 +243,14 @@ void ICIOPage::showEvent(QShowEvent *e)
             }
             if(ioLabels_.at(2) != NULL)
             {
-                ioLabels_[2]->setText(tr("Horizon-1"));
+                if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) == ICVirtualHost::ICAxisDefine_Pneumatic)
+                {
+                    ioLabels_[2]->setText(tr("Horizon-1"));
+                }
+                else
+                {
+                    ioLabels_[2]->setText(tr("C Origin"));
+                }
             }
 
         }
@@ -255,7 +262,14 @@ void ICIOPage::showEvent(QShowEvent *e)
             }
             if(ioLabels_.at(2) != NULL)
             {
-                ioLabels_[2]->setText(tr("Vertical-1"));
+                if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) == ICVirtualHost::ICAxisDefine_Pneumatic)
+                {
+                    ioLabels_[2]->setText(tr("Vertical-1"));
+                }
+                else
+                {
+                    ioLabels_[2]->setText(tr("C Origin"));
+                }
             }
         }
         if(ICVirtualHost::GlobalVirtualHost()->FixtureDefine() == 1)
@@ -266,7 +280,14 @@ void ICIOPage::showEvent(QShowEvent *e)
             }
             if(ioLabels_.at(3) != NULL)
             {
-                ioLabels_[3]->setText(tr("Vertical-1"));
+                if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) == ICVirtualHost::ICAxisDefine_Pneumatic)
+                {
+                    ioLabels_[3]->setText(tr("Vertical-1"));
+                }
+                else
+                {
+                    ioLabels_[3]->setText(tr("C Origin Limit"));
+                }
             }
         }
         else
@@ -277,52 +298,60 @@ void ICIOPage::showEvent(QShowEvent *e)
             }
             if(ioLabels_.at(3) != NULL)
             {
-                ioLabels_[3]->setText(tr("Horizon-1"));
+                if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) == ICVirtualHost::ICAxisDefine_Pneumatic)
+                {
+                    ioLabels_[3]->setText(tr("Horizon-1"));
+                }
+                else
+                {
+                    ioLabels_[3]->setText(tr("C Origin Limit"));
+                }
             }
-
         }
+
+
         if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) == ICVirtualHost::ICAxisDefine_Pneumatic)
         {
             if(adjustLabels_.at(0) != NULL)
             {
                 adjustLabels_[0]->setText(tr("Adjust Sub Forward"));
             }
-            if(adjustLabels_.at(1) != NULL)
-            {
-                adjustLabels_[1]->setText(tr("Adjust Sub Down"));
-            }
+//            if(adjustLabels_.at(1) != NULL)
+//            {
+//                adjustLabels_[1]->setText(tr("Adjust Sub Down"));
+//            }
         }
         else
         {
             if(adjustLabels_.at(0) != NULL)
             {
-                adjustLabels_[0]->setText(tr("A Origin/Vertical-2"));
+                adjustLabels_[0]->setText(tr("A Origin/Horizon-2"));
             }
-            if(adjustLabels_.at(1) != NULL)
-            {
-                adjustLabels_[1]->setText(tr("Reserve"));
-            }
+//            if(adjustLabels_.at(1) != NULL)
+//            {
+//                adjustLabels_[1]->setText(tr("Reserve"));
+//            }
         }
         if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) == ICVirtualHost::ICAxisDefine_Pneumatic)
         {
+            if(adjustLabels_.at(1) != NULL)
+            {
+                adjustLabels_[1]->setText(tr("Adjust Sub Backward"));
+            }
             if(adjustLabels_.at(2) != NULL)
             {
-                adjustLabels_[2]->setText(tr("Adjust Sub Backward"));
-            }
-            if(adjustLabels_.at(3) != NULL)
-            {
-                adjustLabels_[3]->setText(tr("Adjust Sub Up"));
+                adjustLabels_[2]->setText(tr("Adjust Sub Up"));
             }
         }
         else
         {
+            if(adjustLabels_.at(1) != NULL)
+            {
+                adjustLabels_[1]->setText(tr("X2 In Limit"));
+            }
             if(adjustLabels_.at(2) != NULL)
             {
-                adjustLabels_[2]->setText(tr("X2 In Limit"));
-            }
-            if(adjustLabels_.at(3) != NULL)
-            {
-                adjustLabels_[3]->setText(tr("Y2 In Limit"));
+                adjustLabels_[2]->setText(tr("Y2 In Limit"));
             }
         }
 

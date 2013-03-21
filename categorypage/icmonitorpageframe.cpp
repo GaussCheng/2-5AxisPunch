@@ -50,10 +50,11 @@ void ICMonitorPageFrame::Init_()
     points.append(ICIOPoint("X020", tr("X1 Origin"), 8));
     points.append(ICIOPoint("X021", tr("Fixture4"), 9));
     points.append(ICIOPoint("X022", tr("Y1 In Limit"), 10));
-    points.append(ICIOPoint("X023", tr("A Origin/Vertical-2"), 11));
+    points.append(ICIOPoint("X023", tr("A Origin/Horizontal-2"), 11));
     points.append(ICIOPoint("X024", tr("Out Safe Area"), 12));
     points.append(ICIOPoint("X025", tr("Come In Origin"), 13));
-    points.append(ICIOPoint("X026", tr("Reserve"), 14));
+//    points.append(ICIOPoint("X026", tr("Reserve"), 14));
+    points.append(ICIOPoint("X026", tr("B Origin Limit"), 14));
     points.append(ICIOPoint("X027", tr("Pressure"), 15));
 
     points.append(ICIOPoint("X030", tr("X2 In Limit"), 16));
@@ -63,7 +64,7 @@ void ICMonitorPageFrame::Init_()
     points.append(ICIOPoint("X034", tr("Fixture3"), 20));
     points.append(ICIOPoint("X035", tr("Y1 Origin"), 21));
     points.append(ICIOPoint("X036", tr("Y1 Out Limit"), 22));
-    points.append(ICIOPoint("X037", tr("Horizontal-2"), 23));
+    points.append(ICIOPoint("X037", tr("Vertical-2"), 23));
 
     points.append(ICIOPoint("X040", tr("B Origin"), 24));
     points.append(ICIOPoint("X041", tr("Z In Limit"), 25));

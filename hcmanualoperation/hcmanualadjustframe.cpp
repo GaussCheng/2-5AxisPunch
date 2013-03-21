@@ -95,22 +95,22 @@ void HCManualAdjustFrame::StatusRefreshed()
             ui->x023Status->setPixmap(offPixmap_);
         }
     }
-    if(host->IsInputOn(14))  //x026
-    {
-        if(!currentStatus_.at(1))
-        {
-            currentStatus_.setBit(1);
-            ui->x026Status->setPixmap(inputOnPixmap_);
-        }
-    }
-    else
-    {
-        if(currentStatus_.at(1))
-        {
-            currentStatus_.clearBit(1);
-            ui->x026Status->setPixmap(offPixmap_);
-        }
-    }
+//    if(host->IsInputOn(14))  //x026
+//    {
+//        if(!currentStatus_.at(1))
+//        {
+//            currentStatus_.setBit(1);
+//            ui->x026Status->setPixmap(inputOnPixmap_);
+//        }
+//    }
+//    else
+//    {
+//        if(currentStatus_.at(1))
+//        {
+//            currentStatus_.clearBit(1);
+//            ui->x026Status->setPixmap(offPixmap_);
+//        }
+//    }
     if(host->IsInputOn(16))  //x030
     {
         if(!currentStatus_.at(2))

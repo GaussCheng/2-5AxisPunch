@@ -54,7 +54,7 @@ void ActionSettingFrame::changeEvent(QEvent *e)
 }
 
 void ActionSettingFrame::InitInterface()
-{     /************************BUG#119*******************************/
+{     /******BUG#119******/
     QIntValidator * validator = new QIntValidator(0, 30000, this);
 
     ui->x1DelayLineEdit->SetDecimalPlaces(2);

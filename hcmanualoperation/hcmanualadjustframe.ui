@@ -54,7 +54,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="../resource.qrc">:/resource/ledgray(16).png</pixmap>
+      <pixmap>:/resource/ledgray(16).png</pixmap>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -228,7 +228,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="../resource.qrc">:/resource/ledgray(16).png</pixmap>
+      <pixmap>:/resource/ledgray(16).png</pixmap>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -334,7 +334,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="../resource.qrc">:/resource/ledgray(16).png</pixmap>
+      <pixmap>:/resource/ledgray(16).png</pixmap>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -394,54 +394,10 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="../resource.qrc">:/resource/ledgray(16).png</pixmap>
+      <pixmap>:/resource/ledgray(16).png</pixmap>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="1">
-    <widget class="QLabel" name="x026Status">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>100</height>
-      </size>
-     </property>
-     <property name="layoutDirection">
-      <enum>Qt::LeftToRight</enum>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resource.qrc">:/resource/ledgray(16).png</pixmap>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="0">
-    <widget class="QLabel" name="label_x026">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="layoutDirection">
-      <enum>Qt::RightToLeft</enum>
-     </property>
-     <property name="text">
-      <string>X026</string>
      </property>
     </widget>
    </item>
@@ -466,7 +422,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="../resource.qrc">:/resource/ledgray(16).png</pixmap>
+      <pixmap>:/resource/ledgray(16).png</pixmap>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -603,7 +559,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="../resource.qrc">:/resource/ledgray(16).png</pixmap>
+      <pixmap>:/resource/ledgray(16).png</pixmap>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -647,7 +603,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="../resource.qrc">:/resource/ledgray(16).png</pixmap>
+      <pixmap>:/resource/ledgray(16).png</pixmap>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -691,7 +647,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="../resource.qrc">:/resource/ledgray(16).png</pixmap>
+      <pixmap>:/resource/ledgray(16).png</pixmap>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -716,8 +672,6 @@
    </item>
   </layout>
  </widget>
- <resources>
-  <include location="../resource.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
