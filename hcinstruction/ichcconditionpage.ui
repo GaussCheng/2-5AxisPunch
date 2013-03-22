@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>284</width>
+    <width>299</width>
     <height>333</height>
    </rect>
   </property>
@@ -33,95 +33,6 @@
        <widget class="QLabel" name="label">
         <property name="text">
          <string>Check Point</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>Use Macro</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QComboBox" name="subComboBox">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>100</width>
-          <height>48</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>48</height>
-         </size>
-        </property>
-        <property name="layoutDirection">
-         <enum>Qt::LeftToRight</enum>
-        </property>
-        <item>
-         <property name="text">
-          <string>Sub-1</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Sub-2</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Sub-3</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Sub-4</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Sub-5</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Sub-6</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Sub-7</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Sub-8</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QLabel" name="label_3">
-        <property name="text">
-         <string>Return Step</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="1">
-       <widget class="ICLineEditWithVirtualNumericKeypad" name="returnLineEdit">
-        <property name="text">
-         <string>0</string>
         </property>
        </widget>
       </item>
@@ -221,6 +132,95 @@ QRadioButton::indicator:unchecked:disabled
         </property>
         <property name="text">
          <string>X044</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Use Macro</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QComboBox" name="subComboBox">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>38</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <item>
+         <property name="text">
+          <string>Sub-1</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sub-2</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sub-3</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sub-4</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sub-5</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sub-6</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sub-7</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sub-8</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Return Step</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="ICLineEditWithVirtualNumericKeypad" name="returnLineEdit">
+        <property name="text">
+         <string>0</string>
         </property>
        </widget>
       </item>
