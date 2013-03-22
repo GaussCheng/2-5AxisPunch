@@ -243,13 +243,13 @@ void ICIOPage::showEvent(QShowEvent *e)
             }
             if(ioLabels_.at(2) != NULL)
             {
-                if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) == ICVirtualHost::ICAxisDefine_Pneumatic)
+                if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) == ICVirtualHost::ICAxisDefine_Servo)
                 {
-                    ioLabels_[2]->setText(tr("Horizon-1"));
+                    ioLabels_[2]->setText(tr("C Origin"));
                 }
                 else
                 {
-                    ioLabels_[2]->setText(tr("C Origin"));
+                    ioLabels_[2]->setText(tr("Horizon-1"));
                 }
             }
 
@@ -262,13 +262,13 @@ void ICIOPage::showEvent(QShowEvent *e)
             }
             if(ioLabels_.at(2) != NULL)
             {
-                if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) == ICVirtualHost::ICAxisDefine_Pneumatic)
+                if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) == ICVirtualHost::ICAxisDefine_Servo)
                 {
-                    ioLabels_[2]->setText(tr("Vertical-1"));
+                    ioLabels_[2]->setText(tr("C Origin"));
                 }
                 else
                 {
-                    ioLabels_[2]->setText(tr("C Origin"));
+                    ioLabels_[2]->setText(tr("Vertical-1"));
                 }
             }
         }
@@ -280,13 +280,13 @@ void ICIOPage::showEvent(QShowEvent *e)
             }
             if(ioLabels_.at(3) != NULL)
             {
-                if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) == ICVirtualHost::ICAxisDefine_Pneumatic)
+                if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) == ICVirtualHost::ICAxisDefine_Servo)
                 {
-                    ioLabels_[3]->setText(tr("Vertical-1"));
+                    ioLabels_[3]->setText(tr("C Origin Limit"));
                 }
                 else
                 {
-                    ioLabels_[3]->setText(tr("C Origin Limit"));
+                    ioLabels_[3]->setText(tr("Vertical-1"));
                 }
             }
         }
@@ -298,13 +298,13 @@ void ICIOPage::showEvent(QShowEvent *e)
             }
             if(ioLabels_.at(3) != NULL)
             {
-                if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) == ICVirtualHost::ICAxisDefine_Pneumatic)
+                if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) == ICVirtualHost::ICAxisDefine_Servo)
                 {
-                    ioLabels_[3]->setText(tr("Horizon-1"));
+                    ioLabels_[3]->setText(tr("C Origin Limit"));
                 }
                 else
                 {
-                    ioLabels_[3]->setText(tr("C Origin Limit"));
+                    ioLabels_[3]->setText(tr("Horizon-1"));
                 }
             }
         }

@@ -3009,29 +3009,29 @@ Infomation</source>
     </message>
     <message>
         <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="242"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="248"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="252"/>
         <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="297"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="303"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="307"/>
         <source>Horizon-1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="252"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="271"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="248"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="267"/>
         <source>C Origin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="261"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="267"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="271"/>
         <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="279"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="285"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="289"/>
         <source>Vertical-1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="289"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="307"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="285"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="303"/>
         <source>C Origin Limit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5474,58 +5474,70 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="141"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="286"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="352"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="148"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="293"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="367"/>
         <source>Congratulations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="142"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="149"/>
         <source>Update finish
 You must restart this program
 Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="173"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="100"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="180"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="344"/>
         <source>No available HMI version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="174"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="99"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="343"/>
+        <source>USB no exists...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="101"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="181"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="345"/>
         <source>No available Host version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="281"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="301"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="288"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="308"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="281"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="301"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="288"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="308"/>
         <source>Update Host fail!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="287"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="294"/>
         <source>Send to  Host finished!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="327"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="99"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="334"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="343"/>
         <source>tips</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="327"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="334"/>
         <source>Reboot Successful!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="353"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="368"/>
         <source>Update Host finished!</source>
         <translation type="unfinished"></translation>
     </message>
