@@ -424,13 +424,13 @@ QRadioButton::indicator:unchecked:disabled
            </property>
            <property name="minimumSize">
             <size>
-             <width>70</width>
+             <width>80</width>
              <height>48</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>70</width>
+             <width>80</width>
              <height>48</height>
             </size>
            </property>
@@ -607,10 +607,22 @@ QRadioButton::indicator:unchecked:disabled
        </item>
        <item row="5" column="0">
         <widget class="QPushButton" name="changeButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>78</width>
+           <height>38</height>
+          </size>
+         </property>
          <property name="maximumSize">
           <size>
-           <width>64</width>
-           <height>16777215</height>
+           <width>70</width>
+           <height>50</height>
           </size>
          </property>
          <property name="text">
@@ -620,10 +632,22 @@ QRadioButton::indicator:unchecked:disabled
        </item>
        <item row="5" column="1">
         <widget class="QPushButton" name="clearButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>78</width>
+           <height>38</height>
+          </size>
+         </property>
          <property name="maximumSize">
           <size>
-           <width>64</width>
-           <height>16777215</height>
+           <width>70</width>
+           <height>50</height>
           </size>
          </property>
          <property name="text">
@@ -673,15 +697,7 @@ QRadioButton::indicator:unchecked:disabled
           <bool>false</bool>
          </property>
          <property name="styleSheet">
-          <string notr="true">::item{
-height: 33px;
-}
-
-::item::QCheckBox{
-	spacing: 24px;
-}
-
-::indicator {
+          <string notr="true">::indicator {
      width: 32px;
      height: 32px;
  }
@@ -695,7 +711,15 @@ height: 33px;
      image: url(:/resource/check_checked.png);
  }
 
-</string>
+::indicator:checked:disabled
+{
+ image: url(:/resource/check_checked_disable.png);
+}
+
+::indicator:unchecked:disabled
+{
+ image: url(:/resource/check_unchecked_disable.png);
+}</string>
          </property>
          <property name="text">
           <string>Use</string>
@@ -818,10 +842,34 @@ height: 33px;
        </item>
        <item>
         <widget class="QPushButton" name="umountButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>48</height>
+          </size>
+         </property>
          <property name="maximumSize">
           <size>
-           <width>100</width>
-           <height>16777215</height>
+           <width>80</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="sizeIncrement">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="baseSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
           </size>
          </property>
          <property name="text">

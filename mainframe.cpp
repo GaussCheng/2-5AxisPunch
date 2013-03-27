@@ -1278,7 +1278,7 @@ void MainFrame::Register()
     if(resetTime < 0)
     {
         QMessageBox::information(NULL,tr("tips"),tr("No Register. System Restart Now..."));
-        system("reboot");
+//        system("reboot");
     }
 }
 

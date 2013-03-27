@@ -11,7 +11,7 @@ PageTabsBar::PageTabsBar(QWidget *parent):
     this->setFrameShape(QFrame::NoFrame);
     tabSize_.setWidth(70);
     tabSize_.setHeight(50);
-    frameLayout_->setContentsMargins(0,0,0, 2);
+    frameLayout_->setContentsMargins(0,0,0, 10);
     this->setLayout(frameLayout_);
     frameLayout_->setSpacing(6);
     frameLayout_->addStretch();

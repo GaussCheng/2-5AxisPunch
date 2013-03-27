@@ -35,8 +35,8 @@ Q_SIGNALS:
 private:
     Ui::PageSwitchBar *ui;
 
-private slots:
-    void on_ioSelector_currentIndexChanged(int index);
+//private slots:
+//    void on_ioSelector_currentIndexChanged(int index);
 };
 
 

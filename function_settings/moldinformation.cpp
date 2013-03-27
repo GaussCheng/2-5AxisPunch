@@ -385,9 +385,11 @@ void MoldInformation::on_deleteToolButton_clicked()
         selectedItemStringList << selectedItem;
         selectedItemNumberList << i;
     }
-
-
-
+    if(selectedItemStringList.size() == 0)
+    {
+        QMessageBox::information(this,tr("tips"),tr("No selected files"));
+        return ;
+    }
     int ret = QMessageBox::warning(this, tr("warning"),
                                    tr("Are you sure to delete the selected files?"),
                                    QMessageBox::Ok | QMessageBox::Cancel,
@@ -417,125 +419,6 @@ void MoldInformation::on_deleteToolButton_clicked()
 
 
 }
-//void MoldInformation::on_deleteToolButton_clicked()
-//{
-//    QString selectedItem;
-//    int rows = ui->informationTableWidget->rowCount();
-
-
-//    for(int i = 0 ; i < rows ; ++i)
-//    {
-//        if(ui->informationTableWidget->item(i,0)->checkState() == Qt::Unchecked)
-//        {
-//            continue;
-//        }
-//        selectedItem = ui->informationTableWidget->item(i,0)->text()+".act";
-
-//        if(ICParametersSave::Instance()->MoldName(QString()) == selectedItem)
-//        {
-//            QMessageBox::warning(this, tr("warning"),
-//                                 tr("The mold file ") +
-//                                 selectedItem +
-//                                 tr(" is being used"),
-//                                 QMessageBox::Ok,
-//                                 QMessageBox::Ok);
-
-//            continue;
-//        }
-
-//        if(IsStandProgram(selectedItem))
-//        {
-//            QMessageBox::warning(this, tr("warning"),
-//                                 tr("Stand programs can not be delete!"));
-//            continue;
-//        }
-//        int ret = QMessageBox::warning(this, tr("warning"),
-//                                       tr("Are you sure to delete files ") +
-//                                       selectedItem,
-//                                       QMessageBox::Ok | QMessageBox::Cancel,
-//                                       QMessageBox::Cancel);
-//        if(ret != QMessageBox::Ok)
-//        {
-//            continue;
-//        }
-
-//        if(DeleteSourceFile(selectedItem))
-//        {
-//            //            ui->informationTableWidget->removeRow(ui->informationTableWidget->currentRow());
-//            ui->informationTableWidget->removeRow(i);
-//            //        ui->informationTableWidget->removeRow(ui->informationTableWidget->row(selectedItems.at(0)));
-//            //        emit DeleteFile(ui->sourceFileNameLabel->text());
-//            ui->sourceFileNameLabel->clear();
-//            if(ui->informationTableWidget->rowCount() != 0)
-//            {
-//                ui->sourceFileNameLabel->setText(
-//                            ui->informationTableWidget->item(0,0)->text() + ".act");
-//                //                            ui->informationTableWidget->item(ui->informationTableWidget->currentRow(), 0)->text() + ".act");
-
-//            }
-//            i--;
-//            rows--;
-//        }
-
-//    }
-
-
-//    //    if(ui->sourceFileNameLabel->text().isEmpty())
-//    //    {
-//    //        return;
-//    //    }
-
-//    //    QString selectedItem = ui->sourceFileNameLabel->text();
-//    //    if(ICParametersSave::Instance()->MoldName(QString()) == selectedItem)
-//    //    {
-//    //        QMessageBox::warning(this, tr("warning"),
-//    //                             tr("The mold file ") +
-//    //                             selectedItem +
-//    //                             tr(" is being used"),
-//    //                             QMessageBox::Ok,
-//    //                             QMessageBox::Ok);
-//    //        return;
-//    //    }
-
-//    //    if(IsStandProgram(selectedItem))
-//    //    {
-//    //        QMessageBox::warning(this, tr("warning"),
-//    //                             tr("Stand programs can not be delete!"));
-//    //        return;
-//    //    }
-//    //    int ret = QMessageBox::warning(this, tr("warning"),
-//    //                                   tr("Are you sure to delete files ") +
-//    //                                   selectedItem,
-//    //                                   QMessageBox::Ok | QMessageBox::Cancel,
-//    //                                   QMessageBox::Cancel);
-//    //    if(ret != QMessageBox::Ok)
-//    //    {
-//    //        return;
-//    //    }
-
-//    //    if(DeleteSourceFile(selectedItem))
-//    //    {
-//    //        ui->informationTableWidget->removeRow(ui->informationTableWidget->currentRow());
-//    //        //        ui->informationTableWidget->removeRow(ui->informationTableWidget->row(selectedItems.at(0)));
-//    //        //        emit DeleteFile(ui->sourceFileNameLabel->text());
-//    //        ui->sourceFileNameLabel->clear();
-//    //        if(ui->informationTableWidget->rowCount() != 0)
-//    //        {
-//    //            ui->sourceFileNameLabel->setText(
-//    //                        ui->informationTableWidget->item(ui->informationTableWidget->currentRow(), 0)->text() + ".act");
-
-//    //        }
-//    //    }
-//}
-
-
-
-
-//void MoldInformation::on_informationTableWidget_clicked(QModelIndex index)
-//{
-//    QString fileName =  ui->informationTableWidget->item(index.row(), 0)->text() + ".act";
-//    ui->sourceFileNameLabel->setText(fileName);
-//}
 
 void MoldInformation::CreateFileHelper_(QList<ICMoldItem> &items, int axis, int servo, int pneumatic)
 {

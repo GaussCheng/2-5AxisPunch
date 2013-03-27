@@ -14,7 +14,7 @@ ICIOPage::ICIOPage(QWidget *parent) :
     outputOnPixmap_(":/resource/ledgreen(16).png")
 {
     frameLayout_ = new QVBoxLayout();
-    frameLayout_->setContentsMargins(2, 2, 2, 2);
+    frameLayout_->setContentsMargins(2, 10, 2, 2);
     frameLayout_->setSpacing(15);
     this->setLayout(frameLayout_);
     for(int i = 0; i != 6; ++i)
@@ -150,7 +150,7 @@ void ICIOPage::BindingIOPoints(const QList<ICIOPoint> &points)
             }
             nums->setFixedWidth(50);
             descr->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-            descr->setFixedWidth(135);
+            descr->setFixedWidth(243);
 
             itemLayout_->addWidget(nums);
             itemLayout_->addWidget(descr);

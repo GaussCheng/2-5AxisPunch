@@ -60,6 +60,7 @@ ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
     if(axis_[C_AXIS].mode == AXIS_PNEUMATIC)
     {
         axis_[C_AXIS].standbyPos = 1;
+        axis_[C_AXIS].getPos = 1;
     }
     if(axis_[C_AXIS].mode == AXIS_SERVO)
     {

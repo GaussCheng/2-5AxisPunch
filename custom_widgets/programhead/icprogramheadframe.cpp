@@ -26,6 +26,10 @@ ICProgramHeadFrame::ICProgramHeadFrame(QWidget *parent) :
         else if(rest_time < 0)
         ui->restTimeLabel->setText(QString(tr("No Register!")));
     }
+    else
+    {
+        ui->restTimeLabel->clear();
+    }
 }
 
 ICProgramHeadFrame::~ICProgramHeadFrame()
@@ -41,6 +45,7 @@ void ICProgramHeadFrame::changeEvent(QEvent *e)
         ui->retranslateUi(this);
         SetCurrentMoldName(currentMoldName_);
         UpdateDateTime();
+        ReashRestTime();
         break;
     default:
         break;

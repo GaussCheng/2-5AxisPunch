@@ -48,7 +48,7 @@
      <item>
       <widget class="QLabel" name="loopTimeLabel">
        <property name="text">
-        <string>TextLabel</string>
+        <string>0</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -67,6 +67,9 @@
      </item>
      <item>
       <widget class="QLabel" name="finishedProductsLabel">
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
        <property name="text">
         <string>0</string>
        </property>
