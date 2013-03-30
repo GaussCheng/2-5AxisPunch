@@ -471,7 +471,7 @@ void MoldInformation::on_importToolButton_clicked()
     if(!dir.exists())
     {
         QMessageBox::warning(this, tr("Warnning"), tr("Backup files is not exists!"));
-        ui->exportCheckBox->setChecked(true);
+//        ui->exportCheckBox->setChecked(true);
         return;
     }
 
@@ -736,7 +736,7 @@ void MoldInformation::RefreshFileList()
     if(!CheckIsUsbAttached())
     {
         QMessageBox::warning(this, tr("Warning"), tr("USB is not connected!"));
-        ui->exportCheckBox->setChecked(true);
+//        ui->exportCheckBox->setChecked(true);
         return;
     }
     if(!recordDir.exists())
