@@ -10,7 +10,7 @@ enum LocalAlarm
 {
     CommunicationFail   = 200,
     NotInAutoPage       = 201,
-    NotInManualPage     = 202,
+    NotInManualPage     = 202
 };
 
 /*struct AlarmInfo

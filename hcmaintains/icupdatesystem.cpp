@@ -100,11 +100,20 @@ void ICUpdateSystem::on_updateToolButton_clicked()
 
 void ICUpdateSystem::SystemUpdateStart()
 {
+    QDir dir("/proc/scsi/usb-storage");
+    if(!dir.exists())
+    {
+        QMessageBox::warning(this,tr("tips"),tr("USB no exists...")) ;
+        ui->hmiVersionShowLabel->setText(tr("No available HMI version"));
+        ui->hostVersionShowLabel->setText(tr("No available Host version"));
+        ui->connectHostButton->setEnabled(false);
+        ui->updateToolButton->setEnabled(false);
+        return;
+    }
     if(updateSettings_ == NULL)
     {
         return;
     }
-
     QStringList updateFileList = updateSettings_->childGroups();
     if(updateFileList.count() > 0)
     {
@@ -372,6 +381,16 @@ void ICUpdateSystem::rebootButton()
 
 void ICUpdateSystem::on_connectHostButton_clicked()
 {
+    QDir dir("/proc/scsi/usb-storage");
+    if(!dir.exists())
+    {
+        QMessageBox::warning(this,tr("tips"),tr("USB no exists...")) ;
+        ui->hmiVersionShowLabel->setText(tr("No available HMI version"));
+        ui->hostVersionShowLabel->setText(tr("No available Host version"));
+        ui->connectHostButton->setEnabled(false);
+        ui->updateToolButton->setEnabled(false);
+        return;
+    }
     ICUpdateHostStart linkCmd;
     ICCommandProcessor* processor = ICCommandProcessor::Instance();
     linkCmd.SetSlave(processor->SlaveID());
@@ -518,7 +537,7 @@ void ICUpdateSystem::on_registerBtn_clicked()
 
 void ICUpdateSystem::RefreshRestTime()
 {
-    int rest_time = ICParametersSave::Instance()->RestTime(-1);
+    int rest_time = ICParametersSave::Instance()->RestTime(0);
     if(rest_time == 0)
         ui->restTime->setText(tr("No Limit"));
     else if(rest_time > 0)

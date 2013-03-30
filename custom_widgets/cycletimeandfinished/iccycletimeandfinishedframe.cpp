@@ -1,5 +1,6 @@
 #include "iccycletimeandfinishedframe.h"
 #include "ui_iccycletimeandfinishedframe.h"
+#include <QDateTime>
 
 //ICCycleTimeAndFinishedFrame * ICCycleTimeAndFinishedFrame::instance_ = NULL;
 
@@ -8,7 +9,6 @@ ICCycleTimeAndFinishedFrame::ICCycleTimeAndFinishedFrame(QWidget *parent) :
     ui(new Ui::ICCycleTimeAndFinishedFrame)
 {
     ui->setupUi(this);
-
     InitInterface();
 }
 
@@ -55,3 +55,4 @@ void ICCycleTimeAndFinishedFrame::InitInterface()
 {
     ui->alarmLabel->setStyleSheet("background-color: rgb(192,192,192); border-radius: 6px; border: 3px solid gray; font-size: 15px;");
 }
+

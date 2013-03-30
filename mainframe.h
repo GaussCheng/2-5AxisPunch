@@ -76,6 +76,7 @@ private slots:
     void CheckedInput();
     void Register();
     void CountRestTime();
+    void checkAlarmModify();
 
 
 //    void InitHeavyPage();

@@ -18,7 +18,7 @@ ICProgramHeadFrame::ICProgramHeadFrame(QWidget *parent) :
     InitSignal();
 //    restTime_.start(1000*60);
     restTime_.start(1000*3600);
-    int rest_time = ICParametersSave::Instance()->RestTime(-1);
+    int rest_time = ICParametersSave::Instance()->RestTime(0);
     if(rest_time <= 7*24)
     {
         if(rest_time > 0)
@@ -115,7 +115,7 @@ void ICProgramHeadFrame::SetCurrentLevel(int level)
 }
 void ICProgramHeadFrame::ReashRestTime()
 {
-    int rest_time = ICParametersSave::Instance()->RestTime(-1);
+    int rest_time = ICParametersSave::Instance()->RestTime(0);
     if(rest_time <= 7*24)
     {
         if(rest_time > 0)

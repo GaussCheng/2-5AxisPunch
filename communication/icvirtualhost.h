@@ -691,6 +691,7 @@ private:
     bool isParamChanged_;
     bool isFixtureCheck_;
     static ICVirtualHost* globalVirtualHost_;
+    bool flag;
 };
 #define icGlobalVirtuallHost ICVirtualHost::GlobalVirtualHost()
 

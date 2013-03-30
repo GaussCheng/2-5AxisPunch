@@ -62,6 +62,12 @@ Infomation</string>
 DateTime</string>
       </property>
      </column>
+     <column>
+      <property name="text">
+       <string>Alarm 
+ModifyTime</string>
+      </property>
+     </column>
     </widget>
    </item>
   </layout>

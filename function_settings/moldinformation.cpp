@@ -471,6 +471,7 @@ void MoldInformation::on_importToolButton_clicked()
     if(!dir.exists())
     {
         QMessageBox::warning(this, tr("Warnning"), tr("Backup files is not exists!"));
+        ui->exportCheckBox->setChecked(true);
         return;
     }
 
@@ -568,9 +569,9 @@ void MoldInformation::on_importToolButton_clicked()
         }
     }
 
+    ICTipsWidget tipsWidget(tr("Restoring, please wait..."));
     if(!flagItem)
     {
-        ICTipsWidget tipsWidget(tr("Restoring, please wait..."));
         tipsWidget.show();qApp->processEvents();
     }
 
@@ -662,9 +663,9 @@ void MoldInformation::on_exportToolButton_clicked()
         }
     }
 
+    ICTipsWidget tipsWidget(tr("Backuping, please wait..."));
     if(!flagItem)
     {
-        ICTipsWidget tipsWidget(tr("Backuping, please wait..."));
         tipsWidget.show();
         qApp->processEvents();
     }
@@ -730,14 +731,12 @@ void MoldInformation::RefreshFileList()
     getFileDir_ = QFileDialog::getExistingDirectory();
     QDir recordDir(getFileDir_ + "/HC5ABackup/records");
 #else
-    ICTipsWidget tipsWidget(tr("Refresh File List, please wait..."));
-    tipsWidget.show();
-    qApp->processEvents();
     QDir recordDir("/mnt/udisk/HC5ABackup/records");
 
     if(!CheckIsUsbAttached())
     {
         QMessageBox::warning(this, tr("Warning"), tr("USB is not connected!"));
+        ui->exportCheckBox->setChecked(true);
         return;
     }
     if(!recordDir.exists())
@@ -745,6 +744,9 @@ void MoldInformation::RefreshFileList()
         QMessageBox::warning(this, tr("Warnning"), tr("Backup files is not exists!"));
         return;
     }
+    ICTipsWidget tipsWidget(tr("Refresh File List, please wait..."));
+    tipsWidget.show();
+    qApp->processEvents();
 #endif
 
 

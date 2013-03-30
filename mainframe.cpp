@@ -121,7 +121,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     axisDefine_(-1),
     registe_timer(new QTimer)
 {
-    resetTime = ICParametersSave::Instance()->RestTime(-1);
+    resetTime = ICParametersSave::Instance()->RestTime(0);
 
 
     if(resetTime <= 7*24 )
@@ -139,7 +139,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
             QMessageBox::information(NULL,tr("tips"),tr("No Register,The System Will Reboot after 10 minutes"));
             connect(registe_timer,SIGNAL(timeout()),this,SLOT(Register()));
             //            registe_timer->start(1000*60*10);
-            registe_timer->start(1000*600);
+            registe_timer->start(1000*60*10);
 
         }
     }
@@ -688,6 +688,7 @@ void MainFrame::StatusRefreshed()
         if(errCode_ != 0)
         {
             ui->cycleTimeAndFinistWidget->SetAlarmInfo("Err" + QString::number(errCode_) + ":" + alarmString->AlarmInfo(errCode_));
+            QTimer::singleShot(5000, this, SLOT(checkAlarmModify()));
         }
         else if(hintCode != 0)
         {
@@ -886,7 +887,7 @@ void MainFrame::ShowManualPage()
 
 void MainFrame::ShowAutoPage()
 {
-    resetTime = ICParametersSave::Instance()->RestTime(-1);
+    resetTime = ICParametersSave::Instance()->RestTime(0);
 
     if(resetTime <= 7*24 )
     {
@@ -1115,7 +1116,6 @@ void MainFrame::CheckedInput()
     }
     SetHasInput(false);
     QTimer::singleShot(ICParametersSave::Instance()->BackLightTime() * 60000, this, SLOT(CheckedInput()));
-    //    system("reboot");
 }
 
 void MainFrame::ShowWidgets_(QList<QWidget *> &widgets)
@@ -1274,11 +1274,11 @@ void MainFrame::ClearPosColor()
 
 void MainFrame::Register()
 {
-    resetTime = ICParametersSave::Instance()->RestTime(-1);
+    resetTime = ICParametersSave::Instance()->RestTime(0);
     if(resetTime < 0)
     {
         QMessageBox::information(NULL,tr("tips"),tr("No Register. System Restart Now..."));
-//        system("reboot");
+        system("reboot");
     }
 }
 
@@ -1292,4 +1292,16 @@ void MainFrame::CountRestTime()
         Register();
     }
     ICParametersSave::Instance()->SetRestTime(resetTime);
+}
+
+void MainFrame::checkAlarmModify()
+{
+    if(errCode_ == 0)
+    {
+        ICAlarmFrame::Instance()->AlarmModifyTime();
+    }
+    else
+    {
+        QTimer::singleShot(5000, this, SLOT(checkAlarmModify()));
+    }
 }

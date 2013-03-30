@@ -3,6 +3,7 @@
 
 #include <QFrame>
 #include <QPalette>
+#include <QTimer>
 
 namespace Ui {
     class ICCycleTimeAndFinishedFrame;
@@ -31,7 +32,6 @@ public:
 
 protected:
     void changeEvent(QEvent *);
-
 private:
     void InitInterface();
 

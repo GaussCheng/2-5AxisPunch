@@ -40,6 +40,7 @@ ICVirtualHost::ICVirtualHost(QObject *parent) :
     currentStatus_(0),
     freshCount_(0),
     isInitSuccess_(true),
+    flag(true),
     oldMoldNum_(8),
     productCount_(0),
     isParamChanged_(false),
@@ -280,6 +281,18 @@ void ICVirtualHost::RefreshStatus()
             statusMap_.insert(DbgP1, 100);
             statusMap_.insert(DbgQ1, 110);
             statusMap_.insert(Time, 500);
+            if(flag)
+            {
+                statusMap_.insert(ErrCode, 304);
+                flag = FALSE;
+            }
+            else
+            {
+                statusMap_.insert(ErrCode, 0);
+                flag = TRUE ;
+            }
+
+
 #endif
 //            statusMap_.insert(
 //            statusMap_.insert(Input0, 1025);
