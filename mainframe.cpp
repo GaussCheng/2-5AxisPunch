@@ -321,52 +321,26 @@ void MainFrame::keyPressEvent(QKeyEvent *e)
     {
     case ICKeyboard::FB_F1:
     {
-        //        if(ui->functionPageButton->isEnabled())
-        //        {
-        //            ICFunctionPageBackFrame* page = qobject_cast<ICFunctionPageBackFrame*>(functionPage_);
-        //            if(page != NULL)
-        //            {
-        //                page->ShowFunctionSelectPage();
-        //            }
-        //            centerStackedLayout_->setCurrentWidget(functionPage_);
-        //            ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Function"));
-        //            ui->functionPageButton->setChecked(true);
-        //        }
         ui->functionPageButton->click();
     }
         break;
     case ICKeyboard::FB_F2:
     {
-        //        centerStackedLayout_->setCurrentWidget(monitorPage_);
-        //        ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Monitor"));
-        //        ui->monitorPageButton->setChecked(true);
         ui->monitorPageButton->click();
     }
         break;
     case ICKeyboard::FB_F3:
     {
-        //        if(ui->recordPageButton->isEnabled())
-        //        {
-        //            centerStackedLayout_->setCurrentWidget(recordPage_);
-        //            ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Records"));
-        //            ui->recordPageButton->setChecked(true);
-        //        }
         ui->recordPageButton->click();
     }
         break;
     case ICKeyboard::FB_F4:
     {
-        //        centerStackedLayout_->setCurrentWidget(alarmPage_);
-        //        ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Alarm History"));
-        //        ui->alarmPageButton->setChecked(true);
         ui->alarmPageButton->click();
     }
         break;
     case ICKeyboard::FB_F5:
     {
-        //        centerStackedLayout_->setCurrentWidget(initialPage_);
-        //        ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Standby"));
-        //        ReturnButtonClicked();
         ui->returnPageButton->click();
     }
         break;

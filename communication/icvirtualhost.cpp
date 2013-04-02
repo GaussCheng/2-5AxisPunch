@@ -281,16 +281,16 @@ void ICVirtualHost::RefreshStatus()
             statusMap_.insert(DbgP1, 100);
             statusMap_.insert(DbgQ1, 110);
             statusMap_.insert(Time, 500);
-            if(flag)
-            {
-                statusMap_.insert(ErrCode, 304);
-                flag = FALSE;
-            }
-            else
-            {
-                statusMap_.insert(ErrCode, 0);
-                flag = TRUE ;
-            }
+//            if(flag)
+//            {
+//                statusMap_.insert(ErrCode, 304);
+//                flag = FALSE;
+//            }
+//            else
+//            {
+//                statusMap_.insert(ErrCode, 0);
+//                flag = TRUE ;
+//            }
 
 
 #endif
