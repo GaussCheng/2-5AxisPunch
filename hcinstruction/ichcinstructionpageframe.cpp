@@ -420,8 +420,9 @@ void ICHCInstructionPageFrame::on_insertToolButton_clicked()
         return;
     }
     FindIndex_(index, gIndex, tIndex, sIndex);
+    QString currentmoldname  = ICParametersSave::Instance()->MoldName("");
     /******currentEdit_标记为0表示为主程序（主程序时不能删除待机点）*****/
-    if(programList_.at(gIndex).StepNum() == 0 && currentEdit_ == 0)
+    if(programList_.at(gIndex).StepNum() == 0 && currentEdit_ == 0 && currentmoldname.left(4) != "szhc")
     {
         QMessageBox::warning(this,
                              tr("Warning"),
@@ -621,13 +622,15 @@ void ICHCInstructionPageFrame::on_deleteToolButton_clicked()
         QMessageBox::warning(this, tr("warning"),
                              tr("Stand program can not be delete action"));
         return;
-    }
+   }
     int gIndex;
     int tIndex;
     int sIndex;
     FindIndex_(currentRow, gIndex, tIndex, sIndex);
     /************BUG181:子程序位置插入后不能删除******************/
-    if(programList_.at(gIndex).StepNum() == 0 && currentEdit_ == 0)
+
+    QString currentmoldname  = ICParametersSave::Instance()->MoldName("");
+    if(programList_.at(gIndex).StepNum() == 0 && currentEdit_ == 0 && currentmoldname.left(4) != "szhc")
     {
         QMessageBox::warning(this,
                              tr("Warning"),

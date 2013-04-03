@@ -6978,9 +6978,9 @@ Would you want to restart now?</source>
     <message>
         <location filename="mainframe.cpp" line="131"/>
         <location filename="mainframe.cpp" line="139"/>
-        <location filename="mainframe.cpp" line="896"/>
-        <location filename="mainframe.cpp" line="900"/>
-        <location filename="mainframe.cpp" line="1281"/>
+        <location filename="mainframe.cpp" line="870"/>
+        <location filename="mainframe.cpp" line="874"/>
+        <location filename="mainframe.cpp" line="1254"/>
         <source>tips</source>
         <translation>提示</translation>
     </message>
@@ -6990,12 +6990,12 @@ Would you want to restart now?</source>
         <translation>剩余时间:%1小时</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="900"/>
+        <location filename="mainframe.cpp" line="874"/>
         <source>No Register</source>
         <translation>没有注册</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="508"/>
+        <location filename="mainframe.cpp" line="482"/>
         <source>Function</source>
         <translation>功能</translation>
     </message>
@@ -7005,22 +7005,22 @@ Would you want to restart now?</source>
         <translation>没有注册，系统将在十分钟后重启</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="509"/>
+        <location filename="mainframe.cpp" line="483"/>
         <source>Monitor</source>
         <translation>监视</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="896"/>
+        <location filename="mainframe.cpp" line="870"/>
         <source>Spear Time %1 Hour</source>
         <translation>剩余时间:%1小时</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="932"/>
+        <location filename="mainframe.cpp" line="906"/>
         <source>Records</source>
         <translation>档案</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="1281"/>
+        <location filename="mainframe.cpp" line="1254"/>
         <source>No Register. System Restart Now...</source>
         <translation>没有注册，系统现在重启...</translation>
     </message>
@@ -7037,12 +7037,12 @@ Would you want to restart now?</source>
         <translation type="obsolete">欢迎</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="511"/>
+        <location filename="mainframe.cpp" line="485"/>
         <source>Record</source>
         <translation>档案</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="510"/>
+        <location filename="mainframe.cpp" line="484"/>
         <source>Alarm</source>
         <translation>报警</translation>
     </message>
@@ -7059,12 +7059,12 @@ Would you want to restart now?</source>
         <translation type="obsolete">巨集参数从异常中恢复，请先检查巨集参数！</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="512"/>
+        <location filename="mainframe.cpp" line="486"/>
         <source>Return</source>
         <translation>返回</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="695"/>
+        <location filename="mainframe.cpp" line="669"/>
         <source>Hint</source>
         <translation>提示</translation>
     </message>
@@ -7081,7 +7081,7 @@ Would you want to restart now?</source>
         <translation type="obsolete">还没进行原点!</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="884"/>
+        <location filename="mainframe.cpp" line="858"/>
         <source>Instruct</source>
         <translation>教导</translation>
     </message>
