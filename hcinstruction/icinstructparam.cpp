@@ -303,10 +303,10 @@ void ICInstructParam::InstallMoldInfo()
     clipGroupMap_[ACTCLIP6ON] = QObject::tr("Sucker2 ON");
     clipGroupMap_[ACTCLIP7ON] = QObject::tr("Injection ON");
     clipGroupMap_[ACTCLIP8ON] = QObject::tr("Conveyor ON");
-    clipGroupMap_[ACTCLSMDON] = QObject::tr("Lock Mold ON");
+    clipGroupMap_[ACTCLSMDON] = QObject::tr("Lock 1 Mold ON");
     clipGroupMap_[ACTEJECTON] = QObject::tr("Eject ON");
     clipGroupMap_[ACTLAYOUTON] = QObject::tr("Layout ON");
-    clipGroupMap_[ACTCLIP12ON] = QObject::tr("Core1 Permit");
+    clipGroupMap_[ACTCLIP12ON] = QObject::tr("Lock 2 Mold ON");
     clipGroupMap_[ACTCLIP13ON] = QObject::tr("Core2 Permit");
 //    clipGroupMap_[ACTCLIP14ON] = QObject::tr("Clip14 ON");
 //    clipGroupMap_[ACTCLIP15ON] = QObject::tr("Clip15 ON");
@@ -319,10 +319,10 @@ void ICInstructParam::InstallMoldInfo()
     clipGroupMap_[ACTCLIP6OFF] = QObject::tr("Sucker2 OFF");
     clipGroupMap_[ACTCLIP7OFF] = QObject::tr("Injection OFF");
     clipGroupMap_[ACTCLIP8OFF] = QObject::tr("Conveyor OFF");
-    clipGroupMap_[ACTCLSMDOFF] = QObject::tr("Lock Mold OFF");
+    clipGroupMap_[ACTCLSMDOFF] = QObject::tr("Lock 1 Mold OFF");
     clipGroupMap_[ACTEJECTOFF] = QObject::tr("Eject OFF");
     clipGroupMap_[ACTLAYOUTOFF] = QObject::tr("Layout OFF");
-    clipGroupMap_[ACTCLIP12OFF] = QObject::tr("Core1 OFF");
+    clipGroupMap_[ACTCLIP12OFF] = QObject::tr("Lock 2 Mold OFF");
     clipGroupMap_[ACTCLIP13OFF] = QObject::tr("Core2 OFF");
     clipGroupMap_[ACT_AUX1] = QObject::tr("Reserve 1");
     clipGroupMap_[ACT_AUX2] = QObject::tr("Reserve 2");

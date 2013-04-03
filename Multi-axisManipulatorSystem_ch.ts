@@ -1827,8 +1827,9 @@ Reason</source>
     <message>
         <location filename="hcinstruction/ichcinjectionpage.cpp" line="21"/>
         <location filename="hcinstruction/ichcinjectionpage.cpp" line="90"/>
-        <source>Close Mold Permit  </source>
-        <translation>关模允许</translation>
+        <source>Close Mold Permit 1</source>
+        <oldsource>Close Mold Permit 1  </oldsource>
+        <translation>允许锁模1</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcinjectionpage.cpp" line="21"/>
@@ -1838,16 +1839,21 @@ Reason</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcinjectionpage.cpp" line="22"/>
-        <location filename="hcinstruction/ichcinjectionpage.cpp" line="91"/>
-        <source>Core1 Permit  </source>
-        <oldsource>Core1 Pull Permit  </oldsource>
-        <translation>抽芯1允许</translation>
+        <source>Close Mold Permit 2  </source>
+        <oldsource>Core1 Permit  </oldsource>
+        <translation>允许锁模2</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcinjectionpage.cpp" line="23"/>
         <location filename="hcinstruction/ichcinjectionpage.cpp" line="92"/>
         <source>Core2 Permit  </source>
         <translation>抽芯2允许</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcinjectionpage.cpp" line="91"/>
+        <source>Close Mold Permit 2</source>
+        <oldsource>Mold Close Permit 2</oldsource>
+        <translation>允许锁模2</translation>
     </message>
 </context>
 <context>
@@ -3732,35 +3738,40 @@ Reason</source>
         <translation>预留</translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="242"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="252"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="297"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="307"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="241"/>
+        <source>Thimble 2</source>
+        <translation>可顶针2</translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="253"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="263"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="308"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="318"/>
         <source>Horizon-1</source>
         <translation>水平1</translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="248"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="267"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="259"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="278"/>
         <source>C Origin</source>
         <translation>C轴原点</translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="261"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="271"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="279"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="289"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="272"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="282"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="290"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="300"/>
         <source>Vertical-1</source>
         <translation>垂直1</translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="285"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="303"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="296"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="314"/>
         <source>C Origin Limit</source>
         <translation>C轴起点极限</translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="317"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="328"/>
         <source>Adjust Sub Forward</source>
         <translation>副前进调位</translation>
     </message>
@@ -3769,28 +3780,28 @@ Reason</source>
         <translation type="obsolete">副下降调位</translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="328"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="339"/>
         <source>A Origin/Horizon-2</source>
         <oldsource>A Origin/Vertical-2</oldsource>
         <translation>A轴原点/水平2限</translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="339"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="350"/>
         <source>Adjust Sub Backward</source>
         <translation>副后退调位</translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="343"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="354"/>
         <source>Adjust Sub Up</source>
         <translation>副上升调位</translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="350"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="361"/>
         <source>X2 In Limit</source>
         <translation>X2轴起点极限</translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="354"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="365"/>
         <source>Y2 In Limit</source>
         <translation>Y2轴起点极限</translation>
     </message>
@@ -5017,29 +5028,28 @@ Please enter an digit between </source>
         <translation>注塑机I/O信号</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="146"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="148"/>
         <source>Safe Door</source>
         <translation>安全门</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="165"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="168"/>
         <source>En C6</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="166"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="169"/>
         <source>En C7</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="167"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="170"/>
         <source>En A8</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="142"/>
         <source>IMM Reject</source>
-        <translation>不良品</translation>
+        <translation type="obsolete">不良品</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="134"/>
@@ -5049,15 +5059,15 @@ Please enter an digit between </source>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="133"/>
         <source>Mold Opened</source>
-        <translation>开模终止</translation>
+        <translation>开模终止1</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="148"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="150"/>
         <source>Mold Inter</source>
         <translation>中板模</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="149"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="151"/>
         <source>IMM Auto</source>
         <translation>全自动</translation>
     </message>
@@ -5072,32 +5082,32 @@ Please enter an digit between </source>
         <translation>顶针前进到位</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="145"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="147"/>
         <source>ZC7</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="144"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="146"/>
         <source>ZC6</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="143"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="145"/>
         <source>ZC5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="140"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="141"/>
         <source>Core 2 Out</source>
         <translation>出芯2到位</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="139"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="140"/>
         <source>Core 2 In</source>
         <translation>入芯2到位</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="138"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="139"/>
         <source>Core 1 Out</source>
         <translation>出芯1到位</translation>
     </message>
@@ -5111,33 +5121,32 @@ Please enter an digit between </source>
         <translation type="obsolete">主前进限</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="137"/>
         <source>Core 1 In</source>
-        <translation>入芯1到位</translation>
+        <translation type="obsolete">入芯1到位</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="147"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="149"/>
         <source>ES</source>
         <translation>急停</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="156"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="158"/>
         <source>Mold Close Permit</source>
         <oldsource>Mold Close</oldsource>
-        <translation>允许锁模</translation>
+        <translation>允许锁模1</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="157"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="159"/>
         <source>Eject Forward Permit</source>
         <translation>允许顶进</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="158"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="160"/>
         <source>Eject Backward Permit</source>
         <translation>允许顶退</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="155"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="157"/>
         <source>Mold Open Permit</source>
         <translation>允许开模</translation>
     </message>
@@ -5178,27 +5187,37 @@ Please enter an digit between </source>
         <translation>运行灯</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="159"/>
-        <source>Core 1 In Permit</source>
-        <translation>允许入芯1</translation>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="137"/>
+        <source>Mode open In 2</source>
+        <translation>开模终止2</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="143"/>
+        <source>Safe Door 2</source>
+        <translation>安全门2</translation>
     </message>
     <message>
         <location filename="categorypage/icmonitorpageframe.cpp" line="161"/>
+        <source>Mode Close Permit 2</source>
+        <translation>允许锁模2</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="164"/>
         <source>Core 2 In Permit</source>
         <translation>允许入芯2</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="162"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="165"/>
         <source>Core 2 Out Permit</source>
         <translation>允许出芯2</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="160"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="163"/>
         <source>Core 1 Out Permit</source>
         <translation>允许出芯1</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="164"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="167"/>
         <source>Robot</source>
         <translation>机械手模式</translation>
     </message>
@@ -6706,14 +6725,14 @@ Please enter an digit between </source>
         <translation type="obsolete">更新</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="148"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="293"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="367"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="150"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="295"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="371"/>
         <source>Congratulations</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="149"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="151"/>
         <source>Update finish
 You must restart this program
 Would you want to restart now?</source>
@@ -6723,55 +6742,55 @@ Would you want to restart now?</source>
     </message>
     <message>
         <location filename="hcmaintains/icupdatesystem.cpp" line="100"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="180"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="344"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="182"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="346"/>
         <source>No available HMI version</source>
         <translation>没有可以用的手控版本</translation>
     </message>
     <message>
         <location filename="hcmaintains/icupdatesystem.cpp" line="99"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="343"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="345"/>
         <source>USB no exists...</source>
         <translation>USB路径不存在...</translation>
     </message>
     <message>
         <location filename="hcmaintains/icupdatesystem.cpp" line="101"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="181"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="345"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="183"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="347"/>
         <source>No available Host version</source>
         <translation>没有可以用的主机版本</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="288"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="308"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="290"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="310"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="288"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="308"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="290"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="310"/>
         <source>Update Host fail!</source>
         <translation>更新主机失败！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="294"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="296"/>
         <source>Send to  Host finished!</source>
         <translation>发送到主机成功！</translation>
     </message>
     <message>
         <location filename="hcmaintains/icupdatesystem.cpp" line="99"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="334"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="343"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="336"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="345"/>
         <source>tips</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="334"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="336"/>
         <source>Reboot Successful!</source>
         <translation>保存成功！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="368"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="372"/>
         <source>Update Host finished!</source>
         <translation>更新主机成功！</translation>
     </message>
@@ -7670,8 +7689,9 @@ Please try a new name</source>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="306"/>
-        <source>Lock Mold ON</source>
-        <translation>锁模通</translation>
+        <source>Lock 1 Mold ON</source>
+        <oldsource>Lock Mold ON</oldsource>
+        <translation>锁模1通</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="307"/>
@@ -7827,9 +7847,18 @@ Please try a new name</source>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="309"/>
+        <source>Lock 2 Mold ON</source>
+        <translation>锁模2通</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icinstructparam.cpp" line="325"/>
+        <source>Lock 2 Mold OFF</source>
+        <translation>锁模2关</translation>
+    </message>
+    <message>
         <source>Core1 Permit</source>
         <oldsource>Core1 Pull Permit</oldsource>
-        <translation>抽芯1允许</translation>
+        <translation type="obsolete">抽芯1允许</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="310"/>
@@ -7859,8 +7888,9 @@ Please try a new name</source>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="322"/>
-        <source>Lock Mold OFF</source>
-        <translation>锁模关</translation>
+        <source>Lock 1 Mold OFF</source>
+        <oldsource>Lock Mold OFF</oldsource>
+        <translation>锁模1关</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="323"/>
@@ -7873,10 +7903,9 @@ Please try a new name</source>
         <translation>堆叠结束</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="325"/>
         <source>Core1 OFF</source>
         <oldsource>Core1 Pull OFF</oldsource>
-        <translation>抽芯1禁止</translation>
+        <translation type="obsolete">抽芯1禁止</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="326"/>

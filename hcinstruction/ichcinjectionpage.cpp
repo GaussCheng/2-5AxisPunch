@@ -18,8 +18,8 @@ ICHCInjectionPage::ICHCInjectionPage(QWidget *parent) :
     QPushButton * button;
     ICLineEditWithVirtualNumericKeypad* delays = new ICLineEditWithVirtualNumericKeypad[ui->tableWidget->rowCount()];
     ICLineEditWithVirtualNumericKeypad *delayEdit;
-    ioNames_<<tr("Close Mold Permit  ")<<tr("Ejection Permit  ")
-           <<tr("Core1 Permit  ")
+    ioNames_<<tr("Close Mold Permit 1")<<tr("Ejection Permit  ")
+           <<tr("Close Mold Permit 2  ")
           <<tr("Core2 Permit  ");
     onClipToOffClip_.insert(ICMold::ACTCLSMDON, ICMold::ACTCLSMDOFF);
     onClipToOffClip_.insert(ICMold::ACTEJECTON, ICMold::ACTEJECTOFF);
@@ -87,8 +87,8 @@ void ICHCInjectionPage::changeEvent(QEvent *e)
     case QEvent::LanguageChange:
         ui->retranslateUi(this);
         ioNames_.clear();
-        ioNames_<<tr("Close Mold Permit  ")<<tr("Ejection Permit  ")
-               <<tr("Core1 Permit  ")
+        ioNames_<<tr("Close Mold Permit 1")<<tr("Ejection Permit  ")
+               <<tr("Close Mold Permit 2")
               <<tr("Core2 Permit  ");
         for(int i = 0; i != settingButtons_.size(); ++i)
         {

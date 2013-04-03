@@ -1398,7 +1398,8 @@ Infomation</source>
     <message>
         <location filename="hcinstruction/ichcinjectionpage.cpp" line="21"/>
         <location filename="hcinstruction/ichcinjectionpage.cpp" line="90"/>
-        <source>Close Mold Permit  </source>
+        <source>Close Mold Permit 1</source>
+        <oldsource>Close Mold Permit 1  </oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1409,15 +1410,20 @@ Infomation</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcinjectionpage.cpp" line="22"/>
-        <location filename="hcinstruction/ichcinjectionpage.cpp" line="91"/>
-        <source>Core1 Permit  </source>
-        <oldsource>Core1 Pull Permit  </oldsource>
+        <source>Close Mold Permit 2  </source>
+        <oldsource>Core1 Permit  </oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcinjectionpage.cpp" line="23"/>
         <location filename="hcinstruction/ichcinjectionpage.cpp" line="92"/>
         <source>Core2 Permit  </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcinjectionpage.cpp" line="91"/>
+        <source>Close Mold Permit 2</source>
+        <oldsource>Mold Close Permit 2</oldsource>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3008,61 +3014,66 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="242"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="252"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="297"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="307"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="241"/>
+        <source>Thimble 2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="253"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="263"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="308"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="318"/>
         <source>Horizon-1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="248"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="267"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="259"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="278"/>
         <source>C Origin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="261"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="271"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="279"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="289"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="272"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="282"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="290"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="300"/>
         <source>Vertical-1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="285"/>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="303"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="296"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="314"/>
         <source>C Origin Limit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="317"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="328"/>
         <source>Adjust Sub Forward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="328"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="339"/>
         <source>A Origin/Horizon-2</source>
         <oldsource>A Origin/Vertical-2</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="339"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="350"/>
         <source>Adjust Sub Backward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="343"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="354"/>
         <source>Adjust Sub Up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="350"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="361"/>
         <source>X2 In Limit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="354"/>
+        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="365"/>
         <source>Y2 In Limit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4053,28 +4064,38 @@ Please enter an digit between </source>
         <translation>Injection Machine I/O</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="146"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="137"/>
+        <source>Mode open In 2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="143"/>
+        <source>Safe Door 2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="148"/>
         <source>Safe Door</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="165"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="161"/>
+        <source>Mode Close Permit 2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="168"/>
         <source>En C6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="166"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="169"/>
         <source>En C7</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="167"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="170"/>
         <source>En A8</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="142"/>
-        <source>IMM Reject</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4088,12 +4109,12 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="148"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="150"/>
         <source>Mold Inter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="149"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="151"/>
         <source>IMM Auto</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4108,32 +4129,32 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="145"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="147"/>
         <source>ZC7</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="144"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="146"/>
         <source>ZC6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="143"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="145"/>
         <source>ZC5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="140"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="141"/>
         <source>Core 2 Out</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="139"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="140"/>
         <source>Core 2 In</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="138"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="139"/>
         <source>Core 1 Out</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4169,58 +4190,48 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="137"/>
-        <source>Core 1 In</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="147"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="149"/>
         <source>ES</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="156"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="158"/>
         <source>Mold Close Permit</source>
         <oldsource>Mold Close</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="157"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="159"/>
         <source>Eject Forward Permit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="158"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="160"/>
         <source>Eject Backward Permit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="155"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="157"/>
         <source>Mold Open Permit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="159"/>
-        <source>Core 1 In Permit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="161"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="164"/>
         <source>Core 2 In Permit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="162"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="165"/>
         <source>Core 2 Out Permit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="160"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="163"/>
         <source>Core 1 Out Permit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="164"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="167"/>
         <source>Robot</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5474,14 +5485,14 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="148"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="293"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="367"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="150"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="295"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="371"/>
         <source>Congratulations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="149"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="151"/>
         <source>Update finish
 You must restart this program
 Would you want to restart now?</source>
@@ -5489,55 +5500,55 @@ Would you want to restart now?</source>
     </message>
     <message>
         <location filename="hcmaintains/icupdatesystem.cpp" line="100"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="180"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="344"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="182"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="346"/>
         <source>No available HMI version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmaintains/icupdatesystem.cpp" line="99"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="343"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="345"/>
         <source>USB no exists...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmaintains/icupdatesystem.cpp" line="101"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="181"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="345"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="183"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="347"/>
         <source>No available Host version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="288"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="308"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="290"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="310"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="288"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="308"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="290"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="310"/>
         <source>Update Host fail!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="294"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="296"/>
         <source>Send to  Host finished!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmaintains/icupdatesystem.cpp" line="99"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="334"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="343"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="336"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="345"/>
         <source>tips</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="334"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="336"/>
         <source>Reboot Successful!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="368"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="372"/>
         <source>Update Host finished!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6295,7 +6306,8 @@ Please try a new name</source>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="306"/>
-        <source>Lock Mold ON</source>
+        <source>Lock 1 Mold ON</source>
+        <oldsource>Lock Mold ON</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6309,9 +6321,8 @@ Please try a new name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="309"/>
-        <source>Core1 Permit</source>
-        <oldsource>Core1 Pull Permit</oldsource>
+        <location filename="hcinstruction/icinstructparam.cpp" line="325"/>
+        <source>Lock 2 Mold OFF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6398,6 +6409,11 @@ Please try a new name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="hcinstruction/icinstructparam.cpp" line="309"/>
+        <source>Lock 2 Mold ON</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="318"/>
         <source>Sucker1 OFF</source>
         <translation type="unfinished"></translation>
@@ -6419,7 +6435,8 @@ Please try a new name</source>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="322"/>
-        <source>Lock Mold OFF</source>
+        <source>Lock 1 Mold OFF</source>
+        <oldsource>Lock Mold OFF</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6430,12 +6447,6 @@ Please try a new name</source>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="324"/>
         <source>Layout OFF</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="325"/>
-        <source>Core1 OFF</source>
-        <oldsource>Core1 Pull OFF</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -220,7 +220,7 @@ void ICIOPage::UpdateIO()
 void ICIOPage::showEvent(QShowEvent *e)
 {
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    for(int i = 0; i != recsLabels_.size(); ++i)
+    for(int i = 1; i != recsLabels_.size(); ++i)
     {
         if(recsLabels_.at(i) != NULL)
         {
@@ -232,6 +232,17 @@ void ICIOPage::showEvent(QShowEvent *e)
             {
                 recsLabels_[i]->setText(backupDescrMap_.value(i).PointDescription());
             }
+        }
+    }
+    if(recsLabels_.at(0) != NULL)
+    {
+        if(host->PeripheryOutput(0) == 1)
+        {
+            recsLabels_[0]->setText(tr("Thimble 2") + QString::number(0));
+        }
+        else
+        {
+            recsLabels_[0]->setText(backupDescrMap_.value(0).PointDescription());
         }
     }
 
