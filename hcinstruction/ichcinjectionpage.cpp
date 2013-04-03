@@ -18,9 +18,11 @@ ICHCInjectionPage::ICHCInjectionPage(QWidget *parent) :
     QPushButton * button;
     ICLineEditWithVirtualNumericKeypad* delays = new ICLineEditWithVirtualNumericKeypad[ui->tableWidget->rowCount()];
     ICLineEditWithVirtualNumericKeypad *delayEdit;
-    ioNames_<<tr("Close Mold Permit 1")<<tr("Ejection Permit  ")
-           <<tr("Close Mold Permit 2  ")
-          <<tr("Core2 Permit  ");
+    ioNames_<<tr("Close Mold Permit 1")
+           <<tr("Close Mold Permit 2")
+           <<tr("Ejection Permit 1")
+           <<tr("Ejection Permit 2")
+           <<tr("Core2 Permit  ");
     onClipToOffClip_.insert(ICMold::ACTCLSMDON, ICMold::ACTCLSMDOFF);
     onClipToOffClip_.insert(ICMold::ACTEJECTON, ICMold::ACTEJECTOFF);
 //    onClipToOffClip_.insert(ICMold::ACTLAYOUTON, ICMold::ACTLAYOUTOFF);

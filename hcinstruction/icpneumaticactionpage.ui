@@ -107,11 +107,6 @@ QRadioButton::indicator:unchecked:disabled
      </attribute>
      <row>
       <property name="text">
-       <string>Reserve1</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
        <string>Reserve2</string>
       </property>
      </row>
@@ -214,19 +209,6 @@ QRadioButton::indicator:unchecked:disabled
       </property>
      </item>
      <item row="4" column="1">
-      <property name="text">
-       <string/>
-      </property>
-     </item>
-     <item row="5" column="0">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="checkState">
-       <enum>Unchecked</enum>
-      </property>
-     </item>
-     <item row="5" column="1">
       <property name="text">
        <string/>
       </property>

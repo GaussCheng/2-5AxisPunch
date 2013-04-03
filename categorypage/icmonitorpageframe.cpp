@@ -156,8 +156,10 @@ void ICMonitorPageFrame::Init_()
     points.clear();
     points.append(ICIOPoint("", tr("Mold Open Permit"), 38));
     points.append(ICIOPoint("", tr("Mold Close Permit"), 32));
-    points.append(ICIOPoint("", tr("Eject Forward Permit"), 33));
-    points.append(ICIOPoint("", tr("Eject Backward Permit"), 37));
+//    points.append(ICIOPoint("", tr("Eject Forward Permit"), 33));
+    points.append(ICIOPoint("", tr("Thimble Permit 1"), 33));
+//    points.append(ICIOPoint("", tr("Eject Backward Permit"), 37));
+    points.append(ICIOPoint("", tr("Thimble Permit 2"), 37));
     points.append(ICIOPoint("", tr("Mode Close Permit 2"), 40));
 //    points.append(ICIOPoint("", tr("Core 1 In Permit"), 40));
     points.append(ICIOPoint("", tr("Core 1 Out Permit"), 46));
