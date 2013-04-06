@@ -21,20 +21,29 @@ ICHCInjectionPage::ICHCInjectionPage(QWidget *parent) :
     ioNames_<<tr("Close Mold Permit 1")
            <<tr("Close Mold Permit 2")
            <<tr("Ejection Permit 1")
-           <<tr("Ejection Permit 2")
-           <<tr("Core2 Permit  ");
+          <<tr("Core2 Permit  ")
+           <<tr("Ejection Permit 2");
     onClipToOffClip_.insert(ICMold::ACTCLSMDON, ICMold::ACTCLSMDOFF);
-    onClipToOffClip_.insert(ICMold::ACTEJECTON, ICMold::ACTEJECTOFF);
-//    onClipToOffClip_.insert(ICMold::ACTLAYOUTON, ICMold::ACTLAYOUTOFF);
     onClipToOffClip_.insert(ICMold::ACT_CORE1_ON, ICMold::ACT_CORE1_OFF);
+    onClipToOffClip_.insert(ICMold::ACTEJECTON, ICMold::ACTEJECTOFF);
+    onClipToOffClip_.insert(ICMold::ACT_AUX1, ICMold::ACT_AUX1);
+//    onClipToOffClip_.insert(ICMold::ACTLAYOUTON, ICMold::ACTLAYOUTOFF);
     onClipToOffClip_.insert(ICMold::ACT_CORE2_ON, ICMold::ACT_CORE2_OFF);
 
     offClipToOnClip_.insert(ICMold::ACTCLSMDOFF, ICMold::ACTCLSMDON);
-    offClipToOnClip_.insert(ICMold::ACTEJECTOFF, ICMold::ACTEJECTON);
-//    offClipToOnClip_.insert(ICMold::ACTLAYOUTOFF, ICMold::ACTLAYOUTON);
     offClipToOnClip_.insert(ICMold::ACT_CORE1_OFF, ICMold::ACT_CORE1_ON);
+    offClipToOnClip_.insert(ICMold::ACTEJECTOFF, ICMold::ACTEJECTON);
+    offClipToOnClip_.insert(ICMold::ACT_AUX1, ICMold::ACT_AUX1);
+//    offClipToOnClip_.insert(ICMold::ACTLAYOUTOFF, ICMold::ACTLAYOUTON);
     offClipToOnClip_.insert(ICMold::ACT_CORE2_OFF, ICMold::ACT_CORE2_ON);
-    QList<uint> initStatus = onClipToOffClip_.values();
+//    QList<uint> initStatus = onClipToOffClip_.values();
+    QList<uint> initStatus;
+    initStatus.append(ICMold::ACTCLSMDOFF);
+    initStatus.append(ICMold::ACT_CORE1_OFF);
+    initStatus.append(ICMold::ACTEJECTOFF);
+    initStatus.append(ICMold::ACT_CORE2_OFF);
+    initStatus.append(ICMold::ACT_AUX1);
+
     QIntValidator *validator = new QIntValidator(0, 30000, this);
     for(int i = 0; i != ui->tableWidget->rowCount(); ++i)
     {
@@ -54,22 +63,26 @@ ICHCInjectionPage::ICHCInjectionPage(QWidget *parent) :
         ui->tableWidget->setCellWidget(i, 2, delayEdit);
 
         buttonToClip_.insert(button, initStatus.at(i));
+        buttonToLight_.insert(button, 0);
         buttonSignalMapper_.setMapping(button, button);
         connect(button,
                 SIGNAL(clicked()),
                 &buttonSignalMapper_,
                 SLOT(map()));
     }
-//    ui->tableWidget->resizeColumnsToContents();
     ui->tableWidget->setColumnWidth(0, 50);
     ui->tableWidget->setColumnWidth(1, 140);
 
 
     commandKeyMap_.insert(settingButtons_.at(0), qMakePair(static_cast<int>(IC::VKEY_CLSMDON), static_cast<int>(IC::VKEY_CLSMDOFF)));
-    commandKeyMap_.insert(settingButtons_.at(1), qMakePair(static_cast<int>(IC::VKEY_EJECTON), static_cast<int>(IC::VKEY_EJECTOFF)));
-//    commandKeyMap_.insert(settingButtons_.at(2), qMakePair(static_cast<int>(IC::VKEY_LAYOUTON), static_cast<int>(IC::VKEY_LAYOUTOFF)));
-    commandKeyMap_.insert(settingButtons_.at(2), qMakePair(0, 0));
-    commandKeyMap_.insert(settingButtons_.at(3), qMakePair(0, 0));
+    commandKeyMap_.insert(settingButtons_.at(1), qMakePair(0, 0));
+    commandKeyMap_.insert(settingButtons_.at(2), qMakePair(static_cast<int>(IC::VKEY_EJECTON), static_cast<int>(IC::VKEY_EJECTOFF)));
+    commandKeyMap_.insert(settingButtons_.at(3), qMakePair(static_cast<int>(IC::VKEY_RESERVE1_ON), static_cast<int>(IC::VKEY_RESERVE1_OFF)));
+    commandKeyMap_.insert(settingButtons_.at(4), qMakePair(0, 0));
+//    commandKeyMap_.insert(settingButtons_.at(0), qMakePair(static_cast<int>(IC::VKEY_CLSMDON), static_cast<int>(IC::VKEY_CLSMDOFF)));
+//    commandKeyMap_.insert(settingButtons_.at(1), qMakePair(static_cast<int>(IC::VKEY_EJECTON), static_cast<int>(IC::VKEY_EJECTOFF)));
+//    commandKeyMap_.insert(settingButtons_.at(2), qMakePair(0, 0));
+//    commandKeyMap_.insert(settingButtons_.at(3), qMakePair(0, 0));
 
     connect(&buttonSignalMapper_,
             SIGNAL(mapped(QWidget*)),
@@ -89,9 +102,11 @@ void ICHCInjectionPage::changeEvent(QEvent *e)
     case QEvent::LanguageChange:
         ui->retranslateUi(this);
         ioNames_.clear();
-        ioNames_<<tr("Close Mold Permit 1")<<tr("Ejection Permit  ")
+        ioNames_<<tr("Close Mold Permit 1")
                <<tr("Close Mold Permit 2")
-              <<tr("Core2 Permit  ");
+               <<tr("Ejection Permit 1")
+               <<tr("Core2 Permit  ")
+               <<tr("Ejection Permit 2");
         for(int i = 0; i != settingButtons_.size(); ++i)
         {
             settingButtons_[i]->setText(ioNames_.at(i));
@@ -157,52 +172,37 @@ void ICHCInjectionPage::CommandButtonClicked(QWidget *widget)
     Q_ASSERT_X(button != NULL, "ICHCFixturePage::CommandButtonClicked", "widget is null");
     int key;
     int currentClip = buttonToClip_.value(button);
-    if(onClipToOffClip_.contains(currentClip))
+//    if(onClipToOffClip_.contains(currentClip))
+//    {
+//        key = commandKeyMap_.value(button).second;
+//        buttonToClip_.insert(button, onClipToOffClip_.value(currentClip));
+//        button->setIcon(offPixmap_);
+//    }
+//    else
+//    {
+//        key = commandKeyMap_.value(button).first;
+//        buttonToClip_.insert(button, offClipToOnClip_.value(currentClip));
+//        button->setIcon(onPixmap_);
+//    }
+
+    if(buttonToLight_.value(button) == 1)
     {
         key = commandKeyMap_.value(button).second;
         buttonToClip_.insert(button, onClipToOffClip_.value(currentClip));
         button->setIcon(offPixmap_);
+        buttonToLight_.insert(button, 0);
     }
     else
     {
         key = commandKeyMap_.value(button).first;
         buttonToClip_.insert(button, offClipToOnClip_.value(currentClip));
         button->setIcon(onPixmap_);
+        buttonToLight_.insert(button, 1);
     }
+
     ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(key);
 
 }
-
-
-//void ICHCInjectionPage::on_closeMoldlDelayEdit_textChanged(QString )
-//{
-//    ICCommandProcessor::Instance()->TeachParam(ICVirtualHost::ST_DLY_CLSMDON, ui->closeMoldlDelayEdit->TransThisTextToThisInt());
-//}
-
-//void ICHCInjectionPage::on_closeMoldOtherEdit_textChanged(QString )
-//{
-//    ICCommandProcessor::Instance()->TeachParam(ICVirtualHost::ST_SPD_CLSMDON, ui->closeMoldOtherEdit->TransThisTextToThisInt());
-//}
-
-//void ICHCInjectionPage::on_ejecteDelayEdit_textChanged(QString )
-//{
-//    ICCommandProcessor::Instance()->TeachParam(ICVirtualHost::ST_DLY_EJECTON, ui->ejecteDelayEdit->TransThisTextToThisInt());
-//}
-
-//void ICHCInjectionPage::on_ejecteOtherEdit_textChanged(QString )
-//{
-//    ICCommandProcessor::Instance()->TeachParam(ICVirtualHost::ST_SPD_EJECTON, ui->ejecteOtherEdit->TransThisTextToThisInt());
-//}
-
-//void ICHCInjectionPage::on_placeDelayEdit_textChanged(QString )
-//{
-//    ICCommandProcessor::Instance()->TeachParam(ICVirtualHost::ST_DLY_LAYOUTON, ui->placeDelayEdit->TransThisTextToThisInt());
-//}
-
-//void ICHCInjectionPage::on_placeOtherEdit_textEdited(QString )
-//{
-//    ICCommandProcessor::Instance()->TeachParam(ICVirtualHost::ST_SPD_LAYOUTON, ui->placeOtherEdit->TransThisTextToThisInt());
-//}
 
 QList<ICMoldItem> ICHCInjectionPage::CreateCommandImpl() const
 {
@@ -211,12 +211,23 @@ QList<ICMoldItem> ICHCInjectionPage::CreateCommandImpl() const
     ICMoldItem item;
     for(int i = 0; i != ui->tableWidget->rowCount(); ++i)
     {
+        if(i == 4)
+        {
+            continue ;
+        }
         if(ui->tableWidget->item(i,0)->checkState() == Qt::Checked)
         {
             item.SetClip(buttonToClip_.value(qobject_cast<QAbstractButton*>(ui->tableWidget->cellWidget(i, 1))));
             item.SetDVal(delayEdits_.at(i)->TransThisTextToThisInt());
             ret.append(item);
         }
+    }
+    if(ui->tableWidget->item(4,0)->checkState() == Qt::Checked)
+    {
+        item.SetIFVal(buttonToLight_.value(qobject_cast<QAbstractButton*>(ui->tableWidget->cellWidget(4, 1))));
+        item.SetClip(buttonToClip_.value(qobject_cast<QAbstractButton*>(ui->tableWidget->cellWidget(4, 1))));
+        item.SetDVal(delayEdits_.at(4)->TransThisTextToThisInt());
+        ret.append(item);
     }
     return ret;
 }
