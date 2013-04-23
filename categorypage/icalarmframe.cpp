@@ -81,6 +81,10 @@ void ICAlarmFrame::ReadAlarmInfoInFile()
     for(int i = 0; i != alarms_.size(); ++i)
     {
         optionList = alarms_.at(i).split(' ');
+        if(optionList.size() == 2)
+        {
+            optionList.append(tr("no-solve"));
+        }
         alarmNum = optionList.at(0).toInt();
         QString alarmInfo = alarmString_->AlarmInfo(alarmNum);
         AppendNewLineInTable(alarmNum,

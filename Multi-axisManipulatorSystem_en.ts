@@ -732,9 +732,10 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icalarmframe.cpp" line="178"/>
-        <location filename="categorypage/icalarmframe.cpp" line="180"/>
-        <location filename="categorypage/icalarmframe.cpp" line="218"/>
+        <location filename="categorypage/icalarmframe.cpp" line="86"/>
+        <location filename="categorypage/icalarmframe.cpp" line="182"/>
+        <location filename="categorypage/icalarmframe.cpp" line="184"/>
+        <location filename="categorypage/icalarmframe.cpp" line="222"/>
         <source>no-solve</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1541,40 +1542,40 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="427"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="633"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="772"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="846"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="428"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="636"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="775"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="849"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="428"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="429"/>
         <source>Can not add standby position program</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="621"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="622"/>
         <source>warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="622"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="623"/>
         <source>Stand program can not be delete action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="634"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="637"/>
         <source>Can not delete standby position program</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="773"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="776"/>
         <source>Can not group up to standby position program</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="847"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="850"/>
         <source>Can not decompose standby position program</source>
         <translation type="unfinished"></translation>
     </message>

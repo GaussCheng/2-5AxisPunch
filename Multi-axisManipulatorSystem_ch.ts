@@ -941,9 +941,10 @@ Reason</source>
         <translation type="obsolete">解决办法</translation>
     </message>
     <message>
-        <location filename="categorypage/icalarmframe.cpp" line="178"/>
-        <location filename="categorypage/icalarmframe.cpp" line="180"/>
-        <location filename="categorypage/icalarmframe.cpp" line="218"/>
+        <location filename="categorypage/icalarmframe.cpp" line="86"/>
+        <location filename="categorypage/icalarmframe.cpp" line="182"/>
+        <location filename="categorypage/icalarmframe.cpp" line="184"/>
+        <location filename="categorypage/icalarmframe.cpp" line="222"/>
         <source>no-solve</source>
         <translation>未解决</translation>
     </message>
@@ -2042,10 +2043,10 @@ Reason</source>
         <translation>主菜单</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="427"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="633"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="772"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="846"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="428"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="636"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="775"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="849"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -2062,32 +2063,32 @@ Reason</source>
         <translation type="obsolete">该模号是当前模号!</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="428"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="429"/>
         <source>Can not add standby position program</source>
         <translation>不能添加待机点步骤</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="621"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="622"/>
         <source>warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="622"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="623"/>
         <source>Stand program can not be delete action</source>
         <translation>标准程序不能删除动作</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="634"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="637"/>
         <source>Can not delete standby position program</source>
         <translation>不能删除待机点步骤</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="773"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="776"/>
         <source>Can not group up to standby position program</source>
         <translation>不能组合待机点步骤</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="847"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="850"/>
         <source>Can not decompose standby position program</source>
         <translation>不能分解待机点步骤</translation>
     </message>

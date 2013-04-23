@@ -157,7 +157,6 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     emit LoadMessage("Connected");
     ui->setupUi(this);
     ui->systemStatusFrame->SetOriginStatus(StatusLabel::OFFSTATUS);
-    ICParametersSave::Instance()->SetBrightness(ICParametersSave::Instance()->Brightness());
     QDir configDir("./sysconfig");
     configDir.setFilter(QDir::Files);
     QStringList backupFiles = configDir.entryList(QStringList()<<"*~");
