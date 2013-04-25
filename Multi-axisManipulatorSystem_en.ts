@@ -195,13 +195,13 @@
     </message>
     <message>
         <location filename="hcsettings/axissettingsframe.ui" line="62"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="113"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="119"/>
         <source>Internal security zone</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/axissettingsframe.ui" line="72"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="114"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="120"/>
         <source>External security zone</source>
         <translation type="unfinished"></translation>
     </message>
@@ -263,59 +263,59 @@
     </message>
     <message>
         <location filename="hcsettings/axissettingsframe.cpp" line="92"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="123"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="132"/>
         <source>Min pos inside mold</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/axissettingsframe.cpp" line="93"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="124"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="133"/>
         <source>Max pos inside mold</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.cpp" line="103"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="133"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="106"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="145"/>
         <source>Max standby pos</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.cpp" line="104"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="134"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="107"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="146"/>
         <source>Leave origin pos</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.cpp" line="145"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="159"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="171"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="160"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="177"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="192"/>
         <source>Transeve security zone(Less)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.cpp" line="146"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="160"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="172"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="161"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="178"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="193"/>
         <source>Transeve security zone(Lagger)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.cpp" line="147"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="148"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="161"/>
         <location filename="hcsettings/axissettingsframe.cpp" line="162"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="173"/>
-        <location filename="hcsettings/axissettingsframe.cpp" line="174"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="163"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="179"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="180"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="194"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="195"/>
         <source>degree</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.cpp" line="377"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="401"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.cpp" line="377"/>
+        <location filename="hcsettings/axissettingsframe.cpp" line="401"/>
         <source>Save Successfully!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3157,13 +3157,13 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="138"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="146"/>
         <source>speed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="173"/>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="188"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="181"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="196"/>
         <source>Times</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3528,6 +3528,7 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcsettings/icmachinestructpage.ui" line="233"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="245"/>
         <source>Mechanical length</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3539,28 +3540,37 @@ Please enter an digit between </source>
         <location filename="hcsettings/icmachinestructpage.ui" line="311"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="240"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="241"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="242"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="243"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="244"/>
         <source>mm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/icmachinestructpage.ui" line="250"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="260"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="276"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="292"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="308"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="324"/>
         <source>Maximum displacement</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/icmachinestructpage.ui" line="267"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="274"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="286"/>
         <source>Internal security zone</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/icmachinestructpage.ui" line="284"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="275"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="287"/>
         <source>External security zone</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/icmachinestructpage.ui" line="301"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="246"/>
         <source>Distance/Rotation</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3667,60 +3677,91 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="249"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="286"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="254"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="302"/>
         <source>Min pos inside mold</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="250"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="287"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="255"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="303"/>
         <source>Max pos inside mold</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="262"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="298"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="270"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="318"/>
         <source>Max standby pos</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="263"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="299"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="271"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="319"/>
         <source>Leave origin pos</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="312"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="328"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="342"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="335"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="359"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="381"/>
         <source>Transever security zone(Less)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="313"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="329"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="343"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="336"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="360"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="382"/>
         <source>Transever security zone(Lagger)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="314"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="315"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="330"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="331"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="346"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="347"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="337"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="338"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="339"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="340"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="341"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="361"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="362"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="363"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="364"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="365"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="388"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="389"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="390"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="391"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="392"/>
         <source>degree</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="539"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="342"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="366"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="393"/>
+        <source>Max Rotate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="343"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="367"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="394"/>
+        <source>Machine Per</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="348"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="372"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="387"/>
+        <source>Origin Offset</source>
+        <oldsource>Origin Skew</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="586"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="539"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="586"/>
         <source>Save Successfully!</source>
         <translation type="unfinished"></translation>
     </message>

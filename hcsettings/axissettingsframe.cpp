@@ -91,6 +91,9 @@ void AxisSettingsFrame::SetCurrentAxis(QString currentAxisName, int axis)
         total = ICParametersSave::Instance()->DistanceRotation("X");
         minText = tr("Min pos inside mold");
         maxText = tr("Max pos inside mold");
+        ui->label_2->show();
+        ui->label_4->show();
+        ui->maximumDisplacementLineEdit->show();
 
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY1)
@@ -102,6 +105,9 @@ void AxisSettingsFrame::SetCurrentAxis(QString currentAxisName, int axis)
         total = ICParametersSave::Instance()->DistanceRotation("Y");
         minText = tr("Max standby pos");
         maxText = tr("Leave origin pos");
+        ui->label_2->show();
+        ui->label_4->show();
+        ui->maximumDisplacementLineEdit->show();
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisZ)
     {
@@ -112,6 +118,9 @@ void AxisSettingsFrame::SetCurrentAxis(QString currentAxisName, int axis)
         total = ICParametersSave::Instance()->DistanceRotation("Z");
         minText = tr("Internal security zone");
         maxText = tr("External security zone");
+        ui->label_2->show();
+        ui->label_4->show();
+        ui->maximumDisplacementLineEdit->show();
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisX2)
     {
@@ -122,6 +131,9 @@ void AxisSettingsFrame::SetCurrentAxis(QString currentAxisName, int axis)
         total = ICParametersSave::Instance()->DistanceRotation("P");
         minText = tr("Min pos inside mold");
         maxText = tr("Max pos inside mold");
+        ui->label_2->show();
+        ui->label_4->show();
+        ui->maximumDisplacementLineEdit->show();
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY2)
     {
@@ -132,6 +144,9 @@ void AxisSettingsFrame::SetCurrentAxis(QString currentAxisName, int axis)
         total = ICParametersSave::Instance()->DistanceRotation("Q");
         minText = tr("Max standby pos");
         maxText = tr("Leave origin pos");
+        ui->label_2->show();
+        ui->label_4->show();
+        ui->maximumDisplacementLineEdit->show();
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisA)
     {
@@ -146,6 +161,9 @@ void AxisSettingsFrame::SetCurrentAxis(QString currentAxisName, int axis)
         maxText = tr("Transeve security zone(Lagger)");
         ui->minUnitLabel->setText(tr("degree"));
         ui->maxUnitLabel->setText(tr("degree"));
+        ui->label_2->hide();
+        ui->label_4->hide();
+        ui->maximumDisplacementLineEdit->hide();
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisB)
     {
@@ -160,6 +178,9 @@ void AxisSettingsFrame::SetCurrentAxis(QString currentAxisName, int axis)
         maxText = tr("Transeve security zone(Lagger)");
         ui->minUnitLabel->setText(tr("degree"));
         ui->maxUnitLabel->setText(tr("degree"));
+        ui->label_2->hide();
+        ui->label_4->hide();
+        ui->maximumDisplacementLineEdit->hide();
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisC)
     {
@@ -172,6 +193,9 @@ void AxisSettingsFrame::SetCurrentAxis(QString currentAxisName, int axis)
         maxText = tr("Transeve security zone(Lagger)");
         ui->minUnitLabel->setText(tr("degree"));
         ui->maxUnitLabel->setText(tr("degree"));
+        ui->label_2->hide();
+        ui->label_4->hide();
+        ui->maximumDisplacementLineEdit->hide();
     }
     else
     {

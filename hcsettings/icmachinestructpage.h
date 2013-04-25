@@ -67,6 +67,7 @@ private:
     QWidget* timePage_;
     QIntValidator* maxMoveValidator_;
     QIntValidator* rotateValidator_;
+    QIntValidator* maximumValidator_;
     QIntValidator* intValidator;
  //   QIntValidator* externalValidator_;
 

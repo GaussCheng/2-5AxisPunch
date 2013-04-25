@@ -91,7 +91,7 @@ void HCManualFixtureFrame::StatusRefreshed()
     {
         if(clips_.at(0))
         {
-            clips_.clearBit(0);;
+            clips_.clearBit(0);
             ui->fixture1StatusLabel->setPixmap(off);
         }
     }

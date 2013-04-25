@@ -21,6 +21,10 @@ ActionSettingFrame::ActionSettingFrame(QWidget *parent) :
     {
         posValidators_[i].setBottom(0);
     }
+    for(int i = 0; i != 3; ++i)
+    {
+        posValidator[i].setBottom(-50);
+    }
     InitInterface();
     axisWidgets_.append(QList<QWidget*>()<<ui->gxButton<<ui->x1DelayLineEdit<<ui->x1PosLineEdit<<ui->x1SpeedLineEdit<<ui->x1Box);
     axisWidgets_.append(QList<QWidget*>()<<ui->gyButton<<ui->y1DelayLineEdit<<ui->y1PosLineEdit<<ui->y1SpeedLineEdit<<ui->y1Box);
@@ -57,46 +61,55 @@ void ActionSettingFrame::InitInterface()
 {     /******BUG#119******/
     QIntValidator * validator = new QIntValidator(0, 30000, this);
 
+
     ui->x1DelayLineEdit->SetDecimalPlaces(2);
     ui->x1DelayLineEdit->setValidator(validator);
     ui->x1PosLineEdit->SetDecimalPlaces(1);
     ui->x1PosLineEdit->setValidator(posValidators_ + 0);
+//    ui->x1PosLineEdit->setValidator(posvalidator);
 
     ui->y1DelayLineEdit->SetDecimalPlaces(2);
     ui->y1DelayLineEdit->setValidator(validator);
     ui->y1PosLineEdit->SetDecimalPlaces(1);
+//    ui->y1PosLineEdit->setValidator(posvalidator);
     ui->y1PosLineEdit->setValidator(posValidators_ + 1);
 
     ui->zDelayLineEdit->SetDecimalPlaces(2);
     ui->zDelayLineEdit->setValidator(validator);
     ui->zPosLineEdit->SetDecimalPlaces(1);
+//    ui->zPosLineEdit->setValidator(posvalidator);
     ui->zPosLineEdit->setValidator(posValidators_ + 2);
 
 #ifdef HC_8AXIS
     ui->x2DelayLineEdit->SetDecimalPlaces(2);
     ui->x2DelayLineEdit->setValidator(validator);
     ui->x2PosLineEdit->SetDecimalPlaces(1);
+//    ui->x2PosLineEdit->setValidator(posvalidator);
     ui->x2PosLineEdit->setValidator(posValidators_ + 3);
 
     ui->y2DelayLineEdit->SetDecimalPlaces(2);
     ui->y2DelayLineEdit->setValidator(validator);
     ui->y2PosLineEdit->SetDecimalPlaces(1);
+//    ui->y2PosLineEdit->setValidator(posvalidator);
     ui->y2PosLineEdit->setValidator(posValidators_ + 4);
 
     ui->aDelayLineEdit->SetDecimalPlaces(2);
     ui->aDelayLineEdit->setValidator(validator);
     ui->aPosLineEdit->SetDecimalPlaces(1);
-    ui->aPosLineEdit->setValidator(posValidators_ + 5);
+    ui->aPosLineEdit->setValidator(posValidator + 0);
+//    ui->aPosLineEdit->setValidator(posValidators_ + 5);
 
     ui->bDelayLineEdit->SetDecimalPlaces(2);
     ui->bDelayLineEdit->setValidator(validator);
     ui->bPosLineEdit->SetDecimalPlaces(1);
-    ui->bPosLineEdit->setValidator(posValidators_ + 6);
+    ui->bPosLineEdit->setValidator(posValidator + 1);
+//    ui->bPosLineEdit->setValidator(posValidators_ + 6);
 
     ui->cDelayLineEdit->SetDecimalPlaces(2);
     ui->cDelayLineEdit->setValidator(validator);
     ui->cPosLineEdit->SetDecimalPlaces(1);
-    ui->cPosLineEdit->setValidator(posValidators_ + 7);
+    ui->cPosLineEdit->setValidator(posValidator + 2);
+//    ui->cPosLineEdit->setValidator(posValidators_ + 7);
 
     QIntValidator *speed = new QIntValidator(0, 100, this);
     ui->x1SpeedLineEdit->SetDecimalPlaces(0);
@@ -173,10 +186,18 @@ void ActionSettingFrame::showEvent(QShowEvent *e)
     posMaxs_[5] = host->SystemParameter(ICVirtualHost::SYS_A_Maxium).toInt();
     posMaxs_[6] = host->SystemParameter(ICVirtualHost::SYS_B_Maxium).toInt();
     posMaxs_[7] = host->SystemParameter(ICVirtualHost::SYS_C_Maxium).toInt();
+    posLength_[0] = host->SystemParameter(ICVirtualHost::SYS_A_Length).toInt();
+    posLength_[1] = host->SystemParameter(ICVirtualHost::SYS_A_Length).toInt();
+    posLength_[2] = host->SystemParameter(ICVirtualHost::SYS_A_Length).toInt();
     for(int i = 0; i != 8; ++i)
     {
         posValidators_[i].setTop(posMaxs_[i]);
     }
+    for(int i = 0; i != 3; ++i)
+    {
+        posValidator[i].setTop(posLength_[i]);
+    }
+
     QFrame::showEvent(e);
     connect(ICVirtualHost::GlobalVirtualHost(),
             SIGNAL(StatusRefreshed()),
