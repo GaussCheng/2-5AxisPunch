@@ -3,6 +3,7 @@
 
 #include <QLabel>
 #include "passworddialog.h"
+#include <QMouseEvent>
 
 class PasswdLevelLabel : public QLabel
 {

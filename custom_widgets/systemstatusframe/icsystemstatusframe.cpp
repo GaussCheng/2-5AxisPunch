@@ -59,11 +59,6 @@ void ICSystemStatusFrame::SetManualStatus(const StatusLabel::DisplayStatus & dis
 
 void ICSystemStatusFrame::SetAutoStatus(AutoSatus status)
 {
-//    if(currentStatus_ == 1)
-//    {
-//        return;
-//    }
-//    SetSystemStop();
     SetSystemStop();
     if(status == SingleCycle)
     {
@@ -84,50 +79,25 @@ void ICSystemStatusFrame::SetAutoStatus(AutoSatus status)
     currentStatus_ = 1;
 }
 
-/*void ICSystemStatusFrame::SetReferenceStatus(const StatusLabel::DisplayStatus & displayStatus)
-{
-    switch(displayStatus)
-    {
-    case StatusLabel::ONSTATUS:
-        break;
-    case StatusLabel::OFFSTATUS:
-        break;
-    case StatusLabel::CLEAR:
-        break;
-    }
-    ui->referenceStatusLabel->SetStatus(displayStatus);
-}*/
 
 void ICSystemStatusFrame::SetProgramStatus(const StatusLabel::DisplayStatus & displayStatus)
 {
     Q_UNUSED(displayStatus)
     SetSystemStop();
-//    ui->programStatusLabel->SetStatus(StatusLabel::ONSTATUS);
     ui->immButton->setEnabled(true);
     currentStatus_ = 2;
 }
 
 void ICSystemStatusFrame::SetSystemStop()
 {
-//    if(currentStatus_ == 3)
-//    {
-//        return ;
-//    }
     ui->autoStatusLabel->SetStatus(StatusLabel::CLEAR);
     ui->manualStatusLabel->SetStatus(StatusLabel::CLEAR);
     ui->immButton->setEnabled(false);
-//    ui->programStatusLabel->SetStatus(StatusLabel::CLEAR);
-//    ui->originStatusLabel->SetStatus(StatusLabel::CLEAR);
     currentStatus_ = 3;
 }
 
 void ICSystemStatusFrame::SetOriginStatus(const StatusLabel::DisplayStatus &displayStatus)
 {
-//    if(currentStatus_ == 4)
-//    {
-//        return;
-//    }
-//    SetSystemStop();
     ui->originStatusLabel->SetStatus(displayStatus);
     currentStatus_ = 4;
 }
@@ -137,26 +107,13 @@ void ICSystemStatusFrame::InitInterface()
     ui->manualStatusLabel->SetOnStatusAttribute(":/resource/manual-opened.png");
     ui->manualStatusLabel->SetOffStatusAttibute(":/resource/manual-closed.png");
     ui->manualStatusLabel->SetStatus(StatusLabel::ONSTATUS);
-
-//    ui->referenceStatusLabel->SetOnStatusAttribute(":/resource/reference-identified.png");
-//    ui->referenceStatusLabel->SetOffStatusAttibute(":/resource/no-reference.png");
-//    ui->referenceStatusLabel->SetStatus(StatusLabel::ONSTATUS);
-
     ui->autoStatusLabel->SetOnStatusAttribute(":/resource/auto-run.png");
     ui->autoStatusLabel->SetOffStatusAttibute(":/resource/auto-stop.png");
     ui->autoStatusLabel->SetStatus(StatusLabel::ONSTATUS);
 
-//    ui->programStatusLabel->SetOnStatusAttribute(":/resource/close_normal.png");
-//    ui->programStatusLabel->SetOffStatusAttibute(":/resource/close_long.png");
-//    ui->programStatusLabel->SetStatus(StatusLabel::ONSTATUS);
-
     ui->originStatusLabel->SetOnStatusAttribute(":/resource/origin_off.png");
     ui->originStatusLabel->SetOffStatusAttibute(":/resource/reference-identified.png");
     ui->originStatusLabel->SetStatus(StatusLabel::CLEAR);
-//    ui->stepStatusLabel->SetOnStatusAttribute(":/resource/step-running.png");
-//    ui->stepStatusLabel->SetOffStatusAttibute(":/resource/step-stoped.png");
-//    ui->stepStatusLabel->SetStatus(StatusLabel::OFFSTATUS);
-//    ui->stepStatusLabel->setText(QString());
 }
 
 void ICSystemStatusFrame::on_immButton_clicked()

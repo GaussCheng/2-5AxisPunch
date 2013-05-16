@@ -44,8 +44,6 @@ public:
     void SetProgramStatus(const StatusLabel::DisplayStatus & displyaStatus);
     void SetOriginStatus(const StatusLabel::DisplayStatus & displayStatus);
 
-    //    void SetReferenceStatus(const StatusLabel::DisplayStatus & displayStatus);
-
     void SetSystemStop();
     QSize sizeHint() const { return QSize(167, 36);}
 

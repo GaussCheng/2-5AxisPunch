@@ -449,6 +449,9 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="frameShadow">
+        <enum>QFrame::Sunken</enum>
+       </property>
        <property name="text">
         <string>New File Name</string>
        </property>
