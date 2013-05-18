@@ -89,7 +89,7 @@ void HCManualReservePage::StatusRefreshed()
     static ICVirtualHost *host = ICVirtualHost::GlobalVirtualHost();
     if(host->PeripheryOutput(0) == 1)
     {
-        if(host->IsOutputOn(10))
+        if(host->IsOutputOn(7))
         {
             if(!clips_.at(0))
             {
@@ -109,7 +109,7 @@ void HCManualReservePage::StatusRefreshed()
 
     if(host->PeripheryOutput(1) == 1)
     {
-        if(host->IsOutputOn(11))
+        if(host->IsOutputOn(10))
         {
             if(!clips_.at(1))
             {
@@ -129,7 +129,7 @@ void HCManualReservePage::StatusRefreshed()
 
     if(host->PeripheryOutput(2) == 1)
     {
-        if(host->IsOutputOn(18))
+        if(host->IsOutputOn(17))
         {
             if(!clips_.at(2))
             {
@@ -149,7 +149,7 @@ void HCManualReservePage::StatusRefreshed()
 
     if(host->PeripheryOutput(3) == 1)
     {
-        if(host->IsOutputOn(19))
+        if(host->IsOutputOn(18))
         {
             if(!clips_.at(3))
             {

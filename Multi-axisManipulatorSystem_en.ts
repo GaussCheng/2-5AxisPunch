@@ -3004,11 +3004,6 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="241"/>
-        <source>Thimble 2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="253"/>
         <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="263"/>
         <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="308"/>

@@ -3732,9 +3732,8 @@ Reason</source>
         <translation>预留</translation>
     </message>
     <message>
-        <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="241"/>
         <source>Thimble 2</source>
-        <translation>可顶针2</translation>
+        <translation type="obsolete">可顶针2</translation>
     </message>
     <message>
         <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="253"/>
