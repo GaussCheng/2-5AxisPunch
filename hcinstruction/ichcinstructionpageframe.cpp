@@ -766,13 +766,14 @@ void ICHCInstructionPageFrame::on_upButton_clicked()
         return;
     }
     FindIndex_(currentRow, gIndex, tIndex, sIndex);
-    if(programList_.at(gIndex).StepNum() == 1)
-    {
-        QMessageBox::warning(this,
-                             tr("Warning"),
-                             tr("Can not group up to standby position program"));
-        return;
-    }
+    //子程序也可以分解和组合，所以无需判断
+//    if(programList_.at(gIndex).StepNum() == 1)
+//    {
+//        QMessageBox::warning(this,
+//                             tr("Warning"),
+//                             tr("Can not group up to standby position program"));
+//        return;
+//    }
     if(sIndex == -1)
     {
         if(gIndex == 0)
@@ -840,13 +841,14 @@ void ICHCInstructionPageFrame::on_downButton_clicked()
         return;
     }
     FindIndex_(currentRow, gIndex, tIndex, sIndex);
-    if(programList_.at(gIndex).StepNum() == 0)
-    {
-        QMessageBox::warning(this,
-                             tr("Warning"),
-                             tr("Can not decompose standby position program"));
-        return;
-    }
+    //子程序也可以分解和组合，所以无需判断
+//    if(programList_.at(gIndex).StepNum() == 0)
+//    {
+//        QMessageBox::warning(this,
+//                             tr("Warning"),
+//                             tr("Can not decompose standby position program"));
+//        return;
+//    }
     if(sIndex == -1)
     {
         if(gIndex == 0 && tIndex == 0)// if is the first TopItem, do nothing
