@@ -54,7 +54,9 @@ private:
     int oCP_;
 #endif
     QIntValidator posValidators_[8];
+    QIntValidator posValidator[3];
     int posMaxs_[8];
+    int posLength_[3];
     int axisDefine_;
     QList<QList<QWidget*> > axisWidgets_;
 //    QList<ICLabelWrapper*> wrappers_;

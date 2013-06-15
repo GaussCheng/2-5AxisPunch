@@ -90,7 +90,10 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
     ui->horizontalBox->hide();
     ui->verticalBox->hide();
     
-    
+    ui->positionLabel_3->setText(tr("Delay Time"));
+    ui->delayTimeEdit->SetDecimalPlaces(2);
+    ui->positionLabel_6->show();
+
     if(item->IsAction())
     {
         if( item->Action() <= ICMold::GB)
@@ -101,27 +104,35 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
             {
             case ICMold::GX:
                 addr = ICVirtualHost::SYS_X_Maxium;
+                posValidator_->setBottom(0);
                 break;
             case ICMold::GY:
                 addr = ICVirtualHost::SYS_Y_Maxium;
+                posValidator_->setBottom(0);
                 break;
             case ICMold::GZ:
                 addr = ICVirtualHost::SYS_Z_Maxium;
+                posValidator_->setBottom(0);
                 break;
             case ICMold::GP:
                 addr = ICVirtualHost::SYS_P_Maxium;
+                posValidator_->setBottom(0);
                 break;
             case ICMold::GQ:
                 addr = ICVirtualHost::SYS_Q_Maxium;
+                posValidator_->setBottom(0);
                 break;
             case ICMold::GA:
-                addr = ICVirtualHost::SYS_A_Maxium;
+                addr = ICVirtualHost::SYS_C_Length;
+                posValidator_->setBottom(-50);
                 break;
             case ICMold::GB:
-                addr = ICVirtualHost::SYS_B_Maxium;
+                addr = ICVirtualHost::SYS_C_Length;
+                posValidator_->setBottom(-50);
                 break;
             case ICMold::GC:
-                addr = ICVirtualHost::SYS_C_Maxium;
+                addr = ICVirtualHost::SYS_C_Length;
+                posValidator_->setBottom(-50);
                 break;
             }
             
@@ -149,7 +160,7 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
         {
             ui->badProductBox->show();
         }
-        /************任务：待机点姿势可以修改**********************************/
+        /************任务：待机点姿势可以修改*******/
         if(item->Action() == ICMold::ACTPOSEHORI || item->Action() == ICMold::ACT_PoseHori2)
         {
             ui->horizontalBox->show();
@@ -162,7 +173,13 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
             ui->verticalBox->show();
             ui->verticalBox->setChecked(true);
         }
-        
+        //子程序编辑，可以修改返回步号
+        else if(item->Action() == ICMold::ACTCHECKINPUT)
+        {
+            ui->positionLabel_3->setText(tr("Return Step"));
+            ui->delayTimeEdit->SetDecimalPlaces(0);
+            ui->positionLabel_6->hide();
+        }
     }
     /******************BUG#117****************************/
     else if(item->Clip() == ICMold::ACTCLIP7ON
@@ -195,7 +212,6 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
         ui->selectEdit->SetThisIntToThisText(item->SVal() + 1);
         ui->selectEdit->show();
         ui->selectLabel->show();
-        
     }
     
     ui->posEdit->SetThisIntToThisText(item->Pos());
@@ -268,7 +284,7 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
         //    }
         
         
-        /**********************接以上任务****************************/
+        /************接以上任务*************/
         if(ui->verticalBox->isChecked() && !ui->verticalBox->isHidden())
         {
             if(item->Action() == ICMold::ACTPOSEHORI || item->Action() == ICMold::ACTPOSEVERT)

@@ -151,7 +151,7 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
         {
             if(moldItem.SVal() == 1)
             {
-                commandStr += tr("Mold Opened");
+                commandStr += tr("Mold Opened 1");
             }
             else if(moldItem.SVal() == 2)
             {
@@ -199,7 +199,7 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
             }
             else if(moldItem.SVal() == 13)
             {
-                commandStr += tr("EUCOREIN");
+                commandStr += tr("Mold Opened 2");
             }
             else if(moldItem.SVal() == 14)
             {
@@ -221,8 +221,7 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
         {
             commandStr += QObject::tr("Selected:") + QString::number(moldItem.SVal() + 1) + tr("Group") + " ";
         }
-        else if(action == ICMold::ACT_AUX1 ||
-                action == ICMold::ACT_AUX2 ||
+        else if(action == ICMold::ACT_AUX2 ||
                 action == ICMold::ACT_AUX3 ||
                 action == ICMold::ACT_AUX4 ||
                 action == ICMold::ACT_AUX5 ||
@@ -239,6 +238,30 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
             }
             commandStr += " ";
         }
+        else if(action == ICMold::ACT_AUX1)
+        {
+            if(moldItem.Num() == 0)
+            {
+                commandStr = tr("Home") + "    " + "*" + "    ";
+            }
+            else if(moldItem.SubNum() == 255)
+            {
+                commandStr = QString::number(moldItem.Num()) + "    " + "*" + "    ";
+            }
+            else
+            {
+                commandStr = QString::number(moldItem.Num()) + "    " + QString::number(moldItem.SubNum()) + "    ";
+            }
+            if(moldItem.IFVal() == 0)
+            {
+                commandStr += QObject::tr("Eject OFF 2:");
+            }
+            else
+            {
+                commandStr += QObject::tr("Eject ON 2:");
+            }
+        }
+
 
     }
     if(moldItem.Clip() == ICMold::ACTCLIP7ON ||
@@ -303,10 +326,10 @@ void ICInstructParam::InstallMoldInfo()
     clipGroupMap_[ACTCLIP6ON] = QObject::tr("Sucker2 ON");
     clipGroupMap_[ACTCLIP7ON] = QObject::tr("Injection ON");
     clipGroupMap_[ACTCLIP8ON] = QObject::tr("Conveyor ON");
-    clipGroupMap_[ACTCLSMDON] = QObject::tr("Lock Mold ON");
-    clipGroupMap_[ACTEJECTON] = QObject::tr("Eject ON");
+    clipGroupMap_[ACTCLSMDON] = QObject::tr("Lock 1 Mold ON");
+    clipGroupMap_[ACTEJECTON] = QObject::tr("Eject ON 1");
     clipGroupMap_[ACTLAYOUTON] = QObject::tr("Layout ON");
-    clipGroupMap_[ACTCLIP12ON] = QObject::tr("Core1 Permit");
+    clipGroupMap_[ACTCLIP12ON] = QObject::tr("Lock 2 Mold ON");
     clipGroupMap_[ACTCLIP13ON] = QObject::tr("Core2 Permit");
 //    clipGroupMap_[ACTCLIP14ON] = QObject::tr("Clip14 ON");
 //    clipGroupMap_[ACTCLIP15ON] = QObject::tr("Clip15 ON");
@@ -319,12 +342,13 @@ void ICInstructParam::InstallMoldInfo()
     clipGroupMap_[ACTCLIP6OFF] = QObject::tr("Sucker2 OFF");
     clipGroupMap_[ACTCLIP7OFF] = QObject::tr("Injection OFF");
     clipGroupMap_[ACTCLIP8OFF] = QObject::tr("Conveyor OFF");
-    clipGroupMap_[ACTCLSMDOFF] = QObject::tr("Lock Mold OFF");
-    clipGroupMap_[ACTEJECTOFF] = QObject::tr("Eject OFF");
+    clipGroupMap_[ACTCLSMDOFF] = QObject::tr("Lock 1 Mold OFF");
+    clipGroupMap_[ACTEJECTOFF] = QObject::tr("Eject OFF 1");
     clipGroupMap_[ACTLAYOUTOFF] = QObject::tr("Layout OFF");
-    clipGroupMap_[ACTCLIP12OFF] = QObject::tr("Core1 OFF");
+    clipGroupMap_[ACTCLIP12OFF] = QObject::tr("Lock 2 Mold OFF");
     clipGroupMap_[ACTCLIP13OFF] = QObject::tr("Core2 OFF");
-    clipGroupMap_[ACT_AUX1] = QObject::tr("Reserve 1");
+//    clipGroupMap_[ACT_AUX1] = QObject::tr("Reserve 1");
+    clipGroupMap_[ACT_AUX1] = QObject::tr("");
     clipGroupMap_[ACT_AUX2] = QObject::tr("Reserve 2");
     clipGroupMap_[ACT_AUX3] = QObject::tr("Reserve 3");
     clipGroupMap_[ACT_AUX4] = QObject::tr("Reserve 4");

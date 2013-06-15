@@ -603,7 +603,7 @@ void MainFrame::StatusRefreshed()
         isY2PosChanged_ = true;
     }
 
-    pos = virtualHost->HostStatus(ICVirtualHost::APos).toInt();
+    pos = (qint16)virtualHost->HostStatus(ICVirtualHost::APos).toInt();
     if(pos != oldAPos_)
     {
         oldAPos_ = pos;
@@ -612,7 +612,7 @@ void MainFrame::StatusRefreshed()
         isAPosChanged_ = true;
     }
 
-    pos = virtualHost->HostStatus(ICVirtualHost::BPos).toInt();
+    pos = (qint16)virtualHost->HostStatus(ICVirtualHost::BPos).toInt();
     if(pos != oldBPos_)
     {
         oldBPos_ = pos;
@@ -621,7 +621,7 @@ void MainFrame::StatusRefreshed()
         isBPosChanged_ = true;
     }
 
-    pos = virtualHost->HostStatus(ICVirtualHost::CPos).toInt();
+    pos = (qint16)virtualHost->HostStatus(ICVirtualHost::CPos).toInt();
     if(pos != oldCPos_)
     {
         oldCPos_ = pos;

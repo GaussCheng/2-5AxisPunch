@@ -45,6 +45,10 @@ bool ICMacroSubroutine::ReadMacroSubroutieFiles(const QString &dir)
         {
             items = records.at(i).split(' ', QString::SkipEmptyParts);
 //            items.removeAt(2);
+            if(items.size() != 10)
+            {
+                break;
+            }
             subItem.SetValue(items.at(0).toUInt(),
                              items.at(1).toUInt(),
                              items.at(2).toUInt(),

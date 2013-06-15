@@ -238,6 +238,11 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
     double total = 0;
     ui->minUnitLabel->setText(tr("mm"));
     ui->maxUnitLabel->setText(tr("mm"));
+    ui->label_3->setText(tr("mm"));
+    ui->label_4->setText(tr("mm"));
+    ui->label_11->setText(tr("mm"));
+    ui->label->setText(tr("Mechanical length"));
+    ui->label_8->setText(tr("Distance/Rotation"));
     if(currentAxis_ == ICVirtualHost::ICAxis_AxisX1)
     {
         machineLangth = ICVirtualHost::SYS_X_Length;
@@ -249,6 +254,9 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         maxText = tr("Max pos inside mold");
         ui->distanceRotationEdit->SetDecimalPlaces(2);
         rotateValidator_->setTop(32767);
+        maximumValidator_->setTop(65530);
+        maximumValidator_->setBottom(0);
+        ui->label_2->setText(tr("Maximum displacement"));
 
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY1)
@@ -262,6 +270,10 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         maxText = tr("Leave origin pos");
         ui->distanceRotationEdit->SetDecimalPlaces(2);
         rotateValidator_->setTop(32767);
+        maximumValidator_->setTop(65530);
+        maximumValidator_->setBottom(0);
+        ui->label_2->setText(tr("Maximum displacement"));
+
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisZ)
     {
@@ -274,6 +286,10 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         maxText = tr("External security zone");
         ui->distanceRotationEdit->SetDecimalPlaces(2);
         rotateValidator_->setTop(32767);
+        maximumValidator_->setTop(65530);
+        maximumValidator_->setBottom(0);
+        ui->label_2->setText(tr("Maximum displacement"));
+
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisX2)
     {
@@ -286,6 +302,10 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         maxText = tr("Max pos inside mold");
         ui->distanceRotationEdit->SetDecimalPlaces(2);
         rotateValidator_->setTop(32767);
+        maximumValidator_->setTop(65530);
+        maximumValidator_->setBottom(0);
+        ui->label_2->setText(tr("Maximum displacement"));
+
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY2)
     {
@@ -298,6 +318,9 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         maxText = tr("Leave origin pos");
         ui->distanceRotationEdit->SetDecimalPlaces(2);
         rotateValidator_->setTop(32767);
+        maximumValidator_->setTop(65530);
+        maximumValidator_->setBottom(0);
+        ui->label_2->setText(tr("Maximum displacement"));
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisA)
     {
@@ -312,8 +335,16 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         maxText = tr("Transever security zone(Lagger)");
         ui->minUnitLabel->setText(tr("degree"));
         ui->maxUnitLabel->setText(tr("degree"));
+        ui->label_3->setText(tr("degree"));
+        ui->label_4->setText(tr("degree"));
+        ui->label_11->setText(tr("degree"));
+        ui->label->setText(tr("Max Rotate"));
+        ui->label_8->setText(tr("Machine Per"));
         ui->distanceRotationEdit->SetDecimalPlaces(1);
         rotateValidator_->setTop(3600);
+        maximumValidator_->setTop(900);
+        maximumValidator_->setBottom(-900);
+        ui->label_2->setText(tr("Origin Offset"));
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisB)
     {
@@ -328,8 +359,16 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         maxText = tr("Transever security zone(Lagger)");
         ui->minUnitLabel->setText(tr("degree"));
         ui->maxUnitLabel->setText(tr("degree"));
+        ui->label_3->setText(tr("degree"));
+        ui->label_4->setText(tr("degree"));
+        ui->label_11->setText(tr("degree"));
+        ui->label->setText(tr("Max Rotate"));
+        ui->label_8->setText(tr("Machine Per"));
         ui->distanceRotationEdit->SetDecimalPlaces(1);
         rotateValidator_->setTop(3600);
+        maximumValidator_->setTop(900);
+        maximumValidator_->setBottom(-900);
+        ui->label_2->setText(tr("Origin Offset"));
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisC)
     {
@@ -342,8 +381,16 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         maxText = tr("Transever security zone(Lagger)");
         ui->distanceRotationEdit->SetDecimalPlaces(1);
         rotateValidator_->setTop(3600);
+        maximumValidator_->setTop(900);
+        maximumValidator_->setBottom(-900);
+        ui->label_2->setText(tr("Origin Offset"));
         ui->minUnitLabel->setText(tr("degree"));
         ui->maxUnitLabel->setText(tr("degree"));
+        ui->label_3->setText(tr("degree"));
+        ui->label_4->setText(tr("degree"));
+        ui->label_11->setText(tr("degree"));
+        ui->label->setText(tr("Max Rotate")); //最大旋转
+        ui->label_8->setText(tr("Machine Per")); //每转距离
     }
     else
     {
@@ -548,7 +595,8 @@ void ICMachineStructPage::InitInterface()
     ui->mechanicalLengthLineEdit->setValidator(intValidator);
     maxMoveValidator_ = new QIntValidator(0, 65530, this);
     ui->maximumDisplacementLineEdit->SetDecimalPlaces(1);
-    ui->maximumDisplacementLineEdit->setValidator(maxMoveValidator_);
+    maximumValidator_ = new QIntValidator(0, 65530, this);
+    ui->maximumDisplacementLineEdit->setValidator(maximumValidator_);
   //  externalValidator_ = new QIntValidator(0, 65530, this);
     ui->internalSecurityZoneLineEdit->SetDecimalPlaces(1);
     ui->internalSecurityZoneLineEdit->setValidator(maxMoveValidator_);

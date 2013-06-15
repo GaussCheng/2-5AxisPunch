@@ -53,11 +53,11 @@ void ICIOPage::BindingIOPoints(const QList<ICIOPoint> &points)
             {
                 backupDescrMap_.insert(1, points.at(i));
             }
-            else if(points.at(i).PointNum() == tr("Y032"))
+            else if(points.at(i).PointNum() == tr("Y031"))
             {
                 backupDescrMap_.insert(2, points.at(i));
             }
-            else if(points.at(i).PointNum() == tr("Y033"))
+            else if(points.at(i).PointNum() == tr("Y032"))
             {
                 backupDescrMap_.insert(3, points.at(i));
             }
@@ -226,7 +226,7 @@ void ICIOPage::showEvent(QShowEvent *e)
         {
             if(host->PeripheryOutput(i) == 1)
             {
-                recsLabels_[i]->setText(tr("Reserve") + QString::number(i));
+                recsLabels_[i]->setText(tr("Reserve") + QString::number(i+1));
             }
             else
             {
@@ -234,6 +234,17 @@ void ICIOPage::showEvent(QShowEvent *e)
             }
         }
     }
+//    if(recsLabels_.at(0) != NULL)
+//    {
+//        if(host->PeripheryOutput(0) == 1)
+//        {
+//            recsLabels_[0]->setText(tr("Thimble 2") + QString::number(0));
+//        }
+//        else
+//        {
+//            recsLabels_[0]->setText(backupDescrMap_.value(0).PointDescription());
+//        }
+//    }
 
         if(ICVirtualHost::GlobalVirtualHost()->FixtureDefine() == 1)
         {
