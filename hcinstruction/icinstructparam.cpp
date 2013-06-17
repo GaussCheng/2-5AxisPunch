@@ -137,9 +137,17 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
             {
                 commandStr += tr("X043");
             }
-            else
+            else if(moldItem.IFVal() ==2)
             {
                 commandStr += tr("X044");
+            }
+            else if(moldItem.IFVal() ==3)
+            {
+                commandStr += tr("Try Product");
+            }
+            else if(moldItem.IFVal() ==4)
+            {
+                commandStr += tr("Sampling");
             }
             commandStr += " ";
 //            commandStr += " " + tr("ON:Macro") + QString::number(moldItem.RVal()) + " ";

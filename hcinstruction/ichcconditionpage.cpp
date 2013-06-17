@@ -10,6 +10,8 @@ ICHCConditionPage::ICHCConditionPage(QWidget *parent) :
     ui->setupUi(this);
     ui->returnLineEdit->setValidator(new QIntValidator(0, 1000, this));
     buttonGroup = new QButtonGroup ;
+    ui->subComboBox->setCurrentIndex(5);
+    ui->subComboBox->setEnabled(false);
     InitCheckPointBox();
 }
 
@@ -53,11 +55,41 @@ void ICHCConditionPage::InitCheckPointBox()
     buttonGroup->addButton(ui->defectiveProductsBox,0);
     buttonGroup->addButton(ui->x043checkBox,1);
     buttonGroup->addButton(ui->x044checkBox,2);
+    buttonGroup->addButton(ui->tryProductBox,3);
+    buttonGroup->addButton(ui->samplingBox,4);
 
     QList<QAbstractButton*> buttons = buttonGroup->buttons();
     for(int i = 0; i != buttons.size(); ++i)
     {
         buttons[i]->setCheckable(true);
+        connect(buttons[i],
+                SIGNAL(clicked()),
+                this,
+                SLOT(BoxClicked()));
     }
     buttonGroup->setExclusive(true);
+}
+
+void ICHCConditionPage::BoxClicked()
+{
+    int temp = buttonGroup->checkedId();
+    switch(temp)
+    {
+    case 0:
+        ui->subComboBox->setCurrentIndex(5);
+        ui->subComboBox->setEnabled(false);
+        break;
+    case 3:
+        ui->subComboBox->setCurrentIndex(6);
+        ui->subComboBox->setEnabled(false);
+        break;
+    case 4:
+        ui->subComboBox->setCurrentIndex(7);
+        ui->subComboBox->setEnabled(false);
+        break;
+    default:
+        ui->subComboBox->setCurrentIndex(0);
+        ui->subComboBox->setEnabled(true);
+        break;
+    }
 }

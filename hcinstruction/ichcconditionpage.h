@@ -28,6 +28,7 @@ private:
     void InitCheckPointBox();
 
 private slots:
+    void BoxClicked();
 };
 
 #endif // ICHCCONDITIONPAGE_H

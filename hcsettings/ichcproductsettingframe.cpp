@@ -23,6 +23,18 @@ ICHCProductSettingFrame::ICHCProductSettingFrame(QWidget *parent) :
                                                        ICLineEditWrapper::Integer);
     wrappers_.append(wrapper);
 
+    wrapper = new ICLineEditWrapper(ui->tryProductEdit,
+                                                       ICMold::TryProduct,
+                                                       ICLineEditWrapper::Mold,
+                                                       ICLineEditWrapper::Integer);
+    wrappers_.append(wrapper);
+
+    wrapper = new ICLineEditWrapper(ui->samplingEdit,
+                                                       ICMold::Sampling,
+                                                       ICLineEditWrapper::Mold,
+                                                       ICLineEditWrapper::Integer);
+    wrappers_.append(wrapper);
+
     wrapper = new ICLineEditWrapper(ui->waitTimeEdit,
                                     ICVirtualHost::SM_WaitMoldOpenLimit,
                                     ICLineEditWrapper::System,
@@ -116,7 +128,6 @@ void ICHCProductSettingFrame::changeEvent(QEvent *e)
         break;
     }
 }
-//////////////////////////////////
 void ICHCProductSettingFrame::retranslateUi_()
 {
     this->setWindowTitle(tr("Frame"));
@@ -124,7 +135,7 @@ void ICHCProductSettingFrame::retranslateUi_()
     ui->label_2->setText(tr("Wait Mold Opened Limit Time"));
     ui->label_4->setText(tr("s"));
     ui->productClearButton->setText(tr("Product Clear"));
-    ui->label_7->setText(tr("Sampling Count"));
+    ui->label_7->setText(tr("TryProduct")); //试产模数
     ui->label_8->setText(tr("Sampling Interval"));
     ui->label_9->setText(tr("Bad Product"));
     ui->label_5->setText(tr("Alarm Times"));

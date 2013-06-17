@@ -465,8 +465,11 @@ public:
         SM_C_SEC1,
         SM_C_SEC2,
         SM_C_SEC3,
-        SM_C_SEC4
+        SM_C_SEC4,
 #endif
+        SM_StandBy,  //待机姿势
+        SM_TryProduct, //试产
+        SM_Sampling //取样
     };
 
     enum ICTeachParamAddr

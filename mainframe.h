@@ -78,6 +78,7 @@ private slots:
     void CountRestTime();
     void checkAlarmModify();
 
+    void InitSpareTime();
 
 //    void InitHeavyPage();
 
@@ -85,6 +86,7 @@ private:
     void InitCategoryPage();
     void InitInterface();
     void InitSignal();
+
 
     void UpdateTranslate();
     void ShowWidgets_(QList<QWidget*>& widgets);
@@ -113,6 +115,7 @@ private:
     QButtonGroup* buttonGroup_;
     QAbstractButton* nullButton_;
     QTimer *registe_timer;
+    QTimer *reboot_timer;
     int resetTime;
 
     int ledFD_;

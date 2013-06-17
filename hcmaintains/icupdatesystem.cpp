@@ -18,6 +18,21 @@
 #include "icparameterssave.h"
 //ICUpdateSystem *icUpdateSystem = NULL;
 
+
+static void BuildShiftMap(int beg, int* map)
+{
+    int index = 0;
+    for(int i = beg; i < 10; ++i)
+    {
+        map[index++] = i;
+    }
+    for(int i = 0; i < beg; ++i)
+    {
+        map[index++] = i;
+    }
+}
+
+ICUpdateSystem * ICUpdateSystem::instance_ = NULL;
 ICUpdateSystem::ICUpdateSystem(QWidget *parent) :
     QFrame(parent),
     ui(new Ui::ICUpdateSystem),
@@ -445,11 +460,71 @@ void ICUpdateSystem::on_generateBtn_clicked()
 
 int ICUpdateSystem::Register(const QString& code, const QString& machineCode)
 {
-    int pMap[10];
-    for(int i = 0; i != 10; ++i)
-    {
-        pMap[i] = i;
-    }
+//    int pMap[10];
+//    for(int i = 0; i != 10; ++i)
+//    {
+//        pMap[i] = i;
+//    }
+//    int sortMap[16];
+//    sortMap[0] = 1;
+//    sortMap[1] = 2;
+//    sortMap[2] = 3;
+//    sortMap[3] = 5;
+//    sortMap[4] = 7;
+//    sortMap[5] = 11;
+//    sortMap[6] = 13;
+//    sortMap[7] = 0;
+//    sortMap[8] = 4;
+//    sortMap[9] = 6;
+//    sortMap[10] = 8;
+//    sortMap[11] = 10;
+//    sortMap[12] = 12;
+//    sortMap[13] = 14;
+//    sortMap[14] = 9;
+//    sortMap[15] = 15;
+//    QString rC = code;
+//    QString sortRet(16, '0');
+//    int beg;
+//    if(rC.size() != 16)
+//    {
+//        return - 1;
+//    }
+//    for(int i = 0; i != sortRet.size(); ++i)
+//    {
+//        sortRet[sortMap[i]] = rC.at(i);
+//    }
+//    qDebug()<<sortRet;
+//    QString mCode = machineCode.simplified();
+//    mCode = mCode.remove(" ");
+//    beg = 0;
+//    for(int i = 0; i != mCode.size(); ++i)
+//    {
+//        if(!mCode.at(i).isDigit())
+//        {
+//            return -1;
+//        }
+//        beg += mCode.at(i).digitValue();
+//    }
+//    beg /= mCode.size();
+//    beg %= 10;
+//    for(int i = 0; i != sortRet.size(); ++i)
+//    {
+//        for(int j = 0; j != 10; ++j)
+//        {
+//            if(((pMap[j] + beg) % 10) == sortRet.at(i).digitValue())
+//            {
+//                sortRet[i] = QString::number(pMap[j]).at(0);
+//                break;
+//            }
+//        }
+//    }
+//    if(sortRet.left(10) != mCode)
+//    {
+//        return -1;
+//    }
+//    return sortRet.right(6).toInt();
+//    return sortRet.right(6).toInt() *24*7;
+
     int sortMap[16];
     sortMap[0] = 1;
     sortMap[1] = 2;
@@ -478,7 +553,6 @@ int ICUpdateSystem::Register(const QString& code, const QString& machineCode)
     {
         sortRet[sortMap[i]] = rC.at(i);
     }
-    qDebug()<<sortRet;
     QString mCode = machineCode.simplified();
     mCode = mCode.remove(" ");
     beg = 0;
@@ -492,13 +566,15 @@ int ICUpdateSystem::Register(const QString& code, const QString& machineCode)
     }
     beg /= mCode.size();
     beg %= 10;
+    int pMap[10];
+    BuildShiftMap(beg, pMap);
     for(int i = 0; i != sortRet.size(); ++i)
     {
         for(int j = 0; j != 10; ++j)
         {
-            if(((pMap[j] + beg) % 10) == sortRet.at(i).digitValue())
+            if(pMap[j] == sortRet.at(i).digitValue())
             {
-                sortRet[i] = QString::number(pMap[j]).at(0);
+                sortRet[i] = QString::number(j).at(0);
                 break;
             }
         }
@@ -508,10 +584,16 @@ int ICUpdateSystem::Register(const QString& code, const QString& machineCode)
         return -1;
     }
     return sortRet.right(6).toInt();
+//    return sortRet.right(6).toInt() * 24 * 7;
 }
 
 void ICUpdateSystem::on_registerBtn_clicked()
 {
+    if(ui->machineCode->text().isNull())
+    {
+        ui->tipLabel->setText(tr("Wrong Register Code!"));
+        return;
+    }
     int hour = Register(ui->registerCode->text(), ui->machineCode->text());
     if(hour == -1)
     {
@@ -530,6 +612,10 @@ void ICUpdateSystem::on_registerBtn_clicked()
         {
             ui->restTime->setText(QString::number(hour) + tr("hour"));
         }
+        emit RegisterSucceed();
+        ui->machineCode->clear();
+        ui->registerCode->clear();
+
 //        ICDALHelper::UpdateConfigValue(ICAddr_System_OtherUsedTime, hour);
     }
     ICProgramHeadFrame::Instance()->ReashRestTime();
@@ -543,7 +629,7 @@ void ICUpdateSystem::RefreshRestTime()
     else if(rest_time > 0)
         ui->restTime->setText(QString::number(rest_time) + tr("hour"));
     else
-        ui->restTime->setText(tr("No Register!!"));
+        ui->restTime->setText(tr("No Register!"));
 }
 
 //int pMap_[10];

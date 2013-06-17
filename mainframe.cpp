@@ -47,6 +47,7 @@
 #include "icactiondialog.h"
 #include "ictimerpool.h"
 #include "ichostcomparepage.h"
+#include "icupdatesystem.h"
 #if defined(Q_WS_WIN32) || defined(Q_WS_X11)
 #include "simulateknob.h"
 #endif
@@ -119,43 +120,25 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     isBPosChanged_(false),
     isCPosChanged_(false),
     axisDefine_(-1),
-    registe_timer(new QTimer)
+    registe_timer(new QTimer),
+    reboot_timer(new QTimer)
 {
-    resetTime = ICParametersSave::Instance()->RestTime(0);
-
-
-    if(resetTime <= 7*24 )
-    {
-        if(resetTime > 0)
-        {
-            QMessageBox::information(NULL,tr("tips"),tr("Spare Time %1 Hour").arg(resetTime));
-            connect(registe_timer,SIGNAL(timeout()),this,SLOT(CountRestTime()));
-            registe_timer->start(1000*3600);
-
-            //            registe_timer->start(1000*60*60);
-        }
-        else if(resetTime < 0)
-        {
-            QMessageBox::information(NULL,tr("tips"),tr("No Register,The System Will Reboot after 10 minutes"));
-            connect(registe_timer,SIGNAL(timeout()),this,SLOT(Register()));
-            //            registe_timer->start(1000*60*10);
-            registe_timer->start(1000*60*10);
-
-        }
-    }
-    else
-    {
-        connect(registe_timer,SIGNAL(timeout()),this,SLOT(CountRestTime()));
-        registe_timer->start(1000*3600);
-    }
-
-
     connect(this,
             SIGNAL(LoadMessage(QString)),
             splashScreen,
             SLOT(showMessage(QString)));
     emit LoadMessage("Connected");
     ui->setupUi(this);
+
+    InitSpareTime();
+    connect(ICUpdateSystem::Instance(),
+            SIGNAL(RegisterSucceed()),
+            this,
+            SLOT(InitSpareTime()));
+
+    connect(registe_timer,SIGNAL(timeout()),this,SLOT(CountRestTime()));
+    connect(reboot_timer,SIGNAL(timeout()),this,SLOT(Register()));
+
     ui->systemStatusFrame->SetOriginStatus(StatusLabel::OFFSTATUS);
     QDir configDir("./sysconfig");
     configDir.setFilter(QDir::Files);
@@ -1251,7 +1234,7 @@ void MainFrame::Register()
     if(resetTime < 0)
     {
         QMessageBox::information(NULL,tr("tips"),tr("No Register. System Restart Now..."));
-        system("reboot");
+//        system("reboot");
     }
 }
 
@@ -1263,6 +1246,8 @@ void MainFrame::CountRestTime()
         resetTime = -1;
         ICParametersSave::Instance()->SetRestTime(resetTime);
         Register();
+        registe_timer->stop();
+        reboot_timer->start(1000*60*10);
     }
     ICParametersSave::Instance()->SetRestTime(resetTime);
 }
@@ -1277,4 +1262,35 @@ void MainFrame::checkAlarmModify()
     {
         QTimer::singleShot(5000, this, SLOT(checkAlarmModify()));
     }
+}
+
+void MainFrame::InitSpareTime()
+{
+    registe_timer->stop();
+    reboot_timer->stop();
+    resetTime = ICParametersSave::Instance()->RestTime(0);
+    if(resetTime <= 7*24 )
+    {
+        if(resetTime > 0)
+        {
+            QMessageBox::information(NULL,tr("tips"),tr("Spare Time %1 Hour").arg(resetTime));
+//            connect(registe_timer,SIGNAL(timeout()),this,SLOT(CountRestTime()));
+            registe_timer->start(1000*15);
+//            registe_timer->start(1000*3600);
+        }
+        else if(resetTime < 0)
+        {
+            QMessageBox::information(NULL,tr("tips"),tr("No Register,The System Will Reboot after 10 minutes"));
+//            connect(reboot_timer,SIGNAL(timeout()),this,SLOT(Register()));
+            //            registe_timer->start(1000*60*10);
+            reboot_timer->start(1000*60*10);
+
+        }
+    }
+    else
+    {
+        connect(registe_timer,SIGNAL(timeout()),this,SLOT(CountRestTime()));
+        registe_timer->start(1000*3600);
+    }
+
 }

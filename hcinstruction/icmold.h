@@ -240,9 +240,9 @@ public:
         PosMainOut,
         PosMainIn,
         PosViceDown,
-        PosViceUp,
-        PosViceIn,
-        PosViceOut,
+        StandbyPose,  //待机姿势，0代表限制锁模 1代表不限制锁模
+        TryProduct,  //试产
+        Sampling,      //取样
         CheckClip1,
         CheckClip2,
         CheckClip3,

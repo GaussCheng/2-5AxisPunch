@@ -40,7 +40,8 @@ public:
         }
         else if(clickedButton == functionPage->ui->maintainWidget)
         {
-            return new ICUpdateSystem(parent);
+//            return new ICUpdateSystem(parent);
+            return ICUpdateSystem::Instance();
         }
         else if(clickedButton == functionPage->ui->securityPointSettingWidget)
         {

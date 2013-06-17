@@ -25,6 +25,9 @@ ICHCDetectionFrame::ICHCDetectionFrame(QWidget *parent) :
     wrappers_.append(wrapper);
     wrapper = new ICTwoSelectionComboBoxWrapper(ui->detectSucker2ComboBox, ICMold::CheckClip6);
     wrappers_.append(wrapper);
+
+    wrapper = new ICTwoSelectionComboBoxWrapper(ui->standbyPositionBox, ICMold::StandbyPose);
+    wrappers_.append(wrapper);
     //    wrapper = new ICTwoSelectionComboBoxWrapper(ui->converyotComboBox, ICMold::CheckClip7);
     //    wrappers_.append(wrapper);
     //    wrapper = new ICTwoSelectionComboBoxWrapper(ui->injectionComboBox, ICMold::CheckClip8);
@@ -49,8 +52,8 @@ ICHCDetectionFrame::ICHCDetectionFrame(QWidget *parent) :
             this,
             SLOT(OnMoldNumberParamChanged()));
 
-    ui->downPositionBox->hide();
-    ui->label_16->hide();
+//    ui->downPositionBox->hide();
+//    ui->label_16->hide();
 }
 
 ICHCDetectionFrame::~ICHCDetectionFrame()
@@ -192,7 +195,6 @@ void ICHCDetectionFrame::RetranslateUi_()
     ui->detectIMMComboBox->setItemText(0, noUse);
     ui->detectIMMComboBox->setItemText(1, use);
     ui->label_16->setText(tr("Down Position"));
-    ui->downPositionBox->setItemText(0, tr("Vertical"));
-    ui->downPositionBox->setItemText(1, tr("Horizontal"));
-    ui->downPositionBox->setItemText(2, tr("No Limit"));
+    ui->standbyPositionBox->setItemText(0, tr("Limit Lock Mold"));//限制锁模
+    ui->standbyPositionBox->setItemText(1, tr("No Limit Lock Mold"));//不限制锁模
 }

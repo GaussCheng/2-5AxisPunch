@@ -98,7 +98,7 @@
    <item row="1" column="0">
     <widget class="QLabel" name="label_7">
      <property name="text">
-      <string>Sampling Count</string>
+      <string>TryProduct</string>
      </property>
     </widget>
    </item>
@@ -120,7 +120,7 @@
     <widget class="ICLineEditWithVirtualNumericKeypad" name="alarmTimesEdit"/>
    </item>
    <item row="1" column="1">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="samplingEdit"/>
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="tryProductEdit"/>
    </item>
    <item row="2" column="0">
     <widget class="QLabel" name="label_8">
@@ -130,7 +130,7 @@
     </widget>
    </item>
    <item row="2" column="1">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="samplingEdit_2"/>
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="samplingEdit"/>
    </item>
    <item row="0" column="0">
     <widget class="QLabel" name="label">

@@ -17,7 +17,7 @@ ICProgramHeadFrame::ICProgramHeadFrame(QWidget *parent) :
     UpdateDateTime();
     InitSignal();
 //    restTime_.start(1000*60);
-    restTime_.start(1000*3600);
+    restTime_.start(1000*5);
     int rest_time = ICParametersSave::Instance()->RestTime(0);
     if(rest_time <= 7*24)
     {
@@ -30,6 +30,7 @@ ICProgramHeadFrame::ICProgramHeadFrame(QWidget *parent) :
     {
         ui->restTimeLabel->clear();
     }
+
 }
 
 ICProgramHeadFrame::~ICProgramHeadFrame()

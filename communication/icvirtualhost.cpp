@@ -980,6 +980,11 @@ void ICVirtualHost::InitAddrToSysPosMap_()
     moldParamToAddrPos_.insert(ICMold::CheckClip8, SM_CHKCLIP8);
     moldParamToAddrPos_.insert(ICMold::Product, SM_PRODUCT);			//设定产量
     moldParamToAddrPos_.insert(ICMold::PosMainDown, SM_Position_DOWN);
+
+    moldParamToAddrPos_.insert(ICMold::StandbyPose, SM_StandBy);  //待机姿势
+    moldParamToAddrPos_.insert(ICMold::TryProduct, SM_TryProduct); //试产
+    moldParamToAddrPos_.insert(ICMold::Sampling, SM_Sampling); //取样
+
     //    addrToSysPos_.insert(SM_MAINUP, ACT_MainUp);			//主上限制
     //    addrToSysPos_.insert(SM_MAINDOWN, ACT_MainDown);		//主下限制
     //    addrToSysPos_.insert(SM_MAININ, ACT_MainBackward);			//主入限制
