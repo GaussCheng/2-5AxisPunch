@@ -572,9 +572,9 @@ int ICUpdateSystem::Register(const QString& code, const QString& machineCode)
     {
         for(int j = 0; j != 10; ++j)
         {
-            if(pMap[j] == sortRet.at(i).digitValue())
+            if(j == sortRet.at(i).digitValue())
             {
-                sortRet[i] = QString::number(j).at(0);
+                sortRet[i] = QString::number(pMap[j]).at(0);
                 break;
             }
         }

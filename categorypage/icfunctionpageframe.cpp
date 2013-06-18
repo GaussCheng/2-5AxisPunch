@@ -220,6 +220,16 @@ void ICFunctionPageFrame::LevelChanged(int level)
     }
     else
     {
+        if((level == ICParametersSave::MachineAdmin) &&  \
+                ((backFrameCenterStackedLayout_->currentWidget() == \
+                 settingButtonToPage_.value(ui->machineStructConfig, NULL)) || \
+                 (backFrameCenterStackedLayout_->currentWidget() == \
+                 settingButtonToPage_.value(ui->machineConfigSettingWidget,NULL)) ||\
+                 (backFrameCenterStackedLayout_->currentWidget() == \
+                 settingButtonToPage_.value(ui->maintainWidget,NULL))))
+        {
+            backFrameCenterStackedLayout_->setCurrentWidget(this);
+        }
         ui->machineStructConfig->setEnabled(false);
         ui->machineConfigSettingWidget->setEnabled(false);
         ui->maintainWidget->setEnabled(false);

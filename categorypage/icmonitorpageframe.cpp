@@ -114,7 +114,7 @@ void ICMonitorPageFrame::Init_()
     points.append(ICIOPoint("Y034", tr("Fixture3 Valve"), 20));
     points.append(ICIOPoint("Y035", tr("Machine Reversal"), 21));//4
     points.append(ICIOPoint("Y036", tr("Run Led"), 22));//3
-    points.append(ICIOPoint("Y037", tr("Transport"), 23));
+    points.append(ICIOPoint("Y037", tr(" Transport"), 23));
 //#ifdef HC_8AXIS
 //    points.append(ICIOPoint("Y022", tr("Reserve 1"), 10));//1
 //    points.append(ICIOPoint("Y023", tr("Reserve 2"), 11));//2

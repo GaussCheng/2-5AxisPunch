@@ -44,6 +44,9 @@ color: rgb(255, 0, 0);</string>
      <property name="selectionBehavior">
       <enum>QAbstractItemView::SelectRows</enum>
      </property>
+     <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+      <bool>false</bool>
+     </attribute>
      <column>
       <property name="text">
        <string>Alarm 

@@ -324,6 +324,12 @@ void MoldInformation::on_loadToolButton_clicked()
     {
         qDebug("before Load");
         QString moldName = ui->informationTableWidget->item(currentRow, 0)->text() + ".act";
+        if(ICParametersSave::Instance()->MoldName(QString()) == moldName)
+        {
+            QMessageBox::information(this, tr("Tips"), tr("On the Current mold already!"));
+            return;
+        }
+
         QString filePathName = "./records/" + moldName;
         if(QFile::exists(filePathName))
         {
@@ -387,8 +393,10 @@ void MoldInformation::on_deleteToolButton_clicked()
     }
     if(selectedItemStringList.size() == 0)
     {
-        QMessageBox::information(this,tr("tips"),tr("No selected files"));
-        return ;
+//        QMessageBox::information(this,tr("tips"),tr("No selected files"));
+//        return ;
+        selectedItemStringList << ui->informationTableWidget->item(ui->informationTableWidget->currentRow(),0)->text() + ".act" ;
+        selectedItemNumberList << ui->informationTableWidget->currentRow();
     }
     int ret = QMessageBox::warning(this, tr("warning"),
                                    tr("Are you sure to delete the selected files?"),
@@ -661,6 +669,13 @@ void MoldInformation::on_exportToolButton_clicked()
             selectedExportItemName_.append(item_text + ".fnc");
             flagItem = FALSE ;
         }
+    }
+    if(selectedExportItemName_.size() == 0 )
+    {
+//        QMessageBox::information(this,tr("Tips"),tr("No select item"));
+//        return;
+        selectedExportItemName_.append(ui->informationTableWidget->item(ui->informationTableWidget->currentRow(),0)->text() + ".act");
+        selectedExportItemName_.append(ui->informationTableWidget->item(ui->informationTableWidget->currentRow(),0)->text() + ".fnc");
     }
 
     ICTipsWidget tipsWidget(tr("Backuping, please wait..."));

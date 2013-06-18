@@ -130,6 +130,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     emit LoadMessage("Connected");
     ui->setupUi(this);
 
+
     InitSpareTime();
     connect(ICUpdateSystem::Instance(),
             SIGNAL(RegisterSucceed()),

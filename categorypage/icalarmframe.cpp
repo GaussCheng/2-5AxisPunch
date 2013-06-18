@@ -85,6 +85,12 @@ void ICAlarmFrame::ReadAlarmInfoInFile()
         {
             optionList.append(tr("no-solve"));
         }
+        //防止出现报警后未清除报警然后断电，重启系统后报警最后修改时间为乱码的问题
+        else if(optionList.size() == 3 && optionList.at(2).size() != 14)
+        {
+            optionList[2] = QString(tr("no-solve"));
+        }
+
         alarmNum = optionList.at(0).toInt();
         QString alarmInfo = alarmString_->AlarmInfo(alarmNum);
         AppendNewLineInTable(alarmNum,
