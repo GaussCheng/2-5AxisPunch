@@ -69,6 +69,7 @@ private:
     QIntValidator* rotateValidator_;
     QIntValidator* maximumValidator_;
     QIntValidator* intValidator;
+    QIntValidator* originValidator_;
  //   QIntValidator* externalValidator_;
 
     int axisDefine_;

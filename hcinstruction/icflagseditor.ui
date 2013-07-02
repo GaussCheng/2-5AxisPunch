@@ -15,6 +15,13 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Flags</string>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="QListWidget" name="flagListWidget">
      <property name="editTriggers">
       <set>QAbstractItemView::NoEditTriggers</set>

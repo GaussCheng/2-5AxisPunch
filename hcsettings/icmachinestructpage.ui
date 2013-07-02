@@ -238,6 +238,18 @@ height:30px;</string>
           </item>
           <item row="0" column="0">
            <widget class="QLabel" name="label">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>149</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="text">
              <string>Mechanical length</string>
             </property>
@@ -248,6 +260,18 @@ height:30px;</string>
           </item>
           <item row="0" column="2">
            <widget class="QLabel" name="label_3">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>26</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="text">
              <string>mm</string>
             </property>
@@ -255,6 +279,18 @@ height:30px;</string>
           </item>
           <item row="1" column="0">
            <widget class="QLabel" name="label_2">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>149</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="text">
              <string>Maximum displacement</string>
             </property>
@@ -265,6 +301,18 @@ height:30px;</string>
           </item>
           <item row="1" column="2">
            <widget class="QLabel" name="label_4">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>26</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="text">
              <string>mm</string>
             </property>
@@ -272,6 +320,18 @@ height:30px;</string>
           </item>
           <item row="2" column="0">
            <widget class="QLabel" name="minLabel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>149</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="text">
              <string>Internal security zone</string>
             </property>
@@ -282,6 +342,18 @@ height:30px;</string>
           </item>
           <item row="2" column="2">
            <widget class="QLabel" name="minUnitLabel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>26</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="text">
              <string>mm</string>
             </property>
@@ -289,6 +361,18 @@ height:30px;</string>
           </item>
           <item row="3" column="0">
            <widget class="QLabel" name="maxLabel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>149</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="text">
              <string>External security zone</string>
             </property>
@@ -299,6 +383,18 @@ height:30px;</string>
           </item>
           <item row="3" column="2">
            <widget class="QLabel" name="maxUnitLabel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>26</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="text">
              <string>mm</string>
             </property>
@@ -306,6 +402,18 @@ height:30px;</string>
           </item>
           <item row="4" column="0">
            <widget class="QLabel" name="label_8">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>149</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="text">
              <string>Distance/Rotation</string>
             </property>
@@ -316,6 +424,18 @@ height:30px;</string>
           </item>
           <item row="4" column="2">
            <widget class="QLabel" name="label_11">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>26</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="text">
              <string>mm</string>
             </property>

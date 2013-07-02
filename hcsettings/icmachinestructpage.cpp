@@ -243,6 +243,12 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
     ui->label_11->setText(tr("mm"));
     ui->label->setText(tr("Mechanical length"));
     ui->label_8->setText(tr("Distance/Rotation"));
+    rotateValidator_->setTop(32767);
+//    maximumValidator_->setTop(65530);
+    maximumValidator_->setTop(ui->mechanicalLengthLineEdit->TransThisTextToThisInt());
+    maximumValidator_->setBottom(0);
+    ui->maximumDisplacementLineEdit->setValidator(maximumValidator_);
+    intValidator->setTop(65530);
     if(currentAxis_ == ICVirtualHost::ICAxis_AxisX1)
     {
         machineLangth = ICVirtualHost::SYS_X_Length;
@@ -252,10 +258,7 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         total = ICParametersSave::Instance()->DistanceRotation("X");
         minText = tr("Min pos inside mold");
         maxText = tr("Max pos inside mold");
-        ui->distanceRotationEdit->SetDecimalPlaces(2);
-        rotateValidator_->setTop(32767);
-        maximumValidator_->setTop(65530);
-        maximumValidator_->setBottom(0);
+        ui->distanceRotationEdit->SetDecimalPlaces(2);      
         ui->label_2->setText(tr("Maximum displacement"));
 
     }
@@ -269,9 +272,6 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         minText = tr("Max standby pos");
         maxText = tr("Leave origin pos");
         ui->distanceRotationEdit->SetDecimalPlaces(2);
-        rotateValidator_->setTop(32767);
-        maximumValidator_->setTop(65530);
-        maximumValidator_->setBottom(0);
         ui->label_2->setText(tr("Maximum displacement"));
 
     }
@@ -285,9 +285,6 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         minText = tr("Internal security zone");
         maxText = tr("External security zone");
         ui->distanceRotationEdit->SetDecimalPlaces(2);
-        rotateValidator_->setTop(32767);
-        maximumValidator_->setTop(65530);
-        maximumValidator_->setBottom(0);
         ui->label_2->setText(tr("Maximum displacement"));
 
     }
@@ -301,11 +298,7 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         minText = tr("Min pos inside mold");
         maxText = tr("Max pos inside mold");
         ui->distanceRotationEdit->SetDecimalPlaces(2);
-        rotateValidator_->setTop(32767);
-        maximumValidator_->setTop(65530);
-        maximumValidator_->setBottom(0);
         ui->label_2->setText(tr("Maximum displacement"));
-
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY2)
     {
@@ -317,9 +310,6 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         minText = tr("Max standby pos");
         maxText = tr("Leave origin pos");
         ui->distanceRotationEdit->SetDecimalPlaces(2);
-        rotateValidator_->setTop(32767);
-        maximumValidator_->setTop(65530);
-        maximumValidator_->setBottom(0);
         ui->label_2->setText(tr("Maximum displacement"));
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisA)
@@ -342,8 +332,10 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         ui->label_8->setText(tr("Machine Per"));
         ui->distanceRotationEdit->SetDecimalPlaces(1);
         rotateValidator_->setTop(3600);
-        maximumValidator_->setTop(900);
-        maximumValidator_->setBottom(-900);
+        intValidator->setTop(3600);
+//        maximumValidator_->setTop(900);
+//        maximumValidator_->setBottom(-900);
+        ui->maximumDisplacementLineEdit->setValidator(originValidator_);
         ui->label_2->setText(tr("Origin Offset"));
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisB)
@@ -366,8 +358,10 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         ui->label_8->setText(tr("Machine Per"));
         ui->distanceRotationEdit->SetDecimalPlaces(1);
         rotateValidator_->setTop(3600);
-        maximumValidator_->setTop(900);
-        maximumValidator_->setBottom(-900);
+        intValidator->setTop(3600);
+//        maximumValidator_->setTop(900);
+//        maximumValidator_->setBottom(-900);
+        ui->maximumDisplacementLineEdit->setValidator(originValidator_);
         ui->label_2->setText(tr("Origin Offset"));
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisC)
@@ -381,8 +375,10 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         maxText = tr("Transever security zone(Lagger)");
         ui->distanceRotationEdit->SetDecimalPlaces(1);
         rotateValidator_->setTop(3600);
-        maximumValidator_->setTop(900);
-        maximumValidator_->setBottom(-900);
+        intValidator->setTop(3600);
+//        maximumValidator_->setTop(900);
+//        maximumValidator_->setBottom(-900);
+        ui->maximumDisplacementLineEdit->setValidator(originValidator_);
         ui->label_2->setText(tr("Origin Offset"));
         ui->minUnitLabel->setText(tr("degree"));
         ui->maxUnitLabel->setText(tr("degree"));
@@ -390,7 +386,7 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         ui->label_4->setText(tr("degree"));
         ui->label_11->setText(tr("degree"));
         ui->label->setText(tr("Max Rotate")); //最大旋转
-        ui->label_8->setText(tr("Machine Per")); //每转距离
+        ui->label_8->setText(tr("Machine Per")); //电机每圈
     }
     else
     {
@@ -408,6 +404,7 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
     /*********BUG#186.同791行一起**************/
     intValidator->setBottom(ui->maximumDisplacementLineEdit->TransThisTextToThisInt());
     maxMoveValidator_->setTop(ui->mechanicalLengthLineEdit->TransThisTextToThisInt());
+
 }
 
 QList<uint> ICMachineStructPage::GetCurrentStatus_() const
@@ -594,6 +591,7 @@ void ICMachineStructPage::InitInterface()
     intValidator = new QIntValidator(0, 65530, this);
     ui->mechanicalLengthLineEdit->setValidator(intValidator);
     maxMoveValidator_ = new QIntValidator(0, 65530, this);
+    originValidator_ = new QIntValidator(-900, 900, this);
     ui->maximumDisplacementLineEdit->SetDecimalPlaces(1);
     maximumValidator_ = new QIntValidator(0, 65530, this);
     ui->maximumDisplacementLineEdit->setValidator(maximumValidator_);
@@ -848,6 +846,7 @@ void ICMachineStructPage::on_mechanicalLengthLineEdit_textChanged(const QString 
 {
     Q_UNUSED(arg1);
     maxMoveValidator_->setTop(ui->mechanicalLengthLineEdit->TransThisTextToThisInt());
+    maximumValidator_->setTop(ui->mechanicalLengthLineEdit->TransThisTextToThisInt());
  //   externalValidator_->setTop(ui->mechanicalLengthLineEdit->TransThisTextToThisInt());
 }
 

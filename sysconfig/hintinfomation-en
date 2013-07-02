@@ -1,4 +1,197 @@
-1:Security door is open , close door to reset
-2:Security door is open , pause
-3:It's in non-security zone when arm down
-4:Position has not been setted
+1:Virtual Error
+2:Strange Chars
+3:Program no end
+4:Ignored chars
+5:Orion chaos
+6:No end position
+7:Arc definition
+8:Sequency
+9:Large Radio
+10:Over speed
+11:Double Define IO
+12:None Define IO
+13:Group Action is error
+14:Group standby is error
+15:Find next step wrong
+16:Check end out of range
+17:Register context is wrong
+18:Check main action end
+19:Register Num context is wrong
+20:Register Sub context is wrong
+21:Register action has finished
+22:X is still running when generate action
+23:Y is still running when generate action
+24:Z is still running when generate action
+25:The timer has down to zero when G has delay time
+26:X over speed
+27:Y over speed
+28:Z over speed
+100:X large warp
+101:Y large warp
+102:Z large warp
+103:X axial z-pluse error
+104:Y axial z-pluse error
+105:Z axial z-pluse error
+106:X-servo alarm
+107:Y-servo alarm
+108:Z-servo alarm
+109:X missed pos
+110:Y missed pos
+111:Z missed pos
+112:X-Max alarm
+113:X-Min alarm
+114:Y-Max alarm
+115:Y-Min alarm
+116:Z-Max alarm
+117:Z-Min alarm
+118:X-Pos too large
+119:X-Pos too small
+120:Y-Pos too large
+121:Y-Pos too small
+122:Z-Pos too large
+123:Z-Pos too small
+124:X is large when running
+125:X is small when running
+126:Y is large when running
+127:Y is small when running
+128:Z is large when running
+129:Z is small when running
+200:Connect to Host fail
+300:X param error
+301:Y param error
+302:Z param error
+303:Action checksum error!
+304:Emergency Stop!
+305:Main cycle error
+306:Waiting Point error
+307:Fetching act error
+308:Too large tolerance
+309:Mold Function param error
+310:iSub too large
+311:iSub re-called self
+312:illegal layout
+313:Overlap layout
+314:Action sequence is wrong
+315:System parameter is wrong
+316:Action number is wrong
+317:Sub action number is wrong
+318:Number line only
+319:Just run on auto status
+320:Illega sequence
+321:Check sum is wrong
+322:Check GM value is wrong
+323:Wait Mold Opened
+324:GM value is wrong when auto adjust
+325:Clip action is duplicated
+326:Action is duplicated
+327:Just can call in level one
+328:Check input when running
+400:Reading X param error
+401:Reading Y param error
+402:Reading Z param error
+403:Reading System Param error
+404:Reading Mold Param error
+405:Reading Sub-Prg error
+406:Reading Function Param error
+500:Lost contact with MainCtrl!
+501:BoardIO com error!
+502:Over Set Product!
+503:Low pressure
+504:Comm-WatchDog
+505:Sync program list wrong
+506:Time overlay when waiting signal
+600:Z move outside, but Z insafe signal ON
+601:Z move outside, but Z insafe signal OFF
+602:Z move inside, but Z outsafe signal ON
+603:Z move inside, but Z outsafe signal OFF
+604:Y descend by Up-lmt On
+605:Y raised by Up-lmt off
+1000:Mid-mold signal is off when Arm descend.
+1001:Mold Opened signal is off when Arm descend.
+1002:Safety door is opened when Arm descend.
+1003:Vertical and horizontal signal is both on.
+1004:Travel in and travel out signal is both on.
+1005:Mold Opened signal is off when Arm descend inside inner
+1006:Position is horizontal when Arm descend inside inner.
+1007:Arm descend inside inner but position is not inside Z in security zone.
+1008:Arm descend inside outer but position is not inside Z out security zone
+1009:Can not check the security zone when Arm descend.
+1010:Can not check the security zone when Y1 descend.
+1011:Can not check the security zone when Arm ascend
+1012:Tow position is all in horizontal
+1013:Sub forward and backward limit is both on
+1014:Sub up and down limit is both on
+1015:Main forward and backward limit is both on
+1016:Main up and down limit is both on
+1017:Security door is opened when running
+1018:Sub arm action is not depend on the mold
+1100:Can not check the security zone when Main Arm descend
+1101:Can not check the security zone when Sub Arm descend
+1102:Mold-opened signal is off when Main Arm descend
+1103:Mold-opened signal is off when Sub Arm descend
+1104:Main upper limmit is on after Main Arm descended
+1105:Sub upper limmit is on after Sub Arm descended
+1106:Main descen limit is off after main arm has descened
+1107:Sub descen limit is off after sub arm has descened
+1108:Mid mold signal is off when main arm descen
+1109:Mid mold signal is off when main sub descen
+1120:Can not check the inner and outter security zone when Main Arm ascend
+1121:Can not check the inner and outter security zone when Sub Arm ascend
+1122:It's too fast when Main Arm ascend
+1123:It's too fast when Sub Arm ascend
+1124:Mold-opened signal is off when Main Arm ascend
+1125:Mold-opened signal is off when Sub Arm ascend
+1126:Main upper limit is off after Main Arm ascended
+1127:Sub upper limit is off after Sub Arm ascended
+1140:Main back limit is on after Main Arm forwarded
+1141:Sub back limit is on after Sub Arm forwarded
+1142:Main back limit is off after Main Arm backwarded
+1143:Sub back limit is off after Sub Arm backwarded
+1144:Main forward limit is off after main arm has forward
+1145:Sub forward limit is off after sub arm has forward
+1160:Can not check the main upper limmit when position changing
+1161:Can not check the sub upper limmit when position changing
+1162:Mold-opened signal is off when position changing
+1163:horizontal limit is off after position change to horizon
+1164:Vertical limit is off after position change to verizon
+1180:Main upper limmit is off when air action Travel in and Travel out
+1181:Sub upper limmit is off when air action Travel in and Travel out
+1182:Travel in limmit is off after Travel in
+1183:Travel out limmit is off after Travel out
+1184:The position is not the same with the instruction when Travel out
+1185:Mold-opened signal is off when Travel in
+1186:Main upper limmit is off when Travel in the inside dangerous zone
+1187:Sub upper limmit is off when Travel in the inside dangerous zone
+1188:Y1 is no inside the security zone when Travel inside the dangerous zone
+1189:Main upper limmit is not both on when Travelin from oupter
+1190:Main upper limmit is not both on when Travel out from inner
+1191:Can not check the upper limmit when Travel in the dangerous zone in manual status
+1192:Current position is less than the moveabel security position
+1193:Current position is larger than the moveable security position
+1200:Clip1 signal off, Clip1 valve on.
+1201:Clip1 signal on, Clip1 valve off.
+1202:Clip2 signal off, Clip2 valve on.
+1203:Clip2 signal on, Clip2 valve off.
+1204:Clip3 signal off, Clip3 valve on.
+1205:Clip3 signal on, Clip3 valve off.
+1206:Clip4 signal off, Clip4 valve on.
+1207:Clip4 signal on, Clip4 valve off.
+1208:Suck1 signal off, Suck1 valve on.
+1209:Suck1 signal on, Suck1 valve off.
+1210:Suck2 signal off, Suck2 valve on.
+1211:Suck2 signal on, Suck2 valve off.
+1300:Please check Waiting Pose.
+1301:Please check Main up signal.
+1302:Please check Vice up signal.
+1303:Please check Waiting Point X
+1304:Please check Waiting Point Y
+1305:Please check Waiting Point Z
+1306:Please check Waiting Point Clip 1
+1307:Please check Waiting Point Clip 2
+1308:Please check Waiting Point Clip 3
+1309:Please check Waiting Point Clip 4
+1310:Please check Waiting Point Clip 5
+1311:Please check Waiting Point Clip 6
+1400:Not all up signal on.
+1401:Currnt point and waiting point are not both inside
+1402:Currnt point and waiting point are not both outside

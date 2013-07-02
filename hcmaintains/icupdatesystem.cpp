@@ -414,7 +414,7 @@ void ICUpdateSystem::on_connectHostButton_clicked()
 
     if(!timer_.isActive())
     {
-        timer_.start(1000);
+        timer_.start(100);
     }
 //    updateHostButton();
 //    writeHostButton();

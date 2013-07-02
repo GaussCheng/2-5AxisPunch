@@ -40,15 +40,15 @@ void ICMonitorPageFrame::Init_()
     QList<ICIOPoint> points;
     points.append(ICIOPoint("X010", tr("Horizontal-1"), 0));
     points.append(ICIOPoint("X011", tr("Vertical-1"), 1));
-    points.append(ICIOPoint("X012", tr("Fixture1"), 2));
-    points.append(ICIOPoint("X013", tr("Fixture2"), 3));
+    points.append(ICIOPoint("X012", tr("Fixtur1"), 2));//夹1确认限
+    points.append(ICIOPoint("X013", tr("Fixtur2"), 3));
     points.append(ICIOPoint("X014", tr("Sucker2"), 4));
-    points.append(ICIOPoint("X015", tr("Sucker1"), 5));
+    points.append(ICIOPoint("X015", tr("Sucker1"), 5));//吸1确认限
     points.append(ICIOPoint("X016", tr("X1 Out Limit"), 6));
     points.append(ICIOPoint("X017", tr("X1 In Limit"), 7));
 
     points.append(ICIOPoint("X020", tr("X1 Origin"), 8));
-    points.append(ICIOPoint("X021", tr("Fixture4"), 9));
+    points.append(ICIOPoint("X021", tr("Fixtur4"), 9));
     points.append(ICIOPoint("X022", tr("Y1 In Limit"), 10));
     points.append(ICIOPoint("X023", tr("A Origin/Horizontal-2"), 11));
     points.append(ICIOPoint("X024", tr("Out Safe Area"), 12));
@@ -91,17 +91,17 @@ void ICMonitorPageFrame::Init_()
 
     points.append(ICIOPoint("Y010", tr("Horizontal-1 Valve"), 0));
     points.append(ICIOPoint("Y011", tr("Vertical-1 Valve"), 1));
-    points.append(ICIOPoint("Y012", tr("Fixture1 Valve"), 2));
-    points.append(ICIOPoint("Y013", tr("Fixture2 Valve"), 3));
+    points.append(ICIOPoint("Y012", tr("Fixtur1 Valve"), 2));  //夹1阀
+    points.append(ICIOPoint("Y013", tr("Fixtur2 Valve"), 3));
     points.append(ICIOPoint("Y014", tr("Sucker2 Valve"), 4));
-    points.append(ICIOPoint("Y015", tr("Sucker1 Valve"), 5));
+    points.append(ICIOPoint("Y015", tr("Sucke1 Valve"), 5));
     points.append(ICIOPoint("Y016", tr("Main Forward Valve"), 6));
     points.append(ICIOPoint("Y017", tr("Adjust Sub Back"), 7));
 
-    points.append(ICIOPoint("Y020", tr("Fixture4 Valve"), 8));
+    points.append(ICIOPoint("Y020", tr("Fixtur4 Valve"), 8));
     points.append(ICIOPoint("Y021", tr("Alarm"), 9));
     points.append(ICIOPoint("Y022", tr("Adjust Sub Forward"), 10));//1
-    points.append(ICIOPoint("Y023", tr("Next Cycle Sp2"), 11));//2
+    points.append(ICIOPoint("Y023", tr("Next Cycle Sp2"), 11));//备用输出2
     points.append(ICIOPoint("Y024", tr("Horizontal-2 Valve"), 12));
     points.append(ICIOPoint("Y025", tr("Paint Oil"), 13));
     points.append(ICIOPoint("Y026", tr("Next Cycle Sp"), 14));

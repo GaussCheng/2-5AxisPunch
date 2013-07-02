@@ -40,6 +40,8 @@ private:
     QIntValidator* esdValidator_;
 
      QIntValidator* validator ;
+     QIntValidator* validator_ ;
+     QIntValidator* returnStepValidator ;
 
 };
 

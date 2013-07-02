@@ -357,6 +357,8 @@ void MoldInformation::on_loadToolButton_clicked()
 void MoldInformation::on_deleteToolButton_clicked()
 {
     QString selectedItem;
+    bool flag;
+    flag = false;
     QList<int> selectedItemNumberList ;
     QStringList selectedItemStringList ;
     int rows = ui->informationTableWidget->rowCount();
@@ -378,6 +380,7 @@ void MoldInformation::on_deleteToolButton_clicked()
                                  tr(" is being used"),
                                  QMessageBox::Ok,
                                  QMessageBox::Ok);
+            flag = true;
 
             continue;
         }
@@ -386,25 +389,51 @@ void MoldInformation::on_deleteToolButton_clicked()
         {
             QMessageBox::warning(this, tr("warning"),
                                  tr("Stand programs can not be delete!"));
-            continue;
+           flag = true;
+           continue;
         }
         selectedItemStringList << selectedItem;
         selectedItemNumberList << i;
     }
-    if(selectedItemStringList.size() == 0)
+    //同导出，当没有勾选模号时，删除当前行的模号
+    QString str = ui->sourceFileNameLabel->text();
+    if(!flag && !str.isEmpty() && (selectedItemStringList.size() == 0))
+
+//        if(!str.isEmpty() && (selectedItemStringList.size() == 0) && \
+//                (str != ICParametersSave::Instance()->MoldName("")) && \
+//                !IsStandProgram(str))
     {
-//        QMessageBox::information(this,tr("tips"),tr("No selected files"));
-//        return ;
+        str.chop(4);
+        if((str + ".act") == ICParametersSave::Instance()->MoldName(""))
+        {
+            QMessageBox::warning(this, tr("warning"),
+                                 tr("The mold file ") +
+                                 str +
+                                 tr(" is being used"),
+                                 QMessageBox::Ok,
+                                 QMessageBox::Ok);
+            return;
+        }
+        if(IsStandProgram(str + ".act"))
+        {
+            QMessageBox::warning(this, tr("warning"),
+                                 tr("Stand programs can not be delete!"));
+            return;
+        }
+
         selectedItemStringList << ui->informationTableWidget->item(ui->informationTableWidget->currentRow(),0)->text() + ".act" ;
         selectedItemNumberList << ui->informationTableWidget->currentRow();
     }
-    int ret = QMessageBox::warning(this, tr("warning"),
-                                   tr("Are you sure to delete the selected files?"),
-                                   QMessageBox::Ok | QMessageBox::Cancel,
-                                   QMessageBox::Cancel);
-    if(ret != QMessageBox::Ok)
+    if(selectedItemStringList.size() != 0)
     {
-        return ;
+        int ret = QMessageBox::warning(this, tr("warning"),
+                                       tr("Are you sure to delete the selected files?"),
+                                       QMessageBox::Ok | QMessageBox::Cancel,
+                                       QMessageBox::Cancel);
+        if(ret != QMessageBox::Ok)
+        {
+            return ;
+        }
     }
 
     for(int i = 0 ; i < selectedItemNumberList.size() ; ++i)
@@ -416,12 +445,12 @@ void MoldInformation::on_deleteToolButton_clicked()
             else
                 ui->informationTableWidget->removeRow(selectedItemNumberList[i] - i);
 
-            ui->sourceFileNameLabel->clear();
-            if(ui->informationTableWidget->rowCount() != 0)
-            {
-                ui->sourceFileNameLabel->setText(
-                            ui->informationTableWidget->item(0,0)->text() + ".act");
-            }
+//            ui->sourceFileNameLabel->clear();
+//            if(ui->informationTableWidget->rowCount() != 0)
+//            {
+//                ui->sourceFileNameLabel->setText(
+//                            ui->informationTableWidget->item(0,0)->text() + ".act");
+//            }
         }
     }
 
@@ -464,6 +493,7 @@ void MoldInformation::on_informationTableWidget_itemSelectionChanged()
 }
 void MoldInformation::on_importToolButton_clicked()
 {
+    selectedImportItemName_.clear();
 #if defined(Q_WS_WIN32) || defined(Q_WS_X11)
     if(ui->informationTableWidget->rowCount() == 0)
     {
@@ -546,6 +576,8 @@ void MoldInformation::on_importToolButton_clicked()
     }
     int rows_ = ui->informationTableWidget->rowCount();
     bool flagItem = TRUE ;
+    bool flagItem_ = TRUE ;
+    bool flag = false ;
     for(int i = 0 ; i < rows_ ; ++i)
     {
         if(ui->informationTableWidget->item(i,0)->checkState() == Qt::Checked)
@@ -562,13 +594,15 @@ void MoldInformation::on_importToolButton_clicked()
                                          tr(" is being used"),
                                          QMessageBox::Ok,
                                          QMessageBox::Ok);
+                    flag = true;
                     continue;
                 }
-                else
+
+                if(QMessageBox::question(this,tr("tips"),tr( "%1 is exist,replace it?").arg(item_text),
+                                             QMessageBox::Ok,QMessageBox::Cancel) == QMessageBox::Cancel)
                 {
-                    if(QMessageBox::question(this,tr("tips"),tr( "%1 is exist,replace it?").arg(item_text),
-                                             QMessageBox::Cancel,QMessageBox::Ok) == QMessageBox::Cancel)
-                        continue;
+                    flag = true;
+                    continue;
                 }
             }
             selectedImportItemName_.append(item_text + ".act");
@@ -577,12 +611,45 @@ void MoldInformation::on_importToolButton_clicked()
         }
     }
 
-    ICTipsWidget tipsWidget(tr("Restoring, please wait..."));
-    if(!flagItem)
+    //如果没有勾选模号，那么可以导入选中的当前行的模号
+    QString str = ui->sourceFileNameLabel->text();
+//    if((selectedImportItemName_.size() == 0) && (!acts_.contains(str + ".act")))
+    if(!flag && !str.isEmpty() && (selectedImportItemName_.size() == 0))
     {
-        tipsWidget.show();qApp->processEvents();
+        str.chop(4);
+        if(acts_.contains(str + ".act"))
+        {
+            if(QMessageBox::question(this,tr("tips"),tr( "%1 is exist,replace it?").arg(str),
+                                     QMessageBox::Ok,QMessageBox::Cancel) == QMessageBox::Cancel)
+            {
+                return;
+            }
+            if(ICParametersSave::Instance()->MoldName(QString()) == str + ".act")
+            {
+                QMessageBox::warning(this, tr("warning"),
+                                     tr("The mold file ") +
+                                     str +
+                                     tr(" is being used"),
+                                     QMessageBox::Ok,
+                                     QMessageBox::Ok);
+                return;
+            }
+        }
+        selectedImportItemName_.append(str + ".act");
+        selectedImportItemName_.append(str + ".fnc");
+        flagItem_ = FALSE;
+    }
+    ICTipsWidget tipsWidget(tr("Restoring, please wait..."));
+    if(!flagItem || !flagItem_)
+    {
+        tipsWidget.show();
+        qApp->processEvents();
     }
 
+    if(selectedImportItemName_.size() == 0)
+    {
+        return;
+    }
     ICBackupUtility backupUtility;
 #if defined(Q_WS_WIN32) || defined(Q_WS_X11)
     bool ret = backupUtility.RestoreDir(getFileDir_ + "/HC5ABackup/records",
@@ -625,7 +692,7 @@ void MoldInformation::on_importToolButton_clicked()
                                               selectedImportItemName_<<"sub[0-7].prg");
     }
 #endif
-    if(!flagItem)
+    if(!flagItem || !flagItem_)
     {
         QMessageBox::information(this,tr("Information"), tr("Operation finished!"));
     }
@@ -633,6 +700,8 @@ void MoldInformation::on_importToolButton_clicked()
 
 void MoldInformation::on_exportToolButton_clicked()
 {
+    selectedExportItemName_.clear();
+
 #if defined(Q_WS_WIN32) || defined(Q_WS_X11)
     QString getFileDir = QFileDialog::getExistingDirectory();
     QDir dir(getFileDir + "/HC5ABackup/records");
@@ -651,6 +720,8 @@ void MoldInformation::on_exportToolButton_clicked()
     acts_ = dir.entryList(QStringList()<<"*.act");
     int rows = ui->informationTableWidget->rowCount();
     bool flagItem = TRUE ;
+    bool flagItem_ = TRUE ;
+    bool flag = false;
     for(int i = 0 ; i < rows ; ++i)
     {
         if(ui->informationTableWidget->item(i,0)->checkState() == Qt::Checked)
@@ -662,6 +733,7 @@ void MoldInformation::on_exportToolButton_clicked()
                 if(QMessageBox::question(this,tr("tips"),tr( "%1 is exist,replace it?").arg(item_text),
                                          QMessageBox::Ok,QMessageBox::Cancel) == QMessageBox::Cancel)
                 {
+                    flag = true;
                     continue;
                 }
             }
@@ -670,16 +742,32 @@ void MoldInformation::on_exportToolButton_clicked()
             flagItem = FALSE ;
         }
     }
-    if(selectedExportItemName_.size() == 0 )
+
+    //如果没有勾选模号，那么可以导出选中的当前行的模号
+    QString str = ui->sourceFileNameLabel->text();
+    if(!flag && !str.isEmpty() && (selectedExportItemName_.size() == 0))
+//    if(selectedExportItemName_.size() == 0 && !acts_.contains(str + ".act"))
     {
-//        QMessageBox::information(this,tr("Tips"),tr("No select item"));
-//        return;
-        selectedExportItemName_.append(ui->informationTableWidget->item(ui->informationTableWidget->currentRow(),0)->text() + ".act");
-        selectedExportItemName_.append(ui->informationTableWidget->item(ui->informationTableWidget->currentRow(),0)->text() + ".fnc");
+        str.chop(4);
+        if(acts_.contains(str + ".act"))
+        {
+            if(QMessageBox::question(this,tr("tips"),tr( "%1 is exist,replace it?").arg(str),
+                                     QMessageBox::Ok,QMessageBox::Cancel) == QMessageBox::Cancel)
+            {
+                return;
+            }
+        }
+        selectedExportItemName_.append(str + ".act");
+        selectedExportItemName_.append(str + ".fnc");
+        flagItem_ = FALSE;
+    }
+    if(selectedExportItemName_.size() == 0)
+    {
+        return;
     }
 
     ICTipsWidget tipsWidget(tr("Backuping, please wait..."));
-    if(!flagItem)
+    if(!flagItem || !flagItem_)
     {
         tipsWidget.show();
         qApp->processEvents();
@@ -703,7 +791,7 @@ void MoldInformation::on_exportToolButton_clicked()
                                          "/mnt/udisk/HC5ABackup/subs",
                                          selectedExportItemName_<<"sub[0-7].prg");
 #endif
-    if(!flagItem)
+    if(!flagItem || !flagItem_)
     {
         QMessageBox::information(this,tr("Information"), tr("Operation finished!"));
     }
@@ -723,6 +811,7 @@ void MoldInformation::switchPushButton()
         ui->exportToolButton->setEnabled(true);
         ui->importToolButton->setEnabled(false);
         UpdateInformationTable();
+        ui->sourceFileNameLabel->clear();
         break;
     case 1:
         ui->sourceFileNameLabel->clear();
@@ -733,6 +822,7 @@ void MoldInformation::switchPushButton()
         ui->exportToolButton->setEnabled(false);
         ui->importToolButton->setEnabled(true);
         RefreshFileList();
+        ui->sourceFileNameLabel->clear();
         break;
     }
 }

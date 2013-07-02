@@ -1291,7 +1291,7 @@ void MainFrame::InitSpareTime()
     else
     {
         connect(registe_timer,SIGNAL(timeout()),this,SLOT(CountRestTime()));
-        registe_timer->start(1000*3600);
+        registe_timer->start(1000*15); //15秒减一次（方便测试）
     }
 
 }

@@ -8,7 +8,7 @@ ICHCConditionPage::ICHCConditionPage(QWidget *parent) :
     ui(new Ui::ICHCConditionPage)
 {
     ui->setupUi(this);
-    ui->returnLineEdit->setValidator(new QIntValidator(0, 1000, this));
+    ui->returnLineEdit->setValidator(new QIntValidator(1, 1000, this));
     buttonGroup = new QButtonGroup ;
     ui->subComboBox->setCurrentIndex(5);
     ui->subComboBox->setEnabled(false);

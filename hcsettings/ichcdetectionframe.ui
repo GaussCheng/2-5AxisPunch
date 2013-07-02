@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>820</width>
+    <width>835</width>
     <height>337</height>
    </rect>
   </property>
@@ -44,7 +44,7 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>140</width>
+       <width>148</width>
        <height>48</height>
       </size>
      </property>
@@ -76,7 +76,7 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>140</width>
+       <width>148</width>
        <height>48</height>
       </size>
      </property>
@@ -108,7 +108,7 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>140</width>
+       <width>148</width>
        <height>48</height>
       </size>
      </property>
@@ -145,7 +145,7 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>140</width>
+       <width>148</width>
        <height>48</height>
       </size>
      </property>
@@ -211,7 +211,7 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>140</width>
+       <width>148</width>
        <height>48</height>
       </size>
      </property>
@@ -250,7 +250,7 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>140</width>
+       <width>148</width>
        <height>48</height>
       </size>
      </property>
@@ -282,7 +282,7 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>140</width>
+       <width>148</width>
        <height>48</height>
       </size>
      </property>
@@ -321,7 +321,7 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>140</width>
+       <width>148</width>
        <height>48</height>
       </size>
      </property>
@@ -354,7 +354,7 @@
     <widget class="QComboBox" name="detectPressureComboBox">
      <property name="minimumSize">
       <size>
-       <width>140</width>
+       <width>148</width>
        <height>48</height>
       </size>
      </property>
@@ -386,7 +386,7 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>140</width>
+       <width>148</width>
        <height>48</height>
       </size>
      </property>
@@ -446,7 +446,7 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>140</width>
+       <width>148</width>
        <height>48</height>
       </size>
      </property>
@@ -490,7 +490,7 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>140</width>
+       <width>148</width>
        <height>48</height>
       </size>
      </property>
@@ -522,7 +522,7 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>140</width>
+       <width>148</width>
        <height>48</height>
       </size>
      </property>
@@ -554,7 +554,7 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>140</width>
+       <width>148</width>
        <height>48</height>
       </size>
      </property>
@@ -613,7 +613,7 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>140</width>
+       <width>148</width>
        <height>48</height>
       </size>
      </property>

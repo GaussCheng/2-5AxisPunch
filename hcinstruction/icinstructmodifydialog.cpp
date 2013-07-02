@@ -10,9 +10,10 @@ ICInstructModifyDialog::ICInstructModifyDialog(QWidget *parent) :
 {
     ui->setupUi(this);
     /*****************BUG#120********************************/
-    validator = new QIntValidator(0, 30000, this);
+    validator_ = new QIntValidator(0, 30000, this);
+    returnStepValidator = new QIntValidator(1, 1000, this);
     ui->delayTimeEdit->SetDecimalPlaces(2);
-    ui->delayTimeEdit->setValidator(validator);
+    ui->delayTimeEdit->setValidator(validator_);
     /*****************BUG177，178*******************************/
     validator = new QIntValidator(0, 255, this);
     ui->speedEdit->setValidator(validator);
@@ -93,6 +94,7 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
     ui->positionLabel_3->setText(tr("Delay Time"));
     ui->delayTimeEdit->SetDecimalPlaces(2);
     ui->positionLabel_6->show();
+    ui->delayTimeEdit->setValidator(validator_);
 
     if(item->IsAction())
     {
@@ -178,6 +180,7 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
         {
             ui->positionLabel_3->setText(tr("Return Step"));
             ui->delayTimeEdit->SetDecimalPlaces(0);
+            ui->delayTimeEdit->setValidator(returnStepValidator);
             ui->positionLabel_6->hide();
         }
     }

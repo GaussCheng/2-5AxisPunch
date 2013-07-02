@@ -15,6 +15,9 @@ ICHCProductSettingFrame::ICHCProductSettingFrame(QWidget *parent) :
     InitCheckBox();
     ui->productLineEdit->setValidator(new QIntValidator(0, 65535, ui->productLineEdit));
     ui->alarmTimesEdit->setValidator(new QIntValidator(0, 65535, ui->alarmTimesEdit));
+    ui->tryProductEdit->setValidator(new QIntValidator(0, 65535, ui->tryProductEdit));
+    ui->samplingEdit->setValidator(new QIntValidator(0, 65535, ui->samplingEdit));
+    ui->samplingEdit_3->setValidator(new QIntValidator(0, 65535, ui->samplingEdit_3));
     ui->waitTimeEdit->SetDecimalPlaces(1);
     ui->waitTimeEdit->setValidator(new QIntValidator(0, 60000, ui->waitTimeEdit));
     ICLineEditWrapper *wrapper = new ICLineEditWrapper(ui->productLineEdit,
