@@ -480,12 +480,9 @@ QCheckBox::indicator:unchecked:disabled
             <item>
              <layout class="QHBoxLayout" name="horizontalLayout_10">
               <item>
-               <widget class="QCheckBox" name="x1BoxBackward">
+               <widget class="QCheckBox" name="x1BoxForward">
                 <property name="text">
-                 <string>Forward</string>
-                </property>
-                <property name="checked">
-                 <bool>true</bool>
+                 <string>Backward</string>
                 </property>
                 <attribute name="buttonGroup">
                  <string notr="true">buttonGroupX1</string>
@@ -493,9 +490,12 @@ QCheckBox::indicator:unchecked:disabled
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="x1BoxForward">
+               <widget class="QCheckBox" name="x1BoxBackward">
                 <property name="text">
-                 <string>Backward</string>
+                 <string>Forward</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
                 </property>
                 <attribute name="buttonGroup">
                  <string notr="true">buttonGroupX1</string>
@@ -528,12 +528,9 @@ QCheckBox::indicator:unchecked:disabled
             <item>
              <layout class="QHBoxLayout" name="horizontalLayout_11">
               <item>
-               <widget class="QCheckBox" name="y1BoxDown">
+               <widget class="QCheckBox" name="y1BoxUp">
                 <property name="text">
-                 <string>Down</string>
-                </property>
-                <property name="checked">
-                 <bool>true</bool>
+                 <string>Up</string>
                 </property>
                 <attribute name="buttonGroup">
                  <string notr="true">buttonGroupY1</string>
@@ -541,9 +538,12 @@ QCheckBox::indicator:unchecked:disabled
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="y1BoxUp">
+               <widget class="QCheckBox" name="y1BoxDown">
                 <property name="text">
-                 <string>Up</string>
+                 <string>Down</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
                 </property>
                 <attribute name="buttonGroup">
                  <string notr="true">buttonGroupY1</string>
@@ -591,12 +591,9 @@ QCheckBox::indicator:unchecked:disabled
             <item>
              <layout class="QHBoxLayout" name="horizontalLayout_12">
               <item>
-               <widget class="QCheckBox" name="x2BoxBackward">
+               <widget class="QCheckBox" name="x2BoxForward">
                 <property name="text">
-                 <string>Forward</string>
-                </property>
-                <property name="checked">
-                 <bool>true</bool>
+                 <string>Backward</string>
                 </property>
                 <attribute name="buttonGroup">
                  <string notr="true">buttonGroupX2</string>
@@ -604,9 +601,12 @@ QCheckBox::indicator:unchecked:disabled
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="x2BoxForward">
+               <widget class="QCheckBox" name="x2BoxBackward">
                 <property name="text">
-                 <string>Backward</string>
+                 <string>Forward</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
                 </property>
                 <attribute name="buttonGroup">
                  <string notr="true">buttonGroupX2</string>
@@ -636,12 +636,9 @@ QCheckBox::indicator:unchecked:disabled
             <item>
              <layout class="QHBoxLayout" name="horizontalLayout_14">
               <item>
-               <widget class="QCheckBox" name="y2BoxUp">
+               <widget class="QCheckBox" name="y2BoxDown">
                 <property name="text">
-                 <string>Down</string>
-                </property>
-                <property name="checked">
-                 <bool>true</bool>
+                 <string>Up</string>
                 </property>
                 <attribute name="buttonGroup">
                  <string notr="true">buttonGroupY2</string>
@@ -649,9 +646,12 @@ QCheckBox::indicator:unchecked:disabled
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="y2BoxDown">
+               <widget class="QCheckBox" name="y2BoxUp">
                 <property name="text">
-                 <string>Up</string>
+                 <string>Down</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
                 </property>
                 <attribute name="buttonGroup">
                  <string notr="true">buttonGroupY2</string>

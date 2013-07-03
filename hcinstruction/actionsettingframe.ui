@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>470</width>
-    <height>677</height>
+    <height>688</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -136,6 +136,47 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
+          <widget class="QCheckBox" name="x1BackwardBox">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">::indicator {
+     width: 32px;
+     height: 32px;
+ }
+
+::indicator:unchecked 
+{
+     image: url(:/resource/check_unchecked.png);
+ }
+::indicator:checked 
+{
+     image: url(:/resource/check_checked.png);
+ }
+
+::indicator:checked:disabled
+{
+ image: url(:/resource/check_checked_disable.png);
+}
+
+::indicator:unchecked:disabled
+{
+ image: url(:/resource/check_unchecked_disable.png);
+}</string>
+           </property>
+           <property name="text">
+            <string>Backward</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">x1BoxbuttonGroup</string>
+           </attribute>
+          </widget>
+         </item>
+         <item>
           <widget class="QCheckBox" name="x1ForwardBox">
            <property name="enabled">
             <bool>false</bool>
@@ -169,45 +210,7 @@
             <string>Forward</string>
            </property>
            <property name="checked">
-            <bool>true</bool>
-           </property>
-           <attribute name="buttonGroup">
-            <string notr="true">x1BoxbuttonGroup</string>
-           </attribute>
-          </widget>
-         </item>
-         <item>
-          <widget class="QCheckBox" name="x1BackwardBox">
-           <property name="enabled">
             <bool>false</bool>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">::indicator {
-     width: 32px;
-     height: 32px;
- }
-
-::indicator:unchecked 
-{
-     image: url(:/resource/check_unchecked.png);
- }
-::indicator:checked 
-{
-     image: url(:/resource/check_checked.png);
- }
-
-::indicator:checked:disabled
-{
- image: url(:/resource/check_checked_disable.png);
-}
-
-::indicator:unchecked:disabled
-{
- image: url(:/resource/check_unchecked_disable.png);
-}</string>
-           </property>
-           <property name="text">
-            <string>Backward</string>
            </property>
            <attribute name="buttonGroup">
             <string notr="true">x1BoxbuttonGroup</string>
@@ -712,6 +715,47 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
+          <widget class="QCheckBox" name="x2BackwardBox">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">::indicator {
+     width: 32px;
+     height: 32px;
+ }
+
+::indicator:unchecked 
+{
+     image: url(:/resource/check_unchecked.png);
+ }
+::indicator:checked 
+{
+     image: url(:/resource/check_checked.png);
+ }
+
+::indicator:checked:disabled
+{
+ image: url(:/resource/check_checked_disable.png);
+}
+
+::indicator:unchecked:disabled
+{
+ image: url(:/resource/check_unchecked_disable.png);
+}</string>
+           </property>
+           <property name="text">
+            <string>Backward</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">x2BoxbuttonGroup</string>
+           </attribute>
+          </widget>
+         </item>
+         <item>
           <widget class="QCheckBox" name="x2ForwardBox">
            <property name="enabled">
             <bool>false</bool>
@@ -745,45 +789,7 @@
             <string>Forward</string>
            </property>
            <property name="checked">
-            <bool>true</bool>
-           </property>
-           <attribute name="buttonGroup">
-            <string notr="true">x2BoxbuttonGroup</string>
-           </attribute>
-          </widget>
-         </item>
-         <item>
-          <widget class="QCheckBox" name="x2BackwardBox">
-           <property name="enabled">
             <bool>false</bool>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">::indicator {
-     width: 32px;
-     height: 32px;
- }
-
-::indicator:unchecked 
-{
-     image: url(:/resource/check_unchecked.png);
- }
-::indicator:checked 
-{
-     image: url(:/resource/check_checked.png);
- }
-
-::indicator:checked:disabled
-{
- image: url(:/resource/check_checked_disable.png);
-}
-
-::indicator:unchecked:disabled
-{
- image: url(:/resource/check_unchecked_disable.png);
-}</string>
-           </property>
-           <property name="text">
-            <string>Backward</string>
            </property>
            <attribute name="buttonGroup">
             <string notr="true">x2BoxbuttonGroup</string>
