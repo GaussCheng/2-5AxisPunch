@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "icmold.h"
+#include <QIntValidator>
 
 namespace Ui {
     class ICAutoRunRevise;
@@ -26,6 +27,8 @@ Q_SIGNALS:
 private:
     Ui::ICAutoRunRevise *ui;
     ICMoldItem* moldItem_;
+    QIntValidator* validator;
+    QIntValidator* returnStepValidator;
 
 private slots:
 //    void on_buttonBox_accepted();

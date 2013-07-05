@@ -84,10 +84,12 @@ void ICHCProgramMonitorFrame::changeEvent(QEvent *e)
 void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
 {
     //    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     ICVirtualHost::GlobalVirtualHost()->SetSpeedEnable(false);
     ui->speedEnableButton->setIcon(switchOff_);
     ui->speedEnableButton->setText(tr("Speed Disable"));
     SetProduct(ICMold::CurrentMold()->MoldParam(ICMold::Product));
+    currentMoldNum_ = host->HostStatus(ICVirtualHost::S).toInt();
     UpdateHostParam();
     programListBackup_ = programList_;
     QFrame::showEvent(e);
@@ -179,7 +181,10 @@ void ICHCProgramMonitorFrame::hideEvent(QHideEvent *e)
     qDebug("isModify change to false in hide");
     if(isModify_)
     {
-        ICMold::CurrentMold()->SetMoldContent(ICMold::UIItemToMoldItem(programList_));
+        if(currentMoldNum_ == 8)
+        {
+            ICMold::CurrentMold()->SetMoldContent(ICMold::UIItemToMoldItem(programList_));
+        }
         ICMold::CurrentMold()->SaveMoldFile();
         isModify_ = false;
     }
@@ -257,6 +262,7 @@ void ICHCProgramMonitorFrame::StatusRefreshed()
         oldStackedP_ = newStackedP_;
         ui->stackedProducts->setText(QString::number(oldStackedP_));
     }
+    ui->stackedProducts->setText(QString::number(host->HostStatus(ICVirtualHost::S).toInt()));
     //    if(host->CurrentStatus() != ICVirtualHost::Auto)
     //    {
     //        qDebug("isModify change to false in auto");
@@ -284,12 +290,15 @@ void ICHCProgramMonitorFrame::SelectCurrentStep(int currentStep)
         //            ++p;
         //        }
 
-        ICMold::CurrentMold()->SetMoldContent(ICMold::UIItemToMoldItem(programList_));
-        ICMold::CurrentMold()->SaveMoldFile();
-        programListBackup_ = programList_;
-        qDebug("run modify");
-        UpdateHostParam();
-        isModify_ = false;
+        if(currentMoldNum_ == 8)
+        {
+            ICMold::CurrentMold()->SetMoldContent(ICMold::UIItemToMoldItem(programList_));
+            ICMold::CurrentMold()->SaveMoldFile();
+            programListBackup_ = programList_;
+            qDebug("run modify");
+            UpdateHostParam();
+            isModify_ = false;
+        }
         //        modifyMap_.clear();
     }
     oldStep_ = currentStep;
@@ -395,6 +404,7 @@ void ICHCProgramMonitorFrame::UpdateHostParam()
     }
     qDebug("after m update");
 
+    qDebug() << "currentmoldNum:" << currentMoldNum_ ;
     UpdateUIProgramList_();
 }
 
@@ -413,6 +423,10 @@ void ICHCProgramMonitorFrame::InitSignal()
 
 void ICHCProgramMonitorFrame::on_editToolButton_clicked()
 {
+    if(currentMoldNum_ != 8)
+    {
+        return;
+    }
     const int selectedRow = ui->moldContentListWidget->currentRow();
     if(selectedRow < 0)
     {
@@ -421,8 +435,10 @@ void ICHCProgramMonitorFrame::on_editToolButton_clicked()
     int gIndex;
     int tIndex;
     int sIndex;
+    qDebug("Before Find index");
     FindIndex_(selectedRow, gIndex, tIndex, sIndex);
-    /************BUG#201***********************************/
+    qDebug("End Find index");
+    /************BUG#201**********/
     if(programList_.at(gIndex).StepNum() == 0)  //表示待机点位置（自动运行时待机点位置不能删除）
     {
         QMessageBox::warning(this,
@@ -430,17 +446,19 @@ void ICHCProgramMonitorFrame::on_editToolButton_clicked()
                              tr("Can not edit standby position program"));
         return;
     }
-    /******************************************************/
     if(sIndex < 0)
     {
+        qDebug("Sindex");
         ICTopMoldUIItem * topItem = &programList_[gIndex].at(tIndex);
-        ICTopMoldUIItem * topItemB = &programListBackup_[gIndex].at(tIndex);
+//        ICTopMoldUIItem * topItemB = &programListBackup_[gIndex].at(tIndex);
+        qDebug()<<(topItem == NULL);
         ICMoldItem* item = topItem->BaseItem();
         ICMoldItem * currentBackup;
 
         ICAutoAdjustCommand command;
         ICCommandProcessor* processor;
         ICMoldItem ret;
+        qDebug("Before show editor");
         bool isM = autoRunRevise_->ShowModifyItem(item, &ret, topItem->ToStringList().join("\n"));
         if(isM)
         {          
@@ -484,13 +502,18 @@ void ICHCProgramMonitorFrame::on_editToolButton_clicked()
             isM = processor->ExecuteCommand(command).toBool();
 #endif
             qDebug()<<"after show"<<isM;
+            if(isM)
+            {
+                ICMold::CurrentMold()->SetMoldContent(ICMold::UIItemToMoldItem(programList_));
+            }
             isModify_ = isModify_ || isM;
         }
     }
     else
     {
+        qDebug("Else Sindex");
         ICSubMoldUIItem *subItem = &programList_[gIndex].at(tIndex).at(sIndex);
-        ICSubMoldUIItem *subItemB = &programListBackup_[gIndex].at(tIndex).at(sIndex);
+//        ICSubMoldUIItem *subItemB = &programListBackup_[gIndex].at(tIndex).at(sIndex);
         ICMoldItem* item = subItem->BaseItem();
         ICMoldItem * currentBackup;
         ICMoldItem ret;
@@ -535,6 +558,10 @@ void ICHCProgramMonitorFrame::on_editToolButton_clicked()
             }
             isM = processor->ExecuteCommand(command).toBool();
             qDebug()<<"after show"<<isM;
+            if(isM)
+            {
+                ICMold::CurrentMold()->SetMoldContent(ICMold::UIItemToMoldItem(programList_));
+            }
             isModify_ = isModify_ || isM;
 
         }
@@ -554,7 +581,6 @@ void ICHCProgramMonitorFrame::UpdateUIProgramList_()
 {
     ui->moldContentListWidget->clear();
     qDebug("after clear");
-
     ui->moldContentListWidget->addItems(ICMold::UIItemsToStringList(programList_));
     ICGroupMoldUIItem groupItem;
     int topItemRowCount;
@@ -636,6 +662,10 @@ void ICHCProgramMonitorFrame::MoldNumChanged(int mold)
 {
     this->blockSignals(true);
     currentMoldNum_ = mold;
+    if(currentMoldNum_ != 8)
+    {
+        autoRunRevise_->hide();
+    }
     UpdateHostParam();
     this->blockSignals(false);
 }

@@ -44,7 +44,18 @@ QList<ICMoldItem> ICHCConditionPage::CreateCommandImpl() const
     ICMoldItem item;
     item.SetAction(ICMold::ACTCHECKINPUT);
     item.SetIFVal(buttonGroup->checkedId());
-    item.SetSVal(ui->subComboBox->currentIndex());
+    if(item.IFVal() == 3)
+    {
+        item.SetSVal(7);
+    }
+    else if(item.IFVal() == 4)
+    {
+        item.SetSVal(6);
+    }
+    else
+    {
+        item.SetSVal(ui->subComboBox->currentIndex());
+    }
     item.SetDVal(ui->returnLineEdit->TransThisTextToThisInt());
     ret.append(item);
     return ret;

@@ -11,16 +11,18 @@ ICAutoRunRevise::ICAutoRunRevise(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QIntValidator* validator = new QIntValidator(0, 30000, this);
+    validator = new QIntValidator(0, 30000, this);
     ui->delayEdit->SetDecimalPlaces(2);
     ui->delayEdit->setValidator(validator);
 
-    validator = new QIntValidator(0, 100, this);
-    ui->speedEdit->setValidator(validator);
+    returnStepValidator = new QIntValidator(1, 1000, this);
 
-    validator = new QIntValidator(-50, 50, this);
+    QIntValidator* spValidator = new QIntValidator(0, 100, this);
+    ui->speedEdit->setValidator(spValidator);
+
+    QIntValidator* posValidator = new QIntValidator(-50, 50, this);
     ui->posEdit->SetDecimalPlaces(1);
-    ui->posEdit->setValidator(validator);
+    ui->posEdit->setValidator(posValidator);
 
     ui->delayEdit->SetModalKeyboard(true);
     ui->speedEdit->SetModalKeyboard(true);
@@ -48,6 +50,9 @@ void ICAutoRunRevise::changeEvent(QEvent *e)
 
 bool ICAutoRunRevise::ShowModifyItem(const ICMoldItem *item, ICMoldItem* ret, const QString &text)
 {
+    qDebug("In show editor");
+    qDebug()<<(item == NULL);
+    qDebug()<<(ret == NULL);
     ui->currentMoldItemLabel->setText(text);
     ui->positionLabel->hide();
     ui->posEdit->hide();
@@ -55,6 +60,12 @@ bool ICAutoRunRevise::ShowModifyItem(const ICMoldItem *item, ICMoldItem* ret, co
     ui->speedEdit->hide();
     ui->mmLabel->hide();
     ui->precentLabel->hide();
+
+    ui->delayEdit->SetDecimalPlaces(2);
+    ui->delayEdit->setValidator(validator);
+    ui->label->setText(tr("Delay Time:"));
+    ui->sLabel->show();
+
     if(item->IsAction())
     {
         if(item->Action() <= ICMold::GB)
@@ -65,6 +76,13 @@ bool ICAutoRunRevise::ShowModifyItem(const ICMoldItem *item, ICMoldItem* ret, co
             ui->speedEdit->show();
             ui->mmLabel->show();
             ui->precentLabel->show();
+        }
+        else if(item->Action() == ICMold::ACTCHECKINPUT)
+        {
+            ui->label->setText(tr("Return Step:"));
+            ui->delayEdit->SetDecimalPlaces(0);
+            ui->delayEdit->setValidator(returnStepValidator);
+            ui->sLabel->hide();
         }
     }
     ui->posEdit->SetThisIntToThisText(0);

@@ -155,11 +155,11 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
             {
                 commandStr += tr("Defective Products") + " ";
             }
-            else if(moldItem.SVal() == 6)
+            else if(moldItem.SVal() == 7)
             {
                 commandStr += tr("Try Product") + " ";
             }
-            else if(moldItem.SVal() == 7)
+            else if(moldItem.SVal() == 6)
             {
                 commandStr += tr("Sampling") + " ";
             }

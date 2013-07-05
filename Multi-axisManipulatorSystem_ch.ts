@@ -9,7 +9,7 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="594"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="597"/>
         <source>Come Out</source>
         <translation>横出</translation>
     </message>
@@ -23,37 +23,37 @@
     </message>
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="132"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="324"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="516"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="708"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="900"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1064"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1291"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1483"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="327"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="519"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="711"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="906"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1070"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1297"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1489"/>
         <source>0.0</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="239"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="431"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="623"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="815"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1007"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1171"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1398"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1590"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="242"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="434"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="626"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="821"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1013"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1177"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1404"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1596"/>
         <source>80</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="263"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="455"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="647"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="839"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1031"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1230"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1422"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1614"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="266"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="458"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="650"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="845"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1037"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1236"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1428"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1620"/>
         <source>0.00</source>
         <translation></translation>
     </message>
@@ -68,34 +68,34 @@
         <translation>速度(%)</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="679"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="682"/>
         <source>GX2</source>
         <translation>X2</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="871"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="877"/>
         <source>GY2</source>
         <translation>Y2</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1205"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1211"/>
         <source>GA</source>
         <translation>A</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1142"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1369"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1148"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1375"/>
         <source>Vertical-2</source>
         <translation>垂直2</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1101"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1328"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1107"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1334"/>
         <source>Horizon-2</source>
         <translation>水平2</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1262"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1268"/>
         <source>GB</source>
         <translation>B</translation>
     </message>
@@ -108,17 +108,17 @@
         <translation type="obsolete">水平3</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1454"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1460"/>
         <source>GC</source>
         <translation>C</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1561"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1567"/>
         <source>Vertical-1</source>
         <translation>垂直1</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="1520"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="1526"/>
         <source>Horizon-1</source>
         <translation>水平1</translation>
     </message>
@@ -128,31 +128,31 @@
         <translation>   位置      </translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="169"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="745"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="210"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="789"/>
         <source>Forward</source>
         <translation>前进</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="210"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="786"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="169"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="748"/>
         <source>Backward</source>
         <translation>后退</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="361"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="937"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="364"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="943"/>
         <source>Up</source>
         <translation>上升</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="402"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="978"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="405"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="984"/>
         <source>Down</source>
         <translation>下降</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="553"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="556"/>
         <source>Come In</source>
         <translation>横入</translation>
     </message>
@@ -177,13 +177,13 @@
         <translation type="obsolete">主臂后退</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="295"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="298"/>
         <source>GY1</source>
         <oldsource>GY</oldsource>
         <translation>Y1</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="487"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="490"/>
         <source>GZ</source>
         <translation>Z</translation>
     </message>
@@ -964,6 +964,7 @@ Reason</source>
     </message>
     <message>
         <location filename="hcinstruction/icautorunrevise.ui" line="37"/>
+        <location filename="hcinstruction/icautorunrevise.cpp" line="63"/>
         <source>Delay Time:</source>
         <translation>延时时间:</translation>
     </message>
@@ -992,6 +993,11 @@ Reason</source>
         <location filename="hcinstruction/icautorunrevise.ui" line="102"/>
         <source>mm</source>
         <translation></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icautorunrevise.cpp" line="79"/>
+        <source>Return Step:</source>
+        <translation>返回步号:</translation>
     </message>
 </context>
 <context>
@@ -2531,12 +2537,12 @@ Reason</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="162"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="429"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="436"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="430"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="437"/>
         <source>Can not edit standby position program</source>
         <translation>不能修改待机点位置</translation>
     </message>
@@ -2545,7 +2551,7 @@ Reason</source>
         <translation type="obsolete">需要忽略这个警告吗?</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="649"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="667"/>
         <source>Follow</source>
         <translation>跟随</translation>
     </message>
@@ -2553,8 +2559,8 @@ Reason</source>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="369"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="89"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="204"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="664"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="674"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="682"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="692"/>
         <source>Speed Disable</source>
         <translation>调速禁止</translation>
     </message>
@@ -2633,12 +2639,12 @@ Reason</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="305"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="655"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="673"/>
         <source>No Follow</source>
         <translation>不跟随</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="664"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="682"/>
         <source>Speed Enable</source>
         <translation>调速允许</translation>
     </message>
@@ -3836,7 +3842,7 @@ Reason</source>
     </message>
     <message>
         <location filename="hcinstruction/icinstructmodifydialog.ui" line="42"/>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="93"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="94"/>
         <source>Delay Time</source>
         <translation>延迟时间</translation>
     </message>
@@ -3872,18 +3878,18 @@ Reason</source>
         <translation>不良品使能</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="149"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="151"/>
         <source>speed</source>
         <translation>速度</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="179"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="181"/>
         <source>Return Step</source>
         <translation>返回步号</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="190"/>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="205"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="193"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="208"/>
         <source>Times</source>
         <translation>间隔模数</translation>
     </message>
@@ -5755,26 +5761,26 @@ Please enter an digit between </source>
         <translation>0.0</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="485"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="596"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="495"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="606"/>
         <source>Forward</source>
         <translation>前进</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="498"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="609"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="485"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="596"/>
         <source>Backward</source>
         <translation>后退</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="546"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="654"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="533"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="641"/>
         <source>Up</source>
         <translation>上升</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="533"/>
-        <location filename="hcinstruction/icprogramguidepage.ui" line="641"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="543"/>
+        <location filename="hcinstruction/icprogramguidepage.ui" line="651"/>
         <source>Down</source>
         <translation>下降</translation>
     </message>
@@ -7290,11 +7296,11 @@ Would you want to restart now?</source>
         <location filename="function_settings/moldinformation.cpp" line="246"/>
         <location filename="function_settings/moldinformation.cpp" line="377"/>
         <location filename="function_settings/moldinformation.cpp" line="390"/>
-        <location filename="function_settings/moldinformation.cpp" line="408"/>
-        <location filename="function_settings/moldinformation.cpp" line="418"/>
-        <location filename="function_settings/moldinformation.cpp" line="428"/>
-        <location filename="function_settings/moldinformation.cpp" line="590"/>
-        <location filename="function_settings/moldinformation.cpp" line="627"/>
+        <location filename="function_settings/moldinformation.cpp" line="409"/>
+        <location filename="function_settings/moldinformation.cpp" line="419"/>
+        <location filename="function_settings/moldinformation.cpp" line="429"/>
+        <location filename="function_settings/moldinformation.cpp" line="591"/>
+        <location filename="function_settings/moldinformation.cpp" line="629"/>
         <source>warning</source>
         <translation>警告</translation>
     </message>
@@ -7306,14 +7312,14 @@ Please input the file name.</source>
     </message>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="105"/>
-        <location filename="function_settings/moldinformation.cpp" line="510"/>
-        <location filename="function_settings/moldinformation.cpp" line="553"/>
-        <location filename="function_settings/moldinformation.cpp" line="567"/>
-        <location filename="function_settings/moldinformation.cpp" line="572"/>
-        <location filename="function_settings/moldinformation.cpp" line="669"/>
-        <location filename="function_settings/moldinformation.cpp" line="841"/>
-        <location filename="function_settings/moldinformation.cpp" line="858"/>
-        <location filename="function_settings/moldinformation.cpp" line="869"/>
+        <location filename="function_settings/moldinformation.cpp" line="511"/>
+        <location filename="function_settings/moldinformation.cpp" line="554"/>
+        <location filename="function_settings/moldinformation.cpp" line="568"/>
+        <location filename="function_settings/moldinformation.cpp" line="573"/>
+        <location filename="function_settings/moldinformation.cpp" line="675"/>
+        <location filename="function_settings/moldinformation.cpp" line="849"/>
+        <location filename="function_settings/moldinformation.cpp" line="866"/>
+        <location filename="function_settings/moldinformation.cpp" line="877"/>
         <source>Warnning</source>
         <translation>警告</translation>
     </message>
@@ -7373,18 +7379,18 @@ Please try a new name</source>
         <translation type="obsolete">没有选择文件</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="429"/>
+        <location filename="function_settings/moldinformation.cpp" line="430"/>
         <source>Are you sure to delete the selected files?</source>
         <oldsource>Are you sure to delete the selected files </oldsource>
         <translation>确定删除选择的文件吗?</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="641"/>
+        <location filename="function_settings/moldinformation.cpp" line="642"/>
         <source>Restoring, please wait...</source>
         <translation>还原中，请稍后...</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="553"/>
+        <location filename="function_settings/moldinformation.cpp" line="554"/>
         <source>Wrong program format!</source>
         <translation>错误的程序格式！</translation>
     </message>
@@ -7394,46 +7400,46 @@ Please try a new name</source>
         <translation>已经在当前模号上！</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="567"/>
+        <location filename="function_settings/moldinformation.cpp" line="568"/>
         <source>Wrong config format!!!</source>
         <translation>错误的配置格式!</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="572"/>
+        <location filename="function_settings/moldinformation.cpp" line="573"/>
         <source>Wrong config format!</source>
         <translation>错误的模组参数格式！</translation>
     </message>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="601"/>
-        <location filename="function_settings/moldinformation.cpp" line="620"/>
-        <location filename="function_settings/moldinformation.cpp" line="727"/>
-        <location filename="function_settings/moldinformation.cpp" line="747"/>
+        <location filename="function_settings/moldinformation.cpp" line="622"/>
+        <location filename="function_settings/moldinformation.cpp" line="733"/>
+        <location filename="function_settings/moldinformation.cpp" line="754"/>
         <source>tips</source>
         <oldsource>t1ips</oldsource>
         <translation>提示</translation>
     </message>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="601"/>
-        <location filename="function_settings/moldinformation.cpp" line="620"/>
-        <location filename="function_settings/moldinformation.cpp" line="727"/>
-        <location filename="function_settings/moldinformation.cpp" line="747"/>
+        <location filename="function_settings/moldinformation.cpp" line="622"/>
+        <location filename="function_settings/moldinformation.cpp" line="733"/>
+        <location filename="function_settings/moldinformation.cpp" line="754"/>
         <source>%1 is exist,replace it?</source>
         <translation>%1文件存在，是否替换？</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="669"/>
+        <location filename="function_settings/moldinformation.cpp" line="675"/>
         <source>Wrong program format!!!</source>
         <translation>错误的程序格式!!!</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="691"/>
-        <location filename="function_settings/moldinformation.cpp" line="790"/>
+        <location filename="function_settings/moldinformation.cpp" line="697"/>
+        <location filename="function_settings/moldinformation.cpp" line="796"/>
         <source>Information</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="691"/>
-        <location filename="function_settings/moldinformation.cpp" line="790"/>
+        <location filename="function_settings/moldinformation.cpp" line="697"/>
+        <location filename="function_settings/moldinformation.cpp" line="796"/>
         <source>Operation finished!</source>
         <translation>操作完成！</translation>
     </message>
@@ -7442,8 +7448,8 @@ Please try a new name</source>
         <translation type="obsolete">备份文件不完整！</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="705"/>
-        <location filename="function_settings/moldinformation.cpp" line="835"/>
+        <location filename="function_settings/moldinformation.cpp" line="711"/>
+        <location filename="function_settings/moldinformation.cpp" line="843"/>
         <source>USB is not connected!</source>
         <translation>没有检测到U盘！</translation>
     </message>
@@ -7452,24 +7458,24 @@ Please try a new name</source>
         <translation type="obsolete">没有勾选模号</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="763"/>
+        <location filename="function_settings/moldinformation.cpp" line="769"/>
         <source>Backuping, please wait...</source>
         <translation>备份中，请稍后...</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="844"/>
+        <location filename="function_settings/moldinformation.cpp" line="852"/>
         <source>Refresh File List, please wait...</source>
         <translation>刷新文件列表，请稍后...</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="858"/>
-        <location filename="function_settings/moldinformation.cpp" line="869"/>
+        <location filename="function_settings/moldinformation.cpp" line="866"/>
+        <location filename="function_settings/moldinformation.cpp" line="877"/>
         <source>Backup files is incomplete!</source>
         <translation>备份文件不完整！</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="510"/>
-        <location filename="function_settings/moldinformation.cpp" line="841"/>
+        <location filename="function_settings/moldinformation.cpp" line="511"/>
+        <location filename="function_settings/moldinformation.cpp" line="849"/>
         <source>Backup files is not exists!</source>
         <translation>没有可用的备份文件!</translation>
     </message>
@@ -7485,8 +7491,8 @@ Please try a new name</source>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="290"/>
         <location filename="function_settings/moldinformation.cpp" line="307"/>
-        <location filename="function_settings/moldinformation.cpp" line="705"/>
-        <location filename="function_settings/moldinformation.cpp" line="835"/>
+        <location filename="function_settings/moldinformation.cpp" line="711"/>
+        <location filename="function_settings/moldinformation.cpp" line="843"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -7524,23 +7530,23 @@ Please try a new name</source>
     </message>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="378"/>
-        <location filename="function_settings/moldinformation.cpp" line="409"/>
-        <location filename="function_settings/moldinformation.cpp" line="591"/>
-        <location filename="function_settings/moldinformation.cpp" line="628"/>
+        <location filename="function_settings/moldinformation.cpp" line="410"/>
+        <location filename="function_settings/moldinformation.cpp" line="592"/>
+        <location filename="function_settings/moldinformation.cpp" line="630"/>
         <source>The mold file </source>
         <translation>模号文件</translation>
     </message>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="380"/>
-        <location filename="function_settings/moldinformation.cpp" line="411"/>
-        <location filename="function_settings/moldinformation.cpp" line="593"/>
-        <location filename="function_settings/moldinformation.cpp" line="630"/>
+        <location filename="function_settings/moldinformation.cpp" line="412"/>
+        <location filename="function_settings/moldinformation.cpp" line="594"/>
+        <location filename="function_settings/moldinformation.cpp" line="632"/>
         <source> is being used</source>
         <translation>正被使用</translation>
     </message>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="391"/>
-        <location filename="function_settings/moldinformation.cpp" line="419"/>
+        <location filename="function_settings/moldinformation.cpp" line="420"/>
         <source>Stand programs can not be delete!</source>
         <translation>标准程序不能删除！</translation>
     </message>
