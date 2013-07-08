@@ -134,14 +134,14 @@ void ICMonitorPageFrame::Init_()
     points.append(ICIOPoint("", tr("Mold Closed"), 34));
     points.append(ICIOPoint("", tr("Eject Forward"), 39));
     points.append(ICIOPoint("", tr("Eject Backward"), 38));
-    points.append(ICIOPoint("", tr("Mode open In 2"), 46));
-//    points.append(ICIOPoint("", tr("Core 1 In"), 46));
+//    points.append(ICIOPoint("", tr("Mode open In 2"), 46)); //开模2完
+    points.append(ICIOPoint("", tr("Core 1 In"), 46)); //入芯1到位
     points.append(ICIOPoint("", tr("Core 1 Out"), 45));
     points.append(ICIOPoint("", tr("Core 2 In"), 44));
     points.append(ICIOPoint("", tr("Core 2 Out"), 43));
 
-    points.append(ICIOPoint("", tr("Safe Door 2"), 33));
-//    points.append(ICIOPoint("", tr("IMM Reject"), 33));
+//    points.append(ICIOPoint("", tr("Safe Door 2"), 33));//安全门2
+    points.append(ICIOPoint("", tr("IMM Reject"), 33));//不良品
     points.append(ICIOPoint("", tr("ZC5"), 42));
     points.append(ICIOPoint("", tr("ZC6"), 41));
     points.append(ICIOPoint("", tr("ZC7"), 40));
@@ -154,14 +154,14 @@ void ICMonitorPageFrame::Init_()
     euPageRight_->BindingPointsToInputPage(points);
 
     points.clear();
-    points.append(ICIOPoint("", tr("Mold Open Permit"), 38));
+    points.append(ICIOPoint("", tr("Mold Open Permit"), 38)); //允许开模
     points.append(ICIOPoint("", tr("Mold Close Permit"), 32));
-//    points.append(ICIOPoint("", tr("Eject Forward Permit"), 33));
-    points.append(ICIOPoint("", tr("Thimble Permit 1"), 33));
-//    points.append(ICIOPoint("", tr("Eject Backward Permit"), 37));
-    points.append(ICIOPoint("", tr("Thimble Permit 2"), 37));
-    points.append(ICIOPoint("", tr("Mode Close Permit 2"), 40));
-//    points.append(ICIOPoint("", tr("Core 1 In Permit"), 40));
+    points.append(ICIOPoint("", tr("Eject Forward Permit"), 33));
+//    points.append(ICIOPoint("", tr("Thimble Permit 1"), 33));
+    points.append(ICIOPoint("", tr("Eject Backward Permit"), 37));
+//    points.append(ICIOPoint("", tr("Thimble Permit 2"), 37));
+//    points.append(ICIOPoint("", tr("Mode Close Permit 2"), 40));
+    points.append(ICIOPoint("", tr("Core 1 In Permit"), 40));
     points.append(ICIOPoint("", tr("Core 1 Out Permit"), 46));
     points.append(ICIOPoint("", tr("Core 2 In Permit"), 41));
     points.append(ICIOPoint("", tr("Core 2 Out Permit"), 45));

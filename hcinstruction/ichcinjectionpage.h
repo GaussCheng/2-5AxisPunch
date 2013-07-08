@@ -44,7 +44,6 @@ private:
     QVector<QAbstractButton*> settingButtons_;
     QVector<ICLineEditWithVirtualNumericKeypad*> delayEdits_;
     QMap<QAbstractButton*, uint> buttonToClip_;
-    QMap<QAbstractButton*, uint> buttonToLight_;
     QMap<uint, uint> onClipToOffClip_;
     QMap<uint, uint> offClipToOnClip_;
     QStringList ioNames_;

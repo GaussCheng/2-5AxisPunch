@@ -125,27 +125,22 @@ QRadioButton::indicator:unchecked:disabled
      </attribute>
      <row>
       <property name="text">
-       <string>Close Mold Permit 1</string>
+       <string>Close Mold Permit</string>
       </property>
      </row>
      <row>
       <property name="text">
-       <string>Close Mold Permit 2</string>
+       <string>Ejection Permit</string>
       </property>
      </row>
      <row>
       <property name="text">
-       <string>Ejection Permit 1</string>
+       <string>Core1 Permit</string>
       </property>
      </row>
      <row>
       <property name="text">
        <string>Core2 Permit</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>Ejection Permit 2</string>
       </property>
      </row>
      <column>
@@ -183,9 +178,6 @@ QRadioButton::indicator:unchecked:disabled
       <property name="checkState">
        <enum>Unchecked</enum>
       </property>
-      <property name="flags">
-       <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-      </property>
      </item>
      <item row="1" column="1">
       <property name="text">
@@ -198,6 +190,9 @@ QRadioButton::indicator:unchecked:disabled
       </property>
       <property name="checkState">
        <enum>Unchecked</enum>
+      </property>
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="2" column="1">
@@ -216,14 +211,6 @@ QRadioButton::indicator:unchecked:disabled
      <item row="3" column="1">
       <property name="text">
        <string/>
-      </property>
-     </item>
-     <item row="4" column="0">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="checkState">
-       <enum>Unchecked</enum>
       </property>
      </item>
     </widget>

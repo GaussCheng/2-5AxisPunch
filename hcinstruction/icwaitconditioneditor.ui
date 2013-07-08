@@ -64,7 +64,7 @@ QCheckBox::indicator:unchecked:disabled
       <item row="0" column="0">
        <widget class="QCheckBox" name="moldOpenedCheckBox">
         <property name="text">
-         <string>Wait Mold Opened 1</string>
+         <string>Wait Mold Opened</string>
         </property>
         <attribute name="buttonGroup">
          <string notr="true">buttonGroup</string>
@@ -184,7 +184,7 @@ QCheckBox::indicator:unchecked:disabled
       <item row="6" column="0">
        <widget class="QCheckBox" name="eucoreinCheckBox">
         <property name="text">
-         <string>Wait Mold Opened 2</string>
+         <string>Wait EUCOREIN</string>
         </property>
         <attribute name="buttonGroup">
          <string notr="true">buttonGroup</string>
