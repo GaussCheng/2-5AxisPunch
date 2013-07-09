@@ -440,7 +440,7 @@ void ICUpdateSystem::writeHostButton()
 void ICUpdateSystem::on_updateLogoButton_clicked()
 {
  #ifndef Q_WS_X11
-    if(!CheckIsUsbAttached)
+    if(!CheckIsUsbAttached())
     {
         QMessageBox::warning(this,tr("warning"),tr("USB is not exist!"));
         return;

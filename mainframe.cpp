@@ -946,7 +946,10 @@ void MainFrame::ReturnButtonClicked()
     }
     else if(status == ICKeyboard::KS_AutoStatu)
     {
-        ShowAutoPage();
+        if(centerStackedLayout_->currentWidget() != autoPage_)
+        {
+            ShowAutoPage();
+        }
     }
     else
     {

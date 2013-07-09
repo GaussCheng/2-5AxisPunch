@@ -158,6 +158,8 @@ private:
     bool isCPosChanged_;
     int axisDefine_;
     int timerID_;
+
+    bool isFlag;
     QList<QList<QWidget*> > axisWidgets_;
     QList<uint> compareAlarmNums_;
 #if defined(Q_WS_WIN32) || defined(Q_WS_X11)
