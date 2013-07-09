@@ -19,7 +19,7 @@ ICHCProductSettingFrame::ICHCProductSettingFrame(QWidget *parent) :
     ui->samplingEdit->setValidator(new QIntValidator(0, 65535, ui->samplingEdit));
     ui->samplingEdit_3->setValidator(new QIntValidator(0, 65535, ui->samplingEdit_3));
     ui->waitTimeEdit->SetDecimalPlaces(1);
-    ui->waitTimeEdit->setValidator(new QIntValidator(0, 60000, ui->waitTimeEdit));
+    ui->waitTimeEdit->setValidator(new QIntValidator(0, 32760, ui->waitTimeEdit));
     ICLineEditWrapper *wrapper = new ICLineEditWrapper(ui->productLineEdit,
                                                        ICMold::Product,
                                                        ICLineEditWrapper::Mold,

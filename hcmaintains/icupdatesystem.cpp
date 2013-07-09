@@ -439,6 +439,13 @@ void ICUpdateSystem::writeHostButton()
 
 void ICUpdateSystem::on_updateLogoButton_clicked()
 {
+ #ifndef Q_WS_X11
+    if(!CheckIsUsbAttached)
+    {
+        QMessageBox::warning(this,tr("warning"),tr("USB is not exist!"));
+        return;
+    }
+#endif
     if(updateDialog_ == NULL)
     {
         updateDialog_ = new ICUpdateLogoDialog(this);
@@ -634,3 +641,25 @@ void ICUpdateSystem::RefreshRestTime()
 
 //int pMap_[10];
 //int sortMap_[16] = {1,2,3,5,7,11,13,0,4,6,8,10,12,14,9,15};
+
+bool ICUpdateSystem::CheckIsUsbAttached() const
+{
+    QDir dir("/proc/scsi/usb-storage");
+    if(!dir.exists())
+    {
+        return false;
+    }
+    if(dir.entryList(QStringList(), QDir::Files).isEmpty())
+    {
+        return false;
+    }
+    QFile file("/proc/mounts");
+    if(!file.open(QFile::ReadOnly))
+    {
+        return false;
+    }
+    QString content = file.readAll();
+    file.close();
+    return content.contains(QRegExp("/dev/sd[a-z]*[1-9]*"));
+
+}

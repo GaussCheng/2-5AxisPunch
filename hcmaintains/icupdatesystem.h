@@ -56,6 +56,7 @@ private:
     void writeHostButton();
     void rebootButton();
     void RestartAndUpdateTheProgram();
+    bool CheckIsUsbAttached() const ;
 
 
 private slots:

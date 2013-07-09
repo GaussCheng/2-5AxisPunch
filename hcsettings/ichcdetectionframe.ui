@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>835</width>
+    <width>859</width>
     <height>337</height>
    </rect>
   </property>
@@ -223,12 +223,12 @@
      </property>
      <item>
       <property name="text">
-       <string>Limit Lock Mold</string>
+       <string>No Limit Lock Mold</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>No Limit Lock Mold</string>
+       <string>Limit Lock Mold</string>
       </property>
      </item>
     </widget>

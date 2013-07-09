@@ -1040,6 +1040,14 @@
    </item>
    <item row="6" column="0" rowspan="2" colspan="4">
     <widget class="Line" name="line">
+     <property name="styleSheet">
+      <string notr="true">QMessageBox QAbstractButton
+{
+    min-width: 90px;
+	min-height:30px;
+}
+</string>
+     </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>

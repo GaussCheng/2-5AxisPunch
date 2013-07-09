@@ -19,6 +19,14 @@
   <property name="windowTitle">
    <string>MainFrame</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QMessageBox QAbstractButton
+{
+    min-width: 90px;
+	min-height:30px;
+}
+</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
     <number>0</number>
@@ -113,7 +121,6 @@
      <property name="frameShadow">
       <enum>QFrame::Plain</enum>
      </property>
-     <zorder>programHeadWidget</zorder>
     </widget>
    </item>
    <item>

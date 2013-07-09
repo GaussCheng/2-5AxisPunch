@@ -69,22 +69,23 @@ void ICHCStackedSettingsFrame::on_page0ToolButton_clicked()
 
 void ICHCStackedSettingsFrame::InitInterface()
 {
-    QIntValidator * validator = new QIntValidator(0, 32767, this);
+    QIntValidator * validator = new QIntValidator(0, 65535, this);
+    QIntValidator * validator_ = new QIntValidator(0, 65530, this);
 
     ui->xRPLatticeLineEdit->SetDecimalPlaces(0);
     ui->xRPLatticeLineEdit->setValidator(validator);
     ui->xRPStepLineEdit->SetDecimalPlaces(1);
-    ui->xRPStepLineEdit->setValidator(validator);
+    ui->xRPStepLineEdit->setValidator(validator_);
 
     ui->xRPLatticeLineEdit->SetDecimalPlaces(0);
     ui->yRPLatticeLineEdit->setValidator(validator);
     ui->yRPStepLineEdit->SetDecimalPlaces(1);
-    ui->yRPStepLineEdit->setValidator(validator);
+    ui->yRPStepLineEdit->setValidator(validator_);
 
     ui->xRPLatticeLineEdit->SetDecimalPlaces(0);
     ui->zRPLatticeLineEdit->setValidator(validator);
     ui->zRPStepLineEdit->SetDecimalPlaces(1);
-    ui->zRPStepLineEdit->setValidator(validator);
+    ui->zRPStepLineEdit->setValidator(validator_);
 
 }
 

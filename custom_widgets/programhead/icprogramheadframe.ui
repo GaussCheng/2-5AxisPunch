@@ -13,6 +13,14 @@
   <property name="windowTitle">
    <string>Frame</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QMessageBox QAbstractButton
+{
+    min-width: 90px;
+	min-height:30px;
+}
+</string>
+  </property>
   <layout class="QHBoxLayout" name="horizontalLayout_4">
    <property name="spacing">
     <number>0</number>

@@ -30,6 +30,12 @@
 {
      image: url(:/resource/check_checked.png);
  }
+
+QMessageBox QAbstractButton
+{
+    min-width: 90px;
+	min-height:30px;
+}
 </string>
   </property>
   <property name="frameShape">

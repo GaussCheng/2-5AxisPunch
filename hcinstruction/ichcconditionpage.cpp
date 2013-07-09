@@ -12,6 +12,7 @@ ICHCConditionPage::ICHCConditionPage(QWidget *parent) :
     buttonGroup = new QButtonGroup ;
     ui->subComboBox->setCurrentIndex(5);
     ui->subComboBox->setEnabled(false);
+    ui->returnLineEdit->setText("1");
     InitCheckPointBox();
 }
 
