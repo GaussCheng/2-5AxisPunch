@@ -17,7 +17,7 @@ public:
     explicit ICAutoRunRevise(QWidget *parent = 0);
     ~ICAutoRunRevise();
 
-    bool ShowModifyItem(const ICMoldItem* item, ICMoldItem* ret, const QString& text);
+    bool ShowModifyItem(const ICMoldItem* item, ICMoldItem* ret,const QString &text);
 
 protected:
     void changeEvent(QEvent *e);

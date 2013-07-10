@@ -246,8 +246,10 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
     rotateValidator_->setTop(32767);
 //    maximumValidator_->setTop(65530);
     maximumValidator_->setTop(ui->mechanicalLengthLineEdit->TransThisTextToThisInt());
+
     maximumValidator_->setBottom(0);
     ui->maximumDisplacementLineEdit->setValidator(maximumValidator_);
+    ui->mechanicalLengthLineEdit->setValidator(intValidator);
     intValidator->setTop(65530);
     if(currentAxis_ == ICVirtualHost::ICAxis_AxisX1)
     {
@@ -333,6 +335,7 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         ui->distanceRotationEdit->SetDecimalPlaces(1);
         rotateValidator_->setTop(3600);
         intValidator->setTop(3600);
+        ui->mechanicalLengthLineEdit->setValidator(new QIntValidator(0,3600,this));
 //        maximumValidator_->setTop(900);
 //        maximumValidator_->setBottom(-900);
         ui->maximumDisplacementLineEdit->setValidator(originValidator_);
@@ -359,6 +362,7 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         ui->distanceRotationEdit->SetDecimalPlaces(1);
         rotateValidator_->setTop(3600);
         intValidator->setTop(3600);
+        ui->mechanicalLengthLineEdit->setValidator(new QIntValidator(0,3600,this));
 //        maximumValidator_->setTop(900);
 //        maximumValidator_->setBottom(-900);
         ui->maximumDisplacementLineEdit->setValidator(originValidator_);
@@ -376,6 +380,7 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         ui->distanceRotationEdit->SetDecimalPlaces(1);
         rotateValidator_->setTop(3600);
         intValidator->setTop(3600);
+        ui->mechanicalLengthLineEdit->setValidator(new QIntValidator(0,3600,this));
 //        maximumValidator_->setTop(900);
 //        maximumValidator_->setBottom(-900);
         ui->maximumDisplacementLineEdit->setValidator(originValidator_);

@@ -850,11 +850,11 @@ void MainFrame::ShowAutoPage()
     {
         if(resetTime > 0)
         {
-            QMessageBox::information(NULL,tr("tips"),tr("Spear Time %1 Hour").arg(resetTime));
+            QMessageBox::information(this,tr("tips"),tr("Spear Time %1 Hour").arg(resetTime));
         }
         else if(resetTime < 0)
         {
-            QMessageBox::information(NULL,tr("tips"),tr("No Register"));
+            QMessageBox::information(this,tr("tips"),tr("No Register"));
         }
     }
     functionPage_->ShowFunctionSelectPage();
@@ -1279,8 +1279,8 @@ void MainFrame::InitSpareTime()
         {
             QMessageBox::information(NULL,tr("tips"),tr("Spare Time %1 Hour").arg(resetTime));
 //            connect(registe_timer,SIGNAL(timeout()),this,SLOT(CountRestTime()));
-            registe_timer->start(1000*15);
-//            registe_timer->start(1000*3600);
+//            registe_timer->start(1000*15);
+            registe_timer->start(1000*3600);
         }
         else if(resetTime < 0)
         {
@@ -1293,8 +1293,9 @@ void MainFrame::InitSpareTime()
     }
     else
     {
-        connect(registe_timer,SIGNAL(timeout()),this,SLOT(CountRestTime()));
-        registe_timer->start(1000*15); //15秒减一次（方便测试）
+//        connect(registe_timer,SIGNAL(timeout()),this,SLOT(CountRestTime()));
+//        registe_timer->start(1000*15); //15秒减一次（方便测试）
+        registe_timer->start(1000*3600);
     }
 
 }

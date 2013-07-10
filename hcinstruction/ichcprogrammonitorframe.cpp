@@ -11,6 +11,8 @@
 #include "icvirtualkey.h"
 #include "ickeyboard.h"
 #include <QMessageBox>
+#include "icprogramheadframe.h"
+#include "icparameterssave.h"
 
 ICHCProgramMonitorFrame::ICHCProgramMonitorFrame(QWidget *parent) :
     QFrame(parent),
@@ -55,6 +57,11 @@ ICHCProgramMonitorFrame::ICHCProgramMonitorFrame(QWidget *parent) :
     checkResultMap_.insert(3, tr("Has not teach check Fixture-4!"));
     checkResultMap_.insert(4, tr("Has not teach check Sucker-1!"));
     checkResultMap_.insert(5, tr("Has not teach check Sucker-2!"));
+
+    connect(ICProgramHeadFrame::Instance(),
+            SIGNAL(LevelChanged(int)),
+            this,
+            SLOT(LevelChanged(int)));
 }
 
 ICHCProgramMonitorFrame::~ICHCProgramMonitorFrame()
@@ -176,9 +183,11 @@ void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
     //    }
 }
 
+
 void ICHCProgramMonitorFrame::hideEvent(QHideEvent *e)
 {
     qDebug("isModify change to false in hide");
+    autoRunRevise_->hide();
     if(isModify_)
     {
         if(currentMoldNum_ == 8)
@@ -207,9 +216,22 @@ void ICHCProgramMonitorFrame::hideEvent(QHideEvent *e)
     ICVirtualHost::GlobalVirtualHost()->SetSpeedEnable(false);
     ui->speedEnableButton->setIcon(switchOff_);
     ui->speedEnableButton->setText(tr("Speed Disable"));
+
+
     //    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop,0);
 }
 
+void ICHCProgramMonitorFrame::LevelChanged(int level)
+{
+    if(level >=  ICParametersSave::MachineAdmin)
+    {
+        ui->editToolButton->show();
+    }
+    else
+    {
+        ui->editToolButton->hide();
+    }
+}
 void ICHCProgramMonitorFrame::SetTime(int time)
 {
     ui->timeLabel->setText(ICParameterConversion::TransThisIntToThisText(time, 2));
@@ -262,7 +284,7 @@ void ICHCProgramMonitorFrame::StatusRefreshed()
         oldStackedP_ = newStackedP_;
         ui->stackedProducts->setText(QString::number(oldStackedP_));
     }
-    ui->stackedProducts->setText(QString::number(host->HostStatus(ICVirtualHost::S).toInt()));
+//    ui->stackedProducts->setText(QString::number(host->HostStatus(ICVirtualHost::S).toInt()));
     //    if(host->CurrentStatus() != ICVirtualHost::Auto)
     //    {
     //        qDebug("isModify change to false in auto");
@@ -459,7 +481,24 @@ void ICHCProgramMonitorFrame::on_editToolButton_clicked()
         ICCommandProcessor* processor;
         ICMoldItem ret;
         qDebug("Before show editor");
-        bool isM = autoRunRevise_->ShowModifyItem(item, &ret, topItem->ToStringList().join("\n"));
+        /*
+         *调整对话框中标题栏文字显示
+        */
+        QString str = topItem->ToStringList().join("\n");
+        if(str.size() > 37)
+        {
+            str.insert(38,"\n");
+            str.insert(39,"\t");
+        }
+        if(str.size() > 65)
+        {
+            str.insert(66,"\n");
+            str.insert(67,"\t");
+        }
+
+        /*****/
+        bool isM = autoRunRevise_->ShowModifyItem(item, &ret, str);
+//        bool isM = autoRunRevise_->ShowModifyItem(item, &ret, topItem->ToStringList().join("\n"));
         if(isM)
         {          
           if(isModify_)

@@ -125,6 +125,7 @@ void ICHCInstructionPageFrame::showEvent(QShowEvent *e)
 void ICHCInstructionPageFrame::hideEvent(QHideEvent *e)
 {
     qDebug("instruct hide");
+    modifyDialog_->hide();
     QFrame::hideEvent(e);
 //    disconnect(ICVirtualHost::GlobalVirtualHost(),
 //               SIGNAL(StepChanged(int)),
@@ -145,6 +146,7 @@ void ICHCInstructionPageFrame::hideEvent(QHideEvent *e)
     {
         ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnManual, 0);
     }
+
  //   ICInstructParam::Instance()->UpdateHostParam();
 
 }

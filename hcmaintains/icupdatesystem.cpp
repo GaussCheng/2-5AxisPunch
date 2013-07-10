@@ -590,8 +590,8 @@ int ICUpdateSystem::Register(const QString& code, const QString& machineCode)
     {
         return -1;
     }
-    return sortRet.right(6).toInt();
-//    return sortRet.right(6).toInt() * 24 * 7;
+//    return sortRet.right(6).toInt();
+    return sortRet.right(6).toInt() * 24 * 7;
 }
 
 void ICUpdateSystem::on_registerBtn_clicked()

@@ -49,6 +49,7 @@ private slots:
     void on_singleStepButton_pressed();
 
     void on_singleStepButton_released();
+    void LevelChanged(int);
 
 private:
     void InitSignal();

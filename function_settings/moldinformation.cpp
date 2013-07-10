@@ -814,21 +814,34 @@ void MoldInformation::switchPushButton()
         ui->sourceFileNameLabel->clear();
         break;
     case 1:
-        ui->sourceFileNameLabel->clear();
-        ui->newToolButton->setEnabled(false);
-        ui->copyToolButton->setEnabled(false);
-        ui->loadToolButton->setEnabled(false);
-        ui->deleteToolButton->setEnabled(false);
-        ui->exportToolButton->setEnabled(false);
-        ui->importToolButton->setEnabled(true);
+//        ui->newToolButton->setEnabled(false);
+//        ui->copyToolButton->setEnabled(false);
+//        ui->loadToolButton->setEnabled(false);
+//        ui->deleteToolButton->setEnabled(false);
+//        ui->exportToolButton->setEnabled(false);
+//        ui->importToolButton->setEnabled(true);
+//        ui->sourceFileNameLabel->clear();
         RefreshFileList();
-        ui->sourceFileNameLabel->clear();
         break;
     }
 }
 
 void MoldInformation::RefreshFileList()
 {
+    if(!CheckIsUsbAttached())
+    {
+        QMessageBox::warning(this, tr("Warning"), tr("USB is not connected!"));
+        ui->exportCheckBox->click();
+        return;
+    }
+    ui->newToolButton->setEnabled(false);
+    ui->copyToolButton->setEnabled(false);
+    ui->loadToolButton->setEnabled(false);
+    ui->deleteToolButton->setEnabled(false);
+    ui->exportToolButton->setEnabled(false);
+    ui->importToolButton->setEnabled(true);
+    ui->sourceFileNameLabel->clear();
+
     ui->informationTableWidget->clearContents();
     ui->informationTableWidget->setRowCount(0);
     fileInfoList_.clear();
@@ -838,12 +851,6 @@ void MoldInformation::RefreshFileList()
 #else
     QDir recordDir("/mnt/udisk/HC5ABackup/records");
 
-    if(!CheckIsUsbAttached())
-    {
-        QMessageBox::warning(this, tr("Warning"), tr("USB is not connected!"));
-//        ui->exportCheckBox->setChecked(true);
-        return;
-    }
     if(!recordDir.exists())
     {
         QMessageBox::warning(this, tr("Warnning"), tr("Backup files is not exists!"));

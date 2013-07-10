@@ -53,6 +53,7 @@ bool ICAutoRunRevise::ShowModifyItem(const ICMoldItem *item, ICMoldItem* ret, co
     qDebug("In show editor");
     qDebug()<<(item == NULL);
     qDebug()<<(ret == NULL);
+
     ui->currentMoldItemLabel->setText(text);
     ui->positionLabel->hide();
     ui->posEdit->hide();

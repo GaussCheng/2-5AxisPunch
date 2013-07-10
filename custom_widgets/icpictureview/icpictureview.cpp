@@ -1,5 +1,6 @@
 #include "icpictureview.h"
 #include "ui_icpictureview.h"
+#include "QMessageBox"
 
 
 ICPictureView::ICPictureView(QWidget *parent) :
@@ -30,6 +31,11 @@ void ICPictureView::ScanPictures(const QString &path)
 {
     picturesDir_.setPath(path);
     QStringList pics = picturesDir_.entryList(QStringList()<<"*.png");
+    if(pics.isEmpty())
+    {
+        QMessageBox::information(this,tr("Tips"),tr("No find picture!"));
+        return;
+    }
     ui->picList->clear();
     ui->picList->addItems(pics);
 }
