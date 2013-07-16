@@ -247,6 +247,9 @@
 1022：The position is horizontal when origin
 1023:The position is vertical when traving
 1024:The position is horizontal when traving
+1038：The Z axis is not in the inner security zone when bad product
+1039：The Z axis setting is not in the inner security zone when bad product
+1040:The action of forward is not C axis
 1052:Z insafe signal，Z outsafe signal and main up signal is both off
 1053:NULL
 1054:No X axis but has X action
