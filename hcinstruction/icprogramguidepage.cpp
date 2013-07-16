@@ -334,15 +334,15 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
     /*fixture check*/
     item.SetAction(ICMold::ACT_Cut);
     item.SetIFVal(1);
-    item.SetNum(stepNum++);
     if(isMainArmUsed && ui->productCheck->isChecked())
     {
+        item.SetNum(stepNum++);
         item.SetSVal(ui->productFixtureBox->currentIndex());
         ret.append(item);
     }
-    item.SetNum(stepNum++);
     if(isSubArmUsed && ui->outletCheck->isChecked())
     {
+        item.SetNum(stepNum++);
         item.SetSVal(ui->outletFixtureBox->currentIndex());
         ret.append(item);
     }
