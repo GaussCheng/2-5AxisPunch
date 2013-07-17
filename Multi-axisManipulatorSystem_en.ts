@@ -744,49 +744,49 @@ Infomation</source>
 <context>
     <name>ICAutoRunRevise</name>
     <message>
-        <location filename="hcinstruction/icautorunrevise.ui" line="14"/>
+        <location filename="hcinstruction/icautorunrevise.ui" line="26"/>
         <source>Dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icautorunrevise.ui" line="20"/>
+        <location filename="hcinstruction/icautorunrevise.ui" line="32"/>
         <source>TextLabel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icautorunrevise.ui" line="37"/>
-        <location filename="hcinstruction/icautorunrevise.cpp" line="66"/>
+        <location filename="hcinstruction/icautorunrevise.ui" line="49"/>
+        <location filename="hcinstruction/icautorunrevise.cpp" line="67"/>
         <source>Delay Time:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icautorunrevise.ui" line="56"/>
+        <location filename="hcinstruction/icautorunrevise.ui" line="68"/>
         <source>Speed:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icautorunrevise.ui" line="75"/>
+        <location filename="hcinstruction/icautorunrevise.ui" line="87"/>
         <source>Pos(+/-5):</source>
         <oldsource>Pos:</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icautorunrevise.ui" line="88"/>
+        <location filename="hcinstruction/icautorunrevise.ui" line="100"/>
         <source>s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icautorunrevise.ui" line="95"/>
+        <location filename="hcinstruction/icautorunrevise.ui" line="107"/>
         <source>%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icautorunrevise.ui" line="102"/>
+        <location filename="hcinstruction/icautorunrevise.ui" line="114"/>
         <source>mm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icautorunrevise.cpp" line="82"/>
+        <location filename="hcinstruction/icautorunrevise.cpp" line="83"/>
         <source>Return Step:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1567,28 +1567,28 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="428"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="636"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="430"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="638"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="429"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="431"/>
         <source>Can not add standby position program</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="622"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="624"/>
         <source>warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="623"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="625"/>
         <source>Stand program can not be delete action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="637"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="639"/>
         <source>Can not delete standby position program</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1900,68 +1900,68 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="52"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="72"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="54"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="79"/>
         <source>Has not teach check Fixture-1!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="53"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="73"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="55"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="80"/>
         <source>Has not teach check Fixture-2!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="54"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="74"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="56"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="81"/>
         <source>Has not teach check Fixture-3!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="55"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="75"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="57"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="82"/>
         <source>Has not teach check Fixture-4!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="56"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="76"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="58"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="83"/>
         <source>Has not teach check Sucker-1!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="57"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="77"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="59"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="84"/>
         <source>Has not teach check Sucker-2!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="164"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="445"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="171"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="467"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="446"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="468"/>
         <source>Can not edit standby position program</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="694"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="733"/>
         <source>Speed Enable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="679"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="718"/>
         <source>Follow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="377"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="90"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="209"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="694"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="704"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="97"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="218"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="733"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="743"/>
         <source>Speed Disable</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1973,7 +1973,7 @@ Infomation</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="313"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="685"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="724"/>
         <source>No Follow</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5961,9 +5961,9 @@ Please input the file name.</source>
         <location filename="function_settings/moldinformation.cpp" line="568"/>
         <location filename="function_settings/moldinformation.cpp" line="573"/>
         <location filename="function_settings/moldinformation.cpp" line="675"/>
-        <location filename="function_settings/moldinformation.cpp" line="849"/>
-        <location filename="function_settings/moldinformation.cpp" line="866"/>
-        <location filename="function_settings/moldinformation.cpp" line="877"/>
+        <location filename="function_settings/moldinformation.cpp" line="856"/>
+        <location filename="function_settings/moldinformation.cpp" line="873"/>
+        <location filename="function_settings/moldinformation.cpp" line="884"/>
         <source>Warnning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6027,7 +6027,7 @@ Please try a new name</source>
         <location filename="function_settings/moldinformation.cpp" line="290"/>
         <location filename="function_settings/moldinformation.cpp" line="307"/>
         <location filename="function_settings/moldinformation.cpp" line="711"/>
-        <location filename="function_settings/moldinformation.cpp" line="843"/>
+        <location filename="function_settings/moldinformation.cpp" line="833"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6152,7 +6152,7 @@ Please try a new name</source>
     </message>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="711"/>
-        <location filename="function_settings/moldinformation.cpp" line="843"/>
+        <location filename="function_settings/moldinformation.cpp" line="833"/>
         <source>USB is not connected!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6162,19 +6162,19 @@ Please try a new name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="852"/>
+        <location filename="function_settings/moldinformation.cpp" line="859"/>
         <source>Refresh File List, please wait...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="866"/>
-        <location filename="function_settings/moldinformation.cpp" line="877"/>
+        <location filename="function_settings/moldinformation.cpp" line="873"/>
+        <location filename="function_settings/moldinformation.cpp" line="884"/>
         <source>Backup files is incomplete!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="511"/>
-        <location filename="function_settings/moldinformation.cpp" line="849"/>
+        <location filename="function_settings/moldinformation.cpp" line="856"/>
         <source>Backup files is not exists!</source>
         <translation type="unfinished"></translation>
     </message>
