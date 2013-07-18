@@ -1542,7 +1542,7 @@ Reason</source>
         <location filename="hcsettings/ichcdetectionframe.ui" line="595"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="190"/>
         <source>Orgin Position</source>
-        <translation>原点复归</translation>
+        <translation>启动姿势</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="128"/>
@@ -8250,13 +8250,13 @@ Admin</source>
         <location filename="hcinstruction/icinstructparam.cpp" line="369"/>
         <source>Sucker1 OFF</source>
         <oldsource>Lock 1 Mold OFF</oldsource>
-        <translation>锁模1关</translation>
+        <translation>吸1断</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="370"/>
         <source>Sucker2 OFF</source>
         <oldsource>Eject OFF 1</oldsource>
-        <translation>顶针1禁止</translation>
+        <translation>吸2断</translation>
     </message>
     <message>
         <source>Lock 2 Mold OFF</source>
