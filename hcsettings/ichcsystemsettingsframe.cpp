@@ -387,9 +387,11 @@ void ICHCSystemSettingsFrame::on_backupAllButton_clicked()
     ret = ret && backupUtility.BackupDir("/opt/Qt/bin/sysconfig",
                                          "/mnt/udisk/HC5ABackup/sysconfig",
                                          QStringList()<<"system.txt");
+
     ret = ret && backupUtility.BackupDir("/opt/Qt/bin/records/",
                                          "/mnt/udisk/HC5ABackup/records/",
                                          QStringList()<<"*.act"<<"*.fnc");
+
     ret = ret && backupUtility.BackupDir("/opt/Qt/bin/subs",
                                          "/mnt/udisk/HC5ABackup/subs",
                                          QStringList()<<"sub[0-7].prg");
@@ -609,15 +611,17 @@ void ICHCSystemSettingsFrame::on_restoreAllButton_clicked()
         ret = ret && backupUtility.RestoreDir("/mnt/udisk/HC5ABackup/sysconfig",
                                               "/opt/Qt/bin/sysconfig",
                                               QStringList()<<"system.txt");
-//        if(ret)
-//        {
-//            on_restoreMoldsButton_clicked();
-
-//            system("reboot");
-//        }
+        Information(ret);
+        if(ret)
+        {
+            system("reboot");
+        }
 
     }
-    Information(false, tr("Backup files is broken!"));
+    else
+    {
+        Information(false, tr("Backup files is broken!"));
+    }
 
 }
 
