@@ -98,7 +98,11 @@ void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
     SetProduct(ICMold::CurrentMold()->MoldParam(ICMold::Product));
     currentMoldNum_ = host->HostStatus(ICVirtualHost::S).toInt();
     UpdateHostParam();
-    programListBackup_ = ICMold::CurrentMold()->ToUIItems();
+//    programListBackup_ = ICMold::CurrentMold()->ToUIItems();
+    if(!isModify_)
+    {
+        programListBackup_ = ICMold::CurrentMold()->ToUIItems();
+    }
     QFrame::showEvent(e);
     connect(ICVirtualHost::GlobalVirtualHost(),
             SIGNAL(StepChanged(int)),
@@ -195,7 +199,11 @@ void ICHCProgramMonitorFrame::hideEvent(QHideEvent *e)
             ICMold::CurrentMold()->SetMoldContent(ICMold::UIItemToMoldItem(programList_));
         }
         ICMold::CurrentMold()->SaveMoldFile();
-        isModify_ = false;
+//        isModify_ = false;
+        if(ICKeyboard::Instace()->CurrentSwitchStatus() != ICKeyboard::KS_AutoStatu)
+         {
+             isModify_ = false;
+         }
     }
     //    modifyMap_.clear();
     QFrame::hideEvent(e);
