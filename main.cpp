@@ -5,9 +5,21 @@
 #include "icsplashscreen.h"
 #include "icparameterssave.h"
 
+#ifdef Q_WS_WIN
+#include <QFile>
+#endif
+
 int main(int argc, char *argv[])
 {    
     QApplication a(argc, argv);
+#ifdef Q_WS_WIN
+    QFile file("./stylesheet/global.qss");
+    if(file.open(QFile::ReadOnly))
+    {
+        qApp->setStyleSheet(file.readAll());
+        file.close();
+    }
+#endif
 //    qApp->setStyleSheet("./stylesheet/global.qss");
 
     QPixmap splashPixmap("resource/startup_page.png");

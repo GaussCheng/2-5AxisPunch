@@ -828,12 +828,14 @@ void MoldInformation::switchPushButton()
 
 void MoldInformation::RefreshFileList()
 {
+#ifdef Q_WS_QWS
     if(!CheckIsUsbAttached())
     {
         QMessageBox::warning(this, tr("Warning"), tr("USB is not connected!"));
         ui->exportCheckBox->click();
         return;
     }
+#endif
     ui->newToolButton->setEnabled(false);
     ui->copyToolButton->setEnabled(false);
     ui->loadToolButton->setEnabled(false);
@@ -886,7 +888,7 @@ void MoldInformation::RefreshFileList()
         }
     }
 
-    fileInfoList_ = recordDir.entryInfoList(QDir::Files);
+    fileInfoList_ = recordDir.entryInfoList(QStringList()<<"*.act", QDir::Files);
 
     QFileInfoList userProgramList;
     QFileInfo tmp;
