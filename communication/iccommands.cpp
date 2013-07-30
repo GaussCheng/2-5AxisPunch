@@ -408,9 +408,10 @@ QVariant ICUpdateHostTransferCommand::Send(modbus_param_t *modbusParam)
 //    {
         do
         {
+            qDebug()<<"Transfer Host Begin"<<StartAddr();
             ret = hc_update_host_transfer(modbusParam, StartAddr(), DataBuffer().data());
             ++tryedTimes;
-            qDebug()<<"ICTran ReSend"<<StartAddr()<<tryedTimes;
+            qDebug()<<"Transfer Host End"<<StartAddr()<<tryedTimes;
         }while(ret < 0 && tryedTimes < RetryTimes());
         if(ret < 0)
         {

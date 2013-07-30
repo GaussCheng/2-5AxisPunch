@@ -28,6 +28,7 @@ ICHCSystemSettingsFrame::ICHCSystemSettingsFrame(QWidget *parent) :
     ui->languageButtonGroup->setId(ui->englishBox,1);
     InitParameter();
     ui->extentFunctionCheckBox->setChecked(ICParametersSave::Instance()->IsExtentFunctionUsed());
+    ui->limitFunctionBox->setChecked(ICParametersSave::Instance()->IsRegisterFunctinOn());
 
     ui->axisXToolButton->setText(tr("X1 Axis"));
     ui->axisYToolButton->setText(tr("Y1 Axis"));
@@ -1228,4 +1229,9 @@ void ICHCSystemSettingsFrame::on_clearButton_clicked()
 {
     ui->newPwdEdit->clear();
     ui->oldPwdEdit->clear();
+}
+
+void ICHCSystemSettingsFrame::on_limitFunctionBox_toggled(bool checked)
+{
+    ICParametersSave::Instance()->SetRegisterFunction(checked);
 }

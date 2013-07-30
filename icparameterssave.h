@@ -84,6 +84,9 @@ public:
     bool IsSingleArm() { return GetParameter(SystemMachine, "ArmNum", false).toBool();}
     void SetSingleArm(bool isSingle) { SaveParameter(SystemMachine, "ArmNum", isSingle);}
 
+    bool IsRegisterFunctinOn() { return GetParameter(SystemMachine, "RegisterFunction", false).toBool();}
+    void SetRegisterFunction(bool ison) { SaveParameter(SystemMachine, "RegisterFunction", ison);}
+
 signals:
     void CurrentLanguageChanged();
 

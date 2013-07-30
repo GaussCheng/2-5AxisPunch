@@ -5961,9 +5961,9 @@ Please input the file name.</source>
         <location filename="function_settings/moldinformation.cpp" line="568"/>
         <location filename="function_settings/moldinformation.cpp" line="573"/>
         <location filename="function_settings/moldinformation.cpp" line="675"/>
-        <location filename="function_settings/moldinformation.cpp" line="856"/>
-        <location filename="function_settings/moldinformation.cpp" line="873"/>
-        <location filename="function_settings/moldinformation.cpp" line="884"/>
+        <location filename="function_settings/moldinformation.cpp" line="858"/>
+        <location filename="function_settings/moldinformation.cpp" line="875"/>
+        <location filename="function_settings/moldinformation.cpp" line="886"/>
         <source>Warnning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6027,7 +6027,7 @@ Please try a new name</source>
         <location filename="function_settings/moldinformation.cpp" line="290"/>
         <location filename="function_settings/moldinformation.cpp" line="307"/>
         <location filename="function_settings/moldinformation.cpp" line="711"/>
-        <location filename="function_settings/moldinformation.cpp" line="833"/>
+        <location filename="function_settings/moldinformation.cpp" line="834"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6152,7 +6152,7 @@ Please try a new name</source>
     </message>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="711"/>
-        <location filename="function_settings/moldinformation.cpp" line="833"/>
+        <location filename="function_settings/moldinformation.cpp" line="834"/>
         <source>USB is not connected!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6162,19 +6162,19 @@ Please try a new name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="859"/>
+        <location filename="function_settings/moldinformation.cpp" line="861"/>
         <source>Refresh File List, please wait...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="873"/>
-        <location filename="function_settings/moldinformation.cpp" line="884"/>
+        <location filename="function_settings/moldinformation.cpp" line="875"/>
+        <location filename="function_settings/moldinformation.cpp" line="886"/>
         <source>Backup files is incomplete!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="511"/>
-        <location filename="function_settings/moldinformation.cpp" line="856"/>
+        <location filename="function_settings/moldinformation.cpp" line="858"/>
         <source>Backup files is not exists!</source>
         <translation type="unfinished"></translation>
     </message>

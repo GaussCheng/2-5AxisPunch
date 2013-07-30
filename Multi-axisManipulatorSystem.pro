@@ -9,8 +9,10 @@ OBJECTS_DIR = temp_8
 UI_DIR = temp_8
 MOC_DIR = temp_8
 RCC_DIR = temp_8
+DESTDIR = bin
 CONFIG(debug, debug|release) {
 #    LIBS += -lprofiler
+DESTDIR = bin_debug
 OBJECTS_DIR = temp_8_d
 UI_DIR = temp_8_d
 MOC_DIR = temp_8_d

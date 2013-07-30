@@ -40,7 +40,7 @@
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="systemSettingPage">
       <attribute name="title">
@@ -163,7 +163,7 @@ QRadioButton::indicator:unchecked:disabled
             <bool>true</bool>
            </property>
            <attribute name="buttonGroup">
-            <string notr="true">languageButtonGroup</string>
+            <string>languageButtonGroup</string>
            </attribute>
           </widget>
          </item>
@@ -198,7 +198,7 @@ QRadioButton::indicator:unchecked:disabled
             <string>English</string>
            </property>
            <attribute name="buttonGroup">
-            <string notr="true">languageButtonGroup</string>
+            <string>languageButtonGroup</string>
            </attribute>
           </widget>
          </item>
@@ -525,7 +525,7 @@ QRadioButton::indicator:unchecked:disabled
           <bool>false</bool>
          </property>
          <attribute name="buttonGroup">
-          <string notr="true">buttonGroup_2</string>
+          <string>buttonGroup_2</string>
          </attribute>
         </widget>
        </item>
@@ -563,7 +563,7 @@ QRadioButton::indicator:unchecked:disabled
           <bool>true</bool>
          </property>
          <attribute name="buttonGroup">
-          <string notr="true">buttonGroup_2</string>
+          <string>buttonGroup_2</string>
          </attribute>
         </widget>
        </item>
@@ -741,6 +741,54 @@ QRadioButton::indicator:unchecked:disabled
          </property>
         </widget>
        </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="limitFunctionLabel">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Limit Function</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QCheckBox" name="limitFunctionBox">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">::indicator {
+     width: 32px;
+     height: 32px;
+ }
+
+::indicator:unchecked 
+{
+     image: url(:/resource/check_unchecked.png);
+ }
+::indicator:checked 
+{
+     image: url(:/resource/check_checked.png);
+ }
+
+::indicator:checked:disabled
+{
+ image: url(:/resource/check_checked_disable.png);
+}
+
+::indicator:unchecked:disabled
+{
+ image: url(:/resource/check_unchecked_disable.png);
+}</string>
+         </property>
+         <property name="text">
+          <string>Use</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="tab">
@@ -907,7 +955,7 @@ height:30px;</string>
             <bool>true</bool>
            </property>
            <attribute name="buttonGroup">
-            <string notr="true">buttonGroup</string>
+            <string>buttonGroup</string>
            </attribute>
           </widget>
          </item>
@@ -924,7 +972,7 @@ height:30px;</string>
             <bool>true</bool>
            </property>
            <attribute name="buttonGroup">
-            <string notr="true">buttonGroup</string>
+            <string>buttonGroup</string>
            </attribute>
           </widget>
          </item>
@@ -941,7 +989,7 @@ height:30px;</string>
             <bool>true</bool>
            </property>
            <attribute name="buttonGroup">
-            <string notr="true">buttonGroup</string>
+            <string>buttonGroup</string>
            </attribute>
           </widget>
          </item>
@@ -958,7 +1006,7 @@ height:30px;</string>
             <bool>true</bool>
            </property>
            <attribute name="buttonGroup">
-            <string notr="true">buttonGroup</string>
+            <string>buttonGroup</string>
            </attribute>
           </widget>
          </item>
@@ -975,7 +1023,7 @@ height:30px;</string>
             <bool>true</bool>
            </property>
            <attribute name="buttonGroup">
-            <string notr="true">buttonGroup</string>
+            <string>buttonGroup</string>
            </attribute>
           </widget>
          </item>
@@ -992,7 +1040,7 @@ height:30px;</string>
             <bool>true</bool>
            </property>
            <attribute name="buttonGroup">
-            <string notr="true">buttonGroup</string>
+            <string>buttonGroup</string>
            </attribute>
           </widget>
          </item>
@@ -1009,7 +1057,7 @@ height:30px;</string>
             <bool>true</bool>
            </property>
            <attribute name="buttonGroup">
-            <string notr="true">buttonGroup</string>
+            <string>buttonGroup</string>
            </attribute>
           </widget>
          </item>
@@ -1026,7 +1074,7 @@ height:30px;</string>
             <bool>true</bool>
            </property>
            <attribute name="buttonGroup">
-            <string notr="true">buttonGroup</string>
+            <string>buttonGroup</string>
            </attribute>
           </widget>
          </item>
@@ -1043,7 +1091,7 @@ height:30px;</string>
             <bool>true</bool>
            </property>
            <attribute name="buttonGroup">
-            <string notr="true">buttonGroup</string>
+            <string>buttonGroup</string>
            </attribute>
           </widget>
          </item>

@@ -96,6 +96,8 @@ private slots:
 
     void on_clearButton_clicked();
 
+    void on_limitFunctionBox_toggled(bool checked);
+
 private:
     bool CheckRestoreSystemFiles_();
     bool CheckRestoreMachineFiles_();

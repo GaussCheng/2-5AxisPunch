@@ -2610,8 +2610,8 @@ int hc_update_host_transfer(modbus_param_t *mb_param, int addr, char *data)
         FD_SET(mb_param->fd, &readFD);
 
         struct timeval tv;
-        tv.tv_sec = 0;
-        tv.tv_usec = 10000;
+        tv.tv_sec = 10;
+        tv.tv_usec = 100000;
         int ret = select(mb_param->fd + 1, &readFD, NULL, NULL, &tv);
         if(ret == 0)
         {
