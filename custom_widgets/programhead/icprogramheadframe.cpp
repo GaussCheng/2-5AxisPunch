@@ -116,10 +116,17 @@ void ICProgramHeadFrame::SetCurrentLevel(int level)
 }
 void ICProgramHeadFrame::ReashRestTime()
 {
+    if(!ICParametersSave::Instance()->IsRegisterFunctinOn())
+    {
+//        ui->restTimeLabel->hide();
+        ui->restTimeLabel->clear();
+        return;
+    }
     int rest_time = ICParametersSave::Instance()->RestTime(0);
     if(rest_time == 0)
     {
         ui->restTimeLabel->setText(tr("No Limit"));
+        ui->restTimeLabel->clear();
     }
     else if(rest_time <= 7*24)
     {

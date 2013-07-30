@@ -87,6 +87,14 @@ void ICUpdateSystem::changeEvent(QEvent *e)
 void ICUpdateSystem::showEvent(QShowEvent *e)
 {
 //    timer_.start(1000);
+    if(ICParametersSave::Instance()->IsRegisterFunctinOn())
+    {
+        ui->registerContainer->show();
+    }
+    else
+    {
+        ui->registerContainer->hide();
+    }
     ICVirtualHost::GlobalVirtualHost()->StopRefreshStatus();
     QFrame::showEvent(e);
 }
