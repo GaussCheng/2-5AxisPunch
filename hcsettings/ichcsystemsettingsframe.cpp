@@ -267,6 +267,8 @@ void ICHCSystemSettingsFrame::on_verifyButton_clicked()
     {
         ui->extentLabel->setEnabled(true);
         ui->extentFunctionCheckBox->setEnabled(true);
+        ui->limitFunctionLabel->setEnabled(true);
+        ui->limitFunctionBox->setEnabled(true);
     }
     ui->pwdEdit->clear();
 }
