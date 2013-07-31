@@ -120,6 +120,18 @@ void ICKeyboardReceiver::run()
 //                ::system("echo after readkey--VFB_X-P >> keylog");
                 continue;
             }
+            if(key == ICKeyboard::FB_Up ||
+               key == ICKeyboard::FB_Down)
+            {
+                if(key != oldKeyValue_)
+                {
+                    keyboard->SetPressed(true);
+                    oldKeyValue_ = key;
+                    keyboard->SetKeyValue(key);
+                }
+                msleep(200);
+                continue;
+            }
             if(key != oldKeyValue_)
             {
                 oldKeyValue_ = key;

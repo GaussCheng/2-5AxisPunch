@@ -23,6 +23,7 @@ public slots:
     void PasswdLevelChenged(int level);
 protected:
     void mouseReleaseEvent(QMouseEvent *ev);
+    void mousePressEvent(QMouseEvent *ev);
     void changeEvent(QEvent *e);
 
 private slots:

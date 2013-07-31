@@ -2,6 +2,7 @@
 #include "ui_icsystemstatusframe.h"
 
 #include "ictunemolddialog.h"
+#include <QDebug>
 
 //ICSystemStatusFrame * ICSystemStatusFrame::instance_ = NULL;
 
@@ -120,3 +121,4 @@ void ICSystemStatusFrame::on_immButton_clicked()
 {
     tuneMoldDialog_->show();
 }
+

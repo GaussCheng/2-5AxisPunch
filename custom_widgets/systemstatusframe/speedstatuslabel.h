@@ -4,6 +4,7 @@
 #include <QLabel>
 
 #include <QString>
+class QTimer;
 
 class SpeedStatusLabel : public QLabel
 {
@@ -21,12 +22,19 @@ public slots:
 
 protected:
     void mouseReleaseEvent(QMouseEvent *ev);
-};
+    void mousePressEvent(QMouseEvent *ev);
 
-inline void SpeedStatusLabel::SetCurrentSpeed(const QString & speed)
-{
-    this->setText(speed);
-}
+
+private slots:
+    void OnTimerOut();
+private:
+    void Start(int count);
+    void Stop();
+    QTimer* timer_;
+    QString oldSytle_;
+    int count_;
+    int endCount_;
+};
 
 inline QString SpeedStatusLabel::CurrentSpeed() const
 {

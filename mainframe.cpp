@@ -256,7 +256,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     this->setFixedSize(800, 600);
 #endif
 #ifdef Q_WS_X11
-    //        ShowInstructPage();
+            ShowInstructPage();
     //       ShowManualPage();
     //     ShowAutoPage();
 #endif

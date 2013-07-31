@@ -19,10 +19,18 @@ PasswdLevelLabel::~PasswdLevelLabel()
     delete passwordDialog_;
 }
 
+static QString oldStyle;
+void PasswdLevelLabel::mousePressEvent(QMouseEvent *ev)
+{
+    oldStyle = this->styleSheet();
+    this->setStyleSheet("background-color:blue;color:white;");
+}
+
 void PasswdLevelLabel::mouseReleaseEvent(QMouseEvent *ev)
 {
     passwordDialog_->show();
     QLabel::mouseReleaseEvent(ev);
+    this->setStyleSheet(oldStyle);
 }
 
 void PasswdLevelLabel::changeEvent(QEvent *e)

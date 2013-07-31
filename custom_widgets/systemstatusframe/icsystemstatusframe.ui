@@ -166,15 +166,18 @@ color:rgb(255, 0, 255);</string>
       <enum>Qt::NoFocus</enum>
      </property>
      <property name="styleSheet">
-      <string notr="true">border:none;
+      <string notr="true">#immButton
+{
+border:none;
 color: rgb(255, 255, 0);
-</string>
+}
+#immButton:pressed{
+     background-color:blue;
+     color:white;
+}</string>
      </property>
      <property name="text">
       <string>IMM Signal</string>
-     </property>
-     <property name="autoRaise">
-      <bool>true</bool>
      </property>
     </widget>
    </item>
