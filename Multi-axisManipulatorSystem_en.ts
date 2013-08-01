@@ -4923,72 +4923,88 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="35"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="41"/>
         <source>Seq</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="50"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="56"/>
         <source>S:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="66"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="72"/>
         <source>Pos</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="82"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="88"/>
         <source>Num</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="98"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="104"/>
         <source>Step</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="118"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="303"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="497"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="691"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="124"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="312"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="509"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="706"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="939"/>
         <source>X:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="191"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="197"/>
         <source>Group-1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="209"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="403"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="597"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="738"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="200"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="397"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="594"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="888"/>
+        <source>buttonGroup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icstackeditor.ui" line="218"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="415"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="612"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="753"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="949"/>
         <source>Y:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="256"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="450"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="644"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="785"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="265"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="462"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="659"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="800"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="959"/>
         <source>Z:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="385"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="394"/>
         <source>Group-2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="579"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="591"/>
         <source>Group-3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="870"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="885"/>
         <source>Group-4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icstackeditor.ui" line="932"/>
+        <source>Start Point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5347,7 +5363,7 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/systemstatusframe/icsystemstatusframe.ui" line="174"/>
+        <location filename="custom_widgets/systemstatusframe/icsystemstatusframe.ui" line="180"/>
         <source>IMM Signal</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6090,13 +6106,7 @@ Please try a new name</source>
     </message>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="329"/>
-        <location filename="function_settings/moldinformation.cpp" line="350"/>
         <source>Tips</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="function_settings/moldinformation.cpp" line="350"/>
-        <source>Load Mold Successful!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6329,17 +6339,17 @@ Please try a new name</source>
 <context>
     <name>PasswdLevelLabel</name>
     <message>
-        <location filename="custom_widgets/programhead/passwdlevellabel.cpp" line="45"/>
+        <location filename="custom_widgets/programhead/passwdlevellabel.cpp" line="53"/>
         <source>Machine Operator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/passwdlevellabel.cpp" line="49"/>
+        <location filename="custom_widgets/programhead/passwdlevellabel.cpp" line="57"/>
         <source>Machine Admin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/passwdlevellabel.cpp" line="53"/>
+        <location filename="custom_widgets/programhead/passwdlevellabel.cpp" line="61"/>
         <source>Advance Admin</source>
         <translation type="unfinished"></translation>
     </message>
