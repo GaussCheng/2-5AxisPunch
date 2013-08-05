@@ -25,6 +25,7 @@ ICStackEditor::ICStackEditor(QWidget *parent) :
     ui(new Ui::ICStackEditor)
 {
     ui->setupUi(this);
+    ui->pointWidget->hide();
     StackGroup group;
     group.check = ui->g1Check;
     group.seq = ui->g1Seq;
