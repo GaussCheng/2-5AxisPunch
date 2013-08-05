@@ -1,14 +1,14 @@
 INCLUDEPATH += $$PWD
 DEPENDPATH += $$PWD
-HEADERS += ickeyboard.h \
-    ickeyboardreceiver.h \
-    icknobreceiver.h \
-    ickeyboardhandler.h \
-    icpulleyreceiver.h \
-    ickeyboard/icvirtualkey.h \
-    ickeyboard/icactioncommand.h
-SOURCES += ickeyboard.cpp \
-    ickeyboardreceiver.cpp \
-    icknobreceiver.cpp \
-    ickeyboardhandler.cpp \
-    icpulleyreceiver.cpp
+HEADERS += $$PWD/ickeyboard.h \
+    $$PWD/ickeyboardreceiver.h \
+    $$PWD/icknobreceiver.h \
+    $$PWD/ickeyboardhandler.h \
+    $$PWD/icpulleyreceiver.h \
+    $$PWD/ickeyboard/icvirtualkey.h \
+    $$PWD/ickeyboard/icactioncommand.h
+SOURCES += $$PWD\ickeyboard.cpp \
+    $$PWD/ickeyboardreceiver.cpp \
+    $$PWD/icknobreceiver.cpp \
+    $$PWD/ickeyboardhandler.cpp \
+    $$PWD/icpulleyreceiver.cpp

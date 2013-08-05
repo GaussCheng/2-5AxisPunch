@@ -3025,7 +3025,7 @@ Reason</source>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.ui" line="750"/>
         <source>Limit Function</source>
-        <translation type="unfinished"></translation>
+        <translation>注册功能</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.ui" line="796"/>

@@ -1,14 +1,14 @@
 INCLUDEPATH += $$PWD
 DEPENDPATH += $$PWD
 
-HEADERS += icvirtualhost.h \
-    iccommunicationcommandbase.h \
-    iccommands.h \
-    iccommandprocessor.h
+HEADERS += $$PWD/icvirtualhost.h \
+    $$PWD/iccommunicationcommandbase.h \
+    $$PWD/iccommands.h \
+    $$PWD/iccommandprocessor.h
 
-SOURCES += icvirtualhost.cpp \
-    iccommunicationcommandbase.cpp \
-    iccommands.cpp \
-    iccommandprocessor.cpp
+SOURCES += $$PWD/icvirtualhost.cpp \
+    $$PWD/iccommunicationcommandbase.cpp \
+    $$PWD/iccommands.cpp \
+    $$PWD/iccommandprocessor.cpp
 
 include (libmodbus/libmodbus.pri)

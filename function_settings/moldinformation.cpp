@@ -257,7 +257,7 @@ void MoldInformation::UpdateInformationTable()
 
     fileInfoList_.clear();
     QDir recordDir(recordFilePath_);
-    fileInfoList_ = recordDir.entryInfoList(QStringList()<<"*.act", QDir::Files);
+    fileInfoList_ = recordDir.entryInfoList(QStringList()<<"*.act" ,QDir::Files);
 
     QFileInfoList userProgramList;
     qDebug()<<"start1";

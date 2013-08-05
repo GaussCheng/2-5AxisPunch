@@ -183,6 +183,8 @@ void ICHCSystemSettingsFrame::showEvent(QShowEvent *e)
     //    }
     ui->extentLabel->setEnabled(false);
     ui->extentFunctionCheckBox->setEnabled(false);
+    ui->limitFunctionBox->setEnabled(false);
+    ui->limitFunctionLabel->setEnabled(false);
     if(!ui->machineConfigPage->isHidden())
     {
         UpdateConfigShow_();
@@ -1090,7 +1092,7 @@ void ICHCSystemSettingsFrame::StatusRefresh()
     QString os(osInfo_.release);
 #endif
     os += "; ";
-    ui->versionLabel->setText("Version: OS:" + os + "App 4.0.1;Libs:4.7.3; Host:" + ICVirtualHost::GlobalVirtualHost()->HostStatus(ICVirtualHost::Time).toString());
+    ui->versionLabel->setText("Version: OS:" + os + "App 4.1.1;Libs:4.7.3; Host:" + ICVirtualHost::GlobalVirtualHost()->HostStatus(ICVirtualHost::Time).toString());
 }
 
 void ICHCSystemSettingsFrame::on_structSelectHostButton_clicked()

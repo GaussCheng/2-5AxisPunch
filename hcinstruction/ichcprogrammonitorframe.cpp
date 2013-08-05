@@ -62,6 +62,7 @@ ICHCProgramMonitorFrame::ICHCProgramMonitorFrame(QWidget *parent) :
             SIGNAL(LevelChanged(int)),
             this,
             SLOT(LevelChanged(int)));
+    LevelChanged(ICProgramHeadFrame::Instance()->CurrentLevel());
 }
 
 ICHCProgramMonitorFrame::~ICHCProgramMonitorFrame()
@@ -429,6 +430,7 @@ void ICHCProgramMonitorFrame::UpdateHostParam()
     }
     else
     {
+        currentMoldNum_ = 8;
         programList_ = ICMold::CurrentMold()->ToUIItems();
         //        return;
     }
