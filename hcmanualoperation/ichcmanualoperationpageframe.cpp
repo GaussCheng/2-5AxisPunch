@@ -49,7 +49,14 @@ ICHCManualOperationPageFrame::~ICHCManualOperationPageFrame()
 void ICHCManualOperationPageFrame::showEvent(QShowEvent *e)
 {
 //    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
-//    if(ICParametersSave::Instance())
+    if(ICParametersSave::Instance()->IsAdjustFunctionOn())
+    {
+        ui->adjustToolButton->show();
+    }
+    else
+    {
+        ui->adjustToolButton->hide();
+    }
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     if(host->AxisDefine(ICVirtualHost::ICAxis_AxisA) == ICVirtualHost::ICAxisDefine_None)
     {

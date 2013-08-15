@@ -148,6 +148,14 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
         ui->useCheckBox->setChecked(true);
     if(host->EscapeWay() == 1)
         ui->noUseCheckBox->setChecked(true);
+    if(ICParametersSave::Instance()->IsAdjustFunctionOn())
+    {
+        ui->adjUse->setChecked(true);
+    }
+    else
+    {
+        ui->adjNoUse->setChecked(true);
+    }
 }
 
 ICStructDefineFrame::~ICStructDefineFrame()
@@ -392,4 +400,9 @@ void ICStructDefineFrame::InitEscapeBox()
                 SLOT(escapeBoxChange()));
     }
     buttongroup_->setExclusive(true);
+}
+
+void ICStructDefineFrame::on_adjUse_toggled(bool checked)
+{
+    ICParametersSave::Instance()->SetAdjustFunction(checked);
 }
