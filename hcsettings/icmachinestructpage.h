@@ -70,6 +70,8 @@ private:
     QIntValidator* maximumValidator_;
     QIntValidator* intValidator;
     QIntValidator* originValidator_;
+    QIntValidator* minSecValidator_;
+    QIntValidator* maxSecValidator_;
  //   QIntValidator* externalValidator_;
 
     int axisDefine_;

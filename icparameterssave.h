@@ -86,6 +86,9 @@ public:
 
     bool IsRegisterFunctinOn() { return GetParameter(SystemMachine, "RegisterFunction", false).toBool();}
     void SetRegisterFunction(bool ison) { SaveParameter(SystemMachine, "RegisterFunction", ison);}
+    
+    bool IsAdjustFunctionOn() { return GetParameter(SystemMachine, "AdjustFunction", false).toBool();}
+    void SetAdjustFunction(bool ison) { SaveParameter(SystemMachine, "AdjustFunction", ison);}
 
 signals:
     void CurrentLanguageChanged();

@@ -140,7 +140,7 @@ void ICUpdateSystem::SystemUpdateStart()
     QStringList updateFileList = updateSettings_->childGroups();
     if(updateFileList.count() > 0)
     {
-        ui->copyFilesProgressBar->setRange(0, updateFileList.count());
+        ui->copyFilesProgressBar->setRange(0, updateFileList.count() + 2);
         ui->copyFilesProgressBar->setValue(0);
     }
 
@@ -177,6 +177,19 @@ void ICUpdateSystem::SystemUpdateStart()
     //    {
     //        system("cd /opt/Qt/bin && chmod +x custom_step.sh && ./custom_step.sh && rm /opt/Qt/bin/custom_step.sh");
     //    }
+    if(QFile::exists("/opt/Qt/bin/Multi-axisManipulatorSystem.bfe"))
+    {
+        system("cd /opt/Qt/bin \
+               && mv Multi-axisManipulatorSystem Multi-axisManipulatorSystemOld \
+               && decrypt.sh Multi-axisManipulatorSystem.bfe \
+               && rm Multi-axisManipulatorSystemOld");
+    }
+    ui->copyFilesProgressBar->setValue(ui->copyFilesProgressBar->value() + 1);
+    if(QFile::exists("/opt/Qt/bin/custom_step.sh"))
+    {
+        system("cd /opt/Qt/bin && chmod +x custom_step.sh && ./custom_step.sh && rm /opt/Qt/bin/custom_step.sh");
+    }
+    ui->copyFilesProgressBar->setValue(ui->copyFilesProgressBar->value() + 1);
     int ret = QMessageBox::information(this, tr("Congratulations"),
                                        tr("Update finish\n"
                                           "You must restart this program\n"
@@ -232,17 +245,6 @@ void ICUpdateSystem::RefreshUSBIniInfo()
 void ICUpdateSystem::RestartAndUpdateTheProgram()
 {
     //    qApp->notify(qApp, new QCloseEvent());
-    if(QFile::exists("/opt/Qt/bin/Multi-axisManipulatorSystem.bfe"))
-    {
-        system("cd /opt/Qt/bin \
-               && mv Multi-axisManipulatorSystem Multi-axisManipulatorSystemOld \
-               && decrypt.sh Multi-axisManipulatorSystem.bfe \
-               && rm Multi-axisManipulatorSystemOld");
-    }
-    if(QFile::exists("/opt/Qt/bin/custom_step.sh"))
-    {
-        system("cd /opt/Qt/bin && chmod +x custom_step.sh && ./custom_step.sh && rm /opt/Qt/bin/custom_step.sh");
-    }
     system("reboot");
 }
 

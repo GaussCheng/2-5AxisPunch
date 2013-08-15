@@ -82,6 +82,8 @@ void AxisSettingsFrame::SetCurrentAxis(QString currentAxisName, int axis)
     double total = 0;
     ui->minUnitLabel->setText(tr("mm"));
     ui->maxUnitLabel->setText(tr("mm"));
+    minSecValidator_->setBottom(0);
+    maxSecValidator_->setBottom(0);
     if(currentAxis_ == ICVirtualHost::ICAxis_AxisX1)
     {
         machineLangth = ICVirtualHost::SYS_X_Length;
@@ -108,6 +110,8 @@ void AxisSettingsFrame::SetCurrentAxis(QString currentAxisName, int axis)
         ui->label_2->show();
         ui->label_4->show();
         ui->maximumDisplacementLineEdit->show();
+        minSecValidator_->setBottom(10);
+        maxSecValidator_->setBottom(500);
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisZ)
     {
@@ -147,6 +151,8 @@ void AxisSettingsFrame::SetCurrentAxis(QString currentAxisName, int axis)
         ui->label_2->show();
         ui->label_4->show();
         ui->maximumDisplacementLineEdit->show();
+        minSecValidator_->setBottom(10);
+        maxSecValidator_->setBottom(500);
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisA)
     {
@@ -210,21 +216,25 @@ void AxisSettingsFrame::SetCurrentAxis(QString currentAxisName, int axis)
     ui->minLabel->setText(minText);
     ui->maxLabel->setText(maxText);
     maxMoveValidator_->setTop(ui->mechanicalLengthLineEdit->TransThisTextToThisInt());
+    maxSecValidator_->setTop(maxMoveValidator_->top());
+    minSecValidator_->setTop(maxMoveValidator_->top());
 //    ui->maximumDisplacementLineEdit->setValidator();
 }
 
 void AxisSettingsFrame::InitInterface()
 {
     QIntValidator * intValidator = new QIntValidator(0, 65530, this);
+    maxSecValidator_ = new QIntValidator(0, 0, this);
+    minSecValidator_ = new QIntValidator(0, 0, this);
     ui->mechanicalLengthLineEdit->SetDecimalPlaces(1);
     ui->mechanicalLengthLineEdit->setValidator(intValidator);
     ui->maximumDisplacementLineEdit->SetDecimalPlaces(1);
     maxMoveValidator_ = new QIntValidator(0, 65530, this);
     ui->maximumDisplacementLineEdit->setValidator(maxMoveValidator_);
     ui->internalSecurityZoneLineEdit->SetDecimalPlaces(1);
-    ui->internalSecurityZoneLineEdit->setValidator(maxMoveValidator_);
+    ui->internalSecurityZoneLineEdit->setValidator(minSecValidator_);
     ui->externalSecurityZoneLineEdit->SetDecimalPlaces(1);
-    ui->externalSecurityZoneLineEdit->setValidator(maxMoveValidator_);
+    ui->externalSecurityZoneLineEdit->setValidator(maxSecValidator_);
     ui->distanceRotationEdit->SetDecimalPlaces(2);
     ui->distanceRotationEdit->setValidator(intValidator);
 }

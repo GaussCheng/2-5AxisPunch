@@ -16,6 +16,7 @@
 #include "icvirtualhost.h"
 #include "ickeyboard.h"
 #include "ictimerpool.h"
+#include "icparameterssave.h"
 
 ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     QFrame(parent),
@@ -48,6 +49,7 @@ ICHCManualOperationPageFrame::~ICHCManualOperationPageFrame()
 void ICHCManualOperationPageFrame::showEvent(QShowEvent *e)
 {
 //    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
+//    if(ICParametersSave::Instance())
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     if(host->AxisDefine(ICVirtualHost::ICAxis_AxisA) == ICVirtualHost::ICAxisDefine_None)
     {

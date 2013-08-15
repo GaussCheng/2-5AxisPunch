@@ -246,6 +246,8 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
     rotateValidator_->setTop(32767);
 //    maximumValidator_->setTop(65530);
     maximumValidator_->setTop(ui->mechanicalLengthLineEdit->TransThisTextToThisInt());
+    minSecValidator_->setBottom(0);
+    maxSecValidator_->setBottom(0);
 
     maximumValidator_->setBottom(0);
     ui->maximumDisplacementLineEdit->setValidator(maximumValidator_);
@@ -275,6 +277,8 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         maxText = tr("Leave origin pos");
         ui->distanceRotationEdit->SetDecimalPlaces(2);
         ui->label_2->setText(tr("Maximum displacement"));
+        minSecValidator_->setBottom(10);
+        maxSecValidator_->setBottom(500);
 
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisZ)
@@ -313,6 +317,9 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         maxText = tr("Leave origin pos");
         ui->distanceRotationEdit->SetDecimalPlaces(2);
         ui->label_2->setText(tr("Maximum displacement"));
+        minSecValidator_->setBottom(10);
+        maxSecValidator_->setBottom(500);
+
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisA)
     {
@@ -592,6 +599,8 @@ void ICMachineStructPage::on_saveToolButton_clicked()
 void ICMachineStructPage::InitInterface()
 {
     //QIntValidator * intValidator = new QIntValidator(0, 65530, this);
+    minSecValidator_ = new QIntValidator(0,0,this);
+    maxSecValidator_ = new QIntValidator(0, 0, this);
     ui->mechanicalLengthLineEdit->SetDecimalPlaces(1);
     intValidator = new QIntValidator(0, 65530, this);
     ui->mechanicalLengthLineEdit->setValidator(intValidator);
@@ -602,9 +611,9 @@ void ICMachineStructPage::InitInterface()
     ui->maximumDisplacementLineEdit->setValidator(maximumValidator_);
   //  externalValidator_ = new QIntValidator(0, 65530, this);
     ui->internalSecurityZoneLineEdit->SetDecimalPlaces(1);
-    ui->internalSecurityZoneLineEdit->setValidator(maxMoveValidator_);
+    ui->internalSecurityZoneLineEdit->setValidator(minSecValidator_);
     ui->externalSecurityZoneLineEdit->SetDecimalPlaces(1);
-    ui->externalSecurityZoneLineEdit->setValidator(maxMoveValidator_);
+    ui->externalSecurityZoneLineEdit->setValidator(maxSecValidator_);
     rotateValidator_ = new QIntValidator(0, 65530, this);
     ui->distanceRotationEdit->SetDecimalPlaces(2);
     ui->distanceRotationEdit->setValidator(rotateValidator_);
@@ -852,6 +861,8 @@ void ICMachineStructPage::on_mechanicalLengthLineEdit_textChanged(const QString 
     Q_UNUSED(arg1);
     maxMoveValidator_->setTop(ui->mechanicalLengthLineEdit->TransThisTextToThisInt());
     maximumValidator_->setTop(ui->mechanicalLengthLineEdit->TransThisTextToThisInt());
+    minSecValidator_->setTop(maximumValidator_->top());
+    maxSecValidator_->setTop(maximumValidator_->top());
  //   externalValidator_->setTop(ui->mechanicalLengthLineEdit->TransThisTextToThisInt());
 }
 

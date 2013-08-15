@@ -36,6 +36,8 @@ private:
     Ui::AxisSettingsFrame *ui;
     int currentAxis_;
     QIntValidator* maxMoveValidator_;
+    QIntValidator* minSecValidator_;
+    QIntValidator* maxSecValidator_;
 
 //    QIntValidator* securityMinValidator_;
 //    QIntValidator* securityMinValidator_
