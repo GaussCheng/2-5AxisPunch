@@ -44,6 +44,7 @@ QList<ICMoldItem> ICHCConditionPage::CreateCommandImpl() const
     QList<ICMoldItem> ret;
     ICMoldItem item;
     item.SetAction(ICMold::ACTCHECKINPUT);
+    item.SetPos(0);
     item.SetIFVal(buttonGroup->checkedId());
     if(item.IFVal() == 3)
     {
@@ -69,6 +70,12 @@ void ICHCConditionPage::InitCheckPointBox()
     buttonGroup->addButton(ui->x044checkBox,2);
     buttonGroup->addButton(ui->tryProductBox,3);
     buttonGroup->addButton(ui->samplingBox,4);
+    buttonGroup->addButton(ui->fixture1Box, 5);
+    buttonGroup->addButton(ui->fixture2Box, 6);
+    buttonGroup->addButton(ui->fixture3Box, 7);
+    buttonGroup->addButton(ui->fixture4Box, 8);
+    buttonGroup->addButton(ui->sucker1Box, 9);
+    buttonGroup->addButton(ui->sucker2Box, 10);
 
     QList<QAbstractButton*> buttons = buttonGroup->buttons();
     for(int i = 0; i != buttons.size(); ++i)

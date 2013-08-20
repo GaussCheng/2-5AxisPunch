@@ -312,6 +312,7 @@ public:
         AutoRunning     = 1,
         AutoSingleCycle = 2,
         AutoStopping    = 3,
+        AutoOneCycle    = 4,
         Stop            = 0x20,
         Teach           = 0x21,
         Origin          = 0x22,

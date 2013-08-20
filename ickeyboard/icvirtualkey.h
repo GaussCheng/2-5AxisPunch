@@ -37,6 +37,7 @@ enum ICVirtualKey
     VKEY_BADD,
     VKEY_CSUB,
     VKEY_CADD,
+    VKEY_CYCLE = 0xDF,
 
     VKEY_BIASX  = 0xE0,
     VKEY_BIASY,

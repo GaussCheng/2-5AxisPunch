@@ -273,7 +273,7 @@ void ICVirtualHost::RefreshStatus()
             statusMap_.insert(DbgX0, 10);
             statusMap_.insert(DbgY0, 148);
             statusMap_.insert(DbgZ0, 3052);
-            statusMap_.insert(DbgP0, 50);
+            statusMap_.insert(DbgP0, (2 << 8));
             statusMap_.insert(DbgQ0, 60);
             statusMap_.insert(DbgX1, 150);
             statusMap_.insert(DbgY1, 123);
@@ -307,6 +307,7 @@ void ICVirtualHost::RefreshStatus()
 #ifdef Q_WS_X11
                 statusMap_.insert(ErrCode, 0);
                 statusMap_.insert(XPos, rand());
+//                statusMap_.insert(DbgP0, (2 << 8));
 #else
                 statusMap_.insert(ErrCode, 500);
 #endif

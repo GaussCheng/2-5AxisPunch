@@ -14,6 +14,8 @@ ICAutoRunRevise::ICAutoRunRevise(QWidget *parent) :
     validator = new QIntValidator(0, 30000, this);
     ui->delayEdit->SetDecimalPlaces(2);
     ui->delayEdit->setValidator(validator);
+    ui->limitEdit->setValidator(validator);
+    ui->limitEdit->SetDecimalPlaces(2);
 
     returnStepValidator = new QIntValidator(1, 1000, this);
 
@@ -66,6 +68,9 @@ bool ICAutoRunRevise::ShowModifyItem(const ICMoldItem *item, ICMoldItem* ret, co
     ui->delayEdit->setValidator(validator);
     ui->label->setText(tr("Delay Time:"));
     ui->sLabel->show();
+    ui->limitEdit->hide();
+    ui->limitTimeLabel->hide();
+    ui->limitUnitLabel->hide();
 
     if(item->IsAction())
     {
@@ -78,12 +83,20 @@ bool ICAutoRunRevise::ShowModifyItem(const ICMoldItem *item, ICMoldItem* ret, co
             ui->mmLabel->show();
             ui->precentLabel->show();
         }
+        else if(item->Action() == ICMold::ACT_WaitMoldOpened)
+        {
+            ui->label->setText("Limit Time:");
+        }
         else if(item->Action() == ICMold::ACTCHECKINPUT)
         {
             ui->label->setText(tr("Return Step:"));
             ui->delayEdit->SetDecimalPlaces(0);
             ui->delayEdit->setValidator(returnStepValidator);
             ui->sLabel->hide();
+            ui->limitEdit->show();
+            ui->limitTimeLabel->show();
+            ui->limitUnitLabel->show();
+            ui->limitEdit->SetThisIntToThisText(item->Pos());
         }
     }
     ui->posEdit->SetThisIntToThisText(0);
@@ -92,7 +105,14 @@ bool ICAutoRunRevise::ShowModifyItem(const ICMoldItem *item, ICMoldItem* ret, co
     int isok = exec();
     if(isok == QDialog::Accepted)
     {
-        ret->SetPos(ui->posEdit->TransThisTextToThisInt());
+        if(item->Action() == ICMold::ACT_WaitMoldOpened)
+        {
+            ret->SetPos(ui->limitEdit->TransThisTextToThisInt());
+        }
+        else
+        {
+            ret->SetPos(ui->posEdit->TransThisTextToThisInt());
+        }
         ret->SetDVal(ui->delayEdit->TransThisTextToThisInt());
         ret->SetSVal(ui->speedEdit->TransThisTextToThisInt());
 //        ICMoldItem tempItem = *item;

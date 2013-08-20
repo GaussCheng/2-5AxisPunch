@@ -51,6 +51,8 @@ private slots:
     void on_singleStepButton_released();
     void LevelChanged(int);
 
+    void on_cycle_clicked();
+
 private:
     void InitSignal();
     void UpdateUIProgramList_();

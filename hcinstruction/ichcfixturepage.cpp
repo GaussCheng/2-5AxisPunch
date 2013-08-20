@@ -22,7 +22,7 @@ ICHCFixturePage::ICHCFixturePage(QWidget *parent) :
     ICLineEditWithVirtualNumericKeypad* delays = new ICLineEditWithVirtualNumericKeypad[ui->tableWidget->rowCount()];
     ICLineEditWithVirtualNumericKeypad *delayEdit;
     ioNames_<<tr("Fixture1  ")<<tr("Fixture2  ")<<tr("Fixture3  ")<<tr("Fixture4  ")
-               <<tr("Sucker1   ")<<tr("Sucker2   ");
+           <<tr("Sucker1   ")<<tr("Sucker2   ");
     onClipToOffClip_.insert(ICMold::ACTCLIP1ON, ICMold::ACTCLIP1OFF);
     onClipToOffClip_.insert(ICMold::ACTCLIP2ON, ICMold::ACTCLIP2OFF);
     onClipToOffClip_.insert(ICMold::ACTCLIP3ON, ICMold::ACTCLIP3OFF);

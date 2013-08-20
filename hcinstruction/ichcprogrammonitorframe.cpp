@@ -293,6 +293,21 @@ void ICHCProgramMonitorFrame::StatusRefreshed()
         oldStackedP_ = newStackedP_;
         ui->stackedProducts->setText(QString::number(oldStackedP_));
     }
+    int status = host->HostStatus(ICVirtualHost::DbgP0).toInt();
+    int mode = host->HostStatus(ICVirtualHost::DbgX0).toInt();
+    if(status == 2 && mode != ICVirtualHost::AutoSingleCycle)
+    {
+        ui->infoLabel->setText(tr("Single run ready"));
+    }
+    else if(status == 4 && mode != ICVirtualHost::AutoOneCycle)
+    {
+        ui->infoLabel->setText(tr("Single cycle ready"));
+    }
+    else
+    {
+        ui->infoLabel->setText("");
+    }
+
 //    ui->stackedProducts->setText(QString::number(host->HostStatus(ICVirtualHost::S).toInt()));
     //    if(host->CurrentStatus() != ICVirtualHost::Auto)
     //    {
@@ -764,4 +779,9 @@ void ICHCProgramMonitorFrame::on_singleStepButton_pressed()
 void ICHCProgramMonitorFrame::on_singleStepButton_released()
 {
     ICKeyboard::Instace()->SetPressed(false);
+}
+
+void ICHCProgramMonitorFrame::on_cycle_clicked()
+{
+    ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_CYCLE);
 }

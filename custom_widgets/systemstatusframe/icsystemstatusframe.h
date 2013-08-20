@@ -22,7 +22,8 @@ public:
         Ready,
         Running,
         SingleCycle,
-        Stopping
+        Stopping,
+        OneCycle
     };
 
 //    static ICSystemStatusFrame* Instance()
@@ -60,6 +61,7 @@ private:
     int currentStatus_;
     QPixmap singleCycle_;
     QPixmap stopping_;
+    QPixmap oneCycle_;
     ICTuneMoldDialog* tuneMoldDialog_;
 };
 

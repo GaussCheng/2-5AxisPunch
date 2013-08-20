@@ -11,7 +11,8 @@ ICSystemStatusFrame::ICSystemStatusFrame(QWidget *parent) :
     ui(new Ui::ICSystemStatusFrame),
     currentStatus_(-1),
     singleCycle_(":/resource/step-running.png"),
-    stopping_(":/resource/auto-stopping.png")
+    stopping_(":/resource/auto-stopping.png"),
+    oneCycle_(":/resource/auto-onecycle.png")
 {
     ui->setupUi(this);
 
@@ -72,6 +73,10 @@ void ICSystemStatusFrame::SetAutoStatus(AutoSatus status)
     else if(status == Running)
     {
         ui->autoStatusLabel->SetStatus(StatusLabel::ONSTATUS);
+    }
+    else if(status == OneCycle)
+    {
+        ui->autoStatusLabel->setPixmap(oneCycle_);
     }
     else
     {

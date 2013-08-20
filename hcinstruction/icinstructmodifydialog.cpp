@@ -14,6 +14,8 @@ ICInstructModifyDialog::ICInstructModifyDialog(QWidget *parent) :
     returnStepValidator = new QIntValidator(1, 1000, this);
     ui->delayTimeEdit->SetDecimalPlaces(2);
     ui->delayTimeEdit->setValidator(validator_);
+    ui->limitTimeEdit->setValidator(validator_);
+    ui->limitTimeEdit->SetDecimalPlaces(2);
     /*****************BUG177，178*******************************/
     validator = new QIntValidator(0, 255, this);
     ui->speedEdit->setValidator(validator);
@@ -91,10 +93,14 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
     ui->horizontalBox->hide();
     ui->verticalBox->hide();
     
-    ui->positionLabel_3->setText(tr("Delay Time"));
+    ui->delayLabel->setText(tr("Delay Time"));
     ui->delayTimeEdit->SetDecimalPlaces(2);
-    ui->positionLabel_6->show();
+    ui->delayUnitLabel->show();
     ui->delayTimeEdit->setValidator(validator_);
+    ui->limitLabel->hide();
+    ui->limitTimeEdit->hide();
+    ui->limitUnitLabel->hide();
+
 
     if(item->IsAction())
     {
@@ -178,10 +184,18 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
         //子程序编辑，可以修改返回步号
         else if(item->Action() == ICMold::ACTCHECKINPUT)
         {
-            ui->positionLabel_3->setText(tr("Return Step"));
+            ui->delayLabel->setText(tr("Return Step"));
             ui->delayTimeEdit->SetDecimalPlaces(0);
             ui->delayTimeEdit->setValidator(returnStepValidator);
-            ui->positionLabel_6->hide();
+            ui->delayUnitLabel->hide();
+            ui->limitLabel->show();
+            ui->limitTimeEdit->show();
+            ui->limitUnitLabel->show();
+            ui->limitTimeEdit->SetThisIntToThisText(item->Pos());
+        }
+        else if(item->Action() == ICMold::ACT_WaitMoldOpened)
+        {
+            ui->delayLabel->setText(tr("Limit Time"));
         }
     }
     /******************BUG#117****************************/
@@ -249,7 +263,14 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
     int isok = exec();
     if(isok == QDialog::Accepted)
     {
-        item->SetPos(ui->posEdit->TransThisTextToThisInt());
+        if(item->Action() == ICMold::ACTCHECKINPUT)
+        {
+            item->SetPos(ui->limitTimeEdit->TransThisTextToThisInt());
+        }
+        else
+        {
+            item->SetPos(ui->posEdit->TransThisTextToThisInt());
+        }
         if(item->Clip() == ICMold::ACTLAYOUTON)
         {
             item->SetSVal(ui->selectEdit->TransThisTextToThisInt() - 1);

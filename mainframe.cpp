@@ -256,9 +256,9 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     this->setFixedSize(800, 600);
 #endif
 #ifdef Q_WS_X11
-//            ShowInstructPage();
+            ShowInstructPage();
     //       ShowManualPage();
-         ShowAutoPage();
+//         ShowAutoPage();
 #endif
 
 }
@@ -735,6 +735,10 @@ void MainFrame::StatusRefreshed()
         {
             runningStatus_ = ICVirtualHost::AutoStopping;
         }
+        else if(virtualHost->HostStatus(ICVirtualHost::DbgX0) == ICVirtualHost::AutoOneCycle)
+        {
+            runningStatus_ = ICVirtualHost::AutoOneCycle;
+        }
         //        statusStr_ = tr("Auto");
     }
     else if(runningStatus_ == ICVirtualHost::Teach)
@@ -794,6 +798,10 @@ void MainFrame::StatusRefreshed()
             ui->systemStatusFrame->SetAutoStatus(ICSystemStatusFrame::Stopping);
             //            ui->functionPageButton->setEnabled(false);
             //            ui->recordPageButton->setEnabled(false);
+        }
+        else if(runningStatus_ == ICVirtualHost::AutoOneCycle)
+        {
+            ui->systemStatusFrame->SetAutoStatus(ICSystemStatusFrame::OneCycle);
         }
         //        else if(runningStatus_ == ICVirtualHost::Teach)
         //        {

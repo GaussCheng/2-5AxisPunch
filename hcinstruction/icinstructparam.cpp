@@ -63,10 +63,18 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
                 commandStr += tr("Fixture");
                 commandStr += QString::number(moldItem.SVal() + 1);
             }
-            else
+            else if(moldItem.SVal() < 6)
             {
                 commandStr += tr("Sucker");
                 commandStr += QString::number(moldItem.SVal() - 3);
+            }
+            else if(moldItem.SVal() == 6)
+            {
+                commandStr += tr("X037");
+            }
+            else
+            {
+                commandStr += tr("X023");
             }
 //            commandStr += tr("Fixture");
 //            commandStr += QString::number(moldItem.SVal() + 1);
@@ -149,6 +157,30 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
             {
 //                commandStr += tr("Sampling");
             }
+            else if(moldItem.IFVal() == 5)
+            {
+                commandStr += tr("X012 OFF");
+            }
+            else if(moldItem.IFVal() == 6)
+            {
+                commandStr += tr("X013 OFF");
+            }
+            else if(moldItem.IFVal() == 7)
+            {
+                commandStr += tr("X034 OFF");
+            }
+            else if(moldItem.IFVal() == 8)
+            {
+                commandStr += tr("X021 OFF");
+            }
+            else if(moldItem.IFVal() == 9)
+            {
+                commandStr += tr("X015 OFF");
+            }
+            else if(moldItem.IFVal() == 10)
+            {
+                commandStr += tr("X014 OFF");
+            }
             commandStr += " ";
 //            commandStr += " " + tr("ON:Macro") + QString::number(moldItem.RVal()) + " ";
             if(moldItem.SVal() == 5)
@@ -169,6 +201,7 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
             }
 
             commandStr += tr("Return Line") + QString::number(moldItem.DVal());
+            commandStr += QObject::tr("Limit time:") + ICParameterConversion::TransThisIntToThisText(moldItem.Pos(), 2) + "      ";
             return commandStr;
         }
         else if(action == ACT_WaitMoldOpened)
@@ -231,7 +264,8 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
                 commandStr += tr("EUCOREOUT");
             }
             commandStr += " ";
-//            return commandStr;
+            commandStr += QObject::tr("Limit time:") + ICParameterConversion::TransThisIntToThisText(moldItem.DVal(), 2) + "      ";
+            return commandStr;
         }
     }
     else
