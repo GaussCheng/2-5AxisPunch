@@ -997,6 +997,7 @@ Reason</source>
     </message>
     <message>
         <location filename="hcinstruction/icautorunrevise.ui" line="127"/>
+        <location filename="hcinstruction/icautorunrevise.cpp" line="88"/>
         <source>Limit Time:</source>
         <translation>限制时间:</translation>
     </message>
@@ -2604,22 +2605,22 @@ Reason</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="176"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="491"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="492"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="299"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="300"/>
         <source>Single run ready</source>
         <translation>单步准备状态</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="303"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="304"/>
         <source>Single cycle ready</source>
         <translation>单循环准备状态</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="492"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="493"/>
         <source>Can not edit standby position program</source>
         <translation>不能修改待机点位置</translation>
     </message>
@@ -2628,21 +2629,21 @@ Reason</source>
         <translation type="obsolete">需要忽略这个警告吗?</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="742"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="743"/>
         <source>Follow</source>
         <translation>跟随</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="416"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="427"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="98"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="227"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="757"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="767"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="758"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="768"/>
         <source>Speed Disable</source>
         <translation>调速禁止</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="352"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="363"/>
         <source>Single Step</source>
         <oldsource>Single Cycle</oldsource>
         <translation>单步</translation>
@@ -2656,7 +2657,7 @@ Reason</source>
         <translation type="obsolete">步序</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="93"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="227"/>
         <source>Time</source>
         <translation>成型周期</translation>
     </message>
@@ -2665,7 +2666,7 @@ Reason</source>
         <translation type="obsolete">全部时间</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="164"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="103"/>
         <source>Setted products</source>
         <translation>设定产量</translation>
     </message>
@@ -2674,20 +2675,20 @@ Reason</source>
         <translation type="obsolete">当前产量</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="115"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="144"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="125"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="207"/>
         <source>0.00</source>
         <translation>0.0</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="186"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="215"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="244"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="86"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="157"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="249"/>
         <source>0</source>
         <translation>0</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="122"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="185"/>
         <source>Get Time</source>
         <translation>取物时间</translation>
     </message>
@@ -2696,7 +2697,7 @@ Reason</source>
         <translation type="obsolete">自动运行时间</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="193"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="93"/>
         <source>Good products</source>
         <translation>良品个数</translation>
     </message>
@@ -2705,33 +2706,33 @@ Reason</source>
         <translation type="obsolete">循环次数</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="222"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="164"/>
         <source>Stacked products</source>
         <translation>堆叠个数</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="251"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="178"/>
         <source>TextLabel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="282"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="293"/>
         <source>Edit</source>
         <translation>编辑</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="320"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="748"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="331"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="749"/>
         <source>No Follow</source>
         <translation>不跟随</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="384"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="395"/>
         <source>Cycle</source>
         <translation>单循环</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="757"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="758"/>
         <source>Speed Enable</source>
         <translation>调速允许</translation>
     </message>

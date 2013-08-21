@@ -5,8 +5,8 @@ HEADERS += $$PWD/ickeyboard.h \
     $$PWD/icknobreceiver.h \
     $$PWD/ickeyboardhandler.h \
     $$PWD/icpulleyreceiver.h \
-    $$PWD/ickeyboard/icvirtualkey.h \
-    $$PWD/ickeyboard/icactioncommand.h
+    $$PWD/icvirtualkey.h \
+    $$PWD/icactioncommand.h
 SOURCES += $$PWD/ickeyboard.cpp \
     $$PWD/ickeyboardreceiver.cpp \
     $$PWD/icknobreceiver.cpp \

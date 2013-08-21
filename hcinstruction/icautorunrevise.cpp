@@ -83,9 +83,9 @@ bool ICAutoRunRevise::ShowModifyItem(const ICMoldItem *item, ICMoldItem* ret, co
             ui->mmLabel->show();
             ui->precentLabel->show();
         }
-        else if(item->Action() == ICMold::ACT_WaitMoldOpened)
+        else if(item->Action() == ICMold::ACT_WaitMoldOpened && item->SVal() != 1)
         {
-            ui->label->setText("Limit Time:");
+            ui->label->setText(tr("Limit Time:"));
         }
         else if(item->Action() == ICMold::ACTCHECKINPUT)
         {

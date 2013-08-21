@@ -193,7 +193,7 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
             ui->limitUnitLabel->show();
             ui->limitTimeEdit->SetThisIntToThisText(item->Pos());
         }
-        else if(item->Action() == ICMold::ACT_WaitMoldOpened)
+        else if(item->Action() == ICMold::ACT_WaitMoldOpened && item->SVal() != 1)
         {
             ui->delayLabel->setText(tr("Limit Time"));
         }

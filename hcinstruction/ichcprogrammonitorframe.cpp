@@ -299,7 +299,7 @@ void ICHCProgramMonitorFrame::StatusRefreshed()
     {
         ui->infoLabel->setText(tr("Single run ready"));
     }
-    else if(status == 4 && mode != ICVirtualHost::AutoOneCycle)
+    else if(status == 4 && mode != ICVirtualHost::AutoOneCycle && mode != ICVirtualHost::AutoStopping)
     {
         ui->infoLabel->setText(tr("Single cycle ready"));
     }

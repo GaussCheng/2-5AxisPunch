@@ -209,6 +209,9 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
             if(moldItem.SVal() == 1)
             {
                 commandStr += tr("Mold Opened");
+                commandStr += " ";
+                commandStr += QObject::tr("Delay time:") + ICParameterConversion::TransThisIntToThisText(moldItem.DVal(), 2) + "      ";
+                return commandStr;
             }
             else if(moldItem.SVal() == 2)
             {
