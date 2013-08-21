@@ -235,11 +235,11 @@ class ICMold : public QObject
 public:
     enum ICMoldParam
     {
-        PosMainDown,
-        PosMainUp,
-        PosMainOut,
-        PosMainIn,
-        PosViceDown,
+        StackCount0,
+        StackCount1,
+        StackCount2,
+        StackCount3,
+        CountUnit,
         StandbyPose,  //待机姿势，0代表限制锁模 1代表不限制锁模
         TryProduct,  //试产
         Sampling,      //取样

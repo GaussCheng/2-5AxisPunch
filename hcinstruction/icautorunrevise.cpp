@@ -105,7 +105,7 @@ bool ICAutoRunRevise::ShowModifyItem(const ICMoldItem *item, ICMoldItem* ret, co
     int isok = exec();
     if(isok == QDialog::Accepted)
     {
-        if(item->Action() == ICMold::ACT_WaitMoldOpened)
+        if(item->Action() == ICMold::ACT_WaitMoldOpened && item->SVal() != 1)
         {
             ret->SetPos(ui->limitEdit->TransThisTextToThisInt());
         }

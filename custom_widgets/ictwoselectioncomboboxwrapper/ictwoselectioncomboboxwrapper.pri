@@ -1,6 +1,6 @@
 INCLUDEPATH += $$PWD
 DEPENDPATH += $$PWD
 
-HEADERS += ictwoselectioncomboboxwrapper.h
+HEADERS += $$PWD/ictwoselectioncomboboxwrapper.h
 
-SOURCES += ictwoselectioncomboboxwrapper.cpp
+SOURCES += $$PWD/ictwoselectioncomboboxwrapper.cpp

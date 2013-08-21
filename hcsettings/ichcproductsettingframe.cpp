@@ -50,20 +50,22 @@ ICHCProductSettingFrame::ICHCProductSettingFrame(QWidget *parent) :
                                     ICLineEditWrapper::Integer);
     wrappers_.append(wrapper);
 
-    int currentPos = ICMold::CurrentMold()->MoldParam(ICMold::PosMainDown);
-    if(currentPos > 1)
-    {
-        currentPos = 1;
-    }
+//    int currentPos = ICMold::CurrentMold()->MoldParam(ICMold::PosMainDown);
+//    if(currentPos > 1)
+//    {
+//        currentPos = 1;
+//    }
 //    buttongroup_->setId(ICVirtualHost::GlobalVirtualHost()->FixtureDefine());
     if(ICVirtualHost::GlobalVirtualHost()->FixtureDefine() == 0)
         ui->reversedCheckBox->click();
     if(ICVirtualHost::GlobalVirtualHost()->FixtureDefine() == 1)
         ui->positiveCheckBox->click();
+
     connect(ICMold::CurrentMold(),
             SIGNAL(MoldNumberParamChanged()),
             this,
             SLOT(OnMoldNumberParamChanged()));
+    ui->countUnitBox->setCurrentIndex(ICMold::CurrentMold()->MoldParam(ICMold::CountUnit));
 }
 
 ICHCProductSettingFrame::~ICHCProductSettingFrame()
@@ -156,6 +158,7 @@ void ICHCProductSettingFrame::OnMoldNumberParamChanged()
     {
         wrappers_[i]->UpdateParam();
     }
+    ui->countUnitBox->setCurrentIndex(ICMold::CurrentMold()->MoldParam(ICMold::CountUnit));
 }
 
 void ICHCProductSettingFrame::on_productClearButton_clicked()
@@ -185,4 +188,9 @@ void ICHCProductSettingFrame::InitCheckBox()
                 SLOT(FixtureBoxChange()));
     }
     buttongroup_->setExclusive(true);
+}
+
+void ICHCProductSettingFrame::on_countUnitBox_currentIndexChanged(int index)
+{
+    ICMold::CurrentMold()->SetMoldParam(ICMold::CountUnit, index);
 }

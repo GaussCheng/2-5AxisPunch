@@ -30,6 +30,8 @@ private slots:
     void FixtureBoxChange();
     void retranslateUi_();
 
+    void on_countUnitBox_currentIndexChanged(int index);
+
 private:
     Ui::ICHCProductSettingFrame *ui;
     QList<ICLineEditWrapper*> wrappers_;

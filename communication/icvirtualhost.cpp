@@ -129,9 +129,9 @@ ICVirtualHost::ICVirtualHost(QObject *parent) :
 //slots:
 void ICVirtualHost::SetMoldParam(int param, int value)
 {
-    Q_ASSERT_X(moldParamToAddrPos_.contains(param),
-               "ICVirtualHost::SetMoldParam();",
-               (QString::number(param) + " is not a corrent param").toAscii());
+//    Q_ASSERT_X(moldParamToAddrPos_.contains(param),
+//               "ICVirtualHost::SetMoldParam();",
+//               (QString::number(param) + " is not a corrent param").toAscii());
 //    ICCommandProcessor::Instance()->ModifyMoldParam(moldParamToAddrPos_.value(param), value);
     Q_UNUSED(param)
     Q_UNUSED(value)
@@ -980,11 +980,12 @@ void ICVirtualHost::InitAddrToSysPosMap_()
     moldParamToAddrPos_.insert(ICMold::CheckClip7, SM_CHKCLIP7);
     moldParamToAddrPos_.insert(ICMold::CheckClip8, SM_CHKCLIP8);
     moldParamToAddrPos_.insert(ICMold::Product, SM_PRODUCT);			//设定产量
-    moldParamToAddrPos_.insert(ICMold::PosMainDown, SM_Position_DOWN);
+    moldParamToAddrPos_.insert(ICMold::CountUnit, SM_Position_DOWN);
 
     moldParamToAddrPos_.insert(ICMold::StandbyPose, SM_StandBy);  //待机姿势
     moldParamToAddrPos_.insert(ICMold::TryProduct, SM_TryProduct); //试产
     moldParamToAddrPos_.insert(ICMold::Sampling, SM_Sampling); //取样
+//    moldParamToAddrPos_.insert(ICMold::)
 
     //    addrToSysPos_.insert(SM_MAINUP, ACT_MainUp);			//主上限制
     //    addrToSysPos_.insert(SM_MAINDOWN, ACT_MainDown);		//主下限制
