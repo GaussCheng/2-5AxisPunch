@@ -3347,24 +3347,24 @@ Reason</source>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1231"/>
         <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1460"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="709"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="727"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="745"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="763"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="781"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="799"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="802"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="820"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="838"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="856"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="874"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="892"/>
         <source>Internal security zone</source>
         <translation>型内安全区</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1269"/>
         <location filename="hcsettings/ichcsystemsettingsframe.ui" line="1492"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="710"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="728"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="746"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="764"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="782"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="800"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="803"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="821"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="839"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="857"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="875"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="893"/>
         <source>External security zone</source>
         <translation>型外安全区</translation>
     </message>
@@ -3517,7 +3517,7 @@ Reason</source>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="423"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="457"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="603"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1112"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1205"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -3568,18 +3568,18 @@ Reason</source>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="436"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="468"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="628"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="721"/>
         <source>Backup files is broken!</source>
         <translation>备份文件不完整！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1154"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1159"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1181"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1186"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1198"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1209"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1221"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1247"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1252"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1274"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1279"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1291"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1302"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1314"/>
         <source>Warnning</source>
         <translation>警告</translation>
     </message>
@@ -3600,46 +3600,46 @@ Reason</source>
         <translation type="obsolete">错误的模组参数格式！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="673"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="766"/>
         <source>Min pos inside mold</source>
         <translation>模内最小位置</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="674"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="767"/>
         <source>Max pos inside mold</source>
         <translation>模内最大位置</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="691"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="784"/>
         <source>Max standby pos</source>
         <translation>最大待机位置</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="692"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="785"/>
         <source>Leave origin pos</source>
         <translation>离开原点位置</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1113"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1206"/>
         <source>The system will be reboot to calibrate! Do you want to continue?</source>
         <translation>系统需要重启来校准屏幕!要继续吗?</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1154"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1159"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1247"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1252"/>
         <source>Wrong system config format!</source>
         <translation>错误的系统参数格式！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1181"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1186"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1274"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1279"/>
         <source>Wrong Axis config format!</source>
         <translation>错误的轴参数格式！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1198"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1209"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1221"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1291"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1302"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="1314"/>
         <source>Wrong Rotation config format!</source>
         <translation>错误的每转距离参数格式！</translation>
     </message>
