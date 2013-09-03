@@ -1454,114 +1454,128 @@ Reason</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="602"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="351"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="153"/>
         <source>Detect fixture 1</source>
         <translation>夹具1检测</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="270"/>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="297"/>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="341"/>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="374"/>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="574"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="141"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="173"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="200"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="238"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="389"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="421"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="467"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="151"/>
         <source>Use</source>
         <translation>使用</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="265"/>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="302"/>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="336"/>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="369"/>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="569"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="136"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="168"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="205"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="233"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="384"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="416"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="462"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="152"/>
         <source>Not Use</source>
         <translation>不使用</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="59"/>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="91"/>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="160"/>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="401"/>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="505"/>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="537"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="45"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="77"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="293"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="325"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="149"/>
         <source>Reversed Phase</source>
         <translation>反相</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="64"/>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="96"/>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="165"/>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="406"/>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="510"/>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="542"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="50"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="82"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="298"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="330"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="150"/>
         <source>Positive Phase</source>
         <translation>正相</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="33"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="156"/>
         <source>Detect sucker 1</source>
         <translation>吸盘1检测</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="200"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="110"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="159"/>
         <source>Detect fixture 2</source>
         <translation>夹具2检测</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="26"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="162"/>
         <source>Detect sucker 2</source>
         <translation>吸盘2检测</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="421"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="253"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="165"/>
         <source>Detect fixture 3</source>
         <translation>夹具3检测</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="193"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="103"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="180"/>
         <source>Ejection Link Lock</source>
         <translation>顶针连锁</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="186"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="597"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="183"/>
         <source>Detect Postion</source>
         <translation>横行姿势</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="231"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="506"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="198"/>
         <source>Limit Lock Mold</source>
         <translation>限制锁模</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="226"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="501"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="199"/>
         <source>No Limit Lock Mold</source>
         <translation>不限制锁模</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="239"/>
-        <source>Standby Pose</source>
-        <translation>待机姿势</translation>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="475"/>
+        <source>Hor Standby</source>
+        <oldsource>Standby Pose</oldsource>
+        <translation>水平待机</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="628"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="429"/>
+        <source>Auto Run</source>
+        <translation>全自动</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="436"/>
+        <source>Close Mold</source>
+        <translation>锁模到位</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="514"/>
+        <source>U/D Position</source>
+        <translation>上下复归姿势</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="584"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="185"/>
         <source>Don&apos;t need Mold Opened Signal</source>
         <translation>不需开模终止</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="435"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="267"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="194"/>
         <source>IMM Emergency</source>
         <translation>注塑机急停</translation>
@@ -1576,19 +1590,19 @@ Reason</source>
         <translation type="obsolete">型内逃跑</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="633"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="589"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="184"/>
         <source>Need Mold Opened Signal</source>
         <translation>必须开模终止</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="479"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="558"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="186"/>
         <source>Detect Origin</source>
         <translation>原点复归</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="133"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="633"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="189"/>
         <source>Don&apos;t Limit</source>
         <translation>不限制</translation>
@@ -1598,28 +1612,27 @@ Reason</source>
         <translation type="obsolete">须同自动一致</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="595"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="190"/>
         <source>Orgin Position</source>
         <translation>启动姿势</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="128"/>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="466"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="545"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="628"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="188"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="192"/>
         <source>Horizontal</source>
         <translation>治具水平</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="471"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="550"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="193"/>
         <source>No Limit</source>
         <translation>无限制</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="123"/>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="461"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="540"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="623"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="187"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="191"/>
         <source>Vertical</source>
@@ -1630,7 +1643,7 @@ Reason</source>
         <translation type="obsolete">喷油</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="414"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="246"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="168"/>
         <source>Detect fixture 4</source>
         <translation>夹具4检测</translation>
@@ -1640,19 +1653,19 @@ Reason</source>
         <translation type="obsolete">输送带</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="310"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="213"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="171"/>
         <source>Detect Mid Mold</source>
         <translation>中板模检测</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="349"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="358"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="174"/>
         <source>Detect Security Door</source>
         <translation>安全门检测</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.ui" line="428"/>
+        <location filename="hcsettings/ichcdetectionframe.ui" line="260"/>
         <location filename="hcsettings/ichcdetectionframe.cpp" line="175"/>
         <source>Detect Pressure</source>
         <translation>压力检测</translation>
@@ -2472,7 +2485,7 @@ Reason</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="138"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="69"/>
         <location filename="hcsettings/ichcproductsettingframe.cpp" line="139"/>
         <source>Product</source>
         <translation>产品数</translation>
@@ -2482,73 +2495,92 @@ Reason</source>
         <translation type="obsolete">取样模数</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="128"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="115"/>
         <location filename="hcsettings/ichcproductsettingframe.cpp" line="144"/>
         <source>Sampling Interval</source>
         <translation>取样间隔</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="29"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="292"/>
         <location filename="hcsettings/ichcproductsettingframe.cpp" line="145"/>
         <source>Bad Product</source>
         <translation>不良品数</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="46"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="131"/>
         <location filename="hcsettings/ichcproductsettingframe.cpp" line="148"/>
         <source>Fixture</source>
         <translation>治具定义</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="101"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="76"/>
         <location filename="hcsettings/ichcproductsettingframe.cpp" line="143"/>
         <source>TryProduct</source>
         <translation>试产模数</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="219"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="209"/>
         <location filename="hcsettings/ichcproductsettingframe.cpp" line="151"/>
         <source>Reversed Phase</source>
         <translation>反相</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="238"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="227"/>
+        <source>Get Fail</source>
+        <translation>取物失败</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="235"/>
+        <source>Alarm When Up</source>
+        <translation>模内上升报警</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="240"/>
+        <source>Alarm Once</source>
+        <translation>即时报警</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="259"/>
         <source>All</source>
         <translation>全部</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="243"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="264"/>
         <source>Good</source>
         <translation>良品</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="248"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="269"/>
         <source>Stack-1</source>
         <translation>堆叠1组</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="253"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="274"/>
         <source>Stack-2</source>
         <translation>堆叠2组</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="258"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="279"/>
         <source>Stack-3</source>
         <translation>堆叠3组</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="263"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="284"/>
         <source>Stack-4</source>
         <translation>堆叠4组</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="274"/>
-        <source>Count Ways</source>
-        <oldsource>Count Unit</oldsource>
-        <translation>计数选择</translation>
+        <source>Transport Count</source>
+        <translation type="obsolete">输送带计数器</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="175"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="251"/>
+        <source>Count Ways</source>
+        <oldsource>Count Unit</oldsource>
+        <translation>输送带计数器</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="165"/>
         <location filename="hcsettings/ichcproductsettingframe.cpp" line="152"/>
         <source>Positive Phase</source>
         <translation>正相</translation>
@@ -2572,13 +2604,13 @@ Reason</source>
         <translation type="obsolete">水平下降</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="56"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="49"/>
         <location filename="hcsettings/ichcproductsettingframe.cpp" line="141"/>
         <source>s</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="115"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="29"/>
         <location filename="hcsettings/ichcproductsettingframe.cpp" line="146"/>
         <source>Alarm Times</source>
         <translation>报警时间</translation>
@@ -2590,7 +2622,7 @@ Reason</source>
         <translation>s</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcproductsettingframe.ui" line="88"/>
+        <location filename="hcsettings/ichcproductsettingframe.ui" line="95"/>
         <location filename="hcsettings/ichcproductsettingframe.cpp" line="142"/>
         <source>Product Clear</source>
         <translation>产品清零</translation>
@@ -2913,9 +2945,9 @@ Reason</source>
     </message>
     <message>
         <location filename="hcsettings/ichcstackedsettingsframe.ui" line="701"/>
-        <source>Count Way</source>
-        <oldsource>Stack Count</oldsource>
-        <translation>计数选择</translation>
+        <source>Stack Counter</source>
+        <oldsource>Count Way</oldsource>
+        <translation>堆叠计数器</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcstackedsettingsframe.ui" line="709"/>

@@ -698,7 +698,7 @@
          <item>
           <widget class="QLabel" name="label_9">
            <property name="text">
-            <string>Count Way</string>
+            <string>Stack Counter</string>
            </property>
           </widget>
          </item>
@@ -767,10 +767,10 @@
  <resources/>
  <connections/>
  <buttongroups>
+  <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_2"/>
   <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup_4"/>
   <buttongroup name="buttonGroup_5"/>
-  <buttongroup name="buttonGroup"/>
  </buttongroups>
 </ui>
