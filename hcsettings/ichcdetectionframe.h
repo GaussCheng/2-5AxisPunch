@@ -40,6 +40,10 @@ private slots:
 
     void on_originPositionBox_activated(int index);
 
+    void on_detectSucker1ComboBox_activated(int index);
+
+    void on_detectSucker2ComboBox_activated(int index);
+
 private:
     void RetranslateUi_();
     Ui::ICHCDetectionFrame *ui;

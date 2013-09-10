@@ -21,10 +21,10 @@ ICHCDetectionFrame::ICHCDetectionFrame(QWidget *parent) :
     wrappers_.append(wrapper);
     wrapper = new ICTwoSelectionComboBoxWrapper(ui->detectFixture4ComboBox, ICMold::CheckClip4);
     wrappers_.append(wrapper);
-    wrapper = new ICTwoSelectionComboBoxWrapper(ui->detectSucker1ComboBox, ICMold::CheckClip5);
-    wrappers_.append(wrapper);
-    wrapper = new ICTwoSelectionComboBoxWrapper(ui->detectSucker2ComboBox, ICMold::CheckClip6);
-    wrappers_.append(wrapper);
+//    wrapper = new ICTwoSelectionComboBoxWrapper(ui->detectSucker1ComboBox, ICMold::CheckClip5);
+//    wrappers_.append(wrapper);
+//    wrapper = new ICTwoSelectionComboBoxWrapper(ui->detectSucker2ComboBox, ICMold::CheckClip6);
+//    wrappers_.append(wrapper);
 
     wrapper = new ICTwoSelectionComboBoxWrapper(ui->standbyPositionBox, ICMold::StandbyPose);
     wrappers_.append(wrapper);
@@ -45,6 +45,8 @@ ICHCDetectionFrame::ICHCDetectionFrame(QWidget *parent) :
     //    ui->detectPositionBox->setCurrentIndex(qAbs(host->IsPositionDetect() - 1));
     ui->detectPositionBox->setCurrentIndex(host->TranserferPosition());
     ui->originPositionBox->setCurrentIndex(host->OriginPosition());
+    ui->detectSucker1ComboBox->setCurrentIndex(host->IsCloseMoldEn());
+    ui->detectSucker2ComboBox->setCurrentIndex(host->IsAutoSignalUse());
 
 
     connect(ICMold::CurrentMold(),
@@ -143,6 +145,17 @@ void ICHCDetectionFrame::on_originPositionBox_activated(int index)
 {
     ICVirtualHost::GlobalVirtualHost()->SetOriginPosition(index);
 }
+
+void ICHCDetectionFrame::on_detectSucker1ComboBox_activated(int index)
+{
+    ICVirtualHost::GlobalVirtualHost()->SetCloseMoldEn(index);
+}
+
+void ICHCDetectionFrame::on_detectSucker2ComboBox_activated(int index)
+{
+    ICVirtualHost::GlobalVirtualHost()->SetAutoSignalUse(index);
+}
+
 
 void ICHCDetectionFrame::RetranslateUi_()
 {

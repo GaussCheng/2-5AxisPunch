@@ -74,17 +74,17 @@ void ICHCStackedSettingsFrame::InitInterface()
 
     ui->xRPLatticeLineEdit->SetDecimalPlaces(0);
     ui->xRPLatticeLineEdit->setValidator(validator);
-    ui->xRPStepLineEdit->SetDecimalPlaces(1);
+    ui->xRPStepLineEdit->SetDecimalPlaces(2);
     ui->xRPStepLineEdit->setValidator(validator_);
 
     ui->xRPLatticeLineEdit->SetDecimalPlaces(0);
     ui->yRPLatticeLineEdit->setValidator(validator);
-    ui->yRPStepLineEdit->SetDecimalPlaces(1);
+    ui->yRPStepLineEdit->SetDecimalPlaces(2);
     ui->yRPStepLineEdit->setValidator(validator_);
 
     ui->xRPLatticeLineEdit->SetDecimalPlaces(0);
     ui->zRPLatticeLineEdit->setValidator(validator);
-    ui->zRPStepLineEdit->SetDecimalPlaces(1);
+    ui->zRPStepLineEdit->SetDecimalPlaces(2);
     ui->zRPStepLineEdit->setValidator(validator_);
 
 //    ui->stackCount->setValidator(validator);

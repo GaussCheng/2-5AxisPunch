@@ -61,6 +61,8 @@ ICHCProductSettingFrame::ICHCProductSettingFrame(QWidget *parent) :
     if(ICVirtualHost::GlobalVirtualHost()->FixtureDefine() == 1)
         ui->positiveCheckBox->click();
 
+    ui->getFailWay->setCurrentIndex(ICVirtualHost::GlobalVirtualHost()->GetFailAlarmWay());
+
     connect(ICMold::CurrentMold(),
             SIGNAL(MoldNumberParamChanged()),
             this,
@@ -193,4 +195,9 @@ void ICHCProductSettingFrame::InitCheckBox()
 void ICHCProductSettingFrame::on_countUnitBox_currentIndexChanged(int index)
 {
     ICMold::CurrentMold()->SetMoldParam(ICMold::CountUnit, index);
+}
+
+void ICHCProductSettingFrame::on_getFailWay_activated(int index)
+{
+    ICVirtualHost::GlobalVirtualHost()->SetGetFailAlarmWay(index);
 }

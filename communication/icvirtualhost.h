@@ -561,13 +561,13 @@ public:
     bool IsClipOn(int pos) const;
     bool IsAction(int pos) const;
 
-    bool IsPressureCheck() const { return (SystemParameter(SYS_Function).toInt() & 0x00000030) != 0;}
+    bool IsPressureCheck() const { return (SystemParameter(SYS_Function).toInt() & 0x00000010) != 0;}
     void SetPressureCheck(bool isCheck);
     bool IsSecurityCheck() const { return (SystemParameter(SYS_Function).toInt() & 0x00000003) != 0;}
     void SetSecurityCheck(bool isCheck);
-    bool IsMidMoldCheck() const {return (SystemParameter(SYS_Function).toInt() & 0x0000000C) != 0;}
+    bool IsMidMoldCheck() const {return (SystemParameter(SYS_Function).toInt() & 0x00000004) != 0;}
     void SetMidMoldCheck(bool isCheck);
-    bool IsEjectionLink() const { return (SystemParameter(SYS_Function).toInt() & 0x000000C0) != 0;}
+    bool IsEjectionLink() const { return (SystemParameter(SYS_Function).toInt() & 0x00000040) != 0;}
     void SetEjectionLink(bool permit);
     bool IsAlarmWhenOrigin() const { return (SystemParameter(SYS_Function).toInt() & 0x00000300) != 0;}
     void SetAlarmWhenOrigin(bool isAlarm);
@@ -579,6 +579,12 @@ public:
     void SetTranserferPosition(int position);
     int EscapeWay() const { return (SystemParameter(SYS_Function).toInt() & 0x0000C000) >> 14;}
     void SetEscapeWay(int way);
+    bool IsAutoSignalUse() const { return (SystemParameter(SYS_Function).toInt() & 0x08) == 0; }
+    void SetAutoSignalUse(bool isUse);
+    int GetFailAlarmWay() const { return (SystemParameter(SYS_Function).toInt() & 0x20) >> 5;}
+    void SetGetFailAlarmWay(int way);
+    bool IsCloseMoldEn() const { return (SystemParameter((SYS_Function)).toInt() & 0x80 ) != 0;}
+    void SetCloseMoldEn(bool isEn);
 
     int CurrentStep() const { return (statusMap_.value(Step).toInt() & 0x00FF);}
     int CurrentStatus() const { return (statusMap_.value(Status).toUInt() & 0x0FFF);}
@@ -840,7 +846,7 @@ inline bool ICVirtualHost::IsAction(int pos) const
 inline void ICVirtualHost::SetPressureCheck(bool isCheck)
 {
     int val = SystemParameter(SYS_Function).toInt();
-    val &= 0xFFFFFFDF;
+    val &= 0xFFFFFFEF;
     (isCheck ? val |= 0x00000010 : val &= 0xFFFFFFEF);
     systemParamMap_.insert(SYS_Function, val);
     isParamChanged_ = true;
@@ -858,7 +864,7 @@ inline void ICVirtualHost::SetSecurityCheck(bool isCheck)
 inline void ICVirtualHost::SetMidMoldCheck(bool isCheck)
 {
     int val = SystemParameter(SYS_Function).toInt();
-    val &= 0xFFFFFFF7;
+    val &= 0xFFFFFFFB;
     (isCheck ? val |= 0x00000004 : val &= 0xFFFFFFFB);
     systemParamMap_.insert(SYS_Function, val);
     isParamChanged_ = true;
@@ -867,7 +873,7 @@ inline void ICVirtualHost::SetMidMoldCheck(bool isCheck)
 inline void ICVirtualHost::SetEjectionLink(bool permit)
 {
     int val = SystemParameter(SYS_Function).toInt();
-    val &= 0xFFFFFF7F;
+    val &= 0xFFFFFFBF;
     (permit ? val |= 0x00000040 : val &= 0xFFFFFFBF);
     systemParamMap_.insert(SYS_Function, val);
     isParamChanged_ = true;
@@ -914,6 +920,33 @@ inline void ICVirtualHost::SetEscapeWay(int way)
     int val = SystemParameter(SYS_Function).toInt();
     val &= 0xFFFF3FFF;
     val |= (way << 14);
+    systemParamMap_.insert(SYS_Function, val);
+    isParamChanged_ = true;
+}
+
+inline void ICVirtualHost::SetAutoSignalUse(bool isUse)
+{
+    int val = SystemParameter(SYS_Function).toInt();
+    val &= 0xFFFFFFF7;
+    (!isUse ? val |= 0x00000008 : val &= 0xFFFFFFF7);
+    systemParamMap_.insert(SYS_Function, val);
+    isParamChanged_ = true;
+}
+
+inline void ICVirtualHost::SetGetFailAlarmWay(int way)
+{
+    int val = SystemParameter(SYS_Function).toInt();
+    val &= 0xFFFFFFDF;
+    val |= way << 5;
+    systemParamMap_.insert(SYS_Function, val);
+    isParamChanged_ = true;
+}
+
+inline void ICVirtualHost::SetCloseMoldEn(bool isEn)
+{
+    int val = SystemParameter(SYS_Function).toInt();
+    val &= 0xFFFFFF7F;
+    (isEn ? val |= 0x00000080 : val &= 0xFFFFFF7F);
     systemParamMap_.insert(SYS_Function, val);
     isParamChanged_ = true;
 }
