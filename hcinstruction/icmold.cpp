@@ -286,7 +286,10 @@ bool ICMold::ReadMoldParamsFile(const QString &fileName)
         }
         stackParams_.append(stackParam);
     }
+//    moldParams_[CheckClip5] = 0;
+//    moldParams_[CheckClip6] = 0;
     checkSum_ = items.last().toUInt();
+//    UpdateSyncSum();
     moldParamName_ = fileName;
     return true;
 }
@@ -331,6 +334,8 @@ bool ICMold::SaveMoldFile(bool isSaveParams)
 bool ICMold::SaveMoldParamsFile()
 {
     bool ret = false;
+    moldParams_[CheckClip5] = 0;
+    moldParams_[CheckClip6] = 0;
     UpdateSyncSum();
     QByteArray toWrite;
     QList<int> allParams = AllParams();

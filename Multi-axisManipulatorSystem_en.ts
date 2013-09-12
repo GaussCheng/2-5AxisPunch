@@ -1150,7 +1150,7 @@ Infomation</source>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="351"/>
-        <location filename="hcsettings/ichcdetectionframe.cpp" line="153"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="166"/>
         <source>Detect fixture 1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1162,7 +1162,7 @@ Infomation</source>
         <location filename="hcsettings/ichcdetectionframe.ui" line="389"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="421"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="467"/>
-        <location filename="hcsettings/ichcdetectionframe.cpp" line="151"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="164"/>
         <source>Use</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1174,7 +1174,7 @@ Infomation</source>
         <location filename="hcsettings/ichcdetectionframe.ui" line="384"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="416"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="462"/>
-        <location filename="hcsettings/ichcdetectionframe.cpp" line="152"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="165"/>
         <source>Not Use</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1183,7 +1183,7 @@ Infomation</source>
         <location filename="hcsettings/ichcdetectionframe.ui" line="77"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="293"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="325"/>
-        <location filename="hcsettings/ichcdetectionframe.cpp" line="149"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="162"/>
         <source>Reversed Phase</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1192,53 +1192,53 @@ Infomation</source>
         <location filename="hcsettings/ichcdetectionframe.ui" line="82"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="298"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="330"/>
-        <location filename="hcsettings/ichcdetectionframe.cpp" line="150"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="163"/>
         <source>Positive Phase</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.cpp" line="156"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="169"/>
         <source>Detect sucker 1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="110"/>
-        <location filename="hcsettings/ichcdetectionframe.cpp" line="159"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="172"/>
         <source>Detect fixture 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.cpp" line="162"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="175"/>
         <source>Detect sucker 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="253"/>
-        <location filename="hcsettings/ichcdetectionframe.cpp" line="165"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="178"/>
         <source>Detect fixture 3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="103"/>
-        <location filename="hcsettings/ichcdetectionframe.cpp" line="180"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="193"/>
         <source>Ejection Link Lock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="597"/>
-        <location filename="hcsettings/ichcdetectionframe.cpp" line="183"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="196"/>
         <source>Detect Postion</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="506"/>
-        <location filename="hcsettings/ichcdetectionframe.cpp" line="198"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="211"/>
         <source>Limit Lock Mold</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="501"/>
-        <location filename="hcsettings/ichcdetectionframe.cpp" line="199"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="212"/>
         <source>No Limit Lock Mold</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1265,87 +1265,87 @@ Infomation</source>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="584"/>
-        <location filename="hcsettings/ichcdetectionframe.cpp" line="185"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="198"/>
         <source>Don&apos;t need Mold Opened Signal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="267"/>
-        <location filename="hcsettings/ichcdetectionframe.cpp" line="194"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="207"/>
         <source>IMM Emergency</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.cpp" line="197"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="210"/>
         <source>Down Position</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="589"/>
-        <location filename="hcsettings/ichcdetectionframe.cpp" line="184"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="197"/>
         <source>Need Mold Opened Signal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="558"/>
-        <location filename="hcsettings/ichcdetectionframe.cpp" line="186"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="199"/>
         <source>Detect Origin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="633"/>
-        <location filename="hcsettings/ichcdetectionframe.cpp" line="189"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="202"/>
         <source>Don&apos;t Limit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcdetectionframe.cpp" line="190"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="203"/>
         <source>Orgin Position</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="545"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="628"/>
-        <location filename="hcsettings/ichcdetectionframe.cpp" line="188"/>
-        <location filename="hcsettings/ichcdetectionframe.cpp" line="192"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="201"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="205"/>
         <source>Horizontal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="550"/>
-        <location filename="hcsettings/ichcdetectionframe.cpp" line="193"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="206"/>
         <source>No Limit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="540"/>
         <location filename="hcsettings/ichcdetectionframe.ui" line="623"/>
-        <location filename="hcsettings/ichcdetectionframe.cpp" line="187"/>
-        <location filename="hcsettings/ichcdetectionframe.cpp" line="191"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="200"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="204"/>
         <source>Vertical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="246"/>
-        <location filename="hcsettings/ichcdetectionframe.cpp" line="168"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="181"/>
         <source>Detect fixture 4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="213"/>
-        <location filename="hcsettings/ichcdetectionframe.cpp" line="171"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="184"/>
         <source>Detect Mid Mold</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="358"/>
-        <location filename="hcsettings/ichcdetectionframe.cpp" line="174"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="187"/>
         <source>Detect Security Door</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcdetectionframe.ui" line="260"/>
-        <location filename="hcsettings/ichcdetectionframe.cpp" line="175"/>
+        <location filename="hcsettings/ichcdetectionframe.cpp" line="188"/>
         <source>Detect Pressure</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1844,43 +1844,43 @@ Infomation</source>
     <name>ICHCProductSettingFrame</name>
     <message>
         <location filename="hcsettings/ichcproductsettingframe.ui" line="14"/>
-        <location filename="hcsettings/ichcproductsettingframe.cpp" line="138"/>
+        <location filename="hcsettings/ichcproductsettingframe.cpp" line="140"/>
         <source>Frame</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcproductsettingframe.ui" line="69"/>
-        <location filename="hcsettings/ichcproductsettingframe.cpp" line="139"/>
+        <location filename="hcsettings/ichcproductsettingframe.cpp" line="141"/>
         <source>Product</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcproductsettingframe.ui" line="115"/>
-        <location filename="hcsettings/ichcproductsettingframe.cpp" line="144"/>
+        <location filename="hcsettings/ichcproductsettingframe.cpp" line="146"/>
         <source>Sampling Interval</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcproductsettingframe.ui" line="292"/>
-        <location filename="hcsettings/ichcproductsettingframe.cpp" line="145"/>
+        <location filename="hcsettings/ichcproductsettingframe.cpp" line="147"/>
         <source>Bad Product</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcproductsettingframe.ui" line="131"/>
-        <location filename="hcsettings/ichcproductsettingframe.cpp" line="148"/>
+        <location filename="hcsettings/ichcproductsettingframe.cpp" line="150"/>
         <source>Fixture</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcproductsettingframe.ui" line="76"/>
-        <location filename="hcsettings/ichcproductsettingframe.cpp" line="143"/>
+        <location filename="hcsettings/ichcproductsettingframe.cpp" line="145"/>
         <source>TryProduct</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcproductsettingframe.ui" line="209"/>
-        <location filename="hcsettings/ichcproductsettingframe.cpp" line="151"/>
+        <location filename="hcsettings/ichcproductsettingframe.cpp" line="153"/>
         <source>Reversed Phase</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1937,37 +1937,37 @@ Infomation</source>
     </message>
     <message>
         <location filename="hcsettings/ichcproductsettingframe.ui" line="165"/>
-        <location filename="hcsettings/ichcproductsettingframe.cpp" line="152"/>
+        <location filename="hcsettings/ichcproductsettingframe.cpp" line="154"/>
         <source>Positive Phase</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcproductsettingframe.ui" line="108"/>
-        <location filename="hcsettings/ichcproductsettingframe.cpp" line="140"/>
+        <location filename="hcsettings/ichcproductsettingframe.cpp" line="142"/>
         <source>Wait Mold Opened Limit Time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcproductsettingframe.ui" line="49"/>
-        <location filename="hcsettings/ichcproductsettingframe.cpp" line="141"/>
+        <location filename="hcsettings/ichcproductsettingframe.cpp" line="143"/>
         <source>s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcproductsettingframe.ui" line="29"/>
-        <location filename="hcsettings/ichcproductsettingframe.cpp" line="146"/>
+        <location filename="hcsettings/ichcproductsettingframe.cpp" line="148"/>
         <source>Alarm Times</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcproductsettingframe.ui" line="36"/>
-        <location filename="hcsettings/ichcproductsettingframe.cpp" line="147"/>
+        <location filename="hcsettings/ichcproductsettingframe.cpp" line="149"/>
         <source>Times</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcproductsettingframe.ui" line="95"/>
-        <location filename="hcsettings/ichcproductsettingframe.cpp" line="142"/>
+        <location filename="hcsettings/ichcproductsettingframe.cpp" line="144"/>
         <source>Product Clear</source>
         <translation type="unfinished"></translation>
     </message>
