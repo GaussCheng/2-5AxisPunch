@@ -5151,7 +5151,7 @@ Please enter an digit between </source>
     <message>
         <location filename="hcinstruction/icstackeditor.ui" line="124"/>
         <location filename="hcinstruction/icstackeditor.ui" line="312"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="509"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="562"/>
         <location filename="hcinstruction/icstackeditor.ui" line="706"/>
         <location filename="hcinstruction/icstackeditor.ui" line="948"/>
         <source>X:</source>
@@ -5186,7 +5186,7 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="591"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="544"/>
         <source>Group-3</source>
         <translation type="unfinished"></translation>
     </message>
