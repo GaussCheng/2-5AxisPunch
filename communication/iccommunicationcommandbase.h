@@ -16,6 +16,7 @@ public:
     typedef QVector<int> ResultVector;
 
     ICCommunicationCommandBase();
+    virtual ~ICCommunicationCommandBase(){}
 
     QVariant SendCommand(modbus_param_t *modbusParam) { return Send(modbusParam);}
 
