@@ -531,7 +531,8 @@ void ICHCProgramMonitorFrame::on_editToolButton_clicked()
                 currentBackup = programListBackup_[gIndex].at(tIndex).BaseItem();
                 item->SetDVal(ret.DVal());
                 item->SetSVal(ret.SVal());
-                item->SetPos(currentBackup->Pos() + ret.Pos());
+//                item->SetPos(currentBackup->Pos() + ret.Pos());
+                item->SetActualPos(currentBackup->ActualPos() + ret.Pos() * 10);
                 item->ReSum();
                 UpdateUIProgramList_();
                 processor = ICCommandProcessor::Instance();
@@ -548,7 +549,8 @@ void ICHCProgramMonitorFrame::on_editToolButton_clicked()
                 currentBackup = programList_[gIndex].at(tIndex).BaseItem();
                 currentBackup->SetDVal(ret.DVal());
                 currentBackup->SetSVal(ret.SVal());
-                currentBackup->SetPos(currentBackup->Pos() + ret.Pos());
+//                currentBackup->SetPos(currentBackup->Pos() + ret.Pos());
+                currentBackup->SetActualPos(currentBackup->ActualPos() + ret.Pos() * 10);
                 currentBackup->ReSum();
                 UpdateUIProgramList_();
                 processor = ICCommandProcessor::Instance();
@@ -591,7 +593,8 @@ void ICHCProgramMonitorFrame::on_editToolButton_clicked()
                currentBackup = programListBackup_[gIndex].at(tIndex).BaseItem();
                item->SetDVal(ret.DVal());
                item->SetSVal(ret.SVal());
-               item->SetPos(currentBackup->Pos() + ret.Pos());
+//               item->SetPos(currentBackup->Pos() + ret.Pos());
+               item->SetActualPos(currentBackup->ActualPos() + ret.Pos() * 10);
                item->ReSum();
                UpdateUIProgramList_();
                processor = ICCommandProcessor::Instance();
@@ -608,7 +611,8 @@ void ICHCProgramMonitorFrame::on_editToolButton_clicked()
                currentBackup = programList_[gIndex].at(tIndex).BaseItem();
                currentBackup->SetDVal(ret.DVal());
                currentBackup->SetSVal(ret.SVal());
-               currentBackup->SetPos(currentBackup->Pos() + ret.Pos());
+//               currentBackup->SetPos(currentBackup->Pos() + ret.Pos());
+               currentBackup->SetActualPos(currentBackup->ActualPos() + ret.Pos() * 10);
                currentBackup->ReSum();
                UpdateUIProgramList_();
                processor = ICCommandProcessor::Instance();

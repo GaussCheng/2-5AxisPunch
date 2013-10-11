@@ -38,10 +38,11 @@ private:
     ICMoldItem* currentItem;
     QIntValidator* posValidator_;
     QIntValidator* esdValidator_;
+    QIntValidator* ifposValidator_;
 
-     QIntValidator* validator ;
-     QIntValidator* validator_ ;
-     QIntValidator* returnStepValidator ;
+    QIntValidator* validator ;
+    QIntValidator* validator_ ;
+    QIntValidator* returnStepValidator ;
 
 };
 

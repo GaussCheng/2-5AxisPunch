@@ -302,6 +302,8 @@ public:
         DbgY1,
         DbgZ1,
 #endif
+        AxisLastPos1,
+        AxisLastPos2,
 
         StatusCount
     };
@@ -637,6 +639,9 @@ public:
 
     bool IsFixtureCheck() const { return isFixtureCheck_;}
     void SetFixtureCheck(bool isCheck) { isFixtureCheck_ = isCheck;}
+
+    int GetActualPos(ICAxis axis) const;
+    int GetActualPos(ICAxis axis, uint axisLastPos) const;
 public Q_SLOTS:
     void SetMoldParam(int param, int value);
 Q_SIGNALS:
@@ -1022,6 +1027,18 @@ inline void ICVirtualHost::CalPeripheryOutput(int &config, int number, int val)
     config &= ~(3 << (number << 1));
     config |= (val << (number << 1));
 //    systemParamMap_.insert(SYS_Config_Out, current);
+}
+
+inline int ICVirtualHost::GetActualPos(ICAxis axis) const
+{
+    uint axisLastPos = HostStatus(AxisLastPos1).toUInt() | (HostStatus(AxisLastPos2).toUInt() << 16);
+    return GetActualPos(axis, axisLastPos);
+
+}
+
+inline int ICVirtualHost::GetActualPos(ICAxis axis, uint axisLastPos) const
+{
+    return HostStatus(static_cast<ICStatus>(XPos + axis)).toInt() * 10 + ((axisLastPos >> (axis * 4)) & 0xF);
 }
 
 #endif // ICVIRTUALHOST_H

@@ -3,6 +3,8 @@
 #include "icvirtualhost.h"
 #include "ickeyboard.h"
 #include "icparameterssave.h"
+#include "config.h"
+#include <qmath.h>
 
 
 ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
@@ -88,7 +90,7 @@ ICProgramGuidePage::ICProgramGuidePage(QWidget *parent) :
 
     for(int i = 0; i != posEdits_.size(); ++i)
     {
-        posEdits_[i]->SetDecimalPlaces(1);
+        posEdits_[i]->SetDecimalPlaces(POS_DECIMAL);
         posEdits_[i]->setValidator(&posValidators_[i]);
     }
     QList<int> temp;
@@ -170,9 +172,10 @@ void ICProgramGuidePage::showEvent(QShowEvent *e)
     posMaxs_[5] = host->SystemParameter(ICVirtualHost::SYS_A_Maxium).toInt();
     posMaxs_[6] = host->SystemParameter(ICVirtualHost::SYS_B_Maxium).toInt();
     posMaxs_[7] = host->SystemParameter(ICVirtualHost::SYS_C_Maxium).toInt();
+    int mutil = qPow(10, SECTION_DECIMAL);
     for(int i = 0; i != 8; ++i)
     {
-        posValidators_[i].setTop(posMaxs_[i]);
+        posValidators_[i].setTop(posMaxs_[i] * mutil);
     }
     ICInstructionEditorBase::showEvent(e);
 }
@@ -212,7 +215,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
     item.SetNum(stepNum++);
     item.SetSVal(1);
     item.SetDVal(0);
-    item.SetPos(0);
+    item.SetActualPos(0);
     item.SetAction(ICMold::ACT_WaitMoldOpened);
     ret.append(item);
 
@@ -253,7 +256,7 @@ QList<ICMoldItem> ICProgramGuidePage::CreateCommandImpl() const
             item.SetNum(stepNum++);
             item.SetAction(axis_[Z_AXIS].action);
             /*BUG#132*/
-            item.SetPos(axis_[Z_AXIS].getPos);
+            item.SetActualPos(axis_[Z_AXIS].getPos);
             ret.append(item);
         }
     }
@@ -1583,25 +1586,25 @@ bool ICProgramGuidePage::SetAxisICMoldItem_(ICMoldItem *item, const _ICAxis_ *ax
         item->SetAction(axis->action);
         if(setting == STANDBY_SETTING)
         {
-            item->SetPos(axis->standbyPos);
+            item->SetActualPos(axis->standbyPos);
         }
         else if(setting == GET_PRODUCT_SETTING)
         {
-            item->SetPos(axis->getPos);
+            item->SetActualPos(axis->getPos);
         }
         else if(setting == RELEASE_PRODUCT_SETTING)
         {
-            item->SetPos(axis->releaseProductPos);
+            item->SetActualPos(axis->releaseProductPos);
         }
         else if(setting == RELEASE_OUTLET_SETTING)
         {
-            item->SetPos(axis->releaseOutletPos);
+            item->SetActualPos(axis->releaseOutletPos);
         }
         return true;
     }
     else if(axis->mode == AXIS_PNEUMATIC)
     {
-        item->SetPos(0);
+        item->SetActualPos(0);
         if(setting == STANDBY_SETTING)
         {
             item->SetAction(limitActionMap_.value(axis).at(axis->standbyLimit));
@@ -1663,14 +1666,16 @@ void ICProgramGuidePage::on_stackedEn_toggled(bool checked)
 void ICProgramGuidePage::on_setInButton_clicked()
 {
     ICVirtualHost *host = ICVirtualHost::GlobalVirtualHost();
-    ui->x1Edit->SetThisIntToThisText(host->HostStatus(ICVirtualHost::XPos).toInt());
-    ui->y1Edit->SetThisIntToThisText(host->HostStatus(ICVirtualHost::YPos).toInt());
-    ui->zEdit->SetThisIntToThisText(host->HostStatus(ICVirtualHost::ZPos).toInt());
-    ui->x2Edit->SetThisIntToThisText(host->HostStatus(ICVirtualHost::PPos).toInt());
-    ui->y2Edit->SetThisIntToThisText(host->HostStatus(ICVirtualHost::QPos).toInt());
-    ui->aEdit->SetThisIntToThisText(host->HostStatus(ICVirtualHost::APos).toInt());
-    ui->bEdit->SetThisIntToThisText(host->HostStatus(ICVirtualHost::BPos).toInt());
-    ui->cEdit->SetThisIntToThisText(host->HostStatus(ICVirtualHost::CPos).toInt());
+    uint axisLast = host->HostStatus(ICVirtualHost::AxisLastPos1).toUInt() |
+            (host->HostStatus(ICVirtualHost::AxisLastPos2).toUInt() << 16);
+    ui->x1Edit->SetThisIntToThisText(host->GetActualPos(ICVirtualHost::ICAxis_AxisX1, axisLast));
+    ui->y1Edit->SetThisIntToThisText(host->GetActualPos(ICVirtualHost::ICAxis_AxisY1, axisLast));
+    ui->zEdit->SetThisIntToThisText(host->GetActualPos(ICVirtualHost::ICAxis_AxisZ, axisLast));
+    ui->x2Edit->SetThisIntToThisText(host->GetActualPos(ICVirtualHost::ICAxis_AxisX2, axisLast));
+    ui->y2Edit->SetThisIntToThisText(host->GetActualPos(ICVirtualHost::ICAxis_AxisY2, axisLast));
+    ui->aEdit->SetThisIntToThisText(host->GetActualPos(ICVirtualHost::ICAxis_AxisA, axisLast));
+    ui->bEdit->SetThisIntToThisText(host->GetActualPos(ICVirtualHost::ICAxis_AxisB, axisLast));
+    ui->cEdit->SetThisIntToThisText(host->GetActualPos(ICVirtualHost::ICAxis_AxisC, axisLast));
 }
 
 void ICProgramGuidePage::GuideKeyToActionCheck(int key)

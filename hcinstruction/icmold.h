@@ -75,7 +75,7 @@ public:
     uint IFVal() const { return ifVal_;}
     void SetIFVal(uint val) { ifVal_ = val; }
     uint IFPos() const { return ifPos_;}
-    void SetIFPos(uint pos) { ifPos_ = pos; }
+    void SetIFPos(uint pos) { ifPos_ = pos;}
 
 
     uint SVal() const { return sVal_;}  //速度，在clip中是次数，堆叠中是选择
@@ -111,6 +111,30 @@ public:
         sum_ = sum;
     }
     QByteArray ToString() const;
+
+    int ActualPos() const
+    {
+        return (QString::number(Pos()) + QString::number(IFPos() & 0xF)).toInt();
+    }
+    void SetActualPos(int pos)
+    {
+        int p = pos / 10;
+        int d = pos % 10;
+        SetPos(p);
+        ifPos_ &= 0xFFFFFFF0;
+        ifPos_ |= d;
+    }
+
+    int ActualIfPos() const
+    {
+        return IFPos() >> 4;
+    }
+
+    void SetActualIfPos(uint pos)
+    {
+        ifPos_ &= 0x0000000F;
+        ifPos_ |= (pos << 4);
+    }
 
 private:
     uint seq_;

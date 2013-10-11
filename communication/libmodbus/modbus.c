@@ -1844,7 +1844,7 @@ int hc_query_status(modbus_param_t *mb_param, int slave, int start_addr, int nb,
 #ifdef HC_5AXIS
     start_addr = (++start_addr) % 10;
 #elif defined HC_8AXIS
-    start_addr = (++start_addr) % 11;
+    start_addr = (++start_addr) % 12;
 #else
     start_addr = (++start_addr) % 7;
 #endif

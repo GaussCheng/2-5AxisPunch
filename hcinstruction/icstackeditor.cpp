@@ -2,6 +2,8 @@
 #include "ui_icstackeditor.h"
 
 #include "icmold.h"
+#include "config.h"
+#include <qmath.h>
 
 struct StackGroup
 {
@@ -127,23 +129,24 @@ void ICStackEditor::showEvent(QShowEvent *e)
             group.seq->setText(tr("Y->Z->X"));
         }
         //        ui->xRPLatticeLineEdit->SetThisIntToThisText(stackParams.at(ICMold::X_Array));
+        qreal multi = qPow(10, STACK_DECIMAL);
         group.xNum->setText(QString::number(stackParams.at(ICMold::X_Array)));
         //        ui->xRPCheckBox->setChecked(seqH & 32);
         group.xPosition->setText(seqH & 32 ? tr("RP") : tr("P"));
         //        ui->xRPStepLineEdit->SetThisIntToThisText(stackParams.at(ICMold::X_Gap));
-        group.xStep->setText(QString::number(stackParams.at(ICMold::X_Gap)/ 10.0, 'f', 1));
+        group.xStep->setText(QString::number(stackParams.at(ICMold::X_Gap)/ multi, 'f', STACK_DECIMAL));
         //        ui->yRPLatticeLineEdit->SetThisIntToThisText(stackParams.at(ICMold::Y_Array));
         group.yNum->setText(QString::number(stackParams.at(ICMold::Y_Array)));
         //                ui->yRPCheckBox->setChecked(seqH & 64);
         group.yPosition->setText(seqH & 64 ? tr("RP") : tr("P"));
         //        ui->yRPStepLineEdit->SetThisIntToThisText(stackParams.at(ICMold::Y_Gap));
-        group.yStep->setText(QString::number(stackParams.at(ICMold::Y_Gap) / 10.0, 'f', 1));
+        group.yStep->setText(QString::number(stackParams.at(ICMold::Y_Gap) / multi, 'f', STACK_DECIMAL));
         //        ui->zRPLatticeLineEdit->SetThisIntToThisText(stackParams.at(ICMold::Z_Array));
         group.zNum->setText(QString::number(stackParams.at(ICMold::Z_Array)));
         //        ui->zRPCheckBox->setChecked(seqH & 128);
         group.zPosition->setText(seqH & 128 ? tr("RP") : tr("P"));
         //        ui->zRPStepLineEdit->SetThisIntToThisText(stackParams.at(ICMold::Z_Gap));
-        group.zStep->setText(QString::number(stackParams.at(ICMold::Z_Gap) / 10.0, 'f', 1));
+        group.zStep->setText(QString::number(stackParams.at(ICMold::Z_Gap) / multi, 'f', STACK_DECIMAL));
     }
     ICInstructionEditorBase::showEvent(e);
 }

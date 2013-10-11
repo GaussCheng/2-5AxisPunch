@@ -6,6 +6,7 @@
 #include "icparameterssave.h"
 #include "moldinformation.h"
 #include "icmacrosubroutine.h"
+#include "config.h"
 
 #include <QDebug>
 
@@ -94,7 +95,8 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
 
         if(xyzStatusList_.contains(action))
         {
-            commandStr += ICParameterConversion::TransThisIntToThisText(moldItem.Pos(), 1) + " ";
+//            commandStr += ICParameterConversion::TransThisIntToThisText(moldItem.Pos(), 1) + " ";
+            commandStr += ICParameterConversion::TransThisIntToThisText(moldItem.ActualPos(), POS_DECIMAL) + " ";
 //            commandStr += "X" + ICParameterConversion::TransThisIntToThisText(moldItem.X(), 1) + " ";
 //            commandStr += "Y" + ICParameterConversion::TransThisIntToThisText(moldItem.Y(), 1) + " ";
 //            commandStr += "Z" + ICParameterConversion::TransThisIntToThisText(moldItem.Z(), 1) + " ";
@@ -108,7 +110,8 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
                 if(!moldItem.IsEarlySpeedDown())
                 {
                     commandStr += tr("Early End,Early Position:");
-                    commandStr += QString().sprintf("%.1f", moldItem.IFPos() / (qreal)10) + " ";
+//                    commandStr += QString().sprintf("%.1f", moldItem.IFPos() / (qreal)10) + " ";
+                    commandStr += QString::number(moldItem.ActualIfPos()) + " ";
                 }
 
             }
@@ -117,13 +120,15 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
                 if(!moldItem.IsEarlyEnd())
                 {
                     commandStr += tr("Early Speed-Down:") + QString::number(moldItem.GetEarlyDownSpeed()) + " ";
-                    commandStr += tr("Early Position:") + QString().sprintf("%.1f", moldItem.IFPos() / (qreal)10) + " ";
+//                    commandStr += tr("Early Position:") + QString().sprintf("%.1f", moldItem.IFPos() / (qreal)10) + " ";
+                    commandStr += tr("Early Position:") + QString::number(moldItem.ActualIfPos()) + " ";
                 }
                 else
                 {
                     commandStr += tr("Early End,");
                     commandStr += tr("Early Speed-Down:") + QString::number(moldItem.GetEarlyDownSpeed()) + " ";
-                    commandStr += tr("Early Position:") + QString().sprintf("%.1f", moldItem.IFPos() / (qreal)10) + " ";
+//                    commandStr += tr("Early Position:") + QString().sprintf("%.1f", moldItem.IFPos() / (qreal)10) + " ";
+                    commandStr += tr("Early Position:") + QString::number(moldItem.ActualIfPos()) + " ";
                 }
             }
 

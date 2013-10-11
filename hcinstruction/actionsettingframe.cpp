@@ -1,6 +1,7 @@
 #include "actionsettingframe.h"
 #include "ui_actionsettingframe.h"
 
+#include <qmath.h>
 #include "routesettingdialog.h"
 
 #include "iccommandprocessor.h"
@@ -82,50 +83,50 @@ void ActionSettingFrame::InitInterface()
 
     ui->x1DelayLineEdit->SetDecimalPlaces(2);
     ui->x1DelayLineEdit->setValidator(validator);
-    ui->x1PosLineEdit->SetDecimalPlaces(1);
+    ui->x1PosLineEdit->SetDecimalPlaces(POS_DECIMAL);
     ui->x1PosLineEdit->setValidator(posValidators_ + 0);
 //    ui->x1PosLineEdit->setValidator(posvalidator);
 
     ui->y1DelayLineEdit->SetDecimalPlaces(2);
     ui->y1DelayLineEdit->setValidator(validator);
-    ui->y1PosLineEdit->SetDecimalPlaces(1);
+    ui->y1PosLineEdit->SetDecimalPlaces(POS_DECIMAL);
 //    ui->y1PosLineEdit->setValidator(posvalidator);
     ui->y1PosLineEdit->setValidator(posValidators_ + 1);
 
     ui->zDelayLineEdit->SetDecimalPlaces(2);
     ui->zDelayLineEdit->setValidator(validator);
-    ui->zPosLineEdit->SetDecimalPlaces(1);
+    ui->zPosLineEdit->SetDecimalPlaces(POS_DECIMAL);
 //    ui->zPosLineEdit->setValidator(posvalidator);
     ui->zPosLineEdit->setValidator(posValidators_ + 2);
 
 #ifdef HC_8AXIS
     ui->x2DelayLineEdit->SetDecimalPlaces(2);
     ui->x2DelayLineEdit->setValidator(validator);
-    ui->x2PosLineEdit->SetDecimalPlaces(1);
+    ui->x2PosLineEdit->SetDecimalPlaces(POS_DECIMAL);
 //    ui->x2PosLineEdit->setValidator(posvalidator);
     ui->x2PosLineEdit->setValidator(posValidators_ + 3);
 
     ui->y2DelayLineEdit->SetDecimalPlaces(2);
     ui->y2DelayLineEdit->setValidator(validator);
-    ui->y2PosLineEdit->SetDecimalPlaces(1);
+    ui->y2PosLineEdit->SetDecimalPlaces(POS_DECIMAL);
 //    ui->y2PosLineEdit->setValidator(posvalidator);
     ui->y2PosLineEdit->setValidator(posValidators_ + 4);
 
     ui->aDelayLineEdit->SetDecimalPlaces(2);
     ui->aDelayLineEdit->setValidator(validator);
-    ui->aPosLineEdit->SetDecimalPlaces(1);
+    ui->aPosLineEdit->SetDecimalPlaces(POS_DECIMAL);
     ui->aPosLineEdit->setValidator(posValidator + 0);
 //    ui->aPosLineEdit->setValidator(posValidators_ + 5);
 
     ui->bDelayLineEdit->SetDecimalPlaces(2);
     ui->bDelayLineEdit->setValidator(validator);
-    ui->bPosLineEdit->SetDecimalPlaces(1);
+    ui->bPosLineEdit->SetDecimalPlaces(POS_DECIMAL);
     ui->bPosLineEdit->setValidator(posValidator + 1);
 //    ui->bPosLineEdit->setValidator(posValidators_ + 6);
 
     ui->cDelayLineEdit->SetDecimalPlaces(2);
     ui->cDelayLineEdit->setValidator(validator);
-    ui->cPosLineEdit->SetDecimalPlaces(1);
+    ui->cPosLineEdit->SetDecimalPlaces(POS_DECIMAL);
     ui->cPosLineEdit->setValidator(posValidator + 2);
 //    ui->cPosLineEdit->setValidator(posValidators_ + 7);
 
@@ -161,15 +162,15 @@ void ActionSettingFrame::on_inputButton_clicked()
     //    {
     //        ui->gxComboBox->setCurrentIndex(1);
     //    }
-    ui->x1PosLineEdit->setText(QString().sprintf("%.1f", oXP_ / 10.0));
-    ui->y1PosLineEdit->setText(QString().sprintf("%.1f", oYP_ / 10.0));
-    ui->zPosLineEdit->setText(QString().sprintf("%.1f", oZP_ / 10.0));
+    ui->x1PosLineEdit->setText(QString().sprintf("%.2f", oXP_ / 100.0));
+    ui->y1PosLineEdit->setText(QString().sprintf("%.2f", oYP_ / 100.0));
+    ui->zPosLineEdit->setText(QString().sprintf("%.2f", oZP_ / 100.0));
 #ifdef HC_8AXIS
-    ui->x2PosLineEdit->setText(QString().sprintf("%.1f", oX2P_ / 10.0));
-    ui->y2PosLineEdit->setText(QString().sprintf("%.1f", oY2P_ / 10.0));
-    ui->aPosLineEdit->setText(QString().sprintf("%.1f", oAP_ / 10.0));
-    ui->bPosLineEdit->setText(QString().sprintf("%.1f", oBP_ / 10.0));
-    ui->cPosLineEdit->setText(QString().sprintf("%.1f", oCP_ / 10.0));
+    ui->x2PosLineEdit->setText(QString().sprintf("%.2f", oX2P_ / 100.0));
+    ui->y2PosLineEdit->setText(QString().sprintf("%.2f", oY2P_ / 100.0));
+    ui->aPosLineEdit->setText(QString().sprintf("%.2f", oAP_ / 100.0));
+    ui->bPosLineEdit->setText(QString().sprintf("%.2f", oBP_ / 100.0));
+    ui->cPosLineEdit->setText(QString().sprintf("%.2f", oCP_ / 100.0));
 #endif
 
     //do someting
@@ -207,13 +208,15 @@ void ActionSettingFrame::showEvent(QShowEvent *e)
     posLength_[0] = host->SystemParameter(ICVirtualHost::SYS_A_Length).toInt();
     posLength_[1] = host->SystemParameter(ICVirtualHost::SYS_A_Length).toInt();
     posLength_[2] = host->SystemParameter(ICVirtualHost::SYS_A_Length).toInt();
+
+    int mutil = qPow(10, SECTION_DECIMAL);
     for(int i = 0; i != 8; ++i)
     {
-        posValidators_[i].setTop(posMaxs_[i]);
+        posValidators_[i].setTop(posMaxs_[i] * mutil);
     }
     for(int i = 0; i != 3; ++i)
     {
-        posValidator[i].setTop(posLength_[i]);
+        posValidator[i].setTop(posLength_[i] * mutil);
     }
 
     QFrame::showEvent(e);
@@ -231,48 +234,50 @@ void ActionSettingFrame::SyncStatusImpl(const QList<ICMoldItem> &items)
 void ActionSettingFrame::StatusRefresh()
 {
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    int pos = host->HostStatus(ICVirtualHost::YPos).toInt();
+    uint axisLast = host->HostStatus(ICVirtualHost::AxisLastPos1).toUInt() |
+            (host->HostStatus(ICVirtualHost::AxisLastPos2).toUInt() << 16);
+    int pos = host->GetActualPos(ICVirtualHost::ICAxis_AxisY1, axisLast);
     if(pos != oYP_)
     {
         oYP_ = pos;
     }
-    pos = host->HostStatus(ICVirtualHost::ZPos).toInt();
+    pos = host->GetActualPos(ICVirtualHost::ICAxis_AxisZ, axisLast);
     if(pos != oZP_)
     {
         oZP_ = pos;
     }
 
-    pos = host->HostStatus(ICVirtualHost::XPos).toInt();
+    pos = host->GetActualPos(ICVirtualHost::ICAxis_AxisX1, axisLast);
     if(pos != oXP_)
     {
         oXP_ = pos;
     }
 #ifdef HC_8AXIS
-    pos = host->HostStatus(ICVirtualHost::PPos).toInt();
+    pos = host->GetActualPos(ICVirtualHost::ICAxis_AxisX2, axisLast);
     if(pos != oX2P_)
     {
         oX2P_ = pos;
     }
 
-    pos = host->HostStatus(ICVirtualHost::QPos).toInt();
+    pos = host->GetActualPos(ICVirtualHost::ICAxis_AxisY2, axisLast);
     if(pos != oY2P_)
     {
         oY2P_ = pos;
     }
 
-    pos = host->HostStatus(ICVirtualHost::APos).toInt();
+    pos = host->GetActualPos(ICVirtualHost::ICAxis_AxisA, axisLast);
     if(pos != oAP_)
     {
         oAP_ = pos;
     }
 
-    pos = host->HostStatus(ICVirtualHost::BPos).toInt();
+    pos = host->GetActualPos(ICVirtualHost::ICAxis_AxisB, axisLast);
     if(pos != oBP_)
     {
         oBP_ = pos;
     }
 
-    pos = host->HostStatus(ICVirtualHost::CPos).toInt();
+    pos = host->GetActualPos(ICVirtualHost::ICAxis_AxisC, axisLast);
     if(pos != oCP_)
     {
         oCP_ = pos;
@@ -297,7 +302,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         if(ui->x1ForwardBox->isHidden() && ui->x1BackwardBox->isHidden())
         {
             item.SetAction(ICMold::GX);
-            item.SetPos(ui->x1PosLineEdit->TransThisTextToThisInt());
+            item.SetActualPos(ui->x1PosLineEdit->TransThisTextToThisInt());
             item.SetSVal(ui->x1SpeedLineEdit->TransThisTextToThisInt());
         }
         else
@@ -306,7 +311,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         }
         item.SetDVal(ui->x1DelayLineEdit->TransThisTextToThisInt());
         item.SetIFVal(0);
-        item.SetIFPos(0);
+        item.SetActualIfPos(0);
         ret.append(item);
     }
     if(ui->gyButton->isChecked() && (!ui->gyButton->isHidden()))
@@ -314,7 +319,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         if(ui->y1UpBox->isHidden() && ui->y1DownBox->isHidden())
         {
             item.SetAction(ICMold::GY);
-            item.SetPos(ui->y1PosLineEdit->TransThisTextToThisInt());
+            item.SetActualPos(ui->y1PosLineEdit->TransThisTextToThisInt());
             item.SetSVal(ui->y1SpeedLineEdit->TransThisTextToThisInt());
         }
         else
@@ -323,7 +328,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         }
         item.SetDVal(ui->y1DelayLineEdit->TransThisTextToThisInt());
         item.SetIFVal(0);
-        item.SetIFPos(0);
+        item.SetActualIfPos(0);
         ret.append(item);
     }
     if(ui->gzButton->isChecked() && (!ui->gzButton->isHidden()))
@@ -331,7 +336,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         if(ui->zComeInBox->isHidden() && ui->zComeOutBox->isHidden())
         {
             item.SetAction(ICMold::GZ);
-            item.SetPos(ui->zPosLineEdit->TransThisTextToThisInt());
+            item.SetActualPos(ui->zPosLineEdit->TransThisTextToThisInt());
             item.SetSVal(ui->zSpeedLineEdit->TransThisTextToThisInt());
         }
         else
@@ -340,7 +345,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         }
         item.SetDVal(ui->zDelayLineEdit->TransThisTextToThisInt());
         item.SetIFVal(0);
-        item.SetIFPos(0);
+        item.SetActualIfPos(0);
         ret.append(item);
     }
 
@@ -350,7 +355,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         if(ui->x2BackwardBox->isHidden() && ui->x2ForwardBox->isHidden())
         {
             item.SetAction(ICMold::GP);
-            item.SetPos(ui->x2PosLineEdit->TransThisTextToThisInt());
+            item.SetActualPos(ui->x2PosLineEdit->TransThisTextToThisInt());
             item.SetSVal(ui->x2SpeedLineEdit->TransThisTextToThisInt());
         }
         else
@@ -359,7 +364,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         }
         item.SetDVal(ui->x2DelayLineEdit->TransThisTextToThisInt());
         item.SetIFVal(0);
-        item.SetIFPos(0);
+        item.SetActualIfPos(0);
         ret.append(item);
     }
     if(ui->gQButton->isChecked() && (!ui->gQButton->isHidden()))
@@ -367,7 +372,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         if(ui->y2UpBox->isHidden() && ui->y2DownBox->isHidden())
         {
             item.SetAction(ICMold::GQ);
-            item.SetPos(ui->y2PosLineEdit->TransThisTextToThisInt());
+            item.SetActualPos(ui->y2PosLineEdit->TransThisTextToThisInt());
             item.SetSVal(ui->y2SpeedLineEdit->TransThisTextToThisInt());
         }
         else
@@ -376,7 +381,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         }
         item.SetDVal(ui->y2DelayLineEdit->TransThisTextToThisInt());
         item.SetIFVal(0);
-        item.SetIFPos(0);
+        item.SetActualIfPos(0);
         ret.append(item);
     }
     if(ui->gAButton->isChecked() && (!ui->gAButton->isHidden()))
@@ -384,7 +389,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         if(ui->aHorizonBox->isHidden() && ui->aVerticalBox->isHidden())
         {
             item.SetAction(ICMold::GA);
-            item.SetPos(ui->aPosLineEdit->TransThisTextToThisInt());
+            item.SetActualPos(ui->aPosLineEdit->TransThisTextToThisInt());
             item.SetDVal(ui->aDelayLineEdit->TransThisTextToThisInt());
             item.SetSVal(ui->aSpeedLineEdit->TransThisTextToThisInt());
         }
@@ -394,18 +399,18 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         }
         item.SetDVal(ui->aDelayLineEdit->TransThisTextToThisInt());
         item.SetIFVal(0);
-        item.SetIFPos(0);
+        item.SetActualIfPos(0);
         ret.append(item);
     }
     /**********好像有问题*****************/
     if(ui->gBButton->isChecked() && (!ui->gBButton->isHidden()))
     {
         item.SetAction(ICMold::GB);
-        item.SetPos(ui->bPosLineEdit->TransThisTextToThisInt());
+        item.SetActualPos(ui->bPosLineEdit->TransThisTextToThisInt());
         item.SetDVal(ui->bDelayLineEdit->TransThisTextToThisInt());
         item.SetSVal(ui->bSpeedLineEdit->TransThisTextToThisInt());
         item.SetIFVal(0);
-        item.SetIFPos(0);
+        item.SetActualIfPos(0);
         ret.append(item);
     }
     if(ui->gCButton->isChecked() && (!ui->gCButton->isHidden()))
@@ -413,7 +418,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         if(ui->cHorizonBox->isHidden() && ui->cVerticalBox->isHidden())
         {
             item.SetAction(ICMold::GC);
-            item.SetPos(ui->cPosLineEdit->TransThisTextToThisInt());
+            item.SetActualPos(ui->cPosLineEdit->TransThisTextToThisInt());
             item.SetDVal(ui->cDelayLineEdit->TransThisTextToThisInt());
             item.SetSVal(ui->cSpeedLineEdit->TransThisTextToThisInt());
         }
@@ -423,7 +428,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         }
         item.SetDVal(ui->cDelayLineEdit->TransThisTextToThisInt());
         item.SetIFVal(0);
-        item.SetIFPos(0);
+        item.SetActualIfPos(0);
         ret.append(item);
     }
 #endif

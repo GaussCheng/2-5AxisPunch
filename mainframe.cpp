@@ -543,73 +543,76 @@ void MainFrame::StatusRefreshed()
     //        ui->cPosLabel->setStyleSheet("color: rgb(0, 0, 127);");
     //        isCPosChanged_ = false;
     //    }
-    int pos = virtualHost->HostStatus(ICVirtualHost::XPos).toInt();
+    uint axisLast = virtualHost->HostStatus(ICVirtualHost::AxisLastPos1).toUInt() |
+            (virtualHost->HostStatus(ICVirtualHost::AxisLastPos2).toUInt() << 16);
+//    int pos = virtualHost->HostStatus(ICVirtualHost::XPos).toInt() * 10 + (axisLast1 & 0xF);
+    int pos = virtualHost->GetActualPos(ICVirtualHost::ICAxis_AxisX1, axisLast);
     if(pos != oldXPos_)
     {
-        oldXPos_ = pos;
-        ui->xPosLabel->setText(QString().sprintf("%.1f", pos / 10.0));
+        oldXPos_ = pos ;
+        ui->xPosLabel->setText(QString().sprintf("%.2f", oldXPos_ / 100.0));
         ui->xPosLabel->setStyleSheet("color: rgb(0, 0, 127);background-color: rgb(85, 255, 127);");
         isXPosChanged_ = true;
     }
-    pos = virtualHost->HostStatus(ICVirtualHost::YPos).toInt();
+    pos = virtualHost->GetActualPos(ICVirtualHost::ICAxis_AxisY1, axisLast);
     if(pos != oldYPos_)
     {
         oldYPos_ = pos;
-        ui->yPosLabel->setText(QString().sprintf("%.1f", pos / 10.0));
+        ui->yPosLabel->setText(QString().sprintf("%.2f", oldYPos_ / 100.0));
         ui->yPosLabel->setStyleSheet("color: rgb(0, 0, 127);background-color: rgb(85, 255, 127);");
         isYPosChanged_ = true;
     }
 
-    pos = virtualHost->HostStatus(ICVirtualHost::ZPos).toInt();
+    pos = virtualHost->GetActualPos(ICVirtualHost::ICAxis_AxisZ, axisLast);
     if(pos != oldZPos_)
     {
         oldZPos_ = pos;
-        ui->zPosLabel->setText(QString().sprintf("%.1f", pos / 10.0));
+        ui->zPosLabel->setText(QString().sprintf("%.2f", oldZPos_ / 100.0));
         ui->zPosLabel->setStyleSheet("color: rgb(0, 0, 127);background-color: rgb(85, 255, 127);");
         isZPosChanged_ = true;
     }
 
-    pos = virtualHost->HostStatus(ICVirtualHost::PPos).toInt();
+    pos = virtualHost->GetActualPos(ICVirtualHost::ICAxis_AxisX2, axisLast);
     if(pos != oldX2Pos_)
     {
         oldX2Pos_ = pos;
-        ui->pPosLabel->setText(QString().sprintf("%.1f", pos / 10.0));
+        ui->pPosLabel->setText(QString().sprintf("%.2f", oldX2Pos_ / 100.0));
         ui->pPosLabel->setStyleSheet("color: rgb(0, 0, 127);background-color: rgb(85, 255, 127);");
         isX2PosChanged_ = true;
     }
 
-    pos = virtualHost->HostStatus(ICVirtualHost::QPos).toInt();
+    pos = virtualHost->GetActualPos(ICVirtualHost::ICAxis_AxisY2, axisLast);
     if(pos != oldY2Pos_)
     {
         oldY2Pos_ = pos;
-        ui->qPosLabel->setText(QString().sprintf("%.1f", pos / 10.0));
+        ui->qPosLabel->setText(QString().sprintf("%.2f", oldY2Pos_ / 100.0));
         ui->qPosLabel->setStyleSheet("color: rgb(0, 0, 127);background-color: rgb(85, 255, 127);");
         isY2PosChanged_ = true;
     }
 
-    pos = (qint16)virtualHost->HostStatus(ICVirtualHost::APos).toInt();
+    pos = virtualHost->GetActualPos(ICVirtualHost::ICAxis_AxisA, axisLast);
     if(pos != oldAPos_)
     {
         oldAPos_ = pos;
-        ui->aPosLabel->setText(QString().sprintf("%.1f", pos / 10.0));
+        ui->aPosLabel->setText(QString().sprintf("%.2f", oldAPos_ / 100.0));
         ui->aPosLabel->setStyleSheet("color: rgb(0, 0, 127);background-color: rgb(85, 255, 127);");
         isAPosChanged_ = true;
     }
 
-    pos = (qint16)virtualHost->HostStatus(ICVirtualHost::BPos).toInt();
+    pos = virtualHost->GetActualPos(ICVirtualHost::ICAxis_AxisB, axisLast);
     if(pos != oldBPos_)
     {
         oldBPos_ = pos;
-        ui->bPosLabel->setText(QString().sprintf("%.1f", pos / 10.0));
+        ui->bPosLabel->setText(QString().sprintf("%.2f", oldBPos_ / 100.0));
         ui->bPosLabel->setStyleSheet("color: rgb(0, 0, 127);background-color: rgb(85, 255, 127);");
         isBPosChanged_ = true;
     }
 
-    pos = (qint16)virtualHost->HostStatus(ICVirtualHost::CPos).toInt();
+    pos = virtualHost->GetActualPos(ICVirtualHost::ICAxis_AxisC, axisLast);
     if(pos != oldCPos_)
     {
         oldCPos_ = pos;
-        ui->cPosLabel->setText(QString().sprintf("%.1f", pos / 10.0));
+        ui->cPosLabel->setText(QString().sprintf("%.1f", oldCPos_ / 100.0));
         ui->cPosLabel->setStyleSheet("color: rgb(0, 0, 127);background-color: rgb(85, 255, 127);");
         isCPosChanged_ = true;
     }

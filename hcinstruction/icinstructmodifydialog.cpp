@@ -2,6 +2,8 @@
 #include "ui_icinstructmodifydialog.h"
 #include "icmold.h"
 #include "icvirtualhost.h"
+#include "config.h"
+#include <qmath.h>
 
 ICInstructModifyDialog::ICInstructModifyDialog(QWidget *parent) :
     QDialog(parent),
@@ -20,15 +22,16 @@ ICInstructModifyDialog::ICInstructModifyDialog(QWidget *parent) :
     validator = new QIntValidator(0, 255, this);
     ui->speedEdit->setValidator(validator);
     
-    posValidator_ = new QIntValidator(0, 65530, this);
-    ui->posEdit->SetDecimalPlaces(1);
+    posValidator_ = new QIntValidator(0, 65530 * qPow(10, SECTION_DECIMAL), this);
+    ifposValidator_ = new QIntValidator(0, 6553, this);
+    ui->posEdit->SetDecimalPlaces(POS_DECIMAL);
     ui->posEdit->setValidator(posValidator_);
 
     esdValidator_ = new QIntValidator(0, 30, this);
     ui->earlyDownSpeedTimeEdit->setValidator(esdValidator_);
     
-    ui->earlyEndTimeEdit->SetDecimalPlaces(1);
-    ui->earlyEndTimeEdit->setValidator(posValidator_);
+    ui->earlyEndTimeEdit->SetDecimalPlaces(IFPOS_DECIMAL);
+    ui->earlyEndTimeEdit->setValidator(ifposValidator_);
     ui->selectEdit->setValidator(new QIntValidator(1, 4, this));
     
     ui->posEdit->SetModalKeyboard(true);
@@ -113,38 +116,47 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
             case ICMold::GX:
                 addr = ICVirtualHost::SYS_X_Maxium;
                 posValidator_->setBottom(0);
+                ifposValidator_->setBottom(0);
                 break;
             case ICMold::GY:
                 addr = ICVirtualHost::SYS_Y_Maxium;
                 posValidator_->setBottom(0);
+                ifposValidator_->setBottom(0);
                 break;
             case ICMold::GZ:
                 addr = ICVirtualHost::SYS_Z_Maxium;
                 posValidator_->setBottom(0);
+                ifposValidator_->setBottom(0);
                 break;
             case ICMold::GP:
                 addr = ICVirtualHost::SYS_P_Maxium;
                 posValidator_->setBottom(0);
+                ifposValidator_->setBottom(0);
                 break;
             case ICMold::GQ:
                 addr = ICVirtualHost::SYS_Q_Maxium;
                 posValidator_->setBottom(0);
+                ifposValidator_->setBottom(0);
                 break;
             case ICMold::GA:
                 addr = ICVirtualHost::SYS_C_Length;
                 posValidator_->setBottom(-50);
+                ifposValidator_->setBottom(-50);
                 break;
             case ICMold::GB:
                 addr = ICVirtualHost::SYS_C_Length;
                 posValidator_->setBottom(-50);
+                ifposValidator_->setBottom(-50);
                 break;
             case ICMold::GC:
                 addr = ICVirtualHost::SYS_C_Length;
                 posValidator_->setBottom(-50);
+                ifposValidator_->setBottom(-50);
                 break;
             }
             
-            posValidator_->setTop(host->SystemParameter(addr).toInt());
+            posValidator_->setTop(host->SystemParameter(addr).toInt() * qPow(10, SECTION_DECIMAL));
+            ifposValidator_->setTop(host->SystemParameter(addr).toInt() / 10);
             validator->setTop(100);
             
             ui->positionLabel->show();
@@ -231,7 +243,8 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
         ui->selectLabel->show();
     }
     
-    ui->posEdit->SetThisIntToThisText(item->Pos());
+//    ui->posEdit->SetThisIntToThisText(item->Pos());
+    ui->posEdit->SetThisIntToThisText(item->ActualPos());
     
     ui->speedEdit->SetThisIntToThisText(item->SVal());
     ui->delayTimeEdit->SetThisIntToThisText(item->DVal());
@@ -255,7 +268,8 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
         ui->earlyEndCheckBox->setChecked(false);
     }
     
-    ui->earlyEndTimeEdit->SetThisIntToThisText(item->IFPos());
+//    ui->earlyEndTimeEdit->SetThisIntToThisText(item->IFPos());
+    ui->earlyEndTimeEdit->SetThisIntToThisText(item->ActualIfPos());
     ui->earlyDownSpeedTimeEdit->SetThisIntToThisText(item->GetEarlyDownSpeed());    ///
     
     ui->badProductBox->setChecked(item->IsBadProduct());
@@ -269,7 +283,8 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
         }
         else
         {
-            item->SetPos(ui->posEdit->TransThisTextToThisInt());
+//            item->SetPos(ui->posEdit->TransThisTextToThisInt());
+            item->SetActualPos(ui->posEdit->TransThisTextToThisInt());
         }
         if(item->Clip() == ICMold::ACTLAYOUTON)
         {
@@ -290,12 +305,14 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
         
         if(ui->earlySpeedDownCheckBox->isChecked())
         {
-            item->SetIFPos(ui->earlyEndTimeEdit->TransThisTextToThisInt());
+//            item->SetIFPos(ui->earlyEndTimeEdit->TransThisTextToThisInt());
+            item->SetActualIfPos(ui->earlyEndTimeEdit->TransThisTextToThisInt());
             item->SetEarlyDownSpeed(ui->earlyDownSpeedTimeEdit->TransThisTextToThisInt());   ///
         }
         else if(ui->earlyEndCheckBox->isChecked())
         {
-            item->SetIFPos(ui->earlyEndTimeEdit->TransThisTextToThisInt());
+//            item->SetIFPos(ui->earlyEndTimeEdit->TransThisTextToThisInt());
+            item->SetActualIfPos(ui->earlyEndTimeEdit->TransThisTextToThisInt());
         }
         
         //        item->SetIFVal(ui->earlyEndCheckBox->isChecked());
@@ -345,37 +362,39 @@ void ICInstructModifyDialog::on_setButton_clicked()
     }
     int currentPos = 0;
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    uint axisLast = host->HostStatus(ICVirtualHost::AxisLastPos1).toUInt() |
+            (host->HostStatus(ICVirtualHost::AxisLastPos2).toUInt() << 16);
     if(currentItem->Action() == ICMold::GX)
     {
-        currentPos = host->HostStatus(ICVirtualHost::XPos).toInt();
+        currentPos = host->GetActualPos(ICVirtualHost::ICAxis_AxisX1, axisLast);
     }
     else if(currentItem->Action() == ICMold::GY)
     {
-        currentPos = host->HostStatus(ICVirtualHost::YPos).toInt();
+        currentPos = host->GetActualPos(ICVirtualHost::ICAxis_AxisY1, axisLast);
     }
     else if(currentItem->Action() == ICMold::GZ)
     {
-        currentPos = host->HostStatus(ICVirtualHost::ZPos).toInt();
+        currentPos = host->GetActualPos(ICVirtualHost::ICAxis_AxisZ, axisLast);
     }
     else if(currentItem->Action() == ICMold::GP)
     {
-        currentPos = host->HostStatus(ICVirtualHost::PPos).toInt();
+        currentPos = host->GetActualPos(ICVirtualHost::ICAxis_AxisX2, axisLast);
     }
     else if(currentItem->Action() == ICMold::GQ)
     {
-        currentPos = host->HostStatus(ICVirtualHost::QPos).toInt();
+        currentPos = host->GetActualPos(ICVirtualHost::ICAxis_AxisY2, axisLast);
     }
     else if(currentItem->Action() == ICMold::GA)
     {
-        currentPos = host->HostStatus(ICVirtualHost::APos).toInt();
+        currentPos = host->GetActualPos(ICVirtualHost::ICAxis_AxisA, axisLast);
     }
     else if(currentItem->Action() == ICMold::GB)
     {
-        currentPos = host->HostStatus(ICVirtualHost::BPos).toInt();
+        currentPos = host->GetActualPos(ICVirtualHost::ICAxis_AxisB, axisLast);
     }
     else if(currentItem->Action() == ICMold::GC)
     {
-        currentPos = host->HostStatus(ICVirtualHost::CPos).toInt();
+        currentPos = host->GetActualPos(ICVirtualHost::ICAxis_AxisC, axisLast);
     }
     ui->posEdit->SetThisIntToThisText(currentPos);
 }

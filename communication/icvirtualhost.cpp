@@ -230,7 +230,7 @@ void ICVirtualHost::RefreshStatus()
     {
         //        qDebug()<<"refresh statys start";
         ICCommunicationCommandBase::ResultVector result;
-        currentAddr_ %= 11;
+        currentAddr_ %= 12;
         if(currentAddr_ == 0)
         {
             currentStatus_ = 0;

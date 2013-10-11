@@ -3,6 +3,7 @@
 
 #include "icmold.h"
 #include "icvirtualhost.h"
+#include "config.h"
 #include <QTimer>
 
 #include <QDebug>
@@ -74,17 +75,17 @@ void ICHCStackedSettingsFrame::InitInterface()
 
     ui->xRPLatticeLineEdit->SetDecimalPlaces(0);
     ui->xRPLatticeLineEdit->setValidator(validator);
-    ui->xRPStepLineEdit->SetDecimalPlaces(1);
+    ui->xRPStepLineEdit->SetDecimalPlaces(STACK_DECIMAL);
     ui->xRPStepLineEdit->setValidator(validator_);
 
     ui->xRPLatticeLineEdit->SetDecimalPlaces(0);
     ui->yRPLatticeLineEdit->setValidator(validator);
-    ui->yRPStepLineEdit->SetDecimalPlaces(1);
+    ui->yRPStepLineEdit->SetDecimalPlaces(STACK_DECIMAL);
     ui->yRPStepLineEdit->setValidator(validator_);
 
     ui->xRPLatticeLineEdit->SetDecimalPlaces(0);
     ui->zRPLatticeLineEdit->setValidator(validator);
-    ui->zRPStepLineEdit->SetDecimalPlaces(1);
+    ui->zRPStepLineEdit->SetDecimalPlaces(STACK_DECIMAL);
     ui->zRPStepLineEdit->setValidator(validator_);
 
 //    ui->stackCount->setValidator(validator);
