@@ -19,6 +19,7 @@
 #include <QFile>
 #include <QTextStream>
 #include "icparameterssave.h"
+#include <QRegExp>
 //ICUpdateSystem *icUpdateSystem = NULL;
 
 
@@ -743,9 +744,18 @@ void ICUpdateSystem::on_updatePasswardButton_clicked()
     }
     QString str;
     str = updateSettings_->value("superPassward").toString();
-    if(!str.isEmpty())
+    if(str.isEmpty())
+        return;
+    QRegExp reg("^[A-Za-z0-9]+$");
+    reg.setPatternSyntax(QRegExp::RegExp);
+    if(!reg.exactMatch(str))
     {
+        QMessageBox::information(this,tr("Tips"),tr("Passward Format Error,Need to Alphabet Or Number."));
+        return;
+    }
+//    if(!str.isEmpty())
+//    {
         ICParametersSave::Instance()->SetSuperPassward(str);
         QMessageBox::information(this,tr("Tips"),tr("Super Passward Update Succeed."));
-    }
+//    }
 }

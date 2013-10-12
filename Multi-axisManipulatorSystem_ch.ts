@@ -7127,12 +7127,12 @@ Please enter an digit between </source>
         <translation>更新</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="204"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="205"/>
         <source>Congratulations</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="205"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="206"/>
         <source>Update finish
 You must restart this program
 Would you want to restart now?</source>
@@ -7141,103 +7141,109 @@ Would you want to restart now?</source>
 要现在重启吗?</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="139"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="236"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="436"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="720"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="140"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="237"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="449"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="733"/>
         <source>No available HMI version</source>
         <translation>没有可以用的手控版本</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="138"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="435"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="719"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="139"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="448"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="732"/>
         <source>USB no exists...</source>
         <translation>U盘目录不存在...</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="140"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="237"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="437"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="721"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="141"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="238"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="450"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="734"/>
         <source>No available Host version</source>
         <translation>没有可以用的主机版本</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="141"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="242"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="438"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="722"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="142"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="243"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="451"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="735"/>
         <source>No available New SuperPassward</source>
         <translation>没有可以用的超级密码</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="244"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="245"/>
         <source>New SuperPassward</source>
         <translation>新超级密码</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="346"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="367"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="359"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="380"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="346"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="367"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="359"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="380"/>
         <source>Update Host fail!</source>
         <translation>更新主机失败！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="394"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="407"/>
         <source>Update Host Successful!</source>
         <translation>主机更新成功！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="480"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="493"/>
         <source>warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="480"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="493"/>
         <source>USB is not exist!</source>
         <translation>没有找到U盘！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="636"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="642"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="649"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="655"/>
         <source>Wrong Register Code!</source>
         <translation>注册码错误！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="648"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="661"/>
         <source>Register Success!</source>
         <translation>注册成功！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="651"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="670"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="664"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="683"/>
         <source>No Limit</source>
         <translation>无限制</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="655"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="672"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="668"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="685"/>
         <source>hour</source>
         <translation>小时</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="674"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="687"/>
         <source>No Register!</source>
         <translation>没有注册！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="737"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="753"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="759"/>
         <source>Tips</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="737"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="753"/>
+        <source>Passward Format Error,Need to Alphabet Or Number.</source>
+        <translation>密码格式错误，必须为字母数字或者混合.</translation>
+    </message>
+    <message>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="759"/>
         <source>Super Passward Update Succeed.</source>
         <translation>超级密码更新成功.</translation>
     </message>
@@ -7250,10 +7256,10 @@ Would you want to restart now?</source>
         <translation type="obsolete">发送到主机成功！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="138"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="394"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="435"/>
-        <location filename="hcmaintains/icupdatesystem.cpp" line="719"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="139"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="407"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="448"/>
+        <location filename="hcmaintains/icupdatesystem.cpp" line="732"/>
         <source>tips</source>
         <translation>提示</translation>
     </message>
