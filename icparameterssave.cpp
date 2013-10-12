@@ -144,7 +144,7 @@ bool ICParametersSave::VerifyPassword(OperationLevel level, const QString &passw
         parameter = "AdvanceAdmin";
     }
     QString registerPwd = GetParameter("AdminInformation", parameter, "123").toString();
-    return (registerPwd == password || password == "szhc");
+    return (registerPwd == password || password == "szhcrobot" || password == SuperPassward());
 }
 
 void ICParametersSave::SetPassword(OperationLevel level, const QString &password)

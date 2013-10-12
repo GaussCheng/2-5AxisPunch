@@ -16,6 +16,9 @@
 #include "icupdatelogodialog.h"
 #include <QDateTime>
 #include "icparameterssave.h"
+#include <QFile>
+#include <QTextStream>
+#include "icparameterssave.h"
 //ICUpdateSystem *icUpdateSystem = NULL;
 
 
@@ -42,6 +45,11 @@ ICUpdateSystem::ICUpdateSystem(QWidget *parent) :
     updateHostSettings_(NULL),
     status_(-1),
     updateDialog_(NULL)
+//#if defined(Q_WS_WIN32) || defined(Q_WS_X11)
+//    fileName("./Update_SuperPassward")
+//#else
+//    fileName("/mnt/udisk/Update_SuperPassward")
+//#endif
 {
     ui->setupUi(this);
     InitInterface();
@@ -103,6 +111,7 @@ void ICUpdateSystem::hideEvent(QHideEvent *e)
 {
     timer_.stop();
     ui->updateToolButton->setEnabled(false);
+    ui->updatePasswardButton->setEnabled(false);
 //    ui->updateHostButton->setEnabled(false);
     ui->connectHostButton->setEnabled(false);
 //    ui->writeHostButton->setEnabled(false);
@@ -129,8 +138,10 @@ void ICUpdateSystem::SystemUpdateStart()
         QMessageBox::warning(this,tr("tips"),tr("USB no exists...")) ;
         ui->hmiVersionShowLabel->setText(tr("No available HMI version"));
         ui->hostVersionShowLabel->setText(tr("No available Host version"));
+        ui->updatePasswardLabel->setText(tr("No available New SuperPassward"));
         ui->connectHostButton->setEnabled(false);
         ui->updateToolButton->setEnabled(false);
+        ui->updatePasswardButton->setEnabled(false);
         return;
     }
     if(updateSettings_ == NULL)
@@ -224,13 +235,37 @@ void ICUpdateSystem::RefreshUSBIniInfo()
     updateHostSettings_ = new QSettings(updateHostPath_ + "HCUpdateHost", QSettings::IniFormat);
     ui->hmiVersionShowLabel->setText(updateSettings_->value("version", tr("No available HMI version")).toString());
     ui->hostVersionShowLabel->setText(updateHostSettings_->value("version", tr("No available Host version")).toString());
+
+    QString str;
+    str = updateSettings_->value("superPassward").toString();
+    if(str.isEmpty())
+        str = QString(tr("No available New SuperPassward"));
+    else
+        str = QString(tr("New SuperPassward"));
+    ui->updatePasswardLabel->setText(str);
     if(!updateSettings_->value("version","").toString().isEmpty())
     {
         ui->updateToolButton->setEnabled(true);
     }
+    else
+    {
+        ui->updateToolButton->setEnabled(false);
+    }
+    if(!updateSettings_->value("superPassward","").toString().isEmpty())
+    {
+        ui->updatePasswardButton->setEnabled(true);
+    }
+    else
+    {
+        ui->updatePasswardButton->setEnabled(false);
+    }
     if(!updateHostSettings_->value("version", "").toString().isEmpty())
     {
         ui->connectHostButton->setEnabled(true);
+    }
+    else
+    {
+        ui->connectHostButton->setEnabled(false);
     }
     /*******************************************/
         QStringList updateFileList = updateSettings_->childGroups();
@@ -412,8 +447,10 @@ void ICUpdateSystem::on_connectHostButton_clicked()
         QMessageBox::warning(this,tr("tips"),tr("USB no exists...")) ;
         ui->hmiVersionShowLabel->setText(tr("No available HMI version"));
         ui->hostVersionShowLabel->setText(tr("No available Host version"));
+        ui->updatePasswardLabel->setText(tr("No available New SuperPassward"));
         ui->connectHostButton->setEnabled(false);
         ui->updateToolButton->setEnabled(false);
+        ui->updatePasswardButton->setEnabled(false);
         return;
     }
     ICUpdateHostStart linkCmd;
@@ -672,4 +709,43 @@ bool ICUpdateSystem::CheckIsUsbAttached() const
     file.close();
     return content.contains(QRegExp("/dev/sd[a-z]*[1-9]*"));
 
+}
+
+void ICUpdateSystem::on_updatePasswardButton_clicked()
+{
+//    QFile file(fileName);
+//    QTextStream stream(&file);
+//    if(file.open(QIODevice::ReadOnly | QIODevice::Text))
+//    {
+
+//        QString str = stream.readAll();
+//        ICParametersSave::Instance()->SetSuperPassward(str);
+//    }
+//    else
+//    {
+//        QMessageBox::information(this,tr("Tips"),tr("Update SuperPassward file not exist!"));
+//    }
+    QDir dir("/proc/scsi/usb-storage");
+    if(!dir.exists())
+    {
+        QMessageBox::warning(this,tr("tips"),tr("USB no exists...")) ;
+        ui->hmiVersionShowLabel->setText(tr("No available HMI version"));
+        ui->hostVersionShowLabel->setText(tr("No available Host version"));
+        ui->updatePasswardLabel->setText(tr("No available New SuperPassward"));
+        ui->connectHostButton->setEnabled(false);
+        ui->updateToolButton->setEnabled(false);
+        ui->updatePasswardButton->setEnabled(false);
+        return;
+    }
+    if(updateSettings_ == NULL)
+    {
+        return;
+    }
+    QString str;
+    str = updateSettings_->value("superPassward").toString();
+    if(!str.isEmpty())
+    {
+        ICParametersSave::Instance()->SetSuperPassward(str);
+        QMessageBox::information(this,tr("Tips"),tr("Super Passward Update Succeed."));
+    }
 }

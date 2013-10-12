@@ -90,6 +90,9 @@ public:
     bool IsAdjustFunctionOn() { return GetParameter(SystemMachine, "AdjustFunction", false).toBool();}
     void SetAdjustFunction(bool ison) { SaveParameter(SystemMachine, "AdjustFunction", ison);}
 
+    QString SuperPassward() { return GetParameter(SystemMachine, "SuperPassward","123456").toString();}
+    void SetSuperPassward(QString passward) { SaveParameter(SystemMachine, "SuperPassward", passward);}
+
 signals:
     void CurrentLanguageChanged();
 

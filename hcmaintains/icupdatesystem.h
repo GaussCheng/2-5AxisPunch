@@ -52,6 +52,8 @@ private:
 //    QMap<int, int> hostStatusToStringMap_;
     bool connectHostFlag;
 
+    QString fileName;
+
     void updateHostButton();
     void writeHostButton();
     void rebootButton();
@@ -71,6 +73,7 @@ private slots:
     void on_registerBtn_clicked();
     void on_generateBtn_clicked();
     void RefreshRestTime();
+    void on_updatePasswardButton_clicked();
 };
 
 //TODEBUG

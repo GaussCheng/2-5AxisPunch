@@ -2607,8 +2607,8 @@ height:30px;</string>
  </resources>
  <connections/>
  <buttongroups>
-  <buttongroup name="languageButtonGroup"/>
   <buttongroup name="buttonGroup_2"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="languageButtonGroup"/>
  </buttongroups>
 </ui>
