@@ -149,6 +149,9 @@ void ICUpdateSystem::SystemUpdateStart()
     {
         return;
     }
+    ICParametersSave::Instance()->setIniCodec("UTF-8");
+    ICParametersSave::Instance()->SetClient(QString::fromUtf8(updateSettings_->value("Client","").toString().toAscii()));
+    ICParametersSave::Instance()->SetShipmentDate(updateSettings_->value("ShipmentDate","").toString());
     QStringList updateFileList = updateSettings_->childGroups();
     if(updateFileList.count() > 0)
     {

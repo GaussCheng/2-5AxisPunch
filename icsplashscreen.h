@@ -3,6 +3,7 @@
 
 #include <QSplashScreen>
 #include <QProgressBar>
+#include <QLabel>
 
 class ICSplashScreen : public QSplashScreen
 {
@@ -20,6 +21,16 @@ private slots:
     void OnMessageChanged(const QString &message);
 private:
     QProgressBar *progressBar_;
+    QLabel* swVersionLabel_;
+    QLabel* swVersion_;
+    QLabel* hwVersionLabel_;
+    QLabel* hwVersion_;
+    QLabel* clientLabel_;
+    QLabel* client_;
+    QLabel* dateLabel_;
+    QLabel* date_;
+    QWidget* versionContainer_;
+
 };
 
 #endif // ICSPLASHSCREEN_H

@@ -21,14 +21,14 @@ int main(int argc, char *argv[])
     }
 #endif
 //    qApp->setStyleSheet("./stylesheet/global.qss");
-
+    ICParametersSave* paraSave = ICParametersSave::Instance();
+    paraSave->SetCountry(paraSave->Country());
     QPixmap splashPixmap("resource/startup_page.png");
     ICSplashScreen *splash= new ICSplashScreen(splashPixmap);
     splash->SetRange(0, 20);
     splash->show();
 
     a.setGlobalStrut(QSize(32, 32));
-    ICParametersSave* paraSave = ICParametersSave::Instance();
     paraSave->LoadInitLocale();
     ICVirtualHost host;
     MainFrame w(splash);

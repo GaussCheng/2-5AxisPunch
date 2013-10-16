@@ -91,7 +91,13 @@ public:
     void SetAdjustFunction(bool ison) { SaveParameter(SystemMachine, "AdjustFunction", ison);}
 
     QString SuperPassward() { return GetParameter(SystemMachine, "SuperPassward","123456").toString();}
-    void SetSuperPassward(QString passward) { SaveParameter(SystemMachine, "SuperPassward", passward);}
+    void SetSuperPassward(const QString &passward) { SaveParameter(SystemMachine, "SuperPassward", passward);}
+
+    QString Client() { return GetParameter(SystemMachine, "Client", "").toString();}
+    void SetClient(const QString &client) { SaveParameter(SystemMachine, "Client", client);}
+
+    QString ShipmentDate() { return GetParameter(SystemMachine, "ShipmentDate", "").toString();}
+    void SetShipmentDate(const QString &date)  { SaveParameter(SystemMachine, "ShipmentDate", date);}
 
 signals:
     void CurrentLanguageChanged();
