@@ -144,7 +144,8 @@ QList<ICMoldItem> ICPeripheryPage::CreateCommandImpl() const
         {
             item.SetClip(buttonToClip_.value(qobject_cast<QAbstractButton*>(ui->actionWidget->cellWidget(i, 1))));
             item.SetDVal(editorVector_.at(i)->Delay());
-            item.SetSVal(editorVector_.at(i)->Times());
+//            item.SetSVal(editorVector_.at(i)->Times());
+            item.SetActualMoldCount(editorVector_.at(i)->Times());
             ret.append(item);
         }
     }

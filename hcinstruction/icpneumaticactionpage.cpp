@@ -153,7 +153,8 @@ QList<ICMoldItem> ICPneumaticActionPage::CreateCommandImpl() const
             item.SetIFVal(buttonToLight_.value(qobject_cast<QAbstractButton*>(ui->tableWidget->cellWidget(i, 1))));
             item.SetClip(buttonToClip_.value(qobject_cast<QAbstractButton*>(ui->tableWidget->cellWidget(i, 1))));
             item.SetDVal(editorVector_.at(i)->Delay());
-            item.SetSVal(editorVector_.at(i)->Times());
+//            item.SetSVal(editorVector_.at(i)->Times());
+            item.SetActualMoldCount(editorVector_.at(i)->Times());
             ret.append(item);
         }
     }

@@ -12,7 +12,7 @@ ICPeripheryParameterEditor::ICPeripheryParameterEditor(QWidget *parent) :
  //   ui->timesEdit->setValidator(validator);
     ui->delayEdit->setText("0.00");
     /*************BUG#179.180  添加代码********/
-    validator = new QIntValidator(0, 255, this);
+    validator = new QIntValidator(0, 20000, this);
     ui->timesEdit->setValidator(validator);
 }
 

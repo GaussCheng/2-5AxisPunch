@@ -282,7 +282,7 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
         commandStr += clipGroupMap_.value(action) + ": ";
         if(clipStatusList_.contains(action))
         {
-            commandStr += QObject::tr("Times:") + QString::number(moldItem.SVal()) + " ";
+            commandStr += QObject::tr("Times:") + QString::number(moldItem.ActualMoldCount()) + " ";
         }
         else if(IsStackedAction(action))
         {
@@ -302,7 +302,7 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
             else
             {
                 commandStr += QObject::tr("On") + " ";
-                commandStr += QObject::tr("Times:") + QString::number(moldItem.SVal()) + " ";
+                commandStr += QObject::tr("Times:") + QString::number(moldItem.ActualMoldCount()) + " ";
             }
             commandStr += " ";
         }

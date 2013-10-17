@@ -136,6 +136,17 @@ public:
         ifPos_ |= (pos << 4);
     }
 
+    int ActualMoldCount() const
+    {
+        return (IFVal() << 8) | SVal();
+    }
+
+    void SetActualMoldCount(uint count)
+    {
+        SetIFVal((count >> 8) & 0xFF);
+        SetSVal(count & 0xFF);
+    }
+
 private:
     uint seq_;
     uint num_;
