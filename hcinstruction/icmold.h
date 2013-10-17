@@ -138,12 +138,14 @@ public:
 
     int ActualMoldCount() const
     {
-        return (IFVal() << 8) | SVal();
+        return ((IFPos() & 0xFF) << 8) | SVal();
     }
 
     void SetActualMoldCount(uint count)
     {
-        SetIFVal((count >> 8) & 0xFF);
+//        SetIFVal((count >> 8) & 0xFF);
+        ifPos_ &= 0xFFFFFF00;
+        ifPos_ |= (count >> 8) & 0xFF;
         SetSVal(count & 0xFF);
     }
 

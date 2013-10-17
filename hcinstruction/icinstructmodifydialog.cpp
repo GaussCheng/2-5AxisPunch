@@ -103,6 +103,7 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
     ui->limitLabel->hide();
     ui->limitTimeEdit->hide();
     ui->limitUnitLabel->hide();
+    bool isMoldCount = false;
 
 
     if(item->IsAction())
@@ -215,10 +216,11 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
             || item->Clip() == ICMold::ACTCLIP8ON )
         
     {
-        validator->setTop(255);
+        validator->setTop(20000);
         ui->speedLabel->setText(tr("Times"));
         ui->speedLabel->show();
         ui->speedEdit->show();
+        isMoldCount = true;
         
     }
     else if(item->Clip() == ICMold:: ACT_AUX1
@@ -230,10 +232,11 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
     {
         if(item->IFVal() != 0)
         {
-            validator->setTop(255);
+            validator->setTop(20000);
             ui->speedLabel->setText(tr("Times"));
             ui->speedLabel->show();
             ui->speedEdit->show();
+            isMoldCount = true;
         }
     }
     else if(item->Clip() == ICMold::ACTLAYOUTON)
@@ -246,7 +249,15 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
 //    ui->posEdit->SetThisIntToThisText(item->Pos());
     ui->posEdit->SetThisIntToThisText(item->ActualPos());
     
-    ui->speedEdit->SetThisIntToThisText(item->SVal());
+
+    if(isMoldCount)
+    {
+        ui->speedEdit->SetThisIntToThisText(item->ActualMoldCount());
+    }
+    else
+    {
+        ui->speedEdit->SetThisIntToThisText(item->SVal());
+    }
     ui->delayTimeEdit->SetThisIntToThisText(item->DVal());
     
     if(item->IsEarlyEnd())  // is early end checked?
@@ -289,6 +300,10 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
         if(item->Clip() == ICMold::ACTLAYOUTON)
         {
             item->SetSVal(ui->selectEdit->TransThisTextToThisInt() - 1);
+        }
+        else if(isMoldCount)
+        {
+            item->SetActualMoldCount(ui->speedEdit->TransThisTextToThisInt());
         }
         else
         {

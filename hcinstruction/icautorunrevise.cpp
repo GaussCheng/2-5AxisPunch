@@ -100,7 +100,26 @@ bool ICAutoRunRevise::ShowModifyItem(const ICMoldItem *item, ICMoldItem* ret, co
         }
     }
     ui->posEdit->SetThisIntToThisText(0);
-    ui->speedEdit->SetThisIntToThisText(item->SVal());
+    int c = item->Clip();
+    bool isMoldCount = false;
+    if(c == ICMold::ACT_AUX1 ||
+            c == ICMold::ACT_AUX2 ||
+            c == ICMold::ACT_AUX3 ||
+            c == ICMold::ACT_AUX4 ||
+            c == ICMold::ACT_AUX5 ||
+            c == ICMold::ACT_AUX6 ||
+            c == ICMold::ACTCLIP7ON ||
+            c == ICMold::ACTCLIP1OFF ||
+            c == ICMold::ACTCLIP8ON ||
+            c == ICMold::ACTCLIP8OFF)
+    {
+        ui->speedEdit->SetThisIntToThisText(item->ActualMoldCount());
+        isMoldCount = true;
+    }
+    else
+    {
+        ui->speedEdit->SetThisIntToThisText(item->SVal());
+    }
     ui->delayEdit->SetThisIntToThisText(item->DVal());
     int isok = exec();
     if(isok == QDialog::Accepted)
@@ -114,7 +133,15 @@ bool ICAutoRunRevise::ShowModifyItem(const ICMoldItem *item, ICMoldItem* ret, co
             ret->SetPos(ui->posEdit->TransThisTextToThisInt());
         }
         ret->SetDVal(ui->delayEdit->TransThisTextToThisInt());
-        ret->SetSVal(ui->speedEdit->TransThisTextToThisInt());
+
+        if(isMoldCount)
+        {
+            ret->SetActualMoldCount(ui->speedEdit->TransThisTextToThisInt());
+        }
+        else
+        {
+            ret->SetSVal(ui->speedEdit->TransThisTextToThisInt());
+        }
 //        ICMoldItem tempItem = *item;
 
 //        tempItem.SetPos(tempItem.Pos() + ui->posEdit->TransThisTextToThisInt());
