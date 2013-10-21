@@ -582,3 +582,5 @@ void AxisSettingsFrame::LevelChanged(int level)
         ui->saveToolButton->setEnabled(false);
     }
 }
+
+

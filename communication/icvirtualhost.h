@@ -609,8 +609,10 @@ public:
     bool HasTuneSpeed() const { return hasTuneSpeed_;}
     void SetTuneSpeed(bool tune){ hasTuneSpeed_ = tune;}
 
-    int FinishProductCount() const { return productCount_;}
-    void SetFinishProductCount(int product) { productCount_ = product;}
+//    int FinishProductCount() const { return productCount_;}
+//    void SetFinishProductCount(int product) { productCount_ = product;}
+    int FinishProductCount() const;
+    void SetFinishProductCount(int product) { systemParamMap_.insert(SYS_RsvWorkmold, product);}
 
 //    bool IsSingleArm() const { return (systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0100) > 0;}
 //    void SetSingleArm(bool isSingle);
@@ -647,6 +649,7 @@ public:
 
     bool IsSingleRun() const { return isSingleRun_;}
     void SetSingleRun(bool isrun) {isSingleRun_ = isrun;}
+
 public Q_SLOTS:
     void SetMoldParam(int param, int value);
 Q_SIGNALS:

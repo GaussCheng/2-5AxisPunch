@@ -192,6 +192,9 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     ICKeyboard::Instace()->Receive();
     QTimer::singleShot(ICParametersSave::Instance()->BackLightTime() * 60000, this, SLOT(CheckedInput()));
     QTimer::singleShot(1000, this, SLOT(ClearPosColor()));
+    oldFinishCount_ = ICVirtualHost::GlobalVirtualHost()->FinishProductCount();
+    finishCount_ = oldFinishCount_;
+    ui->cycleTimeAndFinistWidget->SetFinished(oldFinishCount_);
 
     //    QTimer::singleShot(100, this, SLOT(InitHeavyPage()));
 #if defined(Q_WS_WIN32) || defined(Q_WS_X11)
@@ -487,12 +490,12 @@ void MainFrame::StatusRefreshed()
             ui->cycleTimeAndFinistWidget->SetAlarmInfo("");
         }
     }
-    finishCount_ = virtualHost->HostStatus(ICVirtualHost::DbgX1).toUInt();
-    if(finishCount_ != oldFinishCount_)
-    {
-        ui->cycleTimeAndFinistWidget->SetFinished(virtualHost->HostStatus(ICVirtualHost::DbgX1).toUInt());
-        oldFinishCount_ = finishCount_;
-    }
+//    finishCount_ = virtualHost->HostStatus(ICVirtualHost::DbgX1).toUInt();
+//    if(finishCount_ != oldFinishCount_)
+//    {
+//        ui->cycleTimeAndFinistWidget->SetFinished(virtualHost->HostStatus(ICVirtualHost::DbgX1).toUInt());
+//        oldFinishCount_ = finishCount_;
+//    }
     cycleTime_ = virtualHost->HostStatus(ICVirtualHost::Time).toUInt();
     if(cycleTime_ != oldCycleTime_)
     {
@@ -512,6 +515,7 @@ void MainFrame::StatusRefreshed()
     {
         speed_ = "0";
         //        statusStr_ = tr("Stop");
+//<<<<<<< HEAD
 #ifdef Q_WS_X11
         finishCount_ = virtualHost->FinishProductCount();
         if(finishCount_ != oldFinishCount_)
@@ -520,6 +524,10 @@ void MainFrame::StatusRefreshed()
             oldFinishCount_ = finishCount_;
         }
 #endif
+//=======
+//        ui->cycleTimeAndFinistWidget->SetFinished(oldFinishCount_);
+//        ui->systemStatusFrame->SetProgramStatus(StatusLabel::ONSTATUS);
+//>>>>>>> 7eb8511... 1.版本升级为4.1.8_SC
     }
     else if(runningStatus_ == ICVirtualHost::Auto)
     {
@@ -534,12 +542,14 @@ void MainFrame::StatusRefreshed()
         {
             actionDialog_->hide();
         }
-        finishCount_ = virtualHost->HostStatus(ICVirtualHost::DbgX1).toUInt();
+//        finishCount_ = virtualHost->HostStatus(ICVirtualHost::DbgX1).toUInt();
+        finishCount_ = virtualHost->FinishProductCount();
         if(finishCount_ != oldFinishCount_)
         {
             ui->cycleTimeAndFinistWidget->SetFinished(finishCount_);
             virtualHost->SetFinishProductCount(finishCount_);
             oldFinishCount_ = finishCount_;
+            virtualHost->SaveSystemConfig();
         }
         int speedVal =  virtualHost->GlobalSpeed();
         speed_ = QString::number(speedVal);

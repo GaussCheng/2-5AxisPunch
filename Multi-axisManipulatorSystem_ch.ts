@@ -8519,8 +8519,8 @@ Would you want to restart now?</source>
         <translation>返回</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="476"/>
-        <location filename="mainframe.cpp" line="483"/>
+        <location filename="mainframe.cpp" line="479"/>
+        <location filename="mainframe.cpp" line="486"/>
         <source>Hint</source>
         <translation>提示</translation>
     </message>

@@ -856,6 +856,8 @@ void ICVirtualHost::InitMoldParam_()
 
     QVector<uint8_t> dataSection;
     QList<int> tempItemValues = currentMold_->AllParams();
+//    int finishedCount = FinishProductCount();
+//    tempItemValues[ICMold::Product] -=
 
     const int count = tempItemValues.size();
     if(count % 4 != 0)
@@ -1074,6 +1076,17 @@ void ICVirtualHost::StopRefreshStatus()
 void ICVirtualHost::RestartRefreshStatus()
 {
     this->blockSignals(false);
+}
+
+int ICVirtualHost::FinishProductCount() const
+{
+
+    if(ICKeyboard::Instace()->CurrentSwitchStatus() != ICKeyboard::KS_AutoStatu)
+    {
+        return (systemParamMap_.value(ICVirtualHost::SYS_RsvWorkmold).toUInt());
+    }
+    return (statusMap_.value(DbgX1).toUInt() );
+
 }
 
 ICVirtualHost::~ICVirtualHost(){}
