@@ -14,7 +14,7 @@
 #define SECTION_DECIMAL 1
 #define STACK_DECIMAL 2
 
-#define SW_VERSION "4.1.8"
+#define SW_VERSION "4.1.9"
 #define HW_VERSION "1.3"
 
 #endif // CONFIG_H

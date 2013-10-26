@@ -297,13 +297,13 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
         {
             if(moldItem.IFVal() == 0)
             {
-                commandStr += QObject::tr("Off");
+                commandStr += QObject::tr("Off") + " ";
             }
             else
             {
                 commandStr += QObject::tr("On") + " ";
-                commandStr += QObject::tr("Times:") + QString::number(moldItem.ActualMoldCount()) + " ";
             }
+            commandStr += QObject::tr("Times:") + QString::number(moldItem.ActualMoldCount()) + " ";
             commandStr += " ";
         }
 //        else if(action == ICMold::ACT_AUX1)
@@ -450,6 +450,8 @@ void ICInstructParam::InitClassesInfo()
 
     clipStatusList_.append(ACTCLIP7ON);
     clipStatusList_.append(ACTCLIP8ON);
+    clipStatusList_.append(ACTCLIP7OFF);
+    clipStatusList_.append(ACTCLIP8OFF);
 //    clipStatusList_.append(ACT_AUX1);
 //    clipStatusList_.append(ACT_AUX2);
 //    clipStatusList_.append(ACT_AUX3);

@@ -6662,7 +6662,7 @@ Admin</source>
     <name>QObject</name>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="285"/>
-        <location filename="hcinstruction/icinstructparam.cpp" line="305"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="306"/>
         <source>Times:</source>
         <translation type="unfinished"></translation>
     </message>

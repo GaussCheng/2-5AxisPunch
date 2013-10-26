@@ -8230,7 +8230,7 @@ Admin</source>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="285"/>
-        <location filename="hcinstruction/icinstructparam.cpp" line="305"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="306"/>
         <source>Times:</source>
         <translation>间隔模数:</translation>
     </message>
