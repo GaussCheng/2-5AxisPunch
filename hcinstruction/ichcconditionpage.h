@@ -29,6 +29,7 @@ private:
 
 private slots:
     void BoxClicked();
+    void on_productCountBox_toggled(bool checked);
 };
 
 #endif // ICHCCONDITIONPAGE_H

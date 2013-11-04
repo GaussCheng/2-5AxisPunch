@@ -166,16 +166,16 @@ border: 3px solid green;
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <property name="spacing">
-       <number>6</number>
+       <number>2</number>
       </property>
       <property name="leftMargin">
-       <number>10</number>
+       <number>2</number>
       </property>
       <property name="topMargin">
        <number>0</number>
       </property>
       <property name="rightMargin">
-       <number>10</number>
+       <number>2</number>
       </property>
       <property name="bottomMargin">
        <number>0</number>
@@ -197,13 +197,13 @@ border: 3px solid green;
        <widget class="QLabel" name="zPosLabel">
         <property name="minimumSize">
          <size>
-          <width>65</width>
+          <width>75</width>
           <height>0</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>65</width>
+          <width>75</width>
           <height>16777215</height>
          </size>
         </property>
@@ -242,13 +242,13 @@ border: 3px solid green;
        <widget class="QLabel" name="xPosLabel">
         <property name="minimumSize">
          <size>
-          <width>65</width>
+          <width>75</width>
           <height>0</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>65</width>
+          <width>75</width>
           <height>16777215</height>
          </size>
         </property>
@@ -287,13 +287,13 @@ border: 3px solid green;
        <widget class="QLabel" name="yPosLabel">
         <property name="minimumSize">
          <size>
-          <width>65</width>
+          <width>75</width>
           <height>0</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>65</width>
+          <width>75</width>
           <height>16777215</height>
          </size>
         </property>
@@ -332,13 +332,13 @@ border: 3px solid green;
        <widget class="QLabel" name="pPosLabel">
         <property name="minimumSize">
          <size>
-          <width>65</width>
+          <width>75</width>
           <height>0</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>65</width>
+          <width>75</width>
           <height>16777215</height>
          </size>
         </property>
@@ -377,13 +377,13 @@ border: 3px solid green;
        <widget class="QLabel" name="qPosLabel">
         <property name="minimumSize">
          <size>
-          <width>65</width>
+          <width>75</width>
           <height>0</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>65</width>
+          <width>75</width>
           <height>16777215</height>
          </size>
         </property>

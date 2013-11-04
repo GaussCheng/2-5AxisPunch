@@ -14,6 +14,8 @@ ICHCConditionPage::ICHCConditionPage(QWidget *parent) :
     ui->subComboBox->setEnabled(false);
     ui->returnLineEdit->setText("1");
     InitCheckPointBox();
+    ui->moldCountEdit->setEnabled(false);
+    ui->moldCountEdit->setValidator(new QIntValidator(0, 65530, this));
 }
 
 ICHCConditionPage::~ICHCConditionPage()
@@ -54,6 +56,11 @@ QList<ICMoldItem> ICHCConditionPage::CreateCommandImpl() const
     {
         item.SetSVal(6);
     }
+    else if(item.IFVal() == 11)
+    {
+        item.SetIFPos(ui->moldCountEdit->TransThisTextToThisInt());
+        item.SetSVal(ui->subComboBox->currentIndex());
+    }
     else
     {
         item.SetSVal(ui->subComboBox->currentIndex());
@@ -76,6 +83,7 @@ void ICHCConditionPage::InitCheckPointBox()
     buttonGroup->addButton(ui->fixture4Box, 8);
     buttonGroup->addButton(ui->sucker1Box, 9);
     buttonGroup->addButton(ui->sucker2Box, 10);
+    buttonGroup->addButton(ui->productCountBox, 11);
 
     QList<QAbstractButton*> buttons = buttonGroup->buttons();
     for(int i = 0; i != buttons.size(); ++i)
@@ -111,4 +119,9 @@ void ICHCConditionPage::BoxClicked()
         ui->subComboBox->setEnabled(true);
         break;
     }
+}
+
+void ICHCConditionPage::on_productCountBox_toggled(bool checked)
+{
+    ui->moldCountEdit->setEnabled(checked);
 }

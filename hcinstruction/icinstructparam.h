@@ -45,6 +45,7 @@ public:
         ACT_GCSUB,
         ACT_GCADD,
 
+        ACT_OTHER = 27,
         ACTCHECKINPUT=28,
         ACT_WaitMoldOpened = 29,
         ACT_Cut,
@@ -127,6 +128,7 @@ private:
     static QMap<int, QString> clipGroupMap_;
     static QList<int> xyzStatusList_;
     static QList<int> clipStatusList_;
+    static QMap<int, QString> countWayMap_;
 
     QStringList commandStrList_;
     QStringList marcoCommadnStrList_;

@@ -32,6 +32,7 @@
 #include "ickeyboard.h"
 #include "icactioncommand.h"
 #include "icprogramguidepage.h"
+#include "ichcotherpage.h"
 
 #include <QDebug>
 #include <QMessageBox>
@@ -56,12 +57,14 @@ ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
     programPage_(NULL),
     stackPage_(NULL),
     guidePage_(NULL),
+    otherPage_(NULL),
     recordPath_("./records/"),
     currentAction_(None),
     currentEdit_(0),
     isProgramChanged_(false)
 {
     ui->setupUi(this);
+//    ui->otherButton->hide();
 
     InitInterface();
     InitSignal();
@@ -242,6 +245,12 @@ void ICHCInstructionPageFrame::OptionButtonClicked()
                 SIGNAL(GuideFinished()),
                 SLOT(OnGuideFinished()));
     }
+    else if(otherPage_ == NULL && optionButton == ui->otherButton)
+    {
+        otherPage_ = new ICHCOtherPage();
+        optionButtonToPage_.insert(ui->otherButton, otherPage_);
+        ui->settingStackedWidget->addWidget(otherPage_);
+    }
     ui->settingStackedWidget->setCurrentWidget(optionButtonToPage_.value(optionButton));
 }
 
@@ -322,6 +331,9 @@ void ICHCInstructionPageFrame::InitSignal()
             SIGNAL(released()),
             SLOT(OnActionButtonReleased()));
     connect(ui->guideButton,
+            SIGNAL(clicked()),
+            SLOT(OptionButtonClicked()));
+    connect(ui->otherButton,
             SIGNAL(clicked()),
             SLOT(OptionButtonClicked()));
 }
