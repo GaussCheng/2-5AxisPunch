@@ -1112,7 +1112,7 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="556"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="563"/>
         <source>Product Count</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1138,7 +1138,7 @@ Infomation</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcconditionpage.ui" line="337"/>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="563"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="531"/>
         <source>0</source>
         <translation type="unfinished"></translation>
     </message>

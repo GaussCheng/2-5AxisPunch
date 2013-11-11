@@ -1365,7 +1365,7 @@ Reason</source>
         <translation>夹1</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="556"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="563"/>
         <source>Product Count</source>
         <translation>间隔模数</translation>
     </message>
@@ -1463,7 +1463,7 @@ Reason</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcconditionpage.ui" line="337"/>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="563"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="531"/>
         <source>0</source>
         <translation></translation>
     </message>
