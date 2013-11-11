@@ -205,7 +205,7 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
                 commandStr += tr("Sub-") + QString::number(moldItem.SVal() + 1) + " ";
             }
 
-            commandStr += tr("Return Line") + QString::number(moldItem.DVal());
+            commandStr += tr("Return Line") + QString::number((int)moldItem.DVal());
             commandStr += QObject::tr("Limit time:") + ICParameterConversion::TransThisIntToThisText(moldItem.Pos(), 2) + "      ";
             return commandStr;
         }

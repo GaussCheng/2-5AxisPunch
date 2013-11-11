@@ -13,7 +13,7 @@ ICInstructModifyDialog::ICInstructModifyDialog(QWidget *parent) :
     ui->setupUi(this);
     /*****************BUG#120********************************/
     validator_ = new QIntValidator(0, 30000, this);
-    returnStepValidator = new QIntValidator(1, 1000, this);
+    returnStepValidator = new QIntValidator(-32767, 32767, this);
     ui->delayTimeEdit->SetDecimalPlaces(2);
     ui->delayTimeEdit->setValidator(validator_);
     ui->limitTimeEdit->setValidator(validator_);
