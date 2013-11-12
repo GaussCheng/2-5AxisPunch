@@ -31,7 +31,16 @@
    <property name="spacing">
     <number>2</number>
    </property>
-   <property name="margin">
+   <property name="leftMargin">
+    <number>2</number>
+   </property>
+   <property name="topMargin">
+    <number>2</number>
+   </property>
+   <property name="rightMargin">
+    <number>2</number>
+   </property>
+   <property name="bottomMargin">
     <number>2</number>
    </property>
    <item>
@@ -246,10 +255,16 @@ padding:5px;
           <number>20</number>
          </property>
          <property name="verticalSpacing">
-          <number>22</number>
+          <number>10</number>
          </property>
          <property name="leftMargin">
           <number>23</number>
+         </property>
+         <property name="topMargin">
+          <number>4</number>
+         </property>
+         <property name="bottomMargin">
+          <number>4</number>
          </property>
          <item row="1" column="0">
           <widget class="QToolButton" name="lineButton">
@@ -555,7 +570,7 @@ padding:5px;
            </property>
           </widget>
          </item>
-         <item row="5" column="0">
+         <item row="6" column="0">
           <widget class="QToolButton" name="flagsButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -581,6 +596,44 @@ padding:5px;
            <property name="icon">
             <iconset resource="../resource.qrc">
              <normaloff>:/resource/macro(32).png</normaloff>:/resource/macro(32).png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QToolButton" name="otherButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>140</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>140</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Other</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resource.qrc">
+             <normaloff>:/resource/settings.png</normaloff>:/resource/settings.png</iconset>
            </property>
            <property name="iconSize">
             <size>

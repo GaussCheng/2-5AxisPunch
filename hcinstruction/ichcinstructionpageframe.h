@@ -100,6 +100,7 @@ private:
     QWidget * cutPage_;
     QWidget * programPage_;
     QWidget * stackPage_;
+    QWidget * otherPage_;
     ICProgramGuidePage * guidePage_;
     ICInstructModifyDialog *modifyDialog_;
 

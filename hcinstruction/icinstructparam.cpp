@@ -15,6 +15,7 @@ QMap<int, QString> ICInstructParam::actionGroupMap_;
 QMap<int, QString> ICInstructParam::clipGroupMap_;
 QList<int> ICInstructParam::xyzStatusList_;
 QList<int> ICInstructParam::clipStatusList_;
+QMap<int, QString> ICInstructParam::countWayMap_;
 
 ICInstructParam::ICInstructParam()
 {
@@ -186,6 +187,10 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
             {
                 commandStr += tr("X014 OFF");
             }
+            else if(moldItem.IFVal() == 11)
+            {
+                commandStr += tr("Mold Count") + ":" + QString::number(moldItem.IFPos());
+            }
             commandStr += " ";
 //            commandStr += " " + tr("ON:Macro") + QString::number(moldItem.RVal()) + " ";
             if(moldItem.SVal() == 5)
@@ -273,6 +278,14 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
             }
             commandStr += " ";
             commandStr += QObject::tr("Limit time:") + ICParameterConversion::TransThisIntToThisText(moldItem.DVal(), 2) + "      ";
+            return commandStr;
+        }
+        else if(moldItem.Action() == ICMold::ACT_OTHER)
+        {
+            if(moldItem.IFVal() == 1)
+            {
+                commandStr += tr("Product Clear");
+            }
             return commandStr;
         }
     }
@@ -385,6 +398,7 @@ void ICInstructParam::InstallMoldInfo()
     actionGroupMap_.insert(ACTParallel, QObject::tr("Parallel"));
     actionGroupMap_.insert(ACT_WaitMoldOpened, QObject::tr("Wait"));
     actionGroupMap_.insert(ACT_Cut, QObject::tr("Cut"));
+    actionGroupMap_.insert(ACT_OTHER, QObject::tr("Other"));
 
     clipGroupMap_[ACTCLIP1ON] = QObject::tr("Clip1 ON");
     clipGroupMap_[ACTCLIP2ON] = QObject::tr("Clip2 ON");
@@ -452,6 +466,13 @@ void ICInstructParam::InitClassesInfo()
     clipStatusList_.append(ACTCLIP8ON);
     clipStatusList_.append(ACTCLIP7OFF);
     clipStatusList_.append(ACTCLIP8OFF);
+
+    countWayMap_.insert(0, tr("All"));
+    countWayMap_.insert(1, tr("Good"));
+    countWayMap_.insert(2, tr("Stacked-1"));
+    countWayMap_.insert(3, tr("Stacked-2"));
+    countWayMap_.insert(4, tr("Stacked-3"));
+    countWayMap_.insert(5, tr("Stacked-4"));
 //    clipStatusList_.append(ACT_AUX1);
 //    clipStatusList_.append(ACT_AUX2);
 //    clipStatusList_.append(ACT_AUX3);

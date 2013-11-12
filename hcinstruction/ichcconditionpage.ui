@@ -6,7 +6,11 @@
    <rect>
     <x>0</x>
     <y>0</y>
+<<<<<<< HEAD
     <width>414</width>
+=======
+    <width>345</width>
+>>>>>>> ffe3a02ef733978bc40cdee20a764a5bfb8c8bc2
     <height>333</height>
    </rect>
   </property>
@@ -41,6 +45,7 @@
       <property name="rightMargin">
        <number>9</number>
       </property>
+<<<<<<< HEAD
       <item row="1" column="1">
        <widget class="QComboBox" name="subComboBox">
         <property name="enabled">
@@ -140,6 +145,18 @@
           </property>
           <property name="styleSheet">
            <string notr="true">::indicator {
+=======
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <property name="verticalSpacing">
+       <number>2</number>
+      </property>
+      <item row="3" column="0">
+       <widget class="QCheckBox" name="x043checkBox">
+        <property name="styleSheet">
+         <string notr="true">::indicator {
+>>>>>>> ffe3a02ef733978bc40cdee20a764a5bfb8c8bc2
      width: 32px;
      height: 32px;
  }
@@ -162,6 +179,7 @@ QRadioButton::indicator:unchecked:disabled
 {
  image: url(:/resource/check_unchecked_disable.png);
 }</string>
+<<<<<<< HEAD
           </property>
           <property name="text">
            <string>Defective Products</string>
@@ -175,6 +193,30 @@ QRadioButton::indicator:unchecked:disabled
          <widget class="QCheckBox" name="samplingBox">
           <property name="styleSheet">
            <string notr="true">::indicator {
+=======
+        </property>
+        <property name="text">
+         <string>X043</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="2">
+       <widget class="QCheckBox" name="defectiveProductsBox">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>20</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">::indicator {
+>>>>>>> ffe3a02ef733978bc40cdee20a764a5bfb8c8bc2
      width: 32px;
      height: 32px;
  }
@@ -197,6 +239,7 @@ QRadioButton::indicator:unchecked:disabled
 {
  image: url(:/resource/check_unchecked_disable.png);
 }</string>
+<<<<<<< HEAD
           </property>
           <property name="text">
            <string>Sampling</string>
@@ -207,6 +250,88 @@ QRadioButton::indicator:unchecked:disabled
          <widget class="QCheckBox" name="fixture4Box">
           <property name="styleSheet">
            <string notr="true">::indicator {
+=======
+        </property>
+        <property name="text">
+         <string>Defective Products</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1" colspan="2">
+       <widget class="QComboBox" name="subComboBox">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>38</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <item>
+         <property name="text">
+          <string>Sub-1</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sub-2</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sub-3</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sub-4</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sub-5</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Bad Product</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Try Product</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sampling</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QCheckBox" name="tryProductBox">
+        <property name="styleSheet">
+         <string notr="true">::indicator {
      width: 32px;
      height: 32px;
  }
@@ -229,6 +354,40 @@ QRadioButton::indicator:unchecked:disabled
 {
  image: url(:/resource/check_unchecked_disable.png);
 }</string>
+        </property>
+        <property name="text">
+         <string>Try Product</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="3">
+       <widget class="QCheckBox" name="sucker1Box">
+        <property name="styleSheet">
+         <string notr="true">::indicator {
+>>>>>>> ffe3a02ef733978bc40cdee20a764a5bfb8c8bc2
+     width: 32px;
+     height: 32px;
+ }
+
+::indicator:unchecked 
+{
+     image: url(:/resource/check_unchecked.png);
+ }
+::indicator:checked 
+{
+     image: url(:/resource/check_checked.png);
+ }
+
+QRadioButton::indicator:checked:disabled
+{
+ image: url(:/resource/check_checked_disable.png);
+}
+
+QRadioButton::indicator:unchecked:disabled
+{
+ image: url(:/resource/check_unchecked_disable.png);
+}</string>
+<<<<<<< HEAD
           </property>
           <property name="text">
            <string>Fixture-4</string>
@@ -239,6 +398,18 @@ QRadioButton::indicator:unchecked:disabled
          <widget class="QCheckBox" name="x044checkBox">
           <property name="styleSheet">
            <string notr="true">::indicator {
+=======
+        </property>
+        <property name="text">
+         <string>Sucker-1</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QCheckBox" name="samplingBox">
+        <property name="styleSheet">
+         <string notr="true">::indicator {
+>>>>>>> ffe3a02ef733978bc40cdee20a764a5bfb8c8bc2
      width: 32px;
      height: 32px;
  }
@@ -261,6 +432,7 @@ QRadioButton::indicator:unchecked:disabled
 {
  image: url(:/resource/check_unchecked_disable.png);
 }</string>
+<<<<<<< HEAD
           </property>
           <property name="text">
            <string>X044</string>
@@ -271,6 +443,18 @@ QRadioButton::indicator:unchecked:disabled
          <widget class="QCheckBox" name="fixture1Box">
           <property name="styleSheet">
            <string notr="true">::indicator {
+=======
+        </property>
+        <property name="text">
+         <string>Sampling</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QCheckBox" name="x044checkBox">
+        <property name="styleSheet">
+         <string notr="true">::indicator {
+>>>>>>> ffe3a02ef733978bc40cdee20a764a5bfb8c8bc2
      width: 32px;
      height: 32px;
  }
@@ -293,6 +477,7 @@ QRadioButton::indicator:unchecked:disabled
 {
  image: url(:/resource/check_unchecked_disable.png);
 }</string>
+<<<<<<< HEAD
           </property>
           <property name="text">
            <string>Fixture-1</string>
@@ -303,6 +488,38 @@ QRadioButton::indicator:unchecked:disabled
          <widget class="QCheckBox" name="sucker1Box">
           <property name="styleSheet">
            <string notr="true">::indicator {
+=======
+        </property>
+        <property name="text">
+         <string>X044</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="4">
+       <widget class="ICLineEditWithVirtualNumericKeypad" name="returnLineEdit">
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Check Point</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QCheckBox" name="fixture2Box">
+        <property name="styleSheet">
+         <string notr="true">::indicator {
+>>>>>>> ffe3a02ef733978bc40cdee20a764a5bfb8c8bc2
      width: 32px;
      height: 32px;
  }
@@ -325,6 +542,7 @@ QRadioButton::indicator:unchecked:disabled
 {
  image: url(:/resource/check_unchecked_disable.png);
 }</string>
+<<<<<<< HEAD
           </property>
           <property name="text">
            <string>Sucker-1</string>
@@ -335,6 +553,25 @@ QRadioButton::indicator:unchecked:disabled
          <widget class="QCheckBox" name="x043checkBox">
           <property name="styleSheet">
            <string notr="true">::indicator {
+=======
+        </property>
+        <property name="text">
+         <string>Fixture-2</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Use Macro</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="QCheckBox" name="fixture3Box">
+        <property name="styleSheet">
+         <string notr="true">::indicator {
+>>>>>>> ffe3a02ef733978bc40cdee20a764a5bfb8c8bc2
      width: 32px;
      height: 32px;
  }
@@ -357,6 +594,7 @@ QRadioButton::indicator:unchecked:disabled
 {
  image: url(:/resource/check_unchecked_disable.png);
 }</string>
+<<<<<<< HEAD
           </property>
           <property name="text">
            <string>X043</string>
@@ -367,6 +605,18 @@ QRadioButton::indicator:unchecked:disabled
          <widget class="QCheckBox" name="fixture2Box">
           <property name="styleSheet">
            <string notr="true">::indicator {
+=======
+        </property>
+        <property name="text">
+         <string>Fixture-3</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QCheckBox" name="fixture4Box">
+        <property name="styleSheet">
+         <string notr="true">::indicator {
+>>>>>>> ffe3a02ef733978bc40cdee20a764a5bfb8c8bc2
      width: 32px;
      height: 32px;
  }
@@ -389,6 +639,7 @@ QRadioButton::indicator:unchecked:disabled
 {
  image: url(:/resource/check_unchecked_disable.png);
 }</string>
+<<<<<<< HEAD
           </property>
           <property name="text">
            <string>Fixture-2</string>
@@ -399,6 +650,18 @@ QRadioButton::indicator:unchecked:disabled
          <widget class="QCheckBox" name="sucker2Box">
           <property name="styleSheet">
            <string notr="true">::indicator {
+=======
+        </property>
+        <property name="text">
+         <string>Fixture-4</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="3">
+       <widget class="QCheckBox" name="sucker2Box">
+        <property name="styleSheet">
+         <string notr="true">::indicator {
+>>>>>>> ffe3a02ef733978bc40cdee20a764a5bfb8c8bc2
      width: 32px;
      height: 32px;
  }
@@ -421,6 +684,7 @@ QRadioButton::indicator:unchecked:disabled
 {
  image: url(:/resource/check_unchecked_disable.png);
 }</string>
+<<<<<<< HEAD
           </property>
           <property name="text">
            <string>Sucker-2</string>
@@ -431,6 +695,25 @@ QRadioButton::indicator:unchecked:disabled
          <widget class="QCheckBox" name="tryProductBox">
           <property name="styleSheet">
            <string notr="true">::indicator {
+=======
+        </property>
+        <property name="text">
+         <string>Sucker-2</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="3">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Return Step</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QCheckBox" name="fixture1Box">
+        <property name="styleSheet">
+         <string notr="true">::indicator {
+>>>>>>> ffe3a02ef733978bc40cdee20a764a5bfb8c8bc2
      width: 32px;
      height: 32px;
  }
@@ -453,6 +736,7 @@ QRadioButton::indicator:unchecked:disabled
 {
  image: url(:/resource/check_unchecked_disable.png);
 }</string>
+<<<<<<< HEAD
           </property>
           <property name="text">
            <string>Try Product</string>
@@ -463,6 +747,25 @@ QRadioButton::indicator:unchecked:disabled
          <widget class="QCheckBox" name="fixture3Box">
           <property name="styleSheet">
            <string notr="true">::indicator {
+=======
+        </property>
+        <property name="text">
+         <string>Fixture-1</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="3">
+       <widget class="ICLineEditWithVirtualNumericKeypad" name="moldCountEdit">
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0" colspan="3">
+       <widget class="QCheckBox" name="productCountBox">
+        <property name="styleSheet">
+         <string notr="true">::indicator {
+>>>>>>> ffe3a02ef733978bc40cdee20a764a5bfb8c8bc2
      width: 32px;
      height: 32px;
  }
@@ -535,6 +838,7 @@ QRadioButton::indicator:unchecked:disabled
       <item row="1" column="0">
        <widget class="QLabel" name="label_2">
         <property name="text">
+<<<<<<< HEAD
          <string>Use Macro</string>
         </property>
        </widget>
@@ -568,6 +872,9 @@ QRadioButton::indicator:unchecked:disabled
         </property>
         <property name="text">
          <string>0</string>
+=======
+         <string>Product Count</string>
+>>>>>>> ffe3a02ef733978bc40cdee20a764a5bfb8c8bc2
         </property>
        </widget>
       </item>

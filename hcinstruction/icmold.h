@@ -345,6 +345,7 @@ public:
         ACT_GCSUB,
         ACT_GCADD,
 
+        ACT_OTHER = 27,
         ACTCHECKINPUT=28,
         ACT_WaitMoldOpened = 29,
         ACT_Cut,
