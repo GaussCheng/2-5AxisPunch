@@ -612,7 +612,7 @@ void MainFrame::StatusRefreshed()
     if(pos != oldCPos_)
     {
         oldCPos_ = pos;
-        ui->cPosLabel->setText(QString().sprintf("%.1f", oldCPos_ / 100.0));
+        ui->cPosLabel->setText(QString().sprintf("%.2f", oldCPos_ / 100.0));
         ui->cPosLabel->setStyleSheet("color: rgb(0, 0, 127);background-color: rgb(85, 255, 127);");
         isCPosChanged_ = true;
     }

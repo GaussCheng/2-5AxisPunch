@@ -1258,7 +1258,7 @@ Reason</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="41"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="32"/>
         <source>Conditions</source>
         <translation>条件</translation>
     </message>
@@ -1283,89 +1283,89 @@ Reason</source>
         <translation type="obsolete">使用</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="350"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="123"/>
         <source>Check Point</source>
         <translation>检查输入点</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="131"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="167"/>
         <source>Defective Products</source>
         <translation>不良品</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="87"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="362"/>
         <source>X043</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="330"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="266"/>
         <source>X044</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="196"/>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="234"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="107"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="458"/>
         <source>Try Product</source>
         <translation>试产</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="201"/>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="298"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="102"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="202"/>
         <source>Sampling</source>
         <translation>取样</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="389"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="538"/>
         <source>Use Macro</source>
         <translation>使用子程序</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="382"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="394"/>
         <source>Fixture-2</source>
         <translation>夹2</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="166"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="72"/>
         <source>Sub-1</source>
         <translation>子程序1</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="171"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="77"/>
         <source>Sub-2</source>
         <translation>子程序2</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="176"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="82"/>
         <source>Sub-3</source>
         <translation>子程序3</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="181"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="87"/>
         <source>Sub-4</source>
         <translation>子程序4</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="186"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="92"/>
         <source>Sub-5</source>
         <translation>子程序5</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="191"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="97"/>
         <source>Bad Product</source>
         <translation>不良品</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="421"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="490"/>
         <source>Fixture-3</source>
         <translation>夹3</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="524"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="298"/>
         <source>Fixture-1</source>
         <translation>夹1</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="563"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="522"/>
         <source>Product Count</source>
         <translation>间隔模数</translation>
     </message>
@@ -1394,17 +1394,17 @@ Reason</source>
         <translation type="obsolete">堆叠4组</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="453"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="234"/>
         <source>Fixture-4</source>
         <translation>夹4</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="266"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="330"/>
         <source>Sucker-1</source>
         <translation>吸1</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="485"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="426"/>
         <source>Sucker-2</source>
         <translation>吸2</translation>
     </message>
@@ -1457,13 +1457,13 @@ Reason</source>
         <translation type="obsolete">巨集7</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="492"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="545"/>
         <source>Return Step</source>
         <translation>返回步号</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="337"/>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="531"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="529"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="570"/>
         <source>0</source>
         <translation></translation>
     </message>
