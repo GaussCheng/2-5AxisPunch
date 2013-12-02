@@ -31,7 +31,6 @@
 #include "mainframe.h"
 #include "ickeyboard.h"
 #include "icactioncommand.h"
-#include "icprogramguidepage.h"
 #include "ichcotherpage.h"
 
 #include <QDebug>
@@ -48,32 +47,27 @@ ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
     ui(new Ui::ICHCInstructionPageFrame),
     injectionPage_(NULL),
     fixturePage_(NULL),
-    conditionPage_(NULL),
-    flagsPage_(NULL),
     pneumaticPage_(NULL),
     waitConditionPage_(NULL),
     peripheryPage_(NULL),
     cutPage_(NULL),
-    programPage_(NULL),
-    stackPage_(NULL),
-    guidePage_(NULL),
-    otherPage_(NULL),
     recordPath_("./records/"),
     currentAction_(None),
     currentEdit_(0),
     isProgramChanged_(false)
 {
     ui->setupUi(this);
-//    ui->otherButton->hide();
+    ui->tabWidget->addTab(MoldInformation::Instance(), tr("Records"));
+    //    ui->otherButton->hide();
 
     InitInterface();
     InitSignal();
-//    ui->moldContentListWidget->setBackgroundRole(QColor("gray"));
+    //    ui->moldContentListWidget->setBackgroundRole(QColor("gray"));
 
-//    LoadAllRecordFileInfo();
+    //    LoadAllRecordFileInfo();
 
     InitParameter();
-//    ui->conditionsToolButton->hide();
+    //    ui->conditionsToolButton->hide();
 }
 
 ICHCInstructionPageFrame::~ICHCInstructionPageFrame()
@@ -84,45 +78,8 @@ ICHCInstructionPageFrame::~ICHCInstructionPageFrame()
 
 void ICHCInstructionPageFrame::showEvent(QShowEvent *e)
 {
-    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisA) == ICVirtualHost::ICAxisDefine_None)
-    {
-        ui->aMinusBtn->hide();
-        ui->aPlusBtn->hide();
-    }
-    else
-    {
-        ui->aMinusBtn->show();
-        ui->aPlusBtn->show();
-    }
-    if(ICParametersSave::Instance()->IsExtentFunctionUsed())
-    {
-        ui->flagsButton->show();
-        ui->conditionsToolButton->show();
-    }
-    else
-    {
-        ui->flagsButton->hide();
-        ui->conditionsToolButton->hide();
-    }
     QFrame::showEvent(e);
-//    connect(ICVirtualHost::GlobalVirtualHost(),
-//            SIGNAL(StepChanged(int)),
-//            this,
-//            SLOT(SelectCurrentStep(int)));
-//    connect(ICVirtualHost::GlobalVirtualHost(),
-//            SIGNAL(NeedToGetTeach()),
-//            this,
-//            SLOT(GetTeachContent()));
-//    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnTeach,
-//                                                     0,
-//                                                     ICMold::CurrentMold()->SyncAct() + ICMacroSubroutine::Instance()->SyncAct(),
-//                                                     ICMold::CurrentMold()->SyncSum() + ICMacroSubroutine::Instance()->SyncSum());
     UpdateHostParam();
-//    if(!icMainFrame->IsOrigined())
-//    {
-//        QMessageBox::warning(this, tr("Warning"), tr("Need to origin!"));
-//    }
 }
 
 void ICHCInstructionPageFrame::hideEvent(QHideEvent *e)
@@ -130,16 +87,16 @@ void ICHCInstructionPageFrame::hideEvent(QHideEvent *e)
     qDebug("instruct hide");
     modifyDialog_->hide();
     QFrame::hideEvent(e);
-//    disconnect(ICVirtualHost::GlobalVirtualHost(),
-//               SIGNAL(StepChanged(int)),
-//               this,
-//               SLOT(SelectCurrentStep(int)));
-//    disconnect(ICVirtualHost::GlobalVirtualHost(),
-//               SIGNAL(NeedToGetTeach()),
-//               this,
-//               SLOT(GetTeachContent()));
-//    ICMold::CurrentMold()->SetMoldContent(ICMold::UIItemToMoldItem(programList_));
-//    ICMold::CurrentMold()->SaveMoldFile();
+    //    disconnect(ICVirtualHost::GlobalVirtualHost(),
+    //               SIGNAL(StepChanged(int)),
+    //               this,
+    //               SLOT(SelectCurrentStep(int)));
+    //    disconnect(ICVirtualHost::GlobalVirtualHost(),
+    //               SIGNAL(NeedToGetTeach()),
+    //               this,
+    //               SLOT(GetTeachContent()));
+    //    ICMold::CurrentMold()->SetMoldContent(ICMold::UIItemToMoldItem(programList_));
+    //    ICMold::CurrentMold()->SaveMoldFile();
     if(SaveCurrentEdit() == true || isProgramChanged_)
     {
         ICVirtualHost::GlobalVirtualHost()->ReConfigure();
@@ -150,7 +107,7 @@ void ICHCInstructionPageFrame::hideEvent(QHideEvent *e)
         ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnManual, 0);
     }
 
- //   ICInstructParam::Instance()->UpdateHostParam();
+    //   ICInstructParam::Instance()->UpdateHostParam();
 
 }
 
@@ -171,42 +128,17 @@ void ICHCInstructionPageFrame::OptionButtonClicked()
 {
     QAbstractButton * optionButton = qobject_cast<QAbstractButton *>(sender());
 
-    if(injectionPage_ == NULL && optionButton == ui->injectionButton)
-    {
-        injectionPage_ = new ICHCInjectionPage;
-        optionButtonToPage_.insert(ui->injectionButton, injectionPage_);
-        ui->settingStackedWidget->addWidget(injectionPage_);
-
-    }
-    else if(fixturePage_ == NULL && optionButton == ui->fixtureButton)
+    if(fixturePage_ == NULL && optionButton == ui->fixtureButton)
     {
         fixturePage_ = new ICHCFixturePage;
         optionButtonToPage_.insert(ui->fixtureButton, fixturePage_);
         ui->settingStackedWidget->addWidget(fixturePage_);
-    }
-    else if(conditionPage_ == NULL && optionButton == ui->conditionsToolButton)
-    {
-        conditionPage_ = new ICHCConditionPage;
-        optionButtonToPage_.insert(ui->conditionsToolButton, conditionPage_);
-        ui->settingStackedWidget->addWidget(conditionPage_);
-    }
-    else if(flagsPage_ == NULL && optionButton == ui->flagsButton)
-    {
-        flagsPage_ = new ICFlagsEditor();
-        optionButtonToPage_.insert(ui->flagsButton, flagsPage_);
-        ui->settingStackedWidget->addWidget(flagsPage_);
     }
     else if(pneumaticPage_ == NULL && optionButton == ui->pneumaticButton)
     {
         pneumaticPage_ = new ICPneumaticActionPage();
         optionButtonToPage_.insert(ui->pneumaticButton, pneumaticPage_);
         ui->settingStackedWidget->addWidget(pneumaticPage_);
-    }
-    else if(waitConditionPage_ == NULL && optionButton == ui->waitToolButton)
-    {
-        waitConditionPage_ = new ICWaitConditionEditor();
-        optionButtonToPage_.insert(ui->waitToolButton, waitConditionPage_);
-        ui->settingStackedWidget->addWidget(waitConditionPage_);
     }
     else if(peripheryPage_ == NULL && optionButton == ui->peripheryButton)
     {
@@ -219,37 +151,6 @@ void ICHCInstructionPageFrame::OptionButtonClicked()
         cutPage_ = new ICCutPage();
         optionButtonToPage_.insert(ui->cutButton, cutPage_);
         ui->settingStackedWidget->addWidget(cutPage_);
-    }
-    else if(programPage_ == NULL && optionButton == ui->programButton)
-    {
-        programPage_ = new ICProgramSelector();
-        optionButtonToPage_.insert(ui->programButton, programPage_);
-        ui->settingStackedWidget->addWidget(programPage_);
-        connect(programPage_,
-                SIGNAL(ProgramChanged(int, QString)),
-                this,
-                SLOT(OnProgramChanged(int, QString)));
-    }
-    else if(stackPage_ == NULL && optionButton == ui->stackButton)
-    {
-        stackPage_ = new ICStackEditor();
-        optionButtonToPage_.insert(ui->stackButton, stackPage_);
-        ui->settingStackedWidget->addWidget(stackPage_);
-    }
-    else if(guidePage_ == NULL && optionButton == ui->guideButton)
-    {
-        guidePage_ = new ICProgramGuidePage();
-        optionButtonToPage_.insert(ui->guideButton, guidePage_);
-        ui->settingStackedWidget->addWidget(guidePage_);
-        connect(guidePage_,
-                SIGNAL(GuideFinished()),
-                SLOT(OnGuideFinished()));
-    }
-    else if(otherPage_ == NULL && optionButton == ui->otherButton)
-    {
-        otherPage_ = new ICHCOtherPage();
-        optionButtonToPage_.insert(ui->otherButton, otherPage_);
-        ui->settingStackedWidget->addWidget(otherPage_);
     }
     ui->settingStackedWidget->setCurrentWidget(optionButtonToPage_.value(optionButton));
 }
@@ -274,7 +175,7 @@ void ICHCInstructionPageFrame::InitInterface()
     //    optionButtonToPage_[ui->conditionsToolButton] = conditionPage_;
     //    ui->settingStackedWidget->addWidget(conditionPage_);
 
-//    ui->settingStackedWidget->setCurrentWidget(actionPage_);
+    //    ui->settingStackedWidget->setCurrentWidget(actionPage_);
 }
 
 void ICHCInstructionPageFrame::InitSignal()
@@ -283,28 +184,12 @@ void ICHCInstructionPageFrame::InitSignal()
             SIGNAL(clicked()),
             this,
             SLOT(OptionButtonClicked()));
-    connect(ui->injectionButton,
-            SIGNAL(clicked()),
-            this,
-            SLOT(OptionButtonClicked()));
     connect(ui->fixtureButton,
             SIGNAL(clicked()),
             this,
             SLOT(OptionButtonClicked()));
-    connect(ui->conditionsToolButton,
-            SIGNAL(clicked()),
-            this,
-            SLOT(OptionButtonClicked()));
 
-    connect(ui->flagsButton,
-            SIGNAL(clicked()),
-            this,
-            SLOT(OptionButtonClicked()));
     connect(ui->pneumaticButton,
-            SIGNAL(clicked()),
-            this,
-            SLOT(OptionButtonClicked()));
-    connect(ui->waitToolButton,
             SIGNAL(clicked()),
             this,
             SLOT(OptionButtonClicked()));
@@ -316,35 +201,15 @@ void ICHCInstructionPageFrame::InitSignal()
             SIGNAL(clicked()),
             this,
             SLOT(OptionButtonClicked()));
-    connect(ui->programButton,
-            SIGNAL(clicked()),
-            this,
-            SLOT(OptionButtonClicked()));
-    connect(ui->stackButton,
-            SIGNAL(clicked()),
-            this,
-            SLOT(OptionButtonClicked()));
-    connect(ui->aMinusBtn,
-            SIGNAL(released()),
-            SLOT(OnActionButtonReleased()));
-    connect(ui->aPlusBtn,
-            SIGNAL(released()),
-            SLOT(OnActionButtonReleased()));
-    connect(ui->guideButton,
-            SIGNAL(clicked()),
-            SLOT(OptionButtonClicked()));
-    connect(ui->otherButton,
-            SIGNAL(clicked()),
-            SLOT(OptionButtonClicked()));
 }
 
 void ICHCInstructionPageFrame::InitParameter()
 {
     QString recordName = ICParametersSave::Instance()->MoldName("TEST.act");
 
-//    ui->programSelectedComboBox->setCurrentIndex(ui->programSelectedComboBox->findText(recordName));
+    //    ui->programSelectedComboBox->setCurrentIndex(ui->programSelectedComboBox->findText(recordName));
 
-//    ICInstructParam::Instance()->UpdateHostParam();
+    //    ICInstructParam::Instance()->UpdateHostParam();
     UpdateHostParam();
     //    LoadMoldFile(recordName);
 }
@@ -380,8 +245,8 @@ void ICHCInstructionPageFrame::UpdateUIProgramList_()
     for(int i = 0; i != programList_.size(); ++i)
     {
         (i % 2 == 0 ? color.setRgb(255,255,154): color.setRgb(154,255,255));
-//        (i % 2 == 0 ? color.setRgb(191,255,191): color.setRgb(222,255,222));
-//        (i % 2 == 0 ? color.setRgb(255,255,154): color.setRgb(191,255,191));
+        //        (i % 2 == 0 ? color.setRgb(191,255,191): color.setRgb(222,255,222));
+        //        (i % 2 == 0 ? color.setRgb(255,255,154): color.setRgb(191,255,191));
         groupItem = programList_.at(i);
         topItemRowCount = groupItem.ItemCount();
         for(int j = 0; j != topItemRowCount; ++j)
@@ -392,12 +257,12 @@ void ICHCInstructionPageFrame::UpdateUIProgramList_()
                 if(tmp->Num() == 0)
                 {
                     ui->moldContentListWidget->item(j + index)->setBackgroundColor(QColor(239, 235, 231));
-//                    ui->moldContentListWidget->item(j + index)->setForeground(QColor("white"));
+                    //                    ui->moldContentListWidget->item(j + index)->setForeground(QColor("white"));
                 }
-                else if(tmp->Action() == ICInstructParam::ACT_WaitMoldOpened)
-                {
-                    ui->moldContentListWidget->item(j + index)->setBackgroundColor("red");
-                }
+//                else if(tmp->Action() == ICMold::ACT_WaitMoldOpened)
+//                {
+//                    ui->moldContentListWidget->item(j + index)->setBackgroundColor("red");
+//                }
                 else
                 {
                     ui->moldContentListWidget->item(j + index)->setBackgroundColor(color);
@@ -411,13 +276,6 @@ void ICHCInstructionPageFrame::UpdateUIProgramList_()
 
 void ICHCInstructionPageFrame::on_insertToolButton_clicked()
 {
-    if(guidePage_)  //限制在教导页面点击插入的时候出现错误
-    {
-        if(!guidePage_->isHidden())
-        {
-            return;  //教导页面点插入无任何动作
-        }
-    }
     ICInstructionEditorBase* editor = qobject_cast<ICInstructionEditorBase*>(ui->settingStackedWidget->currentWidget());
     ICFlagsEditor *flagsEditor = qobject_cast<ICFlagsEditor*> (editor);
     ActionSettingFrame *servoEditor = qobject_cast<ActionSettingFrame*>(editor);
@@ -436,13 +294,13 @@ void ICHCInstructionPageFrame::on_insertToolButton_clicked()
     FindIndex_(index, gIndex, tIndex, sIndex);
     QString currentmoldname  = ICParametersSave::Instance()->MoldName("");
     /******currentEdit_标记为0表示为主程序（主程序时不能删除待机点）*****/
-    if(programList_.at(gIndex).StepNum() == 0 && currentEdit_ == 0 && currentmoldname.left(4) != "szhc")
-    {
-        QMessageBox::warning(this,
-                             tr("Warning"),
-                             tr("Can not add standby position program"));
-        return;
-    }
+//    if(programList_.at(gIndex).StepNum() == 0 && currentEdit_ == 0 && currentmoldname.left(4) != "szhc")
+//    {
+//        QMessageBox::warning(this,
+//                             tr("Warning"),
+//                             tr("Can not add standby position program"));
+//        return;
+//    }
     bool isParallel = false;
     bool isServo = false;
     if(flagsEditor != NULL)
@@ -549,7 +407,7 @@ void ICHCInstructionPageFrame::on_insertToolButton_clicked()
         else
         {
             isSyncItem = programList_.at(gIndex).at(tIndex).at(sIndex).SubNum() ==
-                    programList_.at(gIndex).at(tIndex).at(sIndex - 1).SubNum();
+                         programList_.at(gIndex).at(tIndex).at(sIndex - 1).SubNum();
         }
         for(int i = 0; i != items.size(); ++i)
         {
@@ -573,7 +431,7 @@ void ICHCInstructionPageFrame::on_insertToolButton_clicked()
             }
         }
 
-//        topItem->ReCalSubNum();
+        //        topItem->ReCalSubNum();
     }
     UpdateUIProgramList_();
     index += items.size();
@@ -616,7 +474,8 @@ void ICHCInstructionPageFrame::on_modifyToolButton_clicked()
         }
 
     }
-//    if(isModify)
+
+    //    if(isModify)
 
 }
 
@@ -636,7 +495,7 @@ void ICHCInstructionPageFrame::on_deleteToolButton_clicked()
         QMessageBox::warning(this, tr("warning"),
                              tr("Stand program can not be delete action"));
         return;
-   }
+    }
     int gIndex;
     int tIndex;
     int sIndex;
@@ -644,13 +503,13 @@ void ICHCInstructionPageFrame::on_deleteToolButton_clicked()
     /************BUG181:子程序位置插入后不能删除******************/
 
     QString currentmoldname  = ICParametersSave::Instance()->MoldName("");
-    if(programList_.at(gIndex).StepNum() == 0 && currentEdit_ == 0 && currentmoldname.left(4) != "szhc")
-    {
-        QMessageBox::warning(this,
-                             tr("Warning"),
-                             tr("Can not delete standby position program"));
-        return;
-    }
+//    if(programList_.at(gIndex).StepNum() == 0 && currentEdit_ == 0 && currentmoldname.left(4) != "szhc")
+//    {
+//        QMessageBox::warning(this,
+//                             tr("Warning"),
+//                             tr("Can not delete standby position program"));
+//        return;
+//    }
     if(sIndex == -1)
     {
         if(programList_.at(gIndex).TopItemCount() == 1) //delete Group Item
@@ -670,23 +529,23 @@ void ICHCInstructionPageFrame::on_deleteToolButton_clicked()
     {
         ICTopMoldUIItem* topItem = &programList_[gIndex].at(tIndex);
         bool isSyncItem = topItem->IsSyncSubItem(sIndex);
-//        if(topItem->SubItemCount() == 1)
-//        {
-//            isSyncItem = false;
-//        }
-//        else if(sIndex == 0)
-//        {
-//            isSyncItem = topItem->at(sIndex + 1).SubNum() == topItem->at(sIndex).SubNum();
-//        }
-//        else if(sIndex == topItem->SubItemCount() - 1)
-//        {
-//            isSyncItem = topItem->at(sIndex - 1).SubNum() == topItem->at(sIndex).SubNum();
-//        }
-//        else
-//        {
-//            isSyncItem = (topItem->at(sIndex + 1).SubNum() == topItem->at(sIndex).SubNum()) ||
-//                    topItem->at(sIndex - 1).SubNum() == topItem->at(sIndex).SubNum();
-//        }
+        //        if(topItem->SubItemCount() == 1)
+        //        {
+        //            isSyncItem = false;
+        //        }
+        //        else if(sIndex == 0)
+        //        {
+        //            isSyncItem = topItem->at(sIndex + 1).SubNum() == topItem->at(sIndex).SubNum();
+        //        }
+        //        else if(sIndex == topItem->SubItemCount() - 1)
+        //        {
+        //            isSyncItem = topItem->at(sIndex - 1).SubNum() == topItem->at(sIndex).SubNum();
+        //        }
+        //        else
+        //        {
+        //            isSyncItem = (topItem->at(sIndex + 1).SubNum() == topItem->at(sIndex).SubNum()) ||
+        //                    topItem->at(sIndex - 1).SubNum() == topItem->at(sIndex).SubNum();
+        //        }
         topItem->RemoveSubItem(sIndex);
         if(topItem->ItemCount() == 1)
         {
@@ -748,14 +607,14 @@ void ICHCInstructionPageFrame::FindIndex_(int currentIndex, int& groupItemIndex,
                 if(currentIndex < programList_.at(i).at(j).ItemCount())
                 {
                     topItemIndex = j;
-                    if(currentIndex == 0)
-                    {
+//                    if(currentIndex == 0)
+//                    {
                         subItemIndex = -1;
-                    }
-                    else
-                    {
+//                    }
+//                    else
+//                    {
                         subItemIndex = currentIndex - 1;
-                    }
+//                    }
                     break;
                 }
                 else
@@ -784,13 +643,13 @@ void ICHCInstructionPageFrame::on_upButton_clicked()
     }
     FindIndex_(currentRow, gIndex, tIndex, sIndex);
     //子程序也可以分解和组合，所以无需判断
-//    if(programList_.at(gIndex).StepNum() == 1)
-//    {
-//        QMessageBox::warning(this,
-//                             tr("Warning"),
-//                             tr("Can not group up to standby position program"));
-//        return;
-//    }
+    //    if(programList_.at(gIndex).StepNum() == 1)
+    //    {
+    //        QMessageBox::warning(this,
+    //                             tr("Warning"),
+    //                             tr("Can not group up to standby position program"));
+    //        return;
+    //    }
     if(sIndex == -1)
     {
         if(gIndex == 0)
@@ -859,13 +718,13 @@ void ICHCInstructionPageFrame::on_downButton_clicked()
     }
     FindIndex_(currentRow, gIndex, tIndex, sIndex);
     //子程序也可以分解和组合，所以无需判断
-//    if(programList_.at(gIndex).StepNum() == 0)
-//    {
-//        QMessageBox::warning(this,
-//                             tr("Warning"),
-//                             tr("Can not decompose standby position program"));
-//        return;
-//    }
+    //    if(programList_.at(gIndex).StepNum() == 0)
+    //    {
+    //        QMessageBox::warning(this,
+    //                             tr("Warning"),
+    //                             tr("Can not decompose standby position program"));
+    //        return;
+    //    }
     if(sIndex == -1)
     {
         if(gIndex == 0 && tIndex == 0)// if is the first TopItem, do nothing
@@ -907,17 +766,17 @@ void ICHCInstructionPageFrame::on_downButton_clicked()
     }
     else //sub item
     {
-//        if(sIndex == 0) //sub item1 do nothing
-//        {
-//            return;
-//        }
-//        ICTopMoldUIItem *topItem = &programList_[gIndex].at(tIndex);
-//        ICSubMoldUIItem *subItem = topItem->at(sIndex);
-//        if(sIndex == 0 ||
-//           sIndex == topItem->SubItemCount() - 1) //it's not work when select the oth or last subItem
-//        {
-//            return;
-//        }
+        //        if(sIndex == 0) //sub item1 do nothing
+        //        {
+        //            return;
+        //        }
+        //        ICTopMoldUIItem *topItem = &programList_[gIndex].at(tIndex);
+        //        ICSubMoldUIItem *subItem = topItem->at(sIndex);
+        //        if(sIndex == 0 ||
+        //           sIndex == topItem->SubItemCount() - 1) //it's not work when select the oth or last subItem
+        //        {
+        //            return;
+        //        }
     }
     UpdateUIProgramList_();
 }
@@ -932,8 +791,6 @@ void ICHCInstructionPageFrame::OnProgramChanged(int index, QString name)
     ui->moldContentListWidget->clear();
     programList_.clear();
     currentEdit_ = index;
-//    ui->moldComboBox->setCurrentIndex(index);
-    ui->programLabel->setText(name);
     UpdateHostParam();
 
 }
@@ -952,20 +809,6 @@ bool ICHCInstructionPageFrame::SaveCurrentEdit()
     }
 }
 
-void ICHCInstructionPageFrame::on_aPlusBtn_pressed()
-{
-    ICKeyboard::Instace()->SetKeyValue(ICKeyboard::VFB_AAdd);
-    ICKeyboard::Instace()->SetPressed(true);
-    ShowServoAction(ICKeyboard::VFB_AAdd);
-}
-
-void ICHCInstructionPageFrame::on_aMinusBtn_pressed()
-{
-    ICKeyboard::Instace()->SetKeyValue(ICKeyboard::VFB_ASub);
-    ICKeyboard::Instace()->SetPressed(true);
-    ShowServoAction(ICKeyboard::VFB_ASub);
-}
-
 void ICHCInstructionPageFrame::OnActionButtonReleased()
 {
     ICKeyboard::Instace()->SetPressed(false);
@@ -975,29 +818,32 @@ void ICHCInstructionPageFrame::ShowServoAction(int key)
 {
     if(!this->isHidden())
     {
-        if(guidePage_)
-        {
-            if(guidePage_->isHidden())
-            {
-                ui->lineButton->click();
-                actionPage_->KeyToActionCheck(key);
-            }
-            else
-            {
-                guidePage_->GuideKeyToActionCheck(key);
-            }
-        }
-       else
-        {
-            ui->lineButton->click();
-            actionPage_->KeyToActionCheck(key);
-        }
+
+        ui->lineButton->click();
+        actionPage_->KeyToActionCheck(key);
     }
 
 }
 
-void  ICHCInstructionPageFrame::OnGuideFinished()
+void ICHCInstructionPageFrame::on_tabWidget_currentChanged(int index)
 {
-    ICMold::CurrentMold()->SetMoldContent(guidePage_->CreateCommand());
-    UpdateHostParam();
+    if(index == 0)
+    {
+        UpdateHostParam();
+    }
+    else
+    {
+        SaveCurrentEdit();
+//        isProgramChanged_ = false;
+    }
+}
+
+void ICHCInstructionPageFrame::on_mainButton_clicked()
+{
+    OnProgramChanged(0, "");
+}
+
+void ICHCInstructionPageFrame::on_feedButton_clicked()
+{
+    OnProgramChanged(8, "");
 }

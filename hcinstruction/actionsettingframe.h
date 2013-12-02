@@ -46,13 +46,6 @@ private:
     int oXP_;
     int oYP_;
     int oZP_;
-#ifdef HC_8AXIS
-    int oX2P_;
-    int oY2P_;
-    int oAP_;
-    int oBP_;
-    int oCP_;
-#endif
     QIntValidator posValidators_[8];
     QIntValidator posValidator[3];
     int posMaxs_[8];
@@ -67,13 +60,7 @@ private slots:
     void on_gxButton_toggled(bool checked);
     void on_gyButton_toggled(bool checked);
     void on_gzButton_toggled(bool checked);
-#ifdef HC_8AXIS
-    void on_gPButton_toggled(bool checked);
-    void on_gQButton_toggled(bool checked);
-    void on_gAButton_toggled(bool checked);
-    void on_gBButton_toggled(bool checked);
-    void on_gCButton_toggled(bool checked);
-#endif
+    void on_absBox_toggled(bool checked);
 };
 
 #endif // ACTIONSETTINGFRAME_H

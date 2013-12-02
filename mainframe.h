@@ -6,7 +6,6 @@
 #include <QSplashScreen>
 #include <QScopedPointer>
 #include "icscreensaver.h"
-#include "icfunctionpagebackframe.h"
 #include "ichcmanualoperationpageframe.h"
 #include "ichcprogrammonitorframe.h"
 
@@ -74,11 +73,7 @@ private slots:
     void StepChanged(int step);
     void RecordButtonClicked();
     void CheckedInput();
-    void Register();
-    void CountRestTime();
     void checkAlarmModify();
-
-    void InitSpareTime();
 
 //    void InitHeavyPage();
 
@@ -97,7 +92,7 @@ private:
     Ui::MainFrame *ui;
 
     QWidget * initialPage_;
-    ICFunctionPageBackFrame * functionPage_;
+    QWidget * settingsPage_;
     QWidget * alarmPage_;
     QWidget * recordPage_;
     QWidget * monitorPage_;
@@ -127,11 +122,6 @@ private:
     int oldXPos_;
     int oldYPos_;
     int oldZPos_;
-    int oldX2Pos_;
-    int oldY2Pos_;
-    int oldAPos_;
-    int oldBPos_;
-    int oldCPos_;
     QString speed_;
     QString statusStr_;
     bool isOriginShown_;
@@ -151,11 +141,6 @@ private:
     bool isXPosChanged_;
     bool isYPosChanged_;
     bool isZPosChanged_;
-    bool isX2PosChanged_;
-    bool isY2PosChanged_;
-    bool isAPosChanged_;
-    bool isBPosChanged_;
-    bool isCPosChanged_;
     int axisDefine_;
     int timerID_;
 

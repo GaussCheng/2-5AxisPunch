@@ -117,6 +117,7 @@ extern "C" {
 #define FC_HC_DOWNLOAD_ACT           0x47 //71
 #define FC_HC_UPLOAD_ACT             0x48 //72
 #define FC_HC_RUNTIME_MODIFY         0x49
+#define FC_HC_MANUAL_RUN             0x50
 
 /*custom function codes used for Multi-axis System in SZHC*/
 #define HC_OLD
@@ -433,6 +434,11 @@ int hc_update_host_finish(modbus_param_t *mb_param);
 int hc_update_host_restart(modbus_param_t *mb_param);
 int hc_update_host_query(modbus_param_t *mb_param);
 int hc_update_host_start(modbus_param_t *mb_param, int slave);
+int hc_manual_run(modbus_param_t *mb_param,
+                                   int slave,
+                                   int gm, int sub,
+                                   int pos,
+                                   int ifval);
 #endif
 
 

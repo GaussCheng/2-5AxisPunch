@@ -12,47 +12,47 @@ ICHCDetectionFrame::ICHCDetectionFrame(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ICTwoSelectionComboBoxWrapper* wrapper;
-    wrapper = new ICTwoSelectionComboBoxWrapper(ui->detectFixture1ComboBox, ICMold::CheckClip1);
-    wrappers_.append(wrapper);
-    wrapper = new ICTwoSelectionComboBoxWrapper(ui->detectFixture2ComboBox, ICMold::CheckClip2);
-    wrappers_.append(wrapper);
-    wrapper = new ICTwoSelectionComboBoxWrapper(ui->detectFixture3ComboBox, ICMold::CheckClip3);
-    wrappers_.append(wrapper);
-    wrapper = new ICTwoSelectionComboBoxWrapper(ui->detectFixture4ComboBox, ICMold::CheckClip4);
-    wrappers_.append(wrapper);
-//    wrapper = new ICTwoSelectionComboBoxWrapper(ui->detectSucker1ComboBox, ICMold::CheckClip5);
+//    ICTwoSelectionComboBoxWrapper* wrapper;
+//    wrapper = new ICTwoSelectionComboBoxWrapper(ui->detectFixture1ComboBox, ICMold::CheckClip1);
 //    wrappers_.append(wrapper);
-//    wrapper = new ICTwoSelectionComboBoxWrapper(ui->detectSucker2ComboBox, ICMold::CheckClip6);
+//    wrapper = new ICTwoSelectionComboBoxWrapper(ui->detectFixture2ComboBox, ICMold::CheckClip2);
 //    wrappers_.append(wrapper);
+//    wrapper = new ICTwoSelectionComboBoxWrapper(ui->detectFixture3ComboBox, ICMold::CheckClip3);
+//    wrappers_.append(wrapper);
+//    wrapper = new ICTwoSelectionComboBoxWrapper(ui->detectFixture4ComboBox, ICMold::CheckClip4);
+//    wrappers_.append(wrapper);
+////    wrapper = new ICTwoSelectionComboBoxWrapper(ui->detectSucker1ComboBox, ICMold::CheckClip5);
+////    wrappers_.append(wrapper);
+////    wrapper = new ICTwoSelectionComboBoxWrapper(ui->detectSucker2ComboBox, ICMold::CheckClip6);
+////    wrappers_.append(wrapper);
 
-    wrapper = new ICTwoSelectionComboBoxWrapper(ui->standbyPositionBox, ICMold::StandbyPose);
-    wrappers_.append(wrapper);
-    //    wrapper = new ICTwoSelectionComboBoxWrapper(ui->converyotComboBox, ICMold::CheckClip7);
-    //    wrappers_.append(wrapper);
-    //    wrapper = new ICTwoSelectionComboBoxWrapper(ui->injectionComboBox, ICMold::CheckClip8);
-    //    wrappers_.append(wrapper);
-    //    ui->converyotComboBox->hide();
-    //    ui->injectionComboBox->hide();
-    //    ui->label_13->hide();
-    //    ui->label_8->hide();
-    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    ui->detectPressureComboBox->setCurrentIndex(qAbs(host->IsPressureCheck() - 1));
-    ui->detectSecurityComboBox->setCurrentIndex(qAbs(host->IsSecurityCheck() - 1));
-    ui->detectMidMoldComboBox->setCurrentIndex(qAbs(host->IsMidMoldCheck() - 1));
-    ui->ejectionLinkLockBox->setCurrentIndex(qAbs(host->IsEjectionLink() - 1));
-    ui->detectOriginBox->setCurrentIndex(qAbs(host->IsAlarmWhenOrigin() - 1));
-    //    ui->detectPositionBox->setCurrentIndex(qAbs(host->IsPositionDetect() - 1));
-    ui->detectPositionBox->setCurrentIndex(host->TranserferPosition());
-    ui->originPositionBox->setCurrentIndex(host->OriginPosition());
-    ui->detectSucker1ComboBox->setCurrentIndex(host->IsCloseMoldEn());
-    ui->detectSucker2ComboBox->setCurrentIndex(host->IsAutoSignalUse());
+//    wrapper = new ICTwoSelectionComboBoxWrapper(ui->standbyPositionBox, ICMold::StandbyPose);
+//    wrappers_.append(wrapper);
+//    //    wrapper = new ICTwoSelectionComboBoxWrapper(ui->converyotComboBox, ICMold::CheckClip7);
+//    //    wrappers_.append(wrapper);
+//    //    wrapper = new ICTwoSelectionComboBoxWrapper(ui->injectionComboBox, ICMold::CheckClip8);
+//    //    wrappers_.append(wrapper);
+//    //    ui->converyotComboBox->hide();
+//    //    ui->injectionComboBox->hide();
+//    //    ui->label_13->hide();
+//    //    ui->label_8->hide();
+//    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+//    ui->detectPressureComboBox->setCurrentIndex(qAbs(host->IsPressureCheck() - 1));
+//    ui->detectSecurityComboBox->setCurrentIndex(qAbs(host->IsSecurityCheck() - 1));
+//    ui->detectMidMoldComboBox->setCurrentIndex(qAbs(host->IsMidMoldCheck() - 1));
+//    ui->ejectionLinkLockBox->setCurrentIndex(qAbs(host->IsEjectionLink() - 1));
+//    ui->detectOriginBox->setCurrentIndex(qAbs(host->IsAlarmWhenOrigin() - 1));
+//    //    ui->detectPositionBox->setCurrentIndex(qAbs(host->IsPositionDetect() - 1));
+//    ui->detectPositionBox->setCurrentIndex(host->TranserferPosition());
+//    ui->originPositionBox->setCurrentIndex(host->OriginPosition());
+//    ui->detectSucker1ComboBox->setCurrentIndex(host->IsCloseMoldEn());
+//    ui->detectSucker2ComboBox->setCurrentIndex(host->IsAutoSignalUse());
 
 
-    connect(ICMold::CurrentMold(),
-            SIGNAL(MoldNumberParamChanged()),
-            this,
-            SLOT(OnMoldNumberParamChanged()));
+//    connect(ICMold::CurrentMold(),
+//            SIGNAL(MoldNumberParamChanged()),
+//            this,
+//            SLOT(OnMoldNumberParamChanged()));
 
 //    ui->downPositionBox->hide();
 //    ui->label_16->hide();

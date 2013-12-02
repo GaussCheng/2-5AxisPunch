@@ -868,6 +868,9 @@ static int modbus_receive(modbus_param_t *mb_param,
         case FC_HC_DOWNLOAD_ACT:
             query_nb_value = response_nb_value = 5;
             break;
+        case FC_HC_MANUAL_RUN:
+            query_nb_value = response_nb_value = 7;
+
 #endif
 		default:
 			/* 1 Write functions & others */
@@ -1444,6 +1447,49 @@ static int hc_runtime_modify_query(modbus_param_t *mb_param,
     return ret;
 }
 
+int hc_manual_run(modbus_param_t *mb_param,
+                                   int slave,
+                                   int gm,
+                                   int sub,
+                                   int pos,
+                                   int ifval)
+{
+    int ret;
+    int query_length;
+    uint8_t query[16];
+    uint8_t response[MAX_MESSAGE_LENGTH];
+
+    query[0]  = slave;
+    query[1]  = FC_HC_MANUAL_RUN;
+    query[2]  = gm;
+    query[3]  = sub;
+    query[4]  = pos >> 8;
+    query[5]  = pos & 0x00ff;
+    query[6] = ifval;
+
+    query_length = 7;
+
+    ret = modbus_send(mb_param, query, query_length);
+    if (ret > 0)
+    {
+        int i;
+
+        ret = modbus_receive(mb_param, query, response);
+
+        /* If ret is negative, the loop is jumped ! */
+        for (i = 0; i < ret; i++)
+        {
+            if(response[i] != query[i])
+            {
+                return -1;
+            }
+        }
+        return 1;
+    }
+
+    return -1;
+}
+
 /* Reads the holding registers in a slave and put the data into an
    array */
 int read_holding_registers(modbus_param_t *mb_param, int slave,
@@ -1844,7 +1890,7 @@ int hc_query_status(modbus_param_t *mb_param, int slave, int start_addr, int nb,
 #ifdef HC_5AXIS
     start_addr = (++start_addr) % 10;
 #elif defined HC_8AXIS
-    start_addr = (++start_addr) % 12;
+    start_addr = (++start_addr) % 9;
 #else
     start_addr = (++start_addr) % 7;
 #endif

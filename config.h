@@ -5,12 +5,12 @@
 #define HC_8AXIS
 #endif
 
-#ifndef HC_ARMV6
-#define HC_ARMV6
-#endif
+//#ifndef HC_ARMV6
+//#define HC_ARMV6
+//#endif
 
 #define IFPOS_DECIMAL 0
-#define POS_DECIMAL 2
+#define POS_DECIMAL 1
 #define SECTION_DECIMAL 1
 #define STACK_DECIMAL 2
 

@@ -114,26 +114,29 @@ public:
 
     int ActualPos() const
     {
-        return (QString::number(Pos()) + QString::number(IFPos() & 0xF)).toInt();
+        return Pos();
+//        return (QString::number(Pos()) + QString::number(IFPos() & 0xF)).toInt();
     }
     void SetActualPos(int pos)
     {
-        int p = pos / 10;
-        int d = pos % 10;
-        SetPos(p);
-        ifPos_ &= 0xFFFFFFF0;
-        ifPos_ |= d;
+//        int p = pos / 10;
+//        int d = pos % 10;
+        SetPos(pos);
+//        ifPos_ &= 0xFFFFFFF0;
+//        ifPos_ |= d;
     }
 
     int ActualIfPos() const
     {
-        return IFPos() >> 4;
+        return IFPos();
+//        return IFPos() >> 4;
     }
 
     void SetActualIfPos(uint pos)
     {
-        ifPos_ &= 0x0000000F;
-        ifPos_ |= (pos << 4);
+//        ifPos_ &= 0x0000000F;
+//        ifPos_ |= (pos << 4);
+        SetIFPos(pos);
     }
 
     int ActualMoldCount() const
@@ -272,23 +275,10 @@ class ICMold : public QObject
 public:
     enum ICMoldParam
     {
-        StackCount0,
-        StackCount1,
-        StackCount2,
-        StackCount3,
-        CountUnit,
-        StandbyPose,  //待机姿势，0代表限制锁模 1代表不限制锁模
-        TryProduct,  //试产
-        Sampling,      //取样
-        CheckClip1,
-        CheckClip2,
-        CheckClip3,
-        CheckClip4,
-        CheckClip5,
-        CheckClip6,
-        CheckClip7,
-        CheckClip8,
+        point0,
+        point19 = 29,
         Product,
+        reserve,
 
         MoldParamCount
     };
@@ -311,7 +301,7 @@ public:
 
     enum ACTGROUP
     {
-        GC          =0,		//0
+        GNULL          =0,		//0
         GX,			//1
         GY,			//2
         GZ,			//3
@@ -319,38 +309,44 @@ public:
         GQ,			//5
         GA,			//6
         GB,			//7
+        GC,
+        GTo,
+        GCheckX,
+        GOutY,
+        GOneXOneY,
+        GTwoXTwoY,
 
-        ACTMAINUP,		//8
-        ACTMAINDOWN,	//9
-        ACTMAINFORWARD,	//10
-        ACTMAINBACKWARD,//11
+//        ACTMAINUP,		//8
+//        ACTMAINDOWN,	//9
+//        ACTMAINFORWARD,	//10
+//        ACTMAINBACKWARD,//11
 
-        ACTPOSEHORI,	//12   水平1
-        ACTPOSEVERT,	//13   垂直1
-        ACTVICEUP,		//14
-        ACTVICEDOWN,	//15
+//        ACTPOSEHORI,	//12   水平1
+//        ACTPOSEVERT,	//13   垂直1
+//        ACTVICEUP,		//14
+//        ACTVICEDOWN,	//15
 
-        ACTVICEFORWARD,	//16
-        ACTVICEBACKWARD,//17
-        ACTGOOUT,		//18
-        ACTCOMEIN,		//19
+//        ACTVICEFORWARD,	//16
+//        ACTVICEBACKWARD,//17
+//        ACTGOOUT,		//18
+//        ACTCOMEIN,		//19
 
-        ACT_PoseHori2,		//20  水平2
-        ACT_PoseVert2,   //21  垂直2
+//        ACT_PoseHori2,		//20  水平2
+//        ACT_PoseVert2,   //21  垂直2
 
-        ACT_GASUB,
-        ACT_GAADD,
-        ACT_GBSUB,
-        ACT_GBADD,
-        ACT_GCSUB,
-        ACT_GCADD,
+//        ACT_GASUB,
+//        ACT_GAADD,
+//        ACT_GBSUB,
+//        ACT_GBADD,
+//        ACT_GCSUB,
+//        ACT_GCADD,
 
-        ACT_OTHER = 27,
-        ACTCHECKINPUT=28,
-        ACT_WaitMoldOpened = 29,
-        ACT_Cut,
-        ACTParallel = 31,
-        ACTEND
+//        ACT_OTHER = 27,
+//        ACTCHECKINPUT=28,
+//        ACT_WaitMoldOpened = 29,
+//        ACT_Cut,
+//        ACTParallel = 31,
+        ACTEND = 32
     };
 
     enum CLIPGROUP
@@ -458,7 +454,9 @@ inline void ICMold::SetMoldParam(ICMoldParam param, int value)
 {
     Q_ASSERT_X(param < moldParams_.size(), "ICMold::SetMoldParams", "param is out of range");
     moldParams_[param] = value;
+    UpdateSyncSum();
     emit MoldPramChanged(param, value);
+    emit MoldPramChanged(MoldParamCount, checkSum_);
 }
 
 inline void ICMold::SetStackParam(int group, ICStatckParam param, int value)

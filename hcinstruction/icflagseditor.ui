@@ -6,45 +6,76 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>346</width>
-    <height>252</height>
+    <width>376</width>
+    <height>317</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>9</y>
+     <width>28</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Call</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="listWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>30</y>
+     <width>301</width>
+     <height>191</height>
+    </rect>
+   </property>
    <item>
-    <widget class="QLabel" name="label">
-     <property name="text">
-      <string>Flags</string>
-     </property>
-    </widget>
+    <property name="text">
+     <string>Sub-1</string>
+    </property>
    </item>
    <item>
-    <widget class="QListWidget" name="flagListWidget">
-     <property name="editTriggers">
-      <set>QAbstractItemView::NoEditTriggers</set>
-     </property>
-     <property name="alternatingRowColors">
-      <bool>true</bool>
-     </property>
-     <property name="spacing">
-      <number>5</number>
-     </property>
-     <item>
-      <property name="text">
-       <string>Main Arm Get Product inside</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Sub Arm Get Product inside</string>
-      </property>
-     </item>
-    </widget>
+    <property name="text">
+     <string>Sub-2</string>
+    </property>
    </item>
-  </layout>
+   <item>
+    <property name="text">
+     <string>Sub-3</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Sub-4</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Sub-5</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Sub-6</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Sub-7</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Sub-8</string>
+    </property>
+   </item>
+  </widget>
  </widget>
  <resources/>
  <connections/>

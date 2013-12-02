@@ -2,6 +2,9 @@
 #define ICSYSTEMCONFIG_H
 
 #include <QObject>
+#include <QSharedPointer>
+#include <QWeakPointer>
+#include <QMap>
 
 class QSettings;
 
@@ -48,5 +51,93 @@ private:
     mutable QSettings *sysSetting_;
 
 };
+
+typedef QMap<QString, QString> LocaleStringMap;
+static inline QString GetLocalNameFromMap(const LocaleStringMap& map, const QString& languageName) { return (map.value(languageName, ""));}
+struct ICUserIOInfo
+{
+    int hardwarePoint;
+    QString code;
+    LocaleStringMap localeNameMap;
+    QString GetLocaleName(const QString& languageName) const { return GetLocalNameFromMap(localeNameMap, languageName);}
+};
+
+struct ICUserPointInfo
+{
+    LocaleStringMap localeNameMap;
+    QString GetLocaleName(const QString& languageName) const { return GetLocalNameFromMap(localeNameMap, languageName);}
+};
+
+struct ICUserActionInfo
+{
+    int type;
+    int pointNum;
+    LocaleStringMap localeNameMap;
+    bool dir;
+    QString GetLocaleName(const QString& languageName) const { return GetLocalNameFromMap(localeNameMap, languageName);}
+};
+
+class ICUserDefineConfig
+{
+public:
+    typedef QSharedPointer<ICUserDefineConfig> ICUserDefineConfigSPTR;
+    typedef QWeakPointer<ICUserDefineConfig> ICUserDefineConfigWPTR;
+    typedef QMap<int, ICUserIOInfo> UserIOInfos;
+    typedef QMap<int, ICUserPointInfo> UserPointInfos;
+    typedef QMap<int, ICUserActionInfo> UserActionInfos;
+
+    static ICUserDefineConfigSPTR Instance()
+    {
+        if(instance_.isNull())
+        {
+            instance_ = ICUserDefineConfigSPTR(new ICUserDefineConfig());
+        }
+        return instance_;
+    }
+
+    void Init();
+    QString GetPointsLocaleName(int id, const QString& languageName = "zh")
+    {
+        if(!pointInfos_.contains(id)) return "";
+        return pointInfos_.value(id).GetLocaleName(languageName);
+    }
+
+    QString GetIOActionLocaleName(int id , const QString& languageName = "zh")
+    {
+        if(!actionInfos_.contains(id)) return "";
+        return actionInfos_.value(id).GetLocaleName(languageName);
+    }
+
+    int GetIOActionType(int id)
+    {
+        if(!actionInfos_.contains(id)) return 0;
+        return actionInfos_.value(id).type;
+    }
+
+    ICUserActionInfo GetActionByID(int id){return actionInfos_.value(id, ICUserActionInfo());}
+
+    QList<ICUserActionInfo> GetActionInfosByType(int type);
+
+    QList<ICUserIOInfo> AllXInfos() { return xInfos_.values();}
+    QList<ICUserIOInfo> AllYInfos() { return yInfos_.values();}
+
+    ICUserIOInfo XInfo(int id) { return xInfos_.value(id, ICUserIOInfo());}
+
+private:
+    explicit ICUserDefineConfig(){}
+    static ICUserDefineConfigSPTR instance_;
+
+private:
+    void ReadIOInfos_(const QString& path, UserIOInfos& infos);
+    void ReadPointInfos_(const QString& path);
+    void ReadActionInfos_(const QString& path);
+    UserIOInfos xInfos_;
+    UserIOInfos yInfos_;
+    UserPointInfos pointInfos_;
+    UserActionInfos actionInfos_;
+};
+
+typedef ICUserDefineConfig::ICUserDefineConfigSPTR ICUserDefineConfigSPTR;
+typedef ICUserDefineConfig::ICUserDefineConfigWPTR ICUserDefineConfigWPTR;
 
 #endif // ICSYSTEMCONFIG_H

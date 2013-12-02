@@ -2,7 +2,6 @@ INCLUDEPATH += $$PWD
 DEPENDPATH += $$PWD
 
 include (icpagetag/icpagetag.pri)
-include (icpageswitch/icpageswitch.pri)
 include (systemstatusframe/systemstatusframe.pri)
 include (icpagetab/icpagetab.pri)
 include (iciomonitor/iciomonitor.pri)

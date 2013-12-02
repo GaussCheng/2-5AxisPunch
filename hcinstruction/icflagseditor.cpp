@@ -15,7 +15,7 @@ ICFlagsEditor::ICFlagsEditor(QWidget *parent) :
 
     ICMoldItem item;
     ICSubMoldUIItem subItem;
-    item.SetAction(ICMold::ACTParallel);
+//    item.SetAction(ICMold::ACTParallel);
     item.SetSubNum(255);
     mainArmInsideGet_.SetBaseItem(item);
     mainArmOutsideGet_.SetBaseItem(item);
@@ -31,13 +31,13 @@ ICFlagsEditor::ICFlagsEditor(QWidget *parent) :
     subItem.SetSyncItem(true);
     mainArmInsideGet_.AddSubMoldUIItem(subItem);
     mainArmOutsideGet_.AddSubMoldUIItem(subItem);
-    item.SetAction(ICMold::ACTVICEDOWN);
+//    item.SetAction(ICMold::ACTVICEDOWN);
     item.SetSVal(0);
     subItem.SetBaseItem(item);
     subArmInsideGet_.AddSubMoldUIItem(subItem);
     subArmOUtsideGet_.AddSubMoldUIItem(subItem);
 
-    item.SetAction(ICMold::ACTMAINFORWARD);
+//    item.SetAction(ICMold::ACTMAINFORWARD);
     item.SetSubNum(1);
     item.SetPos(0);
     item.SetDVal(5);
@@ -46,7 +46,7 @@ ICFlagsEditor::ICFlagsEditor(QWidget *parent) :
     subItem.SetSyncItem(true);
     mainArmInsideGet_.AddSubMoldUIItem(subItem);
     mainArmOutsideGet_.AddSubMoldUIItem(subItem);
-    item.SetAction(ICMold::ACTVICEFORWARD);
+//    item.SetAction(ICMold::ACTVICEFORWARD);
     item.SetSVal(0);
     subItem.SetBaseItem(item);
     subArmInsideGet_.AddSubMoldUIItem(subItem);
@@ -64,7 +64,7 @@ ICFlagsEditor::ICFlagsEditor(QWidget *parent) :
     subArmInsideGet_.AddSubMoldUIItem(subItem);
     subArmOUtsideGet_.AddSubMoldUIItem(subItem);
 
-    item.SetAction(ICMold::ACTMAINBACKWARD);
+//    item.SetAction(ICMold::ACTMAINBACKWARD);
     item.SetSubNum(3);
     item.SetPos(0);
     item.SetDVal(5);
@@ -73,7 +73,7 @@ ICFlagsEditor::ICFlagsEditor(QWidget *parent) :
     subItem.SetSyncItem(true);
     mainArmInsideGet_.AddSubMoldUIItem(subItem);
     mainArmOutsideGet_.AddSubMoldUIItem(subItem);
-    item.SetAction(ICMold::ACTVICEBACKWARD);
+//    item.SetAction(ICMold::ACTVICEBACKWARD);
     item.SetSVal(0);
     subItem.SetBaseItem(item);
     subArmInsideGet_.AddSubMoldUIItem(subItem);
@@ -88,7 +88,7 @@ ICFlagsEditor::ICFlagsEditor(QWidget *parent) :
     subItem.SetSyncItem(true);
     mainArmInsideGet_.AddSubMoldUIItem(subItem);
     mainArmOutsideGet_.AddSubMoldUIItem(subItem);
-    item.SetAction(ICMold::ACTVICEUP);
+//    item.SetAction(ICMold::ACTVICEUP);
     item.SetSVal(0);
     subItem.SetBaseItem(item);
     subArmInsideGet_.AddSubMoldUIItem(subItem);
@@ -195,22 +195,22 @@ QList<ICMoldItem> ICFlagsEditor::CreateCommandImpl() const
 
 ICTopMoldUIItem ICFlagsEditor::CreateTopUIItem() const
 {
-    const int currentIndex = ui->flagListWidget->currentRow();
-    if(currentIndex == 0)
-    {
-        return mainArmInsideGet_;
-    }
-    else if(currentIndex == 1)
-    {
-        return subArmInsideGet_;
-    }
-    else if(currentIndex == 2)
-    {
-        return mainArmOutsideGet_;
-    }
-    else if(currentIndex == 3)
-    {
-        return subArmOUtsideGet_;
-    }
+//    const int currentIndex = ui->flagListWidget->currentRow();
+//    if(currentIndex == 0)
+//    {
+//        return mainArmInsideGet_;
+//    }
+//    else if(currentIndex == 1)
+//    {
+//        return subArmInsideGet_;
+//    }
+//    else if(currentIndex == 2)
+//    {
+//        return mainArmOutsideGet_;
+//    }
+//    else if(currentIndex == 3)
+//    {
+//        return subArmOUtsideGet_;
+//    }
     return ICTopMoldUIItem();
 }

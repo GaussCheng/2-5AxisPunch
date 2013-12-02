@@ -182,34 +182,34 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
             ui->badProductBox->show();
         }
         /************任务：待机点姿势可以修改*******/
-        if(item->Action() == ICMold::ACTPOSEHORI || item->Action() == ICMold::ACT_PoseHori2)
-        {
-            ui->horizontalBox->show();
-            ui->verticalBox->show();
-            ui->horizontalBox->setChecked(true);
-        }
-        else if(item->Action() == ICMold::ACTPOSEVERT || item->Action() == ICMold::ACT_PoseVert2)
-        {
-            ui->horizontalBox->show();
-            ui->verticalBox->show();
-            ui->verticalBox->setChecked(true);
-        }
-        //子程序编辑，可以修改返回步号
-        else if(item->Action() == ICMold::ACTCHECKINPUT)
-        {
-            ui->delayLabel->setText(tr("Return Step"));
-            ui->delayTimeEdit->SetDecimalPlaces(0);
-            ui->delayTimeEdit->setValidator(returnStepValidator);
-            ui->delayUnitLabel->hide();
-            ui->limitLabel->show();
-            ui->limitTimeEdit->show();
-            ui->limitUnitLabel->show();
-            ui->limitTimeEdit->SetThisIntToThisText(item->Pos());
-        }
-        else if(item->Action() == ICMold::ACT_WaitMoldOpened && item->SVal() != 1)
-        {
-            ui->delayLabel->setText(tr("Limit Time"));
-        }
+//        if(item->Action() == ICMold::ACTPOSEHORI || item->Action() == ICMold::ACT_PoseHori2)
+//        {
+//            ui->horizontalBox->show();
+//            ui->verticalBox->show();
+//            ui->horizontalBox->setChecked(true);
+//        }
+//        else if(item->Action() == ICMold::ACTPOSEVERT || item->Action() == ICMold::ACT_PoseVert2)
+//        {
+//            ui->horizontalBox->show();
+//            ui->verticalBox->show();
+//            ui->verticalBox->setChecked(true);
+//        }
+//        //子程序编辑，可以修改返回步号
+//        else if(item->Action() == ICMold::ACTCHECKINPUT)
+//        {
+//            ui->delayLabel->setText(tr("Return Step"));
+//            ui->delayTimeEdit->SetDecimalPlaces(0);
+//            ui->delayTimeEdit->setValidator(returnStepValidator);
+//            ui->delayUnitLabel->hide();
+//            ui->limitLabel->show();
+//            ui->limitTimeEdit->show();
+//            ui->limitUnitLabel->show();
+//            ui->limitTimeEdit->SetThisIntToThisText(item->Pos());
+//        }
+//        else if(item->Action() == ICMold::ACT_WaitMoldOpened && item->SVal() != 1)
+//        {
+//            ui->delayLabel->setText(tr("Limit Time"));
+//        }
     }
     /******************BUG#117****************************/
     else if(item->Clip() == ICMold::ACTCLIP7ON
@@ -288,27 +288,27 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
     int isok = exec();
     if(isok == QDialog::Accepted)
     {
-        if(item->Action() == ICMold::ACTCHECKINPUT)
-        {
-            item->SetPos(ui->limitTimeEdit->TransThisTextToThisInt());
-        }
-        else
-        {
+//        if(item->Action() == ICMold::ACTCHECKINPUT)
+//        {
+//            item->SetPos(ui->limitTimeEdit->TransThisTextToThisInt());
+//        }
+//        else
+//        {
 //            item->SetPos(ui->posEdit->TransThisTextToThisInt());
             item->SetActualPos(ui->posEdit->TransThisTextToThisInt());
-        }
-        if(item->Clip() == ICMold::ACTLAYOUTON)
-        {
-            item->SetSVal(ui->selectEdit->TransThisTextToThisInt() - 1);
-        }
-        else if(isMoldCount)
-        {
-            item->SetActualMoldCount(ui->speedEdit->TransThisTextToThisInt());
-        }
-        else
-        {
+//        }
+//        if(item->Clip() == ICMold::ACTLAYOUTON)
+//        {
+//            item->SetSVal(ui->selectEdit->TransThisTextToThisInt() - 1);
+//        }
+//        else if(isMoldCount)
+//        {
+//            item->SetActualMoldCount(ui->speedEdit->TransThisTextToThisInt());
+//        }
+//        else
+//        {
             item->SetSVal(ui->speedEdit->TransThisTextToThisInt());
-        }
+//        }
         
         item->SetDVal(ui->delayTimeEdit->TransThisTextToThisInt());
         item->SetEarlyEnd(ui->earlyEndCheckBox->isChecked());
@@ -341,29 +341,29 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
         
         
         /************接以上任务*************/
-        if(ui->verticalBox->isChecked() && !ui->verticalBox->isHidden())
-        {
-            if(item->Action() == ICMold::ACTPOSEHORI || item->Action() == ICMold::ACTPOSEVERT)
-            {
-                item->SetAction(ICMold::ACTPOSEVERT);
-            }
-            else
-            {
-                item->SetAction(ICMold::ACT_PoseVert2);
-            }
-        }
+//        if(ui->verticalBox->isChecked() && !ui->verticalBox->isHidden())
+//        {
+//            if(item->Action() == ICMold::ACTPOSEHORI || item->Action() == ICMold::ACTPOSEVERT)
+//            {
+//                item->SetAction(ICMold::ACTPOSEVERT);
+//            }
+//            else
+//            {
+//                item->SetAction(ICMold::ACT_PoseVert2);
+//            }
+//        }
         
-        if(ui->horizontalBox->isChecked() && !ui->horizontalBox->isHidden())
-        {
-            if(item->Action() == ICMold::ACTPOSEVERT || item->Action() == ICMold::ACTPOSEHORI)
-            {
-                item->SetAction(ICMold::ACTPOSEHORI);
-            }
-            else
-            {
-                item->SetAction(ICMold::ACT_PoseHori2);
-            }
-        }
+//        if(ui->horizontalBox->isChecked() && !ui->horizontalBox->isHidden())
+//        {
+//            if(item->Action() == ICMold::ACTPOSEVERT || item->Action() == ICMold::ACTPOSEHORI)
+//            {
+//                item->SetAction(ICMold::ACTPOSEHORI);
+//            }
+//            else
+//            {
+//                item->SetAction(ICMold::ACT_PoseHori2);
+//            }
+//        }
         
     }
     return isok;
@@ -377,8 +377,9 @@ void ICInstructModifyDialog::on_setButton_clicked()
     }
     int currentPos = 0;
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    uint axisLast = host->HostStatus(ICVirtualHost::AxisLastPos1).toUInt() |
-            (host->HostStatus(ICVirtualHost::AxisLastPos2).toUInt() << 16);
+//    uint axisLast = host->HostStatus(ICVirtualHost::AxisLastPos1).toUInt() |
+//            (host->HostStatus(ICVirtualHost::AxisLastPos2).toUInt() << 16);
+    uint axisLast = 0;
     if(currentItem->Action() == ICMold::GX)
     {
         currentPos = host->GetActualPos(ICVirtualHost::ICAxis_AxisX1, axisLast);

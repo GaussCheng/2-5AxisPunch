@@ -4,6 +4,7 @@
 #include "ickeyboard.h"
 #include "icsplashscreen.h"
 #include "icparameterssave.h"
+#include "icsystemconfig.h"
 
 #ifdef Q_WS_WIN
 #include <QFile>
@@ -23,7 +24,9 @@ int main(int argc, char *argv[])
 //    qApp->setStyleSheet("./stylesheet/global.qss");
     ICParametersSave* paraSave = ICParametersSave::Instance();
     paraSave->SetCountry(paraSave->Country());
+    ICUserDefineConfig::Instance()->Init();
     QPixmap splashPixmap("resource/startup_page.png");
+    splashPixmap = splashPixmap.scaled(640, 480);
     ICSplashScreen *splash= new ICSplashScreen(splashPixmap);
     splash->SetRange(0, 20);
     splash->show();
@@ -33,7 +36,7 @@ int main(int argc, char *argv[])
     ICVirtualHost host;
     MainFrame w(splash);
     w.show();
-    splash->finish(&w);
+//    splash->finish(&w);
     delete splash;
     return a.exec();
 }

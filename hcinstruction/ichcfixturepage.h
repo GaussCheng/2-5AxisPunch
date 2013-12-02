@@ -8,6 +8,7 @@
 #include <QPixmap>
 #include "icinstructioneditorbase.h"
 #include "iclineeditwithvirtualnumerickeypad.h"
+#include "icsystemconfig.h"
 
 class QAbstractButton;
 class QLabel;
@@ -37,16 +38,10 @@ private Q_SLOTS:
 
 private:
     Ui::ICHCFixturePage *ui;
-    QVector<QAbstractButton*> settingButtons_;
-    QVector<ICLineEditWithVirtualNumericKeypad*> delayEdits_;
-    QMap<QAbstractButton*, uint> buttonToClip_;
-    QMap<uint, uint> onClipToOffClip_;
-    QMap<uint, uint> offClipToOnClip_;
-    QStringList ioNames_;
-    QMap<QAbstractButton*, QPair<int, int> > commandKeyMap_;
-    QSignalMapper buttonSignalMapper_;
     QPixmap onPixmap_;
     QPixmap offPixmap_;
+
+    QMap<int, ICUserActionInfo> rowToInfoMap_;
 };
 
 #endif // ICHCFIXTUREPAGE_H

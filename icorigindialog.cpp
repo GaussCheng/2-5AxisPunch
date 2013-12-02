@@ -86,9 +86,9 @@ void ICOriginDialog::StepChanged(int step)
         host->ChangeSystemParameter(ICVirtualHost::SYS_Z_Origin, host->HostStatus(ICVirtualHost::DbgZ0).toUInt());
         host->ChangeSystemParameter(ICVirtualHost::SYS_P_Origin, host->HostStatus(ICVirtualHost::DbgP0).toUInt());
         host->ChangeSystemParameter(ICVirtualHost::SYS_Q_Origin, host->HostStatus(ICVirtualHost::DbgQ0).toUInt());
-        host->ChangeSystemParameter(ICVirtualHost::SYS_A_Origin, host->HostStatus(ICVirtualHost::DbgA0).toUInt());
-        host->ChangeSystemParameter(ICVirtualHost::SYS_B_Origin, host->HostStatus(ICVirtualHost::DbgB0).toUInt());
-        host->ChangeSystemParameter(ICVirtualHost::SYS_C_Origin, host->HostStatus(ICVirtualHost::DbgC0).toUInt());
+//        host->ChangeSystemParameter(ICVirtualHost::SYS_A_Origin, host->HostStatus(ICVirtualHost::DbgA0).toUInt());
+//        host->ChangeSystemParameter(ICVirtualHost::SYS_B_Origin, host->HostStatus(ICVirtualHost::DbgB0).toUInt());
+//        host->ChangeSystemParameter(ICVirtualHost::SYS_C_Origin, host->HostStatus(ICVirtualHost::DbgC0).toUInt());
         host->SaveSystemConfig();
         this->accept();
     }

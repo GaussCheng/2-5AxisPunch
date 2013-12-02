@@ -4,101 +4,42 @@
 #include <QStackedLayout>
 #include <QButtonGroup>
 
-//#include "hcmanualalternateioframe.h"
-#include "hcmanualfixtureframe.h"
-//#include "hcmanualfunctionframe.h"
-#include "hcmanualsockerframe.h"
-#include "hcmanualotherioframe.h"
-#include "hcmanualreservepage.h"
-
 #include "iccommandprocessor.h"
 #include "icactioncommand.h"
 #include "icvirtualhost.h"
 #include "ickeyboard.h"
 #include "ictimerpool.h"
 #include "icparameterssave.h"
+#include "icaxiskeyboard.h"
+#include "iccommandprocessor.h"
+#include "icsystemconfig.h"
 
 ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     QFrame(parent),
-    ui(new Ui::ICHCManualOperationPageFrame),
-    manualOtherIOPage_(NULL),
-    manualFixturePage_(NULL),
-    manualSuckerPage_(NULL),
-    manualAdjustPage_(NULL),
-    reservePage_(NULL),
-    serveAxisPage_(NULL),
-    centralStackedLayout_(new QStackedLayout),
-    currentAction_(-1)
+    ui(new Ui::ICHCManualOperationPageFrame)
 {
     ui->setupUi(this);
-//    ui->adjustToolButton->hide();
-    buttonGroup_ = new QButtonGroup();
-    ui->centralFrame->setLayout(centralStackedLayout_);
-
     InitInterface();
-//    InitSignal();
-    ui->fixtureToolButton->click();
+    modifyDialog_ = new AxisModifyDialog(this);
 }
 
 ICHCManualOperationPageFrame::~ICHCManualOperationPageFrame()
 {
-    delete buttonGroup_;
     delete ui;
 }
 
 void ICHCManualOperationPageFrame::showEvent(QShowEvent *e)
 {
-//    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
-    if(ICParametersSave::Instance()->IsAdjustFunctionOn())
-    {
-        ui->adjustToolButton->show();
-    }
-    else
-    {
-        ui->adjustToolButton->hide();
-    }
-    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisA) == ICVirtualHost::ICAxisDefine_None)
-    {
-        ui->aAddButton->hide();
-        ui->aSubButton->hide();
-    }
-    else
-    {
-        ui->aAddButton->show();
-        ui->aSubButton->show();
-    }
-    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisB) == ICVirtualHost::ICAxisDefine_None)
-    {
-        ui->bAddButton->hide();
-        ui->bSubButton->hide();
-    }
-    else
-    {
-        ui->bAddButton->show();
-        ui->bSubButton->show();
-    }
-//  //  if(manualAdjustPage_ != NULL)
-//  //  {
-//   //     manualAdjustPage_->ClearStatus();
-//  //  }
     QFrame::showEvent(e);
     ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnManual, 0);
     timerID_ = ICTimerPool::Instance()->Start(ICTimerPool::RefreshTime, this, SLOT(StatusRefreshed()));
-//    connect(ICVirtualHost::GlobalVirtualHost(),
-//            SIGNAL(StatusRefreshed()),
-//            this,
-//            SLOT(StatusRefreshed()));
 }
 
 void ICHCManualOperationPageFrame::hideEvent(QHideEvent *e)
 {
     QFrame::hideEvent(e);
     ICTimerPool::Instance()->Stop(timerID_, this, SLOT(StatusRefreshed()));
-//    disconnect(ICVirtualHost::GlobalVirtualHost(),
-//               SIGNAL(StatusRefreshed()),
-//               this,
-//               SLOT(StatusRefreshed()));
+    ICMold::CurrentMold()->SaveMoldParamsFile();
 }
 
 void ICHCManualOperationPageFrame::changeEvent(QEvent *e)
@@ -107,12 +48,7 @@ void ICHCManualOperationPageFrame::changeEvent(QEvent *e)
     switch (e->type()) {
     case QEvent::LanguageChange:
     {
-        ui->retranslateUi(this);
-        ui->fixtureToolButton->setText(tr("Fixture"));
-        ui->suckerToolButton->setText(tr("Sucker"));
-        ui->otherToolButton->setText(tr("Other"));
-        ui->adjustToolButton->setText(tr("Adjust"));
-        ui->reserveToolButton->setText(tr("Reserve"));
+//        ui->retranslateUi(this);
     }
         break;
     default:
@@ -122,306 +58,217 @@ void ICHCManualOperationPageFrame::changeEvent(QEvent *e)
 
 void ICHCManualOperationPageFrame::InitInterface()
 {
-//    servoArmControlPage_ = new HCServoArmControlFrame;
-//    centralStackedLayout_->addWidget(servoArmControlPage_);
+//    ui->xCurrentPos->setAttribute(Qt::P);
+    ui->xPos->SetDecimalPlaces(1);
+    ui->yPos->SetDecimalPlaces(1);
+    ui->zPos->SetDecimalPlaces(1);
+    ui->xPos->setValidator(new QIntValidator(0, 65530, this));
+    ui->yPos->setValidator(ui->xPos->validator());
+    ui->zPos->setValidator(ui->xPos->validator());
+    ui->buttonGroup->setId(ui->point1, 0);
+    ui->buttonGroup->setId(ui->point2, 1);
+    ui->buttonGroup->setId(ui->point3, 2);
+    ui->buttonGroup->setId(ui->point4, 3);
+    ui->buttonGroup->setId(ui->point5, 4);
+    ui->buttonGroup->setId(ui->point6, 5);
+    ui->buttonGroup->setId(ui->point7, 6);
+    ui->buttonGroup->setId(ui->point8, 7);
+    ui->buttonGroup->setId(ui->point9, 8);
+    ui->buttonGroup->setId(ui->point10, 9);
 
-    ui->fixtureToolButton->setText(tr("Fixture"));
-    ui->suckerToolButton->setText(tr("Sucker"));
-    ui->otherToolButton->setText(tr("Other"));
-    ui->adjustToolButton->setText(tr("Adjust"));
-    ui->reserveToolButton->setText(tr("Reserve"));
-//    ui->fixtureToolButton->setCheckable(true);
-//    ui->suckerToolButton->setCheckable(true);
-//    ui->otherToolButton->setCheckable(true);
-//    ui->adjustToolButton->setCheckable(true);
-    buttonGroup_->addButton(ui->fixtureToolButton);
-    buttonGroup_->addButton(ui->suckerToolButton);
-    buttonGroup_->addButton(ui->otherToolButton);
-    buttonGroup_->addButton(ui->adjustToolButton);
-    buttonGroup_->addButton(ui->reserveToolButton);
-#ifdef HC_8AXIS
-//    ui->x1AxisButton->hide();
-//    ui->y1AxisButton->hide();
-//    ui->zAxisButton->hide();
-//    ui->x2AxisButton->hide();
-//    ui->y2AxisButton->hide();
-//    ui->aAxisButton->hide();
-//    ui->bAxisButton->hide();
-//    ui->cAxisButton->hide();
-    connect(ui->aAddButton,
-            SIGNAL(released()),
-            SLOT(OnButtonReleased()));
-    connect(ui->aSubButton,
-            SIGNAL(released()),
-            SLOT(OnButtonReleased()));
-    connect(ui->bAddButton,
-            SIGNAL(released()),
-            SLOT(OnButtonReleased()));
-    connect(ui->bSubButton,
-            SIGNAL(released()),
-            SLOT(OnButtonReleased()));
-//    ui->x1AxisButton->setText(tr("X1 Axis"));
-//    ui->y1AxisButton->setText(tr("Y1 Axis"));
-//    ui->zAxisButton->setText(tr("Z Axis"));
-//    ui->x2AxisButton->setText(tr("X2 Axis"));
-//    ui->y2AxisButton->setText(tr("Y2 Axis"));
-//    ui->aAxisButton->setText(tr("A Axis"));
-//    ui->bAxisButton->setText(tr("B Axis"));
-//    ui->cAxisButton->setText(tr("C Axis"));
-//    buttonGroup_->addButton(ui->x1AxisButton);
-//    buttonGroup_->addButton(ui->y1AxisButton);
-//    buttonGroup_->addButton(ui->zAxisButton);
-//    buttonGroup_->addButton(ui->x2AxisButton);
-//    buttonGroup_->addButton(ui->y2AxisButton);
-//    buttonGroup_->addButton(ui->aAxisButton);
-//    buttonGroup_->addButton(ui->bAxisButton);
-//    buttonGroup_->addButton(ui->cAxisButton);
-//    ui->currentPose->hide();
-//    ui->currentAction->hide();
-#endif
-    QList<QAbstractButton*> buttons = buttonGroup_->buttons();
-    for(int i = 0; i != buttons.size(); ++i)
+    ui->actionGroup->setId(ui->action1, 0);
+    ui->actionGroup->setId(ui->action2, 1);
+    ui->actionGroup->setId(ui->action3, 2);
+    ui->actionGroup->setId(ui->action4, 3);
+    ui->actionGroup->setId(ui->action5, 4);
+    ui->actionGroup->setId(ui->action6, 5);
+    ui->actionGroup->setId(ui->action7, 6);
+    ui->actionGroup->setId(ui->action8, 7);
+    ui->actionGroup->setId(ui->action9, 8);
+    ui->actionGroup->setId(ui->action10, 9);
+    ui->actionGroup->setId(ui->action11, 10);
+    ui->actionGroup->setId(ui->action12, 11);
+    ui->actionGroup->setId(ui->action13, 12);
+    ui->actionGroup->setId(ui->action14, 13);
+    ui->actionGroup->setId(ui->action15, 14);
+    ui->actionGroup->setId(ui->action16, 15);
+    ui->actionGroup->setId(ui->action17, 16);
+    ui->actionGroup->setId(ui->action18, 17);
+    ui->actionGroup->setId(ui->action19, 18);
+    ui->actionGroup->setId(ui->action20, 19);
+    ui->actionGroup->setId(ui->action21, 20);
+    ui->actionGroup->setId(ui->action22, 21);
+    ui->actionGroup->setId(ui->action23, 22);
+    ui->actionGroup->setId(ui->action24, 23);
+    ui->actionGroup->setId(ui->action25, 24);
+    ui->actionGroup->setId(ui->action26, 25);
+    ui->actionGroup->setId(ui->action27, 26);
+    ui->actionGroup->setId(ui->action28, 27);
+    ui->actionGroup->setId(ui->action29, 28);
+    ui->actionGroup->setId(ui->action30, 29);
+    ui->actionGroup->setId(ui->action31, 30);
+    ui->actionGroup->setId(ui->action32, 31);
+    ui->actionGroup->setExclusive(false);
+    ICUserDefineConfigSPTR config = ICUserDefineConfig::Instance();
+    QList<QAbstractButton*> buttons = ui->buttonGroup->buttons();
+    const int bsize = buttons.size();
+    int tmp;
+    for(int i = 0; i != bsize; ++i)
     {
-        buttons[i]->setCheckable(true);
+        tmp = ui->buttonGroup->id(buttons.at(i));
+        buttonSignalMapper_.setMapping(buttons.at(i), tmp);
         connect(buttons.at(i),
                 SIGNAL(clicked()),
-                this,
-                SLOT(ShowOptionPage()));
+                &buttonSignalMapper_,
+                SLOT(map()));
+        buttons[i]->setText(config->GetPointsLocaleName(tmp));
+
     }
-    buttonGroup_->setExclusive(true);
+    connect(&buttonSignalMapper_,
+            SIGNAL(mapped(int)),
+            SLOT(OnPointSelected(int)));
+
+    QList<QAbstractButton*> actions = ui->actionGroup->buttons();
+    const int asize = actions.size();
+    for(int i = 0; i != asize; ++i)
+    {
+        tmp = ui->actionGroup->id(actions.at(i));
+        actionSignalMapper_.setMapping(actions.at(i), tmp);
+        connect(actions.at(i),
+                SIGNAL(clicked()),
+                &actionSignalMapper_,
+                SLOT(map()));
+//        qDebug()<<config->GetIOActionLocaleName(tmp);
+        if(!config->GetIOActionLocaleName(tmp).isEmpty())
+        {
+            actions[i]->setText(config->GetIOActionLocaleName(tmp));
+        }
+        else
+        {
+            actions[i]->hide();
+        }
+    }
+    connect(&actionSignalMapper_,
+            SIGNAL(mapped(int)),
+            SLOT(OnActionTriggered(int)));
 
 }
 
 void ICHCManualOperationPageFrame::InitSignal()
 {
-//    connect(ui->otherToolButton,
-//            SIGNAL(clicked()),
-//            this,
-//            SLOT(ShowOptionPage()));
-//    connect(ui->fixtureToolButton,
-//            SIGNAL(clicked()),
-//            this,
-//            SLOT(ShowOptionPage()));
-//    connect(ui->suckerToolButton,
-//            SIGNAL(clicked()),
-//            this,
-//            SLOT(ShowOptionPage()));
-//    connect(ui->adjustToolButton,
-//            SIGNAL(clicked()),
-//            this,
-//            SLOT(ShowOptionPage()));
 
 }
 
-//void ICHCManualOperationPageFrame::ShowAxisMovementPage()
-//{
-//    QAbstractButton *clickedButton = qobject_cast<QAbstractButton *>(sender());
-
-//    Q_ASSERT_X(centralStackedLayout_ != NULL, "ICHCManualOperationPageFrame", "centralStackedLayout is NULL");
-//    centralStackedLayout_->setCurrentWidget(servoArmControlPage_);
-//    servoArmControlPage_->SetCurrentAxis(clickedButton->text());
-//}
-
-void ICHCManualOperationPageFrame::ShowOptionPage()
-{
-    QAbstractButton *clickedButton = qobject_cast<QAbstractButton *>(sender());
-
-    Q_ASSERT_X(centralStackedLayout_ != NULL, "ICHCManualOperationPageFrame", "centralStackedLayout is NULL");
-    if(manualFixturePage_ == NULL && clickedButton == ui->fixtureToolButton)
-    {
-        manualFixturePage_ = new HCManualFixtureFrame;
-        buttonToPage_.insert(ui->fixtureToolButton, manualFixturePage_);
-        centralStackedLayout_->addWidget(manualFixturePage_);
-    }
-    else if(manualOtherIOPage_ == NULL && clickedButton == ui->otherToolButton)
-    {
-        manualOtherIOPage_ = new HCManualOtherIOFrame;
-        buttonToPage_.insert(ui->otherToolButton, manualOtherIOPage_);
-        centralStackedLayout_->addWidget(manualOtherIOPage_);
-    }
-    else if(manualSuckerPage_ == NULL && clickedButton == ui->suckerToolButton)
-    {
-        manualSuckerPage_ = new HCManualSockerFrame;
-        buttonToPage_.insert(ui->suckerToolButton, manualSuckerPage_);
-        centralStackedLayout_->addWidget(manualSuckerPage_);
-    }
-    else if(manualAdjustPage_ == NULL && clickedButton == ui->adjustToolButton)
-    {
-        manualAdjustPage_ = new HCManualAdjustFrame;
-        buttonToPage_.insert(ui->adjustToolButton, manualAdjustPage_);
-        centralStackedLayout_->addWidget(manualAdjustPage_);
-    }
-    else if(reservePage_ == NULL && clickedButton == ui->reserveToolButton)
-    {
-        reservePage_ = new HCManualReservePage();
-        buttonToPage_.insert(ui->reserveToolButton, reservePage_);
-        centralStackedLayout_->addWidget(reservePage_);
-    }
-    else if(serveAxisPage_ == NULL)
-    {
-        serveAxisPage_ = new HCServoArmControlFrame();
-        centralStackedLayout_->addWidget(serveAxisPage_);
-//        buttonToPage_.insert(ui->x1AxisButton, serveAxisPage_);
-//        buttonToPage_.insert(ui->y1AxisButton, serveAxisPage_);
-//        buttonToPage_.insert(ui->zAxisButton, serveAxisPage_);
-//        buttonToPage_.insert(ui->x2AxisButton, serveAxisPage_);
-//        buttonToPage_.insert(ui->y2AxisButton, serveAxisPage_);
-//        buttonToPage_.insert(ui->aAxisButton, serveAxisPage_);
-//        buttonToPage_.insert(ui->bAxisButton, serveAxisPage_);
-//        buttonToPage_.insert(ui->cAxisButton, serveAxisPage_);
-//        buttonToAxis_.insert(ui->x1AxisButton, ICVirtualHost::ICAxis_AxisX1);
-//        buttonToAxis_.insert(ui->y1AxisButton, ICVirtualHost::ICAxis_AxisY1);
-//        buttonToAxis_.insert(ui->zAxisButton, ICVirtualHost::ICAxis_AxisZ);
-//        buttonToAxis_.insert(ui->x2AxisButton, ICVirtualHost::ICAxis_AxisX2);
-//        buttonToAxis_.insert(ui->y2AxisButton, ICVirtualHost::ICAxis_AxisY2);
-//        buttonToAxis_.insert(ui->aAxisButton, ICVirtualHost::ICAxis_AxisA);
-//        buttonToAxis_.insert(ui->bAxisButton, ICVirtualHost::ICAxis_AxisB);
-//        buttonToAxis_.insert(ui->cAxisButton, ICVirtualHost::ICAxis_AxisC);
-    }
-    if(buttonToAxis_.contains(clickedButton))
-    {
-        serveAxisPage_->SetCurrentAxis(static_cast<ICVirtualHost::ICAxis>(buttonToAxis_.value(clickedButton)));
-    }
-
-    centralStackedLayout_->setCurrentWidget(buttonToPage_.value(clickedButton));
-}
-
+static int oldX = -1;
+static int oldY = -1;
+static int oldZ = -1;
+static int oldS = -1;
 void ICHCManualOperationPageFrame::StatusRefreshed()
 {
-    bool isAxisOn = !ui->aAddButton->isHidden();
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    QString temp;
-    if(host->IsInputOn(0))
+    int pos = host->HostStatus(ICVirtualHost::XPos).toInt();
+    if(pos != oldX)
     {
-        temp = tr("Horizontal-1 Limit On");
+        oldX = pos;
+        ui->xCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
     }
-    else if(host->IsInputOn(1))
+    pos = host->HostStatus(ICVirtualHost::YPos).toInt();
+    if(pos != oldY)
     {
-        temp = tr("Vertical-1 Limit On");
+        oldY = pos;
+        ui->yCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
     }
-    else
+    pos = host->HostStatus(ICVirtualHost::ZPos).toInt();
+    if(pos != oldZ)
     {
-        temp.clear();
+        oldZ = pos;
+        ui->zCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
     }
-
-    if(host->IsInputOn(23) && isAxisOn)
+    pos = host->HostStatus(ICVirtualHost::DbgX0).toInt();
+    if(pos != oldS)
     {
-        temp += tr("/Horizontal-2 Limit On");
+        oldS = pos;
+        ui->speed->setText(QString::number(pos));
     }
-    else if(host->IsInputOn(11) && isAxisOn)
-    {
-        temp += tr("/Vertical-2 Limit On");
-    }
-
-    if(ui->currentPose->text() != temp)
-    {
-        ui->currentPose->setText(temp);
-    }
-
-
-    if(host->IsAction(12))
-    {
-        if(currentAction_ != 12)
-        {
-            currentAction_ = 12;
-            ui->currentAction->setText(tr("Horizontal-1"));
-        }
-    }
-    else if(host->IsAction(13))
-    {
-        if(currentAction_ != 13)
-        {
-            currentAction_ = 13;
-            ui->currentAction->setText(tr("Vertical-1"));
-        }
-    }
-    else if(host->IsAction(20) && isAxisOn)
-    {
-        if(currentAction_ != 20)
-        {
-            currentAction_ = 20;
-            ui->currentAction->setText(tr("Horizontal-2"));
-        }
-    }
-    else if(host->IsAction(21) && isAxisOn)
-    {
-        if(currentAction_ != 21)
-        {
-            currentAction_ = 21;
-            ui->currentAction->setText(tr("Vertical-2"));
-        }
-    }
-#ifdef Q_WS_X11
-    ui->currentPose->setText(tr("Vertical-1/Vertical-2"));
-#endif
-//    else if(host->IsAction(14))
-//    {
-//        if(currentAction_ != 14)
-//        {
-//            currentAction_ = 14;
-//            ui->currentAction->setText(tr("Sub Arm Up"));
-//        }
-//    }
-//    else if(host->IsAction(15))
-//    {
-//        if(currentAction_ != 15)
-//        {
-//            currentAction_ = 15;
-//            ui->currentAction->setText(tr("Sub Arm Down"));
-//        }
-//    }
-//    else if(host->IsAction(16))
-//    {
-//        if(currentAction_ != 16)
-//        {
-//            currentAction_ = 16;
-//            ui->currentAction->setText(tr("Sub Arm Forward"));
-//        }
-//    }
-//    else if(host->IsAction(17))
-//    {
-//        if(currentAction_ != 17)
-//        {
-//            currentAction_ = 17;
-//            ui->currentAction->setText(tr("Sub Arm Backward"));
-//        }
-//    }
 }
 
-void ICHCManualOperationPageFrame::on_aAddButton_pressed()
+//void ICHCManualOperationPageFrame::on_xPos_textChanged(const QString &arg1)
+//{
+//    int currentPoint = ui->buttonGroup->checkedId();
+//    ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(currentPoint * 3), ui->xPos->TransThisTextToThisInt());
+//}
+
+//void ICHCManualOperationPageFrame::on_yPos_textChanged(const QString &arg1)
+//{
+//    int currentPoint = ui->buttonGroup->checkedId();
+//    ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(currentPoint * 3 + 1), ui->yPos->TransThisTextToThisInt());
+//}
+
+//void ICHCManualOperationPageFrame::on_zPos_textChanged(const QString &arg1)
+//{
+//    int currentPoint = ui->buttonGroup->checkedId();
+//    ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(currentPoint * 3 + 2), ui->zPos->TransThisTextToThisInt());
+//}
+
+void ICHCManualOperationPageFrame::OnPointSelected(int id)
 {
-    ICKeyboard::Instace()->SetKeyValue(ICKeyboard::VFB_AAdd);
-    ICKeyboard::Instace()->SetPressed(true);
+    ICMold* currentMold  = ICMold::CurrentMold();
+    ui->xPos->blockSignals(true);
+    ui->yPos->blockSignals(true);
+    ui->zPos->blockSignals(true);
+    ui->xPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 3 )));
+    ui->yPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 3 + 1)));
+    ui->zPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 3 + 2)));
+//    ui->xPos->setEnabled(true);
+//    ui->yPos->setEnabled(true);
+//    ui->zPos->setEnabled(true);
+    ui->xPos->blockSignals(false);
+    ui->yPos->blockSignals(false);
+    ui->zPos->blockSignals(false);
 }
 
-void ICHCManualOperationPageFrame::OnButtonReleased()
+void ICHCManualOperationPageFrame::OnActionTriggered(int id)
 {
-//    ICKeyboard::Instace()->SetKeyValue(ICKeyboard::FB_NULL);
-    qDebug("release");
-    ICKeyboard::Instace()->SetPressed(false);
+    ICUserDefineConfigSPTR config = ICUserDefineConfig::Instance();
+    ICUserActionInfo info = config->GetActionByID(id);
+    ICManualRun cmd;
+    cmd.SetSlave(1);
+    cmd.SetGM(ICMold::GOutY + info.type);
+    cmd.SetPoint(info.pointNum);
+    cmd.SetIFVal(info.dir);
+    qDebug("Send**************");
+    ICCommandProcessor::Instance()->ExecuteCommand(cmd);
 }
 
-void ICHCManualOperationPageFrame::on_aSubButton_pressed()
+void ICHCManualOperationPageFrame::on_runButton_clicked()
 {
-    ICKeyboard::Instace()->SetKeyValue(ICKeyboard::VFB_ASub);
-    ICKeyboard::Instace()->SetPressed(true);
-}
-
-void ICHCManualOperationPageFrame::on_bSubButton_pressed()
-{
-    ICKeyboard::Instace()->SetKeyValue(ICKeyboard::VFB_BSub);
-    ICKeyboard::Instace()->SetPressed(true);
-}
-
-void ICHCManualOperationPageFrame::on_bAddButton_pressed()
-{
-    ICKeyboard::Instace()->SetKeyValue(ICKeyboard::VFB_BAdd);
-    ICKeyboard::Instace()->SetPressed(true);
-}
-void ICHCManualOperationPageFrame::AdjustFrameTransfer()
-{
-    if(manualAdjustPage_ != NULL)
+    if(ui->buttonGroup->checkedId() < 0)
     {
-        manualAdjustPage_->ChangeButtonColor();
+        return;
     }
+    ICManualRun cmd;
+    cmd.SetSlave(1);
+    cmd.SetGM(ICMold::GTo);
+    cmd.SetPoint(ui->buttonGroup->checkedId());
+//    cmd.SetIFVal(1);
+    ICCommandProcessor::Instance()->ExecuteCommand(cmd);
+}
+
+void ICHCManualOperationPageFrame::on_setButton_clicked()
+{
+    if(ui->buttonGroup->checkedId() < 0)
+    {
+        return;
+    }
+    ICPoint p;
+    p.pointID = ui->buttonGroup->checkedId();
+    p.x = ui->xPos->TransThisTextToThisInt();
+    p.y = ui->yPos->TransThisTextToThisInt();
+    p.z = ui->zPos->TransThisTextToThisInt();
+    modifyDialog_->StartModify(p);
+    OnPointSelected(p.pointID);
+//    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+//    ui->xPos->SetThisIntToThisText(host->HostStatus(ICVirtualHost::XPos).toInt());
+//    ui->yPos->SetThisIntToThisText(host->HostStatus(ICVirtualHost::YPos).toInt());
+//    ui->zPos->SetThisIntToThisText(host->HostStatus(ICVirtualHost::ZPos).toInt());
 }

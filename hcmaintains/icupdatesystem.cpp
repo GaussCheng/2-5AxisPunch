@@ -59,11 +59,6 @@ ICUpdateSystem::ICUpdateSystem(QWidget *parent) :
     connect(&timer_,
             SIGNAL(timeout()),
             SLOT(QueryStatus()));
-    RefreshRestTime();
-    connect(&(ICProgramHeadFrame::Instance()->restTime_),
-            SIGNAL(timeout()),
-            this,
-            SLOT(RefreshRestTime()));
 //    refresh_restTimer->start(1000*60*60);
 }
 
@@ -96,14 +91,6 @@ void ICUpdateSystem::changeEvent(QEvent *e)
 void ICUpdateSystem::showEvent(QShowEvent *e)
 {
 //    timer_.start(1000);
-    if(ICParametersSave::Instance()->IsRegisterFunctinOn())
-    {
-        ui->registerContainer->show();
-    }
-    else
-    {
-        ui->registerContainer->hide();
-    }
     ICVirtualHost::GlobalVirtualHost()->StopRefreshStatus();
     QFrame::showEvent(e);
 }
@@ -505,16 +492,6 @@ void ICUpdateSystem::on_updateLogoButton_clicked()
 }
 
 
-void ICUpdateSystem::on_generateBtn_clicked()
-{
-    QString ret;
-    qsrand(QDateTime::currentDateTime().toMSecsSinceEpoch());
-    for(int i = 0; i != 10; ++i)
-    {
-        ret.append(QString::number(qrand() % 10));
-    }
-    ui->machineCode->setText(ret);
-}
 
 int ICUpdateSystem::Register(const QString& code, const QString& machineCode)
 {
@@ -645,50 +622,6 @@ int ICUpdateSystem::Register(const QString& code, const QString& machineCode)
     return sortRet.right(6).toInt() * 24 * 7;
 }
 
-void ICUpdateSystem::on_registerBtn_clicked()
-{
-    if(ui->machineCode->text().isNull())
-    {
-        ui->tipLabel->setText(tr("Wrong Register Code!"));
-        return;
-    }
-    int hour = Register(ui->registerCode->text(), ui->machineCode->text());
-    if(hour == -1)
-    {
-        ui->tipLabel->setText(tr("Wrong Register Code!"));
-    }
-    else
-    {
-//        ICAppSettings().SetUsedTime(hour);
-        ICParametersSave::Instance()->SetRestTime(hour);
-        ui->tipLabel->setText(tr("Register Success!"));
-        if(hour == 0)
-        {
-            ui->restTime->setText(tr("No Limit"));
-        }
-        else
-        {
-            ui->restTime->setText(QString::number(hour) + tr("hour"));
-        }
-        emit RegisterSucceed();
-        ui->machineCode->clear();
-        ui->registerCode->clear();
-
-//        ICDALHelper::UpdateConfigValue(ICAddr_System_OtherUsedTime, hour);
-    }
-    ICProgramHeadFrame::Instance()->ReashRestTime();
-}
-
-void ICUpdateSystem::RefreshRestTime()
-{
-    int rest_time = ICParametersSave::Instance()->RestTime(0);
-    if(rest_time == 0)
-        ui->restTime->setText(tr("No Limit"));
-    else if(rest_time > 0)
-        ui->restTime->setText(QString::number(rest_time) + tr("hour"));
-    else
-        ui->restTime->setText(tr("No Register!"));
-}
 
 //int pMap_[10];
 //int sortMap_[16] = {1,2,3,5,7,11,13,0,4,6,8,10,12,14,9,15};

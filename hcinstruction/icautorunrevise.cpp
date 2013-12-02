@@ -83,21 +83,21 @@ bool ICAutoRunRevise::ShowModifyItem(const ICMoldItem *item, ICMoldItem* ret, co
             ui->mmLabel->show();
             ui->precentLabel->show();
         }
-        else if(item->Action() == ICMold::ACT_WaitMoldOpened && item->SVal() != 1)
-        {
-            ui->label->setText(tr("Limit Time:"));
-        }
-        else if(item->Action() == ICMold::ACTCHECKINPUT)
-        {
-            ui->label->setText(tr("Return Step:"));
-            ui->delayEdit->SetDecimalPlaces(0);
-            ui->delayEdit->setValidator(returnStepValidator);
-            ui->sLabel->hide();
-            ui->limitEdit->show();
-            ui->limitTimeLabel->show();
-            ui->limitUnitLabel->show();
-            ui->limitEdit->SetThisIntToThisText(item->Pos());
-        }
+//        else if(item->Action() == ICMold::ACT_WaitMoldOpened && item->SVal() != 1)
+//        {
+//            ui->label->setText(tr("Limit Time:"));
+//        }
+//        else if(item->Action() == ICMold::ACTCHECKINPUT)
+//        {
+//            ui->label->setText(tr("Return Step:"));
+//            ui->delayEdit->SetDecimalPlaces(0);
+//            ui->delayEdit->setValidator(returnStepValidator);
+//            ui->sLabel->hide();
+//            ui->limitEdit->show();
+//            ui->limitTimeLabel->show();
+//            ui->limitUnitLabel->show();
+//            ui->limitEdit->SetThisIntToThisText(item->Pos());
+//        }
     }
     ui->posEdit->SetThisIntToThisText(0);
     int c = item->Clip();
@@ -124,24 +124,24 @@ bool ICAutoRunRevise::ShowModifyItem(const ICMoldItem *item, ICMoldItem* ret, co
     int isok = exec();
     if(isok == QDialog::Accepted)
     {
-        if(item->Action() == ICMold::ACT_WaitMoldOpened && item->SVal() != 1)
-        {
-            ret->SetPos(ui->limitEdit->TransThisTextToThisInt());
-        }
-        else
-        {
-            ret->SetPos(ui->posEdit->TransThisTextToThisInt());
-        }
+//        if(item->Action() == ICMold::ACT_WaitMoldOpened && item->SVal() != 1)
+//        {
+//            ret->SetPos(ui->limitEdit->TransThisTextToThisInt());
+//        }
+//        else
+//        {
+        ret->SetPos(ui->posEdit->TransThisTextToThisInt());
+//        }
         ret->SetDVal(ui->delayEdit->TransThisTextToThisInt());
 
-        if(isMoldCount)
-        {
-            ret->SetActualMoldCount(ui->speedEdit->TransThisTextToThisInt());
-        }
-        else
-        {
-            ret->SetSVal(ui->speedEdit->TransThisTextToThisInt());
-        }
+//        if(isMoldCount)
+//        {
+//            ret->SetActualMoldCount(ui->speedEdit->TransThisTextToThisInt());
+//        }
+//        else
+//        {
+        ret->SetSVal(ui->speedEdit->TransThisTextToThisInt());
+//        }
 //        ICMoldItem tempItem = *item;
 
 //        tempItem.SetPos(tempItem.Pos() + ui->posEdit->TransThisTextToThisInt());
@@ -167,14 +167,14 @@ bool ICAutoRunRevise::ShowModifyItem(const ICMoldItem *item, ICMoldItem* ret, co
 //#ifdef Q_WS_X11
         return true;
 //#endif
-        //return isSuccess;
-        //        if(isSuccess)
-        //        {
-        //            item->SetPos(tempItem.Pos());
-        //            item->SetSVal(tempItem.SVal());
-        //            item->SetDVal(tempItem.DVal());
-        //            return true;
-        //        }
+//        return isSuccess;
+//                if(isSuccess)
+//                {
+//                    item->SetPos(tempItem.Pos());
+//                    item->SetSVal(tempItem.SVal());
+//                    item->SetDVal(tempItem.DVal());
+//                    return true;
+//                }
     }
     return false;
 }

@@ -139,18 +139,18 @@ void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
     for(int i = 0; i != moldItems.size(); ++i)
     {
         tmpItem = moldItems.at(i);
-        if(tmpItem.Action() == ICMold::ACT_Cut)
-        {
-            if(checkToFixtureMap_.contains(tmpItem.SVal()))
-            {
-                tmpCount = fixtureToCountMap_.value(checkToFixtureMap_.value(tmpItem.SVal()));
-                if(*tmpCount > 0)
-                {
-                    *tmpCount -= 1;
-                }
-            }
-            continue;
-        }
+//        if(tmpItem.Action() == ICMold::ACT_Cut)
+//        {
+//            if(checkToFixtureMap_.contains(tmpItem.SVal()))
+//            {
+//                tmpCount = fixtureToCountMap_.value(checkToFixtureMap_.value(tmpItem.SVal()));
+//                if(*tmpCount > 0)
+//                {
+//                    *tmpCount -= 1;
+//                }
+//            }
+//            continue;
+//        }
         if(tmpItem.IsClip())
         {
             tmpClip = tmpItem.Clip();
@@ -260,53 +260,81 @@ void ICHCProgramMonitorFrame::SetProduct(int product)
 //{
 //    ui->currentProductsLabel->setText(QString::number(currentFinished));
 //}
-
+static int oldX = -1;
+static int oldY = -1;
+static int oldZ = -1;
+static int oldS = -1;
 void ICHCProgramMonitorFrame::StatusRefreshed()
 {
-
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    newTime_ = host->HostStatus(ICVirtualHost::DbgZ0).toUInt();
+    int pos = host->HostStatus(ICVirtualHost::XPos).toInt();
+    if(pos != oldX)
+    {
+        oldX = pos;
+        ui->xCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
+    }
+    pos = host->HostStatus(ICVirtualHost::YPos).toInt();
+    if(pos != oldY)
+    {
+        oldY = pos;
+        ui->yCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
+    }
+    pos = host->HostStatus(ICVirtualHost::ZPos).toInt();
+    if(pos != oldZ)
+    {
+        oldZ = pos;
+        ui->zCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
+    }
+    pos = host->HostStatus(ICVirtualHost::DbgX0).toInt();
+    if(pos != oldS)
+    {
+        oldS = pos;
+        ui->speed->setText(QString::number(pos));
+    }
 
-    if(newTime_ != oldTime_)
-    {
+//    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+//    newTime_ = host->HostStatus(ICVirtualHost::DbgZ0).toUInt();
 
-        oldTime_ = newTime_;
-        SetTime(newTime_);
-    }
-    ui->getTime->setText(ICParameterConversion::TransThisIntToThisText(host->HostStatus(ICVirtualHost::DbgY1).toUInt(), 2));
-    newCycleTimes_ = host->HostStatus(ICVirtualHost::DbgX1).toUInt();
-    if(newCycleTimes_ != oldCycleTimes_)
-    {
+//    if(newTime_ != oldTime_)
+//    {
 
-        oldCycleTimes_ = newCycleTimes_;
-        //        ui->cycleTimes->setText(QString::number(oldCycleTimes_));
-    }
-    newGoodP_ = host->HostStatus(ICVirtualHost::DbgY0).toUInt();
-    if(newGoodP_ != oldGoodP_)
-    {
-        oldGoodP_ = newGoodP_;
-        ui->goodProducts->setText(QString::number(oldGoodP_));
-    }
-    newStackedP_ = host->HostStatus(ICVirtualHost::DbgZ1).toUInt();
-    if(newStackedP_ != oldStackedP_)
-    {
-        oldStackedP_ = newStackedP_;
-        ui->stackedProducts->setText(QString::number(oldStackedP_));
-    }
-    int status = host->HostStatus(ICVirtualHost::DbgP0).toInt();
-    int mode = host->HostStatus(ICVirtualHost::DbgX0).toInt();
-    if(status == 2 && mode != ICVirtualHost::AutoSingleCycle)
-    {
-        ui->infoLabel->setText(tr("Single run ready"));
-    }
-    else if(status == 4 && mode != ICVirtualHost::AutoOneCycle && mode != ICVirtualHost::AutoStopping)
-    {
-        ui->infoLabel->setText(tr("Single cycle ready"));
-    }
-    else
-    {
-        ui->infoLabel->setText("");
-    }
+//        oldTime_ = newTime_;
+//        SetTime(newTime_);
+//    }
+//    ui->getTime->setText(ICParameterConversion::TransThisIntToThisText(host->HostStatus(ICVirtualHost::DbgY1).toUInt(), 2));
+//    newCycleTimes_ = host->HostStatus(ICVirtualHost::DbgX1).toUInt();
+//    if(newCycleTimes_ != oldCycleTimes_)
+//    {
+
+//        oldCycleTimes_ = newCycleTimes_;
+//        //        ui->cycleTimes->setText(QString::number(oldCycleTimes_));
+//    }
+//    newGoodP_ = host->HostStatus(ICVirtualHost::DbgY0).toUInt();
+//    if(newGoodP_ != oldGoodP_)
+//    {
+//        oldGoodP_ = newGoodP_;
+//        ui->goodProducts->setText(QString::number(oldGoodP_));
+//    }
+//    newStackedP_ = host->HostStatus(ICVirtualHost::DbgZ1).toUInt();
+//    if(newStackedP_ != oldStackedP_)
+//    {
+//        oldStackedP_ = newStackedP_;
+//        ui->stackedProducts->setText(QString::number(oldStackedP_));
+//    }
+//    int status = host->HostStatus(ICVirtualHost::DbgP0).toInt();
+//    int mode = host->HostStatus(ICVirtualHost::DbgX0).toInt();
+//    if(status == 2 && mode != ICVirtualHost::AutoSingleCycle)
+//    {
+//        ui->infoLabel->setText(tr("Single run ready"));
+//    }
+//    else if(status == 4 && mode != ICVirtualHost::AutoOneCycle && mode != ICVirtualHost::AutoStopping)
+//    {
+//        ui->infoLabel->setText(tr("Single cycle ready"));
+//    }
+//    else
+//    {
+//        ui->infoLabel->setText("");
+//    }
 
 //    ui->stackedProducts->setText(QString::number(host->HostStatus(ICVirtualHost::S).toInt()));
     //    if(host->CurrentStatus() != ICVirtualHost::Auto)
@@ -531,8 +559,8 @@ void ICHCProgramMonitorFrame::on_editToolButton_clicked()
                 currentBackup = programListBackup_[gIndex].at(tIndex).BaseItem();
                 item->SetDVal(ret.DVal());
                 item->SetSVal(ret.SVal());
-//                item->SetPos(currentBackup->Pos() + ret.Pos());
-                item->SetActualPos(currentBackup->ActualPos() + ret.Pos() * 10);
+                item->SetPos(currentBackup->Pos() + ret.Pos());
+//                item->SetActualPos(currentBackup->ActualPos() + ret.Pos() * 10);
                 item->ReSum();
                 UpdateUIProgramList_();
                 processor = ICCommandProcessor::Instance();
@@ -549,8 +577,8 @@ void ICHCProgramMonitorFrame::on_editToolButton_clicked()
                 currentBackup = programList_[gIndex].at(tIndex).BaseItem();
                 currentBackup->SetDVal(ret.DVal());
                 currentBackup->SetSVal(ret.SVal());
-//                currentBackup->SetPos(currentBackup->Pos() + ret.Pos());
-                currentBackup->SetActualPos(currentBackup->ActualPos() + ret.Pos() * 10);
+                currentBackup->SetPos(currentBackup->Pos() + ret.Pos());
+//                currentBackup->SetActualPos(currentBackup->ActualPos() + ret.Pos() * 10);
                 currentBackup->ReSum();
                 UpdateUIProgramList_();
                 processor = ICCommandProcessor::Instance();
@@ -670,10 +698,10 @@ void ICHCProgramMonitorFrame::UpdateUIProgramList_()
                     ui->moldContentListWidget->item(j + index)->setBackgroundColor(QColor(239, 235, 231));
                     //                    ui->moldContentListWidget->item(j + index)->setForeground(QColor("white"));
                 }
-                else if(tmp->Action() == ICInstructParam::ACT_WaitMoldOpened)
-                {
-                    ui->moldContentListWidget->item(j + index)->setBackgroundColor("red");
-                }
+//                else if(tmp->Action() == ICInstructParam::ACT_WaitMoldOpened)
+//                {
+//                    ui->moldContentListWidget->item(j + index)->setBackgroundColor("red");
+//                }
                 else
                 {
                     ui->moldContentListWidget->item(j + index)->setBackgroundColor(color);

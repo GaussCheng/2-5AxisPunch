@@ -61,11 +61,13 @@ private slots:
 
     void OnProgramChanged(int index, QString name);
 
-    void on_aPlusBtn_pressed();
-
-    void on_aMinusBtn_pressed();
     void OnActionButtonReleased();
-    void OnGuideFinished();
+
+    void on_tabWidget_currentChanged(int index);
+
+    void on_mainButton_clicked();
+
+    void on_feedButton_clicked();
 
 signals:
 //    void JumpToProgramEditorPage();
@@ -92,16 +94,10 @@ private:
     ActionSettingFrame * actionPage_;
     QWidget * injectionPage_;
     QWidget * fixturePage_;
-    QWidget * conditionPage_;
-    QWidget * flagsPage_;
     QWidget * pneumaticPage_;
     QWidget * waitConditionPage_;
     QWidget * peripheryPage_;
     QWidget * cutPage_;
-    QWidget * programPage_;
-    QWidget * stackPage_;
-    QWidget * otherPage_;
-    ICProgramGuidePage * guidePage_;
     ICInstructModifyDialog *modifyDialog_;
 
     QString recordPath_;

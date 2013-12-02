@@ -210,6 +210,25 @@ protected:
     virtual QVariant Send(modbus_param_t *modbusParam);
 };
 
+class ICManualRun: public ICCommunicationCommandBase
+{
+public:
+    int GM() const { return FlagValue("GM");}
+    void SetGM(int value) { SetFlagValue("GM", value);}
+
+    int Point() const { return FlagValue("Point");}
+    void SetPoint(int value) { SetFlagValue("Point", value);}
+
+    int Pos() const { return FlagValue("Pos");}
+    void SetPos(int value) { SetFlagValue("Pos", value);}
+
+    int IFVal() const { return FlagValue("IFVal");}
+    void SetIFVal(int value) { SetFlagValue("IFVal", value);}
+
+protected:
+    virtual QVariant Send(modbus_param_t *modbusParam);
+};
+
 Q_DECLARE_METATYPE(ICTeachStepCommand::ActionItem);
 
 #endif // ICCOMMANDS_H

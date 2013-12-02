@@ -11,63 +11,63 @@ ICHCProductSettingFrame::ICHCProductSettingFrame(QWidget *parent) :
     ui(new Ui::ICHCProductSettingFrame)
 {
     ui->setupUi(this);
-    buttongroup_ = new QButtonGroup ;
-    InitCheckBox();
-    ui->productLineEdit->setValidator(new QIntValidator(0, 65535, ui->productLineEdit));
-    ui->alarmTimesEdit->setValidator(new QIntValidator(0, 65535, ui->alarmTimesEdit));
-    ui->tryProductEdit->setValidator(new QIntValidator(0, 65535, ui->tryProductEdit));
-    ui->samplingEdit->setValidator(new QIntValidator(0, 65535, ui->samplingEdit));
-    ui->samplingEdit_3->setValidator(new QIntValidator(0, 65535, ui->samplingEdit_3));
-    ui->waitTimeEdit->SetDecimalPlaces(1);
-    ui->waitTimeEdit->setValidator(new QIntValidator(0, 32760, ui->waitTimeEdit));
-    ICLineEditWrapper *wrapper = new ICLineEditWrapper(ui->productLineEdit,
-                                                       ICMold::Product,
-                                                       ICLineEditWrapper::Mold,
-                                                       ICLineEditWrapper::Integer);
-    wrappers_.append(wrapper);
+//    buttongroup_ = new QButtonGroup ;
+//    InitCheckBox();
+//    ui->productLineEdit->setValidator(new QIntValidator(0, 65535, ui->productLineEdit));
+//    ui->alarmTimesEdit->setValidator(new QIntValidator(0, 65535, ui->alarmTimesEdit));
+//    ui->tryProductEdit->setValidator(new QIntValidator(0, 65535, ui->tryProductEdit));
+//    ui->samplingEdit->setValidator(new QIntValidator(0, 65535, ui->samplingEdit));
+//    ui->samplingEdit_3->setValidator(new QIntValidator(0, 65535, ui->samplingEdit_3));
+//    ui->waitTimeEdit->SetDecimalPlaces(1);
+//    ui->waitTimeEdit->setValidator(new QIntValidator(0, 32760, ui->waitTimeEdit));
+//    ICLineEditWrapper *wrapper = new ICLineEditWrapper(ui->productLineEdit,
+//                                                       ICMold::Product,
+//                                                       ICLineEditWrapper::Mold,
+//                                                       ICLineEditWrapper::Integer);
+//    wrappers_.append(wrapper);
 
-    wrapper = new ICLineEditWrapper(ui->tryProductEdit,
-                                                       ICMold::TryProduct,
-                                                       ICLineEditWrapper::Mold,
-                                                       ICLineEditWrapper::Integer);
-    wrappers_.append(wrapper);
+//    wrapper = new ICLineEditWrapper(ui->tryProductEdit,
+//                                                       ICMold::TryProduct,
+//                                                       ICLineEditWrapper::Mold,
+//                                                       ICLineEditWrapper::Integer);
+//    wrappers_.append(wrapper);
 
-    wrapper = new ICLineEditWrapper(ui->samplingEdit,
-                                                       ICMold::Sampling,
-                                                       ICLineEditWrapper::Mold,
-                                                       ICLineEditWrapper::Integer);
-    wrappers_.append(wrapper);
+//    wrapper = new ICLineEditWrapper(ui->samplingEdit,
+//                                                       ICMold::Sampling,
+//                                                       ICLineEditWrapper::Mold,
+//                                                       ICLineEditWrapper::Integer);
+//    wrappers_.append(wrapper);
 
-    wrapper = new ICLineEditWrapper(ui->waitTimeEdit,
-                                    ICVirtualHost::SM_WaitMoldOpenLimit,
-                                    ICLineEditWrapper::System,
-                                    ICLineEditWrapper::OneFraction);
-    wrappers_.append(wrapper);
+//    wrapper = new ICLineEditWrapper(ui->waitTimeEdit,
+//                                    ICVirtualHost::SM_WaitMoldOpenLimit,
+//                                    ICLineEditWrapper::System,
+//                                    ICLineEditWrapper::OneFraction);
+//    wrappers_.append(wrapper);
 
-    wrapper = new ICLineEditWrapper(ui->alarmTimesEdit,
-                                    ICVirtualHost::SM_ACCTIME,
-                                    ICLineEditWrapper::System,
-                                    ICLineEditWrapper::Integer);
-    wrappers_.append(wrapper);
+//    wrapper = new ICLineEditWrapper(ui->alarmTimesEdit,
+//                                    ICVirtualHost::SM_ACCTIME,
+//                                    ICLineEditWrapper::System,
+//                                    ICLineEditWrapper::Integer);
+//    wrappers_.append(wrapper);
 
-//    int currentPos = ICMold::CurrentMold()->MoldParam(ICMold::PosMainDown);
-//    if(currentPos > 1)
-//    {
-//        currentPos = 1;
-//    }
-//    buttongroup_->setId(ICVirtualHost::GlobalVirtualHost()->FixtureDefine());
-    if(ICVirtualHost::GlobalVirtualHost()->FixtureDefine() == 0)
-        ui->reversedCheckBox->click();
-    if(ICVirtualHost::GlobalVirtualHost()->FixtureDefine() == 1)
-        ui->positiveCheckBox->click();
+////    int currentPos = ICMold::CurrentMold()->MoldParam(ICMold::PosMainDown);
+////    if(currentPos > 1)
+////    {
+////        currentPos = 1;
+////    }
+////    buttongroup_->setId(ICVirtualHost::GlobalVirtualHost()->FixtureDefine());
+//    if(ICVirtualHost::GlobalVirtualHost()->FixtureDefine() == 0)
+//        ui->reversedCheckBox->click();
+//    if(ICVirtualHost::GlobalVirtualHost()->FixtureDefine() == 1)
+//        ui->positiveCheckBox->click();
 
-    ui->getFailWay->setCurrentIndex(ICVirtualHost::GlobalVirtualHost()->GetFailAlarmWay());
+//    ui->getFailWay->setCurrentIndex(ICVirtualHost::GlobalVirtualHost()->GetFailAlarmWay());
 
-    connect(ICMold::CurrentMold(),
-            SIGNAL(MoldNumberParamChanged()),
-            this,
-            SLOT(OnMoldNumberParamChanged()));
-    ui->countUnitBox->setCurrentIndex(ICMold::CurrentMold()->MoldParam(ICMold::CountUnit));
+//    connect(ICMold::CurrentMold(),
+//            SIGNAL(MoldNumberParamChanged()),
+//            this,
+//            SLOT(OnMoldNumberParamChanged()));
+//    ui->countUnitBox->setCurrentIndex(ICMold::CurrentMold()->MoldParam(ICMold::CountUnit));
 }
 
 ICHCProductSettingFrame::~ICHCProductSettingFrame()
@@ -160,7 +160,7 @@ void ICHCProductSettingFrame::OnMoldNumberParamChanged()
     {
         wrappers_[i]->UpdateParam();
     }
-    ui->countUnitBox->setCurrentIndex(ICMold::CurrentMold()->MoldParam(ICMold::CountUnit));
+//    ui->countUnitBox->setCurrentIndex(ICMold::CurrentMold()->MoldParam(ICMold::CountUnit));
 }
 
 void ICHCProductSettingFrame::on_productClearButton_clicked()
@@ -194,7 +194,7 @@ void ICHCProductSettingFrame::InitCheckBox()
 
 void ICHCProductSettingFrame::on_countUnitBox_currentIndexChanged(int index)
 {
-    ICMold::CurrentMold()->SetMoldParam(ICMold::CountUnit, index);
+//    ICMold::CurrentMold()->SetMoldParam(ICMold::CountUnit, index);
 }
 
 void ICHCProductSettingFrame::on_getFailWay_activated(int index)

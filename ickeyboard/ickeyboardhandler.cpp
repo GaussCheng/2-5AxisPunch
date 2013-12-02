@@ -88,6 +88,7 @@ void ICKeyboardHandler::SwitchChanged(int value)
     else if(value == ICKeyboard::KS_ManualStatu)
     {
         ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
+        qDebug("know manual");
         icMainFrame->ShowManualPage();
     }
     else

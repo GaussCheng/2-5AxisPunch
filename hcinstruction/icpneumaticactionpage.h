@@ -6,6 +6,7 @@
 #include <QSignalMapper>
 #include <QPixmap>
 #include "icinstructioneditorbase.h"
+#include "icsystemconfig.h"
 
 namespace Ui {
     class ICPneumaticActionPage;
@@ -33,17 +34,9 @@ private Q_SLOTS:
 
 private:
     Ui::ICPneumaticActionPage *ui;
-    QVector<QAbstractButton*> settingButtons_;
-    QVector<ICPeripheryParameterEditor*> editorVector_;
-    QMap<QAbstractButton*, uint> buttonToClip_;
-    QMap<QAbstractButton*, uint> buttonToLight_;
-    QMap<uint, uint> onClipToOffClip_;
-    QMap<uint, uint> offClipToOnClip_;
-    QStringList ioNames_;
-    QMap<QAbstractButton*, QPair<int, int> > commandKeyMap_;
-    QSignalMapper buttonSignalMapper_;
     QPixmap onPixmap_;
     QPixmap offPixmap_;
+    QMap<int, ICUserActionInfo> rowToInfoMap_;
 };
 
 #endif // ICPNEUMATICACTIONPAGE_H

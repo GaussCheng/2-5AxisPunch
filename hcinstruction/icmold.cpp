@@ -260,10 +260,10 @@ bool ICMold::ReadMoldParamsFile(const QString &fileName)
     //    fileContent = fileContent.remove('\r');
 
     QStringList items = fileContent.split('\n', QString::SkipEmptyParts);
-    if(items.size() != MoldParamCount + StackParamCount * 4 + 1)
-    {
-        return false;
-    }
+//    if(items.size() != MoldParamCount + StackParamCount * 4 + 1)
+//    {
+//        return false;
+//    }
     moldParams_.clear();
     stackParams_.clear();
     for(int i = 0; i != MoldParamCount; ++i)
@@ -272,20 +272,20 @@ bool ICMold::ReadMoldParamsFile(const QString &fileName)
     }
     //    Q_ASSERT_X(items.size() == 58, "ICMold::ReadMoldParamFile", "fnc file is not correct!");
 
-    QList<int> stackParam;
-    int base;
-    int count;
-    for(int i = 0; i != 4; ++i)
-    {
-        base = MoldParamCount + StackParamCount * i;
-        count = base + StackParamCount;
-        stackParam.clear();
-        for(int j = base; j != count; ++j)
-        {
-            stackParam.append(items.at(j).toUInt());
-        }
-        stackParams_.append(stackParam);
-    }
+//    QList<int> stackParam;
+//    int base;
+//    int count;
+//    for(int i = 0; i != 4; ++i)
+//    {
+//        base = MoldParamCount + StackParamCount * i;
+//        count = base + StackParamCount;
+//        stackParam.clear();
+//        for(int j = base; j != count; ++j)
+//        {
+//            stackParam.append(items.at(j).toUInt());
+//        }
+//        stackParams_.append(stackParam);
+//    }
 //    moldParams_[CheckClip5] = 0;
 //    moldParams_[CheckClip6] = 0;
     checkSum_ = items.last().toUInt();
@@ -334,8 +334,6 @@ bool ICMold::SaveMoldFile(bool isSaveParams)
 bool ICMold::SaveMoldParamsFile()
 {
     bool ret = false;
-    moldParams_[CheckClip5] = 0;
-    moldParams_[CheckClip6] = 0;
     UpdateSyncSum();
     QByteArray toWrite;
     QList<int> allParams = AllParams();
@@ -442,29 +440,29 @@ QList<ICGroupMoldUIItem> ICMold::MoldItemToUIItem(const QList<ICMoldItem> &items
     QList<ICTopMoldUIItem> ret;
     QList<ICGroupMoldUIItem> groupRet;
     ICTopMoldUIItem topItem;
-    ICSubMoldUIItem subItem;
+//    ICSubMoldUIItem subItem;
     ICMoldItem moldItem;
     for(int i = 0; i != items.size(); ++i)
     {
         moldItem = items.at(i);
-        if(moldItem.SubNum() == 255)
-        {
+//        if(moldItem.SubNum() == 255)
+//        {
             topItem.SetBaseItem(moldItem);
             ret.append(topItem);
-        }
-        else
-        {
-            if(moldItem.SubNum() == items.at(i + 1).SubNum())
-            {
-                subItem.SetSyncItem(true);
-            }
-            subItem.SetBaseItem(moldItem);
-            if(ret.isEmpty())
-            {
-                return groupRet;
-            }
-            ret.last().AddSubMoldUIItem(subItem);
-        }
+//        }
+//        else
+//        {
+//            if(moldItem.SubNum() == items.at(i + 1).SubNum())
+//            {
+//                subItem.SetSyncItem(true);
+//            }
+//            subItem.SetBaseItem(moldItem);
+//            if(ret.isEmpty())
+//            {
+//                return groupRet;
+//            }
+//            ret.last().AddSubMoldUIItem(subItem);
+//        }
     }
     ICGroupMoldUIItem groupItem;
     if(ret.isEmpty())

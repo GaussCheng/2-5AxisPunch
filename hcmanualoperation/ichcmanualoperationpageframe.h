@@ -4,13 +4,8 @@
 #include <QFrame>
 
 #include <QMap>
-
-#include "hcmanualadjustframe.h"
-#include "hcservoarmcontrolframe.h"
-
-class HCServoArmControlFrame;
-class QStackedLayout;
-class QButtonGroup;
+#include <QSignalMapper>
+#include "axismodifydialog.h"
 
 namespace Ui {
     class ICHCManualOperationPageFrame;
@@ -34,40 +29,29 @@ private:
     void InitSignal();
 
 private slots:
-//    void ShowAxisMovementPage();
-    void ShowOptionPage();
     void StatusRefreshed();
 
-    void on_aAddButton_pressed();
 
-    void OnButtonReleased();
+//    void on_xPos_textChanged(const QString &arg1);
 
-    void on_aSubButton_pressed();
+//    void on_yPos_textChanged(const QString &arg1);
 
-    void on_bSubButton_pressed();
+//    void on_zPos_textChanged(const QString &arg1);
 
-    void on_bAddButton_pressed();
+    void OnPointSelected(int id);
+    void OnActionTriggered(int id);
+
+    void on_runButton_clicked();
+
+    void on_setButton_clicked();
 
 private:
     Ui::ICHCManualOperationPageFrame *ui;
-
-//    HCServoArmControlFrame * servoArmControlPage_;
-//    QWidget * manualFunctionPage_;
-    QWidget *manualOtherIOPage_;
-    QWidget *manualFixturePage_;
-    QWidget *manualSuckerPage_;
-    HCManualAdjustFrame * manualAdjustPage_;
-    QWidget *reservePage_;
-    HCServoArmControlFrame *serveAxisPage_;
-
-    QMap<QWidget *, QWidget *> buttonToPage_;
-    QMap<QWidget*, int> buttonToAxis_;
-
-    QStackedLayout * centralStackedLayout_;
-    QButtonGroup* buttonGroup_;
-    int currentAction_;
     int timerID_;
-    QString positionText_;
+
+    QSignalMapper buttonSignalMapper_;
+    QSignalMapper actionSignalMapper_;
+    AxisModifyDialog* modifyDialog_;
 };
 
 #endif // ICHCMANUALOPERATIONPAGEFRAME_H

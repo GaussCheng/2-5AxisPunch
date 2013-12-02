@@ -6,6 +6,7 @@
 #include <QSignalMapper>
 #include <QPixmap>
 #include "icinstructioneditorbase.h"
+#include "icsystemconfig.h"
 //#include "iclineeditwithvirtualnumerickeypad.h"
 
 class QAbstractButton;
@@ -36,15 +37,7 @@ private Q_SLOTS:
 ///////////////
 private:
     Ui::ICPeripheryPage *ui;
-    QVector<QAbstractButton*> settingButtons_;
-    QVector<ICPeripheryParameterEditor*> editorVector_;
-    QMap<QAbstractButton*, uint> buttonToClip_;
-    QMap<QAbstractButton*, uint> buttonToLight_;
-    QMap<uint, uint> onClipToOffClip_;
-    QMap<uint, uint> offClipToOnClip_;
-    QStringList ioNames_;
-    QMap<QAbstractButton*, QPair<int, int> > commandKeyMap_;
-    QSignalMapper buttonSignalMapper_;
+    QMap<int, ICUserActionInfo> rowToInfoMap_;
     QPixmap onPixmap_;
     QPixmap offPixmap_;
 

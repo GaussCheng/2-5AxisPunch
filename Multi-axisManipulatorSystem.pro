@@ -38,7 +38,8 @@ SOURCES += main.cpp \
     icdataformatchecker.cpp \
     icprogramformatchecker.cpp \
     icconfigformatchecker.cpp \
-    simulateknob.cpp
+    simulateknob.cpp \
+    icaxiskeyboard.cpp
 HEADERS += mainframe.h \
     icaxispositionlabel.h \
     #icalarmdescriptiondialog.h \
@@ -58,7 +59,8 @@ HEADERS += mainframe.h \
     icdataformatchecker.h \
     icprogramformatchecker.h \
     icconfigformatchecker.h \
-    simulateknob.h
+    simulateknob.h \
+    icaxiskeyboard.h
 
 FORMS    += mainframe.ui \
     #icalarmdescriptiondialog.ui \
@@ -68,7 +70,8 @@ FORMS    += mainframe.ui \
     icactiondialog.ui \
     ichostcomparepage.ui \
     ictipswidget.ui \
-    simulateknob.ui
+    simulateknob.ui \
+    icaxiskeyboard.ui
 
 include (./categorypage/categorypage.pri)
 include (custom_widgets/custom_widgets.pri)

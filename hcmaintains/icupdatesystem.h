@@ -70,9 +70,6 @@ private slots:
 
     void on_connectHostButton_clicked();
     void on_updateLogoButton_clicked();
-    void on_registerBtn_clicked();
-    void on_generateBtn_clicked();
-    void RefreshRestTime();
     void on_updatePasswardButton_clicked();
 };
 

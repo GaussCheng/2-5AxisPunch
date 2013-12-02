@@ -132,7 +132,7 @@ void ICVirtualHost::SetMoldParam(int param, int value)
 //    Q_ASSERT_X(moldParamToAddrPos_.contains(param),
 //               "ICVirtualHost::SetMoldParam();",
 //               (QString::number(param) + " is not a corrent param").toAscii());
-//    ICCommandProcessor::Instance()->ModifyMoldParam(moldParamToAddrPos_.value(param), value);
+    ICCommandProcessor::Instance()->ModifyMoldParam(moldParamToAddrPos_.value(param), value);
     Q_UNUSED(param)
     Q_UNUSED(value)
     isParamChanged_ = true;
@@ -230,7 +230,7 @@ void ICVirtualHost::RefreshStatus()
     {
         //        qDebug()<<"refresh statys start";
         ICCommunicationCommandBase::ResultVector result;
-        currentAddr_ %= 12;
+        currentAddr_ %= 9;
         if(currentAddr_ == 0)
         {
             currentStatus_ = 0;
@@ -269,7 +269,7 @@ void ICVirtualHost::RefreshStatus()
             statusMap_.insert(ZPos, 10);
             statusMap_.insert(PPos, 10);
             statusMap_.insert(QPos, 10);
-            statusMap_.insert(CPos, 10);
+//            statusMap_.insert(CPos, 10);
             statusMap_.insert(DbgX0, 10);
             statusMap_.insert(DbgY0, 148);
             statusMap_.insert(DbgZ0, 3052);
@@ -763,6 +763,8 @@ void ICVirtualHost::InitMold_()
         path = "./records/ERRRT.act";
         isInitSuccess_ = false;
     }
+    // TODO remove it
+    currentMold_->SaveMoldParamsFile();
     if(!currentMold_->ReadMoldFile(path))
     {
         qDebug("Init Mold fail!");
@@ -971,20 +973,23 @@ void ICVirtualHost::InitAddrToSysPosMap_()
     addrToSysPos_.insert(SM_C_SEC2, ACT_C_Sec2);
     addrToSysPos_.insert(SM_C_SEC3, ACT_C_Sec3);
     addrToSysPos_.insert(SM_C_SEC4, ACT_C_Sec4);
-    moldParamToAddrPos_.insert(ICMold::CheckClip1, SM_CHKCLIP1);
-    moldParamToAddrPos_.insert(ICMold::CheckClip2, SM_CHKCLIP2);
-    moldParamToAddrPos_.insert(ICMold::CheckClip3, SM_CHKCLIP3);
-    moldParamToAddrPos_.insert(ICMold::CheckClip4, SM_CHKCLIP4);
-    moldParamToAddrPos_.insert(ICMold::CheckClip5, SM_CHKCLIP5);
-    moldParamToAddrPos_.insert(ICMold::CheckClip6, SM_CHKCLIP6);
-    moldParamToAddrPos_.insert(ICMold::CheckClip7, SM_CHKCLIP7);
-    moldParamToAddrPos_.insert(ICMold::CheckClip8, SM_CHKCLIP8);
-    moldParamToAddrPos_.insert(ICMold::Product, SM_PRODUCT);			//设定产量
-    moldParamToAddrPos_.insert(ICMold::CountUnit, SM_Position_DOWN);
+    for(int i = 0; i != 33; ++i)
+    {
+        moldParamToAddrPos_.insert(ICMold::point0 + i, static_cast<ICSystemParameterAddr>(SM_Position_DOWN + i));
+    }
+//    moldParamToAddrPos_.insert(ICMold::CheckClip2, SM_CHKCLIP2);
+//    moldParamToAddrPos_.insert(ICMold::CheckClip3, SM_CHKCLIP3);
+//    moldParamToAddrPos_.insert(ICMold::CheckClip4, SM_CHKCLIP4);
+//    moldParamToAddrPos_.insert(ICMold::CheckClip5, SM_CHKCLIP5);
+//    moldParamToAddrPos_.insert(ICMold::CheckClip6, SM_CHKCLIP6);
+//    moldParamToAddrPos_.insert(ICMold::CheckClip7, SM_CHKCLIP7);
+//    moldParamToAddrPos_.insert(ICMold::CheckClip8, SM_CHKCLIP8);
+//    moldParamToAddrPos_.insert(ICMold::Product, SM_PRODUCT);			//设定产量
+//    moldParamToAddrPos_.insert(ICMold::CountUnit, SM_Position_DOWN);
 
-    moldParamToAddrPos_.insert(ICMold::StandbyPose, SM_StandBy);  //待机姿势
-    moldParamToAddrPos_.insert(ICMold::TryProduct, SM_TryProduct); //试产
-    moldParamToAddrPos_.insert(ICMold::Sampling, SM_Sampling); //取样
+//    moldParamToAddrPos_.insert(ICMold::StandbyPose, SM_StandBy);  //待机姿势
+//    moldParamToAddrPos_.insert(ICMold::TryProduct, SM_TryProduct); //试产
+//    moldParamToAddrPos_.insert(ICMold::Sampling, SM_Sampling); //取样
 //    moldParamToAddrPos_.insert(ICMold::)
 
     //    addrToSysPos_.insert(SM_MAINUP, ACT_MainUp);			//主上限制

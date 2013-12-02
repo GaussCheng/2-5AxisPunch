@@ -45,7 +45,7 @@ QList<ICMoldItem> ICHCConditionPage::CreateCommandImpl() const
 {
     QList<ICMoldItem> ret;
     ICMoldItem item;
-    item.SetAction(ICMold::ACTCHECKINPUT);
+//    item.SetAction(ICMold::ACTCHECKINPUT);
     item.SetPos(0);
     item.SetIFVal(buttonGroup->checkedId());
     if(item.IFVal() == 3)

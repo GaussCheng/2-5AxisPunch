@@ -264,9 +264,9 @@ public:
 #ifdef HC_8AXIS
         PPos,
         QPos,
-        APos,
-        BPos,
-        CPos,
+//        APos,
+//        BPos,
+//        CPos,
 #endif
         S,
         Input0,
@@ -287,12 +287,12 @@ public:
         DbgP1,
         DbgQ0,
         DbgQ1,
-        DbgA0,
-        DbgA1,
-        DbgB0,
-        DbgB1,
-        DbgC0,
-        DbgC1,
+//        DbgA0,
+//        DbgA1,
+//        DbgB0,
+//        DbgB1,
+//        DbgC0,
+//        DbgC1,
 
 #else
         DbgX0,
@@ -302,8 +302,8 @@ public:
         DbgY1,
         DbgZ1,
 #endif
-        AxisLastPos1,
-        AxisLastPos2,
+//        AxisLastPos1,
+//        AxisLastPos2,
 
         StatusCount
     };
@@ -1031,24 +1031,25 @@ inline void ICVirtualHost::CalPeripheryOutput(int &config, int number, int val)
 
 inline int ICVirtualHost::GetActualPos(ICAxis axis) const
 {
-    uint axisLastPos = HostStatus(AxisLastPos1).toUInt() | (HostStatus(AxisLastPos2).toUInt() << 16);
-    return GetActualPos(axis, axisLastPos);
+//    uint axisLastPos = HostStatus(AxisLastPos1).toUInt() | (HostStatus(AxisLastPos2).toUInt() << 16);
+//    return GetActualPos(axis, axisLastPos);
+    return GetActualPos(axis, 0);
 
 }
 
 inline int ICVirtualHost::GetActualPos(ICAxis axis, uint axisLastPos) const
 {
-    int16_t tmp = HostStatus(static_cast<ICStatus>(XPos + axis)).toInt();
-    int ret = tmp;
-    ret *= 10;
-    if(tmp >= 0)
-    {
-        return ret += ((axisLastPos >> (axis * 4)) & 0xF);
-    }
-    else
-    {
-        return ret -=((axisLastPos >> (axis * 4)) & 0xF);
-    }
+    return HostStatus(static_cast<ICStatus>(XPos + axis)).toInt();
+//    int ret = tmp;
+//    ret *= 10;
+//    if(tmp >= 0)
+//    {
+//        return ret += ((axisLastPos >> (axis * 4)) & 0xF);
+//    }
+//    else
+//    {
+//        return ret -=((axisLastPos >> (axis * 4)) & 0xF);
+//    }
 }
 
 #endif // ICVIRTUALHOST_H

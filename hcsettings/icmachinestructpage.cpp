@@ -832,24 +832,24 @@ void ICMachineStructPage::StatusRefresh()
         feedbackPos = host->HostStatus(ICVirtualHost::DbgQ0).toString();
         zSignal = host->HostStatus(ICVirtualHost::DbgQ1).toString();
     }
-    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisA)
-    {
-        pos = host->HostStatus(ICVirtualHost::APos).toString();
-        feedbackPos = host->HostStatus(ICVirtualHost::DbgA0).toString();
-        zSignal = host->HostStatus(ICVirtualHost::DbgA1).toString();
-    }
-    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisB)
-    {
-        pos = host->HostStatus(ICVirtualHost::BPos).toString();
-        feedbackPos = host->HostStatus(ICVirtualHost::DbgB0).toString();
-        zSignal = host->HostStatus(ICVirtualHost::DbgB1).toString();
-    }
-    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisC)
-    {
-        pos = host->HostStatus(ICVirtualHost::CPos).toString();
-        feedbackPos = host->HostStatus(ICVirtualHost::DbgC0).toString();
-        zSignal = host->HostStatus(ICVirtualHost::DbgC1).toString();
-    }
+//    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisA)
+//    {
+//        pos = host->HostStatus(ICVirtualHost::APos).toString();
+//        feedbackPos = host->HostStatus(ICVirtualHost::DbgA0).toString();
+//        zSignal = host->HostStatus(ICVirtualHost::DbgA1).toString();
+//    }
+//    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisB)
+//    {
+//        pos = host->HostStatus(ICVirtualHost::BPos).toString();
+//        feedbackPos = host->HostStatus(ICVirtualHost::DbgB0).toString();
+//        zSignal = host->HostStatus(ICVirtualHost::DbgB1).toString();
+//    }
+//    else if(currentAxis_ == ICVirtualHost::ICAxis_AxisC)
+//    {
+//        pos = host->HostStatus(ICVirtualHost::CPos).toString();
+//        feedbackPos = host->HostStatus(ICVirtualHost::DbgC0).toString();
+//        zSignal = host->HostStatus(ICVirtualHost::DbgC1).toString();
+//    }
 
     ui->testLineEdit->setText(pos);
     ui->feedbackEdit->setText(feedbackPos);
