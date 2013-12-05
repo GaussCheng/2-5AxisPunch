@@ -16,6 +16,7 @@ ICPneumaticActionPage::ICPneumaticActionPage(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->delayEdit->SetDecimalPlaces(2);
+    ui->delayEdit->setValidator(new QIntValidator(0, 65530, this));
     ui->tableWidget->setColumnWidth(0, 50);
     ui->tableWidget->setColumnWidth(1, 120);
 
@@ -23,16 +24,18 @@ ICPneumaticActionPage::ICPneumaticActionPage(QWidget *parent) :
     const int infosSize = infos.size();
     ui->tableWidget->setRowCount(infosSize);
     QTableWidgetItem* item;
-    QPushButton* button;
+//    QPushButton* button;
     for(int i = 0; i != infosSize; ++i)
     {
-        item = new QTableWidgetItem();
+        item = new QTableWidgetItem(infos.at(i).GetLocaleName("zh"));
         item->setCheckState(Qt::Unchecked);
         ui->tableWidget->setItem(i, 0, item);
-        button = new QPushButton(infos.at(i).GetLocaleName("zh"));
-//        button->setIcon(offPixmap_);
-        button->setCheckable(true);
-        ui->tableWidget->setCellWidget(i, 1, button);
+//        button = new QPushButton(infos.at(i).GetLocaleName("zh"));
+////        button->setIcon(offPixmap_);
+//        button->setCheckable(true);
+//        ui->tableWidget->setCellWidget(i, 1, button);
+//        item = new QTableWidgetItem(infos.at(i).GetLocaleName("zh"));
+//        ui->tableWidget->setItem(i, 1, item);
         rowToInfoMap_.insert(i, infos.at(i));
     }
 }
@@ -76,16 +79,18 @@ QList<ICMoldItem> ICPneumaticActionPage::CreateCommandImpl() const
 {
     QList<ICMoldItem> ret;
     ICMoldItem item;
-    QPushButton* button;
+//    QPushButton* button;
+    ICUserActionInfo actionInfo;
     for(int i = 0; i != ui->tableWidget->rowCount(); ++i)
     {
         if(ui->tableWidget->item(i,0)->checkState() == Qt::Checked)
         {
             item.SetGMVal(ICMold::GOneXOneY);
 //            item.SetSVal(rowToInfoMap_.value(i).pointNum);
-            item.SetSubNum(rowToInfoMap_.value(i).pointNum);
-            button = qobject_cast<QPushButton*>(ui->tableWidget->cellWidget(i, 1));
-            item.SetIFVal(button->isChecked());
+            actionInfo = rowToInfoMap_.value(i);
+            item.SetSubNum(actionInfo.pointNum);
+//            button = qobject_cast<QPushButton*>(ui->tableWidget->cellWidget(i, 1));
+            item.SetIFVal(actionInfo.dir);
             item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
             ret.append(item);
         }

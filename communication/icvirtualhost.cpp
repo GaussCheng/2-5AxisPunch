@@ -120,7 +120,7 @@ ICVirtualHost::ICVirtualHost(QObject *parent) :
 //#ifdef HC_ARMV6
 //    QTimer::singleShot(REFRESH_TIME, this, SLOT(RefreshStatus()));
 //#else
-    timer_->start(15);
+    timer_->start(20);
 //#endif
 //#endif
 
@@ -764,7 +764,7 @@ void ICVirtualHost::InitMold_()
         isInitSuccess_ = false;
     }
     // TODO remove it
-    currentMold_->SaveMoldParamsFile();
+//    currentMold_->SaveMoldParamsFile();
     if(!currentMold_->ReadMoldFile(path))
     {
         qDebug("Init Mold fail!");

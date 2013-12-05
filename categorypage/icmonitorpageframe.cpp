@@ -144,46 +144,58 @@ void ICMonitorPageFrame::Init_()
     ui->icMonitorFrameRight->AddPage(euPageRight_, tr("EU"));
 
     points.clear();
-    points.append(ICIOPoint("", tr("Mold Opened"), 35));
-    points.append(ICIOPoint("", tr("Mold Closed"), 34));
-    points.append(ICIOPoint("", tr("Eject Forward"), 39));
-    points.append(ICIOPoint("", tr("Eject Backward"), 38));
-//    points.append(ICIOPoint("", tr("Mode open In 2"), 46)); //开模2完
-    points.append(ICIOPoint("", tr("Core 1 In"), 46)); //入芯1到位
-    points.append(ICIOPoint("", tr("Core 1 Out"), 45));
-    points.append(ICIOPoint("", tr("Core 2 In"), 44));
-    points.append(ICIOPoint("", tr("Core 2 Out"), 43));
+    QList<ICUserIOInfo> euXInfos = config->AllEuXInfos();
+    const int euXSize = euXInfos.size();
+    for(int i = 0; i != euXSize; ++i)
+    {
+        points.append(ICIOPoint(euXInfos.at(i).code, euXInfos.at(i).GetLocaleName("zh"), i + 32));
+    }
+//    points.append(ICIOPoint("", tr("Mold Opened"), 35));
+//    points.append(ICIOPoint("", tr("Mold Closed"), 34));
+//    points.append(ICIOPoint("", tr("Eject Forward"), 39));
+//    points.append(ICIOPoint("", tr("Eject Backward"), 38));
+////    points.append(ICIOPoint("", tr("Mode open In 2"), 46)); //开模2完
+//    points.append(ICIOPoint("", tr("Core 1 In"), 46)); //入芯1到位
+//    points.append(ICIOPoint("", tr("Core 1 Out"), 45));
+//    points.append(ICIOPoint("", tr("Core 2 In"), 44));
+//    points.append(ICIOPoint("", tr("Core 2 Out"), 43));
 
-//    points.append(ICIOPoint("", tr("Safe Door 2"), 33));//安全门2
-    points.append(ICIOPoint("", tr("IMM Reject"), 33));//不良品
-    points.append(ICIOPoint("", tr("ZC5"), 42));
-    points.append(ICIOPoint("", tr("ZC6"), 41));
-    points.append(ICIOPoint("", tr("ZC7"), 40));
-    points.append(ICIOPoint("", tr("Safe Door"), 32));
-    points.append(ICIOPoint("", tr("ES"), 47));
-    points.append(ICIOPoint("", tr("Mold Inter"), 36));
-    points.append(ICIOPoint("", tr("IMM Auto"), 37));
+////    points.append(ICIOPoint("", tr("Safe Door 2"), 33));//安全门2
+//    points.append(ICIOPoint("", tr("IMM Reject"), 33));//不良品
+//    points.append(ICIOPoint("", tr("ZC5"), 42));
+//    points.append(ICIOPoint("", tr("ZC6"), 41));
+//    points.append(ICIOPoint("", tr("ZC7"), 40));
+//    points.append(ICIOPoint("", tr("Safe Door"), 32));
+//    points.append(ICIOPoint("", tr("ES"), 47));
+//    points.append(ICIOPoint("", tr("Mold Inter"), 36));
+//    points.append(ICIOPoint("", tr("IMM Auto"), 37));
 
     euPageLeft_->BindingPointsToInputPage(points);
     euPageRight_->BindingPointsToInputPage(points);
 
     points.clear();
-    points.append(ICIOPoint("", tr("Mold Open Permit"), 38)); //允许开模
-    points.append(ICIOPoint("", tr("Mold Close Permit"), 32));
-    points.append(ICIOPoint("", tr("Eject Forward Permit"), 33));
-//    points.append(ICIOPoint("", tr("Thimble Permit 1"), 33));
-    points.append(ICIOPoint("", tr("Eject Backward Permit"), 37));
-//    points.append(ICIOPoint("", tr("Thimble Permit 2"), 37));
-//    points.append(ICIOPoint("", tr("Mode Close Permit 2"), 40));
-    points.append(ICIOPoint("", tr("Core 1 In Permit"), 40));
-    points.append(ICIOPoint("", tr("Core 1 Out Permit"), 46));
-    points.append(ICIOPoint("", tr("Core 2 In Permit"), 41));
-    points.append(ICIOPoint("", tr("Core 2 Out Permit"), 45));
+    QList<ICUserIOInfo> euYInfos = config->AllEuYInfos();
+    const int euYSize = euYInfos.size();
+    for(int i = 0; i != euYSize; ++i)
+    {
+        points.append(ICIOPoint(euYInfos.at(i).code, euYInfos.at(i).GetLocaleName("zh"), i + 32));
+    }
+//    points.append(ICIOPoint("", tr("Mold Open Permit"), 38)); //允许开模
+//    points.append(ICIOPoint("", tr("Mold Close Permit"), 32));
+//    points.append(ICIOPoint("", tr("Eject Forward Permit"), 33));
+////    points.append(ICIOPoint("", tr("Thimble Permit 1"), 33));
+//    points.append(ICIOPoint("", tr("Eject Backward Permit"), 37));
+////    points.append(ICIOPoint("", tr("Thimble Permit 2"), 37));
+////    points.append(ICIOPoint("", tr("Mode Close Permit 2"), 40));
+//    points.append(ICIOPoint("", tr("Core 1 In Permit"), 40));
+//    points.append(ICIOPoint("", tr("Core 1 Out Permit"), 46));
+//    points.append(ICIOPoint("", tr("Core 2 In Permit"), 41));
+//    points.append(ICIOPoint("", tr("Core 2 Out Permit"), 45));
 
-    points.append(ICIOPoint("", tr("Robot"), 35));
-    points.append(ICIOPoint("", tr("En C6"), 44));
-    points.append(ICIOPoint("", tr("En C7"), 43));
-    points.append(ICIOPoint("", tr("En A8"), 42));
+//    points.append(ICIOPoint("", tr("Robot"), 35));
+//    points.append(ICIOPoint("", tr("En C6"), 44));
+//    points.append(ICIOPoint("", tr("En C7"), 43));
+//    points.append(ICIOPoint("", tr("En A8"), 42));
 //    points.append(ICIOPoint("", tr("Blank 0"), 34));
 //    points.append(ICIOPoint("", tr("Blank 1"), 36));
 //    points.append(ICIOPoint("", tr("Blank2"), 39));

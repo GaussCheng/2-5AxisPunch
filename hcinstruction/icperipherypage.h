@@ -12,6 +12,7 @@
 class QAbstractButton;
 class QLabel;
 class ICPeripheryParameterEditor;
+class QTableWidgetItem;
 namespace Ui {
     class ICPeripheryPage;
 }
@@ -35,9 +36,11 @@ private Q_SLOTS:
     void StatusRefreshed();
     void CommandButtonClicked(QWidget* widget);
 ///////////////
+    void on_tableWidget_itemChanged(QTableWidgetItem *item);
+
 private:
     Ui::ICPeripheryPage *ui;
-    QMap<int, ICUserActionInfo> rowToInfoMap_;
+    QMap<int, ICUserIOInfo> rowToInfoMap_;
     QPixmap onPixmap_;
     QPixmap offPixmap_;
 

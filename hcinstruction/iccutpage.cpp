@@ -1,4 +1,5 @@
 #include <QPushButton>
+#include <QTableWidgetItem>
 #include "iccutpage.h"
 #include "ui_iccutpage.h"
 
@@ -14,17 +15,20 @@ ICCutPage::ICCutPage(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->delayEdit->SetDecimalPlaces(2);
+    ui->delayEdit->setValidator(new QIntValidator(0, 65530, this));
     QList<ICUserIOInfo> infos = ICUserDefineConfig::Instance()->AllXInfos();
     const int infosSize = infos.size();
+    ui->tableWidget->blockSignals(true);
     ui->tableWidget->setRowCount(infosSize);
     QTableWidgetItem* item;
     for(int i = 0; i != infosSize; ++i)
     {
-        item = new QTableWidgetItem(infos.at(i).code + ":" + infos.at(i).GetLocaleName("zh"));
+        item = new QTableWidgetItem(infos.at(i).GetLocaleName("zh"));
         item->setCheckState(Qt::Unchecked);
         ui->tableWidget->setItem(i, 0, item);
         rowToInfoMap_.insert(i, infos.at(i));
     }
+    ui->tableWidget->blockSignals(false);
 }
 
 ICCutPage::~ICCutPage()
@@ -115,4 +119,18 @@ QList<ICMoldItem> ICCutPage::CreateCommandImpl() const
         }
     }
     return ret;
+}
+
+void ICCutPage::on_tableWidget_itemChanged(QTableWidgetItem *item)
+{
+    Qt::CheckState state = item->checkState();
+    const int rCount = ui->tableWidget->rowCount();
+    ui->tableWidget->blockSignals(true);
+    for(int i = 0; i != rCount; ++i)
+    {
+        ui->tableWidget->item(i, 0)->setCheckState(Qt::Unchecked);
+    }
+    item->setCheckState(state);
+    ui->tableWidget->blockSignals(false);
+
 }

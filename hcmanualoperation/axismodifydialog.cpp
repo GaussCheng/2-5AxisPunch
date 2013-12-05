@@ -10,9 +10,12 @@ AxisModifyDialog::AxisModifyDialog(QWidget *parent) :
     ui->xPos->SetDecimalPlaces(1);
     ui->yPos->SetDecimalPlaces(1);
     ui->zPos->SetDecimalPlaces(1);
-    ui->xPos->setValidator(new QIntValidator(0, 65530, this));
-    ui->yPos->setValidator(ui->xPos->validator());
-    ui->zPos->setValidator(ui->xPos->validator());
+    xValidator_ = new QIntValidator(-32760, 32760, this);
+    yValidator_ = new QIntValidator(-32760, 32760, this);
+    zValidator_ = new QIntValidator(-32760, 32760, this);
+    ui->xPos->setValidator(xValidator_);
+    ui->yPos->setValidator(yValidator_);
+    ui->zPos->setValidator(zValidator_);
 }
 
 AxisModifyDialog::~AxisModifyDialog()
@@ -48,6 +51,13 @@ void AxisModifyDialog::on_cancelButton_clicked()
 void AxisModifyDialog::StartModify(ICPoint point)
 {
     point_ = point;
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    xValidator_->setRange(host->SystemParameter(ICVirtualHost::SYS_X_Maxium).toInt(),
+                          host->SystemParameter(ICVirtualHost::SYS_X_Length).toInt());
+    yValidator_->setRange(host->SystemParameter(ICVirtualHost::SYS_Y_Maxium).toInt(),
+                          host->SystemParameter(ICVirtualHost::SYS_Y_Length).toInt());
+    zValidator_->setRange(host->SystemParameter(ICVirtualHost::SYS_Z_Maxium).toInt(),
+                          host->SystemParameter(ICVirtualHost::SYS_Z_Length).toInt());
     ui->xPos->SetThisIntToThisText(point.x);
     ui->yPos->SetThisIntToThisText(point.y);
     ui->zPos->SetThisIntToThisText(point.z);

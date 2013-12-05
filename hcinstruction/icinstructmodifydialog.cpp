@@ -13,17 +13,18 @@ ICInstructModifyDialog::ICInstructModifyDialog(QWidget *parent) :
     ui->setupUi(this);
     /*****************BUG#120********************************/
     validator_ = new QIntValidator(0, 30000, this);
-    returnStepValidator = new QIntValidator(-32767, 32767, this);
+    speedValidator_ = new QIntValidator(0, 100, this);
     ui->delayTimeEdit->SetDecimalPlaces(2);
     ui->delayTimeEdit->setValidator(validator_);
     ui->limitTimeEdit->setValidator(validator_);
     ui->limitTimeEdit->SetDecimalPlaces(2);
     /*****************BUG177，178*******************************/
     validator = new QIntValidator(0, 255, this);
-    ui->speedEdit->setValidator(validator);
+    ui->speedEdit->setValidator(speedValidator_);
     
-    posValidator_ = new QIntValidator(0, 65530 * qPow(10, SECTION_DECIMAL), this);
-    ifposValidator_ = new QIntValidator(0, 6553, this);
+//    posValidator_ = new QIntValidator(0, 65530 * qPow(10, SECTION_DECIMAL), this);
+    posValidator_ = new QIntValidator(-32760, 32760, this);
+    ifposValidator_ = new QIntValidator(0, 65530, this);
     ui->posEdit->SetDecimalPlaces(POS_DECIMAL);
     ui->posEdit->setValidator(posValidator_);
 
@@ -93,18 +94,16 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
     
     ui->badProductBox->hide();
     
-    ui->horizontalBox->hide();
-    ui->verticalBox->hide();
+    ui->onBox->hide();
+    ui->offBox->hide();
     
-    ui->delayLabel->setText(tr("Delay Time"));
+    ui->delayLabel->setText(tr("Time"));
     ui->delayTimeEdit->SetDecimalPlaces(2);
     ui->delayUnitLabel->show();
     ui->delayTimeEdit->setValidator(validator_);
     ui->limitLabel->hide();
     ui->limitTimeEdit->hide();
     ui->limitUnitLabel->hide();
-    bool isMoldCount = false;
-
 
     if(item->IsAction())
     {
@@ -156,8 +155,13 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
                 break;
             }
             
-            posValidator_->setTop(host->SystemParameter(addr).toInt() * qPow(10, SECTION_DECIMAL));
-            ifposValidator_->setTop(host->SystemParameter(addr).toInt() / 10);
+            speedValidator_->setRange(0, 100);
+//            ui->speedEdit->SetThisIntToThisText(item->SVal());
+//            posValidator_->setTop(host->SystemParameter(addr).toInt() * qPow(10, SECTION_DECIMAL));
+            posValidator_->setTop(host->SystemParameter(ICVirtualHost::ICSystemParameter(addr - 1)).toInt());
+            posValidator_->setBottom(host->SystemParameter(addr).toInt());
+
+            ifposValidator_->setTop(host->SystemParameter(ICVirtualHost::ICSystemParameter(addr - 1)).toInt() / 10);
             validator->setTop(100);
             
             ui->positionLabel->show();
@@ -176,89 +180,41 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
             
             ui->earlySpeedDownCheckBox->show();
             ui->earlyDownSpeedTimeEdit->show();
+
+        }
+        else if(item->Action() != ICMold::GWait && item->Action() != ICMold::ACTEND)
+        {
+            ui->offBox->show();
+            ui->onBox->show();
+            if(item->Action() == ICMold::GCondition)
+            {
+                speedValidator_->setRange(-100, 100);
+                ui->speedLabel->setText(tr("Return"));
+                ui->speedLabel->show();
+                ui->speedEdit->show();
+                ui->precentLabel->hide();
+//                ui->speedEdit->SetThisIntToThisText(item->SVal());
+            }
+            if(item->IFVal())
+            {
+                ui->onBox->setChecked(true);
+                ui->offBox->setChecked(false);
+            }
+            else
+            {
+                ui->onBox->setChecked(false);
+                ui->offBox->setChecked(true);
+            }
         }
         if( item->Action() == ICMold::GZ)
         {
             ui->badProductBox->show();
         }
-        /************任务：待机点姿势可以修改*******/
-//        if(item->Action() == ICMold::ACTPOSEHORI || item->Action() == ICMold::ACT_PoseHori2)
-//        {
-//            ui->horizontalBox->show();
-//            ui->verticalBox->show();
-//            ui->horizontalBox->setChecked(true);
-//        }
-//        else if(item->Action() == ICMold::ACTPOSEVERT || item->Action() == ICMold::ACT_PoseVert2)
-//        {
-//            ui->horizontalBox->show();
-//            ui->verticalBox->show();
-//            ui->verticalBox->setChecked(true);
-//        }
-//        //子程序编辑，可以修改返回步号
-//        else if(item->Action() == ICMold::ACTCHECKINPUT)
-//        {
-//            ui->delayLabel->setText(tr("Return Step"));
-//            ui->delayTimeEdit->SetDecimalPlaces(0);
-//            ui->delayTimeEdit->setValidator(returnStepValidator);
-//            ui->delayUnitLabel->hide();
-//            ui->limitLabel->show();
-//            ui->limitTimeEdit->show();
-//            ui->limitUnitLabel->show();
-//            ui->limitTimeEdit->SetThisIntToThisText(item->Pos());
-//        }
-//        else if(item->Action() == ICMold::ACT_WaitMoldOpened && item->SVal() != 1)
-//        {
-//            ui->delayLabel->setText(tr("Limit Time"));
-//        }
     }
-    /******************BUG#117****************************/
-    else if(item->Clip() == ICMold::ACTCLIP7ON
-            || item->Clip() == ICMold::ACTCLIP8ON )
-        
-    {
-        validator->setTop(20000);
-        ui->speedLabel->setText(tr("Times"));
-        ui->speedLabel->show();
-        ui->speedEdit->show();
-        isMoldCount = true;
-        
-    }
-    else if(item->Clip() == ICMold:: ACT_AUX1
-            || item->Clip() == ICMold:: ACT_AUX2
-            || item->Clip() == ICMold:: ACT_AUX3
-            || item->Clip() == ICMold:: ACT_AUX4
-            || item->Clip() == ICMold:: ACT_AUX5
-            || item->Clip() == ICMold:: ACT_AUX6 )
-    {
-        if(item->IFVal() != 0)
-        {
-            validator->setTop(20000);
-            ui->speedLabel->setText(tr("Times"));
-            ui->speedLabel->show();
-            ui->speedEdit->show();
-            isMoldCount = true;
-        }
-    }
-    else if(item->Clip() == ICMold::ACTLAYOUTON)
-    {
-        ui->selectEdit->SetThisIntToThisText(item->SVal() + 1);
-        ui->selectEdit->show();
-        ui->selectLabel->show();
-    }
-    
-//    ui->posEdit->SetThisIntToThisText(item->Pos());
-    ui->posEdit->SetThisIntToThisText(item->ActualPos());
-    
 
-    if(isMoldCount)
-    {
-        ui->speedEdit->SetThisIntToThisText(item->ActualMoldCount());
-    }
-    else
-    {
-        ui->speedEdit->SetThisIntToThisText(item->SVal());
-    }
+    ui->posEdit->SetThisIntToThisText(item->ActualPos());
     ui->delayTimeEdit->SetThisIntToThisText(item->DVal());
+    ui->speedEdit->SetThisIntToThisText(item->SVal());
     
     if(item->IsEarlyEnd())  // is early end checked?
     {
@@ -279,7 +235,6 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
         ui->earlyEndCheckBox->setChecked(false);
     }
     
-//    ui->earlyEndTimeEdit->SetThisIntToThisText(item->IFPos());
     ui->earlyEndTimeEdit->SetThisIntToThisText(item->ActualIfPos());
     ui->earlyDownSpeedTimeEdit->SetThisIntToThisText(item->GetEarlyDownSpeed());    ///
     
@@ -288,31 +243,19 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
     int isok = exec();
     if(isok == QDialog::Accepted)
     {
-//        if(item->Action() == ICMold::ACTCHECKINPUT)
-//        {
-//            item->SetPos(ui->limitTimeEdit->TransThisTextToThisInt());
-//        }
-//        else
-//        {
-//            item->SetPos(ui->posEdit->TransThisTextToThisInt());
-            item->SetActualPos(ui->posEdit->TransThisTextToThisInt());
-//        }
-//        if(item->Clip() == ICMold::ACTLAYOUTON)
-//        {
-//            item->SetSVal(ui->selectEdit->TransThisTextToThisInt() - 1);
-//        }
-//        else if(isMoldCount)
-//        {
-//            item->SetActualMoldCount(ui->speedEdit->TransThisTextToThisInt());
-//        }
-//        else
-//        {
-            item->SetSVal(ui->speedEdit->TransThisTextToThisInt());
-//        }
+        item->SetActualPos(ui->posEdit->TransThisTextToThisInt());
+        item->SetSVal(ui->speedEdit->TransThisTextToThisInt());
         
         item->SetDVal(ui->delayTimeEdit->TransThisTextToThisInt());
-        item->SetEarlyEnd(ui->earlyEndCheckBox->isChecked());
-        item->SetEarlySpeedDown(ui->earlySpeedDownCheckBox->isChecked());
+        if(!ui->earlyEndCheckBox->isHidden())
+        {
+            item->SetEarlyEnd(ui->earlyEndCheckBox->isChecked());
+
+        }
+        if(!ui->earlyDownSpeedTimeEdit->isHidden())
+        {
+            item->SetEarlySpeedDown(ui->earlySpeedDownCheckBox->isChecked());
+        }
         if(!ui->badProductBox->isHidden())
         {
             item->SetBadProduct(ui->badProductBox->isChecked());
@@ -329,42 +272,10 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
 //            item->SetIFPos(ui->earlyEndTimeEdit->TransThisTextToThisInt());
             item->SetActualIfPos(ui->earlyEndTimeEdit->TransThisTextToThisInt());
         }
-        
-        //        item->SetIFVal(ui->earlyEndCheckBox->isChecked());
-        //        if(ui->earlyEndCheckBox->isChecked())
-        //            item->SetIFPos(ui->earlyEndTimeEdit->TransThisTextToThisInt());
-        // if(ui->earlySpeedDownCheckBox->isChecked())
-        //   {
-        //            item->SetESVal(ui->earlyDownSpeedTimeEdit->TransThisTextToThisInt());   ///
-        //            item->SetEarlyDownSpeed(ui->earlyDownSpeedTimeEdit->TransThisTextToThisInt());
-        //    }
-        
-        
-        /************接以上任务*************/
-//        if(ui->verticalBox->isChecked() && !ui->verticalBox->isHidden())
-//        {
-//            if(item->Action() == ICMold::ACTPOSEHORI || item->Action() == ICMold::ACTPOSEVERT)
-//            {
-//                item->SetAction(ICMold::ACTPOSEVERT);
-//            }
-//            else
-//            {
-//                item->SetAction(ICMold::ACT_PoseVert2);
-//            }
-//        }
-        
-//        if(ui->horizontalBox->isChecked() && !ui->horizontalBox->isHidden())
-//        {
-//            if(item->Action() == ICMold::ACTPOSEVERT || item->Action() == ICMold::ACTPOSEHORI)
-//            {
-//                item->SetAction(ICMold::ACTPOSEHORI);
-//            }
-//            else
-//            {
-//                item->SetAction(ICMold::ACT_PoseHori2);
-//            }
-//        }
-        
+        if(!ui->onBox->isHidden())
+        {
+            item->SetIFVal(ui->onBox->isChecked());
+        }
     }
     return isok;
 }

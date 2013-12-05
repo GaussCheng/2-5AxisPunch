@@ -128,11 +128,6 @@ QRadioButton::indicator:unchecked:disabled
        <set>AlignHCenter|AlignVCenter|AlignCenter</set>
       </property>
      </column>
-     <column>
-      <property name="text">
-       <string>Current/Setting</string>
-      </property>
-     </column>
     </widget>
    </item>
    <item>

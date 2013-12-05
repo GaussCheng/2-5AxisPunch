@@ -3,6 +3,8 @@
 #include "icupdatesystem.h"
 #include "icmachinestructpage.h"
 #include "icmachineconfigpage.h"
+#include "ichcproductsettingframe.h"
+#include "ichcsystemsettingsframe.h"
 #include <QProxyStyle>
 #include <QPainter>
 
@@ -46,6 +48,8 @@ ICSettingsFrame::ICSettingsFrame(QWidget *parent) :
 {
     ui->setupUi(this);
 
+//    ui->tabWidget->addTab(new ICHCProductSettingFrame(), tr("Product Settings"));
+    ui->tabWidget->addTab(new ICHCSystemSettingsFrame(), tr("Config"));
     ui->tabWidget->addTab(new ICMachineStructPage(), tr("Machine Config"));
     ui->tabWidget->addTab(new ICMachineConfigPage(), tr("Axis Config"));
     ui->tabWidget->addTab(ICUpdateSystem::Instance(), tr("Maintain"));

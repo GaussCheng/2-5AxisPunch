@@ -268,7 +268,7 @@ bool ICMold::ReadMoldParamsFile(const QString &fileName)
     stackParams_.clear();
     for(int i = 0; i != MoldParamCount; ++i)
     {
-        moldParams_.append(items.at(i).toUInt());
+        moldParams_.append(items.at(i).toInt());
     }
     //    Q_ASSERT_X(items.size() == 58, "ICMold::ReadMoldParamFile", "fnc file is not correct!");
 
@@ -346,7 +346,8 @@ bool ICMold::SaveMoldParamsFile()
     {
         return false;
     }
-    if(file.readAll() != toWrite)
+    QByteArray fc = file.readAll();
+    if(fc != toWrite)
     {
         QFile::copy(moldParamName_, moldParamName_ + "~");
         file.resize(0);

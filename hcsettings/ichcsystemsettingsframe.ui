@@ -163,7 +163,7 @@ QRadioButton::indicator:unchecked:disabled
             <bool>true</bool>
            </property>
            <attribute name="buttonGroup">
-            <string notr="true">languageButtonGroup</string>
+            <string>languageButtonGroup</string>
            </attribute>
           </widget>
          </item>
@@ -198,7 +198,7 @@ QRadioButton::indicator:unchecked:disabled
             <string>English</string>
            </property>
            <attribute name="buttonGroup">
-            <string notr="true">languageButtonGroup</string>
+            <string>languageButtonGroup</string>
            </attribute>
           </widget>
          </item>
@@ -525,7 +525,7 @@ QRadioButton::indicator:unchecked:disabled
           <bool>false</bool>
          </property>
          <attribute name="buttonGroup">
-          <string notr="true">buttonGroup_2</string>
+          <string>buttonGroup_2</string>
          </attribute>
         </widget>
        </item>
@@ -563,7 +563,7 @@ QRadioButton::indicator:unchecked:disabled
           <bool>true</bool>
          </property>
          <attribute name="buttonGroup">
-          <string notr="true">buttonGroup_2</string>
+          <string>buttonGroup_2</string>
          </attribute>
         </widget>
        </item>
@@ -955,7 +955,7 @@ height:30px;</string>
             <bool>true</bool>
            </property>
            <attribute name="buttonGroup">
-            <string notr="true">buttonGroup</string>
+            <string>buttonGroup</string>
            </attribute>
           </widget>
          </item>
@@ -972,7 +972,7 @@ height:30px;</string>
             <bool>true</bool>
            </property>
            <attribute name="buttonGroup">
-            <string notr="true">buttonGroup</string>
+            <string>buttonGroup</string>
            </attribute>
           </widget>
          </item>
@@ -989,7 +989,7 @@ height:30px;</string>
             <bool>true</bool>
            </property>
            <attribute name="buttonGroup">
-            <string notr="true">buttonGroup</string>
+            <string>buttonGroup</string>
            </attribute>
           </widget>
          </item>
@@ -1006,7 +1006,7 @@ height:30px;</string>
             <bool>true</bool>
            </property>
            <attribute name="buttonGroup">
-            <string notr="true">buttonGroup</string>
+            <string>buttonGroup</string>
            </attribute>
           </widget>
          </item>
@@ -1023,7 +1023,7 @@ height:30px;</string>
             <bool>true</bool>
            </property>
            <attribute name="buttonGroup">
-            <string notr="true">buttonGroup</string>
+            <string>buttonGroup</string>
            </attribute>
           </widget>
          </item>
@@ -1040,7 +1040,7 @@ height:30px;</string>
             <bool>true</bool>
            </property>
            <attribute name="buttonGroup">
-            <string notr="true">buttonGroup</string>
+            <string>buttonGroup</string>
            </attribute>
           </widget>
          </item>
@@ -1057,7 +1057,7 @@ height:30px;</string>
             <bool>true</bool>
            </property>
            <attribute name="buttonGroup">
-            <string notr="true">buttonGroup</string>
+            <string>buttonGroup</string>
            </attribute>
           </widget>
          </item>
@@ -1074,7 +1074,7 @@ height:30px;</string>
             <bool>true</bool>
            </property>
            <attribute name="buttonGroup">
-            <string notr="true">buttonGroup</string>
+            <string>buttonGroup</string>
            </attribute>
           </widget>
          </item>
@@ -1091,7 +1091,7 @@ height:30px;</string>
             <bool>true</bool>
            </property>
            <attribute name="buttonGroup">
-            <string notr="true">buttonGroup</string>
+            <string>buttonGroup</string>
            </attribute>
           </widget>
          </item>

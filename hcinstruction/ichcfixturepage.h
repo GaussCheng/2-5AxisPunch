@@ -12,6 +12,7 @@
 
 class QAbstractButton;
 class QLabel;
+class QTableWidgetItem;
 
 namespace Ui {
     class ICHCFixturePage;
@@ -36,12 +37,14 @@ private Q_SLOTS:
     void StatusRefreshed();
     void CommandButtonClicked(QWidget* widget);
 
+    void on_tableWidget_itemChanged(QTableWidgetItem *item);
+
 private:
     Ui::ICHCFixturePage *ui;
     QPixmap onPixmap_;
     QPixmap offPixmap_;
 
-    QMap<int, ICUserActionInfo> rowToInfoMap_;
+    QMap<int, ICUserIOInfo> rowToInfoMap_;
 };
 
 #endif // ICHCFIXTUREPAGE_H

@@ -122,14 +122,23 @@ void ActionSettingFrame::showEvent(QShowEvent *e)
 {
     UpdateAxisDefine_();
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    posMaxs_[0] = host->SystemParameter(ICVirtualHost::SYS_X_Maxium).toInt();
-    posMaxs_[1] = host->SystemParameter(ICVirtualHost::SYS_Y_Maxium).toInt();
-    posMaxs_[2] = host->SystemParameter(ICVirtualHost::SYS_Z_Maxium).toInt();
-    posMaxs_[3] = host->SystemParameter(ICVirtualHost::SYS_P_Maxium).toInt();
-    posMaxs_[4] = host->SystemParameter(ICVirtualHost::SYS_Q_Maxium).toInt();
-    posMaxs_[5] = host->SystemParameter(ICVirtualHost::SYS_A_Maxium).toInt();
-    posMaxs_[6] = host->SystemParameter(ICVirtualHost::SYS_B_Maxium).toInt();
-    posMaxs_[7] = host->SystemParameter(ICVirtualHost::SYS_C_Maxium).toInt();
+    posMaxs_[0] = host->SystemParameter(ICVirtualHost::SYS_X_Length).toInt();
+    posMaxs_[1] = host->SystemParameter(ICVirtualHost::SYS_Y_Length).toInt();
+    posMaxs_[2] = host->SystemParameter(ICVirtualHost::SYS_Z_Length).toInt();
+    posMaxs_[3] = host->SystemParameter(ICVirtualHost::SYS_P_Length).toInt();
+    posMaxs_[4] = host->SystemParameter(ICVirtualHost::SYS_Q_Length).toInt();
+    posMaxs_[5] = host->SystemParameter(ICVirtualHost::SYS_A_Length).toInt();
+    posMaxs_[6] = host->SystemParameter(ICVirtualHost::SYS_B_Length).toInt();
+    posMaxs_[7] = host->SystemParameter(ICVirtualHost::SYS_C_Length).toInt();
+
+    posMins_[0] = host->SystemParameter(ICVirtualHost::SYS_X_Maxium).toInt();
+    posMins_[1] = host->SystemParameter(ICVirtualHost::SYS_Y_Maxium).toInt();
+    posMins_[2] = host->SystemParameter(ICVirtualHost::SYS_Z_Maxium).toInt();
+    posMins_[3] = host->SystemParameter(ICVirtualHost::SYS_P_Maxium).toInt();
+    posMins_[4] = host->SystemParameter(ICVirtualHost::SYS_Q_Maxium).toInt();
+    posMins_[5] = host->SystemParameter(ICVirtualHost::SYS_A_Maxium).toInt();
+    posMins_[6] = host->SystemParameter(ICVirtualHost::SYS_B_Maxium).toInt();
+    posMins_[7] = host->SystemParameter(ICVirtualHost::SYS_C_Maxium).toInt();
     posLength_[0] = host->SystemParameter(ICVirtualHost::SYS_A_Length).toInt();
     posLength_[1] = host->SystemParameter(ICVirtualHost::SYS_A_Length).toInt();
     posLength_[2] = host->SystemParameter(ICVirtualHost::SYS_A_Length).toInt();
@@ -137,7 +146,8 @@ void ActionSettingFrame::showEvent(QShowEvent *e)
     int mutil = qPow(10, SECTION_DECIMAL);
     for(int i = 0; i != 8; ++i)
     {
-        posValidators_[i].setTop(posMaxs_[i] * mutil);
+        posValidators_[i].setTop(posMaxs_[i]);
+        posValidators_[i].setBottom(posMins_[i]);
     }
     for(int i = 0; i != 3; ++i)
     {

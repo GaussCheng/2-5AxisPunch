@@ -6,33 +6,41 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>414</width>
+    <width>318</width>
     <height>282</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QCheckBox{
+	spacing: 24px;
+     width: 32px;
+     height: 32px;
+}
+QCheckBox::indicator:checked
+{
+ image: url(:/resource/check_checked.png);
+}
+QCheckBox::indicator:unchecked
+{
+ image: url(:/resource/check_unchecked.png);
+}
+
+</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
-    <number>2</number>
+    <number>4</number>
    </property>
-   <property name="leftMargin">
-    <number>2</number>
-   </property>
-   <property name="topMargin">
-    <number>2</number>
-   </property>
-   <property name="rightMargin">
-    <number>0</number>
-   </property>
-   <property name="bottomMargin">
+   <property name="margin">
     <number>0</number>
    </property>
    <item>
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>Periphery Action</string>
+      <string>Condition</string>
      </property>
     </widget>
    </item>
@@ -60,19 +68,6 @@ height: 33px;
 {
      image: url(:/resource/check_checked.png);
  }
-
-QRadioButton::indicator:checked:disabled
-{
- image: url(:/resource/check_checked_disable.png);
-}
-
-QRadioButton::indicator:unchecked:disabled
-{
- image: url(:/resource/check_unchecked_disable.png);
-}
-
-
-
 </string>
      </property>
      <property name="editTriggers">
@@ -128,19 +123,41 @@ QRadioButton::indicator:unchecked:disabled
        <set>AlignHCenter|AlignVCenter|AlignCenter</set>
       </property>
      </column>
-     <column>
-      <property name="text">
-       <string>Current/Setting</string>
-      </property>
-     </column>
     </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QCheckBox" name="onBox">
+       <property name="text">
+        <string>ON</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string>buttonGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="offBox">
+       <property name="text">
+        <string>OFF</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string>buttonGroup</string>
+       </attribute>
+      </widget>
+     </item>
+    </layout>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QLabel" name="label_2">
        <property name="text">
-        <string>Delay</string>
+        <string>Time</string>
        </property>
       </widget>
      </item>
@@ -176,6 +193,40 @@ QRadioButton::indicator:unchecked:disabled
      </item>
     </layout>
    </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Return</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="ICLineEditWithVirtualNumericKeypad" name="returnEdit">
+       <property name="text">
+        <string>0</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
   </layout>
  </widget>
  <customwidgets>
@@ -187,4 +238,7 @@ QRadioButton::indicator:unchecked:disabled
  </customwidgets>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup"/>
+ </buttongroups>
 </ui>

@@ -201,13 +201,15 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
             SLOT(ShowAutoPage()));
     this->setFixedSize(640, 480);
 
-    ICProgramHeadFrame::Instance()->SetCurrentMoldName(ICParametersSave::Instance()->MoldName("Test.act"));
 #endif
 #ifdef Q_WS_X11
 //            ShowInstructPage();
     //       ShowManualPage();
 //         ShowAutoPage();
 #endif
+    QString moldName = ICParametersSave::Instance()->MoldName("Test.act");
+    qDebug()<<"Last mold:"<<moldName;
+    ICProgramHeadFrame::Instance()->SetCurrentMoldName(moldName);
 
 }
 
@@ -288,32 +290,43 @@ void MainFrame::InitCategoryPage()
     ui->centerPageFrame->setLayout(centerStackedLayout_);
     emit LoadMessage("center page layout has been setted");
 
+    emit LoadMessage("Start to Initialize initial pages");
     initialPage_ = new ICInitialFrame();
     centerStackedLayout_->addWidget(initialPage_);
 
+    emit LoadMessage("Start to Initialize manual pages");
     manualPage_ = new ICHCManualOperationPageFrame();
     centerStackedLayout_->addWidget(manualPage_);
 
+    emit LoadMessage("Start to Initialize auto pages");
     autoPage_ = new ICHCProgramMonitorFrame();
     centerStackedLayout_->addWidget(autoPage_);
 
+    emit LoadMessage("Start to Initialize settings pages");
     settingsPage_ = new ICSettingsFrame();
     functionButtonToPage_.insert(ui->settingsButton, settingsPage_);
     centerStackedLayout_->addWidget(settingsPage_);
 
+    emit LoadMessage("Start to Initialize alarm pages");
     alarmPage_ = ICAlarmFrame::Instance();
     functionButtonToPage_.insert(ui->alarmButton, alarmPage_);
     centerStackedLayout_->addWidget(alarmPage_);
 
+
+    emit LoadMessage("Start to Initialize monitor pages");
     monitorPage_ = new ICMonitorPageFrame();
     functionButtonToPage_.insert(ui->ioMonitorButton, monitorPage_);
     centerStackedLayout_->addWidget(monitorPage_);
 
+
+    emit LoadMessage("Start to Initialize instruct pages");
     instructPage_ = new ICHCInstructionPageFrame();
     functionButtonToPage_.insert(ui->teachButton, instructPage_);
     centerStackedLayout_->addWidget(instructPage_);
 
+    emit LoadMessage("Start to Initialize origin pages");
     originExecutingPage_ = new ICOriginDialog();
+    emit LoadMessage("end to Initialize  pages");
 
 }
 

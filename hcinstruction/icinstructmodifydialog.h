@@ -42,8 +42,7 @@ private:
 
     QIntValidator* validator ;
     QIntValidator* validator_ ;
-    QIntValidator* returnStepValidator ;
-
+    QIntValidator* speedValidator_;
 };
 
 #endif // ICINSTRUCTMODIFYDIALOG_H

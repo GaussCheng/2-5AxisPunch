@@ -315,6 +315,9 @@ public:
         GOutY,
         GOneXOneY,
         GTwoXTwoY,
+        GCondition,
+        GWait = 26,
+        GEuOut,
 
 //        ACTMAINUP,		//8
 //        ACTMAINDOWN,	//9

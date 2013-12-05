@@ -24,6 +24,7 @@ protected:
     void showEvent(QShowEvent *e);
     void hideEvent(QHideEvent *e);
     void changeEvent(QEvent *e);
+    void timerEvent(QTimerEvent *e);
 private:
     void InitInterface();
     void InitSignal();

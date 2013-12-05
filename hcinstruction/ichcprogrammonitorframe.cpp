@@ -234,7 +234,7 @@ void ICHCProgramMonitorFrame::LevelChanged(int level)
 {
     if(level >=  ICParametersSave::MachineAdmin)
     {
-        ui->editToolButton->show();
+        ui->editToolButton->hide();
     }
     else
     {
@@ -260,14 +260,14 @@ void ICHCProgramMonitorFrame::SetProduct(int product)
 //{
 //    ui->currentProductsLabel->setText(QString::number(currentFinished));
 //}
-static int oldX = -1;
-static int oldY = -1;
-static int oldZ = -1;
-static int oldS = -1;
+static int16_t oldX = -1;
+static int16_t oldY = -1;
+static int16_t oldZ = -1;
+static int16_t oldS = -1;
 void ICHCProgramMonitorFrame::StatusRefreshed()
 {
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    int pos = host->HostStatus(ICVirtualHost::XPos).toInt();
+    int16_t pos = host->HostStatus(ICVirtualHost::XPos).toInt();
     if(pos != oldX)
     {
         oldX = pos;
@@ -285,7 +285,7 @@ void ICHCProgramMonitorFrame::StatusRefreshed()
         oldZ = pos;
         ui->zCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
     }
-    pos = host->HostStatus(ICVirtualHost::DbgX0).toInt();
+    pos = host->GlobalSpeed();
     if(pos != oldS)
     {
         oldS = pos;

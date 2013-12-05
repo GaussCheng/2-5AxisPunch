@@ -12,6 +12,7 @@ namespace Ui {
 }
 
 class QAbstractButton;
+class QTableWidgetItem;
 
 class ICCutPage : public ICInstructionEditorBase
 {
@@ -31,6 +32,8 @@ protected:
 private Q_SLOTS:
     void StatusRefreshed();
     void CommandButtonClicked(QWidget* widget);
+
+    void on_tableWidget_itemChanged(QTableWidgetItem *item);
 
 private:
     Ui::ICCutPage *ui;

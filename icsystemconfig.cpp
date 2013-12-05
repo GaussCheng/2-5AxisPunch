@@ -2,6 +2,7 @@
 #include <QFile>
 #include <QStringList>
 #include <QTextStream>
+#include <QDebug>
 #include "icsystemconfig.h"
 
 
@@ -61,12 +62,28 @@ void ICUserDefineConfig::Init()
     const QString sysconfigPath = "./sysconfig/";
     const QString userDefineXPath = sysconfigPath + "user_define_x";
     const QString userDefineYPath = sysconfigPath + "user_define_y";
+    const QString userMachineDefineXPath = sysconfigPath + "user_define_machine_x";
+    const QString userMachineDefineYPath = sysconfigPath + "user_define_machine_y";
     const QString userPointPath = sysconfigPath + "user_define_points";
     const QString userActionPath = sysconfigPath + "user_define_io_actions";
     ReadIOInfos_(userDefineXPath, this->xInfos_);
     ReadIOInfos_(userDefineYPath, this->yInfos_);
+    ReadIOInfos_(userMachineDefineXPath, this->euxInfos_);
+    ReadIOInfos_(userMachineDefineYPath, this->euyInfos_);
     ReadPointInfos_(userPointPath);
     ReadActionInfos_(userActionPath);
+    euxStrings_<<euxInfos_.value(2).GetLocaleName("zh")
+              <<euxInfos_.value(3).GetLocaleName("zh")
+             <<euxInfos_.value(7).GetLocaleName("zh")
+            <<euxInfos_.value(6).GetLocaleName("zh")
+           <<euxInfos_.value(14).GetLocaleName("zh")
+          <<euxInfos_.value(13).GetLocaleName("zh");
+    euyStrings_<<euyInfos_.value(0).GetLocaleName("zh")
+              <<euyInfos_.value(6).GetLocaleName("zh")
+             <<euyInfos_.value(1).GetLocaleName("zh")
+            <<euyInfos_.value(5).GetLocaleName("zh")
+           <<euyInfos_.value(8).GetLocaleName("zh")
+          <<euyInfos_.value(14).GetLocaleName("zh");
 
 }
 
@@ -168,11 +185,28 @@ QList<ICUserActionInfo> ICUserDefineConfig::GetActionInfosByType(int type)
     ICUserDefineConfig::UserActionInfos::iterator p = actionInfos_.begin();
     while(p != actionInfos_.end())
     {
-        if(p.value().type == type)
+        if(p.value().type == type || type == -1)
         {
             ret.append(p.value());
         }
         ++p;
     }
     return ret;
+}
+
+QString ICUserDefineConfig::GetIOActionLocaleName(int type, int id , bool dir, const QString& languageName)
+{
+    UserActionInfos::iterator p = actionInfos_.begin();
+    qDebug()<<type<<id<<dir;
+    while(p != actionInfos_.end())
+    {
+        if(p.value().type == type && p.value().pointNum == id && p.value().dir == dir)
+        {
+            return p.value().GetLocaleName(languageName);
+        }
+        ++p;
+    }
+    return "";
+//        if(!actionInfos_.contains(id)) return "";
+//        return actionInfos_.value(id).GetLocaleName(languageName);
 }

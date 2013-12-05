@@ -32,13 +32,15 @@ void ICHCManualOperationPageFrame::showEvent(QShowEvent *e)
 {
     QFrame::showEvent(e);
     ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnManual, 0);
-    timerID_ = ICTimerPool::Instance()->Start(ICTimerPool::RefreshTime, this, SLOT(StatusRefreshed()));
+    timerID_ = startTimer(100);
+//    timerID_ = ICTimerPool::Instance()->Start(ICTimerPool::RefreshTime, this, SLOT(StatusRefreshed()));
 }
 
 void ICHCManualOperationPageFrame::hideEvent(QHideEvent *e)
 {
     QFrame::hideEvent(e);
-    ICTimerPool::Instance()->Stop(timerID_, this, SLOT(StatusRefreshed()));
+    killTimer(timerID_);
+//    ICTimerPool::Instance()->Stop(timerID_, this, SLOT(StatusRefreshed()));
     ICMold::CurrentMold()->SaveMoldParamsFile();
 }
 
@@ -56,13 +58,18 @@ void ICHCManualOperationPageFrame::changeEvent(QEvent *e)
     }
 }
 
+void ICHCManualOperationPageFrame::timerEvent(QTimerEvent *e)
+{
+    StatusRefreshed();
+}
+
 void ICHCManualOperationPageFrame::InitInterface()
 {
 //    ui->xCurrentPos->setAttribute(Qt::P);
     ui->xPos->SetDecimalPlaces(1);
     ui->yPos->SetDecimalPlaces(1);
     ui->zPos->SetDecimalPlaces(1);
-    ui->xPos->setValidator(new QIntValidator(0, 65530, this));
+    ui->xPos->setValidator(new QIntValidator(-32760, 32760, this));
     ui->yPos->setValidator(ui->xPos->validator());
     ui->zPos->setValidator(ui->xPos->validator());
     ui->buttonGroup->setId(ui->point1, 0);
@@ -113,6 +120,7 @@ void ICHCManualOperationPageFrame::InitInterface()
     QList<QAbstractButton*> buttons = ui->buttonGroup->buttons();
     const int bsize = buttons.size();
     int tmp;
+    QString name;
     for(int i = 0; i != bsize; ++i)
     {
         tmp = ui->buttonGroup->id(buttons.at(i));
@@ -121,7 +129,15 @@ void ICHCManualOperationPageFrame::InitInterface()
                 SIGNAL(clicked()),
                 &buttonSignalMapper_,
                 SLOT(map()));
-        buttons[i]->setText(config->GetPointsLocaleName(tmp));
+        name = config->GetPointsLocaleName(tmp);
+        if(!name.isEmpty())
+        {
+            buttons[i]->setText(name);
+        }
+        else
+        {
+            buttons[i]->hide();
+        }
 
     }
     connect(&buttonSignalMapper_,
@@ -139,9 +155,10 @@ void ICHCManualOperationPageFrame::InitInterface()
                 &actionSignalMapper_,
                 SLOT(map()));
 //        qDebug()<<config->GetIOActionLocaleName(tmp);
-        if(!config->GetIOActionLocaleName(tmp).isEmpty())
+        name = config->GetIOActionLocaleNameByID(tmp);
+        if(!name.isEmpty())
         {
-            actions[i]->setText(config->GetIOActionLocaleName(tmp));
+            actions[i]->setText(name);
         }
         else
         {
@@ -159,14 +176,14 @@ void ICHCManualOperationPageFrame::InitSignal()
 
 }
 
-static int oldX = -1;
-static int oldY = -1;
-static int oldZ = -1;
-static int oldS = -1;
+static int16_t oldX = -1;
+static int16_t oldY = -1;
+static int16_t oldZ = -1;
+static int16_t oldS = -1;
 void ICHCManualOperationPageFrame::StatusRefreshed()
 {
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    int pos = host->HostStatus(ICVirtualHost::XPos).toInt();
+    int16_t pos = host->HostStatus(ICVirtualHost::XPos).toInt();
     if(pos != oldX)
     {
         oldX = pos;

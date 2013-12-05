@@ -60,6 +60,7 @@ ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
     ui->tabWidget->addTab(MoldInformation::Instance(), tr("Records"));
     //    ui->otherButton->hide();
 
+    ui->pneumaticButton->hide();
     InitInterface();
     InitSignal();
     //    ui->moldContentListWidget->setBackgroundRole(QColor("gray"));
@@ -152,6 +153,12 @@ void ICHCInstructionPageFrame::OptionButtonClicked()
         optionButtonToPage_.insert(ui->cutButton, cutPage_);
         ui->settingStackedWidget->addWidget(cutPage_);
     }
+    else if(waitConditionPage_ == NULL && ui->workMachineIOButton == optionButton)
+    {
+        waitConditionPage_ = new ICWaitConditionEditor();
+        optionButtonToPage_.insert(ui->workMachineIOButton, waitConditionPage_);
+        ui->settingStackedWidget->addWidget(waitConditionPage_);
+    }
     ui->settingStackedWidget->setCurrentWidget(optionButtonToPage_.value(optionButton));
 }
 
@@ -200,6 +207,9 @@ void ICHCInstructionPageFrame::InitSignal()
     connect(ui->cutButton,
             SIGNAL(clicked()),
             this,
+            SLOT(OptionButtonClicked()));
+    connect(ui->workMachineIOButton,
+            SIGNAL(clicked()),
             SLOT(OptionButtonClicked()));
 }
 

@@ -5,6 +5,7 @@
 #include <QSharedPointer>
 #include <QWeakPointer>
 #include <QMap>
+#include <QStringList>
 
 class QSettings;
 
@@ -102,11 +103,13 @@ public:
         return pointInfos_.value(id).GetLocaleName(languageName);
     }
 
-    QString GetIOActionLocaleName(int id , const QString& languageName = "zh")
+    QString GetIOActionLocaleNameByID(int id, const QString& languageName = "zh")
     {
         if(!actionInfos_.contains(id)) return "";
         return actionInfos_.value(id).GetLocaleName(languageName);
     }
+
+    QString GetIOActionLocaleName(int type, int id , bool dir, const QString& languageName = "zh");
 
     int GetIOActionType(int id)
     {
@@ -116,12 +119,20 @@ public:
 
     ICUserActionInfo GetActionByID(int id){return actionInfos_.value(id, ICUserActionInfo());}
 
-    QList<ICUserActionInfo> GetActionInfosByType(int type);
+    QList<ICUserActionInfo> GetActionInfosByType(int type = -1);
 
     QList<ICUserIOInfo> AllXInfos() { return xInfos_.values();}
     QList<ICUserIOInfo> AllYInfos() { return yInfos_.values();}
-
+    QList<ICUserIOInfo> AllEuXInfos() { return this->euxInfos_.values();}
+    QList<ICUserIOInfo> AllEuYInfos() { return this->euyInfos_.values();}
+    QStringList AllEuXStrings() { return this->euxStrings_;}
+    QStringList AllEuYStrings() { return this->euyStrings_;}
     ICUserIOInfo XInfo(int id) { return xInfos_.value(id, ICUserIOInfo());}
+    ICUserIOInfo YInfo(int id) { return yInfos_.value(id, ICUserIOInfo());}
+    ICUserIOInfo EuXinfo(int id) { return euxInfos_.value(id, ICUserIOInfo());}
+    ICUserIOInfo EuYinfo(int id) { return euyInfos_.value(id, ICUserIOInfo());}
+    QString EuXString(int id) { return euxStrings_.at(id);}
+    QString EuYString(int id) { return euyStrings_.at(id);}
 
 private:
     explicit ICUserDefineConfig(){}
@@ -133,8 +144,12 @@ private:
     void ReadActionInfos_(const QString& path);
     UserIOInfos xInfos_;
     UserIOInfos yInfos_;
+    UserIOInfos euxInfos_;
+    UserIOInfos euyInfos_;
     UserPointInfos pointInfos_;
     UserActionInfos actionInfos_;
+    QStringList euxStrings_;
+    QStringList euyStrings_;
 };
 
 typedef ICUserDefineConfig::ICUserDefineConfigSPTR ICUserDefineConfigSPTR;

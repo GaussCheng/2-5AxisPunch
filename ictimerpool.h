@@ -37,7 +37,7 @@ public:
     int Start(uint timeout, const QObject * receiver, const char* handler);
     void Stop(int timerID, const QObject * receiver, const char* handler);
 
-    const static int RefreshTime = 20;
+    const static int RefreshTime = 100;
 
 private:
     QTimer* GetTimer_(int &id);

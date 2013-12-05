@@ -68,6 +68,7 @@ void ICOriginDialog::changeEvent(QEvent *e)
 
 void ICOriginDialog::StepChanged(int step)
 {
+    ui->step->setText(QString::number(step));
     if(step > 0 && step < 100)
     {
         ui->label->setText(tr("Originning..."));
@@ -101,6 +102,7 @@ void ICOriginDialog::StepChanged(int step)
 void ICOriginDialog::StatusRefreshed()
 {
     int hintcode = ICVirtualHost::GlobalVirtualHost()->HintNum();
+
     if(hintcode == 14)
     {
         ui->label->setText(tr("Do you need to auto position?"));

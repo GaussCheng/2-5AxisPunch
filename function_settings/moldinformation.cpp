@@ -793,6 +793,7 @@ void MoldInformation::on_exportToolButton_clicked()
 #endif
     if(!flagItem || !flagItem_)
     {
+        system("umount /mnt/udisk");
         QMessageBox::information(this,tr("Information"), tr("Operation finished!"));
     }
 

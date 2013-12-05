@@ -2,6 +2,7 @@
 #define AXISMODIFYDIALOG_H
 
 #include <QDialog>
+#include <QIntValidator>
 
 namespace Ui {
 class AxisModifyDialog;
@@ -37,6 +38,9 @@ private slots:
 private:
     Ui::AxisModifyDialog *ui;
     ICPoint point_;
+    QIntValidator* xValidator_;
+    QIntValidator* yValidator_;
+    QIntValidator* zValidator_;
 };
 
 #endif // AXISMODIFYDIALOG_H

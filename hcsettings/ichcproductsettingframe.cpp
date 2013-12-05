@@ -14,12 +14,13 @@ ICHCProductSettingFrame::ICHCProductSettingFrame(QWidget *parent) :
 //    buttongroup_ = new QButtonGroup ;
 //    InitCheckBox();
 //    ui->productLineEdit->setValidator(new QIntValidator(0, 65535, ui->productLineEdit));
-//    ui->alarmTimesEdit->setValidator(new QIntValidator(0, 65535, ui->alarmTimesEdit));
+    ui->alarmTimesEdit->setValidator(new QIntValidator(0, 65535, ui->alarmTimesEdit));
 //    ui->tryProductEdit->setValidator(new QIntValidator(0, 65535, ui->tryProductEdit));
 //    ui->samplingEdit->setValidator(new QIntValidator(0, 65535, ui->samplingEdit));
 //    ui->samplingEdit_3->setValidator(new QIntValidator(0, 65535, ui->samplingEdit_3));
 //    ui->waitTimeEdit->SetDecimalPlaces(1);
 //    ui->waitTimeEdit->setValidator(new QIntValidator(0, 32760, ui->waitTimeEdit));
+    ICLineEditWrapper *wrapper;
 //    ICLineEditWrapper *wrapper = new ICLineEditWrapper(ui->productLineEdit,
 //                                                       ICMold::Product,
 //                                                       ICLineEditWrapper::Mold,
@@ -44,11 +45,11 @@ ICHCProductSettingFrame::ICHCProductSettingFrame(QWidget *parent) :
 //                                    ICLineEditWrapper::OneFraction);
 //    wrappers_.append(wrapper);
 
-//    wrapper = new ICLineEditWrapper(ui->alarmTimesEdit,
-//                                    ICVirtualHost::SM_ACCTIME,
-//                                    ICLineEditWrapper::System,
-//                                    ICLineEditWrapper::Integer);
-//    wrappers_.append(wrapper);
+    wrapper = new ICLineEditWrapper(ui->alarmTimesEdit,
+                                    ICVirtualHost::SM_ACCTIME,
+                                    ICLineEditWrapper::System,
+                                    ICLineEditWrapper::Integer);
+    wrappers_.append(wrapper);
 
 ////    int currentPos = ICMold::CurrentMold()->MoldParam(ICMold::PosMainDown);
 ////    if(currentPos > 1)

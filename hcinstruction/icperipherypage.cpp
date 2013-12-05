@@ -15,26 +15,21 @@ ICPeripheryPage::ICPeripheryPage(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->delayEdit->SetDecimalPlaces(2);
-    ui->tableWidget->setColumnWidth(0, 50);
-    ui->tableWidget->setColumnWidth(1, 120);
-
-    QList<ICUserActionInfo> infos = ICUserDefineConfig::Instance()->GetActionInfosByType(2);
+    ui->delayEdit->setValidator(new QIntValidator(0, 65530, this));
+    ui->returnEdit->setValidator(new QIntValidator(-100, 100, this));
+    QList<ICUserIOInfo> infos = ICUserDefineConfig::Instance()->AllXInfos();
     const int infosSize = infos.size();
+    ui->tableWidget->blockSignals(true);
     ui->tableWidget->setRowCount(infosSize);
     QTableWidgetItem* item;
-    QPushButton* button;
     for(int i = 0; i != infosSize; ++i)
     {
-        item = new QTableWidgetItem();
+        item = new QTableWidgetItem(infos.at(i).GetLocaleName("zh"));
         item->setCheckState(Qt::Unchecked);
         ui->tableWidget->setItem(i, 0, item);
-        button = new QPushButton(infos.at(i).GetLocaleName("zh"));
-//        button->setIcon(offPixmap_);
-        button->setCheckable(true);
-        ui->tableWidget->setCellWidget(i, 1, button);
         rowToInfoMap_.insert(i, infos.at(i));
     }
-
+    ui->tableWidget->blockSignals(false);
 }
 
 ICPeripheryPage::~ICPeripheryPage()
@@ -88,19 +83,31 @@ QList<ICMoldItem> ICPeripheryPage::CreateCommandImpl() const
 {
     QList<ICMoldItem> ret;
     ICMoldItem item;
-    QPushButton* button;
     for(int i = 0; i != ui->tableWidget->rowCount(); ++i)
     {
         if(ui->tableWidget->item(i,0)->checkState() == Qt::Checked)
         {
-            item.SetGMVal(ICMold::GTwoXTwoY);
+            item.SetGMVal(ICMold::GCondition);
 //            item.SetSVal(rowToInfoMap_.value(i).pointNum);
-            item.SetSubNum(rowToInfoMap_.value(i).pointNum);
-            button = qobject_cast<QPushButton*>(ui->tableWidget->cellWidget(i, 1));
-            item.SetIFVal(button->isChecked());
+            item.SetSubNum(rowToInfoMap_.value(i).hardwarePoint);
+            item.SetIFVal(ui->onBox->isChecked());
             item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
+            item.SetSVal(ui->returnEdit->TransThisTextToThisInt());
             ret.append(item);
         }
     }
     return ret;
+}
+
+void ICPeripheryPage::on_tableWidget_itemChanged(QTableWidgetItem *item)
+{
+    Qt::CheckState state = item->checkState();
+    const int rCount = ui->tableWidget->rowCount();
+    ui->tableWidget->blockSignals(true);
+    for(int i = 0; i != rCount; ++i)
+    {
+        ui->tableWidget->item(i, 0)->setCheckState(Qt::Unchecked);
+    }
+    item->setCheckState(state);
+    ui->tableWidget->blockSignals(false);
 }

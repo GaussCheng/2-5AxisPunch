@@ -17,6 +17,12 @@ ICMachineStructPage::ICMachineStructPage(QWidget *parent) :
     timePage_(NULL)
 {
     ui->setupUi(this);
+    ui->minLabel->hide();
+    ui->minUnitLabel->hide();
+    ui->internalSecurityZoneLineEdit->hide();
+    ui->maxLabel->hide();
+    ui->maxUnitLabel->hide();
+    ui->externalSecurityZoneLineEdit->hide();
     InitInterface();
     buttonGroup_ = new QButtonGroup();
 
@@ -250,7 +256,7 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
     maxSecValidator_->setBottom(0);
 
     maximumValidator_->setBottom(0);
-    ui->maximumDisplacementLineEdit->setValidator(maximumValidator_);
+//    ui->maximumDisplacementLineEdit->setValidator(maximumValidator_);
     ui->mechanicalLengthLineEdit->setValidator(intValidator);
     intValidator->setTop(65530);
     if(currentAxis_ == ICVirtualHost::ICAxis_AxisX1)
@@ -604,11 +610,12 @@ void ICMachineStructPage::InitInterface()
     ui->mechanicalLengthLineEdit->SetDecimalPlaces(1);
     intValidator = new QIntValidator(0, 65530, this);
     ui->mechanicalLengthLineEdit->setValidator(intValidator);
+//    ui->mechanicalLengthLineEdit->setValidator(new QIntValidator(-32760, 32760, this));
     maxMoveValidator_ = new QIntValidator(0, 65530, this);
     originValidator_ = new QIntValidator(-900, 900, this);
     ui->maximumDisplacementLineEdit->SetDecimalPlaces(1);
     maximumValidator_ = new QIntValidator(0, 65530, this);
-    ui->maximumDisplacementLineEdit->setValidator(maximumValidator_);
+    ui->maximumDisplacementLineEdit->setValidator(new QIntValidator(-32760, 32760, this));
   //  externalValidator_ = new QIntValidator(0, 65530, this);
     ui->internalSecurityZoneLineEdit->SetDecimalPlaces(1);
     ui->internalSecurityZoneLineEdit->setValidator(minSecValidator_);
