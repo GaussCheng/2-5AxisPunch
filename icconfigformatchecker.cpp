@@ -15,7 +15,7 @@ bool ICConfigFormatChecker::CheckImpl(const QString &dataStream)
     temp = temp.remove("\n");
     for(int i = 0; i != temp.length(); ++i)
     {
-        if(!temp.at(i).isDigit())
+        if(!temp.at(i).isDigit() && temp.at(i) != '-')
         {
             return false;
         }

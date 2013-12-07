@@ -41,10 +41,19 @@ private slots:
 
     void OnPointSelected(int id);
     void OnActionTriggered(int id);
-
-    void on_runButton_clicked();
+    void OnShortcutTriggered(int id);
 
     void on_setButton_clicked();
+
+    void on_xRun_clicked();
+
+    void on_yRun_clicked();
+
+    void on_runButton_toggled(bool checked);
+
+    void on_productEdit_textChanged(const QString &arg1);
+
+    void on_productClear_clicked();
 
 private:
     Ui::ICHCManualOperationPageFrame *ui;
@@ -52,6 +61,8 @@ private:
 
     QSignalMapper buttonSignalMapper_;
     QSignalMapper actionSignalMapper_;
+    QSignalMapper shortcutSignalMapper_;
+    QPushButton* nullButton_;
     AxisModifyDialog* modifyDialog_;
 };
 

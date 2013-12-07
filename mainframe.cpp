@@ -88,6 +88,9 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
             SIGNAL(LoadMessage(QString)),
             splashScreen,
             SLOT(showMessage(QString)));
+    connect(registe_timer,
+            SIGNAL(timeout()),
+            SLOT(CountRestTime()));
     emit LoadMessage("Connected");
     ui->setupUi(this);
     ICProgramHeadFrame::Instance(ui->headerContainer);
@@ -210,6 +213,8 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     QString moldName = ICParametersSave::Instance()->MoldName("Test.act");
     qDebug()<<"Last mold:"<<moldName;
     ICProgramHeadFrame::Instance()->SetCurrentMoldName(moldName);
+    isOverTime_ = (ICParametersSave::Instance()->RestTime(0) == 1);
+    registe_timer->start(5000);
 
 }
 
@@ -379,16 +384,25 @@ void MainFrame::StatusRefreshed()
 
     static ICAlarmString* alarmString = ICAlarmString::Instance();
     static ICVirtualHost* virtualHost = ICVirtualHost::GlobalVirtualHost();
+    if(isOverTime_)
+    {
+        ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
+        errCode_ = 4000;
+        alarmString->SetPriorAlarmNum(errCode_);
+        ui->cycleTimeAndFinistWidget->SetAlarmInfo("Err" + QString::number(errCode_) + ":" + alarmString->AlarmInfo(errCode_));
+        return;
+    }
 
 //    uint axisLast = virtualHost->HostStatus(ICVirtualHost::AxisLastPos1).toUInt() |
 //            (virtualHost->HostStatus(ICVirtualHost::AxisLastPos2).toUInt() << 16);
 ////    int pos = virtualHost->HostStatus(ICVirtualHost::XPos).toInt() * 10 + (axisLast1 & 0xF);
-//    int pos = virtualHost->GetActualPos(ICVirtualHost::ICAxis_AxisX1, axisLast);
+//    int pos = virtualHost->GetActualPos(ICVirtualHost::ICAxis_AxisX1, 0);
 //    if(pos != oldXPos_)
 //    {
 //        oldXPos_ = pos ;
-//        ui->xPosLabel->setText(QString().sprintf("%.2f", oldXPos_ / 100.0));
-//        ui->xPosLabel->setStyleSheet("color: rgb(0, 0, 127);background-color: rgb(85, 255, 127);");
+//        ui->teachButton->setText(QString().sprintf("%.1f", oldXPos_ / 10.0));
+////        ui->xPosLabel->setText(QString().sprintf("%.2f", oldXPos_ / 100.0));
+////        ui->xPosLabel->setStyleSheet("color: rgb(0, 0, 127);background-color: rgb(85, 255, 127);");
 //        isXPosChanged_ = true;
 //    }
 //    pos = virtualHost->GetActualPos(ICVirtualHost::ICAxis_AxisY1, axisLast);
@@ -464,10 +478,7 @@ void MainFrame::StatusRefreshed()
         oldCycleTime_ = cycleTime_;
     }
 
-    bool getHostOrigin = IsOrigined();
-    if(getHostOrigin != isOrigined_)
-    {
-    }
+    ICProgramHeadFrame::Instance()->ChangeRobotOrigin(IsOrigined());
     runningStatus_ = virtualHost->CurrentStatus();
 
     if(runningStatus_ == ICVirtualHost::Manual)
@@ -552,6 +563,7 @@ void MainFrame::StatusRefreshed()
         oldRunnigStatus_ = runningStatus_; // must put here because the stop status want to use the new value;
         if(runningStatus_ == ICVirtualHost::Manual)
         {
+            ICProgramHeadFrame::Instance()->ChangeCurrentStatus(1);
 //            ui->systemStatusFrame->SetManualStatus(StatusLabel::ONSTATUS);
             //            LevelChanged(ICProgramHeadFrame::Instance()->CurrentLevel());
             //            ui->functionPageButton->setEnabled(false);
@@ -560,12 +572,14 @@ void MainFrame::StatusRefreshed()
         }
         else if(runningStatus_ == ICVirtualHost::AutoRunning)
         {
+            ICProgramHeadFrame::Instance()->ChangeCurrentStatus(2);
 //            ui->systemStatusFrame->SetAutoStatus(ICSystemStatusFrame::Running);
             //            ui->functionPageButton->setEnabled(false);
             //            ui->recordPageButton->setEnabled(false);
         }
         else if(runningStatus_ == ICVirtualHost::AutoReady)
         {
+            ICProgramHeadFrame::Instance()->ChangeCurrentStatus(2);
 //            ui->systemStatusFrame->SetAutoStatus(ICSystemStatusFrame::Ready);
             //            ui->functionPageButton->setEnabled(false);
             //            ui->recordPageButton->setEnabled(false);
@@ -578,6 +592,7 @@ void MainFrame::StatusRefreshed()
         }
         else if(runningStatus_ == ICVirtualHost::AutoStopping)
         {
+            ICProgramHeadFrame::Instance()->ChangeCurrentStatus(2);
 //            ui->systemStatusFrame->SetAutoStatus(ICSystemStatusFrame::Stopping);
             //            ui->functionPageButton->setEnabled(false);
             //            ui->recordPageButton->setEnabled(false);
@@ -592,6 +607,7 @@ void MainFrame::StatusRefreshed()
         //        }
         else if(runningStatus_ == ICVirtualHost::Stop)
         {
+            ICProgramHeadFrame::Instance()->ChangeCurrentStatus(0);
             //            ui->systemStatusFrame->SetProgramStatus(virtualHost->IsCloseMoldPermit() ? StatusLabel::ONSTATUS : StatusLabel::OFFSTATUS);
             //            ui->systemStatusFrame->SetSystemStop();
             //            ui->recordPageButton->setText(tr("Records"));
@@ -950,4 +966,21 @@ void MainFrame::checkAlarmModify()
     {
         QTimer::singleShot(5000, this, SLOT(checkAlarmModify()));
     }
+}
+
+void MainFrame::CountRestTime()
+{
+    int restTime = ICParametersSave::Instance()->RestTime(0);
+    if(restTime < 1)
+    {
+        return;
+    }
+    if(restTime == 1)
+    {
+        isOverTime_ = true;
+        return;
+    }
+    isOverTime_ = false;
+    --restTime;
+    ICParametersSave::Instance()->SetRestTime(restTime);
 }

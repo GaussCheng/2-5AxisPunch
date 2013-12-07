@@ -74,6 +74,7 @@ private slots:
     void RecordButtonClicked();
     void CheckedInput();
     void checkAlarmModify();
+    void CountRestTime();
 
 //    void InitHeavyPage();
 
@@ -144,7 +145,7 @@ private:
     int axisDefine_;
     int timerID_;
 
-    bool isFlag;
+    bool isOverTime_;
     QList<QList<QWidget*> > axisWidgets_;
     QList<uint> compareAlarmNums_;
 #if defined(Q_WS_WIN32) || defined(Q_WS_X11)

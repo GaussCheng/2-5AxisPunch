@@ -16,8 +16,14 @@ public:
     ~ICSettingsFrame();
     
 protected:
+    void showEvent(QShowEvent *e);
     void changeEvent(QEvent *e);
     
+private slots:
+    void on_generateButton_clicked();
+
+    void on_registerButton_clicked();
+
 private:
     Ui::ICSettingsFrame *ui;
 };

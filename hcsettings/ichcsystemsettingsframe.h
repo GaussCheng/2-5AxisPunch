@@ -30,18 +30,10 @@ protected:
 
 private:
     void InitParameter();
-    void SetConfig(int machineLenght,
-                   int maxLength,
-                   int iSafe,
-                   int outsafe,
-                   QString minText,
-                   QString maxText,
-                   QString axisName);
 
 private:
     void Information(bool isSuccess, const QString &msg = QString());
     bool CheckIsUsbAttached() const;
-    void UpdateConfigShow_();
     Ui::ICHCSystemSettingsFrame *ui;
     QDialog *passwordDialog_;
     QButtonGroup* buttonGroup_;
@@ -76,20 +68,7 @@ private slots:
     void on_restoreAllButton_clicked();
     void on_umountButton_clicked();
     void OnLevelChanged(int level);
-    void on_axisZToolButton_clicked();
-    void on_axisYToolButton_clicked();
-    void on_axisXToolButton_clicked();
-    void on_axisX2ToolButton_clicked();
-    void on_axisY2ToolButton_clicked();
-    void on_axisAToolButton_clicked();
-    void on_axisBToolButton_clicked();
-    void on_axisCToolButton_clicked();
-    void on_structDefButton_clicked();
-//    void on_seletHmiButton_clicked();
-    void on_selectHostButton_clicked();
-//    void on_saveParaButton_clicked();
     void StatusRefresh();
-    void on_structSelectHostButton_clicked();
     void on_calibrationBtn_clicked();
     void on_brightMinus_clicked();
     void on_brightPlus_clicked();

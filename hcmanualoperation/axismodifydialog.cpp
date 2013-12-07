@@ -9,13 +9,13 @@ AxisModifyDialog::AxisModifyDialog(QWidget *parent) :
     ui->setupUi(this);
     ui->xPos->SetDecimalPlaces(1);
     ui->yPos->SetDecimalPlaces(1);
-    ui->zPos->SetDecimalPlaces(1);
+//    ui->zPos->SetDecimalPlaces(1);
     xValidator_ = new QIntValidator(-32760, 32760, this);
     yValidator_ = new QIntValidator(-32760, 32760, this);
     zValidator_ = new QIntValidator(-32760, 32760, this);
     ui->xPos->setValidator(xValidator_);
     ui->yPos->setValidator(yValidator_);
-    ui->zPos->setValidator(zValidator_);
+//    ui->zPos->setValidator(zValidator_);
 }
 
 AxisModifyDialog::~AxisModifyDialog()
@@ -39,7 +39,7 @@ void AxisModifyDialog::on_okButton_clicked()
 {
     ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(point_.pointID * 3), ui->xPos->TransThisTextToThisInt());
     ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(point_.pointID * 3 + 1), ui->yPos->TransThisTextToThisInt());
-    ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(point_.pointID * 3 + 2), ui->zPos->TransThisTextToThisInt());
+//    ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(point_.pointID * 3 + 2), ui->zPos->TransThisTextToThisInt());
     this->accept();
 }
 
@@ -60,8 +60,8 @@ void AxisModifyDialog::StartModify(ICPoint point)
                           host->SystemParameter(ICVirtualHost::SYS_Z_Length).toInt());
     ui->xPos->SetThisIntToThisText(point.x);
     ui->yPos->SetThisIntToThisText(point.y);
-    ui->zPos->SetThisIntToThisText(point.z);
-    this->exec();
+//    ui->zPos->SetThisIntToThisText(point.z);
+    this->show();
 }
 
 void AxisModifyDialog::on_setButton_clicked()
@@ -73,5 +73,5 @@ void AxisModifyDialog::on_setButton_clicked()
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     ui->xPos->SetThisIntToThisText(host->HostStatus(ICVirtualHost::XPos).toInt());
     ui->yPos->SetThisIntToThisText(host->HostStatus(ICVirtualHost::YPos).toInt());
-    ui->zPos->SetThisIntToThisText(host->HostStatus(ICVirtualHost::ZPos).toInt());
+//    ui->zPos->SetThisIntToThisText(host->HostStatus(ICVirtualHost::ZPos).toInt());
 }

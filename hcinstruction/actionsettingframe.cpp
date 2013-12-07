@@ -38,7 +38,7 @@ ActionSettingFrame::ActionSettingFrame(QWidget *parent) :
     InitInterface();
     axisWidgets_.append(QList<QWidget*>()<<ui->gxButton<<ui->x1PosLineEdit);
     axisWidgets_.append(QList<QWidget*>()<<ui->gyButton<<ui->y1PosLineEdit);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gzButton<<ui->zPosLineEdit);
+//    axisWidgets_.append(QList<QWidget*>()<<ui->gzButton<<ui->zPosLineEdit);
 
 #ifdef Q_WS_X11
     UpdateAxisDefine_();
@@ -73,9 +73,9 @@ void ActionSettingFrame::InitInterface()
     ui->y1PosLineEdit->SetDecimalPlaces(POS_DECIMAL);
     //    ui->y1PosLineEdit->setValidator(posvalidator);
     ui->y1PosLineEdit->setValidator(posValidators_ + 1);
-    ui->zPosLineEdit->SetDecimalPlaces(POS_DECIMAL);
+//    ui->zPosLineEdit->SetDecimalPlaces(POS_DECIMAL);
     //    ui->zPosLineEdit->setValidator(posvalidator);
-    ui->zPosLineEdit->setValidator(posValidators_ + 2);
+//    ui->zPosLineEdit->setValidator(posValidators_ + 2);
 
     QIntValidator *speed = new QIntValidator(0, 100, this);
     ui->speedEdit->SetDecimalPlaces(0);
@@ -101,7 +101,7 @@ void ActionSettingFrame::on_inputButton_clicked()
     //    }
     ui->x1PosLineEdit->setText(QString().sprintf("%.1f", oXP_ / 100.0));
     ui->y1PosLineEdit->setText(QString().sprintf("%.1f", oYP_ / 100.0));
-    ui->zPosLineEdit->setText(QString().sprintf("%.1f", oZP_ / 100.0));
+//    ui->zPosLineEdit->setText(QString().sprintf("%.1f", oZP_ / 100.0));
 
     //do someting
 }
@@ -110,7 +110,7 @@ void ActionSettingFrame::hideEvent(QHideEvent *e)
 {
     ui->gxButton->setChecked(false);
     ui->gyButton->setChecked(false);
-    ui->gzButton->setChecked(false);
+//    ui->gzButton->setChecked(false);
     QFrame::hideEvent(e);
     disconnect(ICVirtualHost::GlobalVirtualHost(),
                SIGNAL(StatusRefreshed()),
@@ -225,16 +225,16 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         item.SetActualIfPos(0);
         ret.append(item);
     }
-    if(ui->gzButton->isChecked() && (!ui->gzButton->isHidden()))
-    {
-        item.SetAction(ICMold::GZ);
-        item.SetActualPos(ui->zPosLineEdit->TransThisTextToThisInt());
-        item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
-        item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
-//        item.SetIFVal(0);
-        item.SetActualIfPos(0);
-        ret.append(item);
-    }
+//    if(ui->gzButton->isChecked() && (!ui->gzButton->isHidden()))
+//    {
+//        item.SetAction(ICMold::GZ);
+//        item.SetActualPos(ui->zPosLineEdit->TransThisTextToThisInt());
+//        item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
+//        item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
+////        item.SetIFVal(0);
+//        item.SetActualIfPos(0);
+//        ret.append(item);
+//    }
     return ret;
 }
 
@@ -282,7 +282,7 @@ void ActionSettingFrame::on_gzButton_toggled(bool checked)
 {
     if(checked && ui->absBox->isChecked())
     {
-        ui->zPosLineEdit->setEnabled(true);
+//        ui->zPosLineEdit->setEnabled(true);
 //        ui->zDelayLineEdit->setEnabled(true);
 //        ui->zSpeedLineEdit->setEnabled(true);
 //        ui->zComeInBox->setEnabled(true);
@@ -290,7 +290,7 @@ void ActionSettingFrame::on_gzButton_toggled(bool checked)
     }
     else
     {
-        ui->zPosLineEdit->setEnabled(false);
+//        ui->zPosLineEdit->setEnabled(false);
 //        ui->zDelayLineEdit->setEnabled(false);
 //        ui->zSpeedLineEdit->setEnabled(false);
 //        ui->zComeInBox->setEnabled(false);
@@ -332,7 +332,7 @@ void ActionSettingFrame::KeyToActionCheck(int key)
         break;
     case ICKeyboard::VFB_ZAdd:
     case ICKeyboard::VFB_ZSub:
-        ui->gzButton->setChecked(true);
+//        ui->gzButton->setChecked(true);
         break;
     case ICKeyboard::VFB_X2Add:
     case ICKeyboard::VFB_X2Sub:
@@ -360,6 +360,6 @@ void ActionSettingFrame::on_absBox_toggled(bool checked)
 {
     ui->x1PosLineEdit->setEnabled(checked && ui->gxButton->isChecked());
     ui->y1PosLineEdit->setEnabled(checked && ui->gyButton->isChecked());
-    ui->zPosLineEdit->setEnabled(checked && ui->gzButton->isChecked());
+//    ui->zPosLineEdit->setEnabled(checked && ui->gzButton->isChecked());
     ui->pointSel->setEnabled(!checked);
 }

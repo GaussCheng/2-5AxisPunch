@@ -34,7 +34,6 @@ signals:
     void RegisterSucceed();
 private:
     void InitInterface();
-    int Register(const QString& , const QString& );
 
 private:
     Ui::ICUpdateSystem *ui;

@@ -13,14 +13,18 @@
 #include "icaxiskeyboard.h"
 #include "iccommandprocessor.h"
 #include "icsystemconfig.h"
+#include "icvirtualkey.h"
 
 ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     QFrame(parent),
     ui(new Ui::ICHCManualOperationPageFrame)
 {
     ui->setupUi(this);
+//    ui->xCurrentPos->setAttribute(Qt::WA_PaintOnScreen);
+//    ui->yCurrentPos->setAttribute(Qt::WA_PaintOnScreen);
+//    ui->zCurrentPos->setAttribute(Qt::WA_PaintOnScreen);
     InitInterface();
-    modifyDialog_ = new AxisModifyDialog(this);
+    modifyDialog_ = new AxisModifyDialog();
 }
 
 ICHCManualOperationPageFrame::~ICHCManualOperationPageFrame()
@@ -33,6 +37,15 @@ void ICHCManualOperationPageFrame::showEvent(QShowEvent *e)
     QFrame::showEvent(e);
     ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnManual, 0);
     timerID_ = startTimer(100);
+    nullButton_->click();
+    ui->xPos->clear();
+    ui->yPos->clear();
+    ui->productEdit->blockSignals(true);
+    ui->productEdit->SetThisIntToThisText(ICMold::CurrentMold()->MoldParam(ICMold::Product));
+    ui->productEdit->blockSignals(false);
+
+//    button->setChecked(false);
+
 //    timerID_ = ICTimerPool::Instance()->Start(ICTimerPool::RefreshTime, this, SLOT(StatusRefreshed()));
 }
 
@@ -66,12 +79,13 @@ void ICHCManualOperationPageFrame::timerEvent(QTimerEvent *e)
 void ICHCManualOperationPageFrame::InitInterface()
 {
 //    ui->xCurrentPos->setAttribute(Qt::P);
+    ui->productEdit->setValidator(new QIntValidator(0, 65530, this));
     ui->xPos->SetDecimalPlaces(1);
     ui->yPos->SetDecimalPlaces(1);
-    ui->zPos->SetDecimalPlaces(1);
+//    ui->zPos->SetDecimalPlaces(1);
     ui->xPos->setValidator(new QIntValidator(-32760, 32760, this));
     ui->yPos->setValidator(ui->xPos->validator());
-    ui->zPos->setValidator(ui->xPos->validator());
+//    ui->zPos->setValidator(ui->xPos->validator());
     ui->buttonGroup->setId(ui->point1, 0);
     ui->buttonGroup->setId(ui->point2, 1);
     ui->buttonGroup->setId(ui->point3, 2);
@@ -81,7 +95,11 @@ void ICHCManualOperationPageFrame::InitInterface()
     ui->buttonGroup->setId(ui->point7, 6);
     ui->buttonGroup->setId(ui->point8, 7);
     ui->buttonGroup->setId(ui->point9, 8);
-    ui->buttonGroup->setId(ui->point10, 9);
+    nullButton_ = new QPushButton();
+    nullButton_->setCheckable(true);
+    nullButton_->hide();
+    ui->buttonGroup->addButton(nullButton_);
+    ui->buttonGroup->setId(nullButton_, -1);
 
     ui->actionGroup->setId(ui->action1, 0);
     ui->actionGroup->setId(ui->action2, 1);
@@ -116,8 +134,18 @@ void ICHCManualOperationPageFrame::InitInterface()
     ui->actionGroup->setId(ui->action31, 30);
     ui->actionGroup->setId(ui->action32, 31);
     ui->actionGroup->setExclusive(false);
+    ui->shortcutGroup->setId(ui->b1, 0);
+    ui->shortcutGroup->setId(ui->b2, 1);
+    ui->shortcutGroup->setId(ui->b3, 2);
+    ui->shortcutGroup->setId(ui->b4, 3);
+    ui->shortcutGroup->setId(ui->b5, 4);
+    ui->shortcutGroup->setId(ui->b6, 5);
+    ui->shortcutGroup->setExclusive(false);
+
+
     ICUserDefineConfigSPTR config = ICUserDefineConfig::Instance();
     QList<QAbstractButton*> buttons = ui->buttonGroup->buttons();
+    buttons.removeOne(nullButton_);
     const int bsize = buttons.size();
     int tmp;
     QString name;
@@ -169,6 +197,30 @@ void ICHCManualOperationPageFrame::InitInterface()
             SIGNAL(mapped(int)),
             SLOT(OnActionTriggered(int)));
 
+    QList<QAbstractButton*> shortcuts = ui->shortcutGroup->buttons();
+    const int ssize = shortcuts.size();
+    for(int i = 0; i != ssize; ++i)
+    {
+        tmp = ui->shortcutGroup->id(shortcuts.at(i));
+        shortcutSignalMapper_.setMapping(shortcuts.at(i), tmp);
+        connect(shortcuts.at(i),
+                SIGNAL(clicked()),
+                &shortcutSignalMapper_,
+                SLOT(map()));
+//        qDebug()<<config->GetIOActionLocaleName(tmp);
+        name = config->GetIOActionShortcutLocaleNameByID(tmp);
+        if(!name.isEmpty())
+        {
+            shortcuts[i]->setText(name);
+        }
+        else
+        {
+            shortcuts[i]->hide();
+        }
+    }
+    connect(&shortcutSignalMapper_,
+            SIGNAL(mapped(int)),
+            SLOT(OnShortcutTriggered(int)));
 }
 
 void ICHCManualOperationPageFrame::InitSignal()
@@ -182,25 +234,25 @@ static int16_t oldZ = -1;
 static int16_t oldS = -1;
 void ICHCManualOperationPageFrame::StatusRefreshed()
 {
-    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    static ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     int16_t pos = host->HostStatus(ICVirtualHost::XPos).toInt();
     if(pos != oldX)
     {
         oldX = pos;
-        ui->xCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
+        ui->xCurrentPos->setText(QString().sprintf("%.1f", pos / 10.0));
     }
     pos = host->HostStatus(ICVirtualHost::YPos).toInt();
     if(pos != oldY)
     {
         oldY = pos;
-        ui->yCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
+        ui->yCurrentPos->setText(QString().sprintf("%.1f", pos / 10.0));
     }
-    pos = host->HostStatus(ICVirtualHost::ZPos).toInt();
-    if(pos != oldZ)
-    {
-        oldZ = pos;
-        ui->zCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
-    }
+//    pos = host->HostStatus(ICVirtualHost::ZPos).toInt();
+//    if(pos != oldZ)
+//    {
+//        oldZ = pos;
+//        ui->zCurrentPos->setText(QString().sprintf("%.1f", pos / 10.0));
+//    }
     pos = host->HostStatus(ICVirtualHost::DbgX0).toInt();
     if(pos != oldS)
     {
@@ -232,16 +284,16 @@ void ICHCManualOperationPageFrame::OnPointSelected(int id)
     ICMold* currentMold  = ICMold::CurrentMold();
     ui->xPos->blockSignals(true);
     ui->yPos->blockSignals(true);
-    ui->zPos->blockSignals(true);
+//    ui->zPos->blockSignals(true);
     ui->xPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 3 )));
     ui->yPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 3 + 1)));
-    ui->zPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 3 + 2)));
+//    ui->zPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 3 + 2)));
 //    ui->xPos->setEnabled(true);
 //    ui->yPos->setEnabled(true);
 //    ui->zPos->setEnabled(true);
     ui->xPos->blockSignals(false);
     ui->yPos->blockSignals(false);
-    ui->zPos->blockSignals(false);
+//    ui->zPos->blockSignals(false);
 }
 
 void ICHCManualOperationPageFrame::OnActionTriggered(int id)
@@ -253,21 +305,18 @@ void ICHCManualOperationPageFrame::OnActionTriggered(int id)
     cmd.SetGM(ICMold::GOutY + info.type);
     cmd.SetPoint(info.pointNum);
     cmd.SetIFVal(info.dir);
-    qDebug("Send**************");
     ICCommandProcessor::Instance()->ExecuteCommand(cmd);
 }
 
-void ICHCManualOperationPageFrame::on_runButton_clicked()
+void ICHCManualOperationPageFrame::OnShortcutTriggered(int id)
 {
-    if(ui->buttonGroup->checkedId() < 0)
-    {
-        return;
-    }
+    ICUserDefineConfigSPTR config = ICUserDefineConfig::Instance();
+    ICUserActionInfo info = config->GetActionShortcutByID(id);
     ICManualRun cmd;
     cmd.SetSlave(1);
-    cmd.SetGM(ICMold::GTo);
-    cmd.SetPoint(ui->buttonGroup->checkedId());
-//    cmd.SetIFVal(1);
+    cmd.SetGM(ICMold::GOutY + info.type);
+    cmd.SetPoint(info.pointNum);
+    cmd.SetIFVal(info.dir);
     ICCommandProcessor::Instance()->ExecuteCommand(cmd);
 }
 
@@ -281,11 +330,63 @@ void ICHCManualOperationPageFrame::on_setButton_clicked()
     p.pointID = ui->buttonGroup->checkedId();
     p.x = ui->xPos->TransThisTextToThisInt();
     p.y = ui->yPos->TransThisTextToThisInt();
-    p.z = ui->zPos->TransThisTextToThisInt();
+//    p.z = ui->zPos->TransThisTextToThisInt();
     modifyDialog_->StartModify(p);
     OnPointSelected(p.pointID);
 //    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
 //    ui->xPos->SetThisIntToThisText(host->HostStatus(ICVirtualHost::XPos).toInt());
 //    ui->yPos->SetThisIntToThisText(host->HostStatus(ICVirtualHost::YPos).toInt());
 //    ui->zPos->SetThisIntToThisText(host->HostStatus(ICVirtualHost::ZPos).toInt());
+}
+
+void ICHCManualOperationPageFrame::on_xRun_clicked()
+{
+    if(ui->buttonGroup->checkedId() < 0)
+    {
+        return;
+    }
+    ICManualRun cmd;
+    cmd.SetSlave(1);
+    cmd.SetGM(ICMold::GX);
+    cmd.SetPoint(ui->buttonGroup->checkedId());
+//    cmd.SetIFVal(1);
+    ICCommandProcessor::Instance()->ExecuteCommand(cmd);
+}
+
+void ICHCManualOperationPageFrame::on_yRun_clicked()
+{
+    if(ui->buttonGroup->checkedId() < 0)
+    {
+        return;
+    }
+    ICManualRun cmd;
+    cmd.SetSlave(1);
+    cmd.SetGM(ICMold::GY);
+    cmd.SetPoint(ui->buttonGroup->checkedId());
+//    cmd.SetIFVal(1);
+    ICCommandProcessor::Instance()->ExecuteCommand(cmd);
+}
+
+void ICHCManualOperationPageFrame::on_runButton_toggled(bool checked)
+{
+    if(checked)
+    {
+        ui->runButton->setText(tr("No Check"));
+    }
+    else
+    {
+        ui->runButton->setText(tr("Check"));
+    }
+}
+
+void ICHCManualOperationPageFrame::on_productEdit_textChanged(const QString &arg1)
+{
+    ICMold::CurrentMold()->SetMoldParam(ICMold::Product, ui->productEdit->TransThisTextToThisInt());
+
+}
+
+void ICHCManualOperationPageFrame::on_productClear_clicked()
+{
+    ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_PRODUCT_CLEAR);
+    ICVirtualHost::GlobalVirtualHost()->SetFinishProductCount(0);
 }

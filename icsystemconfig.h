@@ -109,6 +109,12 @@ public:
         return actionInfos_.value(id).GetLocaleName(languageName);
     }
 
+    QString GetIOActionShortcutLocaleNameByID(int id, const QString& languageName = "zh")
+    {
+        if(!actionShortcut_.contains(id)) return "";
+        return actionShortcut_.value(id).GetLocaleName(languageName);
+    }
+
     QString GetIOActionLocaleName(int type, int id , bool dir, const QString& languageName = "zh");
 
     int GetIOActionType(int id)
@@ -118,6 +124,7 @@ public:
     }
 
     ICUserActionInfo GetActionByID(int id){return actionInfos_.value(id, ICUserActionInfo());}
+    ICUserActionInfo GetActionShortcutByID(int id) { return actionInfos_.value(id, ICUserActionInfo());}
 
     QList<ICUserActionInfo> GetActionInfosByType(int type = -1);
 
@@ -141,13 +148,14 @@ private:
 private:
     void ReadIOInfos_(const QString& path, UserIOInfos& infos);
     void ReadPointInfos_(const QString& path);
-    void ReadActionInfos_(const QString& path);
+    void ReadActionInfos_(const QString& path, UserActionInfos& infos);
     UserIOInfos xInfos_;
     UserIOInfos yInfos_;
     UserIOInfos euxInfos_;
     UserIOInfos euyInfos_;
     UserPointInfos pointInfos_;
     UserActionInfos actionInfos_;
+    UserActionInfos actionShortcut_;
     QStringList euxStrings_;
     QStringList euyStrings_;
 };

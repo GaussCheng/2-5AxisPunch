@@ -66,12 +66,14 @@ void ICUserDefineConfig::Init()
     const QString userMachineDefineYPath = sysconfigPath + "user_define_machine_y";
     const QString userPointPath = sysconfigPath + "user_define_points";
     const QString userActionPath = sysconfigPath + "user_define_io_actions";
+    const QString userActionShortcutPath = sysconfigPath + "user_define_io_actions_shortcut";
     ReadIOInfos_(userDefineXPath, this->xInfos_);
     ReadIOInfos_(userDefineYPath, this->yInfos_);
     ReadIOInfos_(userMachineDefineXPath, this->euxInfos_);
     ReadIOInfos_(userMachineDefineYPath, this->euyInfos_);
     ReadPointInfos_(userPointPath);
-    ReadActionInfos_(userActionPath);
+    ReadActionInfos_(userActionPath, actionInfos_);
+    ReadActionInfos_(userActionShortcutPath, actionShortcut_);
     euxStrings_<<euxInfos_.value(2).GetLocaleName("zh")
               <<euxInfos_.value(3).GetLocaleName("zh")
              <<euxInfos_.value(7).GetLocaleName("zh")
@@ -147,7 +149,7 @@ void ICUserDefineConfig::ReadPointInfos_(const QString &path)
     }
 }
 
-void ICUserDefineConfig::ReadActionInfos_(const QString &path)
+void ICUserDefineConfig::ReadActionInfos_(const QString &path, UserActionInfos &infos)
 {
     QFile file(path);
     if(file.open(QFile::ReadOnly | QFile::Text))
@@ -174,7 +176,7 @@ void ICUserDefineConfig::ReadActionInfos_(const QString &path)
                 info.localeNameMap.insert("zh", items.at(4));
             if(items.size() > 5)
                 info.localeNameMap.insert("en", items.at(5));
-            this->actionInfos_.insert(items.at(0).toInt(), info);
+            infos.insert(items.at(0).toInt(), info);
         }
     }
 }

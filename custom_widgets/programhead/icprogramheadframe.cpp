@@ -6,15 +6,24 @@
 #include "icparameterssave.h"
 
 ICProgramHeadFrame * ICProgramHeadFrame::instance_ = NULL;
-
+static QMap<int, QString> statusToStringMap;
 ICProgramHeadFrame::ICProgramHeadFrame(QWidget *parent) :
     QFrame(parent),
     ui(new Ui::ICProgramHeadFrame)
 {
     ui->setupUi(this);
+    currentStatus_ = -1;
+    isRobotOrigin_ = false;
+    isPunOrigin_ = false;
+    statusToStringMap.insert(0, tr("Stop"));
+    statusToStringMap.insert(1, tr("Manual"));
+    statusToStringMap.insert(2, tr("Auto"));
     pageTimer_.start(60000);
     UpdateDateTime();
     InitSignal();
+    on = QPixmap(":/resource/ledgreen(16).png");
+    off = QPixmap(":/resource/ledgray(16).png");
+//    ChangeCurrentStatus(0);
 }
 
 ICProgramHeadFrame::~ICProgramHeadFrame()
@@ -59,7 +68,7 @@ void ICProgramHeadFrame::UpdateDateTime()
 {
     QDateTime dateTime = QDateTime::currentDateTime();
     ui->currentTimeLabel->setText(dateTime.toString("hh:mm"));
-    ui->currentDateLabel->setText(dateTime.toString("yyyy/MM/dd"));
+//    ui->currentDateLabel->setText(dateTime.toString("yyyy/MM/dd"));
 
 }
 
@@ -85,5 +94,45 @@ void ICProgramHeadFrame::SetCurrentLevel(int level)
 }
 
 
+void ICProgramHeadFrame::ChangeCurrentStatus(int status)
+{
+    if(!statusToStringMap.contains(status)) return;
+    if(status != this->currentStatus_)
+    {
+        currentStatus_ = status;
+        ui->statusLabel->setText(statusToStringMap.value(status));
+    }
+}
 
+void ICProgramHeadFrame::ChangeRobotOrigin(bool isOrigin)
+{
+    if(isOrigin != this->isRobotOrigin_)
+    {
+         isRobotOrigin_ = isOrigin;
+         if(isRobotOrigin_)
+         {
+             ui->robotOrigin->setPixmap(on);
+         }
+         else
+         {
+             ui->robotOrigin->setPixmap(off);
+         }
+    }
+}
+
+void ICProgramHeadFrame::ChangePunchOrigin(bool isOrigin)
+{
+    if(isOrigin != this->isPunOrigin_)
+    {
+         isPunOrigin_ = isOrigin;
+         if(isPunOrigin_)
+         {
+             ui->punchOrigin->setPixmap(on);
+         }
+         else
+         {
+             ui->punchOrigin->setPixmap(off);
+         }
+    }
+}
 
