@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>644</width>
-    <height>427</height>
+    <width>620</width>
+    <height>380</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,206 +19,393 @@
   <property name="frameShadow">
    <enum>QFrame::Plain</enum>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout_3">
-   <item>
-    <layout class="QVBoxLayout" name="verticalLayout_3">
-     <item>
-      <widget class="QLabel" name="currentPageLabel">
-       <property name="text">
-        <string>Current page</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <property name="spacing">
-        <number>25</number>
-       </property>
-       <item>
-        <widget class="QPushButton" name="page0ToolButton">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>80</width>
-           <height>48</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>80</width>
-           <height>48</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Group-1</string>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-         <attribute name="buttonGroup">
-          <string notr="true">buttonGroup_2</string>
-         </attribute>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="page1ToolButton">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>80</width>
-           <height>48</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>80</width>
-           <height>48</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Group-2</string>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <attribute name="buttonGroup">
-          <string notr="true">buttonGroup_2</string>
-         </attribute>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="page2ToolButton">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>80</width>
-           <height>48</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>80</width>
-           <height>48</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Group-3</string>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <attribute name="buttonGroup">
-          <string notr="true">buttonGroup_2</string>
-         </attribute>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="page3ToolButton">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>80</width>
-           <height>48</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>80</width>
-           <height>48</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Group-4</string>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <attribute name="buttonGroup">
-          <string notr="true">buttonGroup_2</string>
-         </attribute>
-        </widget>
-       </item>
-       <item>
-        <spacer name="verticalSpacer">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QGroupBox" name="groupBox">
-         <property name="title">
-          <string>Sequence</string>
-         </property>
-         <layout class="QFormLayout" name="formLayout">
-          <property name="fieldGrowthPolicy">
-           <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
-          </property>
-          <property name="horizontalSpacing">
-           <number>15</number>
-          </property>
-          <property name="verticalSpacing">
-           <number>15</number>
-          </property>
-          <item row="0" column="0">
-           <widget class="QCheckBox" name="xzyCheckBox">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>142</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>100</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">::indicator {
+  <widget class="QLabel" name="currentPageLabel">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>85</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Current page</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="page1ToolButton">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>111</y>
+     <width>80</width>
+     <height>48</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Group-2</string>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <attribute name="buttonGroup">
+    <string>buttonGroup_2</string>
+   </attribute>
+  </widget>
+  <widget class="QPushButton" name="page0ToolButton">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>38</y>
+     <width>80</width>
+     <height>48</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Group-1</string>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <attribute name="buttonGroup">
+    <string>buttonGroup_2</string>
+   </attribute>
+  </widget>
+  <widget class="QPushButton" name="page2ToolButton">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>184</y>
+     <width>80</width>
+     <height>48</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Group-3</string>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <attribute name="buttonGroup">
+    <string>buttonGroup_2</string>
+   </attribute>
+  </widget>
+  <widget class="QPushButton" name="page3ToolButton">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>257</y>
+     <width>80</width>
+     <height>48</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Group-4</string>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <attribute name="buttonGroup">
+    <string>buttonGroup_2</string>
+   </attribute>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>297</x>
+     <y>217</y>
+     <width>31</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Step</string>
+   </property>
+  </widget>
+  <widget class="ICLineEditWithVirtualNumericKeypad" name="yRPStepLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>297</x>
+     <y>282</y>
+     <width>146</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>32</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="ICLineEditWithVirtualNumericKeypad" name="xRPLatticeLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>145</x>
+     <y>244</y>
+     <width>146</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>32</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="ICLineEditWithVirtualNumericKeypad" name="xRPStepLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>297</x>
+     <y>244</y>
+     <width>146</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>32</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="ICLineEditWithVirtualNumericKeypad" name="yRPLatticeLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>145</x>
+     <y>282</y>
+     <width>146</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>32</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="ICLineEditWithVirtualNumericKeypad" name="zRPLatticeLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>145</x>
+     <y>320</y>
+     <width>146</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>32</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="ICLineEditWithVirtualNumericKeypad" name="zRPStepLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>297</x>
+     <y>320</y>
+     <width>146</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>32</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>245</y>
+     <width>30</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>mm</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>282</y>
+     <width>30</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>mm</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>320</y>
+     <width>30</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>mm</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>104</x>
+     <y>244</y>
+     <width>36</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>X</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>104</x>
+     <y>282</y>
+     <width>36</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Y</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8">
+   <property name="geometry">
+    <rect>
+     <x>104</x>
+     <y>320</y>
+     <width>36</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Z</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>145</x>
+     <y>217</y>
+     <width>45</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Lattice</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>115</x>
+     <y>15</y>
+     <width>231</width>
+     <height>198</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Sequence</string>
+   </property>
+   <widget class="QCheckBox" name="xzyCheckBox">
+    <property name="geometry">
+     <rect>
+      <x>17</x>
+      <y>25</y>
+      <width>100</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">::indicator {
      width: 32px;
      height: 32px;
  }
@@ -232,31 +419,25 @@
      image: url(:/resource/check_checked.png);
  }
 </string>
-            </property>
-            <property name="text">
-             <string>X-Z-Y</string>
-            </property>
-            <attribute name="buttonGroup">
-             <string notr="true">buttonGroup</string>
-            </attribute>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QCheckBox" name="zxyCheckBox">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>125</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">::indicator {
+    </property>
+    <property name="text">
+     <string>X-Z-Y</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string>buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QCheckBox" name="zxyCheckBox">
+    <property name="geometry">
+     <rect>
+      <x>17</x>
+      <y>72</y>
+      <width>100</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">::indicator {
      width: 32px;
      height: 32px;
  }
@@ -270,19 +451,25 @@
      image: url(:/resource/check_checked.png);
  }
 </string>
-            </property>
-            <property name="text">
-             <string>Z-X-Y</string>
-            </property>
-            <attribute name="buttonGroup">
-             <string notr="true">buttonGroup</string>
-            </attribute>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QCheckBox" name="yzxCheckBox">
-            <property name="styleSheet">
-             <string notr="true">::indicator {
+    </property>
+    <property name="text">
+     <string>Z-X-Y</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string>buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QCheckBox" name="yzxCheckBox">
+    <property name="geometry">
+     <rect>
+      <x>125</x>
+      <y>72</y>
+      <width>100</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">::indicator {
      width: 32px;
      height: 32px;
  }
@@ -296,25 +483,31 @@
      image: url(:/resource/check_checked.png);
  }
 </string>
-            </property>
-            <property name="text">
-             <string>Y-Z-X</string>
-            </property>
-            <attribute name="buttonGroup">
-             <string notr="true">buttonGroup</string>
-            </attribute>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QCheckBox" name="yxzCheckBox">
-            <property name="maximumSize">
-             <size>
-              <width>100</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">::indicator {
+    </property>
+    <property name="text">
+     <string>Y-Z-X</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string>buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QCheckBox" name="yxzCheckBox">
+    <property name="geometry">
+     <rect>
+      <x>125</x>
+      <y>25</y>
+      <width>100</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>100</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">::indicator {
      width: 32px;
      height: 32px;
  }
@@ -328,55 +521,38 @@
      image: url(:/resource/check_checked.png);
  }
 </string>
-            </property>
-            <property name="text">
-             <string>Y-X-Z</string>
-            </property>
-            <attribute name="buttonGroup">
-             <string notr="true">buttonGroup</string>
-            </attribute>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="groupBox_2">
-         <property name="title">
-          <string>Direction</string>
-         </property>
-         <layout class="QFormLayout" name="formLayout_2">
-          <property name="fieldGrowthPolicy">
-           <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
-          </property>
-          <property name="horizontalSpacing">
-           <number>15</number>
-          </property>
-          <property name="verticalSpacing">
-           <number>15</number>
-          </property>
-          <item row="0" column="0">
-           <widget class="QCheckBox" name="xPPCheckBox">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>142</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>100</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">::indicator {
+    </property>
+    <property name="text">
+     <string>Y-X-Z</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string>buttonGroup</string>
+    </attribute>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>355</x>
+     <y>15</y>
+     <width>271</width>
+     <height>198</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Direction</string>
+   </property>
+   <widget class="QCheckBox" name="xPPCheckBox">
+    <property name="geometry">
+     <rect>
+      <x>17</x>
+      <y>25</y>
+      <width>100</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">::indicator {
      width: 32px;
      height: 32px;
  }
@@ -390,22 +566,28 @@
      image: url(:/resource/check_checked.png);
  }
 </string>
-            </property>
-            <property name="text">
-             <string>X PP</string>
-            </property>
-            <attribute name="buttonGroup">
-             <string notr="true">buttonGroup_3</string>
-            </attribute>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QCheckBox" name="xRPCheckBox">
-            <property name="layoutDirection">
-             <enum>Qt::LeftToRight</enum>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">::indicator {
+    </property>
+    <property name="text">
+     <string>X PP</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string>buttonGroup_3</string>
+    </attribute>
+   </widget>
+   <widget class="QCheckBox" name="xRPCheckBox">
+    <property name="geometry">
+     <rect>
+      <x>135</x>
+      <y>25</y>
+      <width>100</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">::indicator {
      width: 32px;
      height: 32px;
  }
@@ -419,31 +601,31 @@
      image: url(:/resource/check_checked.png);
  }
 </string>
-            </property>
-            <property name="text">
-             <string>X RP</string>
-            </property>
-            <attribute name="buttonGroup">
-             <string notr="true">buttonGroup_3</string>
-            </attribute>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QCheckBox" name="yPPCheckBox">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>125</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">::indicator {
+    </property>
+    <property name="text">
+     <string>X RP</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string>buttonGroup_3</string>
+    </attribute>
+   </widget>
+   <widget class="QCheckBox" name="yPPCheckBox">
+    <property name="geometry">
+     <rect>
+      <x>17</x>
+      <y>90</y>
+      <width>100</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">::indicator {
      width: 32px;
      height: 32px;
  }
@@ -457,19 +639,25 @@
      image: url(:/resource/check_checked.png);
  }
 </string>
-            </property>
-            <property name="text">
-             <string>Y PP</string>
-            </property>
-            <attribute name="buttonGroup">
-             <string notr="true">buttonGroup_4</string>
-            </attribute>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <widget class="QCheckBox" name="yRPCheckBox">
-            <property name="styleSheet">
-             <string notr="true">::indicator {
+    </property>
+    <property name="text">
+     <string>Y PP</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string>buttonGroup_4</string>
+    </attribute>
+   </widget>
+   <widget class="QCheckBox" name="yRPCheckBox">
+    <property name="geometry">
+     <rect>
+      <x>135</x>
+      <y>90</y>
+      <width>100</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">::indicator {
      width: 32px;
      height: 32px;
  }
@@ -483,31 +671,31 @@
      image: url(:/resource/check_checked.png);
  }
 </string>
-            </property>
-            <property name="text">
-             <string>Y RP</string>
-            </property>
-            <attribute name="buttonGroup">
-             <string notr="true">buttonGroup_4</string>
-            </attribute>
-           </widget>
-          </item>
-          <item row="4" column="0">
-           <widget class="QCheckBox" name="zPPCheckBox">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>125</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">::indicator {
+    </property>
+    <property name="text">
+     <string>Y RP</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string>buttonGroup_4</string>
+    </attribute>
+   </widget>
+   <widget class="QCheckBox" name="zPPCheckBox">
+    <property name="geometry">
+     <rect>
+      <x>17</x>
+      <y>155</y>
+      <width>100</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">::indicator {
      width: 32px;
      height: 32px;
  }
@@ -521,19 +709,25 @@
      image: url(:/resource/check_checked.png);
  }
 </string>
-            </property>
-            <property name="text">
-             <string>Z PP</string>
-            </property>
-            <attribute name="buttonGroup">
-             <string notr="true">buttonGroup_5</string>
-            </attribute>
-           </widget>
-          </item>
-          <item row="4" column="1">
-           <widget class="QCheckBox" name="zRPCheckBox">
-            <property name="styleSheet">
-             <string notr="true">::indicator {
+    </property>
+    <property name="text">
+     <string>Z PP</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string>buttonGroup_5</string>
+    </attribute>
+   </widget>
+   <widget class="QCheckBox" name="zRPCheckBox">
+    <property name="geometry">
+     <rect>
+      <x>135</x>
+      <y>155</y>
+      <width>100</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">::indicator {
      width: 32px;
      height: 32px;
  }
@@ -547,215 +741,41 @@
      image: url(:/resource/check_checked.png);
  }
 </string>
-            </property>
-            <property name="text">
-             <string>Z RP</string>
-            </property>
-            <attribute name="buttonGroup">
-             <string notr="true">buttonGroup_5</string>
-            </attribute>
-           </widget>
-          </item>
-          <item row="1" column="0" colspan="2">
-           <widget class="Line" name="line">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0" colspan="2">
-           <widget class="Line" name="line_2">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QGridLayout" name="gridLayout">
-       <item row="0" column="1">
-        <widget class="QLabel" name="label_2">
-         <property name="text">
-          <string>Lattice</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="2">
-        <widget class="QLabel" name="label_3">
-         <property name="text">
-          <string>Step</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="2">
-        <widget class="ICLineEditWithVirtualNumericKeypad" name="yRPStepLineEdit">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>32</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="ICLineEditWithVirtualNumericKeypad" name="xRPLatticeLineEdit">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>32</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <widget class="ICLineEditWithVirtualNumericKeypad" name="xRPStepLineEdit">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>32</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="ICLineEditWithVirtualNumericKeypad" name="yRPLatticeLineEdit">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>32</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="ICLineEditWithVirtualNumericKeypad" name="zRPLatticeLineEdit">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>32</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="2">
-        <widget class="ICLineEditWithVirtualNumericKeypad" name="zRPStepLineEdit">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>32</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="3">
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>mm</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="3">
-        <widget class="QLabel" name="label_4">
-         <property name="text">
-          <string>mm</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="3">
-        <widget class="QLabel" name="label_5">
-         <property name="text">
-          <string>mm</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="label_6">
-         <property name="text">
-          <string>X</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="label_7">
-         <property name="text">
-          <string>Y</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="label_8">
-         <property name="text">
-          <string>Z</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="2">
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
-         <item>
-          <widget class="QLabel" name="label_9">
-           <property name="text">
-            <string>Stack Counter</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="countWayBox">
-           <item>
-            <property name="text">
-             <string>All</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Good</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Stack-1</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Stack-2</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Stack-3</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Stack-4</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <spacer name="verticalSpacer_2">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>40</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-    </layout>
-   </item>
-  </layout>
+    </property>
+    <property name="text">
+     <string>Z RP</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string>buttonGroup_5</string>
+    </attribute>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>17</x>
+      <y>72</y>
+      <width>229</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_2">
+    <property name="geometry">
+     <rect>
+      <x>17</x>
+      <y>137</y>
+      <width>229</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+  </widget>
  </widget>
  <customwidgets>
   <customwidget>
@@ -767,10 +787,10 @@
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_2"/>
   <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup_4"/>
   <buttongroup name="buttonGroup_5"/>
+  <buttongroup name="buttonGroup"/>
  </buttongroups>
 </ui>

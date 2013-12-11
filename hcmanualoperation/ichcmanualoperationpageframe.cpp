@@ -92,9 +92,6 @@ void ICHCManualOperationPageFrame::InitInterface()
     ui->buttonGroup->setId(ui->point4, 3);
     ui->buttonGroup->setId(ui->point5, 4);
     ui->buttonGroup->setId(ui->point6, 5);
-    ui->buttonGroup->setId(ui->point7, 6);
-    ui->buttonGroup->setId(ui->point8, 7);
-    ui->buttonGroup->setId(ui->point9, 8);
     nullButton_ = new QPushButton();
     nullButton_->setCheckable(true);
     nullButton_->hide();
@@ -259,6 +256,7 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
         oldS = pos;
         ui->speed->setText(QString::number(pos));
     }
+    ui->singleButton->setEnabled(host->HostStatus(ICVirtualHost::ActL).toInt() == 0);
 }
 
 //void ICHCManualOperationPageFrame::on_xPos_textChanged(const QString &arg1)
@@ -372,10 +370,12 @@ void ICHCManualOperationPageFrame::on_runButton_toggled(bool checked)
     if(checked)
     {
         ui->runButton->setText(tr("No Check"));
+        ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_CYCLE);
     }
     else
     {
         ui->runButton->setText(tr("Check"));
+        ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_F6);
     }
 }
 
@@ -389,4 +389,22 @@ void ICHCManualOperationPageFrame::on_productClear_clicked()
 {
     ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_PRODUCT_CLEAR);
     ICVirtualHost::GlobalVirtualHost()->SetFinishProductCount(0);
+}
+
+static int currentStep  = 0;
+void ICHCManualOperationPageFrame::on_singleButton_clicked()
+{
+    ICManualRun cmd;
+    ICMold* mold = ICMold::CurrentMold();
+    ICMoldItem item = mold->MoldContent().at(currentStep);
+    cmd.SetSlave(1);
+    cmd.SetGM(item.GMVal());
+    cmd.SetNumber(currentStep);
+    cmd.SetPoint(item.SubNum());
+    cmd.SetPos(item.Pos());
+    cmd.SetIFVal(item.IFVal());
+    ++currentStep;
+    currentStep %= mold->MoldContent().size();
+    //    cmd.SetIFVal(1);
+    ICCommandProcessor::Instance()->ExecuteCommand(cmd);
 }

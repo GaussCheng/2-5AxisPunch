@@ -213,6 +213,9 @@ protected:
 class ICManualRun: public ICCommunicationCommandBase
 {
 public:
+    int StepNum() { return FlagValue("StepNum");}
+    void SetStepNum(int num) { SetFlagValue("StepNum", num);}
+
     int GM() const { return FlagValue("GM");}
     void SetGM(int value) { SetFlagValue("GM", value);}
 

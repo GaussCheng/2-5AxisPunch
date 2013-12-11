@@ -436,9 +436,9 @@ int hc_update_host_query(modbus_param_t *mb_param);
 int hc_update_host_start(modbus_param_t *mb_param, int slave);
 int hc_manual_run(modbus_param_t *mb_param,
                                    int slave,
-                                   int gm, int sub,
-                                   int pos,
-                                   int ifval);
+                                   int num, int gm,
+                                   int sub,
+                                   int pos, int ifval);
 #endif
 
 

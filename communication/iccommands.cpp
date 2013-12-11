@@ -476,5 +476,5 @@ QVariant ICUpdateHostStart::Send(modbus_param_t *modbusParam)
 
 QVariant ICManualRun::Send(modbus_param_t *modbusParam)
 {
-    return hc_manual_run(modbusParam, Slave(), GM(), Point(), Pos(),IFVal());
+    return hc_manual_run(modbusParam, Slave(), StepNum(),GM(), Point(), Pos(),IFVal());
 }

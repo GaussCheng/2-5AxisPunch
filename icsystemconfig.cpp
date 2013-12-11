@@ -74,18 +74,24 @@ void ICUserDefineConfig::Init()
     ReadPointInfos_(userPointPath);
     ReadActionInfos_(userActionPath, actionInfos_);
     ReadActionInfos_(userActionShortcutPath, actionShortcut_);
-    euxStrings_<<euxInfos_.value(2).GetLocaleName("zh")
-              <<euxInfos_.value(3).GetLocaleName("zh")
-             <<euxInfos_.value(7).GetLocaleName("zh")
+    euxStrings_<<euxInfos_.value(0).GetLocaleName("zh")
+              <<euxInfos_.value(1).GetLocaleName("zh")
+             <<euxInfos_.value(2).GetLocaleName("zh")
+            <<euxInfos_.value(3).GetLocaleName("zh")
+           <<euxInfos_.value(4).GetLocaleName("zh")
+          <<euxInfos_.value(5).GetLocaleName("zh")
             <<euxInfos_.value(6).GetLocaleName("zh")
-           <<euxInfos_.value(14).GetLocaleName("zh")
-          <<euxInfos_.value(13).GetLocaleName("zh");
+              <<euxInfos_.value(7).GetLocaleName("zh")
+                <<euxInfos_.value(8).GetLocaleName("zh")
+                  <<euxInfos_.value(9).GetLocaleName("zh");
     euyStrings_<<euyInfos_.value(0).GetLocaleName("zh")
-              <<euyInfos_.value(6).GetLocaleName("zh")
-             <<euyInfos_.value(1).GetLocaleName("zh")
-            <<euyInfos_.value(5).GetLocaleName("zh")
-           <<euyInfos_.value(8).GetLocaleName("zh")
-          <<euyInfos_.value(14).GetLocaleName("zh");
+              <<euyInfos_.value(1).GetLocaleName("zh")
+             <<euyInfos_.value(2).GetLocaleName("zh")
+            <<euyInfos_.value(3).GetLocaleName("zh")
+           <<euyInfos_.value(4).GetLocaleName("zh")
+          <<euyInfos_.value(5).GetLocaleName("zh")
+            <<euyInfos_.value(6).GetLocaleName("zh")
+              <<euyInfos_.value(7).GetLocaleName("zh");
 
 }
 

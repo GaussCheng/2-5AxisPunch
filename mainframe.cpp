@@ -214,7 +214,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     qDebug()<<"Last mold:"<<moldName;
     ICProgramHeadFrame::Instance()->SetCurrentMoldName(moldName);
     isOverTime_ = (ICParametersSave::Instance()->RestTime(0) == 1);
-    registe_timer->start(5000);
+    registe_timer->start(3600000);
 
 }
 
@@ -437,6 +437,7 @@ void MainFrame::StatusRefreshed()
 //        ioctl(ledFD_, 0, ledFlags_);
 #else
 //        ioctl(ledFD_, 2, ledFlags_);
+        ioctl(ledFD_, 2, ledFlags_);
 #endif
 #endif
     }
@@ -445,6 +446,7 @@ void MainFrame::StatusRefreshed()
     {
         hostCompareDialog_->show();
     }
+    ICProgramHeadFrame::Instance()->ChangePunchOrigin(virtualHost->IsInputOn(40));
     int hintCode = virtualHost->HintNum();
     if(alarmString->PriorAlarmNum() != static_cast<int>(errCode_) || hintCode != oldHintCode_)
     {

@@ -95,6 +95,7 @@ void ICHCStackedSettingsFrame::InitInterface()
 void ICHCStackedSettingsFrame::RefreshStackParams_(int group)
 {
     QList<int> stackParams = ICMold::CurrentMold()->StackParams(group);
+    if(stackParams.size() != ICMold::StackParamCount) { return ;}
     int seq = stackParams.at(ICMold::Seq);
     int seqH;
     int seqL;
@@ -127,7 +128,6 @@ void ICHCStackedSettingsFrame::RefreshStackParams_(int group)
     seqH & 128 ? ui->zRPCheckBox->click() : ui->zPPCheckBox->click();
     ui->zPPCheckBox->setChecked(!ui->zRPCheckBox->isChecked());
     ui->zRPStepLineEdit->SetThisIntToThisText(stackParams.at(ICMold::Z_Gap));
-    ui->countWayBox->setCurrentIndex(ICMold::CurrentMold()->MoldParam(static_cast<ICMold::ICMoldParam>(currentPage_)));
 //    switch(stackParams.at(ICMold::Seq))
 //    {
 //    case 64:
@@ -186,7 +186,6 @@ QList<int> ICHCStackedSettingsFrame::GetCurrentStatus_() const
     status.append(ui->xRPStepLineEdit->TransThisTextToThisInt());
     status.append(ui->yRPStepLineEdit->TransThisTextToThisInt());
     status.append(ui->zRPStepLineEdit->TransThisTextToThisInt());
-    status.append(ui->countWayBox->currentIndex());
 //    status.append(ui->xRPCheckBox->isChecked() ? 1 : 0);
 //    status.append(ui->yRPCheckBox->isChecked() ? 1 : 0);
 //    status.append(ui->zRPCheckBox->isChecked() ? 1 : 0);
@@ -196,12 +195,12 @@ QList<int> ICHCStackedSettingsFrame::GetCurrentStatus_() const
 void ICHCStackedSettingsFrame::SetStackStatus_(const QList<int> &status)
 {
     ICMold *currentMold = ICMold::CurrentMold();
-    const int count = status.size() - 1;
+    const int count = status.size();
     for(int i = 0; i != count; ++i)
     {
         currentMold->SetStackParam(currentPage_, static_cast<ICMold::ICStatckParam>(i), status.at(i));
     }
-    currentMold->SetMoldParam(static_cast<ICMold::ICMoldParam>(currentPage_), status.at(count));
+//    currentMold->SetMoldParam(static_cast<ICMold::ICMoldParam>(currentPage_), status.at(count));
 }
 
 void ICHCStackedSettingsFrame::hideEvent(QHideEvent *e)

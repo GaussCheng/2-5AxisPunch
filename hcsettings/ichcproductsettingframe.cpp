@@ -170,12 +170,6 @@ void ICHCProductSettingFrame::on_productClearButton_clicked()
     ICVirtualHost::GlobalVirtualHost()->SetFinishProductCount(0);
 }
 
-void ICHCProductSettingFrame::FixtureBoxChange()
-{
-    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    host->SetSystemParameter(ICVirtualHost::SYS_Config_Fixture, host->FixtureDefineSwitch(buttongroup_->checkedId()));
-}
-
 void ICHCProductSettingFrame::InitCheckBox()
 {
     buttongroup_->addButton(ui->reversedCheckBox,0);

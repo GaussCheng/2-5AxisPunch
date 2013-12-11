@@ -225,6 +225,10 @@ void ICHCProgramMonitorFrame::hideEvent(QHideEvent *e)
     ICVirtualHost::GlobalVirtualHost()->SetSpeedEnable(false);
     ui->speedEnableButton->setIcon(switchOff_);
     ui->speedEnableButton->setText(tr("Speed Disable"));
+    if(ICVirtualHost::GlobalVirtualHost()->CurrentStatus() != ICVirtualHost::Auto)
+    {
+        ui->cycle->setChecked(false);
+    }
 
 
     //    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop,0);
@@ -232,18 +236,18 @@ void ICHCProgramMonitorFrame::hideEvent(QHideEvent *e)
 
 void ICHCProgramMonitorFrame::LevelChanged(int level)
 {
-    if(level >=  ICParametersSave::MachineAdmin)
-    {
-        ui->editToolButton->hide();
-    }
-    else
-    {
-        ui->editToolButton->hide();
-    }
+//    if(level >=  ICParametersSave::MachineAdmin)
+//    {
+//        ui->editToolButton->hide();
+//    }
+//    else
+//    {
+//        ui->editToolButton->hide();
+//    }
 }
 void ICHCProgramMonitorFrame::SetTime(int time)
 {
-    ui->timeLabel->setText(ICParameterConversion::TransThisIntToThisText(time, 2));
+//    ui->timeLabel->setText(ICParameterConversion::TransThisIntToThisText(time, 2));
 }
 
 //void ICHCProgramMonitorFrame::SetFullTime(int fullTime)
@@ -253,7 +257,7 @@ void ICHCProgramMonitorFrame::SetTime(int time)
 
 void ICHCProgramMonitorFrame::SetProduct(int product)
 {
-    ui->settedProductsLabel->setText(QString::number(product));
+//    ui->settedProductsLabel->setText(QString::number(product));
 }
 
 //void ICHCProgramMonitorFrame::SetCurrentFinished(int currentFinished)
@@ -278,12 +282,6 @@ void ICHCProgramMonitorFrame::StatusRefreshed()
     {
         oldY = pos;
         ui->yCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
-    }
-    pos = host->HostStatus(ICVirtualHost::ZPos).toInt();
-    if(pos != oldZ)
-    {
-        oldZ = pos;
-        ui->zCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
     }
     pos = host->GlobalSpeed();
     if(pos != oldS)
@@ -813,7 +811,17 @@ void ICHCProgramMonitorFrame::on_singleStepButton_released()
     ICKeyboard::Instace()->SetPressed(false);
 }
 
-void ICHCProgramMonitorFrame::on_cycle_clicked()
+
+void ICHCProgramMonitorFrame::on_cycle_toggled(bool checked)
 {
-    ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_CYCLE);
+    if(checked)
+    {
+        ui->cycle->setText(tr("No Check"));
+        ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_CYCLE);
+    }
+    else
+    {
+        ui->cycle->setText(tr("Check"));
+        ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_F6);
+    }
 }

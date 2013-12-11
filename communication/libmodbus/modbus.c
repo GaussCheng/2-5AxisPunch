@@ -1449,6 +1449,7 @@ static int hc_runtime_modify_query(modbus_param_t *mb_param,
 
 int hc_manual_run(modbus_param_t *mb_param,
                                    int slave,
+                                   int num,
                                    int gm,
                                    int sub,
                                    int pos,
@@ -1461,13 +1462,14 @@ int hc_manual_run(modbus_param_t *mb_param,
 
     query[0]  = slave;
     query[1]  = FC_HC_MANUAL_RUN;
-    query[2]  = gm;
-    query[3]  = sub;
-    query[4]  = pos >> 8;
-    query[5]  = pos & 0x00ff;
-    query[6] = ifval;
+    query[2]  = num;
+    query[3]  = gm;
+    query[4]  = sub;
+    query[5]  = pos >> 8;
+    query[6]  = pos & 0x00ff;
+    query[7] = ifval;
 
-    query_length = 7;
+    query_length = 8;
 
     ret = modbus_send(mb_param, query, query_length);
     if (ret > 0)

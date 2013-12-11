@@ -51,7 +51,7 @@ private slots:
     void on_singleStepButton_released();
     void LevelChanged(int);
 
-    void on_cycle_clicked();
+    void on_cycle_toggled(bool checked);
 
 private:
     void InitSignal();

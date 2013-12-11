@@ -55,6 +55,8 @@ private slots:
 
     void on_productClear_clicked();
 
+    void on_singleButton_clicked();
+
 private:
     Ui::ICHCManualOperationPageFrame *ui;
     int timerID_;

@@ -32,6 +32,7 @@
 #include "ickeyboard.h"
 #include "icactioncommand.h"
 #include "ichcotherpage.h"
+#include "ichcstackedsettingsframe.h"
 
 #include <QDebug>
 #include <QMessageBox>
@@ -41,6 +42,8 @@
 //    int stepNum;
 //    int
 //};
+
+static QList<QCheckBox*> fixtureCheckList;
 
 ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
     QFrame(parent),
@@ -58,6 +61,15 @@ ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->tabWidget->addTab(MoldInformation::Instance(), tr("Records"));
+    ui->tabWidget->addTab(new ICHCStackedSettingsFrame(), tr("Stack"));
+    fixtureCheckList<<ui->check0<<ui->check1<<ui->check2<<ui->check3<<ui->check4
+                   <<ui->check5<<ui->check6<<ui->check7<<ui->check8
+                  <<ui->check9<<ui->check10<<ui->check11<<ui->check12
+                 <<ui->check13<<ui->check14<<ui->check15<<ui->check16
+                <<ui->check17<<ui->check18<<ui->check19<<ui->check20
+               <<ui->check21<<ui->check22<<ui->check23<<ui->check24
+              <<ui->check25<<ui->check26<<ui->check27<<ui->check28
+             <<ui->check29<<ui->check30<<ui->check31;
     //    ui->otherButton->hide();
 
     ui->pneumaticButton->hide();
@@ -68,6 +80,14 @@ ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
     //    LoadAllRecordFileInfo();
 
     InitParameter();
+    const int fs = fixtureCheckList.size();
+    ICUserDefineConfigSPTR config = ICUserDefineConfig::Instance();
+    ICUserIOInfo info;
+    for(int i = 0; i != fs; ++i)
+    {
+        info = config->YInfo(i);
+        fixtureCheckList[i]->setText(info.GetLocaleName("zh") + tr("Check"));
+    }
     //    ui->conditionsToolButton->hide();
 }
 
@@ -88,16 +108,26 @@ void ICHCInstructionPageFrame::hideEvent(QHideEvent *e)
     qDebug("instruct hide");
     modifyDialog_->hide();
     QFrame::hideEvent(e);
-    //    disconnect(ICVirtualHost::GlobalVirtualHost(),
-    //               SIGNAL(StepChanged(int)),
-    //               this,
-    //               SLOT(SelectCurrentStep(int)));
-    //    disconnect(ICVirtualHost::GlobalVirtualHost(),
-    //               SIGNAL(NeedToGetTeach()),
-    //               this,
-    //               SLOT(GetTeachContent()));
-    //    ICMold::CurrentMold()->SetMoldContent(ICMold::UIItemToMoldItem(programList_));
-    //    ICMold::CurrentMold()->SaveMoldFile();
+    int c1 = 0;
+    int c2 = 0;
+    for(int i = 0; i != 16; ++i)
+    {
+        if(fixtureCheckList.at(i)->isChecked())
+        {
+            c1 |= (1 << i);
+        }
+    }
+    for(int i = 16; i != 32; ++i)
+    {
+        if(fixtureCheckList.at(i)->isChecked())
+        {
+            c2 |= (1 << i);
+        }
+    }
+
+    ICMold* cm = ICMold::CurrentMold();
+    if(cm->MoldParam(ICMold::check1) != c1) cm->SetMoldParam(ICMold::check1, c1);
+    if(cm->MoldParam(ICMold::check2) != c2) cm->SetMoldParam(ICMold::check2, c2);
     if(SaveCurrentEdit() == true || isProgramChanged_)
     {
         ICVirtualHost::GlobalVirtualHost()->ReConfigure();
@@ -117,8 +147,18 @@ void ICHCInstructionPageFrame::changeEvent(QEvent *e)
     QWidget::changeEvent(e);
     switch (e->type()) {
     case QEvent::LanguageChange:
+    {
         ui->retranslateUi(this);
         ICInstructParam::Instance()->UpdateTranslate();
+        const int fs = fixtureCheckList.size();
+        ICUserDefineConfigSPTR config = ICUserDefineConfig::Instance();
+        ICUserIOInfo info;
+        for(int i = 0; i != fs; ++i)
+        {
+            info = config->YInfo(i);
+            fixtureCheckList[i]->setText(info.GetLocaleName("zh") + tr("Check"));
+        }
+    }
         break;
     default:
         break;
@@ -170,6 +210,23 @@ void ICHCInstructionPageFrame::InitInterface()
     optionButtonToPage_.insert(ui->lineButton, actionPage_);
     ui->settingStackedWidget->addWidget(actionPage_);
     modifyDialog_ = new ICInstructModifyDialog(this);
+    int c1 = ICMold::CurrentMold()->MoldParam(ICMold::check1);
+    int c2 = ICMold::CurrentMold()->MoldParam(ICMold::check2);
+    for(int i = 0; i != 16; ++i)
+    {
+        if(c1 & (1 <<i))
+        {
+            fixtureCheckList[i]->setChecked(true);
+        }
+    }
+    for(int i = 16; i != 32; ++i)
+    {
+        if(c2 & (1 <<i))
+        {
+            fixtureCheckList[i]->setChecked(true);
+        }
+    }
+
     //    injectionPage_ = new ICHCInjectionPage;
     //    optionButtonToPage_[ui->injectionButton] = injectionPage_;
     //    ui->settingStackedWidget->addWidget(injectionPage_);
@@ -269,10 +326,10 @@ void ICHCInstructionPageFrame::UpdateUIProgramList_()
                     ui->moldContentListWidget->item(j + index)->setBackgroundColor(QColor(239, 235, 231));
                     //                    ui->moldContentListWidget->item(j + index)->setForeground(QColor("white"));
                 }
-//                else if(tmp->Action() == ICMold::ACT_WaitMoldOpened)
-//                {
-//                    ui->moldContentListWidget->item(j + index)->setBackgroundColor("red");
-//                }
+                //                else if(tmp->Action() == ICMold::ACT_WaitMoldOpened)
+                //                {
+                //                    ui->moldContentListWidget->item(j + index)->setBackgroundColor("red");
+                //                }
                 else
                 {
                     ui->moldContentListWidget->item(j + index)->setBackgroundColor(color);
@@ -304,13 +361,13 @@ void ICHCInstructionPageFrame::on_insertToolButton_clicked()
     FindIndex_(index, gIndex, tIndex, sIndex);
     QString currentmoldname  = ICParametersSave::Instance()->MoldName("");
     /******currentEdit_标记为0表示为主程序（主程序时不能删除待机点）*****/
-//    if(programList_.at(gIndex).StepNum() == 0 && currentEdit_ == 0 && currentmoldname.left(4) != "szhc")
-//    {
-//        QMessageBox::warning(this,
-//                             tr("Warning"),
-//                             tr("Can not add standby position program"));
-//        return;
-//    }
+    //    if(programList_.at(gIndex).StepNum() == 0 && currentEdit_ == 0 && currentmoldname.left(4) != "szhc")
+    //    {
+    //        QMessageBox::warning(this,
+    //                             tr("Warning"),
+    //                             tr("Can not add standby position program"));
+    //        return;
+    //    }
     bool isParallel = false;
     bool isServo = false;
     if(flagsEditor != NULL)
@@ -417,7 +474,7 @@ void ICHCInstructionPageFrame::on_insertToolButton_clicked()
         else
         {
             isSyncItem = programList_.at(gIndex).at(tIndex).at(sIndex).SubNum() ==
-                         programList_.at(gIndex).at(tIndex).at(sIndex - 1).SubNum();
+                    programList_.at(gIndex).at(tIndex).at(sIndex - 1).SubNum();
         }
         for(int i = 0; i != items.size(); ++i)
         {
@@ -513,13 +570,13 @@ void ICHCInstructionPageFrame::on_deleteToolButton_clicked()
     /************BUG181:子程序位置插入后不能删除******************/
 
     QString currentmoldname  = ICParametersSave::Instance()->MoldName("");
-//    if(programList_.at(gIndex).StepNum() == 0 && currentEdit_ == 0 && currentmoldname.left(4) != "szhc")
-//    {
-//        QMessageBox::warning(this,
-//                             tr("Warning"),
-//                             tr("Can not delete standby position program"));
-//        return;
-//    }
+    //    if(programList_.at(gIndex).StepNum() == 0 && currentEdit_ == 0 && currentmoldname.left(4) != "szhc")
+    //    {
+    //        QMessageBox::warning(this,
+    //                             tr("Warning"),
+    //                             tr("Can not delete standby position program"));
+    //        return;
+    //    }
     if(sIndex == -1)
     {
         if(programList_.at(gIndex).TopItemCount() == 1) //delete Group Item
@@ -617,14 +674,14 @@ void ICHCInstructionPageFrame::FindIndex_(int currentIndex, int& groupItemIndex,
                 if(currentIndex < programList_.at(i).at(j).ItemCount())
                 {
                     topItemIndex = j;
-//                    if(currentIndex == 0)
-//                    {
-                        subItemIndex = -1;
-//                    }
-//                    else
-//                    {
-                        subItemIndex = currentIndex - 1;
-//                    }
+                    //                    if(currentIndex == 0)
+                    //                    {
+                    subItemIndex = -1;
+                    //                    }
+                    //                    else
+                    //                    {
+                    subItemIndex = currentIndex - 1;
+                    //                    }
                     break;
                 }
                 else
@@ -854,7 +911,7 @@ void ICHCInstructionPageFrame::on_tabWidget_currentChanged(int index)
     else
     {
         SaveCurrentEdit();
-//        isProgramChanged_ = false;
+        //        isProgramChanged_ = false;
     }
 }
 

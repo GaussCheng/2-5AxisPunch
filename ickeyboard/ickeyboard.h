@@ -43,6 +43,13 @@ public:
         VFB_X2Add   = 28,
         VFB_Y2Sub   = 15,
         VFB_Y2Add   = 21,
+        VFB_ASub    = 47,
+        VFB_AAdd    = 41,
+        VFB_BSub    = 42,
+        VFB_BAdd    = 43,
+        VFB_CSub    = 44,
+        VFB_CAdd    = 45,
+        VFB_SingleStep = 46,
         FB_F1       = 29, //29
         FB_F2       = 30,
         FB_F3       = 31,

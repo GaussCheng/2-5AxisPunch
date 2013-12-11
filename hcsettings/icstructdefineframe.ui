@@ -31,357 +31,6 @@
    <item>
     <layout class="QVBoxLayout" name="verticalLayout_4">
      <item>
-      <widget class="QGroupBox" name="signalDefineBox">
-       <property name="title">
-        <string>Signal Define</string>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout_3">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <property name="topMargin">
-         <number>3</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QWidget" name="widget" native="true">
-          <layout class="QHBoxLayout" name="horizontalLayout">
-           <property name="spacing">
-            <number>10</number>
-           </property>
-           <property name="leftMargin">
-            <number>9</number>
-           </property>
-           <property name="topMargin">
-            <number>0</number>
-           </property>
-           <property name="rightMargin">
-            <number>0</number>
-           </property>
-           <property name="bottomMargin">
-            <number>0</number>
-           </property>
-           <item>
-            <widget class="QCheckBox" name="singleArmButton">
-             <property name="styleSheet">
-              <string notr="true">::indicator {
-     width: 32px;
-     height: 32px;
- }
-
-::indicator:unchecked 
-{
-     image: url(:/resource/check_unchecked.png);
- }
-::indicator:checked 
-{
-     image: url(:/resource/check_checked.png);
- }
-
-QRadioButton::indicator:checked:disabled
-{
- image: url(:/resource/check_checked_disable.png);
-}
-
-QRadioButton::indicator:unchecked:disabled
-{
- image: url(:/resource/check_unchecked_disable.png);
-}
-
-
-
-</string>
-             </property>
-             <property name="text">
-              <string>Single Arm</string>
-             </property>
-             <property name="checkable">
-              <bool>true</bool>
-             </property>
-             <property name="checked">
-              <bool>true</bool>
-             </property>
-             <property name="autoExclusive">
-              <bool>true</bool>
-             </property>
-             <attribute name="buttonGroup">
-              <string notr="true">buttonGroup</string>
-             </attribute>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="doubleArmButton">
-             <property name="styleSheet">
-              <string notr="true">::indicator {
-     width: 32px;
-     height: 32px;
- }
-
-::indicator:unchecked 
-{
-     image: url(:/resource/check_unchecked.png);
- }
-::indicator:checked 
-{
-     image: url(:/resource/check_checked.png);
- }
-
-QRadioButton::indicator:checked:disabled
-{
- image: url(:/resource/check_checked_disable.png);
-}
-
-QRadioButton::indicator:unchecked:disabled
-{
- image: url(:/resource/check_unchecked_disable.png);
-}
-
-
-
-</string>
-             </property>
-             <property name="text">
-              <string>Double Arm</string>
-             </property>
-             <property name="checkable">
-              <bool>true</bool>
-             </property>
-             <property name="autoExclusive">
-              <bool>true</bool>
-             </property>
-             <attribute name="buttonGroup">
-              <string notr="true">buttonGroup</string>
-             </attribute>
-            </widget>
-           </item>
-           <item>
-            <spacer name="horizontalSpacer">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
-          <property name="leftMargin">
-           <number>9</number>
-          </property>
-          <item>
-           <widget class="QGroupBox" name="mainArmBox">
-            <property name="title">
-             <string>Main Arm</string>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout">
-             <property name="spacing">
-              <number>3</number>
-             </property>
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>3</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="QCheckBox" name="mainArmDownLimitButton">
-               <property name="styleSheet">
-                <string notr="true">::indicator {
-     width: 32px;
-     height: 32px;
- }
-
-::indicator:unchecked 
-{
-     image: url(:/resource/check_unchecked.png);
- }
-::indicator:checked 
-{
-     image: url(:/resource/check_checked.png);
- }
-
-
-
-</string>
-               </property>
-               <property name="text">
-                <string>Down Limit</string>
-               </property>
-               <property name="checkable">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QCheckBox" name="mainArmBackwardLimitButton">
-               <property name="styleSheet">
-                <string notr="true">::indicator {
-     width: 32px;
-     height: 32px;
- }
-
-::indicator:unchecked 
-{
-     image: url(:/resource/check_unchecked.png);
- }
-::indicator:checked 
-{
-     image: url(:/resource/check_checked.png);
- }
-</string>
-               </property>
-               <property name="text">
-                <string>Backward Limit</string>
-               </property>
-               <property name="checkable">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QCheckBox" name="mainArmForwardLimitButton">
-               <property name="styleSheet">
-                <string notr="true">::indicator {
-     width: 32px;
-     height: 32px;
- }
-
-::indicator:unchecked 
-{
-     image: url(:/resource/check_unchecked.png);
- }
-::indicator:checked 
-{
-     image: url(:/resource/check_checked.png);
- }
-
-</string>
-               </property>
-               <property name="text">
-                <string>Forword Limit</string>
-               </property>
-               <property name="checkable">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
-          <item>
-           <widget class="QGroupBox" name="subArmBox">
-            <property name="styleSheet">
-             <string notr="true">QCheckBox::indicator {
-     width: 32px;
-     height: 32px;
- }
-
-QCheckBox::indicator:unchecked 
-{
-     image: url(:/resource/check_unchecked.png);
- }
-QCheckBox::indicator:checked 
-{
-     image: url(:/resource/check_checked.png);
- }
-
-QCheckBox::indicator:checked:disabled
-{
- image: url(:/resource/check_checked_disable.png);
-}
-
-QCheckBox::indicator:unchecked:disabled
-{
- image: url(:/resource/check_unchecked_disable.png);
-}
-
-
-
-</string>
-            </property>
-            <property name="title">
-             <string>Sub Arm</string>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout_2">
-             <property name="spacing">
-              <number>3</number>
-             </property>
-             <property name="topMargin">
-              <number>3</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="QCheckBox" name="subArmDownLimitButton">
-               <property name="text">
-                <string>Down Limit</string>
-               </property>
-               <property name="checkable">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QCheckBox" name="subArmBackwardLimitButton">
-               <property name="text">
-                <string>Backword Limit</string>
-               </property>
-               <property name="checkable">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QCheckBox" name="subArmForwardLimitButton">
-               <property name="text">
-                <string>Forward Limit</string>
-               </property>
-               <property name="checkable">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-         </layout>
-        </item>
-       </layout>
-      </widget>
-     </item>
-     <item>
       <widget class="QGroupBox" name="armDefineBox">
        <property name="title">
         <string>Arm Define</string>
@@ -428,24 +77,10 @@ QCheckBox::indicator:unchecked:disabled
           </property>
          </widget>
         </item>
-        <item row="2" column="4">
-         <widget class="QLabel" name="label_14">
-          <property name="text">
-           <string>C</string>
-          </property>
-         </widget>
-        </item>
         <item row="2" column="0">
          <widget class="QLabel" name="label_13">
           <property name="text">
            <string>Z</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="4">
-         <widget class="QLabel" name="label_15">
-          <property name="text">
-           <string>A</string>
           </property>
          </widget>
         </item>
@@ -472,63 +107,6 @@ QCheckBox::indicator:unchecked:disabled
             <string>Servo</string>
            </property>
           </item>
-         </widget>
-        </item>
-        <item row="2" column="5">
-         <widget class="QComboBox" name="cBox">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>32</height>
-           </size>
-          </property>
-          <item>
-           <property name="text">
-            <string>None</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Pneumatic</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Servo</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="0" column="5">
-         <widget class="QComboBox" name="aBox">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>32</height>
-           </size>
-          </property>
-          <item>
-           <property name="text">
-            <string>None</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Pneumatic</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Servo</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="1" column="4">
-         <widget class="QLabel" name="label_16">
-          <property name="text">
-           <string>B</string>
-          </property>
          </widget>
         </item>
         <item row="2" column="1">
@@ -563,39 +141,14 @@ QCheckBox::indicator:unchecked:disabled
           </property>
          </widget>
         </item>
-        <item row="1" column="5">
-         <widget class="QComboBox" name="bBox">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>32</height>
-           </size>
-          </property>
-          <item>
-           <property name="text">
-            <string>None</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Pneumatic</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Servo</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="0" column="2">
+        <item row="3" column="0">
          <widget class="QLabel" name="label_6">
           <property name="text">
            <string>X2</string>
           </property>
          </widget>
         </item>
-        <item row="0" column="3">
+        <item row="3" column="1">
          <widget class="QComboBox" name="x2Box">
           <property name="minimumSize">
            <size>
@@ -620,15 +173,111 @@ QCheckBox::indicator:unchecked:disabled
           </item>
          </widget>
         </item>
-        <item row="1" column="2">
+        <item row="0" column="2">
          <widget class="QLabel" name="label_12">
           <property name="text">
            <string>Y2</string>
           </property>
          </widget>
         </item>
-        <item row="1" column="3">
+        <item row="0" column="3">
          <widget class="QComboBox" name="y2Box">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>32</height>
+           </size>
+          </property>
+          <item>
+           <property name="text">
+            <string>None</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Pneumatic</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Servo</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLabel" name="label_15">
+          <property name="text">
+           <string>A</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="QComboBox" name="aBox">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>32</height>
+           </size>
+          </property>
+          <item>
+           <property name="text">
+            <string>None</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Pneumatic</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Servo</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QLabel" name="label_16">
+          <property name="text">
+           <string>B</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3">
+         <widget class="QComboBox" name="bBox">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>32</height>
+           </size>
+          </property>
+          <item>
+           <property name="text">
+            <string>None</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Pneumatic</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Servo</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QLabel" name="label_14">
+          <property name="text">
+           <string>C</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="3">
+         <widget class="QComboBox" name="cBox">
           <property name="minimumSize">
            <size>
             <width>0</width>
@@ -663,699 +312,6 @@ QCheckBox::indicator:unchecked:disabled
       <number>2</number>
      </property>
      <item>
-      <widget class="QGroupBox" name="outDefineBox">
-       <property name="title">
-        <string>Out Define</string>
-       </property>
-       <layout class="QGridLayout" name="gridLayout_2">
-        <property name="leftMargin">
-         <number>2</number>
-        </property>
-        <property name="topMargin">
-         <number>4</number>
-        </property>
-        <property name="rightMargin">
-         <number>2</number>
-        </property>
-        <property name="bottomMargin">
-         <number>2</number>
-        </property>
-        <property name="horizontalSpacing">
-         <number>3</number>
-        </property>
-        <property name="verticalSpacing">
-         <number>6</number>
-        </property>
-        <item row="1" column="2">
-         <widget class="QCheckBox" name="extentBBox">
-          <property name="styleSheet">
-           <string notr="true">::indicator {
-     width: 32px;
-     height: 32px;
- }
-
-::indicator:unchecked 
-{
-     image: url(:/resource/check_unchecked.png);
- }
-::indicator:checked 
-{
-     image: url(:/resource/check_checked.png);
- }
-
-QRadioButton::indicator:checked:disabled
-{
- image: url(:/resource/check_checked_disable.png);
-}
-
-QRadioButton::indicator:unchecked:disabled
-{
- image: url(:/resource/check_unchecked_disable.png);
-}</string>
-          </property>
-          <property name="text">
-           <string>Extent</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">buttonGroupB</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="0" column="2">
-         <widget class="QCheckBox" name="extentABox">
-          <property name="styleSheet">
-           <string notr="true">::indicator {
-     width: 32px;
-     height: 32px;
- }
-
-::indicator:unchecked 
-{
-     image: url(:/resource/check_unchecked.png);
- }
-::indicator:checked 
-{
-     image: url(:/resource/check_checked.png);
- }
-
-QRadioButton::indicator:checked:disabled
-{
- image: url(:/resource/check_checked_disable.png);
-}
-
-QRadioButton::indicator:unchecked:disabled
-{
- image: url(:/resource/check_unchecked_disable.png);
-}</string>
-          </property>
-          <property name="text">
-           <string>Extent</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">buttonGroupA</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="3" column="2">
-         <widget class="QCheckBox" name="extentDBox">
-          <property name="styleSheet">
-           <string notr="true">::indicator {
-     width: 32px;
-     height: 32px;
- }
-
-::indicator:unchecked 
-{
-     image: url(:/resource/check_unchecked.png);
- }
-::indicator:checked 
-{
-     image: url(:/resource/check_checked.png);
- }
-
-QRadioButton::indicator:checked:disabled
-{
- image: url(:/resource/check_checked_disable.png);
-}
-
-QRadioButton::indicator:unchecked:disabled
-{
- image: url(:/resource/check_unchecked_disable.png);
-}</string>
-          </property>
-          <property name="text">
-           <string>Extent</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">buttonGroupD</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="label">
-          <property name="text">
-           <string>1</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="4">
-         <widget class="QLabel" name="label_8">
-          <property name="text">
-           <string>5</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="label_2">
-          <property name="text">
-           <string>2</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="4">
-         <widget class="QLabel" name="label_10">
-          <property name="text">
-           <string>8</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="3">
-         <spacer name="horizontalSpacer_3">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="0" column="7">
-         <spacer name="horizontalSpacer_4">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="1" column="4">
-         <widget class="QLabel" name="label_9">
-          <property name="text">
-           <string>6</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="label_3">
-          <property name="text">
-           <string>3</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="4">
-         <widget class="QLabel" name="label_11">
-          <property name="text">
-           <string>7</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="0">
-         <widget class="QLabel" name="label_4">
-          <property name="text">
-           <string>4</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QCheckBox" name="normalABox">
-          <property name="styleSheet">
-           <string notr="true">::indicator {
-     width: 32px;
-     height: 32px;
- }
-
-::indicator:unchecked 
-{
-     image: url(:/resource/check_unchecked.png);
- }
-::indicator:checked 
-{
-     image: url(:/resource/check_checked.png);
- }
-
-QRadioButton::indicator:checked:disabled
-{
- image: url(:/resource/check_checked_disable.png);
-}
-
-QRadioButton::indicator:unchecked:disabled
-{
- image: url(:/resource/check_unchecked_disable.png);
-}</string>
-          </property>
-          <property name="text">
-           <string>Normal</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">buttonGroupA</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QCheckBox" name="normalBBox">
-          <property name="styleSheet">
-           <string notr="true">::indicator {
-     width: 32px;
-     height: 32px;
- }
-
-::indicator:unchecked 
-{
-     image: url(:/resource/check_unchecked.png);
- }
-::indicator:checked 
-{
-     image: url(:/resource/check_checked.png);
- }
-
-QRadioButton::indicator:checked:disabled
-{
- image: url(:/resource/check_checked_disable.png);
-}
-
-QRadioButton::indicator:unchecked:disabled
-{
- image: url(:/resource/check_unchecked_disable.png);
-}</string>
-          </property>
-          <property name="text">
-           <string>Normal</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">buttonGroupB</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="3" column="1">
-         <widget class="QCheckBox" name="normalDBox">
-          <property name="styleSheet">
-           <string notr="true">::indicator {
-     width: 32px;
-     height: 32px;
- }
-
-::indicator:unchecked 
-{
-     image: url(:/resource/check_unchecked.png);
- }
-::indicator:checked 
-{
-     image: url(:/resource/check_checked.png);
- }
-
-QRadioButton::indicator:checked:disabled
-{
- image: url(:/resource/check_checked_disable.png);
-}
-
-QRadioButton::indicator:unchecked:disabled
-{
- image: url(:/resource/check_unchecked_disable.png);
-}</string>
-          </property>
-          <property name="text">
-           <string>Normal</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">buttonGroupD</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="0" column="5">
-         <widget class="QCheckBox" name="normalEBox">
-          <property name="styleSheet">
-           <string notr="true">::indicator {
-     width: 32px;
-     height: 32px;
- }
-
-::indicator:unchecked 
-{
-     image: url(:/resource/check_unchecked.png);
- }
-::indicator:checked 
-{
-     image: url(:/resource/check_checked.png);
- }
-
-QRadioButton::indicator:checked:disabled
-{
- image: url(:/resource/check_checked_disable.png);
-}
-
-QRadioButton::indicator:unchecked:disabled
-{
- image: url(:/resource/check_unchecked_disable.png);
-}</string>
-          </property>
-          <property name="text">
-           <string>Normal</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">buttonGroupE</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="2" column="1">
-         <widget class="QCheckBox" name="normalCBox">
-          <property name="styleSheet">
-           <string notr="true">::indicator {
-     width: 32px;
-     height: 32px;
- }
-
-::indicator:unchecked 
-{
-     image: url(:/resource/check_unchecked.png);
- }
-::indicator:checked 
-{
-     image: url(:/resource/check_checked.png);
- }
-
-QRadioButton::indicator:checked:disabled
-{
- image: url(:/resource/check_checked_disable.png);
-}
-
-QRadioButton::indicator:unchecked:disabled
-{
- image: url(:/resource/check_unchecked_disable.png);
-}</string>
-          </property>
-          <property name="text">
-           <string>Normal</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">buttonGroupC</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="2" column="2">
-         <widget class="QCheckBox" name="extentCBox">
-          <property name="styleSheet">
-           <string notr="true">::indicator {
-     width: 32px;
-     height: 32px;
- }
-
-::indicator:unchecked 
-{
-     image: url(:/resource/check_unchecked.png);
- }
-::indicator:checked 
-{
-     image: url(:/resource/check_checked.png);
- }
-
-QRadioButton::indicator:checked:disabled
-{
- image: url(:/resource/check_checked_disable.png);
-}
-
-QRadioButton::indicator:unchecked:disabled
-{
- image: url(:/resource/check_unchecked_disable.png);
-}</string>
-          </property>
-          <property name="text">
-           <string>Extent</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">buttonGroupC</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="0" column="6">
-         <widget class="QCheckBox" name="extentEBox">
-          <property name="styleSheet">
-           <string notr="true">::indicator {
-     width: 32px;
-     height: 32px;
- }
-
-::indicator:unchecked 
-{
-     image: url(:/resource/check_unchecked.png);
- }
-::indicator:checked 
-{
-     image: url(:/resource/check_checked.png);
- }
-
-QRadioButton::indicator:checked:disabled
-{
- image: url(:/resource/check_checked_disable.png);
-}
-
-QRadioButton::indicator:unchecked:disabled
-{
- image: url(:/resource/check_unchecked_disable.png);
-}</string>
-          </property>
-          <property name="text">
-           <string>Extent</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">buttonGroupE</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="1" column="5">
-         <widget class="QCheckBox" name="normalFBox">
-          <property name="styleSheet">
-           <string notr="true">::indicator {
-     width: 32px;
-     height: 32px;
- }
-
-::indicator:unchecked 
-{
-     image: url(:/resource/check_unchecked.png);
- }
-::indicator:checked 
-{
-     image: url(:/resource/check_checked.png);
- }
-
-QRadioButton::indicator:checked:disabled
-{
- image: url(:/resource/check_checked_disable.png);
-}
-
-QRadioButton::indicator:unchecked:disabled
-{
- image: url(:/resource/check_unchecked_disable.png);
-}</string>
-          </property>
-          <property name="text">
-           <string>Normal</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">buttonGroupF</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="2" column="5">
-         <widget class="QCheckBox" name="normalGBox">
-          <property name="styleSheet">
-           <string notr="true">::indicator {
-     width: 32px;
-     height: 32px;
- }
-
-::indicator:unchecked 
-{
-     image: url(:/resource/check_unchecked.png);
- }
-::indicator:checked 
-{
-     image: url(:/resource/check_checked.png);
- }
-
-QRadioButton::indicator:checked:disabled
-{
- image: url(:/resource/check_checked_disable.png);
-}
-
-QRadioButton::indicator:unchecked:disabled
-{
- image: url(:/resource/check_unchecked_disable.png);
-}</string>
-          </property>
-          <property name="text">
-           <string>Normal</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">buttonGroupG</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="3" column="5">
-         <widget class="QCheckBox" name="normalHBox">
-          <property name="styleSheet">
-           <string notr="true">::indicator {
-     width: 32px;
-     height: 32px;
- }
-
-::indicator:unchecked 
-{
-     image: url(:/resource/check_unchecked.png);
- }
-::indicator:checked 
-{
-     image: url(:/resource/check_checked.png);
- }
-
-QRadioButton::indicator:checked:disabled
-{
- image: url(:/resource/check_checked_disable.png);
-}
-
-QRadioButton::indicator:unchecked:disabled
-{
- image: url(:/resource/check_unchecked_disable.png);
-}</string>
-          </property>
-          <property name="text">
-           <string>Normal</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">buttonGroupH</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="1" column="6">
-         <widget class="QCheckBox" name="extentFBox">
-          <property name="styleSheet">
-           <string notr="true">::indicator {
-     width: 32px;
-     height: 32px;
- }
-
-::indicator:unchecked 
-{
-     image: url(:/resource/check_unchecked.png);
- }
-::indicator:checked 
-{
-     image: url(:/resource/check_checked.png);
- }
-
-QRadioButton::indicator:checked:disabled
-{
- image: url(:/resource/check_checked_disable.png);
-}
-
-QRadioButton::indicator:unchecked:disabled
-{
- image: url(:/resource/check_unchecked_disable.png);
-}</string>
-          </property>
-          <property name="text">
-           <string>Extent</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">buttonGroupF</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="2" column="6">
-         <widget class="QCheckBox" name="extentGBox">
-          <property name="styleSheet">
-           <string notr="true">::indicator {
-     width: 32px;
-     height: 32px;
- }
-
-::indicator:unchecked 
-{
-     image: url(:/resource/check_unchecked.png);
- }
-::indicator:checked 
-{
-     image: url(:/resource/check_checked.png);
- }
-
-QRadioButton::indicator:checked:disabled
-{
- image: url(:/resource/check_checked_disable.png);
-}
-
-QRadioButton::indicator:unchecked:disabled
-{
- image: url(:/resource/check_unchecked_disable.png);
-}</string>
-          </property>
-          <property name="text">
-           <string>Extent</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">buttonGroupG</string>
-          </attribute>
-         </widget>
-        </item>
-        <item row="3" column="6">
-         <widget class="QCheckBox" name="extentHBox">
-          <property name="styleSheet">
-           <string notr="true">::indicator {
-     width: 32px;
-     height: 32px;
- }
-
-::indicator:unchecked 
-{
-     image: url(:/resource/check_unchecked.png);
- }
-::indicator:checked 
-{
-     image: url(:/resource/check_checked.png);
- }
-
-QRadioButton::indicator:checked:disabled
-{
- image: url(:/resource/check_checked_disable.png);
-}
-
-QRadioButton::indicator:unchecked:disabled
-{
- image: url(:/resource/check_unchecked_disable.png);
-}</string>
-          </property>
-          <property name="text">
-           <string>Extent</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">buttonGroupH</string>
-          </attribute>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </item>
-     <item>
       <widget class="QGroupBox" name="fixtureDefineBox_2">
        <property name="title">
         <string>Other Define</string>
@@ -1373,7 +329,7 @@ QRadioButton::indicator:unchecked:disabled
         <property name="bottomMargin">
          <number>2</number>
         </property>
-        <item row="0" column="2">
+        <item row="1" column="2">
          <widget class="QCheckBox" name="useCheckBox">
           <property name="styleSheet">
            <string notr="true">::indicator {
@@ -1408,7 +364,7 @@ QRadioButton::indicator:unchecked:disabled
           </property>
          </widget>
         </item>
-        <item row="0" column="4">
+        <item row="1" column="4">
          <spacer name="horizontalSpacer_7">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -1421,14 +377,14 @@ QRadioButton::indicator:unchecked:disabled
           </property>
          </spacer>
         </item>
-        <item row="0" column="0">
+        <item row="1" column="0">
          <widget class="QLabel" name="label_18">
           <property name="text">
            <string>Escape</string>
           </property>
          </widget>
         </item>
-        <item row="0" column="3">
+        <item row="1" column="3">
          <widget class="QCheckBox" name="noUseCheckBox">
           <property name="styleSheet">
            <string notr="true">::indicator {
@@ -1460,14 +416,14 @@ QRadioButton::indicator:unchecked:disabled
           </property>
          </widget>
         </item>
-        <item row="1" column="0">
+        <item row="2" column="0">
          <widget class="QLabel" name="label_19">
           <property name="text">
            <string>Adjust</string>
           </property>
          </widget>
         </item>
-        <item row="1" column="2">
+        <item row="2" column="2">
          <widget class="QCheckBox" name="adjUse">
           <property name="styleSheet">
            <string notr="true">::indicator {
@@ -1501,11 +457,11 @@ QRadioButton::indicator:unchecked:disabled
            <bool>false</bool>
           </property>
           <attribute name="buttonGroup">
-           <string notr="true">buttonGroup_2</string>
+           <string>buttonGroup_2</string>
           </attribute>
          </widget>
         </item>
-        <item row="1" column="3">
+        <item row="2" column="3">
          <widget class="QCheckBox" name="adjNoUse">
           <property name="styleSheet">
            <string notr="true">::indicator {
@@ -1539,8 +495,25 @@ QRadioButton::indicator:unchecked:disabled
            <bool>true</bool>
           </property>
           <attribute name="buttonGroup">
-           <string notr="true">buttonGroup_2</string>
+           <string>buttonGroup_2</string>
           </attribute>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Machine Count</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="ICLineEditWithVirtualNumericKeypad" name="machineCount">
+          <property name="text">
+           <string>1</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
          </widget>
         </item>
        </layout>
@@ -1586,9 +559,19 @@ QRadioButton::indicator:unchecked:disabled
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ICLineEditWithVirtualNumericKeypad</class>
+   <extends>QLineEdit</extends>
+   <header>iclineeditwithvirtualnumerickeypad.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
  <buttongroups>
+  <buttongroup name="buttonGroupA"/>
+  <buttongroup name="buttonGroupB"/>
+  <buttongroup name="buttonGroup_2"/>
   <buttongroup name="buttonGroupC"/>
   <buttongroup name="buttonGroupD"/>
   <buttongroup name="buttonGroupE"/>
@@ -1596,8 +579,5 @@ QRadioButton::indicator:unchecked:disabled
   <buttongroup name="buttonGroupG"/>
   <buttongroup name="buttonGroupH"/>
   <buttongroup name="buttonGroup"/>
-  <buttongroup name="buttonGroupA"/>
-  <buttongroup name="buttonGroupB"/>
-  <buttongroup name="buttonGroup_2"/>
  </buttongroups>
 </ui>

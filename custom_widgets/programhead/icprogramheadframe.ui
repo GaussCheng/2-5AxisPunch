@@ -492,7 +492,7 @@
     <rect>
      <x>324</x>
      <y>0</y>
-     <width>50</width>
+     <width>56</width>
      <height>32</height>
     </rect>
    </property>
@@ -506,9 +506,9 @@
   <widget class="QLabel" name="moldNameLabel">
    <property name="geometry">
     <rect>
-     <x>374</x>
+     <x>385</x>
      <y>0</y>
-     <width>157</width>
+     <width>146</width>
      <height>32</height>
     </rect>
    </property>

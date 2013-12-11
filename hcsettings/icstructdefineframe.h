@@ -26,24 +26,10 @@ signals:
 
 private slots:
     void on_saveButton_clicked();
-    void on_doubleArmButton_toggled(bool checked);
 
-
-    void on_mainArmDownLimitButton_toggled(bool checked);
-
-    void on_mainArmBackwardLimitButton_toggled(bool checked);
-
-    void on_mainArmForwardLimitButton_toggled(bool checked);
-
-    void on_subArmDownLimitButton_toggled(bool checked);
-
-    void on_subArmBackwardLimitButton_toggled(bool checked);
-
-    void on_subArmForwardLimitButton_toggled(bool checked);
     void escapeBoxChange();
 
     void OnAxisDefineChanged(int index);
-    void OnOutputDefineChanged(int index);
 
     void retranslateUi_();
 
@@ -51,9 +37,7 @@ private slots:
 
 private:
     Ui::ICStructDefineFrame *ui;
-    uint armStruct_;
     int axisDefine_;
-    int outDefine_;
     QMap<int, int> armDefineToIndex_;
     QMap<QComboBox*, int> boxToAxis_;
     QMap<int, int> indexToArmDefine_;

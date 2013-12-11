@@ -6,6 +6,7 @@
 #include <QString>
 #include <QSharedData>
 #include <stdint.h>
+#include <QDebug>
 
 class ICMoldItem
 {
@@ -276,9 +277,13 @@ public:
     enum ICMoldParam
     {
         point0,
-        point19 = 29,
+        point19 = 17,
         Product,
         reserve,
+        check1,
+        check2,
+        check3,
+        check4,
 
         MoldParamCount
     };
@@ -449,13 +454,15 @@ private:
 
 inline int ICMold::MoldParam(ICMoldParam param) const
 {
-    Q_ASSERT_X(param < MoldParams().size(), "ICMold::MoldParam", "param is out of range");
+//    Q_ASSERT_X(param < MoldParams().size(), "ICMold::MoldParam", "param is out of range");
+    if(param >= MoldParams().size()) return 0;
     return MoldParams().at(param);
 }
 
 inline void ICMold::SetMoldParam(ICMoldParam param, int value)
 {
-    Q_ASSERT_X(param < moldParams_.size(), "ICMold::SetMoldParams", "param is out of range");
+//    Q_ASSERT_X(param < moldParams_.size(), "ICMold::SetMoldParams", "param is out of range");
+    if(param >= moldParams_.size()) { return ;}
     moldParams_[param] = value;
     UpdateSyncSum();
     emit MoldPramChanged(param, value);
@@ -464,8 +471,10 @@ inline void ICMold::SetMoldParam(ICMoldParam param, int value)
 
 inline void ICMold::SetStackParam(int group, ICStatckParam param, int value)
 {
-    Q_ASSERT_X(group < stackParams_.size(), "ICMold::SetStatckParams", "group is out of range");
-    Q_ASSERT_X(param < stackParams_.at(group).size(), "ICMold::SetStatckParams", "param is out of range");
+//    Q_ASSERT_X(group < stackParams_.size(), "ICMold::SetStatckParams", "group is out of range");
+//    Q_ASSERT_X(param < stackParams_.at(group).size(), "ICMold::SetStatckParams", "param is out of range");
+    if(group >= stackParams_.size()) return;
+    if(param >= stackParams_.at(group).size()) return;
     stackParams_[group][param] = value;
 //    emit MoldPramChanged(param, value);
 }
@@ -473,13 +482,17 @@ inline void ICMold::SetStackParam(int group, ICStatckParam param, int value)
 
 inline int ICMold::StackParam(int group, ICStatckParam param) const
 {
-    Q_ASSERT_X(group < StackParams().size(), "ICMold::StatckParam", "group is out of range");
-    Q_ASSERT_X(group < StackParams().at(group).size(), "ICMold::StatckParam", "param is out of range");
+//    Q_ASSERT_X(group < StackParams().size(), "ICMold::StatckParam", "group is out of range");
+//    Q_ASSERT_X(group < StackParams().at(group).size(), "ICMold::StatckParam", "param is out of range");
+    if(group >= stackParams_.size()) return 0;
+    if(param >= stackParams_.at(group).size()) return 0;
     return StackParams().at(group).at(param);
 }
 
 inline QList<int> ICMold::StackParams(int group) const
 {
+    qDebug()<<stackParams_.size();
+    if(group >= stackParams_.size()) return QList<int>();
     return StackParams().at(group);
 }
 
