@@ -3082,17 +3082,17 @@ Reason</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="176"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="514"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="518"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="815"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="819"/>
         <source>No Check</source>
         <translation>无料运行</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="820"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="824"/>
         <source>Check</source>
         <translation>料感运行</translation>
     </message>
@@ -3105,7 +3105,7 @@ Reason</source>
         <translation type="obsolete">单循环准备状态</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="515"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="519"/>
         <source>Can not edit standby position program</source>
         <translation>不能修改待机点位置</translation>
     </message>
@@ -3114,7 +3114,7 @@ Reason</source>
         <translation type="obsolete">需要忽略这个警告吗?</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="769"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="773"/>
         <source>Follow</source>
         <translation>跟随</translation>
     </message>
@@ -3122,8 +3122,8 @@ Reason</source>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="52"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="98"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="227"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="784"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="794"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="788"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="798"/>
         <source>Speed Disable</source>
         <translation>调速禁止</translation>
     </message>
@@ -3228,7 +3228,7 @@ Reason</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="96"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="775"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="779"/>
         <source>No Follow</source>
         <translation>不跟随</translation>
     </message>
@@ -3237,7 +3237,7 @@ Reason</source>
         <translation type="obsolete">单循环</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="784"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="788"/>
         <source>Speed Enable</source>
         <translation>调速允许</translation>
     </message>
@@ -7822,83 +7822,83 @@ Would you want to restart now?</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="67"/>
+        <location filename="function_settings/moldinformation.ui" line="75"/>
         <source>All seclect</source>
         <translation>全选</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="95"/>
+        <location filename="function_settings/moldinformation.ui" line="103"/>
         <source>All unselect</source>
         <translation>全不选</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="123"/>
+        <location filename="function_settings/moldinformation.ui" line="131"/>
         <source>Inverse</source>
         <translation>反选</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="164"/>
+        <location filename="function_settings/moldinformation.ui" line="172"/>
         <source>USB Export</source>
         <translation>USB导出</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="170"/>
-        <location filename="function_settings/moldinformation.ui" line="195"/>
+        <location filename="function_settings/moldinformation.ui" line="178"/>
+        <location filename="function_settings/moldinformation.ui" line="203"/>
         <source>buttonGroup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="192"/>
+        <location filename="function_settings/moldinformation.ui" line="200"/>
         <source>USB Import</source>
         <translation>USB导入</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="236"/>
+        <location filename="function_settings/moldinformation.ui" line="244"/>
         <source>Mold Name</source>
         <translation>模号名</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="241"/>
+        <location filename="function_settings/moldinformation.ui" line="249"/>
         <source>Create Date</source>
         <translation>最后修改日期</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="272"/>
+        <location filename="function_settings/moldinformation.ui" line="274"/>
         <source>New</source>
         <translation>新建</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="297"/>
+        <location filename="function_settings/moldinformation.ui" line="293"/>
         <source>Copy</source>
         <translation>复制</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="322"/>
+        <location filename="function_settings/moldinformation.ui" line="312"/>
         <source>Load</source>
         <translation>载入</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="347"/>
+        <location filename="function_settings/moldinformation.ui" line="331"/>
         <source>Delete</source>
         <translation>删除</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="372"/>
+        <location filename="function_settings/moldinformation.ui" line="350"/>
         <source>Export</source>
         <translation>导出</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="400"/>
+        <location filename="function_settings/moldinformation.ui" line="372"/>
         <source>Import</source>
         <translation>导入</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="439"/>
+        <location filename="function_settings/moldinformation.ui" line="411"/>
         <source>Source File Name</source>
         <translation>原文件名</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.ui" line="474"/>
+        <location filename="function_settings/moldinformation.ui" line="446"/>
         <source>New File Name</source>
         <translation>新文件名</translation>
     </message>
