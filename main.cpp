@@ -26,7 +26,9 @@ int main(int argc, char *argv[])
     paraSave->SetCountry(paraSave->Country());
     ICUserDefineConfig::Instance()->Init();
     QPixmap splashPixmap("resource/startup_page.png");
+#ifdef HC_SK_5
     splashPixmap = splashPixmap.scaled(640, 480);
+#endif
     ICSplashScreen *splash= new ICSplashScreen(splashPixmap);
     splash->SetRange(0, 20);
     splash->show();

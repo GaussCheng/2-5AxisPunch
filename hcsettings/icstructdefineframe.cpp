@@ -181,7 +181,7 @@ void ICStructDefineFrame::on_saveButton_clicked()
     dataBuffer[1] = axisDefine_;
     dataBuffer[2] = 0;
 //    dataBuffer[3] = ICVirtualHost::GlobalVirtualHost()->FixtureDefineSwitch(ui->fixtureSelectBox->currentIndex());
-    dataBuffer[3] = 0;
+    dataBuffer[3] = ui->machineCount->TransThisTextToThisInt();
     for(int i = 0; i != 6; ++i)
     {
         sum += dataBuffer.at(i);

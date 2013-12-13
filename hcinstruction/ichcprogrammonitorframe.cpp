@@ -283,6 +283,14 @@ void ICHCProgramMonitorFrame::StatusRefreshed()
         oldY = pos;
         ui->yCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
     }
+#ifdef HC_SK_8
+    pos = host->HostStatus(ICVirtualHost::ZPos).toInt();
+    if(pos != oldZ)
+    {
+        oldZ = pos;
+        ui->zCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
+    }
+#endif
     pos = host->GlobalSpeed();
     if(pos != oldS)
     {

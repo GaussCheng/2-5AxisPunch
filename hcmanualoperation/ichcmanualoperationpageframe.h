@@ -49,6 +49,10 @@ private slots:
 
     void on_yRun_clicked();
 
+#ifdef HC_SK_8
+    void on_zRun_clicked();
+#endif
+
     void on_runButton_toggled(bool checked);
 
     void on_productEdit_textChanged(const QString &arg1);

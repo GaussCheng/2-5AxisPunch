@@ -202,7 +202,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     connect(simulateKnob_,
             SIGNAL(autoButtonClicked()),
             SLOT(ShowAutoPage()));
-    this->setFixedSize(640, 480);
+//    this->setFixedSize(640, 480);
 
 #endif
 #ifdef Q_WS_X11
@@ -566,6 +566,8 @@ void MainFrame::StatusRefreshed()
         if(runningStatus_ == ICVirtualHost::Manual)
         {
             ICProgramHeadFrame::Instance()->ChangeCurrentStatus(1);
+//            ui->settingsButton->setEnabled(false);
+//            ui->teachButton->setEnabled(true);
 //            ui->systemStatusFrame->SetManualStatus(StatusLabel::ONSTATUS);
             //            LevelChanged(ICProgramHeadFrame::Instance()->CurrentLevel());
             //            ui->functionPageButton->setEnabled(false);
@@ -575,6 +577,7 @@ void MainFrame::StatusRefreshed()
         else if(runningStatus_ == ICVirtualHost::AutoRunning)
         {
             ICProgramHeadFrame::Instance()->ChangeCurrentStatus(2);
+//            ui->settingsButton->setEnabled(false);
 //            ui->systemStatusFrame->SetAutoStatus(ICSystemStatusFrame::Running);
             //            ui->functionPageButton->setEnabled(false);
             //            ui->recordPageButton->setEnabled(false);
@@ -582,6 +585,8 @@ void MainFrame::StatusRefreshed()
         else if(runningStatus_ == ICVirtualHost::AutoReady)
         {
             ICProgramHeadFrame::Instance()->ChangeCurrentStatus(2);
+//            ui->settingsButton->setEnabled(false);
+//            ui->teachButton->setEnabled(false);
 //            ui->systemStatusFrame->SetAutoStatus(ICSystemStatusFrame::Ready);
             //            ui->functionPageButton->setEnabled(false);
             //            ui->recordPageButton->setEnabled(false);
@@ -610,6 +615,8 @@ void MainFrame::StatusRefreshed()
         else if(runningStatus_ == ICVirtualHost::Stop)
         {
             ICProgramHeadFrame::Instance()->ChangeCurrentStatus(0);
+//            ui->settingsButton->setEnabled(true);
+//            ui->teachButton->setEnabled(true);
             //            ui->systemStatusFrame->SetProgramStatus(virtualHost->IsCloseMoldPermit() ? StatusLabel::ONSTATUS : StatusLabel::OFFSTATUS);
             //            ui->systemStatusFrame->SetSystemStop();
             //            ui->recordPageButton->setText(tr("Records"));
@@ -785,7 +792,14 @@ void MainFrame::LevelChanged(int level)
         break;
     case ICParametersSave::MachineAdmin:
     {
-        ui->teachButton->setEnabled(true);
+        if(ICKeyboard::Instace()->CurrentSwitchStatus() != ICKeyboard::KS_AutoStatu)
+        {
+            ui->teachButton->setEnabled(true);
+        }
+        else
+        {
+            ui->teachButton->setEnabled(false);
+        }
 
     }
         break;
@@ -795,18 +809,22 @@ void MainFrame::LevelChanged(int level)
         ui->teachButton->setEnabled(true);
         if(ICKeyboard::Instace()->CurrentSwitchStatus() == ICKeyboard::KS_StopStatu)
         {
+            ui->settingsButton->setEnabled(true);
 //            ui->functionPageButton->setEnabled(true);
         }
         else
         {
+            ui->settingsButton->setEnabled(false);
 //            ui->functionPageButton->setEnabled(false);
         }
         if(ICKeyboard::Instace()->CurrentSwitchStatus() != ICKeyboard::KS_AutoStatu)
         {
+            ui->teachButton->setEnabled(true);
 //            ui->recordPageButton->setEnabled(true);
         }
         else
         {
+            ui->teachButton->setEnabled(false);
 //            ui->recordPageButton->setEnabled(false);
         }
     }
@@ -817,6 +835,7 @@ void MainFrame::LevelChanged(int level)
 //        ui->recordPageButton->setEnabled(false);
     }
     }
+//    if()
 }
 void MainFrame::StepChanged(int step)
 {

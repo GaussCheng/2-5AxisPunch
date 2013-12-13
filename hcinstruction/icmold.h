@@ -465,8 +465,11 @@ inline void ICMold::SetMoldParam(ICMoldParam param, int value)
     if(param >= moldParams_.size()) { return ;}
     moldParams_[param] = value;
     UpdateSyncSum();
-    emit MoldPramChanged(param, value);
-    emit MoldPramChanged(MoldParamCount, checkSum_);
+    if(param < 18)
+    {
+        emit MoldPramChanged(param, value);
+        emit MoldPramChanged(MoldParamCount, checkSum_);
+    }
 }
 
 inline void ICMold::SetStackParam(int group, ICStatckParam param, int value)

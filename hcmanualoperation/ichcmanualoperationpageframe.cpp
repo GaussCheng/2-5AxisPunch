@@ -15,6 +15,7 @@
 #include "icsystemconfig.h"
 #include "icvirtualkey.h"
 
+static int currentStep  = 0;
 ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     QFrame(parent),
     ui(new Ui::ICHCManualOperationPageFrame)
@@ -36,6 +37,7 @@ void ICHCManualOperationPageFrame::showEvent(QShowEvent *e)
 {
     QFrame::showEvent(e);
     ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnManual, 0);
+    currentStep = 0;
     timerID_ = startTimer(100);
     nullButton_->click();
     ui->xPos->clear();
@@ -244,12 +246,14 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
         oldY = pos;
         ui->yCurrentPos->setText(QString().sprintf("%.1f", pos / 10.0));
     }
-//    pos = host->HostStatus(ICVirtualHost::ZPos).toInt();
-//    if(pos != oldZ)
-//    {
-//        oldZ = pos;
-//        ui->zCurrentPos->setText(QString().sprintf("%.1f", pos / 10.0));
-//    }
+#ifdef HC_SK_8
+    pos = host->HostStatus(ICVirtualHost::ZPos).toInt();
+    if(pos != oldZ)
+    {
+        oldZ = pos;
+        ui->zCurrentPos->setText(QString().sprintf("%.1f", pos / 10.0));
+    }
+#endif
     pos = host->HostStatus(ICVirtualHost::DbgX0).toInt();
     if(pos != oldS)
     {
@@ -280,17 +284,19 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
 void ICHCManualOperationPageFrame::OnPointSelected(int id)
 {
     ICMold* currentMold  = ICMold::CurrentMold();
-    ui->xPos->blockSignals(true);
-    ui->yPos->blockSignals(true);
+//    ui->xPos->blockSignals(true);
+//    ui->yPos->blockSignals(true);
 //    ui->zPos->blockSignals(true);
     ui->xPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 3 )));
     ui->yPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 3 + 1)));
-//    ui->zPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 3 + 2)));
+#ifdef HC_SK_8
+    ui->zPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 3 + 2)));
+#endif
 //    ui->xPos->setEnabled(true);
 //    ui->yPos->setEnabled(true);
 //    ui->zPos->setEnabled(true);
-    ui->xPos->blockSignals(false);
-    ui->yPos->blockSignals(false);
+//    ui->xPos->blockSignals(false);
+//    ui->yPos->blockSignals(false);
 //    ui->zPos->blockSignals(false);
 }
 
@@ -328,13 +334,13 @@ void ICHCManualOperationPageFrame::on_setButton_clicked()
     p.pointID = ui->buttonGroup->checkedId();
     p.x = ui->xPos->TransThisTextToThisInt();
     p.y = ui->yPos->TransThisTextToThisInt();
-//    p.z = ui->zPos->TransThisTextToThisInt();
+    p.z = ui->zPos->TransThisTextToThisInt();
     modifyDialog_->StartModify(p);
     OnPointSelected(p.pointID);
-//    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-//    ui->xPos->SetThisIntToThisText(host->HostStatus(ICVirtualHost::XPos).toInt());
-//    ui->yPos->SetThisIntToThisText(host->HostStatus(ICVirtualHost::YPos).toInt());
-//    ui->zPos->SetThisIntToThisText(host->HostStatus(ICVirtualHost::ZPos).toInt());
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    ui->xPos->SetThisIntToThisText(host->HostStatus(ICVirtualHost::XPos).toInt());
+    ui->yPos->SetThisIntToThisText(host->HostStatus(ICVirtualHost::YPos).toInt());
+    ui->zPos->SetThisIntToThisText(host->HostStatus(ICVirtualHost::ZPos).toInt());
 }
 
 void ICHCManualOperationPageFrame::on_xRun_clicked()
@@ -365,6 +371,23 @@ void ICHCManualOperationPageFrame::on_yRun_clicked()
     ICCommandProcessor::Instance()->ExecuteCommand(cmd);
 }
 
+#ifdef HC_SK_8
+void ICHCManualOperationPageFrame::on_zRun_clicked()
+{
+    if(ui->buttonGroup->checkedId() < 0)
+    {
+        return;
+    }
+    ICManualRun cmd;
+    cmd.SetSlave(1);
+    cmd.SetGM(ICMold::GZ);
+    cmd.SetPoint(ui->buttonGroup->checkedId());
+//    cmd.SetIFVal(1);
+    ICCommandProcessor::Instance()->ExecuteCommand(cmd);
+}
+
+#endif
+
 void ICHCManualOperationPageFrame::on_runButton_toggled(bool checked)
 {
     if(checked)
@@ -391,7 +414,6 @@ void ICHCManualOperationPageFrame::on_productClear_clicked()
     ICVirtualHost::GlobalVirtualHost()->SetFinishProductCount(0);
 }
 
-static int currentStep  = 0;
 void ICHCManualOperationPageFrame::on_singleButton_clicked()
 {
     ICManualRun cmd;

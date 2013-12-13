@@ -14,9 +14,19 @@ SOURCES += \
     #hcmanualoperation/hcpneumaticaxiscontrolframe.cpp \
     #hcmanualoperation/hcmanualfunctionframe.cpp \
 
+contains(DEFINES, HC_SK_8){
+FORMS += \
+    hcmanualoperation/ichcmanualoperationpageframe_8.ui \
+    hcmanualoperation/axismodifydialog_8.ui
+    #hcmanualoperation/hcmanualalternateioframe.ui \
+    #hcmanualoperation/hcpneumaticaxiscontrolframe.ui \
+    #hcmanualoperation/hcmanualfunctionframe.ui \
+}
+contains(DEFINES, HC_SK_5){
 FORMS += \
     hcmanualoperation/ichcmanualoperationpageframe.ui \
     hcmanualoperation/axismodifydialog.ui
     #hcmanualoperation/hcmanualalternateioframe.ui \
     #hcmanualoperation/hcpneumaticaxiscontrolframe.ui \
     #hcmanualoperation/hcmanualfunctionframe.ui \
+}

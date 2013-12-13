@@ -54,6 +54,35 @@ SOURCES += \
     hcinstruction/icstackeditor.cpp \
     hcinstruction/ichcotherpage.cpp
 
+contains(DEFINES, HC_SK_8){
+
+FORMS += \
+    hcinstruction/ichcinstructionpageframe_8.ui \
+    hcinstruction/actionsettingframe_8.ui \
+    #hcinstruction/ichcparametersframe.ui \
+    #hcinstruction/routesettingdialog.ui \
+    hcinstruction/ichcinjectionpage.ui \
+    hcinstruction/ichcfixturepage.ui \
+    hcinstruction/ichcconditionpage.ui \
+    hcinstruction/ichcprogrammonitorframe_8.ui \
+    #hcinstruction/ichceditordialog.ui \
+    #hcinstruction/icmacroparameditorframe.ui \
+    hcinstruction/icautorunrevise.ui \
+    hcinstruction/icinstructioneditorbase.ui \
+    hcinstruction/icflagseditor.ui \
+    hcinstruction/icpneumaticactionpage.ui \
+    hcinstruction/icinstructmodifydialog.ui \
+    hcinstruction/icwaitconditioneditor.ui \
+    hcinstruction/icperipherypage.ui \
+    hcinstruction/icperipheryparametereditor.ui \
+    hcinstruction/iccutpage.ui \
+    hcinstruction/icprogramselector.ui \
+    hcinstruction/icstackeditor.ui \
+    hcinstruction/ichcotherpage.ui
+}
+
+contains(DEFINES, HC_SK_5){
+
 FORMS += \
     hcinstruction/ichcinstructionpageframe.ui \
     hcinstruction/actionsettingframe.ui \
@@ -77,3 +106,4 @@ FORMS += \
     hcinstruction/icprogramselector.ui \
     hcinstruction/icstackeditor.ui \
     hcinstruction/ichcotherpage.ui
+}

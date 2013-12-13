@@ -9,13 +9,15 @@ AxisModifyDialog::AxisModifyDialog(QWidget *parent) :
     ui->setupUi(this);
     ui->xPos->SetDecimalPlaces(1);
     ui->yPos->SetDecimalPlaces(1);
-//    ui->zPos->SetDecimalPlaces(1);
     xValidator_ = new QIntValidator(-32760, 32760, this);
     yValidator_ = new QIntValidator(-32760, 32760, this);
-    zValidator_ = new QIntValidator(-32760, 32760, this);
     ui->xPos->setValidator(xValidator_);
     ui->yPos->setValidator(yValidator_);
-//    ui->zPos->setValidator(zValidator_);
+#ifdef HC_SK_8
+    ui->zPos->SetDecimalPlaces(1);
+    zValidator_ = new QIntValidator(-32760, 32760, this);
+    ui->zPos->setValidator(zValidator_);
+#endif
 }
 
 AxisModifyDialog::~AxisModifyDialog()
@@ -39,7 +41,9 @@ void AxisModifyDialog::on_okButton_clicked()
 {
     ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(point_.pointID * 3), ui->xPos->TransThisTextToThisInt());
     ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(point_.pointID * 3 + 1), ui->yPos->TransThisTextToThisInt());
-//    ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(point_.pointID * 3 + 2), ui->zPos->TransThisTextToThisInt());
+#ifdef HC_SK_8
+    ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(point_.pointID * 3 + 2), ui->zPos->TransThisTextToThisInt());
+#endif
     this->accept();
 }
 
@@ -56,11 +60,13 @@ void AxisModifyDialog::StartModify(ICPoint point)
                           host->SystemParameter(ICVirtualHost::SYS_X_Length).toInt());
     yValidator_->setRange(host->SystemParameter(ICVirtualHost::SYS_Y_Maxium).toInt(),
                           host->SystemParameter(ICVirtualHost::SYS_Y_Length).toInt());
+#ifdef HC_SK_8
     zValidator_->setRange(host->SystemParameter(ICVirtualHost::SYS_Z_Maxium).toInt(),
                           host->SystemParameter(ICVirtualHost::SYS_Z_Length).toInt());
+    ui->zPos->SetThisIntToThisText(point.z);
+#endif
     ui->xPos->SetThisIntToThisText(point.x);
     ui->yPos->SetThisIntToThisText(point.y);
-//    ui->zPos->SetThisIntToThisText(point.z);
     this->show();
 }
 

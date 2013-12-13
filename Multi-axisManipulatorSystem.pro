@@ -18,6 +18,8 @@ UI_DIR = temp_8_d
 MOC_DIR = temp_8_d
 RCC_DIR = temp_8_d
 }
+
+
 win32{INCLUDEPATH += ./}
 SOURCES += main.cpp \
     mainframe.cpp \
@@ -62,6 +64,24 @@ HEADERS += mainframe.h \
     simulateknob.h \
     icaxiskeyboard.h
 
+SK_SIZE = 8
+equals(SK_SIZE, 8){
+message("Define 8")
+DEFINES += HC_SK_8
+FORMS    += mainframe_8.ui \
+    #icalarmdescriptiondialog.ui \
+    icorigindialog.ui \
+    icreturnpage.ui \
+    icscreensaver.ui \
+    icactiondialog.ui \
+    ichostcomparepage.ui \
+    ictipswidget.ui \
+    simulateknob.ui \
+    icaxiskeyboard.ui
+}
+equals(SK_SIZE ,5){
+message("Define 5")
+DEFINES += HC_SK_5
 FORMS    += mainframe.ui \
     #icalarmdescriptiondialog.ui \
     icorigindialog.ui \
@@ -72,6 +92,7 @@ FORMS    += mainframe.ui \
     ictipswidget.ui \
     simulateknob.ui \
     icaxiskeyboard.ui
+}
 
 include (./categorypage/categorypage.pri)
 include (custom_widgets/custom_widgets.pri)
@@ -97,3 +118,9 @@ OTHER_FILES += \
     sysconfig/alarminfomation-ch \
     sysconfig/hintinfomation-ch \
     sysconfig/hintinfomation-en
+
+CONFIG(debug, debug|release){
+system("python rename_ui.py temp_8_d")
+}else{
+system("python rename_ui.py temp_8")
+}
