@@ -14,6 +14,7 @@
 #include "iccommandprocessor.h"
 #include "icsystemconfig.h"
 #include "icvirtualkey.h"
+#include <QMessageBox>
 
 static int currentStep  = 0;
 ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
@@ -57,6 +58,11 @@ void ICHCManualOperationPageFrame::hideEvent(QHideEvent *e)
     killTimer(timerID_);
 //    ICTimerPool::Instance()->Stop(timerID_, this, SLOT(StatusRefreshed()));
     ICMold::CurrentMold()->SaveMoldParamsFile();
+    ICVirtualHost::GlobalVirtualHost()->SetSingleRun(false);
+    if(ICKeyboard::Instace()->CurrentSwitchStatus() != ICKeyboard::KS_ManualStatu)
+    {
+        ui->runButton->setChecked(false);
+    }
 }
 
 void ICHCManualOperationPageFrame::changeEvent(QEvent *e)
@@ -84,7 +90,9 @@ void ICHCManualOperationPageFrame::InitInterface()
     ui->productEdit->setValidator(new QIntValidator(0, 65530, this));
     ui->xPos->SetDecimalPlaces(1);
     ui->yPos->SetDecimalPlaces(1);
-//    ui->zPos->SetDecimalPlaces(1);
+#ifdef HC_SK_8
+    ui->zPos->SetDecimalPlaces(1);
+#endif
     ui->xPos->setValidator(new QIntValidator(-32760, 32760, this));
     ui->yPos->setValidator(ui->xPos->validator());
 //    ui->zPos->setValidator(ui->xPos->validator());
@@ -139,6 +147,14 @@ void ICHCManualOperationPageFrame::InitInterface()
     ui->shortcutGroup->setId(ui->b4, 3);
     ui->shortcutGroup->setId(ui->b5, 4);
     ui->shortcutGroup->setId(ui->b6, 5);
+#ifdef HC_SK_8
+    ui->shortcutGroup->setId(ui->b7, 6);
+    ui->shortcutGroup->setId(ui->b8, 7);
+    ui->shortcutGroup->setId(ui->b9, 8);
+    ui->shortcutGroup->setId(ui->b10, 9);
+    ui->shortcutGroup->setId(ui->b11, 10);
+    ui->shortcutGroup->setId(ui->b12, 11);
+#endif
     ui->shortcutGroup->setExclusive(false);
 
 
@@ -231,6 +247,8 @@ static int16_t oldX = -1;
 static int16_t oldY = -1;
 static int16_t oldZ = -1;
 static int16_t oldS = -1;
+//static bool isSingleRun = false;
+static int oldStep = -1;
 void ICHCManualOperationPageFrame::StatusRefreshed()
 {
     static ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
@@ -260,7 +278,20 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
         oldS = pos;
         ui->speed->setText(QString::number(pos));
     }
-    ui->singleButton->setEnabled(host->HostStatus(ICVirtualHost::ActL).toInt() == 0);
+    bool isSingleRunFinished = host->HostStatus(ICVirtualHost::ActL).toInt() == 0;
+    ICMold* mold = ICMold::CurrentMold();
+    if(host->IsSingleRun() && isSingleRunFinished)
+    {
+        ++currentStep;
+        currentStep %= mold->MoldContent().size();
+        host->SetSingleRun(false);
+    }
+    ui->singleButton->setEnabled(isSingleRunFinished);
+    if(oldStep != currentStep)
+    {
+        oldStep = currentStep;
+        ui->singleButton->setText(QString(tr("Single(%1/%2)")).arg(currentStep).arg(mold->MoldContent().size()));
+    }
 }
 
 //void ICHCManualOperationPageFrame::on_xPos_textChanged(const QString &arg1)
@@ -321,7 +352,12 @@ void ICHCManualOperationPageFrame::OnShortcutTriggered(int id)
     cmd.SetGM(ICMold::GOutY + info.type);
     cmd.SetPoint(info.pointNum);
     cmd.SetIFVal(info.dir);
-    ICCommandProcessor::Instance()->ExecuteCommand(cmd);
+    if(!ICCommandProcessor::Instance()->ExecuteCommand(cmd).toBool())
+    {
+        QMessageBox::information(this,
+                                 "tr",
+                                 "err");
+    }
 }
 
 void ICHCManualOperationPageFrame::on_setButton_clicked()
@@ -334,13 +370,17 @@ void ICHCManualOperationPageFrame::on_setButton_clicked()
     p.pointID = ui->buttonGroup->checkedId();
     p.x = ui->xPos->TransThisTextToThisInt();
     p.y = ui->yPos->TransThisTextToThisInt();
+#ifdef HC_SK_8
     p.z = ui->zPos->TransThisTextToThisInt();
+#endif
     modifyDialog_->StartModify(p);
     OnPointSelected(p.pointID);
-    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    ui->xPos->SetThisIntToThisText(host->HostStatus(ICVirtualHost::XPos).toInt());
-    ui->yPos->SetThisIntToThisText(host->HostStatus(ICVirtualHost::YPos).toInt());
-    ui->zPos->SetThisIntToThisText(host->HostStatus(ICVirtualHost::ZPos).toInt());
+    ICMold* currentMold = ICMold::CurrentMold();
+    ui->xPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 3)));
+    ui->yPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 3 + 1)));
+#ifdef HC_SK_8
+    ui->zPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 3 + 2)));
+#endif
 }
 
 void ICHCManualOperationPageFrame::on_xRun_clicked()
@@ -418,6 +458,8 @@ void ICHCManualOperationPageFrame::on_singleButton_clicked()
 {
     ICManualRun cmd;
     ICMold* mold = ICMold::CurrentMold();
+    if(mold->MoldContent().empty()) return;
+    if(currentStep >= mold->MoldContent().size()) return;
     ICMoldItem item = mold->MoldContent().at(currentStep);
     cmd.SetSlave(1);
     cmd.SetGM(item.GMVal());
@@ -425,8 +467,14 @@ void ICHCManualOperationPageFrame::on_singleButton_clicked()
     cmd.SetPoint(item.SubNum());
     cmd.SetPos(item.Pos());
     cmd.SetIFVal(item.IFVal());
-    ++currentStep;
-    currentStep %= mold->MoldContent().size();
     //    cmd.SetIFVal(1);
-    ICCommandProcessor::Instance()->ExecuteCommand(cmd);
+    if(ICCommandProcessor::Instance()->ExecuteCommand(cmd).toBool())
+    {
+//        ++currentStep;
+//        currentStep %= mold->MoldContent().size();
+        ICVirtualHost::GlobalVirtualHost()->SetHostStatus(ICVirtualHost::ActL, 1);
+        ICVirtualHost::GlobalVirtualHost()->SetSingleRun(true);
+        ui->singleButton->setEnabled(false);
+    }
+
 }

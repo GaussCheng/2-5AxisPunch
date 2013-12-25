@@ -220,6 +220,29 @@
         <string/>
        </property>
       </widget>
+      <widget class="QLabel" name="fcCodeLabel">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>150</y>
+         <width>131</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>F6 Bit Factory Code:</string>
+       </property>
+      </widget>
+      <widget class="ICLineEditWithVirtualKeyboard" name="fcode">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>140</y>
+         <width>216</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
      </widget>
     </widget>
    </item>

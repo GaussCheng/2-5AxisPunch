@@ -8,7 +8,7 @@
 #include <QProxyStyle>
 #include <QPainter>
 #include <QDateTime>
-
+#include "icutility.h"
 static void BuildShiftMap(int beg, int* map)
 {
     int index = 0;
@@ -24,7 +24,14 @@ static void BuildShiftMap(int beg, int* map)
 
 int Register(const QString& code, const QString& machineCode)
 {
-    int sortMap[16];
+
+    int i,j;
+    int pMap[10] = {0};
+    int sortMap[20] = {0};
+    char sortRet[19] = {0};
+    long beg;
+    quint8 buffer[20];
+
     sortMap[0] = 1;
     sortMap[1] = 2;
     sortMap[2] = 3;
@@ -41,49 +48,76 @@ int Register(const QString& code, const QString& machineCode)
     sortMap[13] = 14;
     sortMap[14] = 9;
     sortMap[15] = 15;
-    QString rC = code;
-    QString sortRet(16, '0');
-    int beg;
-    if(rC.size() != 16)
+    sortMap[16] = 17;
+    sortMap[17] = 16;
+    sortMap[18] = 0;
+    sortMap[19] = 0;
+
+    if(code.size() != 20)
     {
-        return - 1;
+        return -1;
     }
-    for(int i = 0; i != sortRet.size(); ++i)
+    for(i = 0; i != 18; ++i)
     {
-        sortRet[sortMap[i]] = rC.at(i);
+        sortRet[sortMap[i]] = code[i].toAscii();
+        buffer[i] = code[i].digitValue();
     }
-    QString mCode = machineCode.simplified();
-    mCode = mCode.remove(" ");
+
+    quint16 crcValue = ICUtility::CRC16(buffer,18);
+
+    quint8 crc_Hi = crcValue >> 8 & 0xff;
+    quint8 crc_Lo = crcValue & 0xff;
+    if(crc_Hi > 9)
+    {
+        crc_Hi %= 9;
+    }
+    if(crc_Lo > 9)
+    {
+        crc_Lo %= 9;
+    }
+    if(crc_Hi != code[18].digitValue() || crc_Lo != code[19].digitValue())
+    {
+        return -1;
+    }
+
     beg = 0;
-    for(int i = 0; i != mCode.size(); ++i)
+    for(i = 0; i != 12; ++i)
     {
-        if(!mCode.at(i).isDigit())
-        {
-            return -1;
-        }
-        beg += mCode.at(i).digitValue();
+        beg += (machineCode[i].toAscii() - 48);
     }
-    beg /= mCode.size();
+    beg /= 10;
     beg %= 10;
-    int pMap[10];
-    BuildShiftMap(beg, pMap);
-    for(int i = 0; i != sortRet.size(); ++i)
+
+    j = 0;
+    for(i = beg; i < 10; ++i)
     {
-        for(int j = 0; j != 10; ++j)
+        pMap[j++] = i;
+    }
+    for(i = 0; i < beg; ++i)
+    {
+        pMap[j++] = i;
+    }
+
+    for(i = 0; i != 18; ++i)
+    {
+        for(j = 0; j != 10; ++j)
         {
-            if(j == sortRet.at(i).digitValue())
+            if(j == (sortRet[i] - 48))
             {
-                sortRet[i] = QString::number(pMap[j]).at(0);
+                sortRet[i] = (pMap[j] + 48);
                 break;
             }
         }
     }
-    if(sortRet.left(10) != mCode)
+    sortRet[18] = 0;
+    for(i = 0; i != 12; ++i)
     {
-        return -1;
+        if(sortRet[i] != machineCode[i])
+        {
+            return -1;
+        }
     }
-    //    return sortRet.right(6).toInt();
-    return sortRet.right(6).toInt() * 24 * 7;
+    return atoi(sortRet + 12);
 }
 
 class CustomTabStyle : public QProxyStyle
@@ -135,6 +169,7 @@ ICSettingsFrame::ICSettingsFrame(QWidget *parent) :
     //    ui->tabWidget->setStyle(new CustomTabStyle());
 
     //    ui->tabWidget->setTabShape(QTabWidget::Triangular);
+    ui->fcode->setText(ICParametersSave::Instance()->FactoryCode());
 }
 
 ICSettingsFrame::~ICSettingsFrame()
@@ -144,8 +179,18 @@ ICSettingsFrame::~ICSettingsFrame()
 
 void ICSettingsFrame::showEvent(QShowEvent *e)
 {
-    ui->restTime->setText(QString::number(ICParametersSave::Instance()->RestTime(0)) + tr("hour"));
+    ui->restTime->setText(QString::number(ICParametersSave::Instance()->RestTime(0) / 168.0) + tr("week"));
     QFrame::showEvent(e);
+    if(ICParametersSave::Instance()->IsRoot())
+    {
+        ui->fcode->show();
+        ui->fcCodeLabel->show();
+    }
+    else
+    {
+        ui->fcode->hide();
+        ui->fcCodeLabel->hide();
+    }
 }
 
 void ICSettingsFrame::changeEvent(QEvent *e)
@@ -164,7 +209,7 @@ void ICSettingsFrame::on_generateButton_clicked()
 {
     QString ret;
     qsrand(QDateTime::currentDateTime().toMSecsSinceEpoch());
-    for(int i = 0; i != 10; ++i)
+    for(int i = 0; i != 6; ++i)
     {
         ret.append(QString::number(qrand() % 10));
     }
@@ -178,7 +223,7 @@ void ICSettingsFrame::on_registerButton_clicked()
         ui->tipLabel->setText(tr("Wrong Register Code!"));
         return;
     }
-    int hour = Register(ui->registerCode->text(), ui->machineCode->text());
+    int hour = Register(ui->registerCode->text(), ui->fcode->text() + ui->machineCode->text());
     if(hour == -1)
     {
         ui->tipLabel->setText(tr("Wrong Register Code!"));
@@ -186,7 +231,7 @@ void ICSettingsFrame::on_registerButton_clicked()
     else
     {
         //        ICAppSettings().SetUsedTime(hour);
-        ICParametersSave::Instance()->SetRestTime(hour);
+        ICParametersSave::Instance()->SetRestTime(hour * 168);
         ui->tipLabel->setText(tr("Register Success!"));
         if(hour == 0)
         {
@@ -194,13 +239,25 @@ void ICSettingsFrame::on_registerButton_clicked()
         }
         else
         {
-            ui->restTime->setText(QString::number(hour) + tr("hour"));
+            ui->restTime->setText(QString::number(hour) + tr("week"));
         }
-//        emit RegisterSucceed();
+        //        emit RegisterSucceed();
         ui->machineCode->clear();
         ui->registerCode->clear();
 
         //        ICDALHelper::UpdateConfigValue(ICAddr_System_OtherUsedTime, hour);
     }
-//    ICProgramHeadFrame::Instance()->ReashRestTime();
+    //    ICProgramHeadFrame::Instance()->ReashRestTime();
+}
+
+void ICSettingsFrame::on_fcode_textChanged(const QString &arg1)
+{
+    if(arg1.size() < 6)
+    {
+        ui->fcode->blockSignals(true);
+        ui->fcode->setText(ICParametersSave::Instance()->FactoryCode());
+        ui->fcode->blockSignals(false);
+        return;
+    }
+    ICParametersSave::Instance()->SetFactoryCode(arg1);
 }

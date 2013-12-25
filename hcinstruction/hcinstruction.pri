@@ -25,7 +25,8 @@ HEADERS += \
     hcinstruction/iccutpage.h \
     hcinstruction/icprogramselector.h \
     hcinstruction/icstackeditor.h \
-    hcinstruction/ichcotherpage.h
+    hcinstruction/ichcotherpage.h \
+    hcinstruction/icwaitmeditor.h
 
 SOURCES += \
     hcinstruction/ichcinstructionpageframe.cpp \
@@ -52,7 +53,8 @@ SOURCES += \
     hcinstruction/iccutpage.cpp \
     hcinstruction/icprogramselector.cpp \
     hcinstruction/icstackeditor.cpp \
-    hcinstruction/ichcotherpage.cpp
+    hcinstruction/ichcotherpage.cpp \
+    hcinstruction/icwaitmeditor.cpp
 
 contains(DEFINES, HC_SK_8){
 
@@ -107,3 +109,6 @@ FORMS += \
     hcinstruction/icstackeditor.ui \
     hcinstruction/ichcotherpage.ui
 }
+
+FORMS += \
+    hcinstruction/icwaitmeditor.ui

@@ -112,9 +112,16 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
         ICUserDefineConfigSPTR config = ICUserDefineConfig::Instance();
         if(action == ICMold::GCheckX || action == ICMold::GCondition)
         {
-            ICUserIOInfo info = config->XInfo(moldItem.SubNum());
-            commandStr += info.code + ":" + info.GetLocaleName("zh") + " ";
-            commandStr += (moldItem.IFVal() == 0) ? "OFF" :"ON ";
+            if(moldItem.IFVal() & 0x80)
+            {
+                commandStr += QString("M%1 ").arg(QString::number(moldItem.SubNum() + 8, 8));
+            }
+            else
+            {
+                ICUserIOInfo info = config->XInfo(moldItem.SubNum());
+                commandStr += info.code + ":" + info.GetLocaleName("zh") + " ";
+            }
+            commandStr += ((moldItem.IFVal() & 0x7F) == 0) ? "OFF" :"ON ";
             if(action == ICMold::GCondition)
             {
                 commandStr += QObject::tr("Return:") + QString::number((int)moldItem.SVal());
@@ -138,6 +145,21 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
 //            commandStr +=  info.GetLocaleName("zh") + " ";
             commandStr += config->EuYString(moldItem.SubNum());
         }
+        else if(action == ICMold::GMWait)
+        {
+            commandStr += QString("M%1 ").arg(QString::number(moldItem.SubNum() + 8, 8));
+            commandStr += (moldItem.IFVal() == 0) ? "OFF" :"ON ";
+            commandStr += QObject::tr("Limit") + ":" + ICParameterConversion::TransThisIntToThisText(moldItem.DVal(), 2);
+            return commandStr;
+
+        }
+        else if(action == ICMold::GMOut)
+        {
+            commandStr += QString("M%1 ").arg(QString::number(moldItem.SubNum() + 8, 8));
+//            commandStr += (moldItem.IFVal() == 0) ? "OFF" :"ON ";
+//            commandStr += QObject::tr("Limit") + ":" + ICParameterConversion::TransThisIntToThisText(moldItem.DVal(), 2);
+//            return commandStr;
+        }
         else/* if(action == ICMold::GOutY)*/
         {
             ICUserIOInfo info;
@@ -150,7 +172,7 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
                 info = config->YInfo(moldItem.SubNum());
             }
             commandStr += info.code + ":" + info.GetLocaleName("zh") + " ";
-            commandStr += config->GetIOActionLocaleName(action  - ICMold::GOutY, moldItem.SubNum(), moldItem.IFVal(), "zh") + " ";
+//            commandStr += config->GetIOActionLocaleName(action  - ICMold::GOutY, moldItem.SubNum(), moldItem.IFVal(), "zh") + " ";
         }
         if(action != ICMold::ACTEND)
         {
@@ -185,6 +207,8 @@ void ICInstructParam::InstallMoldInfo()
     actionGroupMap_.insert(ICMold::GWait, QObject::tr("Wait EuX"));
     actionGroupMap_.insert(ICMold::GEuOut, QObject::tr("Eu out"));
     actionGroupMap_.insert(ICMold::GCondition, QObject::tr("Check X"));
+    actionGroupMap_.insert(ICMold::GMWait, QObject::tr("Wait M"));
+    actionGroupMap_.insert(ICMold::GMOut, QObject::tr("M out"));
 //    actionGroupMap_[ACTMAINUP] = QObject::tr("Main arm up");
 //    actionGroupMap_[ACTMAINDOWN] = QObject::tr("Main arm down");
 //    actionGroupMap_[ACTMAINFORWARD] = QObject::tr("Main arm forward");

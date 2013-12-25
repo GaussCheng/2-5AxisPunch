@@ -213,7 +213,14 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     QString moldName = ICParametersSave::Instance()->MoldName("Test.act");
     qDebug()<<"Last mold:"<<moldName;
     ICProgramHeadFrame::Instance()->SetCurrentMoldName(moldName);
-    isOverTime_ = (ICParametersSave::Instance()->RestTime(0) == 1);
+    int restTime = ICParametersSave::Instance()->RestTime(0);
+    if(restTime != 0)
+    {
+        QDateTime last = ICParametersSave::Instance()->BootDatetime();
+        int overTime = QDateTime::currentDateTime().daysTo(last) * 24;
+        restTime -= qAbs(overTime);
+    }
+    isOverTime_ = (restTime == 1);
     registe_timer->start(3600000);
 
 }
@@ -424,7 +431,7 @@ void MainFrame::StatusRefreshed()
 //    }
 
     newLedFlags_ = 0;
-    newLedFlags_ |= (virtualHost->IsInputOn(35)? 8 : 0);
+    newLedFlags_ |= (virtualHost->IsInputOn(40)? 8 : 0);
     newLedFlags_ |= (virtualHost->IsInputOn(32)? 4 : 0);
     newLedFlags_ |= (virtualHost->IsOutputOn(32)? 2 : 0);
     newLedFlags_ |= (virtualHost->IsOutputOn(33)? 1 : 0);
@@ -434,7 +441,7 @@ void MainFrame::StatusRefreshed()
 
 #ifndef Q_WS_WIN32
 #ifdef HC_ARMV6
-//        ioctl(ledFD_, 0, ledFlags_);
+        ioctl(ledFD_, 0, ledFlags_);
 #else
 //        ioctl(ledFD_, 2, ledFlags_);
         ioctl(ledFD_, 2, ledFlags_);
@@ -455,7 +462,15 @@ void MainFrame::StatusRefreshed()
         alarmString->SetPriorAlarmNum(errCode_);
         if(errCode_ != 0)
         {
-            ui->cycleTimeAndFinistWidget->SetAlarmInfo("Err" + QString::number(errCode_) + ":" + alarmString->AlarmInfo(errCode_));
+            if(hintCode != 5)
+            {
+                ui->cycleTimeAndFinistWidget->SetAlarmInfo("Err" + QString::number(errCode_) + ":" + alarmString->AlarmInfo(errCode_));
+            }
+            else
+            {
+                ui->cycleTimeAndFinistWidget->SetHintInfo(tr("Hint") + QString::number(errCode_) + ":" + alarmString->AlarmInfo(errCode_));
+
+            }
             QTimer::singleShot(5000, this, SLOT(checkAlarmModify()));
         }
         else if(hintCode != 0)

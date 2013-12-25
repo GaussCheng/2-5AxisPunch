@@ -25,7 +25,7 @@
      <x>0</x>
      <y>5</y>
      <width>791</width>
-     <height>381</height>
+     <height>391</height>
     </rect>
    </property>
    <property name="tabPosition">
@@ -44,7 +44,7 @@
        <x>12</x>
        <y>165</y>
        <width>351</width>
-       <height>141</height>
+       <height>211</height>
       </rect>
      </property>
      <property name="title">
@@ -58,7 +58,7 @@
        <number>4</number>
       </property>
       <property name="spacing">
-       <number>12</number>
+       <number>6</number>
       </property>
       <item row="0" column="0">
        <widget class="QPushButton" name="b1">
@@ -126,28 +126,6 @@
         </attribute>
        </widget>
       </item>
-      <item row="1" column="0">
-       <widget class="QPushButton" name="b4">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>48</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>B1</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string>shortcutGroup</string>
-        </attribute>
-       </widget>
-      </item>
       <item row="1" column="1">
        <widget class="QPushButton" name="b5">
         <property name="sizePolicy">
@@ -170,8 +148,162 @@
         </attribute>
        </widget>
       </item>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="b4">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>B1</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string>shortcutGroup</string>
+        </attribute>
+       </widget>
+      </item>
       <item row="1" column="2">
        <widget class="QPushButton" name="b6">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>B1</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string>shortcutGroup</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QPushButton" name="b7">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>B1</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string>shortcutGroup</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QPushButton" name="b8">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>B1</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string>shortcutGroup</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QPushButton" name="b9">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>B1</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string>shortcutGroup</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QPushButton" name="b10">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>B1</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string>shortcutGroup</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QPushButton" name="b11">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>B1</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string>shortcutGroup</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QPushButton" name="b12">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
           <horstretch>0</horstretch>
@@ -436,7 +568,7 @@
      <property name="geometry">
       <rect>
        <x>610</x>
-       <y>260</y>
+       <y>270</y>
        <width>100</width>
        <height>48</height>
       </rect>
@@ -1373,7 +1505,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>400</y>
+     <y>420</y>
      <width>44</width>
      <height>21</height>
     </rect>
@@ -1386,7 +1518,7 @@
    <property name="geometry">
     <rect>
      <x>181</x>
-     <y>400</y>
+     <y>420</y>
      <width>80</width>
      <height>21</height>
     </rect>
@@ -1829,7 +1961,7 @@
    <property name="geometry">
     <rect>
      <x>305</x>
-     <y>400</y>
+     <y>420</y>
      <width>16</width>
      <height>21</height>
     </rect>
@@ -1842,7 +1974,7 @@
    <property name="geometry">
     <rect>
      <x>409</x>
-     <y>400</y>
+     <y>420</y>
      <width>31</width>
      <height>21</height>
     </rect>
@@ -1855,7 +1987,7 @@
    <property name="geometry">
     <rect>
      <x>267</x>
-     <y>400</y>
+     <y>420</y>
      <width>31</width>
      <height>21</height>
     </rect>
@@ -1868,7 +2000,7 @@
    <property name="geometry">
     <rect>
      <x>323</x>
-     <y>400</y>
+     <y>420</y>
      <width>80</width>
      <height>21</height>
     </rect>
@@ -2311,7 +2443,7 @@
    <property name="geometry">
     <rect>
      <x>146</x>
-     <y>400</y>
+     <y>420</y>
      <width>16</width>
      <height>21</height>
     </rect>
@@ -2324,7 +2456,7 @@
    <property name="geometry">
     <rect>
      <x>162</x>
-     <y>400</y>
+     <y>420</y>
      <width>16</width>
      <height>21</height>
     </rect>
@@ -2337,7 +2469,7 @@
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>400</y>
+     <y>420</y>
      <width>80</width>
      <height>21</height>
     </rect>
@@ -2779,8 +2911,8 @@
   <widget class="QPushButton" name="productClear">
    <property name="geometry">
     <rect>
-     <x>660</x>
-     <y>395</y>
+     <x>695</x>
+     <y>400</y>
      <width>100</width>
      <height>46</height>
     </rect>
@@ -2799,7 +2931,7 @@
    <property name="geometry">
     <rect>
      <x>555</x>
-     <y>400</y>
+     <y>420</y>
      <width>31</width>
      <height>21</height>
     </rect>
@@ -2812,7 +2944,7 @@
    <property name="geometry">
     <rect>
      <x>469</x>
-     <y>400</y>
+     <y>420</y>
      <width>80</width>
      <height>21</height>
     </rect>
@@ -3255,7 +3387,7 @@
    <property name="geometry">
     <rect>
      <x>451</x>
-     <y>400</y>
+     <y>420</y>
      <width>16</width>
      <height>21</height>
     </rect>

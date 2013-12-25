@@ -195,7 +195,7 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
                 ui->precentLabel->hide();
 //                ui->speedEdit->SetThisIntToThisText(item->SVal());
             }
-            if(item->IFVal())
+            if(item->IFVal() & 0x7F)
             {
                 ui->onBox->setChecked(true);
                 ui->offBox->setChecked(false);
@@ -274,7 +274,10 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
         }
         if(!ui->onBox->isHidden())
         {
-            item->SetIFVal(ui->onBox->isChecked());
+            int ifv = item->IFVal();
+            ifv &= 0x80;
+            ifv |= ui->onBox->isChecked();
+            item->SetIFVal(ifv);
         }
     }
     return isok;

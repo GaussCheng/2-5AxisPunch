@@ -29,6 +29,8 @@ private:
     ICIOMonitorPageBase *otherPageRight_;
     ICIOMonitorPageBase *euPageLeft_;
     ICIOMonitorPageBase *euPageRight_;
+    ICIOMonitorPageBase *mPageLeft_;
+    ICIOMonitorPageBase *mPageRight_;
 };
 
 #endif // ICMONITORPAGEFRAME_H

@@ -476,5 +476,13 @@ QVariant ICUpdateHostStart::Send(modbus_param_t *modbusParam)
 
 QVariant ICManualRun::Send(modbus_param_t *modbusParam)
 {
-    return hc_manual_run(modbusParam, Slave(), StepNum(),GM(), Point(), Pos(),IFVal());
+    int tryedTimes = 0;
+    int ret;
+    do
+    {
+        ret = hc_manual_run(modbusParam, Slave(), StepNum(),GM(), Point(), Pos(),IFVal());
+        ++tryedTimes;
+    }while(ret < 0 && tryedTimes < RetryTimes());
+    if(ret < 0) return false;
+    return true;
 }

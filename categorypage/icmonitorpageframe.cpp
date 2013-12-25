@@ -15,6 +15,8 @@ ICMonitorPageFrame::ICMonitorPageFrame(QWidget *parent) :
     otherPageRight_ = new ICIOMonitorPageBase();
     euPageLeft_ = new ICIOMonitorPageBase();
     euPageRight_ = new ICIOMonitorPageBase();
+    mPageLeft_ = new ICIOMonitorPageBase();
+    mPageRight_=new ICIOMonitorPageBase();
     Init_();
 }
 
@@ -240,4 +242,22 @@ void ICMonitorPageFrame::Init_()
 
     euPageLeft_->BindingPointsToOutpuPage(points);
     euPageRight_->BindingPointsToOutpuPage(points);
+
+    points.clear();
+    QStringList items;
+    items<<"M10"<<"M11"<<"M12"<<"M13"<<"M14"
+        <<"M15"<<"M16"<<"M17"<<"M20"<<"M21"
+       <<"M22"<<"M23"<<"M24"<<"M25"<<"M26"
+      <<"M27"<<"M30"<<"M31"<<"M32"<<"M33"
+     <<"M34"<<"M35"<<"M36"<<"M37"<<"M40"
+    <<"M41"<<"M42"<<"M43"<<"M44"<<"M45"
+    <<"M46"<<"M47";
+    for(int i = 0; i != items.size(); ++i)
+    {
+        points.append(ICIOPoint(items.at(i), items.at(i), i + 64));
+    }
+    mPageLeft_->BindingPointsToOutpuPage(points);
+    mPageRight_->BindingPointsToOutpuPage(points);
+    ui->icMonitorFrameleft->AddPage(mPageLeft_, tr("M"));
+    ui->icMonitorFrameRight->AddPage(mPageRight_, tr("M"));
 }

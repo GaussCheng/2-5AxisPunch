@@ -63,7 +63,16 @@ QCheckBox::indicator:unchecked
        <string>Eu In</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout">
-       <property name="margin">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
         <number>0</number>
        </property>
        <item>
@@ -167,7 +176,16 @@ QRadioButton::indicator:unchecked:disabled
        <string>Eu Out</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_2">
-       <property name="margin">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
         <number>0</number>
        </property>
        <item>
@@ -279,7 +297,7 @@ QRadioButton::indicator:unchecked:disabled
         <bool>true</bool>
        </property>
        <attribute name="buttonGroup">
-        <string>buttonGroup</string>
+        <string notr="true">buttonGroup</string>
        </attribute>
       </widget>
      </item>
@@ -289,7 +307,7 @@ QRadioButton::indicator:unchecked:disabled
         <string>OFF</string>
        </property>
        <attribute name="buttonGroup">
-        <string>buttonGroup</string>
+        <string notr="true">buttonGroup</string>
        </attribute>
       </widget>
      </item>

@@ -34,7 +34,7 @@ protected:
     void hideEvent(QHideEvent *e);
 
 private slots:
-    void on_editToolButton_clicked();
+//    void on_editToolButton_clicked();
     void UpdateHostParam();
     void StatusRefreshed();
     void MoldNumChanged(int mold);
@@ -46,9 +46,9 @@ private slots:
 
     void OnTimeOut();
 
-    void on_singleStepButton_pressed();
+//    void on_singleStepButton_pressed();
 
-    void on_singleStepButton_released();
+//    void on_singleStepButton_released();
     void LevelChanged(int);
 
     void on_cycle_toggled(bool checked);

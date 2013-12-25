@@ -75,9 +75,11 @@ void ActionSettingFrame::InitInterface()
     ui->y1PosLineEdit->SetDecimalPlaces(POS_DECIMAL);
     //    ui->y1PosLineEdit->setValidator(posvalidator);
     ui->y1PosLineEdit->setValidator(posValidators_ + 1);
-//    ui->zPosLineEdit->SetDecimalPlaces(POS_DECIMAL);
+#ifdef HC_SK_8
+    ui->zPosLineEdit->SetDecimalPlaces(POS_DECIMAL);
     //    ui->zPosLineEdit->setValidator(posvalidator);
-//    ui->zPosLineEdit->setValidator(posValidators_ + 2);
+    ui->zPosLineEdit->setValidator(posValidators_ + 2);
+#endif
 
     QIntValidator *speed = new QIntValidator(0, 100, this);
     ui->speedEdit->SetDecimalPlaces(0);

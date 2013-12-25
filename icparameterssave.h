@@ -5,6 +5,7 @@
 #include <QString>
 #include <QLocale>
 #include <QTranslator>
+#include <QDateTime>
 #ifndef Q_WS_WIN32
 #include <fcntl.h>
 #include <sys/ioctl.h>
@@ -99,6 +100,15 @@ public:
     QString ShipmentDate() { return GetParameter(SystemMachine, "ShipmentDate", "").toString();}
     void SetShipmentDate(const QString &date)  { SaveParameter(SystemMachine, "ShipmentDate", date);}
 
+    QString FactoryCode() { return GetParameter(SystemMachine, "FactoryCode", "888888").toString();}
+    void SetFactoryCode(const QString& code) {SaveParameter(SystemMachine, "FactoryCode", code);}
+
+    bool IsRoot() { return isRoot_;}
+    void SetRoot(bool isroot) { isRoot_ = isroot;}
+
+    QDateTime BootDatetime() { return GetParameter(SystemMachine, "BootDateTime", QDateTime::currentDateTime()).toDateTime();}
+    void SetBootDatetime(QDateTime dt) { SaveParameter(SystemMachine, "BootDatetime", dt);}
+
 signals:
     void CurrentLanguageChanged();
 
@@ -118,6 +128,7 @@ private:
     QTranslator *sysTranslator_;
     QMap<QString, double> axisToRotate_;
     int beepFD_;
+    bool isRoot_;
     ICParametersSave(const QString fileName = QString());
 };
 

@@ -554,6 +554,7 @@ public:
     void SetSystemParameter(ICSystemParameterAddr which, QVariant value);
 
     QVariant HostStatus(ICStatus status) const;
+    void SetHostStatus(ICStatus status, QVariant v) { statusMap_.insert(status,v);}
 
     static ICVirtualHost* GlobalVirtualHost() { return globalVirtualHost_;}
     static void SetGlobalVirtualHost(ICVirtualHost* virtualHost) {globalVirtualHost_ = virtualHost;}
@@ -642,6 +643,9 @@ public:
 
     int GetActualPos(ICAxis axis) const;
     int GetActualPos(ICAxis axis, uint axisLastPos) const;
+
+    bool IsSingleRun() const { return isSingleRun_;}
+    void SetSingleRun(bool isrun) {isSingleRun_ = isrun;}
 public Q_SLOTS:
     void SetMoldParam(int param, int value);
 Q_SIGNALS:
@@ -707,6 +711,7 @@ private:
     bool isFixtureCheck_;
     static ICVirtualHost* globalVirtualHost_;
     bool flag;
+    bool isSingleRun_;
 };
 #define icGlobalVirtuallHost ICVirtualHost::GlobalVirtualHost()
 
@@ -810,10 +815,20 @@ inline bool ICVirtualHost::IsOutputOn(int pos) const
         uint temp = 1 << (pos - 16);
         return output1Bits_ & temp;
     }
-    else if(pos >= 32)
+    else if(pos < 48)
     {
         uint temp = 1 << (pos - 32);
         return euOutputBits_ & temp;
+    }
+    else if(pos < 80)
+    {
+        uint temp = 1 << (pos - 64);
+        return clipLBits_ & temp;
+    }
+    else if(pos < 96)
+    {
+        uint temp = 1 << (pos - 80);
+        return clipHBits_ & temp;
     }
     return false;
 }
@@ -1039,7 +1054,7 @@ inline int ICVirtualHost::GetActualPos(ICAxis axis) const
 
 inline int ICVirtualHost::GetActualPos(ICAxis axis, uint axisLastPos) const
 {
-    return HostStatus(static_cast<ICStatus>(XPos + axis)).toInt();
+    return (int16_t)HostStatus(static_cast<ICStatus>(XPos + axis)).toInt();
 //    int ret = tmp;
 //    ret *= 10;
 //    if(tmp >= 0)

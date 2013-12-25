@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
+    <width>710</width>
     <height>356</height>
    </rect>
   </property>
@@ -212,7 +212,7 @@
    <widget class="QPushButton" name="letterP">
     <property name="geometry">
      <rect>
-      <x>650</x>
+      <x>560</x>
       <y>73</y>
       <width>50</width>
       <height>45</height>
@@ -552,7 +552,7 @@
    <widget class="QPushButton" name="num0">
     <property name="geometry">
      <rect>
-      <x>640</x>
+      <x>550</x>
       <y>10</y>
       <width>50</width>
       <height>45</height>
@@ -1266,7 +1266,7 @@
    <widget class="QToolButton" name="backspace">
     <property name="geometry">
      <rect>
-      <x>550</x>
+      <x>610</x>
       <y>10</y>
       <width>80</width>
       <height>45</height>
@@ -1302,7 +1302,7 @@
    <widget class="QToolButton" name="cancel">
     <property name="geometry">
      <rect>
-      <x>560</x>
+      <x>620</x>
       <y>73</y>
       <width>70</width>
       <height>45</height>
@@ -1340,7 +1340,7 @@
      <rect>
       <x>570</x>
       <y>133</y>
-      <width>60</width>
+      <width>121</width>
       <height>45</height>
      </rect>
     </property>

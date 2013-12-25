@@ -10,4 +10,4 @@ SOURCES += \
     iclineeditwithvirtualkeyboard.cpp
 
 FORMS += \
-    virtualkeyboarddialog.ui
+    $$PWD/virtualkeyboarddialog.ui

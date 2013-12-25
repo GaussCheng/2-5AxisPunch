@@ -48,7 +48,7 @@ ICWaitConditionEditor::ICWaitConditionEditor(QWidget *parent) :
 //        yrowToInfoMap_.insert(i, infos.at(i));
     }
     ui->euInList->blockSignals(false);
-    ui->euOutList->blockSignals(true);
+    ui->euOutList->blockSignals(false);
     ui->onBox->setEnabled(false);
     ui->offBox->setEnabled(false);
 }

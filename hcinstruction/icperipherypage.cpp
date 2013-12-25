@@ -30,6 +30,23 @@ ICPeripheryPage::ICPeripheryPage(QWidget *parent) :
         rowToInfoMap_.insert(i, infos.at(i));
     }
     ui->tableWidget->blockSignals(false);
+    QStringList items;
+    items<<"M10"<<"M11"<<"M12"<<"M13"<<"M14"
+        <<"M15"<<"M16"<<"M17"<<"M20"<<"M21"
+       <<"M22"<<"M23"<<"M24"<<"M25"<<"M26"
+      <<"M27"<<"M30"<<"M31"<<"M32"<<"M33"
+     <<"M34"<<"M35"<<"M36"<<"M37"<<"M40"
+    <<"M41"<<"M42"<<"M43"<<"M44"<<"M45"
+    <<"M46"<<"M47";
+    ui->mList->blockSignals(true);
+    ui->mList->setRowCount(items.size());
+    for(int i = 0; i != items.size(); ++i)
+    {
+        item = new QTableWidgetItem(items.at(i));
+        item->setCheckState(Qt::Unchecked);
+        ui->mList->setItem(i, 0, item);
+    }
+    ui->mList->blockSignals(false);
 }
 
 ICPeripheryPage::~ICPeripheryPage()
@@ -83,14 +100,23 @@ QList<ICMoldItem> ICPeripheryPage::CreateCommandImpl() const
 {
     QList<ICMoldItem> ret;
     ICMoldItem item;
-    for(int i = 0; i != ui->tableWidget->rowCount(); ++i)
+    QTableWidget* tableWidget = ui->tabWidget->currentIndex() == 0 ? ui->tableWidget : ui->mList;
+    for(int i = 0; i != tableWidget->rowCount(); ++i)
     {
-        if(ui->tableWidget->item(i,0)->checkState() == Qt::Checked)
+        if(tableWidget->item(i,0)->checkState() == Qt::Checked)
         {
             item.SetGMVal(ICMold::GCondition);
 //            item.SetSVal(rowToInfoMap_.value(i).pointNum);
-            item.SetSubNum(rowToInfoMap_.value(i).hardwarePoint);
-            item.SetIFVal(ui->onBox->isChecked());
+            if(ui->tabWidget->currentIndex() == 0)
+            {
+                item.SetSubNum(rowToInfoMap_.value(i).hardwarePoint);
+                item.SetIFVal(ui->onBox->isChecked());
+            }
+            else
+            {
+                item.SetSubNum(i);
+                item.SetIFVal(ui->onBox->isChecked() | 0x80);
+            }
             item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
             item.SetSVal(ui->returnEdit->TransThisTextToThisInt());
             ret.append(item);
@@ -110,4 +136,18 @@ void ICPeripheryPage::on_tableWidget_itemChanged(QTableWidgetItem *item)
     }
     item->setCheckState(state);
     ui->tableWidget->blockSignals(false);
+}
+
+
+void ICPeripheryPage::on_mList_itemChanged(QTableWidgetItem *item)
+{
+    Qt::CheckState state = item->checkState();
+    const int rCount = ui->mList->rowCount();
+    ui->mList->blockSignals(true);
+    for(int i = 0; i != rCount; ++i)
+    {
+        ui->mList->item(i, 0)->setCheckState(Qt::Unchecked);
+    }
+    item->setCheckState(state);
+    ui->mList->blockSignals(false);
 }

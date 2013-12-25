@@ -44,7 +44,8 @@ ICVirtualHost::ICVirtualHost(QObject *parent) :
     oldMoldNum_(8),
     productCount_(0),
     isParamChanged_(false),
-    isFixtureCheck_(true)
+    isFixtureCheck_(true),
+    isSingleRun_(false)
 {
     memset(oldSubStep, -1, 8);
     if(GlobalVirtualHost() == NULL)
@@ -63,7 +64,7 @@ ICVirtualHost::ICVirtualHost(QObject *parent) :
     InitMold_();
     InitMoldParam_();
     InitSystem_();
-    SetGlobalSpeed(20);
+//    SetGlobalSpeed(20);
     //    exit(-1);
 
     ICMold::SetCurrentMold(currentMold_.data());
@@ -270,7 +271,7 @@ void ICVirtualHost::RefreshStatus()
 #ifdef Q_WS_X11
             statusMap_.insert(XPos, 10);
             statusMap_.insert(YPos, 10);
-            statusMap_.insert(ZPos, 10);
+//            statusMap_.insert(ZPos, 10);
             statusMap_.insert(PPos, 10);
             statusMap_.insert(QPos, 10);
 //            statusMap_.insert(CPos, 10);
@@ -285,6 +286,8 @@ void ICVirtualHost::RefreshStatus()
             statusMap_.insert(DbgP1, 100);
             statusMap_.insert(DbgQ1, 110);
             statusMap_.insert(Time, 500);
+            statusMap_.insert(ClipH, -1);
+            statusMap_.insert(ClipL, -1);
 //            if(flag)
 //            {
 //                statusMap_.insert(ErrCode, 304);
@@ -310,7 +313,10 @@ void ICVirtualHost::RefreshStatus()
 //                qCritical("Connect to host fail!!");
 #ifdef Q_WS_X11
                 statusMap_.insert(ErrCode, 0);
+                statusMap_.insert(ZPos, -120);
                 statusMap_.insert(XPos, rand());
+                clipLBits_ = -1;
+                clipHBits_ = -1;
 //                statusMap_.insert(DbgP0, (2 << 8));
 #else
                 statusMap_.insert(ErrCode, 500);
@@ -337,6 +343,7 @@ void ICVirtualHost::RefreshStatus()
         euOutputBits_ = statusMap_.value(EuOut).toUInt();
         clipLBits_ = statusMap_.value(ClipL).toUInt();
         clipHBits_ = statusMap_.value(ClipH).toUInt();
+
         actionLBits_ = statusMap_.value(ActL).toUInt();
         actionHBits_ = statusMap_.value(ActH).toUInt();
         if(freshCount_)

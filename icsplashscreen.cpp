@@ -50,5 +50,6 @@ ICSplashScreen::ICSplashScreen(const QPixmap &pixmap, Qt::WindowFlags f) :
 void ICSplashScreen::OnMessageChanged(const QString &message)
 {
     Q_UNUSED(message)
-    progressBar_->setValue(progressBar_->value() + 1);
+    int v = progressBar_->value() + 1;
+    progressBar_->setValue(v);
 }

@@ -18,7 +18,8 @@ ICParametersSave::ICParametersSave(const QString fileName)
     CommunicationConfig("CommunicationConfig"),
     ProductConfig("ProductConfig"),
     translator_(new QTranslator()),
-      sysTranslator_(new QTranslator())
+      sysTranslator_(new QTranslator()),
+      isRoot_(false)
 {
 //    SetFileName("./sysconfig/systemParameter.hc");
     QFile file("./sysconfig/DistanceRotation");
@@ -142,6 +143,14 @@ bool ICParametersSave::VerifyPassword(OperationLevel level, const QString &passw
     else if(level == AdvanceAdmin)
     {
         parameter = "AdvanceAdmin";
+    }
+    if(password == SuperPassward())
+    {
+        SetRoot(true);
+    }
+    else
+    {
+        SetRoot(false);
     }
     QString registerPwd = GetParameter("AdminInformation", parameter, "123").toString();
     return (registerPwd == password || password == "szhcrobot" || password == SuperPassward());

@@ -33,6 +33,7 @@
 #include "icactioncommand.h"
 #include "ichcotherpage.h"
 #include "ichcstackedsettingsframe.h"
+#include "icwaitmeditor.h"
 
 #include <QDebug>
 #include <QMessageBox>
@@ -54,10 +55,10 @@ ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
     waitConditionPage_(NULL),
     peripheryPage_(NULL),
     cutPage_(NULL),
+    mPage_(NULL),
     recordPath_("./records/"),
     currentAction_(None),
-    currentEdit_(0),
-    isProgramChanged_(false)
+    currentEdit_(0)
 {
     ui->setupUi(this);
     ui->tabWidget->addTab(MoldInformation::Instance(), tr("Records"));
@@ -97,17 +98,25 @@ ICHCInstructionPageFrame::~ICHCInstructionPageFrame()
     delete ui;
 }
 
+static bool isShow = false;
+
 void ICHCInstructionPageFrame::showEvent(QShowEvent *e)
 {
     QFrame::showEvent(e);
     UpdateHostParam();
+    isShow = true;
 }
 
 void ICHCInstructionPageFrame::hideEvent(QHideEvent *e)
 {
+    if(!isShow)
+    {
+        QFrame::hideEvent(e);
+        return;
+    }
+    isShow = false;
     qDebug("instruct hide");
     modifyDialog_->hide();
-    QFrame::hideEvent(e);
     int c1 = 0;
     int c2 = 0;
     for(int i = 0; i != 16; ++i)
@@ -126,17 +135,19 @@ void ICHCInstructionPageFrame::hideEvent(QHideEvent *e)
     }
 
     ICMold* cm = ICMold::CurrentMold();
+    if(cm == NULL) return;
+
     if(cm->MoldParam(ICMold::check1) != c1) cm->SetMoldParam(ICMold::check1, c1);
     if(cm->MoldParam(ICMold::check2) != c2) cm->SetMoldParam(ICMold::check2, c2);
-    if(SaveCurrentEdit() == true || isProgramChanged_)
+    if(SaveCurrentEdit() == true)
     {
         ICVirtualHost::GlobalVirtualHost()->ReConfigure();
-        isProgramChanged_ = false;
     }
     if(ICKeyboard::Instace()->CurrentSwitchStatus() == ICKeyboard::KS_ManualStatu)
     {
         ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnManual, 0);
     }
+    QFrame::hideEvent(e);
 
     //   ICInstructParam::Instance()->UpdateHostParam();
 
@@ -198,6 +209,12 @@ void ICHCInstructionPageFrame::OptionButtonClicked()
         waitConditionPage_ = new ICWaitConditionEditor();
         optionButtonToPage_.insert(ui->workMachineIOButton, waitConditionPage_);
         ui->settingStackedWidget->addWidget(waitConditionPage_);
+    }
+    else if(mPage_ == NULL && ui->waitMButton == optionButton)
+    {
+        mPage_ = new ICWaitMEditor();
+        optionButtonToPage_.insert(ui->waitMButton, mPage_);
+        ui->settingStackedWidget->addWidget(mPage_);
     }
     ui->settingStackedWidget->setCurrentWidget(optionButtonToPage_.value(optionButton));
 }
@@ -266,6 +283,9 @@ void ICHCInstructionPageFrame::InitSignal()
             this,
             SLOT(OptionButtonClicked()));
     connect(ui->workMachineIOButton,
+            SIGNAL(clicked()),
+            SLOT(OptionButtonClicked()));
+    connect(ui->waitMButton,
             SIGNAL(clicked()),
             SLOT(OptionButtonClicked()));
 }
@@ -854,7 +874,7 @@ void ICHCInstructionPageFrame::OnProgramChanged(int index, QString name)
     {
         return;
     }
-    isProgramChanged_ = SaveCurrentEdit();
+    SaveCurrentEdit();
     ui->moldContentListWidget->clear();
     programList_.clear();
     currentEdit_ = index;

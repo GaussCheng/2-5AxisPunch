@@ -181,6 +181,11 @@ void ICKeyboardHandler::Keypressed(int keyValue)
             //            icMainFrame->HideOrigin();
             commandProcessor->ExecuteHCCommand(IC::CMD_TurnStop, 0);
         }
+        else if(ICVirtualHost::GlobalVirtualHost()->IsSingleRun())
+        {
+            ICVirtualHost::GlobalVirtualHost()->SetSingleRun(false);
+            commandProcessor->ExecuteVirtualKeyCommand(IC::VKEY_STOP);
+        }
         else
         {
             commandProcessor->ExecuteVirtualKeyCommand(IC::VKEY_STOP);

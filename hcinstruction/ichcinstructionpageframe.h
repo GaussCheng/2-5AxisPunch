@@ -98,6 +98,7 @@ private:
     QWidget * waitConditionPage_;
     QWidget * peripheryPage_;
     QWidget * cutPage_;
+    QWidget * mPage_;
     ICInstructModifyDialog *modifyDialog_;
 
     QString recordPath_;
@@ -107,7 +108,7 @@ private:
 
     QList<ICGroupMoldUIItem> programList_;
     int currentEdit_;
-    bool isProgramChanged_;
+//    bool isProgramChanged_;
 };
 
 #endif // ICHCINSTRUCTIONPAGEFRAME_H

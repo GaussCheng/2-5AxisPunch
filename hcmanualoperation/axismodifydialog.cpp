@@ -60,14 +60,14 @@ void AxisModifyDialog::StartModify(ICPoint point)
                           host->SystemParameter(ICVirtualHost::SYS_X_Length).toInt());
     yValidator_->setRange(host->SystemParameter(ICVirtualHost::SYS_Y_Maxium).toInt(),
                           host->SystemParameter(ICVirtualHost::SYS_Y_Length).toInt());
+    ui->xPos->SetThisIntToThisText(point.x);
+    ui->yPos->SetThisIntToThisText(point.y);
 #ifdef HC_SK_8
     zValidator_->setRange(host->SystemParameter(ICVirtualHost::SYS_Z_Maxium).toInt(),
                           host->SystemParameter(ICVirtualHost::SYS_Z_Length).toInt());
     ui->zPos->SetThisIntToThisText(point.z);
 #endif
-    ui->xPos->SetThisIntToThisText(point.x);
-    ui->yPos->SetThisIntToThisText(point.y);
-    this->show();
+    this->exec();
 }
 
 void AxisModifyDialog::on_setButton_clicked()
@@ -77,7 +77,12 @@ void AxisModifyDialog::on_setButton_clicked()
         return;
     }
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    ui->xPos->SetThisIntToThisText(host->HostStatus(ICVirtualHost::XPos).toInt());
-    ui->yPos->SetThisIntToThisText(host->HostStatus(ICVirtualHost::YPos).toInt());
+    ui->xPos->SetThisIntToThisText(host->GetActualPos(ICVirtualHost::ICAxis_AxisX1));
+    ui->yPos->SetThisIntToThisText(host->GetActualPos(ICVirtualHost::ICAxis_AxisY1));
+//    ui->xPos->SetThisIntToThisText(host->HostStatus(ICVirtualHost::XPos).toInt());
+//    ui->yPos->SetThisIntToThisText(host->HostStatus(ICVirtualHost::YPos).toInt());
+#ifdef HC_SK_8
 //    ui->zPos->SetThisIntToThisText(host->HostStatus(ICVirtualHost::ZPos).toInt());
+    ui->zPos->SetThisIntToThisText(host->GetActualPos(ICVirtualHost::ICAxis_AxisZ));
+#endif
 }

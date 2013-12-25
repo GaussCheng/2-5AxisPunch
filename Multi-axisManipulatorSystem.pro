@@ -41,7 +41,8 @@ SOURCES += main.cpp \
     icprogramformatchecker.cpp \
     icconfigformatchecker.cpp \
     simulateknob.cpp \
-    icaxiskeyboard.cpp
+    icaxiskeyboard.cpp \
+    icutility.cpp
 HEADERS += mainframe.h \
     icaxispositionlabel.h \
     #icalarmdescriptiondialog.h \
@@ -62,7 +63,8 @@ HEADERS += mainframe.h \
     icprogramformatchecker.h \
     icconfigformatchecker.h \
     simulateknob.h \
-    icaxiskeyboard.h
+    icaxiskeyboard.h \
+    icutility.h
 
 SK_SIZE = 8
 equals(SK_SIZE, 8){
@@ -119,8 +121,12 @@ OTHER_FILES += \
     sysconfig/hintinfomation-ch \
     sysconfig/hintinfomation-en
 
+QMAKE_POST_LINK += "cp *.qm $$DESTDIR"
 CONFIG(debug, debug|release){
 system("python rename_ui.py temp_8_d")
+#QMAKE_POST_LINK += "cp *.qm bin_debug"
 }else{
 system("python rename_ui.py temp_8")
+QMAKE_POST_LINK += "&& arm-linux-strip $$DESTDIR/$$TARGET && HCbcrypt.sh -r $$DESTDIR/$$TARGET"
 }
+

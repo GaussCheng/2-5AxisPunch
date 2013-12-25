@@ -24,6 +24,8 @@ private slots:
 
     void on_registerButton_clicked();
 
+    void on_fcode_textChanged(const QString &arg1);
+
 private:
     Ui::ICSettingsFrame *ui;
 };

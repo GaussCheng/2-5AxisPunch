@@ -42,6 +42,7 @@
 #include <errno.h>
 #include <limits.h>
 #include <fcntl.h>
+//#include <QDebug>
 
 /* TCP */
 #ifndef NATIVE_WIN32
@@ -212,6 +213,9 @@ static unsigned int compute_response_length(modbus_param_t *mb_param,
         {
             length = 5;
         }
+        break;
+    case FC_HC_MANUAL_RUN:
+        length = 8;
         break;
 #else
 	case FC_READ_COIL_STATUS:
@@ -782,6 +786,12 @@ static int modbus_receive(modbus_param_t *mb_param,
 		int nb = 0;
 		/* The number of values is returned if it's corresponding
 		 * to the query */
+//        printf("rl:%d\n", response_length);
+//        for(int i = 0; i != response_length; ++i)
+//        {
+//            printf("response:%d ", response[i]);
+//        }
+//        printf("\n");
 		switch (response[offset + 1]) {
 #ifdef HC_OLD
         case FC_HC_INIT_PARA:
@@ -831,6 +841,10 @@ static int modbus_receive(modbus_param_t *mb_param,
         {
             query_nb_value = response_nb_value = 7;
         }
+            break;
+        case FC_HC_MANUAL_RUN:
+            query_nb_value = response_nb_value = 10;
+            break;
 #else
 		case FC_READ_COIL_STATUS:
 		case FC_READ_INPUT_STATUS:
@@ -868,8 +882,6 @@ static int modbus_receive(modbus_param_t *mb_param,
         case FC_HC_DOWNLOAD_ACT:
             query_nb_value = response_nb_value = 5;
             break;
-        case FC_HC_MANUAL_RUN:
-            query_nb_value = response_nb_value = 7;
 
 #endif
 		default:
@@ -1477,6 +1489,16 @@ int hc_manual_run(modbus_param_t *mb_param,
         int i;
 
         ret = modbus_receive(mb_param, query, response);
+//        qDebug()<<"ret"
+        printf("ret: %d\n", ret);
+        if(ret < 0) return -1;
+        for(int i = 0; i != ret; ++i)
+        {
+            printf("i:%d ", response[i]);
+        }
+        printf("\n");
+
+//        if(ret != query_length) return -1;
 
         /* If ret is negative, the loop is jumped ! */
         for (i = 0; i < ret; i++)
@@ -1486,7 +1508,7 @@ int hc_manual_run(modbus_param_t *mb_param,
                 return -1;
             }
         }
-        return 1;
+        return ret;
     }
 
     return -1;

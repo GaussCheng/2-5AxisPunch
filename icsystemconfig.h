@@ -124,7 +124,7 @@ public:
     }
 
     ICUserActionInfo GetActionByID(int id){return actionInfos_.value(id, ICUserActionInfo());}
-    ICUserActionInfo GetActionShortcutByID(int id) { return actionInfos_.value(id, ICUserActionInfo());}
+    ICUserActionInfo GetActionShortcutByID(int id) { return actionShortcut_.value(id, ICUserActionInfo());}
 
     QList<ICUserActionInfo> GetActionInfosByType(int type = -1);
 

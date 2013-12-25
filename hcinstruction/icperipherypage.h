@@ -37,6 +37,7 @@ private Q_SLOTS:
     void CommandButtonClicked(QWidget* widget);
 ///////////////
     void on_tableWidget_itemChanged(QTableWidgetItem *item);
+    void on_mList_itemChanged(QTableWidgetItem *item);
 
 private:
     Ui::ICPeripheryPage *ui;

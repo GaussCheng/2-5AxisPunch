@@ -117,19 +117,22 @@ bool MoldInformation::CreateNewSourceFile(const QString & fileName)
 //            items.append(item);
         }
         CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisX1, ICMold::GX, -1);
+        items[items.size() - 1].SetNum(items.size() - 1);
         CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisY1, ICMold::GY, -1);
+        items[items.size() - 1].SetNum(items.size() - 1);
         CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisZ, ICMold::GZ, -1);
-        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisX2, ICMold::GP, -1);
-        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisY2, ICMold::GQ, -1);
-        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisA, ICMold::GA, -1);
-        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisB, ICMold::GB, -1);
-        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisC, ICMold::GC, -1);
+        items[items.size() - 1].SetNum(items.size() - 1);
+//        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisX2, ICMold::GP, -1);
+//        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisY2, ICMold::GQ, -1);
+//        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisA, ICMold::GA, -1);
+//        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisB, ICMold::GB, -1);
+//        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisC, ICMold::GC, -1);
 //        item.SetAction(ICMold::ACT_WaitMoldOpened);
 //        item.SetSVal(1);
 //        item.SetNum(1);
 //        items.append(item);
         item.SetAction(ICMold::ACTEND);
-        item.SetNum(1);
+        item.SetNum(items.size() - 1);
         items.append(item);
         ICMold::MoldReSum(items);
         QByteArray toWrite;
@@ -582,7 +585,7 @@ void MoldInformation::on_importToolButton_clicked()
         file.open(QFile::ReadOnly | QFile::Text);
         actContent = file.readAll();
         file.close();
-        if(!configFormatChecker.CheckRowCount(actContent, 33,ICDataFormatChecker::kCompareEqual))
+        if(!configFormatChecker.CheckRowCount(actContent, 65,ICDataFormatChecker::kCompareEqual))
         {
             QMessageBox::warning(this, tr("Warnning"), tr("Wrong config format!!!"));
             return;

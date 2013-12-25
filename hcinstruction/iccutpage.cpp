@@ -29,6 +29,7 @@ ICCutPage::ICCutPage(QWidget *parent) :
         rowToInfoMap_.insert(i, infos.at(i));
     }
     ui->tableWidget->blockSignals(false);
+
 }
 
 ICCutPage::~ICCutPage()

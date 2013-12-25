@@ -231,7 +231,11 @@ void ICUpdateSystem::RefreshUSBIniInfo()
     }
     if(!updateSettings_->value("superPassward","").toString().isEmpty())
     {
-        ui->updatePasswardButton->setEnabled(true);
+        QString oldPasswoard = updateSettings_->value("oldPassward", "").toString();
+        if(oldPasswoard == ICParametersSave::Instance()->SuperPassward())
+        {
+            ui->updatePasswardButton->setEnabled(true);
+        }
     }
     else
     {
