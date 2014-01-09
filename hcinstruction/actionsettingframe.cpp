@@ -11,6 +11,7 @@
 
 #include "icparameterssave.h"
 #include "icsystemconfig.h"
+#include "icaxiskeyboard.h"
 
 ActionSettingFrame::ActionSettingFrame(QWidget *parent) :
     ICInstructionEditorBase(parent),
@@ -377,3 +378,10 @@ void ActionSettingFrame::on_absBox_toggled(bool checked)
 #endif
     ui->pointSel->setEnabled(!checked);
 }
+
+#ifdef HC_SK_8_SC
+void ActionSettingFrame::on_axisBoard_clicked()
+{
+    ICAxisKeyboard::Instance()->show();
+}
+#endif

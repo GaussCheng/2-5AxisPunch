@@ -9,6 +9,7 @@ class QButtonGroup;
 class QIntValidator;
 class QComboBox;
 class ICStructDefineFrame;
+class QPushButton;
 
 namespace Ui {
     class ICMachineStructPage;
@@ -55,6 +56,8 @@ private Q_SLOTS:
     void on_mechanicalLengthLineEdit_textChanged(const QString &arg1);
 
     void on_maximumDisplacementLineEdit_textChanged(const QString &arg1);
+
+    void on_punch_clicked();
 
 private:
     void InitInterface();

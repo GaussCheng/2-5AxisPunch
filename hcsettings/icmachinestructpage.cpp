@@ -100,6 +100,15 @@ void ICMachineStructPage::changeEvent(QEvent *e)
 
 void ICMachineStructPage::hideEvent(QHideEvent *e)
 {
+//    int machineCount = 0;
+//    for(int i = 0; i != punchButtons_.size(); ++i)
+//    {
+//        if(punchButtons_.at(i)->isChecked())
+//        {
+//            machineCount |= (1 << i);
+//        }
+//    }
+//    ICVirtualHost::GlobalVirtualHost()->SetSystemParameter(ICVirtualHost::SYS_Config_Fixture, machineCount);
     if(ICVirtualHost::GlobalVirtualHost()->IsParamChanged())
     {
         ICVirtualHost::GlobalVirtualHost()->SaveSystemConfig();
@@ -878,4 +887,9 @@ void ICMachineStructPage::on_maximumDisplacementLineEdit_textChanged(const QStri
 {
     Q_UNUSED(arg1);
     intValidator->setBottom(ui->maximumDisplacementLineEdit->TransThisTextToThisInt());
+}
+
+void ICMachineStructPage::on_punch_clicked()
+{
+    ui->content->setCurrentIndex(1);
 }

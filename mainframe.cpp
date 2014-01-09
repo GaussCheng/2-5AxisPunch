@@ -83,6 +83,11 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     axisDefine_(-1),
     registe_timer(new QTimer),
     reboot_timer(new QTimer)
+  #ifdef HC_SK_8_SC
+  ,
+    oldSw_(-1),
+    oldKey_(-1)
+  #endif
 {
     connect(this,
             SIGNAL(LoadMessage(QString)),
@@ -656,6 +661,41 @@ void MainFrame::StatusRefreshed()
         mousePoint_ = QCursor::pos();
         SetHasInput(true);
     }
+
+#ifdef HC_SK_8_SC
+    int currentSw = -1;
+    int currentKey = -1;
+    if(virtualHost->IsInputOn(33/*manual*/))
+    {
+        currentSw = ICKeyboard::KS_ManualStatu;
+    }
+    else if(virtualHost->IsInputOn(37/*auto*/))
+    {
+        currentSw = ICKeyboard::KS_AutoStatu;
+    }
+    else if(virtualHost->IsInputOn(45/*stop*/))
+    {
+        currentSw = ICKeyboard::KS_StopStatu;
+    }
+    else if(virtualHost->IsInputOn(46/*start*/))
+    {
+        currentKey = ICKeyboard::VFB_Run;
+    }
+    else if(virtualHost->IsInputOn(36/*origin*/))
+    {
+        currentKey = ICKeyboard::FB_Origin;
+    }
+    if(oldSw_ != currentSw)
+    {
+        oldSw_ = currentSw;
+        ICKeyboard::Instace()->SetSwitchValue(oldSw_);
+    }
+    if(oldKey_ != currentKey)
+    {
+        oldKey_ = currentKey;
+        ICKeyboard::Instace()->SetKeyValue(oldKey_);
+    }
+#endif
 }
 
 void MainFrame::ShowManualPage()

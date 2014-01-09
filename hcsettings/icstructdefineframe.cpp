@@ -16,7 +16,6 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     ui(new Ui::ICStructDefineFrame)
 {
     ui->setupUi(this);
-    ui->machineCount->setValidator(new QIntValidator(1, 8, this));
 
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
 
@@ -69,19 +68,19 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
 
 //    ui->fixtureSelectBox->setCurrentIndex(host->FixtureDefine());
   //  ui->escapeComboBox->setCurrentIndex(host->EscapeWay());
-    if(host->EscapeWay() == 0)
-        ui->useCheckBox->setChecked(true);
-    if(host->EscapeWay() == 1)
-        ui->noUseCheckBox->setChecked(true);
-    if(ICParametersSave::Instance()->IsAdjustFunctionOn())
+
+    punchButtons_<<ui->punch1<<ui->punch2<<ui->punch3<<ui->punch4<<ui->punch5<<ui->punch6
+                   <<ui->punch7<<ui->punch8<<ui->punch9<<ui->punch10;
+
+    int machineCount = ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::SYS_Config_Fixture).toInt();
+    for(int i = 0; i != punchButtons_.size(); ++i)
     {
-        ui->adjUse->setChecked(true);
+        if(machineCount & ((1 << (i))))
+        {
+            punchButtons_[i]->setChecked(true);
+        }
     }
-    else
-    {
-        ui->adjNoUse->setChecked(true);
-    }
-    ui->machineCount->SetThisIntToThisText(host->SystemParameter(ICVirtualHost::SYS_Config_Fixture).toInt());
+
 }
 
 ICStructDefineFrame::~ICStructDefineFrame()
@@ -163,11 +162,6 @@ void ICStructDefineFrame::retranslateUi_()
 //    ui->outHBox->setItemText(1,tr("Extent"));
 
     ui->fixtureDefineBox_2->setTitle(tr("Other Define"));
-    ui->label_18->setText(tr("Escape"));
-//    ui->escapeComboBox->setItemText(0,tr("Use"));
-//    ui->escapeComboBox->setItemText(1,tr("No Use"));
-    ui->useCheckBox->setText(tr("Use"));
-    ui->noUseCheckBox->setText(tr("No Use"));
     ui->saveButton->setText(tr("Save"));
 }
 
@@ -176,12 +170,21 @@ void ICStructDefineFrame::on_saveButton_clicked()
     ICSetAxisConfigsCommand command;
     ICCommandProcessor* process = ICCommandProcessor::Instance();
     int sum = 0;
+    int machineCount = 0;
+    for(int i = 0; i != punchButtons_.size(); ++i)
+    {
+        if(punchButtons_.at(i)->isChecked())
+        {
+            machineCount |= (1 << i);
+        }
+    }
+    ICVirtualHost::GlobalVirtualHost()->SetSystemParameter(ICVirtualHost::SYS_Config_Fixture, machineCount);
     QVector<uint> dataBuffer(7, 0);
     dataBuffer[0] = 0;
     dataBuffer[1] = axisDefine_;
     dataBuffer[2] = 0;
 //    dataBuffer[3] = ICVirtualHost::GlobalVirtualHost()->FixtureDefineSwitch(ui->fixtureSelectBox->currentIndex());
-    dataBuffer[3] = ui->machineCount->TransThisTextToThisInt();
+    dataBuffer[3] = machineCount;
     for(int i = 0; i != 6; ++i)
     {
         sum += dataBuffer.at(i);
@@ -233,8 +236,6 @@ void ICStructDefineFrame::escapeBoxChange()
 void ICStructDefineFrame::InitEscapeBox()
 {
     buttongroup_ = new QButtonGroup();
-    buttongroup_->addButton(ui->useCheckBox,0);
-    buttongroup_->addButton(ui->noUseCheckBox,1);
     QList<QAbstractButton*> buttons = buttongroup_->buttons();
     for(int i = 0; i != buttons.size(); ++i)
     {

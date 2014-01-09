@@ -6,78 +6,25 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>630</width>
-    <height>454</height>
+    <width>640</width>
+    <height>300</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
-    <widget class="QLabel" name="label_3">
-     <property name="text">
-      <string>Tolerance</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="1">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="toleranceLineEdit"/>
-   </item>
-   <item row="1" column="0">
-    <widget class="QLabel" name="x1ALabel">
-     <property name="text">
-      <string>X1 Acceleration and Deceleration</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="1">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="xADEdit"/>
-   </item>
-   <item row="1" column="5">
-    <widget class="QLabel" name="x1MLabel">
-     <property name="text">
-      <string>X1 Max Speed</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="6">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="xMaxSpeedEdit"/>
-   </item>
-   <item row="2" column="0">
-    <widget class="QLabel" name="y1ALabel">
-     <property name="text">
-      <string>Y1 Acceleration and Deceleration</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="1">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="yADEdit"/>
-   </item>
-   <item row="2" column="5">
-    <widget class="QLabel" name="y1MLabel">
-     <property name="text">
-      <string>Y1 Max Speed</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="6">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="yMaxSpeedEdit"/>
+   <property name="topMargin">
+    <number>2</number>
+   </property>
+   <property name="bottomMargin">
+    <number>2</number>
+   </property>
+   <property name="verticalSpacing">
+    <number>4</number>
+   </property>
+   <item row="3" column="1">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="zADEdit"/>
    </item>
    <item row="3" column="0">
     <widget class="QLabel" name="zALabel">
@@ -89,40 +36,33 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="1">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="zADEdit"/>
-   </item>
-   <item row="3" column="5">
-    <widget class="QLabel" name="zMLabel">
+   <item row="7" column="0">
+    <widget class="QLabel" name="bALabel">
      <property name="text">
-      <string>Z Max Speed</string>
+      <string>B Acceleration and Deceleration</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
     </widget>
    </item>
-   <item row="3" column="6">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="zMaxSpeedEdit"/>
-   </item>
-   <item row="1" column="3">
-    <widget class="QLabel" name="x1SLabel">
+   <item row="2" column="0">
+    <widget class="QLabel" name="y1ALabel">
      <property name="text">
-      <string>s</string>
+      <string>Y1 Acceleration and Deceleration</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
     </widget>
    </item>
-   <item row="2" column="3">
-    <widget class="QLabel" name="y1SLabel">
+   <item row="4" column="5">
+    <widget class="QLabel" name="x2MLabel">
      <property name="text">
-      <string>s</string>
+      <string>X2 Max Speed</string>
      </property>
-    </widget>
-   </item>
-   <item row="3" column="3">
-    <widget class="QLabel" name="zSLabel">
-     <property name="text">
-      <string>s</string>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
     </widget>
    </item>
@@ -139,17 +79,56 @@
      </property>
     </spacer>
    </item>
-   <item row="0" column="3">
-    <widget class="QLabel" name="label_17">
+   <item row="4" column="6">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="x2MaxSpeedEdit"/>
+   </item>
+   <item row="3" column="3">
+    <widget class="QLabel" name="zSLabel">
+     <property name="text">
+      <string>s</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLabel" name="cALabel">
+     <property name="text">
+      <string>C Acceleration and Deceleration</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="y2ADEdit"/>
+   </item>
+   <item row="8" column="6">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="cMaxSpeedEdit"/>
+   </item>
+   <item row="1" column="1">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="xADEdit"/>
+   </item>
+   <item row="1" column="3">
+    <widget class="QLabel" name="x1SLabel">
+     <property name="text">
+      <string>s</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="6">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="zMaxSpeedEdit"/>
+   </item>
+   <item row="0" column="7">
+    <widget class="QLabel" name="label_18">
      <property name="text">
       <string>mm</string>
      </property>
     </widget>
    </item>
-   <item row="4" column="0">
-    <widget class="QLabel" name="x2ALabel">
+   <item row="3" column="5">
+    <widget class="QLabel" name="zMLabel">
      <property name="text">
-      <string>X2 Acceleration and Deceleration</string>
+      <string>Z Max Speed</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -159,18 +138,8 @@
    <item row="4" column="1">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="x2ADEdit"/>
    </item>
-   <item row="4" column="5">
-    <widget class="QLabel" name="x2MLabel">
-     <property name="text">
-      <string>X2 Max Speed</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="6">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="x2MaxSpeedEdit"/>
+   <item row="7" column="1">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="bADEdit"/>
    </item>
    <item row="5" column="0">
     <widget class="QLabel" name="y2ALabel">
@@ -182,26 +151,54 @@
      </property>
     </widget>
    </item>
-   <item row="5" column="1">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="y2ADEdit"/>
-   </item>
-   <item row="5" column="5">
-    <widget class="QLabel" name="y2MLabel">
+   <item row="7" column="3">
+    <widget class="QLabel" name="bSLabel">
      <property name="text">
-      <string>Y2 Max Speed</string>
+      <string>s</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="5">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>Pull Push Distance</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
     </widget>
    </item>
-   <item row="5" column="6">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="y2MaxSpeedEdit"/>
-   </item>
-   <item row="4" column="3">
-    <widget class="QLabel" name="x2SLabel">
+   <item row="8" column="3">
+    <widget class="QLabel" name="cSLabel">
      <property name="text">
       <string>s</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3">
+    <widget class="QLabel" name="label_17">
+     <property name="text">
+      <string>mm</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="5">
+    <widget class="QLabel" name="y1MLabel">
+     <property name="text">
+      <string>Y1 Max Speed</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="5">
+    <widget class="QLabel" name="x1MLabel">
+     <property name="text">
+      <string>X1 Max Speed</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
     </widget>
    </item>
@@ -222,46 +219,25 @@
      </property>
     </widget>
    </item>
-   <item row="6" column="1">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="aADEdit"/>
+   <item row="0" column="1">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="toleranceLineEdit"/>
    </item>
-   <item row="6" column="3">
-    <widget class="QLabel" name="aSLabel">
-     <property name="text">
-      <string>s</string>
-     </property>
-    </widget>
+   <item row="0" column="6">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="pullPushDistance"/>
    </item>
-   <item row="6" column="5">
-    <widget class="QLabel" name="aMLabel">
-     <property name="text">
-      <string>A Max Speed</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-    </widget>
+   <item row="2" column="6">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="yMaxSpeedEdit"/>
    </item>
    <item row="6" column="6">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="aMaxSpeedEdit"/>
    </item>
-   <item row="7" column="0">
-    <widget class="QLabel" name="bALabel">
+   <item row="1" column="0">
+    <widget class="QLabel" name="x1ALabel">
      <property name="text">
-      <string>B Acceleration and Deceleration</string>
+      <string>X1 Acceleration and Deceleration</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="1">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="bADEdit"/>
-   </item>
-   <item row="7" column="3">
-    <widget class="QLabel" name="bSLabel">
-     <property name="text">
-      <string>s</string>
      </property>
     </widget>
    </item>
@@ -275,26 +251,36 @@
      </property>
     </widget>
    </item>
-   <item row="7" column="6">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="bMaxSpeedEdit"/>
-   </item>
-   <item row="8" column="0">
-    <widget class="QLabel" name="cALabel">
+   <item row="4" column="3">
+    <widget class="QLabel" name="x2SLabel">
      <property name="text">
-      <string>C Acceleration and Deceleration</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      <string>s</string>
      </property>
     </widget>
+   </item>
+   <item row="2" column="3">
+    <widget class="QLabel" name="y1SLabel">
+     <property name="text">
+      <string>s</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="6">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="bMaxSpeedEdit"/>
    </item>
    <item row="8" column="1">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="cADEdit"/>
    </item>
-   <item row="8" column="3">
-    <widget class="QLabel" name="cSLabel">
+   <item row="2" column="1">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="yADEdit"/>
+   </item>
+   <item row="6" column="5">
+    <widget class="QLabel" name="aMLabel">
      <property name="text">
-      <string>s</string>
+      <string>A Max Speed</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
     </widget>
    </item>
@@ -308,26 +294,49 @@
      </property>
     </widget>
    </item>
-   <item row="8" column="6">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="cMaxSpeedEdit"/>
-   </item>
-   <item row="0" column="5">
-    <widget class="QLabel" name="label_4">
+   <item row="0" column="0">
+    <widget class="QLabel" name="label_3">
      <property name="text">
-      <string>Pull Push Distance</string>
+      <string>Tolerance</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
     </widget>
    </item>
-   <item row="0" column="6">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="pullPushDistance"/>
+   <item row="6" column="1">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="aADEdit"/>
    </item>
-   <item row="0" column="7">
-    <widget class="QLabel" name="label_18">
+   <item row="5" column="6">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="y2MaxSpeedEdit"/>
+   </item>
+   <item row="5" column="5">
+    <widget class="QLabel" name="y2MLabel">
      <property name="text">
-      <string>mm</string>
+      <string>Y2 Max Speed</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="x2ALabel">
+     <property name="text">
+      <string>X2 Acceleration and Deceleration</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="6">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="xMaxSpeedEdit"/>
+   </item>
+   <item row="6" column="3">
+    <widget class="QLabel" name="aSLabel">
+     <property name="text">
+      <string>s</string>
      </property>
     </widget>
    </item>

@@ -28,6 +28,14 @@ public:
 
     ~ICAxisKeyboard();
 
+private slots:
+    void OnOneHitKeyPressed();
+    void OnConHitKeyPressed();
+    void OnConHitKeyRelease();
+
+
+    void on_close_clicked();
+
 protected:
     void changeEvent(QEvent *e);
     

@@ -41,6 +41,8 @@ public slots:
     void ShowServoAction(int key);
 
 private slots:
+    void OnReadyLoadMold(const QString& name);
+    void OnMoldChanged(const QString& name);
     void on_deleteToolButton_clicked();
     void on_modifyToolButton_clicked();
     void on_insertToolButton_clicked();
@@ -99,6 +101,7 @@ private:
     QWidget * peripheryPage_;
     QWidget * cutPage_;
     QWidget * mPage_;
+    QWidget * statckPage_;
     ICInstructModifyDialog *modifyDialog_;
 
     QString recordPath_;

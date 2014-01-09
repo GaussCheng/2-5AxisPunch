@@ -41,7 +41,6 @@ SOURCES += main.cpp \
     icprogramformatchecker.cpp \
     icconfigformatchecker.cpp \
     simulateknob.cpp \
-    icaxiskeyboard.cpp \
     icutility.cpp
 HEADERS += mainframe.h \
     icaxispositionlabel.h \
@@ -63,10 +62,10 @@ HEADERS += mainframe.h \
     icprogramformatchecker.h \
     icconfigformatchecker.h \
     simulateknob.h \
-    icaxiskeyboard.h \
     icutility.h
 
-SK_SIZE = 8
+SK_SIZE = 5
+#DEFINES += HC_SK_8_SC
 equals(SK_SIZE, 8){
 message("Define 8")
 DEFINES += HC_SK_8
@@ -78,8 +77,7 @@ FORMS    += mainframe_8.ui \
     icactiondialog.ui \
     ichostcomparepage.ui \
     ictipswidget.ui \
-    simulateknob.ui \
-    icaxiskeyboard.ui
+    simulateknob.ui
 }
 equals(SK_SIZE ,5){
 message("Define 5")
@@ -92,8 +90,13 @@ FORMS    += mainframe.ui \
     icactiondialog.ui \
     ichostcomparepage.ui \
     ictipswidget.ui \
-    simulateknob.ui \
-    icaxiskeyboard.ui
+    simulateknob.ui
+}
+
+contains(DEFINES, HC_SK_8_SC){
+HEADERS += icaxiskeyboard.h
+SOURCES += icaxiskeyboard.cpp
+FORMS += icaxiskeyboard.ui
 }
 
 include (./categorypage/categorypage.pri)

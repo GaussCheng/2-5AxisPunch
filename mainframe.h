@@ -148,6 +148,10 @@ private:
     bool isOverTime_;
     QList<QList<QWidget*> > axisWidgets_;
     QList<uint> compareAlarmNums_;
+#ifdef HC_SK_8_SC
+    int oldSw_;
+    int oldKey_;
+#endif
 #if defined(Q_WS_WIN32) || defined(Q_WS_X11)
     SimulateKnob* simulateKnob_;
 #endif

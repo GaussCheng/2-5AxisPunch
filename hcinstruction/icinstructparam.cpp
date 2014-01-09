@@ -160,6 +160,10 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
 //            commandStr += QObject::tr("Limit") + ":" + ICParameterConversion::TransThisIntToThisText(moldItem.DVal(), 2);
 //            return commandStr;
         }
+        else if(action == ICMold::GStack)
+        {
+            commandStr += QString(QObject::tr("Group%1")).arg(moldItem.SVal());
+        }
         else/* if(action == ICMold::GOutY)*/
         {
             ICUserIOInfo info;
@@ -174,7 +178,7 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
             commandStr += info.code + ":" + info.GetLocaleName("zh") + " ";
 //            commandStr += config->GetIOActionLocaleName(action  - ICMold::GOutY, moldItem.SubNum(), moldItem.IFVal(), "zh") + " ";
         }
-        if(action != ICMold::ACTEND)
+        if(action != ICMold::ACTEND && action != ICMold::GStack)
         {
             commandStr += (moldItem.IFVal() == 0) ? "OFF" :"ON ";
         }
@@ -209,6 +213,7 @@ void ICInstructParam::InstallMoldInfo()
     actionGroupMap_.insert(ICMold::GCondition, QObject::tr("Check X"));
     actionGroupMap_.insert(ICMold::GMWait, QObject::tr("Wait M"));
     actionGroupMap_.insert(ICMold::GMOut, QObject::tr("M out"));
+    actionGroupMap_.insert(ICMold::GStack, QObject::tr("Stack"));
 //    actionGroupMap_[ACTMAINUP] = QObject::tr("Main arm up");
 //    actionGroupMap_[ACTMAINDOWN] = QObject::tr("Main arm down");
 //    actionGroupMap_[ACTMAINFORWARD] = QObject::tr("Main arm forward");

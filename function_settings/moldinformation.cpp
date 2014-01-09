@@ -117,11 +117,11 @@ bool MoldInformation::CreateNewSourceFile(const QString & fileName)
 //            items.append(item);
         }
         CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisX1, ICMold::GX, -1);
-        items[items.size() - 1].SetNum(items.size() - 1);
+//        items[items.size() - 1].SetNum(items.size() - 1);
         CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisY1, ICMold::GY, -1);
-        items[items.size() - 1].SetNum(items.size() - 1);
+//        items[items.size() - 1].SetNum(items.size() - 1);
         CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisZ, ICMold::GZ, -1);
-        items[items.size() - 1].SetNum(items.size() - 1);
+//        items[items.size() - 1].SetNum(items.size() - 1);
 //        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisX2, ICMold::GP, -1);
 //        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisY2, ICMold::GQ, -1);
 //        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisA, ICMold::GA, -1);
@@ -132,8 +132,12 @@ bool MoldInformation::CreateNewSourceFile(const QString & fileName)
 //        item.SetNum(1);
 //        items.append(item);
         item.SetAction(ICMold::ACTEND);
-        item.SetNum(items.size() - 1);
+//        item.SetNum(items.size() - 1);
         items.append(item);
+        for(int i = 0; i != items.size(); ++i)
+        {
+            items[i].SetNum(i);
+        }
         ICMold::MoldReSum(items);
         QByteArray toWrite;
         for(int i = 0; i != items.size(); ++i)
@@ -352,6 +356,7 @@ void MoldInformation::on_loadToolButton_clicked()
         QString filePathName = "./records/" + moldName;
         if(QFile::exists(filePathName))
         {
+            emit ReadyToLoad(moldName);
             if(!ICMold::CurrentMold()->ReadMoldFile(filePathName))
             {
                 QMessageBox::critical(this, tr("critical"), tr("Read mold or mold para fail! Please change other mold!"));
@@ -368,6 +373,7 @@ void MoldInformation::on_loadToolButton_clicked()
 
             ICParametersSave::Instance()->SetMoldName(moldName);
             ICProgramHeadFrame::Instance()->SetCurrentMoldName(moldName);
+            emit MoldChanged(moldName);
 //            QMessageBox::information(this, tr("Tips"), tr("Load Mold Successful!"));
         }
         ICVirtualHost::GlobalVirtualHost()->SetFixtureCheck(true);
@@ -642,6 +648,7 @@ void MoldInformation::on_importToolButton_clicked()
             }
             selectedImportItemName_.append(item_text + ".act");
             selectedImportItemName_.append(item_text + ".fnc");
+            selectedImportItemName_.append(item_text + ".sub");
             flagItem = FALSE ;
         }
     }
@@ -672,6 +679,7 @@ void MoldInformation::on_importToolButton_clicked()
         }
         selectedImportItemName_.append(str + ".act");
         selectedImportItemName_.append(str + ".fnc");
+        selectedImportItemName_.append(str + ".sub");
         flagItem_ = FALSE;
     }
     ICTipsWidget tipsWidget(tr("Restoring, please wait..."));

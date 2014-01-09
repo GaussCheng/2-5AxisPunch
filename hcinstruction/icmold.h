@@ -321,6 +321,7 @@ public:
         GOneXOneY,
         GTwoXTwoY,
         GCondition,
+        GStack,
         GMWait = 24,
         GMOut = 25,
         GWait = 26,

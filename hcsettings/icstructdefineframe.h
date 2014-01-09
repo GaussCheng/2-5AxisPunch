@@ -6,6 +6,7 @@
 #include <QButtonGroup>
 
 class QComboBox;
+class QPushButton;
 namespace Ui {
     class ICStructDefineFrame;
 }
@@ -47,6 +48,7 @@ private:
 
     QList<QList<QAbstractButton*> >buttonslist_ ;
     void InitEscapeBox() ;
+    QList<QPushButton*> punchButtons_;
 
 
 };

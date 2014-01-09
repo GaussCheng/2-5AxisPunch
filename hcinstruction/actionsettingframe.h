@@ -63,6 +63,9 @@ private slots:
 #ifdef HC_SK_8
     void on_gzButton_toggled(bool checked);
 #endif
+#ifdef HC_SK_8_SC
+    void on_axisBoard_clicked();
+#endif
     void on_absBox_toggled(bool checked);
 };
 

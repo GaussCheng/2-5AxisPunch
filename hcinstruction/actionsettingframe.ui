@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>470</width>
-    <height>688</height>
+    <height>250</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -136,7 +136,7 @@
       <bool>true</bool>
      </property>
      <attribute name="buttonGroup">
-      <string>buttonGroup</string>
+      <string notr="true">buttonGroup</string>
      </attribute>
     </widget>
    </item>
@@ -400,7 +400,7 @@
       <bool>true</bool>
      </property>
      <attribute name="buttonGroup">
-      <string>buttonGroup</string>
+      <string notr="true">buttonGroup</string>
      </attribute>
     </widget>
    </item>

@@ -159,7 +159,7 @@ QList<ICMoldItem> ICStackEditor::CreateCommandImpl() const
     {
         if(stackGroups.at(i).check->isChecked())
         {
-            item.SetClip(ICMold::ACTLAYOUTON);
+            item.SetAction(ICMold::GStack);
             item.SetDVal(0);
             item.SetSVal(i);
             ret.append(item);

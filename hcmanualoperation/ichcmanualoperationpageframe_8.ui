@@ -78,7 +78,7 @@
          <string>B1</string>
         </property>
         <attribute name="buttonGroup">
-         <string>shortcutGroup</string>
+         <string notr="true">shortcutGroup</string>
         </attribute>
        </widget>
       </item>
@@ -100,7 +100,7 @@
          <string>B1</string>
         </property>
         <attribute name="buttonGroup">
-         <string>shortcutGroup</string>
+         <string notr="true">shortcutGroup</string>
         </attribute>
        </widget>
       </item>
@@ -122,7 +122,7 @@
          <string>B1</string>
         </property>
         <attribute name="buttonGroup">
-         <string>shortcutGroup</string>
+         <string notr="true">shortcutGroup</string>
         </attribute>
        </widget>
       </item>
@@ -144,7 +144,7 @@
          <string>B1</string>
         </property>
         <attribute name="buttonGroup">
-         <string>shortcutGroup</string>
+         <string notr="true">shortcutGroup</string>
         </attribute>
        </widget>
       </item>
@@ -166,7 +166,7 @@
          <string>B1</string>
         </property>
         <attribute name="buttonGroup">
-         <string>shortcutGroup</string>
+         <string notr="true">shortcutGroup</string>
         </attribute>
        </widget>
       </item>
@@ -188,7 +188,7 @@
          <string>B1</string>
         </property>
         <attribute name="buttonGroup">
-         <string>shortcutGroup</string>
+         <string notr="true">shortcutGroup</string>
         </attribute>
        </widget>
       </item>
@@ -210,7 +210,7 @@
          <string>B1</string>
         </property>
         <attribute name="buttonGroup">
-         <string>shortcutGroup</string>
+         <string notr="true">shortcutGroup</string>
         </attribute>
        </widget>
       </item>
@@ -232,7 +232,7 @@
          <string>B1</string>
         </property>
         <attribute name="buttonGroup">
-         <string>shortcutGroup</string>
+         <string notr="true">shortcutGroup</string>
         </attribute>
        </widget>
       </item>
@@ -254,7 +254,7 @@
          <string>B1</string>
         </property>
         <attribute name="buttonGroup">
-         <string>shortcutGroup</string>
+         <string notr="true">shortcutGroup</string>
         </attribute>
        </widget>
       </item>
@@ -276,7 +276,7 @@
          <string>B1</string>
         </property>
         <attribute name="buttonGroup">
-         <string>shortcutGroup</string>
+         <string notr="true">shortcutGroup</string>
         </attribute>
        </widget>
       </item>
@@ -298,7 +298,7 @@
          <string>B1</string>
         </property>
         <attribute name="buttonGroup">
-         <string>shortcutGroup</string>
+         <string notr="true">shortcutGroup</string>
         </attribute>
        </widget>
       </item>
@@ -320,7 +320,7 @@
          <string>B1</string>
         </property>
         <attribute name="buttonGroup">
-         <string>shortcutGroup</string>
+         <string notr="true">shortcutGroup</string>
         </attribute>
        </widget>
       </item>
@@ -638,7 +638,7 @@
          <bool>true</bool>
         </property>
         <attribute name="buttonGroup">
-         <string>buttonGroup</string>
+         <string notr="true">buttonGroup</string>
         </attribute>
        </widget>
       </item>
@@ -663,7 +663,7 @@
          <bool>true</bool>
         </property>
         <attribute name="buttonGroup">
-         <string>buttonGroup</string>
+         <string notr="true">buttonGroup</string>
         </attribute>
        </widget>
       </item>
@@ -688,7 +688,7 @@
          <bool>true</bool>
         </property>
         <attribute name="buttonGroup">
-         <string>buttonGroup</string>
+         <string notr="true">buttonGroup</string>
         </attribute>
        </widget>
       </item>
@@ -713,7 +713,7 @@
          <bool>true</bool>
         </property>
         <attribute name="buttonGroup">
-         <string>buttonGroup</string>
+         <string notr="true">buttonGroup</string>
         </attribute>
        </widget>
       </item>
@@ -738,7 +738,7 @@
          <bool>true</bool>
         </property>
         <attribute name="buttonGroup">
-         <string>buttonGroup</string>
+         <string notr="true">buttonGroup</string>
         </attribute>
        </widget>
       </item>
@@ -763,11 +763,36 @@
          <bool>true</bool>
         </property>
         <attribute name="buttonGroup">
-         <string>buttonGroup</string>
+         <string notr="true">buttonGroup</string>
         </attribute>
        </widget>
       </item>
      </layout>
+    </widget>
+    <widget class="QPushButton" name="axisBoard">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>270</y>
+       <width>100</width>
+       <height>48</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Axis Board</string>
+     </property>
     </widget>
    </widget>
    <widget class="QWidget" name="tab_2">
@@ -775,7 +800,16 @@
      <string>Binary</string>
     </attribute>
     <layout class="QGridLayout" name="gridLayout_3">
-     <property name="margin">
+     <property name="leftMargin">
+      <number>2</number>
+     </property>
+     <property name="topMargin">
+      <number>2</number>
+     </property>
+     <property name="rightMargin">
+      <number>2</number>
+     </property>
+     <property name="bottomMargin">
       <number>2</number>
      </property>
      <property name="spacing">
@@ -799,7 +833,7 @@
         <string>Action-20</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -821,7 +855,7 @@
         <string>Action-21</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -843,7 +877,7 @@
         <string>Action-22</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -865,7 +899,7 @@
         <string>Action-23</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -887,7 +921,7 @@
         <string>Action-24</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -909,7 +943,7 @@
         <string>Action-25</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -931,7 +965,7 @@
         <string>Action-9</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -953,7 +987,7 @@
         <string>Action-10</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -975,7 +1009,7 @@
         <string>Action-11</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -997,7 +1031,7 @@
         <string>Action-1</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1019,7 +1053,7 @@
         <string>Action-2</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1041,7 +1075,7 @@
         <string>Action-4</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1063,7 +1097,7 @@
         <string>Action-5</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1085,7 +1119,7 @@
         <string>Action-3</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1107,7 +1141,7 @@
         <string>Action-12</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1129,7 +1163,7 @@
         <string>Action-13</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1151,7 +1185,7 @@
         <string>Action-26</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1173,7 +1207,7 @@
         <string>Action-6</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1195,7 +1229,7 @@
         <string>Action-7</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1217,7 +1251,7 @@
         <string>Action-14</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1239,7 +1273,7 @@
         <string>Action-8</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1261,7 +1295,7 @@
         <string>Action-17</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1283,7 +1317,7 @@
         <string>Action-18</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1305,7 +1339,7 @@
         <string>Action-19</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1327,7 +1361,7 @@
         <string>Action-30</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1349,7 +1383,7 @@
         <string>Action-15</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1371,7 +1405,7 @@
         <string>Action-16</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1393,7 +1427,7 @@
         <string>Action-27</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1415,7 +1449,7 @@
         <string>Action-28</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1437,7 +1471,7 @@
         <string>Action-29</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1459,7 +1493,7 @@
         <string>Action-31</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1481,7 +1515,7 @@
         <string>Action-32</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -3407,8 +3441,8 @@
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="actionGroup"/>
-  <buttongroup name="buttonGroup"/>
   <buttongroup name="shortcutGroup"/>
+  <buttongroup name="buttonGroup"/>
+  <buttongroup name="actionGroup"/>
  </buttongroups>
 </ui>

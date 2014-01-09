@@ -51,6 +51,9 @@ private slots:
 
 #ifdef HC_SK_8
     void on_zRun_clicked();
+#ifdef HC_SK_8_SC
+    void on_axisBoard_clicked();
+#endif
 #endif
 
     void on_runButton_toggled(bool checked);

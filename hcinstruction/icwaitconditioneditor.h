@@ -3,7 +3,6 @@
 
 #include "icinstructioneditorbase.h"
 #include "icsystemconfig.h"
-class QTableWidgetItem;
 
 namespace Ui {
     class ICWaitConditionEditor;
@@ -23,11 +22,9 @@ protected:
     void SyncStatusImpl(const QList<ICMoldItem> &items) {Q_UNUSED(items);}
 
 private slots:
-    void on_tabWidget_currentChanged(int index);
 
-    void on_euInList_itemChanged(QTableWidgetItem *item);
 
-    void on_euOutList_itemChanged(QTableWidgetItem *item);
+    void on_euInbox_toggled(bool checked);
 
 private:
     Ui::ICWaitConditionEditor *ui;

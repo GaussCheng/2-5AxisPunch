@@ -38,6 +38,8 @@ protected:
     void showEvent(QShowEvent *e);
 
 signals:
+    void ReadyToLoad(QString);
+    void MoldChanged(QString);
 //    void NewFileCreated(const QString & moldName);
 //    void DeleteFile(const QString & moldName);
 //    void LoadFileInfoButtonClicked(const QString & moldName);

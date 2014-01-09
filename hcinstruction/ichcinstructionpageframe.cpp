@@ -56,6 +56,7 @@ ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
     peripheryPage_(NULL),
     cutPage_(NULL),
     mPage_(NULL),
+    statckPage_(NULL),
     recordPath_("./records/"),
     currentAction_(None),
     currentEdit_(0)
@@ -89,6 +90,10 @@ ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
         info = config->YInfo(i);
         fixtureCheckList[i]->setText(info.GetLocaleName("zh") + tr("Check"));
     }
+
+    connect(MoldInformation::Instance(),
+            SIGNAL(MoldChanged(QString)),
+            SLOT(OnMoldChanged(QString)));
     //    ui->conditionsToolButton->hide();
 }
 
@@ -216,6 +221,14 @@ void ICHCInstructionPageFrame::OptionButtonClicked()
         optionButtonToPage_.insert(ui->waitMButton, mPage_);
         ui->settingStackedWidget->addWidget(mPage_);
     }
+#ifdef HC_SK_8
+    else if(statckPage_ == NULL && ui->stackButton == optionButton)
+    {
+        statckPage_ = new ICStackEditor();
+        optionButtonToPage_.insert(ui->stackButton, statckPage_);
+        ui->settingStackedWidget->addWidget(statckPage_);
+    }
+#endif
     ui->settingStackedWidget->setCurrentWidget(optionButtonToPage_.value(optionButton));
 }
 
@@ -288,6 +301,11 @@ void ICHCInstructionPageFrame::InitSignal()
     connect(ui->waitMButton,
             SIGNAL(clicked()),
             SLOT(OptionButtonClicked()));
+#ifdef HC_SK_8
+    connect(ui->stackButton,
+            SIGNAL(clicked()),
+            SLOT(OptionButtonClicked()));
+#endif
 }
 
 void ICHCInstructionPageFrame::InitParameter()
@@ -943,4 +961,16 @@ void ICHCInstructionPageFrame::on_mainButton_clicked()
 void ICHCInstructionPageFrame::on_feedButton_clicked()
 {
     OnProgramChanged(8, "");
+}
+
+void ICHCInstructionPageFrame::OnReadyLoadMold(const QString &name)
+{
+//    UpdateHostParam();
+}
+
+void ICHCInstructionPageFrame::OnMoldChanged(const QString &name)
+{
+    UpdateHostParam();
+//    programList_ = ICMold::CurrentMold()->ToUIItems();
+//    programList_ = ICMold::MoldItemToUIItem(ICMacroSubroutine::Instance()->SubRoutine(currentEdit_ - 1));
 }

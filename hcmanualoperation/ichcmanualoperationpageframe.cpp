@@ -16,6 +16,10 @@
 #include "icvirtualkey.h"
 #include <QMessageBox>
 
+#ifdef HC_SK_8_SC
+#include "icaxiskeyboard.h"
+#endif
+
 static int currentStep  = 0;
 ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     QFrame(parent),
@@ -425,6 +429,13 @@ void ICHCManualOperationPageFrame::on_zRun_clicked()
 //    cmd.SetIFVal(1);
     ICCommandProcessor::Instance()->ExecuteCommand(cmd);
 }
+
+#ifdef HC_SK_8_SC
+void ICHCManualOperationPageFrame::on_axisBoard_clicked()
+{
+    ICAxisKeyboard::Instance()->show();
+}
+#endif
 
 #endif
 

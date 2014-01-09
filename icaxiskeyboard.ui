@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>534</width>
+    <height>256</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QPushButton" name="yPluse">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>210</y>
+     <x>179</x>
+     <y>190</y>
      <width>80</width>
      <height>48</height>
     </rect>
@@ -41,8 +41,8 @@
   <widget class="QPushButton" name="xMInus">
    <property name="geometry">
     <rect>
-     <x>9</x>
-     <y>125</y>
+     <x>28</x>
+     <y>105</y>
      <width>80</width>
      <height>48</height>
     </rect>
@@ -66,8 +66,8 @@
   <widget class="QPushButton" name="xPluse">
    <property name="geometry">
     <rect>
-     <x>311</x>
-     <y>125</y>
+     <x>330</x>
+     <y>105</y>
      <width>80</width>
      <height>48</height>
     </rect>
@@ -88,21 +88,11 @@
     <string>X+</string>
    </property>
   </widget>
-  <widget class="ICLineEditWithVirtualNumericKeypad" name="speedEdit">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>140</y>
-     <width>108</width>
-     <height>22</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QPushButton" name="zMinus">
    <property name="geometry">
     <rect>
-     <x>9</x>
-     <y>40</y>
+     <x>29</x>
+     <y>20</y>
      <width>80</width>
      <height>48</height>
     </rect>
@@ -126,8 +116,8 @@
   <widget class="QPushButton" name="zPluse">
    <property name="geometry">
     <rect>
-     <x>311</x>
-     <y>210</y>
+     <x>330</x>
+     <y>190</y>
      <width>80</width>
      <height>48</height>
     </rect>
@@ -151,8 +141,8 @@
   <widget class="QPushButton" name="yMinus">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>40</y>
+     <x>179</x>
+     <y>20</y>
      <width>80</width>
      <height>48</height>
     </rect>
@@ -173,14 +163,82 @@
     <string>Y-</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="close">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>10</y>
+     <width>80</width>
+     <height>48</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="upButton">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>106</y>
+     <width>80</width>
+     <height>48</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Up</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="donwButton">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>190</y>
+     <width>80</width>
+     <height>48</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Down</string>
+   </property>
+  </widget>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>ICLineEditWithVirtualNumericKeypad</class>
-   <extends>QLineEdit</extends>
-   <header>iclineeditwithvirtualnumerickeypad.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>
