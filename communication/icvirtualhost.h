@@ -249,10 +249,10 @@ public:
     {
         Status,
         Step,
-        Sub0,
-        Sub1,
-        Sub2,
-        Sub3,
+        Input2,
+        Input3,
+        Output2,
+        Output3,
         ActL,
         ActH,
         ClipL,
@@ -683,8 +683,12 @@ private:
 
     uint input0Bits_;
     uint input1Bits_;
+    uint input2Bits_;
+    uint input3Bits_;
     uint output0Bits_;
     uint output1Bits_;
+    uint output2Bits_;
+    uint output3Bits_;
     uint euInputBits_;
     uint euOutputBits_;
     uint clipLBits_;
@@ -793,12 +797,17 @@ inline bool ICVirtualHost::IsInputOn(int pos) const
     else if(pos < 48)
     {
         uint temp = 1 << (pos - 32);
-        return euInputBits_ & temp;
+        return input2Bits_ & temp;
     }
     else if(pos < 64)
     {
-        uint temp = 1 << (pos - 40);
-        return output1Bits_ & temp;
+        uint temp = 1 << (pos - 48);
+        return input3Bits_ & temp;
+    }
+    else if(pos < 80)
+    {
+        uint temp = 1 << (pos - 64);
+        return euInputBits_ & temp;
     }
     return false;
 }
@@ -818,17 +827,17 @@ inline bool ICVirtualHost::IsOutputOn(int pos) const
     else if(pos < 48)
     {
         uint temp = 1 << (pos - 32);
-        return euOutputBits_ & temp;
+        return output2Bits_ & temp;
+    }
+    else if(pos < 64)
+    {
+        uint temp = 1 << (pos - 48);
+        return output3Bits_ & temp;
     }
     else if(pos < 80)
     {
         uint temp = 1 << (pos - 64);
-        return clipLBits_ & temp;
-    }
-    else if(pos < 96)
-    {
-        uint temp = 1 << (pos - 80);
-        return clipHBits_ & temp;
+        return euOutputBits_ & temp;
     }
     return false;
 }

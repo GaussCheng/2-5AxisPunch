@@ -355,18 +355,18 @@ void ICVirtualHost::RefreshStatus()
                 emit MoldNumChanged(moldNum);
             }
             int tmpStep = CurrentStep();
-            int queriedSubStep[] = {HostStatus(Sub0).toInt(),
-                                    HostStatus(Sub1).toInt(),
-                                    HostStatus(Sub2).toInt(),
-                                    HostStatus(Sub3).toInt()};
-            uint8_t tmpSubStep[] = {queriedSubStep[0] & 0x00FF,
-                                    queriedSubStep[0] >> 8,
-                                    queriedSubStep[1] & 0x00FF,
-                                    queriedSubStep[1] >> 8,
-                                    queriedSubStep[2] & 0x00FF,
-                                    queriedSubStep[2] >> 8,
-                                    queriedSubStep[3] & 0x00FF,
-                                    queriedSubStep[3] >> 8};
+//            int queriedSubStep[] = {HostStatus(Sub0).toInt(),
+//                                    HostStatus(Sub1).toInt(),
+//                                    HostStatus(Sub2).toInt(),
+//                                    HostStatus(Sub3).toInt()};
+//            uint8_t tmpSubStep[] = {queriedSubStep[0] & 0x00FF,
+//                                    queriedSubStep[0] >> 8,
+//                                    queriedSubStep[1] & 0x00FF,
+//                                    queriedSubStep[1] >> 8,
+//                                    queriedSubStep[2] & 0x00FF,
+//                                    queriedSubStep[2] >> 8,
+//                                    queriedSubStep[3] & 0x00FF,
+//                                    queriedSubStep[3] >> 8};
 
             if(tmpStep != oldStep_)
             {
@@ -375,11 +375,11 @@ void ICVirtualHost::RefreshStatus()
                 emit StepChanged(tmpStep);
             }
 
-            if(memcmp(oldSubStep, tmpSubStep, 8) != 0)
-            {
-                memcpy(oldSubStep, tmpSubStep, 8);
-                emit SubStepChanged(tmpSubStep);
-            }
+//            if(memcmp(oldSubStep, tmpSubStep, 8) != 0)
+//            {
+//                memcpy(oldSubStep, tmpSubStep, 8);
+//                emit SubStepChanged(tmpSubStep);
+//            }
 
 
             emit StatusRefreshed();
