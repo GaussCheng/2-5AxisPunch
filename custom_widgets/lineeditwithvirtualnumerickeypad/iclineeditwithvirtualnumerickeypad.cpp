@@ -9,7 +9,7 @@
 #include "icparameterconversion.h"
 
 #include <QDebug>
-#define SCREEN_WIDTH 640
+#define SCREEN_WIDTH 600
 #define SCREEN_HEIGHT 460
 
 //public:
@@ -53,7 +53,7 @@ void ICLineEditWithVirtualNumericKeypad::mousePressEvent(QMouseEvent *e)
     }
     else
     {
-        toMove.setX(300);
+        toMove.setX(230);
     }
     if(topLeft.y() + 48 + virtualNumericKeypadDialog_->height() <= SCREEN_HEIGHT)
     {

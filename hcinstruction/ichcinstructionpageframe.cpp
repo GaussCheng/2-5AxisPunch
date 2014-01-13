@@ -71,7 +71,15 @@ ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
                 <<ui->check17<<ui->check18<<ui->check19<<ui->check20
                <<ui->check21<<ui->check22<<ui->check23<<ui->check24
               <<ui->check25<<ui->check26<<ui->check27<<ui->check28
-             <<ui->check29<<ui->check30<<ui->check31;
+             <<ui->check29<<ui->check30<<ui->check31<<ui->check32
+               <<ui->check33<<ui->check34<<ui->check35<<ui->check36
+                 <<ui->check37<<ui->check38<<ui->check39<<ui->check40
+                   <<ui->check41<<ui->check42<<ui->check43<<ui->check44
+                     <<ui->check45<<ui->check46<<ui->check47<<ui->check48
+                       <<ui->check49<<ui->check50<<ui->check51<<ui->check52
+                         <<ui->check53<<ui->check54<<ui->check55<<ui->check56
+                           <<ui->check57<<ui->check58<<ui->check59<<ui->check60
+                             <<ui->check61<<ui->check62<<ui->check63;
     //    ui->otherButton->hide();
 
     ui->pneumaticButton->hide();
@@ -87,7 +95,7 @@ ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
     ICUserIOInfo info;
     for(int i = 0; i != fs; ++i)
     {
-        info = config->YInfo(i);
+        info = config->XInfo(i);
         fixtureCheckList[i]->setText(info.GetLocaleName("zh") + tr("Check"));
     }
 
@@ -124,6 +132,8 @@ void ICHCInstructionPageFrame::hideEvent(QHideEvent *e)
     modifyDialog_->hide();
     int c1 = 0;
     int c2 = 0;
+    int c3 = 0;
+    int c4 = 0;
     for(int i = 0; i != 16; ++i)
     {
         if(fixtureCheckList.at(i)->isChecked())
@@ -135,16 +145,55 @@ void ICHCInstructionPageFrame::hideEvent(QHideEvent *e)
     {
         if(fixtureCheckList.at(i)->isChecked())
         {
-            c2 |= (1 << i);
+            c2 |= (1 << (i - 16));
+        }
+    }
+    for(int i = 32; i != 48; ++i)
+    {
+        if(fixtureCheckList.at(i)->isChecked())
+        {
+            c3 |= (1 << (i - 32));
+        }
+    }
+    for(int i = 48; i != 64; ++i)
+    {
+        if(fixtureCheckList.at(i)->isChecked())
+        {
+            c4 |= (1 << (i - 48));
         }
     }
 
     ICMold* cm = ICMold::CurrentMold();
     if(cm == NULL) return;
 
-    if(cm->MoldParam(ICMold::check1) != c1) cm->SetMoldParam(ICMold::check1, c1);
-    if(cm->MoldParam(ICMold::check2) != c2) cm->SetMoldParam(ICMold::check2, c2);
+    bool isCmChanged = false;
+
+    if(cm->MoldParam(ICMold::check1) != c1)
+    {
+        cm->SetMoldParam(ICMold::check1, c1);
+        isCmChanged = true;
+    }
+    if(cm->MoldParam(ICMold::check2) != c2)
+    {
+        cm->SetMoldParam(ICMold::check2, c2);
+        isCmChanged = true;
+    }
+
+    if(cm->MoldParam(ICMold::check3) != c3)
+    {
+        cm->SetMoldParam(ICMold::check3, c3);
+        isCmChanged = true;
+    }
+    if(cm->MoldParam(ICMold::check4) != c4)
+    {
+        cm->SetMoldParam(ICMold::check4, c4);
+        isCmChanged = true;
+    }
     if(SaveCurrentEdit() == true)
+    {
+        ICVirtualHost::GlobalVirtualHost()->ReConfigure();
+    }
+    if(isCmChanged)
     {
         ICVirtualHost::GlobalVirtualHost()->ReConfigure();
     }
@@ -242,6 +291,8 @@ void ICHCInstructionPageFrame::InitInterface()
     modifyDialog_ = new ICInstructModifyDialog(this);
     int c1 = ICMold::CurrentMold()->MoldParam(ICMold::check1);
     int c2 = ICMold::CurrentMold()->MoldParam(ICMold::check2);
+    int c3 = ICMold::CurrentMold()->MoldParam(ICMold::check3);
+    int c4 = ICMold::CurrentMold()->MoldParam(ICMold::check4);
     for(int i = 0; i != 16; ++i)
     {
         if(c1 & (1 <<i))
@@ -251,7 +302,21 @@ void ICHCInstructionPageFrame::InitInterface()
     }
     for(int i = 16; i != 32; ++i)
     {
-        if(c2 & (1 <<i))
+        if(c2 & (1 <<(i - 16)))
+        {
+            fixtureCheckList[i]->setChecked(true);
+        }
+    }
+    for(int i = 32; i != 48; ++i)
+    {
+        if(c3 & (1 <<(i - 32)))
+        {
+            fixtureCheckList[i]->setChecked(true);
+        }
+    }
+    for(int i = 48; i != 64; ++i)
+    {
+        if(c4 & (1 <<(i - 48)))
         {
             fixtureCheckList[i]->setChecked(true);
         }

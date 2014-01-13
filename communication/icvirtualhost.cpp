@@ -337,8 +337,12 @@ void ICVirtualHost::RefreshStatus()
         freshCount_ = (freshCount_ + 1) % 2;
         input0Bits_ = statusMap_.value(Input0).toUInt();
         input1Bits_ = statusMap_.value(Input1).toUInt();
+        input2Bits_ = statusMap_.value(Input2).toUInt();
+        input3Bits_ = statusMap_.value(Input3).toUInt();
         output0Bits_ = statusMap_.value(Output0).toUInt();
         output1Bits_ = statusMap_.value(Output1).toUInt();
+        output2Bits_ = statusMap_.value(Output2).toUInt();
+        output3Bits_ = statusMap_.value(Output3).toUInt();
         euInputBits_ = statusMap_.value(EuIn).toUInt();
         euOutputBits_ = statusMap_.value(EuOut).toUInt();
         clipLBits_ = statusMap_.value(ClipL).toUInt();

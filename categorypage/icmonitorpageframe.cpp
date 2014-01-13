@@ -85,14 +85,14 @@ void ICMonitorPageFrame::Init_()
 //    points.append(ICIOPoint("X046", tr("Next Cycle App"), 30));
 //    points.append(ICIOPoint("X047", tr("Mold Close App"), 31));
 
-    points.append(ICIOPoint("X050", tr("X1 Servo Alarm"), 48));
-    points.append(ICIOPoint("X051", tr("Y1 Servo Alarm"), 49));
-    points.append(ICIOPoint("X052", tr("Z Servo Alarm"), 50));
-    points.append(ICIOPoint("X053", tr("X2 Servo Alarm"), 51));
-    points.append(ICIOPoint("X054", tr("Y2 Servo Alarm"), 52));
-    points.append(ICIOPoint("X055", tr("A Servo Alarm"), 53));
-    points.append(ICIOPoint("X056", tr("B Servo Alarm"), 54));
-    points.append(ICIOPoint("X057", tr("C Servo Alarm"), 55));
+//    points.append(ICIOPoint("X050", tr("X1 Servo Alarm"), 48));
+//    points.append(ICIOPoint("X051", tr("Y1 Servo Alarm"), 49));
+//    points.append(ICIOPoint("X052", tr("Z Servo Alarm"), 50));
+//    points.append(ICIOPoint("X053", tr("X2 Servo Alarm"), 51));
+//    points.append(ICIOPoint("X054", tr("Y2 Servo Alarm"), 52));
+//    points.append(ICIOPoint("X055", tr("A Servo Alarm"), 53));
+//    points.append(ICIOPoint("X056", tr("B Servo Alarm"), 54));
+//    points.append(ICIOPoint("X057", tr("C Servo Alarm"), 55));
     ui->icMonitorFrameleft->AddPage(otherPageLeft_, tr("Other"));
     ui->icMonitorFrameRight->AddPage(otherPageRight_, tr("Other"));
     otherPageLeft_->BindingPointsToInputPage(points);
@@ -150,22 +150,22 @@ void ICMonitorPageFrame::Init_()
 //    const int euXSize = euXInfos.size();
 //    for(int i = 0; i != euXSize; ++i)
 //    {
-    points.append(ICIOPoint(euXInfos.at(0).code, euXInfos.at(0).GetLocaleName("zh"), 32));
-    points.append(ICIOPoint(euXInfos.at(1).code, euXInfos.at(1).GetLocaleName("zh"), 35));
-    points.append(ICIOPoint(euXInfos.at(2).code, euXInfos.at(2).GetLocaleName("zh"), 34));
-    points.append(ICIOPoint(euXInfos.at(3).code, euXInfos.at(3).GetLocaleName("zh"), 39));
-    points.append(ICIOPoint(euXInfos.at(4).code, euXInfos.at(4).GetLocaleName("zh"), 38));
-    points.append(ICIOPoint(euXInfos.at(5).code, euXInfos.at(5).GetLocaleName("zh"), 36));
-    points.append(ICIOPoint(euXInfos.at(6).code, euXInfos.at(6).GetLocaleName("zh"), 33));
-    points.append(ICIOPoint(euXInfos.at(7).code, euXInfos.at(7).GetLocaleName("zh"), 37));
-    points.append(ICIOPoint(euXInfos.at(8).code, euXInfos.at(8).GetLocaleName("zh"), 46));
-    points.append(ICIOPoint(euXInfos.at(9).code, euXInfos.at(9).GetLocaleName("zh"), 45));
-    points.append(ICIOPoint(euXInfos.at(10).code, euXInfos.at(10).GetLocaleName("zh"), 40));
-    points.append(ICIOPoint(euXInfos.at(11).code, euXInfos.at(11).GetLocaleName("zh"), 41));
-    points.append(ICIOPoint(euXInfos.at(12).code, euXInfos.at(12).GetLocaleName("zh"), 42));
-    points.append(ICIOPoint(euXInfos.at(13).code, euXInfos.at(13).GetLocaleName("zh"), 43));
-    points.append(ICIOPoint(euXInfos.at(14).code, euXInfos.at(14).GetLocaleName("zh"), 44));
-    points.append(ICIOPoint(euXInfos.at(15).code, euXInfos.at(15).GetLocaleName("zh"), 47));
+    points.append(ICIOPoint(euXInfos.at(0).code, euXInfos.at(0).GetLocaleName("zh"), 64));
+    points.append(ICIOPoint(euXInfos.at(1).code, euXInfos.at(1).GetLocaleName("zh"), 67));
+    points.append(ICIOPoint(euXInfos.at(2).code, euXInfos.at(2).GetLocaleName("zh"), 66));
+    points.append(ICIOPoint(euXInfos.at(3).code, euXInfos.at(3).GetLocaleName("zh"), 71));
+    points.append(ICIOPoint(euXInfos.at(4).code, euXInfos.at(4).GetLocaleName("zh"), 70));
+    points.append(ICIOPoint(euXInfos.at(5).code, euXInfos.at(5).GetLocaleName("zh"), 68));
+    points.append(ICIOPoint(euXInfos.at(6).code, euXInfos.at(6).GetLocaleName("zh"), 65));
+    points.append(ICIOPoint(euXInfos.at(7).code, euXInfos.at(7).GetLocaleName("zh"), 69));
+    points.append(ICIOPoint(euXInfos.at(8).code, euXInfos.at(8).GetLocaleName("zh"), 78));
+    points.append(ICIOPoint(euXInfos.at(9).code, euXInfos.at(9).GetLocaleName("zh"), 77));
+    points.append(ICIOPoint(euXInfos.at(10).code, euXInfos.at(10).GetLocaleName("zh"), 72));
+    points.append(ICIOPoint(euXInfos.at(11).code, euXInfos.at(11).GetLocaleName("zh"), 73));
+    points.append(ICIOPoint(euXInfos.at(12).code, euXInfos.at(12).GetLocaleName("zh"), 74));
+    points.append(ICIOPoint(euXInfos.at(13).code, euXInfos.at(13).GetLocaleName("zh"), 75));
+    points.append(ICIOPoint(euXInfos.at(14).code, euXInfos.at(14).GetLocaleName("zh"), 76));
+    points.append(ICIOPoint(euXInfos.at(15).code, euXInfos.at(15).GetLocaleName("zh"), 79));
 
 //    }
 //    points.append(ICIOPoint("", tr("Mold Opened"), 35));
@@ -196,22 +196,22 @@ void ICMonitorPageFrame::Init_()
 //    const int euYSize = euYInfos.size();
 //    for(int i = 0; i != euYSize; ++i)
 //    {
-    points.append(ICIOPoint(euYInfos.at(0).code, euYInfos.at(0).GetLocaleName("zh"), 32));
-    points.append(ICIOPoint(euYInfos.at(1).code, euYInfos.at(1).GetLocaleName("zh"), 38));
-    points.append(ICIOPoint(euYInfos.at(2).code, euYInfos.at(2).GetLocaleName("zh"), 39));
-    points.append(ICIOPoint(euYInfos.at(3).code, euYInfos.at(3).GetLocaleName("zh"), 33));
-    points.append(ICIOPoint(euYInfos.at(4).code, euYInfos.at(4).GetLocaleName("zh"), 37));
-    points.append(ICIOPoint(euYInfos.at(5).code, euYInfos.at(5).GetLocaleName("zh"), 40));
-    points.append(ICIOPoint(euYInfos.at(6).code, euYInfos.at(6).GetLocaleName("zh"), 46));
-    points.append(ICIOPoint(euYInfos.at(7).code, euYInfos.at(7).GetLocaleName("zh"), 34));
-    points.append(ICIOPoint(euYInfos.at(8).code, euYInfos.at(8).GetLocaleName("zh"), 35));
-    points.append(ICIOPoint(euYInfos.at(9).code, euYInfos.at(9).GetLocaleName("zh"), 36));
-    points.append(ICIOPoint(euYInfos.at(10).code, euYInfos.at(10).GetLocaleName("zh"), 44));
-    points.append(ICIOPoint(euYInfos.at(11).code, euYInfos.at(11).GetLocaleName("zh"), 41));
-    points.append(ICIOPoint(euYInfos.at(12).code, euYInfos.at(12).GetLocaleName("zh"), 42));
-    points.append(ICIOPoint(euYInfos.at(13).code, euYInfos.at(13).GetLocaleName("zh"), 43));
-    points.append(ICIOPoint(euYInfos.at(14).code, euYInfos.at(14).GetLocaleName("zh"), 45));
-    points.append(ICIOPoint(euYInfos.at(15).code, euYInfos.at(15).GetLocaleName("zh"), 47));
+    points.append(ICIOPoint(euYInfos.at(0).code, euYInfos.at(0).GetLocaleName("zh"), 64));
+    points.append(ICIOPoint(euYInfos.at(1).code, euYInfos.at(1).GetLocaleName("zh"), 70));
+    points.append(ICIOPoint(euYInfos.at(2).code, euYInfos.at(2).GetLocaleName("zh"), 71));
+    points.append(ICIOPoint(euYInfos.at(3).code, euYInfos.at(3).GetLocaleName("zh"), 65));
+    points.append(ICIOPoint(euYInfos.at(4).code, euYInfos.at(4).GetLocaleName("zh"), 69));
+    points.append(ICIOPoint(euYInfos.at(5).code, euYInfos.at(5).GetLocaleName("zh"), 72));
+    points.append(ICIOPoint(euYInfos.at(6).code, euYInfos.at(6).GetLocaleName("zh"), 78));
+    points.append(ICIOPoint(euYInfos.at(7).code, euYInfos.at(7).GetLocaleName("zh"), 66));
+    points.append(ICIOPoint(euYInfos.at(8).code, euYInfos.at(8).GetLocaleName("zh"), 67));
+    points.append(ICIOPoint(euYInfos.at(9).code, euYInfos.at(9).GetLocaleName("zh"), 68));
+    points.append(ICIOPoint(euYInfos.at(10).code, euYInfos.at(10).GetLocaleName("zh"), 76));
+    points.append(ICIOPoint(euYInfos.at(11).code, euYInfos.at(11).GetLocaleName("zh"), 73));
+    points.append(ICIOPoint(euYInfos.at(12).code, euYInfos.at(12).GetLocaleName("zh"), 74));
+    points.append(ICIOPoint(euYInfos.at(13).code, euYInfos.at(13).GetLocaleName("zh"), 75));
+    points.append(ICIOPoint(euYInfos.at(14).code, euYInfos.at(14).GetLocaleName("zh"), 77));
+    points.append(ICIOPoint(euYInfos.at(15).code, euYInfos.at(15).GetLocaleName("zh"), 79));
 
 
 
@@ -254,7 +254,7 @@ void ICMonitorPageFrame::Init_()
     <<"M46"<<"M47";
     for(int i = 0; i != items.size(); ++i)
     {
-        points.append(ICIOPoint(items.at(i), items.at(i), i + 64));
+        points.append(ICIOPoint(items.at(i), items.at(i), i + 80));
     }
     mPageLeft_->BindingPointsToOutpuPage(points);
     mPageRight_->BindingPointsToOutpuPage(points);

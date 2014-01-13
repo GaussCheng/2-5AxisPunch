@@ -436,10 +436,10 @@ void MainFrame::StatusRefreshed()
 //    }
 
     newLedFlags_ = 0;
-    newLedFlags_ |= (virtualHost->IsInputOn(40)? 8 : 0);
-    newLedFlags_ |= (virtualHost->IsInputOn(32)? 4 : 0);
-    newLedFlags_ |= (virtualHost->IsOutputOn(32)? 2 : 0);
-    newLedFlags_ |= (virtualHost->IsOutputOn(33)? 1 : 0);
+    newLedFlags_ |= (virtualHost->IsInputOn(72)? 8 : 0);
+    newLedFlags_ |= (virtualHost->IsInputOn(64)? 4 : 0);
+    newLedFlags_ |= (virtualHost->IsOutputOn(64)? 2 : 0);
+    newLedFlags_ |= (virtualHost->IsOutputOn(65)? 1 : 0);
     if(newLedFlags_ != ledFlags_)
     {
         ledFlags_ = newLedFlags_;
@@ -458,7 +458,7 @@ void MainFrame::StatusRefreshed()
     {
         hostCompareDialog_->show();
     }
-    ICProgramHeadFrame::Instance()->ChangePunchOrigin(virtualHost->IsInputOn(40));
+    ICProgramHeadFrame::Instance()->ChangePunchOrigin(virtualHost->IsInputOn(72));
     int hintCode = virtualHost->HintNum();
     if(alarmString->PriorAlarmNum() != static_cast<int>(errCode_) || hintCode != oldHintCode_)
     {

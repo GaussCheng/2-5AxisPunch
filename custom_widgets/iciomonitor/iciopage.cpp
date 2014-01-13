@@ -7,8 +7,8 @@
 
 ICIOPage::ICIOPage(QWidget *parent) :
     QWidget(parent),
-    inputs_(64, false),
-    outputs_(96, false),
+    inputs_(128, false),
+    outputs_(128, false),
     offPixmap_(":/resource/ledgray(16).png"),
     inputOnPixmap_(":/resource/ledred(16).png"),
     outputOnPixmap_(":/resource/ledgreen(16).png")

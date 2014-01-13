@@ -839,6 +839,16 @@ inline bool ICVirtualHost::IsOutputOn(int pos) const
         uint temp = 1 << (pos - 64);
         return euOutputBits_ & temp;
     }
+    else if(pos < 96)
+    {
+        uint temp = 1 << (pos - 80);
+        return clipLBits_ & temp;
+    }
+    else if(pos < 128)
+    {
+        uint temp = 1 << (pos - 90);
+        return clipHBits_ & temp;
+    }
     return false;
 }
 
