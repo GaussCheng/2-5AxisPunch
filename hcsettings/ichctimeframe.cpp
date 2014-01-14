@@ -12,17 +12,21 @@ ICHCTimeFrame::ICHCTimeFrame(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->mainArmForwardEdit->hide();
+//    ui->mainArmForwardEdit->hide();
 
-    ui->mainArmBackwardEdit->hide();
+//    ui->mainArmBackwardEdit->hide();
 
     ui->secondaryArmDownLineEdit->hide();
 
     ui->secondaryArmUpLineEdit->hide();
     ui->secondayGoBackwardLineEdit->hide();
     ui->secondayGoForwardLineEdit->hide();
-    ui->mainArmUpEdit->hide();
-    ui->mainArmDownEdit->hide();
+//    ui->mainArmUpEdit->hide();
+//    ui->mainArmDownEdit->hide();
+    ui->horizontal2LineEdit->hide();
+    ui->vertical2LineEdit->hide();
+    ui->horizontalLineEdit->hide();
+    ui->verticalineEdit->hide();
 
     InitInterFace();
 }
