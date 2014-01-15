@@ -114,17 +114,8 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="1">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="mainArmForwardEdit"/>
-   </item>
    <item row="4" column="1">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="verticalineEdit"/>
-   </item>
-   <item row="1" column="1">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="mainArmBackwardEdit"/>
-   </item>
-   <item row="2" column="1">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="mainArmUpEdit"/>
    </item>
    <item row="4" column="4">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="vertical2LineEdit"/>
@@ -132,11 +123,20 @@
    <item row="5" column="1">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="horizontal2LineEdit"/>
    </item>
-   <item row="3" column="1">
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="mainArmDownEdit"/>
-   </item>
    <item row="5" column="4">
     <widget class="ICLineEditWithVirtualNumericKeypad" name="horizontalLineEdit"/>
+   </item>
+   <item row="0" column="1">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="mainArmUpEdit"/>
+   </item>
+   <item row="1" column="1">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="mainArmDownEdit"/>
+   </item>
+   <item row="3" column="1">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="mainArmBackwardEdit"/>
+   </item>
+   <item row="2" column="1">
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="mainArmForwardEdit"/>
    </item>
   </layout>
  </widget>

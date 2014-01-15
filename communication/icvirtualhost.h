@@ -136,14 +136,14 @@ public:
         SYS_C_Origin,
 #endif
 
-        ACT_GC,
-        ACT_GX,			//1
-        ACT_GY,			//2
-        ACT_GZ,			//3
-        ACT_GP,			//4
-        ACT_GQ,			//5
-        ACT_GA,			//6
-        ACT_GB,			//7
+//        ACT_GC,
+//        ACT_GX,			//1
+//        ACT_GY,			//2
+//        ACT_GZ,			//3
+//        ACT_GP,			//4
+//        ACT_GQ,			//5
+//        ACT_GA,			//6
+//        ACT_GB,			//7
 
         ACT_MainUp,		//8
         ACT_MainDown,	//9
