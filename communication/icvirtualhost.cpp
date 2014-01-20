@@ -169,6 +169,7 @@ void ICVirtualHost::RefreshStatus()
     static ICCommandProcessor* commandProcess = ICCommandProcessor::Instance();
     static ICKeyboardHandler* keyboardHandler = ICKeyboardHandler::Instance();
     static ICKeyboard* keyboard = ICKeyboard::Instace();
+
     //    emit StepChanged(rand() % 10);
     if(flag_)
     {

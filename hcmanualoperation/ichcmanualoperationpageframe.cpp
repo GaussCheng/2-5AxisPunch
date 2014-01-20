@@ -40,6 +40,22 @@ ICHCManualOperationPageFrame::~ICHCManualOperationPageFrame()
 
 void ICHCManualOperationPageFrame::showEvent(QShowEvent *e)
 {
+    int currentTuneType = ICKeyboard::Instace()->CurrentTuneSpeedType();
+    if(currentTuneType < 0)
+    {
+        ui->xSpeed->setChecked(false);
+        ui->ySpeed->setChecked(false);
+    }
+    else if(currentTuneType == 0)
+    {
+        ui->ySpeed->setChecked(false);
+        ui->xSpeed->setChecked(true);
+    }
+    else
+    {
+        ui->xSpeed->setChecked(false);
+        ui->ySpeed->setChecked(true);
+    }
     QFrame::showEvent(e);
     ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnManual, 0);
     currentStep = 0;
@@ -280,7 +296,9 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
     if(pos != oldS)
     {
         oldS = pos;
-        ui->speed->setText(QString::number(pos));
+//        ui->speed->setText(QString::number(pos));
+        ui->xSpeedLabel->setText(QString::number(pos >> 8));
+        ui->ySpeedLabel->setText(QString::number(pos & 0xFF));
     }
     bool isSingleRunFinished = host->HostStatus(ICVirtualHost::ActL).toInt() == 0;
     ICMold* mold = ICMold::CurrentMold();
@@ -488,4 +506,34 @@ void ICHCManualOperationPageFrame::on_singleButton_clicked()
         ui->singleButton->setEnabled(false);
     }
 
+}
+
+void ICHCManualOperationPageFrame::on_xSpeed_toggled(bool checked)
+{
+    if(checked)
+    {
+        ICKeyboard::Instace()->SetCurrentTuneSpeedType(0);
+        ui->ySpeed->blockSignals(true);
+        ui->ySpeed->setChecked(false);
+        ui->ySpeed->blockSignals(false);
+    }
+    else
+    {
+        ICKeyboard::Instace()->SetCurrentTuneSpeedType(-1);
+    }
+}
+
+void ICHCManualOperationPageFrame::on_ySpeed_toggled(bool checked)
+{
+    if(checked)
+    {
+        ICKeyboard::Instace()->SetCurrentTuneSpeedType(1);
+        ui->xSpeed->blockSignals(true);
+        ui->xSpeed->setChecked(false);
+        ui->xSpeed->blockSignals(false);
+    }
+    else
+    {
+        ICKeyboard::Instace()->SetCurrentTuneSpeedType(-1);
+    }
 }

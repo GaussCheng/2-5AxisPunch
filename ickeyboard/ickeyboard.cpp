@@ -30,7 +30,8 @@ ICKeyboard::ICKeyboard(QObject *parent) :
     isTaken_(true),
     isSwitchTaken_(true),
     isPressed_(false),
-    currentSwitchValue_(KS_StopStatu)
+    currentSwitchValue_(KS_StopStatu),
+    currentTuneSpeedType_(-1)
 {
     pimpl_.reset(new ICKeyboardPrivate());
     //    connect(&pimpl_->knobReceiver_,

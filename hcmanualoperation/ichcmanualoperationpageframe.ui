@@ -78,7 +78,7 @@
          <string>B1</string>
         </property>
         <attribute name="buttonGroup">
-         <string>shortcutGroup</string>
+         <string notr="true">shortcutGroup</string>
         </attribute>
        </widget>
       </item>
@@ -100,7 +100,7 @@
          <string>B1</string>
         </property>
         <attribute name="buttonGroup">
-         <string>shortcutGroup</string>
+         <string notr="true">shortcutGroup</string>
         </attribute>
        </widget>
       </item>
@@ -122,7 +122,7 @@
          <string>B1</string>
         </property>
         <attribute name="buttonGroup">
-         <string>shortcutGroup</string>
+         <string notr="true">shortcutGroup</string>
         </attribute>
        </widget>
       </item>
@@ -144,7 +144,7 @@
          <string>B1</string>
         </property>
         <attribute name="buttonGroup">
-         <string>shortcutGroup</string>
+         <string notr="true">shortcutGroup</string>
         </attribute>
        </widget>
       </item>
@@ -166,7 +166,7 @@
          <string>B1</string>
         </property>
         <attribute name="buttonGroup">
-         <string>shortcutGroup</string>
+         <string notr="true">shortcutGroup</string>
         </attribute>
        </widget>
       </item>
@@ -188,7 +188,7 @@
          <string>B1</string>
         </property>
         <attribute name="buttonGroup">
-         <string>shortcutGroup</string>
+         <string notr="true">shortcutGroup</string>
         </attribute>
        </widget>
       </item>
@@ -485,7 +485,7 @@
          <bool>true</bool>
         </property>
         <attribute name="buttonGroup">
-         <string>buttonGroup</string>
+         <string notr="true">buttonGroup</string>
         </attribute>
        </widget>
       </item>
@@ -510,7 +510,7 @@
          <bool>true</bool>
         </property>
         <attribute name="buttonGroup">
-         <string>buttonGroup</string>
+         <string notr="true">buttonGroup</string>
         </attribute>
        </widget>
       </item>
@@ -535,7 +535,7 @@
          <bool>true</bool>
         </property>
         <attribute name="buttonGroup">
-         <string>buttonGroup</string>
+         <string notr="true">buttonGroup</string>
         </attribute>
        </widget>
       </item>
@@ -560,7 +560,7 @@
          <bool>true</bool>
         </property>
         <attribute name="buttonGroup">
-         <string>buttonGroup</string>
+         <string notr="true">buttonGroup</string>
         </attribute>
        </widget>
       </item>
@@ -585,7 +585,7 @@
          <bool>true</bool>
         </property>
         <attribute name="buttonGroup">
-         <string>buttonGroup</string>
+         <string notr="true">buttonGroup</string>
         </attribute>
        </widget>
       </item>
@@ -610,7 +610,7 @@
          <bool>true</bool>
         </property>
         <attribute name="buttonGroup">
-         <string>buttonGroup</string>
+         <string notr="true">buttonGroup</string>
         </attribute>
        </widget>
       </item>
@@ -622,7 +622,16 @@
      <string>Binary</string>
     </attribute>
     <layout class="QGridLayout" name="gridLayout_3">
-     <property name="margin">
+     <property name="leftMargin">
+      <number>2</number>
+     </property>
+     <property name="topMargin">
+      <number>2</number>
+     </property>
+     <property name="rightMargin">
+      <number>2</number>
+     </property>
+     <property name="bottomMargin">
       <number>2</number>
      </property>
      <property name="spacing">
@@ -646,7 +655,7 @@
         <string>Action-20</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -668,7 +677,7 @@
         <string>Action-21</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -690,7 +699,7 @@
         <string>Action-22</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -712,7 +721,7 @@
         <string>Action-23</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -734,7 +743,7 @@
         <string>Action-24</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -756,7 +765,7 @@
         <string>Action-25</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -778,7 +787,7 @@
         <string>Action-9</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -800,7 +809,7 @@
         <string>Action-10</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -822,7 +831,7 @@
         <string>Action-11</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -844,7 +853,7 @@
         <string>Action-1</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -866,7 +875,7 @@
         <string>Action-2</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -888,7 +897,7 @@
         <string>Action-4</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -910,7 +919,7 @@
         <string>Action-5</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -932,7 +941,7 @@
         <string>Action-3</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -954,7 +963,7 @@
         <string>Action-12</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -976,7 +985,7 @@
         <string>Action-13</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -998,7 +1007,7 @@
         <string>Action-26</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1020,7 +1029,7 @@
         <string>Action-6</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1042,7 +1051,7 @@
         <string>Action-7</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1064,7 +1073,7 @@
         <string>Action-14</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1086,7 +1095,7 @@
         <string>Action-8</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1108,7 +1117,7 @@
         <string>Action-17</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1130,7 +1139,7 @@
         <string>Action-18</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1152,7 +1161,7 @@
         <string>Action-19</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1174,7 +1183,7 @@
         <string>Action-30</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1196,7 +1205,7 @@
         <string>Action-15</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1218,7 +1227,7 @@
         <string>Action-16</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1240,7 +1249,7 @@
         <string>Action-27</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1262,7 +1271,7 @@
         <string>Action-28</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1284,7 +1293,7 @@
         <string>Action-29</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1306,7 +1315,7 @@
         <string>Action-31</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1328,7 +1337,7 @@
         <string>Action-32</string>
        </property>
        <attribute name="buttonGroup">
-        <string>actionGroup</string>
+        <string notr="true">actionGroup</string>
        </attribute>
       </widget>
      </item>
@@ -1348,33 +1357,14 @@
     </layout>
    </widget>
   </widget>
-  <widget class="QLabel" name="label_8">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>340</y>
-     <width>44</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Speed:</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="xCurrentPos">
    <property name="geometry">
     <rect>
-     <x>181</x>
+     <x>30</x>
      <y>340</y>
-     <width>80</width>
+     <width>60</width>
      <height>21</height>
     </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>0</height>
-    </size>
    </property>
    <property name="palette">
     <palette>
@@ -1807,7 +1797,7 @@
   <widget class="QLabel" name="label_11">
    <property name="geometry">
     <rect>
-     <x>305</x>
+     <x>170</x>
      <y>340</y>
      <width>16</width>
      <height>21</height>
@@ -1820,7 +1810,7 @@
   <widget class="QLabel" name="label_10">
    <property name="geometry">
     <rect>
-     <x>409</x>
+     <x>250</x>
      <y>340</y>
      <width>31</width>
      <height>21</height>
@@ -1833,7 +1823,7 @@
   <widget class="QLabel" name="label_9">
    <property name="geometry">
     <rect>
-     <x>267</x>
+     <x>90</x>
      <y>340</y>
      <width>31</width>
      <height>21</height>
@@ -1846,17 +1836,11 @@
   <widget class="QLabel" name="yCurrentPos">
    <property name="geometry">
     <rect>
-     <x>323</x>
+     <x>190</x>
      <y>340</y>
-     <width>80</width>
+     <width>60</width>
      <height>21</height>
     </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>0</height>
-    </size>
    </property>
    <property name="palette">
     <palette>
@@ -2289,7 +2273,7 @@
   <widget class="QLabel" name="label_12">
    <property name="geometry">
     <rect>
-     <x>146</x>
+     <x>150</x>
      <y>340</y>
      <width>16</width>
      <height>21</height>
@@ -2302,7 +2286,7 @@
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>162</x>
+     <x>10</x>
      <y>340</y>
      <width>16</width>
      <height>21</height>
@@ -2312,20 +2296,14 @@
     <string>X:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="speed">
+  <widget class="QLabel" name="xSpeedLabel">
    <property name="geometry">
     <rect>
-     <x>60</x>
+     <x>120</x>
      <y>340</y>
-     <width>80</width>
+     <width>30</width>
      <height>21</height>
     </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>80</width>
-     <height>0</height>
-    </size>
    </property>
    <property name="palette">
     <palette>
@@ -2758,7 +2736,7 @@
   <widget class="QPushButton" name="productClear">
    <property name="geometry">
     <rect>
-     <x>520</x>
+     <x>530</x>
      <y>335</y>
      <width>100</width>
      <height>31</height>
@@ -2774,6 +2752,500 @@
     <string>P.Clear</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="xSpeed">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>335</y>
+     <width>61</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="text">
+    <string>X.Speed</string>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ySpeed">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>335</y>
+     <width>61</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="text">
+    <string>Y.Speed</string>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_13">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>340</y>
+     <width>16</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>%</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="ySpeedLabel">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>340</y>
+     <width>30</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="palette">
+    <palette>
+     <active>
+      <colorrole role="WindowText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Button">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>89</red>
+         <green>88</green>
+         <blue>88</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Light">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>134</red>
+         <green>132</green>
+         <blue>132</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Midlight">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>111</red>
+         <green>110</green>
+         <blue>110</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Dark">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>44</red>
+         <green>44</green>
+         <blue>44</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Mid">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>59</red>
+         <green>58</green>
+         <blue>58</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Text">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="BrightText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="ButtonText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>89</red>
+         <green>88</green>
+         <blue>88</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Shadow">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="AlternateBase">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>44</red>
+         <green>44</green>
+         <blue>44</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="ToolTipBase">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>220</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="ToolTipText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="WindowText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Button">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>89</red>
+         <green>88</green>
+         <blue>88</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Light">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>134</red>
+         <green>132</green>
+         <blue>132</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Midlight">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>111</red>
+         <green>110</green>
+         <blue>110</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Dark">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>44</red>
+         <green>44</green>
+         <blue>44</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Mid">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>59</red>
+         <green>58</green>
+         <blue>58</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Text">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="BrightText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="ButtonText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>89</red>
+         <green>88</green>
+         <blue>88</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Shadow">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="AlternateBase">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>44</red>
+         <green>44</green>
+         <blue>44</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="ToolTipBase">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>220</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="ToolTipText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="WindowText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>44</red>
+         <green>44</green>
+         <blue>44</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Button">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>89</red>
+         <green>88</green>
+         <blue>88</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Light">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>134</red>
+         <green>132</green>
+         <blue>132</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Midlight">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>111</red>
+         <green>110</green>
+         <blue>110</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Dark">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>44</red>
+         <green>44</green>
+         <blue>44</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Mid">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>59</red>
+         <green>58</green>
+         <blue>58</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Text">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>44</red>
+         <green>44</green>
+         <blue>44</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="BrightText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="ButtonText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>44</red>
+         <green>44</green>
+         <blue>44</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>89</red>
+         <green>88</green>
+         <blue>88</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>89</red>
+         <green>88</green>
+         <blue>88</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Shadow">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="AlternateBase">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>89</red>
+         <green>88</green>
+         <blue>88</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="ToolTipBase">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>220</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="ToolTipText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::PlainText</enum>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
  </widget>
  <customwidgets>
   <customwidget>
@@ -2785,8 +3257,8 @@
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="actionGroup"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="actionGroup"/>
   <buttongroup name="shortcutGroup"/>
  </buttongroups>
 </ui>

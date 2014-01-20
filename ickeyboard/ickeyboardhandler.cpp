@@ -137,6 +137,8 @@ void ICKeyboardHandler::Keypressed(int keyValue)
     if( keyValue == ICKeyboard::FB_Down ||
             keyValue == ICKeyboard::FB_Up)
     {
+        int currentTuneSpeedType = ICKeyboard::Instace()->CurrentTuneSpeedType();
+        if(currentTuneSpeedType < 0) return;
         if(status == ICVirtualHost::Auto)
         {
             ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
@@ -145,30 +147,52 @@ void ICKeyboardHandler::Keypressed(int keyValue)
                 return;
             }
             int currentSpeed =  virtualHost->GlobalSpeed();
+            int xSpeed = currentSpeed >> 8;
+            int ySpeed = currentSpeed & 0xFF;
             int currentSpeedStep = OperatingRatioSetDialog::Instance()->CurrentGlobalSpeedStep();
             if(keyValue == ICKeyboard::FB_Down)
             {
-                currentSpeed -= currentSpeedStep;
+                if(currentTuneSpeedType == 0) xSpeed -=currentSpeedStep;
+                else ySpeed -= currentSpeedStep;
             }
             else
             {
-                currentSpeed += currentSpeedStep;
+                if(currentTuneSpeedType == 0) xSpeed += currentSpeedStep;
+                else ySpeed += currentSpeedStep;
             }
-            if(currentSpeed < 10)
+            if(xSpeed < 10)
             {
-                currentSpeed = 10;
+                xSpeed = 10;
             }
-            if(currentSpeed > 200)
+            if(ySpeed < 10)
             {
-                currentSpeed = 200;
+                ySpeed = 10;
             }
+            if(xSpeed > 200)
+            {
+                xSpeed = 200;
+            }
+            if(ySpeed > 200)
+            {
+                ySpeed = 200;
+            }
+
+            currentSpeed = (xSpeed << 8) | ySpeed;
 
             host->SetGlobalSpeed(currentSpeed);
             host->SetTuneSpeed(true);
         }
         else
         {
-            commandProcessor->ExecuteVirtualKeyCommand(virtualKeyMap_.value(keyValue));
+            if(currentTuneSpeedType == 0)
+            {
+                commandProcessor->ExecuteVirtualKeyCommand(virtualKeyMap_.value(keyValue));
+            }
+            else if(currentTuneSpeedType == 1)
+            {
+                if(keyValue == ICKeyboard::FB_Up) commandProcessor->ExecuteVirtualKeyCommand(IC::VKEY_Y_SPEED_UP);
+                else commandProcessor->ExecuteVirtualKeyCommand(IC::VKEY_Y_SPEED_DOWN);
+            }
         }
         return;
     }

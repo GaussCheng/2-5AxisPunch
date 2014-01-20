@@ -64,6 +64,10 @@ private slots:
 
     void on_singleButton_clicked();
 
+    void on_xSpeed_toggled(bool checked);
+
+    void on_ySpeed_toggled(bool checked);
+
 private:
     Ui::ICHCManualOperationPageFrame *ui;
     int timerID_;

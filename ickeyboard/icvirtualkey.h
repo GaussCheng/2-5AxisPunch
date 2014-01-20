@@ -53,9 +53,11 @@ enum ICVirtualKey
     VKEY_JOG3,      //Forward-
     VKEY_JOG4,      //Up+
     VKEY_PRODUCT_CLEAR,
-    VKEY_JOG5,      //Up-
-    VKEY_JOG6,      //Down+
-    VKEY_JOG7,      //Down-
+    VKEY_Y_SPEED_UP,
+    VKEY_Y_SPEED_DOWN,
+//    VKEY_JOG5,      //Up-
+//    VKEY_JOG6,      //Down+
+//    VKEY_JOG7,      //Down-
 
 
     VKEY_RESERVE1_ON = 0xF0,
@@ -102,7 +104,7 @@ enum ICVirtualKey
     VKEY_CLIP5OFF,
     VKEY_CLIP6OFF,
     VKEY_CLIP7OFF,
-    VKEY_CLIP8OFF
+    VKEY_CLIP8OFF,
 };
 
 }//namespace IC{

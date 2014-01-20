@@ -199,6 +199,10 @@ public:
     void SetPressed(bool isPressed) { isPressed_ = isPressed;}
 
     int CurrentSwitchStatus() const;
+
+    int CurrentTuneSpeedType() const { return currentTuneSpeedType_;}
+    void SetCurrentTuneSpeedType(int type) { currentTuneSpeedType_ = type;}
+
 Q_SIGNALS:
     //    void Keypressed(int);
     //    void KnobSwitched(int);
@@ -218,6 +222,7 @@ private:
     int currentSwitchValue_;
     mutable QMutex keyMutex_;
     mutable QMutex switchMutex_;
+    int currentTuneSpeedType_;
 
 };
 

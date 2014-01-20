@@ -92,6 +92,22 @@ void ICHCProgramMonitorFrame::changeEvent(QEvent *e)
 void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
 {
     //    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
+    int currentTuneType = ICKeyboard::Instace()->CurrentTuneSpeedType();
+    if(currentTuneType < 0)
+    {
+        ui->xSpeed->setChecked(false);
+        ui->ySpeed->setChecked(false);
+    }
+    else if(currentTuneType == 0)
+    {
+        ui->ySpeed->setChecked(false);
+        ui->xSpeed->setChecked(true);
+    }
+    else
+    {
+        ui->xSpeed->setChecked(false);
+        ui->ySpeed->setChecked(true);
+    }
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     ICVirtualHost::GlobalVirtualHost()->SetSpeedEnable(false);
     ui->speedEnableButton->setIcon(switchOff_);
@@ -295,7 +311,8 @@ void ICHCProgramMonitorFrame::StatusRefreshed()
     if(pos != oldS)
     {
         oldS = pos;
-        ui->speed->setText(QString::number(pos));
+        ui->xSpeedLabel->setText(QString::number(pos >> 8));
+        ui->ySpeedLabel->setText(QString::number(pos & 0xFF));
     }
 
 //    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
@@ -833,3 +850,34 @@ void ICHCProgramMonitorFrame::on_cycle_toggled(bool checked)
         ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_F6);
     }
 }
+
+void ICHCProgramMonitorFrame::on_xSpeed_toggled(bool checked)
+{
+    if(checked)
+    {
+        ICKeyboard::Instace()->SetCurrentTuneSpeedType(0);
+        ui->ySpeed->blockSignals(true);
+        ui->ySpeed->setChecked(false);
+        ui->ySpeed->blockSignals(false);
+    }
+    else
+    {
+        ICKeyboard::Instace()->SetCurrentTuneSpeedType(-1);
+    }
+}
+
+void ICHCProgramMonitorFrame::on_ySpeed_toggled(bool checked)
+{
+    if(checked)
+    {
+        ICKeyboard::Instace()->SetCurrentTuneSpeedType(1);
+        ui->xSpeed->blockSignals(true);
+        ui->xSpeed->setChecked(false);
+        ui->xSpeed->blockSignals(false);
+    }
+    else
+    {
+        ICKeyboard::Instace()->SetCurrentTuneSpeedType(-1);
+    }
+}
+
