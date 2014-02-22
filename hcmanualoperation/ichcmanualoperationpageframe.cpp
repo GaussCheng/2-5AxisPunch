@@ -238,9 +238,14 @@ void ICHCManualOperationPageFrame::InitInterface()
     {
         tmp = ui->shortcutGroup->id(shortcuts.at(i));
         shortcutSignalMapper_.setMapping(shortcuts.at(i), tmp);
+        releaseShortcutSignalMapper_.setMapping(shortcuts.at(i), tmp);
         connect(shortcuts.at(i),
-                SIGNAL(clicked()),
+                SIGNAL(pressed()),
                 &shortcutSignalMapper_,
+                SLOT(map()));
+        connect(shortcuts.at(i),
+                SIGNAL(released()),
+                &releaseShortcutSignalMapper_,
                 SLOT(map()));
 //        qDebug()<<config->GetIOActionLocaleName(tmp);
         name = config->GetIOActionShortcutLocaleNameByID(tmp);
@@ -256,6 +261,9 @@ void ICHCManualOperationPageFrame::InitInterface()
     connect(&shortcutSignalMapper_,
             SIGNAL(mapped(int)),
             SLOT(OnShortcutTriggered(int)));
+    connect(&releaseShortcutSignalMapper_,
+            SIGNAL(mapped(int)),
+            SLOT(OnShortcutReleased(int)));
 }
 
 void ICHCManualOperationPageFrame::InitSignal()
@@ -374,6 +382,25 @@ void ICHCManualOperationPageFrame::OnShortcutTriggered(int id)
     cmd.SetGM(ICMold::GOutY + info.type);
     cmd.SetPoint(info.pointNum);
     cmd.SetIFVal(info.dir);
+    if(!ICCommandProcessor::Instance()->ExecuteCommand(cmd).toBool())
+    {
+        QMessageBox::information(this,
+                                 "tr",
+                                 "err");
+    }
+}
+
+void ICHCManualOperationPageFrame::OnShortcutReleased(int id)
+{
+    ICUserDefineConfigSPTR config = ICUserDefineConfig::Instance();
+    ICUserActionInfo info = config->GetActionShortcutByID(id);
+    if(info.type != 0) return;
+    if(info.pointNum != 10 && info.pointNum != 11) return;
+    ICManualRun cmd;
+    cmd.SetSlave(1);
+    cmd.SetGM(ICMold::GOutY + info.type);
+    cmd.SetPoint(info.pointNum);
+    cmd.SetIFVal(0);
     if(!ICCommandProcessor::Instance()->ExecuteCommand(cmd).toBool())
     {
         QMessageBox::information(this,

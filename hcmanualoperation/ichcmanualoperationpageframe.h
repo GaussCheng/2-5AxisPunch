@@ -42,6 +42,7 @@ private slots:
     void OnPointSelected(int id);
     void OnActionTriggered(int id);
     void OnShortcutTriggered(int id);
+    void OnShortcutReleased(int id);
 
     void on_setButton_clicked();
 
@@ -75,6 +76,7 @@ private:
     QSignalMapper buttonSignalMapper_;
     QSignalMapper actionSignalMapper_;
     QSignalMapper shortcutSignalMapper_;
+    QSignalMapper releaseShortcutSignalMapper_;
     QPushButton* nullButton_;
     AxisModifyDialog* modifyDialog_;
 };

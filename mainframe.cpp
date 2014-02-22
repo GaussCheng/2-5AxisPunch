@@ -187,7 +187,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
 //    axisWidgets_.append(QList<QWidget*>()<<ui->x1Label<<ui->x1mmLabel<<ui->xPosLabel);
 //    axisWidgets_.append(QList<QWidget*>()<<ui->y1Label<<ui->y1mmLabel<<ui->yPosLabel);
 //    axisWidgets_.append(QList<QWidget*>()<<ui->zLabel<<ui->zmmLabel<<ui->zPosLabel);
-    compareAlarmNums_<<134<<135<<136<<137<<182<<183<<234<<235<<236<<330<<332<<333;
+    compareAlarmNums_<<210<<211<<212<<213<<214<<215<<216<<217<<218;
     hostCompareDialog_ = new ICHostComparePage(this);
     UpdateAxisDefine_();
     ICKeyboard::Instace()->Receive();
