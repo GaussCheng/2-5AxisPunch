@@ -56,6 +56,10 @@ private slots:
 
     void on_ySpeed_toggled(bool checked);
 
+#ifdef HC_SK_8
+    void on_zSpeed_toggled(bool checked);
+#endif
+
 private:
     void InitSignal();
     void UpdateUIProgramList_();

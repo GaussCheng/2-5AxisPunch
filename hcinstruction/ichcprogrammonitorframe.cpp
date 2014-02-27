@@ -283,7 +283,7 @@ void ICHCProgramMonitorFrame::SetProduct(int product)
 static int16_t oldX = -1;
 static int16_t oldY = -1;
 static int16_t oldZ = -1;
-static int16_t oldS = -1;
+static int oldS = -1;
 void ICHCProgramMonitorFrame::StatusRefreshed()
 {
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
@@ -307,12 +307,15 @@ void ICHCProgramMonitorFrame::StatusRefreshed()
         ui->zCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
     }
 #endif
-    pos = host->GlobalSpeed();
-    if(pos != oldS)
+    int speed = host->GlobalSpeed();
+    if(speed != oldS)
     {
         oldS = pos;
-        ui->xSpeedLabel->setText(QString::number(pos >> 8));
+        ui->xSpeedLabel->setText(QString::number((pos >> 8) & 0xFF));
         ui->ySpeedLabel->setText(QString::number(pos & 0xFF));
+#ifdef HC_SK_8
+        ui->zSpeedLabel->setText(QString::number((pos >> 16) & 0xFF));
+#endif
     }
 
 //    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
@@ -859,6 +862,11 @@ void ICHCProgramMonitorFrame::on_xSpeed_toggled(bool checked)
         ui->ySpeed->blockSignals(true);
         ui->ySpeed->setChecked(false);
         ui->ySpeed->blockSignals(false);
+#ifdef HC_SK_8
+        ui->zSpeed->blockSignals(true);
+        ui->zSpeed->setChecked(false);
+        ui->zSpeed->blockSignals(false);
+#endif
     }
     else
     {
@@ -874,10 +882,35 @@ void ICHCProgramMonitorFrame::on_ySpeed_toggled(bool checked)
         ui->xSpeed->blockSignals(true);
         ui->xSpeed->setChecked(false);
         ui->xSpeed->blockSignals(false);
+#ifdef HC_SK_8
+        ui->zSpeed->blockSignals(true);
+        ui->zSpeed->setChecked(false);
+        ui->zSpeed->blockSignals(false);
+#endif
     }
     else
     {
         ICKeyboard::Instace()->SetCurrentTuneSpeedType(-1);
     }
 }
+
+#ifdef HC_SK_8
+void ICHCProgramMonitorFrame::on_zSpeed_toggled(bool checked)
+{
+    if(checked)
+    {
+        ICKeyboard::Instace()->SetCurrentTuneSpeedType(2);
+        ui->xSpeed->blockSignals(true);
+        ui->xSpeed->setChecked(false);
+        ui->xSpeed->blockSignals(false);
+        ui->ySpeed->blockSignals(true);
+        ui->ySpeed->setChecked(false);
+        ui->ySpeed->blockSignals(false);
+    }
+    else
+    {
+        ICKeyboard::Instace()->SetCurrentTuneSpeedType(-1);
+    }
+}
+#endif
 

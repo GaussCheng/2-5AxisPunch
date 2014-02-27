@@ -147,18 +147,27 @@ void ICKeyboardHandler::Keypressed(int keyValue)
                 return;
             }
             int currentSpeed =  virtualHost->GlobalSpeed();
-            int xSpeed = currentSpeed >> 8;
+            int xSpeed = currentSpeed >> 8 & 0x000000FF;
             int ySpeed = currentSpeed & 0xFF;
+#ifdef HC_SK_8
+            int zSpeed = (currentSpeed >> 16) & 0xFF;
+#endif
             int currentSpeedStep = OperatingRatioSetDialog::Instance()->CurrentGlobalSpeedStep();
             if(keyValue == ICKeyboard::FB_Down)
             {
                 if(currentTuneSpeedType == 0) xSpeed -=currentSpeedStep;
-                else ySpeed -= currentSpeedStep;
+                else if(currentTuneSpeedType == 1)ySpeed -= currentSpeedStep;
+#ifdef HC_SK_8
+                else if(currentTuneSpeedType == 2) zSpeed -= currentSpeedStep;
+#endif
             }
             else
             {
-                if(currentTuneSpeedType == 0) xSpeed += currentSpeedStep;
-                else ySpeed += currentSpeedStep;
+                if(currentTuneSpeedType == 0) xSpeed +=currentSpeedStep;
+                else if(currentTuneSpeedType == 1)ySpeed += currentSpeedStep;
+#ifdef HC_SK_8
+                else if(currentTuneSpeedType == 2) zSpeed += currentSpeedStep;
+#endif
             }
             if(xSpeed < 10)
             {
@@ -168,16 +177,25 @@ void ICKeyboardHandler::Keypressed(int keyValue)
             {
                 ySpeed = 10;
             }
-            if(xSpeed > 200)
+#ifdef HC_SK_8
+            if(zSpeed < 10) zSpeed = 10;
+#endif
+            if(xSpeed > 100)
             {
-                xSpeed = 200;
+                xSpeed = 100;
             }
-            if(ySpeed > 200)
+            if(ySpeed > 100)
             {
-                ySpeed = 200;
+                ySpeed = 100;
             }
+#ifdef HC_SK_8
+            if(zSpeed > 100) zSpeed = 100;
+#endif
 
             currentSpeed = (xSpeed << 8) | ySpeed;
+#ifdef HC_SK_8
+            currentSpeed |= (zSpeed << 16);
+#endif
 
             host->SetGlobalSpeed(currentSpeed);
             host->SetTuneSpeed(true);
@@ -192,6 +210,11 @@ void ICKeyboardHandler::Keypressed(int keyValue)
             {
                 if(keyValue == ICKeyboard::FB_Up) commandProcessor->ExecuteVirtualKeyCommand(IC::VKEY_Y_SPEED_UP);
                 else commandProcessor->ExecuteVirtualKeyCommand(IC::VKEY_Y_SPEED_DOWN);
+            }
+            else if(currentTuneSpeedType == 2)
+            {
+                if(keyValue == ICKeyboard::FB_Up) commandProcessor->ExecuteVirtualKeyCommand(IC::VKEY_Z_SPEED_UP);
+                else commandProcessor->ExecuteVirtualKeyCommand(IC::VKEY_Z_SPEED_DOWN);
             }
         }
         return;

@@ -3257,8 +3257,8 @@
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="buttonGroup"/>
   <buttongroup name="actionGroup"/>
   <buttongroup name="shortcutGroup"/>
+  <buttongroup name="buttonGroup"/>
  </buttongroups>
 </ui>

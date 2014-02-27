@@ -595,7 +595,8 @@ public:
     int HintNum() const { return (statusMap_.value(ErrCode).toUInt() >> 12);}
     bool IsOrigined() const { return (statusMap_.value(Status).toUInt() >> 12) == 1;}
 
-    int GlobalSpeed() const {return systemParamMap_.value(SYS_Global_Speed).toInt();}
+    int GlobalSpeed() const {return systemParamMap_.value(SYS_Global_Speed).toInt() |
+             (systemParamMap_.value(SYS_RsvReadMold).toInt() << 16);}
     void SetGlobalSpeed(int speed);
 
     void SaveSystemConfig();
@@ -734,9 +735,13 @@ inline void ICVirtualHost::ReConfigure()
 
 inline void ICVirtualHost::SetGlobalSpeed(int speed)
 {
-    if(ICCommandProcessor::Instance()->ModifySysParam(SYS_Global_Speed, speed))
+    if(ICCommandProcessor::Instance()->ModifySysParam(SYS_Global_Speed, speed & 0x0000FFFF))
     {
-        systemParamMap_.insert(SYS_Global_Speed, speed);
+        systemParamMap_.insert(SYS_Global_Speed, speed & 0x0000FFFF);
+        if(ICCommandProcessor::Instance()->ModifyMoldParam(SYS_RsvReadMold, speed >> 16))
+        {
+            systemParamMap_.insert(SYS_RsvReadMold,(speed >> 16) & 0x0000FFFF );
+        }
         SaveSystemConfig();
     }
 }

@@ -20,17 +20,24 @@
 #include "icaxiskeyboard.h"
 #endif
 
+QPalette yOnPalette;
+QPalette oriPalette;
 static int currentStep  = 0;
 ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     QFrame(parent),
     ui(new Ui::ICHCManualOperationPageFrame)
 {
     ui->setupUi(this);
+#ifndef HC_SK_8_SC
+    ui->axisBoard->hide();
+#endif
 //    ui->xCurrentPos->setAttribute(Qt::WA_PaintOnScreen);
 //    ui->yCurrentPos->setAttribute(Qt::WA_PaintOnScreen);
 //    ui->zCurrentPos->setAttribute(Qt::WA_PaintOnScreen);
     InitInterface();
     modifyDialog_ = new AxisModifyDialog();
+    yOnPalette.setBrush(QPalette::Button, QBrush(Qt::blue));
+    oriPalette = ui->b1->palette();
 }
 
 ICHCManualOperationPageFrame::~ICHCManualOperationPageFrame()
@@ -274,7 +281,7 @@ void ICHCManualOperationPageFrame::InitSignal()
 static int16_t oldX = -1;
 static int16_t oldY = -1;
 static int16_t oldZ = -1;
-static int16_t oldS = -1;
+static int oldS = -1;
 //static bool isSingleRun = false;
 static int oldStep = -1;
 void ICHCManualOperationPageFrame::StatusRefreshed()
@@ -300,13 +307,16 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
         ui->zCurrentPos->setText(QString().sprintf("%.1f", pos / 10.0));
     }
 #endif
-    pos = host->HostStatus(ICVirtualHost::DbgX0).toInt();
-    if(pos != oldS)
+    int speed = host->HostStatus(ICVirtualHost::DbgX0).toInt() | (host->HostStatus(ICVirtualHost::DbgX1).toUInt() << 16);
+    if(speed != oldS)
     {
-        oldS = pos;
+        oldS = speed;
 //        ui->speed->setText(QString::number(pos));
-        ui->xSpeedLabel->setText(QString::number(pos >> 8));
+        ui->xSpeedLabel->setText(QString::number((pos >> 8) & 0xFF));
         ui->ySpeedLabel->setText(QString::number(pos & 0xFF));
+#ifdef HC_SK_8
+        ui->zSpeedLabel->setText(QString::number((pos >> 16) & 0xFF));
+#endif
     }
     bool isSingleRunFinished = host->HostStatus(ICVirtualHost::ActL).toInt() == 0;
     ICMold* mold = ICMold::CurrentMold();
@@ -321,6 +331,24 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
     {
         oldStep = currentStep;
         ui->singleButton->setText(QString(tr("Single(%1/%2)")).arg(currentStep).arg(mold->MoldContent().size()));
+    }
+    QList<QAbstractButton*> buttons = ui->shortcutGroup->buttons();
+    ICUserDefineConfigSPTR config = ICUserDefineConfig::Instance();
+    ICUserActionInfo info;
+    int p;
+    for(int i = 0; i != buttons.size(); ++i)
+    {
+       info = config->GetActionByID(ui->shortcutGroup->id(buttons.at(i)));
+       p = (info.type == 2) ? info.pointNum << 1 : info.pointNum;
+
+       if(host->IsOutputOn(p))
+       {
+           buttons[i]->setPalette(yOnPalette);
+       }
+       else
+       {
+           buttons[i]->setPalette(oriPalette);
+       }
     }
 }
 
@@ -369,7 +397,16 @@ void ICHCManualOperationPageFrame::OnActionTriggered(int id)
     cmd.SetSlave(1);
     cmd.SetGM(ICMold::GOutY + info.type);
     cmd.SetPoint(info.pointNum);
-    cmd.SetIFVal(info.dir);
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    int p = (cmd.GM() == ICMold::GTwoXTwoY) ? info.pointNum * 2 : info.pointNum;
+    if(host->IsOutputOn(p))
+    {
+        cmd.SetIFVal(0);
+    }
+    else
+    {
+        cmd.SetIFVal(1);
+    }
     ICCommandProcessor::Instance()->ExecuteCommand(cmd);
 }
 
@@ -381,7 +418,17 @@ void ICHCManualOperationPageFrame::OnShortcutTriggered(int id)
     cmd.SetSlave(1);
     cmd.SetGM(ICMold::GOutY + info.type);
     cmd.SetPoint(info.pointNum);
-    cmd.SetIFVal(info.dir);
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    int p = (cmd.GM() == ICMold::GTwoXTwoY) ? info.pointNum * 2 : info.pointNum;
+    if(host->IsOutputOn(p))
+    {
+        cmd.SetIFVal(0);
+    }
+    else
+    {
+        cmd.SetIFVal(1);
+    }
+//    cmd.SetIFVal(info.dir);
     if(!ICCommandProcessor::Instance()->ExecuteCommand(cmd).toBool())
     {
         QMessageBox::information(this,
@@ -543,6 +590,11 @@ void ICHCManualOperationPageFrame::on_xSpeed_toggled(bool checked)
         ui->ySpeed->blockSignals(true);
         ui->ySpeed->setChecked(false);
         ui->ySpeed->blockSignals(false);
+#ifdef HC_SK_8
+        ui->zSpeed->blockSignals(true);
+        ui->zSpeed->setChecked(false);
+        ui->zSpeed->blockSignals(false);
+#endif
     }
     else
     {
@@ -558,9 +610,34 @@ void ICHCManualOperationPageFrame::on_ySpeed_toggled(bool checked)
         ui->xSpeed->blockSignals(true);
         ui->xSpeed->setChecked(false);
         ui->xSpeed->blockSignals(false);
+#ifdef HC_SK_8
+        ui->zSpeed->blockSignals(true);
+        ui->zSpeed->setChecked(false);
+        ui->zSpeed->blockSignals(false);
+#endif
     }
     else
     {
         ICKeyboard::Instace()->SetCurrentTuneSpeedType(-1);
     }
 }
+
+#ifdef HC_SK_8
+void ICHCManualOperationPageFrame::on_zSpeed_toggled(bool checked)
+{
+    if(checked)
+    {
+        ICKeyboard::Instace()->SetCurrentTuneSpeedType(1);
+        ui->xSpeed->blockSignals(true);
+        ui->xSpeed->setChecked(false);
+        ui->xSpeed->blockSignals(false);
+        ui->ySpeed->blockSignals(true);
+        ui->ySpeed->setChecked(false);
+        ui->ySpeed->blockSignals(false);
+    }
+    else
+    {
+        ICKeyboard::Instace()->SetCurrentTuneSpeedType(-1);
+    }
+}
+#endif

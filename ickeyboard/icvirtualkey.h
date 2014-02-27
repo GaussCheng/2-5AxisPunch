@@ -55,12 +55,13 @@ enum ICVirtualKey
     VKEY_PRODUCT_CLEAR,
     VKEY_Y_SPEED_UP,
     VKEY_Y_SPEED_DOWN,
+    VKEY_Z_SPEED_UP,
 //    VKEY_JOG5,      //Up-
 //    VKEY_JOG6,      //Down+
 //    VKEY_JOG7,      //Down-
 
 
-    VKEY_RESERVE1_ON = 0xF0,
+    VKEY_Z_SPEED_DOWN = 0xF0,
     VKEY_RESERVE2_ON,
     VKEY_RESERVE3_ON,
     VKEY_RESERVE4_ON,
