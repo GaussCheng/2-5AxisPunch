@@ -8,6 +8,8 @@
 #include "icscreensaver.h"
 #include "ichcmanualoperationpageframe.h"
 #include "ichcprogrammonitorframe.h"
+#include "icsettingsframe.h"
+
 
 class QStackedLayout;
 class QDialog;
@@ -93,7 +95,7 @@ private:
     Ui::MainFrame *ui;
 
     QWidget * initialPage_;
-    QWidget * settingsPage_;
+    ICSettingsFrame * settingsPage_;
     QWidget * alarmPage_;
     QWidget * recordPage_;
     QWidget * monitorPage_;

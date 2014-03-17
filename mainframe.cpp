@@ -27,7 +27,6 @@
 #include "icalarmdescriptiondialog.h"
 #include "icalarmframe.h"
 #include "iccycletimeandfinishedframe.h"
-#include "icsettingsframe.h"
 #include "ichcinstructionpageframe.h"
 #include "ichcmanualoperationpageframe.h"
 #include "ichcprogrammonitorframe.h"
@@ -850,6 +849,8 @@ void MainFrame::LevelChanged(int level)
         if(ICKeyboard::Instace()->CurrentSwitchStatus() != ICKeyboard::KS_AutoStatu)
         {
             ui->teachButton->setEnabled(true);
+            ui->settingsButton->setEnabled(true);
+            settingsPage_->SetToShowAll(false);
         }
         else
         {
@@ -865,6 +866,7 @@ void MainFrame::LevelChanged(int level)
         if(ICKeyboard::Instace()->CurrentSwitchStatus() == ICKeyboard::KS_StopStatu)
         {
             ui->settingsButton->setEnabled(true);
+            settingsPage_->SetToShowAll(true);
 //            ui->functionPageButton->setEnabled(true);
         }
         else

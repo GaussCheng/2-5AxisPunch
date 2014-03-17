@@ -261,3 +261,11 @@ void ICSettingsFrame::on_fcode_textChanged(const QString &arg1)
     }
     ICParametersSave::Instance()->SetFactoryCode(arg1);
 }
+
+void ICSettingsFrame::SetToShowAll(bool isshow)
+{
+    ui->tabWidget->setTabEnabled(0, isshow);
+    ui->tabWidget->setTabEnabled(1, isshow);
+    ui->tabWidget->setTabEnabled(2, isshow);
+    ui->tabWidget->setTabEnabled(3, isshow);
+}

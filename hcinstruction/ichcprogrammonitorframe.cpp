@@ -311,10 +311,10 @@ void ICHCProgramMonitorFrame::StatusRefreshed()
     if(speed != oldS)
     {
         oldS = pos;
-        ui->xSpeedLabel->setText(QString::number((pos >> 8) & 0xFF));
-        ui->ySpeedLabel->setText(QString::number(pos & 0xFF));
+        ui->xSpeedLabel->setText(QString::number((speed >> 8) & 0xFF));
+        ui->ySpeedLabel->setText(QString::number(speed & 0xFF));
 #ifdef HC_SK_8
-        ui->zSpeedLabel->setText(QString::number((pos >> 16) & 0xFF));
+        ui->zSpeedLabel->setText(QString::number((speed >> 16) & 0xFF));
 #endif
     }
 

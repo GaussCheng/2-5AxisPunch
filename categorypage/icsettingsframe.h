@@ -14,6 +14,8 @@ class ICSettingsFrame : public QFrame
 public:
     explicit ICSettingsFrame(QWidget *parent = 0);
     ~ICSettingsFrame();
+
+    void SetToShowAll(bool isshow);
     
 protected:
     void showEvent(QShowEvent *e);
