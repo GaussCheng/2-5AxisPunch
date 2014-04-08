@@ -81,6 +81,9 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
         }
     }
 
+    ui->canType->setCurrentIndex(ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::SYS_Config_Resv1).toInt());
+    ui->canID->SetThisIntToThisText(ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::SYS_Config_Resv2).toInt());
+
 }
 
 ICStructDefineFrame::~ICStructDefineFrame()
@@ -185,6 +188,8 @@ void ICStructDefineFrame::on_saveButton_clicked()
     dataBuffer[2] = 0;
 //    dataBuffer[3] = ICVirtualHost::GlobalVirtualHost()->FixtureDefineSwitch(ui->fixtureSelectBox->currentIndex());
     dataBuffer[3] = machineCount;
+    dataBuffer[4] = ui->canType->currentIndex();
+    dataBuffer[5] = ui->canID->TransThisTextToThisInt();
     for(int i = 0; i != 6; ++i)
     {
         sum += dataBuffer.at(i);

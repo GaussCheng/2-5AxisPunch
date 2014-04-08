@@ -119,7 +119,7 @@ void ICHCManualOperationPageFrame::InitInterface()
     ui->productEdit->setValidator(new QIntValidator(0, 65530, this));
     ui->xPos->SetDecimalPlaces(1);
     ui->yPos->SetDecimalPlaces(1);
-#ifdef HC_SK_8
+#ifdef HC_AXIS_COUNT_5
     ui->zPos->SetDecimalPlaces(1);
 #endif
     ui->xPos->setValidator(new QIntValidator(-32760, 32760, this));
@@ -301,7 +301,7 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
         oldY = pos;
         ui->yCurrentPos->setText(QString().sprintf("%.1f", pos / 10.0));
     }
-#ifdef HC_SK_8
+#ifdef HC_AXIS_COUNT_5
     pos = host->HostStatus(ICVirtualHost::ZPos).toInt();
     if(pos != oldZ)
     {
@@ -316,7 +316,7 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
         //        ui->speed->setText(QString::number(pos));
         ui->xSpeedLabel->setText(QString::number((speed >> 8) & 0xFF));
         ui->ySpeedLabel->setText(QString::number(speed & 0xFF));
-#ifdef HC_SK_8
+#ifdef HC_AXIS_COUNT_5
         ui->zSpeedLabel->setText(QString::number((speed >> 16) & 0xFF));
 #endif
     }
@@ -401,7 +401,7 @@ void ICHCManualOperationPageFrame::OnPointSelected(int id)
     //    ui->zPos->blockSignals(true);
     ui->xPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 3 )));
     ui->yPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 3 + 1)));
-#ifdef HC_SK_8
+#ifdef HC_AXIS_COUNT_5
     ui->zPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 3 + 2)));
 #endif
     //    ui->xPos->setEnabled(true);
@@ -489,7 +489,7 @@ void ICHCManualOperationPageFrame::on_setButton_clicked()
     p.pointID = ui->buttonGroup->checkedId();
     p.x = ui->xPos->TransThisTextToThisInt();
     p.y = ui->yPos->TransThisTextToThisInt();
-#ifdef HC_SK_8
+#ifdef HC_AXIS_COUNT_5
     p.z = ui->zPos->TransThisTextToThisInt();
 #endif
     modifyDialog_->StartModify(p);
@@ -497,7 +497,7 @@ void ICHCManualOperationPageFrame::on_setButton_clicked()
     ICMold* currentMold = ICMold::CurrentMold();
     ui->xPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 3)));
     ui->yPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 3 + 1)));
-#ifdef HC_SK_8
+#ifdef HC_AXIS_COUNT_5
     ui->zPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 3 + 2)));
 #endif
 }
@@ -544,7 +544,7 @@ void ICHCManualOperationPageFrame::on_yRun_clicked()
     ICCommandProcessor::Instance()->ExecuteCommand(cmd);
 }
 
-#ifdef HC_SK_8
+#ifdef HC_AXIS_COUNT_5
 void ICHCManualOperationPageFrame::on_zRun_clicked()
 {
     if(ui->buttonGroup->checkedId() < 0)
@@ -641,7 +641,7 @@ void ICHCManualOperationPageFrame::on_xSpeed_toggled(bool checked)
         ui->ySpeed->blockSignals(true);
         ui->ySpeed->setChecked(false);
         ui->ySpeed->blockSignals(false);
-#ifdef HC_SK_8
+#ifdef HC_AXIS_COUNT_5
         ui->zSpeed->blockSignals(true);
         ui->zSpeed->setChecked(false);
         ui->zSpeed->blockSignals(false);
@@ -661,7 +661,7 @@ void ICHCManualOperationPageFrame::on_ySpeed_toggled(bool checked)
         ui->xSpeed->blockSignals(true);
         ui->xSpeed->setChecked(false);
         ui->xSpeed->blockSignals(false);
-#ifdef HC_SK_8
+#ifdef HC_AXIS_COUNT_5
         ui->zSpeed->blockSignals(true);
         ui->zSpeed->setChecked(false);
         ui->zSpeed->blockSignals(false);
@@ -673,7 +673,7 @@ void ICHCManualOperationPageFrame::on_ySpeed_toggled(bool checked)
     }
 }
 
-#ifdef HC_SK_8
+#ifdef HC_AXIS_COUNT_5
 void ICHCManualOperationPageFrame::on_zSpeed_toggled(bool checked)
 {
     if(checked)

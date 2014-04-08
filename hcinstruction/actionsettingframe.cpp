@@ -39,7 +39,7 @@ ActionSettingFrame::ActionSettingFrame(QWidget *parent) :
     InitInterface();
     axisWidgets_.append(QList<QWidget*>()<<ui->gxButton<<ui->x1PosLineEdit);
     axisWidgets_.append(QList<QWidget*>()<<ui->gyButton<<ui->y1PosLineEdit);
-#ifdef HC_SK_8
+#ifdef HC_AXIS_COUNT_5
     axisWidgets_.append(QList<QWidget*>()<<ui->gzButton<<ui->zPosLineEdit);
 #endif
 
@@ -76,7 +76,7 @@ void ActionSettingFrame::InitInterface()
     ui->y1PosLineEdit->SetDecimalPlaces(POS_DECIMAL);
     //    ui->y1PosLineEdit->setValidator(posvalidator);
     ui->y1PosLineEdit->setValidator(posValidators_ + 1);
-#ifdef HC_SK_8
+#ifdef HC_AXIS_COUNT_5
     ui->zPosLineEdit->SetDecimalPlaces(POS_DECIMAL);
     //    ui->zPosLineEdit->setValidator(posvalidator);
     ui->zPosLineEdit->setValidator(posValidators_ + 2);
@@ -106,7 +106,7 @@ void ActionSettingFrame::on_inputButton_clicked()
     //    }
     ui->x1PosLineEdit->setText(QString().sprintf("%.1f", oXP_ / 10.0));
     ui->y1PosLineEdit->setText(QString().sprintf("%.1f", oYP_ / 10.0));
-#ifdef HC_SK_8
+#ifdef HC_AXIS_COUNT_5
     ui->zPosLineEdit->setText(QString().sprintf("%.1f", oZP_ / 10.0));
 #endif
 
@@ -117,7 +117,7 @@ void ActionSettingFrame::hideEvent(QHideEvent *e)
 {
     ui->gxButton->setChecked(false);
     ui->gyButton->setChecked(false);
-#ifdef HC_SK_8
+#ifdef HC_AXIS_COUNT_5
     ui->gzButton->setChecked(false);
 #endif
     QFrame::hideEvent(e);
@@ -234,7 +234,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         item.SetActualIfPos(0);
         ret.append(item);
     }
-#ifdef HC_SK_8
+#ifdef HC_AXIS_COUNT_5
     if(ui->gzButton->isChecked() && (!ui->gzButton->isHidden()))
     {
         item.SetAction(ICMold::GZ);
@@ -289,7 +289,7 @@ void ActionSettingFrame::on_gyButton_toggled(bool checked)
     }
 }
 
-#ifdef HC_SK_8
+#ifdef HC_AXIS_COUNT_5
 void ActionSettingFrame::on_gzButton_toggled(bool checked)
 {
     if(checked && ui->absBox->isChecked())
@@ -373,7 +373,7 @@ void ActionSettingFrame::on_absBox_toggled(bool checked)
 {
     ui->x1PosLineEdit->setEnabled(checked && ui->gxButton->isChecked());
     ui->y1PosLineEdit->setEnabled(checked && ui->gyButton->isChecked());
-#ifdef HC_SK_8
+#ifdef HC_AXIS_COUNT_5
     ui->zPosLineEdit->setEnabled(checked && ui->gzButton->isChecked());
 #endif
     ui->pointSel->setEnabled(!checked);

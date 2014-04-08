@@ -60,7 +60,7 @@ private slots:
     void StatusRefresh();
     void on_gxButton_toggled(bool checked);
     void on_gyButton_toggled(bool checked);
-#ifdef HC_SK_8
+#ifdef HC_AXIS_COUNT_5
     void on_gzButton_toggled(bool checked);
 #endif
 #ifdef HC_SK_8_SC

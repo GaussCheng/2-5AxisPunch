@@ -56,7 +56,7 @@ private slots:
 
     void on_ySpeed_toggled(bool checked);
 
-#ifdef HC_SK_8
+#ifdef HC_AXIS_COUNT_5
     void on_zSpeed_toggled(bool checked);
 #endif
 

@@ -299,7 +299,7 @@ void ICHCProgramMonitorFrame::StatusRefreshed()
         oldY = pos;
         ui->yCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
     }
-#ifdef HC_SK_8
+#ifdef HC_AXIS_COUNT_5
     pos = host->HostStatus(ICVirtualHost::ZPos).toInt();
     if(pos != oldZ)
     {
@@ -313,7 +313,7 @@ void ICHCProgramMonitorFrame::StatusRefreshed()
         oldS = pos;
         ui->xSpeedLabel->setText(QString::number((speed >> 8) & 0xFF));
         ui->ySpeedLabel->setText(QString::number(speed & 0xFF));
-#ifdef HC_SK_8
+#ifdef HC_AXIS_COUNT_5
         ui->zSpeedLabel->setText(QString::number((speed >> 16) & 0xFF));
 #endif
     }
@@ -862,7 +862,7 @@ void ICHCProgramMonitorFrame::on_xSpeed_toggled(bool checked)
         ui->ySpeed->blockSignals(true);
         ui->ySpeed->setChecked(false);
         ui->ySpeed->blockSignals(false);
-#ifdef HC_SK_8
+#ifdef HC_AXIS_COUNT_5
         ui->zSpeed->blockSignals(true);
         ui->zSpeed->setChecked(false);
         ui->zSpeed->blockSignals(false);
@@ -882,7 +882,7 @@ void ICHCProgramMonitorFrame::on_ySpeed_toggled(bool checked)
         ui->xSpeed->blockSignals(true);
         ui->xSpeed->setChecked(false);
         ui->xSpeed->blockSignals(false);
-#ifdef HC_SK_8
+#ifdef HC_AXIS_COUNT_5
         ui->zSpeed->blockSignals(true);
         ui->zSpeed->setChecked(false);
         ui->zSpeed->blockSignals(false);
@@ -894,7 +894,7 @@ void ICHCProgramMonitorFrame::on_ySpeed_toggled(bool checked)
     }
 }
 
-#ifdef HC_SK_8
+#ifdef HC_AXIS_COUNT_5
 void ICHCProgramMonitorFrame::on_zSpeed_toggled(bool checked)
 {
     if(checked)
