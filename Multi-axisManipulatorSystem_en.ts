@@ -1817,17 +1817,33 @@ Infomation</source>
         <translation type="obsolete">Manipulator I/O</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="330"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="335"/>
         <source>Single(%1/%2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="514"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="535"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="557"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="609"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="515"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="536"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="558"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="610"/>
+        <source>Has not been origin!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="582"/>
         <source>No Check</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="540"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="587"/>
         <source>Check</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4941,8 +4957,8 @@ Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="476"/>
-        <location filename="mainframe.cpp" line="483"/>
+        <location filename="mainframe.cpp" line="475"/>
+        <location filename="mainframe.cpp" line="482"/>
         <source>Hint</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4982,8 +4998,6 @@ Would you want to restart now?</source>
     <message>
         <location filename="function_settings/moldinformation.ui" line="178"/>
         <location filename="function_settings/moldinformation.ui" line="203"/>
-        <location filename="function_settings/moldinformation_8.ui" line="178"/>
-        <location filename="function_settings/moldinformation_8.ui" line="203"/>
         <source>buttonGroup</source>
         <translation type="unfinished"></translation>
     </message>
