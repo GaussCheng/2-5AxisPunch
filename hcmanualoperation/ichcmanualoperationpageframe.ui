@@ -25,7 +25,7 @@
      <x>0</x>
      <y>0</y>
      <width>640</width>
-     <height>281</height>
+     <height>291</height>
     </rect>
    </property>
    <property name="tabPosition">
@@ -672,16 +672,7 @@
      <string>Binary</string>
     </attribute>
     <layout class="QGridLayout" name="gridLayout_3">
-     <property name="leftMargin">
-      <number>2</number>
-     </property>
-     <property name="topMargin">
-      <number>2</number>
-     </property>
-     <property name="rightMargin">
-      <number>2</number>
-     </property>
-     <property name="bottomMargin">
+     <property name="margin">
       <number>2</number>
      </property>
      <property name="spacing">
@@ -1410,10 +1401,10 @@
   <widget class="QLabel" name="xCurrentPos">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>290</y>
+     <x>100</x>
+     <y>299</y>
      <width>60</width>
-     <height>21</height>
+     <height>30</height>
     </rect>
    </property>
    <property name="palette">
@@ -1847,8 +1838,8 @@
   <widget class="QLabel" name="label_11">
    <property name="geometry">
     <rect>
-     <x>270</x>
-     <y>290</y>
+     <x>230</x>
+     <y>299</y>
      <width>16</width>
      <height>21</height>
     </rect>
@@ -1860,8 +1851,8 @@
   <widget class="QLabel" name="label_10">
    <property name="geometry">
     <rect>
-     <x>350</x>
-     <y>290</y>
+     <x>310</x>
+     <y>299</y>
      <width>31</width>
      <height>21</height>
     </rect>
@@ -1873,8 +1864,8 @@
   <widget class="QLabel" name="label_9">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>290</y>
+     <x>160</x>
+     <y>299</y>
      <width>31</width>
      <height>21</height>
     </rect>
@@ -1886,10 +1877,10 @@
   <widget class="QLabel" name="yCurrentPos">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>290</y>
+     <x>250</x>
+     <y>299</y>
      <width>60</width>
-     <height>21</height>
+     <height>30</height>
     </rect>
    </property>
    <property name="palette">
@@ -2323,8 +2314,8 @@
   <widget class="QLabel" name="label_12">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>316</y>
+     <x>160</x>
+     <y>340</y>
      <width>16</width>
      <height>21</height>
     </rect>
@@ -2336,8 +2327,8 @@
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>146</x>
-     <y>290</y>
+     <x>76</x>
+     <y>299</y>
      <width>20</width>
      <height>21</height>
     </rect>
@@ -2349,10 +2340,10 @@
   <widget class="QLabel" name="xSpeedLabel">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>316</y>
+     <x>130</x>
+     <y>335</y>
      <width>30</width>
-     <height>21</height>
+     <height>30</height>
     </rect>
    </property>
    <property name="palette">
@@ -2786,9 +2777,9 @@
   <widget class="QPushButton" name="xSpeed">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>342</y>
-     <width>61</width>
+     <x>50</x>
+     <y>335</y>
+     <width>71</width>
      <height>32</height>
     </rect>
    </property>
@@ -2808,9 +2799,9 @@
   <widget class="QPushButton" name="ySpeed">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>342</y>
-     <width>61</width>
+     <x>200</x>
+     <y>335</y>
+     <width>71</width>
      <height>32</height>
     </rect>
    </property>
@@ -2830,8 +2821,8 @@
   <widget class="QLabel" name="label_13">
    <property name="geometry">
     <rect>
-     <x>350</x>
-     <y>316</y>
+     <x>310</x>
+     <y>340</y>
      <width>16</width>
      <height>21</height>
     </rect>
@@ -2843,10 +2834,10 @@
   <widget class="QLabel" name="ySpeedLabel">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>316</y>
+     <x>280</x>
+     <y>335</y>
      <width>30</width>
-     <height>21</height>
+     <height>30</height>
     </rect>
    </property>
    <property name="palette">
@@ -3280,9 +3271,9 @@
   <widget class="QPushButton" name="zSpeed">
    <property name="geometry">
     <rect>
-     <x>410</x>
-     <y>342</y>
-     <width>61</width>
+     <x>360</x>
+     <y>335</y>
+     <width>71</width>
      <height>32</height>
     </rect>
    </property>
@@ -3303,9 +3294,9 @@
    <property name="geometry">
     <rect>
      <x>410</x>
-     <y>290</y>
+     <y>299</y>
      <width>60</width>
-     <height>21</height>
+     <height>30</height>
     </rect>
    </property>
    <property name="palette">
@@ -3740,7 +3731,7 @@
    <property name="geometry">
     <rect>
      <x>390</x>
-     <y>290</y>
+     <y>299</y>
      <width>16</width>
      <height>21</height>
     </rect>
@@ -3753,7 +3744,7 @@
    <property name="geometry">
     <rect>
      <x>470</x>
-     <y>290</y>
+     <y>299</y>
      <width>31</width>
      <height>21</height>
     </rect>
@@ -3766,9 +3757,9 @@
    <property name="geometry">
     <rect>
      <x>440</x>
-     <y>316</y>
+     <y>335</y>
      <width>30</width>
-     <height>21</height>
+     <height>30</height>
     </rect>
    </property>
    <property name="palette">
@@ -4203,7 +4194,7 @@
    <property name="geometry">
     <rect>
      <x>470</x>
-     <y>316</y>
+     <y>340</y>
      <width>16</width>
      <height>21</height>
     </rect>
@@ -4224,7 +4215,7 @@
  <connections/>
  <buttongroups>
   <buttongroup name="actionGroup"/>
-  <buttongroup name="shortcutGroup"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="shortcutGroup"/>
  </buttongroups>
 </ui>
