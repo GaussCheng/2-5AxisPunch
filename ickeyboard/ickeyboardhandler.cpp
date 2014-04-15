@@ -35,14 +35,14 @@ ICKeyboardHandler::ICKeyboardHandler(QObject *parent) :
     virtualKeyMap_.insert(ICKeyboard::FB_Stop, IC::VKEY_STOP);
     virtualKeyMap_.insert(ICKeyboard::VFB_Y1Sub, IC::VKEY_Y1SUB);
     virtualKeyMap_.insert(ICKeyboard::VFB_Y1Add, IC::VKEY_Y1ADD);
-    virtualKeyMap_.insert(ICKeyboard::VFB_Y2Sub, IC::VKEY_Y2SUB);
-    virtualKeyMap_.insert(ICKeyboard::VFB_Y2Add, IC::VKEY_Y2ADD);
+    virtualKeyMap_.insert(ICKeyboard::VFB_Y2Sub, IC::VKEY_BSUB);
+    virtualKeyMap_.insert(ICKeyboard::VFB_Y2Add, IC::VKEY_BADD);
     virtualKeyMap_.insert(ICKeyboard::VFB_ZAdd, IC::VKEY_ZADD);
     virtualKeyMap_.insert(ICKeyboard::VFB_ZSub, IC::VKEY_ZSUB);
     virtualKeyMap_.insert(ICKeyboard::VFB_X1Sub, IC::VKEY_X1SUB);
     virtualKeyMap_.insert(ICKeyboard::VFB_X1Add, IC::VKEY_X1ADD);
-    virtualKeyMap_.insert(ICKeyboard::VFB_X2Sub, IC::VKEY_X2SUB);
-    virtualKeyMap_.insert(ICKeyboard::VFB_X2Add, IC::VKEY_X2ADD);
+    virtualKeyMap_.insert(ICKeyboard::VFB_X2Sub, IC::VKEY_CSUB);
+    virtualKeyMap_.insert(ICKeyboard::VFB_X2Add, IC::VKEY_CADD);
     virtualKeyMap_.insert(ICKeyboard::VFB_SP1, IC::VKEY_SP1);
     virtualKeyMap_.insert(ICKeyboard::VFB_SP2, IC::VKEY_SP2);
     virtualKeyMap_.insert(ICKeyboard::VFB_AAdd, IC::VKEY_AADD);
