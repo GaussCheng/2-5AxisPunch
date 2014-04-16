@@ -195,7 +195,7 @@ void ICVirtualHost::RefreshStatus()
         {
             swKey = keyboard->CurrentSwitchStatus();
 //            qDebug()<<"swKey"<<swKey<<CurrentStatus();
-            if(StatusToKey(CurrentStatus()) != swKey)
+            if(StatusToKey(CurrentStatus()) != swKey && SystemParameter(ICVirtualHost::SYS_Config_Resv1).toInt() == 1)
             {
                 switch(swKey)
                 {

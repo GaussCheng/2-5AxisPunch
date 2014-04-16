@@ -562,6 +562,7 @@ void MainFrame::StatusRefreshed()
         {
             runningStatus_ = ICVirtualHost::AutoOneCycle;
         }
+        runningStatus_ = ICVirtualHost::AutoRunning;
         //        statusStr_ = tr("Auto");
     }
     else if(runningStatus_ == ICVirtualHost::Teach)
