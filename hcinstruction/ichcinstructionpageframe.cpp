@@ -62,6 +62,7 @@ ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
     currentEdit_(0)
 {
     ui->setupUi(this);
+
     ui->tabWidget->addTab(MoldInformation::Instance(), tr("Records"));
     ui->tabWidget->addTab(new ICHCStackedSettingsFrame(), tr("Stack"));
     fixtureCheckList<<ui->check0<<ui->check1<<ui->check2<<ui->check3<<ui->check4
@@ -72,14 +73,14 @@ ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
                <<ui->check21<<ui->check22<<ui->check23<<ui->check24
               <<ui->check25<<ui->check26<<ui->check27<<ui->check28
              <<ui->check29<<ui->check30<<ui->check31<<ui->check32
-               <<ui->check33<<ui->check34<<ui->check35<<ui->check36
-                 <<ui->check37<<ui->check38<<ui->check39<<ui->check40
-                   <<ui->check41<<ui->check42<<ui->check43<<ui->check44
-                     <<ui->check45<<ui->check46<<ui->check47<<ui->check48
-                       <<ui->check49<<ui->check50<<ui->check51<<ui->check52
-                         <<ui->check53<<ui->check54<<ui->check55<<ui->check56
-                           <<ui->check57<<ui->check58<<ui->check59<<ui->check60
-                             <<ui->check61<<ui->check62<<ui->check63;
+            <<ui->check33<<ui->check34<<ui->check35<<ui->check36
+           <<ui->check37<<ui->check38<<ui->check39<<ui->check40
+          <<ui->check41<<ui->check42<<ui->check43<<ui->check44
+         <<ui->check45<<ui->check46<<ui->check47<<ui->check48
+        <<ui->check49<<ui->check50<<ui->check51<<ui->check52
+       <<ui->check53<<ui->check54<<ui->check55<<ui->check56
+      <<ui->check57<<ui->check58<<ui->check59<<ui->check60
+     <<ui->check61<<ui->check62<<ui->check63;
     //    ui->otherButton->hide();
 
     ui->pneumaticButton->hide();
@@ -985,6 +986,15 @@ bool ICHCInstructionPageFrame::SaveCurrentEdit()
             QFile::remove(moldName);
             ret = QFile::copy("subs/sub7.prg", moldName);
         }
+        if(currentEdit_ == 7)
+        {
+            QString moldName = ICParametersSave::Instance()->MoldName("Base.act");
+            moldName.chop(3);
+            moldName += "reserve";
+            moldName = QString("records/%1").arg(moldName);
+            QFile::remove(moldName);
+            ret = QFile::copy("subs/sub6.prg", moldName);
+        }
         return ret;
     }
 }
@@ -1030,12 +1040,17 @@ void ICHCInstructionPageFrame::on_feedButton_clicked()
 
 void ICHCInstructionPageFrame::OnReadyLoadMold(const QString &name)
 {
-//    UpdateHostParam();
+    //    UpdateHostParam();
 }
 
 void ICHCInstructionPageFrame::OnMoldChanged(const QString &name)
 {
     UpdateHostParam();
-//    programList_ = ICMold::CurrentMold()->ToUIItems();
-//    programList_ = ICMold::MoldItemToUIItem(ICMacroSubroutine::Instance()->SubRoutine(currentEdit_ - 1));
+    //    programList_ = ICMold::CurrentMold()->ToUIItems();
+    //    programList_ = ICMold::MoldItemToUIItem(ICMacroSubroutine::Instance()->SubRoutine(currentEdit_ - 1));
+}
+
+void ICHCInstructionPageFrame::on_reserveButton_clicked()
+{
+     OnProgramChanged(7, "");
 }

@@ -71,6 +71,8 @@ private slots:
 
     void on_feedButton_clicked();
 
+    void on_reserveButton_clicked();
+
 signals:
 //    void JumpToProgramEditorPage();
 

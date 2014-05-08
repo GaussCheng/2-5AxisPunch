@@ -27,6 +27,15 @@ ICHCProgramMonitorFrame::ICHCProgramMonitorFrame(QWidget *parent) :
 {
     ui->setupUi(this);
 
+#ifdef HC_AXIS_COUNT_2
+    ui->label_15->hide();
+    ui->label_16->hide();
+    ui->label_14->hide();
+    ui->zCurrentPos->hide();
+    ui->zSpeed->hide();
+    ui->zSpeedLabel->hide();
+#endif
+
     autoRunRevise_ = new ICAutoRunRevise(this);
     InitSignal();
     //    UpdateHostParam();

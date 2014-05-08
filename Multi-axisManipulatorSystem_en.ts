@@ -1171,82 +1171,82 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="750"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="781"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="726"/>
         <source>Fixture Check</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="775"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="797"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="736"/>
         <source>Page1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="781"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="788"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="795"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="802"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="809"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="816"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="823"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="830"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="837"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="844"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="851"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="858"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="865"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="872"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="879"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="886"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="893"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="900"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="907"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="914"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="921"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="928"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="935"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="942"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="949"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="956"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="963"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="970"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="977"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="984"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="991"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="998"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1012"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1019"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1026"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1033"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1040"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1047"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1054"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1061"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1068"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1075"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1082"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1089"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1096"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1103"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1110"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1117"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1124"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1131"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1138"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1145"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1152"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1159"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1166"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1173"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1180"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1187"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1194"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1201"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1208"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1215"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1222"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1229"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="803"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="810"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="817"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="824"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="831"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="838"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="845"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="852"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="859"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="866"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="873"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="880"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="887"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="894"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="901"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="908"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="915"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="922"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="929"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="936"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="943"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="950"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="957"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="964"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="971"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="978"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="985"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="992"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="999"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1006"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1013"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1020"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1034"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1041"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1048"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1055"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1062"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1069"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1076"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1083"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1090"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1097"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1104"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1111"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1118"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1125"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1132"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1139"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1146"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1153"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1160"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1167"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1174"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1181"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1188"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1195"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1202"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1209"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1216"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1223"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1230"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1237"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1244"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1251"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="742"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="749"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="756"/>
@@ -1315,7 +1315,7 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1006"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1028"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="967"/>
         <source>Page2</source>
         <translation type="unfinished"></translation>
@@ -1376,6 +1376,7 @@ Infomation</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.ui" line="430"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="752"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="427"/>
         <source>Reserve</source>
         <translation type="unfinished"></translation>
@@ -1391,29 +1392,29 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="65"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="66"/>
         <source>Records</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="579"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="66"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="67"/>
         <source>Stack</source>
         <translation type="unfinished">堆叠</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="99"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="224"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="100"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="225"/>
         <source>Check</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="665"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="666"/>
         <source>warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="666"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="667"/>
         <source>Stand program can not be delete action</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1841,33 +1842,33 @@ Infomation</source>
         <translation type="obsolete">Manipulator I/O</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="335"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="347"/>
         <source>Single(%1/%2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="514"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="535"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="557"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="609"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="526"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="547"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="569"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="621"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="515"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="536"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="558"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="610"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="527"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="548"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="570"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="622"/>
         <source>Has not been origin!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="582"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="594"/>
         <source>No Check</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="587"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="599"/>
         <source>Check</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2198,80 +2199,80 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="54"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="80"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="63"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="89"/>
         <source>Has not teach check Fixture-1!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="55"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="81"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="64"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="90"/>
         <source>Has not teach check Fixture-2!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="56"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="82"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="65"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="91"/>
         <source>Has not teach check Fixture-3!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="57"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="83"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="66"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="92"/>
         <source>Has not teach check Fixture-4!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="58"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="84"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="67"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="93"/>
         <source>Has not teach check Sucker-1!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="59"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="85"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="68"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="94"/>
         <source>Has not teach check Sucker-2!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="192"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="201"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="816"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="825"/>
         <source>Speed Enable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="847"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="856"/>
         <source>No Check</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="852"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="861"/>
         <source>Check</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="801"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="810"/>
         <source>Follow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="52"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="52"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="114"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="243"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="816"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="826"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="123"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="252"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="825"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="835"/>
         <source>Speed Disable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="96"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="96"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="807"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="816"/>
         <source>No Follow</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5159,18 +5160,18 @@ Would you want to restart now?</source>
     </message>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="84"/>
-        <location filename="function_settings/moldinformation.cpp" line="185"/>
-        <location filename="function_settings/moldinformation.cpp" line="193"/>
-        <location filename="function_settings/moldinformation.cpp" line="231"/>
+        <location filename="function_settings/moldinformation.cpp" line="186"/>
+        <location filename="function_settings/moldinformation.cpp" line="194"/>
         <location filename="function_settings/moldinformation.cpp" line="242"/>
-        <location filename="function_settings/moldinformation.cpp" line="267"/>
-        <location filename="function_settings/moldinformation.cpp" line="404"/>
-        <location filename="function_settings/moldinformation.cpp" line="417"/>
-        <location filename="function_settings/moldinformation.cpp" line="436"/>
-        <location filename="function_settings/moldinformation.cpp" line="446"/>
-        <location filename="function_settings/moldinformation.cpp" line="456"/>
-        <location filename="function_settings/moldinformation.cpp" line="632"/>
-        <location filename="function_settings/moldinformation.cpp" line="671"/>
+        <location filename="function_settings/moldinformation.cpp" line="253"/>
+        <location filename="function_settings/moldinformation.cpp" line="280"/>
+        <location filename="function_settings/moldinformation.cpp" line="419"/>
+        <location filename="function_settings/moldinformation.cpp" line="432"/>
+        <location filename="function_settings/moldinformation.cpp" line="451"/>
+        <location filename="function_settings/moldinformation.cpp" line="461"/>
+        <location filename="function_settings/moldinformation.cpp" line="471"/>
+        <location filename="function_settings/moldinformation.cpp" line="661"/>
+        <location filename="function_settings/moldinformation.cpp" line="701"/>
         <source>warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5182,15 +5183,16 @@ Please input the file name.</source>
     </message>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="106"/>
-        <location filename="function_settings/moldinformation.cpp" line="538"/>
-        <location filename="function_settings/moldinformation.cpp" line="582"/>
-        <location filename="function_settings/moldinformation.cpp" line="596"/>
-        <location filename="function_settings/moldinformation.cpp" line="601"/>
-        <location filename="function_settings/moldinformation.cpp" line="614"/>
-        <location filename="function_settings/moldinformation.cpp" line="718"/>
-        <location filename="function_settings/moldinformation.cpp" line="904"/>
-        <location filename="function_settings/moldinformation.cpp" line="921"/>
-        <location filename="function_settings/moldinformation.cpp" line="932"/>
+        <location filename="function_settings/moldinformation.cpp" line="553"/>
+        <location filename="function_settings/moldinformation.cpp" line="598"/>
+        <location filename="function_settings/moldinformation.cpp" line="612"/>
+        <location filename="function_settings/moldinformation.cpp" line="617"/>
+        <location filename="function_settings/moldinformation.cpp" line="630"/>
+        <location filename="function_settings/moldinformation.cpp" line="643"/>
+        <location filename="function_settings/moldinformation.cpp" line="749"/>
+        <location filename="function_settings/moldinformation.cpp" line="937"/>
+        <location filename="function_settings/moldinformation.cpp" line="954"/>
+        <location filename="function_settings/moldinformation.cpp" line="965"/>
         <source>Warnning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5200,203 +5202,204 @@ Please input the file name.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="157"/>
-        <location filename="function_settings/moldinformation.cpp" line="222"/>
+        <location filename="function_settings/moldinformation.cpp" line="158"/>
+        <location filename="function_settings/moldinformation.cpp" line="231"/>
         <source>Success</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="158"/>
+        <location filename="function_settings/moldinformation.cpp" line="159"/>
         <source>New file success.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="164"/>
+        <location filename="function_settings/moldinformation.cpp" line="165"/>
         <source>The file has been existing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="165"/>
+        <location filename="function_settings/moldinformation.cpp" line="166"/>
         <source>File already exists,
 Please change a new name.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="186"/>
-        <location filename="function_settings/moldinformation.cpp" line="243"/>
+        <location filename="function_settings/moldinformation.cpp" line="187"/>
+        <location filename="function_settings/moldinformation.cpp" line="254"/>
         <source>Source file name is empty,
 Please choose an existing file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="194"/>
+        <location filename="function_settings/moldinformation.cpp" line="195"/>
         <source>New file name is empty,
 Please write the destination file name.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="223"/>
+        <location filename="function_settings/moldinformation.cpp" line="232"/>
         <source>Copy file success!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="232"/>
+        <location filename="function_settings/moldinformation.cpp" line="243"/>
         <source>Destination file already exists!
 Please try a new name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="268"/>
+        <location filename="function_settings/moldinformation.cpp" line="281"/>
         <source>File does not exist!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="311"/>
-        <location filename="function_settings/moldinformation.cpp" line="328"/>
-        <location filename="function_settings/moldinformation.cpp" line="754"/>
-        <location filename="function_settings/moldinformation.cpp" line="880"/>
+        <location filename="function_settings/moldinformation.cpp" line="324"/>
+        <location filename="function_settings/moldinformation.cpp" line="341"/>
+        <location filename="function_settings/moldinformation.cpp" line="785"/>
+        <location filename="function_settings/moldinformation.cpp" line="913"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="311"/>
-        <location filename="function_settings/moldinformation.cpp" line="328"/>
+        <location filename="function_settings/moldinformation.cpp" line="324"/>
+        <location filename="function_settings/moldinformation.cpp" line="341"/>
         <source>file name is empty</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="352"/>
+        <location filename="function_settings/moldinformation.cpp" line="366"/>
         <source>On the Current mold already!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="362"/>
+        <location filename="function_settings/moldinformation.cpp" line="376"/>
         <source>critical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="362"/>
+        <location filename="function_settings/moldinformation.cpp" line="376"/>
         <source>Read mold or mold para fail! Please change other mold!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="368"/>
+        <location filename="function_settings/moldinformation.cpp" line="383"/>
         <source>Loading...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="352"/>
+        <location filename="function_settings/moldinformation.cpp" line="366"/>
         <source>Tips</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="405"/>
-        <location filename="function_settings/moldinformation.cpp" line="437"/>
-        <location filename="function_settings/moldinformation.cpp" line="633"/>
-        <location filename="function_settings/moldinformation.cpp" line="672"/>
+        <location filename="function_settings/moldinformation.cpp" line="420"/>
+        <location filename="function_settings/moldinformation.cpp" line="452"/>
+        <location filename="function_settings/moldinformation.cpp" line="662"/>
+        <location filename="function_settings/moldinformation.cpp" line="702"/>
         <source>The mold file </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="407"/>
-        <location filename="function_settings/moldinformation.cpp" line="439"/>
-        <location filename="function_settings/moldinformation.cpp" line="635"/>
-        <location filename="function_settings/moldinformation.cpp" line="674"/>
+        <location filename="function_settings/moldinformation.cpp" line="422"/>
+        <location filename="function_settings/moldinformation.cpp" line="454"/>
+        <location filename="function_settings/moldinformation.cpp" line="664"/>
+        <location filename="function_settings/moldinformation.cpp" line="704"/>
         <source> is being used</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="418"/>
-        <location filename="function_settings/moldinformation.cpp" line="447"/>
+        <location filename="function_settings/moldinformation.cpp" line="433"/>
+        <location filename="function_settings/moldinformation.cpp" line="462"/>
         <source>Stand programs can not be delete!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="685"/>
+        <location filename="function_settings/moldinformation.cpp" line="716"/>
         <source>Restoring, please wait...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="582"/>
-        <location filename="function_settings/moldinformation.cpp" line="614"/>
+        <location filename="function_settings/moldinformation.cpp" line="598"/>
+        <location filename="function_settings/moldinformation.cpp" line="630"/>
+        <location filename="function_settings/moldinformation.cpp" line="643"/>
         <source>Wrong program format!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="457"/>
+        <location filename="function_settings/moldinformation.cpp" line="472"/>
         <source>Are you sure to delete the selected files?</source>
         <oldsource>Are you sure to delete the selected files </oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="596"/>
+        <location filename="function_settings/moldinformation.cpp" line="612"/>
         <source>Wrong config format!!!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="601"/>
+        <location filename="function_settings/moldinformation.cpp" line="617"/>
         <source>Wrong config format!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="642"/>
-        <location filename="function_settings/moldinformation.cpp" line="664"/>
-        <location filename="function_settings/moldinformation.cpp" line="776"/>
-        <location filename="function_settings/moldinformation.cpp" line="798"/>
+        <location filename="function_settings/moldinformation.cpp" line="671"/>
+        <location filename="function_settings/moldinformation.cpp" line="694"/>
+        <location filename="function_settings/moldinformation.cpp" line="807"/>
+        <location filename="function_settings/moldinformation.cpp" line="830"/>
         <source>tips</source>
         <oldsource>t1ips</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="642"/>
-        <location filename="function_settings/moldinformation.cpp" line="664"/>
-        <location filename="function_settings/moldinformation.cpp" line="776"/>
-        <location filename="function_settings/moldinformation.cpp" line="798"/>
+        <location filename="function_settings/moldinformation.cpp" line="671"/>
+        <location filename="function_settings/moldinformation.cpp" line="694"/>
+        <location filename="function_settings/moldinformation.cpp" line="807"/>
+        <location filename="function_settings/moldinformation.cpp" line="830"/>
         <source>%1 is exist,replace it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="718"/>
+        <location filename="function_settings/moldinformation.cpp" line="749"/>
         <source>Wrong program format!!!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="740"/>
-        <location filename="function_settings/moldinformation.cpp" line="842"/>
+        <location filename="function_settings/moldinformation.cpp" line="771"/>
+        <location filename="function_settings/moldinformation.cpp" line="875"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="740"/>
-        <location filename="function_settings/moldinformation.cpp" line="842"/>
+        <location filename="function_settings/moldinformation.cpp" line="771"/>
+        <location filename="function_settings/moldinformation.cpp" line="875"/>
         <source>Operation finished!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="754"/>
-        <location filename="function_settings/moldinformation.cpp" line="880"/>
+        <location filename="function_settings/moldinformation.cpp" line="785"/>
+        <location filename="function_settings/moldinformation.cpp" line="913"/>
         <source>USB is not connected!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="814"/>
+        <location filename="function_settings/moldinformation.cpp" line="847"/>
         <source>Backuping, please wait...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="907"/>
+        <location filename="function_settings/moldinformation.cpp" line="940"/>
         <source>Refresh File List, please wait...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="921"/>
-        <location filename="function_settings/moldinformation.cpp" line="932"/>
+        <location filename="function_settings/moldinformation.cpp" line="954"/>
+        <location filename="function_settings/moldinformation.cpp" line="965"/>
         <source>Backup files is incomplete!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="538"/>
-        <location filename="function_settings/moldinformation.cpp" line="904"/>
+        <location filename="function_settings/moldinformation.cpp" line="553"/>
+        <location filename="function_settings/moldinformation.cpp" line="937"/>
         <source>Backup files is not exists!</source>
         <translation type="unfinished"></translation>
     </message>

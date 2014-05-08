@@ -33,6 +33,18 @@ ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     ui->axisBoard->hide();
 #endif
 #endif
+#ifdef HC_AXIS_COUNT_2
+    ui->label_14->hide();
+    ui->label_15->hide();
+    ui->zCurrentPos->hide();
+    ui->zPos->hide();
+    ui->zRun->hide();
+    ui->zSpeed->hide();
+    ui->zSpeedLabel->hide();
+    ui->label_16->hide();
+    ui->label_6->hide();
+    ui->label_8->hide();
+#endif
     //    ui->xCurrentPos->setAttribute(Qt::WA_PaintOnScreen);
     //    ui->yCurrentPos->setAttribute(Qt::WA_PaintOnScreen);
     //    ui->zCurrentPos->setAttribute(Qt::WA_PaintOnScreen);

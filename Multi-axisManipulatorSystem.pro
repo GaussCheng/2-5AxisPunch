@@ -65,7 +65,7 @@ HEADERS += mainframe.h \
     icutility.h
 
 SK_SIZE = 5
-AXIS_COUNT = 5
+AXIS_COUNT = 2
 equals(AXIS_COUNT, 5){
 DEFINES += HC_AXIS_COUNT_5
 }

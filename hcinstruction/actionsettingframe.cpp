@@ -19,7 +19,11 @@ ActionSettingFrame::ActionSettingFrame(QWidget *parent) :
     axisDefine_(-1)
 {
     ui->setupUi(this);
-
+#ifdef HC_AXIS_COUNT_2
+    ui->gzButton->hide();
+    ui->zPosLineEdit->hide();
+    ui->label_12->hide();
+#endif
     QStringList points;
     ICUserDefineConfigSPTR config = ICUserDefineConfig::Instance();
     for(int i = 0; i != 10; ++i)

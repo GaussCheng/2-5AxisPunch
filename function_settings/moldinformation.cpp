@@ -112,27 +112,27 @@ bool MoldInformation::CreateNewSourceFile(const QString & fileName)
 
         if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis_AxisC) != ICVirtualHost::ICAxisDefine_Servo)
         {
-//            item.SetAction(ICMold::ACTPOSEVERT);
-//            item.SetNum(0);
-//            items.append(item);
+            //            item.SetAction(ICMold::ACTPOSEVERT);
+            //            item.SetNum(0);
+            //            items.append(item);
         }
         CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisX1, ICMold::GX, -1);
-//        items[items.size() - 1].SetNum(items.size() - 1);
+        //        items[items.size() - 1].SetNum(items.size() - 1);
         CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisY1, ICMold::GY, -1);
-//        items[items.size() - 1].SetNum(items.size() - 1);
+        //        items[items.size() - 1].SetNum(items.size() - 1);
         CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisZ, ICMold::GZ, -1);
-//        items[items.size() - 1].SetNum(items.size() - 1);
-//        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisX2, ICMold::GP, -1);
-//        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisY2, ICMold::GQ, -1);
-//        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisA, ICMold::GA, -1);
-//        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisB, ICMold::GB, -1);
-//        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisC, ICMold::GC, -1);
-//        item.SetAction(ICMold::ACT_WaitMoldOpened);
-//        item.SetSVal(1);
-//        item.SetNum(1);
-//        items.append(item);
+        //        items[items.size() - 1].SetNum(items.size() - 1);
+        //        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisX2, ICMold::GP, -1);
+        //        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisY2, ICMold::GQ, -1);
+        //        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisA, ICMold::GA, -1);
+        //        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisB, ICMold::GB, -1);
+        //        CreateFileHelper_(items, ICVirtualHost::ICAxis_AxisC, ICMold::GC, -1);
+        //        item.SetAction(ICMold::ACT_WaitMoldOpened);
+        //        item.SetSVal(1);
+        //        item.SetNum(1);
+        //        items.append(item);
         item.SetAction(ICMold::ACTEND);
-//        item.SetNum(items.size() - 1);
+        //        item.SetNum(items.size() - 1);
         items.append(item);
         for(int i = 0; i != items.size(); ++i)
         {
@@ -153,6 +153,7 @@ bool MoldInformation::CreateNewSourceFile(const QString & fileName)
 #endif
         QFile::copy(recordFilePath_ + "/Base.fnc", recordFilePath_ + "/" + fileNameNoExtent + "fnc");
         QFile::copy(recordFilePath_ + "/Base.sub", recordFilePath_ + "/" + fileNameNoExtent + "sub");
+        QFile::copy(recordFilePath_ + "/Base.sub", recordFilePath_ + "/" + fileNameNoExtent + "reserve");
         newFile.close();
         QMessageBox::warning(this, tr("Success"),
                              tr("New file success."),
@@ -212,6 +213,12 @@ bool MoldInformation::CopySourceFile(const QString & originFileName, const QStri
     QString targetSubFilePath = targetFilePathName;
     targetSubFilePath.chop(3);
     targetSubFilePath += "sub";
+    QString originResvFilePath = originFilePathName;
+    originResvFilePath.chop(3);
+    originResvFilePath += "reserve";
+    QString targetResvFilePath = targetFilePathName;
+    targetResvFilePath.chop(3);
+    targetResvFilePath += "reserve";
     //    QFile::copy(originConfigFilePath, targetConfigFilePath);
     if(QFile::copy(originFilePathName, targetFilePathName))
     {
@@ -219,10 +226,14 @@ bool MoldInformation::CopySourceFile(const QString & originFileName, const QStri
         {
             if(QFile::copy(originSubFilePath, targetSubFilePath))
             {
-                QMessageBox::information(this, tr("Success"),
-                                     tr("Copy file success!"),
-                                     QMessageBox::Ok);
-                return true;
+                if(QFile::copy(originResvFilePath, targetResvFilePath))
+                {
+                    QMessageBox::information(this, tr("Success"),
+                                             tr("Copy file success!"),
+                                             QMessageBox::Ok);
+                    return true;
+                }
+                QFile::remove(targetSubFilePath);
             }
             QFile::remove(targetConfigFilePath);
         }
@@ -250,12 +261,14 @@ bool MoldInformation::DeleteSourceFile(const QString & fileName)
     QString configFile = filePathName;
     configFile.chop(3);
     QString subFile = configFile + "sub";
+    QString resvFile = configFile + "reserve";
     configFile += "fnc";
     if(QFile::exists(filePathName))
     {
         QFile::remove(filePathName);
         QFile::remove(configFile);
         QFile::remove(subFile);
+        QFile::remove(resvFile);
         //        QFile::remove(ICSettingConfig::ConfigPath() + fileName);
         //        QMessageBox::information(this, tr("Success"),
         //                                 tr("File deleted success!"),
@@ -346,6 +359,7 @@ void MoldInformation::on_loadToolButton_clicked()
         qDebug("before Load");
         QString moldName = ui->informationTableWidget->item(currentRow, 0)->text();
         QString subName = moldName + ".sub";
+        QString resvName = moldName + ".reserve";
         moldName += ".act";
         if(ICParametersSave::Instance()->MoldName(QString()) == moldName)
         {
@@ -364,6 +378,7 @@ void MoldInformation::on_loadToolButton_clicked()
                 return;
             }
             system(QString("cp ./records/%1 ./subs/sub7.prg -f").arg(subName).toLatin1());
+            system(QString("cp ./records/%1 ./subs/sub6.prg -f").arg(resvName).toLatin1());
             ICMacroSubroutine::Instance()->ReadMacroSubroutieFiles("./subs");
             ICTipsWidget tipsWidget(tr("Loading..."));
             tipsWidget.show();qApp->processEvents();
@@ -374,7 +389,7 @@ void MoldInformation::on_loadToolButton_clicked()
             ICParametersSave::Instance()->SetMoldName(moldName);
             ICProgramHeadFrame::Instance()->SetCurrentMoldName(moldName);
             emit MoldChanged(moldName);
-//            QMessageBox::information(this, tr("Tips"), tr("Load Mold Successful!"));
+            //            QMessageBox::information(this, tr("Tips"), tr("Load Mold Successful!"));
         }
         ICVirtualHost::GlobalVirtualHost()->SetFixtureCheck(true);
         qDebug("after load");
@@ -416,8 +431,8 @@ void MoldInformation::on_deleteToolButton_clicked()
         {
             QMessageBox::warning(this, tr("warning"),
                                  tr("Stand programs can not be delete!"));
-           flag = true;
-           continue;
+            flag = true;
+            continue;
         }
         selectedItemStringList << selectedItem;
         selectedItemNumberList << i;
@@ -426,9 +441,9 @@ void MoldInformation::on_deleteToolButton_clicked()
     QString str = ui->sourceFileNameLabel->text();
     if(!flag && !str.isEmpty() && (selectedItemStringList.size() == 0))
 
-//        if(!str.isEmpty() && (selectedItemStringList.size() == 0) && \
-//                (str != ICParametersSave::Instance()->MoldName("")) && \
-//                !IsStandProgram(str))
+        //        if(!str.isEmpty() && (selectedItemStringList.size() == 0) && \
+        //                (str != ICParametersSave::Instance()->MoldName("")) && \
+        //                !IsStandProgram(str))
     {
         str.chop(4);
         if((str + ".act") == ICParametersSave::Instance()->MoldName(""))
@@ -472,12 +487,12 @@ void MoldInformation::on_deleteToolButton_clicked()
             else
                 ui->informationTableWidget->removeRow(selectedItemNumberList[i] - i);
 
-//            ui->sourceFileNameLabel->clear();
-//            if(ui->informationTableWidget->rowCount() != 0)
-//            {
-//                ui->sourceFileNameLabel->setText(
-//                            ui->informationTableWidget->item(0,0)->text() + ".act");
-//            }
+            //            ui->sourceFileNameLabel->clear();
+            //            if(ui->informationTableWidget->rowCount() != 0)
+            //            {
+            //                ui->sourceFileNameLabel->setText(
+            //                            ui->informationTableWidget->item(0,0)->text() + ".act");
+            //            }
         }
     }
 
@@ -536,13 +551,14 @@ void MoldInformation::on_importToolButton_clicked()
     if(!dir.exists())
     {
         QMessageBox::warning(this, tr("Warnning"), tr("Backup files is not exists!"));
-//        ui->exportCheckBox->setChecked(true);
+        //        ui->exportCheckBox->setChecked(true);
         return;
     }
 
     QStringList acts = dir.entryList(QStringList()<<"*.act");
     QStringList fncs = dir.entryList(QStringList()<<"*.fnc");
     QStringList actsubs = dir.entryList(QStringList()<<"*.sub");
+    QStringList reserves = dir.entryList(QStringList()<<"*.reserve");
     acts_ = src_dir.entryList(QStringList()<<"*.act");
 
 
@@ -615,6 +631,19 @@ void MoldInformation::on_importToolButton_clicked()
             return;
         }
     }
+    for(int i = 0; i != reserves.size(); ++i)
+    {
+        file.setFileName(dir.absoluteFilePath(reserves.at(i)));
+        actContent.clear();
+        file.open(QFile::ReadOnly | QFile::Text);
+        actContent = file.readAll();
+        file.close();
+        if(!programChecker.Check(actContent))
+        {
+            QMessageBox::warning(this, tr("Warnning"), tr("Wrong program format!"));
+            return;
+        }
+    }
     int rows_ = ui->informationTableWidget->rowCount();
     bool flagItem = TRUE ;
     bool flagItem_ = TRUE ;
@@ -640,7 +669,7 @@ void MoldInformation::on_importToolButton_clicked()
                 }
 
                 if(QMessageBox::question(this,tr("tips"),tr( "%1 is exist,replace it?").arg(item_text),
-                                             QMessageBox::Ok,QMessageBox::Cancel) == QMessageBox::Cancel)
+                                         QMessageBox::Ok,QMessageBox::Cancel) == QMessageBox::Cancel)
                 {
                     flag = true;
                     continue;
@@ -649,13 +678,14 @@ void MoldInformation::on_importToolButton_clicked()
             selectedImportItemName_.append(item_text + ".act");
             selectedImportItemName_.append(item_text + ".fnc");
             selectedImportItemName_.append(item_text + ".sub");
+            selectedImportItemName_.append(item_text + ".reserve");
             flagItem = FALSE ;
         }
     }
 
     //如果没有勾选模号，那么可以导入选中的当前行的模号
     QString str = ui->sourceFileNameLabel->text();
-//    if((selectedImportItemName_.size() == 0) && (!acts_.contains(str + ".act")))
+    //    if((selectedImportItemName_.size() == 0) && (!acts_.contains(str + ".act")))
     if(!flag && !str.isEmpty() && (selectedImportItemName_.size() == 0))
     {
         str.chop(4);
@@ -680,6 +710,7 @@ void MoldInformation::on_importToolButton_clicked()
         selectedImportItemName_.append(str + ".act");
         selectedImportItemName_.append(str + ".fnc");
         selectedImportItemName_.append(str + ".sub");
+        selectedImportItemName_.append(str + ".reserve");
         flagItem_ = FALSE;
     }
     ICTipsWidget tipsWidget(tr("Restoring, please wait..."));
@@ -783,6 +814,7 @@ void MoldInformation::on_exportToolButton_clicked()
             selectedExportItemName_.append(item_text + ".act");
             selectedExportItemName_.append(item_text + ".fnc");
             selectedExportItemName_.append(item_text + ".sub");
+            selectedExportItemName_.append(item_text + ".reserve");
             flagItem = FALSE ;
         }
     }
@@ -790,7 +822,7 @@ void MoldInformation::on_exportToolButton_clicked()
     //如果没有勾选模号，那么可以导出选中的当前行的模号
     QString str = ui->sourceFileNameLabel->text();
     if(!flag && !str.isEmpty() && (selectedExportItemName_.size() == 0))
-//    if(selectedExportItemName_.size() == 0 && !acts_.contains(str + ".act"))
+        //    if(selectedExportItemName_.size() == 0 && !acts_.contains(str + ".act"))
     {
         str.chop(4);
         if(acts_.contains(str + ".act"))
@@ -804,6 +836,7 @@ void MoldInformation::on_exportToolButton_clicked()
         selectedExportItemName_.append(str + ".act");
         selectedExportItemName_.append(str + ".fnc");
         selectedExportItemName_.append(str + ".sub");
+        selectedExportItemName_.append(str + ".reserve");
         flagItem_ = FALSE;
     }
     if(selectedExportItemName_.size() == 0)
@@ -860,13 +893,13 @@ void MoldInformation::switchPushButton()
         ui->sourceFileNameLabel->clear();
         break;
     case 1:
-//        ui->newToolButton->setEnabled(false);
-//        ui->copyToolButton->setEnabled(false);
-//        ui->loadToolButton->setEnabled(false);
-//        ui->deleteToolButton->setEnabled(false);
-//        ui->exportToolButton->setEnabled(false);
-//        ui->importToolButton->setEnabled(true);
-//        ui->sourceFileNameLabel->clear();
+        //        ui->newToolButton->setEnabled(false);
+        //        ui->copyToolButton->setEnabled(false);
+        //        ui->loadToolButton->setEnabled(false);
+        //        ui->deleteToolButton->setEnabled(false);
+        //        ui->exportToolButton->setEnabled(false);
+        //        ui->importToolButton->setEnabled(true);
+        //        ui->sourceFileNameLabel->clear();
         RefreshFileList();
         break;
     }
