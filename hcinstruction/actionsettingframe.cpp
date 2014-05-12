@@ -23,6 +23,9 @@ ActionSettingFrame::ActionSettingFrame(QWidget *parent) :
     ui->gzButton->hide();
     ui->zPosLineEdit->hide();
     ui->label_12->hide();
+    ui->gtButton->hide();
+    ui->tPosLineEdit->hide();
+    ui->label_13->hide();
 #endif
     QStringList points;
     ICUserDefineConfigSPTR config = ICUserDefineConfig::Instance();
@@ -45,6 +48,7 @@ ActionSettingFrame::ActionSettingFrame(QWidget *parent) :
     axisWidgets_.append(QList<QWidget*>()<<ui->gyButton<<ui->y1PosLineEdit);
 #ifdef HC_AXIS_COUNT_5
     axisWidgets_.append(QList<QWidget*>()<<ui->gzButton<<ui->zPosLineEdit);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gtButton<<ui->tPosLineEdit);
 #endif
 
 #ifdef Q_WS_X11
@@ -84,6 +88,9 @@ void ActionSettingFrame::InitInterface()
     ui->zPosLineEdit->SetDecimalPlaces(POS_DECIMAL);
     //    ui->zPosLineEdit->setValidator(posvalidator);
     ui->zPosLineEdit->setValidator(posValidators_ + 2);
+    ui->tPosLineEdit->SetDecimalPlaces(POS_DECIMAL);
+    //    ui->zPosLineEdit->setValidator(posvalidator);
+    ui->tPosLineEdit->setValidator(posValidators_ + 4);
 #endif
 
     QIntValidator *speed = new QIntValidator(0, 100, this);
@@ -249,6 +256,16 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         item.SetActualIfPos(0);
         ret.append(item);
     }
+    if(ui->gtButton->isChecked() && (!ui->gtButton->isHidden()))
+    {
+        item.SetAction(ICMold::GQ);
+        item.SetActualPos(ui->tPosLineEdit->TransThisTextToThisInt());
+        item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
+        item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
+//        item.SetIFVal(0);
+        item.SetActualIfPos(0);
+        ret.append(item);
+    }
 #endif
     return ret;
 }
@@ -313,6 +330,19 @@ void ActionSettingFrame::on_gzButton_toggled(bool checked)
 //        ui->zComeOutBox->setEnabled(false);
     }
 }
+
+void ActionSettingFrame::on_gtButton_toggled(bool checked)
+{
+    if(checked && ui->absBox->isChecked())
+    {
+        ui->tPosLineEdit->setEnabled(true);
+    }
+    else
+    {
+        ui->tPosLineEdit->setEnabled(false);
+    }
+}
+
 #endif
 
 void ActionSettingFrame::ShowWidgets_(QList<QWidget *> &widgets)
@@ -349,7 +379,7 @@ void ActionSettingFrame::KeyToActionCheck(int key)
         break;
     case ICKeyboard::VFB_ZAdd:
     case ICKeyboard::VFB_ZSub:
-//        ui->gzButton->setChecked(true);
+        ui->gzButton->setChecked(true);
         break;
     case ICKeyboard::VFB_X2Add:
     case ICKeyboard::VFB_X2Sub:
@@ -379,6 +409,7 @@ void ActionSettingFrame::on_absBox_toggled(bool checked)
     ui->y1PosLineEdit->setEnabled(checked && ui->gyButton->isChecked());
 #ifdef HC_AXIS_COUNT_5
     ui->zPosLineEdit->setEnabled(checked && ui->gzButton->isChecked());
+    ui->tPosLineEdit->setEnabled(checked && ui->gtButton->isChecked());
 #endif
     ui->pointSel->setEnabled(!checked);
 }
@@ -389,3 +420,4 @@ void ActionSettingFrame::on_axisBoard_clicked()
     ICAxisKeyboard::Instance()->show();
 }
 #endif
+

@@ -28,9 +28,9 @@ ICMachineStructPage::ICMachineStructPage(QWidget *parent) :
 
     ui->axisXToolButton->setText(tr("X1 Axis"));
     ui->axisYToolButton->setText(tr("Y1 Axis"));
-    ui->axisZToolButton->setText(tr("Z Axis"));
+    ui->axisZToolButton->setText(tr("T Axis"));
     ui->axisPToolButton->setText(tr("X2 Axis"));
-    ui->axisQToolButton->setText(tr("Y2 Axis"));
+    ui->axisQToolButton->setText(tr("S Axis"));
     ui->axisAToolButton->setText(tr("A Axis"));
     ui->axisBToolButton->setText(tr("B Axis"));
     ui->axisCToolButton->setText(tr("C Axis"));
@@ -84,9 +84,9 @@ void ICMachineStructPage::changeEvent(QEvent *e)
         ui->retranslateUi(this);
         ui->axisXToolButton->setText(tr("X1 Axis"));
         ui->axisYToolButton->setText(tr("Y1 Axis"));
-        ui->axisZToolButton->setText(tr("Z Axis"));
+        ui->axisZToolButton->setText(tr("T Axis"));
         ui->axisPToolButton->setText(tr("X2 Axis"));
-        ui->axisQToolButton->setText(tr("Y2 Axis"));
+        ui->axisQToolButton->setText(tr("S Axis"));
         ui->axisAToolButton->setText(tr("A Axis"));
         ui->axisBToolButton->setText(tr("B Axis"));
         ui->axisCToolButton->setText(tr("C Axis"));

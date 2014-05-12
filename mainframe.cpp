@@ -224,6 +224,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
         int overTime = QDateTime::currentDateTime().daysTo(last) * 24;
         restTime -= qAbs(overTime);
     }
+    ICParametersSave::Instance()->SetBootDatetime(QDateTime::currentDateTime());
     isOverTime_ = (restTime == 1);
     registe_timer->start(3600000);
 
@@ -1062,4 +1063,5 @@ void MainFrame::CountRestTime()
     isOverTime_ = false;
     --restTime;
     ICParametersSave::Instance()->SetRestTime(restTime);
+    ICParametersSave::Instance()->SetBootDatetime(QDateTime::currentDateTime());
 }

@@ -17,8 +17,9 @@
     </message>
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="82"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="231"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="266"/>
         <location filename="hcinstruction/actionsettingframe.ui" line="475"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="548"/>
         <location filename="hcinstruction/actionsettingframe_8.ui" line="82"/>
         <location filename="hcinstruction/actionsettingframe_8.ui" line="231"/>
         <location filename="hcinstruction/actionsettingframe_8.ui" line="475"/>
@@ -50,13 +51,23 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="hcinstruction/actionsettingframe.ui" line="450"/>
+        <source>GS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/actionsettingframe.ui" line="523"/>
+        <source>GT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="343"/>
         <location filename="hcinstruction/actionsettingframe_8.ui" line="343"/>
         <source>Speed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="301"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="241"/>
         <location filename="hcinstruction/actionsettingframe_8.ui" line="301"/>
         <source>GY</source>
         <translation type="unfinished"></translation>
@@ -65,6 +76,7 @@
         <location filename="hcinstruction/actionsettingframe.ui" line="206"/>
         <location filename="hcinstruction/actionsettingframe.ui" line="359"/>
         <location filename="hcinstruction/actionsettingframe.ui" line="488"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="561"/>
         <location filename="hcinstruction/actionsettingframe_8.ui" line="206"/>
         <location filename="hcinstruction/actionsettingframe_8.ui" line="359"/>
         <location filename="hcinstruction/actionsettingframe_8.ui" line="488"/>
@@ -72,7 +84,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="250"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="285"/>
         <location filename="hcinstruction/actionsettingframe_8.ui" line="250"/>
         <source>80</source>
         <translation type="unfinished"></translation>
@@ -90,13 +102,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="269"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="317"/>
         <location filename="hcinstruction/actionsettingframe_8.ui" line="269"/>
         <source>Set=&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="450"/>
         <location filename="hcinstruction/actionsettingframe_8.ui" line="450"/>
         <source>GZ</source>
         <translation type="unfinished"></translation>
@@ -1497,6 +1508,7 @@ Infomation</source>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1861"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1874"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3753"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4688"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="397"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="424"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="451"/>
@@ -1533,6 +1545,7 @@ Infomation</source>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2768"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3262"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4184"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="5132"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="2470"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="3405"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="4331"/>
@@ -1543,6 +1556,7 @@ Infomation</source>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2324"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2831"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4203"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4216"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1548"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="3424"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="3450"/>
@@ -1553,6 +1567,7 @@ Infomation</source>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1829"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2305"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3721"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4647"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1979"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="2907"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="3894"/>
@@ -1617,6 +1632,17 @@ Infomation</source>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="344"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="470"/>
         <source>X Run</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="377"/>
+        <source>S Run</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="384"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3740"/>
+        <source>S:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1822,6 +1848,21 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3287"/>
+        <source>S.Speed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4672"/>
+        <source>T.Speed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4701"/>
+        <source>T:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="666"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="2004"/>
         <source>P.Clear</source>
@@ -1873,15 +1914,12 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="384"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3740"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="431"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="3463"/>
         <source>Z:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="377"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="508"/>
         <source>Z Run</source>
         <translation type="unfinished"></translation>
@@ -1892,7 +1930,6 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3287"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="4356"/>
         <source>Z.Speed</source>
         <translation type="unfinished"></translation>
@@ -2132,6 +2169,7 @@ Infomation</source>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="1114"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="2001"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="2984"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="3421"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="651"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="1547"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="2534"/>
@@ -2142,6 +2180,7 @@ Infomation</source>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="211"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="1570"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="2090"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="3925"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="1592"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="1605"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="2553"/>
@@ -2158,6 +2197,7 @@ Infomation</source>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="664"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="1551"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="2547"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="3906"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="1088"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="2049"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="2984"/>
@@ -2174,6 +2214,7 @@ Infomation</source>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="198"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="2020"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="2116"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="3462"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="1566"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="1579"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="2103"/>
@@ -2196,6 +2237,26 @@ Infomation</source>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="2052"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="1113"/>
         <source>X.Speed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="2074"/>
+        <source>S.Speed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="2103"/>
+        <source>S:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="3446"/>
+        <source>T.Speed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="3475"/>
+        <source>T:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2277,13 +2338,11 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="2074"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="2074"/>
         <source>Z.Speed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="2103"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="2090"/>
         <source>Z:</source>
         <translation type="unfinished"></translation>
@@ -3349,12 +3408,14 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcsettings/icmachineconfigpage.ui" line="32"/>
-        <source>Z Acceleration and Deceleration</source>
+        <source>S Acceleration and Deceleration</source>
+        <oldsource>Z Acceleration and Deceleration</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/icmachineconfigpage.ui" line="131"/>
-        <source>Z Max Speed</source>
+        <source>S Max Speed</source>
+        <oldsource>Z Max Speed</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3375,12 +3436,14 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcsettings/icmachineconfigpage.ui" line="147"/>
-        <source>Y2 Acceleration and Deceleration</source>
+        <source>T Acceleration and Deceleration</source>
+        <oldsource>Y2 Acceleration and Deceleration</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/icmachineconfigpage.ui" line="316"/>
-        <source>Y2 Max Speed</source>
+        <source>T Max Speed</source>
+        <oldsource>Y2 Max Speed</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3562,7 +3625,8 @@ Please enter an digit between </source>
     <message>
         <location filename="hcsettings/icmachinestructpage.cpp" line="31"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="87"/>
-        <source>Z Axis</source>
+        <source>T Axis</source>
+        <oldsource>Z Axis</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3574,7 +3638,8 @@ Please enter an digit between </source>
     <message>
         <location filename="hcsettings/icmachinestructpage.cpp" line="33"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="89"/>
-        <source>Y2 Axis</source>
+        <source>S Axis</source>
+        <oldsource>Y2 Axis</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4461,6 +4526,16 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="hcsettings/icstructdefineframe.ui" line="122"/>
+        <source>S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/icstructdefineframe.ui" line="218"/>
+        <source>T</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="314"/>
         <location filename="hcsettings/icstructdefineframe.cpp" line="115"/>
         <source>C</source>
@@ -4517,7 +4592,6 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="122"/>
         <location filename="hcsettings/icstructdefineframe.cpp" line="119"/>
         <source>Z</source>
         <oldsource>C</oldsource>
@@ -4553,7 +4627,6 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="218"/>
         <location filename="hcsettings/icstructdefineframe.cpp" line="139"/>
         <source>Y2</source>
         <translation type="unfinished"></translation>

@@ -62,6 +62,7 @@ private slots:
     void on_gyButton_toggled(bool checked);
 #ifdef HC_AXIS_COUNT_5
     void on_gzButton_toggled(bool checked);
+    void on_gtButton_toggled(bool checked);
 #endif
 #ifdef HC_SK_8_SC
     void on_axisBoard_clicked();

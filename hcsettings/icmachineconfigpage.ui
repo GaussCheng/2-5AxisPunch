@@ -29,7 +29,7 @@
    <item row="3" column="0">
     <widget class="QLabel" name="zALabel">
      <property name="text">
-      <string>Z Acceleration and Deceleration</string>
+      <string>S Acceleration and Deceleration</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -128,7 +128,7 @@
    <item row="3" column="5">
     <widget class="QLabel" name="zMLabel">
      <property name="text">
-      <string>Z Max Speed</string>
+      <string>S Max Speed</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -144,7 +144,7 @@
    <item row="5" column="0">
     <widget class="QLabel" name="y2ALabel">
      <property name="text">
-      <string>Y2 Acceleration and Deceleration</string>
+      <string>T Acceleration and Deceleration</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -313,7 +313,7 @@
    <item row="5" column="5">
     <widget class="QLabel" name="y2MLabel">
      <property name="text">
-      <string>Y2 Max Speed</string>
+      <string>T Max Speed</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
