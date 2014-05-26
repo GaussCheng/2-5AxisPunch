@@ -46,6 +46,8 @@ private:
     int oXP_;
     int oYP_;
     int oZP_;
+    int oTP_;
+    int oPP_;
     QIntValidator posValidators_[8];
     QIntValidator posValidator[3];
     int posMaxs_[8];
@@ -68,6 +70,7 @@ private slots:
     void on_axisBoard_clicked();
 #endif
     void on_absBox_toggled(bool checked);
+    void on_gPButton_toggled(bool checked);
 };
 
 #endif // ACTIONSETTINGFRAME_H

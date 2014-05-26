@@ -296,6 +296,7 @@ static int16_t oldX = -1;
 static int16_t oldY = -1;
 static int16_t oldZ = -1;
 static int16_t oldQ = -1;
+static int16_t oldP = -1;
 static int oldS = -1;
 //static bool isSingleRun = false;
 static int oldStep = -1;
@@ -327,6 +328,13 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
     {
         oldQ = pos;
         ui->tCurrentPos->setText(QString().sprintf("%.1f", pos / 10.0));
+    }
+
+    pos = host->HostStatus(ICVirtualHost::PPos).toInt();
+    if(pos != oldP)
+    {
+        oldP = pos;
+        ui->x2CurrentPos->setText(QString().sprintf("%.1f", pos / 10.0));
     }
 #endif
     int speed = host->HostStatus(ICVirtualHost::DbgX0).toInt() | (host->HostStatus(ICVirtualHost::DbgX1).toUInt() << 16);

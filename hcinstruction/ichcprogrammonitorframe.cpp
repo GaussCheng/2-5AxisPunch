@@ -293,6 +293,7 @@ static int16_t oldX = -1;
 static int16_t oldY = -1;
 static int16_t oldZ = -1;
 static int16_t oldQ = -1;
+static int16_t oldP = -1;
 static int oldS = -1;
 void ICHCProgramMonitorFrame::StatusRefreshed()
 {
@@ -321,6 +322,13 @@ void ICHCProgramMonitorFrame::StatusRefreshed()
     {
         oldQ = pos;
         ui->tCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
+    }
+
+    pos = host->HostStatus(ICVirtualHost::PPos).toInt();
+    if(pos != oldP)
+    {
+        oldP = pos;
+        ui->x2CurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
     }
 #endif
     int speed = host->GlobalSpeed();

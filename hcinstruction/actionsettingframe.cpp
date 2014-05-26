@@ -49,6 +49,7 @@ ActionSettingFrame::ActionSettingFrame(QWidget *parent) :
 #ifdef HC_AXIS_COUNT_5
     axisWidgets_.append(QList<QWidget*>()<<ui->gzButton<<ui->zPosLineEdit);
     axisWidgets_.append(QList<QWidget*>()<<ui->gtButton<<ui->tPosLineEdit);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gPButton<<ui->pPosLineEdit);
 #endif
 
 #ifdef Q_WS_X11
@@ -91,6 +92,8 @@ void ActionSettingFrame::InitInterface()
     ui->tPosLineEdit->SetDecimalPlaces(POS_DECIMAL);
     //    ui->zPosLineEdit->setValidator(posvalidator);
     ui->tPosLineEdit->setValidator(posValidators_ + 4);
+    ui->pPosLineEdit->SetDecimalPlaces(POS_DECIMAL);
+    ui->pPosLineEdit->setValidator(posValidators_ + 5);
 #endif
 
     QIntValidator *speed = new QIntValidator(0, 100, this);
@@ -119,6 +122,8 @@ void ActionSettingFrame::on_inputButton_clicked()
     ui->y1PosLineEdit->setText(QString().sprintf("%.1f", oYP_ / 10.0));
 #ifdef HC_AXIS_COUNT_5
     ui->zPosLineEdit->setText(QString().sprintf("%.1f", oZP_ / 10.0));
+    ui->tPosLineEdit->setText(QString().sprintf("%.1f", oTP_ / 10.0));
+    ui->pPosLineEdit->setText(QString().sprintf("%.1f", oPP_ / 10.0));
 #endif
 
     //do someting
@@ -208,6 +213,19 @@ void ActionSettingFrame::StatusRefresh()
     {
         oXP_ = pos;
     }
+
+#ifdef HC_AXIS_COUNT_5
+    pos = host->GetActualPos(ICVirtualHost::ICAxis_AxisX2, axisLast);
+    if(pos != oPP_)
+    {
+        oPP_ = pos;
+    }
+    pos = host->GetActualPos(ICVirtualHost::ICAxis_AxisY2, axisLast);
+    if(pos != oTP_)
+    {
+        oTP_ = pos;
+    }
+#endif
 }
 
 QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
@@ -260,6 +278,17 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
     {
         item.SetAction(ICMold::GQ);
         item.SetActualPos(ui->tPosLineEdit->TransThisTextToThisInt());
+        item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
+        item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
+//        item.SetIFVal(0);
+        item.SetActualIfPos(0);
+        ret.append(item);
+    }
+
+    if(ui->gPButton->isChecked() && (!ui->gPButton->isHidden()))
+    {
+        item.SetAction(ICMold::GP);
+        item.SetActualPos(ui->pPosLineEdit->TransThisTextToThisInt());
         item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
         item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
 //        item.SetIFVal(0);
@@ -343,6 +372,19 @@ void ActionSettingFrame::on_gtButton_toggled(bool checked)
     }
 }
 
+void ActionSettingFrame::on_gPButton_toggled(bool checked)
+{
+    if(checked && ui->absBox->isChecked())
+    {
+        ui->pPosLineEdit->setEnabled(true);
+    }
+    else
+    {
+        ui->pPosLineEdit->setEnabled(false);
+    }
+}
+
+
 #endif
 
 void ActionSettingFrame::ShowWidgets_(QList<QWidget *> &widgets)
@@ -363,6 +405,9 @@ void ActionSettingFrame::HideWidgets_(QList<QWidget *> &widgets)
 
 void ActionSettingFrame::UpdateAxisDefine_()
 {
+#ifdef HC_AXIS_COUNT_5
+
+#endif
 }
 
 void ActionSettingFrame::KeyToActionCheck(int key)
@@ -410,6 +455,7 @@ void ActionSettingFrame::on_absBox_toggled(bool checked)
 #ifdef HC_AXIS_COUNT_5
     ui->zPosLineEdit->setEnabled(checked && ui->gzButton->isChecked());
     ui->tPosLineEdit->setEnabled(checked && ui->gtButton->isChecked());
+    ui->pPosLineEdit->setEnabled(checked && ui->gtButton->isChecked());
 #endif
     ui->pointSel->setEnabled(!checked);
 }
