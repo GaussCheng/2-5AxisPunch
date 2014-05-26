@@ -406,7 +406,11 @@ void ActionSettingFrame::HideWidgets_(QList<QWidget *> &widgets)
 void ActionSettingFrame::UpdateAxisDefine_()
 {
 #ifdef HC_AXIS_COUNT_5
-
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    bool isAxisX2Visable = (host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) != ICVirtualHost::ICAxisDefine_None);
+    ui->gPButton->setVisible(isAxisX2Visable);
+    ui->pPosLineEdit->setVisible(isAxisX2Visable);
+    ui->label_13->setVisible(isAxisX2Visable);
 #endif
 }
 
