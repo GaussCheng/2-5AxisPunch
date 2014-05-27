@@ -986,14 +986,14 @@ bool ICHCInstructionPageFrame::SaveCurrentEdit()
             QFile::remove(moldName);
             ret = QFile::copy("subs/sub7.prg", moldName);
         }
-        if(currentEdit_ == 7)
+        if(currentEdit_ < 8 )
         {
             QString moldName = ICParametersSave::Instance()->MoldName("Base.act");
             moldName.chop(3);
             moldName += "reserve";
-            moldName = QString("records/%1").arg(moldName);
+            moldName = QString("records/%1%2").arg(moldName).arg(currentEdit_);
             QFile::remove(moldName);
-            ret = QFile::copy("subs/sub6.prg", moldName);
+            ret = QFile::copy(QString("subs/sub%1.prg").arg(currentEdit_ - 1), moldName);
         }
         return ret;
     }
@@ -1050,7 +1050,8 @@ void ICHCInstructionPageFrame::OnMoldChanged(const QString &name)
     //    programList_ = ICMold::MoldItemToUIItem(ICMacroSubroutine::Instance()->SubRoutine(currentEdit_ - 1));
 }
 
-void ICHCInstructionPageFrame::on_reserveButton_clicked()
+
+void ICHCInstructionPageFrame::on_reserveBox_activated(int index)
 {
-     OnProgramChanged(7, "");
+    OnProgramChanged(index + 1, "");
 }

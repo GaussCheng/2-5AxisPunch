@@ -72,6 +72,8 @@ ICHCProgramMonitorFrame::ICHCProgramMonitorFrame(QWidget *parent) :
             this,
             SLOT(LevelChanged(int)));
     LevelChanged(ICProgramHeadFrame::Instance()->CurrentLevel());
+    ui->tSpeed->hide();
+    ui->tSpeed_2->hide();
 }
 
 ICHCProgramMonitorFrame::~ICHCProgramMonitorFrame()
@@ -339,6 +341,8 @@ void ICHCProgramMonitorFrame::StatusRefreshed()
         ui->ySpeedLabel->setText(QString::number(speed & 0xFF));
 #ifdef HC_AXIS_COUNT_5
         ui->zSpeedLabel->setText(QString::number((speed >> 16) & 0xFF));
+        ui->x2SpeedLabel->setText(ui->xSpeedLabel->text());
+        ui->tSpeedLabel->setText(ui->ySpeedLabel->text());
 #endif
     }
 

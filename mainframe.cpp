@@ -653,7 +653,7 @@ void MainFrame::StatusRefreshed()
         }
         else if(runningStatus_ == ICVirtualHost::Return)
         {
-            ShowReturn();
+//            ShowReturn();
         }
     }
     LevelChanged(ICProgramHeadFrame::Instance()->CurrentLevel());

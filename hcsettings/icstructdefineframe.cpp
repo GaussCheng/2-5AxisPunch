@@ -11,6 +11,28 @@
 #include <QDebug>
 #include "mainframe.h"
 
+typedef union {
+     struct {
+        u_int16_t canType : 8;
+        u_int16_t  canAddr:8;
+    }b;
+    u_int16_t all;
+}CanConfig;
+
+typedef union{
+     struct{
+        u_int16_t r1 : 1;
+        u_int16_t r2 : 1;
+        u_int16_t r3 : 1;
+        u_int16_t r4 : 1;
+        u_int16_t r5 : 1;
+        u_int16_t r6 : 1;
+        u_int16_t r7 : 1;
+        u_int16_t r : 9;
+    }b;
+    u_int16_t all;
+}ReserveProgConfig;
+
 ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ICStructDefineFrame)
@@ -81,9 +103,20 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
         }
     }
 
-    ui->canType->setCurrentIndex(ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::SYS_Config_Resv1).toInt());
-    ui->canID->SetThisIntToThisText(ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::SYS_Config_Resv2).toInt());
+    CanConfig canConfig;
+    canConfig.all = ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::SYS_Config_Resv1).toInt();
+    ui->canType->setCurrentIndex(canConfig.b.canType);
+    ui->canID->SetThisIntToThisText(canConfig.b.canAddr);
 
+    ReserveProgConfig progConfig;
+    progConfig.all =  ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::SYS_Config_Resv2).toInt();
+    ui->rP1->setCurrentIndex(progConfig.b.r1);
+    ui->rP2->setCurrentIndex(progConfig.b.r2);
+    ui->rP3->setCurrentIndex(progConfig.b.r3);
+    ui->rP4->setCurrentIndex(progConfig.b.r4);
+    ui->rP5->setCurrentIndex(progConfig.b.r5);
+    ui->rP6->setCurrentIndex(progConfig.b.r6);
+    ui->rP7->setCurrentIndex(progConfig.b.r7);
 }
 
 ICStructDefineFrame::~ICStructDefineFrame()
@@ -188,8 +221,19 @@ void ICStructDefineFrame::on_saveButton_clicked()
     dataBuffer[2] = 0;
 //    dataBuffer[3] = ICVirtualHost::GlobalVirtualHost()->FixtureDefineSwitch(ui->fixtureSelectBox->currentIndex());
     dataBuffer[3] = machineCount;
-    dataBuffer[4] = ui->canType->currentIndex();
-    dataBuffer[5] = ui->canID->TransThisTextToThisInt();
+    CanConfig canConfig;
+    canConfig.b.canType = ui->canType->currentIndex();
+    canConfig.b.canAddr = ui->canID->TransThisTextToThisInt();
+    ReserveProgConfig progConfig;
+    progConfig.b.r1 = ui->rP1->currentIndex();
+    progConfig.b.r2 = ui->rP2->currentIndex();
+    progConfig.b.r3 = ui->rP3->currentIndex();
+    progConfig.b.r4 = ui->rP4->currentIndex();
+    progConfig.b.r5 = ui->rP5->currentIndex();
+    progConfig.b.r6 = ui->rP6->currentIndex();
+    progConfig.b.r7 = ui->rP7->currentIndex();
+    dataBuffer[4] = canConfig.all;
+    dataBuffer[5] = progConfig.all;
     for(int i = 0; i != 6; ++i)
     {
         sum += dataBuffer.at(i);

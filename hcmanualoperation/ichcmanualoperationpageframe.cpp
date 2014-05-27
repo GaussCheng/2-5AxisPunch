@@ -52,6 +52,8 @@ ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     modifyDialog_ = new AxisModifyDialog();
     yOnPalette.setBrush(QPalette::Button, QBrush(Qt::green));
     oriPalette = ui->b1->palette();
+    ui->tSpeed->hide();
+    ui->x2Speed->hide();
 }
 
 ICHCManualOperationPageFrame::~ICHCManualOperationPageFrame()
@@ -346,6 +348,8 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
         ui->ySpeedLabel->setText(QString::number(speed & 0xFF));
 #ifdef HC_AXIS_COUNT_5
         ui->zSpeedLabel->setText(QString::number((speed >> 16) & 0xFF));
+        ui->x2SpeedLabel->setText(ui->xSpeedLabel->text());
+        ui->tSpeedLabel->setText(ui->ySpeedLabel->text());
 #endif
     }
     bool isSingleRunFinished = host->HostStatus(ICVirtualHost::ActL).toInt() == 0;

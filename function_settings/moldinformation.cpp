@@ -153,7 +153,13 @@ bool MoldInformation::CreateNewSourceFile(const QString & fileName)
 #endif
         QFile::copy(recordFilePath_ + "/Base.fnc", recordFilePath_ + "/" + fileNameNoExtent + "fnc");
         QFile::copy(recordFilePath_ + "/Base.sub", recordFilePath_ + "/" + fileNameNoExtent + "sub");
-        QFile::copy(recordFilePath_ + "/Base.sub", recordFilePath_ + "/" + fileNameNoExtent + "reserve");
+        QFile::copy(recordFilePath_ + "/Base.sub", recordFilePath_ + "/" + fileNameNoExtent + "reserve1");
+        QFile::copy(recordFilePath_ + "/Base.sub", recordFilePath_ + "/" + fileNameNoExtent + "reserve2");
+        QFile::copy(recordFilePath_ + "/Base.sub", recordFilePath_ + "/" + fileNameNoExtent + "reserve3");
+        QFile::copy(recordFilePath_ + "/Base.sub", recordFilePath_ + "/" + fileNameNoExtent + "reserve4");
+        QFile::copy(recordFilePath_ + "/Base.sub", recordFilePath_ + "/" + fileNameNoExtent + "reserve5");
+        QFile::copy(recordFilePath_ + "/Base.sub", recordFilePath_ + "/" + fileNameNoExtent + "reserve6");
+        QFile::copy(recordFilePath_ + "/Base.sub", recordFilePath_ + "/" + fileNameNoExtent + "reserve7");
         newFile.close();
         QMessageBox::warning(this, tr("Success"),
                              tr("New file success."),
@@ -226,13 +232,20 @@ bool MoldInformation::CopySourceFile(const QString & originFileName, const QStri
         {
             if(QFile::copy(originSubFilePath, targetSubFilePath))
             {
-                if(QFile::copy(originResvFilePath, targetResvFilePath))
+                bool isOk = true;
+                for(int i = 1; i != 8; ++i)
                 {
-                    QMessageBox::information(this, tr("Success"),
-                                             tr("Copy file success!"),
-                                             QMessageBox::Ok);
-                    return true;
+                    isOk = isOk && QFile::copy(originResvFilePath+ QString::number(i), targetResvFilePath + QString::number(i));
+//                    if(QFile::copy(originResvFilePath, targetResvFilePath))
+//                    {
+//                        QMessageBox::information(this, tr("Success"),
+//                                                 tr("Copy file success!"),
+//                                                 QMessageBox::Ok);
+//                        return true;
+//                    }
                 }
+                if(isOk) return true;
+                system(QString("rm %1*").arg(targetResvFilePath).toLatin1());
                 QFile::remove(targetSubFilePath);
             }
             QFile::remove(targetConfigFilePath);
@@ -268,7 +281,9 @@ bool MoldInformation::DeleteSourceFile(const QString & fileName)
         QFile::remove(filePathName);
         QFile::remove(configFile);
         QFile::remove(subFile);
-        QFile::remove(resvFile);
+//        QFile::remove(resvFile);
+        QString toRm = QString("rm %1*").arg(resvFile);
+        system(toRm.toLatin1());
         //        QFile::remove(ICSettingConfig::ConfigPath() + fileName);
         //        QMessageBox::information(this, tr("Success"),
         //                                 tr("File deleted success!"),
@@ -378,7 +393,13 @@ void MoldInformation::on_loadToolButton_clicked()
                 return;
             }
             system(QString("cp ./records/%1 ./subs/sub7.prg -f").arg(subName).toLatin1());
-            system(QString("cp ./records/%1 ./subs/sub6.prg -f").arg(resvName).toLatin1());
+            system(QString("cp ./records/%1%2 ./subs/sub0.prg -f").arg(resvName).arg(1).toLatin1());
+            system(QString("cp ./records/%1%2 ./subs/sub1.prg -f").arg(resvName).arg(2).toLatin1());
+            system(QString("cp ./records/%1%2 ./subs/sub2.prg -f").arg(resvName).arg(3).toLatin1());
+            system(QString("cp ./records/%1%2 ./subs/sub3.prg -f").arg(resvName).arg(4).toLatin1());
+            system(QString("cp ./records/%1%2 ./subs/sub4.prg -f").arg(resvName).arg(5).toLatin1());
+            system(QString("cp ./records/%1%2 ./subs/sub5.prg -f").arg(resvName).arg(6).toLatin1());
+            system(QString("cp ./records/%1%2 ./subs/sub6.prg -f").arg(resvName).arg(7).toLatin1());
             ICMacroSubroutine::Instance()->ReadMacroSubroutieFiles("./subs");
             ICTipsWidget tipsWidget(tr("Loading..."));
             tipsWidget.show();qApp->processEvents();
@@ -558,7 +579,7 @@ void MoldInformation::on_importToolButton_clicked()
     QStringList acts = dir.entryList(QStringList()<<"*.act");
     QStringList fncs = dir.entryList(QStringList()<<"*.fnc");
     QStringList actsubs = dir.entryList(QStringList()<<"*.sub");
-    QStringList reserves = dir.entryList(QStringList()<<"*.reserve");
+    QStringList reserves = dir.entryList(QStringList()<<"*.reserve*");
     acts_ = src_dir.entryList(QStringList()<<"*.act");
 
 
@@ -678,7 +699,13 @@ void MoldInformation::on_importToolButton_clicked()
             selectedImportItemName_.append(item_text + ".act");
             selectedImportItemName_.append(item_text + ".fnc");
             selectedImportItemName_.append(item_text + ".sub");
-            selectedImportItemName_.append(item_text + ".reserve");
+            selectedImportItemName_.append(item_text + ".reserve1");
+            selectedImportItemName_.append(item_text + ".reserve2");
+            selectedImportItemName_.append(item_text + ".reserve3");
+            selectedImportItemName_.append(item_text + ".reserve4");
+            selectedImportItemName_.append(item_text + ".reserve5");
+            selectedImportItemName_.append(item_text + ".reserve6");
+            selectedImportItemName_.append(item_text + ".reserve7");
             flagItem = FALSE ;
         }
     }
@@ -710,9 +737,16 @@ void MoldInformation::on_importToolButton_clicked()
         selectedImportItemName_.append(str + ".act");
         selectedImportItemName_.append(str + ".fnc");
         selectedImportItemName_.append(str + ".sub");
-        selectedImportItemName_.append(str + ".reserve");
+        selectedImportItemName_.append(str + ".reserve1");
+        selectedImportItemName_.append(str + ".reserve2");
+        selectedImportItemName_.append(str + ".reserve3");
+        selectedImportItemName_.append(str + ".reserve4");
+        selectedImportItemName_.append(str + ".reserve5");
+        selectedImportItemName_.append(str + ".reserve6");
+        selectedImportItemName_.append(str + ".reserve7");
         flagItem_ = FALSE;
     }
+
     ICTipsWidget tipsWidget(tr("Restoring, please wait..."));
     if(!flagItem || !flagItem_)
     {
@@ -814,7 +848,13 @@ void MoldInformation::on_exportToolButton_clicked()
             selectedExportItemName_.append(item_text + ".act");
             selectedExportItemName_.append(item_text + ".fnc");
             selectedExportItemName_.append(item_text + ".sub");
-            selectedExportItemName_.append(item_text + ".reserve");
+            selectedExportItemName_.append(item_text + ".reserve1");
+            selectedExportItemName_.append(item_text + ".reserve2");
+            selectedExportItemName_.append(item_text + ".reserve3");
+            selectedExportItemName_.append(item_text + ".reserve4");
+            selectedExportItemName_.append(item_text + ".reserve5");
+            selectedExportItemName_.append(item_text + ".reserve6");
+            selectedExportItemName_.append(item_text + ".reserve7");
             flagItem = FALSE ;
         }
     }
@@ -836,7 +876,13 @@ void MoldInformation::on_exportToolButton_clicked()
         selectedExportItemName_.append(str + ".act");
         selectedExportItemName_.append(str + ".fnc");
         selectedExportItemName_.append(str + ".sub");
-        selectedExportItemName_.append(str + ".reserve");
+        selectedExportItemName_.append(str + ".reserve1");
+        selectedExportItemName_.append(str + ".reserve2");
+        selectedExportItemName_.append(str + ".reserve3");
+        selectedExportItemName_.append(str + ".reserve4");
+        selectedExportItemName_.append(str + ".reserve5");
+        selectedExportItemName_.append(str + ".reserve6");
+        selectedExportItemName_.append(str + ".reserve7");
         flagItem_ = FALSE;
     }
     if(selectedExportItemName_.size() == 0)
