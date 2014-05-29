@@ -703,6 +703,51 @@ padding:5px;
       <string notr="true">buttonGroup</string>
      </attribute>
     </widget>
+    <widget class="QComboBox" name="reserveBox">
+     <property name="geometry">
+      <rect>
+       <x>355</x>
+       <y>5</y>
+       <width>91</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Reserve1</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Reserve2</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Reserve3</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Reserve4</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Reserve5</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Reserve6</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Reserve7</string>
+      </property>
+     </item>
+    </widget>
    </widget>
    <widget class="QWidget" name="fixtureCheck">
     <property name="styleSheet">

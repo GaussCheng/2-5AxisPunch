@@ -52,6 +52,12 @@ ActionSettingFrame::ActionSettingFrame(QWidget *parent) :
     axisWidgets_.append(QList<QWidget*>()<<ui->gPButton<<ui->pPosLineEdit);
 #endif
 
+#ifndef HC_SK_8_SC
+#ifndef HC_SK_5
+    ui->axisBoard->hide();
+#endif
+#endif
+
 #ifdef Q_WS_X11
     UpdateAxisDefine_();
 #endif
