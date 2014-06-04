@@ -9,6 +9,7 @@ ICWaitMEditor::ICWaitMEditor(QWidget *parent) :
     ui->delayEdit->SetDecimalPlaces(2);
     ui->delayEdit->setValidator(new QIntValidator(0, 65530, this));
     QStringList items;
+
     items<<tr("M10")<<tr("M11")<<tr("M12")<<tr("M13")<<"M14"
         <<"M15"<<"M16"<<"M17"<<"M20"<<"M21"
        <<"M22"<<"M23"<<"M24"<<"M25"<<"M26"

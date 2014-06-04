@@ -17,6 +17,7 @@ QMap<int, QString> ICInstructParam::clipGroupMap_;
 QList<int> ICInstructParam::xyzStatusList_;
 QList<int> ICInstructParam::clipStatusList_;
 QMap<int, QString> ICInstructParam::countWayMap_;
+QStringList mStr;
 
 ICInstructParam::ICInstructParam()
 {
@@ -147,7 +148,12 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
         }
         else if(action == ICMold::GMWait)
         {
+
             commandStr += QString("M%1 ").arg(QString::number(moldItem.SubNum() + 8, 8));
+            if(moldItem.SubNum() < 4)
+            {
+                commandStr += mStr.at(moldItem.SubNum());
+            }
             commandStr += (moldItem.IFVal() == 0) ? "OFF" :"ON ";
             commandStr += QObject::tr("Limit") + ":" + ICParameterConversion::TransThisIntToThisText(moldItem.DVal(), 2);
             return commandStr;
@@ -156,6 +162,10 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
         else if(action == ICMold::GMOut)
         {
             commandStr += QString("M%1 ").arg(QString::number(moldItem.SubNum() + 8, 8));
+            if(moldItem.SubNum() < 4)
+            {
+                commandStr += mStr.at(moldItem.SubNum());
+            }
 //            commandStr += (moldItem.IFVal() == 0) ? "OFF" :"ON ";
 //            commandStr += QObject::tr("Limit") + ":" + ICParameterConversion::TransThisIntToThisText(moldItem.DVal(), 2);
 //            return commandStr;
@@ -282,6 +292,7 @@ void ICInstructParam::InstallMoldInfo()
 //    //    clipGroupMap_[ACTCLIP16OFF] = QObject::tr("Clip16 OFF");
 //    clipGroupMap_[ACTCLIPEND] = QObject::tr("Clip End");
     //    clipGroupMap_.insert(ACT_WaitMoldOpened, QObject::tr("Wait Mold Opened"));
+    mStr<<tr("M10")<<tr("M11")<<tr("M12")<<tr("M13");
 }
 
 void ICInstructParam::InitClassesInfo()
