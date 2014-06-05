@@ -3745,8 +3745,8 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="31"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="87"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="33"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="89"/>
         <source>T Axis</source>
         <oldsource>Z Axis</oldsource>
         <translation type="unfinished"></translation>
@@ -3758,8 +3758,8 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="33"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="89"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="31"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="87"/>
         <source>S Axis</source>
         <oldsource>Y2 Axis</oldsource>
         <translation type="unfinished"></translation>
@@ -5268,22 +5268,22 @@ Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icwaitmeditor.cpp" line="12"/>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="13"/>
         <source>M10</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icwaitmeditor.cpp" line="12"/>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="13"/>
         <source>M11</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icwaitmeditor.cpp" line="12"/>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="13"/>
         <source>M12</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icwaitmeditor.cpp" line="12"/>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="13"/>
         <source>M13</source>
         <translation type="unfinished"></translation>
     </message>

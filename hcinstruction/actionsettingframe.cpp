@@ -48,8 +48,8 @@ ActionSettingFrame::ActionSettingFrame(QWidget *parent) :
     axisWidgets_.append(QList<QWidget*>()<<ui->gyButton<<ui->y1PosLineEdit);
 #ifdef HC_AXIS_COUNT_5
     axisWidgets_.append(QList<QWidget*>()<<ui->gzButton<<ui->zPosLineEdit);
-    axisWidgets_.append(QList<QWidget*>()<<ui->gtButton<<ui->tPosLineEdit);
     axisWidgets_.append(QList<QWidget*>()<<ui->gPButton<<ui->pPosLineEdit);
+    axisWidgets_.append(QList<QWidget*>()<<ui->gtButton<<ui->tPosLineEdit);
 #endif
 
 #ifndef HC_SK_8_SC
@@ -99,7 +99,7 @@ void ActionSettingFrame::InitInterface()
     //    ui->zPosLineEdit->setValidator(posvalidator);
     ui->tPosLineEdit->setValidator(posValidators_ + 4);
     ui->pPosLineEdit->SetDecimalPlaces(POS_DECIMAL);
-    ui->pPosLineEdit->setValidator(posValidators_ + 5);
+    ui->pPosLineEdit->setValidator(posValidators_ + 3);
 #endif
 
     QIntValidator *speed = new QIntValidator(0, 100, this);
