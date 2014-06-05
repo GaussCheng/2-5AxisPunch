@@ -116,6 +116,10 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
             if(moldItem.IFVal() & 0x80)
             {
                 commandStr += QString("M%1 ").arg(QString::number(moldItem.SubNum() + 8, 8));
+                if(moldItem.SubNum() < mStr.size())
+                {
+                    commandStr += mStr.at(moldItem.SubNum());
+                }
             }
             else
             {
@@ -150,7 +154,7 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
         {
 
             commandStr += QString("M%1 ").arg(QString::number(moldItem.SubNum() + 8, 8));
-            if(moldItem.SubNum() < 4)
+            if(moldItem.SubNum() < mStr.size())
             {
                 commandStr += mStr.at(moldItem.SubNum());
             }
@@ -162,7 +166,7 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
         else if(action == ICMold::GMOut)
         {
             commandStr += QString("M%1 ").arg(QString::number(moldItem.SubNum() + 8, 8));
-            if(moldItem.SubNum() < 4)
+            if(moldItem.SubNum() < mStr.size())
             {
                 commandStr += mStr.at(moldItem.SubNum());
             }

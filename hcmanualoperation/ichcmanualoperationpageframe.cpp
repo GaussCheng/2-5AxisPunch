@@ -431,10 +431,10 @@ void ICHCManualOperationPageFrame::OnPointSelected(int id)
     //    ui->xPos->blockSignals(true);
     //    ui->yPos->blockSignals(true);
     //    ui->zPos->blockSignals(true);
-    ui->xPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 3 )));
-    ui->yPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 3 + 1)));
+    ui->xPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 6 )));
+    ui->yPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 6 + 1)));
 #ifdef HC_AXIS_COUNT_5
-    ui->zPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 3 + 2)));
+    ui->zPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 6 + 2)));
 #endif
     //    ui->xPos->setEnabled(true);
     //    ui->yPos->setEnabled(true);
@@ -517,20 +517,22 @@ void ICHCManualOperationPageFrame::on_setButton_clicked()
     {
         return;
     }
+    ICMold* currentMold = ICMold::CurrentMold();
     ICPoint p;
     p.pointID = ui->buttonGroup->checkedId();
     p.x = ui->xPos->TransThisTextToThisInt();
     p.y = ui->yPos->TransThisTextToThisInt();
 #ifdef HC_AXIS_COUNT_5
     p.z = ui->zPos->TransThisTextToThisInt();
+    p.p = currentMold->MoldParam((static_cast<ICMold::ICMoldParam>(p.pointID * 6 + 3)));
+    p.q = currentMold->MoldParam((static_cast<ICMold::ICMoldParam>(p.pointID * 6 + 4)));
 #endif
     modifyDialog_->StartModify(p);
     OnPointSelected(p.pointID);
-    ICMold* currentMold = ICMold::CurrentMold();
-    ui->xPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 3)));
-    ui->yPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 3 + 1)));
+    ui->xPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 6)));
+    ui->yPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 6 + 1)));
 #ifdef HC_AXIS_COUNT_5
-    ui->zPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 3 + 2)));
+    ui->zPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 6 + 2)));
 #endif
 }
 

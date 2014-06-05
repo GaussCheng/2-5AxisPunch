@@ -10,7 +10,7 @@ class AxisModifyDialog;
 
 struct ICPoint
 {
-    int x,y,z;
+    int x,y,z,p,q;
     int pointID;
 };
 
@@ -41,6 +41,8 @@ private:
     QIntValidator* xValidator_;
     QIntValidator* yValidator_;
     QIntValidator* zValidator_;
+    QIntValidator* pValidator_;
+    QIntValidator* tValidator_;
 };
 
 #endif // AXISMODIFYDIALOG_H
