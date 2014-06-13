@@ -328,6 +328,9 @@
     <message>
         <location filename="hcmanualoperation/axismodifydialog.ui" line="26"/>
         <location filename="hcmanualoperation/axismodifydialog.ui" line="87"/>
+        <location filename="hcmanualoperation/axismodifydialog.ui" line="196"/>
+        <location filename="hcmanualoperation/axismodifydialog.ui" line="209"/>
+        <location filename="hcmanualoperation/axismodifydialog.ui" line="292"/>
         <location filename="hcmanualoperation/axismodifydialog_8.ui" line="26"/>
         <location filename="hcmanualoperation/axismodifydialog_8.ui" line="87"/>
         <location filename="hcmanualoperation/axismodifydialog_8.ui" line="196"/>
@@ -337,6 +340,9 @@
     <message>
         <location filename="hcmanualoperation/axismodifydialog.ui" line="58"/>
         <location filename="hcmanualoperation/axismodifydialog.ui" line="106"/>
+        <location filename="hcmanualoperation/axismodifydialog.ui" line="180"/>
+        <location filename="hcmanualoperation/axismodifydialog.ui" line="228"/>
+        <location filename="hcmanualoperation/axismodifydialog.ui" line="276"/>
         <location filename="hcmanualoperation/axismodifydialog_8.ui" line="58"/>
         <location filename="hcmanualoperation/axismodifydialog_8.ui" line="106"/>
         <location filename="hcmanualoperation/axismodifydialog_8.ui" line="180"/>
@@ -372,6 +378,21 @@
         <location filename="hcmanualoperation/axismodifydialog_8.ui" line="148"/>
         <source>Set</source>
         <translation>设入</translation>
+    </message>
+    <message>
+        <location filename="hcmanualoperation/axismodifydialog.ui" line="161"/>
+        <source>S:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="hcmanualoperation/axismodifydialog.ui" line="244"/>
+        <source>T:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="hcmanualoperation/axismodifydialog.ui" line="257"/>
+        <source>X2</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/axismodifydialog_8.ui" line="161"/>
@@ -3110,28 +3131,28 @@ Reason</source>
         <translation>单步(%1/%2)</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="546"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="567"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="589"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="641"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="548"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="569"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="591"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="643"/>
         <source>Warning</source>
         <translation type="unfinished">警告</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="547"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="568"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="590"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="642"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="549"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="570"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="592"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="644"/>
         <source>Has not been origin!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="614"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="616"/>
         <source>No Check</source>
         <translation>无料运行</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="619"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="621"/>
         <source>Check</source>
         <translation>料感运行</translation>
     </message>
@@ -3692,7 +3713,7 @@ Reason</source>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="2103"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="2090"/>
         <source>S:</source>
-        <translation>轴:</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="3446"/>
@@ -3739,7 +3760,7 @@ Reason</source>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="198"/>
         <source>X1:</source>
-        <translation type="unfinished">X:</translation>
+        <translation></translation>
     </message>
 </context>
 <context>

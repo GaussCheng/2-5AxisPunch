@@ -48,7 +48,7 @@ void ICOriginDialog::hideEvent(QHideEvent *e)
             SIGNAL(StatusRefreshed()),
             this,
             SLOT(StatusRefreshed()));
-    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
+//    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
     QDialog::hideEvent(e);
 }
 
@@ -81,7 +81,7 @@ void ICOriginDialog::StepChanged(int step)
     {
     //    emit OriginStatusChanged(false);
         ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-        ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
+//        ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
         host->ChangeSystemParameter(ICVirtualHost::SYS_X_Origin, host->HostStatus(ICVirtualHost::DbgX0).toUInt());
         host->ChangeSystemParameter(ICVirtualHost::SYS_Y_Origin, host->HostStatus(ICVirtualHost::DbgY0).toUInt());
         host->ChangeSystemParameter(ICVirtualHost::SYS_Z_Origin, host->HostStatus(ICVirtualHost::DbgZ0).toUInt());
