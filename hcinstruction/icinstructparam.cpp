@@ -228,6 +228,7 @@ void ICInstructParam::InstallMoldInfo()
     actionGroupMap_.insert(ICMold::GMWait, QObject::tr("Wait M"));
     actionGroupMap_.insert(ICMold::GMOut, QObject::tr("M out"));
     actionGroupMap_.insert(ICMold::GStack, QObject::tr("Stack"));
+    actionGroupMap_.insert(ICMold::GARC, QObject::tr("3-D"));
 //    actionGroupMap_[ACTMAINUP] = QObject::tr("Main arm up");
 //    actionGroupMap_[ACTMAINDOWN] = QObject::tr("Main arm down");
 //    actionGroupMap_[ACTMAINFORWARD] = QObject::tr("Main arm forward");
@@ -310,6 +311,7 @@ void ICInstructParam::InitClassesInfo()
     xyzStatusList_.append(ICMold::GB);
     xyzStatusList_.append(ICMold::GC);
     xyzStatusList_.append(ICMold::GTo);
+    xyzStatusList_.append(ICMold::GARC);
     //    xyzStatusList_.append(GYZ);
     //    xyzStatusList_.append(GZY);
     //    xyzStatusList_.append(GZX);

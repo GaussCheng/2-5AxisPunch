@@ -322,6 +322,7 @@ public:
         GTwoXTwoY,
         GCondition,
         GStack,
+        GARC = 22,
         GMWait = 24,
         GMOut = 25,
         GWait = 26,
