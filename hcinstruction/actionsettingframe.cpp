@@ -200,8 +200,8 @@ void ActionSettingFrame::SyncStatusImpl(const QList<ICMoldItem> &items)
 void ActionSettingFrame::StatusRefresh()
 {
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-//    uint axisLast = host->HostStatus(ICVirtualHost::AxisLastPos1).toUInt() |
-//                    (host->HostStatus(ICVirtualHost::AxisLastPos2).toUInt() << 16);
+    //    uint axisLast = host->HostStatus(ICVirtualHost::AxisLastPos1).toUInt() |
+    //                    (host->HostStatus(ICVirtualHost::AxisLastPos2).toUInt() << 16);
     uint axisLast = 0;
     int pos = host->GetActualPos(ICVirtualHost::ICAxis_AxisY1, axisLast);
     if(pos != oYP_)
@@ -240,68 +240,147 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
     ICMoldItem item;
     item.SetBadProduct(ui->relBox->isChecked());
     item.SetSubNum(ui->pointSel->currentIndex());
-    if(ui->gxButton->isChecked() && (!ui->gxButton->isHidden()))
+    if(!ui->arcBox->isChecked() && !ui->slashBox->isChecked())
     {
-        //        if(ui->gxComboBox->currentIndex() == 0)
-        //        {
-        //            item.SetAction(ICMold::ACTMAINFORWARD);
-        //        }
-        //        else
-        //        {
-        //            item.SetAction(ICMold::ACTMAINBACKWARD);
-        //        }
 
-        item.SetAction(ICMold::GX);
-        item.SetActualPos(ui->x1PosLineEdit->TransThisTextToThisInt());
-        item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
-        item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
-//        item.SetIFVal(0);
-        item.SetActualIfPos(0);
-        ret.append(item);
-    }
-    if(ui->gyButton->isChecked() && (!ui->gyButton->isHidden()))
-    {
-        item.SetAction(ICMold::GY);
-        item.SetActualPos(ui->y1PosLineEdit->TransThisTextToThisInt());
-        item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
-        item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
-//        item.SetIFVal(0);
-        item.SetActualIfPos(0);
-        ret.append(item);
-    }
+        if(ui->gxButton->isChecked() && (!ui->gxButton->isHidden()))
+        {
+            //        if(ui->gxComboBox->currentIndex() == 0)
+            //        {
+            //            item.SetAction(ICMold::ACTMAINFORWARD);
+            //        }
+            //        else
+            //        {
+            //            item.SetAction(ICMold::ACTMAINBACKWARD);
+            //        }
+
+            item.SetAction(ICMold::GX);
+            item.SetActualPos(ui->x1PosLineEdit->TransThisTextToThisInt());
+            item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
+            item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
+            //        item.SetIFVal(0);
+            item.SetActualIfPos(0);
+            ret.append(item);
+        }
+        if(ui->gyButton->isChecked() && (!ui->gyButton->isHidden()))
+        {
+            item.SetAction(ICMold::GY);
+            item.SetActualPos(ui->y1PosLineEdit->TransThisTextToThisInt());
+            item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
+            item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
+            //        item.SetIFVal(0);
+            item.SetActualIfPos(0);
+            ret.append(item);
+        }
 #ifdef HC_AXIS_COUNT_5
-    if(ui->gzButton->isChecked() && (!ui->gzButton->isHidden()))
-    {
-        item.SetAction(ICMold::GZ);
-        item.SetActualPos(ui->zPosLineEdit->TransThisTextToThisInt());
-        item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
-        item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
-//        item.SetIFVal(0);
-        item.SetActualIfPos(0);
-        ret.append(item);
-    }
-    if(ui->gtButton->isChecked() && (!ui->gtButton->isHidden()))
-    {
-        item.SetAction(ICMold::GQ);
-        item.SetActualPos(ui->tPosLineEdit->TransThisTextToThisInt());
-        item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
-        item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
-//        item.SetIFVal(0);
-        item.SetActualIfPos(0);
-        ret.append(item);
-    }
+        if(ui->gzButton->isChecked() && (!ui->gzButton->isHidden()))
+        {
+            item.SetAction(ICMold::GZ);
+            item.SetActualPos(ui->zPosLineEdit->TransThisTextToThisInt());
+            item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
+            item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
+            //        item.SetIFVal(0);
+            item.SetActualIfPos(0);
+            ret.append(item);
+        }
+        if(ui->gtButton->isChecked() && (!ui->gtButton->isHidden()))
+        {
+            item.SetAction(ICMold::GQ);
+            item.SetActualPos(ui->tPosLineEdit->TransThisTextToThisInt());
+            item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
+            item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
+            //        item.SetIFVal(0);
+            item.SetActualIfPos(0);
+            ret.append(item);
+        }
 
-    if(ui->gPButton->isChecked() && (!ui->gPButton->isHidden()))
-    {
-        item.SetAction(ICMold::GP);
-        item.SetActualPos(ui->pPosLineEdit->TransThisTextToThisInt());
-        item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
-        item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
-//        item.SetIFVal(0);
-        item.SetActualIfPos(0);
-        ret.append(item);
-    }
+        if(ui->gPButton->isChecked() && (!ui->gPButton->isHidden()))
+        {
+            item.SetAction(ICMold::GP);
+            item.SetActualPos(ui->pPosLineEdit->TransThisTextToThisInt());
+            item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
+            item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
+            //        item.SetIFVal(0);
+            item.SetActualIfPos(0);
+            ret.append(item);
+        }
 #endif
+    }
+    else
+    {
+        if(ui->gxButton->isChecked() && (!ui->gxButton->isHidden()))
+        {
+            //        if(ui->gxComboBox->currentIndex() == 0)
+            //        {
+            //            item.SetAction(ICMold::ACTMAINFORWARD);
+            //        }
+            //        else
+            //        {
+            //            item.SetAction(ICMold::ACTMAINBACKWARD);
+            //        }
+
+            item.SetAction(ICMold::GARC);
+            item.SetIFPos(ICMold::GX);
+            item.SetIFVal(ui->arcBox->isChecked()?  2 : 1);
+            item.SetActualPos(ui->x1PosLineEdit->TransThisTextToThisInt());
+            item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
+            item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
+            //        item.SetIFVal(0);
+            item.SetActualIfPos(0);
+            ret.append(item);
+        }
+        if(ui->gyButton->isChecked() && (!ui->gyButton->isHidden()))
+        {
+            item.SetAction(ICMold::GARC);
+            item.SetIFPos(ICMold::GY);
+            item.SetIFVal(ui->arcBox->isChecked()?  2 : 1);
+            item.SetActualPos(ui->y1PosLineEdit->TransThisTextToThisInt());
+            item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
+            item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
+            //        item.SetIFVal(0);
+            item.SetActualIfPos(0);
+            ret.append(item);
+        }
+#ifdef HC_AXIS_COUNT_5
+        if(ui->gzButton->isChecked() && (!ui->gzButton->isHidden()))
+        {
+            item.SetAction(ICMold::GARC);
+            item.SetIFPos(ICMold::GZ);
+            item.SetIFVal(ui->arcBox->isChecked()?  2 : 1);
+            item.SetActualPos(ui->zPosLineEdit->TransThisTextToThisInt());
+            item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
+            item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
+            //        item.SetIFVal(0);
+            item.SetActualIfPos(0);
+            ret.append(item);
+        }
+        if(ui->gtButton->isChecked() && (!ui->gtButton->isHidden()))
+        {
+            item.SetAction(ICMold::GARC);
+            item.SetIFPos(ICMold::GQ);
+            item.SetIFVal(ui->arcBox->isChecked()?  2 : 1);
+            item.SetActualPos(ui->tPosLineEdit->TransThisTextToThisInt());
+            item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
+            item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
+            //        item.SetIFVal(0);
+            item.SetActualIfPos(0);
+            ret.append(item);
+        }
+
+        if(ui->gPButton->isChecked() && (!ui->gPButton->isHidden()))
+        {
+            item.SetAction(ICMold::GARC);
+            item.SetIFPos(ICMold::GP);
+            item.SetIFVal(ui->arcBox->isChecked()? 2 : 1);
+            item.SetActualPos(ui->pPosLineEdit->TransThisTextToThisInt());
+            item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
+            item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
+            //        item.SetIFVal(0);
+            item.SetActualIfPos(0);
+            ret.append(item);
+        }
+#endif
+    }
     return ret;
 }
 
@@ -311,17 +390,17 @@ void ActionSettingFrame::on_gxButton_toggled(bool checked)
     {
         //        ui->gxComboBox->setEnabled(true);
         ui->x1PosLineEdit->setEnabled(true);
-//        ui->delayEdit->setEnabled(true);
-//        ui->speedEdit->setEnabled(true);
+        //        ui->delayEdit->setEnabled(true);
+        //        ui->speedEdit->setEnabled(true);
     }
     else
     {
         //        ui->gxComboBox->setEnabled(false);
         ui->x1PosLineEdit->setEnabled(false);
-//        ui->delayEdit->setEnabled(false);
-//        ui->x1SpeedLineEdit->setEnabled(false);
-//        ui->x1ForwardBox->setEnabled(false);
-//        ui->x1BackwardBox->setEnabled(false);
+        //        ui->delayEdit->setEnabled(false);
+        //        ui->x1SpeedLineEdit->setEnabled(false);
+        //        ui->x1ForwardBox->setEnabled(false);
+        //        ui->x1BackwardBox->setEnabled(false);
     }
 }
 
@@ -330,18 +409,18 @@ void ActionSettingFrame::on_gyButton_toggled(bool checked)
     if(checked && ui->absBox->isChecked())
     {
         ui->y1PosLineEdit->setEnabled(true);
-//        ui->y1DelayLineEdit->setEnabled(true);
-//        ui->y1SpeedLineEdit->setEnabled(true);
-//        ui->y1DownBox->setEnabled(true);
-//        ui->y1UpBox->setEnabled(true);
+        //        ui->y1DelayLineEdit->setEnabled(true);
+        //        ui->y1SpeedLineEdit->setEnabled(true);
+        //        ui->y1DownBox->setEnabled(true);
+        //        ui->y1UpBox->setEnabled(true);
     }
     else
     {
         ui->y1PosLineEdit->setEnabled(false);
-//        ui->y1DelayLineEdit->setEnabled(false);
-//        ui->y1SpeedLineEdit->setEnabled(false);
-//        ui->y1DownBox->setEnabled(false);
-//        ui->y1UpBox->setEnabled(false);
+        //        ui->y1DelayLineEdit->setEnabled(false);
+        //        ui->y1SpeedLineEdit->setEnabled(false);
+        //        ui->y1DownBox->setEnabled(false);
+        //        ui->y1UpBox->setEnabled(false);
     }
 }
 
@@ -351,18 +430,18 @@ void ActionSettingFrame::on_gzButton_toggled(bool checked)
     if(checked && ui->absBox->isChecked())
     {
         ui->zPosLineEdit->setEnabled(true);
-//        ui->zDelayLineEdit->setEnabled(true);
-//        ui->zSpeedLineEdit->setEnabled(true);
-//        ui->zComeInBox->setEnabled(true);
-//        ui->zComeOutBox->setEnabled(true);
+        //        ui->zDelayLineEdit->setEnabled(true);
+        //        ui->zSpeedLineEdit->setEnabled(true);
+        //        ui->zComeInBox->setEnabled(true);
+        //        ui->zComeOutBox->setEnabled(true);
     }
     else
     {
         ui->zPosLineEdit->setEnabled(false);
-//        ui->zDelayLineEdit->setEnabled(false);
-//        ui->zSpeedLineEdit->setEnabled(false);
-//        ui->zComeInBox->setEnabled(false);
-//        ui->zComeOutBox->setEnabled(false);
+        //        ui->zDelayLineEdit->setEnabled(false);
+        //        ui->zSpeedLineEdit->setEnabled(false);
+        //        ui->zComeInBox->setEnabled(false);
+        //        ui->zComeOutBox->setEnabled(false);
     }
 }
 
@@ -477,3 +556,26 @@ void ActionSettingFrame::on_axisBoard_clicked()
 }
 #endif
 
+
+void ActionSettingFrame::on_arcBox_clicked(bool checked)
+{
+    if(checked)
+    {
+        if(ui->slashBox->isChecked())
+        {
+            ui->slashBox->setChecked(false);
+        }
+    }
+
+}
+
+void ActionSettingFrame::on_slashBox_clicked(bool checked)
+{
+    if(checked)
+    {
+        if(ui->arcBox->isChecked())
+        {
+            ui->arcBox->setChecked(false);
+        }
+    }
+}

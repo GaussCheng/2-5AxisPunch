@@ -53,6 +53,16 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="hcinstruction/actionsettingframe.ui" line="764"/>
+        <source>Slash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/actionsettingframe.ui" line="808"/>
+        <source>ARC</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="85"/>
         <location filename="hcinstruction/actionsettingframe_8.ui" line="107"/>
         <source>Abs</source>
@@ -3432,22 +3442,22 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="299"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="300"/>
         <source>M10</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="299"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="300"/>
         <source>M11</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="299"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="300"/>
         <source>M12</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="299"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="300"/>
         <source>M13</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5918,7 +5928,7 @@ Admin</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="248"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="249"/>
         <source>Mold end</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6019,6 +6029,11 @@ Admin</source>
         <location filename="hcinstruction/icinstructparam.cpp" line="230"/>
         <source>Stack</source>
         <translation type="unfinished">堆叠</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icinstructparam.cpp" line="231"/>
+        <source>3-D</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="222"/>

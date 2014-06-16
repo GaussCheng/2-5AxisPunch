@@ -64,6 +64,16 @@
         <translation>T</translation>
     </message>
     <message>
+        <location filename="hcinstruction/actionsettingframe.ui" line="764"/>
+        <source>Slash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/actionsettingframe.ui" line="808"/>
+        <source>ARC</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Move</source>
         <translation type="obsolete">组合</translation>
     </message>
@@ -5120,22 +5130,22 @@ Reason</source>
         <translation>提前结束使能,</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="299"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="300"/>
         <source>M10</source>
         <translation>取物允许</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="299"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="300"/>
         <source>M11</source>
         <translation>取物完成</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="299"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="300"/>
         <source>M12</source>
         <translation>置物允许</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="299"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="300"/>
         <source>M13</source>
         <translation>冲压完成</translation>
     </message>
@@ -9362,7 +9372,7 @@ Admin</source>
         <translation type="obsolete">检测</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructparam.cpp" line="248"/>
+        <location filename="hcinstruction/icinstructparam.cpp" line="249"/>
         <source>Mold end</source>
         <translation>模组结束</translation>
     </message>
@@ -9575,6 +9585,11 @@ Admin</source>
         <location filename="hcinstruction/icinstructparam.cpp" line="230"/>
         <source>Stack</source>
         <translation>堆叠</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icinstructparam.cpp" line="231"/>
+        <source>3-D</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="222"/>
