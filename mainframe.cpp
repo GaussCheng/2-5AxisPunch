@@ -231,6 +231,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     isOverTime_ = (restTime == 1);
     registe_timer->start(3600000);
 
+
 }
 
 

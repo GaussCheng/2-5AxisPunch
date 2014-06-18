@@ -72,8 +72,19 @@ ICHCProgramMonitorFrame::ICHCProgramMonitorFrame(QWidget *parent) :
             this,
             SLOT(LevelChanged(int)));
     LevelChanged(ICProgramHeadFrame::Instance()->CurrentLevel());
+    ui->label_8->hide();
+    ui->label_21->hide();
+    ui->x2SpeedLabel->hide();
+    ui->label_20->hide();
+    ui->label_18->hide();
+    ui->label_19->hide();
     ui->tSpeed->hide();
+    ui->tCurrentPos->hide();
+    ui->tSpeedLabel->hide();
+    ui->x2CurrentPos->hide();
     ui->tSpeed_2->hide();
+    ui->label_17->hide();
+
 }
 
 ICHCProgramMonitorFrame::~ICHCProgramMonitorFrame()

@@ -643,7 +643,7 @@ padding:5px;
       <rect>
        <x>215</x>
        <y>3</y>
-       <width>85</width>
+       <width>90</width>
        <height>31</height>
       </rect>
      </property>
@@ -708,7 +708,7 @@ padding:5px;
       <rect>
        <x>355</x>
        <y>5</y>
-       <width>91</width>
+       <width>106</width>
        <height>27</height>
       </rect>
      </property>

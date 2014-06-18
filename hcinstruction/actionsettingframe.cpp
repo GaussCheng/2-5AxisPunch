@@ -61,6 +61,12 @@ ActionSettingFrame::ActionSettingFrame(QWidget *parent) :
 #ifdef Q_WS_X11
     UpdateAxisDefine_();
 #endif
+    ui->gtButton->hide();
+    ui->gPButton->hide();
+    ui->tPosLineEdit->hide();
+    ui->pPosLineEdit->hide();
+    ui->label_13->hide();
+    ui->label_14->hide();
     //    ui->x1SpeedLineEdit->hide();
 }
 

@@ -23,6 +23,9 @@ ICProgramHeadFrame::ICProgramHeadFrame(QWidget *parent) :
     InitSignal();
     on = QPixmap(":/resource/ledgreen(16).png");
     off = QPixmap(":/resource/ledgray(16).png");
+
+    ui->label_4->hide();
+    ui->punchOrigin->hide();
 //    ChangeCurrentStatus(0);
 }
 

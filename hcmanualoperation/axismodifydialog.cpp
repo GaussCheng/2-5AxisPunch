@@ -26,6 +26,13 @@ AxisModifyDialog::AxisModifyDialog(QWidget *parent) :
     tValidator_ = new QIntValidator(-32760, 32760, this);
     ui->tPos->setValidator(tValidator_);
 #endif
+
+    ui->label_7->hide();
+    ui->label_8->hide();
+    ui->label_9->hide();
+    ui->label_10->hide();
+    ui->pPos->hide();
+    ui->tPos->hide();
 }
 
 AxisModifyDialog::~AxisModifyDialog()

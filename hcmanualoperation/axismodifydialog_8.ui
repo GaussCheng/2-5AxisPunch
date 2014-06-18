@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>248</width>
-    <height>254</height>
+    <width>313</width>
+    <height>322</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -112,8 +112,8 @@
   <widget class="QPushButton" name="okButton">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>180</y>
+     <x>30</x>
+     <y>260</y>
      <width>80</width>
      <height>31</height>
     </rect>
@@ -125,8 +125,8 @@
   <widget class="QPushButton" name="cancelButton">
    <property name="geometry">
     <rect>
-     <x>140</x>
-     <y>180</y>
+     <x>150</x>
+     <y>260</y>
      <width>80</width>
      <height>31</height>
     </rect>
@@ -188,6 +188,102 @@
     <rect>
      <x>165</x>
      <y>125</y>
+     <width>36</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>mm</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>165</x>
+     <y>163</y>
+     <width>36</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>mm</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8">
+   <property name="geometry">
+    <rect>
+     <x>35</x>
+     <y>163</y>
+     <width>11</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>T:</string>
+   </property>
+  </widget>
+  <widget class="ICLineEditWithVirtualNumericKeypad" name="tPos">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>163</y>
+     <width>108</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>0.0</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_9">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>200</y>
+     <width>16</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>X2</string>
+   </property>
+  </widget>
+  <widget class="ICLineEditWithVirtualNumericKeypad" name="pPos">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>200</y>
+     <width>108</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>0.0</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_10">
+   <property name="geometry">
+    <rect>
+     <x>165</x>
+     <y>200</y>
      <width>36</width>
      <height>32</height>
     </rect>

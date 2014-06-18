@@ -45,6 +45,19 @@ ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     ui->label_6->hide();
     ui->label_8->hide();
 #endif
+
+    ui->label_8->hide();
+    ui->label_22->hide();
+    ui->label_21->hide();
+    ui->x2CurrentPos->hide();
+    ui->x2Speed->hide();
+    ui->x2SpeedLabel->hide();
+    ui->label_20->hide();
+    ui->label_18->hide();
+    ui->label_19->hide();
+    ui->tSpeed->hide();
+    ui->tCurrentPos->hide();
+    ui->tSpeedLabel->hide();
     //    ui->xCurrentPos->setAttribute(Qt::WA_PaintOnScreen);
     //    ui->yCurrentPos->setAttribute(Qt::WA_PaintOnScreen);
     //    ui->zCurrentPos->setAttribute(Qt::WA_PaintOnScreen);
@@ -494,6 +507,7 @@ void ICHCManualOperationPageFrame::OnShortcutTriggered(int id)
 
 void ICHCManualOperationPageFrame::OnShortcutReleased(int id)
 {
+    return;
     ICUserDefineConfigSPTR config = ICUserDefineConfig::Instance();
     ICUserActionInfo info = config->GetActionShortcutByID(id);
     if(info.type != 0) return;

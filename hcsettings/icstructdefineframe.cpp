@@ -117,6 +117,8 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     ui->rP5->setCurrentIndex(progConfig.b.r5);
     ui->rP6->setCurrentIndex(progConfig.b.r6);
     ui->rP7->setCurrentIndex(progConfig.b.r7);
+
+    ui->fixtureDefineBox_2->hide();
 }
 
 ICStructDefineFrame::~ICStructDefineFrame()

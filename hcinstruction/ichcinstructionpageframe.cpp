@@ -104,6 +104,8 @@ ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
             SIGNAL(MoldChanged(QString)),
             SLOT(OnMoldChanged(QString)));
     //    ui->conditionsToolButton->hide();
+
+    ui->workMachineIOButton->hide();
 }
 
 ICHCInstructionPageFrame::~ICHCInstructionPageFrame()
@@ -221,7 +223,7 @@ void ICHCInstructionPageFrame::changeEvent(QEvent *e)
         ICUserIOInfo info;
         for(int i = 0; i != fs; ++i)
         {
-            info = config->YInfo(i);
+            info = config->XInfo(i);
             fixtureCheckList[i]->setText(info.GetLocaleName("zh") + tr("Check"));
         }
     }
