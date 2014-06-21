@@ -332,7 +332,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
             item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
             item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
             //        item.SetIFVal(0);
-            item.SetActualIfPos(0);
+//            item.SetActualIfPos(0);
             ret.append(item);
         }
         if(ui->gyButton->isChecked() && (!ui->gyButton->isHidden()))
@@ -344,7 +344,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
             item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
             item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
             //        item.SetIFVal(0);
-            item.SetActualIfPos(0);
+//            item.SetActualIfPos(0);
             ret.append(item);
         }
 #ifdef HC_AXIS_COUNT_5
@@ -357,7 +357,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
             item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
             item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
             //        item.SetIFVal(0);
-            item.SetActualIfPos(0);
+//            item.SetActualIfPos(0);
             ret.append(item);
         }
         if(ui->gtButton->isChecked() && (!ui->gtButton->isHidden()))
@@ -369,7 +369,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
             item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
             item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
             //        item.SetIFVal(0);
-            item.SetActualIfPos(0);
+//            item.SetActualIfPos(0);
             ret.append(item);
         }
 
@@ -382,7 +382,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
             item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
             item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
             //        item.SetIFVal(0);
-            item.SetActualIfPos(0);
+//            item.SetActualIfPos(0);
             ret.append(item);
         }
 #endif

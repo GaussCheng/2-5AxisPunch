@@ -57,6 +57,12 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
     if(xyzStatusList_.contains(action))
     {
         //            commandStr += ICParameterConversion::TransThisIntToThisText(moldItem.Pos(), 1) + " ";
+        if(action == ICMold::GARC)
+        {
+            commandStr.chop(2);
+            commandStr += "-";
+            commandStr += actionGroupMap_.value(moldItem.IFPos()) + ":";
+        }
         if(moldItem.IsBadProduct() == 1)
         {
             commandStr += ICUserDefineConfig::Instance()->GetPointsLocaleName(moldItem.SubNum(), "zh");
