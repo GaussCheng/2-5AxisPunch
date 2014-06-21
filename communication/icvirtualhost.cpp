@@ -48,6 +48,14 @@ ICVirtualHost::ICVirtualHost(QObject *parent) :
     isSingleRun_(false)
 {
     memset(oldSubStep, -1, 8);
+    input0Bits_ = 0;
+    input1Bits_ = 0;
+    input2Bits_ = 0;
+    input3Bits_ = 0;
+    output0Bits_ = 0;
+    output1Bits_ = 0;
+    output2Bits_ = 0;
+    output3Bits_ = 0;
     if(GlobalVirtualHost() == NULL)
     {
         SetGlobalVirtualHost(this);

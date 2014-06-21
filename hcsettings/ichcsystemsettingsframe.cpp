@@ -566,90 +566,7 @@ void ICHCSystemSettingsFrame::on_restoreAllButton_clicked()
     tipsWidget.show();qApp->processEvents();
     bool ret = CheckRestoreSystemFiles_();
     ret = ret && CheckRestoreMachineFiles_();
-    QDir dir("/mnt/udisk/HC5ABackup/records");
-    if(!dir.exists())
-    {
-        ret = false;
-        return;
-    }
-    QStringList acts = dir.entryList(QStringList()<<"*.act");
-    QStringList fncs = dir.entryList(QStringList()<<"*.fnc");
-    if(fncs.contains("Base.fnc"))
-    {
-        fncs.removeOne("Base.fnc");
-    }
-    if(acts.size() != fncs.size())
-    {
-        ret = false;
-        return;
-    }
-    for(int i = 0; i != fncs.size(); ++i)
-    {
-        fncs[i] = fncs.at(i).left(fncs.at(i).size() - 4);
-    }
-    for(int i = 0; i != acts.size(); ++i)
-    {
-        if(!fncs.contains(acts.at(i).left(acts.at(i).size() - 4)))
-        {
-            ret = false;
-            return;
-        }
-    }
-    QFile file;
-    QString actContent;
-    ICProgramFormatChecker programChecker;
-    for(int i = 0; i != acts.size(); ++i)
-    {
-        file.setFileName(dir.absoluteFilePath(acts.at(i)));
-        actContent.clear();
-        file.open(QFile::ReadOnly | QFile::Text);
-        actContent = file.readAll();
-        file.close();
-        if(!programChecker.Check(actContent))
-        {
-//            QMessageBox::warning(this, tr("Warnning"), tr("Wrong program format!"));
-            ret = false;
-            return;
-        }
-    }
-    ICConfigFormatChecker configFormatChecker;
-    for(int i = 0; i != fncs.size(); ++i)
-    {
-        file.setFileName(dir.absoluteFilePath(fncs.at(i) + ".fnc"));
-        actContent.clear();
-        file.open(QFile::ReadOnly | QFile::Text);
-        actContent = file.readAll();
-        file.close();
-        if(!configFormatChecker.CheckRowCount(actContent, 58,ICDataFormatChecker::kCompareEqual))
-        {
-//            QMessageBox::warning(this, tr("Warnning"), tr("Wrong config format!"));
-            ret = false;
-            return;
-        }
-        if(!configFormatChecker.Check(actContent))
-        {
-//            QMessageBox::warning(this, tr("Warnning"), tr("Wrong config format!"));
-            ret = false;
-            return;
-        }
-    }
-    dir.cdUp();
-    dir.cd("subs");
-    QStringList subs = dir.entryList(QStringList()<<"sub[0-7]");
-    for(int i = 0; i != subs.size(); ++i)
-    {
-        file.setFileName(dir.absoluteFilePath(subs.at(i)));
-        actContent.clear();
-        file.open(QFile::ReadOnly | QFile::Text);
-        actContent = file.readAll();
-        file.close();
-        if(!programChecker.Check(actContent))
-        {
-//            QMessageBox::warning(this, tr("Warnning"), tr("Wrong program format!"));
-            ret = false;
-            return;
-        }
-    }
+
     if(ret)
     {
         ICBackupUtility backupUtility;
@@ -659,14 +576,6 @@ void ICHCSystemSettingsFrame::on_restoreAllButton_clicked()
         ret = ret && backupUtility.RestoreDir("/mnt/udisk/HC5ABackup/sysconfig",
                                               "/opt/Qt/bin/sysconfig",
                                               QStringList()<<"system.txt");
-
-        ret = ret && backupUtility.RestoreDir("/mnt/udisk/HC5ABackup/records",
-                                            "/opt/Qt/bin/records",
-                                            QStringList()<<"*.act"<<"*.fnc");
-
-        ret = ret && backupUtility.RestoreDir("/mnt/udisk/HC5ABackup/subs",
-                                                  "/opt/Qt/bin/subs",
-                                                  QStringList()<<"sub[0-7].prg");
 
         Information(ret);
         if(ret)

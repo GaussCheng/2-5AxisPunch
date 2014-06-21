@@ -383,6 +383,17 @@ void MainFrame::CategoryButtonClicked()
 
     if(functionButtonToPage_.contains(clickedButton))
     {
+        if(clickedButton == ui->settingsButton ||
+                clickedButton == ui->teachButton)
+        {
+            if(ICVirtualHost::GlobalVirtualHost()->DoseControled())
+            {
+                QMessageBox::warning(this,
+                                     tr("Warning"),
+                                     tr("Controlled, Can't modify!"));
+                return;
+            }
+        }
         centerStackedLayout_->setCurrentWidget(functionButtonToPage_.value(clickedButton));
     }
     //    else if(clickedButton == ui->monitorPageButton)
@@ -438,6 +449,8 @@ void MainFrame::StatusRefreshed()
 //        isZPosChanged_ = true;
 //    }
 
+    bool isControled = virtualHost->DoseControled();
+    ICProgramHeadFrame::Instance()->ChangeControlStatus(isControled);
     newLedFlags_ = 0;
     newLedFlags_ |= (virtualHost->IsInputOn(72)? 8 : 0);
     newLedFlags_ |= (virtualHost->IsInputOn(64)? 4 : 0);
@@ -752,6 +765,13 @@ void MainFrame::ShowStandbyPage()
 
 void MainFrame::ShowFunctionPage()
 {
+    if(ICVirtualHost::GlobalVirtualHost()->DoseControled())
+    {
+        QMessageBox::warning(this,
+                             tr("Warning"),
+                             tr("Controlled, Can't modify!"));
+        return;
+    }
     centerStackedLayout_->setCurrentWidget(settingsPage_);
     //    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(ui->functionPageButton->text());
 }
@@ -821,6 +841,13 @@ void MainFrame::ReturnButtonClicked()
 void MainFrame::RecordButtonClicked()
 {
     //    int status = ICVirtualHost::GlobalVirtualHost()->CurrentStatus();
+    if(ICVirtualHost::GlobalVirtualHost()->DoseControled())
+    {
+        QMessageBox::warning(this,
+                             tr("Warning"),
+                             tr("Controlled, Can't modify!"));
+        return;
+    }
 #if !defined(Q_WS_WIN32) &&  !defined(Q_WS_X11)
     if(ICKeyboard::Instace()->CurrentSwitchStatus() == ICKeyboard::KS_ManualStatu)
 #else

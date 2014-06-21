@@ -593,7 +593,7 @@ public:
     int CurrentStatus() const { return (statusMap_.value(Status).toUInt() & 0x0FFF);}
     int AlarmNum() const { return (statusMap_.value(ErrCode).toUInt() & 0x0FFF);}
     int HintNum() const { return (statusMap_.value(ErrCode).toUInt() >> 12);}
-    bool IsOrigined() const { return (statusMap_.value(Status).toUInt() >> 12) == 1;}
+    bool IsOrigined() const { return (( (statusMap_.value(Status).toUInt() >> 12) & 3) == 1);}
 
     int GlobalSpeed() const {return systemParamMap_.value(SYS_Global_Speed).toInt() |
              (systemParamMap_.value(SYS_RsvReadMold).toInt() << 16);}
@@ -649,6 +649,8 @@ public:
 
     bool IsSingleRun() const { return isSingleRun_;}
     void SetSingleRun(bool isrun) {isSingleRun_ = isrun;}
+
+    bool DoseControled() const { return ((statusMap_.value(Status).toUInt() >> 14) & 1) == 1; }
 
 public Q_SLOTS:
     void SetMoldParam(int param, int value);

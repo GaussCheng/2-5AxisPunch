@@ -15,6 +15,7 @@ ICProgramHeadFrame::ICProgramHeadFrame(QWidget *parent) :
     currentStatus_ = -1;
     isRobotOrigin_ = false;
     isPunOrigin_ = false;
+    isControled_ = false;
     statusToStringMap.insert(0, tr("Stop"));
     statusToStringMap.insert(1, tr("Manual"));
     statusToStringMap.insert(2, tr("Auto"));
@@ -101,6 +102,15 @@ void ICProgramHeadFrame::ChangeCurrentStatus(int status)
     {
         currentStatus_ = status;
         ui->statusLabel->setText(statusToStringMap.value(status));
+    }
+}
+
+void ICProgramHeadFrame::ChangeControlStatus(bool isControled)
+{
+    if(isControled != this->isControled_)
+    {
+        this->isControled_ = isControled;
+        ui->controlStatus->setText(isControled ? tr("Controled") : tr("Single"));
     }
 }
 

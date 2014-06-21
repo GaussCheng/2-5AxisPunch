@@ -36,6 +36,7 @@ public:
     void ChangeCurrentStatus(int status);
     void ChangeRobotOrigin(bool isOrigin);
     void ChangePunchOrigin(bool isOrigin);
+    void ChangeControlStatus(bool isControled);
 
 Q_SIGNALS:
     void LevelChanged(int);
@@ -58,6 +59,7 @@ private:
     int currentStatus_;
     bool isRobotOrigin_;
     bool isPunOrigin_;
+    bool isControled_;
     QPixmap on, off;
     explicit ICProgramHeadFrame(QWidget *parent = 0);
 };
