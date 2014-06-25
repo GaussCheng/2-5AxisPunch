@@ -10,8 +10,9 @@ ICWaitMEditor::ICWaitMEditor(QWidget *parent) :
     ui->delayEdit->setValidator(new QIntValidator(0, 65530, this));
     QStringList items;
 
-    items<<tr("M10")<<tr("M11")<<tr("M12")<<tr("M13")<<"M14"
-        <<"M15"<<"M16"<<"M17"<<"M20"<<"M21"
+    items<<tr("M10")<<tr("M11")<<tr("M12")<<tr("M13")
+        <<tr("N14")
+        <<tr("M15")<<"M16"<<"M17"<<"M20"<<"M21"
        <<"M22"<<"M23"<<"M24"<<"M25"<<"M26"
       <<"M27"<<"M30"<<"M31"<<"M32"<<"M33"
      <<"M34"<<"M35"<<"M36"<<"M37"<<"M40"

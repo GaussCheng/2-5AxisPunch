@@ -904,7 +904,7 @@ void ICVirtualHost::InitICStatusMap_()
 {
     for(ICStatus i = Status; i != StatusCount; i = static_cast<ICStatus>(i + 1))
     {
-        statusMap_.insert(i, -1);
+        statusMap_.insert(i, 0);
     }
     statusMap_.insert(ErrCode, 0);
     qDebug()<<statusMap_.size();

@@ -331,9 +331,11 @@
         <location filename="hcmanualoperation/axismodifydialog.ui" line="196"/>
         <location filename="hcmanualoperation/axismodifydialog.ui" line="209"/>
         <location filename="hcmanualoperation/axismodifydialog.ui" line="292"/>
-        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="26"/>
-        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="87"/>
-        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="196"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="78"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="91"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="174"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="209"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="222"/>
         <source>mm</source>
         <translation></translation>
     </message>
@@ -343,60 +345,60 @@
         <location filename="hcmanualoperation/axismodifydialog.ui" line="180"/>
         <location filename="hcmanualoperation/axismodifydialog.ui" line="228"/>
         <location filename="hcmanualoperation/axismodifydialog.ui" line="276"/>
-        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="58"/>
-        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="106"/>
-        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="180"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="123"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="158"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="193"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="254"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="276"/>
         <source>0.0</source>
         <translation>0.0</translation>
     </message>
     <message>
         <location filename="hcmanualoperation/axismodifydialog.ui" line="39"/>
-        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="39"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="104"/>
         <source>X:</source>
         <translation></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/axismodifydialog.ui" line="74"/>
-        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="74"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="235"/>
         <source>Y:</source>
         <translation></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/axismodifydialog.ui" line="122"/>
-        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="122"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="26"/>
         <source>OK</source>
         <translation>确定</translation>
     </message>
     <message>
         <location filename="hcmanualoperation/axismodifydialog.ui" line="135"/>
-        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="135"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="39"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
         <location filename="hcmanualoperation/axismodifydialog.ui" line="148"/>
-        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="148"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="52"/>
         <source>Set</source>
         <translation>设入</translation>
     </message>
     <message>
         <location filename="hcmanualoperation/axismodifydialog.ui" line="161"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="139"/>
         <source>S:</source>
         <translation></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/axismodifydialog.ui" line="244"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="292"/>
         <source>T:</source>
         <translation></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/axismodifydialog.ui" line="257"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="65"/>
         <source>X2</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="161"/>
-        <source>Z:</source>
         <translation></translation>
     </message>
 </context>
@@ -4445,7 +4447,7 @@ Reason</source>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="382"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="416"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="562"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="723"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="632"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -4496,18 +4498,18 @@ Reason</source>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="395"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="427"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="680"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="589"/>
         <source>Backup files is broken!</source>
         <translation>备份文件不完整！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="765"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="770"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="792"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="797"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="809"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="820"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="832"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="674"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="679"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="701"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="706"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="718"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="729"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="741"/>
         <source>Warnning</source>
         <translation>警告</translation>
     </message>
@@ -4544,26 +4546,26 @@ Reason</source>
         <translation type="obsolete">离开原点位置</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="724"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="633"/>
         <source>The system will be reboot to calibrate! Do you want to continue?</source>
         <translation>系统需要重启来校准屏幕!要继续吗?</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="765"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="770"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="674"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="679"/>
         <source>Wrong system config format!</source>
         <translation>错误的系统参数格式！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="792"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="797"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="701"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="706"/>
         <source>Wrong Axis config format!</source>
         <translation>错误的轴参数格式！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="809"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="820"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="832"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="718"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="729"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="741"/>
         <source>Wrong Rotation config format!</source>
         <translation>错误的每转距离参数格式！</translation>
     </message>
@@ -5120,22 +5122,27 @@ Reason</source>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="299"/>
         <source>M10</source>
-        <translation type="unfinished">取物允许</translation>
+        <translation>取物允许</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="299"/>
         <source>M11</source>
-        <translation type="unfinished">取物完成</translation>
+        <translation>取物完成</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="299"/>
         <source>M12</source>
-        <translation type="unfinished">置物允许</translation>
+        <translation>置物允许</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="299"/>
         <source>M13</source>
-        <translation type="unfinished">冲压完成</translation>
+        <translation>冲压完成</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icinstructparam.cpp" line="299"/>
+        <source>N14</source>
+        <translation>等安全位</translation>
     </message>
     <message>
         <source>Mold Count</source>
@@ -6901,6 +6908,7 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="959"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1467"/>
         <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="483"/>
         <source>Status</source>
         <translation></translation>
@@ -6964,19 +6972,29 @@ Please enter an digit between </source>
         <translation type="obsolete">没有注册！</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="18"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="19"/>
         <source>Stop</source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="19"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="20"/>
         <source>Manual</source>
         <translation>手动</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="20"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="21"/>
         <source>Auto</source>
         <translation>自动</translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="113"/>
+        <source>Controled</source>
+        <translation type="unfinished">联机</translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="113"/>
+        <source>Single</source>
+        <translation type="unfinished">单机</translation>
     </message>
 </context>
 <context>
@@ -8204,7 +8222,7 @@ Would you want to restart now?</source>
 <context>
     <name>ICVirtualHost</name>
     <message>
-        <location filename="communication/icvirtualhost.cpp" line="96"/>
+        <location filename="communication/icvirtualhost.cpp" line="104"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
@@ -8428,6 +8446,16 @@ Would you want to restart now?</source>
         <source>M13</source>
         <translation>冲压完成</translation>
     </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="14"/>
+        <source>N14</source>
+        <translation>等安全位</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="15"/>
+        <source>M15</source>
+        <translation>M15</translation>
+    </message>
 </context>
 <context>
     <name>MainFrame</name>
@@ -8540,8 +8568,15 @@ Would you want to restart now?</source>
         <translation>返回</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="479"/>
-        <location filename="mainframe.cpp" line="486"/>
+        <location filename="mainframe.cpp" line="393"/>
+        <location filename="mainframe.cpp" line="772"/>
+        <location filename="mainframe.cpp" line="848"/>
+        <source>Controlled, Can&apos;t modify!</source>
+        <translation>联机中，不能设定！</translation>
+    </message>
+    <message>
+        <location filename="mainframe.cpp" line="492"/>
+        <location filename="mainframe.cpp" line="499"/>
         <source>Hint</source>
         <translation>提示</translation>
     </message>
@@ -8550,8 +8585,11 @@ Would you want to restart now?</source>
         <translation type="obsolete">手动</translation>
     </message>
     <message>
+        <location filename="mainframe.cpp" line="392"/>
+        <location filename="mainframe.cpp" line="771"/>
+        <location filename="mainframe.cpp" line="847"/>
         <source>Warning</source>
-        <translation type="obsolete">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>Need to origin!</source>

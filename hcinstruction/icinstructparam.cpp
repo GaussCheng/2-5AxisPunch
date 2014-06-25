@@ -296,7 +296,7 @@ void ICInstructParam::InstallMoldInfo()
 //    //    clipGroupMap_[ACTCLIP16OFF] = QObject::tr("Clip16 OFF");
 //    clipGroupMap_[ACTCLIPEND] = QObject::tr("Clip End");
     //    clipGroupMap_.insert(ACT_WaitMoldOpened, QObject::tr("Wait Mold Opened"));
-    mStr<<tr("M10")<<tr("M11")<<tr("M12")<<tr("M13");
+    mStr<<tr("M10")<<tr("M11")<<tr("M12")<<tr("M13")<<tr("N14");
 }
 
 void ICInstructParam::InitClassesInfo()

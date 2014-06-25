@@ -149,9 +149,11 @@
         <location filename="hcmanualoperation/axismodifydialog.ui" line="196"/>
         <location filename="hcmanualoperation/axismodifydialog.ui" line="209"/>
         <location filename="hcmanualoperation/axismodifydialog.ui" line="292"/>
-        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="26"/>
-        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="87"/>
-        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="196"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="78"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="91"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="174"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="209"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="222"/>
         <source>mm</source>
         <translation type="unfinished"></translation>
     </message>
@@ -161,60 +163,60 @@
         <location filename="hcmanualoperation/axismodifydialog.ui" line="180"/>
         <location filename="hcmanualoperation/axismodifydialog.ui" line="228"/>
         <location filename="hcmanualoperation/axismodifydialog.ui" line="276"/>
-        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="58"/>
-        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="106"/>
-        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="180"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="123"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="158"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="193"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="254"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="276"/>
         <source>0.0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/axismodifydialog.ui" line="39"/>
-        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="39"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="104"/>
         <source>X:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/axismodifydialog.ui" line="74"/>
-        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="74"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="235"/>
         <source>Y:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/axismodifydialog.ui" line="122"/>
-        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="122"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="26"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/axismodifydialog.ui" line="135"/>
-        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="135"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="39"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/axismodifydialog.ui" line="148"/>
-        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="148"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="52"/>
         <source>Set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/axismodifydialog.ui" line="161"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="139"/>
         <source>S:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/axismodifydialog.ui" line="244"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="292"/>
         <source>T:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/axismodifydialog.ui" line="257"/>
+        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="65"/>
         <source>X2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcmanualoperation/axismodifydialog_8.ui" line="161"/>
-        <source>Z:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2962,7 +2964,7 @@ Infomation</source>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="382"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="416"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="562"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="723"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="632"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3013,42 +3015,42 @@ Infomation</source>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="395"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="427"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="680"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="589"/>
         <source>Backup files is broken!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="765"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="770"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="792"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="797"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="809"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="820"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="832"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="674"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="679"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="701"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="706"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="718"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="729"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="741"/>
         <source>Warnning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="724"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="633"/>
         <source>The system will be reboot to calibrate! Do you want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="765"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="770"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="674"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="679"/>
         <source>Wrong system config format!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="792"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="797"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="701"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="706"/>
         <source>Wrong Axis config format!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="809"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="820"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="832"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="718"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="729"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="741"/>
         <source>Wrong Rotation config format!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3447,6 +3449,11 @@ Infomation</source>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="299"/>
         <source>M13</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icinstructparam.cpp" line="299"/>
+        <source>N14</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4194,6 +4201,7 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="959"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1467"/>
         <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="483"/>
         <source>Status</source>
         <translation type="unfinished"></translation>
@@ -4224,18 +4232,28 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="18"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="19"/>
         <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="19"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="20"/>
         <source>Manual</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="20"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="21"/>
         <source>Auto</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="113"/>
+        <source>Controled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="113"/>
+        <source>Single</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5176,7 +5194,7 @@ Would you want to restart now?</source>
 <context>
     <name>ICVirtualHost</name>
     <message>
-        <location filename="communication/icvirtualhost.cpp" line="96"/>
+        <location filename="communication/icvirtualhost.cpp" line="104"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5308,6 +5326,16 @@ Would you want to restart now?</source>
         <source>M13</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="14"/>
+        <source>N14</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="15"/>
+        <source>M15</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainFrame</name>
@@ -5348,8 +5376,22 @@ Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="479"/>
-        <location filename="mainframe.cpp" line="486"/>
+        <location filename="mainframe.cpp" line="392"/>
+        <location filename="mainframe.cpp" line="771"/>
+        <location filename="mainframe.cpp" line="847"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainframe.cpp" line="393"/>
+        <location filename="mainframe.cpp" line="772"/>
+        <location filename="mainframe.cpp" line="848"/>
+        <source>Controlled, Can&apos;t modify!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainframe.cpp" line="492"/>
+        <location filename="mainframe.cpp" line="499"/>
         <source>Hint</source>
         <translation type="unfinished"></translation>
     </message>
