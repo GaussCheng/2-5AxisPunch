@@ -8740,7 +8740,6 @@ Please input the file name.</source>
         <location filename="function_settings/moldinformation.cpp" line="574"/>
         <location filename="function_settings/moldinformation.cpp" line="619"/>
         <location filename="function_settings/moldinformation.cpp" line="633"/>
-        <location filename="function_settings/moldinformation.cpp" line="638"/>
         <location filename="function_settings/moldinformation.cpp" line="651"/>
         <location filename="function_settings/moldinformation.cpp" line="664"/>
         <location filename="function_settings/moldinformation.cpp" line="783"/>
@@ -8832,9 +8831,8 @@ Please try a new name</source>
         <translation>错误的配置格式!</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="638"/>
         <source>Wrong config format!</source>
-        <translation>错误的模组参数格式！</translation>
+        <translation type="obsolete">错误的模组参数格式！</translation>
     </message>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="692"/>

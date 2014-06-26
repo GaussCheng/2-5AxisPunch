@@ -5528,7 +5528,6 @@ Please input the file name.</source>
         <location filename="function_settings/moldinformation.cpp" line="574"/>
         <location filename="function_settings/moldinformation.cpp" line="619"/>
         <location filename="function_settings/moldinformation.cpp" line="633"/>
-        <location filename="function_settings/moldinformation.cpp" line="638"/>
         <location filename="function_settings/moldinformation.cpp" line="651"/>
         <location filename="function_settings/moldinformation.cpp" line="664"/>
         <location filename="function_settings/moldinformation.cpp" line="783"/>
@@ -5670,11 +5669,6 @@ Please try a new name</source>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="633"/>
         <source>Wrong config format!!!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="function_settings/moldinformation.cpp" line="638"/>
-        <source>Wrong config format!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
