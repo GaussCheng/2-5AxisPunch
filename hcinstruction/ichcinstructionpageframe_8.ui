@@ -248,9 +248,9 @@
     <widget class="QStackedWidget" name="settingStackedWidget">
      <property name="geometry">
       <rect>
-       <x>535</x>
+       <x>509</x>
        <y>1</y>
-       <width>220</width>
+       <width>246</width>
        <height>381</height>
       </rect>
      </property>
@@ -259,18 +259,6 @@
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>220</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>220</width>
-       <height>16777215</height>
-      </size>
      </property>
      <property name="frameShape">
       <enum>QFrame::Box</enum>
@@ -601,7 +589,7 @@
       <rect>
        <x>4</x>
        <y>37</y>
-       <width>521</width>
+       <width>496</width>
        <height>346</height>
       </rect>
      </property>

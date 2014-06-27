@@ -44,6 +44,7 @@ public:
     void SetBadProduct(bool badProduct) { badProduct ? ifVal_ |= 0x40 : ifVal_ &= 0xBF;}
     uint IFOtherVal() const { return IFVal() & 0x1F;}
     void SetIFOtherVal(uint val) { ifVal_ &= 0xE0; ifVal_ |= (val & 0x1F);}
+//    bool IsContinue
     uint Action() const
     {
         if(!IsAction())
