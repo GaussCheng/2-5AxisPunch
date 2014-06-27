@@ -747,6 +747,11 @@ padding:5px;
        <string>Reserve7</string>
       </property>
      </item>
+     <item>
+      <property name="text">
+       <string>Reserve8</string>
+      </property>
+     </item>
     </widget>
    </widget>
    <widget class="QWidget" name="fixtureCheck">

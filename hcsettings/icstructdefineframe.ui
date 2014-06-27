@@ -479,6 +479,27 @@
         </property>
        </widget>
       </item>
+      <item row="3" column="2">
+       <widget class="QLabel" name="label_19">
+        <property name="text">
+         <string>8</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="3">
+       <widget class="QComboBox" name="rP8">
+        <item>
+         <property name="text">
+          <string>Un</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>En</string>
+         </property>
+        </item>
+       </widget>
+      </item>
      </layout>
     </widget>
    </widget>

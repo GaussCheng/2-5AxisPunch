@@ -28,7 +28,8 @@ typedef union{
         u_int16_t r5 : 1;
         u_int16_t r6 : 1;
         u_int16_t r7 : 1;
-        u_int16_t r : 9;
+        u_int16_t r8 : 1;
+        u_int16_t r : 8;
     }b;
     u_int16_t all;
 }ReserveProgConfig;
@@ -117,8 +118,9 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     ui->rP5->setCurrentIndex(progConfig.b.r5);
     ui->rP6->setCurrentIndex(progConfig.b.r6);
     ui->rP7->setCurrentIndex(progConfig.b.r7);
+    ui->rP8->setCurrentIndex(progConfig.b.r8);
 
-    ui->fixtureDefineBox_2->hide();
+//    ui->fixtureDefineBox_2->hide();
 }
 
 ICStructDefineFrame::~ICStructDefineFrame()
@@ -234,6 +236,7 @@ void ICStructDefineFrame::on_saveButton_clicked()
     progConfig.b.r5 = ui->rP5->currentIndex();
     progConfig.b.r6 = ui->rP6->currentIndex();
     progConfig.b.r7 = ui->rP7->currentIndex();
+    progConfig.b.r8 = ui->rP8->currentIndex();
     dataBuffer[4] = canConfig.all;
     dataBuffer[5] = progConfig.all;
     for(int i = 0; i != 6; ++i)

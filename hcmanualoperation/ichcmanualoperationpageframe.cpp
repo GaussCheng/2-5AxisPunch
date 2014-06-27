@@ -67,6 +67,8 @@ ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     oriPalette = ui->b1->palette();
     ui->tSpeed->hide();
     ui->x2Speed->hide();
+    ui->groupBox_3->hide();
+    ui->runButton->hide();
 }
 
 ICHCManualOperationPageFrame::~ICHCManualOperationPageFrame()

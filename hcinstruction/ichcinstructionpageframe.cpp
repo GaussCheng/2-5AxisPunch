@@ -106,6 +106,7 @@ ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
     //    ui->conditionsToolButton->hide();
 
     ui->workMachineIOButton->hide();
+    ui->feedButton->hide();
 }
 
 ICHCInstructionPageFrame::~ICHCInstructionPageFrame()
