@@ -555,8 +555,8 @@ void MainFrame::StatusRefreshed()
         {
             actionDialog_->hide();
         }
-//        finishCount_ = virtualHost->HostStatus(ICVirtualHost::DbgX1).toUInt();
-        finishCount_ = virtualHost->FinishProductCount();
+        finishCount_ = virtualHost->HostStatus(ICVirtualHost::DbgX1).toUInt();
+//        finishCount_ = virtualHost->FinishProductCount();
         if(finishCount_ != oldFinishCount_)
         {
             ui->cycleTimeAndFinistWidget->SetFinished(finishCount_);

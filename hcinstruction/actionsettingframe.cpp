@@ -321,7 +321,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
 
             item.SetAction(ICMold::GARC);
             item.SetIFPos(ICMold::GX);
-            item.SetIFVal(ui->arcBox->isChecked()?  2 : 1);
+//            item.SetIFVal(ui->arcBox->isChecked()?  2 : 1);
             item.SetActualPos(ui->x1PosLineEdit->TransThisTextToThisInt());
             item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
             item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
@@ -333,7 +333,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         {
             item.SetAction(ICMold::GARC);
             item.SetIFPos(ICMold::GY);
-            item.SetIFVal(ui->arcBox->isChecked()?  2 : 1);
+//            item.SetIFVal(ui->arcBox->isChecked()?  2 : 1);
             item.SetActualPos(ui->y1PosLineEdit->TransThisTextToThisInt());
             item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
             item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
@@ -346,7 +346,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         {
             item.SetAction(ICMold::GARC);
             item.SetIFPos(ICMold::GZ);
-            item.SetIFVal(ui->arcBox->isChecked()?  2 : 1);
+//            item.SetIFVal(ui->arcBox->isChecked()?  2 : 1);
             item.SetActualPos(ui->zPosLineEdit->TransThisTextToThisInt());
             item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
             item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
@@ -358,7 +358,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         {
             item.SetAction(ICMold::GARC);
             item.SetIFPos(ICMold::GQ);
-            item.SetIFVal(ui->arcBox->isChecked()?  2 : 1);
+//            item.SetIFVal(ui->arcBox->isChecked()?  2 : 1);
             item.SetActualPos(ui->tPosLineEdit->TransThisTextToThisInt());
             item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
             item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
@@ -371,7 +371,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
         {
             item.SetAction(ICMold::GARC);
             item.SetIFPos(ICMold::GP);
-            item.SetIFVal(ui->arcBox->isChecked()? 2 : 1);
+//            item.SetIFVal(ui->arcBox->isChecked()? 2 : 1);
             item.SetActualPos(ui->pPosLineEdit->TransThisTextToThisInt());
             item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
             item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
