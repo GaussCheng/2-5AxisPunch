@@ -430,7 +430,7 @@
      <property name="geometry">
       <rect>
        <x>482</x>
-       <y>240</y>
+       <y>193</y>
        <width>100</width>
        <height>32</height>
       </rect>
@@ -664,6 +664,25 @@
      </property>
      <property name="text">
       <string>P.Clear</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="return0Button">
+     <property name="geometry">
+      <rect>
+       <x>482</x>
+       <y>240</y>
+       <width>100</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Return 0</string>
      </property>
     </widget>
    </widget>

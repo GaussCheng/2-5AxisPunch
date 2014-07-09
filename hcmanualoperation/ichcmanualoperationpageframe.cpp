@@ -81,7 +81,7 @@ void ICHCManualOperationPageFrame::showEvent(QShowEvent *e)
     }
     QFrame::showEvent(e);
     ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnManual, 0);
-    currentStep = 0;
+//    currentStep = 0;
     timerID_ = startTimer(100);
     nullButton_->click();
     ui->xPos->clear();
@@ -650,7 +650,14 @@ void ICHCManualOperationPageFrame::on_singleButton_clicked()
     if(currentStep >= mold->MoldContent().size()) return;
     ICMoldItem item = mold->MoldContent().at(currentStep);
     cmd.SetSlave(1);
-    cmd.SetGM(item.GMVal());
+    if(item.GMVal() == ICMold::GARC)
+    {
+        cmd.SetGM(item.IFPos());
+    }
+    else
+    {
+        cmd.SetGM(item.GMVal());
+    }
     cmd.SetNumber(currentStep);
     cmd.SetPoint(item.SubNum());
     cmd.SetPos(item.Pos());
@@ -726,3 +733,10 @@ void ICHCManualOperationPageFrame::on_zSpeed_toggled(bool checked)
     }
 }
 #endif
+
+void ICHCManualOperationPageFrame::on_return0Button_clicked()
+{
+    currentStep = 0;
+    oldStep = -1;
+//    ui->singleButton->setText(QString(tr("Single(%1/%2)")).arg(currentStep).arg(mold->MoldContent().size()));
+}

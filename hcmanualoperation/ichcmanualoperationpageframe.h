@@ -73,6 +73,8 @@ private slots:
     void on_zSpeed_toggled(bool checked);
 #endif
 
+    void on_return0Button_clicked();
+
 private:
     Ui::ICHCManualOperationPageFrame *ui;
     int timerID_;

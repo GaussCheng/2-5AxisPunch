@@ -2619,11 +2619,11 @@ Reason</source>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="260"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="280"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="404"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1861"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1874"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3753"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4688"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="6038"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1880"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1893"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3772"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4707"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="6057"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="397"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="424"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="451"/>
@@ -2661,11 +2661,11 @@ Reason</source>
         <translation type="obsolete">速度:</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2768"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3262"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4184"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="5132"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="5569"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2787"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3281"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4203"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="5151"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="5588"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="2461"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="3396"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="4322"/>
@@ -2675,11 +2675,11 @@ Reason</source>
         <translation type="unfinished">0</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2324"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2831"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4203"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4216"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="5588"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2343"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2850"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4222"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4235"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="5607"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1539"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="3415"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="3441"/>
@@ -2689,11 +2689,11 @@ Reason</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1829"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2305"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3721"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4647"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="6019"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1848"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2324"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3740"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4666"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="6038"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1970"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="2898"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="3885"/>
@@ -2704,7 +2704,7 @@ Reason</source>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="51"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="672"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="691"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="51"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="800"/>
         <source>Binary</source>
@@ -2769,249 +2769,254 @@ Reason</source>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="384"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3740"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3759"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="3454"/>
         <source>S:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="696"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="685"/>
+        <source>Return 0</source>
+        <translation>回零步</translation>
+    </message>
+    <message>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="715"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="824"/>
         <source>Action-20</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="718"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="737"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="846"/>
         <source>Action-21</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="740"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="759"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="868"/>
         <source>Action-22</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="762"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="781"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="890"/>
         <source>Action-23</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="784"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="803"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="912"/>
         <source>Action-24</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="806"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="825"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="934"/>
         <source>Action-25</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="828"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="847"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="956"/>
         <source>Action-9</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="850"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="869"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="978"/>
         <source>Action-10</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="872"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="891"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1000"/>
         <source>Action-11</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="894"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="913"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1022"/>
         <source>Action-1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="916"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="935"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1044"/>
         <source>Action-2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="938"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="957"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1066"/>
         <source>Action-4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="960"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="979"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1088"/>
         <source>Action-5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="982"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1001"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1110"/>
         <source>Action-3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1004"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1023"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1132"/>
         <source>Action-12</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1026"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1045"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1154"/>
         <source>Action-13</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1048"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1067"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1176"/>
         <source>Action-26</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1070"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1089"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1198"/>
         <source>Action-6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1092"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1111"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1220"/>
         <source>Action-7</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1114"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1133"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1242"/>
         <source>Action-14</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1136"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1155"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1264"/>
         <source>Action-8</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1158"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1177"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1286"/>
         <source>Action-17</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1180"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1199"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1308"/>
         <source>Action-18</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1202"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1221"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1330"/>
         <source>Action-19</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1224"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1243"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1352"/>
         <source>Action-30</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1246"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1265"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1374"/>
         <source>Action-15</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1268"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1287"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1396"/>
         <source>Action-16</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1290"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1309"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1418"/>
         <source>Action-27</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1312"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1331"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1440"/>
         <source>Action-28</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1334"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1353"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1462"/>
         <source>Action-29</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1356"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1375"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1484"/>
         <source>Action-31</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1378"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1397"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1506"/>
         <source>Action-32</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1848"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1867"/>
         <source>Y1:</source>
         <translation>Y:</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2337"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2356"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="2008"/>
         <source>X1:</source>
         <translation>X:</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2793"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2812"/>
         <source>X1.Speed</source>
         <translation>X调速</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2815"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2834"/>
         <source>Y1.Speed</source>
         <translation>Y调速</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3287"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3306"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="4347"/>
         <source>S.Speed</source>
         <translation>S调速</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4672"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4691"/>
         <source>T.Speed</source>
         <translation>T调速</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4701"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4720"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="4826"/>
         <source>T:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="6051"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="6070"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="6176"/>
         <source>X2:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="6070"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="6089"/>
         <source>X2.Speed</source>
         <translation>X2调速</translation>
     </message>
