@@ -629,7 +629,7 @@ padding:5px;
     <widget class="QPushButton" name="feedButton">
      <property name="geometry">
       <rect>
-       <x>215</x>
+       <x>100</x>
        <y>3</y>
        <width>90</width>
        <height>31</height>
@@ -660,7 +660,7 @@ padding:5px;
     <widget class="QPushButton" name="mainButton">
      <property name="geometry">
       <rect>
-       <x>60</x>
+       <x>10</x>
        <y>3</y>
        <width>85</width>
        <height>31</height>
@@ -694,9 +694,9 @@ padding:5px;
     <widget class="QComboBox" name="reserveBox">
      <property name="geometry">
       <rect>
-       <x>355</x>
+       <x>200</x>
        <y>5</y>
-       <width>106</width>
+       <width>116</width>
        <height>27</height>
       </rect>
      </property>
@@ -740,6 +740,29 @@ padding:5px;
        <string>Reserve8</string>
       </property>
      </item>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>10</y>
+       <width>81</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Mold Count</string>
+     </property>
+    </widget>
+    <widget class="ICLineEditWithVirtualNumericKeypad" name="moldCount">
+     <property name="geometry">
+      <rect>
+       <x>410</x>
+       <y>5</y>
+       <width>76</width>
+       <height>27</height>
+      </rect>
+     </property>
     </widget>
    </widget>
    <widget class="QWidget" name="fixtureCheck">
@@ -1237,6 +1260,13 @@ QCheckBox::indicator:unchecked
    </widget>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ICLineEditWithVirtualNumericKeypad</class>
+   <extends>QLineEdit</extends>
+   <header>iclineeditwithvirtualnumerickeypad.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="../resource.qrc"/>
  </resources>

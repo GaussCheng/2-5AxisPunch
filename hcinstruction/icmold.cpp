@@ -326,7 +326,7 @@ bool ICMold::SaveMoldFile(bool isSaveParams)
     }
     if(isSaveParams)
     {
-        SaveMoldParamsFile();
+        ret |= SaveMoldParamsFile();
     }
     return ret;
 }

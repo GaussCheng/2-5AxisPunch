@@ -73,6 +73,8 @@ private slots:
 
     void on_reserveBox_activated(int index);
 
+    void OnMoldCountChanged(const QString& text);
+
 signals:
 //    void JumpToProgramEditorPage();
 

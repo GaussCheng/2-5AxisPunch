@@ -100,6 +100,10 @@ ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
         fixtureCheckList[i]->setText(info.GetLocaleName("zh") + tr("Check"));
     }
 
+    connect(ui->moldCount,
+            SIGNAL(textChanged(QString)),
+            SLOT(OnMoldCountChanged(QString)));
+
     connect(MoldInformation::Instance(),
             SIGNAL(MoldChanged(QString)),
             SLOT(OnMoldChanged(QString)));
@@ -120,6 +124,9 @@ static bool isShow = false;
 void ICHCInstructionPageFrame::showEvent(QShowEvent *e)
 {
     QFrame::showEvent(e);
+    ui->moldCount->blockSignals(true);
+    ui->moldCount->setText(QString::number(ICMold::CurrentMold()->MoldParam(ICMold::reserve)));
+    ui->moldCount->blockSignals(false);
     UpdateHostParam();
     isShow = true;
 }
@@ -1023,6 +1030,9 @@ void ICHCInstructionPageFrame::on_tabWidget_currentChanged(int index)
     if(index == 0)
     {
         UpdateHostParam();
+        ui->moldCount->blockSignals(true);
+        ui->moldCount->setText(QString::number(ICMold::CurrentMold()->MoldParam(ICMold::reserve)));
+        ui->moldCount->blockSignals(false);
     }
     else
     {
@@ -1057,4 +1067,9 @@ void ICHCInstructionPageFrame::OnMoldChanged(const QString &name)
 void ICHCInstructionPageFrame::on_reserveBox_activated(int index)
 {
     OnProgramChanged(index + 1, "");
+}
+
+void ICHCInstructionPageFrame::OnMoldCountChanged(const QString &text)
+{
+    ICMold::CurrentMold()->SetMoldParam(ICMold::reserve, text.toUInt());
 }
