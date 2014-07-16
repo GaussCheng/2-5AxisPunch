@@ -114,6 +114,22 @@ void ICOriginDialog::StatusRefreshed()
         ui->yesBtn->hide();
         ui->noBtn->hide();
     }
+
+    static ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    int16_t pos = host->HostStatus(ICVirtualHost::XPos).toInt();
+     ui->x1Pos->setText(QString().sprintf("%.1f", pos / 10.0));
+    pos = host->HostStatus(ICVirtualHost::YPos).toInt();
+    ui->y1Pos->setText(QString().sprintf("%.1f", pos / 10.0));
+#ifdef HC_AXIS_COUNT_5
+    pos = host->HostStatus(ICVirtualHost::ZPos).toInt();
+    ui->zPos->setText(QString().sprintf("%.1f", pos / 10.0));
+
+    pos = host->HostStatus(ICVirtualHost::QPos).toInt();
+    ui->y2Pos->setText(QString().sprintf("%.1f", pos / 10.0));
+
+    pos = host->HostStatus(ICVirtualHost::PPos).toInt();
+    ui->x2Pos->setText(QString().sprintf("%.1f", pos / 10.0));
+#endif
 }
 
 
