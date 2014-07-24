@@ -34,6 +34,19 @@ typedef union{
     u_int16_t all;
 }ReserveProgConfig;
 
+typedef union{
+    struct {
+        u_int16_t a1 : 3;
+        u_int16_t a2 : 3;
+        u_int16_t a3 : 3;
+        u_int16_t a4 : 3;
+        u_int16_t a5 : 3;
+        u_int16_t resv : 1;
+    }mode;
+    u_int16_t allMode;
+}AxisMode;
+
+
 ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ICStructDefineFrame)
@@ -119,6 +132,14 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     ui->rP6->setCurrentIndex(progConfig.b.r6);
     ui->rP7->setCurrentIndex(progConfig.b.r7);
     ui->rP8->setCurrentIndex(progConfig.b.r8);
+
+    AxisMode axisMode;
+    axisMode.allMode = ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::SYS_Config_Out).toInt();
+    ui->a1->setCurrentIndex(axisMode.mode.a1);
+    ui->a2->setCurrentIndex(axisMode.mode.a2);
+    ui->a3->setCurrentIndex(axisMode.mode.a3);
+    ui->a4->setCurrentIndex(axisMode.mode.a4);
+    ui->a5->setCurrentIndex(axisMode.mode.a5);
 
 //    ui->fixtureDefineBox_2->hide();
 }
@@ -219,10 +240,16 @@ void ICStructDefineFrame::on_saveButton_clicked()
         }
     }
     ICVirtualHost::GlobalVirtualHost()->SetSystemParameter(ICVirtualHost::SYS_Config_Fixture, machineCount);
+    AxisMode axisMode;
+    axisMode.mode.a1 = ui->a1->currentIndex();
+    axisMode.mode.a2 = ui->a2->currentIndex();
+    axisMode.mode.a3 = ui->a3->currentIndex();
+    axisMode.mode.a4 = ui->a4->currentIndex();
+    axisMode.mode.a5 = ui->a5->currentIndex();
     QVector<uint> dataBuffer(7, 0);
     dataBuffer[0] = 0;
     dataBuffer[1] = axisDefine_;
-    dataBuffer[2] = 0;
+    dataBuffer[2] = axisMode.allMode;
 //    dataBuffer[3] = ICVirtualHost::GlobalVirtualHost()->FixtureDefineSwitch(ui->fixtureSelectBox->currentIndex());
     dataBuffer[3] = machineCount;
     CanConfig canConfig;
@@ -261,7 +288,7 @@ void ICStructDefineFrame::on_saveButton_clicked()
         host->SetSystemParameter(ICVirtualHost::SYS_Config_Xorsum, dataBuffer.at(6));
         host->SetSystemParameter(ICVirtualHost::SYS_ARM_CONFIG, 0);
         host->SetSystemParameter(ICVirtualHost::SYS_Config_Signal, 0);
-        host->SetSystemParameter(ICVirtualHost::SYS_Config_Out, 0);
+        host->SetSystemParameter(ICVirtualHost::SYS_Config_Out, dataBuffer[2]);
 //        host->SystemParameter(ICVirtualHost::SYS_Function);
         host->SaveSystemConfig();
         QMessageBox::information(this, tr("Tips"), tr("Save Sucessfully!"));
