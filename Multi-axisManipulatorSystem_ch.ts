@@ -6334,8 +6334,8 @@ Please enter an digit between </source>
         <translation>需要自动侧姿吗?</translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="145"/>
-        <location filename="icorigindialog.cpp" line="151"/>
+        <location filename="icorigindialog.cpp" line="161"/>
+        <location filename="icorigindialog.cpp" line="167"/>
         <source>Originning</source>
         <translation>原点执行中</translation>
     </message>
@@ -6351,21 +6351,51 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="icorigindialog.ui" line="58"/>
+        <location filename="icorigindialog.ui" line="76"/>
+        <location filename="icorigindialog.ui" line="93"/>
+        <location filename="icorigindialog.ui" line="110"/>
+        <location filename="icorigindialog.ui" line="127"/>
+        <location filename="icorigindialog.ui" line="144"/>
         <source>0</source>
         <translation>0</translation>
     </message>
     <message>
-        <location filename="icorigindialog.ui" line="75"/>
+        <location filename="icorigindialog.ui" line="69"/>
+        <source>X1:</source>
+        <translation type="unfinished">X:</translation>
+    </message>
+    <message>
+        <location filename="icorigindialog.ui" line="86"/>
+        <source>Y1:</source>
+        <translation type="unfinished">Y:</translation>
+    </message>
+    <message>
+        <location filename="icorigindialog.ui" line="103"/>
+        <source>S:</source>
+        <translation type="unfinished">轴:</translation>
+    </message>
+    <message>
+        <location filename="icorigindialog.ui" line="120"/>
+        <source>T:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icorigindialog.ui" line="137"/>
+        <source>X2:</source>
+        <translation type="unfinished">X: {2:?}</translation>
+    </message>
+    <message>
+        <location filename="icorigindialog.ui" line="164"/>
         <source>Stop</source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="icorigindialog.ui" line="114"/>
+        <location filename="icorigindialog.ui" line="203"/>
         <source>Yes</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="icorigindialog.ui" line="101"/>
+        <location filename="icorigindialog.ui" line="190"/>
         <source>No</source>
         <translation></translation>
     </message>

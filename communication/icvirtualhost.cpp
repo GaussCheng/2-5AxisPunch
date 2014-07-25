@@ -280,25 +280,41 @@ void ICVirtualHost::RefreshStatus()
         else
         {
 #ifdef Q_WS_X11
-            statusMap_.insert(XPos, 10);
-            statusMap_.insert(YPos, 10);
-//            statusMap_.insert(ZPos, 10);
-            statusMap_.insert(PPos, 10);
-            statusMap_.insert(QPos, 10);
-//            statusMap_.insert(CPos, 10);
-            statusMap_.insert(DbgX0, 10);
-            statusMap_.insert(DbgY0, 148);
-            statusMap_.insert(DbgZ0, 3052);
-            statusMap_.insert(DbgP0, (2 << 8));
-            statusMap_.insert(DbgQ0, 60);
-            statusMap_.insert(DbgX1, 150);
-            statusMap_.insert(DbgY1, 123);
-            statusMap_.insert(DbgZ1, 50);
-            statusMap_.insert(DbgP1, 100);
-            statusMap_.insert(DbgQ1, 110);
-            statusMap_.insert(Time, 500);
-            statusMap_.insert(ClipH, -1);
-            statusMap_.insert(ClipL, -1);
+            statusMap_.insert(Status, rand());
+            statusMap_.insert(Step, rand()  % 100);
+            statusMap_.insert(Input2, rand());
+            statusMap_.insert(Input3, rand());
+            statusMap_.insert(Output2, rand());
+            statusMap_.insert(Output3, rand());
+            statusMap_.insert(ActL, rand());
+            statusMap_.insert(ActH, rand());
+            statusMap_.insert(ClipL, rand());
+            statusMap_.insert(ClipH, rand());
+            statusMap_.insert(Time, rand());
+            statusMap_.insert(XPos, rand());
+            statusMap_.insert(YPos, rand());
+            statusMap_.insert(ZPos, rand());
+            statusMap_.insert(PPos, rand());
+            statusMap_.insert(QPos, rand());
+            statusMap_.insert(S, rand());
+            statusMap_.insert(Input0, rand());
+            statusMap_.insert(Input1, rand());
+            statusMap_.insert(Output0, rand());
+            statusMap_.insert(Output1, rand());
+            statusMap_.insert(EuIn, rand());
+            statusMap_.insert(EuOut, rand());
+            statusMap_.insert(ErrCode, rand());
+            statusMap_.insert(DbgX0, rand());
+            statusMap_.insert(DbgX1, rand());
+            statusMap_.insert(DbgY0, rand());
+            statusMap_.insert(DbgY1, rand());
+            statusMap_.insert(DbgZ0, rand());
+            statusMap_.insert(DbgZ1, rand());
+            statusMap_.insert(DbgP0, rand());
+            statusMap_.insert(DbgP1, rand());
+            statusMap_.insert(DbgQ0, rand());
+            statusMap_.insert(DbgQ1, rand());
+            emit StepChanged(statusMap_.value(Step).toInt());
 //            if(flag)
 //            {
 //                statusMap_.insert(ErrCode, 304);
