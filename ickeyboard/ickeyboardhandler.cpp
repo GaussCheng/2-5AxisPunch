@@ -279,7 +279,7 @@ void ICKeyboardHandler::Keypressed(int keyValue)
     case ICKeyboard::VFB_Y2Add:
     case ICKeyboard::VFB_Y2Sub:
     {
-        if(!ICParametersSave::Instance()->IsSingleArm())
+//        if(!ICParametersSave::Instance()->IsSingleArm())
         {
             if(status == ICVirtualHost::Stop)
             {

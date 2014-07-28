@@ -6362,27 +6362,27 @@ Please enter an digit between </source>
     <message>
         <location filename="icorigindialog.ui" line="69"/>
         <source>X1:</source>
-        <translation type="unfinished">X:</translation>
+        <translation>X1:</translation>
     </message>
     <message>
         <location filename="icorigindialog.ui" line="86"/>
         <source>Y1:</source>
-        <translation type="unfinished">Y:</translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <location filename="icorigindialog.ui" line="103"/>
         <source>S:</source>
-        <translation type="unfinished">轴:</translation>
+        <translation>S:</translation>
     </message>
     <message>
         <location filename="icorigindialog.ui" line="120"/>
         <source>T:</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="icorigindialog.ui" line="137"/>
         <source>X2:</source>
-        <translation type="unfinished">X: {2:?}</translation>
+        <translation>X2:</translation>
     </message>
     <message>
         <location filename="icorigindialog.ui" line="164"/>
@@ -8613,15 +8613,15 @@ Would you want to restart now?</source>
         <translation>返回</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="393"/>
-        <location filename="mainframe.cpp" line="772"/>
-        <location filename="mainframe.cpp" line="848"/>
+        <location filename="mainframe.cpp" line="397"/>
+        <location filename="mainframe.cpp" line="776"/>
+        <location filename="mainframe.cpp" line="852"/>
         <source>Controlled, Can&apos;t modify!</source>
         <translation>联机中，不能设定！</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="492"/>
-        <location filename="mainframe.cpp" line="499"/>
+        <location filename="mainframe.cpp" line="496"/>
+        <location filename="mainframe.cpp" line="503"/>
         <source>Hint</source>
         <translation>提示</translation>
     </message>
@@ -8630,9 +8630,9 @@ Would you want to restart now?</source>
         <translation type="obsolete">手动</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="392"/>
-        <location filename="mainframe.cpp" line="771"/>
-        <location filename="mainframe.cpp" line="847"/>
+        <location filename="mainframe.cpp" line="396"/>
+        <location filename="mainframe.cpp" line="775"/>
+        <location filename="mainframe.cpp" line="851"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>

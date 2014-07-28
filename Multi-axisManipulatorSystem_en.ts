@@ -5421,22 +5421,22 @@ Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="392"/>
-        <location filename="mainframe.cpp" line="771"/>
-        <location filename="mainframe.cpp" line="847"/>
+        <location filename="mainframe.cpp" line="396"/>
+        <location filename="mainframe.cpp" line="775"/>
+        <location filename="mainframe.cpp" line="851"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="393"/>
-        <location filename="mainframe.cpp" line="772"/>
-        <location filename="mainframe.cpp" line="848"/>
+        <location filename="mainframe.cpp" line="397"/>
+        <location filename="mainframe.cpp" line="776"/>
+        <location filename="mainframe.cpp" line="852"/>
         <source>Controlled, Can&apos;t modify!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="492"/>
-        <location filename="mainframe.cpp" line="499"/>
+        <location filename="mainframe.cpp" line="496"/>
+        <location filename="mainframe.cpp" line="503"/>
         <source>Hint</source>
         <translation type="unfinished"></translation>
     </message>
