@@ -10,13 +10,13 @@ ICWaitMEditor::ICWaitMEditor(QWidget *parent) :
     ui->delayEdit->setValidator(new QIntValidator(0, 65530, this));
     QStringList items;
 
-    items<<tr("M10")<<tr("M11")<<tr("M12")<<tr("M13")<<"M14"
-        <<"M15"<<"M16"<<"M17"<<"M20"<<"M21"
-       <<"M22"<<"M23"<<"M24"<<"M25"<<"M26"
-      <<"M27"<<"M30"<<"M31"<<"M32"<<"M33"
-     <<"M34"<<"M35"<<"M36"<<"M37"<<"M40"
-    <<"M41"<<"M42"<<"M43"<<"M44"<<"M45"
-    <<"M46"<<"M47";
+    items<<tr("M10")<<tr("M11")<<tr("M12")<<tr("M13")<<tr("M14")
+        <<tr("M15")<<tr("M16")<<tr("M17")<<tr("M20")<<tr("M21")
+        <<tr("M22")<<tr("M23")<<tr("M24")<<tr("M25")<<tr("M26")
+        <<tr("M27")<<tr("M30")<<tr("M31")<<tr("M32")<<tr("M33")
+        <<tr("M34")<<tr("M35")<<tr("M36")<<tr("M37")<<tr("M40")
+        <<tr("M41")<<tr("M42")<<tr("M43")<<tr("M44")<<tr("M45")
+        <<tr("M46")<<tr("M47");
     ui->mList->blockSignals(true);
     ui->mList->setRowCount(items.size());
     QTableWidgetItem* item;
