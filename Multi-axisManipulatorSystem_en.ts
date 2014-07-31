@@ -5381,6 +5381,141 @@ Would you want to restart now?</source>
         <source>M13</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="14"/>
+        <source>M15</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="14"/>
+        <source>M16</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="14"/>
+        <source>M17</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="14"/>
+        <source>M20</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="14"/>
+        <source>M21</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="15"/>
+        <source>M22</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="15"/>
+        <source>M23</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="15"/>
+        <source>M24</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="15"/>
+        <source>M25</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="15"/>
+        <source>M26</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="16"/>
+        <source>M27</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="16"/>
+        <source>M30</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="16"/>
+        <source>M31</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="16"/>
+        <source>M32</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="16"/>
+        <source>M33</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="17"/>
+        <source>M34</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="17"/>
+        <source>M35</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="17"/>
+        <source>M36</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="17"/>
+        <source>M37</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="17"/>
+        <source>M40</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="18"/>
+        <source>M41</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="18"/>
+        <source>M42</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="18"/>
+        <source>M43</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="18"/>
+        <source>M44</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="18"/>
+        <source>M45</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="19"/>
+        <source>M46</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icwaitmeditor.cpp" line="19"/>
+        <source>M47</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainFrame</name>
