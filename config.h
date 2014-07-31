@@ -5,6 +5,7 @@
 #define HC_8AXIS
 #endif
 
+#define HC_ARMV6
 #ifdef HC_SK_8
 #ifndef HC_ARMV6
 #define HC_ARMV6

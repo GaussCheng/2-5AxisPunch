@@ -179,8 +179,10 @@ void ICVirtualHost::RefreshStatus()
     static ICKeyboard* keyboard = ICKeyboard::Instace();
 
     //    emit StepChanged(rand() % 10);
+    qDebug("refresh");
     if(flag_)
     {
+        qDebug("flag");
         int key = keyboard->TakeKeyValue();
         if(keyboard->IsPressed())
         {
@@ -244,6 +246,7 @@ void ICVirtualHost::RefreshStatus()
     }
     else
     {
+        qDebug("!flag");
         //        qDebug()<<"refresh statys start";
         ICCommunicationCommandBase::ResultVector result;
         currentAddr_ %= 9;
@@ -338,7 +341,7 @@ void ICVirtualHost::RefreshStatus()
             ++tryTimes_;
 //            qCritical()<<"connect to host fail in refresh status"<<tryTimes_;
 //            static int test = 0;
-            if(tryTimes_ == 200)
+            if(tryTimes_  >= 200)
             {
 //                qCritical("Connect to host fail!!");
 #ifdef Q_WS_X11
@@ -1098,12 +1101,12 @@ void ICVirtualHost::SaveAxisParamHelper_(const QString &fileName, int start, int
 
 void ICVirtualHost::StopRefreshStatus()
 {
-    this->blockSignals(true);
+    timer_->blockSignals(true);
 }
 
 void ICVirtualHost::RestartRefreshStatus()
 {
-    this->blockSignals(false);
+    timer_->blockSignals(false);
 }
 
 int ICVirtualHost::FinishProductCount() const

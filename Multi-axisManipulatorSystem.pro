@@ -64,7 +64,7 @@ HEADERS += mainframe.h \
     simulateknob.h \
     icutility.h
 
-SK_SIZE = 5
+SK_SIZE = 8
 AXIS_COUNT = 5
 equals(AXIS_COUNT, 5){
 DEFINES += HC_AXIS_COUNT_5

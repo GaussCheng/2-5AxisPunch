@@ -5243,6 +5243,16 @@ Would you want to restart now?</source>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="communication/icvirtualhost.cpp" line="267"/>
+        <source>Reconfig</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="communication/icvirtualhost.cpp" line="268"/>
+        <source>Need to reconfig</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ICWaitConditionEditor</name>
