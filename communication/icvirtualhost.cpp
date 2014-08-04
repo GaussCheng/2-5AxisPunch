@@ -145,7 +145,7 @@ void ICVirtualHost::SetMoldParam(int param, int value)
 //    Q_ASSERT_X(moldParamToAddrPos_.contains(param),
 //               "ICVirtualHost::SetMoldParam();",
 //               (QString::number(param) + " is not a corrent param").toAscii());
-    ICCommandProcessor::Instance()->ModifyMoldParam(moldParamToAddrPos_.value(param), value);
+//    ICCommandProcessor::Instance()->ModifyMoldParam(moldParamToAddrPos_.value(param), value);
     Q_UNUSED(param)
     Q_UNUSED(value)
     isParamChanged_ = true;

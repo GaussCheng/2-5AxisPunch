@@ -159,7 +159,12 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     //            SIGNAL(StatusRefreshed()),
     //            this,
     //            SLOT(StatusRefreshed()));
-    timerID_ = ICTimerPool::Instance()->Start(ICTimerPool::RefreshTime, this, SLOT(StatusRefreshed()));
+//    timerID_ = ICTimerPool::Instance()->Start(ICTimerPool::RefreshTime, this, SLOT(StatusRefreshed()));
+    connect(&timer_,
+            SIGNAL(timeout()),
+            SLOT(StatusRefreshed()));
+    timer_.start(ICTimerPool::RefreshTime);
+
     emit LoadMessage("Ready to Refresh");
     InitCategoryPage();
     InitInterface();
@@ -236,7 +241,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
 
 MainFrame::~MainFrame()
 {
-    ICTimerPool::Instance()->Stop(timerID_, this, SLOT(StatusRefreshed()));
+//    ICTimerPool::Instance()->Stop(timerID_, this, SLOT(StatusRefreshed()));
     delete nullButton_;
     delete buttonGroup_;
     delete ui;
@@ -418,36 +423,6 @@ void MainFrame::StatusRefreshed()
         ui->cycleTimeAndFinistWidget->SetAlarmInfo("Err" + QString::number(errCode_) + ":" + alarmString->AlarmInfo(errCode_));
         return;
     }
-
-//    uint axisLast = virtualHost->HostStatus(ICVirtualHost::AxisLastPos1).toUInt() |
-//            (virtualHost->HostStatus(ICVirtualHost::AxisLastPos2).toUInt() << 16);
-////    int pos = virtualHost->HostStatus(ICVirtualHost::XPos).toInt() * 10 + (axisLast1 & 0xF);
-//    int pos = virtualHost->GetActualPos(ICVirtualHost::ICAxis_AxisX1, 0);
-//    if(pos != oldXPos_)
-//    {
-//        oldXPos_ = pos ;
-//        ui->teachButton->setText(QString().sprintf("%.1f", oldXPos_ / 10.0));
-////        ui->xPosLabel->setText(QString().sprintf("%.2f", oldXPos_ / 100.0));
-////        ui->xPosLabel->setStyleSheet("color: rgb(0, 0, 127);background-color: rgb(85, 255, 127);");
-//        isXPosChanged_ = true;
-//    }
-//    pos = virtualHost->GetActualPos(ICVirtualHost::ICAxis_AxisY1, axisLast);
-//    if(pos != oldYPos_)
-//    {
-//        oldYPos_ = pos;
-//        ui->yPosLabel->setText(QString().sprintf("%.2f", oldYPos_ / 100.0));
-//        ui->yPosLabel->setStyleSheet("color: rgb(0, 0, 127);background-color: rgb(85, 255, 127);");
-//        isYPosChanged_ = true;
-//    }
-
-//    pos = virtualHost->GetActualPos(ICVirtualHost::ICAxis_AxisZ, axisLast);
-//    if(pos != oldZPos_)
-//    {
-//        oldZPos_ = pos;
-//        ui->zPosLabel->setText(QString().sprintf("%.2f", oldZPos_ / 100.0));
-//        ui->zPosLabel->setStyleSheet("color: rgb(0, 0, 127);background-color: rgb(85, 255, 127);");
-//        isZPosChanged_ = true;
-//    }
 
     bool isControled = virtualHost->DoseControled();
     ICProgramHeadFrame::Instance()->ChangeControlStatus(isControled);

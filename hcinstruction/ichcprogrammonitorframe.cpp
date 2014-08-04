@@ -429,6 +429,7 @@ void ICHCProgramMonitorFrame::SelectCurrentStep(int currentStep)
 //        }
 //        //        modifyMap_.clear();
 //    }
+    if(!this->isVisible()) return;
     oldStep_ = currentStep;
     if(currentStep < 0 || currentStep >= programList_.size())
     {
