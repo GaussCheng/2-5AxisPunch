@@ -52,7 +52,11 @@ ICKeyboardReceiver::~ICKeyboardReceiver()
 void ICKeyboardReceiver::run()
 {
 #ifndef NATIVE_WIN32
+#ifdef Q_WS_QWS
     int fd = open("/dev/szhc_keyboard", O_RDONLY);
+#else
+    int fd = open("fake_keyboard", O_RDONLY);
+#endif
     //    int fakeKeyboard = open("/dev/fake_keyboard", O_WRONLY);
     char keyValue[5];
     ICParametersSave *config = ICParametersSave::Instance();
@@ -114,7 +118,7 @@ void ICKeyboardReceiver::run()
                     keyboard->SetPressed(true);
                     oldKeyValue_ = key;
                     keyboard->SetKeyValue(key);
-                    icMainFrame->KeyToInstructEditor(key);
+//                    icMainFrame->KeyToInstructEditor(key);
                 }
 //                msleep(100);
 //                ::system("echo after readkey--VFB_X-P >> keylog");
@@ -176,7 +180,7 @@ void ICKeyboardReceiver::run()
                 }
             }
 //            ::system("echo end readkey >> keylog");
-//            msleep(100);
+            msleep(20);
         }
     }
     ::close(fd);

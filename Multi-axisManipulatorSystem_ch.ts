@@ -65,11 +65,13 @@
     </message>
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="764"/>
+        <location filename="hcinstruction/actionsettingframe_8.ui" line="726"/>
         <source>Slash</source>
         <translation>直线</translation>
     </message>
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="808"/>
+        <location filename="hcinstruction/actionsettingframe_8.ui" line="688"/>
         <source>ARC</source>
         <translation>曲线</translation>
     </message>
@@ -3536,12 +3538,12 @@ Reason</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="875"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="876"/>
         <source>No Check</source>
         <translation>无料运行</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="880"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="881"/>
         <source>Check</source>
         <translation>料感运行</translation>
     </message>
@@ -3562,7 +3564,7 @@ Reason</source>
         <translation type="obsolete">需要忽略这个警告吗?</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="829"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="830"/>
         <source>Follow</source>
         <translation>跟随</translation>
     </message>
@@ -3571,8 +3573,8 @@ Reason</source>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="52"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="125"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="254"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="844"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="854"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="845"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="855"/>
         <source>Speed Disable</source>
         <translation>调速禁止</translation>
     </message>
@@ -3761,7 +3763,7 @@ Reason</source>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="96"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="96"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="835"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="836"/>
         <source>No Follow</source>
         <translation>不跟随</translation>
     </message>
@@ -3770,7 +3772,7 @@ Reason</source>
         <translation type="obsolete">单循环</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="844"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="845"/>
         <source>Speed Enable</source>
         <translation>调速允许</translation>
     </message>
@@ -6362,27 +6364,27 @@ Please enter an digit between </source>
     <message>
         <location filename="icorigindialog.ui" line="69"/>
         <source>X1:</source>
-        <translation type="unfinished">X:</translation>
+        <translation>X1:</translation>
     </message>
     <message>
         <location filename="icorigindialog.ui" line="86"/>
         <source>Y1:</source>
-        <translation type="unfinished">Y:</translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <location filename="icorigindialog.ui" line="103"/>
         <source>S:</source>
-        <translation type="unfinished">轴:</translation>
+        <translation>S:</translation>
     </message>
     <message>
         <location filename="icorigindialog.ui" line="120"/>
         <source>T:</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="icorigindialog.ui" line="137"/>
         <source>X2:</source>
-        <translation type="unfinished">X: {2:?}</translation>
+        <translation>X2:</translation>
     </message>
     <message>
         <location filename="icorigindialog.ui" line="164"/>
@@ -6955,25 +6957,26 @@ Please enter an digit between </source>
         <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="959"/>
         <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1467"/>
         <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="483"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="911"/>
         <source>Status</source>
         <translation></translation>
     </message>
     <message>
         <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1004"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="503"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="931"/>
         <source>Punch Origin</source>
         <translation>冲床原点</translation>
     </message>
     <message>
         <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="500"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="510"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="938"/>
         <source>Mold:</source>
         <oldsource>Mold</oldsource>
         <translation>模号：</translation>
     </message>
     <message>
         <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="525"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="529"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="957"/>
         <source>name</source>
         <translation></translation>
     </message>
@@ -6992,7 +6995,7 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="484"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="970"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1398"/>
         <source>Machine Operator</source>
         <translation>操作员</translation>
     </message>
@@ -8271,6 +8274,16 @@ Would you want to restart now?</source>
         <source>Error</source>
         <translation>错误</translation>
     </message>
+    <message>
+        <location filename="communication/icvirtualhost.cpp" line="267"/>
+        <source>Reconfig</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="communication/icvirtualhost.cpp" line="268"/>
+        <source>Need to reconfig</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ICWaitConditionEditor</name>
@@ -8613,15 +8626,15 @@ Would you want to restart now?</source>
         <translation>返回</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="393"/>
-        <location filename="mainframe.cpp" line="772"/>
-        <location filename="mainframe.cpp" line="848"/>
+        <location filename="mainframe.cpp" line="397"/>
+        <location filename="mainframe.cpp" line="746"/>
+        <location filename="mainframe.cpp" line="822"/>
         <source>Controlled, Can&apos;t modify!</source>
         <translation>联机中，不能设定！</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="492"/>
-        <location filename="mainframe.cpp" line="499"/>
+        <location filename="mainframe.cpp" line="466"/>
+        <location filename="mainframe.cpp" line="473"/>
         <source>Hint</source>
         <translation>提示</translation>
     </message>
@@ -8630,9 +8643,9 @@ Would you want to restart now?</source>
         <translation type="obsolete">手动</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="392"/>
-        <location filename="mainframe.cpp" line="771"/>
-        <location filename="mainframe.cpp" line="847"/>
+        <location filename="mainframe.cpp" line="396"/>
+        <location filename="mainframe.cpp" line="745"/>
+        <location filename="mainframe.cpp" line="821"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>

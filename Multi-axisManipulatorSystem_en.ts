@@ -54,11 +54,13 @@
     </message>
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="764"/>
+        <location filename="hcinstruction/actionsettingframe_8.ui" line="726"/>
         <source>Slash</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="808"/>
+        <location filename="hcinstruction/actionsettingframe_8.ui" line="688"/>
         <source>ARC</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2446,22 +2448,22 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="844"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="845"/>
         <source>Speed Enable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="875"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="876"/>
         <source>No Check</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="880"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="881"/>
         <source>Check</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="829"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="830"/>
         <source>Follow</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2470,15 +2472,15 @@ Infomation</source>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="52"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="125"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="254"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="844"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="854"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="845"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="855"/>
         <source>Speed Disable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="96"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="96"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="835"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="836"/>
         <source>No Follow</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4248,31 +4250,32 @@ Please enter an digit between </source>
         <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="959"/>
         <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1467"/>
         <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="483"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="911"/>
         <source>Status</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1004"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="503"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="931"/>
         <source>Punch Origin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="500"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="510"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="938"/>
         <source>Mold:</source>
         <oldsource>Mold</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="525"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="529"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="957"/>
         <source>name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="484"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="970"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1398"/>
         <source>Machine Operator</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5243,6 +5246,16 @@ Would you want to restart now?</source>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="communication/icvirtualhost.cpp" line="267"/>
+        <source>Reconfig</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="communication/icvirtualhost.cpp" line="268"/>
+        <source>Need to reconfig</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ICWaitConditionEditor</name>
@@ -5421,22 +5434,22 @@ Would you want to restart now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="392"/>
-        <location filename="mainframe.cpp" line="771"/>
-        <location filename="mainframe.cpp" line="847"/>
+        <location filename="mainframe.cpp" line="396"/>
+        <location filename="mainframe.cpp" line="745"/>
+        <location filename="mainframe.cpp" line="821"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="393"/>
-        <location filename="mainframe.cpp" line="772"/>
-        <location filename="mainframe.cpp" line="848"/>
+        <location filename="mainframe.cpp" line="397"/>
+        <location filename="mainframe.cpp" line="746"/>
+        <location filename="mainframe.cpp" line="822"/>
         <source>Controlled, Can&apos;t modify!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="492"/>
-        <location filename="mainframe.cpp" line="499"/>
+        <location filename="mainframe.cpp" line="466"/>
+        <location filename="mainframe.cpp" line="473"/>
         <source>Hint</source>
         <translation type="unfinished"></translation>
     </message>

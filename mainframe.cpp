@@ -159,12 +159,10 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     //            SIGNAL(StatusRefreshed()),
     //            this,
     //            SLOT(StatusRefreshed()));
-//    timerID_ = ICTimerPool::Instance()->Start(ICTimerPool::RefreshTime, this, SLOT(StatusRefreshed()));
-    connect(&timer_,
+    connect(&refreshTimer_,
             SIGNAL(timeout()),
             SLOT(StatusRefreshed()));
-    timer_.start(ICTimerPool::RefreshTime);
-
+//    timerID_ = ICTimerPool::Instance()->Start(ICTimerPool::RefreshTime, this, SLOT(StatusRefreshed()));
     emit LoadMessage("Ready to Refresh");
     InitCategoryPage();
     InitInterface();
@@ -235,6 +233,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     ICParametersSave::Instance()->SetBootDatetime(QDateTime::currentDateTime());
     isOverTime_ = (restTime == 1);
     registe_timer->start(3600000);
+    refreshTimer_.start(ICTimerPool::RefreshTime);
 
 }
 
@@ -840,6 +839,9 @@ void MainFrame::RecordButtonClicked()
 void MainFrame::LevelChanged(int level)
 {
 
+    static int oldLevel;
+    if(oldLevel == level) return;
+    oldLevel = level;
     switch(level)
     {
     case ICParametersSave::MachineOperator:

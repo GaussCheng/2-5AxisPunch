@@ -150,7 +150,7 @@ private:
     bool isOverTime_;
     QList<QList<QWidget*> > axisWidgets_;
     QList<uint> compareAlarmNums_;
-    QTimer timer_;
+    QTimer refreshTimer_;
 #ifdef HC_SK_8_SC
     int oldSw_;
     int oldKey_;

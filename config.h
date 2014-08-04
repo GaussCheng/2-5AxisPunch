@@ -16,7 +16,11 @@
 #define SECTION_DECIMAL 1
 #define STACK_DECIMAL 2
 
-#define SW_VERSION "CYR_4.2.5"
+#ifdef HC_SK_8
+#define SW_VERSION "CYR8_4.2.6"
+#else
+#define SW_VERSION "CYR5_4.2.6"
+#endif
 #define HW_VERSION "1.3"
 
 //#ifndef HC_SK_5
