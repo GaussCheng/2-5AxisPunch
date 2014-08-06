@@ -57,7 +57,7 @@ private Q_SLOTS:
 
     void on_maximumDisplacementLineEdit_textChanged(const QString &arg1);
 
-    void on_punch_clicked();
+//    void on_punch_clicked();
 
 private:
     void InitInterface();

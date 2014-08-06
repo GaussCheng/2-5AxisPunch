@@ -59,6 +59,8 @@ ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
 ICHCManualOperationPageFrame::~ICHCManualOperationPageFrame()
 {
     delete ui;
+    delete nullButton_;
+    delete modifyDialog_;
 }
 
 void ICHCManualOperationPageFrame::showEvent(QShowEvent *e)

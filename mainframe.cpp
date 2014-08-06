@@ -79,9 +79,9 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     isXPosChanged_(false),
     isYPosChanged_(false),
     isZPosChanged_(false),
-    axisDefine_(-1),
-    registe_timer(new QTimer),
-    reboot_timer(new QTimer)
+    axisDefine_(-1)
+//    registe_timer(new QTimer),
+//    reboot_timer(new QTimer)
   #ifdef HC_SK_8_SC
   ,
     oldSw_(-1),
@@ -92,7 +92,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
             SIGNAL(LoadMessage(QString)),
             splashScreen,
             SLOT(showMessage(QString)));
-    connect(registe_timer,
+    connect(&registe_timer,
             SIGNAL(timeout()),
             SLOT(CountRestTime()));
     emit LoadMessage("Connected");
@@ -232,7 +232,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     }
     ICParametersSave::Instance()->SetBootDatetime(QDateTime::currentDateTime());
     isOverTime_ = (restTime == 1);
-    registe_timer->start(3600000);
+    registe_timer.start(3600000);
     refreshTimer_.start(ICTimerPool::RefreshTime);
 
 }
@@ -243,6 +243,7 @@ MainFrame::~MainFrame()
 //    ICTimerPool::Instance()->Stop(timerID_, this, SLOT(StatusRefreshed()));
     delete nullButton_;
     delete buttonGroup_;
+    delete originExecutingPage_;
     delete ui;
 
 }

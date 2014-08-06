@@ -112,8 +112,8 @@ private:
     QStackedLayout * centerStackedLayout_;
     QButtonGroup* buttonGroup_;
     QAbstractButton* nullButton_;
-    QTimer *registe_timer;
-    QTimer *reboot_timer;
+    QTimer registe_timer;
+    QTimer reboot_timer;
     int resetTime;
 
     int ledFD_;

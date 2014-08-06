@@ -8,7 +8,7 @@
 #include <stdint.h>
 #include <QScopedPointer>
 #include <QApplication>
-//#include <QBitArray>
+#include <QTimer>
 #include "config.h"
 #include "iccommands.h"
 #include "iccommandprocessor.h"
@@ -710,7 +710,7 @@ private:
     int freshCount_;
 
     bool isInitSuccess_;
-    QTimer* timer_;
+    QTimer timer_;
     uint8_t oldSubStep[8];
     int oldMoldNum_;
     int watchdogFd_;

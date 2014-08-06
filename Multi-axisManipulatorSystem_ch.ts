@@ -8626,15 +8626,15 @@ Would you want to restart now?</source>
         <translation>返回</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="397"/>
-        <location filename="mainframe.cpp" line="746"/>
-        <location filename="mainframe.cpp" line="822"/>
+        <location filename="mainframe.cpp" line="398"/>
+        <location filename="mainframe.cpp" line="747"/>
+        <location filename="mainframe.cpp" line="823"/>
         <source>Controlled, Can&apos;t modify!</source>
         <translation>联机中，不能设定！</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="466"/>
-        <location filename="mainframe.cpp" line="473"/>
+        <location filename="mainframe.cpp" line="467"/>
+        <location filename="mainframe.cpp" line="474"/>
         <source>Hint</source>
         <translation>提示</translation>
     </message>
@@ -8643,9 +8643,9 @@ Would you want to restart now?</source>
         <translation type="obsolete">手动</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="396"/>
-        <location filename="mainframe.cpp" line="745"/>
-        <location filename="mainframe.cpp" line="821"/>
+        <location filename="mainframe.cpp" line="397"/>
+        <location filename="mainframe.cpp" line="746"/>
+        <location filename="mainframe.cpp" line="822"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>

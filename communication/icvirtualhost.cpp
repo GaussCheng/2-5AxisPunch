@@ -56,6 +56,10 @@ ICVirtualHost::ICVirtualHost(QObject *parent) :
     output1Bits_ = 0;
     output2Bits_ = 0;
     output3Bits_ = 0;
+    euInputBits_ = 0;
+    euOutputBits_ = 0;
+    clipLBits_ = 0;
+    clipHBits_ = 0;
     if(GlobalVirtualHost() == NULL)
     {
         SetGlobalVirtualHost(this);
@@ -104,12 +108,12 @@ ICVirtualHost::ICVirtualHost(QObject *parent) :
         QMessageBox::critical(NULL, tr("Error"), "Init host fail!");
         return;
     }
-    timer_ = new QTimer();
+//    timer_ = new QTimer();
     connect(currentMold_.data(),
             SIGNAL(MoldPramChanged(int,int)),
             this,
             SLOT(SetMoldParam(int,int)));
-    connect(timer_,
+    connect(&timer_,
             SIGNAL(timeout()),
             this,
             SLOT(RefreshStatus()));
@@ -130,9 +134,9 @@ ICVirtualHost::ICVirtualHost(QObject *parent) :
 //    QTimer::singleShot(REFRESH_TIME, this, SLOT(RefreshStatus()));
 //#else
 #ifndef HC_ARMV6
-    timer_->start(20);
+    timer_.start(20);
 #else
-    timer_->start(15);
+    timer_.start(15);
 #endif
 //#endif
 //#endif
@@ -1101,12 +1105,12 @@ void ICVirtualHost::SaveAxisParamHelper_(const QString &fileName, int start, int
 
 void ICVirtualHost::StopRefreshStatus()
 {
-    timer_->blockSignals(true);
+    timer_.blockSignals(true);
 }
 
 void ICVirtualHost::RestartRefreshStatus()
 {
-    timer_->blockSignals(false);
+    timer_.blockSignals(false);
 }
 
 int ICVirtualHost::FinishProductCount() const

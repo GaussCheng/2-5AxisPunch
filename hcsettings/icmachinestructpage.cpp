@@ -14,7 +14,8 @@ ICMachineStructPage::ICMachineStructPage(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ICMachineStructPage),
     structPage_(NULL),
-    timePage_(NULL)
+    timePage_(NULL),
+    axisDefine_(-1)
 {
     ui->setupUi(this);
     ui->minLabel->hide();
@@ -889,7 +890,7 @@ void ICMachineStructPage::on_maximumDisplacementLineEdit_textChanged(const QStri
     intValidator->setBottom(ui->maximumDisplacementLineEdit->TransThisTextToThisInt());
 }
 
-void ICMachineStructPage::on_punch_clicked()
-{
-    ui->content->setCurrentIndex(1);
-}
+//void ICMachineStructPage::on_punch_clicked()
+//{
+//    ui->content->setCurrentIndex(1);
+//}

@@ -6,6 +6,7 @@
 #include <QWeakPointer>
 #include <QMap>
 #include <QStringList>
+#include <QSettings>
 
 class QSettings;
 
@@ -49,7 +50,7 @@ public slots:
 private:
     const QString CommunicationConfigGroup;
     const QString MoldNameConfigGroup;
-    mutable QSettings *sysSetting_;
+    mutable QSettings sysSetting_;
 
 };
 

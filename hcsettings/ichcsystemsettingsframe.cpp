@@ -65,6 +65,7 @@ ICHCSystemSettingsFrame::ICHCSystemSettingsFrame(QWidget *parent) :
 ICHCSystemSettingsFrame::~ICHCSystemSettingsFrame()
 {
     delete ui;
+    delete buttonGroup_;
 }
 
 void ICHCSystemSettingsFrame::InitParameter()
