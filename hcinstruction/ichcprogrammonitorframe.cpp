@@ -131,15 +131,14 @@ void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
 //    {
 //        programListBackup_ = ICMold::CurrentMold()->ToUIItems();
 //    }
-    QFrame::showEvent(e);
     connect(ICVirtualHost::GlobalVirtualHost(),
             SIGNAL(StepChanged(int)),
             this,
             SLOT(SelectCurrentStep(int)));
-    connect(ICVirtualHost::GlobalVirtualHost(),
-            SIGNAL(SubStepChanged(uint8_t*)),
-            this,
-            SLOT(SubStepChanged(uint8_t*)));
+//    connect(ICVirtualHost::GlobalVirtualHost(),
+//            SIGNAL(SubStepChanged(uint8_t*)),
+//            this,
+//            SLOT(SubStepChanged(uint8_t*)));
     connect(ICVirtualHost::GlobalVirtualHost(),
             SIGNAL(MoldNumChanged(int)),
             this,
@@ -213,6 +212,7 @@ void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
     //            ICVirtualHost::GlobalVirtualHost()->SetFixtureCheck(false);
     //        }
     //    }
+    QFrame::showEvent(e);
 }
 
 
@@ -234,15 +234,14 @@ void ICHCProgramMonitorFrame::hideEvent(QHideEvent *e)
 //         }
 //    }
     //    modifyMap_.clear();
-    QFrame::hideEvent(e);
     disconnect(ICVirtualHost::GlobalVirtualHost(),
                SIGNAL(StepChanged(int)),
                this,
                SLOT(SelectCurrentStep(int)));
-    disconnect(ICVirtualHost::GlobalVirtualHost(),
-               SIGNAL(SubStepChanged(uint8_t*)),
-               this,
-               SLOT(SubStepChanged(uint8_t*)));
+//    disconnect(ICVirtualHost::GlobalVirtualHost(),
+//               SIGNAL(SubStepChanged(uint8_t*)),
+//               this,
+//               SLOT(SubStepChanged(uint8_t*)));
     disconnect(ICVirtualHost::GlobalVirtualHost(),
                SIGNAL(MoldNumChanged(int)),
                this,
@@ -256,6 +255,7 @@ void ICHCProgramMonitorFrame::hideEvent(QHideEvent *e)
     {
         ui->cycle->setChecked(false);
     }
+    QFrame::hideEvent(e);
 
 
     //    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop,0);

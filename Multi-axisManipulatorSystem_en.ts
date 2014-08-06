@@ -2443,7 +2443,7 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="203"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="202"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2471,7 +2471,7 @@ Infomation</source>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="52"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="52"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="125"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="254"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="253"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="845"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="855"/>
         <source>Speed Disable</source>

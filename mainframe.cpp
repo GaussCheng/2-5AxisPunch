@@ -250,10 +250,11 @@ MainFrame::~MainFrame()
 
 void MainFrame::closeEvent(QCloseEvent *e)
 {
-#ifdef Q_WS_WIN32
+#ifndef Q_WS_QWS
     simulateKnob_->close();
     delete simulateKnob_;
 #endif
+    ICKeyboard::Instace()->Stop();
     QWidget::closeEvent(e);
 }
 
@@ -839,9 +840,9 @@ void MainFrame::RecordButtonClicked()
 void MainFrame::LevelChanged(int level)
 {
 
-    static int oldLevel;
-    if(oldLevel == level) return;
-    oldLevel = level;
+//    static int oldLevel;
+//    if(oldLevel == level) return;
+//    oldLevel = level;
     switch(level)
     {
     case ICParametersSave::MachineOperator:

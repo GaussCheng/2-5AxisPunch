@@ -186,6 +186,7 @@ public:
     }
 
     void Receive();
+    void Stop();
     int TakeKeyValue();
     void SetKeyValue(int value);
 

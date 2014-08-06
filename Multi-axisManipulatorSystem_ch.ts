@@ -3533,7 +3533,7 @@ Reason</source>
         <translation>没有教导吸2检测！</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="203"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="202"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -3572,7 +3572,7 @@ Reason</source>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="52"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="52"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="125"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="254"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="253"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="845"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="855"/>
         <source>Speed Disable</source>

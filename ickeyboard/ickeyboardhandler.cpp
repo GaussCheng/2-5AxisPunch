@@ -130,13 +130,14 @@ void ICKeyboardHandler::Keypressed(int keyValue)
     }
     if(keyValue == ICKeyboard::FB_NULL)
     {
-        commandProcessor->ExecuteVirtualKeyCommand(virtualKeyMap_.value(keyValue));
+//        commandProcessor->ExecuteVirtualKeyCommand(virtualKeyMap_.value(keyValue));
         return;
     }
 
     if( keyValue == ICKeyboard::FB_Down ||
             keyValue == ICKeyboard::FB_Up)
     {
+//        return;
         int currentTuneSpeedType = ICKeyboard::Instace()->CurrentTuneSpeedType();
         if(currentTuneSpeedType < 0) return;
         if(status == ICVirtualHost::Auto)
@@ -281,7 +282,7 @@ void ICKeyboardHandler::Keypressed(int keyValue)
     {
 //        if(!ICParametersSave::Instance()->IsSingleArm())
         {
-            if(status == ICVirtualHost::Stop)
+            if(status != ICVirtualHost::Manual)
             {
                 return;
             }
@@ -292,7 +293,7 @@ void ICKeyboardHandler::Keypressed(int keyValue)
     case ICKeyboard::VFB_Pose_Horizontal:
     case ICKeyboard::VFB_Pose_Vertical:
     {
-        if(status == ICVirtualHost::Stop)
+        if(status != ICVirtualHost::Manual)
         {
             return;
         }

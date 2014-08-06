@@ -52,6 +52,12 @@ void ICKeyboard::Receive()
     pimpl_->knobReceiver_.start();
     pimpl_->pulleyReceiver_.start();
 }
+void ICKeyboard::Stop()
+{
+    pimpl_->keyboardReceiver_.quit();
+    pimpl_->knobReceiver_.quit();
+    pimpl_->pulleyReceiver_.quit();
+}
 
 int ICKeyboard::TakeKeyValue()
 {
