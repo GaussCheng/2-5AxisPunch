@@ -183,10 +183,10 @@ void ICVirtualHost::RefreshStatus()
     static ICKeyboard* keyboard = ICKeyboard::Instace();
 
     //    emit StepChanged(rand() % 10);
-    qDebug("refresh");
+//    qDebug("refresh");
     if(flag_)
     {
-        qDebug("flag");
+//        qDebug("flag");
         int key = keyboard->TakeKeyValue();
         if(keyboard->IsPressed())
         {
@@ -250,7 +250,7 @@ void ICVirtualHost::RefreshStatus()
     }
     else
     {
-        qDebug("!flag");
+//        qDebug("!flag");
         //        qDebug()<<"refresh statys start";
         ICCommunicationCommandBase::ResultVector result;
         currentAddr_ %= 9;

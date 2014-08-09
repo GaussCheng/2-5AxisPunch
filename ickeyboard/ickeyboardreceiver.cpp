@@ -118,6 +118,7 @@ void ICKeyboardReceiver::run()
                     keyboard->SetPressed(true);
                     oldKeyValue_ = key;
                     keyboard->SetKeyValue(key);
+                    specialKeyCount_ = 0;
 //                    icMainFrame->KeyToInstructEditor(key);
                 }
 //                msleep(100);
@@ -154,6 +155,7 @@ void ICKeyboardReceiver::run()
                         QKeyEvent *event = new QKeyEvent(QEvent::KeyPress, key, Qt::NoModifier);
                         qApp->postEvent(icMainFrame, event);
                     }
+                    specialKeyCount_ = 0;
 //                    msleep(100);
 //                    ::system("echo after readkey-F1--F5 >> keylog");
                     continue;

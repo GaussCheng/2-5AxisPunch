@@ -292,10 +292,10 @@ void ICHCProgramMonitorFrame::SetProduct(int product)
 //    ui->currentProductsLabel->setText(QString::number(currentFinished));
 //}
 static int16_t oldX = -1;
-static int16_t oldY = -1;
-static int16_t oldZ = -1;
-static int16_t oldQ = -1;
-static int16_t oldP = -1;
+static uint16_t oldY = 0;
+static uint16_t oldZ = 0;
+static uint16_t oldQ = 0;
+static uint16_t oldP = 0;
 static int oldS = -1;
 void ICHCProgramMonitorFrame::StatusRefreshed()
 {

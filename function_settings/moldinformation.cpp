@@ -604,67 +604,7 @@ void MoldInformation::on_importToolButton_clicked()
     //            return;
     //        }
     //    }
-    QFile file;
-    QString actContent;
-    ICProgramFormatChecker programChecker;
-    for(int i = 0; i != acts.size(); ++i)
-    {
-        file.setFileName(dir.absoluteFilePath(acts.at(i)));
-        actContent.clear();
-        file.open(QFile::ReadOnly | QFile::Text);
-        actContent = file.readAll();
-        file.close();
-        if(!programChecker.Check(actContent))
-        {
-            QMessageBox::warning(this, tr("Warnning"), tr("Wrong program format!"));
-            return;
-        }
-    }
-    ICConfigFormatChecker configFormatChecker;
-    for(int i = 0; i != fncs.size(); ++i)
-    {
-        file.setFileName(dir.absoluteFilePath(fncs.at(i)));
-        actContent.clear();
-        file.open(QFile::ReadOnly | QFile::Text);
-        actContent = file.readAll();
-        file.close();
-        if(!configFormatChecker.CheckRowCount(actContent, 65,ICDataFormatChecker::kCompareEqual))
-        {
-            QMessageBox::warning(this, tr("Warnning"), tr("Wrong config format!!!"));
-            return;
-        }
-        if(!configFormatChecker.Check(actContent))
-        {
-            QMessageBox::warning(this, tr("Warnning"), tr("Wrong config format!"));
-            return;
-        }
-    }
-    for(int i = 0; i != actsubs.size(); ++i)
-    {
-        file.setFileName(dir.absoluteFilePath(actsubs.at(i)));
-        actContent.clear();
-        file.open(QFile::ReadOnly | QFile::Text);
-        actContent = file.readAll();
-        file.close();
-        if(!programChecker.Check(actContent))
-        {
-            QMessageBox::warning(this, tr("Warnning"), tr("Wrong program format!"));
-            return;
-        }
-    }
-    for(int i = 0; i != reserves.size(); ++i)
-    {
-        file.setFileName(dir.absoluteFilePath(reserves.at(i)));
-        actContent.clear();
-        file.open(QFile::ReadOnly | QFile::Text);
-        actContent = file.readAll();
-        file.close();
-        if(!programChecker.Check(actContent))
-        {
-            QMessageBox::warning(this, tr("Warnning"), tr("Wrong program format!"));
-            return;
-        }
-    }
+
     int rows_ = ui->informationTableWidget->rowCount();
     bool flagItem = TRUE ;
     bool flagItem_ = TRUE ;
@@ -745,6 +685,55 @@ void MoldInformation::on_importToolButton_clicked()
         selectedImportItemName_.append(str + ".reserve6");
         selectedImportItemName_.append(str + ".reserve7");
         flagItem_ = FALSE;
+    }
+
+    QFile file;
+    QString actContent;
+    ICProgramFormatChecker programChecker;
+    ICConfigFormatChecker configFormatChecker;
+    for(int i = 0; i != selectedImportItemName_.size(); ++i)
+    {
+        file.setFileName(dir.absoluteFilePath(selectedImportItemName_.at(i)));
+        actContent.clear();
+        file.open(QFile::ReadOnly | QFile::Text);
+        actContent = file.readAll();
+        file.close();
+        if(selectedImportItemName_.at(i).endsWith(".act"))
+        {
+            if(!programChecker.Check(actContent))
+            {
+                QMessageBox::warning(this, tr("Warnning"), tr("Wrong program format!"));
+                return;
+            }
+        }
+        else if(selectedImportItemName_.at(i).endsWith(".fnc"))
+        {
+            if(!configFormatChecker.CheckRowCount(actContent, 65,ICDataFormatChecker::kCompareEqual))
+            {
+                QMessageBox::warning(this, tr("Warnning"), tr("Wrong config format!!!"));
+                return;
+            }
+            if(!configFormatChecker.Check(actContent))
+            {
+                QMessageBox::warning(this, tr("Warnning"), tr("Wrong config format!"));
+                return;
+            }
+        }
+        else if(selectedImportItemName_.at(i).endsWith(".sub") ||
+                selectedImportItemName_.at(i).endsWith(".reserve1") ||
+                selectedImportItemName_.at(i).endsWith(".reserve2") ||
+                selectedImportItemName_.at(i).endsWith(".reserve3") ||
+                selectedImportItemName_.at(i).endsWith(".reserve4") ||
+                selectedImportItemName_.at(i).endsWith(".reserve5") ||
+                selectedImportItemName_.at(i).endsWith(".reserve6") ||
+                selectedImportItemName_.at(i).endsWith(".reserve7"))
+        {
+            if(!programChecker.Check(actContent))
+            {
+                QMessageBox::warning(this, tr("Warnning"), tr("Wrong program format!"));
+                return;
+            }
+        }
     }
 
     ICTipsWidget tipsWidget(tr("Restoring, please wait..."));

@@ -280,6 +280,7 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         maxText = tr("Max pos inside mold");
         ui->distanceRotationEdit->SetDecimalPlaces(2);      
         ui->label_2->setText(tr("Maximum displacement"));
+        intValidator->setTop(32760);
 
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY1)
