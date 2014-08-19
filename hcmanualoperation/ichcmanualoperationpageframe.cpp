@@ -296,9 +296,9 @@ void ICHCManualOperationPageFrame::InitSignal()
 
 }
 
-static int16_t oldX = -1;
+static uint16_t oldX = -1;
 static uint16_t oldY = 0;
-static uint16_t oldZ = 0;
+static int16_t oldZ = 0;
 static uint16_t oldQ = 0;
 static uint16_t oldP = 0;
 static int oldS = -1;
@@ -307,7 +307,7 @@ static int oldStep = -1;
 void ICHCManualOperationPageFrame::StatusRefreshed()
 {
     static ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    int16_t pos = host->HostStatus(ICVirtualHost::XPos).toInt();
+    uint16_t pos = host->HostStatus(ICVirtualHost::XPos).toInt();
     if(pos != oldX)
     {
         oldX = pos;
@@ -320,11 +320,11 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
         ui->yCurrentPos->setText(QString().sprintf("%.1f", pos / 10.0));
     }
 #ifdef HC_AXIS_COUNT_5
-    pos = host->HostStatus(ICVirtualHost::ZPos).toInt();
-    if(pos != oldZ)
+    int16_t posz = host->HostStatus(ICVirtualHost::ZPos).toInt();
+    if(posz != oldZ)
     {
-        oldZ = pos;
-        ui->zCurrentPos->setText(QString().sprintf("%.1f", pos / 10.0));
+        oldZ = posz;
+        ui->zCurrentPos->setText(QString().sprintf("%.1f", posz / 10.0));
     }
 
     pos = host->HostStatus(ICVirtualHost::QPos).toInt();

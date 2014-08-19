@@ -269,6 +269,7 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
 //    ui->maximumDisplacementLineEdit->setValidator(maximumValidator_);
     ui->mechanicalLengthLineEdit->setValidator(intValidator);
     intValidator->setTop(65530);
+    maxMoveValidator_->setBottom(0);
     if(currentAxis_ == ICVirtualHost::ICAxis_AxisX1)
     {
         machineLangth = ICVirtualHost::SYS_X_Length;
@@ -280,7 +281,8 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         maxText = tr("Max pos inside mold");
         ui->distanceRotationEdit->SetDecimalPlaces(2);      
         ui->label_2->setText(tr("Maximum displacement"));
-        intValidator->setTop(32760);
+//        intValidator->setTop(32760);
+//        maximumValidator_->setBottom(0);
 
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY1)
@@ -309,6 +311,8 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         maxText = tr("External security zone");
         ui->distanceRotationEdit->SetDecimalPlaces(2);
         ui->label_2->setText(tr("Maximum displacement"));
+        maxMoveValidator_->setBottom(-32760);
+         intValidator->setTop(32760);
 
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisX2)
@@ -626,7 +630,8 @@ void ICMachineStructPage::InitInterface()
     originValidator_ = new QIntValidator(-900, 900, this);
     ui->maximumDisplacementLineEdit->SetDecimalPlaces(1);
     maximumValidator_ = new QIntValidator(0, 65530, this);
-    ui->maximumDisplacementLineEdit->setValidator(new QIntValidator(-32760, 32760, this));
+//    ui->maximumDisplacementLineEdit->setValidator(new QIntValidator(-32760, 32760, this));
+     ui->maximumDisplacementLineEdit->setValidator(maxMoveValidator_);
   //  externalValidator_ = new QIntValidator(0, 65530, this);
     ui->internalSecurityZoneLineEdit->SetDecimalPlaces(1);
     ui->internalSecurityZoneLineEdit->setValidator(minSecValidator_);
