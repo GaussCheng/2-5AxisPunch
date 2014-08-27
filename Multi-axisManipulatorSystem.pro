@@ -41,7 +41,8 @@ SOURCES += main.cpp \
     icprogramformatchecker.cpp \
     icconfigformatchecker.cpp \
     simulateknob.cpp \
-    icutility.cpp
+    icutility.cpp \
+    icrecaldialog.cpp
 HEADERS += mainframe.h \
     icaxispositionlabel.h \
     #icalarmdescriptiondialog.h \
@@ -62,7 +63,8 @@ HEADERS += mainframe.h \
     icprogramformatchecker.h \
     icconfigformatchecker.h \
     simulateknob.h \
-    icutility.h
+    icutility.h \
+    icrecaldialog.h
 
 SK_SIZE = 5
 AXIS_COUNT = 5
@@ -139,4 +141,7 @@ system("python rename_ui.py temp_8_d")
 system("python rename_ui.py temp_8")
 QMAKE_POST_LINK += "&& arm-linux-strip $$DESTDIR/$$TARGET && HCbcrypt.sh -r $$DESTDIR/$$TARGET"
 }
+
+FORMS += \
+    icrecaldialog.ui
 

@@ -65,7 +65,7 @@ QRadioButton::indicator:unchecked:disabled
     </widget>
    </item>
    <item>
-    <widget class="QTableWidget" name="tableWidget">
+    <widget class="ICTableWidget" name="tableWidget">
      <property name="styleSheet">
       <string notr="true">::indicator {
      width: 32px;
@@ -217,6 +217,13 @@ QRadioButton::indicator:unchecked:disabled
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ICTableWidget</class>
+   <extends>QTableWidget</extends>
+   <header>ictablewidget.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

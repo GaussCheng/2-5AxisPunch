@@ -26,7 +26,7 @@
     <string>Call</string>
    </property>
   </widget>
-  <widget class="QListWidget" name="listWidget">
+  <widget class="ICListWidget" name="listWidget">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -77,6 +77,13 @@
    </item>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ICListWidget</class>
+   <extends>QListWidget</extends>
+   <header>iclistwidget.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

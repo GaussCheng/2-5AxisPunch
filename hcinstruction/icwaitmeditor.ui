@@ -44,7 +44,7 @@
         <number>0</number>
        </property>
        <item>
-        <widget class="QTableWidget" name="mList">
+        <widget class="ICTableWidget" name="mList">
          <property name="styleSheet">
           <string notr="true">::item{
 height: 33px;
@@ -239,6 +239,11 @@ QRadioButton::indicator:unchecked:disabled
   </layout>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>ICTableWidget</class>
+   <extends>QTableWidget</extends>
+   <header>ictablewidget.h</header>
+  </customwidget>
   <customwidget>
    <class>ICLineEditWithVirtualNumericKeypad</class>
    <extends>QLineEdit</extends>

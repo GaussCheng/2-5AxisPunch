@@ -1088,12 +1088,6 @@ Reason</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/iccutpage.ui" line="148"/>
-        <location filename="hcinstruction/iccutpage.ui" line="158"/>
-        <source>buttonGroup</source>
-        <translation></translation>
-    </message>
-    <message>
         <location filename="hcinstruction/iccutpage.ui" line="155"/>
         <source>OFF</source>
         <translation></translation>
@@ -1328,7 +1322,7 @@ Reason</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="32"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="41"/>
         <source>Conditions</source>
         <translation>条件</translation>
     </message>
@@ -1353,89 +1347,89 @@ Reason</source>
         <translation type="obsolete">使用</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="123"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="132"/>
         <source>Check Point</source>
         <translation>检查输入点</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="167"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="176"/>
         <source>Defective Products</source>
         <translation>不良品</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="362"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="371"/>
         <source>X043</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="266"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="275"/>
         <source>X044</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="107"/>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="458"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="116"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="467"/>
         <source>Try Product</source>
         <translation>试产</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="102"/>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="202"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="111"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="211"/>
         <source>Sampling</source>
         <translation>取样</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="538"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="547"/>
         <source>Use Macro</source>
         <translation>使用子程序</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="394"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="403"/>
         <source>Fixture-2</source>
         <translation>顶退到位</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="72"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="81"/>
         <source>Sub-1</source>
         <translation>子程序1</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="77"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="86"/>
         <source>Sub-2</source>
         <translation>子程序2</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="82"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="91"/>
         <source>Sub-3</source>
         <translation>子程序3</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="87"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="96"/>
         <source>Sub-4</source>
         <translation>子程序4</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="92"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="101"/>
         <source>Sub-5</source>
         <translation>子程序5</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="97"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="106"/>
         <source>Bad Product</source>
         <translation>不良品</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="490"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="499"/>
         <source>Fixture-3</source>
         <translation>夹3</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="298"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="307"/>
         <source>Fixture-1</source>
         <translation>顶进到位</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="522"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="531"/>
         <source>Product Count</source>
         <translation>间隔模数</translation>
     </message>
@@ -1464,17 +1458,17 @@ Reason</source>
         <translation type="obsolete">堆叠4组</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="234"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="243"/>
         <source>Fixture-4</source>
         <translation>夹4</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="330"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="339"/>
         <source>Sucker-1</source>
         <translation>吸1</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="426"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="435"/>
         <source>Sucker-2</source>
         <translation>吸2</translation>
     </message>
@@ -1527,13 +1521,13 @@ Reason</source>
         <translation type="obsolete">巨集7</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="545"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="554"/>
         <source>Return Step</source>
         <translation>返回步号</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="529"/>
-        <location filename="hcinstruction/ichcconditionpage.ui" line="570"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="538"/>
+        <location filename="hcinstruction/ichcconditionpage.ui" line="579"/>
         <source>0</source>
         <translation></translation>
     </message>
@@ -1818,54 +1812,48 @@ Reason</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcfixturepage.ui" line="49"/>
+        <location filename="hcinstruction/ichcfixturepage.ui" line="58"/>
         <source>Fixture Action</source>
         <oldsource>Fixture</oldsource>
         <translation>输出</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcfixturepage.ui" line="142"/>
+        <location filename="hcinstruction/ichcfixturepage.ui" line="151"/>
         <source>Function</source>
         <translation>类型</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcfixturepage.ui" line="150"/>
+        <location filename="hcinstruction/ichcfixturepage.ui" line="159"/>
         <source>Out</source>
         <translation>输出</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcfixturepage.ui" line="155"/>
+        <location filename="hcinstruction/ichcfixturepage.ui" line="164"/>
         <source>Single</source>
         <translation>单头阀</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcfixturepage.ui" line="160"/>
+        <location filename="hcinstruction/ichcfixturepage.ui" line="169"/>
         <source>Double</source>
         <translation>双头阀</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcfixturepage.ui" line="185"/>
+        <location filename="hcinstruction/ichcfixturepage.ui" line="194"/>
         <source>ON</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcfixturepage.ui" line="191"/>
-        <location filename="hcinstruction/ichcfixturepage.ui" line="204"/>
-        <source>buttonGroup</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/ichcfixturepage.ui" line="198"/>
+        <location filename="hcinstruction/ichcfixturepage.ui" line="207"/>
         <source>OFF</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcfixturepage.ui" line="228"/>
+        <location filename="hcinstruction/ichcfixturepage.ui" line="237"/>
         <source>0.00</source>
         <translation>0.00</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcfixturepage.ui" line="238"/>
+        <location filename="hcinstruction/ichcfixturepage.ui" line="247"/>
         <source>s</source>
         <translation></translation>
     </message>
@@ -1886,7 +1874,7 @@ Reason</source>
         <translation type="obsolete">设入状态</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcfixturepage.ui" line="215"/>
+        <location filename="hcinstruction/ichcfixturepage.ui" line="224"/>
         <source>Delay</source>
         <translation>延时</translation>
     </message>
@@ -1931,7 +1919,7 @@ Reason</source>
         <translation type="obsolete">吸2</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcfixturepage.ui" line="129"/>
+        <location filename="hcinstruction/ichcfixturepage.ui" line="138"/>
         <source>En</source>
         <translation>使能</translation>
     </message>
@@ -2218,76 +2206,76 @@ Reason</source>
         <translation>IO检测</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="811"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="820"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="781"/>
         <source>Page1</source>
         <translation>第1页</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="817"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="824"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="831"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="838"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="845"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="852"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="859"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="866"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="873"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="880"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="887"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="894"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="901"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="908"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="915"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="922"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="929"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="936"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="943"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="950"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="957"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="964"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="971"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="978"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="985"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="992"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="999"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1006"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1013"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1020"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1027"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1034"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1048"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1055"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1062"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1069"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1076"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1083"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1090"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1097"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1104"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1111"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1118"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1125"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1132"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1139"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1146"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1153"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1160"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1167"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1174"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1181"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1188"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1195"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1202"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1209"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1216"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1223"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1230"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1237"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1244"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1251"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1258"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1265"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="826"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="833"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="840"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="847"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="854"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="861"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="868"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="875"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="882"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="889"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="896"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="903"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="910"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="917"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="924"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="931"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="938"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="945"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="952"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="959"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="966"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="973"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="980"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="987"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="994"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1001"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1008"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1015"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1022"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1029"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1036"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1043"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1057"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1064"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1071"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1078"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1085"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1092"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1099"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1106"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1113"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1120"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1127"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1134"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1141"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1148"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1155"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1162"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1169"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1176"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1183"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1190"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1197"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1204"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1211"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1218"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1225"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1232"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1239"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1246"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1253"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1260"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1267"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1274"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="787"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="794"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="801"/>
@@ -2356,7 +2344,7 @@ Reason</source>
         <translation>0</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1042"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1051"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="1012"/>
         <source>Page2</source>
         <translation>第2页</translation>
@@ -6391,6 +6379,49 @@ Please enter an digit between </source>
     </message>
 </context>
 <context>
+    <name>ICPasswordModifyDialog</name>
+    <message>
+        <location filename="custom_widgets/icpasswordmodifydialog.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/icpasswordmodifydialog.ui" line="20"/>
+        <source>Old Super Password:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/icpasswordmodifydialog.ui" line="30"/>
+        <source>New Super Password:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/icpasswordmodifydialog.ui" line="40"/>
+        <source>Confirm New Super Password:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/icpasswordmodifydialog.ui" line="56"/>
+        <source>Cancel</source>
+        <translation type="unfinished">取消</translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/icpasswordmodifydialog.ui" line="69"/>
+        <source>Ok</source>
+        <translation type="unfinished">确定</translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/icpasswordmodifydialog.cpp" line="34"/>
+        <source>warning</source>
+        <translation type="unfinished">警告</translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/icpasswordmodifydialog.cpp" line="35"/>
+        <source>Two password is not the same!</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ICPeripheryPage</name>
     <message>
         <location filename="hcinstruction/icperipherypage.ui" line="14"/>
@@ -6415,12 +6446,6 @@ Please enter an digit between </source>
     <message>
         <location filename="hcinstruction/icperipherypage.ui" line="268"/>
         <source>ON</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/icperipherypage.ui" line="274"/>
-        <location filename="hcinstruction/icperipherypage.ui" line="284"/>
-        <source>buttonGroup</source>
         <translation></translation>
     </message>
     <message>
@@ -7109,6 +7134,29 @@ Please enter an digit between </source>
     </message>
 </context>
 <context>
+    <name>ICRecalDialog</name>
+    <message>
+        <location filename="icrecaldialog.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icrecaldialog.ui" line="20"/>
+        <source>You pressed the recal sequence.Need to recal?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icrecaldialog.ui" line="38"/>
+        <source>No(F4)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icrecaldialog.ui" line="51"/>
+        <source>Yes(F5)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ICReturnPage</name>
     <message>
         <location filename="icreturnpage.ui" line="14"/>
@@ -7490,7 +7538,7 @@ Please enter an digit between </source>
         <translation type="obsolete">需上升和下降限位</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="869"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="856"/>
         <location filename="hcsettings/icstructdefineframe.cpp" line="201"/>
         <source>Save</source>
         <translation>保存</translation>
@@ -8614,15 +8662,15 @@ Would you want to restart now?</source>
         <translation>返回</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="399"/>
-        <location filename="mainframe.cpp" line="748"/>
-        <location filename="mainframe.cpp" line="824"/>
+        <location filename="mainframe.cpp" line="509"/>
+        <location filename="mainframe.cpp" line="858"/>
+        <location filename="mainframe.cpp" line="934"/>
         <source>Controlled, Can&apos;t modify!</source>
         <translation>联机中，不能设定！</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="468"/>
-        <location filename="mainframe.cpp" line="475"/>
+        <location filename="mainframe.cpp" line="578"/>
+        <location filename="mainframe.cpp" line="585"/>
         <source>Hint</source>
         <translation>提示</translation>
     </message>
@@ -8631,9 +8679,9 @@ Would you want to restart now?</source>
         <translation type="obsolete">手动</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="398"/>
-        <location filename="mainframe.cpp" line="747"/>
-        <location filename="mainframe.cpp" line="823"/>
+        <location filename="mainframe.cpp" line="508"/>
+        <location filename="mainframe.cpp" line="857"/>
+        <location filename="mainframe.cpp" line="933"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -8685,12 +8733,6 @@ Would you want to restart now?</source>
         <location filename="function_settings/moldinformation_8.ui" line="172"/>
         <source>USB Export</source>
         <translation>USB导出</translation>
-    </message>
-    <message>
-        <location filename="function_settings/moldinformation.ui" line="178"/>
-        <location filename="function_settings/moldinformation.ui" line="203"/>
-        <source>buttonGroup</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="function_settings/moldinformation.ui" line="200"/>

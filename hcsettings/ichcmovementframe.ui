@@ -32,7 +32,7 @@
     <string>Main arm down</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="mainArmDownomboBox">
+  <widget class="ICComboBox" name="mainArmDownomboBox">
    <property name="geometry">
     <rect>
      <x>208</x>
@@ -65,7 +65,7 @@
     <string>Main arm up</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="mainArmUpComboBox">
+  <widget class="ICComboBox" name="mainArmUpComboBox">
    <property name="geometry">
     <rect>
      <x>532</x>
@@ -98,7 +98,7 @@
     <string>Secondary arm down</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="secondaryArmDownComboBox">
+  <widget class="ICComboBox" name="secondaryArmDownComboBox">
    <property name="geometry">
     <rect>
      <x>208</x>
@@ -131,7 +131,7 @@
     <string>Secondary arm up</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="secondaryArmUpComboBox">
+  <widget class="ICComboBox" name="secondaryArmUpComboBox">
    <property name="geometry">
     <rect>
      <x>532</x>
@@ -164,7 +164,7 @@
     <string>Main arm traverse out</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="mainArmTraverseOutComboBox">
+  <widget class="ICComboBox" name="mainArmTraverseOutComboBox">
    <property name="geometry">
     <rect>
      <x>208</x>
@@ -197,7 +197,7 @@
     <string>Main arm traverse in</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="mainArmTraverseInComboBox">
+  <widget class="ICComboBox" name="mainArmTraverseInComboBox">
    <property name="geometry">
     <rect>
      <x>532</x>
@@ -230,7 +230,7 @@
     <string>Secondary arm traverse out</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="secondaryArmTraverseOutComboBox">
+  <widget class="ICComboBox" name="secondaryArmTraverseOutComboBox">
    <property name="geometry">
     <rect>
      <x>208</x>
@@ -263,7 +263,7 @@
     <string>Secondary arm traverse in</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="secondaryArmTraverseInComboBox">
+  <widget class="ICComboBox" name="secondaryArmTraverseInComboBox">
    <property name="geometry">
     <rect>
      <x>532</x>
@@ -284,6 +284,13 @@
    </item>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ICComboBox</class>
+   <extends>QComboBox</extends>
+   <header>iccombobox.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

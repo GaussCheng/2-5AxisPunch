@@ -76,7 +76,7 @@ QCheckBox::indicator:unchecked
         <number>0</number>
        </property>
        <item>
-        <widget class="QTableWidget" name="tableWidget">
+        <widget class="ICTableWidget" name="tableWidget">
          <property name="styleSheet">
           <string notr="true">::item{
 height: 33px;
@@ -271,7 +271,7 @@ height: 33px;
         <bool>true</bool>
        </property>
        <attribute name="buttonGroup">
-        <string>buttonGroup</string>
+        <string notr="true">buttonGroup</string>
        </attribute>
       </widget>
      </item>
@@ -281,7 +281,7 @@ height: 33px;
         <string>OFF</string>
        </property>
        <attribute name="buttonGroup">
-        <string>buttonGroup</string>
+        <string notr="true">buttonGroup</string>
        </attribute>
       </widget>
      </item>
@@ -365,6 +365,11 @@ height: 33px;
   </layout>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>ICTableWidget</class>
+   <extends>QTableWidget</extends>
+   <header>ictablewidget.h</header>
+  </customwidget>
   <customwidget>
    <class>ICLineEditWithVirtualNumericKeypad</class>
    <extends>QLineEdit</extends>
