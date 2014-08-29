@@ -268,15 +268,21 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
 //    ui->maximumDisplacementLineEdit->setValidator(maximumValidator_);
     ui->mechanicalLengthLineEdit->setValidator(intValidator);
     intValidator->setTop(65530);
+    ui->maxLabel->hide();
+    ui->externalSecurityZoneLineEdit->hide();
+    ui->maxUnitLabel->hide();
     if(currentAxis_ == ICVirtualHost::ICAxis_AxisX1)
     {
+        ui->maxLabel->show();
+        ui->externalSecurityZoneLineEdit->show();
+        ui->maxUnitLabel->show();
         machineLangth = ICVirtualHost::SYS_X_Length;
         maxLangth = ICVirtualHost::SYS_X_Maxium;
         iSafe = ICVirtualHost::SYS_X_InSafe;
         oSafe = ICVirtualHost::SYS_X_OutSafe;
         total = ICParametersSave::Instance()->DistanceRotation("X");
         minText = tr("Min pos inside mold");
-        maxText = tr("Max pos inside mold");
+        maxText = tr("Safe Pos");
         ui->distanceRotationEdit->SetDecimalPlaces(2);      
         ui->label_2->setText(tr("Maximum displacement"));
 
