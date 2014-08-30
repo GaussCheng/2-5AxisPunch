@@ -109,7 +109,7 @@ ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
             SLOT(OnMoldChanged(QString)));
     //    ui->conditionsToolButton->hide();
 
-    ui->workMachineIOButton->hide();
+//    ui->workMachineIOButton->hide();
     ui->feedButton->hide();
 }
 

@@ -5148,22 +5148,22 @@ Reason</source>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="306"/>
         <source>M10</source>
-        <translation type="unfinished">取物允许</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="306"/>
         <source>M11</source>
-        <translation type="unfinished">取物完成</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="306"/>
         <source>M12</source>
-        <translation type="unfinished">置物允许</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="306"/>
         <source>M13</source>
-        <translation type="unfinished">冲压完成</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Mold Count</source>
@@ -8500,157 +8500,157 @@ Would you want to restart now?</source>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="13"/>
         <source>M10</source>
-        <translation>取汤完成</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="13"/>
         <source>M11</source>
-        <translation>汤勺水平</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="13"/>
         <source>M12</source>
-        <translation>注汤</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="13"/>
         <source>M13</source>
-        <translation>后定位选择</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="14"/>
         <source>M15</source>
-        <translation type="unfinished">后定位选择 {15?}</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="14"/>
         <source>M16</source>
-        <translation type="unfinished">后定位选择 {16?}</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="14"/>
         <source>M17</source>
-        <translation type="unfinished">后定位选择 {17?}</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="14"/>
         <source>M20</source>
-        <translation type="unfinished">后定位选择 {20?}</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="14"/>
         <source>M21</source>
-        <translation type="unfinished">后定位选择 {21?}</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="15"/>
         <source>M22</source>
-        <translation type="unfinished">后定位选择 {22?}</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="15"/>
         <source>M23</source>
-        <translation type="unfinished">后定位选择 {23?}</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="15"/>
         <source>M24</source>
-        <translation type="unfinished">后定位选择 {24?}</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="15"/>
         <source>M25</source>
-        <translation type="unfinished">后定位选择 {25?}</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="15"/>
         <source>M26</source>
-        <translation type="unfinished">后定位选择 {26?}</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="16"/>
         <source>M27</source>
-        <translation type="unfinished">后定位选择 {27?}</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="16"/>
         <source>M30</source>
-        <translation type="unfinished">后定位选择 {30?}</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="16"/>
         <source>M31</source>
-        <translation type="unfinished">后定位选择 {31?}</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="16"/>
         <source>M32</source>
-        <translation type="unfinished">后定位选择 {32?}</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="16"/>
         <source>M33</source>
-        <translation type="unfinished">后定位选择 {33?}</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="17"/>
         <source>M34</source>
-        <translation type="unfinished">后定位选择 {34?}</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="17"/>
         <source>M35</source>
-        <translation type="unfinished">后定位选择 {35?}</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="17"/>
         <source>M36</source>
-        <translation type="unfinished">后定位选择 {36?}</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="17"/>
         <source>M37</source>
-        <translation type="unfinished">后定位选择 {37?}</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="17"/>
         <source>M40</source>
-        <translation type="unfinished">后定位选择 {40?}</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="18"/>
         <source>M41</source>
-        <translation type="unfinished">后定位选择 {41?}</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="18"/>
         <source>M42</source>
-        <translation type="unfinished">后定位选择 {42?}</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="18"/>
         <source>M43</source>
-        <translation type="unfinished">后定位选择 {43?}</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="18"/>
         <source>M44</source>
-        <translation type="unfinished">后定位选择 {44?}</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="18"/>
         <source>M45</source>
-        <translation type="unfinished">后定位选择 {45?}</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="19"/>
         <source>M46</source>
-        <translation type="unfinished">后定位选择 {46?}</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitmeditor.cpp" line="19"/>
         <source>M47</source>
-        <translation type="unfinished">后定位选择 {47?}</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -9765,7 +9765,7 @@ Admin</source>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="237"/>
         <source>3-D</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="228"/>

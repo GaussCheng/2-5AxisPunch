@@ -30,8 +30,10 @@ private:
     Ui::ICWaitConditionEditor *ui;
     QPixmap onPixmap_;
     QPixmap offPixmap_;
-//    QMap<int, ICUserIOInfo> xrowToInfoMap_;
-//    QMap<int, ICUserIOInfo> yrowToInfoMap_;
+    QMap<int, ICUserIOInfo> xrowToInfoMap_;
+    QMap<int, ICUserIOInfo> yrowToInfoMap_;
+//    QMap<int, ICUserIOInfo> rowToInfoMap_;
+
 };
 
 #endif // ICWAITCONDITIONEDITOR_H
