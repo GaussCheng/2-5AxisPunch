@@ -20,7 +20,7 @@ ICSerialPortConfig ICSystemConfig::SerialPortConfig() const
 {
     ICSerialPortConfig config;
     sysSetting_.beginGroup(CommunicationConfigGroup);
-    config.SetDevice(sysSetting_.value("Device", "/dev/ttyS0").toString());
+    config.SetDevice(sysSetting_.value("Device", "/dev/ttySZHC0").toString());
     config.SetBaudRate(sysSetting_.value("BaudRate", 115200).toInt());
     config.SetParity(sysSetting_.value("Parity", "none").toString());
     config.SetDataBit(sysSetting_.value("DataBit", 8).toInt());

@@ -3,6 +3,10 @@
 #include "icvirtualhost.h"
 #include "iccommandprocessor.h"
 #include "icactioncommand.h"
+#include <QKeyEvent>
+#include "ickeyboardhandler.h"
+#include "ickeyboard.h"
+
 
 ICOriginDialog::ICOriginDialog(QWidget *parent) :
     QDialog(parent),
@@ -63,6 +67,20 @@ void ICOriginDialog::changeEvent(QEvent *e)
     break;
     default:
         break;
+    }
+}
+
+void ICOriginDialog::keyPressEvent(QKeyEvent *e)
+{
+    if(e->key() == Qt::Key_F11)
+    {
+        ICKeyboardHandler::Instance()->Keypressed(ICKeyboard::VFB_Run);
+    }
+    else
+    {
+        QKeyEvent* ke = new QKeyEvent(*e);
+        qApp->postEvent(this->parentWidget(), ke);
+        this->accept();
     }
 }
 

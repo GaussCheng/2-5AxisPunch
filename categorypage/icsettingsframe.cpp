@@ -1,6 +1,6 @@
 #include "icsettingsframe.h"
 #include "ui_icsettingsframe.h"
-#include "icupdatesystem.h"
+#include "icupdatesystempage.h"
 #include "icmachinestructpage.h"
 #include "icmachineconfigpage.h"
 #include "ichcproductsettingframe.h"
@@ -161,7 +161,7 @@ ICSettingsFrame::ICSettingsFrame(QWidget *parent) :
     ui->setupUi(this);
 
     //    ui->tabWidget->addTab(new ICHCProductSettingFrame(), tr("Product Settings"));
-    ui->tabWidget->insertTab(0, ICUpdateSystem::Instance(), tr("Maintain"));
+    ui->tabWidget->insertTab(0, ICUpdateSystemPage::Instance(), tr("Maintain"));
     ui->tabWidget->insertTab(0, new ICMachineConfigPage(), tr("Axis Config"));
     ui->tabWidget->insertTab(0, new ICMachineStructPage(), tr("Machine Config"));
     ui->tabWidget->insertTab(0, new ICHCSystemSettingsFrame(), tr("Config"));

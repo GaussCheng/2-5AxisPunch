@@ -42,7 +42,8 @@ SOURCES += main.cpp \
     icconfigformatchecker.cpp \
     simulateknob.cpp \
     icutility.cpp \
-    icrecaldialog.cpp
+    icrecaldialog.cpp \
+    icfile.cpp
 HEADERS += mainframe.h \
     icaxispositionlabel.h \
     #icalarmdescriptiondialog.h \
@@ -64,7 +65,8 @@ HEADERS += mainframe.h \
     icconfigformatchecker.h \
     simulateknob.h \
     icutility.h \
-    icrecaldialog.h
+    icrecaldialog.h \
+    icfile.h
 
 SK_SIZE = 5
 AXIS_COUNT = 5
@@ -119,6 +121,9 @@ include (hcsettings/hcsettings.pri)
 include (hcinstruction/hcinstruction.pri)
 include (ickeyboard/ickeyboard.pri)
 include (hcmaintains/hcmaintains.pri)
+
+include (vendor/IndustrialSystemFramework/ICUtility/ICUtility.pri)
+include (vendor/ICCustomWidgets/icupdatepackmodel/icupdatepackmodel.pri)
 
 RESOURCES += \
     resource.qrc \

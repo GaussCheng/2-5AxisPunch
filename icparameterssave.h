@@ -32,7 +32,7 @@ public:
     }
     ~ICParametersSave();
 
-    void SaveParameter(const QString & group, const QString & key, const QVariant & value);
+    void SaveParameter(const QString & group, const QString & key, const QVariant & value, bool issync = true);
     QVariant GetParameter(const QString & group, const QString & key, const QVariant & defaultValue);
 
     void SetCommunicationConfig(const QString& device,

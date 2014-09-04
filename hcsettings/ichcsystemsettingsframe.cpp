@@ -267,7 +267,7 @@ void ICHCSystemSettingsFrame::on_backupMachineButton_clicked()
     ICTipsWidget tipsWidget(tr("Backuping, please wait..."));
     tipsWidget.show();qApp->processEvents();
     ICBackupUtility backupUtility;
-    Information(backupUtility.BackupDir("/opt/Qt/bin/sysconfig",
+    Information(backupUtility.BackupDir("./sysconfig",
                                         "/mnt/udisk/HC5ABackup/sysconfig",
                                         QStringList()<<"param*.txt"<<"DistanceRotation"));
     //    system("rm /mnt/udisk/HC5ABackup/sysconfig/param*.txt");
@@ -289,7 +289,7 @@ void ICHCSystemSettingsFrame::on_backupSystemButton_clicked()
     ICTipsWidget tipsWidget(tr("Backuping, please wait..."));
     tipsWidget.show();qApp->processEvents();
     ICBackupUtility backupUtility;
-    Information(backupUtility.BackupDir("/opt/Qt/bin/sysconfig",
+    Information(backupUtility.BackupDir("./sysconfig",
                                         "/mnt/udisk/HC5ABackup/sysconfig",
                                         QStringList()<<"system.txt"));
     //    system("rm /mnt/udisk/HC5ABackup/sysconfig/system.txt");
@@ -346,18 +346,18 @@ void ICHCSystemSettingsFrame::on_backupAllButton_clicked()
     ICTipsWidget tipsWidget(tr("Backuping, please wait..."));
     tipsWidget.show();qApp->processEvents();
     ICBackupUtility backupUtility;
-    bool ret = backupUtility.BackupDir("/opt/Qt/bin/sysconfig",
+    bool ret = backupUtility.BackupDir("./sysconfig",
                                        "/mnt/udisk/HC5ABackup/sysconfig",
                                        QStringList()<<"param*.txt"<<"DistanceRotation");
-    ret = ret && backupUtility.BackupDir("/opt/Qt/bin/sysconfig",
+    ret = ret && backupUtility.BackupDir("./sysconfig",
                                          "/mnt/udisk/HC5ABackup/sysconfig",
                                          QStringList()<<"system.txt");
 
-    ret = ret && backupUtility.BackupDir("/opt/Qt/bin/records/",
+    ret = ret && backupUtility.BackupDir("./records/",
                                          "/mnt/udisk/HC5ABackup/records/",
                                          QStringList()<<"*.act"<<"*.fnc");
 
-    ret = ret && backupUtility.BackupDir("/opt/Qt/bin/subs",
+    ret = ret && backupUtility.BackupDir("./subs",
                                          "/mnt/udisk/HC5ABackup/subs",
                                          QStringList()<<"sub[0-7].prg");
     Information(ret);
@@ -391,7 +391,7 @@ void ICHCSystemSettingsFrame::on_restoreMachineButton_clicked()
 
         ICBackupUtility backupUtility;
         bool ret = (backupUtility.RestoreDir("/mnt/udisk/HC5ABackup/sysconfig",
-                                             "/opt/Qt/bin/sysconfig",
+                                             "./sysconfig",
                                              QStringList()<<"param*.txt"<<"DistanceRotation"));
         Information(ret, tr("Backup files is broken!"));
         //    QDir dir("/mnt/udisk/HC5ABackup/sysconfig");
@@ -423,7 +423,7 @@ void ICHCSystemSettingsFrame::on_restoreSystemButton_clicked()
     {
         ICBackupUtility backupUtility;
         bool ret = (backupUtility.RestoreDir("/mnt/udisk/HC5ABackup/sysconfig",
-                                             "/opt/Qt/bin/sysconfig",
+                                             "./sysconfig",
                                              QStringList()<<"system.txt"));
         Information(ret, tr("Backup files is broken!"));
         //    QDir dir("/mnt/udisk/HC5ABackup/sysconfig");
@@ -572,10 +572,10 @@ void ICHCSystemSettingsFrame::on_restoreAllButton_clicked()
     {
         ICBackupUtility backupUtility;
         ret = backupUtility.RestoreDir("/mnt/udisk/HC5ABackup/sysconfig",
-                                       "/opt/Qt/bin/sysconfig",
+                                       "./sysconfig",
                                        QStringList()<<"param*.txt"<<"DistanceRotation");
         ret = ret && backupUtility.RestoreDir("/mnt/udisk/HC5ABackup/sysconfig",
-                                              "/opt/Qt/bin/sysconfig",
+                                              "./sysconfig",
                                               QStringList()<<"system.txt");
 
         Information(ret);

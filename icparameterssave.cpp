@@ -4,6 +4,7 @@
 #include <QFile>
 #include <QTextStream>
 #include <QDebug>
+#include "icfile.h"
 
 ICParametersSave * ICParametersSave::instance_ = NULL;
 
@@ -47,11 +48,13 @@ ICParametersSave::~ICParametersSave()
     delete translator_;
 }
 
-void ICParametersSave::SaveParameter(const QString & group,const QString & key, const QVariant & value)
+void ICParametersSave::SaveParameter(const QString & group, const QString & key, const QVariant & value, bool issync)
 {
     this->beginGroup(group);
     this->setValue(key,value);
     this->endGroup();
+    if(issync)
+        this->sync();
 }
 
 QVariant ICParametersSave::GetParameter(const QString & group,const QString & key,const QVariant & defaultValue)
@@ -186,22 +189,26 @@ void ICParametersSave::SetDistanceRotation(const QString &axisName, double value
 {
     Q_ASSERT_X(axisToRotate_.contains(axisName), "ICParameterSave::SetDistanceRotation", "no this axis!");
     axisToRotate_.insert(axisName, value);
-    QFile file("./sysconfig/DistanceRotation");
-    QFile::copy("./sysconfig/DistanceRotation", "./sysconfig/DistanceRotation~");
-    if(file.open(QFile::WriteOnly | QFile::Text))
+    QByteArray toWrite;
+    QMap<QString, double>::iterator p = axisToRotate_.begin();
+    while(p != axisToRotate_.end())
     {
-        QTextStream out(&file);
-        QMap<QString, double>::iterator p = axisToRotate_.begin();
-        while(p != axisToRotate_.end())
-        {
-            qDebug()<<p.key()<<p.value();
-            out<<p.key()<<" "<<p.value()<<endl;
-            ++p;
-        }
+        toWrite += QString("%1 %2 \n").arg(p.key()).arg(p.value()).toUtf8();
+        qDebug()<<p.key()<<p.value();
+//        out<<p.key()<<" "<<p.value()<<endl;
+        ++p;
     }
-    file.close();
-//    system("rm ./sysconfig/DistanceRotation~");
-    QFile::remove("./sysconfig/DistanceRotation~");
+    ICFile file("./sysconfig/DistanceRotation");
+    file.ICWrite(toWrite);
+//    QFile file("./sysconfig/DistanceRotation");
+//    QFile::copy("./sysconfig/DistanceRotation", "./sysconfig/DistanceRotation~");
+//    if(file.open(QFile::WriteOnly | QFile::Text))
+//    {
+//        QTextStream out(&file);
+//    }
+//    file.close();
+////    system("rm ./sysconfig/DistanceRotation~");
+//    QFile::remove("./sysconfig/DistanceRotation~");
 }
 
 void ICParametersSave::SetBrightness(uint brightness)

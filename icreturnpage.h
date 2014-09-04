@@ -19,6 +19,7 @@ protected:
     void showEvent(QShowEvent *e);
     void hideEvent(QHideEvent *e);
     void changeEvent(QEvent *e);
+    void keyPressEvent(QKeyEvent *e);
 
 private Q_SLOTS:
     void StatusRefresh();

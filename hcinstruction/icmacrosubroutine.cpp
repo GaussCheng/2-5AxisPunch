@@ -3,6 +3,7 @@
 #include <QDebug>
 #include <QStringList>
 #include "icmacrosubroutine.h"
+#include "icfile.h"
 
 QScopedPointer<ICMacroSubroutine> ICMacroSubroutine::instance_;
 ICMacroSubroutine::ICMacroSubroutine(QObject *parent) :
@@ -84,20 +85,22 @@ bool ICMacroSubroutine::SaveMacroSubroutieFile(int group)
     {
         toWrite += items.at(i).ToString() + "\n";
     }
-    QFile file(subsDir_ + "/sub" + QString::number(group) + ".prg");
-    if(!file.open(QFile::ReadWrite | QFile::Text))
-    {
-        return false;
-    }
-    if(file.readAll() != toWrite)
-    {
-        QFile::copy(file.fileName(), file.fileName() + "~");
-        file.resize(0);
-        file.write(toWrite);
-        file.close();
-        QFile::remove(file.fileName() + "~");
-        ret = true;
-    }
+    ICFile file(subsDir_ + "/sub" + QString::number(group) + ".prg");
+    ret = file.ICWrite(toWrite);
+//    QFile file(subsDir_ + "/sub" + QString::number(group) + ".prg");
+//    if(!file.open(QFile::ReadWrite | QFile::Text))
+//    {
+//        return false;
+//    }
+//    if(file.readAll() != toWrite)
+//    {
+//        QFile::copy(file.fileName(), file.fileName() + "~");
+//        file.resize(0);
+//        file.write(toWrite);
+//        file.close();
+//        QFile::remove(file.fileName() + "~");
+//        ret = true;
+//    }
     return ret;
 }
 
