@@ -22,6 +22,7 @@ ICHCSystemSettingsFrame::ICHCSystemSettingsFrame(QWidget *parent) :
     ui(new Ui::ICHCSystemSettingsFrame)
 {
     ui->setupUi(this);
+    ui->dateTimeEdit->setCalendarPopup(false);
     buttonGroup_ = new QButtonGroup();
 
     ui->languageButtonGroup->setId(ui->chineseBox,0);
@@ -355,7 +356,7 @@ void ICHCSystemSettingsFrame::on_backupAllButton_clicked()
 
     ret = ret && backupUtility.BackupDir("./records/",
                                          "/mnt/udisk/HC5ABackup/records/",
-                                         QStringList()<<"*.act"<<"*.fnc");
+                                         QStringList()<<"*.act"<<"*.fnc"<<"*.sub"<<"*.reserve*");
 
     ret = ret && backupUtility.BackupDir("./subs",
                                          "/mnt/udisk/HC5ABackup/subs",
@@ -634,7 +635,7 @@ void ICHCSystemSettingsFrame::on_calibrationBtn_clicked()
                             tr("The system will be reboot to calibrate! Do you want to continue?"),
                             QMessageBox::Ok | QMessageBox::Cancel) == QMessageBox::Ok)
     {
-        ::system("cd /home/szhc && echo recal >>recal && reboot");
+        ::system("cd /home/szhc && echo recal >>recal && sync && reboot");
     }
 
 }
@@ -642,12 +643,12 @@ void ICHCSystemSettingsFrame::on_calibrationBtn_clicked()
 void ICHCSystemSettingsFrame::on_brightMinus_clicked()
 {
     uint brightness = ui->brightnessBar->value();
-    if(brightness == 0)
+    if(brightness == 1)
     {
         return;
     }
     ui->brightnessBar->setValue((--brightness));
-    ICParametersSave::Instance()->SetBrightness(9 - brightness);
+    ICParametersSave::Instance()->SetBrightness(brightness);
 }
 
 void ICHCSystemSettingsFrame::on_brightPlus_clicked()
@@ -658,7 +659,7 @@ void ICHCSystemSettingsFrame::on_brightPlus_clicked()
         return;
     }
     ui->brightnessBar->setValue((++brightness));
-    ICParametersSave::Instance()->SetBrightness(9 -brightness);
+    ICParametersSave::Instance()->SetBrightness(brightness);
 }
 
 bool ICHCSystemSettingsFrame::CheckRestoreSystemFiles_()

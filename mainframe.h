@@ -62,6 +62,7 @@ public Q_SLOTS:
 protected:
     void changeEvent(QEvent *e);
     void keyPressEvent(QKeyEvent *e);
+    void keyReleaseEvent(QKeyEvent *e);
     void closeEvent(QCloseEvent *e);
 
 Q_SIGNALS:

@@ -6,24 +6,25 @@
 #include "icparameterssave.h"
 #include "icsystemconfig.h"
 
-#ifdef Q_WS_WIN
+//#ifdef Q_WS_WIN
 #include <QFile>
-#endif
+//#endif
 
 int main(int argc, char *argv[])
 {    
     QApplication a(argc, argv);
-#ifdef Q_WS_WIN
+//#ifdef Q_WS_WIN
     QFile file("./stylesheet/global.qss");
     if(file.open(QFile::ReadOnly))
     {
         qApp->setStyleSheet(file.readAll());
         file.close();
     }
-#endif
+//#endif
 //    qApp->setStyleSheet("./stylesheet/global.qss");
     ICParametersSave* paraSave = ICParametersSave::Instance();
     paraSave->SetCountry(paraSave->Country());
+    paraSave->SetBrightness(paraSave->Brightness());
     ICUserDefineConfig::Instance()->Init();
     QPixmap splashPixmap("resource/startup_page.png");
 #ifdef HC_SK_5

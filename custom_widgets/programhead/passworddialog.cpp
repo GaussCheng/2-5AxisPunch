@@ -8,6 +8,7 @@ PasswordDialog::PasswordDialog(QWidget *parent) :
     ui(new Ui::PasswordDialog)
 {
     ui->setupUi(this);
+    ui->pwdEdit->setEchoMode(QLineEdit::Normal);
     buttonGroup_ = new QButtonGroup();
     InitButton();
 }

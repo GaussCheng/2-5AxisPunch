@@ -71,8 +71,8 @@ private slots:
 #endif
     void on_absBox_toggled(bool checked);
     void on_gPButton_toggled(bool checked);
-    void on_arcBox_clicked(bool checked);
-    void on_slashBox_clicked(bool checked);
+//    void on_arcBox_clicked(bool checked);
+//    void on_slashBox_clicked(bool checked);
 };
 
 #endif // ACTIONSETTINGFRAME_H

@@ -144,7 +144,7 @@ system("python rename_ui.py temp_8_d")
 #QMAKE_POST_LINK += "cp *.qm bin_debug"
 }else{
 system("python rename_ui.py temp_8")
-QMAKE_POST_LINK += "&& arm-linux-strip $$DESTDIR/$$TARGET && HCbcrypt.sh -r $$DESTDIR/$$TARGET"
+QMAKE_POST_LINK += "&& arm-linux-gnueabihf-strip $$DESTDIR/$$TARGET && HCbcrypt.sh -r $$DESTDIR/$$TARGET"
 }
 
 FORMS += \

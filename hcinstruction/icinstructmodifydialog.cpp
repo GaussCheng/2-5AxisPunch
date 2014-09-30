@@ -208,7 +208,7 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
         }
         if( item->Action() == ICMold::GZ)
         {
-            ui->badProductBox->show();
+//            ui->badProductBox->show();
         }
     }
 

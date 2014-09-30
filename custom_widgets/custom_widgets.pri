@@ -30,7 +30,8 @@ HEADERS += \
     custom_widgets/icpasswordmodifydialog.h \
     custom_widgets/icmessagebox.h \
     custom_widgets/iclistwidget.h \
-    custom_widgets/iccombobox.h
+    custom_widgets/iccombobox.h \
+    custom_widgets/icgroupbox.h
 
 SOURCES += \
     custom_widgets/ictablewidget.cpp \
@@ -38,4 +39,5 @@ SOURCES += \
     custom_widgets/icpasswordmodifydialog.cpp \
     custom_widgets/icmessagebox.cpp \
     custom_widgets/iclistwidget.cpp \
-    custom_widgets/iccombobox.cpp
+    custom_widgets/iccombobox.cpp \
+    custom_widgets/icgroupbox.cpp

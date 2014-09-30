@@ -38,7 +38,7 @@
     <attribute name="title">
      <string>Position</string>
     </attribute>
-    <widget class="QGroupBox" name="groupBox_3">
+    <widget class="ICGroupBox" name="groupBox_3">
      <property name="geometry">
       <rect>
        <x>12</x>
@@ -226,7 +226,7 @@
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
     </widget>
-    <widget class="QGroupBox" name="groupBox">
+    <widget class="ICGroupBox" name="groupBox">
      <property name="geometry">
       <rect>
        <x>371</x>
@@ -467,7 +467,7 @@
       <string>Modify</string>
      </property>
     </widget>
-    <widget class="QGroupBox" name="groupBox_2">
+    <widget class="ICGroupBox" name="groupBox_2">
      <property name="geometry">
       <rect>
        <x>12</x>
@@ -691,7 +691,16 @@
      <string>Binary</string>
     </attribute>
     <layout class="QGridLayout" name="gridLayout_3">
-     <property name="margin">
+     <property name="leftMargin">
+      <number>2</number>
+     </property>
+     <property name="topMargin">
+      <number>2</number>
+     </property>
+     <property name="rightMargin">
+      <number>2</number>
+     </property>
+     <property name="bottomMargin">
       <number>2</number>
      </property>
      <property name="spacing">
@@ -6098,6 +6107,12 @@
    <class>ICLineEditWithVirtualNumericKeypad</class>
    <extends>QLineEdit</extends>
    <header>iclineeditwithvirtualnumerickeypad.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ICGroupBox</class>
+   <extends>QGroupBox</extends>
+   <header>icgroupbox.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1196</width>
-    <height>463</height>
+    <width>593</width>
+    <height>415</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -280,6 +280,9 @@ QRadioButton::indicator:unchecked:disabled
 	image: url(:/resource/minus(64).png);
 }</string>
            </property>
+           <property name="buttonSymbols">
+            <enum>QAbstractSpinBox::PlusMinus</enum>
+           </property>
            <property name="accelerated">
             <bool>true</bool>
            </property>
@@ -380,8 +383,11 @@ QRadioButton::indicator:unchecked:disabled
              <height>16</height>
             </size>
            </property>
+           <property name="minimum">
+            <number>0</number>
+           </property>
            <property name="maximum">
-            <number>9</number>
+            <number>8</number>
            </property>
            <property name="value">
             <number>0</number>
@@ -962,7 +968,7 @@ QRadioButton::indicator:unchecked:disabled
  </resources>
  <connections/>
  <buttongroups>
-  <buttongroup name="buttonGroup_2"/>
   <buttongroup name="languageButtonGroup"/>
+  <buttongroup name="buttonGroup_2"/>
  </buttongroups>
 </ui>

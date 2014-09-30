@@ -161,6 +161,7 @@ bool MoldInformation::CreateNewSourceFile(const QString & fileName)
         QFile::copy(recordFilePath_ + "/Base.sub", recordFilePath_ + "/" + fileNameNoExtent + "reserve6");
         QFile::copy(recordFilePath_ + "/Base.sub", recordFilePath_ + "/" + fileNameNoExtent + "reserve7");
         newFile.close();
+        ::system("sync");
         QMessageBox::warning(this, tr("Success"),
                              tr("New file success."),
                              QMessageBox::Ok);
@@ -252,6 +253,7 @@ bool MoldInformation::CopySourceFile(const QString & originFileName, const QStri
         }
         QFile::remove(targetFilePathName);
     }
+    ::system("sync");
     QMessageBox::information(this, tr("warning"),
                              tr("Destination file already exists!\n"
                                 "Please try a new name"),
@@ -288,6 +290,7 @@ bool MoldInformation::DeleteSourceFile(const QString & fileName)
         //        QMessageBox::information(this, tr("Success"),
         //                                 tr("File deleted success!"),
         //                                 QMessageBox::Ok);
+        system("sync");
         return true;
     }
     else
@@ -791,6 +794,7 @@ void MoldInformation::on_importToolButton_clicked()
 #endif
     if(!flagItem || !flagItem_)
     {
+        ::system("sync");
         QMessageBox::information(this,tr("Information"), tr("Operation finished!"));
     }
 }
@@ -897,16 +901,17 @@ void MoldInformation::on_exportToolButton_clicked()
 
 #else
 
-    bool ret = backupUtility.BackupDir("/opt/Qt/bin/records",
+    bool ret = backupUtility.BackupDir("./records",
                                        "/mnt/udisk/HC5ABackup/records",
                                        selectedExportItemName_);
-    ret = ret && backupUtility.BackupDir("/opt/Qt/bin/subs",
+    ret = ret && backupUtility.BackupDir("./subs",
                                          "/mnt/udisk/HC5ABackup/subs",
                                          selectedExportItemName_<<"sub[0-7].prg");
 #endif
     if(!flagItem || !flagItem_)
     {
-        system("umount /mnt/udisk");
+//        system("umount /mnt/udisk");
+        system("sync");
         QMessageBox::information(this,tr("Information"), tr("Operation finished!"));
     }
 

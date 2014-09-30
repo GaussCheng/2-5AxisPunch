@@ -162,6 +162,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
         button->setCheckable(true);
     }
     emit LoadMessage("MainFrame UI Loaded");
+    qDebug("22222222222");
 #ifndef Q_WS_X11
 #ifndef Q_WS_WIN32
     this->setWindowFlags(Qt::FramelessWindowHint);
@@ -176,9 +177,12 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
             SIGNAL(timeout()),
             SLOT(StatusRefreshed()));
     //    timerID_ = ICTimerPool::Instance()->Start(ICTimerPool::RefreshTime, this, SLOT(StatusRefreshed()));
+    qDebug("33333333333333");
     emit LoadMessage("Ready to Refresh");
     InitCategoryPage();
+    qDebug("44444444444");
     InitInterface();
+    qDebug("11111111111");
     UpdateTranslate();
     emit LoadMessage("Translation Loaded");
     InitSignal();
@@ -280,8 +284,9 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     knobMap.insert(Qt::Key_F7, ICKeyboard::KS_StopStatu);
     knobMap.insert(Qt::Key_F5, ICKeyboard::KS_AutoStatu);
 
-    pulleyMap.insert(Qt::Key_Up, -1);
-    pulleyMap.insert(Qt::Key_Down, 1);
+    pulleyMap.insert(Qt::Key_F13, -1);
+    pulleyMap.insert(Qt::Key_F14, 1);
+    qDebug("555555555555555555");
 
 }
 
@@ -420,15 +425,25 @@ void MainFrame::keyPressEvent(QKeyEvent *e)
        }
 }
 
+void MainFrame::keyReleaseEvent(QKeyEvent *e)
+{
+    if(keyMap.contains(e->key()))
+    {
+        ICKeyboard::Instace()->SetPressed(false);
+    }
+}
+
 void MainFrame::InitCategoryPage()
 {
     emit LoadMessage("Start to Initialize category pages");
     ui->centerPageFrame->setLayout(centerStackedLayout_);
     emit LoadMessage("center page layout has been setted");
+    qDebug("666666");
 
     emit LoadMessage("Start to Initialize initial pages");
     initialPage_ = new ICInitialFrame();
     centerStackedLayout_->addWidget(initialPage_);
+    qDebug("7777777");
 
     emit LoadMessage("Start to Initialize manual pages");
     manualPage_ = new ICHCManualOperationPageFrame();
@@ -442,27 +457,34 @@ void MainFrame::InitCategoryPage()
     settingsPage_ = new ICSettingsFrame();
     functionButtonToPage_.insert(ui->settingsButton, settingsPage_);
     centerStackedLayout_->addWidget(settingsPage_);
+    qDebug("0000000");
 
     emit LoadMessage("Start to Initialize alarm pages");
     alarmPage_ = ICAlarmFrame::Instance();
+    qDebug("999999");
     functionButtonToPage_.insert(ui->alarmButton, alarmPage_);
+    qDebug("888888");
     centerStackedLayout_->addWidget(alarmPage_);
+    qDebug("11111111");
 
 
     emit LoadMessage("Start to Initialize monitor pages");
     monitorPage_ = new ICMonitorPageFrame();
     functionButtonToPage_.insert(ui->ioMonitorButton, monitorPage_);
     centerStackedLayout_->addWidget(monitorPage_);
+    qDebug("22222222");
 
 
     emit LoadMessage("Start to Initialize instruct pages");
     instructPage_ = new ICHCInstructionPageFrame();
     functionButtonToPage_.insert(ui->teachButton, instructPage_);
     centerStackedLayout_->addWidget(instructPage_);
+    qDebug("33333333");
 
     emit LoadMessage("Start to Initialize origin pages");
     originExecutingPage_ = new ICOriginDialog();
     emit LoadMessage("end to Initialize  pages");
+    qDebug("44444444");
 
 }
 
@@ -1071,7 +1093,8 @@ void MainFrame::CheckedInput()
     if(!IsInput())
     {
         ShowScreenSaver();
-        system("BackLight off");
+//        system("BackLight off");
+        system("BackLight.sh 0");
         SetBackLightOff(true);
     }
     SetHasInput(false);

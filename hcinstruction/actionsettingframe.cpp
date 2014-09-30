@@ -240,7 +240,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
     ICMoldItem item;
     item.SetBadProduct(ui->relBox->isChecked());
     item.SetSubNum(ui->pointSel->currentIndex());
-    if(!ui->arcBox->isChecked() && !ui->slashBox->isChecked())
+    if(!ui->curveBox->isChecked())
     {
 
         if(ui->gxButton->isChecked() && (!ui->gxButton->isHidden()))
@@ -557,25 +557,25 @@ void ActionSettingFrame::on_axisBoard_clicked()
 #endif
 
 
-void ActionSettingFrame::on_arcBox_clicked(bool checked)
-{
-    if(checked)
-    {
-        if(ui->slashBox->isChecked())
-        {
-            ui->slashBox->setChecked(false);
-        }
-    }
+//void ActionSettingFrame::on_arcBox_clicked(bool checked)
+//{
+//    if(checked)
+//    {
+//        if(ui->slashBox->isChecked())
+//        {
+//            ui->slashBox->setChecked(false);
+//        }
+//    }
 
-}
+//}
 
-void ActionSettingFrame::on_slashBox_clicked(bool checked)
-{
-    if(checked)
-    {
-        if(ui->arcBox->isChecked())
-        {
-            ui->arcBox->setChecked(false);
-        }
-    }
-}
+//void ActionSettingFrame::on_slashBox_clicked(bool checked)
+//{
+//    if(checked)
+//    {
+//        if(ui->arcBox->isChecked())
+//        {
+//            ui->arcBox->setChecked(false);
+//        }
+//    }
+//}
