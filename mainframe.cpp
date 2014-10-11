@@ -284,8 +284,8 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     knobMap.insert(Qt::Key_F7, ICKeyboard::KS_StopStatu);
     knobMap.insert(Qt::Key_F5, ICKeyboard::KS_AutoStatu);
 
-    pulleyMap.insert(Qt::Key_F13, -1);
-    pulleyMap.insert(Qt::Key_F14, 1);
+    pulleyMap.insert(Qt::Key_F13, 1);
+    pulleyMap.insert(Qt::Key_F14, -1);
     qDebug("555555555555555555");
 
 }
@@ -560,7 +560,7 @@ void MainFrame::StatusRefreshed()
     bool isControled = virtualHost->DoseControled();
     ICProgramHeadFrame::Instance()->ChangeControlStatus(isControled);
     newLedFlags_ = 0;
-    newLedFlags_ |= (virtualHost->IsInputOn(72)? 8 : 0);
+    newLedFlags_ |= (virtualHost->IsInputOn(67)? 8 : 0);
     newLedFlags_ |= (virtualHost->IsInputOn(64)? 4 : 0);
     newLedFlags_ |= (virtualHost->IsOutputOn(64)? 2 : 0);
     newLedFlags_ |= (virtualHost->IsOutputOn(65)? 1 : 0);
@@ -573,10 +573,11 @@ void MainFrame::StatusRefreshed()
         ioctl(ledFD_, 0, ledFlags_);
 #else
         //        ioctl(ledFD_, 2, ledFlags_);
-        ioctl(ledFD_, 2, ledFlags_);
+        ioctl(ledFD_, 0, ledFlags_);
 #endif
 #endif
     }
+//    ioctl(ledFD_, 0, ledFlags_);
     errCode_ = virtualHost->AlarmNum();
     if(compareAlarmNums_.indexOf(errCode_) != -1)
     {

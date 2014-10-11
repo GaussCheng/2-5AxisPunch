@@ -141,6 +141,8 @@ void ActionSettingFrame::hideEvent(QHideEvent *e)
     ui->gyButton->setChecked(false);
 #ifdef HC_AXIS_COUNT_5
     ui->gzButton->setChecked(false);
+    ui->gtButton->setChecked(false);
+    ui->gPButton->setChecked(false);
 #endif
     QFrame::hideEvent(e);
     disconnect(ICVirtualHost::GlobalVirtualHost(),
