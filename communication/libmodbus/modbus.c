@@ -1864,7 +1864,7 @@ int hc_query_status(modbus_param_t *mb_param, int slave, int start_addr, int nb,
     int ret = select(mb_param->fd + 1, &readFD, NULL, NULL, &tv);
     if(ret == 0)
     {
-//        printf("Query Timeout!!\n");
+        printf("Query Timeout!!\n");
         ret = -1;
         goto Send;
     }
@@ -1894,6 +1894,7 @@ int hc_query_status(modbus_param_t *mb_param, int slave, int start_addr, int nb,
     uint16_t crcRec = (response[length] << 8) | response[length + 1];
     if(crcCal != crcRec)
     {
+        printf("query CRC wrong!\n");
         ret = -1;
         goto Send;
     }
@@ -2617,9 +2618,10 @@ int hc_update_host_req(modbus_param_t *mb_param)
         }
         uint16_t crcCal = crc16(response, 3);
         uint16_t crcRec = (response[3] << 8) | response[4];
+        printf("crcCal = %d, crcRec %d\n",crcCal, crcRec);
         if(crcCal != crcRec)
         {
-            return -1;
+//            return -1;
         }
         for(int i = 0; i != 5; ++i)
         {
@@ -2662,7 +2664,7 @@ int hc_update_host_transfer(modbus_param_t *mb_param, int addr, char *data)
         FD_SET(mb_param->fd, &readFD);
 
         struct timeval tv;
-        tv.tv_sec = 1;
+        tv.tv_sec = 4;
         tv.tv_usec = 10000;
         int ret = select(mb_param->fd + 1, &readFD, NULL, NULL, &tv);
         if(ret == 0)
@@ -2670,6 +2672,8 @@ int hc_update_host_transfer(modbus_param_t *mb_param, int addr, char *data)
             printf("ReadTimeOut\n");
             return -1;
         }
+//        ret = -1;
+//        while(ret != )
         ret = read(mb_param->fd, response, MAX_MESSAGE_LENGTH);
         if(ret <= 0)
         {
@@ -2678,6 +2682,10 @@ int hc_update_host_transfer(modbus_param_t *mb_param, int addr, char *data)
         }
         uint16_t crcCal = crc16(response, 7);
         uint16_t crcRec = (response[7] << 8) | response[8];
+        for(int i = 0; i != 9; ++i)
+        {
+            printf("resonse[%d]=%d\n", i, response[i]);
+        }
         printf("crc = %d crcRec = %d\n", crcCal, crcRec);
         int sum = 0;
         for(int i = 0; i != 32; ++i)
@@ -2861,7 +2869,7 @@ int hc_update_host_query(modbus_param_t *mb_param)
         }
         for(int i = 0; i != 6; ++i)
         {
-            printf("query[%d] = %d\n", i, response[i]);
+//            printf("query[%d] = %d  response[%d] = %d \n", i, query[i], i, response[i]);
         }
         uint16_t crcCal = crc16(response, 4);
         uint16_t crcRec = (response[4] << 8) | response[5];

@@ -945,10 +945,8 @@ Reason</source>
         <translation type="obsolete">解决办法</translation>
     </message>
     <message>
-        <location filename="categorypage/icalarmframe.cpp" line="86"/>
-        <location filename="categorypage/icalarmframe.cpp" line="91"/>
-        <location filename="categorypage/icalarmframe.cpp" line="220"/>
-        <location filename="categorypage/icalarmframe.cpp" line="260"/>
+        <location filename="categorypage/icalarmframe.cpp" line="131"/>
+        <location filename="categorypage/icalarmframe.cpp" line="249"/>
         <source>no-solve</source>
         <translation>未解决</translation>
     </message>
@@ -8358,80 +8356,84 @@ Would you want to restart now?</source>
         <translation>新超级密码</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="291"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="312"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="689"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="293"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="314"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="692"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="291"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="312"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="293"/>
         <source>Update Host fail!</source>
         <translation>更新主机失败！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="339"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="383"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="314"/>
+        <source>Open Host file fail!</source>
+        <translation type="unfinished">打开更新文件失败！</translation>
+    </message>
+    <message>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="341"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="385"/>
         <source>tips</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="339"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="341"/>
         <source>Update Host Successful!</source>
         <translation>主机更新成功！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="383"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="385"/>
         <source>USB no exists...</source>
         <translation>U盘目录不存在...</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="453"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="456"/>
         <source>warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="453"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="456"/>
         <source>USB is not exist!</source>
         <translation>没有找到U盘！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="609"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="615"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="612"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="618"/>
         <source>Wrong Register Code!</source>
         <translation>注册码错误！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="621"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="624"/>
         <source>Register Success!</source>
         <translation>注册成功！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="624"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="643"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="627"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="646"/>
         <source>No Limit</source>
         <translation>无限制</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="628"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="645"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="631"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="648"/>
         <source>hour</source>
         <translation>小时</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="647"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="650"/>
         <source>No Register!</source>
         <translation>没有注册！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="690"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="693"/>
         <source>Old password is wrong</source>
         <translation>旧密码错误！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="697"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="708"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="700"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="711"/>
         <source>Scanning...</source>
         <translation>扫描中...</translation>
     </message>
@@ -8796,14 +8798,14 @@ Would you want to restart now?</source>
     </message>
     <message>
         <location filename="mainframe.cpp" line="531"/>
-        <location filename="mainframe.cpp" line="880"/>
-        <location filename="mainframe.cpp" line="956"/>
+        <location filename="mainframe.cpp" line="881"/>
+        <location filename="mainframe.cpp" line="957"/>
         <source>Controlled, Can&apos;t modify!</source>
         <translation>联机中，不能设定！</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="600"/>
-        <location filename="mainframe.cpp" line="607"/>
+        <location filename="mainframe.cpp" line="601"/>
+        <location filename="mainframe.cpp" line="608"/>
         <source>Hint</source>
         <translation>提示</translation>
     </message>
@@ -8813,8 +8815,8 @@ Would you want to restart now?</source>
     </message>
     <message>
         <location filename="mainframe.cpp" line="530"/>
-        <location filename="mainframe.cpp" line="879"/>
-        <location filename="mainframe.cpp" line="955"/>
+        <location filename="mainframe.cpp" line="880"/>
+        <location filename="mainframe.cpp" line="956"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>

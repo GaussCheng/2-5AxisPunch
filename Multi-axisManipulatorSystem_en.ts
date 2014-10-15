@@ -452,10 +452,8 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="categorypage/icalarmframe.cpp" line="86"/>
-        <location filename="categorypage/icalarmframe.cpp" line="91"/>
-        <location filename="categorypage/icalarmframe.cpp" line="220"/>
-        <location filename="categorypage/icalarmframe.cpp" line="260"/>
+        <location filename="categorypage/icalarmframe.cpp" line="131"/>
+        <location filename="categorypage/icalarmframe.cpp" line="249"/>
         <source>no-solve</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5208,80 +5206,84 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="291"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="312"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="689"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="293"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="314"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="692"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="291"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="312"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="293"/>
         <source>Update Host fail!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="339"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="383"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="314"/>
+        <source>Open Host file fail!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="341"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="385"/>
         <source>tips</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="339"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="341"/>
         <source>Update Host Successful!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="383"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="385"/>
         <source>USB no exists...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="453"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="456"/>
         <source>warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="453"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="456"/>
         <source>USB is not exist!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="609"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="615"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="612"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="618"/>
         <source>Wrong Register Code!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="621"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="624"/>
         <source>Register Success!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="624"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="643"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="627"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="646"/>
         <source>No Limit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="628"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="645"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="631"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="648"/>
         <source>hour</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="647"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="650"/>
         <source>No Register!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="690"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="693"/>
         <source>Old password is wrong</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="697"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="708"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="700"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="711"/>
         <source>Scanning...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5482,21 +5484,21 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="mainframe.cpp" line="530"/>
-        <location filename="mainframe.cpp" line="879"/>
-        <location filename="mainframe.cpp" line="955"/>
+        <location filename="mainframe.cpp" line="880"/>
+        <location filename="mainframe.cpp" line="956"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainframe.cpp" line="531"/>
-        <location filename="mainframe.cpp" line="880"/>
-        <location filename="mainframe.cpp" line="956"/>
+        <location filename="mainframe.cpp" line="881"/>
+        <location filename="mainframe.cpp" line="957"/>
         <source>Controlled, Can&apos;t modify!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="600"/>
-        <location filename="mainframe.cpp" line="607"/>
+        <location filename="mainframe.cpp" line="601"/>
+        <location filename="mainframe.cpp" line="608"/>
         <source>Hint</source>
         <translation type="unfinished"></translation>
     </message>

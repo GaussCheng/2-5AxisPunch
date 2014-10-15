@@ -392,7 +392,7 @@ QVariant ICUpdateHostRequestCommand::Send(modbus_param_t *modbusParam)
     {
         ret = hc_update_host_req(modbusParam);
         ++tryedTimes;
-    }while(ret < 0 && tryedTimes < RetryTimes());
+    }while(ret < 0 && tryedTimes < 100);
     if(ret < 0)
     {
         return false;
@@ -460,6 +460,7 @@ QVariant ICUpdateHostQueryCommand::Send(modbus_param_t *modbusParam)
     do
     {
         ret = hc_update_host_query(modbusParam);
+//        qDebug()<<ret;
         ++tryedTimes;
     }while(ret < 0 && tryedTimes < RetryTimes());
     if(ret < 0)
