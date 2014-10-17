@@ -254,30 +254,23 @@ void ICUpdateSystemPage::keyPressEvent(QKeyEvent *e)
 
 void ICUpdateSystemPage::updateHostButton()
 {
-    QMessageBox::information(this,"fsf", "Start update");
-    if(updateHostFile_.isEmpty())
+    if(updateHostSettings_ == NULL)
     {
         return;
     }
-    QStringList updateFileList;
-    updateFileList.append(updateHostFile_);
-    updateHostFile_.clear();
+    QStringList updateFileList = updateHostSettings_->childGroups();
     if(updateFileList.isEmpty())
     {
         return;
     }
+//    timer_.stop();
     ui->copyFilesProgressBar->setValue(0);
-    qDebug()<<updateFileList.at(0);
-    QFile file(updateFileList.at(0));
+    QFile file(updateHostPath_ + updateFileList.at(0));
     if(file.open(QFile::ReadOnly))
     {
         ICCommandProcessor* processor = ICCommandProcessor::Instance();
         ICUpdateHostRequestCommand reqCommand;
-        while(!processor->ExecuteCommand(reqCommand).toBool())
-        {
-            qApp->processEvents();
-        }
-//        if(processor->ExecuteCommand(reqCommand).toBool())
+        if(processor->ExecuteCommand(reqCommand).toBool())
         {
             qDebug("req successful");
             ICUpdateHostTransferCommand tranCommand;
@@ -289,11 +282,7 @@ void ICUpdateSystemPage::updateHostButton()
             {
                 tranCommand.SetDataBuffer(readySend.mid(addr << 5, 32));
                 tranCommand.SetStartAddr(addr);
-                while(!processor->ExecuteCommand(tranCommand).toBool())
-                {
-                    qApp->processEvents();
-                }
-//                isTranSuccessful = isTranSuccessful && processor->ExecuteCommand(tranCommand).toBool();
+                isTranSuccessful = isTranSuccessful && processor->ExecuteCommand(tranCommand).toBool();
                 if(isTranSuccessful)
                 {
                     ui->copyFilesProgressBar->setValue(addr + 1);
@@ -309,6 +298,7 @@ void ICUpdateSystemPage::updateHostButton()
 //                                     tr("Send to  Host finished!"));
 //            ui->writeHostButton->setEnabled(true);
 
+//            timer_.start(200);
             return;
 //            ICUpdateHostFinishCommand finishCommand;
 //            if(processor->ExecuteCommand(finishCommand).toBool())
@@ -320,9 +310,8 @@ void ICUpdateSystemPage::updateHostButton()
 //            }
 
         }
-        QMessageBox::warning(this, tr("Warning"),tr("Request write fail!"));
     }
-    QMessageBox::warning(this, tr("Warning"), tr("Open Host file fail!"));
+    QMessageBox::warning(this, tr("Warning"), tr("Update Host fail!"));
 }
 
 void ICUpdateSystemPage::QueryStatus()
@@ -410,7 +399,7 @@ void ICUpdateSystemPage::on_connectHostButton_clicked()
     {
         QFile file(packPath_.absoluteFilePath(packName));
         QString tmpFile = QDir::temp().absoluteFilePath(packName);
-        system(QString("rm " + tmpFile).toAscii());
+//        system(QString("rm " + tmpFile).toAscii());
         if(file.copy(tmpFile))
         {
             system(("decrypt.sh " + tmpFile).toAscii());
@@ -433,10 +422,9 @@ void ICUpdateSystemPage::on_connectHostButton_clicked()
         updateHostSettings_ = NULL;
     }
     updateHostSettings_ = new QSettings(updateHostPath_ + "HCUpdateHost", QSettings::IniFormat);
-    updateHostFile_ = QString("%1rom.bin").arg(updateHostPath_);
     if(!timer_.isActive())
     {
-        timer_.start(100);
+        timer_.start(200);
     }
 //    updateHostButton();
 //    writeHostButton();
@@ -445,7 +433,6 @@ void ICUpdateSystemPage::on_connectHostButton_clicked()
 
 void ICUpdateSystemPage::writeHostButton()
 {
-    QMessageBox::information(this,"fsf", "Start write");
     ICUpdateHostFinishCommand finishCommand;
     ICCommandProcessor::Instance()->ExecuteCommand(finishCommand);
 //    if(ICCommandProcessor::Instance()->ExecuteCommand(finishCommand).toBool())

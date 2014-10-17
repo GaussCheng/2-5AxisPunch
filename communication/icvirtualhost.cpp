@@ -1111,13 +1111,15 @@ void ICVirtualHost::SaveAxisParamHelper_(const QString &fileName, int start, int
 void ICVirtualHost::StopRefreshStatus()
 {
 //    timer_.blockSignals(true);
-    timer_.stop();
+//    timer_.stop();
+    this->blockSignals(true);
 }
 
 void ICVirtualHost::RestartRefreshStatus()
 {
 //    timer_.blockSignals(false);
-    timer_.start(15);
+//    timer_.start(15);
+    this->blockSignals(false);
 }
 
 int ICVirtualHost::FinishProductCount() const

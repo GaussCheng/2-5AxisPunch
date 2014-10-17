@@ -2618,10 +2618,9 @@ int hc_update_host_req(modbus_param_t *mb_param)
         }
         uint16_t crcCal = crc16(response, 3);
         uint16_t crcRec = (response[3] << 8) | response[4];
-        printf("crcCal = %d, crcRec %d\n",crcCal, crcRec);
         if(crcCal != crcRec)
         {
-//            return -1;
+            return -1;
         }
         for(int i = 0; i != 5; ++i)
         {
@@ -2658,34 +2657,48 @@ int hc_update_host_transfer(modbus_param_t *mb_param, int addr, char *data)
 
     ret = modbus_send(mb_param, query, query_length);
     if (ret > 0) {
-        uint8_t response[MAX_MESSAGE_LENGTH];
-        fd_set readFD;
-        FD_ZERO(&readFD);
-        FD_SET(mb_param->fd, &readFD);
+        int toread = 9;
+        uint8_t response[toread];
+        fd_set rfds;
+        FD_ZERO(&rfds);
+        FD_SET(mb_param->fd, &rfds);
 
         struct timeval tv;
-        tv.tv_sec = 4;
-        tv.tv_usec = 10000;
-        int ret = select(mb_param->fd + 1, &readFD, NULL, NULL, &tv);
-        if(ret == 0)
+        tv.tv_sec = 1;
+        tv.tv_usec = 500000;
+        int	select_ret = 0;
+        WAIT_DATA();
+//        ret = read(mb_param->fd, response, toread);
+//        if(select_ret == 0)
+//        {
+//            printf("ReadTimeOut\n");
+//            return -1;
+//        }
+        ret = 0;
+        while(select_ret)
         {
-            printf("ReadTimeOut\n");
-            return -1;
+            ret = read(mb_param->fd, response + ret, toread);
+            printf("while ret %d\n",ret);
+            if(ret <= 0)
+            {
+                printf("ReadError\n");
+                return -1;
+            }
+            if(ret != toread)
+            {
+                toread -= ret;
+//                if(toread == 0) break;
+                WAIT_DATA();
+            }
+            else
+                break;
         }
-//        ret = -1;
-//        while(ret != )
-        ret = read(mb_param->fd, response, MAX_MESSAGE_LENGTH);
-        if(ret <= 0)
+        for(int i = 0; i != 9; ++i)
         {
-            printf("ReadError\n");
-            return -1;
+            printf("rec[%d] = %d \n", i, response[i]);
         }
         uint16_t crcCal = crc16(response, 7);
         uint16_t crcRec = (response[7] << 8) | response[8];
-        for(int i = 0; i != 9; ++i)
-        {
-            printf("resonse[%d]=%d\n", i, response[i]);
-        }
         printf("crc = %d crcRec = %d\n", crcCal, crcRec);
         int sum = 0;
         for(int i = 0; i != 32; ++i)
@@ -2849,27 +2862,32 @@ int hc_update_host_query(modbus_param_t *mb_param)
 
     ret = modbus_send(mb_param, query, query_length);
     if (ret > 0) {
-        uint8_t response[MAX_MESSAGE_LENGTH];
-        fd_set readFD;
-        FD_ZERO(&readFD);
-        FD_SET(mb_param->fd, &readFD);
+        int toread = 6;
+        uint8_t response[toread];
+        fd_set rfds;
+        FD_ZERO(&rfds);
+        FD_SET(mb_param->fd, &rfds);
 
         struct timeval tv;
         tv.tv_sec = 0;
-        tv.tv_usec = 10000;
-        int ret = select(mb_param->fd + 1, &readFD, NULL, NULL, &tv);
-        if(ret == 0)
-        {
-            return -1;
-        }
-        ret = read(mb_param->fd, response, MAX_MESSAGE_LENGTH);
-        if(ret <= 0)
-        {
-            return -1;
-        }
+        tv.tv_usec = 50000;
+        int	select_ret = 0;
+        WAIT_DATA();
+        ret = read(mb_param->fd, response, toread);
+//        while(ret != toread)
+//        {
+//            toread -= ret;
+//            ret = read(mb_param->fd, response + ret, toread);
+//            modbus_receive()
+//        }
+
+//        if(ret <= 0)
+//        {
+//            return -1;
+//        }
         for(int i = 0; i != 6; ++i)
         {
-//            printf("query[%d] = %d  response[%d] = %d \n", i, query[i], i, response[i]);
+            printf("query[%d] = %d\n", i, response[i]);
         }
         uint16_t crcCal = crc16(response, 4);
         uint16_t crcRec = (response[4] << 8) | response[5];
@@ -2905,6 +2923,7 @@ int hc_update_host_start(modbus_param_t *mb_param, int slave)
     ret = modbus_send(mb_param, query, query_length);
     return ret;
 }
+
 
 
 /* Initializes the modbus_param_t structure for RTU
