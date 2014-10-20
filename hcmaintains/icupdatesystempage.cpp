@@ -376,59 +376,13 @@ void ICUpdateSystemPage::rebootButton()
 
 void ICUpdateSystemPage::on_connectHostButton_clicked()
 {
+    ICTipsWidget tipWidget(tr("System Updating..."));
+    tipWidget.show();
+    qApp->processEvents();
     QModelIndex mI = ui->packetTable->currentIndex();
-    QString packName = model_->data(mI.sibling(mI.row(), 0)).toString();
-#ifdef Q_WS_QWS
-    QDir dir("/proc/scsi/usb-storage");
-    if(!dir.exists())
-    {
-        QMessageBox::warning(this,tr("tips"),tr("USB no exists...")) ;
-//        ui->hmiVersionShowLabel->setText(tr("No available HMI version"));
-//        ui->hostVersionShowLabel->setText(tr("No available Host version"));
-//        ui->updatePasswardLabel->setText(tr("No available New SuperPassward"));
-//        ui->connectHostButton->setEnabled(false);
-//        ui->updateToolButton->setEnabled(false);
-        ui->updatePasswardButton->setEnabled(false);
-        return;
-    }
-    QDir packPath_("/mnt/udisk/");
-#else
-    QDir packPath_(QDir::homePath() + "/HCUpdate_UpdateTest");
-#endif
-    if(packPath_.exists(packName))
-    {
-        QFile file(packPath_.absoluteFilePath(packName));
-        QString tmpFile = QDir::temp().absoluteFilePath(packName);
-//        system(QString("rm " + tmpFile).toAscii());
-        if(file.copy(tmpFile))
-        {
-            system(("decrypt.sh " + tmpFile).toAscii());
-            tmpFile.chop(4);
-            system(QString("cd %1 && tar -xf %2").arg(QDir::tempPath()).arg(tmpFile).toAscii());
-            tmpFile.chop(4);
-            updateHostPath_ = QDir::temp().absoluteFilePath(tmpFile) + "/";
-//            return system(QString("cd %1 && chmod +x ./UpdateSystem.sh &&./UpdateSystem.sh").arg(QDir::temp().absoluteFilePath(tmpFile)).toAscii()) > 0;
-        }
-    }
-    ICUpdateHostStart linkCmd;
-    ICCommandProcessor* processor = ICCommandProcessor::Instance();
-    linkCmd.SetSlave(processor->SlaveID());
-    processor->ExecuteCommand(linkCmd);
-    connectHostFlag = TRUE;
+//    QString packName = model_->data(index.sibling(mI->row(), 0).toString();
+    updateSystem_->StartUpdate(model_->data(mI.sibling(mI.row(), 0)).toString());
 
-    if(updateHostSettings_ != NULL)
-    {
-        delete updateHostSettings_;
-        updateHostSettings_ = NULL;
-    }
-    updateHostSettings_ = new QSettings(updateHostPath_ + "HCUpdateHost", QSettings::IniFormat);
-    if(!timer_.isActive())
-    {
-        timer_.start(200);
-    }
-//    updateHostButton();
-//    writeHostButton();
-//    rebootButton();
 }
 
 void ICUpdateSystemPage::writeHostButton()
