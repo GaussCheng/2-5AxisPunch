@@ -19,7 +19,7 @@
   <property name="frameShadow">
    <enum>QFrame::Raised</enum>
   </property>
-  <widget class="QTabWidget" name="tabWidget">
+  <widget class="ICTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -800,7 +800,16 @@
      <string>Binary</string>
     </attribute>
     <layout class="QGridLayout" name="gridLayout_3">
-     <property name="margin">
+     <property name="leftMargin">
+      <number>2</number>
+     </property>
+     <property name="topMargin">
+      <number>2</number>
+     </property>
+     <property name="rightMargin">
+      <number>2</number>
+     </property>
+     <property name="bottomMargin">
       <number>2</number>
      </property>
      <property name="spacing">
@@ -6227,12 +6236,18 @@
    <extends>QLineEdit</extends>
    <header>iclineeditwithvirtualnumerickeypad.h</header>
   </customwidget>
+  <customwidget>
+   <class>ICTabWidget</class>
+   <extends>QTabWidget</extends>
+   <header>ictabwidget.h</header>
+   <container>1</container>
+  </customwidget>
  </customwidgets>
  <resources/>
  <connections/>
  <buttongroups>
   <buttongroup name="actionGroup"/>
-  <buttongroup name="buttonGroup"/>
   <buttongroup name="shortcutGroup"/>
+  <buttongroup name="buttonGroup"/>
  </buttongroups>
 </ui>

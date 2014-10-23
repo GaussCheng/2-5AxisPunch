@@ -45,7 +45,7 @@ ICHCSystemSettingsFrame::ICHCSystemSettingsFrame(QWidget *parent) :
     armValueToName_.insert(1, tr("Double Arm"));
     ui->backLightTimeEdit->setValidator(new QIntValidator(1, 60, this));
     ui->backLightTimeEdit->SetThisIntToThisText(ICParametersSave::Instance()->BackLightTime());
-    ui->brightnessBar->setValue((9 - ICParametersSave::Instance()->Brightness()));
+    ui->brightnessBar->setValue((ICParametersSave::Instance()->Brightness()));
 
     QList<QAbstractButton*> buttons_ = ui->languageButtonGroup->buttons();
     for(int i = 0; i != buttons_.size(); ++i)

@@ -38,7 +38,7 @@
     <number>2</number>
    </property>
    <item>
-    <widget class="QTabWidget" name="systemConfigPages">
+    <widget class="ICTabWidget" name="systemConfigPages">
      <property name="minimumSize">
       <size>
        <width>0</width>
@@ -953,14 +953,20 @@ QRadioButton::indicator:unchecked:disabled
  </widget>
  <customwidgets>
   <customwidget>
+   <class>ICLineEditWithVirtualKeyboard</class>
+   <extends>QLineEdit</extends>
+   <header>iclineeditwithvirtualkeyboard.h</header>
+  </customwidget>
+  <customwidget>
    <class>ICLineEditWithVirtualNumericKeypad</class>
    <extends>QLineEdit</extends>
    <header>iclineeditwithvirtualnumerickeypad.h</header>
   </customwidget>
   <customwidget>
-   <class>ICLineEditWithVirtualKeyboard</class>
-   <extends>QLineEdit</extends>
-   <header>iclineeditwithvirtualkeyboard.h</header>
+   <class>ICTabWidget</class>
+   <extends>QTabWidget</extends>
+   <header>ictabwidget.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources>

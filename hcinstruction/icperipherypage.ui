@@ -54,7 +54,7 @@ QCheckBox::indicator:unchecked
     </widget>
    </item>
    <item>
-    <widget class="QTabWidget" name="tabWidget">
+    <widget class="ICTabWidget" name="tabWidget">
      <property name="currentIndex">
       <number>0</number>
      </property>
@@ -374,6 +374,12 @@ height: 33px;
    <class>ICLineEditWithVirtualNumericKeypad</class>
    <extends>QLineEdit</extends>
    <header>iclineeditwithvirtualnumerickeypad.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ICTabWidget</class>
+   <extends>QTabWidget</extends>
+   <header>ictabwidget.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>

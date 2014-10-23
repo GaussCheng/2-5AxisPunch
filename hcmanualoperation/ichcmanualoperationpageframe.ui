@@ -19,7 +19,7 @@
   <property name="frameShadow">
    <enum>QFrame::Raised</enum>
   </property>
-  <widget class="QTabWidget" name="tabWidget">
+  <widget class="ICTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -6109,6 +6109,12 @@
    <header>iclineeditwithvirtualnumerickeypad.h</header>
   </customwidget>
   <customwidget>
+   <class>ICTabWidget</class>
+   <extends>QTabWidget</extends>
+   <header>ictabwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
    <class>ICGroupBox</class>
    <extends>QGroupBox</extends>
    <header>icgroupbox.h</header>
@@ -6119,7 +6125,7 @@
  <connections/>
  <buttongroups>
   <buttongroup name="actionGroup"/>
-  <buttongroup name="buttonGroup"/>
   <buttongroup name="shortcutGroup"/>
+  <buttongroup name="buttonGroup"/>
  </buttongroups>
 </ui>

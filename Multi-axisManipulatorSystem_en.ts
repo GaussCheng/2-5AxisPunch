@@ -5192,6 +5192,7 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcmaintains/icupdatesystempage.cpp" line="145"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="379"/>
         <source>System Updating...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5206,25 +5207,20 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="293"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="292"/>
         <location filename="hcmaintains/icupdatesystempage.cpp" line="314"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="692"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="645"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="293"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="292"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="314"/>
         <source>Update Host fail!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="314"/>
-        <source>Open Host file fail!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="hcmaintains/icupdatesystempage.cpp" line="341"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="385"/>
         <source>tips</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5234,56 +5230,51 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="385"/>
-        <source>USB no exists...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="456"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="409"/>
         <source>warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="456"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="409"/>
         <source>USB is not exist!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="612"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="618"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="565"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="571"/>
         <source>Wrong Register Code!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="624"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="577"/>
         <source>Register Success!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="627"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="646"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="580"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="599"/>
         <source>No Limit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="631"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="648"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="584"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="601"/>
         <source>hour</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="650"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="603"/>
         <source>No Register!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="693"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="646"/>
         <source>Old password is wrong</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="700"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="711"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="653"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="664"/>
         <source>Scanning...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5693,6 +5684,7 @@ Please try a new name</source>
         <location filename="function_settings/moldinformation.cpp" line="359"/>
         <location filename="function_settings/moldinformation.cpp" line="812"/>
         <location filename="function_settings/moldinformation.cpp" line="953"/>
+        <location filename="function_settings/moldinformation.cpp" line="1093"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5720,6 +5712,11 @@ Please try a new name</source>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="407"/>
         <source>Loading...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.cpp" line="1094"/>
+        <source>Only accept number and word</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

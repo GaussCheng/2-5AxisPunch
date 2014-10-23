@@ -83,6 +83,7 @@ private slots:
     void on_InverseToolButton_clicked();
     void on_unselectToolButton_clicked();
 
+    void on_destinationFileLineEdit_textChanged(const QString &arg1);
 };
 
 #endif // MOLDINFORMATION_H

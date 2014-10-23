@@ -31,7 +31,8 @@ HEADERS += \
     custom_widgets/icmessagebox.h \
     custom_widgets/iclistwidget.h \
     custom_widgets/iccombobox.h \
-    custom_widgets/icgroupbox.h
+    custom_widgets/icgroupbox.h \
+    custom_widgets/ictabwidget.h
 
 SOURCES += \
     custom_widgets/ictablewidget.cpp \
@@ -40,4 +41,5 @@ SOURCES += \
     custom_widgets/icmessagebox.cpp \
     custom_widgets/iclistwidget.cpp \
     custom_widgets/iccombobox.cpp \
-    custom_widgets/icgroupbox.cpp
+    custom_widgets/icgroupbox.cpp \
+    custom_widgets/ictabwidget.cpp

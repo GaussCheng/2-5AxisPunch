@@ -27,7 +27,7 @@
   <property name="frameShadow">
    <enum>QFrame::Plain</enum>
   </property>
-  <widget class="QTabWidget" name="tabWidget">
+  <widget class="ICTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
      <x>9</x>
@@ -1284,6 +1284,12 @@ QCheckBox::indicator:unchecked
   </widget>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>ICTabWidget</class>
+   <extends>QTabWidget</extends>
+   <header>ictabwidget.h</header>
+   <container>1</container>
+  </customwidget>
   <customwidget>
    <class>ICListWidget</class>
    <extends>QListWidget</extends>

@@ -8342,6 +8342,7 @@ Would you want to restart now?</source>
     </message>
     <message>
         <location filename="hcmaintains/icupdatesystempage.cpp" line="145"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="379"/>
         <source>System Updating...</source>
         <translation>系统更新中...</translation>
     </message>
@@ -8356,25 +8357,24 @@ Would you want to restart now?</source>
         <translation>新超级密码</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="293"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="292"/>
         <location filename="hcmaintains/icupdatesystempage.cpp" line="314"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="692"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="645"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="293"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="292"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="314"/>
         <source>Update Host fail!</source>
         <translation>更新主机失败！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="314"/>
         <source>Open Host file fail!</source>
-        <translation type="unfinished">打开更新文件失败！</translation>
+        <translation type="obsolete">打开更新文件失败！</translation>
     </message>
     <message>
         <location filename="hcmaintains/icupdatesystempage.cpp" line="341"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="385"/>
         <source>tips</source>
         <translation>提示</translation>
     </message>
@@ -8384,56 +8384,55 @@ Would you want to restart now?</source>
         <translation>主机更新成功！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="385"/>
         <source>USB no exists...</source>
-        <translation>U盘目录不存在...</translation>
+        <translation type="obsolete">U盘目录不存在...</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="456"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="409"/>
         <source>warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="456"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="409"/>
         <source>USB is not exist!</source>
         <translation>没有找到U盘！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="612"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="618"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="565"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="571"/>
         <source>Wrong Register Code!</source>
         <translation>注册码错误！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="624"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="577"/>
         <source>Register Success!</source>
         <translation>注册成功！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="627"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="646"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="580"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="599"/>
         <source>No Limit</source>
         <translation>无限制</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="631"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="648"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="584"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="601"/>
         <source>hour</source>
         <translation>小时</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="650"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="603"/>
         <source>No Register!</source>
         <translation>没有注册！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="693"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="646"/>
         <source>Old password is wrong</source>
         <translation>旧密码错误！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="700"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="711"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="653"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="664"/>
         <source>Scanning...</source>
         <translation>扫描中...</translation>
     </message>
@@ -9012,6 +9011,11 @@ Please write the destination file name.</source>
         <translation>文件名为空,请输入文件名.</translation>
     </message>
     <message>
+        <location filename="function_settings/moldinformation.cpp" line="1094"/>
+        <source>Only accept number and word</source>
+        <translation>只能输入字母和数字！</translation>
+    </message>
+    <message>
         <source>Copy file success!</source>
         <translation type="obsolete">复制文件成功!</translation>
     </message>
@@ -9055,7 +9059,7 @@ Please try a new name</source>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="721"/>
         <source>Wrong config format!</source>
-        <translation type="unfinished">错误的模组参数格式！</translation>
+        <translation>错误的模组参数格式！</translation>
     </message>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="635"/>
@@ -9141,6 +9145,7 @@ Please try a new name</source>
         <location filename="function_settings/moldinformation.cpp" line="359"/>
         <location filename="function_settings/moldinformation.cpp" line="812"/>
         <location filename="function_settings/moldinformation.cpp" line="953"/>
+        <location filename="function_settings/moldinformation.cpp" line="1093"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>

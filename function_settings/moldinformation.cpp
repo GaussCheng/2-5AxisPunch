@@ -1084,3 +1084,14 @@ bool MoldInformation::CheckIsUsbAttached() const
     return content.contains(QRegExp("/dev/sd[a-z]*[1-9]*"));
 
 }
+
+void MoldInformation::on_destinationFileLineEdit_textChanged(const QString &arg1)
+{
+    if(arg1.contains(QRegExp("\\W")))
+    {
+        QMessageBox::warning(this,
+                             tr("Warning"),
+                             tr("Only accept number and word"));
+        ui->destinationFileLineEdit->clear();
+    }
+}

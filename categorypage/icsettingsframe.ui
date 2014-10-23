@@ -21,7 +21,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QTabWidget" name="tabWidget">
+    <widget class="ICTabWidget" name="tabWidget">
      <property name="tabPosition">
       <enum>QTabWidget::West</enum>
      </property>
@@ -253,6 +253,12 @@
    <class>ICLineEditWithVirtualKeyboard</class>
    <extends>QLineEdit</extends>
    <header>iclineeditwithvirtualkeyboard.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ICTabWidget</class>
+   <extends>QTabWidget</extends>
+   <header>ictabwidget.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>
