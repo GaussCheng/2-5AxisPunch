@@ -306,11 +306,11 @@ void ICHCProgramMonitorFrame::StatusRefreshed()
         oldX = pos;
         ui->xCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
     }
-    pos = host->HostStatus(ICVirtualHost::YPos).toInt();
-    if(pos != oldY)
+    int16_t posy = host->HostStatus(ICVirtualHost::YPos).toInt();
+    if(posy != oldY)
     {
-        oldY = pos;
-        ui->yCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
+        oldY = posy;
+        ui->yCurrentPos->setText(QString::number(posy / 10.0, 'f', 1));
     }
 #ifdef HC_AXIS_COUNT_5
     int16_t posz = host->HostStatus(ICVirtualHost::ZPos).toInt();

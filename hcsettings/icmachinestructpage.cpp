@@ -296,8 +296,10 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         maxText = tr("Leave origin pos");
         ui->distanceRotationEdit->SetDecimalPlaces(2);
         ui->label_2->setText(tr("Maximum displacement"));
-        minSecValidator_->setBottom(10);
-        maxSecValidator_->setBottom(500);
+//        minSecValidator_->setBottom(10);
+//        maxSecValidator_->setBottom(500);
+        maxMoveValidator_->setBottom(-32760);
+         intValidator->setTop(32760);
 
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisZ)
