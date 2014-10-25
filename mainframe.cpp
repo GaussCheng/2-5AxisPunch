@@ -664,15 +664,19 @@ void MainFrame::StatusRefreshed()
         {
             actionDialog_->hide();
         }
-        finishCount_ = virtualHost->HostStatus(ICVirtualHost::DbgX1).toUInt();
-        //        finishCount_ = virtualHost->FinishProductCount();
-        if(finishCount_ != oldFinishCount_)
+        if(virtualHost->HasGetFinishProductCount())
         {
-            ui->cycleTimeAndFinistWidget->SetFinished(finishCount_);
-            virtualHost->SetFinishProductCount(finishCount_);
-            oldFinishCount_ = finishCount_;
-            virtualHost->SaveSystemConfig();
+            finishCount_ = virtualHost->HostStatus(ICVirtualHost::DbgX1).toUInt();
+            //        finishCount_ = virtualHost->FinishProductCount();
+            if(finishCount_ != oldFinishCount_)
+            {
+                ui->cycleTimeAndFinistWidget->SetFinished(finishCount_);
+                virtualHost->SetFinishProductCount(finishCount_);
+                oldFinishCount_ = finishCount_;
+                virtualHost->SaveSystemConfig();
+            }
         }
+
         int speedVal =  virtualHost->GlobalSpeed();
         speed_ = QString::number(speedVal);
         if(virtualHost->HostStatus(ICVirtualHost::DbgX0) == ICVirtualHost::AutoReady)
