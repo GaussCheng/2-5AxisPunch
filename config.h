@@ -17,9 +17,9 @@
 #define STACK_DECIMAL 2
 
 #ifdef HC_SK_8
-#define SW_VERSION "CYR8_5.0.1"
+#define SW_VERSION "CYR8_5.0.2"
 #else
-#define SW_VERSION "CYR5_5.0.1"
+#define SW_VERSION "CYR5_5.0.2"
 #endif
 #define HW_VERSION "1.3"
 

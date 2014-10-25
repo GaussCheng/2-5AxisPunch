@@ -703,7 +703,7 @@ padding:5px;
       <string notr="true">buttonGroup</string>
      </attribute>
     </widget>
-    <widget class="QComboBox" name="reserveBox">
+    <widget class="ICComboBox" name="reserveBox">
      <property name="geometry">
       <rect>
        <x>355</x>
@@ -1244,6 +1244,13 @@ QCheckBox::indicator:unchecked
    </widget>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ICComboBox</class>
+   <extends>QComboBox</extends>
+   <header>iccombobox.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="../resource.qrc"/>
  </resources>

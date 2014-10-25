@@ -107,11 +107,14 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
 
     if(item->IsAction())
     {
-        if( item->Action() <= ICMold::GB)
+        if( item->Action() <= ICMold::GB || item->Action() == ICMold::GARC)
         {
             ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
             ICVirtualHost::ICSystemParameter addr;
-            switch(item->Action())
+            int action = item->Action();
+            if(action == ICMold::GARC)
+                action = item->IFPos();
+            switch(action)
             {
             case ICMold::GX:
                 addr = ICVirtualHost::SYS_X_Maxium;

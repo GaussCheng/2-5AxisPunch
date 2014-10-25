@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>750</width>
-    <height>205</height>
+    <width>759</width>
+    <height>209</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -229,7 +229,7 @@ QRadioButton::indicator:unchecked:disabled
     </widget>
    </item>
    <item row="5" column="1">
-    <widget class="QComboBox" name="getFailWay">
+    <widget class="ICComboBox" name="getFailWay">
      <item>
       <property name="text">
        <string>Alarm When Up</string>
@@ -253,7 +253,7 @@ QRadioButton::indicator:unchecked:disabled
     </widget>
    </item>
    <item row="3" column="5">
-    <widget class="QComboBox" name="countUnitBox">
+    <widget class="ICComboBox" name="countUnitBox">
      <item>
       <property name="text">
        <string>All</string>
@@ -303,6 +303,11 @@ QRadioButton::indicator:unchecked:disabled
    <class>ICLineEditWithVirtualNumericKeypad</class>
    <extends>QLineEdit</extends>
    <header>iclineeditwithvirtualnumerickeypad.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ICComboBox</class>
+   <extends>QComboBox</extends>
+   <header>iccombobox.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

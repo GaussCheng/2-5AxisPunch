@@ -29,7 +29,7 @@ ActionSettingFrame::ActionSettingFrame(QWidget *parent) :
 #endif
     QStringList points;
     ICUserDefineConfigSPTR config = ICUserDefineConfig::Instance();
-    for(int i = 0; i != 10; ++i)
+    for(int i = 0; i != 6; ++i)
     {
         points.append(config->GetPointsLocaleName(i, "zh"));
     }

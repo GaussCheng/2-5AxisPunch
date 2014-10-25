@@ -314,8 +314,10 @@ void MoldInformation::UpdateInformationTable()
     QFileInfoList userProgramList;
     qDebug()<<"start1";
     QFileInfo tmp;
+//    QString moldName;
     foreach(tmp, fileInfoList_)
     {
+//        moldName = tmp.fileName().left(tmp.fileName().indexOf('.'));
         if(IsStandProgram(tmp.fileName()))
         {
             userProgramList.prepend(tmp);
@@ -395,6 +397,18 @@ void MoldInformation::on_loadToolButton_clicked()
                 //                ICMold::CurrentMold()->ReadMoldFile(
                 return;
             }
+            if(!QFile::exists(QString("./records/%1").arg(subName)) ||
+                    !QFile::exists(QString("./records/%1%2").arg(resvName).arg(1)) ||
+                    !QFile::exists(QString("./records/%1%2").arg(resvName).arg(2)) ||
+                    !QFile::exists(QString("./records/%1%2").arg(resvName).arg(3)) ||
+                    !QFile::exists(QString("./records/%1%2").arg(resvName).arg(4)) ||
+                    !QFile::exists(QString("./records/%1%2").arg(resvName).arg(5)) ||
+                    !QFile::exists(QString("./records/%1%2").arg(resvName).arg(6)) ||
+                    !QFile::exists(QString("./records/%1%2").arg(resvName).arg(7)))
+            {
+                QMessageBox::critical(this, tr("critical"), tr("Mold is break, please remove it!"));
+                return;
+            }
             system(QString("cp ./records/%1 ./subs/sub7.prg -f").arg(subName).toLatin1());
             system(QString("cp ./records/%1%2 ./subs/sub0.prg -f").arg(resvName).arg(1).toLatin1());
             system(QString("cp ./records/%1%2 ./subs/sub1.prg -f").arg(resvName).arg(2).toLatin1());
@@ -417,6 +431,7 @@ void MoldInformation::on_loadToolButton_clicked()
         }
         ICVirtualHost::GlobalVirtualHost()->SetFixtureCheck(true);
         qDebug("after load");
+        system("sync");
     }
 }
 

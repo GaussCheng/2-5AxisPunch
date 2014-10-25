@@ -60,7 +60,7 @@
        <number>3</number>
       </property>
       <item row="0" column="1">
-       <widget class="QComboBox" name="x1Box">
+       <widget class="ICComboBox" name="x1Box">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -99,7 +99,7 @@
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="QComboBox" name="y1Box">
+       <widget class="ICComboBox" name="y1Box">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -124,7 +124,7 @@
        </widget>
       </item>
       <item row="2" column="1">
-       <widget class="QComboBox" name="zBox">
+       <widget class="ICComboBox" name="zBox">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -163,7 +163,7 @@
        </widget>
       </item>
       <item row="3" column="1">
-       <widget class="QComboBox" name="x2Box">
+       <widget class="ICComboBox" name="x2Box">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -195,7 +195,7 @@
        </widget>
       </item>
       <item row="0" column="3">
-       <widget class="QComboBox" name="y2Box">
+       <widget class="ICComboBox" name="y2Box">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -227,7 +227,7 @@
        </widget>
       </item>
       <item row="1" column="3">
-       <widget class="QComboBox" name="aBox">
+       <widget class="ICComboBox" name="aBox">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -259,7 +259,7 @@
        </widget>
       </item>
       <item row="2" column="3">
-       <widget class="QComboBox" name="bBox">
+       <widget class="ICComboBox" name="bBox">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -291,7 +291,7 @@
        </widget>
       </item>
       <item row="3" column="3">
-       <widget class="QComboBox" name="cBox">
+       <widget class="ICComboBox" name="cBox">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -340,7 +340,7 @@
        </widget>
       </item>
       <item row="3" column="1">
-       <widget class="QComboBox" name="rP4">
+       <widget class="ICComboBox" name="rP4">
         <item>
          <property name="text">
           <string>Un</string>
@@ -354,7 +354,7 @@
        </widget>
       </item>
       <item row="1" column="3">
-       <widget class="QComboBox" name="rP6">
+       <widget class="ICComboBox" name="rP6">
         <item>
          <property name="text">
           <string>Un</string>
@@ -389,7 +389,7 @@
        </widget>
       </item>
       <item row="2" column="3">
-       <widget class="QComboBox" name="rP7">
+       <widget class="ICComboBox" name="rP7">
         <item>
          <property name="text">
           <string>Un</string>
@@ -417,7 +417,7 @@
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QComboBox" name="rP1">
+       <widget class="ICComboBox" name="rP1">
         <item>
          <property name="text">
           <string>Un</string>
@@ -431,7 +431,7 @@
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="QComboBox" name="rP2">
+       <widget class="ICComboBox" name="rP2">
         <item>
          <property name="text">
           <string>Un</string>
@@ -445,7 +445,7 @@
        </widget>
       </item>
       <item row="2" column="1">
-       <widget class="QComboBox" name="rP3">
+       <widget class="ICComboBox" name="rP3">
         <item>
          <property name="text">
           <string>Un</string>
@@ -459,7 +459,7 @@
        </widget>
       </item>
       <item row="0" column="3">
-       <widget class="QComboBox" name="rP5">
+       <widget class="ICComboBox" name="rP5">
         <item>
          <property name="text">
           <string>Un</string>
@@ -507,7 +507,7 @@
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QComboBox" name="canType">
+       <widget class="ICComboBox" name="canType">
         <item>
          <property name="text">
           <string>None</string>
@@ -865,6 +865,11 @@
    <class>ICLineEditWithVirtualNumericKeypad</class>
    <extends>QLineEdit</extends>
    <header>iclineeditwithvirtualnumerickeypad.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ICComboBox</class>
+   <extends>QComboBox</extends>
+   <header>iccombobox.h</header>
   </customwidget>
   <customwidget>
    <class>ICTabWidget</class>

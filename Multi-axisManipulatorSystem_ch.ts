@@ -429,50 +429,50 @@
         <translation type="obsolete">当前轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.ui" line="262"/>
+        <location filename="hcsettings/axissettingsframe.ui" line="271"/>
         <source>Mechanical length</source>
         <translation>机械长度</translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.ui" line="45"/>
+        <location filename="hcsettings/axissettingsframe.ui" line="54"/>
         <source>Security Point</source>
         <translation>安全点</translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.ui" line="72"/>
+        <location filename="hcsettings/axissettingsframe.ui" line="81"/>
         <source>Maximum displacement</source>
         <translation>最大移动</translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.ui" line="94"/>
+        <location filename="hcsettings/axissettingsframe.ui" line="103"/>
         <location filename="hcsettings/axissettingsframe.cpp" line="123"/>
         <source>Internal security zone</source>
         <translation>型内安全区</translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.ui" line="116"/>
+        <location filename="hcsettings/axissettingsframe.ui" line="125"/>
         <location filename="hcsettings/axissettingsframe.cpp" line="124"/>
         <source>External security zone</source>
         <translation>型外安全区</translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.ui" line="217"/>
+        <location filename="hcsettings/axissettingsframe.ui" line="226"/>
         <source>Distance/Rotation</source>
         <translation>每转距离</translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.ui" line="138"/>
-        <location filename="hcsettings/axissettingsframe.ui" line="157"/>
-        <location filename="hcsettings/axissettingsframe.ui" line="176"/>
-        <location filename="hcsettings/axissettingsframe.ui" line="195"/>
-        <location filename="hcsettings/axissettingsframe.ui" line="243"/>
+        <location filename="hcsettings/axissettingsframe.ui" line="147"/>
+        <location filename="hcsettings/axissettingsframe.ui" line="166"/>
+        <location filename="hcsettings/axissettingsframe.ui" line="185"/>
+        <location filename="hcsettings/axissettingsframe.ui" line="204"/>
+        <location filename="hcsettings/axissettingsframe.ui" line="252"/>
         <location filename="hcsettings/axissettingsframe.cpp" line="83"/>
         <location filename="hcsettings/axissettingsframe.cpp" line="84"/>
         <source>mm</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.ui" line="400"/>
+        <location filename="hcsettings/axissettingsframe.ui" line="421"/>
         <source>Set In</source>
         <translation>保存</translation>
     </message>
@@ -481,37 +481,37 @@
         <translation type="obsolete">向导</translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.ui" line="272"/>
+        <location filename="hcsettings/axissettingsframe.ui" line="281"/>
         <source>Test Feedback</source>
         <translation>测试反馈</translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.ui" line="281"/>
+        <location filename="hcsettings/axissettingsframe.ui" line="290"/>
         <source>Test</source>
         <translation>测试</translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.ui" line="291"/>
+        <location filename="hcsettings/axissettingsframe.ui" line="304"/>
         <source>Feedback</source>
         <translation>反馈</translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.ui" line="301"/>
+        <location filename="hcsettings/axissettingsframe.ui" line="318"/>
         <source>Z Signal</source>
         <translation>Z信号</translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.ui" line="325"/>
+        <location filename="hcsettings/axissettingsframe.ui" line="346"/>
         <source>+Test</source>
         <translation>电机正转</translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.ui" line="344"/>
+        <location filename="hcsettings/axissettingsframe.ui" line="365"/>
         <source>-Test</source>
         <translation>电机反转</translation>
     </message>
     <message>
-        <location filename="hcsettings/axissettingsframe.ui" line="363"/>
+        <location filename="hcsettings/axissettingsframe.ui" line="384"/>
         <source>Clear</source>
         <translation>清除测试</translation>
     </message>
@@ -2617,18 +2617,18 @@ Reason</source>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="397"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="424"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="451"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="2930"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="2965"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="3428"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="4376"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="5289"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="2939"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="2974"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="3437"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="4385"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="5298"/>
         <source>mm</source>
         <translation></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="358"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="404"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="2917"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="2926"/>
         <source>Y:</source>
         <translation></translation>
     </message>
@@ -2656,11 +2656,11 @@ Reason</source>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4212"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="5160"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="5597"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="2461"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="3396"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="4322"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="4807"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="6157"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="2470"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="3405"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="4331"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="4816"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="6166"/>
         <source>0</source>
         <translation type="unfinished">0</translation>
     </message>
@@ -2670,11 +2670,11 @@ Reason</source>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4231"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4244"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="5616"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1539"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="3415"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="3441"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="4363"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="5276"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1548"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="3424"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="3450"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="4372"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="5285"/>
         <source>%</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2684,11 +2684,11 @@ Reason</source>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3749"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4675"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="6047"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1970"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="2898"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="3885"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="5257"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="5720"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1979"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="2907"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="3894"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="5266"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="5729"/>
         <source>0.0</source>
         <translation>0.0</translation>
     </message>
@@ -2760,7 +2760,7 @@ Reason</source>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="384"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3768"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="3454"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="3463"/>
         <source>S:</source>
         <translation></translation>
     </message>
@@ -2771,193 +2771,193 @@ Reason</source>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="724"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="824"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="833"/>
         <source>Action-20</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="746"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="846"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="855"/>
         <source>Action-21</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="768"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="868"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="877"/>
         <source>Action-22</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="790"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="890"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="899"/>
         <source>Action-23</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="812"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="912"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="921"/>
         <source>Action-24</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="834"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="934"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="943"/>
         <source>Action-25</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="856"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="956"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="965"/>
         <source>Action-9</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="878"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="978"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="987"/>
         <source>Action-10</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="900"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1000"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1009"/>
         <source>Action-11</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="922"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1022"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1031"/>
         <source>Action-1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="944"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1044"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1053"/>
         <source>Action-2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="966"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1066"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1075"/>
         <source>Action-4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="988"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1088"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1097"/>
         <source>Action-5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1010"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1110"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1119"/>
         <source>Action-3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1032"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1132"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1141"/>
         <source>Action-12</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1054"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1154"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1163"/>
         <source>Action-13</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1076"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1176"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1185"/>
         <source>Action-26</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1098"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1198"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1207"/>
         <source>Action-6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1120"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1220"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1229"/>
         <source>Action-7</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1142"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1242"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1251"/>
         <source>Action-14</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1164"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1264"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1273"/>
         <source>Action-8</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1186"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1286"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1295"/>
         <source>Action-17</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1208"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1308"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1317"/>
         <source>Action-18</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1230"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1330"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1339"/>
         <source>Action-19</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1252"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1352"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1361"/>
         <source>Action-30</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1274"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1374"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1383"/>
         <source>Action-15</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1296"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1396"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1405"/>
         <source>Action-16</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1318"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1418"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1427"/>
         <source>Action-27</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1340"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1440"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1449"/>
         <source>Action-28</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1362"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1462"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1471"/>
         <source>Action-29</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1384"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1484"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1493"/>
         <source>Action-31</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="1406"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1506"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1515"/>
         <source>Action-32</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2968,7 +2968,7 @@ Reason</source>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2365"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="2008"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="2017"/>
         <source>X1:</source>
         <translation>X:</translation>
     </message>
@@ -2984,7 +2984,7 @@ Reason</source>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3315"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="4347"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="4356"/>
         <source>S.Speed</source>
         <translation>S调速</translation>
     </message>
@@ -2995,13 +2995,13 @@ Reason</source>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4729"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="4826"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="4835"/>
         <source>T:</source>
         <translation></translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="6079"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="6176"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="6185"/>
         <source>X2:</source>
         <translation></translation>
     </message>
@@ -3012,19 +3012,19 @@ Reason</source>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="666"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="1995"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="2004"/>
         <source>P.Clear</source>
         <translation>产品清零</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="2027"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="6195"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="2036"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="6204"/>
         <source>X.Speed</source>
         <translation>X调速</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="2949"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="6217"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="2958"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe_8.ui" line="6226"/>
         <source>Y.Speed</source>
         <translation>Y调速</translation>
     </message>
@@ -4971,12 +4971,12 @@ Reason</source>
         <translation>时间</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="174"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="177"/>
         <source>speed</source>
         <translation>速度</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="192"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="195"/>
         <source>Return</source>
         <translation>返回</translation>
     </message>
@@ -5474,21 +5474,21 @@ Please enter an digit between </source>
         <location filename="hcsettings/icmachinestructpage.ui" line="319"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="283"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="298"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="313"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="328"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="340"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="315"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="330"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="342"/>
         <source>Maximum displacement</source>
         <translation>最小移动</translation>
     </message>
     <message>
         <location filename="hcsettings/icmachinestructpage.ui" line="367"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="310"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="312"/>
         <source>Internal security zone</source>
         <translation>型内安全区</translation>
     </message>
     <message>
         <location filename="hcsettings/icmachinestructpage.ui" line="415"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="311"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="313"/>
         <source>External security zone</source>
         <translation>型外安全区</translation>
     </message>
@@ -5514,27 +5514,27 @@ Please enter an digit between </source>
         <translation>测试</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.ui" line="562"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="566"/>
         <source>Feedback</source>
         <translation>反馈</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.ui" line="572"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="580"/>
         <source>Z Signal</source>
         <translation>Z信号</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.ui" line="596"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="608"/>
         <source>+Test</source>
         <translation>电机正转</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.ui" line="615"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="627"/>
         <source>-Test</source>
         <translation>电机反转</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.ui" line="634"/>
+        <location filename="hcsettings/icmachinestructpage.ui" line="646"/>
         <source>Clear</source>
         <translation>清除测试</translation>
     </message>
@@ -5604,89 +5604,89 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcsettings/icmachinestructpage.cpp" line="280"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="325"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="327"/>
         <source>Min pos inside mold</source>
         <translation>模内最小位置</translation>
     </message>
     <message>
         <location filename="hcsettings/icmachinestructpage.cpp" line="281"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="326"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="328"/>
         <source>Max pos inside mold</source>
         <translation>模内最大位置</translation>
     </message>
     <message>
         <location filename="hcsettings/icmachinestructpage.cpp" line="295"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="337"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="339"/>
         <source>Max standby pos</source>
         <translation>最大待机位置</translation>
     </message>
     <message>
         <location filename="hcsettings/icmachinestructpage.cpp" line="296"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="338"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="340"/>
         <source>Leave origin pos</source>
         <translation>离开原点位置</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="354"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="381"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="406"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="356"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="383"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="408"/>
         <source>Transever security zone(Less)</source>
         <translation>横行安全范围(小于)</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="355"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="382"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="407"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="357"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="384"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="409"/>
         <source>Transever security zone(Lagger)</source>
         <translation>横行安全范围(大于)</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="356"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="357"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="358"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="359"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="360"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="383"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="384"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="361"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="362"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="385"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="386"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="387"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="416"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="417"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="388"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="389"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="418"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="419"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="420"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="421"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="422"/>
         <source>degree</source>
         <translation>度</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="361"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="388"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="421"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="363"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="390"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="423"/>
         <source>Max Rotate</source>
         <translation>最大旋转</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="362"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="389"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="422"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="364"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="391"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="424"/>
         <source>Machine Per</source>
         <translation>电机每圈</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="370"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="397"/>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="415"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="372"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="399"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="417"/>
         <source>Origin Offset</source>
         <translation>原点偏置</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="615"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="617"/>
         <source>Information</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="615"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="617"/>
         <source>Save Successfully!</source>
         <translation>保存成功!</translation>
     </message>
@@ -8941,13 +8941,13 @@ Would you want to restart now?</source>
         <location filename="function_settings/moldinformation.cpp" line="257"/>
         <location filename="function_settings/moldinformation.cpp" line="268"/>
         <location filename="function_settings/moldinformation.cpp" line="298"/>
-        <location filename="function_settings/moldinformation.cpp" line="443"/>
-        <location filename="function_settings/moldinformation.cpp" line="456"/>
-        <location filename="function_settings/moldinformation.cpp" line="475"/>
-        <location filename="function_settings/moldinformation.cpp" line="485"/>
-        <location filename="function_settings/moldinformation.cpp" line="495"/>
-        <location filename="function_settings/moldinformation.cpp" line="625"/>
-        <location filename="function_settings/moldinformation.cpp" line="671"/>
+        <location filename="function_settings/moldinformation.cpp" line="458"/>
+        <location filename="function_settings/moldinformation.cpp" line="471"/>
+        <location filename="function_settings/moldinformation.cpp" line="490"/>
+        <location filename="function_settings/moldinformation.cpp" line="500"/>
+        <location filename="function_settings/moldinformation.cpp" line="510"/>
+        <location filename="function_settings/moldinformation.cpp" line="640"/>
+        <location filename="function_settings/moldinformation.cpp" line="686"/>
         <source>warning</source>
         <translation>警告</translation>
     </message>
@@ -8959,15 +8959,15 @@ Please input the file name.</source>
     </message>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="106"/>
-        <location filename="function_settings/moldinformation.cpp" line="577"/>
-        <location filename="function_settings/moldinformation.cpp" line="708"/>
-        <location filename="function_settings/moldinformation.cpp" line="716"/>
-        <location filename="function_settings/moldinformation.cpp" line="721"/>
+        <location filename="function_settings/moldinformation.cpp" line="592"/>
+        <location filename="function_settings/moldinformation.cpp" line="723"/>
+        <location filename="function_settings/moldinformation.cpp" line="731"/>
         <location filename="function_settings/moldinformation.cpp" line="736"/>
-        <location filename="function_settings/moldinformation.cpp" line="775"/>
-        <location filename="function_settings/moldinformation.cpp" line="977"/>
-        <location filename="function_settings/moldinformation.cpp" line="994"/>
-        <location filename="function_settings/moldinformation.cpp" line="1005"/>
+        <location filename="function_settings/moldinformation.cpp" line="751"/>
+        <location filename="function_settings/moldinformation.cpp" line="790"/>
+        <location filename="function_settings/moldinformation.cpp" line="992"/>
+        <location filename="function_settings/moldinformation.cpp" line="1009"/>
+        <location filename="function_settings/moldinformation.cpp" line="1020"/>
         <source>Warnning</source>
         <translation>警告</translation>
     </message>
@@ -9011,7 +9011,12 @@ Please write the destination file name.</source>
         <translation>文件名为空,请输入文件名.</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="1094"/>
+        <location filename="function_settings/moldinformation.cpp" line="409"/>
+        <source>Mold is break, please remove it!</source>
+        <translation>模号数据损坏，请删除该模号！</translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.cpp" line="1109"/>
         <source>Only accept number and word</source>
         <translation>只能输入字母和数字！</translation>
     </message>
@@ -9030,68 +9035,68 @@ Please try a new name</source>
         <translation type="obsolete">没有选择文件</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="496"/>
+        <location filename="function_settings/moldinformation.cpp" line="511"/>
         <source>Are you sure to delete the selected files?</source>
         <oldsource>Are you sure to delete the selected files </oldsource>
         <translation>确定删除选择的文件吗?</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="742"/>
+        <location filename="function_settings/moldinformation.cpp" line="757"/>
         <source>Restoring, please wait...</source>
         <translation>还原中，请稍后...</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="708"/>
-        <location filename="function_settings/moldinformation.cpp" line="736"/>
+        <location filename="function_settings/moldinformation.cpp" line="723"/>
+        <location filename="function_settings/moldinformation.cpp" line="751"/>
         <source>Wrong program format!</source>
         <translation>错误的程序格式！</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="384"/>
+        <location filename="function_settings/moldinformation.cpp" line="386"/>
         <source>On the Current mold already!</source>
         <translation>已经在当前模号上！</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="716"/>
+        <location filename="function_settings/moldinformation.cpp" line="731"/>
         <source>Wrong config format!!!</source>
         <translation>错误的配置格式!</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="721"/>
+        <location filename="function_settings/moldinformation.cpp" line="736"/>
         <source>Wrong config format!</source>
         <translation>错误的模组参数格式！</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="635"/>
-        <location filename="function_settings/moldinformation.cpp" line="664"/>
-        <location filename="function_settings/moldinformation.cpp" line="834"/>
-        <location filename="function_settings/moldinformation.cpp" line="863"/>
+        <location filename="function_settings/moldinformation.cpp" line="650"/>
+        <location filename="function_settings/moldinformation.cpp" line="679"/>
+        <location filename="function_settings/moldinformation.cpp" line="849"/>
+        <location filename="function_settings/moldinformation.cpp" line="878"/>
         <source>tips</source>
         <oldsource>t1ips</oldsource>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="635"/>
-        <location filename="function_settings/moldinformation.cpp" line="664"/>
-        <location filename="function_settings/moldinformation.cpp" line="834"/>
-        <location filename="function_settings/moldinformation.cpp" line="863"/>
+        <location filename="function_settings/moldinformation.cpp" line="650"/>
+        <location filename="function_settings/moldinformation.cpp" line="679"/>
+        <location filename="function_settings/moldinformation.cpp" line="849"/>
+        <location filename="function_settings/moldinformation.cpp" line="878"/>
         <source>%1 is exist,replace it?</source>
         <translation>%1文件存在，是否替换？</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="775"/>
+        <location filename="function_settings/moldinformation.cpp" line="790"/>
         <source>Wrong program format!!!</source>
         <translation>错误的程序格式!!!</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="798"/>
-        <location filename="function_settings/moldinformation.cpp" line="915"/>
+        <location filename="function_settings/moldinformation.cpp" line="813"/>
+        <location filename="function_settings/moldinformation.cpp" line="930"/>
         <source>Information</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="798"/>
-        <location filename="function_settings/moldinformation.cpp" line="915"/>
+        <location filename="function_settings/moldinformation.cpp" line="813"/>
+        <location filename="function_settings/moldinformation.cpp" line="930"/>
         <source>Operation finished!</source>
         <translation>操作完成！</translation>
     </message>
@@ -9100,8 +9105,8 @@ Please try a new name</source>
         <translation type="obsolete">备份文件不完整！</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="812"/>
-        <location filename="function_settings/moldinformation.cpp" line="953"/>
+        <location filename="function_settings/moldinformation.cpp" line="827"/>
+        <location filename="function_settings/moldinformation.cpp" line="968"/>
         <source>USB is not connected!</source>
         <translation>没有检测到U盘！</translation>
     </message>
@@ -9110,24 +9115,24 @@ Please try a new name</source>
         <translation type="obsolete">没有勾选模号</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="886"/>
+        <location filename="function_settings/moldinformation.cpp" line="901"/>
         <source>Backuping, please wait...</source>
         <translation>备份中，请稍后...</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="980"/>
+        <location filename="function_settings/moldinformation.cpp" line="995"/>
         <source>Refresh File List, please wait...</source>
         <translation>刷新文件列表，请稍后...</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="994"/>
-        <location filename="function_settings/moldinformation.cpp" line="1005"/>
+        <location filename="function_settings/moldinformation.cpp" line="1009"/>
+        <location filename="function_settings/moldinformation.cpp" line="1020"/>
         <source>Backup files is incomplete!</source>
         <translation>备份文件不完整！</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="577"/>
-        <location filename="function_settings/moldinformation.cpp" line="977"/>
+        <location filename="function_settings/moldinformation.cpp" line="592"/>
+        <location filename="function_settings/moldinformation.cpp" line="992"/>
         <source>Backup files is not exists!</source>
         <translation>没有可用的备份文件!</translation>
     </message>
@@ -9141,37 +9146,38 @@ Please try a new name</source>
         <translation>文件不存在!</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="342"/>
-        <location filename="function_settings/moldinformation.cpp" line="359"/>
-        <location filename="function_settings/moldinformation.cpp" line="812"/>
-        <location filename="function_settings/moldinformation.cpp" line="953"/>
-        <location filename="function_settings/moldinformation.cpp" line="1093"/>
+        <location filename="function_settings/moldinformation.cpp" line="344"/>
+        <location filename="function_settings/moldinformation.cpp" line="361"/>
+        <location filename="function_settings/moldinformation.cpp" line="827"/>
+        <location filename="function_settings/moldinformation.cpp" line="968"/>
+        <location filename="function_settings/moldinformation.cpp" line="1108"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="342"/>
-        <location filename="function_settings/moldinformation.cpp" line="359"/>
+        <location filename="function_settings/moldinformation.cpp" line="344"/>
+        <location filename="function_settings/moldinformation.cpp" line="361"/>
         <source>file name is empty</source>
         <translation>文件名空</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="394"/>
+        <location filename="function_settings/moldinformation.cpp" line="396"/>
+        <location filename="function_settings/moldinformation.cpp" line="409"/>
         <source>critical</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="394"/>
+        <location filename="function_settings/moldinformation.cpp" line="396"/>
         <source>Read mold or mold para fail! Please change other mold!</source>
         <translation>模组数据已损坏，请更换其它模组!</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="407"/>
+        <location filename="function_settings/moldinformation.cpp" line="421"/>
         <source>Loading...</source>
         <translation>载入中...</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="384"/>
+        <location filename="function_settings/moldinformation.cpp" line="386"/>
         <source>Tips</source>
         <translation>提示</translation>
     </message>
@@ -9180,24 +9186,24 @@ Please try a new name</source>
         <translation type="obsolete">装载模号成功！</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="444"/>
-        <location filename="function_settings/moldinformation.cpp" line="476"/>
-        <location filename="function_settings/moldinformation.cpp" line="626"/>
-        <location filename="function_settings/moldinformation.cpp" line="672"/>
+        <location filename="function_settings/moldinformation.cpp" line="459"/>
+        <location filename="function_settings/moldinformation.cpp" line="491"/>
+        <location filename="function_settings/moldinformation.cpp" line="641"/>
+        <location filename="function_settings/moldinformation.cpp" line="687"/>
         <source>The mold file </source>
         <translation>模号文件</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="446"/>
-        <location filename="function_settings/moldinformation.cpp" line="478"/>
-        <location filename="function_settings/moldinformation.cpp" line="628"/>
-        <location filename="function_settings/moldinformation.cpp" line="674"/>
+        <location filename="function_settings/moldinformation.cpp" line="461"/>
+        <location filename="function_settings/moldinformation.cpp" line="493"/>
+        <location filename="function_settings/moldinformation.cpp" line="643"/>
+        <location filename="function_settings/moldinformation.cpp" line="689"/>
         <source> is being used</source>
         <translation>正被使用</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="457"/>
-        <location filename="function_settings/moldinformation.cpp" line="486"/>
+        <location filename="function_settings/moldinformation.cpp" line="472"/>
+        <location filename="function_settings/moldinformation.cpp" line="501"/>
         <source>Stand programs can not be delete!</source>
         <translation>标准程序不能删除！</translation>
     </message>
