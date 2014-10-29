@@ -638,14 +638,14 @@ void MainFrame::StatusRefreshed()
         speed_ = "0";
         //        statusStr_ = tr("Stop");
         //<<<<<<< HEAD
-#ifdef Q_WS_X11
-        finishCount_ = virtualHost->FinishProductCount();
-        if(finishCount_ != oldFinishCount_)
-        {
-            ui->cycleTimeAndFinistWidget->SetFinished(finishCount_);
-            oldFinishCount_ = finishCount_;
-        }
-#endif
+//#ifdef Q_WS_X11
+//        finishCount_ = virtualHost->FinishProductCount();
+//        if(finishCount_ != oldFinishCount_)
+//        {
+//            ui->cycleTimeAndFinistWidget->SetFinished(finishCount_);
+//            oldFinishCount_ = finishCount_;
+//        }
+//#endif
         //=======
         //        ui->cycleTimeAndFinistWidget->SetFinished(oldFinishCount_);
         //        ui->systemStatusFrame->SetProgramStatus(StatusLabel::ONSTATUS);
@@ -664,6 +664,7 @@ void MainFrame::StatusRefreshed()
         {
             actionDialog_->hide();
         }
+
         if(virtualHost->HasGetFinishProductCount())
         {
             finishCount_ = virtualHost->HostStatus(ICVirtualHost::DbgX1).toUInt();
@@ -738,6 +739,7 @@ void MainFrame::StatusRefreshed()
             //            ui->systemStatusFrame->SetAutoStatus(ICSystemStatusFrame::Running);
             //            ui->functionPageButton->setEnabled(false);
             //            ui->recordPageButton->setEnabled(false);
+
         }
         else if(runningStatus_ == ICVirtualHost::AutoReady)
         {

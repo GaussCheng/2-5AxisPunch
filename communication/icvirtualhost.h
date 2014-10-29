@@ -613,7 +613,7 @@ public:
 //    void SetFinishProductCount(int product) { productCount_ = product;}
     int FinishProductCount() const;
     void SetFinishProductCount(int product) { systemParamMap_.insert(SYS_RsvWorkmold, product);}
-    bool HasGetFinishProductCount() const { return currentAddr_ >= 7;}
+    bool HasGetFinishProductCount() const { return (currentAddr_ >= 7) && (CurrentStatus() == Auto && statusMap_.value(DbgX0).toInt() == 1);}
 
 //    bool IsSingleArm() const { return (systemParamMap_.value(SYS_ARM_CONFIG).toInt() & 0x0100) > 0;}
 //    void SetSingleArm(bool isSingle);
