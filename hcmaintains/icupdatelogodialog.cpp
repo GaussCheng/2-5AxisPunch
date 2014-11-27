@@ -45,16 +45,17 @@ void ICUpdateLogoDialog::on_setToStartup_clicked()
     startupPage_ = ui->picView->CurrentSelectedPicture();
     ui->startupPage->setText(startupPage_);
 
-    ::system("rm /opt/Qt/bin/resource/startup_page.png");
+    ::system("rm /opt/Qt/apps/resource/startup_page.png");
     if(!startupPage_.isEmpty())
     {
 #ifdef Q_WS_X11
         QFile::copy(startupPage_, "/home/gausscheng/startup_page.png");
 #else
-        QFile::copy(startupPage_, "/opt/Qt/bin/resource/startup_page.png");
+        QFile::copy(startupPage_, "/opt/Qt/apps/resource/startup_page.png");
 #endif
     }
     QMessageBox::information(this,tr("Tips"),tr("Setting success,In operation after reboot!"));
+    ::system("sync");
 }
 
 void ICUpdateLogoDialog::on_setToStandby_clicked()
@@ -67,16 +68,17 @@ void ICUpdateLogoDialog::on_setToStandby_clicked()
     standbyPage_ = ui->picView->CurrentSelectedPicture();
     ui->standbyPage->setText(standbyPage_);
 
-    ::system("rm /opt/Qt/bin/resource/Standby.png");
+    ::system("rm /opt/Qt/apps/resource/Standby.png");
     if(!standbyPage_.isEmpty())
     {
 #ifdef Q_WS_X11
         QFile::copy(standbyPage_, "/home/gausscheng/Standby.png");
 #else
-        QFile::copy(standbyPage_, "/opt/Qt/bin/resource/Standby.png");
+        QFile::copy(standbyPage_, "/opt/Qt/apps/resource/Standby.png");
 #endif
     }
     QMessageBox::information(this,tr("Tips"),tr("Setting success,In operation after reboot!"));
+     ::system("sync");
 }
 
 //void ICUpdateLogoDialog::on_okButton_clicked()

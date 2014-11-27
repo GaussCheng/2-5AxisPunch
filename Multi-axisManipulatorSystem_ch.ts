@@ -65,18 +65,17 @@
     </message>
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="764"/>
+        <location filename="hcinstruction/actionsettingframe_8.ui" line="688"/>
         <source>3D</source>
         <translation type="unfinished">3D</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe_8.ui" line="726"/>
         <source>Slash</source>
-        <translation>直线</translation>
+        <translation type="obsolete">直线</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe_8.ui" line="688"/>
         <source>ARC</source>
-        <translation>曲线</translation>
+        <translation type="obsolete">曲线</translation>
     </message>
     <message>
         <source>Move</source>
@@ -8797,8 +8796,8 @@ Would you want to restart now?</source>
     </message>
     <message>
         <location filename="mainframe.cpp" line="531"/>
-        <location filename="mainframe.cpp" line="881"/>
-        <location filename="mainframe.cpp" line="957"/>
+        <location filename="mainframe.cpp" line="887"/>
+        <location filename="mainframe.cpp" line="963"/>
         <source>Controlled, Can&apos;t modify!</source>
         <translation>联机中，不能设定！</translation>
     </message>
@@ -8814,8 +8813,8 @@ Would you want to restart now?</source>
     </message>
     <message>
         <location filename="mainframe.cpp" line="530"/>
-        <location filename="mainframe.cpp" line="880"/>
-        <location filename="mainframe.cpp" line="956"/>
+        <location filename="mainframe.cpp" line="886"/>
+        <location filename="mainframe.cpp" line="962"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>

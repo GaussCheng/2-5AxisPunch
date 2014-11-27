@@ -54,17 +54,8 @@
     </message>
     <message>
         <location filename="hcinstruction/actionsettingframe.ui" line="764"/>
-        <source>3D</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/actionsettingframe_8.ui" line="726"/>
-        <source>Slash</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="hcinstruction/actionsettingframe_8.ui" line="688"/>
-        <source>ARC</source>
+        <source>3D</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5475,15 +5466,15 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="mainframe.cpp" line="530"/>
-        <location filename="mainframe.cpp" line="880"/>
-        <location filename="mainframe.cpp" line="956"/>
+        <location filename="mainframe.cpp" line="886"/>
+        <location filename="mainframe.cpp" line="962"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainframe.cpp" line="531"/>
-        <location filename="mainframe.cpp" line="881"/>
-        <location filename="mainframe.cpp" line="957"/>
+        <location filename="mainframe.cpp" line="887"/>
+        <location filename="mainframe.cpp" line="963"/>
         <source>Controlled, Can&apos;t modify!</source>
         <translation type="unfinished"></translation>
     </message>
