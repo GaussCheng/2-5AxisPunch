@@ -27,10 +27,10 @@ ICMachineStructPage::ICMachineStructPage(QWidget *parent) :
     InitInterface();
     buttonGroup_ = new QButtonGroup();
 
-    ui->axisXToolButton->setText(tr("X1 Axis"));
-    ui->axisYToolButton->setText(tr("Y1 Axis"));
+    ui->axisXToolButton->setText(tr("X Axis"));
+    ui->axisYToolButton->setText(tr("Y Axis"));
     ui->axisZToolButton->setText(tr("S Axis"));
-    ui->axisPToolButton->setText(tr("X2 Axis"));
+    ui->axisPToolButton->setText(tr("R Axis"));
     ui->axisQToolButton->setText(tr("T Axis"));
     ui->axisAToolButton->setText(tr("A Axis"));
     ui->axisBToolButton->setText(tr("B Axis"));
@@ -83,10 +83,10 @@ void ICMachineStructPage::changeEvent(QEvent *e)
     switch (e->type()) {
     case QEvent::LanguageChange:
         ui->retranslateUi(this);
-        ui->axisXToolButton->setText(tr("X1 Axis"));
-        ui->axisYToolButton->setText(tr("Y1 Axis"));
+        ui->axisXToolButton->setText(tr("X Axis"));
+        ui->axisYToolButton->setText(tr("Y Axis"));
         ui->axisZToolButton->setText(tr("S Axis"));
-        ui->axisPToolButton->setText(tr("X2 Axis"));
+        ui->axisPToolButton->setText(tr("R Axis"));
         ui->axisQToolButton->setText(tr("T Axis"));
         ui->axisAToolButton->setText(tr("A Axis"));
         ui->axisBToolButton->setText(tr("B Axis"));
@@ -313,8 +313,13 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         maxText = tr("External security zone");
         ui->distanceRotationEdit->SetDecimalPlaces(2);
         ui->label_2->setText(tr("Maximum displacement"));
-        maxMoveValidator_->setBottom(-32760);
-         intValidator->setTop(32760);
+        maxMoveValidator_->setBottom(-3600);
+         intValidator->setTop(3600);
+         ui->minUnitLabel->setText(tr("deg"));
+         ui->maxUnitLabel->setText(tr("deg"));
+         ui->label_3->setText(tr("deg"));
+         ui->label_4->setText(tr("deg"));
+         ui->label_11->setText(tr("deg"));
 
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisX2)
@@ -327,7 +332,14 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         minText = tr("Min pos inside mold");
         maxText = tr("Max pos inside mold");
         ui->distanceRotationEdit->SetDecimalPlaces(2);
+        maxMoveValidator_->setBottom(-3600);
+         intValidator->setTop(3600);
         ui->label_2->setText(tr("Maximum displacement"));
+        ui->minUnitLabel->setText(tr("deg"));
+        ui->maxUnitLabel->setText(tr("deg"));
+        ui->label_3->setText(tr("deg"));
+        ui->label_4->setText(tr("deg"));
+        ui->label_11->setText(tr("deg"));
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY2)
     {
@@ -342,6 +354,13 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         ui->label_2->setText(tr("Maximum displacement"));
         minSecValidator_->setBottom(10);
         maxSecValidator_->setBottom(500);
+        maxMoveValidator_->setBottom(-3600);
+         intValidator->setTop(3600);
+        ui->minUnitLabel->setText(tr("deg"));
+        ui->maxUnitLabel->setText(tr("deg"));
+        ui->label_3->setText(tr("deg"));
+        ui->label_4->setText(tr("deg"));
+        ui->label_11->setText(tr("deg"));
 
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisA)

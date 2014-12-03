@@ -14,6 +14,29 @@
 #include "iccommandprocessor.h"
 #include "icmold.h"
 
+typedef union {
+     struct {
+        u_int16_t canType : 8;
+        u_int16_t  canAddr:8;
+    }b;
+    u_int16_t all;
+}CanConfig;
+
+typedef union{
+     struct{
+        u_int16_t r1 : 1;
+        u_int16_t r2 : 1;
+        u_int16_t r3 : 1;
+        u_int16_t r4 : 1;
+        u_int16_t r5 : 1;
+        u_int16_t r6 : 1;
+        u_int16_t r7 : 1;
+        u_int16_t r8 : 1;
+        u_int16_t r : 8;
+    }b;
+    u_int16_t all;
+}ReserveProgConfig;
+
 class QTimer;
 class ICMacroSubroutine;
 //class ICMold;

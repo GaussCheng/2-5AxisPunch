@@ -52,6 +52,7 @@ private slots:
     void LevelChanged(int);
 
     void on_cycle_toggled(bool checked);
+
     void on_xSpeed_toggled(bool checked);
 
     void on_ySpeed_toggled(bool checked);

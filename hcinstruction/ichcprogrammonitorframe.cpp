@@ -73,7 +73,7 @@ ICHCProgramMonitorFrame::ICHCProgramMonitorFrame(QWidget *parent) :
             SLOT(LevelChanged(int)));
     LevelChanged(ICProgramHeadFrame::Instance()->CurrentLevel());
     ui->tSpeed->hide();
-    ui->tSpeed_2->hide();
+    ui->rsSpeed->hide();
 }
 
 ICHCProgramMonitorFrame::~ICHCProgramMonitorFrame()
@@ -103,22 +103,22 @@ void ICHCProgramMonitorFrame::changeEvent(QEvent *e)
 void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
 {
     //    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
-    int currentTuneType = ICKeyboard::Instace()->CurrentTuneSpeedType();
-    if(currentTuneType < 0)
-    {
-        ui->xSpeed->setChecked(false);
-        ui->ySpeed->setChecked(false);
-    }
-    else if(currentTuneType == 0)
-    {
-        ui->ySpeed->setChecked(false);
-        ui->xSpeed->setChecked(true);
-    }
-    else
-    {
-        ui->xSpeed->setChecked(false);
-        ui->ySpeed->setChecked(true);
-    }
+//    int currentTuneType = ICKeyboard::Instace()->CurrentTuneSpeedType();
+//    if(currentTuneType < 0)
+//    {
+//        ui->xSpeed->setChecked(false);
+//        ui->ySpeed->setChecked(false);
+//    }
+//    else if(currentTuneType == 0)
+//    {
+//        ui->ySpeed->setChecked(false);
+//        ui->xSpeed->setChecked(true);
+//    }
+//    else
+//    {
+//        ui->xSpeed->setChecked(false);
+//        ui->ySpeed->setChecked(true);
+//    }
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     ICVirtualHost::GlobalVirtualHost()->SetSpeedEnable(false);
     ui->speedEnableButton->setIcon(switchOff_);
@@ -300,43 +300,43 @@ static int oldS = -1;
 void ICHCProgramMonitorFrame::StatusRefreshed()
 {
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    int16_t pos = host->HostStatus(ICVirtualHost::XPos).toInt();
-    if(pos != oldX)
-    {
-        oldX = pos;
-        ui->xCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
-    }
-    int16_t posy = host->HostStatus(ICVirtualHost::YPos).toInt();
-    if(posy != oldY)
-    {
-        oldY = posy;
-        ui->yCurrentPos->setText(QString::number(posy / 10.0, 'f', 1));
-    }
-#ifdef HC_AXIS_COUNT_5
-    int16_t posz = host->HostStatus(ICVirtualHost::ZPos).toInt();
-    if(posz != oldZ)
-    {
-        oldZ = posz;
-        ui->zCurrentPos->setText(QString::number(posz / 10.0, 'f', 1));
-    }
-    pos = host->HostStatus(ICVirtualHost::QPos).toInt();
-    if(pos != oldQ)
-    {
-        oldQ = pos;
-        ui->tCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
-    }
+//    int16_t pos = host->HostStatus(ICVirtualHost::XPos).toInt();
+//    if(pos != oldX)
+//    {
+//        oldX = pos;
+//        ui->xCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
+//    }
+//    int16_t posy = host->HostStatus(ICVirtualHost::YPos).toInt();
+//    if(posy != oldY)
+//    {
+//        oldY = posy;
+//        ui->yCurrentPos->setText(QString::number(posy / 10.0, 'f', 1));
+//    }
+//#ifdef HC_AXIS_COUNT_5
+//    int16_t posz = host->HostStatus(ICVirtualHost::ZPos).toInt();
+//    if(posz != oldZ)
+//    {
+//        oldZ = posz;
+//        ui->zCurrentPos->setText(QString::number(posz / 10.0, 'f', 1));
+//    }
+//    pos = host->HostStatus(ICVirtualHost::QPos).toInt();
+//    if(pos != oldQ)
+//    {
+//        oldQ = pos;
+//        ui->tCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
+//    }
 
-    pos = host->HostStatus(ICVirtualHost::PPos).toInt();
-    if(pos != oldP)
-    {
-        oldP = pos;
-        ui->x2CurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
-    }
-#endif
+//    pos = host->HostStatus(ICVirtualHost::PPos).toInt();
+//    if(pos != oldP)
+//    {
+//        oldP = pos;
+//        ui->x2CurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
+//    }
+//#endif
     int speed = host->GlobalSpeed();
     if(speed != oldS)
     {
-        oldS = pos;
+        oldS = speed;
         ui->xSpeedLabel->setText(QString::number((speed >> 8) & 0xFF));
         ui->ySpeedLabel->setText(QString::number(speed & 0xFF));
 #ifdef HC_AXIS_COUNT_5
@@ -942,4 +942,3 @@ void ICHCProgramMonitorFrame::on_zSpeed_toggled(bool checked)
     }
 }
 #endif
-

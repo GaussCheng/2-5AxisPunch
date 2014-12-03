@@ -121,11 +121,13 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
         {
             if(moldItem.IFVal() & 0x80)
             {
-                commandStr += QString("M%1 ").arg(QString::number(moldItem.SubNum() + 8, 8));
-                if(moldItem.SubNum() < mStr.size())
-                {
-                    commandStr += mStr.at(moldItem.SubNum());
-                }
+//                commandStr += QString("M%1 ").arg(QString::number(moldItem.SubNum() + 8, 8));
+                ICUserIOInfo info = config->MInfo(moldItem.SubNum());
+                commandStr += info.code + ":" + info.GetLocaleName("zh") + " ";
+//                if(moldItem.SubNum() < mStr.size())
+//                {
+//                    commandStr += mStr.at(moldItem.SubNum());
+//                }
             }
             else
             {
@@ -158,12 +160,14 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
         }
         else if(action == ICMold::GMWait)
         {
+            ICUserIOInfo info = config->MInfo(moldItem.SubNum());
+            commandStr += info.code + ":" + info.GetLocaleName("zh") + " ";
 
-            commandStr += QString("M%1 ").arg(QString::number(moldItem.SubNum() + 8, 8));
-            if(moldItem.SubNum() < mStr.size())
-            {
-                commandStr += mStr.at(moldItem.SubNum());
-            }
+//            commandStr += QString("M%1 ").arg(QString::number(moldItem.SubNum() + 8, 8));
+//            if(moldItem.SubNum() < mStr.size())
+//            {
+//                commandStr += mStr.at(moldItem.SubNum());
+//            }
             commandStr += (moldItem.IFVal() == 0) ? "OFF" :"ON ";
             commandStr += QObject::tr("Limit") + ":" + ICParameterConversion::TransThisIntToThisText(moldItem.DVal(), 2);
             return commandStr;
@@ -171,11 +175,13 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
         }
         else if(action == ICMold::GMOut)
         {
-            commandStr += QString("M%1 ").arg(QString::number(moldItem.SubNum() + 8, 8));
-            if(moldItem.SubNum() < mStr.size())
-            {
-                commandStr += mStr.at(moldItem.SubNum());
-            }
+            ICUserIOInfo info = config->MInfo(moldItem.SubNum());
+            commandStr += info.code + ":" + info.GetLocaleName("zh") + " ";
+//            commandStr += QString("M%1 ").arg(QString::number(moldItem.SubNum() + 8, 8));
+//            if(moldItem.SubNum() < mStr.size())
+//            {
+//                commandStr += mStr.at(moldItem.SubNum());
+//            }
 //            commandStr += (moldItem.IFVal() == 0) ? "OFF" :"ON ";
 //            commandStr += QObject::tr("Limit") + ":" + ICParameterConversion::TransThisIntToThisText(moldItem.DVal(), 2);
 //            return commandStr;

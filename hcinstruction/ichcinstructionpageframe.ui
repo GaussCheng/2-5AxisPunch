@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>640</width>
-    <height>380</height>
+    <height>366</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -33,7 +33,7 @@
      <x>9</x>
      <y>0</y>
      <width>631</width>
-     <height>381</height>
+     <height>361</height>
     </rect>
    </property>
    <property name="tabPosition">
@@ -50,7 +50,7 @@
      <property name="geometry">
       <rect>
        <x>495</x>
-       <y>321</y>
+       <y>300</y>
        <width>100</width>
        <height>44</height>
       </rect>
@@ -82,7 +82,7 @@
      <property name="geometry">
       <rect>
        <x>213</x>
-       <y>321</y>
+       <y>300</y>
        <width>80</width>
        <height>44</height>
       </rect>
@@ -117,7 +117,7 @@
      <property name="geometry">
       <rect>
        <x>301</x>
-       <y>321</y>
+       <y>300</y>
        <width>80</width>
        <height>44</height>
       </rect>
@@ -152,7 +152,7 @@
      <property name="geometry">
       <rect>
        <x>389</x>
-       <y>321</y>
+       <y>300</y>
        <width>100</width>
        <height>44</height>
       </rect>
@@ -185,7 +185,7 @@
      <property name="geometry">
       <rect>
        <x>1</x>
-       <y>321</y>
+       <y>300</y>
        <width>100</width>
        <height>44</height>
       </rect>
@@ -217,7 +217,7 @@
      <property name="geometry">
       <rect>
        <x>107</x>
-       <y>321</y>
+       <y>300</y>
        <width>100</width>
        <height>44</height>
       </rect>
@@ -251,7 +251,7 @@
        <x>377</x>
        <y>1</y>
        <width>220</width>
-       <height>319</height>
+       <height>291</height>
       </rect>
      </property>
      <property name="sizePolicy">
@@ -567,7 +567,7 @@
        <x>4</x>
        <y>37</y>
        <width>370</width>
-       <height>281</height>
+       <height>261</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -820,6 +820,21 @@ QCheckBox::indicator:unchecked
          <string>Page1</string>
         </attribute>
         <layout class="QGridLayout" name="gridLayout_3">
+         <property name="leftMargin">
+          <number>2</number>
+         </property>
+         <property name="topMargin">
+          <number>2</number>
+         </property>
+         <property name="rightMargin">
+          <number>2</number>
+         </property>
+         <property name="bottomMargin">
+          <number>2</number>
+         </property>
+         <property name="spacing">
+          <number>2</number>
+         </property>
          <item row="0" column="0">
           <widget class="QCheckBox" name="check0">
            <property name="text">
@@ -1051,6 +1066,21 @@ QCheckBox::indicator:unchecked
          <string>Page2</string>
         </attribute>
         <layout class="QGridLayout" name="gridLayout_2">
+         <property name="leftMargin">
+          <number>2</number>
+         </property>
+         <property name="topMargin">
+          <number>2</number>
+         </property>
+         <property name="rightMargin">
+          <number>2</number>
+         </property>
+         <property name="bottomMargin">
+          <number>2</number>
+         </property>
+         <property name="spacing">
+          <number>2</number>
+         </property>
          <item row="0" column="0">
           <widget class="QCheckBox" name="check32">
            <property name="text">

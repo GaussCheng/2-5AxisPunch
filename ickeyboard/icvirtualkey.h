@@ -106,6 +106,9 @@ enum ICVirtualKey
     VKEY_CLIP6OFF,
     VKEY_CLIP7OFF,
     VKEY_CLIP8OFF,
+
+    VKEY_SERVO_ON = 0xA6,
+    VKEY_SERVO_OFF = 0xA7
 };
 
 }//namespace IC{

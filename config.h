@@ -16,12 +16,18 @@
 #define SECTION_DECIMAL 1
 #define STACK_DECIMAL 2
 
+#define SW_VERSION_PREFIX "CYR"
 #ifdef HC_SK_8
-#define SW_VERSION "CYR8_5.0.3"
+#define INCH "8"
 #else
-#define SW_VERSION "CYR5_5.0.3"
+#define INCH "5"
 #endif
 #define HW_VERSION "1.3"
+
+#define SW_VERSION "5.0.3"
+
+static const char*  SHOW_VERSION =  SW_VERSION_PREFIX INCH"_"SW_VERSION;
+#define UPDATE_PREFIX "HCPunch"
 
 //#ifndef HC_SK_5
 //#define HC_SK_5

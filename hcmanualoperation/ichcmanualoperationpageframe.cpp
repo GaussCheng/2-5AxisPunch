@@ -29,9 +29,9 @@ ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
 {
     ui->setupUi(this);
 #ifndef HC_SK_8_SC
-#ifdef HC_SK_8
-    ui->axisBoard->hide();
-#endif
+//#ifdef HC_SK_8
+//    ui->axisBoard->hide();
+//#endif
 #endif
 #ifdef HC_AXIS_COUNT_2
     ui->label_14->hide();
@@ -53,7 +53,7 @@ ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     yOnPalette.setBrush(QPalette::Button, QBrush(Qt::green));
     oriPalette = ui->b1->palette();
     ui->tSpeed->hide();
-    ui->x2Speed->hide();
+    ui->rsSpeed->hide();
 }
 
 ICHCManualOperationPageFrame::~ICHCManualOperationPageFrame()
@@ -65,22 +65,22 @@ ICHCManualOperationPageFrame::~ICHCManualOperationPageFrame()
 
 void ICHCManualOperationPageFrame::showEvent(QShowEvent *e)
 {
-    int currentTuneType = ICKeyboard::Instace()->CurrentTuneSpeedType();
-    if(currentTuneType < 0)
-    {
-        ui->xSpeed->setChecked(false);
-        ui->ySpeed->setChecked(false);
-    }
-    else if(currentTuneType == 0)
-    {
-        ui->ySpeed->setChecked(false);
-        ui->xSpeed->setChecked(true);
-    }
-    else
-    {
-        ui->xSpeed->setChecked(false);
-        ui->ySpeed->setChecked(true);
-    }
+//    int currentTuneType = ICKeyboard::Instace()->CurrentTuneSpeedType();
+//    if(currentTuneType < 0)
+//    {
+//        ui->xSpeed->setChecked(false);
+//        ui->ySpeed->setChecked(false);
+//    }
+//    else if(currentTuneType == 0)
+//    {
+//        ui->ySpeed->setChecked(false);
+//        ui->xSpeed->setChecked(true);
+//    }
+//    else
+//    {
+//        ui->xSpeed->setChecked(false);
+//        ui->ySpeed->setChecked(true);
+//    }
     QFrame::showEvent(e);
     ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnManual, 0);
 //    currentStep = 0;
@@ -307,40 +307,40 @@ static int oldStep = -1;
 void ICHCManualOperationPageFrame::StatusRefreshed()
 {
     static ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    uint16_t pos = host->HostStatus(ICVirtualHost::XPos).toInt();
-    if(pos != oldX)
-    {
-        oldX = pos;
-        ui->xCurrentPos->setText(QString().sprintf("%.1f", pos / 10.0));
-    }
-    int16_t posy = host->HostStatus(ICVirtualHost::YPos).toInt();
-    if(posy != oldY)
-    {
-        oldY = posy;
-        ui->yCurrentPos->setText(QString().sprintf("%.1f", posy / 10.0));
-    }
-#ifdef HC_AXIS_COUNT_5
-    int16_t posz = host->HostStatus(ICVirtualHost::ZPos).toInt();
-    if(posz != oldZ)
-    {
-        oldZ = posz;
-        ui->zCurrentPos->setText(QString().sprintf("%.1f", posz / 10.0));
-    }
+//    uint16_t pos = host->HostStatus(ICVirtualHost::XPos).toInt();
+//    if(pos != oldX)
+//    {
+//        oldX = pos;
+//        ui->xCurrentPos->setText(QString().sprintf("%.1f", pos / 10.0));
+//    }
+//    int16_t posy = host->HostStatus(ICVirtualHost::YPos).toInt();
+//    if(posy != oldY)
+//    {
+//        oldY = posy;
+//        ui->yCurrentPos->setText(QString().sprintf("%.1f", posy / 10.0));
+//    }
+//#ifdef HC_AXIS_COUNT_5
+//    int16_t posz = host->HostStatus(ICVirtualHost::ZPos).toInt();
+//    if(posz != oldZ)
+//    {
+//        oldZ = posz;
+//        ui->zCurrentPos->setText(QString().sprintf("%.1f", posz / 10.0));
+//    }
 
-    pos = host->HostStatus(ICVirtualHost::QPos).toInt();
-    if(pos != oldQ)
-    {
-        oldQ = pos;
-        ui->tCurrentPos->setText(QString().sprintf("%.1f", pos / 10.0));
-    }
+//    pos = host->HostStatus(ICVirtualHost::QPos).toInt();
+//    if(pos != oldQ)
+//    {
+//        oldQ = pos;
+//        ui->tCurrentPos->setText(QString().sprintf("%.1f", pos / 10.0));
+//    }
 
-    pos = host->HostStatus(ICVirtualHost::PPos).toInt();
-    if(pos != oldP)
-    {
-        oldP = pos;
-        ui->x2CurrentPos->setText(QString().sprintf("%.1f", pos / 10.0));
-    }
-#endif
+//    pos = host->HostStatus(ICVirtualHost::PPos).toInt();
+//    if(pos != oldP)
+//    {
+//        oldP = pos;
+//        ui->x2CurrentPos->setText(QString().sprintf("%.1f", pos / 10.0));
+//    }
+//#endif
     int speed = host->HostStatus(ICVirtualHost::DbgX0).toInt() | (host->HostStatus(ICVirtualHost::DbgX1).toUInt() << 16);
     if(speed != oldS)
     {
@@ -676,6 +676,28 @@ void ICHCManualOperationPageFrame::on_singleButton_clicked()
 
 }
 
+
+void ICHCManualOperationPageFrame::on_return0Button_clicked()
+{
+    currentStep = 0;
+    oldStep = -1;
+//    ui->singleButton->setText(QString(tr("Single(%1/%2)")).arg(currentStep).arg(mold->MoldContent().size()));
+}
+
+void ICHCManualOperationPageFrame::on_serveOn_toggled(bool checked)
+{
+    if(checked)
+    {
+        ui->serveControl->setText(tr("Servo OFF"));
+        ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_SERVO_OFF);
+    }
+    else
+    {
+        ui->serveControl->setText(tr("Servo On"));
+        ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_SERVO_ON);
+    }
+}
+
 void ICHCManualOperationPageFrame::on_xSpeed_toggled(bool checked)
 {
     if(checked)
@@ -735,10 +757,3 @@ void ICHCManualOperationPageFrame::on_zSpeed_toggled(bool checked)
     }
 }
 #endif
-
-void ICHCManualOperationPageFrame::on_return0Button_clicked()
-{
-    currentStep = 0;
-    oldStep = -1;
-//    ui->singleButton->setText(QString(tr("Single(%1/%2)")).arg(currentStep).arg(mold->MoldContent().size()));
-}

@@ -11,27 +11,6 @@
 #include <QDebug>
 #include "mainframe.h"
 
-typedef union {
-     struct {
-        u_int16_t canType : 8;
-        u_int16_t  canAddr:8;
-    }b;
-    u_int16_t all;
-}CanConfig;
-
-typedef union{
-     struct{
-        u_int16_t r1 : 1;
-        u_int16_t r2 : 1;
-        u_int16_t r3 : 1;
-        u_int16_t r4 : 1;
-        u_int16_t r5 : 1;
-        u_int16_t r6 : 1;
-        u_int16_t r7 : 1;
-        u_int16_t r : 9;
-    }b;
-    u_int16_t all;
-}ReserveProgConfig;
 
 ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     QWidget(parent),
@@ -117,6 +96,7 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     ui->rP5->setCurrentIndex(progConfig.b.r5);
     ui->rP6->setCurrentIndex(progConfig.b.r6);
     ui->rP7->setCurrentIndex(progConfig.b.r7);
+    ui->rP8->setCurrentIndex(progConfig.b.r8);
 }
 
 ICStructDefineFrame::~ICStructDefineFrame()
@@ -232,6 +212,7 @@ void ICStructDefineFrame::on_saveButton_clicked()
     progConfig.b.r5 = ui->rP5->currentIndex();
     progConfig.b.r6 = ui->rP6->currentIndex();
     progConfig.b.r7 = ui->rP7->currentIndex();
+    progConfig.b.r8 = ui->rP8->currentIndex();
     dataBuffer[4] = canConfig.all;
     dataBuffer[5] = progConfig.all;
     for(int i = 0; i != 6; ++i)
@@ -297,7 +278,7 @@ void ICStructDefineFrame::InitEscapeBox()
     buttongroup_->setExclusive(true);
 }
 
-void ICStructDefineFrame::on_adjUse_toggled(bool checked)
-{
-    ICParametersSave::Instance()->SetAdjustFunction(checked);
-}
+//void ICStructDefineFrame::on_adjUse_toggled(bool checked)
+//{
+//    ICParametersSave::Instance()->SetAdjustFunction(checked);
+//}

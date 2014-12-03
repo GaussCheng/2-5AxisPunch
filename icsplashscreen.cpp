@@ -14,7 +14,7 @@ ICSplashScreen::ICSplashScreen(const QPixmap &pixmap, Qt::WindowFlags f) :
     versionContainer_ = new QWidget(this);
     QFormLayout *flayout = new QFormLayout();
     swVersionLabel_ = new QLabel(tr("SW Version:"), this);
-    swVersion_ = new QLabel(SW_VERSION, this);
+    swVersion_ = new QLabel(SHOW_VERSION, this);
     hwVersionLabel_ = new QLabel(tr("HW Version:"), this);
     hwVersion_ = new QLabel(HW_VERSION, this);
     clientLabel_ = new QLabel(tr("Client:"), this);

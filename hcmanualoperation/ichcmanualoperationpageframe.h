@@ -65,6 +65,11 @@ private slots:
 
     void on_singleButton_clicked();
 
+
+    void on_return0Button_clicked();
+
+    void on_serveOn_toggled(bool checked);
+
     void on_xSpeed_toggled(bool checked);
 
     void on_ySpeed_toggled(bool checked);
@@ -73,7 +78,6 @@ private slots:
     void on_zSpeed_toggled(bool checked);
 #endif
 
-    void on_return0Button_clicked();
 
 private:
     Ui::ICHCManualOperationPageFrame *ui;

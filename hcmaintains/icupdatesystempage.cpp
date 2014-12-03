@@ -653,7 +653,7 @@ void ICUpdateSystemPage::on_scanPanel_clicked()
     ICTipsWidget tipWidget(tr("Scanning..."));
     tipWidget.show();
     qApp->processEvents();
-    model_->SetScanPattern("HCPunchPanel*.bfe");
+    model_->SetScanPattern(UPDATE_PREFIX"Panel*.bfe");
     model_->fetchMore(model_->index(0, 0));
     ui->packetTable->resizeColumnsToContents();
     ui->packetTable->setCurrentIndex(QModelIndex());
@@ -664,7 +664,7 @@ void ICUpdateSystemPage::on_scanHost_clicked()
     ICTipsWidget tipWidget(tr("Scanning..."));
     tipWidget.show();
     qApp->processEvents();
-    model_->SetScanPattern("HCPunchHost*.bfe");
+    model_->SetScanPattern(UPDATE_PREFIX"Host*.bfe");
     model_->fetchMore(model_->index(0, 0));
     ui->packetTable->resizeColumnsToContents();
     ui->packetTable->setCurrentIndex(QModelIndex());

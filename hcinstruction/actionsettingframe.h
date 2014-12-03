@@ -24,6 +24,7 @@ public:
 
 public slots:
     void KeyToActionCheck(int key);
+    void ResetServo();
 
 protected:
     void changeEvent(QEvent *);
@@ -73,6 +74,7 @@ private slots:
     void on_gPButton_toggled(bool checked);
 //    void on_arcBox_clicked(bool checked);
 //    void on_slashBox_clicked(bool checked);
+    void on_serveControl_toggled(bool checked);
 };
 
 #endif // ACTIONSETTINGFRAME_H

@@ -1,5 +1,6 @@
 #include "icwaitmeditor.h"
 #include "ui_icwaitmeditor.h"
+#include "icsystemconfig.h"
 
 ICWaitMEditor::ICWaitMEditor(QWidget *parent) :
     ICInstructionEditorBase(parent),
@@ -9,15 +10,20 @@ ICWaitMEditor::ICWaitMEditor(QWidget *parent) :
     ui->delayEdit->SetDecimalPlaces(2);
     ui->delayEdit->setValidator(new QIntValidator(0, 65530, this));
     QStringList items;
+    QList<ICUserIOInfo> mInfos = ICUserDefineConfig::Instance()->AllMInfos();
+    for(int i = 0 ; i != mInfos.size(); ++i)
+    {
+        items<<mInfos.at(i).code + ":" + mInfos.at(i).GetLocaleName("zh");
+    }
 
-    items<<tr("M10")<<tr("M11")<<tr("M12")<<tr("M13")
-        <<tr("N14")
-        <<tr("M15")<<"M16"<<"M17"<<"M20"<<"M21"
-       <<"M22"<<"M23"<<"M24"<<"M25"<<"M26"
-      <<"M27"<<"M30"<<"M31"<<"M32"<<"M33"
-     <<"M34"<<"M35"<<"M36"<<"M37"<<"M40"
-    <<"M41"<<"M42"<<"M43"<<"M44"<<"M45"
-    <<"M46"<<"M47";
+//    items<<tr("M10")<<tr("M11")<<tr("M12")<<tr("M13")
+//        <<tr("N14")
+//        <<tr("M15")<<"M16"<<"M17"<<"M20"<<"M21"
+//       <<"M22"<<"M23"<<"M24"<<"M25"<<"M26"
+//      <<"M27"<<"M30"<<"M31"<<"M32"<<"M33"
+//     <<"M34"<<"M35"<<"M36"<<"M37"<<"M40"
+//    <<"M41"<<"M42"<<"M43"<<"M44"<<"M45"
+//    <<"M46"<<"M47";
     ui->mList->blockSignals(true);
     ui->mList->setRowCount(items.size());
     QTableWidgetItem* item;

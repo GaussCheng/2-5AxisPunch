@@ -8,6 +8,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <cstdio>
+#include <linux/input.h>
 #endif
 
 #include <QBoxLayout>
@@ -329,100 +330,134 @@ void MainFrame::changeEvent(QEvent *e)
 
 void MainFrame::keyPressEvent(QKeyEvent *e)
 {
-    qDebug()<<"KeyEvent:"<<e->key();
-       SetHasInput(true);
-       if(keyMap.contains(e->key()))
-       {
-           int key = keyMap.value(e->key());
-           currentKeySeq.append(key);
-           if(currentKeySeq.size() == recalKeySeq.size())
-           {
-               if(currentKeySeq == recalKeySeq)
-               {
-                   ICRecalDialog recalDialog;
-                   recalDialog.exec();
-   //                ::system("touch /mnt/config_data/recal");
-   //                int ret = QMessageBox::warning(this,
-   //                                     tr("Recal"),
-   //                                     tr("You have press the recal sequence, recal after reboot"),
-   //                                     QMessageBox::Yes | QMessageBox::No);
-   //                if(ret == QMessageBox::Yes) ::system("reboot");
+//    qDebug()<<"KeyEvent:"<<e->key();
+    SetHasInput(true);
+    if(keyMap.contains(e->key()))
+    {
+        int key = keyMap.value(e->key());
+        currentKeySeq.append(key);
+        if(currentKeySeq.size() == recalKeySeq.size())
+        {
+            if(currentKeySeq == recalKeySeq)
+            {
+                ICRecalDialog recalDialog;
+                recalDialog.exec();
+                //                ::system("touch /mnt/config_data/recal");
+                //                int ret = QMessageBox::warning(this,
+                //                                     tr("Recal"),
+                //                                     tr("You have press the recal sequence, recal after reboot"),
+                //                                     QMessageBox::Yes | QMessageBox::No);
+                //                if(ret == QMessageBox::Yes) ::system("reboot");
 
-               }
-               currentKeySeq.clear();
-           }
-           qDebug()<<"Key:"<<key;
-           switch(key)
-           {
-           case ICKeyboard::FB_F1:
-           {
-               ui->teachButton->click();
-           }
-               break;
-           case ICKeyboard::FB_F2:
-           {
-               ui->ioMonitorButton->click();
-           }
-               break;
-           case ICKeyboard::FB_F3:
-           {
-               ui->alarmButton->click();
-           }
-               break;
-           case ICKeyboard::FB_F4:
-           {
-               ui->settingsButton->click();
-           }
-               break;
-           case ICKeyboard::FB_F5:
-           {
-               ui->returnButton->click();
-           }
-               break;
-           default:
-           {
-               ICKeyboard *keyboard = ICKeyboard::Instace();
-               keyboard->SetKeyValue(key);
-               if(key == ICKeyboard::VFB_X1Add ||
-                       key == ICKeyboard::VFB_Y1Add ||
-                       key == ICKeyboard::VFB_ZAdd ||
-                       key == ICKeyboard::VFB_X2Add ||
-                       key == ICKeyboard::VFB_Y2Add ||
-                       key == ICKeyboard::VFB_AAdd ||
-                       key == ICKeyboard::VFB_BAdd ||
-                       key == ICKeyboard::VFB_CAdd ||
-                       key == ICKeyboard::VFB_X1Sub ||
-                       key == ICKeyboard::VFB_Y1Sub ||
-                       key == ICKeyboard::VFB_ZSub ||
-                       key == ICKeyboard::VFB_X2Sub ||
-                       key == ICKeyboard::VFB_Y2Sub ||
-                       key == ICKeyboard::VFB_ASub ||
-                       key == ICKeyboard::VFB_BSub ||
-                       key == ICKeyboard::VFB_CSub ||
-                       key == ICKeyboard::VFB_Pose_Horizontal ||
-                       key == ICKeyboard::VFB_Pose_Vertical)
-               {
-                   keyboard->SetPressed(true);
-                   if(instructPage_->isVisible())
-                   {
-                       KeyToInstructEditor(key);
-                   }
-               }
-   //            ICKeyboardHandler::Instance()->Keypressed(key);
-               //        QWidget::keyPressEvent(e);
-           }
-           }
-       }
-       else if(knobMap.contains(e->key()))
-       {
-           ICKeyboard::Instace()->SetSwitchValue(knobMap.value(e->key()));
-           currentKeySeq.clear();
-   //        ICKeyboardHandler::Instance()->Keypressed(key);
-       }
-       else if(pulleyMap.contains(e->key()))
-       {
-           ICKeyboard::Instace()->SetPulleyValue(pulleyMap.value(e->key()));
-       }
+            }
+            currentKeySeq.clear();
+        }
+        qDebug()<<"Key:"<<key;
+        switch(key)
+        {
+        case ICKeyboard::FB_F1:
+        {
+            ui->teachButton->click();
+        }
+            break;
+        case ICKeyboard::FB_F2:
+        {
+            ui->ioMonitorButton->click();
+        }
+            break;
+        case ICKeyboard::FB_F3:
+        {
+            ui->alarmButton->click();
+        }
+            break;
+        case ICKeyboard::FB_F4:
+        {
+            ui->settingsButton->click();
+        }
+            break;
+        case ICKeyboard::FB_F5:
+        {
+            ui->returnButton->click();
+        }
+            break;
+        default:
+        {
+            ICKeyboard *keyboard = ICKeyboard::Instace();
+            keyboard->SetKeyValue(key);
+            if(key == ICKeyboard::VFB_X1Add ||
+                    key == ICKeyboard::VFB_Y1Add ||
+                    key == ICKeyboard::VFB_ZAdd ||
+                    key == ICKeyboard::VFB_X2Add ||
+                    key == ICKeyboard::VFB_Y2Add ||
+                    key == ICKeyboard::VFB_AAdd ||
+                    key == ICKeyboard::VFB_BAdd ||
+                    key == ICKeyboard::VFB_CAdd ||
+                    key == ICKeyboard::VFB_X1Sub ||
+                    key == ICKeyboard::VFB_Y1Sub ||
+                    key == ICKeyboard::VFB_ZSub ||
+                    key == ICKeyboard::VFB_X2Sub ||
+                    key == ICKeyboard::VFB_Y2Sub ||
+                    key == ICKeyboard::VFB_ASub ||
+                    key == ICKeyboard::VFB_BSub ||
+                    key == ICKeyboard::VFB_CSub ||
+                    key == ICKeyboard::VFB_Pose_Horizontal ||
+                    key == ICKeyboard::VFB_Pose_Vertical)
+            {
+                keyboard->SetPressed(true);
+                if(instructPage_->isVisible())
+                {
+                    KeyToInstructEditor(key);
+                }
+            }
+            //            ICKeyboardHandler::Instance()->Keypressed(key);
+            //        QWidget::keyPressEvent(e);
+        }
+        }
+    }
+    else if(knobMap.contains(e->key()))
+    {
+        int k = knobMap.value(e->key());
+        if(ICKeyboard::Instace()->CurrentSwitchStatus() != k)
+        {
+            ICKeyboard::Instace()->SetSwitchValue(k);
+            currentKeySeq.clear();
+        }
+#ifndef Q_WS_WIN32
+        static bool isExeced = false;
+        if(!isExeced)
+        {
+            struct input_event inputEvent;
+            inputEvent.type = EV_SYN; //__set_bit
+            inputEvent.code = SYN_CONFIG;  //__set_bit
+            inputEvent.value = 1;
+            int keyFD_ = open("/dev/input/event1", O_RDWR);
+            write(keyFD_,&inputEvent,sizeof(inputEvent));
+            ::close(keyFD_);
+            isExeced = true;
+        }
+#endif
+        //        ICKeyboardHandler::Instance()->Keypressed(key);
+    }
+    else if(pulleyMap.contains(e->key()))
+    {
+        ICKeyboard::Instace()->SetPulleyValue(pulleyMap.value(e->key()));
+    }
+    QFileInfo keylog("./keylog");
+    if(keylog.exists())
+    {
+        if(keylog.size() >= 1048576)
+        {
+            system(QString("echo %1,%2 > %3").arg(e->key()).arg(QDateTime::currentDateTime().toString()).arg("./keylog").toAscii());
+        }
+        else
+        {
+            system(QString("echo %1,%2 >> %3").arg(e->key()).arg(QDateTime::currentDateTime().toString()).arg("./keylog").toAscii());
+        }
+    }
+    else
+    {
+        system(QString("echo %1,%2 >> %3").arg(e->key()).arg(QDateTime::currentDateTime().toString()).arg("./keylog").toAscii());
+    }
 }
 
 void MainFrame::keyReleaseEvent(QKeyEvent *e)
@@ -543,6 +578,12 @@ void MainFrame::CategoryButtonClicked()
     //    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(clickedButton->text());
 }
 
+static int16_t oldX = -1;
+static uint16_t oldY = 0;
+static uint16_t oldZ = 0;
+static uint16_t oldQ = 0;
+static uint16_t oldP = 0;
+//static int oldS = -1;
 void MainFrame::StatusRefreshed()
 {
 
@@ -556,6 +597,53 @@ void MainFrame::StatusRefreshed()
         ui->cycleTimeAndFinistWidget->SetAlarmInfo("Err" + QString::number(errCode_) + ":" + alarmString->AlarmInfo(errCode_));
         return;
     }
+
+    ICVirtualHost* host = virtualHost;
+    int16_t pos = host->HostStatus(ICVirtualHost::XPos).toInt();
+    if(pos != oldX)
+    {
+        oldX = pos;
+        ui->xCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
+    }
+    int16_t posy = host->HostStatus(ICVirtualHost::YPos).toInt();
+    if(posy != oldY)
+    {
+        oldY = posy;
+        ui->yCurrentPos->setText(QString::number(posy / 10.0, 'f', 1));
+    }
+#ifdef HC_AXIS_COUNT_5
+    int16_t posz = host->HostStatus(ICVirtualHost::ZPos).toInt();
+    if(posz != oldZ)
+    {
+        oldZ = posz;
+        ui->zCurrentPos->setText(QString::number(posz / 10.0, 'f', 1));
+    }
+    pos = host->HostStatus(ICVirtualHost::QPos).toInt();
+    if(pos != oldQ)
+    {
+        oldQ = pos;
+        ui->tCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
+    }
+
+    pos = host->HostStatus(ICVirtualHost::PPos).toInt();
+    if(pos != oldP)
+    {
+        oldP = pos;
+        ui->x2CurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
+    }
+#endif
+//    int speed = host->GlobalSpeed();
+//    if(speed != oldS)
+//    {
+//        oldS = pos;
+//        ui->xSpeedLabel->setText(QString::number((speed >> 8) & 0xFF));
+//        ui->ySpeedLabel->setText(QString::number(speed & 0xFF));
+//#ifdef HC_AXIS_COUNT_5
+//        ui->zSpeedLabel->setText(QString::number((speed >> 16) & 0xFF));
+//        ui->x2SpeedLabel->setText(ui->xSpeedLabel->text());
+//        ui->tSpeedLabel->setText(ui->ySpeedLabel->text());
+//#endif
+//    }
 
     bool isControled = virtualHost->DoseControled();
     ICProgramHeadFrame::Instance()->ChangeControlStatus(isControled);

@@ -581,3 +581,22 @@ void ActionSettingFrame::on_axisBoard_clicked()
 //        }
 //    }
 //}
+
+void ActionSettingFrame::on_serveControl_toggled(bool checked)
+{
+    if(checked)
+    {
+        ui->serveControl->setText(tr("Servo OFF"));
+        ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_SERVO_OFF);
+    }
+    else
+    {
+        ui->serveControl->setText(tr("Servo On"));
+        ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_SERVO_ON);
+    }
+}
+
+void ActionSettingFrame::ResetServo()
+{
+    ui->serveControl->setChecked(false);
+}

@@ -49,7 +49,7 @@
    <item row="2" column="0">
     <widget class="QLabel" name="y1ALabel">
      <property name="text">
-      <string>Y1 Acceleration and Deceleration</string>
+      <string>Y Acceleration and Deceleration</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -59,7 +59,7 @@
    <item row="4" column="5">
     <widget class="QLabel" name="x2MLabel">
      <property name="text">
-      <string>X2 Max Speed</string>
+      <string>R Max Speed</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -185,7 +185,7 @@
    <item row="2" column="5">
     <widget class="QLabel" name="y1MLabel">
      <property name="text">
-      <string>Y1 Max Speed</string>
+      <string>Y Max Speed</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -195,7 +195,7 @@
    <item row="1" column="5">
     <widget class="QLabel" name="x1MLabel">
      <property name="text">
-      <string>X1 Max Speed</string>
+      <string>X Max Speed</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -234,7 +234,7 @@
    <item row="1" column="0">
     <widget class="QLabel" name="x1ALabel">
      <property name="text">
-      <string>X1 Acceleration and Deceleration</string>
+      <string>X Acceleration and Deceleration</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -323,7 +323,7 @@
    <item row="4" column="0">
     <widget class="QLabel" name="x2ALabel">
      <property name="text">
-      <string>X2 Acceleration and Deceleration</string>
+      <string>R Acceleration and Deceleration</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

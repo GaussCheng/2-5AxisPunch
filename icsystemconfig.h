@@ -141,6 +141,8 @@ public:
     ICUserIOInfo EuYinfo(int id) { return euyInfos_.value(id, ICUserIOInfo());}
     QString EuXString(int id) { return euxStrings_.at(id);}
     QString EuYString(int id) { return euyStrings_.at(id);}
+    QList<ICUserIOInfo> AllMInfos() { return mInfos_.values();}
+    ICUserIOInfo MInfo(int id) { return mInfos_.value(id, ICUserIOInfo());}
 
 private:
     explicit ICUserDefineConfig(){}
@@ -159,6 +161,7 @@ private:
     UserActionInfos actionShortcut_;
     QStringList euxStrings_;
     QStringList euyStrings_;
+    UserIOInfos mInfos_;
 };
 
 typedef ICUserDefineConfig::ICUserDefineConfigSPTR ICUserDefineConfigSPTR;

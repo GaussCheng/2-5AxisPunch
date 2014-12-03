@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>600</width>
-    <height>380</height>
+    <height>340</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -212,7 +212,7 @@ QMessageBox QAbstractButton
      <x>5</x>
      <y>40</y>
      <width>591</width>
-     <height>286</height>
+     <height>251</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
@@ -381,7 +381,7 @@ QMessageBox QAbstractButton
    <property name="geometry">
     <rect>
      <x>5</x>
-     <y>330</y>
+     <y>300</y>
      <width>586</width>
      <height>33</height>
     </rect>

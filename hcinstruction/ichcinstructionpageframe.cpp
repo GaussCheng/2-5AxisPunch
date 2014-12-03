@@ -44,6 +44,12 @@
 //    int
 //};
 
+
+int ReserveTextToIndex(const QString& text)
+{
+    return text.right(1).toInt();
+}
+
 static QList<QCheckBox*> fixtureCheckList;
 
 ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
@@ -64,7 +70,7 @@ ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
     ui->setupUi(this);
 
     ui->tabWidget->addTab(MoldInformation::Instance(), tr("Records"));
-    ui->tabWidget->addTab(new ICHCStackedSettingsFrame(), tr("Stack"));
+//    ui->tabWidget->addTab(new ICHCStackedSettingsFrame(), tr("Stack"));
     fixtureCheckList<<ui->check0<<ui->check1<<ui->check2<<ui->check3<<ui->check4
                    <<ui->check5<<ui->check6<<ui->check7<<ui->check8
                   <<ui->check9<<ui->check10<<ui->check11<<ui->check12
@@ -86,6 +92,7 @@ ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
     ui->pneumaticButton->hide();
     InitInterface();
     InitSignal();
+//    ui->tabWidget
     //    ui->moldContentListWidget->setBackgroundRole(QColor("gray"));
 
     //    LoadAllRecordFileInfo();
@@ -119,6 +126,38 @@ void ICHCInstructionPageFrame::showEvent(QShowEvent *e)
     QFrame::showEvent(e);
     UpdateHostParam();
     isShow = true;
+    ReserveProgConfig progConfig;
+    progConfig.all =  ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::SYS_Config_Resv2).toInt();
+    ui->feedButton->setVisible(progConfig.b.r8);
+    ui->reserveBox->blockSignals(true);
+    ui->reserveBox->clear();
+    QStringList items;
+    if(progConfig.b.r1)
+        items.append(tr("Reserve1"));
+    if(progConfig.b.r2)
+        items.append(tr("Reserve2"));
+    if(progConfig.b.r3)
+        items.append(tr("Reserve3"));
+    if(progConfig.b.r4)
+        items.append(tr("Reserve4"));
+    if(progConfig.b.r5)
+        items.append(tr("Reserve5"));
+    if(progConfig.b.r6)
+        items.append(tr("Reserve6"));
+    if(progConfig.b.r7)
+        items.append(tr("Reserve7"));
+
+    ui->reserveBox->addItems(items);
+    ui->reserveBox->blockSignals(false);
+//    ui->rP1->setCurrentIndex(progConfig.b.r1);
+//    ui->rP2->setCurrentIndex(progConfig.b.r2);
+//    ui->rP3->setCurrentIndex(progConfig.b.r3);
+//    ui->rP4->setCurrentIndex(progConfig.b.r4);
+//    ui->rP5->setCurrentIndex(progConfig.b.r5);
+//    ui->rP6->setCurrentIndex(progConfig.b.r6);
+//    ui->rP7->setCurrentIndex(progConfig.b.r7);
+//    ui->rP8->setCurrentIndex(progConfig.b.r8);
+
 }
 
 void ICHCInstructionPageFrame::hideEvent(QHideEvent *e)
@@ -202,6 +241,7 @@ void ICHCInstructionPageFrame::hideEvent(QHideEvent *e)
     {
         ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnManual, 0);
     }
+    actionPage_->ResetServo();
     QFrame::hideEvent(e);
 
     //   ICInstructParam::Instance()->UpdateHostParam();
@@ -1053,5 +1093,5 @@ void ICHCInstructionPageFrame::OnMoldChanged(const QString &name)
 
 void ICHCInstructionPageFrame::on_reserveBox_activated(int index)
 {
-    OnProgramChanged(index + 1, "");
+    OnProgramChanged(ReserveTextToIndex(ui->reserveBox->itemText(index)), "");
 }

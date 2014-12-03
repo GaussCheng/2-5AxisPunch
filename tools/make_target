@@ -1,0 +1,59 @@
+#! /bin/sh
+
+
+if [ $# -ge 1 ]
+	workDir=$1
+then
+	workDir=`pwd`
+fi
+
+reinstallDir=${workDir}/bin/Reinstall/Reinstall
+
+rm -r ${workDir}/bin/Reinstall
+mkdir ${workDir}/bin/Reinstall
+cp -r ${workDir}/tools/Reinstall/ ${workDir}/bin/Reinstall
+cp ${workDir}/bin/Multi-axisManipulatorSystem ${reinstallDir} -f
+cp ${workDir}/Multi-axisManipulatorSystem_ch.qm ${reinstallDir} -f
+cp ${workDir}/Multi-axisManipulatorSystem_en.qm ${reinstallDir} -f
+
+inch=`cat ${workDir}/Multi-axisManipulatorSystem.pro | grep "SK_SIZE =" | awk '{print $3}'`
+swVersionPrefix=`cat ${workDir}/config.h | grep "#define SW_VERSION_PREFIX" | awk '{print $3}' | sed 's/\"//g' | tr -d ['\r']`
+swVersion=`cat ${workDir}/config.h | grep "SW_VERSION " | awk '{print $3}' | sed 's/\"//g' | tr -d ['\r']`
+swVersion=${swVersionPrefix}${inch}_${swVersion}
+updatePrefix=`cat ${workDir}/config.h | grep "UPDATE_PREFIX" | awk '{print $3}' | sed 's/\"//g' | tr -d ['\r']`
+cp ${reinstallDir}/${inch}-inch-qmap/3a8.qmap ${reinstallDir}
+echo "
+#! /bin/sh
+cd Reinstall
+cd ${inch}inch-drivers
+chmod +x ./UpdateSystem.sh
+./UpdateSystem.sh
+cd ..
+./UpdateGUI update_cmd -qws
+
+reboot
+" > ${workDir}/bin/Reinstall/SelectSystemBootWay
+
+chmod +x ${workDir}/bin/Reinstall/SelectSystemBootWay
+
+echo "Create reinstall done!"
+
+####### 创建更新包
+
+echo ${updatePrefix}
+echo ${swVersionPrefix}
+echo ${swVersion}
+updateDir=${workDir}/bin/Update/${updatePrefix}Panel${swVersion}
+rm -r ${workDir}/bin/Update
+mkdir ${workDir}/bin/Update
+mkdir ${workDir}/bin/Update/${updatePrefix}Panel${swVersion}
+cp -r ${workDir}/tools/Update/* ${workDir}/bin/Update/${updatePrefix}Panel${swVersion}
+cp ${workDir}/bin/Multi-axisManipulatorSystem ${updateDir} -f
+cp ${workDir}/Multi-axisManipulatorSystem_ch.qm ${updateDir} -f
+cp ${workDir}/Multi-axisManipulatorSystem_en.qm ${updateDir} -f
+
+echo ${updateDir}.tar ${updateDir}
+cd ${workDir}/bin/Update/ && tar -cf ${updatePrefix}Panel${swVersion}.tar ${updatePrefix}Panel${swVersion}
+HCbcrypt.sh ${updateDir}.tar
+
+echo "Create update done!"

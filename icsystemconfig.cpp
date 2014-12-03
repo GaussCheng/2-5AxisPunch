@@ -67,10 +67,12 @@ void ICUserDefineConfig::Init()
     const QString userPointPath = sysconfigPath + "user_define_points";
     const QString userActionPath = sysconfigPath + "user_define_io_actions";
     const QString userActionShortcutPath = sysconfigPath + "user_define_io_actions_shortcut";
+    const QString userDefineMPath = sysconfigPath + "user_define_m";
     ReadIOInfos_(userDefineXPath, this->xInfos_);
     ReadIOInfos_(userDefineYPath, this->yInfos_);
     ReadIOInfos_(userMachineDefineXPath, this->euxInfos_);
     ReadIOInfos_(userMachineDefineYPath, this->euyInfos_);
+    ReadIOInfos_(userDefineMPath, this->mInfos_);
     ReadPointInfos_(userPointPath);
     ReadActionInfos_(userActionPath, actionInfos_);
     ReadActionInfos_(userActionShortcutPath, actionShortcut_);

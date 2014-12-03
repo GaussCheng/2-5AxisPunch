@@ -15,7 +15,7 @@ ICIOPage::ICIOPage(QWidget *parent) :
 {
     frameLayout_ = new QVBoxLayout();
     frameLayout_->setContentsMargins(2, 10, 2, 2);
-    frameLayout_->setSpacing(15);
+    frameLayout_->setSpacing(10);
     this->setLayout(frameLayout_);
     for(int i = 0; i != 6; ++i)
     {

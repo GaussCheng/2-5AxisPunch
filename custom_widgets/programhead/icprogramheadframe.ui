@@ -956,7 +956,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Status</string>
+    <string/>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -975,7 +975,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../../resource.qrc">:/resource/ledgray(16).png</pixmap>
+    <pixmap resource="../iciomonitor/iciomonitor.qrc">:/resource/ledgray(16).png</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
@@ -1017,7 +1017,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../../resource.qrc">:/resource/ledgray(16).png</pixmap>
+    <pixmap resource="../iciomonitor/iciomonitor.qrc">:/resource/ledgray(16).png</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="currentTimeLabel">
@@ -1464,7 +1464,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Status</string>
+    <string/>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -1479,7 +1479,7 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../../resource.qrc"/>
+  <include location="../iciomonitor/iciomonitor.qrc"/>
  </resources>
  <connections/>
 </ui>

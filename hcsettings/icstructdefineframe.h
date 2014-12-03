@@ -34,7 +34,7 @@ private slots:
 
     void retranslateUi_();
 
-    void on_adjUse_toggled(bool checked);
+//    void on_adjUse_toggled(bool checked);
 
 private:
     Ui::ICStructDefineFrame *ui;
