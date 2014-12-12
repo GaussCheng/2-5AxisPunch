@@ -25,8 +25,8 @@ QToolButton{
      border-width: 2px;
      border-radius: 6px;
      border-color: gray;
-	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(199, 199, 199, 255), stop:1 rgba(255, 255, 255, 255));
-    /* background-color: red;*/
+	/*background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(199, 199, 199, 255), stop:1 rgba(255, 255, 255, 255));*/
+     background-color: rgb(230,230,230);
      /*font: bold 14px;*/
      /*min-width: 64px;*/
      /*min-height: 48px;*/
@@ -39,19 +39,38 @@ background-color:lightgray;
 QToolButton:pressed{
      border-style: inset;
      /*background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(38, 146, 218, 255), stop:1 rgba(255, 255, 255, 255));*/
-     background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(39, 26, 247, 255), stop:1 rgba(114, 171, 213, 255));
+     background-color: rgba(62, 113, 255, 255);
      color:white;
     /* background-color: rgb(224, 0, 0);*/
 
 }
+
+/*QPushButton{
+     border-style: outset;
+     border-width: 2px;
+     border-radius: 6px;
+     border-color: gray;
+	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(199, 199, 199, 255), stop:1 rgba(255, 255, 255, 255));
+     padding-right: 6px;
+     padding-left:6px;
+}
+QPushButton::disabled{
+background-color:lightgray;
+}
+
+QPushButton:pressed, QPushButton:checked{
+     border-style: inset;
+     background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(39, 26, 247, 255), stop:1 rgba(114, 171, 213, 255));
+     color:white;
+
+}*/
 
 QPushButton{
      border-style: outset;
      border-width: 2px;
      border-radius: 6px;
      border-color: gray;
-	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(199, 199, 199, 255), stop:1 rgba(255, 255, 255, 255));
-    /* background-color: red;*/
+     background-color: rgb(240,240,240);
      /*font: bold 14px;*/
      /*min-width: 10em;*/
      /*min-height: 48px;*/
@@ -66,7 +85,7 @@ background-color:lightgray;
 QPushButton:pressed, QPushButton:checked{
      border-style: inset;
      /*background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(38, 146, 218, 255), stop:1 rgba(255, 255, 255, 255));*/
-     background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(39, 26, 247, 255), stop:1 rgba(114, 171, 213, 255));
+     background-color: rgba(62, 113, 255, 255);
      color:white;
     /* background-color: rgb(224, 0, 0);*/
 
@@ -111,7 +130,7 @@ QComboBox::down-arrow:on { /* shift the arrow when popup is open */
 QLineEdit {
      border: 2px solid gray;
      border-radius: 6px;
-     padding: 0 4px;
+     padding: 0 8px;
      /*background: rgb(79, 223, 255);*/
      /*selection-background-color: darkgray;*/
 }

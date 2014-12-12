@@ -24,6 +24,10 @@ ICProgramHeadFrame::ICProgramHeadFrame(QWidget *parent) :
     InitSignal();
     on = QPixmap(":/resource/ledgreen(16).png");
     off = QPixmap(":/resource/ledgray(16).png");
+    connect(ui->moldNameLabel,
+            SIGNAL(clicked()),
+            SIGNAL(MoldButtonClicked()));
+    ui->moldNameLabel->setEnabled(false);
 //    ChangeCurrentStatus(0);
 }
 
@@ -68,7 +72,7 @@ void ICProgramHeadFrame::SetCurrentMoldName(const QString & moldName)
 void ICProgramHeadFrame::UpdateDateTime()
 {
     QDateTime dateTime = QDateTime::currentDateTime();
-    ui->currentTimeLabel->setText(dateTime.toString("hh:mm"));
+    ui->currentTimeLabel->setText(dateTime.toString("hh:mm\nyyyy/MM/dd"));
 //    ui->currentDateLabel->setText(dateTime.toString("yyyy/MM/dd"));
 
 }
@@ -81,7 +85,7 @@ void ICProgramHeadFrame::InitSignal()
             SLOT(UpdateDateTime()));
     connect(ui->passwdLevelLabel,
             SIGNAL(Levelchenged(int)),
-            SIGNAL(LevelChanged(int)));
+            SLOT(OnLevelChanged(int)));
 }
 
 int ICProgramHeadFrame::CurrentLevel() const
@@ -92,6 +96,7 @@ int ICProgramHeadFrame::CurrentLevel() const
 void ICProgramHeadFrame::SetCurrentLevel(int level)
 {
     ui->passwdLevelLabel->PasswdLevelChenged(level);
+//    if(level)
 }
 
 
@@ -146,3 +151,8 @@ void ICProgramHeadFrame::ChangePunchOrigin(bool isOrigin)
     }
 }
 
+void ICProgramHeadFrame::OnLevelChanged(int level)
+{
+    ui->moldNameLabel->setEnabled(level >= 1);
+    emit LevelChanged(level);
+}

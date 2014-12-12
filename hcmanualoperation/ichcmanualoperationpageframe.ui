@@ -1442,7 +1442,7 @@
     </layout>
    </widget>
   </widget>
-  <widget class="QPushButton" name="x2Speed">
+  <widget class="QPushButton" name="rSpeed">
    <property name="geometry">
     <rect>
      <x>510</x>
@@ -3825,8 +3825,8 @@
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="actionGroup"/>
   <buttongroup name="shortcutGroup"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="actionGroup"/>
  </buttongroups>
 </ui>

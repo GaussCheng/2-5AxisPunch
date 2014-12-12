@@ -40,9 +40,9 @@ private slots:
     void MoldNumChanged(int mold);
 //    void on_singleStepButton_clicked();
 
-    void on_followToolButton_clicked();
+//    void on_followToolButton_clicked();
 
-    void on_speedEnableButton_clicked();
+//    void on_speedEnableButton_clicked();
 
     void OnTimeOut();
 
@@ -59,6 +59,8 @@ private slots:
 
 #ifdef HC_AXIS_COUNT_5
     void on_zSpeed_toggled(bool checked);
+    void on_rSpeed_toggled(bool checked);
+    void on_tSpeed_toggled(bool checked);
 #endif
 
 private:

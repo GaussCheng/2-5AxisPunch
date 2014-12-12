@@ -33,6 +33,7 @@ bool ICBackupUtility::BackupDir(const QStringList &nameFilter) const
     }
     end.write("CopyEnd");
     end.close();
+    ::system("sync");
     return ret;
 }
 

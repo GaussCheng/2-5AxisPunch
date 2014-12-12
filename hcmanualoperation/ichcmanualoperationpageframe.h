@@ -52,6 +52,8 @@ private slots:
 
 #ifdef HC_AXIS_COUNT_5
     void on_zRun_clicked();
+    void on_rRun_clicked();
+    void on_tRun_clicked();
 #endif
 #ifdef HC_SK_8_SC
     void on_axisBoard_clicked();
@@ -68,7 +70,7 @@ private slots:
 
     void on_return0Button_clicked();
 
-    void on_serveOn_toggled(bool checked);
+    void on_serveControl_toggled(bool checked);
 
     void on_xSpeed_toggled(bool checked);
 
@@ -76,7 +78,11 @@ private slots:
 
 #ifdef HC_AXIS_COUNT_5
     void on_zSpeed_toggled(bool checked);
+    void on_rSpeed_toggled(bool checked);
+    void on_tSpeed_toggled(bool checked);
 #endif
+    void on_showMore_clicked();
+    void on_returnManual_clicked();
 
 
 private:

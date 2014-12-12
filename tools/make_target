@@ -22,9 +22,20 @@ swVersion=`cat ${workDir}/config.h | grep "SW_VERSION " | awk '{print $3}' | sed
 swVersion=${swVersionPrefix}${inch}_${swVersion}
 updatePrefix=`cat ${workDir}/config.h | grep "UPDATE_PREFIX" | awk '{print $3}' | sed 's/\"//g' | tr -d ['\r']`
 cp ${reinstallDir}/${inch}-inch-qmap/3a8.qmap ${reinstallDir}
+cp -r ${reinstallDir}/${inch}resource ${reinstallDir}/resource
+rm -r ${reinstallDir}/5resource ${reinstallDir}/8resource
 echo "
 #! /bin/sh
 cd Reinstall
+chmod +x ./SelectSystemBootWay
+./SelectSystemBootWay -qws
+" > ${workDir}/bin/Reinstall/SelectSystemBootWay
+
+chmod +x ${workDir}/bin/Reinstall/SelectSystemBootWay
+
+echo "
+#! /bin/sh
+
 cd ${inch}inch-drivers
 chmod +x ./UpdateSystem.sh
 ./UpdateSystem.sh
@@ -32,9 +43,17 @@ cd ..
 ./UpdateGUI update_cmd -qws
 
 reboot
-" > ${workDir}/bin/Reinstall/SelectSystemBootWay
+" > ${workDir}/bin/Reinstall/Reinstall/RobotFactorySettings.sh
 
-chmod +x ${workDir}/bin/Reinstall/SelectSystemBootWay
+chmod +x ${workDir}/bin/Reinstall/Reinstall/RobotFactorySettings.sh
+
+echo "
+#! /bin/sh
+
+./3a8HardwareTest-${inch}-inch -qws 
+" > ${workDir}/bin/Reinstall/Reinstall/test_robot.sh
+
+chmod +x ${workDir}/bin/Reinstall/Reinstall/test_robot.sh
 
 echo "Create reinstall done!"
 

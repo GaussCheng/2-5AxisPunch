@@ -554,11 +554,7 @@ height:30px;</string>
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QLineEdit" name="testLineEdit">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-           </widget>
+           <widget class="QLineEdit" name="testLineEdit"/>
           </item>
           <item row="2" column="0">
            <widget class="QLabel" name="label_6">
@@ -568,11 +564,7 @@ height:30px;</string>
            </widget>
           </item>
           <item row="2" column="1">
-           <widget class="QLineEdit" name="feedbackEdit">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-           </widget>
+           <widget class="QLineEdit" name="feedbackEdit"/>
           </item>
           <item row="3" column="0">
            <widget class="QLabel" name="label_7">
@@ -582,11 +574,7 @@ height:30px;</string>
            </widget>
           </item>
           <item row="3" column="1">
-           <widget class="QLineEdit" name="zSignalEdit">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-           </widget>
+           <widget class="QLineEdit" name="zSignalEdit"/>
           </item>
           <item row="4" column="0" colspan="2">
            <layout class="QHBoxLayout" name="horizontalLayout_2">

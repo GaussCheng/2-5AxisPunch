@@ -169,7 +169,9 @@ ICSettingsFrame::ICSettingsFrame(QWidget *parent) :
     //    ui->tabWidget->setStyle(new CustomTabStyle());
 
     //    ui->tabWidget->setTabShape(QTabWidget::Triangular);
+    ui->fcode->blockSignals(true);
     ui->fcode->setText(ICParametersSave::Instance()->FactoryCode());
+    ui->fcode->blockSignals(false);
 }
 
 ICSettingsFrame::~ICSettingsFrame()

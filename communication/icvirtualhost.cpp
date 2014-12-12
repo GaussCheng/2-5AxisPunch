@@ -351,8 +351,12 @@ void ICVirtualHost::RefreshStatus()
 //                qCritical("Connect to host fail!!");
 #ifdef Q_WS_X11
                 statusMap_.insert(ErrCode, 0);
-                statusMap_.insert(ZPos, -120);
-                statusMap_.insert(XPos, rand());
+                statusMap_.insert(XPos, 65530);
+                statusMap_.insert(YPos, 65530);
+                statusMap_.insert(ZPos, 65530);
+                statusMap_.insert(PPos, 65530);
+                statusMap_.insert(QPos, 65530);
+//                statusMap_.insert(APos, rand());
                 clipLBits_ = -1;
                 clipHBits_ = -1;
 //                statusMap_.insert(DbgP0, (2 << 8));
@@ -447,7 +451,7 @@ void ICVirtualHost::SaveSystemConfig()
 //        return;
 //    }
     int sum = 0;
-    for(ICSystemParameter i = SYS_Language; i != SYS_CheckSum; i = static_cast<ICSystemParameter>(i + 1))
+    for(ICSystemParameter i = SYS_Function; i != SYS_CheckSum; i = static_cast<ICSystemParameter>(i + 1))
     {
         sum += systemParamMap_.value(i).toUInt();
     }
@@ -801,8 +805,8 @@ void ICVirtualHost::InitMold_()
     QString path = "./records/";
     if(config->MoldName("").isEmpty())
     {
-        path += "TEST.act";
-        config->SetMoldName("TEST.act");
+        path += "Default.act";
+        config->SetMoldName("Default.act");
     }
     else
     {

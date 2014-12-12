@@ -55,6 +55,7 @@ public Q_SLOTS:
     void UpdateAxisDefine_();
     void KeyToInstructEditor(int key);
     void ClearPosColor();
+    void OnMoldButtonClicked();
 
 //    void SetBackLightOff();
 //    void SetBackLightOn();

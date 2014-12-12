@@ -245,7 +245,7 @@ public:
         ACT_CORE1_ON,
         ACT_CORE2_ON,
         ACT_AUX1,
-        ACT_AUX2,
+        ACT_AUR,
         ACT_AUX3,
         ACT_CLIP_1Off,
         ACT_CLIP_2Off,
@@ -618,9 +618,10 @@ public:
     int HintNum() const { return (statusMap_.value(ErrCode).toUInt() >> 12);}
     bool IsOrigined() const { return (( (statusMap_.value(Status).toUInt() >> 12) & 3) == 1);}
 
-    int GlobalSpeed() const {return systemParamMap_.value(SYS_Global_Speed).toInt() |
-             (systemParamMap_.value(SYS_RsvReadMold).toInt() << 16);}
-    void SetGlobalSpeed(int speed);
+    int64_t GlobalSpeed() const {return systemParamMap_.value(SYS_Global_Speed).toInt() |
+             (systemParamMap_.value(SYS_RsvReadMold).toInt() << 16) |
+                ((int64_t)(systemParamMap_.value(SYS_Language).toInt()) << 32);}
+    void SetGlobalSpeed(int64_t speed);
 
     void SaveSystemConfig();
     void SaveAxisParam(int axis);
@@ -762,14 +763,18 @@ inline void ICVirtualHost::ReConfigure()
 //    WriteSystemTohost_();
 }
 
-inline void ICVirtualHost::SetGlobalSpeed(int speed)
+inline void ICVirtualHost::SetGlobalSpeed(int64_t speed)
 {
     if(ICCommandProcessor::Instance()->ModifySysParam(SYS_Global_Speed, speed & 0x0000FFFF))
     {
         systemParamMap_.insert(SYS_Global_Speed, speed & 0x0000FFFF);
-        if(ICCommandProcessor::Instance()->ModifyMoldParam(SYS_RsvReadMold, speed >> 16))
+        if(ICCommandProcessor::Instance()->ModifyMoldParam(SYS_RsvReadMold, (speed >> 16) & 0xFFFF ))
         {
             systemParamMap_.insert(SYS_RsvReadMold,(speed >> 16) & 0x0000FFFF );
+            if(ICCommandProcessor::Instance()->ModifyMoldParam(SYS_Language, (speed >> 32) & 0xFFFF))
+            {
+                systemParamMap_.insert(SYS_Language,(speed >> 32) & 0xFFFF);
+            }
         }
         SaveSystemConfig();
     }

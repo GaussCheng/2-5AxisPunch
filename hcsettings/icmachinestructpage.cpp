@@ -268,7 +268,7 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
     maximumValidator_->setBottom(0);
 //    ui->maximumDisplacementLineEdit->setValidator(maximumValidator_);
     ui->mechanicalLengthLineEdit->setValidator(intValidator);
-    intValidator->setTop(65530);
+    intValidator->setTop(32767);
     maxMoveValidator_->setBottom(0);
     if(currentAxis_ == ICVirtualHost::ICAxis_AxisX1)
     {
@@ -281,8 +281,8 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         maxText = tr("Max pos inside mold");
         ui->distanceRotationEdit->SetDecimalPlaces(2);      
         ui->label_2->setText(tr("Maximum displacement"));
-//        intValidator->setTop(32760);
-//        maximumValidator_->setBottom(0);
+        intValidator->setTop(32760);
+        maxMoveValidator_->setBottom(-32760);
 
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisY1)

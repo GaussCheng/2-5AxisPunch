@@ -37,6 +37,8 @@
 
 #include <QDebug>
 #include <QMessageBox>
+#include <QCheckBox>
+//#include <QMenu>
 
 //struct MoldItem
 //{
@@ -44,9 +46,11 @@
 //    int
 //};
 
-
 int ReserveTextToIndex(const QString& text)
 {
+    if(!text.right(1).at(0).isDigit())
+        return 8;
+
     return text.right(1).toInt();
 }
 
@@ -69,7 +73,7 @@ ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->tabWidget->addTab(MoldInformation::Instance(), tr("Records"));
+//    ui->tabWidget->addTab(MoldInformation::Instance(), tr("Records"));
 //    ui->tabWidget->addTab(new ICHCStackedSettingsFrame(), tr("Stack"));
     fixtureCheckList<<ui->check0<<ui->check1<<ui->check2<<ui->check3<<ui->check4
                    <<ui->check5<<ui->check6<<ui->check7<<ui->check8
@@ -110,12 +114,22 @@ ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
     connect(MoldInformation::Instance(),
             SIGNAL(MoldChanged(QString)),
             SLOT(OnMoldChanged(QString)));
-    //    ui->conditionsToolButton->hide();
+    ui->stackButton->hide();
+    nullButton = new QPushButton();
+    nullButton->setCheckable(true);
+    ui->buttonGroup->addButton(nullButton);
+
+    oriStyle = ui->reserveBox->styleSheet();
+    selStyle = "border: 2px solid gray;"
+            "border-radius: 6px;"
+            "padding: 1px 18px 1px 3px;"
+           "background-color:  rgba(62, 113, 255, 255);";
 }
 
 ICHCInstructionPageFrame::~ICHCInstructionPageFrame()
 {
     delete modifyDialog_;
+    delete nullButton;
     delete ui;
 }
 
@@ -128,7 +142,7 @@ void ICHCInstructionPageFrame::showEvent(QShowEvent *e)
     isShow = true;
     ReserveProgConfig progConfig;
     progConfig.all =  ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::SYS_Config_Resv2).toInt();
-    ui->feedButton->setVisible(progConfig.b.r8);
+//    ui->feedButton->setVisible(progConfig.b.r8);
     ui->reserveBox->blockSignals(true);
     ui->reserveBox->clear();
     QStringList items;
@@ -146,6 +160,21 @@ void ICHCInstructionPageFrame::showEvent(QShowEvent *e)
         items.append(tr("Reserve6"));
     if(progConfig.b.r7)
         items.append(tr("Reserve7"));
+//    if(progConfig.b.r8)
+//        items.append(tr("Feed"));
+    if(!progConfig.b.r8 && items.isEmpty())
+    {
+        nullButton->click();
+        ui->mainButton->setEnabled(false);
+    }
+    else
+    {
+        ui->mainButton->setEnabled(true);
+    }
+
+    ui->reserveBox->setVisible(!items.isEmpty());
+    ui->fixtureCheckBtn->setVisible(progConfig.b.r8);
+    ui->feedButton->setVisible(progConfig.b.r8);
 
     ui->reserveBox->addItems(items);
     ui->reserveBox->blockSignals(false);
@@ -416,7 +445,7 @@ void ICHCInstructionPageFrame::InitSignal()
 
 void ICHCInstructionPageFrame::InitParameter()
 {
-    QString recordName = ICParametersSave::Instance()->MoldName("TEST.act");
+    QString recordName = ICParametersSave::Instance()->MoldName("Default.act");
 
     //    ui->programSelectedComboBox->setCurrentIndex(ui->programSelectedComboBox->findText(recordName));
 
@@ -544,13 +573,27 @@ void ICHCInstructionPageFrame::on_insertToolButton_clicked()
             {
                 ICTopMoldUIItem topItem;
                 ICGroupMoldUIItem groupItem;
-                for(int i = 0; i != items.size(); ++i)
+                if(items.at(0).Action() == ICMold::GARC)
                 {
-                    topItem.SetBaseItem(items.at(i));
-                    groupItem.AddToMoldUIItem(topItem);
+                    for(int i = 0; i != items.size(); ++i)
+                    {
+                        topItem.SetBaseItem(items.at(i));
+                        groupItem.AddToMoldUIItem(topItem);
+                    }
+                    groupItem.SetStepNum(gIndex);
+                    insertedGroupItems.append(groupItem);
                 }
-                groupItem.SetStepNum(gIndex);
-                insertedGroupItems.append(groupItem);
+                else
+                {
+                    for(int i = 0; i != items.size(); ++i)
+                    {
+                        topItem.SetBaseItem(items.at(i));
+                        ICGroupMoldUIItem groupItem;
+                        groupItem.AddToMoldUIItem(topItem);
+                        groupItem.SetStepNum(gIndex + i);
+                        insertedGroupItems.append(groupItem);
+                    }
+                }
             }
             else
             {
@@ -872,6 +915,13 @@ void ICHCInstructionPageFrame::on_upButton_clicked()
             return;
         }
         ICGroupMoldUIItem *item = &programList_[gIndex];
+        for(int i = 0; i != item->ItemCount(); ++i)
+        {
+            if(item->MoldItemAt(i)->Action() <= 8)
+            {
+                return;
+            }
+        }
         if(item->TopItemCount() == 1) //group up
         {
             item->SetStepNum(gIndex - 1);
@@ -1071,11 +1121,13 @@ void ICHCInstructionPageFrame::on_tabWidget_currentChanged(int index)
 void ICHCInstructionPageFrame::on_mainButton_clicked()
 {
     OnProgramChanged(0, "");
+    ui->reserveBox->setStyleSheet(oriStyle);
 }
 
 void ICHCInstructionPageFrame::on_feedButton_clicked()
 {
     OnProgramChanged(8, "");
+    ui->reserveBox->setStyleSheet(oriStyle);
 }
 
 void ICHCInstructionPageFrame::OnReadyLoadMold(const QString &name)
@@ -1094,4 +1146,15 @@ void ICHCInstructionPageFrame::OnMoldChanged(const QString &name)
 void ICHCInstructionPageFrame::on_reserveBox_activated(int index)
 {
     OnProgramChanged(ReserveTextToIndex(ui->reserveBox->itemText(index)), "");
+    nullButton->click();
+    ui->reserveBox->setStyleSheet(selStyle);
+}
+
+void ICHCInstructionPageFrame::on_fixtureCheckBtn_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+void ICHCInstructionPageFrame::on_returnButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
 }

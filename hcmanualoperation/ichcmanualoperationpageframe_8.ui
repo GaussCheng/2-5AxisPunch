@@ -14,12 +14,12 @@
    <string>Frame</string>
   </property>
   <property name="frameShape">
-   <enum>QFrame::StyledPanel</enum>
+   <enum>QFrame::NoFrame</enum>
   </property>
   <property name="frameShadow">
-   <enum>QFrame::Raised</enum>
+   <enum>QFrame::Plain</enum>
   </property>
-  <widget class="ICTabWidget" name="tabWidget">
+  <widget class="QStackedWidget" name="tabWidget">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -28,310 +28,443 @@
      <height>391</height>
     </rect>
    </property>
-   <property name="tabPosition">
-    <enum>QTabWidget::West</enum>
-   </property>
    <property name="currentIndex">
     <number>0</number>
    </property>
-   <widget class="QWidget" name="tab">
-    <attribute name="title">
-     <string>Position</string>
-    </attribute>
+   <widget class="QWidget" name="tabWidgetPage1">
     <widget class="QGroupBox" name="groupBox_3">
      <property name="geometry">
       <rect>
        <x>12</x>
-       <y>165</y>
-       <width>351</width>
-       <height>211</height>
+       <y>0</y>
+       <width>331</width>
+       <height>261</height>
       </rect>
      </property>
      <property name="title">
       <string>Binary</string>
      </property>
-     <layout class="QGridLayout" name="gridLayout_4">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
       <property name="topMargin">
-       <number>4</number>
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
       </property>
       <property name="bottomMargin">
-       <number>4</number>
+       <number>0</number>
       </property>
-      <property name="spacing">
-       <number>6</number>
-      </property>
-      <item row="0" column="0">
-       <widget class="QPushButton" name="b1">
+      <item>
+       <widget class="QWidget" name="bGroup" native="true">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>48</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>B1</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">shortcutGroup</string>
-        </attribute>
+        <layout class="QGridLayout" name="gridLayout_4">
+         <item row="0" column="0">
+          <widget class="QPushButton" name="b1">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>B1</string>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">shortcutGroup</string>
+           </attribute>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QPushButton" name="b2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>B1</string>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">shortcutGroup</string>
+           </attribute>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QPushButton" name="b3">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>B1</string>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">shortcutGroup</string>
+           </attribute>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QPushButton" name="b4">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>B1</string>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">shortcutGroup</string>
+           </attribute>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QPushButton" name="b5">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>B1</string>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">shortcutGroup</string>
+           </attribute>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QPushButton" name="b6">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>B1</string>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">shortcutGroup</string>
+           </attribute>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QPushButton" name="b7">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>B1</string>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">shortcutGroup</string>
+           </attribute>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QPushButton" name="b8">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>B1</string>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">shortcutGroup</string>
+           </attribute>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QPushButton" name="b9">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>B1</string>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">shortcutGroup</string>
+           </attribute>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QPushButton" name="b10">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>B1</string>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">shortcutGroup</string>
+           </attribute>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QPushButton" name="b11">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>B1</string>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">shortcutGroup</string>
+           </attribute>
+          </widget>
+         </item>
+         <item row="3" column="2">
+          <widget class="QPushButton" name="b12">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>B1</string>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">shortcutGroup</string>
+           </attribute>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </item>
-      <item row="0" column="1">
-       <widget class="QPushButton" name="b2">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>48</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>B1</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">shortcutGroup</string>
-        </attribute>
-       </widget>
-      </item>
-      <item row="0" column="2">
-       <widget class="QPushButton" name="b3">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>48</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>B1</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">shortcutGroup</string>
-        </attribute>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QPushButton" name="b5">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>48</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>B1</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">shortcutGroup</string>
-        </attribute>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QPushButton" name="b4">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>48</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>B1</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">shortcutGroup</string>
-        </attribute>
-       </widget>
-      </item>
-      <item row="1" column="2">
-       <widget class="QPushButton" name="b6">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>48</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>B1</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">shortcutGroup</string>
-        </attribute>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QPushButton" name="b7">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>48</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>B1</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">shortcutGroup</string>
-        </attribute>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QPushButton" name="b8">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>48</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>B1</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">shortcutGroup</string>
-        </attribute>
-       </widget>
-      </item>
-      <item row="2" column="2">
-       <widget class="QPushButton" name="b9">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>48</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>B1</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">shortcutGroup</string>
-        </attribute>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QPushButton" name="b10">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>48</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>B1</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">shortcutGroup</string>
-        </attribute>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QPushButton" name="b11">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>48</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>B1</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">shortcutGroup</string>
-        </attribute>
-       </widget>
-      </item>
-      <item row="3" column="2">
-       <widget class="QPushButton" name="b12">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>48</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>B1</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">shortcutGroup</string>
-        </attribute>
-       </widget>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="showMore">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>50</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>32</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">#showMore{
+background-color: rgb(240,240,240);
+border-style: none;
+}
+#showMore:pressed{
+     background-color: rgba(62, 113, 255, 255);
+     color:white;
+}</string>
+          </property>
+          <property name="text">
+           <string>More</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </widget>
     <widget class="QLabel" name="label_3">
      <property name="geometry">
       <rect>
-       <x>489</x>
-       <y>20</y>
-       <width>61</width>
+       <x>440</x>
+       <y>355</y>
+       <width>91</width>
        <height>21</height>
       </rect>
      </property>
@@ -342,8 +475,8 @@
     <widget class="ICLineEditWithVirtualNumericKeypad" name="productEdit">
      <property name="geometry">
       <rect>
-       <x>553</x>
-       <y>15</y>
+       <x>540</x>
+       <y>350</y>
        <width>120</width>
        <height>32</height>
       </rect>
@@ -361,20 +494,93 @@
     <widget class="QGroupBox" name="groupBox">
      <property name="geometry">
       <rect>
-       <x>410</x>
-       <y>52</y>
-       <width>331</width>
-       <height>211</height>
+       <x>350</x>
+       <y>110</y>
+       <width>421</width>
+       <height>231</height>
       </rect>
      </property>
      <property name="title">
       <string>Position</string>
      </property>
      <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="1">
-       <widget class="QLabel" name="label">
+      <item row="2" column="3">
+       <widget class="QLabel" name="label_15">
         <property name="text">
-         <string>X:</string>
+         <string>deg</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="yRun">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>32</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Y Run</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>mm</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Y:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="ICLineEditWithVirtualNumericKeypad" name="rPos">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>32</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit::disabled{
+background:white;
+color: rgb(97, 97, 97);
+}
+</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="ICLineEditWithVirtualNumericKeypad" name="tPos">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>32</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit::disabled{
+background:white;
+color: rgb(97, 97, 97);
+}
+</string>
         </property>
        </widget>
       </item>
@@ -389,46 +595,31 @@
           <height>32</height>
          </size>
         </property>
-       </widget>
-      </item>
-      <item row="0" column="3">
-       <widget class="QLabel" name="label_4">
-        <property name="text">
-         <string>mm</string>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit::disabled{
+background:white;
+color: rgb(97, 97, 97);
+}
+</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>Y:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="2">
-       <widget class="ICLineEditWithVirtualNumericKeypad" name="yPos">
-        <property name="enabled">
-         <bool>false</bool>
+      <item row="0" column="0">
+       <widget class="QPushButton" name="xRun">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
         </property>
         <property name="minimumSize">
          <size>
-          <width>0</width>
+          <width>100</width>
           <height>32</height>
          </size>
         </property>
-       </widget>
-      </item>
-      <item row="1" column="3">
-       <widget class="QLabel" name="label_5">
         <property name="text">
-         <string>mm</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QLabel" name="label_6">
-        <property name="text">
-         <string>Z:</string>
+         <string>X Run</string>
         </property>
        </widget>
       </item>
@@ -443,17 +634,44 @@
           <height>32</height>
          </size>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit::disabled{
+background:white;
+color: rgb(97, 97, 97);
+}
+</string>
+        </property>
        </widget>
       </item>
-      <item row="2" column="3">
-       <widget class="QLabel" name="label_15">
+      <item row="1" column="2">
+       <widget class="ICLineEditWithVirtualNumericKeypad" name="yPos">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>32</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit::disabled{
+background:white;
+color: rgb(97, 97, 97);
+}
+</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QLabel" name="label_4">
         <property name="text">
          <string>mm</string>
         </property>
        </widget>
       </item>
-      <item row="0" column="0">
-       <widget class="QPushButton" name="xRun">
+      <item row="3" column="0">
+       <widget class="QPushButton" name="rRun">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
           <horstretch>0</horstretch>
@@ -462,31 +680,40 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>0</width>
-          <height>48</height>
+          <width>100</width>
+          <height>32</height>
          </size>
         </property>
         <property name="text">
-         <string>X Run</string>
+         <string>R Run</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
-       <widget class="QPushButton" name="yRun">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>48</height>
-         </size>
-        </property>
+      <item row="3" column="1">
+       <widget class="QLabel" name="label_7">
         <property name="text">
-         <string>Y Run</string>
+         <string>R:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="3">
+       <widget class="QLabel" name="label_10">
+        <property name="text">
+         <string>deg</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="3">
+       <widget class="QLabel" name="label_9">
+        <property name="text">
+         <string>deg</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLabel" name="label_8">
+        <property name="text">
+         <string>T:</string>
         </property>
        </widget>
       </item>
@@ -500,12 +727,86 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>0</width>
-          <height>48</height>
+          <width>100</width>
+          <height>32</height>
          </size>
         </property>
         <property name="text">
-         <string>Z Run</string>
+         <string>S Run</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QPushButton" name="tRun">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>32</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>T Run</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>X:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>S:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4">
+       <widget class="QPushButton" name="serveControl">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>32</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Serve On</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="4">
+       <widget class="QPushButton" name="setButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>32</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Modify</string>
         </property>
        </widget>
       </item>
@@ -514,9 +815,9 @@
     <widget class="QPushButton" name="singleButton">
      <property name="geometry">
       <rect>
-       <x>490</x>
-       <y>325</y>
-       <width>100</width>
+       <x>130</x>
+       <y>270</y>
+       <width>171</width>
        <height>48</height>
       </rect>
      </property>
@@ -539,8 +840,8 @@
     <widget class="QPushButton" name="runButton">
      <property name="geometry">
       <rect>
-       <x>610</x>
-       <y>325</y>
+       <x>20</x>
+       <y>330</y>
        <width>100</width>
        <height>48</height>
       </rect>
@@ -563,39 +864,17 @@
      <property name="checkable">
       <bool>true</bool>
      </property>
-    </widget>
-    <widget class="QPushButton" name="setButton">
-     <property name="geometry">
-      <rect>
-       <x>610</x>
-       <y>270</y>
-       <width>100</width>
-       <height>48</height>
-      </rect>
-     </property>
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>48</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>Modify</string>
-     </property>
+     <attribute name="buttonGroup">
+      <string notr="true">buttonGroup_2</string>
+     </attribute>
     </widget>
     <widget class="QGroupBox" name="groupBox_2">
      <property name="geometry">
       <rect>
-       <x>12</x>
-       <y>12</y>
-       <width>350</width>
-       <height>143</height>
+       <x>350</x>
+       <y>0</y>
+       <width>421</width>
+       <height>101</height>
       </rect>
      </property>
      <property name="minimumSize">
@@ -769,10 +1048,10 @@
       </item>
      </layout>
     </widget>
-    <widget class="QPushButton" name="axisBoard">
+    <widget class="QPushButton" name="return0Button">
      <property name="geometry">
       <rect>
-       <x>490</x>
+       <x>20</x>
        <y>270</y>
        <width>100</width>
        <height>48</height>
@@ -791,14 +1070,33 @@
       </size>
      </property>
      <property name="text">
-      <string>Axis Board</string>
+      <string>Return 0</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="serveControl">
+    <widget class="QPushButton" name="productClear">
      <property name="geometry">
       <rect>
-       <x>380</x>
-       <y>270</y>
+       <x>680</x>
+       <y>350</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>P.Clear</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="uncheckRunButton">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>330</y>
        <width>100</width>
        <height>48</height>
       </rect>
@@ -816,14 +1114,20 @@
       </size>
      </property>
      <property name="text">
-      <string>Serve On</string>
+      <string>Uncheck Run</string>
      </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+     <attribute name="buttonGroup">
+      <string notr="true">buttonGroup_2</string>
+     </attribute>
     </widget>
    </widget>
-   <widget class="QWidget" name="tab_2">
-    <attribute name="title">
-     <string>Binary</string>
-    </attribute>
+   <widget class="QWidget" name="tabWidgetPage2">
     <layout class="QGridLayout" name="gridLayout_3">
      <property name="leftMargin">
       <number>2</number>
@@ -840,182 +1144,6 @@
      <property name="spacing">
       <number>12</number>
      </property>
-     <item row="3" column="1">
-      <widget class="QPushButton" name="action20">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Action-20</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">actionGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item row="3" column="2">
-      <widget class="QPushButton" name="action21">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Action-21</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">actionGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item row="3" column="3">
-      <widget class="QPushButton" name="action22">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Action-22</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">actionGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item row="3" column="4">
-      <widget class="QPushButton" name="action23">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Action-23</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">actionGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item row="3" column="5">
-      <widget class="QPushButton" name="action24">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Action-24</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">actionGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item row="4" column="0">
-      <widget class="QPushButton" name="action25">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Action-25</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">actionGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item row="1" column="2">
-      <widget class="QPushButton" name="action9">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Action-9</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">actionGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item row="1" column="3">
-      <widget class="QPushButton" name="action10">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Action-10</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">actionGroup</string>
-       </attribute>
-      </widget>
-     </item>
      <item row="1" column="4">
       <widget class="QPushButton" name="action11">
        <property name="sizePolicy">
@@ -1038,8 +1166,8 @@
        </attribute>
       </widget>
      </item>
-     <item row="0" column="0">
-      <widget class="QPushButton" name="action1">
+     <item row="2" column="2">
+      <widget class="QPushButton" name="action15">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
          <horstretch>0</horstretch>
@@ -1053,183 +1181,7 @@
         </size>
        </property>
        <property name="text">
-        <string>Action-1</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">actionGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QPushButton" name="action2">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Action-2</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">actionGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item row="0" column="3">
-      <widget class="QPushButton" name="action4">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Action-4</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">actionGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item row="0" column="4">
-      <widget class="QPushButton" name="action5">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Action-5</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">actionGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item row="0" column="2">
-      <widget class="QPushButton" name="action3">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Action-3</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">actionGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item row="1" column="5">
-      <widget class="QPushButton" name="action12">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Action-12</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">actionGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QPushButton" name="action13">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Action-13</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">actionGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item row="4" column="1">
-      <widget class="QPushButton" name="action26">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Action-26</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">actionGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item row="0" column="5">
-      <widget class="QPushButton" name="action6">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Action-6</string>
+        <string>Action-15</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">actionGroup</string>
@@ -1258,6 +1210,50 @@
        </attribute>
       </widget>
      </item>
+     <item row="0" column="3">
+      <widget class="QPushButton" name="action4">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Action-4</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">actionGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item row="2" column="3">
+      <widget class="QPushButton" name="action16">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Action-16</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">actionGroup</string>
+       </attribute>
+      </widget>
+     </item>
      <item row="2" column="1">
       <widget class="QPushButton" name="action14">
        <property name="sizePolicy">
@@ -1274,6 +1270,503 @@
        </property>
        <property name="text">
         <string>Action-14</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">actionGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item row="3" column="5">
+      <widget class="QPushButton" name="action24">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Action-24</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">actionGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QPushButton" name="action13">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Action-13</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">actionGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QPushButton" name="action3">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Action-3</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">actionGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item row="3" column="3">
+      <widget class="QPushButton" name="action22">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Action-22</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">actionGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QPushButton" name="action32">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Action-32</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">actionGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item row="4" column="4">
+      <widget class="QPushButton" name="action29">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Action-29</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">actionGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item row="2" column="5">
+      <widget class="QPushButton" name="action18">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Action-18</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">actionGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QPushButton" name="action20">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Action-20</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">actionGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item row="0" column="4">
+      <widget class="QPushButton" name="action5">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Action-5</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">actionGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="action2">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Action-2</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">actionGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QPushButton" name="action31">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Action-31</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">actionGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QPushButton" name="action19">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Action-19</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">actionGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QPushButton" name="action25">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Action-25</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">actionGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item row="3" column="4">
+      <widget class="QPushButton" name="action23">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Action-23</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">actionGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item row="4" column="5">
+      <widget class="QPushButton" name="action30">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Action-30</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">actionGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QPushButton" name="action26">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Action-26</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">actionGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QPushButton" name="action9">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Action-9</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">actionGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item row="1" column="5">
+      <widget class="QPushButton" name="action12">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Action-12</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">actionGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QPushButton" name="action1">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Action-1</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">actionGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QPushButton" name="action21">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Action-21</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">actionGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <spacer name="verticalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="1" column="3">
+      <widget class="QPushButton" name="action10">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Action-10</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">actionGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item row="0" column="5">
+      <widget class="QPushButton" name="action6">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Action-6</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">actionGroup</string>
@@ -1324,8 +1817,8 @@
        </attribute>
       </widget>
      </item>
-     <item row="2" column="5">
-      <widget class="QPushButton" name="action18">
+     <item row="4" column="3">
+      <widget class="QPushButton" name="action28">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
          <horstretch>0</horstretch>
@@ -1339,95 +1832,7 @@
         </size>
        </property>
        <property name="text">
-        <string>Action-18</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">actionGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item row="3" column="0">
-      <widget class="QPushButton" name="action19">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Action-19</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">actionGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item row="4" column="5">
-      <widget class="QPushButton" name="action30">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Action-30</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">actionGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item row="2" column="2">
-      <widget class="QPushButton" name="action15">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Action-15</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">actionGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item row="2" column="3">
-      <widget class="QPushButton" name="action16">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Action-16</string>
+        <string>Action-28</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">actionGroup</string>
@@ -1456,135 +1861,28 @@
        </attribute>
       </widget>
      </item>
-     <item row="4" column="3">
-      <widget class="QPushButton" name="action28">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
+     <item row="7" column="5">
+      <widget class="QPushButton" name="returnManual">
+       <property name="minimumSize">
         <size>
-         <width>16777215</width>
-         <height>48</height>
+         <width>0</width>
+         <height>32</height>
         </size>
        </property>
        <property name="text">
-        <string>Action-28</string>
+        <string>Return Manual</string>
        </property>
-       <attribute name="buttonGroup">
-        <string notr="true">actionGroup</string>
-       </attribute>
       </widget>
-     </item>
-     <item row="4" column="4">
-      <widget class="QPushButton" name="action29">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Action-29</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">actionGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item row="5" column="0">
-      <widget class="QPushButton" name="action31">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Action-31</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">actionGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item row="5" column="1">
-      <widget class="QPushButton" name="action32">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Action-32</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">actionGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item row="6" column="0">
-      <spacer name="verticalSpacer_2">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>40</height>
-        </size>
-       </property>
-      </spacer>
      </item>
     </layout>
    </widget>
-  </widget>
-  <widget class="QPushButton" name="productClear">
-   <property name="geometry">
-    <rect>
-     <x>680</x>
-     <y>400</y>
-     <width>81</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="text">
-    <string>P.Clear</string>
-   </property>
   </widget>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>400</y>
-     <width>661</width>
+     <y>410</y>
+     <width>761</width>
      <height>31</height>
     </rect>
    </property>
@@ -1600,6 +1898,12 @@
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
+      <property name="maximumSize">
+       <size>
+        <width>80</width>
+        <height>16777215</height>
+       </size>
+      </property>
       <property name="text">
        <string>X.Speed</string>
       </property>
@@ -1610,6 +1914,18 @@
     </item>
     <item>
      <widget class="QLabel" name="xSpeedLabel">
+      <property name="minimumSize">
+       <size>
+        <width>30</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>30</width>
+        <height>16777215</height>
+       </size>
+      </property>
       <property name="palette">
        <palette>
         <active>
@@ -1625,9 +1941,9 @@
          <colorrole role="Button">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>194</red>
+            <green>193</green>
+            <blue>193</blue>
            </color>
           </brush>
          </colorrole>
@@ -1706,9 +2022,9 @@
          <colorrole role="Window">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>186</red>
+            <green>185</green>
+            <blue>185</blue>
            </color>
           </brush>
          </colorrole>
@@ -1762,9 +2078,9 @@
          <colorrole role="Button">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>194</red>
+            <green>193</green>
+            <blue>193</blue>
            </color>
           </brush>
          </colorrole>
@@ -1843,9 +2159,9 @@
          <colorrole role="Window">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>186</red>
+            <green>185</green>
+            <blue>185</blue>
            </color>
           </brush>
          </colorrole>
@@ -1899,9 +2215,9 @@
          <colorrole role="Button">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>194</red>
+            <green>193</green>
+            <blue>193</blue>
            </color>
           </brush>
          </colorrole>
@@ -1971,18 +2287,18 @@
          <colorrole role="Base">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>186</red>
+            <green>185</green>
+            <blue>185</blue>
            </color>
           </brush>
          </colorrole>
          <colorrole role="Window">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>186</red>
+            <green>185</green>
+            <blue>185</blue>
            </color>
           </brush>
          </colorrole>
@@ -2041,6 +2357,12 @@
     </item>
     <item>
      <widget class="QLabel" name="label_12">
+      <property name="maximumSize">
+       <size>
+        <width>25</width>
+        <height>16777215</height>
+       </size>
+      </property>
       <property name="text">
        <string>%</string>
       </property>
@@ -2054,6 +2376,12 @@
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
+      <property name="maximumSize">
+       <size>
+        <width>80</width>
+        <height>16777215</height>
+       </size>
+      </property>
       <property name="text">
        <string>Y.Speed</string>
       </property>
@@ -2064,6 +2392,18 @@
     </item>
     <item>
      <widget class="QLabel" name="ySpeedLabel">
+      <property name="minimumSize">
+       <size>
+        <width>30</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>30</width>
+        <height>16777215</height>
+       </size>
+      </property>
       <property name="palette">
        <palette>
         <active>
@@ -2079,9 +2419,9 @@
          <colorrole role="Button">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>194</red>
+            <green>193</green>
+            <blue>193</blue>
            </color>
           </brush>
          </colorrole>
@@ -2160,9 +2500,9 @@
          <colorrole role="Window">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>186</red>
+            <green>185</green>
+            <blue>185</blue>
            </color>
           </brush>
          </colorrole>
@@ -2216,9 +2556,9 @@
          <colorrole role="Button">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>194</red>
+            <green>193</green>
+            <blue>193</blue>
            </color>
           </brush>
          </colorrole>
@@ -2297,9 +2637,9 @@
          <colorrole role="Window">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>186</red>
+            <green>185</green>
+            <blue>185</blue>
            </color>
           </brush>
          </colorrole>
@@ -2353,9 +2693,9 @@
          <colorrole role="Button">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>194</red>
+            <green>193</green>
+            <blue>193</blue>
            </color>
           </brush>
          </colorrole>
@@ -2425,18 +2765,18 @@
          <colorrole role="Base">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>186</red>
+            <green>185</green>
+            <blue>185</blue>
            </color>
           </brush>
          </colorrole>
          <colorrole role="Window">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>186</red>
+            <green>185</green>
+            <blue>185</blue>
            </color>
           </brush>
          </colorrole>
@@ -2495,6 +2835,12 @@
     </item>
     <item>
      <widget class="QLabel" name="label_13">
+      <property name="maximumSize">
+       <size>
+        <width>25</width>
+        <height>16777215</height>
+       </size>
+      </property>
       <property name="text">
        <string>%</string>
       </property>
@@ -2508,6 +2854,12 @@
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
+      <property name="maximumSize">
+       <size>
+        <width>80</width>
+        <height>16777215</height>
+       </size>
+      </property>
       <property name="text">
        <string>S.Speed</string>
       </property>
@@ -2518,6 +2870,18 @@
     </item>
     <item>
      <widget class="QLabel" name="zSpeedLabel">
+      <property name="minimumSize">
+       <size>
+        <width>30</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>30</width>
+        <height>16777215</height>
+       </size>
+      </property>
       <property name="palette">
        <palette>
         <active>
@@ -2533,9 +2897,9 @@
          <colorrole role="Button">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>194</red>
+            <green>193</green>
+            <blue>193</blue>
            </color>
           </brush>
          </colorrole>
@@ -2614,9 +2978,9 @@
          <colorrole role="Window">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>186</red>
+            <green>185</green>
+            <blue>185</blue>
            </color>
           </brush>
          </colorrole>
@@ -2670,9 +3034,9 @@
          <colorrole role="Button">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>194</red>
+            <green>193</green>
+            <blue>193</blue>
            </color>
           </brush>
          </colorrole>
@@ -2751,9 +3115,9 @@
          <colorrole role="Window">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>186</red>
+            <green>185</green>
+            <blue>185</blue>
            </color>
           </brush>
          </colorrole>
@@ -2807,9 +3171,9 @@
          <colorrole role="Button">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>194</red>
+            <green>193</green>
+            <blue>193</blue>
            </color>
           </brush>
          </colorrole>
@@ -2879,18 +3243,18 @@
          <colorrole role="Base">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>186</red>
+            <green>185</green>
+            <blue>185</blue>
            </color>
           </brush>
          </colorrole>
          <colorrole role="Window">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>186</red>
+            <green>185</green>
+            <blue>185</blue>
            </color>
           </brush>
          </colorrole>
@@ -2949,18 +3313,30 @@
     </item>
     <item>
      <widget class="QLabel" name="label_16">
+      <property name="maximumSize">
+       <size>
+        <width>25</width>
+        <height>16777215</height>
+       </size>
+      </property>
       <property name="text">
        <string>%</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="rsSpeed">
+     <widget class="QPushButton" name="rSpeed">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>80</width>
+        <height>16777215</height>
+       </size>
       </property>
       <property name="text">
        <string>R.Speed</string>
@@ -2971,7 +3347,19 @@
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="x2SpeedLabel">
+     <widget class="QLabel" name="rSpeedLabel">
+      <property name="minimumSize">
+       <size>
+        <width>30</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>30</width>
+        <height>16777215</height>
+       </size>
+      </property>
       <property name="palette">
        <palette>
         <active>
@@ -2987,9 +3375,9 @@
          <colorrole role="Button">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>194</red>
+            <green>193</green>
+            <blue>193</blue>
            </color>
           </brush>
          </colorrole>
@@ -3068,9 +3456,9 @@
          <colorrole role="Window">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>186</red>
+            <green>185</green>
+            <blue>185</blue>
            </color>
           </brush>
          </colorrole>
@@ -3124,9 +3512,9 @@
          <colorrole role="Button">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>194</red>
+            <green>193</green>
+            <blue>193</blue>
            </color>
           </brush>
          </colorrole>
@@ -3205,9 +3593,9 @@
          <colorrole role="Window">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>186</red>
+            <green>185</green>
+            <blue>185</blue>
            </color>
           </brush>
          </colorrole>
@@ -3261,9 +3649,9 @@
          <colorrole role="Button">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>194</red>
+            <green>193</green>
+            <blue>193</blue>
            </color>
           </brush>
          </colorrole>
@@ -3333,18 +3721,18 @@
          <colorrole role="Base">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>186</red>
+            <green>185</green>
+            <blue>185</blue>
            </color>
           </brush>
          </colorrole>
          <colorrole role="Window">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>186</red>
+            <green>185</green>
+            <blue>185</blue>
            </color>
           </brush>
          </colorrole>
@@ -3403,6 +3791,12 @@
     </item>
     <item>
      <widget class="QLabel" name="label_21">
+      <property name="maximumSize">
+       <size>
+        <width>25</width>
+        <height>16777215</height>
+       </size>
+      </property>
       <property name="text">
        <string>%</string>
       </property>
@@ -3416,6 +3810,12 @@
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
+      <property name="maximumSize">
+       <size>
+        <width>80</width>
+        <height>16777215</height>
+       </size>
+      </property>
       <property name="text">
        <string>T.Speed</string>
       </property>
@@ -3426,6 +3826,18 @@
     </item>
     <item>
      <widget class="QLabel" name="tSpeedLabel">
+      <property name="minimumSize">
+       <size>
+        <width>30</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>30</width>
+        <height>16777215</height>
+       </size>
+      </property>
       <property name="palette">
        <palette>
         <active>
@@ -3441,9 +3853,9 @@
          <colorrole role="Button">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>194</red>
+            <green>193</green>
+            <blue>193</blue>
            </color>
           </brush>
          </colorrole>
@@ -3522,9 +3934,9 @@
          <colorrole role="Window">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>186</red>
+            <green>185</green>
+            <blue>185</blue>
            </color>
           </brush>
          </colorrole>
@@ -3578,9 +3990,9 @@
          <colorrole role="Button">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>194</red>
+            <green>193</green>
+            <blue>193</blue>
            </color>
           </brush>
          </colorrole>
@@ -3659,9 +4071,9 @@
          <colorrole role="Window">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>186</red>
+            <green>185</green>
+            <blue>185</blue>
            </color>
           </brush>
          </colorrole>
@@ -3715,9 +4127,9 @@
          <colorrole role="Button">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>194</red>
+            <green>193</green>
+            <blue>193</blue>
            </color>
           </brush>
          </colorrole>
@@ -3787,18 +4199,18 @@
          <colorrole role="Base">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>186</red>
+            <green>185</green>
+            <blue>185</blue>
            </color>
           </brush>
          </colorrole>
          <colorrole role="Window">
           <brush brushstyle="SolidPattern">
            <color alpha="255">
-            <red>89</red>
-            <green>88</green>
-            <blue>88</blue>
+            <red>186</red>
+            <green>185</green>
+            <blue>185</blue>
            </color>
           </brush>
          </colorrole>
@@ -3857,6 +4269,12 @@
     </item>
     <item>
      <widget class="QLabel" name="label_18">
+      <property name="maximumSize">
+       <size>
+        <width>25</width>
+        <height>16777215</height>
+       </size>
+      </property>
       <property name="text">
        <string>%</string>
       </property>
@@ -3871,18 +4289,13 @@
    <extends>QLineEdit</extends>
    <header>iclineeditwithvirtualnumerickeypad.h</header>
   </customwidget>
-  <customwidget>
-   <class>ICTabWidget</class>
-   <extends>QTabWidget</extends>
-   <header>ictabwidget.h</header>
-   <container>1</container>
-  </customwidget>
  </customwidgets>
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="buttonGroup"/>
-  <buttongroup name="actionGroup"/>
   <buttongroup name="shortcutGroup"/>
+  <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_2"/>
+  <buttongroup name="actionGroup"/>
  </buttongroups>
 </ui>

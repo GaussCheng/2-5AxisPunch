@@ -22,6 +22,8 @@
 
 QPalette yOnPalette;
 QPalette oriPalette;
+QString oriStyle;
+QString yOnStyle;
 static int currentStep  = 0;
 ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     QFrame(parent),
@@ -29,9 +31,9 @@ ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
 {
     ui->setupUi(this);
 #ifndef HC_SK_8_SC
-//#ifdef HC_SK_8
+#ifdef HC_SK_8
 //    ui->axisBoard->hide();
-//#endif
+#endif
 #endif
 #ifdef HC_AXIS_COUNT_2
     ui->label_14->hide();
@@ -52,8 +54,16 @@ ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     modifyDialog_ = new AxisModifyDialog();
     yOnPalette.setBrush(QPalette::Button, QBrush(Qt::green));
     oriPalette = ui->b1->palette();
-    ui->tSpeed->hide();
-    ui->rsSpeed->hide();
+    oriStyle = ui->b1->styleSheet();
+    yOnStyle = "border-style: outset;"
+            "border-width: 2px;"
+            "border-radius: 6px;"
+            "border-color: gray;"
+            "background-color: green;"
+            "padding-right: 6px;"
+            "padding-left:6px;";
+//    ui->tSpeed->hide();
+//    ui->rsSpeed->hide();
 }
 
 ICHCManualOperationPageFrame::~ICHCManualOperationPageFrame()
@@ -88,9 +98,18 @@ void ICHCManualOperationPageFrame::showEvent(QShowEvent *e)
     nullButton_->click();
     ui->xPos->clear();
     ui->yPos->clear();
+    ui->zPos->clear();
+    ui->rPos->clear();
+    ui->tPos->clear();
     ui->productEdit->blockSignals(true);
     ui->productEdit->SetThisIntToThisText(ICMold::CurrentMold()->MoldParam(ICMold::Product));
     ui->productEdit->blockSignals(false);
+    ReserveProgConfig progConfig;
+    progConfig.all =  ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::SYS_Config_Resv2).toInt();
+
+//    if(!progConfig.b.r8)
+    ui->showMore->setVisible(progConfig.b.r8);
+
 
     //    button->setChecked(false);
 
@@ -108,6 +127,12 @@ void ICHCManualOperationPageFrame::hideEvent(QHideEvent *e)
     {
         ui->runButton->setChecked(false);
     }
+    ui->xSpeed->setChecked(false);
+    ui->ySpeed->setChecked(false);
+    ui->zSpeed->setChecked(false);
+    ui->rSpeed->setChecked(false);
+    ui->tSpeed->setChecked(false);
+    ui->serveControl->setChecked(false);
 }
 
 void ICHCManualOperationPageFrame::changeEvent(QEvent *e)
@@ -137,6 +162,8 @@ void ICHCManualOperationPageFrame::InitInterface()
     ui->yPos->SetDecimalPlaces(1);
 #ifdef HC_AXIS_COUNT_5
     ui->zPos->SetDecimalPlaces(1);
+    ui->rPos->SetDecimalPlaces(1);
+    ui->tPos->SetDecimalPlaces(1);
 #endif
     ui->xPos->setValidator(new QIntValidator(-32760, 32760, this));
     ui->yPos->setValidator(ui->xPos->validator());
@@ -341,7 +368,9 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
 //        ui->x2CurrentPos->setText(QString().sprintf("%.1f", pos / 10.0));
 //    }
 //#endif
-    int speed = host->HostStatus(ICVirtualHost::DbgX0).toInt() | (host->HostStatus(ICVirtualHost::DbgX1).toUInt() << 16);
+    int64_t speed = host->HostStatus(ICVirtualHost::DbgX0).toInt() |
+            (host->HostStatus(ICVirtualHost::DbgX1).toUInt() << 16) |
+            (((int64_t)(host->HostStatus(ICVirtualHost::DbgY0).toUInt())) << 32);
     if(speed != oldS)
     {
         oldS = speed;
@@ -350,8 +379,8 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
         ui->ySpeedLabel->setText(QString::number(speed & 0xFF));
 #ifdef HC_AXIS_COUNT_5
         ui->zSpeedLabel->setText(QString::number((speed >> 16) & 0xFF));
-        ui->x2SpeedLabel->setText(ui->xSpeedLabel->text());
-        ui->tSpeedLabel->setText(ui->ySpeedLabel->text());
+        ui->rSpeedLabel->setText(QString::number((speed >> 40) & 0xFF));
+        ui->tSpeedLabel->setText(QString::number((speed >> 32) & 0xFF));
 #endif
     }
     bool isSingleRunFinished = host->HostStatus(ICVirtualHost::ActL).toInt() == 0;
@@ -381,11 +410,13 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
 
             if(host->IsOutputOn(p))
             {
-                buttons[i]->setPalette(yOnPalette);
+//                buttons[i]->setPalette(yOnPalette);
+                buttons[i]->setStyleSheet(yOnStyle);
             }
             else
             {
-                buttons[i]->setPalette(oriPalette);
+//                buttons[i]->setPalette(oriPalette);
+                buttons[i]->setStyleSheet(oriStyle);
             }
         }
     }
@@ -399,11 +430,13 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
 
             if(host->IsOutputOn(p))
             {
-                buttons[i]->setPalette(yOnPalette);
+//                buttons[i]->setPalette(yOnPalette);
+                buttons[i]->setStyleSheet(yOnStyle);
             }
             else
             {
-                buttons[i]->setPalette(oriPalette);
+//                buttons[i]->setPalette(oriPalette);
+                buttons[i]->setStyleSheet(oriStyle);
             }
         }
     }
@@ -437,6 +470,9 @@ void ICHCManualOperationPageFrame::OnPointSelected(int id)
     ui->yPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 6 + 1)));
 #ifdef HC_AXIS_COUNT_5
     ui->zPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 6 + 2)));
+    ui->rPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 6 + 3)));
+    ui->tPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 6 + 4)));
+
 #endif
     //    ui->xPos->setEnabled(true);
     //    ui->yPos->setEnabled(true);
@@ -535,6 +571,8 @@ void ICHCManualOperationPageFrame::on_setButton_clicked()
     ui->yPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 6 + 1)));
 #ifdef HC_AXIS_COUNT_5
     ui->zPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 6 + 2)));
+    ui->rPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 6 + 3)));
+    ui->tPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 6 + 4)));
 #endif
 }
 
@@ -602,6 +640,48 @@ void ICHCManualOperationPageFrame::on_zRun_clicked()
     ICCommandProcessor::Instance()->ExecuteCommand(cmd);
 }
 
+void ICHCManualOperationPageFrame::on_rRun_clicked()
+{
+    if(ui->buttonGroup->checkedId() < 0)
+    {
+        return;
+    }
+    if(!ICVirtualHost::GlobalVirtualHost()->IsOrigined())
+    {
+        QMessageBox::warning(this,
+                             tr("Warning"),
+                             tr("Has not been origin!"));
+        return;
+    }
+    ICManualRun cmd;
+    cmd.SetSlave(1);
+    cmd.SetGM(ICMold::GP);
+    cmd.SetPoint(ui->buttonGroup->checkedId());
+    //    cmd.SetIFVal(1);
+    ICCommandProcessor::Instance()->ExecuteCommand(cmd);
+}
+
+void ICHCManualOperationPageFrame::on_tRun_clicked()
+{
+    if(ui->buttonGroup->checkedId() < 0)
+    {
+        return;
+    }
+    if(!ICVirtualHost::GlobalVirtualHost()->IsOrigined())
+    {
+        QMessageBox::warning(this,
+                             tr("Warning"),
+                             tr("Has not been origin!"));
+        return;
+    }
+    ICManualRun cmd;
+    cmd.SetSlave(1);
+    cmd.SetGM(ICMold::GQ);
+    cmd.SetPoint(ui->buttonGroup->checkedId());
+    //    cmd.SetIFVal(1);
+    ICCommandProcessor::Instance()->ExecuteCommand(cmd);
+}
+
 #ifdef HC_SK_8_SC
 void ICHCManualOperationPageFrame::on_axisBoard_clicked()
 {
@@ -615,12 +695,12 @@ void ICHCManualOperationPageFrame::on_runButton_toggled(bool checked)
 {
     if(checked)
     {
-        ui->runButton->setText(tr("No Check"));
+//        ui->runButton->setText(tr("No Check"));
         ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_CYCLE);
     }
     else
     {
-        ui->runButton->setText(tr("Check"));
+//        ui->runButton->setText(tr("Check"));
         ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_F6);
     }
 }
@@ -684,7 +764,7 @@ void ICHCManualOperationPageFrame::on_return0Button_clicked()
 //    ui->singleButton->setText(QString(tr("Single(%1/%2)")).arg(currentStep).arg(mold->MoldContent().size()));
 }
 
-void ICHCManualOperationPageFrame::on_serveOn_toggled(bool checked)
+void ICHCManualOperationPageFrame::on_serveControl_toggled(bool checked)
 {
     if(checked)
     {
@@ -710,6 +790,12 @@ void ICHCManualOperationPageFrame::on_xSpeed_toggled(bool checked)
         ui->zSpeed->blockSignals(true);
         ui->zSpeed->setChecked(false);
         ui->zSpeed->blockSignals(false);
+        ui->rSpeed->blockSignals(true);
+        ui->rSpeed->setChecked(false);
+        ui->rSpeed->blockSignals(false);
+        ui->tSpeed->blockSignals(true);
+        ui->tSpeed->setChecked(false);
+        ui->tSpeed->blockSignals(false);
 #endif
     }
     else
@@ -730,6 +816,12 @@ void ICHCManualOperationPageFrame::on_ySpeed_toggled(bool checked)
         ui->zSpeed->blockSignals(true);
         ui->zSpeed->setChecked(false);
         ui->zSpeed->blockSignals(false);
+        ui->rSpeed->blockSignals(true);
+        ui->rSpeed->setChecked(false);
+        ui->rSpeed->blockSignals(false);
+        ui->tSpeed->blockSignals(true);
+        ui->tSpeed->setChecked(false);
+        ui->tSpeed->blockSignals(false);
 #endif
     }
     else
@@ -750,6 +842,60 @@ void ICHCManualOperationPageFrame::on_zSpeed_toggled(bool checked)
         ui->ySpeed->blockSignals(true);
         ui->ySpeed->setChecked(false);
         ui->ySpeed->blockSignals(false);
+        ui->rSpeed->blockSignals(true);
+        ui->rSpeed->setChecked(false);
+        ui->rSpeed->blockSignals(false);
+        ui->tSpeed->blockSignals(true);
+        ui->tSpeed->setChecked(false);
+        ui->tSpeed->blockSignals(false);
+    }
+    else
+    {
+        ICKeyboard::Instace()->SetCurrentTuneSpeedType(-1);
+    }
+}
+
+void ICHCManualOperationPageFrame::on_rSpeed_toggled(bool checked)
+{
+    if(checked)
+    {
+        ICKeyboard::Instace()->SetCurrentTuneSpeedType(3);
+        ui->xSpeed->blockSignals(true);
+        ui->xSpeed->setChecked(false);
+        ui->xSpeed->blockSignals(false);
+        ui->ySpeed->blockSignals(true);
+        ui->ySpeed->setChecked(false);
+        ui->ySpeed->blockSignals(false);
+        ui->zSpeed->blockSignals(true);
+        ui->zSpeed->setChecked(false);
+        ui->zSpeed->blockSignals(false);
+        ui->tSpeed->blockSignals(true);
+        ui->tSpeed->setChecked(false);
+        ui->tSpeed->blockSignals(false);
+    }
+    else
+    {
+        ICKeyboard::Instace()->SetCurrentTuneSpeedType(-1);
+    }
+}
+
+void ICHCManualOperationPageFrame::on_tSpeed_toggled(bool checked)
+{
+    if(checked)
+    {
+        ICKeyboard::Instace()->SetCurrentTuneSpeedType(4);
+        ui->xSpeed->blockSignals(true);
+        ui->xSpeed->setChecked(false);
+        ui->xSpeed->blockSignals(false);
+        ui->ySpeed->blockSignals(true);
+        ui->ySpeed->setChecked(false);
+        ui->ySpeed->blockSignals(false);
+        ui->zSpeed->blockSignals(true);
+        ui->zSpeed->setChecked(false);
+        ui->zSpeed->blockSignals(false);
+        ui->rSpeed->blockSignals(true);
+        ui->rSpeed->setChecked(false);
+        ui->rSpeed->blockSignals(false);
     }
     else
     {
@@ -757,3 +903,13 @@ void ICHCManualOperationPageFrame::on_zSpeed_toggled(bool checked)
     }
 }
 #endif
+
+void ICHCManualOperationPageFrame::on_showMore_clicked()
+{
+    ui->tabWidget->setCurrentIndex(1);
+}
+
+void ICHCManualOperationPageFrame::on_returnManual_clicked()
+{
+    ui->tabWidget->setCurrentIndex(0);
+}

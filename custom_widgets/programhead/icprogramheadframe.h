@@ -38,8 +38,12 @@ public:
     void ChangePunchOrigin(bool isOrigin);
     void ChangeControlStatus(bool isControled);
 
+public slots:
+    void OnLevelChanged(int level);
+
 Q_SIGNALS:
     void LevelChanged(int);
+    void MoldButtonClicked();
 
 protected:
     void changeEvent(QEvent *e);

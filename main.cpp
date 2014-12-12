@@ -23,8 +23,8 @@ int main(int argc, char *argv[])
 //#endif
 //    qApp->setStyleSheet("./stylesheet/global.qss");
     ICParametersSave* paraSave = ICParametersSave::Instance();
-    paraSave->SetCountry(paraSave->Country());
-    paraSave->SetBrightness(paraSave->Brightness());
+    paraSave->SetCountry(paraSave->Country(), false);
+    paraSave->SetBrightness(paraSave->Brightness(), false);
     ICUserDefineConfig::Instance()->Init();
     QPixmap splashPixmap("resource/startup_page.png");
 #ifdef HC_SK_5

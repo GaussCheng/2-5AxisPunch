@@ -162,6 +162,10 @@ ICMachineConfigPage::ICMachineConfigPage(QWidget *parent) :
                                     ICLineEditWrapper::System,
                                     ICLineEditWrapper::OneFraction);
     wrappers_.append(wrapper);
+//    ui->toleranceLineEdit->hide();
+    ui->pullPushDistance->hide();
+    ui->label_18->hide();
+    ui->label_4->hide();
 }
 
 ICMachineConfigPage::~ICMachineConfigPage()

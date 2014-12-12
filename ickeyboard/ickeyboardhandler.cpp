@@ -147,11 +147,14 @@ void ICKeyboardHandler::Keypressed(int keyValue)
             {
                 return;
             }
-            int currentSpeed =  virtualHost->GlobalSpeed();
+            int64_t currentSpeed =  virtualHost->GlobalSpeed();
             int xSpeed = currentSpeed >> 8 & 0x000000FF;
             int ySpeed = currentSpeed & 0xFF;
 #ifdef HC_AXIS_COUNT_5
             int zSpeed = (currentSpeed >> 16) & 0xFF;
+            int64_t rSpeed = (currentSpeed >> 40) & 0xFF;
+            int64_t tSpeed = (currentSpeed >> 32) & 0xFF;
+//            int tSpeed =
 #endif
             int currentSpeedStep = OperatingRatioSetDialog::Instance()->CurrentGlobalSpeedStep();
             if(keyValue == ICKeyboard::FB_Down)
@@ -160,6 +163,8 @@ void ICKeyboardHandler::Keypressed(int keyValue)
                 else if(currentTuneSpeedType == 1)ySpeed -= currentSpeedStep;
 #ifdef HC_AXIS_COUNT_5
                 else if(currentTuneSpeedType == 2) zSpeed -= currentSpeedStep;
+                else if(currentTuneSpeedType == 3) rSpeed -= currentSpeedStep;
+                else if(currentTuneSpeedType == 4) tSpeed -= currentSpeedStep;
 #endif
             }
             else
@@ -168,6 +173,8 @@ void ICKeyboardHandler::Keypressed(int keyValue)
                 else if(currentTuneSpeedType == 1)ySpeed += currentSpeedStep;
 #ifdef HC_AXIS_COUNT_5
                 else if(currentTuneSpeedType == 2) zSpeed += currentSpeedStep;
+                else if(currentTuneSpeedType == 3) rSpeed += currentSpeedStep;
+                else if(currentTuneSpeedType == 4) tSpeed += currentSpeedStep;
 #endif
             }
             if(xSpeed < 10)
@@ -180,6 +187,8 @@ void ICKeyboardHandler::Keypressed(int keyValue)
             }
 #ifdef HC_AXIS_COUNT_5
             if(zSpeed < 10) zSpeed = 10;
+            if(rSpeed < 10) rSpeed = 10;
+            if(tSpeed < 10) tSpeed = 10;
 #endif
             if(xSpeed > 100)
             {
@@ -191,11 +200,15 @@ void ICKeyboardHandler::Keypressed(int keyValue)
             }
 #ifdef HC_AXIS_COUNT_5
             if(zSpeed > 100) zSpeed = 100;
+            if(rSpeed > 100) rSpeed = 100;
+            if(tSpeed > 100) tSpeed = 100;
 #endif
 
             currentSpeed = (xSpeed << 8) | ySpeed;
 #ifdef HC_AXIS_COUNT_5
             currentSpeed |= (zSpeed << 16);
+            currentSpeed |= (rSpeed << 40);
+            currentSpeed |= (tSpeed << 32);
 #endif
 
             host->SetGlobalSpeed(currentSpeed);
@@ -216,6 +229,16 @@ void ICKeyboardHandler::Keypressed(int keyValue)
             {
                 if(keyValue == ICKeyboard::FB_Up) commandProcessor->ExecuteVirtualKeyCommand(IC::VKEY_Z_SPEED_UP);
                 else commandProcessor->ExecuteVirtualKeyCommand(IC::VKEY_Z_SPEED_DOWN);
+            }
+            else if(currentTuneSpeedType == 3)
+            {
+                if(keyValue == ICKeyboard::FB_Up) commandProcessor->ExecuteVirtualKeyCommand(IC::VKEY_R_SPEED_UP);
+                else commandProcessor->ExecuteVirtualKeyCommand(IC::VKEY_R_SPEED_DOWN);
+            }
+            else if(currentTuneSpeedType == 4)
+            {
+                if(keyValue == ICKeyboard::FB_Up) commandProcessor->ExecuteVirtualKeyCommand(IC::VKEY_T_SPEED_UP);
+                else commandProcessor->ExecuteVirtualKeyCommand(IC::VKEY_T_SPEED_DOWN);
             }
         }
         return;

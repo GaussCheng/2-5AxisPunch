@@ -23,7 +23,10 @@ static QString oldStyle;
 void PasswdLevelLabel::mousePressEvent(QMouseEvent *ev)
 {
     oldStyle = this->styleSheet();
-    this->setStyleSheet("background-color:blue;color:white;");
+
+
+
+    this->setStyleSheet("padding-left:6px;padding-right: 6px;border-style: inset;border-width: 2px;border-radius: 6px;border-color: gray;background-color: rgba(62, 113, 255, 255);");
 }
 
 void PasswdLevelLabel::mouseReleaseEvent(QMouseEvent *ev)

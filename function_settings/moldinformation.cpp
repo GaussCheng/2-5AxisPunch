@@ -1007,7 +1007,7 @@ void MoldInformation::RefreshFileList()
     if(acts.size() != fncs.size())
     {
         QMessageBox::warning(this, tr("Warnning"), tr("Backup files is incomplete!"));
-        return;
+//        return;
     }
     for(int i = 0; i != fncs.size(); ++i)
     {
@@ -1018,7 +1018,7 @@ void MoldInformation::RefreshFileList()
         if(!fncs.contains(acts.at(i).left(acts.at(i).size() - 4)))
         {
             QMessageBox::warning(this, tr("Warnning"), tr("Backup files is incomplete!"));
-            return;
+//            return;
         }
     }
 

@@ -72,8 +72,8 @@ ICHCProgramMonitorFrame::ICHCProgramMonitorFrame(QWidget *parent) :
             this,
             SLOT(LevelChanged(int)));
     LevelChanged(ICProgramHeadFrame::Instance()->CurrentLevel());
-    ui->tSpeed->hide();
-    ui->rsSpeed->hide();
+//    ui->tSpeed->hide();
+//    ui->rsSpeed->hide();
 }
 
 ICHCProgramMonitorFrame::~ICHCProgramMonitorFrame()
@@ -120,9 +120,9 @@ void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
 //        ui->ySpeed->setChecked(true);
 //    }
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    ICVirtualHost::GlobalVirtualHost()->SetSpeedEnable(false);
-    ui->speedEnableButton->setIcon(switchOff_);
-    ui->speedEnableButton->setText(tr("Speed Disable"));
+    ICVirtualHost::GlobalVirtualHost()->SetSpeedEnable(true);
+//    ui->speedEnableButton->setIcon(switchOff_);
+//    ui->speedEnableButton->setText(tr("Speed Disable"));
     SetProduct(ICMold::CurrentMold()->MoldParam(ICMold::Product));
     currentMoldNum_ = host->HostStatus(ICVirtualHost::S).toInt();
     UpdateHostParam();
@@ -249,12 +249,18 @@ void ICHCProgramMonitorFrame::hideEvent(QHideEvent *e)
     timer_.stop();
     refreshTimer_.stop();
     ICVirtualHost::GlobalVirtualHost()->SetSpeedEnable(false);
-    ui->speedEnableButton->setIcon(switchOff_);
-    ui->speedEnableButton->setText(tr("Speed Disable"));
+//    ui->speedEnableButton->setIcon(switchOff_);
+//    ui->speedEnableButton->setText(tr("Speed Disable"));
     if(ICKeyboard::Instace()->CurrentSwitchStatus() != ICKeyboard::KS_AutoStatu)
     {
         ui->cycle->setChecked(false);
     }
+
+    ui->xSpeed->setChecked(false);
+    ui->ySpeed->setChecked(false);
+    ui->zSpeed->setChecked(false);
+    ui->rSpeed->setChecked(false);
+    ui->tSpeed->setChecked(false);
     QFrame::hideEvent(e);
 
 
@@ -333,7 +339,7 @@ void ICHCProgramMonitorFrame::StatusRefreshed()
 //        ui->x2CurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
 //    }
 //#endif
-    int speed = host->GlobalSpeed();
+    int64_t speed = host->GlobalSpeed();
     if(speed != oldS)
     {
         oldS = speed;
@@ -341,8 +347,8 @@ void ICHCProgramMonitorFrame::StatusRefreshed()
         ui->ySpeedLabel->setText(QString::number(speed & 0xFF));
 #ifdef HC_AXIS_COUNT_5
         ui->zSpeedLabel->setText(QString::number((speed >> 16) & 0xFF));
-        ui->x2SpeedLabel->setText(ui->xSpeedLabel->text());
-        ui->tSpeedLabel->setText(ui->ySpeedLabel->text());
+        ui->rSpeedLabel->setText(QString::number((speed >> 40) & 0xFF));
+        ui->tSpeedLabel->setText(QString::number((speed >> 32) & 0xFF));
 #endif
     }
 
@@ -821,29 +827,29 @@ void ICHCProgramMonitorFrame::MoldNumChanged(int mold)
     this->blockSignals(false);
 }
 
-void ICHCProgramMonitorFrame::on_followToolButton_clicked()
-{
-    if(isFollow_)
-    {
-        isFollow_ = false;
-        ui->followToolButton->setIcon(QPixmap(":/resource/play.png"));
-        ui->followToolButton->setText(tr("Follow"));
-    }
-    else
-    {
-        isFollow_ = true;
-        ui->followToolButton->setIcon(QPixmap(":/resource/stop.png"));
-        ui->followToolButton->setText(tr("No Follow"));
-    }
-}
+//void ICHCProgramMonitorFrame::on_followToolButton_clicked()
+//{
+//    if(isFollow_)
+//    {
+//        isFollow_ = false;
+//        ui->followToolButton->setIcon(QPixmap(":/resource/play.png"));
+//        ui->followToolButton->setText(tr("Follow"));
+//    }
+//    else
+//    {
+//        isFollow_ = true;
+//        ui->followToolButton->setIcon(QPixmap(":/resource/stop.png"));
+//        ui->followToolButton->setText(tr("No Follow"));
+//    }
+//}
 
-void ICHCProgramMonitorFrame::on_speedEnableButton_clicked()
-{
-    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    host->SetSpeedEnable(!host->IsSpeedEnable());
-    ui->speedEnableButton->setIcon(host->IsSpeedEnable()? switchOn_ : switchOff_);
-    ui->speedEnableButton->setText(host->IsSpeedEnable() ? tr("Speed Enable") : tr("Speed Disable"));
-}
+//void ICHCProgramMonitorFrame::on_speedEnableButton_clicked()
+//{
+//    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+//    host->SetSpeedEnable(!host->IsSpeedEnable());
+//    ui->speedEnableButton->setIcon(host->IsSpeedEnable()? switchOn_ : switchOff_);
+//    ui->speedEnableButton->setText(host->IsSpeedEnable() ? tr("Speed Enable") : tr("Speed Disable"));
+//}
 
 void ICHCProgramMonitorFrame::OnTimeOut()
 {
@@ -851,8 +857,8 @@ void ICHCProgramMonitorFrame::OnTimeOut()
     if(!host->HasTuneSpeed())
     {
         host->SetSpeedEnable(false);
-        ui->speedEnableButton->setIcon(switchOff_);
-        ui->speedEnableButton->setText(tr("Speed Disable"));
+//        ui->speedEnableButton->setIcon(switchOff_);
+//        ui->speedEnableButton->setText(tr("Speed Disable"));
     }
     host->SetTuneSpeed(false);
 }
@@ -873,12 +879,12 @@ void ICHCProgramMonitorFrame::on_cycle_toggled(bool checked)
 {
     if(checked)
     {
-        ui->cycle->setText(tr("No Check"));
+//        ui->cycle->setText(tr("No Check"));
         ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_CYCLE);
     }
     else
     {
-        ui->cycle->setText(tr("Check"));
+//        ui->cycle->setText(tr("Check"));
         ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_F6);
     }
 }
@@ -895,6 +901,12 @@ void ICHCProgramMonitorFrame::on_xSpeed_toggled(bool checked)
         ui->zSpeed->blockSignals(true);
         ui->zSpeed->setChecked(false);
         ui->zSpeed->blockSignals(false);
+        ui->rSpeed->blockSignals(true);
+        ui->rSpeed->setChecked(false);
+        ui->rSpeed->blockSignals(false);
+        ui->tSpeed->blockSignals(true);
+        ui->tSpeed->setChecked(false);
+        ui->tSpeed->blockSignals(false);
 #endif
     }
     else
@@ -915,6 +927,12 @@ void ICHCProgramMonitorFrame::on_ySpeed_toggled(bool checked)
         ui->zSpeed->blockSignals(true);
         ui->zSpeed->setChecked(false);
         ui->zSpeed->blockSignals(false);
+        ui->rSpeed->blockSignals(true);
+        ui->rSpeed->setChecked(false);
+        ui->rSpeed->blockSignals(false);
+        ui->tSpeed->blockSignals(true);
+        ui->tSpeed->setChecked(false);
+        ui->tSpeed->blockSignals(false);
 #endif
     }
     else
@@ -935,6 +953,58 @@ void ICHCProgramMonitorFrame::on_zSpeed_toggled(bool checked)
         ui->ySpeed->blockSignals(true);
         ui->ySpeed->setChecked(false);
         ui->ySpeed->blockSignals(false);
+        ui->rSpeed->blockSignals(true);
+        ui->rSpeed->setChecked(false);
+        ui->rSpeed->blockSignals(false);
+        ui->tSpeed->blockSignals(true);
+        ui->tSpeed->setChecked(false);
+        ui->tSpeed->blockSignals(false);
+    }
+    else
+    {
+        ICKeyboard::Instace()->SetCurrentTuneSpeedType(-1);
+    }
+}
+void ICHCProgramMonitorFrame::on_rSpeed_toggled(bool checked)
+{
+    if(checked)
+    {
+        ICKeyboard::Instace()->SetCurrentTuneSpeedType(3);
+        ui->xSpeed->blockSignals(true);
+        ui->xSpeed->setChecked(false);
+        ui->xSpeed->blockSignals(false);
+        ui->ySpeed->blockSignals(true);
+        ui->ySpeed->setChecked(false);
+        ui->ySpeed->blockSignals(false);
+        ui->zSpeed->blockSignals(true);
+        ui->zSpeed->setChecked(false);
+        ui->zSpeed->blockSignals(false);
+        ui->tSpeed->blockSignals(true);
+        ui->tSpeed->setChecked(false);
+        ui->tSpeed->blockSignals(false);
+    }
+    else
+    {
+        ICKeyboard::Instace()->SetCurrentTuneSpeedType(-1);
+    }
+}
+void ICHCProgramMonitorFrame::on_tSpeed_toggled(bool checked)
+{
+    if(checked)
+    {
+        ICKeyboard::Instace()->SetCurrentTuneSpeedType(4);
+        ui->xSpeed->blockSignals(true);
+        ui->xSpeed->setChecked(false);
+        ui->xSpeed->blockSignals(false);
+        ui->ySpeed->blockSignals(true);
+        ui->ySpeed->setChecked(false);
+        ui->ySpeed->blockSignals(false);
+        ui->rSpeed->blockSignals(true);
+        ui->rSpeed->setChecked(false);
+        ui->rSpeed->blockSignals(false);
+        ui->zSpeed->blockSignals(true);
+        ui->zSpeed->setChecked(false);
+        ui->zSpeed->blockSignals(false);
     }
     else
     {

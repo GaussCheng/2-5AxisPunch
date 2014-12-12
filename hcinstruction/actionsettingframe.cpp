@@ -285,6 +285,16 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
             item.SetActualIfPos(0);
             ret.append(item);
         }
+        if(ui->gPButton->isChecked() && (!ui->gPButton->isHidden()))
+        {
+            item.SetAction(ICMold::GP);
+            item.SetActualPos(ui->pPosLineEdit->TransThisTextToThisInt());
+            item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
+            item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
+            //        item.SetIFVal(0);
+            item.SetActualIfPos(0);
+            ret.append(item);
+        }
         if(ui->gtButton->isChecked() && (!ui->gtButton->isHidden()))
         {
             item.SetAction(ICMold::GQ);
@@ -296,16 +306,6 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
             ret.append(item);
         }
 
-        if(ui->gPButton->isChecked() && (!ui->gPButton->isHidden()))
-        {
-            item.SetAction(ICMold::GP);
-            item.SetActualPos(ui->pPosLineEdit->TransThisTextToThisInt());
-            item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
-            item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
-            //        item.SetIFVal(0);
-            item.SetActualIfPos(0);
-            ret.append(item);
-        }
 #endif
     }
     else
@@ -356,25 +356,24 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
 //            item.SetActualIfPos(0);
             ret.append(item);
         }
-        if(ui->gtButton->isChecked() && (!ui->gtButton->isHidden()))
-        {
-            item.SetAction(ICMold::GARC);
-            item.SetIFPos(ICMold::GQ);
-//            item.SetIFVal(ui->arcBox->isChecked()?  2 : 1);
-            item.SetActualPos(ui->tPosLineEdit->TransThisTextToThisInt());
-            item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
-            item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
-            //        item.SetIFVal(0);
-//            item.SetActualIfPos(0);
-            ret.append(item);
-        }
-
         if(ui->gPButton->isChecked() && (!ui->gPButton->isHidden()))
         {
             item.SetAction(ICMold::GARC);
             item.SetIFPos(ICMold::GP);
 //            item.SetIFVal(ui->arcBox->isChecked()? 2 : 1);
             item.SetActualPos(ui->pPosLineEdit->TransThisTextToThisInt());
+            item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
+            item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
+            //        item.SetIFVal(0);
+//            item.SetActualIfPos(0);
+            ret.append(item);
+        }
+        if(ui->gtButton->isChecked() && (!ui->gtButton->isHidden()))
+        {
+            item.SetAction(ICMold::GARC);
+            item.SetIFPos(ICMold::GQ);
+//            item.SetIFVal(ui->arcBox->isChecked()?  2 : 1);
+            item.SetActualPos(ui->tPosLineEdit->TransThisTextToThisInt());
             item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
             item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
             //        item.SetIFVal(0);

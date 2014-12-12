@@ -11,6 +11,18 @@
 #include <QDebug>
 #include "mainframe.h"
 
+typedef union {
+     struct {
+        u_int16_t xLimit : 2;
+        u_int16_t yLimit : 2;
+        u_int16_t sLimit : 2;
+        u_int16_t rLimit : 2;
+        u_int16_t tLimit : 2;
+        u_int16_t rev : 6;
+    }b;
+    u_int16_t all;
+}AxisLimitConfig;
+
 
 ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     QWidget(parent),
@@ -97,6 +109,21 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     ui->rP6->setCurrentIndex(progConfig.b.r6);
     ui->rP7->setCurrentIndex(progConfig.b.r7);
     ui->rP8->setCurrentIndex(progConfig.b.r8);
+
+    AxisLimitConfig axisLimitconfig;
+    axisLimitconfig.all = ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::SYS_Config_Signal).toUInt();
+    ui->xLimit->setChecked(axisLimitconfig.b.xLimit);
+    ui->yLimit->setChecked(axisLimitconfig.b.yLimit);
+    ui->sLimit->setChecked(axisLimitconfig.b.sLimit);
+    ui->rLimit->setChecked(axisLimitconfig.b.rLimit);
+    ui->tLimit->setChecked(axisLimitconfig.b.tLimit);
+
+    ui->aBox->hide();
+    ui->bBox->hide();
+    ui->cBox->hide();
+    ui->label_14->hide();
+    ui->label_15->hide();
+    ui->label_16->hide();
 }
 
 ICStructDefineFrame::~ICStructDefineFrame()
@@ -196,7 +223,13 @@ void ICStructDefineFrame::on_saveButton_clicked()
     }
     ICVirtualHost::GlobalVirtualHost()->SetSystemParameter(ICVirtualHost::SYS_Config_Fixture, machineCount);
     QVector<uint> dataBuffer(7, 0);
-    dataBuffer[0] = 0;
+    AxisLimitConfig axisLimitConfig;
+    axisLimitConfig.b.xLimit = ui->xLimit->isChecked();
+    axisLimitConfig.b.yLimit = ui->yLimit->isChecked();
+    axisLimitConfig.b.sLimit = ui->sLimit->isChecked();
+    axisLimitConfig.b.rLimit = ui->rLimit->isChecked();
+    axisLimitConfig.b.tLimit = ui->tLimit->isChecked();
+    dataBuffer[0] = axisLimitConfig.all;
     dataBuffer[1] = axisDefine_;
     dataBuffer[2] = 0;
 //    dataBuffer[3] = ICVirtualHost::GlobalVirtualHost()->FixtureDefineSwitch(ui->fixtureSelectBox->currentIndex());
@@ -236,7 +269,7 @@ void ICStructDefineFrame::on_saveButton_clicked()
         host->SetSystemParameter(ICVirtualHost::SYS_Config_Resv2, dataBuffer.at(5));
         host->SetSystemParameter(ICVirtualHost::SYS_Config_Xorsum, dataBuffer.at(6));
         host->SetSystemParameter(ICVirtualHost::SYS_ARM_CONFIG, 0);
-        host->SetSystemParameter(ICVirtualHost::SYS_Config_Signal, 0);
+        host->SetSystemParameter(ICVirtualHost::SYS_Config_Signal, dataBuffer.at(0));
         host->SetSystemParameter(ICVirtualHost::SYS_Config_Out, 0);
 //        host->SystemParameter(ICVirtualHost::SYS_Function);
         host->SaveSystemConfig();

@@ -125,7 +125,7 @@ void ICUpdateSystemPage::hideEvent(QHideEvent *e)
 {
     timer_.stop();
 //    ui->updateToolButton->setEnabled(false);
-    ui->updatePasswardButton->setEnabled(false);
+//    ui->updatePasswardButton->setEnabled(false);
 //    ui->updateHostButton->setEnabled(false);
 //    ui->connectHostButton->setEnabled(false);
 //    ui->writeHostButton->setEnabled(false);
@@ -184,14 +184,14 @@ void ICUpdateSystemPage::RefreshUSBIniInfo()
     {
 //        ui->updateToolButton->setEnabled(false);
     }
-    if(!updateSettings_->value("superPassward","").toString().isEmpty())
-    {
-        ui->updatePasswardButton->setEnabled(true);
-    }
-    else
-    {
-        ui->updatePasswardButton->setEnabled(false);
-    }
+//    if(!updateSettings_->value("superPassward","").toString().isEmpty())
+//    {
+//        ui->updatePasswardButton->setEnabled(true);
+//    }
+//    else
+//    {
+//        ui->updatePasswardButton->setEnabled(false);
+//    }
     if(!updateHostSettings_->value("version", "").toString().isEmpty())
     {
 //        ui->connectHostButton->setEnabled(true);

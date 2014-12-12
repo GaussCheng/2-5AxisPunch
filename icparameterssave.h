@@ -53,16 +53,21 @@ public:
     void SetRestTime(const int & hour_){SaveParameter("BootParameter", "hour_", hour_); }
 
     QLocale::Language Language(){ return static_cast<QLocale::Language>(GetParameter(SystemLocale, "SystemLanguage", QLocale::Chinese).toInt());}
-    void SetLanguage(QLocale::Language language);
-    void LoadInitLocale() { SetCountry(Country());}
+    void SetLanguage(QLocale::Language language, bool isSync=true);
+    void LoadInitLocale() { SetCountry(Country(), false);}
     QLocale::Country Country() { return static_cast<QLocale::Country>(GetParameter(SystemLocale, "SystemCountry", QLocale::China).toInt());}
-    void SetCountry(QLocale::Country country);
+    void SetCountry(QLocale::Country country, bool isSync=true);
 
     QTranslator* Translator() { return translator_;}
 
     bool KeyTone() { return GetParameter(ProductConfig, "KeyTone", true).toBool();}
 #ifndef Q_WS_WIN32
-    void SetKeyTone(bool isOn)  {SaveParameter(ProductConfig, "KeyTone", isOn);ioctl(beepFD_, 0, isOn ? 1 : 0);}
+    void SetKeyTone(bool isOn, bool isSync = true)
+    {
+        if(isSync)
+            SaveParameter(ProductConfig, "KeyTone", isOn, isSync);
+        ioctl(beepFD_, 0, isOn ? 1 : 0);
+    }
 #else
     void SetKeyTone(bool isOn)  {SaveParameter(ProductConfig, "KeyTone", isOn);}
 #endif
@@ -80,7 +85,7 @@ public:
     void SetBackLightTime(uint time) { SaveParameter(ProductConfig, "BackLight", time);}
 
     uint Brightness() { return GetParameter(ProductConfig, "Brightness", 8).toUInt();}
-    void SetBrightness(uint brightness);
+    void SetBrightness(uint brightness, bool isSync = true);
 
     bool IsSingleArm() { return GetParameter(SystemMachine, "ArmNum", false).toBool();}
     void SetSingleArm(bool isSingle) { SaveParameter(SystemMachine, "ArmNum", isSingle);}

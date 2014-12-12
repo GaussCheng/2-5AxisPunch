@@ -9,6 +9,7 @@ cp decrypt.sh /usr/bin -f
 cp drivers/* /home/root -f
 rm -r /Settings/sysconfig
 cp 3a8.qmap /home/root -f
+cp QtAutorun.sh /usr/bin -f
 reboot
 #cd 3a8
 #cp -rf records subs sysconfig /mnt/database

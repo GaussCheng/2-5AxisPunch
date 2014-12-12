@@ -40,7 +40,7 @@ ICParametersSave::ICParametersSave(const QString fileName)
 #else
     beepFD_ = 0;
 #endif
-    SetKeyTone(KeyTone());
+    SetKeyTone(KeyTone(), false);
 }
 
 ICParametersSave::~ICParametersSave()
@@ -77,7 +77,7 @@ void ICParametersSave::SetCommunicationConfig(const QString &device, int baudRat
     this->endGroup();
 }
 
-void ICParametersSave::SetLanguage(QLocale::Language language)
+void ICParametersSave::SetLanguage(QLocale::Language language, bool isSync)
 {
     switch(language)
     {
@@ -102,34 +102,36 @@ void ICParametersSave::SetLanguage(QLocale::Language language)
 
 
     qApp->installTranslator(translator_);
-    SaveParameter(SystemLocale, "SystemLanguage", static_cast<int>(language));
+    if(isSync)
+        SaveParameter(SystemLocale, "SystemLanguage", static_cast<int>(language), isSync);
 
     CurrentLanguageChanged();
 }
 
-void ICParametersSave::SetCountry(QLocale::Country country)
+void ICParametersSave::SetCountry(QLocale::Country country, bool isSync)
 {
     switch(country)
     {
     case QLocale::China:
         {
             QLocale::setDefault(QLocale(QLocale::Chinese, country));
-            SetLanguage(QLocale::Chinese);
+            SetLanguage(QLocale::Chinese, isSync);
         }
         break;
     case QLocale::UnitedStates:
         {
             QLocale::setDefault(QLocale(QLocale::English, country));
-            SetLanguage(QLocale::English);
+            SetLanguage(QLocale::English, isSync);
         }
         break;
     default:
         {
             QLocale::setDefault(QLocale(QLocale::Chinese, country));
-            SetLanguage(QLocale::Chinese);
+            SetLanguage(QLocale::Chinese, isSync);
         }
     }
-    SaveParameter(SystemLocale, "SystemCountry", static_cast<int>(country));
+    if(isSync)
+        SaveParameter(SystemLocale, "SystemCountry", static_cast<int>(country), isSync);
 }
 
 bool ICParametersSave::VerifyPassword(OperationLevel level, const QString &password)
@@ -211,11 +213,12 @@ void ICParametersSave::SetDistanceRotation(const QString &axisName, double value
 //    QFile::remove("./sysconfig/DistanceRotation~");
 }
 
-void ICParametersSave::SetBrightness(uint brightness)
+void ICParametersSave::SetBrightness(uint brightness, bool isSync)
 {
 //    QString cmd("BackLight on ");
     QString cmd("BackLight.sh  ");
     cmd += QString::number(brightness);
     ::system(cmd.toAscii());
-    SaveParameter(ProductConfig, "Brightness", brightness);
+    if(isSync)
+        SaveParameter(ProductConfig, "Brightness", brightness, isSync);
 }

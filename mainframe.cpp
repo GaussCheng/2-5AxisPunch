@@ -112,6 +112,9 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     emit LoadMessage("Connected");
     ui->setupUi(this);
     ICProgramHeadFrame::Instance(ui->headerContainer);
+    connect(ICProgramHeadFrame::Instance(),
+            SIGNAL(MoldButtonClicked()),
+            SLOT(OnMoldButtonClicked()));
 
     QDir configDir("./sysconfig");
     configDir.setFilter(QDir::Files);
@@ -209,6 +212,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     //    axisWidgets_.append(QList<QWidget*>()<<ui->zLabel<<ui->zmmLabel<<ui->zPosLabel);
     compareAlarmNums_<<210<<211<<212<<213<<214<<215<<216<<217<<218;
     hostCompareDialog_ = new ICHostComparePage(this);
+    recordPage_ =  NULL;
     UpdateAxisDefine_();
     ICKeyboard::Instace()->Receive();
     QTimer::singleShot(ICParametersSave::Instance()->BackLightTime() * 60000, this, SLOT(CheckedInput()));
@@ -238,7 +242,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     //       ShowManualPage();
     //         ShowAutoPage();
 #endif
-    QString moldName = ICParametersSave::Instance()->MoldName("Test.act");
+    QString moldName = ICParametersSave::Instance()->MoldName("Default.act");
     qDebug()<<"Last mold:"<<moldName;
     ICProgramHeadFrame::Instance()->SetCurrentMoldName(moldName);
     int restTime = ICParametersSave::Instance()->RestTime(0);
@@ -579,10 +583,10 @@ void MainFrame::CategoryButtonClicked()
 }
 
 static int16_t oldX = -1;
-static uint16_t oldY = 0;
-static uint16_t oldZ = 0;
-static uint16_t oldQ = 0;
-static uint16_t oldP = 0;
+static int16_t oldY = -1;
+static int16_t oldZ = -1;
+static int16_t oldQ = -1;
+static int16_t oldP = -1;
 //static int oldS = -1;
 void MainFrame::StatusRefreshed()
 {
@@ -629,7 +633,7 @@ void MainFrame::StatusRefreshed()
     if(pos != oldP)
     {
         oldP = pos;
-        ui->x2CurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
+        ui->rCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
     }
 #endif
 //    int speed = host->GlobalSpeed();
@@ -1308,4 +1312,15 @@ void MainFrame::CountRestTime()
     --restTime;
     ICParametersSave::Instance()->SetRestTime(restTime);
     ICParametersSave::Instance()->SetBootDatetime(QDateTime::currentDateTime());
+}
+
+void MainFrame::OnMoldButtonClicked()
+{
+    nullButton_->click();
+    if(recordPage_ == NULL)
+    {
+        recordPage_ = MoldInformation::Instance();
+        centerStackedLayout_->addWidget(recordPage_);
+    }
+    centerStackedLayout_->setCurrentWidget(recordPage_);
 }

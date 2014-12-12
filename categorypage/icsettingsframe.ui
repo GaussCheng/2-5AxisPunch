@@ -23,7 +23,7 @@
    <item>
     <widget class="ICTabWidget" name="tabWidget">
      <property name="tabPosition">
-      <enum>QTabWidget::West</enum>
+      <enum>QTabWidget::North</enum>
      </property>
      <property name="currentIndex">
       <number>0</number>
@@ -86,7 +86,7 @@
         <rect>
          <x>20</x>
          <y>85</y>
-         <width>98</width>
+         <width>141</width>
          <height>36</height>
         </rect>
        </property>
@@ -97,9 +97,9 @@
       <widget class="QPushButton" name="registerButton">
        <property name="geometry">
         <rect>
-         <x>155</x>
+         <x>170</x>
          <y>85</y>
-         <width>98</width>
+         <width>141</width>
          <height>36</height>
         </rect>
        </property>
@@ -110,9 +110,9 @@
       <widget class="QLabel" name="tipLabel">
        <property name="geometry">
         <rect>
-         <x>270</x>
+         <x>315</x>
          <y>90</y>
-         <width>306</width>
+         <width>261</width>
          <height>21</height>
         </rect>
        </property>
@@ -250,15 +250,15 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>ICLineEditWithVirtualKeyboard</class>
-   <extends>QLineEdit</extends>
-   <header>iclineeditwithvirtualkeyboard.h</header>
-  </customwidget>
-  <customwidget>
    <class>ICTabWidget</class>
    <extends>QTabWidget</extends>
    <header>ictabwidget.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ICLineEditWithVirtualKeyboard</class>
+   <extends>QLineEdit</extends>
+   <header>iclineeditwithvirtualkeyboard.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

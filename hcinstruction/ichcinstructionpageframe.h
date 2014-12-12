@@ -70,6 +70,8 @@ private slots:
     void on_mainButton_clicked();
 
     void on_feedButton_clicked();
+    void on_fixtureCheckBtn_clicked();
+    void on_returnButton_clicked();
 
     void on_reserveBox_activated(int index);
 
@@ -113,6 +115,9 @@ private:
 
     QList<ICGroupMoldUIItem> programList_;
     int currentEdit_;
+    QPushButton* nullButton;
+    QString oriStyle;
+    QString selStyle;
 //    bool isProgramChanged_;
 };
 

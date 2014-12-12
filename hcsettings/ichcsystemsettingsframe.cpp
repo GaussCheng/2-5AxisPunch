@@ -28,9 +28,12 @@ ICHCSystemSettingsFrame::ICHCSystemSettingsFrame(QWidget *parent) :
     ui->languageButtonGroup->setId(ui->chineseBox,0);
     ui->languageButtonGroup->setId(ui->englishBox,1);
     InitParameter();
+    ui->extentFunctionCheckBox->blockSignals(true);
     ui->extentFunctionCheckBox->setChecked(ICParametersSave::Instance()->IsExtentFunctionUsed());
+    ui->extentFunctionCheckBox->blockSignals(false);
+    ui->limitFunctionBox->blockSignals(true);
     ui->limitFunctionBox->setChecked(ICParametersSave::Instance()->IsRegisterFunctinOn());
-
+    ui->limitFunctionBox->blockSignals(false);
     connect(ICProgramHeadFrame::Instance(),
             SIGNAL(LevelChanged(int)),
             this,
@@ -79,6 +82,7 @@ void ICHCSystemSettingsFrame::InitParameter()
     else if(index == 1)
         ui->englishBox->setChecked(true);
     // ui->languageComboBox->setCurrentIndex(index);
+    ui->keyToneButton->blockSignals(true);
     if(paraSave->KeyTone())
     {
         ui->keyToneButton->setText(tr("Key Tone(ON)"));
@@ -89,6 +93,7 @@ void ICHCSystemSettingsFrame::InitParameter()
         ui->keyToneButton->setText(tr("Key Tone(OFF)"));
         ui->keyToneButton->setChecked(false);
     }
+    ui->keyToneButton->blockSignals(false);
 }
 
 void ICHCSystemSettingsFrame::languageBoxChange()
@@ -625,7 +630,7 @@ void ICHCSystemSettingsFrame::StatusRefresh()
     QString os(osInfo_.release);
 #endif
     os += "; ";
-    ui->versionLabel->setText("Version: OS:" + os + QString("App %1;Libs:4.7.3; Host:").arg(SHOW_VERSION) + ICVirtualHost::GlobalVirtualHost()->HostStatus(ICVirtualHost::Time).toString());
+    ui->versionLabel->setText("Version: OS:" + os + QString(tr("App %1;Libs:4.7.3; Host:")).arg(SHOW_VERSION) + ICVirtualHost::GlobalVirtualHost()->HostStatus(ICVirtualHost::Time).toString());
 }
 
 void ICHCSystemSettingsFrame::on_calibrationBtn_clicked()

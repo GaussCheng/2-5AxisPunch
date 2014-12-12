@@ -12,6 +12,7 @@ UI_DIR = temp_$${SK_SIZE}
 MOC_DIR = temp_$${SK_SIZE}
 RCC_DIR = temp_$${SK_SIZE}
 DESTDIR = bin
+QMAKE_CXX = ccache $${QMAKE_CXX}
 CONFIG(debug, debug|release) {
 #    LIBS += -lprofiler
 DESTDIR = bin_debug
