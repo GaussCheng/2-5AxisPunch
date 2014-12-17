@@ -65,7 +65,7 @@ private slots:
 
     void OnActionButtonReleased();
 
-    void on_tabWidget_currentChanged(int index);
+//    void on_tabWidget_currentChanged(int index);
 
     void on_mainButton_clicked();
 

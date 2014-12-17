@@ -42,7 +42,7 @@
        <property name="minimumSize">
         <size>
          <width>0</width>
-         <height>32</height>
+         <height>48</height>
         </size>
        </property>
       </widget>
@@ -97,7 +97,7 @@
      <property name="maximumSize">
       <size>
        <width>640</width>
-       <height>480</height>
+       <height>400</height>
       </size>
      </property>
      <property name="frameShape">
@@ -106,7 +106,6 @@
      <property name="frameShadow">
       <enum>QFrame::Plain</enum>
      </property>
-     <zorder>posContainer</zorder>
     </widget>
    </item>
    <item>
@@ -1538,7 +1537,7 @@
        <string>S:</string>
       </property>
      </widget>
-     <widget class="QLabel" name="x2CurrentPos">
+     <widget class="QLabel" name="rCurrentPos">
       <property name="geometry">
        <rect>
         <x>535</x>

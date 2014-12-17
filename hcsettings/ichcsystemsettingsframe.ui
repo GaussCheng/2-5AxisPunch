@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>593</width>
-    <height>415</height>
+    <height>400</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -31,8 +31,14 @@
    <property name="spacing">
     <number>2</number>
    </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
    <property name="topMargin">
     <number>2</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
    </property>
    <property name="bottomMargin">
     <number>2</number>
@@ -57,7 +63,19 @@
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <property name="spacing">
-        <number>20</number>
+        <number>6</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
        </property>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_15">
@@ -307,40 +325,6 @@ QRadioButton::indicator:unchecked:disabled
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_7">
-         <item>
-          <widget class="QLabel" name="label_14">
-           <property name="text">
-            <string>Back Light Time:</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="ICLineEditWithVirtualNumericKeypad" name="backLightTimeEdit"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_15">
-           <property name="text">
-            <string>min</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_4">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-        </layout>
-       </item>
-       <item>
         <layout class="QHBoxLayout" name="horizontalLayout_8">
          <item>
           <widget class="QLabel" name="label_40">
@@ -424,6 +408,36 @@ QRadioButton::indicator:unchecked:disabled
           </widget>
          </item>
          <item>
+          <spacer name="horizontalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_14">
+           <property name="text">
+            <string>Back Light Time:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="ICLineEditWithVirtualNumericKeypad" name="backLightTimeEdit"/>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_15">
+           <property name="text">
+            <string>min</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QPushButton" name="saveButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -454,8 +468,17 @@ QRadioButton::indicator:unchecked:disabled
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
           <widget class="QLabel" name="versionLabel">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>48</height>
+            </size>
+           </property>
            <property name="text">
             <string/>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -958,15 +981,15 @@ QRadioButton::indicator:unchecked:disabled
    <header>iclineeditwithvirtualnumerickeypad.h</header>
   </customwidget>
   <customwidget>
-   <class>ICLineEditWithVirtualKeyboard</class>
-   <extends>QLineEdit</extends>
-   <header>iclineeditwithvirtualkeyboard.h</header>
-  </customwidget>
-  <customwidget>
    <class>ICTabWidget</class>
    <extends>QTabWidget</extends>
    <header>ictabwidget.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ICLineEditWithVirtualKeyboard</class>
+   <extends>QLineEdit</extends>
+   <header>iclineeditwithvirtualkeyboard.h</header>
   </customwidget>
  </customwidgets>
  <resources>

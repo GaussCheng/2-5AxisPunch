@@ -7,8 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>640</width>
-    <height>366</height>
+    <height>317</height>
    </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>640</width>
+    <height>400</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Frame</string>
@@ -27,32 +33,26 @@
   <property name="frameShadow">
    <enum>QFrame::Plain</enum>
   </property>
-  <widget class="ICTabWidget" name="tabWidget">
+  <widget class="QStackedWidget" name="stackedWidget">
    <property name="geometry">
     <rect>
-     <x>9</x>
-     <y>0</y>
-     <width>631</width>
-     <height>361</height>
+     <x>5</x>
+     <y>3</y>
+     <width>640</width>
+     <height>311</height>
     </rect>
-   </property>
-   <property name="tabPosition">
-    <enum>QTabWidget::West</enum>
    </property>
    <property name="currentIndex">
     <number>0</number>
    </property>
-   <widget class="QWidget" name="tab_3">
-    <attribute name="title">
-     <string>Program</string>
-    </attribute>
+   <widget class="QWidget" name="stackedWidgetPage1">
     <widget class="QToolButton" name="insertToolButton">
      <property name="geometry">
       <rect>
-       <x>495</x>
-       <y>300</y>
-       <width>100</width>
-       <height>44</height>
+       <x>540</x>
+       <y>276</y>
+       <width>80</width>
+       <height>32</height>
       </rect>
      </property>
      <property name="sizePolicy">
@@ -81,10 +81,10 @@
     <widget class="QToolButton" name="downButton">
      <property name="geometry">
       <rect>
-       <x>213</x>
-       <y>300</y>
+       <x>180</x>
+       <y>276</y>
        <width>80</width>
-       <height>44</height>
+       <height>32</height>
       </rect>
      </property>
      <property name="sizePolicy">
@@ -116,10 +116,10 @@
     <widget class="QToolButton" name="upButton">
      <property name="geometry">
       <rect>
-       <x>301</x>
-       <y>300</y>
+       <x>270</x>
+       <y>276</y>
        <width>80</width>
-       <height>44</height>
+       <height>32</height>
       </rect>
      </property>
      <property name="sizePolicy">
@@ -151,10 +151,10 @@
     <widget class="QToolButton" name="commandButton">
      <property name="geometry">
       <rect>
-       <x>389</x>
-       <y>300</y>
-       <width>100</width>
-       <height>44</height>
+       <x>370</x>
+       <y>276</y>
+       <width>80</width>
+       <height>32</height>
       </rect>
      </property>
      <property name="sizePolicy">
@@ -184,10 +184,10 @@
     <widget class="QToolButton" name="modifyToolButton">
      <property name="geometry">
       <rect>
-       <x>1</x>
-       <y>300</y>
-       <width>100</width>
-       <height>44</height>
+       <x>2</x>
+       <y>276</y>
+       <width>80</width>
+       <height>32</height>
       </rect>
      </property>
      <property name="sizePolicy">
@@ -216,10 +216,10 @@
     <widget class="QToolButton" name="deleteToolButton">
      <property name="geometry">
       <rect>
-       <x>107</x>
-       <y>300</y>
-       <width>100</width>
-       <height>44</height>
+       <x>90</x>
+       <y>276</y>
+       <width>80</width>
+       <height>32</height>
       </rect>
      </property>
      <property name="sizePolicy">
@@ -248,29 +248,17 @@
     <widget class="QStackedWidget" name="settingStackedWidget">
      <property name="geometry">
       <rect>
-       <x>377</x>
+       <x>360</x>
        <y>1</y>
-       <width>220</width>
-       <height>291</height>
+       <width>271</width>
+       <height>271</height>
       </rect>
      </property>
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>220</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>220</width>
-       <height>16777215</height>
-      </size>
      </property>
      <property name="frameShape">
       <enum>QFrame::Box</enum>
@@ -293,6 +281,22 @@
         <number>2</number>
        </property>
        <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>13</width>
+           <height>25</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
         <widget class="QToolButton" name="lineButton">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -302,14 +306,14 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>140</width>
-           <height>40</height>
+           <width>0</width>
+           <height>32</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>140</width>
-           <height>40</height>
+           <width>16777215</width>
+           <height>44</height>
           </size>
          </property>
          <property name="text">
@@ -340,14 +344,14 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>140</width>
-           <height>40</height>
+           <width>0</width>
+           <height>32</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>140</width>
-           <height>40</height>
+           <width>16777215</width>
+           <height>44</height>
           </size>
          </property>
          <property name="text">
@@ -378,14 +382,14 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>140</width>
-           <height>40</height>
+           <width>0</width>
+           <height>32</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>140</width>
-           <height>40</height>
+           <width>16777215</width>
+           <height>44</height>
           </size>
          </property>
          <property name="text">
@@ -416,14 +420,14 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>140</width>
-           <height>40</height>
+           <width>0</width>
+           <height>32</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>140</width>
-           <height>40</height>
+           <width>16777215</width>
+           <height>44</height>
           </size>
          </property>
          <property name="text">
@@ -454,14 +458,14 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>140</width>
-           <height>40</height>
+           <width>0</width>
+           <height>32</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>140</width>
-           <height>40</height>
+           <width>16777215</width>
+           <height>44</height>
           </size>
          </property>
          <property name="text">
@@ -492,14 +496,14 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>140</width>
-           <height>40</height>
+           <width>0</width>
+           <height>32</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>140</width>
-           <height>40</height>
+           <width>16777215</width>
+           <height>44</height>
           </size>
          </property>
          <property name="text">
@@ -530,14 +534,14 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>140</width>
-           <height>40</height>
+           <width>0</width>
+           <height>32</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>140</width>
-           <height>40</height>
+           <width>16777215</width>
+           <height>44</height>
           </size>
          </property>
          <property name="text">
@@ -558,773 +562,758 @@
          </property>
         </widget>
        </item>
+       <item>
+        <widget class="QToolButton" name="stackButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>44</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Stack</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../resource.qrc">
+           <normaloff>:/resource/jump(32).png</normaloff>:/resource/jump(32).png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="toolButtonStyle">
+          <enum>Qt::ToolButtonTextBesideIcon</enum>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
     </widget>
-    <widget class="ICListWidget" name="moldContentListWidget">
+    <widget class="QWidget" name="widget" native="true">
      <property name="geometry">
       <rect>
-       <x>4</x>
-       <y>37</y>
-       <width>370</width>
-       <height>261</height>
+       <x>0</x>
+       <y>0</y>
+       <width>351</width>
+       <height>271</height>
       </rect>
      </property>
-     <property name="styleSheet">
-      <string notr="true">QListView{
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QWidget" name="widget" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="mainButton">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>24</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Main</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">buttonGroup</string>
+           </attribute>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="feedButton">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>24</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Feed</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">buttonGroup</string>
+           </attribute>
+          </widget>
+         </item>
+         <item>
+          <widget class="ICComboBox" name="reserveBox">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>24</height>
+            </size>
+           </property>
+           <item>
+            <property name="text">
+             <string>Reserve1</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Reserve2</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Reserve3</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Reserve4</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Reserve5</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Reserve6</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Reserve7</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="fixtureCheckBtn">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>24</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Fixture Check</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QListWidget" name="moldContentListWidget">
+        <property name="styleSheet">
+         <string notr="true">QListView{
 background-color: darkgray;
 }
 QListView::item{
 padding:5px;
-}
-QScrollBar:vertical{
-     border: 2px solid #6c6c6c;
-     background: rgba(214,212,210,100%);
-     width: 15px;
-     margin: 22px 0 22px 0;
-}
-QScrollBar:horizontal {
-     border: 2px solid #6c6c6c;
-     background: rgba(214,212,210,100%);
-     height: 15px;
-     margin: 0 22px 0 22px;
-}
-QScrollBar::handle:vertical {
-     background-color: qlineargradient(spread:pad, x1:0.995455, y1:0.455, x2:0, y2:0.46, stop:0 rgba(94, 126, 165, 255), stop:1 rgba(159, 191, 230, 255));
-     min-height: 20px;
-}
-QScrollBar::handle:horizontal {
-     background-color: qlineargradient(spread:pad,  x1:1, y1:1, x2:1, y2:0, stop:0 rgba(94, 126, 165, 255), stop:1 rgba(159, 191, 230, 255));
-     min-width: 20px;
-}
-QScrollBar::add-line:vertical{
-     border: 2px solid #6c6c6c;
-     background: rgba(0,0,0,30%);
-     height: 20px;
-     subcontrol-position: bottom;
-     subcontrol-origin: margin;
-}
-QScrollBar::add-line:horizontal {
-     border: 2px solid #6c6c6c;
-     background: rgba(0,0,0,30%);
-     width: 20px;
-     subcontrol-position: right;
-     subcontrol-origin: margin;
-}
-
-QScrollBar::sub-line:vertical {
-     border: 2px solid #6c6c6c;
-     background: rgba(0,0,0,30%);
-     height: 20px;
-     subcontrol-position: top;
-     subcontrol-origin: margin;
-}
-QScrollBar::sub-line:horizontal {
-     border: 2px solid #6c6c6c;
-     background: rgba(0,0,0,30%);
-     width: 20px;
-     subcontrol-position: left;
-     subcontrol-origin: margin;
-}
-QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical,QScrollBar::left-arrow:horizontal, QScrollBar::right-arrow:horizontal{
-     border: 2px solid #6c6c6c;
-     width: 3px;
-     height: 3px;
-     background: white;
-}
-
-QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical, QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
-      background: none;
 }</string>
-     </property>
-     <property name="horizontalScrollBarPolicy">
-      <enum>Qt::ScrollBarAsNeeded</enum>
-     </property>
-     <property name="editTriggers">
-      <set>QAbstractItemView::NoEditTriggers</set>
-     </property>
-     <property name="showDropIndicator" stdset="0">
-      <bool>false</bool>
-     </property>
-     <property name="alternatingRowColors">
-      <bool>true</bool>
-     </property>
-     <property name="selectionMode">
-      <enum>QAbstractItemView::SingleSelection</enum>
-     </property>
-     <property name="selectionBehavior">
-      <enum>QAbstractItemView::SelectRows</enum>
-     </property>
-     <property name="spacing">
-      <number>1</number>
-     </property>
-     <property name="selectionRectVisible">
-      <bool>false</bool>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="feedButton">
-     <property name="geometry">
-      <rect>
-       <x>120</x>
-       <y>3</y>
-       <width>85</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>24</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>90</width>
-       <height>16777215</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>Feed</string>
-     </property>
-     <property name="checkable">
-      <bool>true</bool>
-     </property>
-     <attribute name="buttonGroup">
-      <string notr="true">buttonGroup</string>
-     </attribute>
-    </widget>
-    <widget class="QPushButton" name="mainButton">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>3</y>
-       <width>85</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>24</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>90</width>
-       <height>16777215</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>Main</string>
-     </property>
-     <property name="checkable">
-      <bool>true</bool>
-     </property>
-     <property name="checked">
-      <bool>true</bool>
-     </property>
-     <attribute name="buttonGroup">
-      <string notr="true">buttonGroup</string>
-     </attribute>
-    </widget>
-    <widget class="ICComboBox" name="reserveBox">
-     <property name="geometry">
-      <rect>
-       <x>245</x>
-       <y>5</y>
-       <width>91</width>
-       <height>27</height>
-      </rect>
-     </property>
-     <item>
-      <property name="text">
-       <string>Reserve1</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Reserve2</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Reserve3</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Reserve4</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Reserve5</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Reserve6</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Reserve7</string>
-      </property>
-     </item>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAsNeeded</enum>
+        </property>
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+        <property name="showDropIndicator" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>true</bool>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::SingleSelection</enum>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
+        </property>
+        <property name="spacing">
+         <number>1</number>
+        </property>
+        <property name="selectionRectVisible">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </widget>
-   <widget class="QWidget" name="fixtureCheck">
-    <property name="styleSheet">
-     <string notr="true">QCheckBox{
-	spacing: 8px;
+   <widget class="QWidget" name="stackedWidgetPage2">
+    <widget class="QTabWidget" name="tabWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>2</y>
+       <width>631</width>
+       <height>315</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">::indicator {
      width: 32px;
      height: 32px;
-}
-QCheckBox::indicator:checked
+ }
+
+::indicator:unchecked 
 {
- image: url(:/resource/check_checked.png);
-}
-QCheckBox::indicator:unchecked
+     image: url(:/resource/check_unchecked.png);
+ }
+::indicator:checked 
 {
- image: url(:/resource/check_unchecked.png);
+     image: url(:/resource/check_checked.png);
+ }
+
+::indicator:checked:disabled
+{
+ image: url(:/resource/check_checked_disable.png);
 }
 
-</string>
-    </property>
-    <attribute name="title">
-     <string>Fixture Check</string>
-    </attribute>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <property name="spacing">
-      <number>2</number>
+::indicator:unchecked:disabled
+{
+ image: url(:/resource/check_unchecked_disable.png);
+}</string>
      </property>
-     <property name="leftMargin">
-      <number>1</number>
+     <property name="currentIndex">
+      <number>0</number>
      </property>
-     <property name="topMargin">
-      <number>1</number>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Page1</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <widget class="QCheckBox" name="check0">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QCheckBox" name="check8">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QCheckBox" name="check16">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QCheckBox" name="check24">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QCheckBox" name="check1">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QCheckBox" name="check9">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QCheckBox" name="check17">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QCheckBox" name="check25">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QCheckBox" name="check2">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QCheckBox" name="check10">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QCheckBox" name="check18">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="3">
+        <widget class="QCheckBox" name="check26">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QCheckBox" name="check3">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QCheckBox" name="check11">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="QCheckBox" name="check19">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="3">
+        <widget class="QCheckBox" name="check27">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QCheckBox" name="check4">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QCheckBox" name="check12">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QCheckBox" name="check20">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="3">
+        <widget class="QCheckBox" name="check28">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QCheckBox" name="check5">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QCheckBox" name="check13">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="2">
+        <widget class="QCheckBox" name="check21">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="3">
+        <widget class="QCheckBox" name="check29">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QCheckBox" name="check6">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QCheckBox" name="check14">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="2">
+        <widget class="QCheckBox" name="check22">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="3">
+        <widget class="QCheckBox" name="check30">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QCheckBox" name="check7">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QCheckBox" name="check15">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="2">
+        <widget class="QCheckBox" name="check23">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="3">
+        <widget class="QCheckBox" name="check31">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>Page2</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QCheckBox" name="check32">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QCheckBox" name="check40">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QCheckBox" name="check48">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QCheckBox" name="check56">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QCheckBox" name="check33">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QCheckBox" name="check41">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QCheckBox" name="check49">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QCheckBox" name="check57">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QCheckBox" name="check34">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QCheckBox" name="check42">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QCheckBox" name="check50">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="3">
+        <widget class="QCheckBox" name="check58">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QCheckBox" name="check35">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QCheckBox" name="check43">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="QCheckBox" name="check51">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="3">
+        <widget class="QCheckBox" name="check59">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QCheckBox" name="check36">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QCheckBox" name="check44">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QCheckBox" name="check52">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="3">
+        <widget class="QCheckBox" name="check60">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QCheckBox" name="check37">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QCheckBox" name="check45">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="2">
+        <widget class="QCheckBox" name="check53">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="3">
+        <widget class="QCheckBox" name="check61">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QCheckBox" name="check38">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QCheckBox" name="check46">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="2">
+        <widget class="QCheckBox" name="check54">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="3">
+        <widget class="QCheckBox" name="check62">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QCheckBox" name="check39">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QCheckBox" name="check47">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="2">
+        <widget class="QCheckBox" name="check55">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="3">
+        <widget class="QCheckBox" name="check63">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="returnButton">
+     <property name="geometry">
+      <rect>
+       <x>530</x>
+       <y>2</y>
+       <width>101</width>
+       <height>26</height>
+      </rect>
      </property>
-     <property name="rightMargin">
-      <number>1</number>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
      </property>
-     <property name="bottomMargin">
-      <number>1</number>
+     <property name="text">
+      <string>Return</string>
      </property>
-     <item>
-      <widget class="QTabWidget" name="tabWidget_2">
-       <property name="currentIndex">
-        <number>0</number>
-       </property>
-       <widget class="QWidget" name="tab">
-        <attribute name="title">
-         <string>Page1</string>
-        </attribute>
-        <layout class="QGridLayout" name="gridLayout_3">
-         <property name="leftMargin">
-          <number>2</number>
-         </property>
-         <property name="topMargin">
-          <number>2</number>
-         </property>
-         <property name="rightMargin">
-          <number>2</number>
-         </property>
-         <property name="bottomMargin">
-          <number>2</number>
-         </property>
-         <property name="spacing">
-          <number>2</number>
-         </property>
-         <item row="0" column="0">
-          <widget class="QCheckBox" name="check0">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QCheckBox" name="check8">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="2">
-          <widget class="QCheckBox" name="check16">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="3">
-          <widget class="QCheckBox" name="check24">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QCheckBox" name="check1">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QCheckBox" name="check9">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="2">
-          <widget class="QCheckBox" name="check17">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="3">
-          <widget class="QCheckBox" name="check25">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
-          <widget class="QCheckBox" name="check2">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
-          <widget class="QCheckBox" name="check10">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="2">
-          <widget class="QCheckBox" name="check18">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="3">
-          <widget class="QCheckBox" name="check26">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="0">
-          <widget class="QCheckBox" name="check3">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="1">
-          <widget class="QCheckBox" name="check11">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="2">
-          <widget class="QCheckBox" name="check19">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="3">
-          <widget class="QCheckBox" name="check27">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="0">
-          <widget class="QCheckBox" name="check4">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="1">
-          <widget class="QCheckBox" name="check12">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="2">
-          <widget class="QCheckBox" name="check20">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="3">
-          <widget class="QCheckBox" name="check28">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="0">
-          <widget class="QCheckBox" name="check5">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="1">
-          <widget class="QCheckBox" name="check13">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="2">
-          <widget class="QCheckBox" name="check21">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="3">
-          <widget class="QCheckBox" name="check29">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="0">
-          <widget class="QCheckBox" name="check6">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="1">
-          <widget class="QCheckBox" name="check14">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="2">
-          <widget class="QCheckBox" name="check22">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="3">
-          <widget class="QCheckBox" name="check30">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="7" column="0">
-          <widget class="QCheckBox" name="check7">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="7" column="1">
-          <widget class="QCheckBox" name="check15">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="7" column="2">
-          <widget class="QCheckBox" name="check23">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="7" column="3">
-          <widget class="QCheckBox" name="check31">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-       <widget class="QWidget" name="tab_2">
-        <attribute name="title">
-         <string>Page2</string>
-        </attribute>
-        <layout class="QGridLayout" name="gridLayout_2">
-         <property name="leftMargin">
-          <number>2</number>
-         </property>
-         <property name="topMargin">
-          <number>2</number>
-         </property>
-         <property name="rightMargin">
-          <number>2</number>
-         </property>
-         <property name="bottomMargin">
-          <number>2</number>
-         </property>
-         <property name="spacing">
-          <number>2</number>
-         </property>
-         <item row="0" column="0">
-          <widget class="QCheckBox" name="check32">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QCheckBox" name="check40">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="2">
-          <widget class="QCheckBox" name="check48">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="3">
-          <widget class="QCheckBox" name="check56">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QCheckBox" name="check33">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QCheckBox" name="check41">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="2">
-          <widget class="QCheckBox" name="check49">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="3">
-          <widget class="QCheckBox" name="check57">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
-          <widget class="QCheckBox" name="check34">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
-          <widget class="QCheckBox" name="check42">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="2">
-          <widget class="QCheckBox" name="check50">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="3">
-          <widget class="QCheckBox" name="check58">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="0">
-          <widget class="QCheckBox" name="check35">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="1">
-          <widget class="QCheckBox" name="check43">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="2">
-          <widget class="QCheckBox" name="check51">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="3">
-          <widget class="QCheckBox" name="check59">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="0">
-          <widget class="QCheckBox" name="check36">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="1">
-          <widget class="QCheckBox" name="check44">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="2">
-          <widget class="QCheckBox" name="check52">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="3">
-          <widget class="QCheckBox" name="check60">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="0">
-          <widget class="QCheckBox" name="check37">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="1">
-          <widget class="QCheckBox" name="check45">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="2">
-          <widget class="QCheckBox" name="check53">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="3">
-          <widget class="QCheckBox" name="check61">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="0">
-          <widget class="QCheckBox" name="check38">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="1">
-          <widget class="QCheckBox" name="check46">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="2">
-          <widget class="QCheckBox" name="check54">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="3">
-          <widget class="QCheckBox" name="check62">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="7" column="0">
-          <widget class="QCheckBox" name="check39">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="7" column="1">
-          <widget class="QCheckBox" name="check47">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="7" column="2">
-          <widget class="QCheckBox" name="check55">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="7" column="3">
-          <widget class="QCheckBox" name="check63">
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </widget>
-     </item>
-    </layout>
+    </widget>
    </widget>
   </widget>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>ICTabWidget</class>
-   <extends>QTabWidget</extends>
-   <header>ictabwidget.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>ICListWidget</class>
-   <extends>QListWidget</extends>
-   <header>iclistwidget.h</header>
-  </customwidget>
   <customwidget>
    <class>ICComboBox</class>
    <extends>QComboBox</extends>

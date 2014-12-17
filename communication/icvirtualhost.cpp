@@ -134,11 +134,11 @@ ICVirtualHost::ICVirtualHost(QObject *parent) :
 //#ifdef HC_ARMV6
 //    QTimer::singleShot(REFRESH_TIME, this, SLOT(RefreshStatus()));
 //#else
-#ifndef HC_ARMV6
-    timer_.start(20);
-#else
+//#ifndef HC_ARMV6
+//    timer_.start(20);
+//#else
     timer_.start(15);
-#endif
+//#endif
 //#endif
 //#endif
 

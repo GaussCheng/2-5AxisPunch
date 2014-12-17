@@ -1105,18 +1105,18 @@ void ICHCInstructionPageFrame::ShowServoAction(int key)
 
 }
 
-void ICHCInstructionPageFrame::on_tabWidget_currentChanged(int index)
-{
-    if(index == 0)
-    {
-        UpdateHostParam();
-    }
-    else
-    {
-        SaveCurrentEdit();
-        //        isProgramChanged_ = false;
-    }
-}
+//void ICHCInstructionPageFrame::on_tabWidget_currentChanged(int index)
+//{
+//    if(index == 0)
+//    {
+//        UpdateHostParam();
+//    }
+//    else
+//    {
+//        SaveCurrentEdit();
+//        //        isProgramChanged_ = false;
+//    }
+//}
 
 void ICHCInstructionPageFrame::on_mainButton_clicked()
 {
