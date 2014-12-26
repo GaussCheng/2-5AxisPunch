@@ -317,7 +317,7 @@ void ICVirtualHost::RefreshStatus()
 //            statusMap_.insert(ErrCode, rand());
 //            statusMap_.insert(DbgX0, rand());
 //            statusMap_.insert(DbgX1, rand());
-//            statusMap_.insert(DbgY0, rand());
+//            statusMap_.insert(DbgY0, 1);
 //            statusMap_.insert(DbgY1, rand());
 //            statusMap_.insert(DbgZ0, rand());
 //            statusMap_.insert(DbgZ1, rand());
@@ -356,6 +356,7 @@ void ICVirtualHost::RefreshStatus()
                 statusMap_.insert(ZPos, 65530);
                 statusMap_.insert(PPos, 65530);
                 statusMap_.insert(QPos, 65530);
+                statusMap_.insert(DbgY0, 0);
 //                statusMap_.insert(APos, rand());
                 clipLBits_ = -1;
                 clipHBits_ = -1;

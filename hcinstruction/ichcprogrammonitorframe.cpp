@@ -302,7 +302,7 @@ static uint16_t oldY = 0;
 static uint16_t oldZ = 0;
 static uint16_t oldQ = 0;
 static uint16_t oldP = 0;
-static int oldS = -1;
+static int64_t oldS = -1;
 void ICHCProgramMonitorFrame::StatusRefreshed()
 {
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();

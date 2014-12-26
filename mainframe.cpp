@@ -634,6 +634,7 @@ void MainFrame::StatusRefreshed()
     {
         oldP = pos;
         ui->rCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
+//        ui->rCurrentPos->setText(QString::number(host->HostStatus(ICVirtualHost::DbgY0).toUInt()));
     }
 #endif
 //    int speed = host->GlobalSpeed();

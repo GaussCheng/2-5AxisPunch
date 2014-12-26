@@ -328,7 +328,7 @@ static int16_t oldY = 0;
 static int16_t oldZ = 0;
 static uint16_t oldQ = 0;
 static uint16_t oldP = 0;
-static int oldS = -1;
+static int64_t oldS = -1;
 //static bool isSingleRun = false;
 static int oldStep = -1;
 void ICHCManualOperationPageFrame::StatusRefreshed()
@@ -371,6 +371,7 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
     int64_t speed = host->HostStatus(ICVirtualHost::DbgX0).toInt() |
             (host->HostStatus(ICVirtualHost::DbgX1).toUInt() << 16) |
             (((int64_t)(host->HostStatus(ICVirtualHost::DbgY0).toUInt())) << 32);
+//    speed = 0;
     if(speed != oldS)
     {
         oldS = speed;
