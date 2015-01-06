@@ -67,6 +67,48 @@ void AxisModifyDialog::StartModify(ICPoint point)
 {
     point_ = point;
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->label->show();ui->xPos->show();ui->label_4->show();
+    }
+    else
+    {
+        ui->label->hide();ui->xPos->hide();ui->label_4->hide();
+    }
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY1) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->label_2->show();ui->yPos->show();ui->label_5->show();
+    }
+    else
+    {
+        ui->label_2->hide();ui->yPos->hide();ui->label_5->hide();
+    }
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisZ) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->label_3->show();ui->zPos->show();ui->label_6->show();
+    }
+    else
+    {
+        ui->label_3->hide();ui->zPos->hide();ui->label_6->hide();
+    }
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->label_8->show();ui->pPos->show();ui->label_7->show();
+    }
+    else
+    {
+        ui->label_8->hide();ui->pPos->hide();ui->label_7->hide();
+    }
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->label_9->show();ui->tPos->show();ui->label_10->show();
+    }
+    else
+    {
+        ui->label_9->hide();ui->tPos->hide();ui->label_10->hide();
+    }
+
     xValidator_->setRange(host->SystemParameter(ICVirtualHost::SYS_X_Maxium).toInt(),
                           host->SystemParameter(ICVirtualHost::SYS_X_Length).toInt());
     yValidator_->setRange(host->SystemParameter(ICVirtualHost::SYS_Y_Maxium).toInt(),

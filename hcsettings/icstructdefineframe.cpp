@@ -124,6 +124,18 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     ui->label_14->hide();
     ui->label_15->hide();
     ui->label_16->hide();
+
+
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) == ICVirtualHost::ICAxisDefine_Servo)  ui->xLimit->show();
+    else ui->xLimit->hide();
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY1) == ICVirtualHost::ICAxisDefine_Servo)  ui->yLimit->show();
+    else ui->yLimit->hide();
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisZ) == ICVirtualHost::ICAxisDefine_Servo)  ui->sLimit->show();
+    else ui->sLimit->hide();
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) == ICVirtualHost::ICAxisDefine_Servo)  ui->rLimit->show();
+    else ui->rLimit->hide();
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) == ICVirtualHost::ICAxisDefine_Servo)  ui->tLimit->show();
+    else ui->tLimit->hide();
 }
 
 ICStructDefineFrame::~ICStructDefineFrame()
@@ -212,6 +224,7 @@ void ICStructDefineFrame::on_saveButton_clicked()
 {
     ICSetAxisConfigsCommand command;
     ICCommandProcessor* process = ICCommandProcessor::Instance();
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     int sum = 0;
     int machineCount = 0;
     for(int i = 0; i != punchButtons_.size(); ++i)
@@ -261,7 +274,6 @@ void ICStructDefineFrame::on_saveButton_clicked()
     if(process->ExecuteCommand(command).toBool())
 #endif
     {
-        ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
         host->SetAxisDefine(axisDefine_);
         host->SetPeripheryOutput(0);
         host->SetSystemParameter(ICVirtualHost::SYS_Config_Fixture, dataBuffer.at(3));
@@ -278,6 +290,16 @@ void ICStructDefineFrame::on_saveButton_clicked()
         icMainFrame->UpdateAxisDefine_();
     }
     qDebug()<<"Arm Define"<<axisDefine_;
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) == ICVirtualHost::ICAxisDefine_Servo)  ui->xLimit->show();
+    else ui->xLimit->hide();
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY1) == ICVirtualHost::ICAxisDefine_Servo)  ui->yLimit->show();
+    else ui->yLimit->hide();
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisZ) == ICVirtualHost::ICAxisDefine_Servo)  ui->sLimit->show();
+    else ui->sLimit->hide();
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) == ICVirtualHost::ICAxisDefine_Servo)  ui->rLimit->show();
+    else ui->rLimit->hide();
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) == ICVirtualHost::ICAxisDefine_Servo)  ui->tLimit->show();
+    else ui->tLimit->hide();
 }
 
 

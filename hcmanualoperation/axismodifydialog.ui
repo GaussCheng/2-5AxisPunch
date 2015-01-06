@@ -209,7 +209,7 @@
     <string>deg</string>
    </property>
   </widget>
-  <widget class="ICLineEditWithVirtualNumericKeypad" name="tPos">
+  <widget class="ICLineEditWithVirtualNumericKeypad" name="pPos">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -241,7 +241,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>T:</string>
+    <string>R:</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_9">
@@ -254,10 +254,10 @@
     </rect>
    </property>
    <property name="text">
-    <string>R:</string>
+    <string>T:</string>
    </property>
   </widget>
-  <widget class="ICLineEditWithVirtualNumericKeypad" name="pPos">
+  <widget class="ICLineEditWithVirtualNumericKeypad" name="tPos">
    <property name="geometry">
     <rect>
      <x>50</x>

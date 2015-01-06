@@ -167,22 +167,24 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
             ifposValidator_->setTop(host->SystemParameter(ICVirtualHost::ICSystemParameter(addr - 1)).toInt() / 10);
             validator->setTop(100);
             
-            ui->positionLabel->show();
-            ui->posEdit->show();
-            ui->mmLabel->show();
-            ui->mmLabel_2->show();
-            
-            ui->mmLabel_4->show();
+            if(!item->IsBadProduct())
+            {
+                ui->positionLabel->show();
+                ui->posEdit->show();
+                ui->mmLabel->show();
+                ui->mmLabel_2->show();
+                ui->mmLabel_4->show();
+                ui->earlyEndCheckBox->show();
+                ui->earlySpeedDownCheckBox->show();
+                ui->earlyDownSpeedTimeEdit->show();
+                ui->earlyEndTimeEdit->show();
+            }
             ui->label->show();
             ui->speedLabel->setText(tr("speed"));
             ui->speedLabel->show();
             ui->speedEdit->show();
             ui->precentLabel->show();
-            ui->earlyEndCheckBox->show();
-            ui->earlyEndTimeEdit->show();
-            
-            ui->earlySpeedDownCheckBox->show();
-            ui->earlyDownSpeedTimeEdit->show();
+
 
         }
         else if(item->Action() != ICMold::GWait && item->Action() != ICMold::ACTEND)
