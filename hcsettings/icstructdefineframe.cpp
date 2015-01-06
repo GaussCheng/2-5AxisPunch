@@ -180,6 +180,10 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     oldStyle = ui->oStartBtn->styleSheet();
     newStyle = "border-style: outset;border-width: 2px;border-radius: 6px;border-color: gray;background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(0, 255, 0, 255), stop:1 rgba(255, 255, 255, 255));padding-right: 6px;padding-left:6px;";
     timerID_ = -1;
+
+    ui->pressureMode->setCurrentIndex(host->PressureCheckMode());
+    ui->originSpd->setValidator(new QIntValidator(0, 10, this));
+    ui->originSpd->SetThisIntToThisText(host->SystemParameter(ICVirtualHost::SYS_OriginSpeed).toInt());
 }
 
 ICStructDefineFrame::~ICStructDefineFrame()
@@ -225,9 +229,6 @@ void ICStructDefineFrame::timerEvent(QTimerEvent *)
         ui->oY1Btn->setStyleSheet(oldStyle);
         ui->oY2Btn->setStyleSheet(oldStyle);
         ui->oZBtn->setStyleSheet(oldStyle);
-        ui->oABtn->setStyleSheet(oldStyle);
-        ui->oBBtn->setStyleSheet(oldStyle);
-        ui->oCBtn->setStyleSheet(oldStyle);
         ui->oStartBtn->setText(tr("Start"));
         return;
     }
@@ -277,33 +278,6 @@ void ICStructDefineFrame::timerEvent(QTimerEvent *)
     else
     {
         ui->oY2Btn->setStyleSheet(oldStyle);
-    }
-
-    if(os.b.a)
-    {
-        ui->oABtn->setStyleSheet(newStyle);
-    }
-    else
-    {
-        ui->oABtn->setStyleSheet(oldStyle);
-    }
-
-    if(os.b.b)
-    {
-        ui->oBBtn->setStyleSheet(newStyle);
-    }
-    else
-    {
-        ui->oBBtn->setStyleSheet(oldStyle);
-    }
-
-    if(os.b.c)
-    {
-        ui->oCBtn->setStyleSheet(newStyle);
-    }
-    else
-    {
-        ui->oCBtn->setStyleSheet(oldStyle);
     }
 
 }
@@ -442,6 +416,8 @@ void ICStructDefineFrame::on_saveButton_clicked()
         host->SetSystemParameter(ICVirtualHost::SYS_ARM_CONFIG, 0);
         host->SetSystemParameter(ICVirtualHost::SYS_Config_Signal, dataBuffer.at(0));
         host->SetSystemParameter(ICVirtualHost::SYS_Config_Out, dataBuffer.at(2));
+        host->SetPressureCheckMode(ui->pressureMode->currentIndex());
+        host->SetSystemParameter(ICVirtualHost::SYS_OriginSpeed, ui->originSpd->TransThisTextToThisInt());
 //        host->SystemParameter(ICVirtualHost::SYS_Function);
         host->SaveSystemConfig();
         QMessageBox::information(this, tr("Tips"), tr("Save Sucessfully!"));

@@ -1076,6 +1076,44 @@
         </item>
        </layout>
       </widget>
+      <widget class="QLabel" name="label_10">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>117</y>
+         <width>101</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Pressure Check</string>
+       </property>
+      </widget>
+      <widget class="ICComboBox" name="pressureMode">
+       <property name="geometry">
+        <rect>
+         <x>110</x>
+         <y>115</y>
+         <width>121</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <item>
+        <property name="text">
+         <string>Disable</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Always ON</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Always OFF</string>
+        </property>
+       </item>
+      </widget>
      </widget>
      <widget class="QWidget" name="tab_4">
       <attribute name="title">
@@ -1103,46 +1141,7 @@
            </size>
           </property>
           <property name="text">
-           <string>X1</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0">
-         <widget class="QPushButton" name="oZBtn">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>32</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>Z</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="2">
-         <widget class="QPushButton" name="oABtn">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>32</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>A</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QPushButton" name="oX2Btn">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>32</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>X2</string>
+           <string notr="true">X</string>
           </property>
          </widget>
         </item>
@@ -1155,59 +1154,7 @@
            </size>
           </property>
           <property name="text">
-           <string>Y2</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="2">
-         <widget class="QPushButton" name="oBBtn">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>32</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>B</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="2">
-         <widget class="QPushButton" name="oCBtn">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>32</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>C</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QPushButton" name="oY1Btn">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>32</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>Y1</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0">
-         <widget class="QPushButton" name="oStartBtn">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>32</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>Start</string>
+           <string notr="true">T</string>
           </property>
          </widget>
         </item>
@@ -1224,6 +1171,58 @@
           </property>
          </widget>
         </item>
+        <item row="2" column="0">
+         <widget class="QPushButton" name="oY1Btn">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>32</height>
+           </size>
+          </property>
+          <property name="text">
+           <string notr="true">Y</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QPushButton" name="oZBtn">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>32</height>
+           </size>
+          </property>
+          <property name="text">
+           <string notr="true">S</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QPushButton" name="oStartBtn">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>32</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Start</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QPushButton" name="oX2Btn">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>32</height>
+           </size>
+          </property>
+          <property name="text">
+           <string notr="true">R</string>
+          </property>
+         </widget>
+        </item>
        </layout>
       </widget>
       <widget class="QGroupBox" name="groupBox_4">
@@ -1232,7 +1231,7 @@
          <x>10</x>
          <y>0</y>
          <width>241</width>
-         <height>201</height>
+         <height>161</height>
         </rect>
        </property>
        <property name="title">
@@ -1261,27 +1260,27 @@
           </item>
           <item>
            <property name="text">
-            <string>X1</string>
+            <string notr="true">X</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Y1</string>
+            <string notr="true">Y</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Z</string>
+            <string notr="true">S</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>X2</string>
+            <string notr="true">R</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Y2</string>
+            <string notr="true">T</string>
            </property>
           </item>
          </widget>
@@ -1322,27 +1321,27 @@
           </item>
           <item>
            <property name="text">
-            <string>X1</string>
+            <string notr="true">X</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Y1</string>
+            <string notr="true">Y</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Z</string>
+            <string notr="true">S</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>X2</string>
+            <string notr="true">R</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Y2</string>
+            <string notr="true">T</string>
            </property>
           </item>
          </widget>
@@ -1362,27 +1361,27 @@
           </item>
           <item>
            <property name="text">
-            <string>X1</string>
+            <string notr="true">X</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Y1</string>
+            <string notr="true">Y</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Z</string>
+            <string notr="true">S</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>X2</string>
+            <string notr="true">R</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Y2</string>
+            <string notr="true">T</string>
            </property>
           </item>
          </widget>
@@ -1409,27 +1408,27 @@
           </item>
           <item>
            <property name="text">
-            <string>X1</string>
+            <string notr="true">X</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Y1</string>
+            <string notr="true">Y</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Z</string>
+            <string notr="true">S</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>X2</string>
+            <string notr="true">R</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Y2</string>
+            <string notr="true">T</string>
            </property>
           </item>
          </widget>
@@ -1449,29 +1448,58 @@
           </item>
           <item>
            <property name="text">
-            <string>X1</string>
+            <string notr="true">X</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Y1</string>
+            <string notr="true">Y</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Z</string>
+            <string notr="true">S</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>X2</string>
+            <string notr="true">R</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Y2</string>
+            <string notr="true">T</string>
            </property>
           </item>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>170</y>
+         <width>241</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_20">
+          <property name="text">
+           <string>Origin SPD</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="ICLineEditWithVirtualNumericKeypad" name="originSpd"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_21">
+          <property name="text">
+           <string>%</string>
+          </property>
          </widget>
         </item>
        </layout>

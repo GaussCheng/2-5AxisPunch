@@ -93,7 +93,7 @@ void ICHCDetectionFrame::changeEvent(QEvent *e)
 void ICHCDetectionFrame::on_detectPressureComboBox_activated(int index)
 {
     bool isCheck = qAbs(index - 1);
-    ICVirtualHost::GlobalVirtualHost()->SetPressureCheck(isCheck);
+//    ICVirtualHost::GlobalVirtualHost()->SetPressureCheck(isCheck);
 }
 
 void ICHCDetectionFrame::on_detectSecurityComboBox_activated(int index)

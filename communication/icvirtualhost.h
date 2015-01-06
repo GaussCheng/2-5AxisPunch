@@ -198,7 +198,7 @@ public:
 //        ACT_End,
 //        ACT_End,
 #ifdef HC_8AXIS
-        ACT_X_Sec1,
+        SYS_OriginSpeed,
         ACT_X_Sec2,
         ACT_X_Sec3,
         ACT_X_Sec4,
@@ -587,8 +587,8 @@ public:
     bool IsClipOn(int pos) const;
     bool IsAction(int pos) const;
 
-    bool IsPressureCheck() const { return (SystemParameter(SYS_Function).toInt() & 0x00000010) != 0;}
-    void SetPressureCheck(bool isCheck);
+    int PressureCheckMode() const { return (SystemParameter(SYS_Function).toInt() & 0x00000011);}
+    void SetPressureCheckMode(int mode);
     bool IsSecurityCheck() const { return (SystemParameter(SYS_Function).toInt() & 0x00000003) != 0;}
     void SetSecurityCheck(bool isCheck);
     bool IsMidMoldCheck() const {return (SystemParameter(SYS_Function).toInt() & 0x00000004) != 0;}
@@ -921,11 +921,11 @@ inline bool ICVirtualHost::IsAction(int pos) const
     return false;
 }
 
-inline void ICVirtualHost::SetPressureCheck(bool isCheck)
+inline void ICVirtualHost::SetPressureCheckMode(int mode)
 {
     int val = SystemParameter(SYS_Function).toInt();
-    val &= 0xFFFFFFEF;
-    (isCheck ? val |= 0x00000010 : val &= 0xFFFFFFEF);
+    val &= 0xFFFFFFFC;
+    val |= (mode & 0x11);
     systemParamMap_.insert(SYS_Function, val);
     isParamChanged_ = true;
 }
