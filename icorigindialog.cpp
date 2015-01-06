@@ -28,6 +28,50 @@ ICOriginDialog::~ICOriginDialog()
 
 void ICOriginDialog::showEvent(QShowEvent *e)
 {
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->label_3->show();ui->x1Pos->show();
+    }
+    else
+    {
+        ui->label_3->hide();ui->x1Pos->hide();
+    }
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY1) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->label_4->show();ui->y1Pos->show();
+    }
+    else
+    {
+        ui->label_4->hide();ui->y1Pos->hide();
+    }
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisZ) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->label_5->show();ui->zPos->show();
+    }
+    else
+    {
+        ui->label_5->hide();ui->zPos->hide();
+    }
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->label_7->show();ui->x2Pos->show();
+    }
+    else
+    {
+        ui->label_7->hide();ui->x2Pos->hide();
+    }
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->label_6->show();ui->y2Pos->show();
+    }
+    else
+    {
+        ui->label_6->hide();ui->y2Pos->hide();
+    }
+
+
     connect(ICVirtualHost::GlobalVirtualHost(),
             SIGNAL(StepChanged(int)),
             this,

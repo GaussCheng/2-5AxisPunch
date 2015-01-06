@@ -20,16 +20,7 @@
    <enum>QFrame::Raised</enum>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
-   <property name="leftMargin">
-    <number>0</number>
-   </property>
-   <property name="topMargin">
-    <number>0</number>
-   </property>
-   <property name="rightMargin">
-    <number>0</number>
-   </property>
-   <property name="bottomMargin">
+   <property name="margin">
     <number>0</number>
    </property>
    <item>
@@ -591,7 +582,7 @@
       </widget>
      </item>
      <item row="5" column="1">
-      <widget class="QComboBox" name="pointSel"/>
+      <widget class="ICComboBox" name="pointSel"/>
      </item>
     </layout>
    </item>
@@ -723,6 +714,11 @@
   </layout>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>ICComboBox</class>
+   <extends>QComboBox</extends>
+   <header>iccombobox.h</header>
+  </customwidget>
   <customwidget>
    <class>ICLineEditWithVirtualNumericKeypad</class>
    <extends>QLineEdit</extends>

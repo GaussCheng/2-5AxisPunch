@@ -110,7 +110,57 @@ void ICHCManualOperationPageFrame::showEvent(QShowEvent *e)
 //    if(!progConfig.b.r8)
     ui->showMore->setVisible(progConfig.b.r8);
 
-
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->xRun->show();ui->label->show();ui->xPos->show();ui->label_4->show();
+        ui->xSpeed->show();ui->xSpeedLabel->show();ui->label_12->show();
+    }
+    else
+    {
+        ui->xRun->hide();ui->label->hide();ui->xPos->hide();ui->label_4->hide();
+        ui->xSpeed->hide();ui->xSpeedLabel->hide();ui->label_12->hide();
+    }
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY1) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->yRun->show();ui->label_2->show();ui->yPos->show();ui->label_5->show();
+        ui->ySpeed->show();ui->ySpeedLabel->show();ui->label_13->show();
+    }
+    else
+    {
+        ui->yRun->hide();ui->label_2->hide();ui->yPos->hide();ui->label_5->hide();
+        ui->ySpeed->hide();ui->ySpeedLabel->hide();ui->label_13->hide();
+    }
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisZ) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->zRun->show();ui->label_6->show();ui->zPos->show();ui->label_15->show();
+        ui->zSpeed->show();ui->zSpeedLabel->show();ui->label_16->show();
+    }
+    else
+    {
+        ui->zRun->hide();ui->label_6->hide();ui->zPos->hide();ui->label_15->hide();
+        ui->zSpeed->hide();ui->zSpeedLabel->hide();ui->label_16->hide();
+    }
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->rRun->show();ui->label_7->show();ui->rPos->show();ui->label_9->show();
+        ui->rSpeed->show();ui->rSpeedLabel->show();ui->label_21->show();
+    }
+    else
+    {
+        ui->rRun->hide();ui->label_7->hide();ui->rPos->hide();ui->label_9->hide();
+        ui->rSpeed->hide();ui->rSpeedLabel->hide();ui->label_21->hide();
+    }
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->tRun->show();ui->label_8->show();ui->tPos->show();ui->label_10->show();
+        ui->tSpeed->show();ui->tSpeedLabel->show();ui->label_18->show();
+    }
+    else
+    {
+        ui->tRun->hide();ui->label_8->hide();ui->tPos->hide();ui->label_10->hide();
+        ui->tSpeed->hide();ui->tSpeedLabel->hide();ui->label_18->hide();
+    }
     //    button->setChecked(false);
 
     //    timerID_ = ICTimerPool::Instance()->Start(ICTimerPool::RefreshTime, this, SLOT(StatusRefreshed()));

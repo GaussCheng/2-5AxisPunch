@@ -121,6 +121,49 @@ void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
 //    }
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     ICVirtualHost::GlobalVirtualHost()->SetSpeedEnable(true);
+
+
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->xSpeed->show();ui->xSpeedLabel->show();ui->label_12->show();
+    }
+    else
+    {
+        ui->xSpeed->hide();ui->xSpeedLabel->hide();ui->label_12->hide();
+    }
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY1) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->ySpeed->show();ui->ySpeedLabel->show();ui->label_13->show();
+    }
+    else
+    {
+        ui->ySpeed->hide();ui->ySpeedLabel->hide();ui->label_13->hide();
+    }
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisZ) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->zSpeed->show();ui->zSpeedLabel->show();ui->label_16->show();
+    }
+    else
+    {
+        ui->zSpeed->hide();ui->zSpeedLabel->hide();ui->label_16->hide();
+    }
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->rSpeed->show();ui->rSpeedLabel->show();ui->label_21->show();
+    }
+    else
+    {
+        ui->rSpeed->hide();ui->rSpeedLabel->hide();ui->label_21->hide();
+    }
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->tSpeed->show();ui->tSpeedLabel->show();ui->label_18->show();
+    }
+    else
+    {
+        ui->tSpeed->hide();ui->tSpeedLabel->hide();ui->label_18->hide();
+    }
+
 //    ui->speedEnableButton->setIcon(switchOff_);
 //    ui->speedEnableButton->setText(tr("Speed Disable"));
     SetProduct(ICMold::CurrentMold()->MoldParam(ICMold::Product));
@@ -248,7 +291,7 @@ void ICHCProgramMonitorFrame::hideEvent(QHideEvent *e)
                SLOT(MoldNumChanged(int)));
     timer_.stop();
     refreshTimer_.stop();
-    ICVirtualHost::GlobalVirtualHost()->SetSpeedEnable(false);
+//    ICVirtualHost::GlobalVirtualHost()->SetSpeedEnable(false);
 //    ui->speedEnableButton->setIcon(switchOff_);
 //    ui->speedEnableButton->setText(tr("Speed Disable"));
     if(ICKeyboard::Instace()->CurrentSwitchStatus() != ICKeyboard::KS_AutoStatu)
@@ -856,7 +899,7 @@ void ICHCProgramMonitorFrame::OnTimeOut()
     ICVirtualHost *host = ICVirtualHost::GlobalVirtualHost();
     if(!host->HasTuneSpeed())
     {
-        host->SetSpeedEnable(false);
+//        host->SetSpeedEnable(false);
 //        ui->speedEnableButton->setIcon(switchOff_);
 //        ui->speedEnableButton->setText(tr("Speed Disable"));
     }

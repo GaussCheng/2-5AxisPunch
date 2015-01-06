@@ -37,6 +37,7 @@ public:
     void ChangeRobotOrigin(bool isOrigin);
     void ChangePunchOrigin(bool isOrigin);
     void ChangeControlStatus(bool isControled);
+    void ChangStatusmoldNameLabelOperation(bool s);
 
 public slots:
     void OnLevelChanged(int level);

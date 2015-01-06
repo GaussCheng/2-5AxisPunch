@@ -217,7 +217,7 @@ void ICMachineConfigPage::UpdateAxisDefine_()
         }
 
 
-        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) == ICVirtualHost::ICAxisDefine_None)
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) != ICVirtualHost::ICAxisDefine_Servo)
         {
             HideWidgets_(axisWidgets_[0]);
         }
@@ -226,7 +226,7 @@ void ICMachineConfigPage::UpdateAxisDefine_()
             ShowWidgets_(axisWidgets_[0]);
         }
 
-        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY1) == ICVirtualHost::ICAxisDefine_None)
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY1) != ICVirtualHost::ICAxisDefine_Servo)
         {
             HideWidgets_(axisWidgets_[1]);
         }
@@ -235,7 +235,7 @@ void ICMachineConfigPage::UpdateAxisDefine_()
             ShowWidgets_(axisWidgets_[1]);
         }
 
-        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisZ) == ICVirtualHost::ICAxisDefine_None)
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisZ) != ICVirtualHost::ICAxisDefine_Servo)
         {
             HideWidgets_(axisWidgets_[2]);
         }
@@ -244,7 +244,7 @@ void ICMachineConfigPage::UpdateAxisDefine_()
             ShowWidgets_(axisWidgets_[2]);
         }
 
-        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) == ICVirtualHost::ICAxisDefine_None)
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) != ICVirtualHost::ICAxisDefine_Servo)
         {
             HideWidgets_(axisWidgets_[3]);
         }
@@ -253,7 +253,7 @@ void ICMachineConfigPage::UpdateAxisDefine_()
             ShowWidgets_(axisWidgets_[3]);
         }
 
-        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) == ICVirtualHost::ICAxisDefine_None)
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) != ICVirtualHost::ICAxisDefine_Servo)
         {
             HideWidgets_(axisWidgets_[4]);
         }
@@ -262,7 +262,7 @@ void ICMachineConfigPage::UpdateAxisDefine_()
             ShowWidgets_(axisWidgets_[4]);
         }
 
-        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisA) == ICVirtualHost::ICAxisDefine_None)
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisA) != ICVirtualHost::ICAxisDefine_Servo)
         {
             HideWidgets_(axisWidgets_[5]);
         }
@@ -271,7 +271,7 @@ void ICMachineConfigPage::UpdateAxisDefine_()
             ShowWidgets_(axisWidgets_[5]);
         }
 
-        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisB) == ICVirtualHost::ICAxisDefine_None)
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisB) != ICVirtualHost::ICAxisDefine_Servo)
         {
             HideWidgets_(axisWidgets_[6]);
         }
@@ -280,7 +280,7 @@ void ICMachineConfigPage::UpdateAxisDefine_()
             ShowWidgets_(axisWidgets_[6]);
         }
 
-        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) == ICVirtualHost::ICAxisDefine_None)
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) != ICVirtualHost::ICAxisDefine_Servo)
         {
             HideWidgets_(axisWidgets_[7]);
         }

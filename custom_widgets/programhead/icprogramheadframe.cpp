@@ -156,3 +156,9 @@ void ICProgramHeadFrame::OnLevelChanged(int level)
     ui->moldNameLabel->setEnabled(level >= 1);
     emit LevelChanged(level);
 }
+
+void ICProgramHeadFrame::ChangStatusmoldNameLabelOperation(bool s)
+{
+    int level = ICProgramHeadFrame::CurrentLevel();
+    ui->moldNameLabel->setEnabled((level >= 1)&s);
+}

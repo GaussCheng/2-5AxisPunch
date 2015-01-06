@@ -603,6 +603,47 @@ void MainFrame::StatusRefreshed()
     }
 
     ICVirtualHost* host = virtualHost;
+
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->xCurrentPos->show();ui->label_7->show();ui->label_22->show();
+    }
+    else
+    {
+        ui->xCurrentPos->hide();ui->label_7->hide();ui->label_22->hide();
+    }
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY1) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->yCurrentPos->show();ui->label_11->show();ui->label_9->show();
+    }
+    else
+    {
+        ui->yCurrentPos->hide();ui->label_11->hide();ui->label_9->hide();
+    }
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisZ) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->zCurrentPos->show();ui->label_17->show();ui->label_10->show();
+    }
+    else
+    {
+        ui->zCurrentPos->hide();ui->label_17->hide();ui->label_10->hide();
+    }
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->rCurrentPos->show();ui->label_8->show();ui->label_14->show();
+    }
+    else
+    {
+        ui->rCurrentPos->hide();ui->label_8->hide();ui->label_14->hide();
+    }
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->tCurrentPos->show();ui->label_20->show();ui->label_19->show();
+    }
+    else
+    {
+        ui->tCurrentPos->hide();ui->label_20->hide();ui->label_19->hide();
+    }
     int16_t pos = host->HostStatus(ICVirtualHost::XPos).toInt();
     if(pos != oldX)
     {
@@ -725,10 +766,12 @@ void MainFrame::StatusRefreshed()
     {
         speed_ = virtualHost->HostStatus(ICVirtualHost::DbgX0).toString();
         //        statusStr_ = tr("Manual");
+        ICProgramHeadFrame::Instance()->ChangStatusmoldNameLabelOperation(false);
     }
     else if(runningStatus_ == ICVirtualHost::Stop)
     {
         speed_ = "0";
+        ICProgramHeadFrame::Instance()->ChangStatusmoldNameLabelOperation(true);
         //        statusStr_ = tr("Stop");
         //<<<<<<< HEAD
 //#ifdef Q_WS_X11
@@ -746,6 +789,7 @@ void MainFrame::StatusRefreshed()
     }
     else if(runningStatus_ == ICVirtualHost::Auto)
     {
+        ICProgramHeadFrame::Instance()->ChangStatusmoldNameLabelOperation(false);
         if(virtualHost->HostStatus(ICVirtualHost::ClipL).toInt() >> 15)
         {
             if(actionDialog_->isHidden())

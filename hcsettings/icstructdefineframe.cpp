@@ -11,6 +11,7 @@
 #include <QDebug>
 #include "mainframe.h"
 #include "icactioncommand.h"
+#include "icvirtualkey.h"
 
 typedef union {
      struct {
@@ -165,8 +166,20 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     ui->os4->setCurrentIndex(axisMode.mode.a4);
     ui->os5->setCurrentIndex(axisMode.mode.a5);
 
+
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) == ICVirtualHost::ICAxisDefine_Servo)  ui->xLimit->show();
+    else ui->xLimit->hide();
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY1) == ICVirtualHost::ICAxisDefine_Servo)  ui->yLimit->show();
+    else ui->yLimit->hide();
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisZ) == ICVirtualHost::ICAxisDefine_Servo)  ui->sLimit->show();
+    else ui->sLimit->hide();
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) == ICVirtualHost::ICAxisDefine_Servo)  ui->rLimit->show();
+    else ui->rLimit->hide();
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) == ICVirtualHost::ICAxisDefine_Servo)  ui->tLimit->show();
+    else ui->tLimit->hide();
     oldStyle = ui->oStartBtn->styleSheet();
     newStyle = "border-style: outset;border-width: 2px;border-radius: 6px;border-color: gray;background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(0, 255, 0, 255), stop:1 rgba(255, 255, 255, 255));padding-right: 6px;padding-left:6px;";
+    timerID_ = -1;
 }
 
 ICStructDefineFrame::~ICStructDefineFrame()
@@ -364,6 +377,7 @@ void ICStructDefineFrame::on_saveButton_clicked()
 {
     ICSetAxisConfigsCommand command;
     ICCommandProcessor* process = ICCommandProcessor::Instance();
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     int sum = 0;
     int machineCount = 0;
     for(int i = 0; i != punchButtons_.size(); ++i)
@@ -419,7 +433,6 @@ void ICStructDefineFrame::on_saveButton_clicked()
     if(process->ExecuteCommand(command).toBool())
 #endif
     {
-        ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
         host->SetAxisDefine(axisDefine_);
         host->SetPeripheryOutput(0);
         host->SetSystemParameter(ICVirtualHost::SYS_Config_Fixture, dataBuffer.at(3));
@@ -436,6 +449,16 @@ void ICStructDefineFrame::on_saveButton_clicked()
         icMainFrame->UpdateAxisDefine_();
     }
     qDebug()<<"Arm Define"<<axisDefine_;
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) == ICVirtualHost::ICAxisDefine_Servo)  ui->xLimit->show();
+    else ui->xLimit->hide();
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY1) == ICVirtualHost::ICAxisDefine_Servo)  ui->yLimit->show();
+    else ui->yLimit->hide();
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisZ) == ICVirtualHost::ICAxisDefine_Servo)  ui->sLimit->show();
+    else ui->sLimit->hide();
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) == ICVirtualHost::ICAxisDefine_Servo)  ui->rLimit->show();
+    else ui->rLimit->hide();
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) == ICVirtualHost::ICAxisDefine_Servo)  ui->tLimit->show();
+    else ui->tLimit->hide();
 }
 
 
@@ -473,3 +496,55 @@ void ICStructDefineFrame::InitEscapeBox()
 //{
 //    ICParametersSave::Instance()->SetAdjustFunction(checked);
 //}
+
+void ICStructDefineFrame::on_tabWidget_currentChanged(int index)
+{
+    if(index == 3)
+    {
+        timerID_ = startTimer(50);
+    }
+    else
+    {
+        if(timerID_ >=0)
+        {
+            killTimer(timerID_);
+        }
+    }
+}
+
+void ICStructDefineFrame::on_oStartBtn_clicked()
+{
+    icMainFrame->BlockOrignShow(true);
+    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnZero, 0);
+}
+
+void ICStructDefineFrame::on_oX1Btn_clicked()
+{
+    ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_ORIGIN_X1);
+}
+
+void ICStructDefineFrame::on_oY1Btn_clicked()
+{
+    ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_ORIGIN_Y1);
+}
+
+void ICStructDefineFrame::on_oZBtn_clicked()
+{
+    ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_ORIGIN_Z);
+}
+
+void ICStructDefineFrame::on_oX2Btn_clicked()
+{
+    ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_ORIGIN_X2);
+}
+
+void ICStructDefineFrame::on_oY2Btn_clicked()
+{
+    ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_ORIGIN_Y2);
+}
+
+void ICStructDefineFrame::on_setOrigin_clicked()
+{
+    ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_SET_ORIGIN);
+}
+

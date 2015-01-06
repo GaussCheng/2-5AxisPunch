@@ -155,6 +155,47 @@ void ActionSettingFrame::showEvent(QShowEvent *e)
 {
     UpdateAxisDefine_();
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->gxButton->show();ui->x1PosLineEdit->show();ui->label_11->show();
+    }
+    else
+    {
+        ui->gxButton->hide();ui->x1PosLineEdit->hide();ui->label_11->hide();
+    }
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY1) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->gyButton->show();ui->y1PosLineEdit->show();ui->label_10->show();
+    }
+    else
+    {
+        ui->gyButton->hide();ui->y1PosLineEdit->hide();ui->label_10->hide();
+    }
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisZ) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->gzButton->show();ui->zPosLineEdit->show();ui->label_12->show();
+    }
+    else
+    {
+        ui->gzButton->hide();ui->zPosLineEdit->hide();ui->label_12->hide();
+    }
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->gPButton->show();ui->pPosLineEdit->show();ui->label_14->show();
+    }
+    else
+    {
+        ui->gPButton->hide();ui->pPosLineEdit->hide();ui->label_14->hide();
+    }
+    if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) == ICVirtualHost::ICAxisDefine_Servo)
+    {
+        ui->gtButton->show();ui->tPosLineEdit->show();ui->label_13->show();
+    }
+    else
+    {
+        ui->gtButton->hide();ui->tPosLineEdit->hide();ui->label_13->hide();
+    }
+
     posMaxs_[0] = host->SystemParameter(ICVirtualHost::SYS_X_Length).toInt();
     posMaxs_[1] = host->SystemParameter(ICVirtualHost::SYS_Y_Length).toInt();
     posMaxs_[2] = host->SystemParameter(ICVirtualHost::SYS_Z_Length).toInt();

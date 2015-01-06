@@ -8,7 +8,7 @@
 class QComboBox;
 class QPushButton;
 namespace Ui {
-    class ICStructDefineFrame;
+class ICStructDefineFrame;
 }
 
 class ICStructDefineFrame : public QWidget
@@ -36,7 +36,24 @@ private slots:
 
     void retranslateUi_();
 
-//    void on_adjUse_toggled(bool checked);
+    //    void on_adjUse_toggled(bool checked);
+
+    void on_tabWidget_currentChanged(int index);
+
+    void on_oStartBtn_clicked();
+
+    void on_oX1Btn_clicked();
+
+    void on_oY1Btn_clicked();
+
+    void on_oZBtn_clicked();
+
+    void on_oX2Btn_clicked();
+
+    void on_oY2Btn_clicked();
+
+    void on_setOrigin_clicked();
+
 
 private:
     Ui::ICStructDefineFrame *ui;
@@ -51,7 +68,7 @@ private:
     QList<QList<QAbstractButton*> >buttonslist_ ;
     void InitEscapeBox() ;
     QList<QPushButton*> punchButtons_;
-
+    int timerID_;
 
 };
 

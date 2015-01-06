@@ -679,7 +679,7 @@ void ICMachineStructPage::UpdateAxisDefine_()
         ui->axisBToolButton->hide();
         ui->axisCToolButton->hide();
 
-        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) == ICVirtualHost::ICAxisDefine_None)
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) != ICVirtualHost::ICAxisDefine_Servo)
         {
             ui->axisXToolButton->hide();
         }
@@ -688,7 +688,7 @@ void ICMachineStructPage::UpdateAxisDefine_()
             ui->axisXToolButton->show();
         }
 
-        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY1) == ICVirtualHost::ICAxisDefine_None)
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY1) != ICVirtualHost::ICAxisDefine_Servo)
         {
             ui->axisYToolButton->hide();
         }
@@ -697,7 +697,7 @@ void ICMachineStructPage::UpdateAxisDefine_()
             ui->axisYToolButton->show();
         }
 
-        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisZ) == ICVirtualHost::ICAxisDefine_None)
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisZ) != ICVirtualHost::ICAxisDefine_Servo)
         {
             ui->axisZToolButton->hide();
         }
@@ -706,7 +706,7 @@ void ICMachineStructPage::UpdateAxisDefine_()
             ui->axisZToolButton->show();
         }
 
-        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) == ICVirtualHost::ICAxisDefine_None)
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX2) != ICVirtualHost::ICAxisDefine_Servo)
         {
             ui->axisPToolButton->hide();
         }
@@ -715,7 +715,7 @@ void ICMachineStructPage::UpdateAxisDefine_()
             ui->axisPToolButton->show();
         }
 
-        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) == ICVirtualHost::ICAxisDefine_None)
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) != ICVirtualHost::ICAxisDefine_Servo)
         {
             ui->axisQToolButton->hide();
         }
@@ -724,7 +724,7 @@ void ICMachineStructPage::UpdateAxisDefine_()
             ui->axisQToolButton->show();
         }
 
-        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisA) == ICVirtualHost::ICAxisDefine_None)
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisA) != ICVirtualHost::ICAxisDefine_Servo)
         {
             ui->axisAToolButton->hide();
         }
@@ -733,7 +733,7 @@ void ICMachineStructPage::UpdateAxisDefine_()
             ui->axisAToolButton->show();
         }
 
-        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisB) == ICVirtualHost::ICAxisDefine_None)
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisB) != ICVirtualHost::ICAxisDefine_Servo)
         {
             ui->axisBToolButton->hide();
         }
@@ -742,7 +742,7 @@ void ICMachineStructPage::UpdateAxisDefine_()
             ui->axisBToolButton->show();
         }
 
-        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) == ICVirtualHost::ICAxisDefine_None)
+        if(host->AxisDefine(ICVirtualHost::ICAxis_AxisC) != ICVirtualHost::ICAxisDefine_Servo)
         {
             ui->axisCToolButton->hide();
         }
