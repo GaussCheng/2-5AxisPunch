@@ -219,7 +219,7 @@
         <bool>true</bool>
        </property>
        <property name="text">
-        <string>X:</string>
+        <string>X(FB):</string>
        </property>
       </widget>
      </item>
@@ -340,7 +340,7 @@
         <bool>true</bool>
        </property>
        <property name="text">
-        <string>Y:</string>
+        <string>Y(UD):</string>
        </property>
       </widget>
      </item>
@@ -455,7 +455,7 @@
         <bool>true</bool>
        </property>
        <property name="text">
-        <string>S:</string>
+        <string>S(SW):</string>
        </property>
       </widget>
      </item>
@@ -570,7 +570,7 @@
         <bool>true</bool>
        </property>
        <property name="text">
-        <string>R:</string>
+        <string>R(HV):</string>
        </property>
       </widget>
      </item>
@@ -685,7 +685,7 @@
         <bool>true</bool>
        </property>
        <property name="text">
-        <string>T:</string>
+        <string>T(AD):</string>
        </property>
       </widget>
      </item>
@@ -765,7 +765,6 @@
      <property name="frameShadow">
       <enum>QFrame::Plain</enum>
      </property>
-     <zorder>centerPageFrame</zorder>
     </widget>
    </item>
    <item>

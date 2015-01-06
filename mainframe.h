@@ -57,6 +57,8 @@ public Q_SLOTS:
     void ClearPosColor();
     void OnMoldButtonClicked();
 
+    void BlockOrignShow(bool isblock) { isblockOriginShow_ = isblock;}
+
 //    void SetBackLightOff();
 //    void SetBackLightOn();
 
@@ -153,6 +155,7 @@ private:
     QList<QList<QWidget*> > axisWidgets_;
     QList<uint> compareAlarmNums_;
     QTimer refreshTimer_;
+    bool isblockOriginShow_;
 #ifdef HC_SK_8_SC
     int oldSw_;
     int oldKey_;

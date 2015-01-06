@@ -746,7 +746,7 @@ void MainFrame::StatusRefreshed()
     }
     else if(runningStatus_ == ICVirtualHost::Auto)
     {
-        if(hintCode == 15)
+        if(virtualHost->HostStatus(ICVirtualHost::ClipL).toInt() >> 15)
         {
             if(actionDialog_->isHidden())
             {
@@ -986,7 +986,7 @@ void MainFrame::ShowFunctionPage()
 
 void MainFrame::ShowOrigin()
 {
-    if(!originExecutingPage_->isVisible())
+    if(!originExecutingPage_->isVisible() && !isblockOriginShow_)
     {
         //        ui->systemStatusFrame->SetOriginStatus(StatusLabel::ONSTATUS);
         //        isOriginShown_ = true;

@@ -10,6 +10,7 @@
 #include <QMessageBox>
 #include <QDebug>
 #include "mainframe.h"
+#include "icactioncommand.h"
 
 typedef union {
      struct {
@@ -23,7 +24,34 @@ typedef union {
     u_int16_t all;
 }AxisLimitConfig;
 
+typedef union{
+    struct {
+        u_int16_t x : 2;
+        u_int16_t y : 2;
+        u_int16_t z : 2;
+        u_int16_t p : 2;
+        u_int16_t q : 2;
+        u_int16_t a : 2;
+        u_int16_t b : 2;
+        u_int16_t c : 2;
+    }b;
+    u_int16_t combine;
+}OriginStatus;
 
+typedef union{
+    struct {
+        u_int16_t a1 : 3;
+        u_int16_t a2 : 3;
+        u_int16_t a3 : 3;
+        u_int16_t a4 : 3;
+        u_int16_t a5 : 3;
+        u_int16_t resv : 1;
+    }mode;
+    u_int16_t allMode;
+}AxisMode;
+
+QString newStyle;
+QString oldStyle;
 ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ICStructDefineFrame)
@@ -118,12 +146,27 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     ui->rLimit->setChecked(axisLimitconfig.b.rLimit);
     ui->tLimit->setChecked(axisLimitconfig.b.tLimit);
 
+
     ui->aBox->hide();
     ui->bBox->hide();
     ui->cBox->hide();
     ui->label_14->hide();
     ui->label_15->hide();
     ui->label_16->hide();
+
+    AxisMode axisMode;
+    axisMode.allMode = host->SystemParameter(ICVirtualHost::SYS_Config_Out).toInt();
+//    ui->waitTime->SetThisIntToThisText(recycleMode.split.time);
+//    ui->waitTime->SetDecimalPlaces(1);
+//    ui->waitTime->setValidator(new QIntValidator(0, 100, this));
+    ui->os1->setCurrentIndex(axisMode.mode.a1);
+    ui->os2->setCurrentIndex(axisMode.mode.a2);
+    ui->os3->setCurrentIndex(axisMode.mode.a3);
+    ui->os4->setCurrentIndex(axisMode.mode.a4);
+    ui->os5->setCurrentIndex(axisMode.mode.a5);
+
+    oldStyle = ui->oStartBtn->styleSheet();
+    newStyle = "border-style: outset;border-width: 2px;border-radius: 6px;border-color: gray;background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(0, 255, 0, 255), stop:1 rgba(255, 255, 255, 255));padding-right: 6px;padding-left:6px;";
 }
 
 ICStructDefineFrame::~ICStructDefineFrame()
@@ -143,6 +186,115 @@ void ICStructDefineFrame::changeEvent(QEvent *e)
         break;
     }
 }
+
+void ICStructDefineFrame::hideEvent(QHideEvent *e)
+{
+    icMainFrame->BlockOrignShow(false);
+    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
+    ui->tabWidget->setCurrentIndex(0);
+    QWidget::hideEvent(e);
+}
+
+void ICStructDefineFrame::timerEvent(QTimerEvent *)
+{
+    if(ui->tabWidget->currentIndex() != 3) return;
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    if(host->CurrentStatus() == ICVirtualHost::Origin)
+    {
+        ui->oStartBtn->setStyleSheet(newStyle);
+        ui->oStartBtn->setText(tr("Origining"));
+    }
+    else
+    {
+        ui->oStartBtn->setStyleSheet(oldStyle);
+        ui->oX1Btn->setStyleSheet(oldStyle);
+        ui->oX2Btn->setStyleSheet(oldStyle);
+        ui->oY1Btn->setStyleSheet(oldStyle);
+        ui->oY2Btn->setStyleSheet(oldStyle);
+        ui->oZBtn->setStyleSheet(oldStyle);
+        ui->oABtn->setStyleSheet(oldStyle);
+        ui->oBBtn->setStyleSheet(oldStyle);
+        ui->oCBtn->setStyleSheet(oldStyle);
+        ui->oStartBtn->setText(tr("Start"));
+        return;
+    }
+
+    OriginStatus os;
+    os.combine = host->HostStatus(ICVirtualHost::DbgX1).toUInt();
+    if(os.b.x)
+    {
+        ui->oX1Btn->setStyleSheet(newStyle);
+    }
+    else
+    {
+        ui->oX1Btn->setStyleSheet(oldStyle);
+    }
+
+    if(os.b.y)
+    {
+        ui->oY1Btn->setStyleSheet(newStyle);
+    }
+    else
+    {
+        ui->oY1Btn->setStyleSheet(oldStyle);
+    }
+
+    if(os.b.z)
+    {
+        ui->oZBtn->setStyleSheet(newStyle);
+    }
+    else
+    {
+        ui->oZBtn->setStyleSheet(oldStyle);
+    }
+
+    if(os.b.p)
+    {
+        ui->oX2Btn->setStyleSheet(newStyle);
+    }
+    else
+    {
+        ui->oX2Btn->setStyleSheet(oldStyle);
+    }
+
+    if(os.b.q)
+    {
+        ui->oY2Btn->setStyleSheet(newStyle);
+    }
+    else
+    {
+        ui->oY2Btn->setStyleSheet(oldStyle);
+    }
+
+    if(os.b.a)
+    {
+        ui->oABtn->setStyleSheet(newStyle);
+    }
+    else
+    {
+        ui->oABtn->setStyleSheet(oldStyle);
+    }
+
+    if(os.b.b)
+    {
+        ui->oBBtn->setStyleSheet(newStyle);
+    }
+    else
+    {
+        ui->oBBtn->setStyleSheet(oldStyle);
+    }
+
+    if(os.b.c)
+    {
+        ui->oCBtn->setStyleSheet(newStyle);
+    }
+    else
+    {
+        ui->oCBtn->setStyleSheet(oldStyle);
+    }
+
+}
+
 
 void ICStructDefineFrame::retranslateUi_()
 {
@@ -231,7 +383,13 @@ void ICStructDefineFrame::on_saveButton_clicked()
     axisLimitConfig.b.tLimit = ui->tLimit->isChecked();
     dataBuffer[0] = axisLimitConfig.all;
     dataBuffer[1] = axisDefine_;
-    dataBuffer[2] = 0;
+    AxisMode axisMode;
+    axisMode.mode.a1 = ui->os1->currentIndex();
+    axisMode.mode.a2 = ui->os2->currentIndex();
+    axisMode.mode.a3 = ui->os3->currentIndex();
+    axisMode.mode.a4 = ui->os4->currentIndex();
+    axisMode.mode.a5 = ui->os5->currentIndex();
+    dataBuffer[2] = axisMode.allMode;
 //    dataBuffer[3] = ICVirtualHost::GlobalVirtualHost()->FixtureDefineSwitch(ui->fixtureSelectBox->currentIndex());
     dataBuffer[3] = machineCount;
     CanConfig canConfig;
@@ -270,7 +428,7 @@ void ICStructDefineFrame::on_saveButton_clicked()
         host->SetSystemParameter(ICVirtualHost::SYS_Config_Xorsum, dataBuffer.at(6));
         host->SetSystemParameter(ICVirtualHost::SYS_ARM_CONFIG, 0);
         host->SetSystemParameter(ICVirtualHost::SYS_Config_Signal, dataBuffer.at(0));
-        host->SetSystemParameter(ICVirtualHost::SYS_Config_Out, 0);
+        host->SetSystemParameter(ICVirtualHost::SYS_Config_Out, dataBuffer.at(2));
 //        host->SystemParameter(ICVirtualHost::SYS_Function);
         host->SaveSystemConfig();
         QMessageBox::information(this, tr("Tips"), tr("Save Sucessfully!"));
