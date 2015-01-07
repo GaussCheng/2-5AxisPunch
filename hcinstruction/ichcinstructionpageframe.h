@@ -72,6 +72,7 @@ private slots:
     void on_feedButton_clicked();
     void on_fixtureCheckBtn_clicked();
     void on_returnButton_clicked();
+    void on_singleButton_clicked();
 
     void on_reserveBox_activated(int index);
 
