@@ -1171,14 +1171,8 @@ void ICHCInstructionPageFrame::on_singleButton_clicked()
                              tr("Has not been origin!"));
         return;
     }
-    bool isSingleRunFinished = host->HostStatus(ICVirtualHost::ActL).toInt() == 0;
-    if(host->IsSingleRun() && isSingleRunFinished)
-    {
-    }
-    else
-    {
-        return;
-    }
+//    bool isSingleRunFinished = host->HostStatus(ICVirtualHost::ActL).toInt() == 0;
+//    if(isSingleRunFinished)return;
     int currentStep = ui->moldContentListWidget->currentRow();
     ICManualRun cmd;
     if(mold->MoldContent().empty()) return;
@@ -1202,8 +1196,8 @@ void ICHCInstructionPageFrame::on_singleButton_clicked()
     {
         //        ++currentStep;
         //        currentStep %= mold->MoldContent().size();
-        host->SetHostStatus(ICVirtualHost::ActL, 1);
-        host->SetSingleRun(true);
+//        host->SetHostStatus(ICVirtualHost::ActL, 1);
+//        host->SetSingleRun(true);
 //        ui->singleButton->setEnabled(false);
     }
 

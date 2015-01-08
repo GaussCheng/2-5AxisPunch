@@ -93,6 +93,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     isXPosChanged_(false),
     isYPosChanged_(false),
     isZPosChanged_(false),
+    isblockOriginShow_(false),
     axisDefine_(-1)
   //    registe_timer(new QTimer),
   //    reboot_timer(new QTimer)

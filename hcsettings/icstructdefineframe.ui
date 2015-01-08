@@ -22,22 +22,13 @@
 </string>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
-   <property name="leftMargin">
-    <number>0</number>
-   </property>
-   <property name="topMargin">
-    <number>0</number>
-   </property>
-   <property name="rightMargin">
-    <number>0</number>
-   </property>
-   <property name="bottomMargin">
+   <property name="margin">
     <number>0</number>
    </property>
    <item>
     <widget class="ICTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
@@ -1475,13 +1466,13 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>10</x>
          <y>170</y>
          <width>241</width>
-         <height>25</height>
+         <height>33</height>
         </rect>
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -1552,15 +1543,15 @@
    <header>iclineeditwithvirtualnumerickeypad.h</header>
   </customwidget>
   <customwidget>
-   <class>ICComboBox</class>
-   <extends>QComboBox</extends>
-   <header>iccombobox.h</header>
-  </customwidget>
-  <customwidget>
    <class>ICTabWidget</class>
    <extends>QTabWidget</extends>
    <header>ictabwidget.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ICComboBox</class>
+   <extends>QComboBox</extends>
+   <header>iccombobox.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

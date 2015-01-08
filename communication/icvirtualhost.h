@@ -587,7 +587,7 @@ public:
     bool IsClipOn(int pos) const;
     bool IsAction(int pos) const;
 
-    int PressureCheckMode() const { return (SystemParameter(SYS_Function).toInt() & 0x00000011);}
+    int PressureCheckMode() const { return (SystemParameter(SYS_Function).toInt() & 0x00000003);}
     void SetPressureCheckMode(int mode);
     bool IsSecurityCheck() const { return (SystemParameter(SYS_Function).toInt() & 0x00000003) != 0;}
     void SetSecurityCheck(bool isCheck);
@@ -925,7 +925,7 @@ inline void ICVirtualHost::SetPressureCheckMode(int mode)
 {
     int val = SystemParameter(SYS_Function).toInt();
     val &= 0xFFFFFFFC;
-    val |= (mode & 0x11);
+    val |= (mode & 3);
     systemParamMap_.insert(SYS_Function, val);
     isParamChanged_ = true;
 }
