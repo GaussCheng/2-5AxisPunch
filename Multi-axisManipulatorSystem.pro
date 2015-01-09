@@ -5,7 +5,7 @@ TARGET = Multi-axisManipulatorSystem
 TEMPLATE = app
 QMAKE_CFLAGS += -std=c99
 
-SK_SIZE = 8
+SK_SIZE = 5
 
 OBJECTS_DIR = temp_$${SK_SIZE}
 UI_DIR = temp_$${SK_SIZE}

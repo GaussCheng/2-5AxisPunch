@@ -1011,6 +1011,47 @@
     </widget>
    </item>
    <item>
+    <widget class="ICComboBox" name="handSelect">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>50</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <item>
+      <property name="text">
+       <string>H:X</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>H:Y</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>H:S</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>H:R</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>H:T</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item>
     <widget class="PasswdLevelLabel" name="passwdLevelLabel">
      <property name="minimumSize">
       <size>
@@ -1044,6 +1085,11 @@ padding-left:6px;
    <class>PasswdLevelLabel</class>
    <extends>QLabel</extends>
    <header>passwdlevellabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ICComboBox</class>
+   <extends>QComboBox</extends>
+   <header>iccombobox.h</header>
   </customwidget>
  </customwidgets>
  <resources>

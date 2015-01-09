@@ -2536,8 +2536,9 @@ Reason</source>
         <translation>主菜单</translation>
     </message>
     <message>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="1170"/>
         <source>Warning</source>
-        <translation type="obsolete">警告</translation>
+        <translation type="unfinished">警告</translation>
     </message>
     <message>
         <source>Need to origin!</source>
@@ -2574,6 +2575,11 @@ Reason</source>
         <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="750"/>
         <source>Stand program can not be delete action</source>
         <translation>标准程序不能删除动作</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="1171"/>
+        <source>Has not been origin!</source>
+        <translation type="unfinished">还没原点复归!</translation>
     </message>
     <message>
         <source>Can not delete standby position program</source>
@@ -7017,7 +7023,37 @@ Please enter an digit between </source>
         <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="993"/>
         <source>Mold:</source>
         <oldsource>Mold</oldsource>
-        <translation>模号：</translation>
+        <translation>程序：</translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1028"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1029"/>
+        <source>H:X</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1033"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1034"/>
+        <source>H:Y</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1038"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1039"/>
+        <source>H:S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1043"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1044"/>
+        <source>H:R</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1048"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1049"/>
+        <source>H:T</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Run Time:</source>
@@ -7033,8 +7069,8 @@ Please enter an digit between </source>
         <translation type="obsolete">权限等级</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1033"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1033"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1075"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1074"/>
         <source>Machine Operator</source>
         <translation>操作员</translation>
     </message>
@@ -7059,32 +7095,32 @@ Please enter an digit between </source>
         <translation type="obsolete">没有注册！</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="19"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="22"/>
         <source>Stop</source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="20"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="23"/>
         <source>Manual</source>
         <translation>手动</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="21"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="24"/>
         <source>Auto</source>
         <translation>自动</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="118"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="121"/>
         <source>Controled</source>
         <translation>联机</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="118"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="121"/>
         <source>Single</source>
         <translation>单机</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1009"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1014"/>
         <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1009"/>
         <source>PushButton</source>
         <translation type="unfinished"></translation>
@@ -8601,17 +8637,17 @@ Would you want to restart now?</source>
 <context>
     <name>ICVirtualHost</name>
     <message>
-        <location filename="communication/icvirtualhost.cpp" line="109"/>
+        <location filename="communication/icvirtualhost.cpp" line="110"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="communication/icvirtualhost.cpp" line="272"/>
+        <location filename="communication/icvirtualhost.cpp" line="287"/>
         <source>Reconfig</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="communication/icvirtualhost.cpp" line="273"/>
+        <location filename="communication/icvirtualhost.cpp" line="288"/>
         <source>Need to reconfig</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8850,8 +8886,8 @@ Would you want to restart now?</source>
     <message>
         <location filename="mainframe.ui" line="263"/>
         <location filename="mainframe.ui" line="390"/>
-        <location filename="mainframe_8.ui" line="263"/>
-        <location filename="mainframe_8.ui" line="378"/>
+        <location filename="mainframe_8.ui" line="254"/>
+        <location filename="mainframe_8.ui" line="369"/>
         <source>mm</source>
         <translation></translation>
     </message>
@@ -8864,9 +8900,9 @@ Would you want to restart now?</source>
         <location filename="mainframe.ui" line="517"/>
         <location filename="mainframe.ui" line="644"/>
         <location filename="mainframe.ui" line="765"/>
-        <location filename="mainframe_8.ui" line="493"/>
-        <location filename="mainframe_8.ui" line="608"/>
-        <location filename="mainframe_8.ui" line="717"/>
+        <location filename="mainframe_8.ui" line="484"/>
+        <location filename="mainframe_8.ui" line="599"/>
+        <location filename="mainframe_8.ui" line="708"/>
         <source>deg</source>
         <translation>度</translation>
     </message>
@@ -8892,19 +8928,19 @@ Would you want to restart now?</source>
     </message>
     <message>
         <location filename="mainframe.ui" line="838"/>
-        <location filename="mainframe_8.ui" line="790"/>
+        <location filename="mainframe_8.ui" line="781"/>
         <source>Teach</source>
         <translation>教导</translation>
     </message>
     <message>
         <location filename="mainframe.ui" line="857"/>
-        <location filename="mainframe_8.ui" line="809"/>
+        <location filename="mainframe_8.ui" line="800"/>
         <source>I/O Monitor</source>
         <translation>I/O监视</translation>
     </message>
     <message>
         <location filename="mainframe.ui" line="895"/>
-        <location filename="mainframe_8.ui" line="847"/>
+        <location filename="mainframe_8.ui" line="838"/>
         <source>Settings</source>
         <translation>设定</translation>
     </message>
@@ -8970,7 +9006,7 @@ Would you want to restart now?</source>
     </message>
     <message>
         <location filename="mainframe.ui" line="876"/>
-        <location filename="mainframe_8.ui" line="828"/>
+        <location filename="mainframe_8.ui" line="819"/>
         <source>Alarm</source>
         <translation>报警</translation>
     </message>
@@ -8988,20 +9024,20 @@ Would you want to restart now?</source>
     </message>
     <message>
         <location filename="mainframe.ui" line="914"/>
-        <location filename="mainframe_8.ui" line="866"/>
+        <location filename="mainframe_8.ui" line="857"/>
         <source>Return</source>
         <translation>返回</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="570"/>
-        <location filename="mainframe.cpp" line="1024"/>
-        <location filename="mainframe.cpp" line="1100"/>
+        <location filename="mainframe.cpp" line="571"/>
+        <location filename="mainframe.cpp" line="1025"/>
+        <location filename="mainframe.cpp" line="1101"/>
         <source>Controlled, Can&apos;t modify!</source>
         <translation>联机中，不能设定！</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="735"/>
-        <location filename="mainframe.cpp" line="742"/>
+        <location filename="mainframe.cpp" line="736"/>
+        <location filename="mainframe.cpp" line="743"/>
         <source>Hint</source>
         <translation>提示</translation>
     </message>
@@ -9010,9 +9046,9 @@ Would you want to restart now?</source>
         <translation type="obsolete">手动</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="569"/>
-        <location filename="mainframe.cpp" line="1023"/>
-        <location filename="mainframe.cpp" line="1099"/>
+        <location filename="mainframe.cpp" line="570"/>
+        <location filename="mainframe.cpp" line="1024"/>
+        <location filename="mainframe.cpp" line="1100"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -9037,27 +9073,27 @@ Would you want to restart now?</source>
         <translation type="obsolete">0.0</translation>
     </message>
     <message>
-        <location filename="mainframe_8.ui" line="222"/>
+        <location filename="mainframe_8.ui" line="213"/>
         <source>X(FB):</source>
         <translation>X(前后):</translation>
     </message>
     <message>
-        <location filename="mainframe_8.ui" line="343"/>
+        <location filename="mainframe_8.ui" line="334"/>
         <source>Y(UD):</source>
         <translation>Y(上下):</translation>
     </message>
     <message>
-        <location filename="mainframe_8.ui" line="458"/>
+        <location filename="mainframe_8.ui" line="449"/>
         <source>S(SW):</source>
         <translation>S(摆臂):</translation>
     </message>
     <message>
-        <location filename="mainframe_8.ui" line="573"/>
+        <location filename="mainframe_8.ui" line="564"/>
         <source>R(HV):</source>
         <translation>R(翻转):</translation>
     </message>
     <message>
-        <location filename="mainframe_8.ui" line="688"/>
+        <location filename="mainframe_8.ui" line="679"/>
         <source>T(AD):</source>
         <translation>T(校正):</translation>
     </message>
@@ -9239,7 +9275,7 @@ Please write the destination file name.</source>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="409"/>
         <source>Mold is break, please remove it!</source>
-        <translation>模号数据损坏，请删除该模号！</translation>
+        <translation>程序数据损坏，请删除该程序！</translation>
     </message>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="1109"/>
@@ -9280,7 +9316,7 @@ Please try a new name</source>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="386"/>
         <source>On the Current mold already!</source>
-        <translation>已经在当前模号上！</translation>
+        <translation>已经在当前程序上！</translation>
     </message>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="731"/>
@@ -9290,7 +9326,7 @@ Please try a new name</source>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="736"/>
         <source>Wrong config format!</source>
-        <translation>错误的模组参数格式！</translation>
+        <translation>错误的程序参数格式！</translation>
     </message>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="650"/>
@@ -9395,7 +9431,7 @@ Please try a new name</source>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="396"/>
         <source>Read mold or mold para fail! Please change other mold!</source>
-        <translation>模组数据已损坏，请更换其它模组!</translation>
+        <translation>程序数据已损坏，请更换其它程序!</translation>
     </message>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="421"/>
@@ -9417,7 +9453,7 @@ Please try a new name</source>
         <location filename="function_settings/moldinformation.cpp" line="641"/>
         <location filename="function_settings/moldinformation.cpp" line="687"/>
         <source>The mold file </source>
-        <translation>模号文件</translation>
+        <translation>程序文件</translation>
     </message>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="461"/>

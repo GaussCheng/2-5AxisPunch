@@ -1520,6 +1520,16 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="1170"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="1171"/>
+        <source>Has not been origin!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="hcinstruction/ichcinstructionpageframe.ui" line="548"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="343"/>
         <source>Wait M</source>
@@ -4185,38 +4195,68 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1028"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1029"/>
+        <source>H:X</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1033"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1033"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1034"/>
+        <source>H:Y</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1038"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1039"/>
+        <source>H:S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1043"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1044"/>
+        <source>H:R</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1048"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1049"/>
+        <source>H:T</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1075"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1074"/>
         <source>Machine Operator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="19"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="22"/>
         <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="20"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="23"/>
         <source>Manual</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="21"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="24"/>
         <source>Auto</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="118"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="121"/>
         <source>Controled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="118"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="121"/>
         <source>Single</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1009"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1014"/>
         <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1009"/>
         <source>PushButton</source>
         <translation type="unfinished"></translation>
@@ -5267,17 +5307,17 @@ Please enter an digit between </source>
 <context>
     <name>ICVirtualHost</name>
     <message>
-        <location filename="communication/icvirtualhost.cpp" line="109"/>
+        <location filename="communication/icvirtualhost.cpp" line="110"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="communication/icvirtualhost.cpp" line="272"/>
+        <location filename="communication/icvirtualhost.cpp" line="287"/>
         <source>Reconfig</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="communication/icvirtualhost.cpp" line="273"/>
+        <location filename="communication/icvirtualhost.cpp" line="288"/>
         <source>Need to reconfig</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5400,8 +5440,8 @@ Please enter an digit between </source>
     <message>
         <location filename="mainframe.ui" line="263"/>
         <location filename="mainframe.ui" line="390"/>
-        <location filename="mainframe_8.ui" line="263"/>
-        <location filename="mainframe_8.ui" line="378"/>
+        <location filename="mainframe_8.ui" line="254"/>
+        <location filename="mainframe_8.ui" line="369"/>
         <source>mm</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5414,9 +5454,9 @@ Please enter an digit between </source>
         <location filename="mainframe.ui" line="517"/>
         <location filename="mainframe.ui" line="644"/>
         <location filename="mainframe.ui" line="765"/>
-        <location filename="mainframe_8.ui" line="493"/>
-        <location filename="mainframe_8.ui" line="608"/>
-        <location filename="mainframe_8.ui" line="717"/>
+        <location filename="mainframe_8.ui" line="484"/>
+        <location filename="mainframe_8.ui" line="599"/>
+        <location filename="mainframe_8.ui" line="708"/>
         <source>deg</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5442,76 +5482,76 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="mainframe.ui" line="838"/>
-        <location filename="mainframe_8.ui" line="790"/>
+        <location filename="mainframe_8.ui" line="781"/>
         <source>Teach</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainframe.ui" line="857"/>
-        <location filename="mainframe_8.ui" line="809"/>
+        <location filename="mainframe_8.ui" line="800"/>
         <source>I/O Monitor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainframe.ui" line="895"/>
-        <location filename="mainframe_8.ui" line="847"/>
+        <location filename="mainframe_8.ui" line="838"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainframe.ui" line="876"/>
-        <location filename="mainframe_8.ui" line="828"/>
+        <location filename="mainframe_8.ui" line="819"/>
         <source>Alarm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainframe.ui" line="914"/>
-        <location filename="mainframe_8.ui" line="866"/>
+        <location filename="mainframe_8.ui" line="857"/>
         <source>Return</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainframe.cpp" line="569"/>
-        <location filename="mainframe.cpp" line="1023"/>
-        <location filename="mainframe.cpp" line="1099"/>
-        <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainframe.cpp" line="570"/>
         <location filename="mainframe.cpp" line="1024"/>
         <location filename="mainframe.cpp" line="1100"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainframe.cpp" line="571"/>
+        <location filename="mainframe.cpp" line="1025"/>
+        <location filename="mainframe.cpp" line="1101"/>
         <source>Controlled, Can&apos;t modify!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="735"/>
-        <location filename="mainframe.cpp" line="742"/>
+        <location filename="mainframe.cpp" line="736"/>
+        <location filename="mainframe.cpp" line="743"/>
         <source>Hint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe_8.ui" line="222"/>
+        <location filename="mainframe_8.ui" line="213"/>
         <source>X(FB):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe_8.ui" line="343"/>
+        <location filename="mainframe_8.ui" line="334"/>
         <source>Y(UD):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe_8.ui" line="458"/>
+        <location filename="mainframe_8.ui" line="449"/>
         <source>S(SW):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe_8.ui" line="573"/>
+        <location filename="mainframe_8.ui" line="564"/>
         <source>R(HV):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe_8.ui" line="688"/>
+        <location filename="mainframe_8.ui" line="679"/>
         <source>T(AD):</source>
         <translation type="unfinished"></translation>
     </message>

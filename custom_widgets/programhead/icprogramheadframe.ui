@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>640</width>
-    <height>48</height>
+    <height>50</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,7 +23,7 @@
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <property name="spacing">
-    <number>1</number>
+    <number>0</number>
    </property>
    <property name="leftMargin">
     <number>0</number>
@@ -60,7 +60,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="../../resource.qrc">:/resource/ledgray(16).png</pixmap>
+      <pixmap resource="../iciomonitor/iciomonitor.qrc">:/resource/ledgray(16).png</pixmap>
      </property>
     </widget>
    </item>
@@ -91,7 +91,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="../../resource.qrc">:/resource/ledgray(16).png</pixmap>
+      <pixmap resource="../iciomonitor/iciomonitor.qrc">:/resource/ledgray(16).png</pixmap>
      </property>
     </widget>
    </item>
@@ -998,17 +998,59 @@
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="moldNameLabel">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="spacing">
+      <number>2</number>
      </property>
-     <property name="text">
-      <string>PushButton</string>
-     </property>
-    </widget>
+     <item>
+      <widget class="QPushButton" name="moldNameLabel">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>PushButton</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="ICComboBox" name="handSelect">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <item>
+        <property name="text">
+         <string>H:X</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>H:Y</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>H:S</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>H:R</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>H:T</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
    </item>
    <item>
     <widget class="PasswdLevelLabel" name="passwdLevelLabel">
@@ -1045,9 +1087,14 @@ padding-left:6px;
    <extends>QLabel</extends>
    <header>passwdlevellabel.h</header>
   </customwidget>
+  <customwidget>
+   <class>ICComboBox</class>
+   <extends>QComboBox</extends>
+   <header>iccombobox.h</header>
+  </customwidget>
  </customwidgets>
  <resources>
-  <include location="../../resource.qrc"/>
+  <include location="../iciomonitor/iciomonitor.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -32,7 +32,9 @@ public:
     {
         Axis_X,
         Axis_Y,
-        Axis_Z
+        Axis_Z,
+        Axis_R,
+        Axis_T,
     };
 
     static OperatingRatioSetDialog* Instance()

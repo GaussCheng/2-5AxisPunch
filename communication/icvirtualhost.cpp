@@ -25,6 +25,7 @@
 #include <QTime>
 #include "icactioncommand.h"
 #include "icfile.h"
+#include "icprogramheadframe.h"
 
 #define REFRESH_TIME 10
 static QTime testTime;
@@ -195,15 +196,29 @@ void ICVirtualHost::RefreshStatus()
         }
         if(key == ICKeyboard::VFB_X1Add || key == ICKeyboard::VFB_X1Sub)
         {
-            OperatingRatioSetDialog::Instance()->SetCurrentHandwheelAxis(OperatingRatioSetDialog::Axis_X);
+            ICProgramHeadFrame::Instance()->ChangeHandSelect(0);
+//            OperatingRatioSetDialog::Instance()->SetCurrentHandwheelAxis(OperatingRatioSetDialog::Axis_X);
+
         }
         else if(key == ICKeyboard::VFB_Y1Add || key == ICKeyboard::VFB_Y1Sub)
         {
-            OperatingRatioSetDialog::Instance()->SetCurrentHandwheelAxis(OperatingRatioSetDialog::Axis_Y);
+            ICProgramHeadFrame::Instance()->ChangeHandSelect(1);
+//            OperatingRatioSetDialog::Instance()->SetCurrentHandwheelAxis(OperatingRatioSetDialog::Axis_Y);
         }
         else if(key == ICKeyboard::VFB_ZAdd || key == ICKeyboard::VFB_ZSub)
         {
-            OperatingRatioSetDialog::Instance()->SetCurrentHandwheelAxis(OperatingRatioSetDialog::Axis_Z);
+            ICProgramHeadFrame::Instance()->ChangeHandSelect(2);
+//            OperatingRatioSetDialog::Instance()->SetCurrentHandwheelAxis(OperatingRatioSetDialog::Axis_Z);
+        }
+        else if(key == ICKeyboard::VFB_X2Add || key == ICKeyboard::VFB_X2Sub)
+        {
+            ICProgramHeadFrame::Instance()->ChangeHandSelect(3);
+//            OperatingRatioSetDialog::Instance()->SetCurrentHandwheelAxis(OperatingRatioSetDialog::Axis_Z);
+        }
+        else if(key == ICKeyboard::VFB_Y2Add || key == ICKeyboard::VFB_Y2Sub)
+        {
+            ICProgramHeadFrame::Instance()->ChangeHandSelect(4);
+//            OperatingRatioSetDialog::Instance()->SetCurrentHandwheelAxis(OperatingRatioSetDialog::Axis_Z);
         }
         int swKey = keyboard->TakeSwitchValue();
         if(swKey == -1)

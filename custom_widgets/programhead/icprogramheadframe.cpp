@@ -4,6 +4,9 @@
 #include <QMessageBox>
 
 #include "icparameterssave.h"
+#include "operatingratiosetdialog.h"
+#include "iccommandprocessor.h"
+#include "icvirtualkey.h"
 
 ICProgramHeadFrame * ICProgramHeadFrame::instance_ = NULL;
 static QMap<int, QString> statusToStringMap;
@@ -28,6 +31,7 @@ ICProgramHeadFrame::ICProgramHeadFrame(QWidget *parent) :
             SIGNAL(clicked()),
             SIGNAL(MoldButtonClicked()));
     ui->moldNameLabel->setEnabled(false);
+    ui->handSelect->setCurrentIndex(-1);
 //    ChangeCurrentStatus(0);
 }
 
@@ -161,4 +165,28 @@ void ICProgramHeadFrame::ChangStatusmoldNameLabelOperation(bool s)
 {
     int level = ICProgramHeadFrame::CurrentLevel();
     ui->moldNameLabel->setEnabled((level >= 1)&s);
+}
+
+void ICProgramHeadFrame::on_handSelect_currentIndexChanged(int index)
+{
+//    OperatingRatioSetDialog::Instance()->SetCurrentHandwheelAxis();
+    ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_BIASX + index);
+}
+
+void ICProgramHeadFrame::ChangeHandSelect(int index)
+{
+    ui->handSelect->blockSignals(true);
+    ui->handSelect->setCurrentIndex(index);
+    ui->handSelect->blockSignals(false);
+}
+
+void ICProgramHeadFrame::SetHanSelectEnable(bool en)
+{
+    if(en)
+        ui->handSelect->setEnabled(true);
+    else
+    {
+        ChangeHandSelect(-1);
+        ui->handSelect->setEnabled(false);
+    }
 }

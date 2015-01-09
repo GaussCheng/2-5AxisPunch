@@ -768,11 +768,15 @@ void MainFrame::StatusRefreshed()
         speed_ = virtualHost->HostStatus(ICVirtualHost::DbgX0).toString();
         //        statusStr_ = tr("Manual");
         ICProgramHeadFrame::Instance()->ChangStatusmoldNameLabelOperation(false);
+        ICProgramHeadFrame::Instance()->SetHanSelectEnable(true);
+        ui->teachButton->setEnabled(true);
     }
     else if(runningStatus_ == ICVirtualHost::Stop)
     {
         speed_ = "0";
         ICProgramHeadFrame::Instance()->ChangStatusmoldNameLabelOperation(true);
+        ICProgramHeadFrame::Instance()->SetHanSelectEnable(false);
+        ui->teachButton->setEnabled(false);
         //        statusStr_ = tr("Stop");
         //<<<<<<< HEAD
 //#ifdef Q_WS_X11
@@ -791,6 +795,8 @@ void MainFrame::StatusRefreshed()
     else if(runningStatus_ == ICVirtualHost::Auto)
     {
         ICProgramHeadFrame::Instance()->ChangStatusmoldNameLabelOperation(false);
+        ICProgramHeadFrame::Instance()->SetHanSelectEnable(false);
+        ui->teachButton->setEnabled(false);
         if(virtualHost->HostStatus(ICVirtualHost::ClipL).toInt() >> 15)
         {
             if(actionDialog_->isHidden())

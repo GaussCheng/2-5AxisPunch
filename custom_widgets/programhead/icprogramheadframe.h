@@ -41,6 +41,8 @@ public:
 
 public slots:
     void OnLevelChanged(int level);
+    void ChangeHandSelect(int index);
+    void SetHanSelectEnable(bool en);
 
 Q_SIGNALS:
     void LevelChanged(int);
@@ -54,6 +56,7 @@ private:
 
 private slots:
     void UpdateDateTime();
+    void on_handSelect_currentIndexChanged(int index);
 
 
 private:
