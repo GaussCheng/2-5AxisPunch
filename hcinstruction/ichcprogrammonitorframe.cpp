@@ -1055,3 +1055,13 @@ void ICHCProgramMonitorFrame::on_tSpeed_toggled(bool checked)
     }
 }
 #endif
+
+void ICHCProgramMonitorFrame::on_allowGet_clicked()
+{
+    ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_ALLOWTACK);
+}
+
+void ICHCProgramMonitorFrame::on_allowSet_clicked()
+{
+    ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_ALLOWPUT);
+}

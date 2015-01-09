@@ -3572,7 +3572,7 @@ Reason</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="1674"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="1668"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="1741"/>
         <source>R.Speed</source>
         <translation>R调速</translation>
     </message>
@@ -3716,11 +3716,11 @@ Reason</source>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="1649"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="2133"/>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="2617"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="675"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="1159"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="1643"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="2127"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="2611"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="748"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="1232"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="1716"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="2200"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="2684"/>
         <source>%</source>
         <translation></translation>
     </message>
@@ -3730,31 +3730,31 @@ Reason</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="82"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="76"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="67"/>
         <source>CheckRun</source>
         <translation>料感运行</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="706"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="700"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="773"/>
         <source>Y.Speed</source>
         <translation>Y调速</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="222"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="216"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="289"/>
         <source>X.Speed</source>
         <translation>X调速</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="1190"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="1184"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="1257"/>
         <source>S.Speed</source>
         <translation>S调速</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="2158"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="2152"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="2225"/>
         <source>T.Speed</source>
         <translation>T调速</translation>
     </message>
@@ -3780,9 +3780,19 @@ Reason</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="126"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="120"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="111"/>
         <source>UncheckRun</source>
         <translation>无料运行</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="158"/>
+        <source>allowGet</source>
+        <translation>允许取物</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="199"/>
+        <source>allowSet</source>
+        <translation>冲压完成</translation>
     </message>
 </context>
 <context>
@@ -7110,12 +7120,12 @@ Please enter an digit between </source>
         <translation>自动</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="121"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="122"/>
         <source>Controled</source>
         <translation>联机</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="121"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.cpp" line="122"/>
         <source>Single</source>
         <translation>单机</translation>
     </message>
@@ -9030,8 +9040,8 @@ Would you want to restart now?</source>
     </message>
     <message>
         <location filename="mainframe.cpp" line="571"/>
-        <location filename="mainframe.cpp" line="1025"/>
-        <location filename="mainframe.cpp" line="1101"/>
+        <location filename="mainframe.cpp" line="1031"/>
+        <location filename="mainframe.cpp" line="1107"/>
         <source>Controlled, Can&apos;t modify!</source>
         <translation>联机中，不能设定！</translation>
     </message>
@@ -9047,8 +9057,8 @@ Would you want to restart now?</source>
     </message>
     <message>
         <location filename="mainframe.cpp" line="570"/>
-        <location filename="mainframe.cpp" line="1024"/>
-        <location filename="mainframe.cpp" line="1100"/>
+        <location filename="mainframe.cpp" line="1030"/>
+        <location filename="mainframe.cpp" line="1106"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>

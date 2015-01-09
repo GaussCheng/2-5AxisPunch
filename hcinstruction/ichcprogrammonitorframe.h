@@ -63,6 +63,10 @@ private slots:
     void on_tSpeed_toggled(bool checked);
 #endif
 
+    void on_allowGet_clicked();
+
+    void on_allowSet_clicked();
+
 private:
     void InitSignal();
     void UpdateUIProgramList_();
