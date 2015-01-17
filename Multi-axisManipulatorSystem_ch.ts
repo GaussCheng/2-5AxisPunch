@@ -2538,7 +2538,7 @@ Reason</source>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="1170"/>
         <source>Warning</source>
-        <translation type="unfinished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>Need to origin!</source>
@@ -2579,7 +2579,7 @@ Reason</source>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="1171"/>
         <source>Has not been origin!</source>
-        <translation type="unfinished">还没原点复归!</translation>
+        <translation>还没原点复归!</translation>
     </message>
     <message>
         <source>Can not delete standby position program</source>
@@ -3571,7 +3571,7 @@ Reason</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="1674"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="1756"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="1741"/>
         <source>R.Speed</source>
         <translation>R调速</translation>
@@ -3711,11 +3711,11 @@ Reason</source>
         <translation type="obsolete">速度:</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="681"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="1165"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="1649"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="2133"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="2617"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="763"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="1247"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="1731"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="2215"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="2699"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="748"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="1232"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="1716"/>
@@ -3729,31 +3729,31 @@ Reason</source>
         <translation type="obsolete">0.0</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="82"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="73"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="67"/>
         <source>CheckRun</source>
         <translation>料感运行</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="706"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="788"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="773"/>
         <source>Y.Speed</source>
         <translation>Y调速</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="222"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="304"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="289"/>
         <source>X.Speed</source>
         <translation>X调速</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="1190"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="1272"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="1257"/>
         <source>S.Speed</source>
         <translation>S调速</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="2158"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="2240"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="2225"/>
         <source>T.Speed</source>
         <translation>T调速</translation>
@@ -3779,17 +3779,19 @@ Reason</source>
         <translation type="obsolete">调速允许</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="126"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="120"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="111"/>
         <source>UncheckRun</source>
         <translation>无料运行</translation>
     </message>
     <message>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="167"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="158"/>
         <source>allowGet</source>
         <translation>允许取物</translation>
     </message>
     <message>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="211"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="199"/>
         <source>allowSet</source>
         <translation>冲压完成</translation>
@@ -7017,51 +7019,51 @@ Please enter an digit between </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="70"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="70"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="65"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="75"/>
         <source>Origin</source>
         <translation>机械手原点</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="84"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="84"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="82"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="92"/>
         <source>Punch Origin</source>
         <translation>冲床原点</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="993"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="993"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1000"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1000"/>
         <source>Mold:</source>
         <oldsource>Mold</oldsource>
         <translation>程序：</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1028"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1029"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1037"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1030"/>
         <source>H:X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1033"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1034"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1042"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1035"/>
         <source>H:Y</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1038"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1039"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1047"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1040"/>
         <source>H:S</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1043"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1044"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1052"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1045"/>
         <source>H:R</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1048"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1049"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1057"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1050"/>
         <source>H:T</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7079,8 +7081,8 @@ Please enter an digit between </source>
         <translation type="obsolete">权限等级</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1075"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1074"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1111"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1106"/>
         <source>Machine Operator</source>
         <translation>操作员</translation>
     </message>
@@ -7130,10 +7132,28 @@ Please enter an digit between </source>
         <translation>单机</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1014"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1009"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1021"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1016"/>
         <source>PushButton</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1072"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1071"/>
+        <source>X1</source>
+        <translation type="unfinished">X</translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1077"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1076"/>
+        <source>X5</source>
+        <translation type="unfinished">R {5?}</translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1082"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1081"/>
+        <source>X10</source>
+        <translation type="unfinished">R {10?}</translation>
     </message>
 </context>
 <context>
@@ -8896,8 +8916,8 @@ Would you want to restart now?</source>
     <message>
         <location filename="mainframe.ui" line="263"/>
         <location filename="mainframe.ui" line="390"/>
-        <location filename="mainframe_8.ui" line="254"/>
-        <location filename="mainframe_8.ui" line="369"/>
+        <location filename="mainframe_8.ui" line="269"/>
+        <location filename="mainframe_8.ui" line="396"/>
         <source>mm</source>
         <translation></translation>
     </message>
@@ -8910,9 +8930,9 @@ Would you want to restart now?</source>
         <location filename="mainframe.ui" line="517"/>
         <location filename="mainframe.ui" line="644"/>
         <location filename="mainframe.ui" line="765"/>
-        <location filename="mainframe_8.ui" line="484"/>
-        <location filename="mainframe_8.ui" line="599"/>
-        <location filename="mainframe_8.ui" line="708"/>
+        <location filename="mainframe_8.ui" line="523"/>
+        <location filename="mainframe_8.ui" line="650"/>
+        <location filename="mainframe_8.ui" line="771"/>
         <source>deg</source>
         <translation>度</translation>
     </message>
@@ -8938,19 +8958,19 @@ Would you want to restart now?</source>
     </message>
     <message>
         <location filename="mainframe.ui" line="838"/>
-        <location filename="mainframe_8.ui" line="781"/>
+        <location filename="mainframe_8.ui" line="844"/>
         <source>Teach</source>
         <translation>教导</translation>
     </message>
     <message>
         <location filename="mainframe.ui" line="857"/>
-        <location filename="mainframe_8.ui" line="800"/>
+        <location filename="mainframe_8.ui" line="863"/>
         <source>I/O Monitor</source>
         <translation>I/O监视</translation>
     </message>
     <message>
         <location filename="mainframe.ui" line="895"/>
-        <location filename="mainframe_8.ui" line="838"/>
+        <location filename="mainframe_8.ui" line="901"/>
         <source>Settings</source>
         <translation>设定</translation>
     </message>
@@ -9016,7 +9036,7 @@ Would you want to restart now?</source>
     </message>
     <message>
         <location filename="mainframe.ui" line="876"/>
-        <location filename="mainframe_8.ui" line="819"/>
+        <location filename="mainframe_8.ui" line="882"/>
         <source>Alarm</source>
         <translation>报警</translation>
     </message>
@@ -9034,7 +9054,7 @@ Would you want to restart now?</source>
     </message>
     <message>
         <location filename="mainframe.ui" line="914"/>
-        <location filename="mainframe_8.ui" line="857"/>
+        <location filename="mainframe_8.ui" line="920"/>
         <source>Return</source>
         <translation>返回</translation>
     </message>
@@ -9083,27 +9103,27 @@ Would you want to restart now?</source>
         <translation type="obsolete">0.0</translation>
     </message>
     <message>
-        <location filename="mainframe_8.ui" line="213"/>
+        <location filename="mainframe_8.ui" line="222"/>
         <source>X(FB):</source>
         <translation>X(前后):</translation>
     </message>
     <message>
-        <location filename="mainframe_8.ui" line="334"/>
+        <location filename="mainframe_8.ui" line="349"/>
         <source>Y(UD):</source>
         <translation>Y(上下):</translation>
     </message>
     <message>
-        <location filename="mainframe_8.ui" line="449"/>
+        <location filename="mainframe_8.ui" line="476"/>
         <source>S(SW):</source>
         <translation>S(摆臂):</translation>
     </message>
     <message>
-        <location filename="mainframe_8.ui" line="564"/>
+        <location filename="mainframe_8.ui" line="603"/>
         <source>R(HV):</source>
         <translation>R(翻转):</translation>
     </message>
     <message>
-        <location filename="mainframe_8.ui" line="679"/>
+        <location filename="mainframe_8.ui" line="730"/>
         <source>T(AD):</source>
         <translation>T(校正):</translation>
     </message>

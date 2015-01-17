@@ -2276,11 +2276,11 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="681"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="1165"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="1649"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="2133"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="2617"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="763"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="1247"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="1731"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="2215"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="2699"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="748"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="1232"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="1716"/>
@@ -2290,31 +2290,31 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="82"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="73"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="67"/>
         <source>CheckRun</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="706"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="788"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="773"/>
         <source>Y.Speed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="222"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="304"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="289"/>
         <source>X.Speed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="1190"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="1272"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="1257"/>
         <source>S.Speed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="2158"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="2240"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="2225"/>
         <source>T.Speed</source>
         <translation type="unfinished"></translation>
@@ -2361,23 +2361,25 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="1674"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="1756"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="1741"/>
         <source>R.Speed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="126"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="120"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="111"/>
         <source>UncheckRun</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="167"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="158"/>
         <source>allowGet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="211"/>
         <location filename="hcinstruction/ichcprogrammonitorframe_8.ui" line="199"/>
         <source>allowSet</source>
         <translation type="unfinished"></translation>
@@ -4186,57 +4188,57 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="70"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="70"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="65"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="75"/>
         <source>Origin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="84"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="84"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="82"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="92"/>
         <source>Punch Origin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="993"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="993"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1000"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1000"/>
         <source>Mold:</source>
         <oldsource>Mold</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1028"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1029"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1037"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1030"/>
         <source>H:X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1033"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1034"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1042"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1035"/>
         <source>H:Y</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1038"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1039"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1047"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1040"/>
         <source>H:S</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1043"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1044"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1052"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1045"/>
         <source>H:R</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1048"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1049"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1057"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1050"/>
         <source>H:T</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1075"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1074"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1111"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1106"/>
         <source>Machine Operator</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4266,9 +4268,27 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1014"/>
-        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1009"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1021"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1016"/>
         <source>PushButton</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1072"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1071"/>
+        <source>X1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1077"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1076"/>
+        <source>X5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1082"/>
+        <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1081"/>
+        <source>X10</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5450,8 +5470,8 @@ Please enter an digit between </source>
     <message>
         <location filename="mainframe.ui" line="263"/>
         <location filename="mainframe.ui" line="390"/>
-        <location filename="mainframe_8.ui" line="254"/>
-        <location filename="mainframe_8.ui" line="369"/>
+        <location filename="mainframe_8.ui" line="269"/>
+        <location filename="mainframe_8.ui" line="396"/>
         <source>mm</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5464,9 +5484,9 @@ Please enter an digit between </source>
         <location filename="mainframe.ui" line="517"/>
         <location filename="mainframe.ui" line="644"/>
         <location filename="mainframe.ui" line="765"/>
-        <location filename="mainframe_8.ui" line="484"/>
-        <location filename="mainframe_8.ui" line="599"/>
-        <location filename="mainframe_8.ui" line="708"/>
+        <location filename="mainframe_8.ui" line="523"/>
+        <location filename="mainframe_8.ui" line="650"/>
+        <location filename="mainframe_8.ui" line="771"/>
         <source>deg</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5492,31 +5512,31 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="mainframe.ui" line="838"/>
-        <location filename="mainframe_8.ui" line="781"/>
+        <location filename="mainframe_8.ui" line="844"/>
         <source>Teach</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainframe.ui" line="857"/>
-        <location filename="mainframe_8.ui" line="800"/>
+        <location filename="mainframe_8.ui" line="863"/>
         <source>I/O Monitor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainframe.ui" line="895"/>
-        <location filename="mainframe_8.ui" line="838"/>
+        <location filename="mainframe_8.ui" line="901"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainframe.ui" line="876"/>
-        <location filename="mainframe_8.ui" line="819"/>
+        <location filename="mainframe_8.ui" line="882"/>
         <source>Alarm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainframe.ui" line="914"/>
-        <location filename="mainframe_8.ui" line="857"/>
+        <location filename="mainframe_8.ui" line="920"/>
         <source>Return</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5541,27 +5561,27 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe_8.ui" line="213"/>
+        <location filename="mainframe_8.ui" line="222"/>
         <source>X(FB):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe_8.ui" line="334"/>
+        <location filename="mainframe_8.ui" line="349"/>
         <source>Y(UD):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe_8.ui" line="449"/>
+        <location filename="mainframe_8.ui" line="476"/>
         <source>S(SW):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe_8.ui" line="564"/>
+        <location filename="mainframe_8.ui" line="603"/>
         <source>R(HV):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe_8.ui" line="679"/>
+        <location filename="mainframe_8.ui" line="730"/>
         <source>T(AD):</source>
         <translation type="unfinished"></translation>
     </message>

@@ -107,6 +107,7 @@ void ICHCInjectionPage::showEvent(QShowEvent *e)
             SIGNAL(StatusRefreshed()),
             this,
             SLOT(StatusRefreshed()));
+
 }
 
 void ICHCInjectionPage::hideEvent(QHideEvent *e)

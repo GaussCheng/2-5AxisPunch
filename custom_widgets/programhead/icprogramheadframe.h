@@ -43,6 +43,7 @@ public slots:
     void OnLevelChanged(int level);
     void ChangeHandSelect(int index);
     void SetHanSelectEnable(bool en);
+    int HandSpeed();
 
 Q_SIGNALS:
     void LevelChanged(int);

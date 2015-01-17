@@ -55,43 +55,50 @@
     </widget>
    </item>
    <item>
-    <widget class="QLabel" name="robotOrigin">
-     <property name="text">
-      <string/>
+    <layout class="QGridLayout" name="gridLayout">
+     <property name="spacing">
+      <number>2</number>
      </property>
-     <property name="pixmap">
-      <pixmap resource="../iciomonitor/iciomonitor.qrc">:/resource/ledgray(16).png</pixmap>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_3">
-     <property name="text">
-      <string>Origin</string>
-     </property>
-    </widget>
+     <item row="0" column="0">
+      <widget class="QLabel" name="robotOrigin">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="../iciomonitor/iciomonitor.qrc">:/resource/ledgray(16).png</pixmap>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1" colspan="2">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>Origin</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="punchOrigin">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="../iciomonitor/iciomonitor.qrc">:/resource/ledgray(16).png</pixmap>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1" colspan="2">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Punch Origin</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
    <item>
     <widget class="Line" name="line_3">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_4">
-     <property name="text">
-      <string>Punch Origin</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="punchOrigin">
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../iciomonitor/iciomonitor.qrc">:/resource/ledgray(16).png</pixmap>
      </property>
     </widget>
    </item>
@@ -1018,12 +1025,6 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <property name="maximumSize">
-      <size>
-       <width>50</width>
-       <height>16777215</height>
-      </size>
-     </property>
      <item>
       <property name="text">
        <string>H:X</string>
@@ -1047,6 +1048,37 @@
      <item>
       <property name="text">
        <string>H:T</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item>
+    <widget class="ICComboBox" name="handSpeed">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>55</width>
+       <height>0</height>
+      </size>
+     </property>
+     <item>
+      <property name="text">
+       <string>X1</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>X5</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>X10</string>
       </property>
      </item>
     </widget>

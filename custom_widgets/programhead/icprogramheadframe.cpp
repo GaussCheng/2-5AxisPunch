@@ -190,3 +190,18 @@ void ICProgramHeadFrame::SetHanSelectEnable(bool en)
         ui->handSelect->setEnabled(false);
     }
 }
+
+int ICProgramHeadFrame::HandSpeed()
+{
+    int index = ui->handSpeed->currentIndex();
+    switch (index) {
+    case 0:
+        return 1;
+    case 1:
+        return 5;
+    case 2:
+        return 10;
+    default:
+        return 1;
+    }
+}

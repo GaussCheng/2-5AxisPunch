@@ -138,7 +138,8 @@ static bool isShow = false;
 void ICHCInstructionPageFrame::showEvent(QShowEvent *e)
 {
     QFrame::showEvent(e);
-    UpdateHostParam();
+//    UpdateHostParam();
+    ui->mainButton->click();
     isShow = true;
     ReserveProgConfig progConfig;
     progConfig.all =  ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::SYS_Config_Resv2).toInt();

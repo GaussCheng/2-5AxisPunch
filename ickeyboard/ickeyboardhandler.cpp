@@ -14,7 +14,7 @@
 //#include "icmold.h"
 //#include "icmacrosubroutine.h"
 #include "operatingratiosetdialog.h"
-
+#include "icprogramheadframe.h"
 QScopedPointer<ICKeyboardHandler> ICKeyboardHandler::instance_;
 ICKeyboardHandler::ICKeyboardHandler(QObject *parent) :
     QObject(parent),
@@ -356,7 +356,7 @@ void ICKeyboardHandler::PulleyChanged(int value)
     }
     qDebug("status is right");
     pulleyTurn_ = (pulleyTurn_ + 1) % 2;
-    int currentPulleySpeed = OperatingRatioSetDialog::Instance()->CurrentPulleySpeed();
+    int currentPulleySpeed = ICProgramHeadFrame::Instance()->HandSpeed();
     int cmd;
     if(pulleyTurn_ == 0)
     {
