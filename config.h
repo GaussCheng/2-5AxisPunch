@@ -24,7 +24,7 @@
 #endif
 #define HW_VERSION "1.3"
 
-#define SW_VERSION "5.0.4"
+#define SW_VERSION "5.0.5"
 
 static const char*  SHOW_VERSION =  SW_VERSION_PREFIX INCH"_"SW_VERSION;
 #define UPDATE_PREFIX "HCPunch"

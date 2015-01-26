@@ -2201,49 +2201,49 @@ Reason</source>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.ui" line="703"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="480"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="150"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="151"/>
         <source>Reserve1</source>
         <translation>预留程序1</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.ui" line="708"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="485"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="152"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="153"/>
         <source>Reserve2</source>
         <translation>预留程序2</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.ui" line="713"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="490"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="154"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="155"/>
         <source>Reserve3</source>
         <translation>预留程序3</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.ui" line="718"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="495"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="156"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="157"/>
         <source>Reserve4</source>
         <translation>预留程序4</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.ui" line="723"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="500"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="158"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="159"/>
         <source>Reserve5</source>
         <translation>预留程序5</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.ui" line="728"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="505"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="160"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="161"/>
         <source>Reserve6</source>
         <translation>预留程序6</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.ui" line="733"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="510"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="162"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="163"/>
         <source>Reserve7</source>
         <translation>预留程序7</translation>
     </message>
@@ -2536,7 +2536,7 @@ Reason</source>
         <translation>主菜单</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="1170"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="1171"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -2562,22 +2562,22 @@ Reason</source>
     </message>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="111"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="294"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="295"/>
         <source>Check</source>
         <translation>检测</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="749"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="750"/>
         <source>warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="750"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="751"/>
         <source>Stand program can not be delete action</source>
         <translation>标准程序不能删除动作</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="1171"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="1172"/>
         <source>Has not been origin!</source>
         <translation>还没原点复归!</translation>
     </message>
@@ -7038,31 +7038,26 @@ Please enter an digit between </source>
         <translation>程序：</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1037"/>
         <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1030"/>
         <source>H:X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1042"/>
         <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1035"/>
         <source>H:Y</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1047"/>
         <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1040"/>
         <source>H:S</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1052"/>
         <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1045"/>
         <source>H:R</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1057"/>
         <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1050"/>
         <source>H:T</source>
         <translation type="unfinished"></translation>
@@ -7138,19 +7133,16 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1072"/>
         <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1071"/>
         <source>X1</source>
         <translation type="unfinished">X</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1077"/>
         <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1076"/>
         <source>X5</source>
         <translation type="unfinished">R {5?}</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/icprogramheadframe.ui" line="1082"/>
         <location filename="custom_widgets/programhead/icprogramheadframe_8.ui" line="1081"/>
         <source>X10</source>
         <translation type="unfinished">R {10?}</translation>
