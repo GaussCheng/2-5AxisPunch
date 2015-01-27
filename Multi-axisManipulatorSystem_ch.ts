@@ -2245,7 +2245,7 @@ Reason</source>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="510"/>
         <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="163"/>
         <source>Reserve7</source>
-        <translation>预留程序7</translation>
+        <translation>原点偏置</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.ui" line="747"/>
@@ -2533,10 +2533,10 @@ Reason</source>
         <location filename="hcinstruction/ichcinstructionpageframe.ui" line="181"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="751"/>
         <source>Menu</source>
-        <translation>主菜单</translation>
+        <translation>指令</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="1171"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="1177"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -2567,17 +2567,23 @@ Reason</source>
         <translation>检测</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="750"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="537"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="756"/>
         <source>warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="751"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="538"/>
+        <source>Stand program can not do insert action</source>
+        <translation>标准程序不能插入动作</translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="757"/>
         <source>Stand program can not be delete action</source>
         <translation>标准程序不能删除动作</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="1172"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="1178"/>
         <source>Has not been origin!</source>
         <translation>还没原点复归!</translation>
     </message>
@@ -7884,7 +7890,7 @@ Please enter an digit between </source>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="519"/>
         <source>RP7</source>
-        <translation>预留程序7</translation>
+        <translation>原点偏置</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="533"/>
@@ -8483,7 +8489,7 @@ Would you want to restart now?</source>
         <location filename="hcmaintains/icupdatesystempage.ui" line="20"/>
         <location filename="hcmaintains/icupdatesystempage_8.ui" line="20"/>
         <source>Frame</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcmaintains/icupdatesystempage_8.ui" line="96"/>
@@ -8666,12 +8672,12 @@ Would you want to restart now?</source>
     <message>
         <location filename="communication/icvirtualhost.cpp" line="287"/>
         <source>Reconfig</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="communication/icvirtualhost.cpp" line="288"/>
         <source>Need to reconfig</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>

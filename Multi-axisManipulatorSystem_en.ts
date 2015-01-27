@@ -1510,22 +1510,28 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="750"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="537"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="756"/>
         <source>warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="751"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="538"/>
+        <source>Stand program can not do insert action</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="757"/>
         <source>Stand program can not be delete action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="1171"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="1177"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="1172"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="1178"/>
         <source>Has not been origin!</source>
         <translation type="unfinished"></translation>
     </message>

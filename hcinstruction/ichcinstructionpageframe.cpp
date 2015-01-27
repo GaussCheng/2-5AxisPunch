@@ -49,7 +49,7 @@
 int ReserveTextToIndex(const QString& text)
 {
     if(!text.right(1).at(0).isDigit())
-        return 8;
+        return 7;
 
     return text.right(1).toInt();
 }
@@ -530,6 +530,12 @@ void ICHCInstructionPageFrame::on_insertToolButton_clicked()
     int sIndex;
     if(index < 0)
     {
+        return;
+    }
+    if(MoldInformation::Instance()->IsStandProgram(ICParametersSave::Instance()->MoldName("")))
+    {
+        QMessageBox::warning(this, tr("warning"),
+                             tr("Stand program can not do insert action"));
         return;
     }
     FindIndex_(index, gIndex, tIndex, sIndex);
