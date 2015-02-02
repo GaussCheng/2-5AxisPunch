@@ -104,7 +104,7 @@ QCheckBox::indicator:unchecked
      <item>
       <widget class="ICLineEditWithVirtualNumericKeypad" name="delayEdit">
        <property name="text">
-        <string>0.00</string>
+        <string>0.0</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -158,7 +158,7 @@ QCheckBox::indicator:unchecked
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_2"/>
+  <buttongroup name="buttonGroup"/>
  </buttongroups>
 </ui>

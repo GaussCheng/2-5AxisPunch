@@ -4,6 +4,7 @@
 TARGET = Multi-axisManipulatorSystem
 TEMPLATE = app
 QMAKE_CFLAGS += -std=c99
+QT += sql
 
 SK_SIZE = 5
 
@@ -143,10 +144,10 @@ OTHER_FILES += \
 
 QMAKE_POST_LINK += "cp *.qm $$DESTDIR"
 CONFIG(debug, debug|release){
-system("python rename_ui.py temp_8_d")
+system("python rename_ui.py $$UI_DIR")
 #QMAKE_POST_LINK += "cp *.qm bin_debug"
 }else{
-system("python rename_ui.py temp_8")
+system("python rename_ui.py $${UI_DIR}")
 QMAKE_POST_LINK += "&& arm-linux-gnueabihf-strip $$DESTDIR/$$TARGET && HCbcrypt.sh -r $$DESTDIR/$$TARGET"
 QMAKE_POST_LINK += "&& chmod +x tools/make_target && tools/make_target"
 }

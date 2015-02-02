@@ -36,6 +36,11 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
 {
     QString commandStr;
     //    commandStr += QString::number(moldItem.Seq()) + " ";
+    if(moldItem.Action() == ICMold::ACTCOMMENT)
+    {
+        commandStr += QString(tr("#Comment:%1").arg(moldItem.Comment()));
+        return commandStr;
+    }
     if(moldItem.Num() == 0)
     {
         commandStr += tr("Home") + "     "/* + "*" + "    "*/;
@@ -139,7 +144,7 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
             {
                 commandStr += QObject::tr("Return:") + QString::number((int)moldItem.SVal());
             }
-            commandStr += QObject::tr("Limit") + ":" + ICParameterConversion::TransThisIntToThisText(moldItem.DVal(), 2);
+            commandStr += QObject::tr("Limit") + ":" + ICParameterConversion::TransThisIntToThisText(moldItem.DVal(), 1);
             return commandStr;
 
         }
@@ -149,7 +154,7 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
 //            commandStr +=  info.GetLocaleName("zh") + " ";
             commandStr += config->EuXString(moldItem.SubNum());
             commandStr += (moldItem.IFVal() == 0) ? "OFF" :"ON ";
-            commandStr += QObject::tr("Limit") + ":" + ICParameterConversion::TransThisIntToThisText(moldItem.DVal(), 2);
+            commandStr += QObject::tr("Limit") + ":" + ICParameterConversion::TransThisIntToThisText(moldItem.DVal(), 1);
             return commandStr;
         }
         else if(action == ICMold::GEuOut)
@@ -169,7 +174,7 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
 //                commandStr += mStr.at(moldItem.SubNum());
 //            }
             commandStr += (moldItem.IFVal() == 0) ? "OFF" :"ON ";
-            commandStr += QObject::tr("Limit") + ":" + ICParameterConversion::TransThisIntToThisText(moldItem.DVal(), 2);
+            commandStr += QObject::tr("Limit") + ":" + ICParameterConversion::TransThisIntToThisText(moldItem.DVal(), 1);
             return commandStr;
 
         }

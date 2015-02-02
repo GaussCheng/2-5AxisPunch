@@ -7,7 +7,7 @@ ICWaitMEditor::ICWaitMEditor(QWidget *parent) :
     ui(new Ui::ICWaitMEditor)
 {
     ui->setupUi(this);
-    ui->delayEdit->SetDecimalPlaces(2);
+    ui->delayEdit->SetDecimalPlaces(1);
     ui->delayEdit->setValidator(new QIntValidator(0, 65530, this));
     QStringList items;
     QList<ICUserIOInfo> mInfos = ICUserDefineConfig::Instance()->AllMInfos();

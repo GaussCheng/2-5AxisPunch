@@ -23,6 +23,7 @@ protected:
     void hideEvent(QHideEvent *e);
     void changeEvent(QEvent *e);
     void keyPressEvent(QKeyEvent* e);
+    void closeEvent(QCloseEvent *e);
 private Q_SLOTS:
     void StepChanged(int step);
      void StatusRefreshed();

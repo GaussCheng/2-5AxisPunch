@@ -7,7 +7,7 @@ ICWaitConditionEditor::ICWaitConditionEditor(QWidget *parent) :
     ui(new Ui::ICWaitConditionEditor)
 {
     ui->setupUi(this);
-    ui->delayEdit->SetDecimalPlaces(2);
+    ui->delayEdit->SetDecimalPlaces(1);
     ui->delayEdit->setValidator(new QIntValidator(0, 65530, this));
     ui->onBox->setEnabled(false);
     ui->offBox->setEnabled(false);

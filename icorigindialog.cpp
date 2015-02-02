@@ -96,7 +96,7 @@ void ICOriginDialog::hideEvent(QHideEvent *e)
             SIGNAL(StatusRefreshed()),
             this,
             SLOT(StatusRefreshed()));
-//    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
+
     QDialog::hideEvent(e);
 }
 
@@ -124,8 +124,14 @@ void ICOriginDialog::keyPressEvent(QKeyEvent *e)
     {
         QKeyEvent* ke = new QKeyEvent(*e);
         qApp->postEvent(this->parentWidget(), ke);
-        this->accept();
+//        this->accept();
     }
+}
+
+void ICOriginDialog::closeEvent(QCloseEvent *e)
+{
+//    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
+    QDialog::closeEvent(e);
 }
 
 void ICOriginDialog::StepChanged(int step)
@@ -232,4 +238,5 @@ void ICOriginDialog::on_noBtn_clicked()
 void ICOriginDialog::on_stopBtn_clicked()
 {
     this->reject();
+    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
 }

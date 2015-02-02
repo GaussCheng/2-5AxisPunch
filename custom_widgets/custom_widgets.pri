@@ -21,8 +21,17 @@ include (iccommandkeywrapper/iccommandkeywrapper.pri)
 include (iciopointwrapper/iciopointwrapper.pri)
 include (icpictureview/icpictureview.pri)
 
+contains(DEFINES, HC_SK_8){
+    FORMS += custom_widgets/icinputmethodkeyboard.ui
+}
+
+contains(DEFINES, HC_SK_5){
+    FORMS += custom_widgets/icinputmethodkeyboard_5.ui
+}
+
 FORMS += \
     custom_widgets/icpasswordmodifydialog.ui
+
 
 HEADERS += \
     custom_widgets/ictablewidget.h \
@@ -32,7 +41,9 @@ HEADERS += \
     custom_widgets/iclistwidget.h \
     custom_widgets/iccombobox.h \
     custom_widgets/icgroupbox.h \
-    custom_widgets/ictabwidget.h
+    custom_widgets/ictabwidget.h \
+    custom_widgets/icinputmethodkeyboard.h \
+    custom_widgets/icplaintextedit.h
 
 SOURCES += \
     custom_widgets/ictablewidget.cpp \
@@ -42,4 +53,6 @@ SOURCES += \
     custom_widgets/iclistwidget.cpp \
     custom_widgets/iccombobox.cpp \
     custom_widgets/icgroupbox.cpp \
-    custom_widgets/ictabwidget.cpp
+    custom_widgets/ictabwidget.cpp \
+    custom_widgets/icinputmethodkeyboard.cpp \
+    custom_widgets/icplaintextedit.cpp

@@ -34,6 +34,7 @@
 #include "ichcotherpage.h"
 #include "ichcstackedsettingsframe.h"
 #include "icwaitmeditor.h"
+#include "iccommenteditor.h"
 
 #include <QDebug>
 #include <QMessageBox>
@@ -67,11 +68,13 @@ ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
     cutPage_(NULL),
     mPage_(NULL),
     statckPage_(NULL),
+    commentPage_(NULL),
     recordPath_("./records/"),
     currentAction_(None),
     currentEdit_(0)
 {
     ui->setupUi(this);
+//    ui->commentButton->hide();
 
 //    ui->tabWidget->addTab(MoldInformation::Instance(), tr("Records"));
 //    ui->tabWidget->addTab(new ICHCStackedSettingsFrame(), tr("Stack"));
@@ -349,6 +352,12 @@ void ICHCInstructionPageFrame::OptionButtonClicked()
         ui->settingStackedWidget->addWidget(statckPage_);
     }
 #endif
+    else if(commentPage_ == NULL && optionButton == ui->commentButton)
+    {
+        commentPage_ = new ICCommentEditor();
+        optionButtonToPage_.insert(ui->commentButton, commentPage_);
+        ui->settingStackedWidget->addWidget(commentPage_);
+    }
     ui->settingStackedWidget->setCurrentWidget(optionButtonToPage_.value(optionButton));
 }
 
@@ -441,6 +450,9 @@ void ICHCInstructionPageFrame::InitSignal()
     connect(ui->stackButton,
             SIGNAL(clicked()),
             SLOT(OptionButtonClicked()));
+    connect(ui->commentButton,
+            SIGNAL(clicked()),
+            SLOT(OptionButtonClicked()));
 #endif
 }
 
@@ -520,6 +532,7 @@ void ICHCInstructionPageFrame::on_insertToolButton_clicked()
     ICInstructionEditorBase* editor = qobject_cast<ICInstructionEditorBase*>(ui->settingStackedWidget->currentWidget());
     ICFlagsEditor *flagsEditor = qobject_cast<ICFlagsEditor*> (editor);
     ActionSettingFrame *servoEditor = qobject_cast<ActionSettingFrame*>(editor);
+    ICCommentEditor *commentEdit = qobject_cast<ICCommentEditor*>(editor);
     if(editor == NULL)
     {
         return;
@@ -550,6 +563,7 @@ void ICHCInstructionPageFrame::on_insertToolButton_clicked()
     //    }
     bool isParallel = false;
     bool isServo = false;
+    bool isComment = false;
     if(flagsEditor != NULL)
     {
         isParallel = true;
@@ -557,6 +571,10 @@ void ICHCInstructionPageFrame::on_insertToolButton_clicked()
     if(servoEditor != NULL)
     {
         isServo = true;
+    }
+    if(commentEdit != NULL)
+    {
+        isComment = true;
     }
     QList<ICMoldItem> items = editor->CreateCommand();
     if(items.isEmpty() && !isParallel)
@@ -601,6 +619,24 @@ void ICHCInstructionPageFrame::on_insertToolButton_clicked()
                         insertedGroupItems.append(groupItem);
                     }
                 }
+            }
+            else if(isComment)
+            {
+                ICTopMoldUIItem topItem;
+                topItem.SetBaseItem(items.at(0));
+                if(programList_[gIndex].MoldItemAt(0)->Action() == ICMold::ACTEND &&
+                        gIndex != 0)
+                {
+                    topItem.SetStepNum(gIndex - 1);
+                    programList_[gIndex - 1].AddToMoldUIItem(topItem);
+                }
+                else if(programList_[gIndex].MoldItemAt(0)->Action() == ICMold::ACTEND &&
+                        gIndex == 0)
+                {
+                    return;
+                }
+                else
+                    programList_[gIndex].PrependTopMoldUIItem(topItem);
             }
             else
             {
@@ -653,6 +689,10 @@ void ICHCInstructionPageFrame::on_insertToolButton_clicked()
     else //insert SubItem
     {
         if(isParallel)
+        {
+            return;
+        }
+        if(isComment)
         {
             return;
         }
@@ -773,18 +813,37 @@ void ICHCInstructionPageFrame::on_deleteToolButton_clicked()
     //    }
     if(sIndex == -1)
     {
-        if(programList_.at(gIndex).TopItemCount() == 1) //delete Group Item
+        programList_[gIndex].RemoveTopItem(tIndex);
+        if(programList_[gIndex].RunableTopItemCount() == 0)
         {
+            programList_[gIndex].SetStepNum(gIndex - 1);
+            if(gIndex > 0 )
+            {
+                for(int i = 0 ; i != programList_[gIndex].TopItemCount(); ++i)
+                {
+                    ICTopMoldUIItem topItem;
+                    topItem.SetBaseItem(*(programList_[gIndex].MoldItemAt(i)));
+                    programList_[gIndex - 1].AddToMoldUIItem(topItem);
+                }
+            }
             programList_.removeAt(gIndex);
             for(int i = gIndex; i != programList_.size(); ++i)
             {
                 programList_[i].SetStepNum(i);
             }
         }
-        else
-        {
-            programList_[gIndex].RemoveTopItem(tIndex);
-        }
+//        if(programList_.at(gIndex).TopItemCount() == 1) //delete Group Item
+//        {
+//            programList_.removeAt(gIndex);
+//            for(int i = gIndex; i != programList_.size(); ++i)
+//            {
+//                programList_[i].SetStepNum(i);
+//            }
+//        }
+//        else
+//        {
+//            programList_[gIndex].RemoveTopItem(tIndex);
+//        }
     }
     else
     {
@@ -922,6 +981,13 @@ void ICHCInstructionPageFrame::on_upButton_clicked()
             return;
         }
         ICGroupMoldUIItem *item = &programList_[gIndex];
+//        if(item->MoldItemAt(0)->Action() == ICMold::ACTCOMMENT) return;
+        int runableCount = 0;
+        for(int i = 0; i != item->TopItemCount(); ++i)
+        {
+            if(item->MoldItemAt(i)->Action() != ICMold::ACTCOMMENT)
+                ++runableCount;
+        }
         for(int i = 0; i != item->ItemCount(); ++i)
         {
             if(item->MoldItemAt(i)->Action() <= 8)
@@ -929,10 +995,13 @@ void ICHCInstructionPageFrame::on_upButton_clicked()
                 return;
             }
         }
-        if(item->TopItemCount() == 1) //group up
+        if(runableCount < 2 || item->TopItemCount() == 1) //group up
         {
-            item->SetStepNum(gIndex - 1);
-            programList_[gIndex - 1].AddToMoldUIItem(item->at(0));
+            item->SetStepNum( gIndex - 1);
+            for(int i = 0 ; i != item->TopItemCount(); ++i)
+            {
+                programList_[gIndex  -1].AddToMoldUIItem(item->at(i));
+            }
             programList_.removeAt(gIndex);
             for(int i = gIndex; i != programList_.size(); ++i)
             {
@@ -1019,6 +1088,23 @@ void ICHCInstructionPageFrame::on_downButton_clicked()
         }
         else //split group item
         {
+            if(groupItem->MoldItemAt(tIndex)->Action() == ICMold::ACTCOMMENT) return;
+            bool up = false;
+            bool dw = false;
+            int runableCount = 0;
+            for(int i = 0; i != tIndex; ++i)
+            {
+                if(groupItem->MoldItemAt(i)->Action() != ICMold::ACTCOMMENT)
+                    ++runableCount;
+            }
+            if(runableCount == 0) return;
+            runableCount = 0;
+            for(int i = tIndex; i != groupItem->ItemCount(); ++i)
+            {
+                if(groupItem->MoldItemAt(i)->Action() != ICMold::ACTCOMMENT)
+                    ++runableCount;
+            }
+            if(runableCount == 0 ) return;
             QList<ICGroupMoldUIItem> gItems = programList_.at(gIndex).SpliteToTwoGroup(tIndex);
             gItems[0].SetStepNum(gIndex);
             gItems[1].SetStepNum(gIndex + 1);
@@ -1181,6 +1267,7 @@ void ICHCInstructionPageFrame::on_singleButton_clicked()
 //    bool isSingleRunFinished = host->HostStatus(ICVirtualHost::ActL).toInt() == 0;
 //    if(isSingleRunFinished)return;
     int currentStep = ui->moldContentListWidget->currentRow();
+    if(currentStep < 0) return;
     ICManualRun cmd;
     if(mold->MoldContent().empty()) return;
     if(currentStep >= mold->MoldContent().size()) return;
@@ -1210,3 +1297,15 @@ void ICHCInstructionPageFrame::on_singleButton_clicked()
 
 }
 
+
+void ICHCInstructionPageFrame::on_moldContentListWidget_itemSelectionChanged()
+{
+    QList<QListWidgetItem*> items = ui->moldContentListWidget->selectedItems();
+    int row;
+    if(items.isEmpty())
+        row = -1;
+    else
+        row = ui->moldContentListWidget->row(items.at(0));
+    ui->moldContentListWidget->setCurrentRow(row);
+    qDebug()<<row;
+}

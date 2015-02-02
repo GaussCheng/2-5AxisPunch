@@ -12,7 +12,7 @@ ICInstructModifyDialog::ICInstructModifyDialog(QWidget *parent) :
 {
     ui->setupUi(this);
     /*****************BUG#120********************************/
-    validator_ = new QIntValidator(0, 30000, this);
+    validator_ = new QIntValidator(0, 65530, this);
     speedValidator_ = new QIntValidator(0, 100, this);
     ui->delayTimeEdit->SetDecimalPlaces(2);
     ui->delayTimeEdit->setValidator(validator_);
@@ -105,10 +105,12 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
     ui->limitTimeEdit->hide();
     ui->limitUnitLabel->hide();
 
+    ui->delayTimeEdit->SetDecimalPlaces(1);
     if(item->IsAction())
     {
         if( item->Action() <= ICMold::GB || item->Action() == ICMold::GARC)
         {
+            ui->delayTimeEdit->SetDecimalPlaces(2);
             ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
             ICVirtualHost::ICSystemParameter addr;
             int action = item->Action();
@@ -214,6 +216,10 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
         if( item->Action() == ICMold::GZ)
         {
 //            ui->badProductBox->show();
+        }
+        else if(item->Action() >= ICMold::GOutY && item->Action() <= ICMold::GTwoXTwoY)
+        {
+            ui->delayTimeEdit->SetDecimalPlaces(2);
         }
     }
 

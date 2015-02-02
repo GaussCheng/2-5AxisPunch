@@ -76,6 +76,8 @@ private slots:
 
     void on_reserveBox_activated(int index);
 
+    void on_moldContentListWidget_itemSelectionChanged();
+
 signals:
 //    void JumpToProgramEditorPage();
 
@@ -107,6 +109,7 @@ private:
     QWidget * cutPage_;
     QWidget * mPage_;
     QWidget * statckPage_;
+    QWidget * commentPage_;
     ICInstructModifyDialog *modifyDialog_;
 
     QString recordPath_;

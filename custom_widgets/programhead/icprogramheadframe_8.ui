@@ -1068,17 +1068,17 @@
      </property>
      <item>
       <property name="text">
-       <string>X1</string>
+       <string notr="true">X1</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>X5</string>
+       <string notr="true">X5</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>X10</string>
+       <string notr="true">X10</string>
       </property>
      </item>
     </widget>
@@ -1114,14 +1114,14 @@ padding-left:6px;
  </widget>
  <customwidgets>
   <customwidget>
-   <class>PasswdLevelLabel</class>
-   <extends>QLabel</extends>
-   <header>passwdlevellabel.h</header>
-  </customwidget>
-  <customwidget>
    <class>ICComboBox</class>
    <extends>QComboBox</extends>
    <header>iccombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>PasswdLevelLabel</class>
+   <extends>QLabel</extends>
+   <header>passwdlevellabel.h</header>
   </customwidget>
  </customwidgets>
  <resources>

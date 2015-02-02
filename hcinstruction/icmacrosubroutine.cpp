@@ -4,6 +4,7 @@
 #include <QStringList>
 #include "icmacrosubroutine.h"
 #include "icfile.h"
+#include "icmold.h"
 
 QScopedPointer<ICMacroSubroutine> ICMacroSubroutine::instance_;
 ICMacroSubroutine::ICMacroSubroutine(QObject *parent) :
@@ -39,16 +40,18 @@ bool ICMacroSubroutine::ReadMacroSubroutieFiles(const QString &dir)
             qCritical()<<fileName<<" can't open";
             return false;
         }
-        fileContent = file.readAll();
+        fileContent = QString::fromUtf8(file.readAll());
         file.close();
 
         records = fileContent.split('\n', QString::SkipEmptyParts);
+//        qDebug()<<records;
         sub.clear();
         for(int i = 0; i != records.size(); ++i)
         {
             items = records.at(i).split(' ', QString::SkipEmptyParts);
 //            items.removeAt(2);
-            if(items.size() != 10)
+            if(items.size() != 10 &&
+                    items.size() != 11)
             {
                 break;
             }
@@ -62,6 +65,10 @@ bool ICMacroSubroutine::ReadMacroSubroutieFiles(const QString &dir)
                              items.at(7).toUInt(),
                              items.at(8).toUInt(),
                              items.at(9).toUInt());
+            if(items.size() == 11)
+            {
+                subItem.SetComment(items.at(10));
+            }
 
             sub.append(subItem);
         }//foreach(record, records)
@@ -111,7 +118,8 @@ uint ICMacroSubroutine::SyncAct() const
     {
         for(int j = 0; j != subroutines_.at(i).size(); ++j)
         {
-            ret += subroutines_.at(i).at(j).GMVal();
+            if(subroutines_.at(i).at(j).Action() != ICMold::ACTCOMMENT)
+                ret += subroutines_.at(i).at(j).GMVal();
         }
     }
     return ret;
@@ -124,7 +132,8 @@ uint ICMacroSubroutine::SyncSum() const
     {
         for(int j = 0; j != subroutines_.at(i).size(); ++j)
         {
-            ret += subroutines_.at(i).at(j).Sum();
+            if(subroutines_.at(i).at(j).Action() != ICMold::ACTCOMMENT)
+                ret += subroutines_.at(i).at(j).Sum();
         }
     }
     return ret;

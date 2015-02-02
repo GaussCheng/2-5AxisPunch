@@ -5,6 +5,9 @@
 #include "icsplashscreen.h"
 #include "icparameterssave.h"
 #include "icsystemconfig.h"
+#include <QSqlDatabase>
+#include <QMessageBox>
+#include <QTextCodec>
 
 //#ifdef Q_WS_WIN
 #include <QFile>
@@ -13,6 +16,20 @@
 int main(int argc, char *argv[])
 {    
     QApplication a(argc, argv);
+    QTextCodec *textc = QTextCodec::codecForName("UTF-8");
+    QTextCodec::setCodecForLocale(textc);
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName("3-5AxisRobotDatabase");
+    if(!db.isValid())
+    {
+        qCritical("Open Database fail!!");
+        QMessageBox::critical(NULL, QT_TR_NOOP("Error"), QT_TR_NOOP("Database is error!!"));
+    }
+    if(!db.open())
+    {
+        qCritical("Open Database fail!!");
+        QMessageBox::critical(NULL, QT_TR_NOOP("Error"), QT_TR_NOOP("Open Database fail!!"));
+    }
 //#ifdef Q_WS_WIN
     QFile file("./stylesheet/global.qss");
     if(file.open(QFile::ReadOnly))

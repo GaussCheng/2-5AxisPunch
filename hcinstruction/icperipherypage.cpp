@@ -14,7 +14,7 @@ ICPeripheryPage::ICPeripheryPage(QWidget *parent) :
     offPixmap_(":/resource/ledgray(16).png")
 {
     ui->setupUi(this);
-    ui->delayEdit->SetDecimalPlaces(2);
+    ui->delayEdit->SetDecimalPlaces(1);
     ui->delayEdit->setValidator(new QIntValidator(0, 65530, this));
     ui->returnEdit->setValidator(new QIntValidator(-100, 100, this));
     QList<ICUserIOInfo> infos = ICUserDefineConfig::Instance()->AllXInfos();
