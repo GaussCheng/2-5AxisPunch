@@ -376,19 +376,19 @@
         <translation>修改</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/axismodifydialog.ui" line="26"/>
-        <location filename="hcmanualoperation/axismodifydialog.ui" line="87"/>
+        <location filename="hcmanualoperation/axismodifydialog.ui" line="68"/>
+        <location filename="hcmanualoperation/axismodifydialog.ui" line="91"/>
         <location filename="hcmanualoperation/axismodifydialog_8.ui" line="143"/>
         <location filename="hcmanualoperation/axismodifydialog_8.ui" line="150"/>
         <source>mm</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/axismodifydialog.ui" line="58"/>
-        <location filename="hcmanualoperation/axismodifydialog.ui" line="106"/>
-        <location filename="hcmanualoperation/axismodifydialog.ui" line="180"/>
-        <location filename="hcmanualoperation/axismodifydialog.ui" line="228"/>
-        <location filename="hcmanualoperation/axismodifydialog.ui" line="276"/>
+        <location filename="hcmanualoperation/axismodifydialog.ui" line="81"/>
+        <location filename="hcmanualoperation/axismodifydialog.ui" line="132"/>
+        <location filename="hcmanualoperation/axismodifydialog.ui" line="148"/>
+        <location filename="hcmanualoperation/axismodifydialog.ui" line="185"/>
+        <location filename="hcmanualoperation/axismodifydialog.ui" line="208"/>
         <location filename="hcmanualoperation/axismodifydialog_8.ui" line="73"/>
         <location filename="hcmanualoperation/axismodifydialog_8.ui" line="89"/>
         <location filename="hcmanualoperation/axismodifydialog_8.ui" line="105"/>
@@ -398,45 +398,45 @@
         <translation>0.0</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/axismodifydialog.ui" line="39"/>
+        <location filename="hcmanualoperation/axismodifydialog.ui" line="195"/>
         <location filename="hcmanualoperation/axismodifydialog_8.ui" line="129"/>
         <source>X:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/axismodifydialog.ui" line="74"/>
+        <location filename="hcmanualoperation/axismodifydialog.ui" line="172"/>
         <location filename="hcmanualoperation/axismodifydialog_8.ui" line="115"/>
         <source>Y:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/axismodifydialog.ui" line="122"/>
+        <location filename="hcmanualoperation/axismodifydialog.ui" line="26"/>
         <location filename="hcmanualoperation/axismodifydialog_8.ui" line="40"/>
         <source>OK</source>
         <translation>确定</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/axismodifydialog.ui" line="135"/>
+        <location filename="hcmanualoperation/axismodifydialog.ui" line="39"/>
         <location filename="hcmanualoperation/axismodifydialog_8.ui" line="53"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/axismodifydialog.ui" line="148"/>
+        <location filename="hcmanualoperation/axismodifydialog.ui" line="52"/>
         <location filename="hcmanualoperation/axismodifydialog_8.ui" line="136"/>
         <source>Set</source>
         <translation>设入</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/axismodifydialog.ui" line="161"/>
+        <location filename="hcmanualoperation/axismodifydialog.ui" line="98"/>
         <location filename="hcmanualoperation/axismodifydialog_8.ui" line="60"/>
         <source>S:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/axismodifydialog.ui" line="196"/>
-        <location filename="hcmanualoperation/axismodifydialog.ui" line="209"/>
-        <location filename="hcmanualoperation/axismodifydialog.ui" line="292"/>
+        <location filename="hcmanualoperation/axismodifydialog.ui" line="105"/>
+        <location filename="hcmanualoperation/axismodifydialog.ui" line="119"/>
+        <location filename="hcmanualoperation/axismodifydialog.ui" line="165"/>
         <location filename="hcmanualoperation/axismodifydialog_8.ui" line="20"/>
         <location filename="hcmanualoperation/axismodifydialog_8.ui" line="122"/>
         <location filename="hcmanualoperation/axismodifydialog_8.ui" line="196"/>
@@ -444,13 +444,13 @@
         <translation>度</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/axismodifydialog.ui" line="257"/>
+        <location filename="hcmanualoperation/axismodifydialog.ui" line="158"/>
         <location filename="hcmanualoperation/axismodifydialog_8.ui" line="27"/>
         <source>T:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/axismodifydialog.ui" line="244"/>
+        <location filename="hcmanualoperation/axismodifydialog.ui" line="112"/>
         <location filename="hcmanualoperation/axismodifydialog_8.ui" line="173"/>
         <source>R:</source>
         <translation>R:</translation>
@@ -5056,12 +5056,12 @@ Reason</source>
         <translation>时间</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="183"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="185"/>
         <source>speed</source>
         <translation>速度</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="197"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="199"/>
         <source>Return</source>
         <translation>返回</translation>
     </message>
@@ -6409,23 +6409,23 @@ Please enter an digit between </source>
     <name>ICOriginDialog</name>
     <message>
         <location filename="icorigindialog.cpp" line="83"/>
-        <location filename="icorigindialog.cpp" line="140"/>
+        <location filename="icorigindialog.cpp" line="146"/>
         <source>Please press the start button to start execute origin action</source>
         <translation>请按启动键执行原点复归</translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="136"/>
+        <location filename="icorigindialog.cpp" line="142"/>
         <source>Originning...</source>
         <translation>原点复归中...</translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="170"/>
+        <location filename="icorigindialog.cpp" line="176"/>
         <source>Do you need to auto position?</source>
         <translation>需要自动侧姿吗?</translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="223"/>
         <location filename="icorigindialog.cpp" line="229"/>
+        <location filename="icorigindialog.cpp" line="235"/>
         <source>Originning</source>
         <translation>原点执行中</translation>
     </message>
@@ -8785,8 +8785,9 @@ Would you want to restart now?</source>
     </message>
     <message>
         <location filename="hcinstruction/icwaitconditioneditor.ui" line="107"/>
-        <source>0.00</source>
-        <translation>0.00</translation>
+        <source>0.0</source>
+        <oldsource>0.00</oldsource>
+        <translation type="unfinished">0.00</translation>
     </message>
     <message>
         <location filename="hcinstruction/icwaitconditioneditor.ui" line="117"/>
