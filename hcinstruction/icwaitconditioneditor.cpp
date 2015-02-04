@@ -11,6 +11,7 @@ ICWaitConditionEditor::ICWaitConditionEditor(QWidget *parent) :
     ui->delayEdit->setValidator(new QIntValidator(0, 65530, this));
     ui->onBox->setEnabled(false);
     ui->offBox->setEnabled(false);
+    ui->delayEdit->SetThisIntToThisText(0);
 }
 
 ICWaitConditionEditor::~ICWaitConditionEditor()

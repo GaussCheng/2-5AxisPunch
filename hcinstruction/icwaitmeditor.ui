@@ -207,7 +207,7 @@ QRadioButton::indicator:unchecked:disabled
          <item>
           <widget class="ICLineEditWithVirtualNumericKeypad" name="delayEdit">
            <property name="text">
-            <string>0.00</string>
+            <string>0.0</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -249,21 +249,21 @@ QRadioButton::indicator:unchecked:disabled
    <header>iclineeditwithvirtualnumerickeypad.h</header>
   </customwidget>
   <customwidget>
+   <class>ICTableWidget</class>
+   <extends>QTableWidget</extends>
+   <header>ictablewidget.h</header>
+  </customwidget>
+  <customwidget>
    <class>ICTabWidget</class>
    <extends>QTabWidget</extends>
    <header>ictabwidget.h</header>
    <container>1</container>
   </customwidget>
-  <customwidget>
-   <class>ICTableWidget</class>
-   <extends>QTableWidget</extends>
-   <header>ictablewidget.h</header>
-  </customwidget>
  </customwidgets>
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="buttonGroup_2"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_2"/>
  </buttongroups>
 </ui>

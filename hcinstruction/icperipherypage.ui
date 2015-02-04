@@ -299,7 +299,7 @@ height: 33px;
      <item>
       <widget class="ICLineEditWithVirtualNumericKeypad" name="delayEdit">
        <property name="text">
-        <string>0.00</string>
+        <string>0.0</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -366,14 +366,14 @@ height: 33px;
  </widget>
  <customwidgets>
   <customwidget>
-   <class>ICTableWidget</class>
-   <extends>QTableWidget</extends>
-   <header>ictablewidget.h</header>
-  </customwidget>
-  <customwidget>
    <class>ICLineEditWithVirtualNumericKeypad</class>
    <extends>QLineEdit</extends>
    <header>iclineeditwithvirtualnumerickeypad.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ICTableWidget</class>
+   <extends>QTableWidget</extends>
+   <header>ictablewidget.h</header>
   </customwidget>
   <customwidget>
    <class>ICTabWidget</class>

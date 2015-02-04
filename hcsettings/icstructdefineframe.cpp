@@ -184,6 +184,7 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     ui->pressureMode->setCurrentIndex(host->PressureCheckMode());
     ui->originSpd->setValidator(new QIntValidator(0, 10, this));
     ui->originSpd->SetThisIntToThisText(host->SystemParameter(ICVirtualHost::SYS_OriginSpeed).toInt());
+    ui->tryRunBox->setChecked(host->IsMidMoldCheck());
 }
 
 ICStructDefineFrame::~ICStructDefineFrame()
@@ -418,7 +419,8 @@ void ICStructDefineFrame::on_saveButton_clicked()
         host->SetSystemParameter(ICVirtualHost::SYS_Config_Out, dataBuffer.at(2));
         host->SetPressureCheckMode(ui->pressureMode->currentIndex());
         host->SetSystemParameter(ICVirtualHost::SYS_OriginSpeed, ui->originSpd->TransThisTextToThisInt());
-//        host->SystemParameter(ICVirtualHost::SYS_Function);
+        host->SetMidMoldCheck(ui->tryRunBox->isChecked());
+        //        host->SystemParameter(ICVirtualHost::SYS_Function);
         host->SaveSystemConfig();
         QMessageBox::information(this, tr("Tips"), tr("Save Sucessfully!"));
         emit StructChanged();
