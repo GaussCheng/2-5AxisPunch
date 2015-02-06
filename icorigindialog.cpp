@@ -6,6 +6,7 @@
 #include <QKeyEvent>
 #include "ickeyboardhandler.h"
 #include "ickeyboard.h"
+#include "icvirtualkey.h"
 
 
 ICOriginDialog::ICOriginDialog(QWidget *parent) :
@@ -29,6 +30,7 @@ ICOriginDialog::~ICOriginDialog()
 void ICOriginDialog::showEvent(QShowEvent *e)
 {
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    ui->lh->setChecked(true);
 
     if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) == ICVirtualHost::ICAxisDefine_Servo)
     {
@@ -239,4 +241,9 @@ void ICOriginDialog::on_stopBtn_clicked()
 {
     this->reject();
     ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
+}
+
+void ICOriginDialog::on_rh_toggled(bool checked)
+{
+    ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(checked ? IC::VKEY_RHORIGIN : IC::VKEY_LHORIGIN);
 }

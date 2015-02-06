@@ -26,6 +26,8 @@ protected:
 private slots:
     void on_mList_itemChanged(QTableWidgetItem *item);
 
+    void on_outBox_toggled(bool checked);
+
 private:
     Ui::ICWaitMEditor *ui;
 };

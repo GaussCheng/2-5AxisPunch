@@ -118,6 +118,9 @@ enum ICVirtualKey
     VKEY_SERVO_OFF,
     VKEY_ALLOWTACK,//允许取物
     VKEY_ALLOWPUT,//允许置物
+
+    VKEY_LHORIGIN = 0xAA,
+    VKEY_RHORIGIN = 0xAB
 };
 
 }//namespace IC{

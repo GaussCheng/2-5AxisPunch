@@ -3975,24 +3975,24 @@ Please enter an digit between </source>
 <context>
     <name>ICOriginDialog</name>
     <message>
-        <location filename="icorigindialog.cpp" line="83"/>
-        <location filename="icorigindialog.cpp" line="146"/>
+        <location filename="icorigindialog.cpp" line="85"/>
+        <location filename="icorigindialog.cpp" line="148"/>
         <source>Please press the start button to start execute origin action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="142"/>
+        <location filename="icorigindialog.cpp" line="144"/>
         <source>Originning...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="176"/>
+        <location filename="icorigindialog.cpp" line="178"/>
         <source>Do you need to auto position?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="229"/>
-        <location filename="icorigindialog.cpp" line="235"/>
+        <location filename="icorigindialog.cpp" line="231"/>
+        <location filename="icorigindialog.cpp" line="237"/>
         <source>Originning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4047,12 +4047,22 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icorigindialog.ui" line="203"/>
+        <location filename="icorigindialog.ui" line="187"/>
+        <source>LH</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icorigindialog.ui" line="213"/>
+        <source>RH</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icorigindialog.ui" line="255"/>
         <source>Yes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icorigindialog.ui" line="190"/>
+        <location filename="icorigindialog.ui" line="242"/>
         <source>No</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5858,6 +5868,18 @@ Please try a new name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="function_settings/moldinformation.cpp" line="723"/>
+        <location filename="function_settings/moldinformation.cpp" line="751"/>
+        <source>%1 Wrong program format!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.cpp" line="731"/>
+        <location filename="function_settings/moldinformation.cpp" line="736"/>
+        <source>%1 Wrong config format!!!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="function_settings/moldinformation.cpp" line="1109"/>
         <source>Only accept number and word</source>
         <translation type="unfinished"></translation>
@@ -5895,25 +5917,9 @@ Please try a new name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="723"/>
-        <location filename="function_settings/moldinformation.cpp" line="751"/>
-        <source>Wrong program format!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="function_settings/moldinformation.cpp" line="511"/>
         <source>Are you sure to delete the selected files?</source>
         <oldsource>Are you sure to delete the selected files </oldsource>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="function_settings/moldinformation.cpp" line="731"/>
-        <source>Wrong config format!!!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="function_settings/moldinformation.cpp" line="736"/>
-        <source>Wrong config format!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -288,7 +288,7 @@ public:
     enum ICMoldParam
     {
         point0,
-        point19 = 17,
+        point19 = 35,
         Product,
         reserve,
         check1,

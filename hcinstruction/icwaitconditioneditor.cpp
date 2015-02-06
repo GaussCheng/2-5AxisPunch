@@ -71,3 +71,9 @@ void ICWaitConditionEditor::on_euInbox_toggled(bool checked)
         ui->offBox->setEnabled(true);
     }
 }
+
+void ICWaitConditionEditor::on_euOutBox_toggled(bool checked)
+{
+    ui->delayEdit->SetDecimalPlaces(checked ? 2 : 1);
+    ui->delayEdit->SetThisIntToThisText(ui->delayEdit->TransThisTextToThisInt());
+}

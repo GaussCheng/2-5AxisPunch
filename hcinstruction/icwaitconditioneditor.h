@@ -26,6 +26,8 @@ private slots:
 
     void on_euInbox_toggled(bool checked);
 
+    void on_euOutBox_toggled(bool checked);
+
 private:
     Ui::ICWaitConditionEditor *ui;
     QPixmap onPixmap_;

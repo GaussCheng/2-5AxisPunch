@@ -6409,24 +6409,24 @@ Please enter an digit between </source>
 <context>
     <name>ICOriginDialog</name>
     <message>
-        <location filename="icorigindialog.cpp" line="83"/>
-        <location filename="icorigindialog.cpp" line="146"/>
+        <location filename="icorigindialog.cpp" line="85"/>
+        <location filename="icorigindialog.cpp" line="148"/>
         <source>Please press the start button to start execute origin action</source>
         <translation>请按启动键执行原点复归</translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="142"/>
+        <location filename="icorigindialog.cpp" line="144"/>
         <source>Originning...</source>
         <translation>原点复归中...</translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="176"/>
+        <location filename="icorigindialog.cpp" line="178"/>
         <source>Do you need to auto position?</source>
         <translation>需要自动侧姿吗?</translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="229"/>
-        <location filename="icorigindialog.cpp" line="235"/>
+        <location filename="icorigindialog.cpp" line="231"/>
+        <location filename="icorigindialog.cpp" line="237"/>
         <source>Originning</source>
         <translation>原点执行中</translation>
     </message>
@@ -6485,12 +6485,22 @@ Please enter an digit between </source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="icorigindialog.ui" line="203"/>
+        <location filename="icorigindialog.ui" line="187"/>
+        <source>LH</source>
+        <translation>左手系</translation>
+    </message>
+    <message>
+        <location filename="icorigindialog.ui" line="213"/>
+        <source>RH</source>
+        <translation>右手系</translation>
+    </message>
+    <message>
+        <location filename="icorigindialog.ui" line="255"/>
         <source>Yes</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="icorigindialog.ui" line="190"/>
+        <location filename="icorigindialog.ui" line="242"/>
         <source>No</source>
         <translation></translation>
     </message>
@@ -9365,6 +9375,18 @@ Please write the destination file name.</source>
         <translation>程序数据损坏，请删除该程序！</translation>
     </message>
     <message>
+        <location filename="function_settings/moldinformation.cpp" line="723"/>
+        <location filename="function_settings/moldinformation.cpp" line="751"/>
+        <source>%1 Wrong program format!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="function_settings/moldinformation.cpp" line="731"/>
+        <location filename="function_settings/moldinformation.cpp" line="736"/>
+        <source>%1 Wrong config format!!!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="function_settings/moldinformation.cpp" line="1109"/>
         <source>Only accept number and word</source>
         <translation>只能输入字母和数字！</translation>
@@ -9395,10 +9417,8 @@ Please try a new name</source>
         <translation>还原中，请稍后...</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="723"/>
-        <location filename="function_settings/moldinformation.cpp" line="751"/>
         <source>Wrong program format!</source>
-        <translation>错误的程序格式！</translation>
+        <translation type="obsolete">错误的程序格式！</translation>
     </message>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="386"/>
@@ -9406,14 +9426,12 @@ Please try a new name</source>
         <translation>已经在当前程序上！</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="731"/>
         <source>Wrong config format!!!</source>
-        <translation>错误的配置格式!</translation>
+        <translation type="obsolete">错误的配置格式!</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="736"/>
         <source>Wrong config format!</source>
-        <translation>错误的程序参数格式！</translation>
+        <translation type="obsolete">错误的程序参数格式！</translation>
     </message>
     <message>
         <location filename="function_settings/moldinformation.cpp" line="650"/>

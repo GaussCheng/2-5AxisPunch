@@ -90,3 +90,9 @@ void ICWaitMEditor::on_mList_itemChanged(QTableWidgetItem *item)
     item->setCheckState(state);
     ui->mList->blockSignals(false);
 }
+
+void ICWaitMEditor::on_outBox_toggled(bool checked)
+{
+    ui->delayEdit->SetDecimalPlaces(checked ? 2 : 1);
+    ui->delayEdit->SetThisIntToThisText(ui->delayEdit->TransThisTextToThisInt());
+}

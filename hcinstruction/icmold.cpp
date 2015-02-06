@@ -266,6 +266,11 @@ bool ICMold::ReadMoldParamsFile(const QString &fileName)
     //    fileContent = fileContent.remove('\r');
 
     QStringList items = fileContent.split('\n', QString::SkipEmptyParts);
+    int diff = (MoldParamCount + StackParamCount * 4 + 1) - items.size();
+    for(int i = 0; i < diff; ++i)
+    {
+        items.append("0");
+    }
     if(items.size() != MoldParamCount + StackParamCount * 4 + 1)
     {
         return false;

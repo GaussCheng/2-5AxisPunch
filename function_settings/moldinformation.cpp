@@ -720,20 +720,20 @@ void MoldInformation::on_importToolButton_clicked()
         {
             if(!programChecker.Check(actContent))
             {
-                QMessageBox::warning(this, tr("Warnning"), tr("Wrong program format!"));
+                QMessageBox::warning(this, tr("Warnning"), QString(tr("%1 Wrong program format!")).arg(selectedImportItemName_.at(i)));
                 return;
             }
         }
         else if(selectedImportItemName_.at(i).endsWith(".fnc"))
         {
-            if(!configFormatChecker.CheckRowCount(actContent, 65,ICDataFormatChecker::kCompareEqual))
+            if(!configFormatChecker.CheckRowCount(actContent, ICMold::MoldParamCount +  ICMold::StackParamCount * 4 + 1,ICDataFormatChecker::kCompareEqual))
             {
-                QMessageBox::warning(this, tr("Warnning"), tr("Wrong config format!!!"));
+                QMessageBox::warning(this, tr("Warnning"), QString(tr("%1 Wrong config format!!!")).arg(selectedImportItemName_.at(i)));
                 return;
             }
             if(!configFormatChecker.Check(actContent))
             {
-                QMessageBox::warning(this, tr("Warnning"), tr("Wrong config format!"));
+                QMessageBox::warning(this, tr("Warnning"), QString(tr("%1 Wrong config format!!!")).arg(selectedImportItemName_.at(i)));
                 return;
             }
         }
@@ -748,7 +748,7 @@ void MoldInformation::on_importToolButton_clicked()
         {
             if(!programChecker.Check(actContent))
             {
-                QMessageBox::warning(this, tr("Warnning"), tr("Wrong program format!"));
+                QMessageBox::warning(this, tr("Warnning"), QString(tr("%1 Wrong program format!")).arg(selectedImportItemName_.at(i)));
                 return;
             }
         }
