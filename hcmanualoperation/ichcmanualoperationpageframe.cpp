@@ -64,6 +64,8 @@ ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
             "padding-left:6px;";
 //    ui->tSpeed->hide();
 //    ui->rsSpeed->hide();
+    ui->runButton->hide();
+    ui->uncheckRunButton->hide();
 }
 
 ICHCManualOperationPageFrame::~ICHCManualOperationPageFrame()
@@ -747,12 +749,12 @@ void ICHCManualOperationPageFrame::on_runButton_toggled(bool checked)
     if(checked)
     {
 //        ui->runButton->setText(tr("No Check"));
-        ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_CYCLE);
+        ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_F6);
     }
     else
     {
 //        ui->runButton->setText(tr("Check"));
-        ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_F6);
+        ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_CYCLE);
     }
 }
 

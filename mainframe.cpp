@@ -797,7 +797,7 @@ void MainFrame::StatusRefreshed()
         ICProgramHeadFrame::Instance()->ChangStatusmoldNameLabelOperation(false);
         ICProgramHeadFrame::Instance()->SetHanSelectEnable(false);
         ui->teachButton->setEnabled(false);
-        if(virtualHost->HostStatus(ICVirtualHost::ClipL).toInt() >> 15)
+        if((virtualHost->HostStatus(ICVirtualHost::ClipL).toInt() >> 15) && errCode_ == 2423)
         {
             if(actionDialog_->isHidden())
             {

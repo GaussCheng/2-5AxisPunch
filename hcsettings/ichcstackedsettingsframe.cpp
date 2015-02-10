@@ -233,3 +233,9 @@ void ICHCStackedSettingsFrame::OnMoldNumberParamChanged()
 {
     RefreshStackParams_(currentPage_);
 }
+
+void ICHCStackedSettingsFrame::on_closeButton_clicked()
+{
+    this->hide();
+    emit closed();
+}

@@ -296,7 +296,7 @@ void ICHCProgramMonitorFrame::hideEvent(QHideEvent *e)
 //    ui->speedEnableButton->setText(tr("Speed Disable"));
     if(ICKeyboard::Instace()->CurrentSwitchStatus() != ICKeyboard::KS_AutoStatu)
     {
-        ui->cycle->setChecked(false);
+        ui->cycle->setChecked(true);
     }
 
     ui->xSpeed->setChecked(false);
@@ -922,13 +922,13 @@ void ICHCProgramMonitorFrame::on_cycle_toggled(bool checked)
 {
     if(checked)
     {
-//        ui->cycle->setText(tr("No Check"));
-        ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_CYCLE);
+        //        ui->cycle->setText(tr("Check"));
+        ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_F6);
     }
     else
     {
-//        ui->cycle->setText(tr("Check"));
-        ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_F6);
+//        ui->cycle->setText(tr("No Check"));
+        ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_CYCLE);
     }
 }
 

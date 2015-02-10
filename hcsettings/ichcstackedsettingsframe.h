@@ -15,6 +15,9 @@ public:
     explicit ICHCStackedSettingsFrame(QWidget *parent = 0);
     ~ICHCStackedSettingsFrame();
 
+signals:
+    void closed();
+
 protected:
     void hideEvent(QHideEvent *e);
     void changeEvent(QEvent *e);
@@ -28,6 +31,8 @@ private slots:
     void on_page2ToolButton_clicked();
     void on_page3ToolButton_clicked();
     void OnMoldNumberParamChanged();
+
+    void on_closeButton_clicked();
 
 private:
     void InitInterface();

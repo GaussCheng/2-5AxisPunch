@@ -117,7 +117,7 @@ ICHCInstructionPageFrame::ICHCInstructionPageFrame(QWidget *parent) :
     connect(MoldInformation::Instance(),
             SIGNAL(MoldChanged(QString)),
             SLOT(OnMoldChanged(QString)));
-    ui->stackButton->hide();
+//    ui->stackButton->hide();
     nullButton = new QPushButton();
     nullButton->setCheckable(true);
     ui->buttonGroup->addButton(nullButton);
@@ -344,14 +344,12 @@ void ICHCInstructionPageFrame::OptionButtonClicked()
         optionButtonToPage_.insert(ui->waitMButton, mPage_);
         ui->settingStackedWidget->addWidget(mPage_);
     }
-#ifdef HC_SK_8
     else if(statckPage_ == NULL && ui->stackButton == optionButton)
     {
         statckPage_ = new ICStackEditor();
         optionButtonToPage_.insert(ui->stackButton, statckPage_);
         ui->settingStackedWidget->addWidget(statckPage_);
     }
-#endif
     else if(commentPage_ == NULL && optionButton == ui->commentButton)
     {
         commentPage_ = new ICCommentEditor();
@@ -446,14 +444,12 @@ void ICHCInstructionPageFrame::InitSignal()
     connect(ui->waitMButton,
             SIGNAL(clicked()),
             SLOT(OptionButtonClicked()));
-#ifdef HC_SK_8
     connect(ui->stackButton,
             SIGNAL(clicked()),
             SLOT(OptionButtonClicked()));
     connect(ui->commentButton,
             SIGNAL(clicked()),
             SLOT(OptionButtonClicked()));
-#endif
 }
 
 void ICHCInstructionPageFrame::InitParameter()
