@@ -1231,149 +1231,149 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="380"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="415"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="218"/>
         <source>Fixture</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="456"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="491"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="154"/>
         <source>Periphery</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="570"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="301"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="90"/>
         <source>Comment</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="725"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="722"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="463"/>
         <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="154"/>
         <source>Reserve1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="730"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="727"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="468"/>
         <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="156"/>
         <source>Reserve2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="735"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="732"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="473"/>
         <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="158"/>
         <source>Reserve3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="740"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="737"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="478"/>
         <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="160"/>
         <source>Reserve4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="745"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="742"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="483"/>
         <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="162"/>
         <source>Reserve5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="750"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="747"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="488"/>
         <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="164"/>
         <source>Reserve6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="755"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="752"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="493"/>
         <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="166"/>
         <source>Reserve7</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="769"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="766"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="507"/>
         <source>Fixture Check</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="874"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="871"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="781"/>
         <source>Page1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="880"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="887"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="894"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="901"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="908"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="915"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="922"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="929"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="936"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="943"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="950"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="957"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="964"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="971"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="978"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="985"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="992"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="999"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1006"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1013"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1020"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1027"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1034"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1041"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1048"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1055"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1062"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1069"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1076"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1083"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1090"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1097"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1111"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1118"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1125"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1132"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1139"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1146"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1153"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1160"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1167"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1174"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1181"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1188"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1195"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1202"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1209"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1216"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1223"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1230"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1237"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1244"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1251"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1258"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1265"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1272"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1279"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1286"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1293"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1300"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1307"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1314"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1321"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1328"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="877"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="884"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="891"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="898"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="905"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="912"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="919"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="926"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="933"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="940"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="947"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="954"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="961"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="968"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="975"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="982"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="989"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="996"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1003"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1010"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1017"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1024"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1031"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1038"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1045"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1052"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1059"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1066"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1073"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1080"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1087"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1094"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1108"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1115"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1122"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1129"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1136"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1143"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1150"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1157"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1164"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1171"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1178"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1185"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1192"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1199"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1206"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1213"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1220"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1227"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1234"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1241"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1248"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1255"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1262"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1269"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1276"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1283"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1290"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1297"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1304"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1311"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1318"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1325"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="787"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="794"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="801"/>
@@ -1442,31 +1442,31 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1105"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1102"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="1012"/>
         <source>Page2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="342"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="377"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="282"/>
         <source>Cut</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="680"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="677"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="418"/>
         <source>Main</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="702"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="699"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="440"/>
         <source>Feed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="494"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="567"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="346"/>
         <source>Work Machine</source>
         <translation type="unfinished"></translation>
@@ -1490,13 +1490,13 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="304"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="339"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="122"/>
         <source>Line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="418"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="605"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="314"/>
         <source>Reserve</source>
         <translation type="unfinished"></translation>
@@ -1512,13 +1512,13 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="608"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="529"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="250"/>
         <source>Stack</source>
         <translation type="unfinished">堆叠</translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1351"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="1348"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="1258"/>
         <source>Return</source>
         <translation type="unfinished"></translation>
@@ -1530,39 +1530,39 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="550"/>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="796"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="546"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="792"/>
         <source>warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="551"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="547"/>
         <source>Stand program can not do insert action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="797"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="793"/>
         <source>Stand program can not be delete action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="1263"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="1259"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="1264"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="1260"/>
         <source>Has not been origin!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="532"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="453"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="186"/>
         <source>Wait M</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="830"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.ui" line="827"/>
         <location filename="hcinstruction/ichcinstructionpageframe_8.ui" line="681"/>
         <source>Single</source>
         <translation type="unfinished"></translation>
@@ -1747,7 +1747,7 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="827"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="829"/>
         <source>Servo On</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1984,32 +1984,32 @@ Infomation</source>
         <translation type="obsolete">Manipulator I/O</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="449"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="451"/>
         <source>Single(%1/%2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="639"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="660"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="682"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="703"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="724"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="776"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="641"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="662"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="684"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="705"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="726"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="778"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="640"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="661"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="683"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="704"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="725"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="777"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="642"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="663"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="685"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="706"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="727"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="779"/>
         <source>Has not been origin!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="822"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="824"/>
         <source>Servo OFF</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4556,10 +4556,6 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcinstruction/icstackeditor.ui" line="96"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="471"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="518"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="703"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="962"/>
         <source>S:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4579,11 +4575,7 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="377"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="424"/>
         <location filename="hcinstruction/icstackeditor.ui" line="595"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="797"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="847"/>
         <source>X:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4598,11 +4590,7 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="49"/>
         <location filename="hcinstruction/icstackeditor.ui" line="605"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="646"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="750"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="908"/>
         <source>Y:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4632,36 +4620,36 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.cpp" line="117"/>
+        <location filename="hcinstruction/icstackeditor.cpp" line="152"/>
         <source>X-&gt;S-&gt;Y</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.cpp" line="122"/>
+        <location filename="hcinstruction/icstackeditor.cpp" line="157"/>
         <source>S-&gt;X-&gt;Y</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.cpp" line="127"/>
+        <location filename="hcinstruction/icstackeditor.cpp" line="162"/>
         <source>Y-&gt;X-&gt;S</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.cpp" line="132"/>
+        <location filename="hcinstruction/icstackeditor.cpp" line="167"/>
         <source>Y-&gt;S-&gt;X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.cpp" line="138"/>
-        <location filename="hcinstruction/icstackeditor.cpp" line="144"/>
-        <location filename="hcinstruction/icstackeditor.cpp" line="150"/>
+        <location filename="hcinstruction/icstackeditor.cpp" line="173"/>
+        <location filename="hcinstruction/icstackeditor.cpp" line="179"/>
+        <location filename="hcinstruction/icstackeditor.cpp" line="185"/>
         <source>RP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.cpp" line="138"/>
-        <location filename="hcinstruction/icstackeditor.cpp" line="144"/>
-        <location filename="hcinstruction/icstackeditor.cpp" line="150"/>
+        <location filename="hcinstruction/icstackeditor.cpp" line="173"/>
+        <location filename="hcinstruction/icstackeditor.cpp" line="179"/>
+        <location filename="hcinstruction/icstackeditor.cpp" line="185"/>
         <source>P</source>
         <translation type="unfinished"></translation>
     </message>
