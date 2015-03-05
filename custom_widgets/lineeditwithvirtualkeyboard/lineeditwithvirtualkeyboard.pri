@@ -2,12 +2,12 @@ INCLUDEPATH += $$PWD
 DEPENDPATH += $$PWD
 
 HEADERS += \
-    virtualkeyboarddialog.h \
-    iclineeditwithvirtualkeyboard.h
+    $$PWD/virtualkeyboarddialog.h \
+    $$PWD/iclineeditwithvirtualkeyboard.h
 
 SOURCES += \
-    virtualkeyboarddialog.cpp \
-    iclineeditwithvirtualkeyboard.cpp
+    $$PWD/virtualkeyboarddialog.cpp \
+    $$PWD/iclineeditwithvirtualkeyboard.cpp
 
 contains(DEFINES, HC_SK_8){
 FORMS += \

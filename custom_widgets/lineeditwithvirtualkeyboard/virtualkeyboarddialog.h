@@ -28,6 +28,7 @@ public:
 
 protected:
     void changeEvent(QEvent *e);
+    bool eventFilter(QObject *o, QEvent *e);
 
 private:
     Ui::VirtualKeyboardDialog *ui;
@@ -41,6 +42,8 @@ private slots:
     void on_ok_clicked();
 
     void KeyboardClicked();
+    void on_del_clicked();
+
 private:
     static QScopedPointer<VirtualKeyboardDialog> instance_;
     VirtualKeyboardDialog(QWidget *parent = 0);

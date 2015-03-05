@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>ICHCStackedSettingsFrame</class>
- <widget class="QFrame" name="ICHCStackedSettingsFrame">
+ <widget class="QDialog" name="ICHCStackedSettingsFrame">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,13 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Frame</string>
-  </property>
-  <property name="frameShape">
-   <enum>QFrame::NoFrame</enum>
-  </property>
-  <property name="frameShadow">
-   <enum>QFrame::Plain</enum>
+   <string>StackSettings</string>
   </property>
   <widget class="QLabel" name="currentPageLabel">
    <property name="geometry">
@@ -367,7 +361,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Z</string>
+    <string>S</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
@@ -421,7 +415,7 @@
 </string>
     </property>
     <property name="text">
-     <string>X-Z-Y</string>
+     <string notr="true">X-S-Y</string>
     </property>
     <attribute name="buttonGroup">
      <string notr="true">buttonGroup</string>
@@ -453,7 +447,7 @@
 </string>
     </property>
     <property name="text">
-     <string>Z-X-Y</string>
+     <string notr="true">S-X-Y</string>
     </property>
     <attribute name="buttonGroup">
      <string notr="true">buttonGroup</string>
@@ -485,7 +479,7 @@
 </string>
     </property>
     <property name="text">
-     <string>Y-Z-X</string>
+     <string notr="true">Y-S-X</string>
     </property>
     <attribute name="buttonGroup">
      <string notr="true">buttonGroup</string>
@@ -523,7 +517,7 @@
 </string>
     </property>
     <property name="text">
-     <string>Y-X-Z</string>
+     <string notr="true">Y-X-S</string>
     </property>
     <attribute name="buttonGroup">
      <string notr="true">buttonGroup</string>
@@ -711,7 +705,7 @@
 </string>
     </property>
     <property name="text">
-     <string>Z PP</string>
+     <string>S PP</string>
     </property>
     <attribute name="buttonGroup">
      <string notr="true">buttonGroup_5</string>
@@ -743,7 +737,7 @@
 </string>
     </property>
     <property name="text">
-     <string>Z RP</string>
+     <string>S RP</string>
     </property>
     <attribute name="buttonGroup">
      <string notr="true">buttonGroup_5</string>
@@ -800,10 +794,10 @@
  <resources/>
  <connections/>
  <buttongroups>
+  <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_2"/>
   <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup_4"/>
   <buttongroup name="buttonGroup_5"/>
-  <buttongroup name="buttonGroup"/>
  </buttongroups>
 </ui>

@@ -957,6 +957,12 @@ void ICHCInstructionPageFrame::on_upButton_clicked()
     {
         return;
     }
+    if(MoldInformation::Instance()->IsStandProgram(ICParametersSave::Instance()->MoldName("")))
+    {
+        QMessageBox::warning(this, tr("warning"),
+                             tr("Stand program can not do up action"));
+        return;
+    }
     FindIndex_(currentRow, gIndex, tIndex, sIndex);
     //子程序也可以分解和组合，所以无需判断
     //    if(programList_.at(gIndex).StepNum() == 1)
@@ -1047,6 +1053,12 @@ void ICHCInstructionPageFrame::on_downButton_clicked()
     const int currentRow = ui->moldContentListWidget->currentRow();
     if(currentRow < 0)
     {
+        return;
+    }
+    if(MoldInformation::Instance()->IsStandProgram(ICParametersSave::Instance()->MoldName("")))
+    {
+        QMessageBox::warning(this, tr("warning"),
+                             tr("Stand program can not down insert action"));
         return;
     }
     FindIndex_(currentRow, gIndex, tIndex, sIndex);

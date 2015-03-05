@@ -47,7 +47,8 @@ SOURCES += main.cpp \
     simulateknob.cpp \
     icutility.cpp \
     icrecaldialog.cpp \
-    icfile.cpp
+    icfile.cpp \
+    icbackupdialog.cpp
 HEADERS += mainframe.h \
     icaxispositionlabel.h \
     #icalarmdescriptiondialog.h \
@@ -70,7 +71,8 @@ HEADERS += mainframe.h \
     simulateknob.h \
     icutility.h \
     icrecaldialog.h \
-    icfile.h
+    icfile.h \
+    icbackupdialog.h
 
 
 AXIS_COUNT = 5
@@ -153,5 +155,6 @@ QMAKE_POST_LINK += "&& chmod +x tools/make_target && tools/make_target"
 }
 
 FORMS += \
-    icrecaldialog.ui
+    icrecaldialog.ui \
+    icbackupdialog.ui
 

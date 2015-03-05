@@ -27,7 +27,7 @@ private slots:
 
 private:
     Ui::ICStackEditor *ui;
-    QWidget *stackSettingPage_;
+    QDialog *stackSettingPage_;
 };
 
 #endif // ICSTACKEDITOR_H

@@ -1,13 +1,13 @@
 #ifndef ICHCSTACKEDSETTINGSFRAME_H
 #define ICHCSTACKEDSETTINGSFRAME_H
 
-#include <QFrame>
+#include <QDialog>
 
 namespace Ui {
     class ICHCStackedSettingsFrame;
 }
 
-class ICHCStackedSettingsFrame : public QFrame
+class ICHCStackedSettingsFrame : public QDialog
 {
     Q_OBJECT
 

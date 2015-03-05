@@ -131,7 +131,7 @@ void ICStackEditor::on_stackSetting_clicked()
                 SIGNAL(closed()),
                 SLOT(OnStackSettingPageClosed()));
     }
-    stackSettingPage_->show();
+    stackSettingPage_->exec();
 }
 
 void ICStackEditor::OnStackSettingPageClosed()

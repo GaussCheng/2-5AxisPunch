@@ -31,6 +31,7 @@ VirtualKeyboardDialog::VirtualKeyboardDialog(QWidget *parent) :
                 this,
                 SLOT(KeyboardClicked()));
     }
+    ui->display->installEventFilter(this);
 }
 
 VirtualKeyboardDialog::~VirtualKeyboardDialog()
@@ -49,6 +50,19 @@ void VirtualKeyboardDialog::changeEvent(QEvent *e)
         break;
     }
 }
+
+bool VirtualKeyboardDialog::eventFilter(QObject *o, QEvent *e)
+{
+#ifdef Q_WS_QWS
+    if(o == ui->display && e->type() == QEvent::KeyPress)
+    {
+        return true;
+    }
+#endif
+    return QDialog::eventFilter(o, e);
+
+}
+
 
 //public slots:
 void VirtualKeyboardDialog::ResetDisplay()
@@ -103,4 +117,9 @@ void VirtualKeyboardDialog::KeyboardClicked()
 QString VirtualKeyboardDialog::GetCurrentText() const
 {
     return ui->display->text();
+}
+
+void VirtualKeyboardDialog::on_del_clicked()
+{
+    ui->display->del();
 }

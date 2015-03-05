@@ -570,6 +570,60 @@ Infomation</source>
     </message>
 </context>
 <context>
+    <name>ICBackupDialog</name>
+    <message>
+        <location filename="icbackupdialog.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icbackupdialog.ui" line="20"/>
+        <source>You pressed the backup sequence.Need to backups?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icbackupdialog.ui" line="38"/>
+        <source>No(F4)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icbackupdialog.ui" line="51"/>
+        <source>Yes(F5)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icbackupdialog.cpp" line="45"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icbackupdialog.cpp" line="45"/>
+        <source>USB is not connected!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icbackupdialog.cpp" line="48"/>
+        <source>Backuping, please wait...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icbackupdialog.cpp" line="67"/>
+        <location filename="icbackupdialog.cpp" line="71"/>
+        <source>Backup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icbackupdialog.cpp" line="67"/>
+        <source>Backup all configs successfully!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icbackupdialog.cpp" line="71"/>
+        <source>Backup all configs fail!</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ICCommentEditor</name>
     <message>
         <location filename="hcinstruction/iccommenteditor.ui" line="14"/>
@@ -1532,6 +1586,8 @@ Infomation</source>
     <message>
         <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="546"/>
         <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="792"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="962"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="1060"/>
         <source>warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1546,12 +1602,22 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="1259"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="963"/>
+        <source>Stand program can not do up action</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="1061"/>
+        <source>Stand program can not down insert action</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="1271"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="1260"/>
+        <location filename="hcinstruction/ichcinstructionpageframe.cpp" line="1272"/>
         <source>Has not been origin!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2478,129 +2544,112 @@ Infomation</source>
 <context>
     <name>ICHCStackedSettingsFrame</name>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="14"/>
-        <source>Frame</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="32"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="26"/>
         <source>Current page</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="100"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="94"/>
         <source>Group-1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="63"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="57"/>
         <source>Group-2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="177"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="14"/>
+        <source>StackSettings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="171"/>
         <source>Group-4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="344"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="338"/>
         <source>X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="357"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="351"/>
         <source>Y</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="370"/>
-        <source>Z</source>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="364"/>
+        <source>S</source>
+        <oldsource>Z</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="789"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="783"/>
         <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="140"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="134"/>
         <source>Group-3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="396"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="390"/>
         <source>Sequence</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="424"/>
-        <source>X-Z-Y</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="526"/>
-        <source>Y-X-Z</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="456"/>
-        <source>Z-X-Y</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="488"/>
-        <source>Y-Z-X</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="543"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="537"/>
         <source>Direction</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="571"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="565"/>
         <source>X PP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="644"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="638"/>
         <source>Y PP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="714"/>
-        <source>Z PP</source>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="708"/>
+        <source>S PP</source>
+        <oldsource>Z PP</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="196"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="190"/>
         <source>Step</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="606"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="600"/>
         <source>X RP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="676"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="670"/>
         <source>Y RP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="746"/>
-        <source>Z RP</source>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="740"/>
+        <source>S RP</source>
+        <oldsource>Z RP</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="305"/>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="318"/>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="331"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="299"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="312"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="325"/>
         <source>mm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="383"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="377"/>
         <source>Lattice</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3317,12 +3366,12 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="185"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="186"/>
         <source>speed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="199"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="209"/>
         <source>Return</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5560,22 +5609,22 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="570"/>
-        <location filename="mainframe.cpp" line="1030"/>
-        <location filename="mainframe.cpp" line="1106"/>
+        <location filename="mainframe.cpp" line="604"/>
+        <location filename="mainframe.cpp" line="1064"/>
+        <location filename="mainframe.cpp" line="1140"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="571"/>
-        <location filename="mainframe.cpp" line="1031"/>
-        <location filename="mainframe.cpp" line="1107"/>
+        <location filename="mainframe.cpp" line="605"/>
+        <location filename="mainframe.cpp" line="1065"/>
+        <location filename="mainframe.cpp" line="1141"/>
         <source>Controlled, Can&apos;t modify!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="736"/>
-        <location filename="mainframe.cpp" line="743"/>
+        <location filename="mainframe.cpp" line="770"/>
+        <location filename="mainframe.cpp" line="777"/>
         <source>Hint</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6685,7 +6734,7 @@ Admin</source>
     </message>
     <message>
         <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="421"/>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.cpp" line="70"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.cpp" line="83"/>
         <source>.</source>
         <translation type="unfinished"></translation>
     </message>

@@ -49,6 +49,7 @@
 #include "ichostcomparepage.h"
 #include "icupdatesystem.h"
 #include "icrecaldialog.h"
+#include "icbackupdialog.h"
 #if defined(Q_WS_WIN32) || defined(Q_WS_X11)
 #include "simulateknob.h"
 #endif
@@ -67,6 +68,24 @@ const QList<int> recalKeySeq = QList<int>()<<ICKeyboard::FB_F5
                                       <<ICKeyboard::FB_F1
                                      <<ICKeyboard::FB_F2
                                     <<ICKeyboard::FB_F5;
+
+const QList<int> backupKeySeq = QList<int>()<<ICKeyboard::FB_F5
+                                           <<ICKeyboard::FB_F2
+                                          <<ICKeyboard::FB_F4
+                                         <<ICKeyboard::FB_F2
+                                        <<ICKeyboard::FB_F3
+                                       <<ICKeyboard::FB_F2
+                                      <<ICKeyboard::FB_F1
+                                     <<ICKeyboard::FB_F5;
+
+const QList<int> testKeySeq = QList<int>()<<ICKeyboard::FB_F5
+                                           <<ICKeyboard::FB_F3
+                                          <<ICKeyboard::FB_F4
+                                         <<ICKeyboard::FB_F3
+                                        <<ICKeyboard::FB_F2
+                                       <<ICKeyboard::FB_F3
+                                      <<ICKeyboard::FB_F1
+                                     <<ICKeyboard::FB_F5;
 
 MainFrame *icMainFrame = NULL;
 MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
@@ -276,8 +295,13 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     keyMap.insert(Qt::Key_F, ICKeyboard::VFB_Pose_Vertical);
 
     keyMap.insert(Qt::Key_Q, ICKeyboard::VFB_X2Sub);
+#ifdef HC_SK_8
+    keyMap.insert(Qt::Key_P, ICKeyboard::VFB_X2Add);
+    keyMap.insert(Qt::Key_K, ICKeyboard::VFB_Y2Sub);
+#else
     keyMap.insert(Qt::Key_K, ICKeyboard::VFB_X2Add);
     keyMap.insert(Qt::Key_P, ICKeyboard::VFB_Y2Sub);
+#endif
     keyMap.insert(Qt::Key_L, ICKeyboard::VFB_Y2Add);
 
     keyMap.insert(Qt::Key_C, ICKeyboard::FB_F1);
@@ -354,6 +378,16 @@ void MainFrame::keyPressEvent(QKeyEvent *e)
                 //                                     QMessageBox::Yes | QMessageBox::No);
                 //                if(ret == QMessageBox::Yes) ::system("reboot");
 
+            }
+            else if(currentKeySeq == backupKeySeq)
+            {
+                ICBackupDialog backupDialog;
+                backupDialog.exec();
+            }
+            else if(currentKeySeq == testKeySeq)
+            {
+                ::system("chmod +x ./test_robot.sh && ./test_robot.sh");
+//                exit(0);
             }
             currentKeySeq.clear();
         }
@@ -695,8 +729,8 @@ void MainFrame::StatusRefreshed()
     bool isControled = virtualHost->DoseControled();
     ICProgramHeadFrame::Instance()->ChangeControlStatus(isControled);
     newLedFlags_ = 0;
-    newLedFlags_ |= (virtualHost->IsInputOn(67)? 8 : 0);
-    newLedFlags_ |= (virtualHost->IsInputOn(64)? 4 : 0);
+    newLedFlags_ |= (virtualHost->IsInputOn(64)? 8 : 0);
+    newLedFlags_ |= (virtualHost->IsInputOn(67)? 4 : 0);
     newLedFlags_ |= (virtualHost->IsOutputOn(64)? 2 : 0);
     newLedFlags_ |= (virtualHost->IsOutputOn(65)? 1 : 0);
     if(newLedFlags_ != ledFlags_)

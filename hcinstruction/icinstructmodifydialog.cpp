@@ -108,6 +108,7 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
     ui->delayTimeEdit->SetDecimalPlaces(1);
     if(item->IsAction())
     {
+
         if( item->Action() <= ICMold::GB || item->Action() == ICMold::GARC)
         {
             ui->delayTimeEdit->SetDecimalPlaces(2);
@@ -193,6 +194,15 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
         {
             ui->offBox->show();
             ui->onBox->show();
+            if(item->Action() == ICMold::GStack)
+            {
+                ui->selectEdit->SetThisIntToThisText(item->SVal() + 1);
+                ui->selectEdit->show();
+                ui->selectLabel->show();
+                ui->onBox->hide();
+                ui->offBox->hide();
+
+            }
             if(item->Action() == ICMold::GCondition)
             {
                 speedValidator_->setRange(-100, 100);
@@ -216,6 +226,19 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
         if( item->Action() == ICMold::GZ)
         {
 //            ui->badProductBox->show();
+        }
+        else if(item->Action() == ICMold::GWait ||
+                item->Action() == ICMold::GMWait ||
+                item->Action() == ICMold::GCondition )
+        {
+            ui->delayTimeEdit->SetDecimalPlaces(1);
+        }
+        else if(item->Action() == ICMold::ACTEND||
+                item->Action() == ICMold::GStack ||
+                item->Action() == ICMold::GEuOut ||
+                item->Action() == ICMold::GMOut)
+        {
+            ui->delayTimeEdit->SetDecimalPlaces(2);
         }
         else if(item->Action() >= ICMold::GOutY && item->Action() <= ICMold::GTwoXTwoY)
         {
@@ -255,7 +278,14 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
     if(isok == QDialog::Accepted)
     {
         item->SetActualPos(ui->posEdit->TransThisTextToThisInt());
-        item->SetSVal(ui->speedEdit->TransThisTextToThisInt());
+        if(item->Action() == ICMold::GStack)
+        {
+            item->SetSVal(ui->selectEdit->TransThisTextToThisInt() - 1);
+        }
+        else
+        {
+            item->SetSVal(ui->speedEdit->TransThisTextToThisInt());
+        }
         
         item->SetDVal(ui->delayTimeEdit->TransThisTextToThisInt());
         if(!ui->earlyEndCheckBox->isHidden())

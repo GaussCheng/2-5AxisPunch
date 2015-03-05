@@ -36,6 +36,7 @@ VirtualNumericKeypadDialog::VirtualNumericKeypadDialog(QWidget *parent) :
             SIGNAL(mapped(QString)),
             this,
             SLOT(KeyboardClicked(QString)));
+    ui->displayLineEdit->installEventFilter(this);
 
 //    ui->displayLineEdit->setValidator(new QDoubleValidator(ui->displayLineEdit));
 }
@@ -55,6 +56,18 @@ void VirtualNumericKeypadDialog::changeEvent(QEvent *e)
     default:
         break;
     }
+}
+
+bool VirtualNumericKeypadDialog::eventFilter(QObject *o, QEvent *e)
+{
+#ifdef Q_WS_QWS
+    if(o == ui->displayLineEdit && e->type() == QEvent::KeyPress)
+    {
+        return true;
+    }
+#endif
+    return QDialog::eventFilter(o, e);
+
 }
 
 void VirtualNumericKeypadDialog::ResetDisplay()
