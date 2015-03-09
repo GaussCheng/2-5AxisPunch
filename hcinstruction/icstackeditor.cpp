@@ -4,6 +4,7 @@
 #include "icmold.h"
 #include "config.h"
 #include <qmath.h>
+#include "ichcstackedsettingsframe.h"
 
 struct StackGroup
 {
@@ -77,6 +78,8 @@ ICStackEditor::ICStackEditor(QWidget *parent) :
     group.yStep = ui->g4YStep;
     group.zStep = ui->g4ZStep;
     stackGroups.append(group);
+
+    stackSettingPage_ = NULL;
 }
 
 ICStackEditor::~ICStackEditor()
@@ -98,6 +101,41 @@ void ICStackEditor::changeEvent(QEvent *e)
 
 void ICStackEditor::showEvent(QShowEvent *e)
 {
+    OnStackSettingPageClosed();
+    ICInstructionEditorBase::showEvent(e);
+}
+
+QList<ICMoldItem> ICStackEditor::CreateCommandImpl() const
+{
+    QList<ICMoldItem> ret;
+    ICMoldItem item;
+    for(int i = 0; i != stackGroups.size(); ++i)
+    {
+        if(stackGroups.at(i).check->isChecked())
+        {
+            item.SetAction(ICMold::GStack);
+            item.SetDVal(0);
+            item.SetSVal(i);
+            ret.append(item);
+        }
+    }
+    return ret;
+}
+
+void ICStackEditor::on_stackSetting_clicked()
+{
+    if(stackSettingPage_ == NULL)
+    {
+        stackSettingPage_ = new ICHCStackedSettingsFrame();
+        connect(stackSettingPage_,
+                SIGNAL(closed()),
+                SLOT(OnStackSettingPageClosed()));
+    }
+    stackSettingPage_->exec();
+}
+
+void ICStackEditor::OnStackSettingPageClosed()
+{
     StackGroup group;
     for(int i = 0; i != stackGroups.size(); ++i)
     {
@@ -111,22 +149,22 @@ void ICStackEditor::showEvent(QShowEvent *e)
         if(seqL == 0)
         {
             //        ui->xzyCheckBox->setChecked(true);
-            group.seq->setText(tr("X->Z->Y"));
+            group.seq->setText(tr("X->S->Y"));
         }
         else if(seqL == 1)
         {
             //        ui->zxyCheckBox->setChecked(true);
-            group.seq->setText(tr("Z->X->Y"));
+            group.seq->setText(tr("S->X->Y"));
         }
         else if(seqL == 2)
         {
             //            ui->yxzCheckBox->setChecked(true);
-            group.seq->setText(tr("Y->X->Z"));
+            group.seq->setText(tr("Y->X->S"));
         }
         else if(seqL == 3)
         {
             //            ui->yzxCheckBox->setChecked(true);
-            group.seq->setText(tr("Y->Z->X"));
+            group.seq->setText(tr("Y->S->X"));
         }
         //        ui->xRPLatticeLineEdit->SetThisIntToThisText(stackParams.at(ICMold::X_Array));
         qreal multi = qPow(10, STACK_DECIMAL);
@@ -148,22 +186,4 @@ void ICStackEditor::showEvent(QShowEvent *e)
         //        ui->zRPStepLineEdit->SetThisIntToThisText(stackParams.at(ICMold::Z_Gap));
         group.zStep->setText(QString::number(stackParams.at(ICMold::Z_Gap) / multi, 'f', STACK_DECIMAL));
     }
-    ICInstructionEditorBase::showEvent(e);
-}
-
-QList<ICMoldItem> ICStackEditor::CreateCommandImpl() const
-{
-    QList<ICMoldItem> ret;
-    ICMoldItem item;
-    for(int i = 0; i != stackGroups.size(); ++i)
-    {
-        if(stackGroups.at(i).check->isChecked())
-        {
-            item.SetAction(ICMold::GStack);
-            item.SetDVal(0);
-            item.SetSVal(i);
-            ret.append(item);
-        }
-    }
-    return ret;
 }

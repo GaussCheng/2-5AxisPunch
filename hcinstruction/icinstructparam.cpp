@@ -182,7 +182,7 @@ QString ICInstructParam::ConvertCommandStr(const ICMoldItem & moldItem)
         }
         else if(action == ICMold::GStack)
         {
-            commandStr += QString(QObject::tr("Group%1")).arg(moldItem.SVal());
+            commandStr += QString(QObject::tr("Group%1")).arg(moldItem.SVal() + 1);
         }
         else/* if(action == ICMold::GOutY)*/
         {

@@ -9,7 +9,7 @@
 #include <QDebug>
 
 ICHCStackedSettingsFrame::ICHCStackedSettingsFrame(QWidget *parent) :
-    QFrame(parent),
+    QDialog(parent),
     ui(new Ui::ICHCStackedSettingsFrame)
 {
     ui->setupUi(this);
@@ -205,7 +205,7 @@ void ICHCStackedSettingsFrame::SetStackStatus_(const QList<int> &status)
 
 void ICHCStackedSettingsFrame::hideEvent(QHideEvent *e)
 {
-    QFrame::hideEvent(e);
+    QDialog::hideEvent(e);
     qDebug("stack hide");
     QList<int> status = GetCurrentStatus_();
     SetStackStatus_(status);
@@ -217,7 +217,7 @@ void ICHCStackedSettingsFrame::hideEvent(QHideEvent *e)
 
 void ICHCStackedSettingsFrame::changeEvent(QEvent *e)
 {
-    QFrame::changeEvent(e);
+    QDialog::changeEvent(e);
     switch (e->type()) {
     case QEvent::LanguageChange:
     {
@@ -232,4 +232,10 @@ void ICHCStackedSettingsFrame::changeEvent(QEvent *e)
 void ICHCStackedSettingsFrame::OnMoldNumberParamChanged()
 {
     RefreshStackParams_(currentPage_);
+}
+
+void ICHCStackedSettingsFrame::on_closeButton_clicked()
+{
+    this->accept();
+    emit closed();
 }

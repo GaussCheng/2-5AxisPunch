@@ -3885,57 +3885,63 @@ Reason</source>
 <context>
     <name>ICHCStackedSettingsFrame</name>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="14"/>
-        <source>Frame</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="32"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="26"/>
         <source>Current page</source>
         <translation>当前组</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="100"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="94"/>
         <source>Group-1</source>
         <translation>第1组</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="63"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="57"/>
         <source>Group-2</source>
         <translation>第2组</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="69"/>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="109"/>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="146"/>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="183"/>
-        <source>buttonGroup_2</source>
-        <translation></translation>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="14"/>
+        <source>StackSettings</source>
+        <translation>堆叠设定</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="140"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="134"/>
         <source>Group-3</source>
         <translation>第3组</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="177"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="171"/>
         <source>Group-4</source>
         <translation>第4组</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="344"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="338"/>
         <source>X</source>
         <translation>X轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="357"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="351"/>
         <source>Y</source>
         <translation>Y轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="370"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="708"/>
+        <source>S PP</source>
+        <translation>S轴正向</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="740"/>
+        <source>S RP</source>
+        <translation>S轴反向</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="783"/>
+        <source>Close</source>
+        <translation>关闭</translation>
+    </message>
+    <message>
         <source>Z</source>
-        <translation>Z轴</translation>
+        <translation type="obsolete">Z轴</translation>
     </message>
     <message>
         <source>Stack Counter</source>
@@ -3983,105 +3989,78 @@ Reason</source>
         <translation type="obsolete">第3组</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="396"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="390"/>
         <source>Sequence</source>
         <translation>顺序</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="424"/>
         <source>X-Z-Y</source>
-        <translation>X-&gt;Z-&gt;Y</translation>
+        <translation type="obsolete">X-&gt;Z-&gt;Y</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="526"/>
         <source>Y-X-Z</source>
-        <translation>Y-&gt;X-&gt;Z</translation>
+        <translation type="obsolete">Y-&gt;X-&gt;Z</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="456"/>
         <source>Z-X-Y</source>
-        <translation>Z-&gt;X-&gt;Y</translation>
+        <translation type="obsolete">Z-&gt;X-&gt;Y</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="427"/>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="459"/>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="491"/>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="529"/>
-        <source>buttonGroup</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="488"/>
         <source>Y-Z-X</source>
-        <translation>Y-&gt;Z-&gt;X</translation>
+        <translation type="obsolete">Y-&gt;Z-&gt;X</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="543"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="537"/>
         <source>Direction</source>
         <translation>方向</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="571"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="565"/>
         <source>X PP</source>
         <translation>X轴正向</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="574"/>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="609"/>
-        <source>buttonGroup_3</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="644"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="638"/>
         <source>Y PP</source>
         <translation>Y轴正向</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="647"/>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="679"/>
-        <source>buttonGroup_4</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="714"/>
         <source>Z PP</source>
-        <translation>Z轴正向</translation>
+        <translation type="obsolete">Z轴正向</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="196"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="190"/>
         <source>Step</source>
         <translation>间距</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="606"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="364"/>
+        <source>S</source>
+        <translation>S轴</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="600"/>
         <source>X RP</source>
         <translation>X轴反向</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="676"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="670"/>
         <source>Y RP</source>
         <translation>Y轴反向</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="717"/>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="749"/>
-        <source>buttonGroup_5</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="746"/>
         <source>Z RP</source>
-        <translation>Z轴反向</translation>
+        <translation type="obsolete">Z轴反向</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="305"/>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="318"/>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="331"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="299"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="312"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="325"/>
         <source>mm</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="383"/>
+        <location filename="hcsettings/ichcstackedsettingsframe.ui" line="377"/>
         <source>Lattice</source>
         <translation>个数</translation>
     </message>
@@ -5009,7 +4988,7 @@ Reason</source>
         <translation>速度</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="192"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="201"/>
         <source>Return</source>
         <translation>返回</translation>
     </message>
@@ -6173,8 +6152,10 @@ Please enter an digit between </source>
         <translation type="obsolete">预留6</translation>
     </message>
     <message>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="145"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="146"/>
         <source>EU</source>
-        <translation type="obsolete">机器I/O信号</translation>
+        <translation type="unfinished">机器I/O信号</translation>
     </message>
     <message>
         <source>Mode open In 2</source>
@@ -7276,38 +7257,39 @@ Please enter an digit between </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="41"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="688"/>
         <source>Seq</source>
         <translation>顺序</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="56"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="96"/>
         <source>S:</source>
         <translation>轴:</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="72"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="112"/>
         <source>Pos</source>
         <translation>方向</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="88"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="128"/>
         <source>Num</source>
         <translation>个数</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="104"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="144"/>
         <source>Step</source>
         <translation>间距</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="124"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="312"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="562"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="706"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="948"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="595"/>
         <source>X:</source>
         <translation></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icstackeditor.ui" line="1001"/>
+        <source>Stack Setting</source>
+        <translation>堆叠设定</translation>
     </message>
     <message>
         <location filename="hcinstruction/icstackeditor.ui" line="197"/>
@@ -7315,74 +7297,66 @@ Please enter an digit between </source>
         <translation>第1组</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="218"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="415"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="612"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="753"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="958"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="605"/>
         <source>Y:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="265"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="462"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="659"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="800"/>
-        <location filename="hcinstruction/icstackeditor.ui" line="968"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="615"/>
         <source>Z:</source>
         <translation>S:</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="394"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="356"/>
         <source>Group-2</source>
         <translation>第2组</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="544"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="303"/>
         <source>Group-3</source>
         <translation>第3组</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="885"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="250"/>
         <source>Group-4</source>
         <translation>第4组</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.ui" line="941"/>
+        <location filename="hcinstruction/icstackeditor.ui" line="588"/>
         <source>Start Point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.cpp" line="114"/>
-        <source>X-&gt;Z-&gt;Y</source>
-        <translation></translation>
+        <location filename="hcinstruction/icstackeditor.cpp" line="152"/>
+        <source>X-&gt;S-&gt;Y</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.cpp" line="119"/>
-        <source>Z-&gt;X-&gt;Y</source>
-        <translation></translation>
+        <location filename="hcinstruction/icstackeditor.cpp" line="157"/>
+        <source>S-&gt;X-&gt;Y</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.cpp" line="124"/>
-        <source>Y-&gt;X-&gt;Z</source>
-        <translation></translation>
+        <location filename="hcinstruction/icstackeditor.cpp" line="162"/>
+        <source>Y-&gt;X-&gt;S</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.cpp" line="129"/>
-        <source>Y-&gt;Z-&gt;X</source>
-        <translation></translation>
+        <location filename="hcinstruction/icstackeditor.cpp" line="167"/>
+        <source>Y-&gt;S-&gt;X</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.cpp" line="135"/>
-        <location filename="hcinstruction/icstackeditor.cpp" line="141"/>
-        <location filename="hcinstruction/icstackeditor.cpp" line="147"/>
+        <location filename="hcinstruction/icstackeditor.cpp" line="173"/>
+        <location filename="hcinstruction/icstackeditor.cpp" line="179"/>
+        <location filename="hcinstruction/icstackeditor.cpp" line="185"/>
         <source>RP</source>
         <translation>反向</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icstackeditor.cpp" line="135"/>
-        <location filename="hcinstruction/icstackeditor.cpp" line="141"/>
-        <location filename="hcinstruction/icstackeditor.cpp" line="147"/>
+        <location filename="hcinstruction/icstackeditor.cpp" line="173"/>
+        <location filename="hcinstruction/icstackeditor.cpp" line="179"/>
+        <location filename="hcinstruction/icstackeditor.cpp" line="185"/>
         <source>P</source>
         <translation>正向</translation>
     </message>
@@ -8327,38 +8301,46 @@ Would you want to restart now?</source>
         <translation type="obsolete">输出</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="46"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="48"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="91"/>
         <source>EuIn</source>
         <translation>输入</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="59"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="58"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="77"/>
+        <source>EN</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="67"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="104"/>
         <source>EuOut</source>
         <translation>输出</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="73"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="118"/>
         <source>ON</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="86"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="131"/>
         <source>OFF</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="100"/>
-        <location filename="hcinstruction/icwaitconditioneditor.cpp" line="60"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="145"/>
+        <location filename="hcinstruction/icwaitconditioneditor.cpp" line="154"/>
         <source>Limit</source>
         <translation>限制时间</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="107"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="152"/>
         <source>0.00</source>
         <translation>0.00</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icwaitconditioneditor.ui" line="117"/>
+        <location filename="hcinstruction/icwaitconditioneditor.ui" line="162"/>
         <source>s</source>
         <translation></translation>
     </message>
@@ -8439,7 +8421,7 @@ Would you want to restart now?</source>
         <translation type="obsolete">等待出芯到位</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icwaitconditioneditor.cpp" line="68"/>
+        <location filename="hcinstruction/icwaitconditioneditor.cpp" line="163"/>
         <source>Delay</source>
         <translation>延时</translation>
     </message>
@@ -9678,7 +9660,7 @@ Admin</source>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="185"/>
         <source>Group%1</source>
-        <translation></translation>
+        <translation>组%1</translation>
     </message>
     <message>
         <location filename="hcinstruction/icinstructparam.cpp" line="207"/>

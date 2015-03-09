@@ -186,6 +186,15 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
         {
             ui->offBox->show();
             ui->onBox->show();
+            if(item->Action() == ICMold::GStack)
+            {
+                ui->selectEdit->SetThisIntToThisText(item->SVal() + 1);
+                ui->selectEdit->show();
+                ui->selectLabel->show();
+                ui->onBox->hide();
+                ui->offBox->hide();
+
+            }
             if(item->Action() == ICMold::GCondition)
             {
                 speedValidator_->setRange(-100, 100);
