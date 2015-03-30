@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>593</width>
-    <height>400</height>
+    <height>447</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -55,7 +55,7 @@
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="systemSettingPage">
       <attribute name="title">
@@ -63,83 +63,10 @@
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <property name="spacing">
-        <number>6</number>
-       </property>
-       <property name="margin">
-        <number>0</number>
+        <number>20</number>
        </property>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_15">
-         <item>
-          <widget class="QPushButton" name="keyToneButton">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>130</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>130</width>
-             <height>32</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>Key Tone(On)</string>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_13">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QPushButton" name="calibrationBtn">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>130</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>130</width>
-             <height>32</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>Calibration</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
           <widget class="QLabel" name="label">
            <property name="text">
@@ -221,7 +148,7 @@ QRadioButton::indicator:unchecked:disabled
           </widget>
          </item>
          <item>
-          <spacer name="horizontalSpacer">
+          <spacer name="horizontalSpacer_13">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
@@ -232,6 +159,31 @@ QRadioButton::indicator:unchecked:disabled
             </size>
            </property>
           </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="calibrationBtn">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>130</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>130</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Calibration</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -289,9 +241,6 @@ QRadioButton::indicator:unchecked:disabled
 	image: url(:/resource/minus(64).png);
 }</string>
            </property>
-           <property name="buttonSymbols">
-            <enum>QAbstractSpinBox::PlusMinus</enum>
-           </property>
            <property name="accelerated">
             <bool>true</bool>
            </property>
@@ -313,10 +262,41 @@ QRadioButton::indicator:unchecked:disabled
            </property>
           </spacer>
          </item>
+         <item>
+          <widget class="QPushButton" name="keyToneButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>130</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>130</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Key Tone(On)</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
         </layout>
        </item>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <property name="rightMargin">
+          <number>200</number>
+         </property>
          <item>
           <widget class="QLabel" name="label_40">
            <property name="text">
@@ -358,11 +338,8 @@ QRadioButton::indicator:unchecked:disabled
              <height>16</height>
             </size>
            </property>
-           <property name="minimum">
-            <number>0</number>
-           </property>
            <property name="maximum">
-            <number>8</number>
+            <number>9</number>
            </property>
            <property name="value">
             <number>0</number>
@@ -398,19 +375,10 @@ QRadioButton::indicator:unchecked:disabled
            </property>
           </widget>
          </item>
-         <item>
-          <spacer name="horizontalSpacer_4">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
          <item>
           <widget class="QLabel" name="label_14">
            <property name="text">
@@ -425,6 +393,46 @@ QRadioButton::indicator:unchecked:disabled
           <widget class="QLabel" name="label_15">
            <property name="text">
             <string>min</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QLabel" name="versionLabel">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QLabel" name="versionLabel_2">
+           <property name="text">
+            <string/>
            </property>
           </widget>
          </item>
@@ -444,32 +452,12 @@ QRadioButton::indicator:unchecked:disabled
            </property>
            <property name="maximumSize">
             <size>
-             <width>80</width>
+             <width>130</width>
              <height>48</height>
             </size>
            </property>
            <property name="text">
             <string>Save</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
-         <item>
-          <widget class="QLabel" name="versionLabel">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -483,7 +471,7 @@ QRadioButton::indicator:unchecked:disabled
          <property name="sizeHint" stdset="0">
           <size>
            <width>20</width>
-           <height>40</height>
+           <height>47</height>
           </size>
          </property>
         </spacer>
@@ -835,7 +823,7 @@ QRadioButton::indicator:unchecked:disabled
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>32</height>
+                <height>48</height>
                </size>
               </property>
               <property name="text">
@@ -848,7 +836,7 @@ QRadioButton::indicator:unchecked:disabled
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>32</height>
+                <height>48</height>
                </size>
               </property>
               <property name="text">
@@ -861,7 +849,7 @@ QRadioButton::indicator:unchecked:disabled
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>32</height>
+                <height>48</height>
                </size>
               </property>
               <property name="text">
@@ -883,7 +871,7 @@ QRadioButton::indicator:unchecked:disabled
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>32</height>
+                <height>48</height>
                </size>
               </property>
               <property name="text">
@@ -896,7 +884,7 @@ QRadioButton::indicator:unchecked:disabled
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>32</height>
+                <height>48</height>
                </size>
               </property>
               <property name="text">
@@ -909,7 +897,7 @@ QRadioButton::indicator:unchecked:disabled
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>32</height>
+                <height>48</height>
                </size>
               </property>
               <property name="text">

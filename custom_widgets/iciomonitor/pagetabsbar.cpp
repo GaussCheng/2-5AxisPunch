@@ -34,7 +34,9 @@ void PageTabsBar::AddTab(QWidget *tabWidget, const QString &tabName)
     {
         QAbstractButton *button = new QPushButton(tabName);
         button->setCheckable(true);
-//        button->setMinimumHeight(48);
+        button->setMinimumHeight(38);
+        button->setMinimumWidth(80);
+
         if(tabButtonGroup_->buttons().isEmpty())
         {
             button->setChecked(true);

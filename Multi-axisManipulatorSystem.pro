@@ -127,6 +127,7 @@ include (hcsettings/hcsettings.pri)
 include (hcinstruction/hcinstruction.pri)
 include (ickeyboard/ickeyboard.pri)
 include (hcmaintains/hcmaintains.pri)
+include (icprogrampage/icprogrampage.pri)
 
 include (vendor/IndustrialSystemFramework/ICUtility/ICUtility.pri)
 include (vendor/ICCustomWidgets/icupdatepackmodel/icupdatepackmodel.pri)

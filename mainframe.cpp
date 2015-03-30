@@ -56,6 +56,7 @@
 #include "icmachinestructpage.h"
 #include "icupdatesystempage.h"
 #include "icmachineconfigpage.h"
+#include "icprogrampage.h"
 
 #include <QDebug>
 
@@ -315,7 +316,6 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
 
     pulleyMap.insert(Qt::Key_F13, 1);
     pulleyMap.insert(Qt::Key_F14, -1);
-    qDebug("555555555555555555");
 
 }
 
@@ -511,12 +511,10 @@ void MainFrame::InitCategoryPage()
     emit LoadMessage("Start to Initialize category pages");
     ui->centerPageFrame->setLayout(centerStackedLayout_);
     emit LoadMessage("center page layout has been setted");
-    qDebug("666666");
 
     emit LoadMessage("Start to Initialize initial pages");
     initialPage_ = new ICInitialFrame();
     centerStackedLayout_->addWidget(initialPage_);
-    qDebug("7777777");
 
     emit LoadMessage("Start to Initialize manual pages");
     manualPage_ = new ICHCManualOperationPageFrame();
@@ -537,7 +535,8 @@ void MainFrame::InitCategoryPage()
 
 
     emit LoadMessage("Start to Initialize monitor pages");
-    monitorPage_ = new ICMonitorPageFrame();
+//    monitorPage_ = new ICMonitorPageFrame();
+    monitorPage_ = new ICProgramPage();
     functionButtonToPage_.insert(ui->ioMonitorButton, monitorPage_);
     centerStackedLayout_->addWidget(monitorPage_);
 
@@ -564,6 +563,11 @@ void MainFrame::InitCategoryPage()
     updatePage_ =  ICUpdateSystemPage::Instance();
     settingButtonToPage_.insert(ui->updateButton,updatePage_);
     centerStackedLayout_->addWidget(updatePage_);
+
+
+//      updatePage_ =  new ICProgramPage();
+//      settingButtonToPage_.insert(ui->updateButton,updatePage_);
+//      centerStackedLayout_->addWidget(updatePage_);
 
     settingButtonToPage_.insert(ui->SettingReturn,NULL);
 

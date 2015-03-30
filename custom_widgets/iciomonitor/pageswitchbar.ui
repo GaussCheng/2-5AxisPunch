@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>160</width>
+    <width>250</width>
     <height>51</height>
    </rect>
   </property>
@@ -34,7 +34,7 @@
      <property name="minimumSize">
       <size>
        <width>0</width>
-       <height>32</height>
+       <height>38</height>
       </size>
      </property>
      <property name="text">
@@ -52,6 +52,12 @@
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>38</height>
+      </size>
      </property>
      <property name="text">
       <string>Input</string>
@@ -71,6 +77,12 @@
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>38</height>
+      </size>
      </property>
      <property name="text">
       <string>Output</string>
@@ -94,7 +106,7 @@
      <property name="minimumSize">
       <size>
        <width>0</width>
-       <height>32</height>
+       <height>38</height>
       </size>
      </property>
      <property name="text">
