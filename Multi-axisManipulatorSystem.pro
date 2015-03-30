@@ -6,14 +6,14 @@ TEMPLATE = app
 QMAKE_CFLAGS += -std=c99
 QT += sql
 
-SK_SIZE = 5
+SK_SIZE = 8
 
 OBJECTS_DIR = temp_$${SK_SIZE}
 UI_DIR = temp_$${SK_SIZE}
 MOC_DIR = temp_$${SK_SIZE}
 RCC_DIR = temp_$${SK_SIZE}
 DESTDIR = bin
-QMAKE_CXX = ccache $${QMAKE_CXX}
+#QMAKE_CXX = ccache $${QMAKE_CXX}
 CONFIG(debug, debug|release) {
 #    LIBS += -lprofiler
 DESTDIR = bin_debug
@@ -44,7 +44,7 @@ SOURCES += main.cpp \
     icdataformatchecker.cpp \
     icprogramformatchecker.cpp \
     icconfigformatchecker.cpp \
-    simulateknob.cpp \
+    simulateknob.cpp\
     icutility.cpp \
     icrecaldialog.cpp \
     icfile.cpp \
@@ -142,7 +142,9 @@ OTHER_FILES += \
     sysconfig/alarminfomation-en \
     sysconfig/alarminfomation-ch \
     sysconfig/hintinfomation-ch \
-    sysconfig/hintinfomation-en
+    sysconfig/hintinfomation-en \
+    Multi-axisManipulatorSystem_en.ts \
+    Multi-axisManipulatorSystem_ch.ts
 
 QMAKE_POST_LINK += "cp *.qm $$DESTDIR"
 CONFIG(debug, debug|release){
@@ -150,8 +152,8 @@ system("python rename_ui.py $$UI_DIR")
 #QMAKE_POST_LINK += "cp *.qm bin_debug"
 }else{
 system("python rename_ui.py $${UI_DIR}")
-QMAKE_POST_LINK += "&& arm-linux-gnueabihf-strip $$DESTDIR/$$TARGET && HCbcrypt.sh -r $$DESTDIR/$$TARGET"
-QMAKE_POST_LINK += "&& chmod +x tools/make_target && tools/make_target"
+#QMAKE_POST_LINK += "&& arm-linux-gnueabihf-strip $$DESTDIR/$$TARGET && HCbcrypt.sh -r $$DESTDIR/$$TARGET"
+#QMAKE_POST_LINK += "&& chmod +x tools/make_target && tools/make_target"
 }
 
 FORMS += \

@@ -20,6 +20,7 @@ include (iclineeditwrapper/iclineeditwrapper.pri)
 include (iccommandkeywrapper/iccommandkeywrapper.pri)
 include (iciopointwrapper/iciopointwrapper.pri)
 include (icpictureview/icpictureview.pri)
+include (iccheckedbutton/iccheckedbutton.pri)
 
 contains(DEFINES, HC_SK_8){
     FORMS += custom_widgets/icinputmethodkeyboard.ui

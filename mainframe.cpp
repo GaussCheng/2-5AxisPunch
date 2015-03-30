@@ -53,6 +53,9 @@
 #if defined(Q_WS_WIN32) || defined(Q_WS_X11)
 #include "simulateknob.h"
 #endif
+#include "icmachinestructpage.h"
+#include "icupdatesystempage.h"
+#include "icmachineconfigpage.h"
 
 #include <QDebug>
 
@@ -186,7 +189,6 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
         button->setCheckable(true);
     }
     emit LoadMessage("MainFrame UI Loaded");
-    qDebug("22222222222");
 #ifndef Q_WS_X11
 #ifndef Q_WS_WIN32
     this->setWindowFlags(Qt::FramelessWindowHint);
@@ -201,12 +203,9 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
             SIGNAL(timeout()),
             SLOT(StatusRefreshed()));
     //    timerID_ = ICTimerPool::Instance()->Start(ICTimerPool::RefreshTime, this, SLOT(StatusRefreshed()));
-    qDebug("33333333333333");
     emit LoadMessage("Ready to Refresh");
     InitCategoryPage();
-    qDebug("44444444444");
     InitInterface();
-    qDebug("11111111111");
     UpdateTranslate();
     emit LoadMessage("Translation Loaded");
     InitSignal();
@@ -527,38 +526,52 @@ void MainFrame::InitCategoryPage()
     autoPage_ = new ICHCProgramMonitorFrame();
     centerStackedLayout_->addWidget(autoPage_);
 
-    emit LoadMessage("Start to Initialize settings pages");
-    settingsPage_ = new ICSettingsFrame();
-    functionButtonToPage_.insert(ui->settingsButton, settingsPage_);
-    centerStackedLayout_->addWidget(settingsPage_);
-    qDebug("0000000");
+//    settingsPage_ = new ICSettingsFrame();
+//    functionButtonToPage_.insert(ui->settingsButton, settingsPage_);
+//    centerStackedLayout_->addWidget(settingsPage_);
 
     emit LoadMessage("Start to Initialize alarm pages");
     alarmPage_ = ICAlarmFrame::Instance();
-    qDebug("999999");
     functionButtonToPage_.insert(ui->alarmButton, alarmPage_);
-    qDebug("888888");
     centerStackedLayout_->addWidget(alarmPage_);
-    qDebug("11111111");
 
 
     emit LoadMessage("Start to Initialize monitor pages");
     monitorPage_ = new ICMonitorPageFrame();
     functionButtonToPage_.insert(ui->ioMonitorButton, monitorPage_);
     centerStackedLayout_->addWidget(monitorPage_);
-    qDebug("22222222");
 
 
     emit LoadMessage("Start to Initialize instruct pages");
     instructPage_ = new ICHCInstructionPageFrame();
     functionButtonToPage_.insert(ui->teachButton, instructPage_);
     centerStackedLayout_->addWidget(instructPage_);
-    qDebug("33333333");
+
+
+    emit LoadMessage("Start to Initialize settings pages");
+    baseFuncPage_ = new ICHCSystemSettingsFrame();
+    settingButtonToPage_.insert(ui->baseButton,baseFuncPage_);
+    centerStackedLayout_->addWidget(baseFuncPage_);
+
+    axisPage_ = new ICMachineStructPage();
+    settingButtonToPage_.insert(ui->axisButton,axisPage_);
+    centerStackedLayout_->addWidget(axisPage_);
+
+    servoPage_ = new ICMachineConfigPage();
+    settingButtonToPage_.insert(ui->servoButton,servoPage_);
+    centerStackedLayout_->addWidget(servoPage_);
+
+    updatePage_ =  ICUpdateSystemPage::Instance();
+    settingButtonToPage_.insert(ui->updateButton,updatePage_);
+    centerStackedLayout_->addWidget(updatePage_);
+
+    settingButtonToPage_.insert(ui->SettingReturn,NULL);
+
 
     emit LoadMessage("Start to Initialize origin pages");
     originExecutingPage_ = new ICOriginDialog();
     emit LoadMessage("end to Initialize  pages");
-    qDebug("44444444");
+
 
 }
 
@@ -583,6 +596,11 @@ void MainFrame::InitSignal()
     connect(ui->returnButton,
             SIGNAL(clicked()),
             SLOT(ReturnButtonClicked()));
+
+    foreach(QAbstractButton *btn,settingButtonToPage_.keys()){
+        connect(btn,SIGNAL(clicked()),
+                SLOT(SettingButtonClicked()));
+    }
 }
 
 void MainFrame::UpdateTranslate()
@@ -592,6 +610,13 @@ void MainFrame::UpdateTranslate()
 void MainFrame::CategoryButtonClicked()
 {
     QAbstractButton *clickedButton = qobject_cast<QAbstractButton *>(sender());
+
+    if(clickedButton == ui->settingsButton){
+        ui->stackedWidget->setCurrentIndex(1);
+        ui->baseButton->click();
+
+    }
+
 
     if(functionButtonToPage_.contains(clickedButton))
     {
@@ -615,6 +640,22 @@ void MainFrame::CategoryButtonClicked()
     //        centerStackedLayout_->addWidget(monitorPage_);
     //    }
     //    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(clickedButton->text());
+}
+
+void MainFrame::SettingButtonClicked()
+{
+    QAbstractButton *clickedButton = qobject_cast<QAbstractButton *>(sender());
+
+    if(settingButtonToPage_.contains(clickedButton))
+    {
+        if(settingButtonToPage_.value(clickedButton)){
+            centerStackedLayout_->setCurrentWidget(settingButtonToPage_.value(clickedButton));
+        }
+        else{
+            ui->stackedWidget->setCurrentIndex(0);
+            ReturnButtonClicked();
+        }
+    }
 }
 
 static int16_t oldX = -1;
@@ -1065,7 +1106,7 @@ void MainFrame::ShowFunctionPage()
                              tr("Controlled, Can't modify!"));
         return;
     }
-    centerStackedLayout_->setCurrentWidget(settingsPage_);
+//    centerStackedLayout_->setCurrentWidget(settingsPage_);
     //    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(ui->functionPageButton->text());
 }
 
@@ -1185,7 +1226,7 @@ void MainFrame::LevelChanged(int level)
         {
             ui->teachButton->setEnabled(true);
             ui->settingsButton->setEnabled(true);
-            settingsPage_->SetToShowAll(false);
+//            settingsPage_->SetToShowAll(false);
         }
         else
         {
@@ -1201,7 +1242,7 @@ void MainFrame::LevelChanged(int level)
         if(ICKeyboard::Instace()->CurrentSwitchStatus() == ICKeyboard::KS_StopStatu)
         {
             ui->settingsButton->setEnabled(true);
-            settingsPage_->SetToShowAll(true);
+//            settingsPage_->SetToShowAll(true);
             //            ui->functionPageButton->setEnabled(true);
         }
         else

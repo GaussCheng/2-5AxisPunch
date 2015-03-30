@@ -73,6 +73,8 @@ Q_SIGNALS:
 
 private slots:
     void CategoryButtonClicked();
+    void SettingButtonClicked();
+
     void ReturnButtonClicked();
     void ShowFunctionPage();
     void LevelChanged(int level);
@@ -104,6 +106,13 @@ private:
     QWidget * recordPage_;
     QWidget * monitorPage_;
     ICHCInstructionPageFrame * instructPage_;
+
+    QWidget * baseFuncPage_;
+    QWidget * axisPage_;
+    QWidget * servoPage_;
+    QWidget * updatePage_;
+
+
     QWidget * autoPage_;
 //    QWidget * returnPage_;
     ICHCManualOperationPageFrame * manualPage_;
@@ -113,6 +122,8 @@ private:
     QDialog *hostCompareDialog_;
 
     QMap <QWidget *, QWidget *> functionButtonToPage_;
+    QMap <QAbstractButton *, QWidget *> settingButtonToPage_;
+
     QStackedLayout * centerStackedLayout_;
     QButtonGroup* buttonGroup_;
     QAbstractButton* nullButton_;

@@ -2667,173 +2667,173 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="103"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="94"/>
         <source>Key Tone(On)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="144"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="135"/>
         <source>Calibration</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="155"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="146"/>
         <source>Language:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="225"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="216"/>
         <source>English</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="252"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="243"/>
         <source>Data Time:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="426"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="417"/>
         <source>Back Light Time:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="436"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="427"/>
         <source>min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="332"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="323"/>
         <source>Brightness</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="461"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="452"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="504"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="495"/>
         <source>Level Management</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="525"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="516"/>
         <source>Level</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="557"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="548"/>
         <source>Machine Admin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="595"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="586"/>
         <source>Advance Admin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="608"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="599"/>
         <source>Old Password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="631"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="622"/>
         <source>New Password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="672"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="663"/>
         <source>Change</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="697"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="688"/>
         <source>Clear</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="708"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="699"/>
         <source>Admin Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="730"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="721"/>
         <source>Extent Function</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="768"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="823"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="759"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="814"/>
         <source>Use</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="775"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="766"/>
         <source>Verify</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="785"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="776"/>
         <source>Limit Function</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="831"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="822"/>
         <source>BackUp/Restore</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="839"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="830"/>
         <source>Backup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="851"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="842"/>
         <source>Backup Machine Configures</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="864"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="855"/>
         <source>Backup System Configures</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="877"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="868"/>
         <source>Backup All</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="887"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="878"/>
         <source>Restore</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="899"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="890"/>
         <source>Restore Machine Configures</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="912"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="903"/>
         <source>Restore System Configures</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="925"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="916"/>
         <source>Restore All</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="967"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="958"/>
         <source>umount</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="187"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="178"/>
         <source>中文</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="308"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.ui" line="299"/>
         <source>yyyy / MM  /  dd   hh : mm</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5536,22 +5536,22 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="263"/>
-        <location filename="mainframe.ui" line="390"/>
+        <location filename="mainframe.ui" line="248"/>
+        <location filename="mainframe.ui" line="375"/>
         <location filename="mainframe_8.ui" line="266"/>
         <location filename="mainframe_8.ui" line="387"/>
         <source>mm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="597"/>
+        <location filename="mainframe.ui" line="582"/>
         <source>R:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="517"/>
-        <location filename="mainframe.ui" line="644"/>
-        <location filename="mainframe.ui" line="765"/>
+        <location filename="mainframe.ui" line="502"/>
+        <location filename="mainframe.ui" line="629"/>
+        <location filename="mainframe.ui" line="750"/>
         <location filename="mainframe_8.ui" line="508"/>
         <location filename="mainframe_8.ui" line="629"/>
         <location filename="mainframe_8.ui" line="750"/>
@@ -5559,72 +5559,73 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="724"/>
+        <location filename="mainframe.ui" line="709"/>
         <source>T:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="343"/>
+        <location filename="mainframe.ui" line="328"/>
         <source>Y:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="470"/>
+        <location filename="mainframe.ui" line="455"/>
         <source>S:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="216"/>
+        <location filename="mainframe.ui" line="201"/>
         <source>X:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="838"/>
-        <location filename="mainframe_8.ui" line="823"/>
+        <location filename="mainframe.ui" line="823"/>
+        <location filename="mainframe_8.ui" line="831"/>
         <source>Teach</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="857"/>
-        <location filename="mainframe_8.ui" line="842"/>
+        <location filename="mainframe.ui" line="842"/>
+        <location filename="mainframe_8.ui" line="856"/>
         <source>I/O Monitor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="895"/>
-        <location filename="mainframe_8.ui" line="880"/>
+        <location filename="mainframe.ui" line="880"/>
+        <location filename="mainframe_8.ui" line="906"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="876"/>
-        <location filename="mainframe_8.ui" line="861"/>
+        <location filename="mainframe.ui" line="861"/>
+        <location filename="mainframe_8.ui" line="881"/>
         <source>Alarm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="914"/>
-        <location filename="mainframe_8.ui" line="899"/>
+        <location filename="mainframe.ui" line="899"/>
+        <location filename="mainframe_8.ui" line="931"/>
+        <location filename="mainframe_8.ui" line="1030"/>
         <source>Return</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="604"/>
-        <location filename="mainframe.cpp" line="1064"/>
-        <location filename="mainframe.cpp" line="1140"/>
+        <location filename="mainframe.cpp" line="629"/>
+        <location filename="mainframe.cpp" line="1105"/>
+        <location filename="mainframe.cpp" line="1181"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="605"/>
-        <location filename="mainframe.cpp" line="1065"/>
-        <location filename="mainframe.cpp" line="1141"/>
+        <location filename="mainframe.cpp" line="630"/>
+        <location filename="mainframe.cpp" line="1106"/>
+        <location filename="mainframe.cpp" line="1182"/>
         <source>Controlled, Can&apos;t modify!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="770"/>
-        <location filename="mainframe.cpp" line="777"/>
+        <location filename="mainframe.cpp" line="811"/>
+        <location filename="mainframe.cpp" line="818"/>
         <source>Hint</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5651,6 +5652,26 @@ Please enter an digit between </source>
     <message>
         <location filename="mainframe_8.ui" line="709"/>
         <source>T(AD):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainframe_8.ui" line="954"/>
+        <source>Base</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainframe_8.ui" line="973"/>
+        <source>Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainframe_8.ui" line="992"/>
+        <source>Servo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainframe_8.ui" line="1011"/>
+        <source>Update</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
