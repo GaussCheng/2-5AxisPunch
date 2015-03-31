@@ -145,7 +145,9 @@ OTHER_FILES += \
     sysconfig/hintinfomation-ch \
     sysconfig/hintinfomation-en \
     Multi-axisManipulatorSystem_en.ts \
-    Multi-axisManipulatorSystem_ch.ts
+    Multi-axisManipulatorSystem_ch.ts \
+    bin_debug/stylesheet/global.qss \
+    bin_debug/sysconfig/systemParameter.hc
 
 QMAKE_POST_LINK += "cp *.qm $$DESTDIR"
 CONFIG(debug, debug|release){

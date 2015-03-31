@@ -58,6 +58,13 @@ public:
     QLocale::Country Country() { return static_cast<QLocale::Country>(GetParameter(SystemLocale, "SystemCountry", QLocale::China).toInt());}
     void SetCountry(QLocale::Country country, bool isSync=true);
 
+    int ProgramUsedFlag();
+    void SetProgramUsedFlag(int flag);
+
+    int ProgramInnerFlag();
+    void SetProgramInnerFlag(int flag);
+
+
     QTranslator* Translator() { return translator_;}
 
     bool KeyTone() { return GetParameter(ProductConfig, "KeyTone", true).toBool();}
@@ -126,6 +133,7 @@ public:
     const QString InstructMultidotPut;
     const QString CommunicationConfig;
     const QString ProductConfig;
+    const QString ProgramConfig;
 
 private:
     static ICParametersSave* instance_;

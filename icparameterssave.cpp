@@ -9,7 +9,7 @@
 ICParametersSave * ICParametersSave::instance_ = NULL;
 
 ICParametersSave::ICParametersSave(const QString fileName)
-    : QSettings(fileName),
+    : QSettings(fileName,QSettings::IniFormat),
     ProductOperationer("ProductOperationer"),
     ProductAdministrator("ProductAdministrator"),
     ProductAlarmHistory("ProductAlarmHistory"),
@@ -18,6 +18,8 @@ ICParametersSave::ICParametersSave(const QString fileName)
     InstructMultidotPut("InstructMultidotPut"),
     CommunicationConfig("CommunicationConfig"),
     ProductConfig("ProductConfig"),
+    ProgramConfig("ProgramConfig"),
+
     translator_(new QTranslator()),
       sysTranslator_(new QTranslator()),
       isRoot_(false)
@@ -132,6 +134,27 @@ void ICParametersSave::SetCountry(QLocale::Country country, bool isSync)
     }
     if(isSync)
         SaveParameter(SystemLocale, "SystemCountry", static_cast<int>(country), isSync);
+}
+
+int ICParametersSave::ProgramUsedFlag()
+{
+    return GetParameter(ProgramConfig,"ProgramUsed",3).toInt();
+}
+
+void ICParametersSave::SetProgramUsedFlag(int flag)
+{
+    SaveParameter(ProgramConfig,"ProgramUsed",flag);
+}
+
+int ICParametersSave::ProgramInnerFlag()
+{
+    return GetParameter(ProgramConfig,"ProgramInnerUsed",0).toInt();
+
+}
+
+void ICParametersSave::SetProgramInnerFlag(int flag)
+{
+    SaveParameter(ProgramConfig,"ProgramInnerUsed",flag);
 }
 
 bool ICParametersSave::VerifyPassword(OperationLevel level, const QString &password)

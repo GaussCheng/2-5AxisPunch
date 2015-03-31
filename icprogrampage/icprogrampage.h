@@ -6,6 +6,8 @@
 #include <QLabel>
 #include <iccheckedbutton.h>
 #include <QTableWidgetItem>
+#include <virtualnumerickeypaddialog.h>
+
 
 #define MAX_POINTS 5
 #define COLUMN_COUNTS 9
@@ -22,15 +24,27 @@ public:
     explicit ICProgramPage(QWidget *parent = 0,int pageIndex = 0);
     void setItemNames(QStringList & contents);
     ~ICProgramPage();
+
+protected:
+    void showEvent(QShowEvent *);
     
+signals:
+    void returnProgram();
+
 private slots:
     void itemClicked(QTableWidgetItem*);
+    void saveButtonsCliked();
+    void testButonsClicked();
+    void usedButtonsClicked(bool);
+
+    void on_pushButton_clicked();
 
 private:
     Ui::ICProgramPage *ui;
-    QPushButton saveButtons[MAX_POINTS];
-    QPushButton testButtons[MAX_POINTS];
-    ICCheckedButton reserveButtons[MAX_POINTS - 3];
+    VirtualNumericKeypadDialog *_dialog;
+    QList<QPushButton*> saveButtons;
+    QList<QPushButton*> testButtons;
+    QList<ICCheckedButton*> reserveButtons;
 
     QLabel  headers[MAX_POINTS];
     int _index;

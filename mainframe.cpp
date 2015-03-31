@@ -56,7 +56,7 @@
 #include "icmachinestructpage.h"
 #include "icupdatesystempage.h"
 #include "icmachineconfigpage.h"
-#include "icprogrampage.h"
+#include "icprogrammainpage.h"
 
 #include <QDebug>
 
@@ -535,14 +535,14 @@ void MainFrame::InitCategoryPage()
 
 
     emit LoadMessage("Start to Initialize monitor pages");
-//    monitorPage_ = new ICMonitorPageFrame();
-    monitorPage_ = new ICProgramPage();
+    monitorPage_ = new ICMonitorPageFrame();
+//    monitorPage_ = new ICProgramMainPage();
     functionButtonToPage_.insert(ui->ioMonitorButton, monitorPage_);
     centerStackedLayout_->addWidget(monitorPage_);
 
 
     emit LoadMessage("Start to Initialize instruct pages");
-    instructPage_ = new ICHCInstructionPageFrame();
+    instructPage_ = new ICProgramMainPage();
     functionButtonToPage_.insert(ui->teachButton, instructPage_);
     centerStackedLayout_->addWidget(instructPage_);
 
@@ -624,17 +624,17 @@ void MainFrame::CategoryButtonClicked()
 
     if(functionButtonToPage_.contains(clickedButton))
     {
-        if(clickedButton == ui->settingsButton ||
-                clickedButton == ui->teachButton)
-        {
-            if(ICVirtualHost::GlobalVirtualHost()->DoseControled())
-            {
-                QMessageBox::warning(this,
-                                     tr("Warning"),
-                                     tr("Controlled, Can't modify!"));
-                return;
-            }
-        }
+//        if(clickedButton == ui->settingsButton ||
+//                clickedButton == ui->teachButton)
+//        {
+//            if(ICVirtualHost::GlobalVirtualHost()->DoseControled())
+//            {
+//                QMessageBox::warning(this,
+//                                     tr("Warning"),
+//                                     tr("Controlled, Can't modify!"));
+//                return;
+//            }
+//        }
         centerStackedLayout_->setCurrentWidget(functionButtonToPage_.value(clickedButton));
     }
     //    else if(clickedButton == ui->monitorPageButton)
@@ -848,14 +848,14 @@ void MainFrame::StatusRefreshed()
         //        statusStr_ = tr("Manual");
         ICProgramHeadFrame::Instance()->ChangStatusmoldNameLabelOperation(false);
         ICProgramHeadFrame::Instance()->SetHanSelectEnable(true);
-        ui->teachButton->setEnabled(true);
+//        ui->teachButton->setEnabled(true);
     }
     else if(runningStatus_ == ICVirtualHost::Stop)
     {
         speed_ = "0";
         ICProgramHeadFrame::Instance()->ChangStatusmoldNameLabelOperation(true);
         ICProgramHeadFrame::Instance()->SetHanSelectEnable(false);
-        ui->teachButton->setEnabled(false);
+//        ui->teachButton->setEnabled(false);
         //        statusStr_ = tr("Stop");
         //<<<<<<< HEAD
 //#ifdef Q_WS_X11
@@ -875,7 +875,7 @@ void MainFrame::StatusRefreshed()
     {
         ICProgramHeadFrame::Instance()->ChangStatusmoldNameLabelOperation(false);
         ICProgramHeadFrame::Instance()->SetHanSelectEnable(false);
-        ui->teachButton->setEnabled(false);
+//        ui->teachButton->setEnabled(false);
         if((virtualHost->HostStatus(ICVirtualHost::ClipL).toInt() >> 15) && errCode_ == 2423)
         {
             if(actionDialog_->isHidden())
@@ -1234,7 +1234,7 @@ void MainFrame::LevelChanged(int level)
         }
         else
         {
-            ui->teachButton->setEnabled(false);
+//            ui->teachButton->setEnabled(false);
         }
 
     }
@@ -1256,12 +1256,12 @@ void MainFrame::LevelChanged(int level)
         }
         if(ICKeyboard::Instace()->CurrentSwitchStatus() != ICKeyboard::KS_AutoStatu)
         {
-            ui->teachButton->setEnabled(true);
+//            ui->teachButton->setEnabled(true);
             //            ui->recordPageButton->setEnabled(true);
         }
         else
         {
-            ui->teachButton->setEnabled(false);
+//            ui->teachButton->setEnabled(false);
             //            ui->recordPageButton->setEnabled(false);
         }
     }
@@ -1392,7 +1392,7 @@ void MainFrame::UpdateAxisDefine_()
 void MainFrame::KeyToInstructEditor(int key)
 {
     Q_UNUSED(key);
-    instructPage_->ShowServoAction(key);
+//    instructPage_->ShowServoAction(key);
 }
 
 void MainFrame::ClearPosColor()

@@ -105,7 +105,7 @@ private:
     QWidget * alarmPage_;
     QWidget * recordPage_;
     QWidget * monitorPage_;
-    ICHCInstructionPageFrame * instructPage_;
+    QWidget * instructPage_;
 
     QWidget * baseFuncPage_;
     QWidget * axisPage_;
