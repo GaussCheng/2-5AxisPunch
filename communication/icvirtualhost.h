@@ -607,7 +607,7 @@ public:
     void SetEscapeWay(int way);
     bool IsAutoSignalUse() const { return (SystemParameter(SYS_Function).toInt() & 0x08) == 0; }
     void SetAutoSignalUse(bool isUse);
-    int GetFailAlarmWay() const { return (SystemParameter(SYS_Function).toInt() & 0x20) >> 5;}
+    int FailAlarmWay() const { return (SystemParameter(SYS_Function).toInt() & 0x20) >> 5;}
     void SetGetFailAlarmWay(int way);
     bool IsCloseMoldEn() const { return (SystemParameter((SYS_Function)).toInt() & 0x80 ) != 0;}
     void SetCloseMoldEn(bool isEn);

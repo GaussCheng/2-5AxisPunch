@@ -13,11 +13,11 @@ class VirtualKeyboardDialog : public QDialog {
 public:
     static VirtualKeyboardDialog* Instance()
     {
-        if(instance_.isNull())
+        if(!instance_)
         {
-            instance_.reset(new VirtualKeyboardDialog());
+            instance_ = new VirtualKeyboardDialog();
         }
-        return instance_.data();
+        return instance_;
     }
 
     ~VirtualKeyboardDialog();
@@ -45,7 +45,7 @@ private slots:
     void on_del_clicked();
 
 private:
-    static QScopedPointer<VirtualKeyboardDialog> instance_;
+    static VirtualKeyboardDialog * instance_;
     VirtualKeyboardDialog(QWidget *parent = 0);
 };
 

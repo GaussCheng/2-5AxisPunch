@@ -6,7 +6,7 @@
 
 #include <QDebug>
 
-QScopedPointer<VirtualKeyboardDialog> VirtualKeyboardDialog::instance_;
+VirtualKeyboardDialog *VirtualKeyboardDialog::instance_;
 
 VirtualKeyboardDialog::VirtualKeyboardDialog(QWidget *parent) :
     QDialog(parent),

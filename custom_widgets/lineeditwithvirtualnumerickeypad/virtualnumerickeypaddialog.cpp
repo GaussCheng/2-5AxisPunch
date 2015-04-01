@@ -6,7 +6,7 @@
 
 #include <QDebug>
 
-QScopedPointer<VirtualNumericKeypadDialog> VirtualNumericKeypadDialog::instance_;
+VirtualNumericKeypadDialog* VirtualNumericKeypadDialog::instance_;
 VirtualNumericKeypadDialog::VirtualNumericKeypadDialog(QWidget *parent) :
     QDialog(parent),
     numerickSignalMapper_(new QSignalMapper(this)),

@@ -288,15 +288,17 @@ public:
     enum ICMoldParam
     {
         point0,
-        point19 = 35, //120
+        point19 = 120, //120
         Product,
         reserve,
         check1,
         check2,
         check3,
         check4,
-
+        programUsed,
+        programInnerUsed,
         MoldParamCount
+
     };
 
     enum ICStatckParam

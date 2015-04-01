@@ -4378,23 +4378,59 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrammainpage.cpp" line="40"/>
+        <location filename="icprogrampage/icprogrammainpage.cpp" line="42"/>
         <source>Jump Program</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrammainpage.cpp" line="49"/>
+        <location filename="icprogrampage/icprogrammainpage.cpp" line="56"/>
+        <source>Get Wait</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrammainpage.cpp" line="56"/>
+        <location filename="icprogrampage/icprogrammainpage.cpp" line="59"/>
+        <source>reserve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrammainpage.cpp" line="56"/>
+        <source>Get Up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrammainpage.cpp" line="56"/>
+        <source>Get</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrammainpage.cpp" line="59"/>
+        <source>Put Wait</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrammainpage.cpp" line="59"/>
+        <source>Put Up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrammainpage.cpp" line="59"/>
+        <source>Put</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrammainpage.cpp" line="65"/>
         <source>Mould Get</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrammainpage.cpp" line="49"/>
+        <location filename="icprogrampage/icprogrammainpage.cpp" line="65"/>
         <source>Mould Put</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrammainpage.cpp" line="49"/>
-        <location filename="icprogrampage/icprogrammainpage.cpp" line="50"/>
+        <location filename="icprogrampage/icprogrammainpage.cpp" line="65"/>
+        <location filename="icprogrampage/icprogrammainpage.cpp" line="66"/>
         <source>Reserve</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4407,88 +4443,68 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.ui" line="44"/>
+        <location filename="icprogrampage/icprogrampage.ui" line="51"/>
         <source>Return</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="25"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="27"/>
         <source>UpDown</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="25"/>
-        <source>LeftRight</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="25"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="27"/>
         <source>Rotated</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="25"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="27"/>
         <source>Windup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="26"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="28"/>
         <source>Rollovers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="53"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="70"/>
         <source>Used</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="26"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="28"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="26"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="27"/>
+        <source>FrontBack</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrampage.cpp" line="28"/>
         <source>Tested</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="26"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="28"/>
         <source>Used Stoped</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="41"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="46"/>
         <source>save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="43"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="54"/>
         <source>test</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="51"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="67"/>
         <source>Skip</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="61"/>
-        <source>first</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="61"/>
-        <source>reserve</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="61"/>
-        <source>second</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="61"/>
-        <source>third</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5711,45 +5727,43 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="823"/>
-        <location filename="mainframe_8.ui" line="831"/>
+        <location filename="mainframe.ui" line="822"/>
+        <location filename="mainframe_8.ui" line="834"/>
         <source>Teach</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="842"/>
-        <location filename="mainframe_8.ui" line="856"/>
+        <location filename="mainframe.ui" line="841"/>
+        <location filename="mainframe_8.ui" line="862"/>
         <source>I/O Monitor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="880"/>
-        <location filename="mainframe_8.ui" line="906"/>
+        <location filename="mainframe.ui" line="879"/>
+        <location filename="mainframe_8.ui" line="918"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="861"/>
-        <location filename="mainframe_8.ui" line="881"/>
+        <location filename="mainframe.ui" line="860"/>
+        <location filename="mainframe_8.ui" line="890"/>
         <source>Alarm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="899"/>
-        <location filename="mainframe_8.ui" line="931"/>
-        <location filename="mainframe_8.ui" line="1030"/>
+        <location filename="mainframe.ui" line="898"/>
+        <location filename="mainframe_8.ui" line="946"/>
+        <location filename="mainframe_8.ui" line="1060"/>
         <source>Return</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="633"/>
         <location filename="mainframe.cpp" line="1109"/>
         <location filename="mainframe.cpp" line="1185"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="634"/>
         <location filename="mainframe.cpp" line="1110"/>
         <location filename="mainframe.cpp" line="1186"/>
         <source>Controlled, Can&apos;t modify!</source>
@@ -5787,22 +5801,22 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe_8.ui" line="954"/>
+        <location filename="mainframe_8.ui" line="972"/>
         <source>Base</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe_8.ui" line="973"/>
+        <location filename="mainframe_8.ui" line="994"/>
         <source>Axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe_8.ui" line="992"/>
+        <location filename="mainframe_8.ui" line="1016"/>
         <source>Servo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe_8.ui" line="1011"/>
+        <location filename="mainframe_8.ui" line="1038"/>
         <source>Update</source>
         <translation type="unfinished"></translation>
     </message>

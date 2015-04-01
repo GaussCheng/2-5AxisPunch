@@ -1,7 +1,7 @@
 #include "icprogrammainpage.h"
 #include "ui_icprogrammainpage.h"
 #include "icparameterssave.h"
-
+#include "icmold.h"
 
 
 ICProgramMainPage::ICProgramMainPage(QWidget *parent) :
@@ -52,6 +52,14 @@ ICProgramMainPage::ICProgramMainPage(QWidget *parent) :
                 SLOT(showMainProgram()));
     }
 
+    QStringList items;
+    items << tr("Get Wait") << tr("reserve") << tr("Get Up") << tr("reserve") << tr("Get");
+    programPages[0]->setItemNames(items);
+    items.clear();
+    items << tr("Put Wait") << tr("reserve") << tr("Put Up") << tr("reserve") << tr("Put");
+    programPages[1]->setItemNames(items);
+
+
 
      QStringList ql;
      ql << tr("Mould Get") << tr("Mould Put") << tr("Reserve") << tr("Reserve")
@@ -83,10 +91,10 @@ ICProgramMainPage::~ICProgramMainPage()
 
 void ICProgramMainPage::showEvent(QShowEvent *e)
 {
-    int program = ICParametersSave::Instance()->ProgramUsedFlag();
+    int used = ICMold::CurrentMold()->MoldParam(static_cast<ICMold::ICMoldParam>(ICMold::programUsed));
     for(int i=0;i < MAX_ROWS;i++){
-            usedButtons[i]->setChecked(program & ( 1 << i));
-            programButtons[i]->setEnabled(program & ( 1 << i));
+            usedButtons[i]->setChecked(used & ( 1 << i));
+            programButtons[i]->setEnabled(used & ( 1 << i));
     }
 
     ui->stackedWidget->setCurrentWidget(ui->mainPage);
@@ -98,14 +106,16 @@ void ICProgramMainPage::usedButtonClicked(bool checked)
     ICCheckedButton *button = qobject_cast<ICCheckedButton*>(sender());
     int index = usedButtons.indexOf(button);
     programButtons.at(index)->setEnabled(checked);
-    int flag = ICParametersSave::Instance()->ProgramUsedFlag();
+    int used = ICMold::CurrentMold()->MoldParam(static_cast<ICMold::ICMoldParam>(ICMold::programUsed));
     if(checked){
-        flag |= ( 1 << index);
+        used |= ( 1 << index);
     }
     else{
-        flag &= ~( 1 << index);
+        used &= ~( 1 << index);
     }
-    ICParametersSave::Instance()->SetProgramUsedFlag(flag);
+    ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(ICMold::programUsed), used);
+    ICMold::CurrentMold()->SaveMoldParamsFile();
+
 }
 
 void ICProgramMainPage::programButtonClicked()

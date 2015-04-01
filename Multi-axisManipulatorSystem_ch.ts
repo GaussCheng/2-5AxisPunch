@@ -7274,23 +7274,59 @@ Please enter an digit between </source>
         <translation>使用</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrammainpage.cpp" line="40"/>
+        <location filename="icprogrampage/icprogrammainpage.cpp" line="42"/>
         <source>Jump Program</source>
         <translation>进入编程</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrammainpage.cpp" line="49"/>
+        <location filename="icprogrampage/icprogrammainpage.cpp" line="56"/>
+        <source>Get Wait</source>
+        <translation>取待机点</translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrammainpage.cpp" line="56"/>
+        <location filename="icprogrampage/icprogrammainpage.cpp" line="59"/>
+        <source>reserve</source>
+        <translation>过渡点</translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrammainpage.cpp" line="56"/>
+        <source>Get Up</source>
+        <translation>取料上方</translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrammainpage.cpp" line="56"/>
+        <source>Get</source>
+        <translation>取料点</translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrammainpage.cpp" line="59"/>
+        <source>Put Wait</source>
+        <translation>放待机点</translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrammainpage.cpp" line="59"/>
+        <source>Put Up</source>
+        <translation>放料上方</translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrammainpage.cpp" line="59"/>
+        <source>Put</source>
+        <translation>放料点</translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrammainpage.cpp" line="65"/>
         <source>Mould Get</source>
         <translation>模内取料</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrammainpage.cpp" line="49"/>
+        <location filename="icprogrampage/icprogrammainpage.cpp" line="65"/>
         <source>Mould Put</source>
         <translation>模内放料</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrammainpage.cpp" line="49"/>
-        <location filename="icprogrampage/icprogrammainpage.cpp" line="50"/>
+        <location filename="icprogrampage/icprogrammainpage.cpp" line="65"/>
+        <location filename="icprogrampage/icprogrammainpage.cpp" line="66"/>
         <source>Reserve</source>
         <translation>预留</translation>
     </message>
@@ -7303,89 +7339,89 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.ui" line="44"/>
+        <location filename="icprogrampage/icprogrampage.ui" line="51"/>
         <source>Return</source>
         <translation>返回主编程页面</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="25"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="27"/>
         <source>UpDown</source>
         <translation>上下轴</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="25"/>
         <source>LeftRight</source>
-        <translation>前后轴</translation>
+        <translation type="obsolete">前后轴</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="25"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="27"/>
         <source>Rotated</source>
         <translation>旋转轴</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="25"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="27"/>
         <source>Windup</source>
         <translation>摆臂轴</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="26"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="28"/>
         <source>Rollovers</source>
-        <translation>翻转轴</translation>
+        <translation>校正轴</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="53"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="70"/>
         <source>Used</source>
         <translation>使用</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="26"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="28"/>
         <source>Save</source>
         <translation>坐标保存</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="26"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="27"/>
+        <source>FrontBack</source>
+        <translation>前后轴</translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrampage.cpp" line="28"/>
         <source>Tested</source>
         <translation>定位测试</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="26"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="28"/>
         <source>Used Stoped</source>
         <translation>使用禁止</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="41"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="46"/>
         <source>save</source>
         <translation>保存</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="43"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="54"/>
         <source>test</source>
         <translation>测试</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="51"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="67"/>
         <source>Skip</source>
         <translation>跳过</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="61"/>
         <source>first</source>
-        <translation>取料待机点</translation>
+        <translation type="obsolete">取料待机点</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="61"/>
         <source>reserve</source>
-        <translation>过渡点</translation>
+        <translation type="obsolete">过渡点</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="61"/>
         <source>second</source>
-        <translation>取料上方</translation>
+        <translation type="obsolete">取料上方</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="61"/>
         <source>third</source>
-        <translation>取料点</translation>
+        <translation type="obsolete">取料点</translation>
     </message>
 </context>
 <context>
@@ -9189,20 +9225,20 @@ Would you want to restart now?</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="823"/>
-        <location filename="mainframe_8.ui" line="831"/>
+        <location filename="mainframe.ui" line="822"/>
+        <location filename="mainframe_8.ui" line="834"/>
         <source>Teach</source>
         <translation>编程</translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="842"/>
-        <location filename="mainframe_8.ui" line="856"/>
+        <location filename="mainframe.ui" line="841"/>
+        <location filename="mainframe_8.ui" line="862"/>
         <source>I/O Monitor</source>
         <translation>I/O监视</translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="880"/>
-        <location filename="mainframe_8.ui" line="906"/>
+        <location filename="mainframe.ui" line="879"/>
+        <location filename="mainframe_8.ui" line="918"/>
         <source>Settings</source>
         <translation>功能</translation>
     </message>
@@ -9267,8 +9303,8 @@ Would you want to restart now?</source>
         <translation type="obsolete">档案</translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="861"/>
-        <location filename="mainframe_8.ui" line="881"/>
+        <location filename="mainframe.ui" line="860"/>
+        <location filename="mainframe_8.ui" line="890"/>
         <source>Alarm</source>
         <translation>报警</translation>
     </message>
@@ -9285,14 +9321,13 @@ Would you want to restart now?</source>
         <translation type="obsolete">巨集参数从异常中恢复，请先检查巨集参数！</translation>
     </message>
     <message>
-        <location filename="mainframe.ui" line="899"/>
-        <location filename="mainframe_8.ui" line="931"/>
-        <location filename="mainframe_8.ui" line="1030"/>
+        <location filename="mainframe.ui" line="898"/>
+        <location filename="mainframe_8.ui" line="946"/>
+        <location filename="mainframe_8.ui" line="1060"/>
         <source>Return</source>
         <translation>返回</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="634"/>
         <location filename="mainframe.cpp" line="1110"/>
         <location filename="mainframe.cpp" line="1186"/>
         <source>Controlled, Can&apos;t modify!</source>
@@ -9309,7 +9344,6 @@ Would you want to restart now?</source>
         <translation type="obsolete">手动</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="633"/>
         <location filename="mainframe.cpp" line="1109"/>
         <location filename="mainframe.cpp" line="1185"/>
         <source>Warning</source>
@@ -9361,22 +9395,22 @@ Would you want to restart now?</source>
         <translation>T校正:</translation>
     </message>
     <message>
-        <location filename="mainframe_8.ui" line="954"/>
+        <location filename="mainframe_8.ui" line="972"/>
         <source>Base</source>
         <translation>手控</translation>
     </message>
     <message>
-        <location filename="mainframe_8.ui" line="973"/>
+        <location filename="mainframe_8.ui" line="994"/>
         <source>Axis</source>
         <translation>机械</translation>
     </message>
     <message>
-        <location filename="mainframe_8.ui" line="992"/>
+        <location filename="mainframe_8.ui" line="1016"/>
         <source>Servo</source>
         <translation>伺服</translation>
     </message>
     <message>
-        <location filename="mainframe_8.ui" line="1011"/>
+        <location filename="mainframe_8.ui" line="1038"/>
         <source>Update</source>
         <translation>升级</translation>
     </message>
