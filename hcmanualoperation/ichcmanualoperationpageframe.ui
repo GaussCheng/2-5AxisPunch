@@ -51,16 +51,7 @@
       <string>Binary</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
-      <property name="leftMargin">
-       <number>0</number>
-      </property>
-      <property name="topMargin">
-       <number>0</number>
-      </property>
-      <property name="rightMargin">
-       <number>0</number>
-      </property>
-      <property name="bottomMargin">
+      <property name="margin">
        <number>0</number>
       </property>
       <item>
@@ -504,20 +495,11 @@ border-style: none;
       <string>Position</string>
      </property>
      <layout class="QGridLayout" name="gridLayout">
-      <property name="leftMargin">
-       <number>0</number>
-      </property>
-      <property name="topMargin">
-       <number>0</number>
-      </property>
-      <property name="rightMargin">
-       <number>0</number>
-      </property>
-      <property name="bottomMargin">
-       <number>0</number>
-      </property>
       <property name="verticalSpacing">
        <number>2</number>
+      </property>
+      <property name="margin">
+       <number>0</number>
       </property>
       <item row="2" column="3">
        <widget class="QLabel" name="label_15">
@@ -1090,16 +1072,7 @@ color: rgb(97, 97, 97);
    </widget>
    <widget class="QWidget" name="tabWidgetPage2">
     <layout class="QGridLayout" name="gridLayout_3">
-     <property name="leftMargin">
-      <number>2</number>
-     </property>
-     <property name="topMargin">
-      <number>2</number>
-     </property>
-     <property name="rightMargin">
-      <number>2</number>
-     </property>
-     <property name="bottomMargin">
+     <property name="margin">
       <number>2</number>
      </property>
      <property name="spacing">
@@ -1844,7 +1817,7 @@ color: rgb(97, 97, 97);
      <x>0</x>
      <y>290</y>
      <width>640</width>
-     <height>31</height>
+     <height>33</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
@@ -4254,9 +4227,9 @@ color: rgb(97, 97, 97);
  <resources/>
  <connections/>
  <buttongroups>
+  <buttongroup name="actionGroup"/>
   <buttongroup name="buttonGroup_2"/>
   <buttongroup name="buttonGroup"/>
   <buttongroup name="shortcutGroup"/>
-  <buttongroup name="actionGroup"/>
  </buttongroups>
 </ui>

@@ -27,9 +27,10 @@ typedef struct{
    qint16 s;
    qint16 r;
    qint16 t;
-} ICPoint;
+} ICPoint_;
 
-typedef QSharedPointer<ICPoint>  PointPtr;
+typedef QSharedPointer<ICPoint_>  PointPtr;
+typedef QSharedPointer<ICMoldItem>  MoldItemPtr;
 
 
 class ICProgramPage : public QWidget
@@ -40,11 +41,28 @@ public:
     explicit ICProgramPage(QWidget *parent = 0,int pageIndex = 0);
     void setItemNames(QStringList & contents);
     QList<PointPtr> GT_Points();
+    QList<MoldItemPtr> GT_Items();
+    QList<MoldItemPtr> GT_Pos(int pos);
+
+
     PointPtr MK_Point(qint16 x,qint16 y,qint16 s,qint16 r,qint16 t);
+    MoldItemPtr MK_MoldItem(uint seq,
+                            uint num,
+                            uint8_t subNum,
+                            uint gmVal,
+                            uint pos,
+                            uint ifVal,
+                            uint ifPos,
+                            uint sVal,
+                            uint dVal,
+                            uint sum);
+
+    void InitFixMoldItems();
     ~ICProgramPage();
 
 protected:
     void showEvent(QShowEvent *);
+    void hideEvent(QHideEvent *);
     
 signals:
     void returnProgram();
@@ -73,6 +91,19 @@ private:
     ICVirtualHost *_host;
     int _index;
     QList<PointPtr> allPoints;
+    QList<MoldItemPtr> allItems;
+
+
+    MoldItemPtr waitM10;
+    MoldItemPtr outY37On;
+    MoldItemPtr outM11;
+    MoldItemPtr waitM12;
+    MoldItemPtr outY37Off;
+    MoldItemPtr outY31On;
+    MoldItemPtr outY31Off;
+    MoldItemPtr waitM14;
+    MoldItemPtr outPermit;
+
 
 };
 

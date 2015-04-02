@@ -156,8 +156,9 @@ static uint8_t table_crc_lo[] = {
 /* Treats errors and flush or close connection if necessary */
 static void error_treat(modbus_param_t *mb_param, int code, const char *string)
 {
+#ifdef Q_WS_QWS
 	printf("\nERROR %s (%d)\n", string, code);
-
+#endif
 	if (mb_param->error_handling == FLUSH_OR_RECONNECT_ON_ERROR) {
 		switch (code) {
 		case ILLEGAL_DATA_VALUE:
@@ -1864,7 +1865,9 @@ int hc_query_status(modbus_param_t *mb_param, int slave, int start_addr, int nb,
     int ret = select(mb_param->fd + 1, &readFD, NULL, NULL, &tv);
     if(ret == 0)
     {
+#ifdef Q_WS_QWS
         printf("Query Timeout!!\n");
+#endif
         ret = -1;
         goto Send;
     }

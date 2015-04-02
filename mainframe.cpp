@@ -542,7 +542,7 @@ void MainFrame::InitCategoryPage()
 
 
     emit LoadMessage("Start to Initialize instruct pages");
-    instructPage_ = new ICProgramMainPage();
+    instructPage_ = new ICProgramMainPage();//ICHCInstructionPageFrame  ICProgramMainPage
     functionButtonToPage_.insert(ui->teachButton, instructPage_);
     centerStackedLayout_->addWidget(instructPage_);
 

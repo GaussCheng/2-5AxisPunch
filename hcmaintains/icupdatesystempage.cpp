@@ -93,7 +93,8 @@ ICUpdateSystemPage::~ICUpdateSystemPage()
     {
         delete updateHostSettings_;
     }
-
+    delete updateSystem_;
+    delete model_;
 }
 
 void ICUpdateSystemPage::changeEvent(QEvent *e)

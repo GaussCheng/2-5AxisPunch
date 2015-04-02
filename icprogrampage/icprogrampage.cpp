@@ -17,6 +17,7 @@ ICProgramPage::ICProgramPage(QWidget *parent,int _pageIndex) :
 
     InitTableWidget();
     InitPoints();
+    InitFixMoldItems();
 }
 
 void ICProgramPage::setItemNames(QStringList &contents)
@@ -47,6 +48,69 @@ QList<PointPtr> ICProgramPage::GT_Points()
     return allPoints;
 }
 
+QList<MoldItemPtr> ICProgramPage::GT_Items()
+{
+    QList<MoldItemPtr> items;
+    bool reserve_1 = reserveButtons[0]->isChecked();
+    bool reserve_2 = reserveButtons[1]->isChecked();
+
+    if(_index == 0){
+        items << GT_Pos(_index * MAX_POINTS + 0);      //取料待机点
+        items << waitM10;
+        if(reserve_1)
+            items << GT_Pos(_index * MAX_POINTS + 1);      //过渡点1
+        items << GT_Pos(_index * MAX_POINTS + 2);          //取料上方
+        if(reserve_2)
+            items << GT_Pos(_index * MAX_POINTS + 3);      //过渡点2
+        items << GT_Pos(_index * MAX_POINTS + 4);          //取料位点
+        items << outY37On;
+        if(reserve_2)
+            items << GT_Pos(_index * MAX_POINTS + 3);      //过渡点2
+        items << GT_Pos(_index * MAX_POINTS + 2);          //取料上方
+    }
+    else if(_index == 1){//放料
+        items << GT_Pos(_index * MAX_POINTS + 0);          //放料待机点
+        items << outM11;
+        items << waitM12;
+        if(reserve_1)
+            items << GT_Pos(_index * MAX_POINTS + 1);      //过渡点1
+        items << GT_Pos(_index * MAX_POINTS + 2);          //放料上方
+        if(reserve_2)
+            items << GT_Pos(_index * MAX_POINTS + 3);      //过渡点2
+        items << GT_Pos(_index * MAX_POINTS + 4);          //放料位点
+        items << outY37Off;
+        if(reserve_2)
+            items << GT_Pos(_index * MAX_POINTS + 3);      //过渡点2
+        items << GT_Pos(_index * MAX_POINTS + 2);          //放料上方
+        if(reserve_1)
+            items << GT_Pos(_index * MAX_POINTS + 1);      //过渡点1
+        items << GT_Pos(_index * MAX_POINTS + 0);          //放料待机点
+
+        items <<  outY31On; //喷油
+        items <<  outY31Off;
+
+        items <<  waitM14;
+        items <<  outPermit;
+
+    }
+    else{
+        //预留
+    }
+
+    return items;
+}
+
+QList<MoldItemPtr> ICProgramPage::GT_Pos(int pos)
+{
+    QList<MoldItemPtr> items;
+    items << MK_MoldItem(1,1,pos,22,0,64,2,80,0,172)  //3D教导
+        << MK_MoldItem(2,1,pos,22,0,64,1,80,0,174)
+        << MK_MoldItem(3,1,pos,22,0,64,3,80,0,176)
+        << MK_MoldItem(4,1,pos,22,0,64,4,80,0,178)
+        << MK_MoldItem(5,1,pos,22,0,64,5,80,0,180);
+    return items;
+}
+
 ICProgramPage::~ICProgramPage()
 {
     delete ui;
@@ -54,17 +118,6 @@ ICProgramPage::~ICProgramPage()
 
 void ICProgramPage::showEvent(QShowEvent *e)
 {
-    QList<PointPtr> p = GT_Points();
-
-
-    int used = ICMold::CurrentMold()->MoldParam(static_cast<ICMold::ICMoldParam>(ICMold::programInnerUsed));
-
-    for(int i=0;i<MAX_POINTS - 3;i++){
-        reserveButtons[i]->setChecked(used & ( 1 << (_index * 2 +  i)));
-        saveButtons[reserveIndexs[i] -1]->setEnabled(used & ( 1 << (_index * 2 +  i)));
-        testButtons[reserveIndexs[i] -1]->setEnabled(used & ( 1 << (_index * 2 +  i)));
-    }
-
     //隐藏列
     for(int i=0;i < AXIS_COUNTS;i++){
         if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisX1 + i)) != ICVirtualHost::ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisX1)))
@@ -81,6 +134,13 @@ void ICProgramPage::showEvent(QShowEvent *e)
     QWidget::showEvent(e);
 }
 
+void ICProgramPage::hideEvent(QHideEvent *e)
+{
+    ICMold::CurrentMold()->SaveMoldParamsFile();
+    QWidget::hideEvent(e);
+
+}
+
 void ICProgramPage::itemClicked(QTableWidgetItem *item)
 {
     if((item->row() >0 && item->row() < MAX_POINTS + 1)  &&
@@ -91,13 +151,13 @@ void ICProgramPage::itemClicked(QTableWidgetItem *item)
             _dialog->exec();
         }
 
+
         QString text = _dialog->GetCurrentText();
-        if(!text.isEmpty())
+        if(!text.isEmpty() && (text != item->text())){
             item->setText(text);
-
+            ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(_index * 6 * MAX_POINTS + (item->row() - 1) * 6 + (item->column() - 1) ),text.remove(".").toInt());
+        }
     }
-
-
 
 }
 
@@ -109,6 +169,7 @@ void ICProgramPage::saveButtonsCliked()
     for(int i=0; i < AXIS_COUNTS;i++){
         int16_t pos = _host->HostStatus(ICVirtualHost::ICStatus(ICVirtualHost::XPos + i)).toInt();
         ui->tableWidget->item(index+1,1+i)->setText(QString::number(pos / 10.0, 'f', 1));
+        ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(_index * 6 * MAX_POINTS + index * 6 + i),pos);
 
     }
 }
@@ -132,7 +193,7 @@ void ICProgramPage::usedButtonsClicked(bool checked)
         used &= ~(1 <<  (_index * 2 +  index));
     }
     ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(ICMold::programInnerUsed), used);
-    ICMold::CurrentMold()->SaveMoldParamsFile();
+//    ICMold::CurrentMold()->SaveMoldParamsFile();
 
     if(checked){
         saveButtons[reserveIndexs[index] -1]->setEnabled(true);
@@ -245,6 +306,15 @@ void ICProgramPage::InitTableWidget()
 
 void ICProgramPage::InitPoints()
 {
+    int used = ICMold::CurrentMold()->MoldParam(static_cast<ICMold::ICMoldParam>(ICMold::programInnerUsed));
+
+    for(int i=0;i<MAX_POINTS - 3;i++){
+        reserveButtons[i]->setChecked(used & ( 1 << (_index * 2 +  i)));
+        saveButtons[reserveIndexs[i] -1]->setEnabled(used & ( 1 << (_index * 2 +  i)));
+        testButtons[reserveIndexs[i] -1]->setEnabled(used & ( 1 << (_index * 2 +  i)));
+    }
+
+
     for(int i=0;i<MAX_POINTS;i++){
         ui->tableWidget->item(i+1,1)->setText(QString::number(allPoints[i]->x / 10.0, 'f', 1));
         ui->tableWidget->item(i+1,2)->setText(QString::number(allPoints[i]->y / 10.0, 'f', 1));
@@ -257,7 +327,7 @@ void ICProgramPage::InitPoints()
 
 PointPtr ICProgramPage::MK_Point(qint16 x, qint16 y, qint16 s, qint16 r, qint16 t)
 {
-    PointPtr p(new ICPoint);
+    PointPtr p(new ICPoint_);
     p->x = x;
     p->y = y;
     p->s = s;
@@ -265,4 +335,36 @@ PointPtr ICProgramPage::MK_Point(qint16 x, qint16 y, qint16 s, qint16 r, qint16 
     p->t = t;
 
     return p;
+}
+
+MoldItemPtr ICProgramPage::MK_MoldItem(uint seq, uint num, uint8_t subNum, uint gmVal, uint pos, uint ifVal, uint ifPos, uint sVal, uint dVal, uint sum)
+{
+    MoldItemPtr p(new ICMoldItem);
+    p->SetSeq(seq);
+    p->SetNum(num);
+    p->SetSubNum(subNum);
+    p->SetGMVal(gmVal);
+    p->SetPos(pos);
+    p->SetIFVal(ifVal);
+    p->SetIFPos(ifPos);
+    p->SetSVal(sVal);
+    p->SetDVal(dVal);
+
+
+    return p;
+
+}
+
+void ICProgramPage::InitFixMoldItems()
+{
+    waitM10   = MK_MoldItem(6,2,0,24,0,1,0,0,0,33);
+    outY37On  = MK_MoldItem(7,3,23,11,0,1,0,0,0,45);
+    outM11    = MK_MoldItem(8,4,1,25,0,1,0,0,30000,204);
+    waitM12   = MK_MoldItem(9,5,2,25,0,1,0,0,30000,207);
+    outY37Off = MK_MoldItem(10,6,23,11,0,0,0,0,0,50);
+    outY31On  = MK_MoldItem(11,7,17,11,0,1,0,0,0,47);
+    outY31Off = MK_MoldItem(12,8,17,11,0,0,0,0,50,98);
+    waitM14   = MK_MoldItem(13,9,4,24,0,1,0,0,3000,246);
+    outPermit = MK_MoldItem(14,10,3,25,0,1,0,0,50,103);
+
 }

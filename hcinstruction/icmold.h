@@ -414,6 +414,7 @@ public:
     explicit ICMold(QObject *parent = 0);
 
     static ICMold* CurrentMold() { return currentMold_;}
+    QString MoldName() { return moldName_;}
     static void SetCurrentMold(ICMold* mold) { currentMold_ = mold;}
 
     uint SyncAct() const;

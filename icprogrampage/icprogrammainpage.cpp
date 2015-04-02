@@ -2,7 +2,7 @@
 #include "ui_icprogrammainpage.h"
 #include "icparameterssave.h"
 #include "icmold.h"
-
+#include "icfile.h"
 
 ICProgramMainPage::ICProgramMainPage(QWidget *parent) :
     QWidget(parent),
@@ -56,7 +56,7 @@ ICProgramMainPage::ICProgramMainPage(QWidget *parent) :
     items << tr("Get Wait") << tr("reserve") << tr("Get Up") << tr("reserve") << tr("Get");
     programPages[0]->setItemNames(items);
     items.clear();
-    items << tr("Put Wait") << tr("reserve") << tr("Put Up") << tr("reserve") << tr("Put");
+    items << tr("Put Wait") << tr("reserve") << tr("Put Up") << tr("reserve")  << tr("Put");
     programPages[1]->setItemNames(items);
 
 
@@ -65,6 +65,7 @@ ICProgramMainPage::ICProgramMainPage(QWidget *parent) :
      ql << tr("Mould Get") << tr("Mould Put") << tr("Reserve") << tr("Reserve")
            << tr("Reserve") << tr("Reserve") << tr("Reserve") << tr("Reserve");
      setVerticalNames(ql);
+     oldUsed  = ICMold::CurrentMold()->MoldParam(static_cast<ICMold::ICMoldParam>(ICMold::programInnerUsed));
 
 }
 
@@ -101,6 +102,14 @@ void ICProgramMainPage::showEvent(QShowEvent *e)
     QWidget::showEvent(e);
 }
 
+void ICProgramMainPage::hideEvent(QHideEvent *e)
+{
+    if(MoldChanged()){
+        qDebug() << "SaveProgramToFiles: " << SaveProgramToFiles(GT_AllItems());
+    }
+    QWidget::hideEvent(e);
+}
+
 void ICProgramMainPage::usedButtonClicked(bool checked)
 {
     ICCheckedButton *button = qobject_cast<ICCheckedButton*>(sender());
@@ -130,4 +139,64 @@ void ICProgramMainPage::programButtonClicked()
 void ICProgramMainPage::showMainProgram()
 {
     ui->stackedWidget->setCurrentWidget(ui->mainPage);
+}
+
+QList<MoldItemPtr> ICProgramMainPage::GT_AllItems()
+{
+    return GT_CalculateItem(programPages[0]->GT_Items()  +  programPages[1]->GT_Items());
+}
+
+bool ICProgramMainPage::SaveProgramToFiles(QList<MoldItemPtr> items)
+{
+    bool ret = false;
+    MoldReSum(items);
+    QByteArray toWrite;
+
+    for(int i = 0; i != items.size(); ++i)
+    {
+        toWrite += items.at(i)->ToString() + "\n";
+    }
+    ICFile file(ICMold::CurrentMold()->MoldName()+"_bak");
+    ret = file.ICWrite(toWrite);
+    return ret;
+}
+
+void ICProgramMainPage::MoldReSum(QList<MoldItemPtr> items)
+{
+    int seq = 0;
+    for(int i = 0; i != items.size(); ++i)
+    {
+        items[i]->SetSeq(seq);
+        items[i]->ReSum();
+        ++seq;
+    }
+}
+
+bool ICProgramMainPage::MoldChanged()
+{
+    if(oldUsed != _MoldParam(ICMold::programInnerUsed) ){
+        oldUsed =_MoldParam(ICMold::programInnerUsed);
+        return true;
+    }
+}
+
+QList<MoldItemPtr> ICProgramMainPage::GT_CalculateItem(QList<MoldItemPtr> items)
+{
+    int oldNum = 0;
+    //计算num
+    for(int i=0;i<items.size();i++){
+        if(items.at(i)->GMVal() == ICMold::GARC){
+            items.at(i)->SetNum(oldNum);
+            if(items.at(i)->IFPos()  == 5){
+                oldNum ++;
+            }
+        }
+        else{
+            items.at(i)->SetNum(oldNum);
+            oldNum ++;
+        }
+    }
+
+
+   return items;
 }
