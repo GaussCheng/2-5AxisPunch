@@ -158,6 +158,19 @@ public:
     QString Comment() const { return comment_;}
     void SetComment(const QString& comment) { comment_ = comment;}
 
+    bool operator == (const ICMoldItem &t)const{
+        return ((seq_ == t.seq_) &&
+                (num_ == t.num_) &&
+                (subNum_ == t.subNum_) &&
+                (gmVal_ == t.gmVal_) &&
+                (pos_ == t.pos_) &&
+                (ifVal_ == t.ifVal_) &&
+                (ifPos_ == t.ifPos_) &&
+                (sVal_ == t.sVal_) &&
+                (dVal_ == t.dVal_));
+    }
+
+
 private:
     uint seq_;
     uint num_;
@@ -297,8 +310,10 @@ public:
         check2,
         check3,
         check4,
-        programUsed,
-        programInnerUsed,
+        getPointCount,
+        getPointConfig,
+        putPointCount,
+        putPointConfig,
         MoldParamCount
 
     };

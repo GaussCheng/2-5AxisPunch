@@ -52,20 +52,12 @@ ICProgramMainPage::ICProgramMainPage(QWidget *parent) :
                 SLOT(showMainProgram()));
     }
 
-    QStringList items;
-    items << tr("Get Wait") << tr("reserve") << tr("Get Up") << tr("reserve") << tr("Get");
-    programPages[0]->setItemNames(items);
-    items.clear();
-    items << tr("Put Wait") << tr("reserve") << tr("Put Up") << tr("reserve")  << tr("Put");
-    programPages[1]->setItemNames(items);
-
-
 
      QStringList ql;
      ql << tr("Mould Get") << tr("Mould Put") << tr("Reserve") << tr("Reserve")
            << tr("Reserve") << tr("Reserve") << tr("Reserve") << tr("Reserve");
      setVerticalNames(ql);
-     oldUsed  = ICMold::CurrentMold()->MoldParam(static_cast<ICMold::ICMoldParam>(ICMold::programInnerUsed));
+//     oldUsed  = ICMold::CurrentMold()->MoldParam(static_cast<ICMold::ICMoldParam>(ICMold::programInnerUsed));
 
 }
 
@@ -92,11 +84,6 @@ ICProgramMainPage::~ICProgramMainPage()
 
 void ICProgramMainPage::showEvent(QShowEvent *e)
 {
-    int used = ICMold::CurrentMold()->MoldParam(static_cast<ICMold::ICMoldParam>(ICMold::programUsed));
-    for(int i=0;i < MAX_ROWS;i++){
-            usedButtons[i]->setChecked(used & ( 1 << i));
-            programButtons[i]->setEnabled(used & ( 1 << i));
-    }
 
     ui->stackedWidget->setCurrentWidget(ui->mainPage);
     QWidget::showEvent(e);
@@ -104,9 +91,10 @@ void ICProgramMainPage::showEvent(QShowEvent *e)
 
 void ICProgramMainPage::hideEvent(QHideEvent *e)
 {
-    if(MoldChanged()){
-        ICMold::CurrentMold()->SetMoldContent(GT_AllItems());
-        qDebug() << "SaveProgramToFiles: " << ICMold::CurrentMold()->SaveMoldFile();
+    QList<ICMoldItem> items = GT_AllMoldItems();
+    if(MoldChanged(items)){
+        ICMold::CurrentMold()->SetMoldContent(items);
+        qDebug() << "SaveProgramToFiles: " << ICMold::CurrentMold()->SaveMoldFile(false);
         ICVirtualHost::GlobalVirtualHost()->ReConfigure();
 
     }
@@ -118,15 +106,6 @@ void ICProgramMainPage::usedButtonClicked(bool checked)
     ICCheckedButton *button = qobject_cast<ICCheckedButton*>(sender());
     int index = usedButtons.indexOf(button);
     programButtons.at(index)->setEnabled(checked);
-    int used = ICMold::CurrentMold()->MoldParam(static_cast<ICMold::ICMoldParam>(ICMold::programUsed));
-    if(checked){
-        used |= ( 1 << index);
-    }
-    else{
-        used &= ~( 1 << index);
-    }
-    ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(ICMold::programUsed), used);
-    ICMold::CurrentMold()->SaveMoldParamsFile();
 
 }
 
@@ -144,15 +123,18 @@ void ICProgramMainPage::showMainProgram()
     ui->stackedWidget->setCurrentWidget(ui->mainPage);
 }
 
-QList<ICMoldItem> ICProgramMainPage::GT_AllItems()
+QList<ICMoldItem> ICProgramMainPage::GT_AllMoldItems()
 {
     QList<ICMoldItem> items;
-    items = programPages[0]->GT_Items()  +  programPages[1]->GT_Items();
+    items = programPages[0]->GT_MoldItems()
+            +  programPages[1]->GT_MoldItems()
+            +  programPages[0]->GT_TailMoldItems();
     GT_CalculateItem(items);
+    ICMold::MoldReSum(items);
     return items;
 }
 
-void ICProgramMainPage::GT_CalculateItem(QList<ICMoldItem> items)
+void ICProgramMainPage::GT_CalculateItem(QList<ICMoldItem>& items)
 {
     uint oldNum = 0;
     //计算num
@@ -167,14 +149,22 @@ void ICProgramMainPage::GT_CalculateItem(QList<ICMoldItem> items)
             items[i].SetNum(oldNum);
             oldNum ++;
         }
+
     }
 }
 
 
-bool ICProgramMainPage::MoldChanged()
+bool ICProgramMainPage::MoldChanged(QList<ICMoldItem>& items)
 {
-    if(oldUsed != _MoldParam(ICMold::programInnerUsed) ){
-        oldUsed =_MoldParam(ICMold::programInnerUsed);
+    QList<ICMoldItem> oldItems = ICMold::CurrentMold()->MoldContent();
+    if(items.size() != oldItems.size()){
         return true;
     }
+    for(int i=0;i<items.size();i++){
+        if(!(items.at(i) == oldItems.at(i))){
+            return true;
+        }
+    }
+
+    return false;
 }

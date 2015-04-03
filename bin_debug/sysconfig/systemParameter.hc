@@ -2,7 +2,7 @@
 moldName=fyk.act
 
 [SystemMachine]
-BootDatetime=@Variant(\0\0\0\x10\0%~\x1c\x2\x6\x1)\0)
+BootDatetime=@Variant(\0\0\0\x10\0%~\x1c\x3\xd9\xea\x80\0)
 
 [ProductConfig]
 KeyTone=true

@@ -3,7 +3,8 @@
 #include <QDebug>
 #include "icparameterssave.h"
 #include "icmold.h"
-
+#include <QMessageBox>
+#include "moldinformation.h"
 
 
 ICProgramPage::ICProgramPage(QWidget *parent,int _pageIndex) :
@@ -13,94 +14,48 @@ ICProgramPage::ICProgramPage(QWidget *parent,int _pageIndex) :
 {
     ui->setupUi(this);
     _dialog =  VirtualNumericKeypadDialog::Instance();
+    _typeDialog = new ICPointType(this);
     _host = ICVirtualHost::GlobalVirtualHost();
 
     InitTableWidget();
-    InitPoints();
+    InitPoint();
     InitFixMoldItems();
+    InitPointToItem();
+    connect(MoldInformation::Instance(),SIGNAL(MoldChanged(QString)),
+            SLOT(MoldChanged(QString)));
 }
 
-void ICProgramPage::setItemNames(QStringList &contents)
-{
-    Q_ASSERT(contents.size() == MAX_POINTS);
-    for(int i = 0 ;i < MAX_POINTS;i++){
-        if(ui->tableWidget->item(i+1,0)){
-            ui->tableWidget->item(i+1,0)->setText(contents.at(i));
 
-        }
-        else{
-            QTableWidgetItem * item = new QTableWidgetItem(contents.at(i));
-            item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-            ui->tableWidget->setItem(i+1,0,item);
-        }
-    }
-}
-
-QList<PointPtr> ICProgramPage::GT_Points()
-{
-    for(int i=0;i<MAX_POINTS;i++){
-        allPoints[i]->x = ui->tableWidget->item(i+1,1)->text().remove(".").toInt();
-        allPoints[i]->y = ui->tableWidget->item(i+1,2)->text().remove(".").toInt();
-        allPoints[i]->s = ui->tableWidget->item(i+1,3)->text().remove(".").toInt();
-        allPoints[i]->r = ui->tableWidget->item(i+1,4)->text().remove(".").toInt();
-        allPoints[i]->t = ui->tableWidget->item(i+1,5)->text().remove(".").toInt();
-    }
-    return allPoints;
-}
-
-QList<ICMoldItem> ICProgramPage::GT_Items()
+QList<ICMoldItem> ICProgramPage::GT_MoldItems()
 {
     QList<ICMoldItem> items;
-    bool reserve_1 = reserveButtons[0]->isChecked();
-    bool reserve_2 = reserveButtons[1]->isChecked();
+    QList<ICMoldItem> fixItems;
 
-    if(_index == 0){
-        items << GT_Pos(_index * MAX_POINTS + 0);      //取料待机点
-        items << waitM10;
-        if(reserve_1)
-            items << GT_Pos(_index * MAX_POINTS + 1);      //过渡点1
-        items << GT_Pos(_index * MAX_POINTS + 2);          //取料上方
-        if(reserve_2)
-            items << GT_Pos(_index * MAX_POINTS + 3);      //过渡点2
-        items << GT_Pos(_index * MAX_POINTS + 4);          //取料位点
-        items << outY37On;
-        if(reserve_2)
-            items << GT_Pos(_index * MAX_POINTS + 3);      //过渡点2
-        items << GT_Pos(_index * MAX_POINTS + 2);          //取料上方
-    }
-    else if(_index == 1){//放料
-        items << GT_Pos(_index * MAX_POINTS + 0);          //放料待机点
-        items << outM11;
-        items << waitM12;
-        if(reserve_1)
-            items << GT_Pos(_index * MAX_POINTS + 1);      //过渡点1
-        items << GT_Pos(_index * MAX_POINTS + 2);          //放料上方
-        if(reserve_2)
-            items << GT_Pos(_index * MAX_POINTS + 3);      //过渡点2
-        items << GT_Pos(_index * MAX_POINTS + 4);          //放料位点
-        items << outY37Off;
-        if(reserve_2)
-            items << GT_Pos(_index * MAX_POINTS + 3);      //过渡点2
-        items << GT_Pos(_index * MAX_POINTS + 2);          //放料上方
-        if(reserve_1)
-            items << GT_Pos(_index * MAX_POINTS + 1);      //过渡点1
-        items << GT_Pos(_index * MAX_POINTS + 0);          //放料待机点
-
-        items <<  outY31On; //喷油
-        items <<  outY31Off;
-
-        items <<  waitM14;
-        items <<  outPermit;
-
-    }
-    else{
-        //预留
+    for(int i=0;i < ui->tableWidget->rowCount() -1;i++){
+        items += MK_PosItem(i);
+        fixItems = pointToItem.value(pointTypes.at(i));
+        if(fixItems.size()){
+            items += fixItems;
+        }
     }
 
     return items;
 }
 
-QList<ICMoldItem> ICProgramPage::GT_Pos(int pos)
+QList<ICMoldItem> ICProgramPage::GT_HeaderItems()
+{
+    QList<ICMoldItem> items;
+    return items;
+}
+
+QList<ICMoldItem> ICProgramPage::GT_TailMoldItems()
+{
+    QList<ICMoldItem> items;
+    items << MK_MoldItem(5,5,255,32,0,0,0,0,0,42);
+    return items;
+}
+
+QList<ICMoldItem> ICProgramPage::MK_PosItem(int pos)
 {
     QList<ICMoldItem> items;
     items << MK_MoldItem(1,1,pos,22,0,64,2,80,0,172)  //3D教导
@@ -143,21 +98,24 @@ void ICProgramPage::hideEvent(QHideEvent *e)
 
 void ICProgramPage::itemClicked(QTableWidgetItem *item)
 {
-    if((item->row() >0 && item->row() < MAX_POINTS + 1)  &&
-        (item->column() >0 && item->column() < 6)){
+//    if((item->row() >=0 && item->row() < ui->tableWidget->rowCount() -1)  &&
+//        (item->column() >0 && item->column() < AXIS_COUNTS + 1)){
 
-        if(!_dialog->isVisible()){
-            _dialog->move(200,200);
-            _dialog->exec();
-        }
+//        if(!_dialog->isVisible()){
+//            _dialog->move(200,200);
+//            _dialog->exec();
+//        }
 
 
-        QString text = _dialog->GetCurrentText();
-        if(!text.isEmpty() && (text != item->text())){
-            item->setText(text);
-            ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(_index * 6 * MAX_POINTS + (item->row() - 1) * 6 + (item->column() - 1) ),text.remove(".").toInt());
-        }
-    }
+//        QString text = _dialog->GetCurrentText();
+
+//        if(!text.isEmpty() && (text != item->text())){
+//            if(!text.contains(QChar('.'))){
+//                text += ".0";
+//            }
+//            item->setText(text);
+//        }
+//    }
 
 }
 
@@ -168,7 +126,7 @@ void ICProgramPage::saveButtonsCliked()
 
     for(int i=0; i < AXIS_COUNTS;i++){
         int16_t pos = _host->HostStatus(ICVirtualHost::ICStatus(ICVirtualHost::XPos + i)).toInt();
-        ui->tableWidget->item(index+1,1+i)->setText(QString::number(pos / 10.0, 'f', 1));
+        ui->tableWidget->item(index,1+i)->setText(QString::number(pos / 10.0, 'f', 1));
         ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(_index * 6 * MAX_POINTS + index * 6 + i),pos);
 
     }
@@ -179,37 +137,6 @@ void ICProgramPage::testButonsClicked()
 
 }
 
-void ICProgramPage::usedButtonsClicked(bool checked)
-{
-
-
-    ICCheckedButton *button = qobject_cast<ICCheckedButton*>(sender());
-    int index = reserveButtons.indexOf(button);
-    int used = ICMold::CurrentMold()->MoldParam(static_cast<ICMold::ICMoldParam>(ICMold::programInnerUsed));
-    if(checked){
-        used |= 1 <<  (_index * 2 +  index);
-    }
-    else{
-        used &= ~(1 <<  (_index * 2 +  index));
-    }
-    ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(ICMold::programInnerUsed), used);
-//    ICMold::CurrentMold()->SaveMoldParamsFile();
-
-    if(checked){
-        saveButtons[reserveIndexs[index] -1]->setEnabled(true);
-        testButtons[reserveIndexs[index] -1]->setEnabled(true);
-    }
-    else{
-        saveButtons[reserveIndexs[index] -1]->setEnabled(false);
-        testButtons[reserveIndexs[index] -1]->setEnabled(false);
-        for(int i=0;i<AXIS_COUNTS;i++){
-            ui->tableWidget->item(reserveIndexs[index],i+1)->setText("");
-        }
-    }
-
-}
-
-
 
 void ICProgramPage::on_pushButton_clicked()
 {
@@ -218,31 +145,46 @@ void ICProgramPage::on_pushButton_clicked()
 
 void ICProgramPage::InitTableWidget()
 {
-    ui->tableWidget->setRowCount(MAX_POINTS + 1);
+//    ui->tableWidget->setRowCount(MAX_POINTS);
     ui->tableWidget->setColumnCount(COLUMN_COUNTS);
 
 
     ui->tableWidget->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
-    ui->tableWidget->horizontalHeader()->hide();
-    ui->tableWidget->verticalHeader()->setResizeMode(QHeaderView::Stretch);
-    ui->tableWidget->verticalHeader()->hide();
+//    ui->tableWidget->horizontalHeader()->hide();
+    ui->tableWidget->verticalHeader()->setResizeMode(QHeaderView::Fixed);
+//    ui->tableWidget->verticalHeader()->hide();
 
     ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    ui->tableWidget->setSelectionMode(QAbstractItemView::NoSelection);
+//    ui->tableWidget->setSelectionMode(QAbstractItemView::NoSelection);
 
     QStringList headerContents;
-    headerContents  << tr("FrontBack") << tr("UpDown") << tr("Windup") <<  tr("Rotated")
-                    << tr("Rollovers") << tr("Used Stoped") << tr("Save") << tr("Tested");
+    headerContents  <<  tr("Type") << tr("FrontBack") << tr("UpDown") << tr("Windup") <<  tr("Rotated")
+                    << tr("Rollovers")  << tr("Save") << tr("Tested");
 
-    reserveIndexs << 2 << 4;
-
-    for(int i = 1 ;i < COLUMN_COUNTS;i++){
-        QTableWidgetItem * item = new QTableWidgetItem();
-        item->setText(headerContents.at(i-1));
-        item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-        ui->tableWidget->setItem(0,i,item);
+    for(int i=0;i<headerContents.size();i++){
+        ui->tableWidget->setHorizontalHeaderItem(i,new QTableWidgetItem(headerContents[i]));
     }
-    for(int i = 0 ;i < MAX_POINTS;i++){
+
+    ui->tableWidget->insertRow(0);
+    connect(ui->tableWidget,SIGNAL(itemClicked(QTableWidgetItem*)),
+            this,SLOT(itemClicked(QTableWidgetItem*)));
+}
+
+void ICProgramPage::InitPoint()
+{
+    DeleteWidgets();
+
+    uint pointCount = _MoldParam(ICMold::getPointCount + _index * 2);
+    uint pointConfig = _MoldParam(ICMold::getPointConfig + _index * 2);
+
+    for(int i =0 ;i < pointCount;i++){
+        pointTypes.append((PointType)(pointConfig >> (i *4) & 0xF));
+    }
+
+
+    for(int i = 0 ;i < pointCount;i++){
+        ui->tableWidget->insertRow(ui->tableWidget->rowCount()-1);
+
         QPushButton *button = new QPushButton(this);
         saveButtons.append(button);
         saveButtons[i]->setText(tr("save"));
@@ -267,68 +209,95 @@ void ICProgramPage::InitTableWidget()
                                   _MoldParam(ICMold::point0 + i * 6 + 4 + _index * 6 * MAX_POINTS)
                                   ));
 
-        ui->tableWidget->setCellWidget(i + 1,AXIS_COUNTS + 2,saveButtons[i]);
-        ui->tableWidget->setCellWidget(i + 1,AXIS_COUNTS + 3,testButtons[i]);
+        ui->tableWidget->setCellWidget(i,AXIS_COUNTS + 1,saveButtons[i]);
+        ui->tableWidget->setCellWidget(i,AXIS_COUNTS + 2,testButtons[i]);
+    }
+    for(int k=0;k< ui->tableWidget->verticalHeader()->count();k++){
+        ui->tableWidget->verticalHeader()->resizeSection(k,40);
     }
 
-    for(int i=0; i < MAX_POINTS - 3;i++){
-        ICCheckedButton *button = new ICCheckedButton(this);
-        reserveButtons.append(button);
-        reserveButtons[i]->setName(tr("Skip"));
-        reserveButtons[i]->setFocusPolicy(Qt::NoFocus);
-        reserveButtons[i]->setMinimumHeight(40);
-        reserveButtons[i]->setCheckedName(tr("Used"));
-        connect(reserveButtons[i],SIGNAL(clicked(bool)),
-                SLOT(usedButtonsClicked(bool)));
-    }
 
-    for(int i=0 ; i < reserveIndexs.count();i++){
-        int index = reserveIndexs[i];
-        ui->tableWidget->setCellWidget(index,AXIS_COUNTS + 1,reserveButtons[i]);
-        saveButtons[index - 1]->setEnabled(false);
-        testButtons[index - 1]->setEnabled(false);
-
-    }
-
-    for(int j =0; j< MAX_POINTS + 1;j++){
+    for(int j =0; j< pointCount;j++){
         for(int i=0;i <COLUMN_COUNTS ; i++){
             if(!ui->tableWidget->cellWidget(j,i) && !ui->tableWidget->item(j,i)){
                 QTableWidgetItem * item = new QTableWidgetItem();
                 item->setText("");
                 item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-                ui->tableWidget->setItem(j,i,item);            }
+                ui->tableWidget->setItem(j,i,item);
+            }
         }
+        ui->tableWidget->item(j,0)->setText(_typeDialog->toString(pointTypes.at(j)));
     }
 
-    connect(ui->tableWidget,SIGNAL(itemClicked(QTableWidgetItem*)),
-            this,SLOT(itemClicked(QTableWidgetItem*)));
+
+    for(int i=0;i<pointCount;i++){
+        ui->tableWidget->item(i,1)->setText(QString::number(allPoints[i]->x / 10.0, 'f', 1));
+        ui->tableWidget->item(i,2)->setText(QString::number(allPoints[i]->y / 10.0, 'f', 1));
+        ui->tableWidget->item(i,3)->setText(QString::number(allPoints[i]->s / 10.0, 'f', 1));
+        ui->tableWidget->item(i,4)->setText(QString::number(allPoints[i]->r / 10.0, 'f', 1));
+        ui->tableWidget->item(i,5)->setText(QString::number(allPoints[i]->t / 10.0, 'f', 1));
+    }
 }
 
-void ICProgramPage::InitPoints()
+void ICProgramPage::DeleteWidgets()
 {
-    int used = ICMold::CurrentMold()->MoldParam(static_cast<ICMold::ICMoldParam>(ICMold::programInnerUsed));
-
-    for(int i=0;i<MAX_POINTS - 3;i++){
-        reserveButtons[i]->setChecked(used & ( 1 << (_index * 2 +  i)));
-        saveButtons[reserveIndexs[i] -1]->setEnabled(used & ( 1 << (_index * 2 +  i)));
-        testButtons[reserveIndexs[i] -1]->setEnabled(used & ( 1 << (_index * 2 +  i)));
-    }
-
-
-    for(int i=0;i<MAX_POINTS;i++){
-        if(( i== (reserveIndexs[0] - 1) && !reserveButtons[0]->isChecked()) |
-             i== (reserveIndexs[1] - 1) && !reserveButtons[1]->isChecked())
-        {
-            continue;
+    int rowCount = ui->tableWidget->rowCount()-1;
+    for(int index=0;index < rowCount;index++){
+        for(int i=0;i < ui->tableWidget->columnCount();i++){
+            if(ui->tableWidget->item(index,i))
+            delete ui->tableWidget->item(index,i);
         }
-        ui->tableWidget->item(i+1,1)->setText(QString::number(allPoints[i]->x / 10.0, 'f', 1));
-        ui->tableWidget->item(i+1,2)->setText(QString::number(allPoints[i]->y / 10.0, 'f', 1));
-        ui->tableWidget->item(i+1,3)->setText(QString::number(allPoints[i]->s / 10.0, 'f', 1));
-        ui->tableWidget->item(i+1,4)->setText(QString::number(allPoints[i]->r / 10.0, 'f', 1));
-        ui->tableWidget->item(i+1,5)->setText(QString::number(allPoints[i]->t / 10.0, 'f', 1));
+        delete saveButtons[0];
+        delete testButtons[0];
+
+        saveButtons.removeAt(0);
+        testButtons.removeAt(0);
+        ui->tableWidget->removeRow(0);
+        pointTypes.removeAt(0);
     }
+}
+
+void ICProgramPage::InitPointToItem()
+{
+    QList<ICMoldItem> items;
+    pointToItem.insert(Get_Wait,(items << waitM10)); items.clear();
+    pointToItem.insert(Get_Up,items); items.clear();
+    pointToItem.insert(Get,(items << outY37On)); items.clear();
+    pointToItem.insert(Get_Finish,(items << outM11 << waitM12)); items.clear();
+    pointToItem.insert(Put_Wait,items); items.clear();
+    pointToItem.insert(Put_Up,items); items.clear();
+    pointToItem.insert(Put,(items << outY37Off)); items.clear();
+    pointToItem.insert(Put_Finish,(items << waitM14 << outPermit)); items.clear();
+    pointToItem.insert(Reserve,items); items.clear();
+
 
 }
+
+void ICProgramPage::SaveConfigPoint()
+{
+    //保存点配置
+    int config = 0;
+    for(int i=0;i<pointTypes.size();i++)
+        config += (pointTypes.at(i)  << (i *4));
+
+    if(_MoldParam(ICMold::getPointCount + _index * 2) != ui->tableWidget->rowCount() -1)
+        _SetMoldParam(ICMold::getPointCount + _index * 2, ui->tableWidget->rowCount() -1);
+    if(_MoldParam(ICMold::getPointConfig + _index * 2) != config)
+        _SetMoldParam(ICMold::getPointConfig + _index * 2,config);
+
+    //保存点坐标
+    for(int i=0;i<ui->tableWidget->rowCount() - 1;i++){
+        for(int j=0;j<AXIS_COUNTS;j++){
+            int16_t pos = ui->tableWidget->item(i,j+1)->text().remove(".").toInt();
+            int16_t oldPos = _MoldParam(_index * 6 * MAX_POINTS + i * 6 + j);
+            if(pos != oldPos)
+                _SetMoldParam(_index * 6 * MAX_POINTS + i * 6 + j,pos);
+
+        }
+    }
+}
+
+
 
 PointPtr ICProgramPage::MK_Point(qint16 x, qint16 y, qint16 s, qint16 r, qint16 t)
 {
@@ -372,4 +341,91 @@ void ICProgramPage::InitFixMoldItems()
     waitM14   = MK_MoldItem(13,9,4,24,0,1,0,0,3000,246);
     outPermit = MK_MoldItem(14,10,3,25,0,1,0,0,50,103);
 
+}
+
+void ICProgramPage::on_newButton_clicked()
+{
+    int index = ui->tableWidget->currentIndex().row();
+    if(index == -1) index ++;
+    if(_typeDialog->exec() == QDialog::Accepted){
+
+        if(ui->tableWidget->rowCount() == MAX_ROWCOUNT){
+            return;
+        }
+        ui->tableWidget->insertRow(index);
+        ui->tableWidget->setItem(index,0,new QTableWidgetItem(_typeDialog->toString()));
+        ui->tableWidget->item(index,0)->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+        for(int i = 0 ;i < AXIS_COUNTS; i++){
+            QTableWidgetItem *item = new QTableWidgetItem("") ;
+            item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+            ui->tableWidget->setItem(index,i+1,item);
+        }
+        QPushButton *button = new QPushButton;
+        saveButtons.insert(index,button);
+        saveButtons[index]->setText(tr("save"));
+        saveButtons[index]->setMinimumHeight(40);
+        saveButtons[index]->setFocusPolicy(Qt::NoFocus);
+        connect(saveButtons[index],SIGNAL(clicked()),
+                SLOT(saveButtonsCliked()));
+        ui->tableWidget->setCellWidget(index,AXIS_COUNTS + 1,saveButtons[index]);
+
+        button = new QPushButton;
+        testButtons.insert(index,button);
+        testButtons[index]->setText(tr("test"));
+        testButtons[index]->setMinimumHeight(40);
+        testButtons[index]->setFocusPolicy(Qt::NoFocus);
+        connect(testButtons[index],SIGNAL(clicked()),
+                SLOT(testButonsClicked()));
+        ui->tableWidget->setCellWidget(index,AXIS_COUNTS + 2,testButtons[index]);
+        pointTypes.insert(index,_typeDialog->currentType());
+
+
+        for(int k=0;k< ui->tableWidget->verticalHeader()->count();k++){
+            ui->tableWidget->verticalHeader()->resizeSection(k,40);
+        }
+    }
+
+}
+
+void ICProgramPage::on_modiifyButton_clicked()
+{
+    int index = ui->tableWidget->currentIndex().row();
+    if(index == -1) index ++;
+    if(_typeDialog->exec() == QDialog::Accepted){
+        pointTypes[index] = _typeDialog->currentType();
+        ui->tableWidget->item(index,0)->setText(_typeDialog->toString());
+    }
+}
+
+void ICProgramPage::on_deleteButton_clicked()
+{
+    int index = ui->tableWidget->currentIndex().row();
+    if(index == -1) index ++;
+    if(index != ui->tableWidget->rowCount() -1){
+        for(int i=0;i < ui->tableWidget->columnCount();i++){
+            delete ui->tableWidget->item(index,i);
+        }
+        delete saveButtons[index];
+        delete testButtons[index];
+
+        saveButtons.removeAt(index);
+        testButtons.removeAt(index);
+        ui->tableWidget->removeRow(index);
+        pointTypes.removeAt(index);
+
+    }
+    else{
+        qDebug() << "Not  Delete Space Line";
+    }
+
+}
+
+void ICProgramPage::on_saveButton_clicked()
+{
+    SaveConfigPoint();
+}
+
+void ICProgramPage::MoldChanged(QString s)
+{
+    InitPoint();
 }

@@ -8,11 +8,13 @@
 #include <QTableWidgetItem>
 #include <virtualnumerickeypaddialog.h>
 #include "icvirtualhost.h"
+#include "icpointtype.h"
 
 
-#define MAX_POINTS 5
+#define MAX_POINTS 8
 #define AXIS_COUNTS 5
-#define COLUMN_COUNTS (AXIS_COUNTS + 4)
+#define MAX_ROWCOUNT 8
+#define COLUMN_COUNTS (AXIS_COUNTS + 3)
 #define RESERVE_COUNTS (MAX_POINTS - 3)
 
 namespace Ui {
@@ -20,6 +22,7 @@ class ICProgramPage;
 }
 
 #define _MoldParam(addr) ICMold::CurrentMold()->MoldParam(static_cast<ICMold::ICMoldParam>(addr))
+#define _SetMoldParam(addr,value) ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(addr),value)
 
 typedef struct{
    qint16 x;
@@ -39,12 +42,13 @@ class ICProgramPage : public QWidget
 
 public:
     explicit ICProgramPage(QWidget *parent = 0,int pageIndex = 0);
-    void setItemNames(QStringList & contents);
-    QList<PointPtr> GT_Points();
-    QList<ICMoldItem> GT_Items();
-    QList<ICMoldItem> GT_Pos(int pos);
+    QList<ICMoldItem> GT_MoldItems();
+    QList<ICMoldItem> GT_HeaderItems();
+    QList<ICMoldItem> GT_TailMoldItems();
 
 
+
+    QList<ICMoldItem> MK_PosItem(int pos);
     PointPtr MK_Point(qint16 x,qint16 y,qint16 s,qint16 r,qint16 t);
     ICMoldItem MK_MoldItem(uint seq,
                             uint num,
@@ -71,22 +75,29 @@ private slots:
     void itemClicked(QTableWidgetItem*);
     void saveButtonsCliked();
     void testButonsClicked();
-    void usedButtonsClicked(bool);
-
     void on_pushButton_clicked();
+    void on_newButton_clicked();
+    void on_modiifyButton_clicked();
+    void on_deleteButton_clicked();
 
+    void on_saveButton_clicked();
+    void MoldChanged(QString);
 
 private:
     void InitTableWidget();
-    void InitPoints();
+    void InitPoint();
+    void DeleteWidgets();
+    void InitPointToItem();
+    void SaveConfigPoint();
 
 private:
     Ui::ICProgramPage *ui;
     VirtualNumericKeypadDialog *_dialog;
+    ICPointType *_typeDialog;
     QList<QPushButton*> saveButtons;
     QList<QPushButton*> testButtons;
-    QList<ICCheckedButton*> reserveButtons;
-    QList<int> reserveIndexs;
+    QList<PointType> pointTypes;
+    QMap<PointType,QList<ICMoldItem> > pointToItem;
 
     ICVirtualHost *_host;
     int _index;
@@ -103,6 +114,8 @@ private:
     ICMoldItem outY31Off;
     ICMoldItem waitM14;
     ICMoldItem outPermit;
+
+
 
 
 };
