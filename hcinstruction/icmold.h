@@ -7,6 +7,8 @@
 #include <QSharedData>
 #include <stdint.h>
 #include <QDebug>
+#include <QSharedPointer>
+
 
 class ICMoldItem
 {
@@ -428,6 +430,7 @@ public:
 
     QList<ICMoldItem> MoldContent() const { return moldContent_;}
     void SetMoldContent(const QList<ICMoldItem>& moldContent) { moldContent_ = moldContent;}
+
     void Insert(const QList<ICMoldItem> &items) { Insert(items, moldContent_);}
     void Modify(const QList<ICMoldItem> &items) { Modify(items, moldContent_);}
     void Delete(int step) { Delete(step, moldContent_);}

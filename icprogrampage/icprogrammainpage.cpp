@@ -105,7 +105,10 @@ void ICProgramMainPage::showEvent(QShowEvent *e)
 void ICProgramMainPage::hideEvent(QHideEvent *e)
 {
     if(MoldChanged()){
-        qDebug() << "SaveProgramToFiles: " << SaveProgramToFiles(GT_AllItems());
+        ICMold::CurrentMold()->SetMoldContent(GT_AllItems());
+        qDebug() << "SaveProgramToFiles: " << ICMold::CurrentMold()->SaveMoldFile();
+        ICVirtualHost::GlobalVirtualHost()->ReConfigure();
+
     }
     QWidget::hideEvent(e);
 }
@@ -141,36 +144,32 @@ void ICProgramMainPage::showMainProgram()
     ui->stackedWidget->setCurrentWidget(ui->mainPage);
 }
 
-QList<MoldItemPtr> ICProgramMainPage::GT_AllItems()
+QList<ICMoldItem> ICProgramMainPage::GT_AllItems()
 {
-    return GT_CalculateItem(programPages[0]->GT_Items()  +  programPages[1]->GT_Items());
+    QList<ICMoldItem> items;
+    items = programPages[0]->GT_Items()  +  programPages[1]->GT_Items();
+    GT_CalculateItem(items);
+    return items;
 }
 
-bool ICProgramMainPage::SaveProgramToFiles(QList<MoldItemPtr> items)
+void ICProgramMainPage::GT_CalculateItem(QList<ICMoldItem> items)
 {
-    bool ret = false;
-    MoldReSum(items);
-    QByteArray toWrite;
-
-    for(int i = 0; i != items.size(); ++i)
-    {
-        toWrite += items.at(i)->ToString() + "\n";
-    }
-    ICFile file(ICMold::CurrentMold()->MoldName()+"_bak");
-    ret = file.ICWrite(toWrite);
-    return ret;
-}
-
-void ICProgramMainPage::MoldReSum(QList<MoldItemPtr> items)
-{
-    int seq = 0;
-    for(int i = 0; i != items.size(); ++i)
-    {
-        items[i]->SetSeq(seq);
-        items[i]->ReSum();
-        ++seq;
+    uint oldNum = 0;
+    //计算num
+    for(int i=0;i<items.size();i++){
+        if(items.at(i).GMVal() == ICMold::GARC){
+            items[i].SetNum(oldNum);
+            if(items.at(i).IFPos()  == 5){
+                oldNum ++;
+            }
+        }
+        else{
+            items[i].SetNum(oldNum);
+            oldNum ++;
+        }
     }
 }
+
 
 bool ICProgramMainPage::MoldChanged()
 {
@@ -178,25 +177,4 @@ bool ICProgramMainPage::MoldChanged()
         oldUsed =_MoldParam(ICMold::programInnerUsed);
         return true;
     }
-}
-
-QList<MoldItemPtr> ICProgramMainPage::GT_CalculateItem(QList<MoldItemPtr> items)
-{
-    int oldNum = 0;
-    //计算num
-    for(int i=0;i<items.size();i++){
-        if(items.at(i)->GMVal() == ICMold::GARC){
-            items.at(i)->SetNum(oldNum);
-            if(items.at(i)->IFPos()  == 5){
-                oldNum ++;
-            }
-        }
-        else{
-            items.at(i)->SetNum(oldNum);
-            oldNum ++;
-        }
-    }
-
-
-   return items;
 }

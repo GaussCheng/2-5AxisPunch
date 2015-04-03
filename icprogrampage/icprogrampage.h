@@ -41,12 +41,12 @@ public:
     explicit ICProgramPage(QWidget *parent = 0,int pageIndex = 0);
     void setItemNames(QStringList & contents);
     QList<PointPtr> GT_Points();
-    QList<MoldItemPtr> GT_Items();
-    QList<MoldItemPtr> GT_Pos(int pos);
+    QList<ICMoldItem> GT_Items();
+    QList<ICMoldItem> GT_Pos(int pos);
 
 
     PointPtr MK_Point(qint16 x,qint16 y,qint16 s,qint16 r,qint16 t);
-    MoldItemPtr MK_MoldItem(uint seq,
+    ICMoldItem MK_MoldItem(uint seq,
                             uint num,
                             uint8_t subNum,
                             uint gmVal,
@@ -91,18 +91,18 @@ private:
     ICVirtualHost *_host;
     int _index;
     QList<PointPtr> allPoints;
-    QList<MoldItemPtr> allItems;
+    QList<ICMoldItem> allItems;
 
 
-    MoldItemPtr waitM10;
-    MoldItemPtr outY37On;
-    MoldItemPtr outM11;
-    MoldItemPtr waitM12;
-    MoldItemPtr outY37Off;
-    MoldItemPtr outY31On;
-    MoldItemPtr outY31Off;
-    MoldItemPtr waitM14;
-    MoldItemPtr outPermit;
+    ICMoldItem waitM10;
+    ICMoldItem outY37On;
+    ICMoldItem outM11;
+    ICMoldItem waitM12;
+    ICMoldItem outY37Off;
+    ICMoldItem outY31On;
+    ICMoldItem outY31Off;
+    ICMoldItem waitM14;
+    ICMoldItem outPermit;
 
 
 };

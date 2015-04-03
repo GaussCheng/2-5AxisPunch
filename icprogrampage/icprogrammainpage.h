@@ -30,10 +30,8 @@ private slots:
     void programButtonClicked();
     void showMainProgram();
 private:
-    QList<MoldItemPtr> GT_AllItems();
-    bool SaveProgramToFiles(QList<MoldItemPtr> items);
-    QList<MoldItemPtr> GT_CalculateItem(QList<MoldItemPtr> items);
-    void MoldReSum(QList<MoldItemPtr> items);
+    QList<ICMoldItem> GT_AllItems();
+    void GT_CalculateItem(QList<ICMoldItem> items);
     bool MoldChanged();
 
 

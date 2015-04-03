@@ -48,9 +48,9 @@ QList<PointPtr> ICProgramPage::GT_Points()
     return allPoints;
 }
 
-QList<MoldItemPtr> ICProgramPage::GT_Items()
+QList<ICMoldItem> ICProgramPage::GT_Items()
 {
-    QList<MoldItemPtr> items;
+    QList<ICMoldItem> items;
     bool reserve_1 = reserveButtons[0]->isChecked();
     bool reserve_2 = reserveButtons[1]->isChecked();
 
@@ -100,9 +100,9 @@ QList<MoldItemPtr> ICProgramPage::GT_Items()
     return items;
 }
 
-QList<MoldItemPtr> ICProgramPage::GT_Pos(int pos)
+QList<ICMoldItem> ICProgramPage::GT_Pos(int pos)
 {
-    QList<MoldItemPtr> items;
+    QList<ICMoldItem> items;
     items << MK_MoldItem(1,1,pos,22,0,64,2,80,0,172)  //3D教导
         << MK_MoldItem(2,1,pos,22,0,64,1,80,0,174)
         << MK_MoldItem(3,1,pos,22,0,64,3,80,0,176)
@@ -316,6 +316,11 @@ void ICProgramPage::InitPoints()
 
 
     for(int i=0;i<MAX_POINTS;i++){
+        if(( i== (reserveIndexs[0] - 1) && !reserveButtons[0]->isChecked()) |
+             i== (reserveIndexs[1] - 1) && !reserveButtons[1]->isChecked())
+        {
+            continue;
+        }
         ui->tableWidget->item(i+1,1)->setText(QString::number(allPoints[i]->x / 10.0, 'f', 1));
         ui->tableWidget->item(i+1,2)->setText(QString::number(allPoints[i]->y / 10.0, 'f', 1));
         ui->tableWidget->item(i+1,3)->setText(QString::number(allPoints[i]->s / 10.0, 'f', 1));
@@ -337,18 +342,18 @@ PointPtr ICProgramPage::MK_Point(qint16 x, qint16 y, qint16 s, qint16 r, qint16 
     return p;
 }
 
-MoldItemPtr ICProgramPage::MK_MoldItem(uint seq, uint num, uint8_t subNum, uint gmVal, uint pos, uint ifVal, uint ifPos, uint sVal, uint dVal, uint sum)
+ICMoldItem ICProgramPage::MK_MoldItem(uint seq, uint num, uint8_t subNum, uint gmVal, uint pos, uint ifVal, uint ifPos, uint sVal, uint dVal, uint sum)
 {
-    MoldItemPtr p(new ICMoldItem);
-    p->SetSeq(seq);
-    p->SetNum(num);
-    p->SetSubNum(subNum);
-    p->SetGMVal(gmVal);
-    p->SetPos(pos);
-    p->SetIFVal(ifVal);
-    p->SetIFPos(ifPos);
-    p->SetSVal(sVal);
-    p->SetDVal(dVal);
+    ICMoldItem p;
+    p.SetSeq(seq);
+    p.SetNum(num);
+    p.SetSubNum(subNum);
+    p.SetGMVal(gmVal);
+    p.SetPos(pos);
+    p.SetIFVal(ifVal);
+    p.SetIFPos(ifPos);
+    p.SetSVal(sVal);
+    p.SetDVal(dVal);
 
 
     return p;
