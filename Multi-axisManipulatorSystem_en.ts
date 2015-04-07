@@ -4493,59 +4493,87 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.ui" line="133"/>
+        <location filename="icprogrampage/icprogrampage.ui" line="171"/>
         <source>Return</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="183"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="186"/>
         <source>UpDown</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="183"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="186"/>
         <source>Rotated</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="183"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="186"/>
         <source>Windup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="183"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="186"/>
         <source>Type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="184"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="187"/>
         <source>Rollovers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="184"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="187"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="183"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="377"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="385"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="444"/>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrampage.cpp" line="377"/>
+        <source>Max Rows Beyond %1!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrampage.cpp" line="385"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="444"/>
+        <source>Canot insert %1 action!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrampage.cpp" line="186"/>
         <source>FrontBack</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="184"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="21"/>
+        <source>Get</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrampage.cpp" line="24"/>
+        <source>Put</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrampage.cpp" line="187"/>
         <source>Tested</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="205"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="364"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="215"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="399"/>
         <source>save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="213"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="373"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="223"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="408"/>
         <source>test</source>
         <translation type="unfinished"></translation>
     </message>

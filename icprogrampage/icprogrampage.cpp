@@ -7,15 +7,18 @@
 #include "moldinformation.h"
 
 
-ICProgramPage::ICProgramPage(QWidget *parent,int _pageIndex) :
+ICProgramPage::ICProgramPage(QWidget *parent,int _pageIndex,QString pageName) :
     QWidget(parent),
     ui(new Ui::ICProgramPage),
-    _index(_pageIndex)
+    _index(_pageIndex),
+    _pageName(pageName)
 {
     ui->setupUi(this);
     _dialog =  VirtualNumericKeypadDialog::Instance();
     _typeDialog = new ICPointType(this);
     _host = ICVirtualHost::GlobalVirtualHost();
+    ui->modiifyButton->hide();
+    ui->actionLabel->setText(_pageName);
 
     InitTableWidget();
     InitPoint();
@@ -31,7 +34,7 @@ QList<ICMoldItem> ICProgramPage::GT_MoldItems()
     QList<ICMoldItem> items;
     QList<ICMoldItem> fixItems;
 
-    for(int i=0;i < ui->tableWidget->rowCount() -1;i++){
+    for(int i=0;i < ROW_COUNTS;i++){
         items += MK_PosItem(i);
         fixItems = pointToItem.value(pointTypes.at(i));
         if(fixItems.size()){
@@ -58,11 +61,29 @@ QList<ICMoldItem> ICProgramPage::GT_TailMoldItems()
 QList<ICMoldItem> ICProgramPage::MK_PosItem(int pos)
 {
     QList<ICMoldItem> items;
-    items << MK_MoldItem(1,1,pos,22,0,64,2,80,0,172)  //3D教导
-        << MK_MoldItem(2,1,pos,22,0,64,1,80,0,174)
-        << MK_MoldItem(3,1,pos,22,0,64,3,80,0,176)
-        << MK_MoldItem(4,1,pos,22,0,64,4,80,0,178)
-        << MK_MoldItem(5,1,pos,22,0,64,5,80,0,180);
+
+    if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisY1)) ==
+            ICVirtualHost::ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisY1))){
+        items << MK_MoldItem(1,1,pos,22,0,64,2,80,0,172);  //3D教导
+    }
+    if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisX1)) ==
+            ICVirtualHost::ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisX1))){
+        items  << MK_MoldItem(2,1,pos,22,0,64,1,80,0,174);//3D教导
+    }
+    if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisZ)) ==
+            ICVirtualHost::ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisZ))){
+        items  << MK_MoldItem(3,1,pos,22,0,64,3,80,0,176);  //3D教导
+    }
+    if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisX2)) ==
+            ICVirtualHost::ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisX2))){
+        items  << MK_MoldItem(4,1,pos,22,0,64,4,80,0,178);  //3D教导
+    }
+    if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisY2)) ==
+            ICVirtualHost::ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisY2))){
+        items  << MK_MoldItem(5,1,pos,22,0,64,5,80,0,180);  //3D教导
+    }
+
+
     return items;
 }
 
@@ -98,7 +119,7 @@ void ICProgramPage::hideEvent(QHideEvent *e)
 
 void ICProgramPage::itemClicked(QTableWidgetItem *item)
 {
-//    if((item->row() >=0 && item->row() < ui->tableWidget->rowCount() -1)  &&
+//    if((item->row() >=0 && item->row() < ROW_COUNTS)  &&
 //        (item->column() >0 && item->column() < AXIS_COUNTS + 1)){
 
 //        if(!_dialog->isVisible()){
@@ -183,7 +204,7 @@ void ICProgramPage::InitPoint()
 
 
     for(int i = 0 ;i < pointCount;i++){
-        ui->tableWidget->insertRow(ui->tableWidget->rowCount()-1);
+        ui->tableWidget->insertRow(ROW_COUNTS);
 
         QPushButton *button = new QPushButton(this);
         saveButtons.append(button);
@@ -241,8 +262,7 @@ void ICProgramPage::InitPoint()
 
 void ICProgramPage::DeleteWidgets()
 {
-    int rowCount = ui->tableWidget->rowCount()-1;
-    for(int index=0;index < rowCount;index++){
+    for(int index=0;index < ROW_COUNTS;index++){
         for(int i=0;i < ui->tableWidget->columnCount();i++){
             if(ui->tableWidget->item(index,i))
             delete ui->tableWidget->item(index,i);
@@ -280,13 +300,13 @@ void ICProgramPage::SaveConfigPoint()
     for(int i=0;i<pointTypes.size();i++)
         config += (pointTypes.at(i)  << (i *4));
 
-    if(_MoldParam(ICMold::getPointCount + _index * 2) != ui->tableWidget->rowCount() -1)
-        _SetMoldParam(ICMold::getPointCount + _index * 2, ui->tableWidget->rowCount() -1);
+    if(_MoldParam(ICMold::getPointCount + _index * 2) != ROW_COUNTS)
+        _SetMoldParam(ICMold::getPointCount + _index * 2, ROW_COUNTS);
     if(_MoldParam(ICMold::getPointConfig + _index * 2) != config)
         _SetMoldParam(ICMold::getPointConfig + _index * 2,config);
 
     //保存点坐标
-    for(int i=0;i<ui->tableWidget->rowCount() - 1;i++){
+    for(int i=0;i<ROW_COUNTS;i++){
         for(int j=0;j<AXIS_COUNTS;j++){
             int16_t pos = ui->tableWidget->item(i,j+1)->text().remove(".").toInt();
             int16_t oldPos = _MoldParam(_index * 6 * MAX_POINTS + i * 6 + j);
@@ -349,9 +369,19 @@ void ICProgramPage::on_newButton_clicked()
     if(index == -1) index ++;
     if(_typeDialog->exec() == QDialog::Accepted){
 
-        if(ui->tableWidget->rowCount() == MAX_ROWCOUNT){
-            return;
-        }
+//        if(ui->tableWidget->rowCount() == MAX_ROWCOUNT){
+//            QMessageBox::information(this,tr("Information"),tr("Max Rows Beyond %1!").arg(MAX_POINTS));
+//            return;
+//        }
+//        if(_typeDialog->currentType() == Get_Wait ||
+//           _typeDialog->currentType() == Get ||
+//                _typeDialog->currentType() == Get_Finish ||
+//                _typeDialog->currentType() == Put ||
+//                _typeDialog->currentType() == Put_Finish ){
+//            QMessageBox::information(this,tr("Information"),tr("Canot insert %1 action!").arg( _typeDialog->toString()));
+//            return;
+//        }
+
         ui->tableWidget->insertRow(index);
         ui->tableWidget->setItem(index,0,new QTableWidgetItem(_typeDialog->toString()));
         ui->tableWidget->item(index,0)->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
@@ -401,7 +431,16 @@ void ICProgramPage::on_deleteButton_clicked()
 {
     int index = ui->tableWidget->currentIndex().row();
     if(index == -1) index ++;
-    if(index != ui->tableWidget->rowCount() -1){
+
+//    if(pointTypes.at(index) == Get_Wait ||
+//        pointTypes.at(index)== Get ||
+//        pointTypes.at(index) == Get_Finish ||
+//        pointTypes.at(index) == Put ||
+//        pointTypes.at(index) == Put_Finish ){
+//        QMessageBox::information(this,tr("Information"),tr("Canot insert %1 action!").arg( _typeDialog->toString(pointTypes.at(index) )));
+//        return;
+//    }
+    if(index != ROW_COUNTS){
         for(int i=0;i < ui->tableWidget->columnCount();i++){
             delete ui->tableWidget->item(index,i);
         }

@@ -23,6 +23,10 @@ ICProgramMainPage::ICProgramMainPage(QWidget *parent) :
     for(int i=0;i<ui->tableWidget->rowCount();i++){
         ui->tableWidget->setVerticalHeaderItem(i,new QTableWidgetItem(QString("S%1").arg(i+1)));
     }
+    QStringList ql;
+    ql << tr("Mould Get") << tr("Mould Put") << tr("Reserve") << tr("Reserve")
+          << tr("Reserve") << tr("Reserve") << tr("Reserve") << tr("Reserve");
+    setVerticalNames(ql);
 
     for(int i=0;i < MAX_ROWS;i++){
         usedButtons.append(new ICCheckedButton);
@@ -45,7 +49,7 @@ ICProgramMainPage::ICProgramMainPage(QWidget *parent) :
         ui->tableWidget->setCellWidget(i,1,usedButtons[i]);
         ui->tableWidget->setCellWidget(i,2,programButtons[i]);
 
-        ICProgramPage * page = new ICProgramPage(this,i);
+        ICProgramPage * page = new ICProgramPage(this,i,ui->tableWidget->item(i,0)->text());
         programPages.append(page);
         ui->stackedWidget->addWidget(page);
         connect(page,SIGNAL(returnProgram()),
@@ -53,10 +57,6 @@ ICProgramMainPage::ICProgramMainPage(QWidget *parent) :
     }
 
 
-     QStringList ql;
-     ql << tr("Mould Get") << tr("Mould Put") << tr("Reserve") << tr("Reserve")
-           << tr("Reserve") << tr("Reserve") << tr("Reserve") << tr("Reserve");
-     setVerticalNames(ql);
 //     oldUsed  = ICMold::CurrentMold()->MoldParam(static_cast<ICMold::ICMoldParam>(ICMold::programInnerUsed));
 
 }

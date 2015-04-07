@@ -7417,12 +7417,12 @@ Please enter an digit between </source>
         <translation>保存</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.ui" line="133"/>
+        <location filename="icprogrampage/icprogrampage.ui" line="171"/>
         <source>Return</source>
         <translation>返回主编程页面</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="183"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="186"/>
         <source>UpDown</source>
         <translation>上下轴</translation>
     </message>
@@ -7431,41 +7431,69 @@ Please enter an digit between </source>
         <translation type="obsolete">前后轴</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="183"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="186"/>
         <source>Rotated</source>
         <translation>旋转轴</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="183"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="186"/>
         <source>Windup</source>
         <translation>摆臂轴</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="183"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="186"/>
         <source>Type</source>
         <translation>点类型</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="184"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="187"/>
         <source>Rollovers</source>
         <translation>校正轴</translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrampage.cpp" line="377"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="385"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="444"/>
+        <source>Information</source>
+        <translation type="unfinished">提示</translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrampage.cpp" line="377"/>
+        <source>Max Rows Beyond %1!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrampage.cpp" line="385"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="444"/>
+        <source>Canot insert %1 action!</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Used</source>
         <translation type="obsolete">使用</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="184"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="187"/>
         <source>Save</source>
         <translation>坐标保存</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="183"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="186"/>
         <source>FrontBack</source>
         <translation>前后轴</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="184"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="21"/>
+        <source>Get</source>
+        <translation>取料操作</translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrampage.cpp" line="24"/>
+        <source>Put</source>
+        <translation>放料操作</translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrampage.cpp" line="187"/>
         <source>Tested</source>
         <translation>定位测试</translation>
     </message>
@@ -7474,14 +7502,14 @@ Please enter an digit between </source>
         <translation type="obsolete">使用禁止</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="205"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="364"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="215"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="399"/>
         <source>save</source>
         <translation>设入</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="213"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="373"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="223"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="408"/>
         <source>test</source>
         <translation>测试</translation>
     </message>

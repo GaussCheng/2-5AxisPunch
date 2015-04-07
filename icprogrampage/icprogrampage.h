@@ -16,6 +16,7 @@
 #define MAX_ROWCOUNT 8
 #define COLUMN_COUNTS (AXIS_COUNTS + 3)
 #define RESERVE_COUNTS (MAX_POINTS - 3)
+#define ROW_COUNTS ui->tableWidget->rowCount() - 1
 
 namespace Ui {
 class ICProgramPage;
@@ -41,7 +42,7 @@ class ICProgramPage : public QWidget
     Q_OBJECT
 
 public:
-    explicit ICProgramPage(QWidget *parent = 0,int pageIndex = 0);
+    explicit ICProgramPage(QWidget *parent = 0,int pageIndex = 0,QString pageName = "");
     QList<ICMoldItem> GT_MoldItems();
     QList<ICMoldItem> GT_HeaderItems();
     QList<ICMoldItem> GT_TailMoldItems();
@@ -101,6 +102,7 @@ private:
 
     ICVirtualHost *_host;
     int _index;
+    QString _pageName;
     QList<PointPtr> allPoints;
     QList<ICMoldItem> allItems;
 
