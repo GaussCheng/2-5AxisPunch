@@ -851,6 +851,56 @@ color: rgb(97, 97, 97);
       <property name="spacing">
        <number>12</number>
       </property>
+      <item row="1" column="1">
+       <widget class="QPushButton" name="point5">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Point-5</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="point6">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Point-6</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup</string>
+        </attribute>
+       </widget>
+      </item>
       <item row="0" column="0">
        <widget class="QPushButton" name="point1">
         <property name="sizePolicy">
@@ -951,56 +1001,6 @@ color: rgb(97, 97, 97);
         </attribute>
        </widget>
       </item>
-      <item row="1" column="1">
-       <widget class="QPushButton" name="point5">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>48</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Point-5</string>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">buttonGroup</string>
-        </attribute>
-       </widget>
-      </item>
-      <item row="1" column="2">
-       <widget class="QPushButton" name="point6">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>48</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Point-6</string>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">buttonGroup</string>
-        </attribute>
-       </widget>
-      </item>
      </layout>
     </widget>
     <widget class="QPushButton" name="return0Button">
@@ -1069,6 +1069,17 @@ color: rgb(97, 97, 97);
       <string notr="true">buttonGroup_2</string>
      </attribute>
     </widget>
+    <zorder>groupBox_3</zorder>
+    <zorder>label_3</zorder>
+    <zorder>productEdit</zorder>
+    <zorder>groupBox</zorder>
+    <zorder>singleButton</zorder>
+    <zorder>runButton</zorder>
+    <zorder>groupBox_2</zorder>
+    <zorder>return0Button</zorder>
+    <zorder>productClear</zorder>
+    <zorder>uncheckRunButton</zorder>
+    <zorder>serveControl</zorder>
    </widget>
    <widget class="QWidget" name="tabWidgetPage2">
     <layout class="QGridLayout" name="gridLayout_3">

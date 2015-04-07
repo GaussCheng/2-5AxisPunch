@@ -13,7 +13,7 @@
 
 #define MAX_POINTS 8
 #define AXIS_COUNTS 5
-#define MAX_ROWCOUNT 8
+#define MAX_ROWCOUNT 32
 #define COLUMN_COUNTS (AXIS_COUNTS + 3)
 #define RESERVE_COUNTS (MAX_POINTS - 3)
 #define ROW_COUNTS ui->tableWidget->rowCount() - 1
@@ -90,6 +90,9 @@ private:
     void DeleteWidgets();
     void InitPointToItem();
     void SaveConfigPoint();
+    QList<ICMoldItem> GT_AllMoldItems();
+    bool MoldChanged(QList<ICMoldItem>& items);
+    void GT_CalculateItem(QList<ICMoldItem>& items);
 
 private:
     Ui::ICProgramPage *ui;

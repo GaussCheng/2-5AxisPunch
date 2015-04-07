@@ -310,10 +310,12 @@ public:
         check2,
         check3,
         check4,
-        getPointCount,
-        getPointConfig,
-        putPointCount,
-        putPointConfig,
+        Native,
+        pointCount = Native,
+        pointConfig1,
+        pointConfig2,
+        pointConfig3,
+        pointConfig4,
         MoldParamCount
 
     };
@@ -539,7 +541,7 @@ inline QList<int> ICMold::StackParams(int group) const
 inline QList<int> ICMold::AllParams() const
 {
     QList<int> ret;
-    ret += moldParams_;
+    ret += moldParams_/*.mid(0,Native)*/;
     for(int i = 0; i != stackParams_.size(); ++i)
     {
         ret += stackParams_.at(i);

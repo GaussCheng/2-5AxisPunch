@@ -45,16 +45,7 @@
       <string>Binary</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
-      <property name="leftMargin">
-       <number>0</number>
-      </property>
-      <property name="topMargin">
-       <number>0</number>
-      </property>
-      <property name="rightMargin">
-       <number>0</number>
-      </property>
-      <property name="bottomMargin">
+      <property name="margin">
        <number>0</number>
       </property>
       <item>
@@ -408,6 +399,34 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
+         <widget class="QPushButton" name="serveControl">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Serve On</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
          <spacer name="horizontalSpacer">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -504,14 +523,14 @@ border-style: none;
       <string>Position</string>
      </property>
      <layout class="QGridLayout" name="gridLayout">
-      <item row="2" column="3">
+      <item row="2" column="4">
        <widget class="QLabel" name="label_15">
         <property name="text">
          <string>deg</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
+      <item row="1" column="1">
        <widget class="QPushButton" name="yRun">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -530,21 +549,21 @@ border-style: none;
         </property>
        </widget>
       </item>
-      <item row="1" column="3">
+      <item row="1" column="4">
        <widget class="QLabel" name="label_5">
         <property name="text">
          <string>mm</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
+      <item row="1" column="2">
        <widget class="QLabel" name="label_2">
         <property name="text">
          <string>Y:</string>
         </property>
        </widget>
       </item>
-      <item row="3" column="2">
+      <item row="3" column="3">
        <widget class="ICLineEditWithVirtualNumericKeypad" name="rPos">
         <property name="enabled">
          <bool>false</bool>
@@ -564,7 +583,7 @@ color: rgb(97, 97, 97);
         </property>
        </widget>
       </item>
-      <item row="4" column="2">
+      <item row="4" column="3">
        <widget class="ICLineEditWithVirtualNumericKeypad" name="tPos">
         <property name="enabled">
          <bool>false</bool>
@@ -584,7 +603,7 @@ color: rgb(97, 97, 97);
         </property>
        </widget>
       </item>
-      <item row="0" column="2">
+      <item row="0" column="3">
        <widget class="ICLineEditWithVirtualNumericKeypad" name="xPos">
         <property name="enabled">
          <bool>false</bool>
@@ -604,7 +623,7 @@ color: rgb(97, 97, 97);
         </property>
        </widget>
       </item>
-      <item row="0" column="0">
+      <item row="0" column="1">
        <widget class="QPushButton" name="xRun">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -623,7 +642,7 @@ color: rgb(97, 97, 97);
         </property>
        </widget>
       </item>
-      <item row="2" column="2">
+      <item row="2" column="3">
        <widget class="ICLineEditWithVirtualNumericKeypad" name="zPos">
         <property name="enabled">
          <bool>false</bool>
@@ -643,7 +662,7 @@ color: rgb(97, 97, 97);
         </property>
        </widget>
       </item>
-      <item row="1" column="2">
+      <item row="1" column="3">
        <widget class="ICLineEditWithVirtualNumericKeypad" name="yPos">
         <property name="enabled">
          <bool>false</bool>
@@ -663,14 +682,14 @@ color: rgb(97, 97, 97);
         </property>
        </widget>
       </item>
-      <item row="0" column="3">
+      <item row="0" column="4">
        <widget class="QLabel" name="label_4">
         <property name="text">
          <string>mm</string>
         </property>
        </widget>
       </item>
-      <item row="3" column="0">
+      <item row="3" column="1">
        <widget class="QPushButton" name="rRun">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -689,35 +708,35 @@ color: rgb(97, 97, 97);
         </property>
        </widget>
       </item>
-      <item row="3" column="1">
+      <item row="3" column="2">
        <widget class="QLabel" name="label_7">
         <property name="text">
          <string>R:</string>
         </property>
        </widget>
       </item>
-      <item row="4" column="3">
+      <item row="4" column="4">
        <widget class="QLabel" name="label_10">
         <property name="text">
          <string>deg</string>
         </property>
        </widget>
       </item>
-      <item row="3" column="3">
+      <item row="3" column="4">
        <widget class="QLabel" name="label_9">
         <property name="text">
          <string>deg</string>
         </property>
        </widget>
       </item>
-      <item row="4" column="1">
+      <item row="4" column="2">
        <widget class="QLabel" name="label_8">
         <property name="text">
          <string>T:</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="0">
+      <item row="2" column="1">
        <widget class="QPushButton" name="zRun">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -736,7 +755,7 @@ color: rgb(97, 97, 97);
         </property>
        </widget>
       </item>
-      <item row="4" column="0">
+      <item row="4" column="1">
        <widget class="QPushButton" name="tRun">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -755,43 +774,21 @@ color: rgb(97, 97, 97);
         </property>
        </widget>
       </item>
-      <item row="0" column="1">
+      <item row="0" column="2">
        <widget class="QLabel" name="label">
         <property name="text">
          <string>X:</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="1">
+      <item row="2" column="2">
        <widget class="QLabel" name="label_6">
         <property name="text">
          <string>S:</string>
         </property>
        </widget>
       </item>
-      <item row="0" column="4">
-       <widget class="QPushButton" name="serveControl">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>100</width>
-          <height>32</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Serve On</string>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="4">
+      <item row="4" column="5">
        <widget class="QPushButton" name="setButton">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
@@ -1126,19 +1123,22 @@ color: rgb(97, 97, 97);
       <string notr="true">buttonGroup_2</string>
      </attribute>
     </widget>
+    <zorder>groupBox_3</zorder>
+    <zorder>label_3</zorder>
+    <zorder>productEdit</zorder>
+    <zorder>groupBox</zorder>
+    <zorder>singleButton</zorder>
+    <zorder>runButton</zorder>
+    <zorder>groupBox_2</zorder>
+    <zorder>return0Button</zorder>
+    <zorder>productClear</zorder>
+    <zorder>uncheckRunButton</zorder>
+    <zorder>serveControl</zorder>
+    <zorder>serveControl</zorder>
    </widget>
    <widget class="QWidget" name="tabWidgetPage2">
     <layout class="QGridLayout" name="gridLayout_3">
-     <property name="leftMargin">
-      <number>2</number>
-     </property>
-     <property name="topMargin">
-      <number>2</number>
-     </property>
-     <property name="rightMargin">
-      <number>2</number>
-     </property>
-     <property name="bottomMargin">
+     <property name="margin">
       <number>2</number>
      </property>
      <property name="spacing">
@@ -1883,7 +1883,7 @@ color: rgb(97, 97, 97);
      <x>10</x>
      <y>410</y>
      <width>761</width>
-     <height>31</height>
+     <height>33</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
@@ -4293,9 +4293,9 @@ color: rgb(97, 97, 97);
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="shortcutGroup"/>
-  <buttongroup name="buttonGroup"/>
-  <buttongroup name="buttonGroup_2"/>
   <buttongroup name="actionGroup"/>
+  <buttongroup name="buttonGroup_2"/>
+  <buttongroup name="buttonGroup"/>
+  <buttongroup name="shortcutGroup"/>
  </buttongroups>
 </ui>

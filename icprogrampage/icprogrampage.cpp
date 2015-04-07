@@ -18,7 +18,7 @@ ICProgramPage::ICProgramPage(QWidget *parent,int _pageIndex,QString pageName) :
     _typeDialog = new ICPointType(this);
     _host = ICVirtualHost::GlobalVirtualHost();
     ui->modiifyButton->hide();
-    ui->actionLabel->setText(_pageName);
+    ui->pushButton->hide();
 
     InitTableWidget();
     InitPoint();
@@ -112,6 +112,14 @@ void ICProgramPage::showEvent(QShowEvent *e)
 
 void ICProgramPage::hideEvent(QHideEvent *e)
 {
+    QList<ICMoldItem> items = GT_AllMoldItems();
+    if(MoldChanged(items)){
+        ICMold::CurrentMold()->SetMoldContent(items);
+        qDebug() << "SaveProgramToFiles: " << ICMold::CurrentMold()->SaveMoldFile(false);
+        ICVirtualHost::GlobalVirtualHost()->ReConfigure();
+
+    }
+
     ICMold::CurrentMold()->SaveMoldParamsFile();
     QWidget::hideEvent(e);
 
@@ -195,12 +203,23 @@ void ICProgramPage::InitPoint()
 {
     DeleteWidgets();
 
-    uint pointCount = _MoldParam(ICMold::getPointCount + _index * 2);
-    uint pointConfig = _MoldParam(ICMold::getPointConfig + _index * 2);
+    uint pointCount = _MoldParam(ICMold::pointCount);
+    quint64 pointConfig = _MoldParam(ICMold::pointConfig1)  |
+                          ((quint64)(_MoldParam(ICMold::pointConfig2)) << 32);
+    quint64 pointConfig2 = _MoldParam(ICMold::pointConfig3)  |
+                              ((quint64)(_MoldParam(ICMold::pointConfig4)) << 32);
+
 
     for(int i =0 ;i < pointCount;i++){
-        pointTypes.append((PointType)(pointConfig >> (i *4) & 0xF));
+        if(i < 16){
+            pointTypes.append((PointType)(pointConfig >> (i *4) & 0xF));
+        }
+        else{
+            pointTypes.append((PointType)(pointConfig2 >> ((i- 16) * 4) & 0xF));
+        }
     }
+
+
 
 
     for(int i = 0 ;i < pointCount;i++){
@@ -262,7 +281,8 @@ void ICProgramPage::InitPoint()
 
 void ICProgramPage::DeleteWidgets()
 {
-    for(int index=0;index < ROW_COUNTS;index++){
+    int rowCount = ROW_COUNTS;
+    for(int index=0;index < rowCount;index++){
         for(int i=0;i < ui->tableWidget->columnCount();i++){
             if(ui->tableWidget->item(index,i))
             delete ui->tableWidget->item(index,i);
@@ -275,6 +295,10 @@ void ICProgramPage::DeleteWidgets()
         ui->tableWidget->removeRow(0);
         pointTypes.removeAt(0);
     }
+//    for(int k=0;k< ui->tableWidget->verticalHeader()->count();k++){
+//        ui->tableWidget->verticalHeader()->resizeSection(k,40);
+//    }
+
 }
 
 void ICProgramPage::InitPointToItem()
@@ -296,14 +320,35 @@ void ICProgramPage::InitPointToItem()
 void ICProgramPage::SaveConfigPoint()
 {
     //保存点配置
-    int config = 0;
-    for(int i=0;i<pointTypes.size();i++)
-        config += (pointTypes.at(i)  << (i *4));
+    quint64 config1 = 0;
+    quint64 config2 = 0;
 
-    if(_MoldParam(ICMold::getPointCount + _index * 2) != ROW_COUNTS)
-        _SetMoldParam(ICMold::getPointCount + _index * 2, ROW_COUNTS);
-    if(_MoldParam(ICMold::getPointConfig + _index * 2) != config)
-        _SetMoldParam(ICMold::getPointConfig + _index * 2,config);
+
+
+    for(int i=0;i<pointTypes.size();i++){
+        if(i < 16){
+            quint64 type =  pointTypes.at(i);
+            config1 |= (type  << (i *4));
+        }
+        else{
+            quint64 type =  pointTypes.at(i);
+            config2 |= (type  << (i-16) * 4);
+        }
+    }
+
+
+    if(_MoldParam(ICMold::pointCount) != ROW_COUNTS)
+        _SetMoldParam(ICMold::pointCount, ROW_COUNTS);
+    if(_MoldParam(ICMold::pointConfig1) != config1 & 0xFFFFFFFF)
+        _SetMoldParam(ICMold::pointConfig1,config1 & 0xFFFFFFFF);
+    if(_MoldParam(ICMold::pointConfig2) != (config1 >> 32) & 0xFFFFFFFF)
+        _SetMoldParam(ICMold::pointConfig2,(config1 >> 32) & 0xFFFFFFFF);
+    if(_MoldParam(ICMold::pointConfig3) != config2 & 0xFFFFFFFF)
+        _SetMoldParam(ICMold::pointConfig3,config2 & 0xFFFFFFFF);
+    if(_MoldParam(ICMold::pointConfig4) != (config2 >> 32) & 0xFFFFFFFF)
+        _SetMoldParam(ICMold::pointConfig4,(config2 >> 32) & 0xFFFFFFFF);
+
+
 
     //保存点坐标
     for(int i=0;i<ROW_COUNTS;i++){
@@ -315,6 +360,17 @@ void ICProgramPage::SaveConfigPoint()
 
         }
     }
+}
+
+QList<ICMoldItem> ICProgramPage::GT_AllMoldItems()
+{
+    QList<ICMoldItem> items;
+    items =    GT_HeaderItems()
+            +  GT_MoldItems()
+            +  GT_TailMoldItems();
+    GT_CalculateItem(items);
+    ICMold::MoldReSum(items);
+    return items;
 }
 
 
@@ -369,10 +425,10 @@ void ICProgramPage::on_newButton_clicked()
     if(index == -1) index ++;
     if(_typeDialog->exec() == QDialog::Accepted){
 
-//        if(ui->tableWidget->rowCount() == MAX_ROWCOUNT){
-//            QMessageBox::information(this,tr("Information"),tr("Max Rows Beyond %1!").arg(MAX_POINTS));
-//            return;
-//        }
+    if(ui->tableWidget->rowCount() == MAX_ROWCOUNT + 1){
+        QMessageBox::information(this,tr("Information"),tr("Max Rows Beyond %1!").arg(MAX_ROWCOUNT));
+        return;
+    }
 //        if(_typeDialog->currentType() == Get_Wait ||
 //           _typeDialog->currentType() == Get ||
 //                _typeDialog->currentType() == Get_Finish ||
@@ -388,6 +444,7 @@ void ICProgramPage::on_newButton_clicked()
         for(int i = 0 ;i < AXIS_COUNTS; i++){
             QTableWidgetItem *item = new QTableWidgetItem("") ;
             item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+            item->setText("0.0");
             ui->tableWidget->setItem(index,i+1,item);
         }
         QPushButton *button = new QPushButton;
@@ -456,6 +513,8 @@ void ICProgramPage::on_deleteButton_clicked()
     else{
         qDebug() << "Not  Delete Space Line";
     }
+    ui->tableWidget->hide();
+    ui->tableWidget->show();
 
 }
 
@@ -467,4 +526,40 @@ void ICProgramPage::on_saveButton_clicked()
 void ICProgramPage::MoldChanged(QString s)
 {
     InitPoint();
+}
+
+
+void ICProgramPage::GT_CalculateItem(QList<ICMoldItem>& items)
+{
+    uint oldNum = 0;
+    //计算num
+    for(int i=0;i<items.size();i++){
+        if(items.at(i).GMVal() == ICMold::GARC){
+            items[i].SetNum(oldNum);
+            if(items.at(i).IFPos()  == 5){
+                oldNum ++;
+            }
+        }
+        else{
+            items[i].SetNum(oldNum);
+            oldNum ++;
+        }
+
+    }
+}
+
+
+bool ICProgramPage::MoldChanged(QList<ICMoldItem>& items)
+{
+    QList<ICMoldItem> oldItems = ICMold::CurrentMold()->MoldContent();
+    if(items.size() != oldItems.size()){
+        return true;
+    }
+    for(int i=0;i<items.size();i++){
+        if(!(items.at(i) == oldItems.at(i))){
+            return true;
+        }
+    }
+
+    return false;
 }

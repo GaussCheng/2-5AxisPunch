@@ -57,6 +57,7 @@
 #include "icupdatesystempage.h"
 #include "icmachineconfigpage.h"
 #include "icprogrammainpage.h"
+#include "icautoactionpage.h"
 
 #include <QDebug>
 
@@ -521,7 +522,7 @@ void MainFrame::InitCategoryPage()
     centerStackedLayout_->addWidget(manualPage_);
 
     emit LoadMessage("Start to Initialize auto pages");
-    autoPage_ = new ICHCProgramMonitorFrame();
+    autoPage_ = new ICAutoActionPage();
     centerStackedLayout_->addWidget(autoPage_);
 
 //    settingsPage_ = new ICSettingsFrame();
@@ -542,7 +543,7 @@ void MainFrame::InitCategoryPage()
 
 
     emit LoadMessage("Start to Initialize instruct pages");
-    instructPage_ = new ICProgramMainPage();//ICHCInstructionPageFrame  ICProgramMainPage
+    instructPage_ = new ICProgramPage();//ICHCInstructionPageFrame  ICProgramMainPage
     functionButtonToPage_.insert(ui->teachButton, instructPage_);
     centerStackedLayout_->addWidget(instructPage_);
 
@@ -1242,7 +1243,7 @@ void MainFrame::LevelChanged(int level)
     case ICParametersSave::AdvanceAdmin:
     {
         ui->settingsButton->setEnabled(true);
-        ui->teachButton->setEnabled(true);
+//        ui->teachButton->setEnabled(true);
         if(ICKeyboard::Instace()->CurrentSwitchStatus() == ICKeyboard::KS_StopStatu)
         {
             ui->settingsButton->setEnabled(true);
@@ -1256,12 +1257,12 @@ void MainFrame::LevelChanged(int level)
         }
         if(ICKeyboard::Instace()->CurrentSwitchStatus() != ICKeyboard::KS_AutoStatu)
         {
-//            ui->teachButton->setEnabled(true);
+            ui->teachButton->setEnabled(true);
             //            ui->recordPageButton->setEnabled(true);
         }
         else
         {
-//            ui->teachButton->setEnabled(false);
+            ui->teachButton->setEnabled(false);
             //            ui->recordPageButton->setEnabled(false);
         }
     }

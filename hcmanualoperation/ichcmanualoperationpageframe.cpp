@@ -66,6 +66,9 @@ ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
 //    ui->rsSpeed->hide();
     ui->runButton->hide();
     ui->uncheckRunButton->hide();
+
+    ui->groupBox->hide();
+    ui->groupBox_2->hide();
 }
 
 ICHCManualOperationPageFrame::~ICHCManualOperationPageFrame()
