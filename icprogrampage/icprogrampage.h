@@ -16,6 +16,7 @@
 #define MAX_ROWCOUNT 32
 #define COLUMN_COUNTS (AXIS_COUNTS + 3)
 #define RESERVE_COUNTS (MAX_POINTS - 3)
+#define PAGE_MAX_COUNT 8
 #define ROW_COUNTS ui->tableWidget->rowCount() - 1
 
 namespace Ui {
@@ -63,6 +64,7 @@ public:
                             uint sum);
 
     void InitFixMoldItems();
+    void SetPageMaxCount(int count);
     ~ICProgramPage();
 
 protected:
@@ -81,12 +83,18 @@ private slots:
     void on_modiifyButton_clicked();
     void on_deleteButton_clicked();
 
+
     void on_saveButton_clicked();
     void MoldChanged(QString);
 
 private:
     void InitTableWidget();
     void InitPoint();
+    void DisableTestButtons();
+    void EnableTestButtons();
+    void PreviousPage();
+    void NextPage();
+
     void DeleteWidgets();
     void InitPointToItem();
     void SaveConfigPoint();
@@ -106,6 +114,9 @@ private:
     ICVirtualHost *_host;
     int _index;
     QString _pageName;
+    int _pageMaxCount;
+    int _currentPage;
+
     QList<PointPtr> allPoints;
     QList<ICMoldItem> allItems;
 

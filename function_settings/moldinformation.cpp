@@ -285,7 +285,8 @@ bool MoldInformation::DeleteSourceFile(const QString & fileName)
         QFile::remove(subFile);
 //        QFile::remove(resvFile);
         QString toRm = QString("rm %1*").arg(resvFile);
-        system(toRm.toLatin1());
+//        qDebug() << toRm.toUtf8();
+        system(toRm.toUtf8()); //中文采用utf-8编码
         //        QFile::remove(ICSettingConfig::ConfigPath() + fileName);
         //        QMessageBox::information(this, tr("Success"),
         //                                 tr("File deleted success!"),

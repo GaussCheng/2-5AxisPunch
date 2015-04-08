@@ -11,7 +11,9 @@ ICProgramPage::ICProgramPage(QWidget *parent,int _pageIndex,QString pageName) :
     QWidget(parent),
     ui(new Ui::ICProgramPage),
     _index(_pageIndex),
-    _pageName(pageName)
+    _pageName(pageName),
+    _pageMaxCount(PAGE_MAX_COUNT),
+    _currentPage(0)
 {
     ui->setupUi(this);
     _dialog =  VirtualNumericKeypadDialog::Instance();
@@ -19,6 +21,7 @@ ICProgramPage::ICProgramPage(QWidget *parent,int _pageIndex,QString pageName) :
     _host = ICVirtualHost::GlobalVirtualHost();
     ui->modiifyButton->hide();
     ui->pushButton->hide();
+
 
     InitTableWidget();
     InitPoint();
@@ -202,6 +205,7 @@ void ICProgramPage::InitTableWidget()
 void ICProgramPage::InitPoint()
 {
     DeleteWidgets();
+    allPoints.clear();
 
     uint pointCount = _MoldParam(ICMold::pointCount);
     quint64 pointConfig = _MoldParam(ICMold::pointConfig1)  |
@@ -276,6 +280,20 @@ void ICProgramPage::InitPoint()
         ui->tableWidget->item(i,3)->setText(QString::number(allPoints[i]->s / 10.0, 'f', 1));
         ui->tableWidget->item(i,4)->setText(QString::number(allPoints[i]->r / 10.0, 'f', 1));
         ui->tableWidget->item(i,5)->setText(QString::number(allPoints[i]->t / 10.0, 'f', 1));
+    }
+}
+
+void ICProgramPage::DisableTestButtons()
+{
+    foreach(QPushButton *button,testButtons){
+        button->setEnabled(false);
+    }
+}
+
+void ICProgramPage::EnableTestButtons()
+{
+    foreach(QPushButton *button,testButtons){
+        button->setEnabled(true);
     }
 }
 
@@ -419,6 +437,12 @@ void ICProgramPage::InitFixMoldItems()
 
 }
 
+void ICProgramPage::SetPageMaxCount(int count)
+{
+    _pageMaxCount = count;
+}
+
+
 void ICProgramPage::on_newButton_clicked()
 {
     int index = ui->tableWidget->currentIndex().row();
@@ -470,6 +494,7 @@ void ICProgramPage::on_newButton_clicked()
         for(int k=0;k< ui->tableWidget->verticalHeader()->count();k++){
             ui->tableWidget->verticalHeader()->resizeSection(k,40);
         }
+        DisableTestButtons();
     }
 
 }
@@ -497,6 +522,13 @@ void ICProgramPage::on_deleteButton_clicked()
 //        QMessageBox::information(this,tr("Information"),tr("Canot insert %1 action!").arg( _typeDialog->toString(pointTypes.at(index) )));
 //        return;
 //    }
+
+    if(QMessageBox::information(this,tr("Information"),tr("If Delete current Row?"),
+                                QMessageBox::Ok | QMessageBox::Cancel) != QMessageBox::Ok)
+    {
+        return;
+    }
+
     if(index != ROW_COUNTS){
         for(int i=0;i < ui->tableWidget->columnCount();i++){
             delete ui->tableWidget->item(index,i);
@@ -515,12 +547,14 @@ void ICProgramPage::on_deleteButton_clicked()
     }
     ui->tableWidget->hide();
     ui->tableWidget->show();
+    DisableTestButtons();
 
 }
 
 void ICProgramPage::on_saveButton_clicked()
 {
     SaveConfigPoint();
+    EnableTestButtons();
 }
 
 void ICProgramPage::MoldChanged(QString s)

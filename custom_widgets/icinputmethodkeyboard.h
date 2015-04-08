@@ -17,7 +17,7 @@ public:
     explicit ICInputMethodKeyboard(QWidget *parent = 0);
     ~ICInputMethodKeyboard();
 
-    void SetTextEditor(QPlainTextEdit* editor) { editor_ = editor;}
+    void SetTextEditor(QWidget* editor) { editor_ = editor;}
 
 protected:
     void changeEvent(QEvent *e);
@@ -26,7 +26,7 @@ private slots:
     void on_btn_ent_clicked();
     void OnInputButtonClicked(const QString& text);
     void ShowMaching_(const QStringList& texts);
-
+    void InsertContent(const QString& content);
 
     void on_btn_sw_clicked();
 
@@ -43,7 +43,7 @@ private slots:
 private:
     bool IsChEn_() const;
     Ui::ICInputMethodKeyboard *ui;
-    QPlainTextEdit* editor_;
+    QWidget * editor_;
     QSignalMapper signalMapper_;
 };
 

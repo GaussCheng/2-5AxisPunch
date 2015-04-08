@@ -399,34 +399,6 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
-         <widget class="QPushButton" name="serveControl">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>100</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>100</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>Serve On</string>
-          </property>
-          <property name="checkable">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
          <spacer name="horizontalSpacer">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -481,8 +453,8 @@ border-style: none;
     <widget class="QLabel" name="label_3">
      <property name="geometry">
       <rect>
-       <x>440</x>
-       <y>355</y>
+       <x>430</x>
+       <y>360</y>
        <width>91</width>
        <height>21</height>
       </rect>
@@ -807,6 +779,34 @@ color: rgb(97, 97, 97);
         </property>
        </widget>
       </item>
+      <item row="0" column="5">
+       <widget class="QPushButton" name="serveControl">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Serve On</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
     <widget class="QPushButton" name="singleButton">
@@ -1123,18 +1123,6 @@ color: rgb(97, 97, 97);
       <string notr="true">buttonGroup_2</string>
      </attribute>
     </widget>
-    <zorder>groupBox_3</zorder>
-    <zorder>label_3</zorder>
-    <zorder>productEdit</zorder>
-    <zorder>groupBox</zorder>
-    <zorder>singleButton</zorder>
-    <zorder>runButton</zorder>
-    <zorder>groupBox_2</zorder>
-    <zorder>return0Button</zorder>
-    <zorder>productClear</zorder>
-    <zorder>uncheckRunButton</zorder>
-    <zorder>serveControl</zorder>
-    <zorder>serveControl</zorder>
    </widget>
    <widget class="QWidget" name="tabWidgetPage2">
     <layout class="QGridLayout" name="gridLayout_3">

@@ -44,7 +44,8 @@ HEADERS += \
     custom_widgets/icgroupbox.h \
     custom_widgets/ictabwidget.h \
     custom_widgets/icinputmethodkeyboard.h \
-    custom_widgets/icplaintextedit.h
+    custom_widgets/icplaintextedit.h \
+    custom_widgets/icinputmethodedit.h
 
 SOURCES += \
     custom_widgets/ictablewidget.cpp \
@@ -56,4 +57,5 @@ SOURCES += \
     custom_widgets/icgroupbox.cpp \
     custom_widgets/ictabwidget.cpp \
     custom_widgets/icinputmethodkeyboard.cpp \
-    custom_widgets/icplaintextedit.cpp
+    custom_widgets/icplaintextedit.cpp \
+    custom_widgets/icinputmethodedit.cpp

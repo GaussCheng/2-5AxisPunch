@@ -656,7 +656,7 @@
     <enum>Qt::NoFocus</enum>
    </property>
    <property name="text">
-    <string notr="true">EN</string>
+    <string>EN</string>
    </property>
   </widget>
   <widget class="QToolButton" name="btn_spot">

@@ -115,7 +115,7 @@ private:
 
     QWidget * autoPage_;
 //    QWidget * returnPage_;
-    ICHCManualOperationPageFrame * manualPage_;
+    QWidget * manualPage_;
     QDialog *originExecutingPage_;
     QDialog *returnExecutingPage_;
     QDialog *actionDialog_;

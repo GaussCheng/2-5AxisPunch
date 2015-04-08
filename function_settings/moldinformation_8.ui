@@ -425,7 +425,7 @@ QMessageBox QAbstractButton
       </widget>
      </item>
      <item>
-      <widget class="ICLineEditWithVirtualKeyboard" name="destinationFileLineEdit">
+      <widget class="ICInputMethodEdit" name="destinationFileLineEdit">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -443,9 +443,9 @@ QMessageBox QAbstractButton
  </widget>
  <customwidgets>
   <customwidget>
-   <class>ICLineEditWithVirtualKeyboard</class>
+   <class>ICInputMethodEdit</class>
    <extends>QLineEdit</extends>
-   <header>iclineeditwithvirtualkeyboard.h</header>
+   <header>icinputmethodedit.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
