@@ -160,6 +160,8 @@ bool MoldInformation::CreateNewSourceFile(const QString & fileName)
         QFile::copy(recordFilePath_ + "/Base.sub", recordFilePath_ + "/" + fileNameNoExtent + "reserve5");
         QFile::copy(recordFilePath_ + "/Base.sub", recordFilePath_ + "/" + fileNameNoExtent + "reserve6");
         QFile::copy(recordFilePath_ + "/Base.sub", recordFilePath_ + "/" + fileNameNoExtent + "reserve7");
+        QFile::copy(recordFilePath_ + "/Base.cfg", recordFilePath_ + "/" + fileNameNoExtent + "cfg");
+
         newFile.close();
         ::system("sync");
         QMessageBox::warning(this, tr("Success"),
@@ -220,6 +222,13 @@ bool MoldInformation::CopySourceFile(const QString & originFileName, const QStri
     QString targetSubFilePath = targetFilePathName;
     targetSubFilePath.chop(3);
     targetSubFilePath += "sub";
+    QString originCfgFilePath = originFilePathName;
+    originCfgFilePath.chop(3);
+    originCfgFilePath += "cfg";
+    QString targetCfgFilePath = targetFilePathName;
+    targetCfgFilePath.chop(3);
+    targetCfgFilePath += "cfg";
+
     QString originResvFilePath = originFilePathName;
     originResvFilePath.chop(3);
     originResvFilePath += "reserve";
@@ -245,6 +254,7 @@ bool MoldInformation::CopySourceFile(const QString & originFileName, const QStri
 //                        return true;
 //                    }
                 }
+                isOk = isOk && QFile::copy(originCfgFilePath, targetCfgFilePath);
                 if(isOk) return true;
                 system(QString("rm %1*").arg(targetResvFilePath).toLatin1());
                 QFile::remove(targetSubFilePath);
@@ -277,12 +287,16 @@ bool MoldInformation::DeleteSourceFile(const QString & fileName)
     configFile.chop(3);
     QString subFile = configFile + "sub";
     QString resvFile = configFile + "reserve";
+    QString cfgFile = configFile + "cfg";
+
     configFile += "fnc";
     if(QFile::exists(filePathName))
     {
         QFile::remove(filePathName);
         QFile::remove(configFile);
         QFile::remove(subFile);
+        QFile::remove(cfgFile);
+
 //        QFile::remove(resvFile);
         QString toRm = QString("rm %1*").arg(resvFile);
 //        qDebug() << toRm.toUtf8();

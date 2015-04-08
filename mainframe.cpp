@@ -519,11 +519,11 @@ void MainFrame::InitCategoryPage()
     centerStackedLayout_->addWidget(initialPage_);
 
     emit LoadMessage("Start to Initialize manual pages");
-    manualPage_ = new ICMaualActionPage();//ICHCManualOperationPageFrame
+    manualPage_ = new ICHCManualOperationPageFrame();//ICHCManualOperationPageFrame
     centerStackedLayout_->addWidget(manualPage_);
 
     emit LoadMessage("Start to Initialize auto pages");
-    autoPage_ = new ICAutoActionPage();
+    autoPage_ = new ICHCProgramMonitorFrame();
     centerStackedLayout_->addWidget(autoPage_);
 
 //    settingsPage_ = new ICSettingsFrame();

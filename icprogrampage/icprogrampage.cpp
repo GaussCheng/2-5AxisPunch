@@ -67,23 +67,23 @@ QList<ICMoldItem> ICProgramPage::MK_PosItem(int pos)
 
     if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisY1)) ==
             ICVirtualHost::ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisY1))){
-        items << MK_MoldItem(1,1,pos,22,0,64,2,80,0,172);  //3D教导
+        items << MK_MoldItem(1,1,pos,22,0,64,2,100,0,172);  //3D教导
     }
     if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisX1)) ==
             ICVirtualHost::ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisX1))){
-        items  << MK_MoldItem(2,1,pos,22,0,64,1,80,0,174);//3D教导
+        items  << MK_MoldItem(2,1,pos,22,0,64,1,100,0,174);//3D教导
     }
     if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisZ)) ==
             ICVirtualHost::ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisZ))){
-        items  << MK_MoldItem(3,1,pos,22,0,64,3,80,0,176);  //3D教导
+        items  << MK_MoldItem(3,1,pos,22,0,64,3,100,0,176);  //3D教导
     }
     if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisX2)) ==
             ICVirtualHost::ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisX2))){
-        items  << MK_MoldItem(4,1,pos,22,0,64,4,80,0,178);  //3D教导
+        items  << MK_MoldItem(4,1,pos,22,0,64,4,100,0,178);  //3D教导
     }
     if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisY2)) ==
             ICVirtualHost::ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisY2))){
-        items  << MK_MoldItem(5,1,pos,22,0,64,5,80,0,180);  //3D教导
+        items  << MK_MoldItem(5,1,pos,22,0,64,5,100,0,180);  //3D教导
     }
 
 
@@ -166,7 +166,26 @@ void ICProgramPage::saveButtonsCliked()
 
 void ICProgramPage::testButonsClicked()
 {
+    QPushButton *button = qobject_cast<QPushButton*>(sender());
+    int index = testButtons.indexOf(button);
 
+    if(index < 0)
+    {
+        return;
+    }
+    if(!ICVirtualHost::GlobalVirtualHost()->IsOrigined())
+    {
+        QMessageBox::warning(this,
+                             tr("Warning"),
+                             tr("Has not been origin!"));
+        return;
+    }
+    ICManualRun cmd;
+    cmd.SetSlave(1);
+    cmd.SetGM(ICMold::GARC);
+    cmd.SetPoint(index);
+    //    cmd.SetIFVal(1);
+    ICCommandProcessor::Instance()->ExecuteCommand(cmd);
 }
 
 
@@ -425,14 +444,14 @@ ICMoldItem ICProgramPage::MK_MoldItem(uint seq, uint num, uint8_t subNum, uint g
 
 void ICProgramPage::InitFixMoldItems()
 {
-    waitM10   = MK_MoldItem(6,2,0,24,0,1,0,0,0,33);
+    waitM10   = MK_MoldItem(6,2,0,24,0,1,0,0,300,33);
     outY37On  = MK_MoldItem(7,3,23,11,0,1,0,0,0,45);
-    outM11    = MK_MoldItem(8,4,1,25,0,1,0,0,30000,204);
-    waitM12   = MK_MoldItem(9,5,2,25,0,1,0,0,30000,207);
+    outM11    = MK_MoldItem(8,4,1,25,0,1,0,0,300,204);
+    waitM12   = MK_MoldItem(9,5,2,25,0,1,0,0,300,207);
     outY37Off = MK_MoldItem(10,6,23,11,0,0,0,0,0,50);
     outY31On  = MK_MoldItem(11,7,17,11,0,1,0,0,0,47);
     outY31Off = MK_MoldItem(12,8,17,11,0,0,0,0,50,98);
-    waitM14   = MK_MoldItem(13,9,4,24,0,1,0,0,3000,246);
+    waitM14   = MK_MoldItem(13,9,4,24,0,1,0,0,300,246);
     outPermit = MK_MoldItem(14,10,3,25,0,1,0,0,50,103);
 
 }

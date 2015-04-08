@@ -253,6 +253,34 @@ bool ICMold::ReadMoldFile(const QString &fileName, bool isLoadParams)
     return ret;
 }
 
+bool ICMold::ReadConfigFile(const QString &fileName)
+{
+    QFile file(fileName);
+
+    if(!file.open(QFile::ReadOnly | QFile::Text))
+    {
+        return false;
+    }
+    QString content = QString::fromUtf8(file.readAll());
+    file.close();
+    //    content = content.remove('\r');
+
+    if(content.isNull())
+    {
+        qDebug("mold configure null");
+        return false;
+    }
+
+    QStringList records = content.split("\n", QString::SkipEmptyParts);
+    for(int i = 0; i != records.size(); ++i)
+    {
+        moldNativeParams_.append(records.at(i).toInt());
+    }
+    moldConfigName_ = fileName;
+
+    return true;
+}
+
 bool ICMold::ReadMoldParamsFile(const QString &fileName)
 {
 //    moldParamName_ = fileName;
@@ -372,6 +400,20 @@ bool ICMold::SaveMoldParamsFile()
 //        QFile::remove(moldParamName_ + "~");
 //        ret = true;
 //    }
+    return ret;
+}
+
+bool ICMold::SaveMoldConfigFile()
+{
+    bool ret = false;
+    QByteArray toWrite;
+    for(int i = 0; i != moldNativeParams_.size(); ++i)
+    {
+        toWrite += QByteArray::number(moldNativeParams_.at(i)) + "\n";
+    }
+    ICFile file(moldConfigName_);
+    ret = file.ICWrite(toWrite);
+
     return ret;
 }
 

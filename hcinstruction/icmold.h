@@ -310,14 +310,15 @@ public:
         check2,
         check3,
         check4,
-        Native,
-        pointCount = Native,
+        MoldParamCount
+
+    };
+    enum ICMoldNativeParam{
+        pointCount,
         pointConfig1,
         pointConfig2,
         pointConfig3,
-        pointConfig4,
-        MoldParamCount
-
+        pointConfig4
     };
 
     enum ICStatckParam
@@ -440,10 +441,14 @@ public:
     uint SyncSum() const;
     void MoldReSum() {MoldReSum(moldContent_);}
     bool ReadMoldFile(const QString& fileName, bool isLoadParams = true);
+    bool ReadConfigFile(const QString& fileName);
+
     bool ReadMoldParamsFile(const QString& fileName);
 
     bool SaveMoldFile(bool isSaveParams = true);
     bool SaveMoldParamsFile();
+    bool SaveMoldConfigFile();
+
 
     QList<ICMoldItem> MoldContent() const { return moldContent_;}
     void SetMoldContent(const QList<ICMoldItem>& moldContent) { moldContent_ = moldContent;}
@@ -469,6 +474,10 @@ public:
 
     int MoldParam(ICMoldParam param) const;
     void SetMoldParam(ICMoldParam param, int value);
+
+    int MoldNativeParam(ICMoldNativeParam param) const;
+    void SetMoldNativeParam(ICMoldNativeParam param, int value);
+
     void UpdateSyncSum();
 
     int StackParam(int group, ICStatckParam param) const;
@@ -482,9 +491,12 @@ public slots:
 private:
     QList<ICMoldItem> moldContent_;
     QList<int> moldParams_;
+    QList<int> moldNativeParams_;
+
     QList<QList<int> > stackParams_;
     int checkSum_;
     QString moldName_;
+    QString moldConfigName_;
     QString moldParamName_;
 //    QList<ACTGROUP> axisActions_;
     static ICMold* currentMold_;
@@ -498,6 +510,15 @@ inline int ICMold::MoldParam(ICMoldParam param) const
     return MoldParams().at(param);
 }
 
+
+inline int ICMold::MoldNativeParam(ICMoldNativeParam param) const
+{
+//    Q_ASSERT_X(param < MoldParams().size(), "ICMold::MoldParam", "param is out of range");
+    if(param >= moldNativeParams_.size()) return 0;
+    return moldNativeParams_.at(param);
+}
+
+
 inline void ICMold::SetMoldParam(ICMoldParam param, int value)
 {
 //    Q_ASSERT_X(param < moldParams_.size(), "ICMold::SetMoldParams", "param is out of range");
@@ -510,6 +531,14 @@ inline void ICMold::SetMoldParam(ICMoldParam param, int value)
         emit MoldPramChanged(MoldParamCount, checkSum_);
     }
 }
+
+inline void ICMold::SetMoldNativeParam(ICMoldNativeParam param, int value)
+{
+//    Q_ASSERT_X(param < moldParams_.size(), "ICMold::SetMoldParams", "param is out of range");
+    if(param >= moldNativeParams_.size()) { return ;}
+    moldNativeParams_[param] = value;
+}
+
 
 inline void ICMold::SetStackParam(int group, ICStatckParam param, int value)
 {

@@ -860,6 +860,15 @@ void ICVirtualHost::InitMold_()
         return;
     }
 
+    configPath = path;
+    configPath.chop(3);
+    configPath += "cfg";
+
+    if(!currentMold_->ReadConfigFile(configPath)){
+        qDebug("Init Native fail!");
+        return;
+    }
+
     WriteMoldTohost_();
 
     qDebug("Init mold finish");

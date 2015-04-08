@@ -397,6 +397,34 @@
        </widget>
       </item>
       <item>
+       <widget class="QPushButton" name="serveControl">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Serve On</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
          <spacer name="horizontalSpacer">
@@ -449,38 +477,6 @@ border-style: none;
        </layout>
       </item>
      </layout>
-    </widget>
-    <widget class="QLabel" name="label_3">
-     <property name="geometry">
-      <rect>
-       <x>430</x>
-       <y>360</y>
-       <width>91</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Product</string>
-     </property>
-    </widget>
-    <widget class="ICLineEditWithVirtualNumericKeypad" name="productEdit">
-     <property name="geometry">
-      <rect>
-       <x>540</x>
-       <y>350</y>
-       <width>120</width>
-       <height>32</height>
-      </rect>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>32</height>
-      </size>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
     </widget>
     <widget class="QGroupBox" name="groupBox">
      <property name="geometry">
@@ -779,34 +775,6 @@ color: rgb(97, 97, 97);
         </property>
        </widget>
       </item>
-      <item row="0" column="5">
-       <widget class="QPushButton" name="serveControl">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>100</width>
-          <height>50</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>100</width>
-          <height>50</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Serve On</string>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
      </layout>
     </widget>
     <widget class="QPushButton" name="singleButton">
@@ -837,7 +805,7 @@ color: rgb(97, 97, 97);
     <widget class="QPushButton" name="runButton">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>370</x>
        <y>330</y>
        <width>100</width>
        <height>48</height>
@@ -1070,31 +1038,12 @@ color: rgb(97, 97, 97);
       <string>Return 0</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="productClear">
-     <property name="geometry">
-      <rect>
-       <x>680</x>
-       <y>350</y>
-       <width>91</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string>P.Clear</string>
-     </property>
-    </widget>
     <widget class="QPushButton" name="uncheckRunButton">
      <property name="geometry">
       <rect>
-       <x>130</x>
+       <x>550</x>
        <y>330</y>
-       <width>100</width>
+       <width>102</width>
        <height>48</height>
       </rect>
      </property>
@@ -1122,6 +1071,51 @@ color: rgb(97, 97, 97);
      <attribute name="buttonGroup">
       <string notr="true">buttonGroup_2</string>
      </attribute>
+    </widget>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>330</y>
+       <width>297</width>
+       <height>34</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Product</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="ICLineEditWithVirtualNumericKeypad" name="productEdit">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>32</height>
+         </size>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="productClear">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>P.Clear</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </widget>
    <widget class="QWidget" name="tabWidgetPage2">
@@ -1869,7 +1863,7 @@ color: rgb(97, 97, 97);
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>410</y>
+     <y>400</y>
      <width>761</width>
      <height>33</height>
     </rect>

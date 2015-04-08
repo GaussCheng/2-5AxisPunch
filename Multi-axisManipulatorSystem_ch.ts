@@ -7241,7 +7241,7 @@ Please enter an digit between </source>
     <message>
         <location filename="icprogrampage/icpointtype.cpp" line="11"/>
         <source>Get_Wait</source>
-        <translation>取料待机点</translation>
+        <translation>取料待机</translation>
     </message>
     <message>
         <location filename="icprogrampage/icpointtype.cpp" line="12"/>
@@ -7261,7 +7261,7 @@ Please enter an digit between </source>
     <message>
         <location filename="icprogrampage/icpointtype.cpp" line="15"/>
         <source>Put_Wait</source>
-        <translation>放料待机点</translation>
+        <translation>放料待机</translation>
     </message>
     <message>
         <location filename="icprogrampage/icpointtype.cpp" line="16"/>
