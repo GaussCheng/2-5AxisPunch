@@ -2,7 +2,7 @@
 moldName=Default.act
 
 [SystemMachine]
-BootDatetime=@Variant(\0\0\0\x10\0%~!\x3\xea\xbeK\0)
+BootDatetime=@Variant(\0\0\0\x10\0%~\"\x2\x10\x14\xbd\0)
 
 [ProductConfig]
 KeyTone=true

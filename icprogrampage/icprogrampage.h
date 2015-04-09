@@ -13,7 +13,7 @@
 
 #define MAX_POINTS 8
 #define AXIS_COUNTS 5
-#define MAX_ROWCOUNT 32
+#define MAX_ROWCOUNT 20
 #define COLUMN_COUNTS (AXIS_COUNTS + 3)
 #define RESERVE_COUNTS (MAX_POINTS - 3)
 #define PAGE_MAX_COUNT 8
@@ -25,6 +25,10 @@ class ICProgramPage;
 
 #define _MoldParam(addr) ICMold::CurrentMold()->MoldParam(static_cast<ICMold::ICMoldParam>(addr))
 #define _SetMoldParam(addr,value) ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(addr),value)
+
+
+#define _NativeMoldParam(addr) ICMold::CurrentMold()->MoldNativeParam(static_cast<ICMold::ICMoldNativeParam>(addr))
+#define _SetNativeMoldParam(addr,value) ICMold::CurrentMold()->SetMoldNativeParam(static_cast<ICMold::ICMoldNativeParam>(addr),value)
 
 typedef struct{
    qint16 x;
@@ -100,6 +104,8 @@ private:
     void SaveConfigPoint();
     QList<ICMoldItem> GT_AllMoldItems();
     bool MoldChanged(QList<ICMoldItem>& items);
+    bool MoldConfigChanged();
+
     void GT_CalculateItem(QList<ICMoldItem>& items);
 
 private:

@@ -261,6 +261,7 @@ bool ICMold::ReadConfigFile(const QString &fileName)
     {
         return false;
     }
+    moldNativeParams_.clear();
     QString content = QString::fromUtf8(file.readAll());
     file.close();
     //    content = content.remove('\r');

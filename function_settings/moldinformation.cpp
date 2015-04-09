@@ -412,6 +412,15 @@ void MoldInformation::on_loadToolButton_clicked()
                 //                ICMold::CurrentMold()->ReadMoldFile(
                 return;
             }
+            QString configFile = filePathName;
+            configFile.chop(3);
+            configFile += "cfg";
+            if(!ICMold::CurrentMold()->ReadConfigFile(configFile))
+            {
+                QMessageBox::critical(this, tr("critical"), tr("Read mold or mold para fail! Please change other mold!"));
+                //                ICMold::CurrentMold()->ReadMoldFile(
+                return;
+            }
             if(!QFile::exists(QString("./records/%1").arg(subName)) ||
                     !QFile::exists(QString("./records/%1%2").arg(resvName).arg(1)) ||
                     !QFile::exists(QString("./records/%1%2").arg(resvName).arg(2)) ||

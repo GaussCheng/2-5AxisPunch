@@ -118,12 +118,12 @@ void ICProgramPage::hideEvent(QHideEvent *e)
     QList<ICMoldItem> items = GT_AllMoldItems();
     if(MoldChanged(items)){
         ICMold::CurrentMold()->SetMoldContent(items);
-        qDebug() << "SaveProgramToFiles: " << ICMold::CurrentMold()->SaveMoldFile(false);
+        qDebug() << "SaveProgramToFiles: " << ICMold::CurrentMold()->SaveMoldFile();
+        ICMold::CurrentMold()->SaveMoldConfigFile();
         ICVirtualHost::GlobalVirtualHost()->ReConfigure();
 
     }
 
-    ICMold::CurrentMold()->SaveMoldParamsFile();
     QWidget::hideEvent(e);
 
 }
@@ -159,7 +159,7 @@ void ICProgramPage::saveButtonsCliked()
     for(int i=0; i < AXIS_COUNTS;i++){
         int16_t pos = _host->HostStatus(ICVirtualHost::ICStatus(ICVirtualHost::XPos + i)).toInt();
         ui->tableWidget->item(index,1+i)->setText(QString::number(pos / 10.0, 'f', 1));
-        ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(_index * 6 * MAX_POINTS + index * 6 + i),pos);
+//        ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(_index * 6 * MAX_POINTS + index * 6 + i),pos);
 
     }
 }
@@ -226,11 +226,11 @@ void ICProgramPage::InitPoint()
     DeleteWidgets();
     allPoints.clear();
 
-    uint pointCount = _MoldParam(ICMold::pointCount);
-    quint64 pointConfig = _MoldParam(ICMold::pointConfig1)  |
-                          ((quint64)(_MoldParam(ICMold::pointConfig2)) << 32);
-    quint64 pointConfig2 = _MoldParam(ICMold::pointConfig3)  |
-                              ((quint64)(_MoldParam(ICMold::pointConfig4)) << 32);
+    uint pointCount = _NativeMoldParam(ICMold::pointCount);
+    quint64 pointConfig = _NativeMoldParam(ICMold::pointConfig1)  |
+                          ((quint64)(_NativeMoldParam(ICMold::pointConfig2)) << 32);
+    quint64 pointConfig2 = _NativeMoldParam(ICMold::pointConfig3)  |
+                              ((quint64)(_NativeMoldParam(ICMold::pointConfig4)) << 32);
 
 
     for(int i =0 ;i < pointCount;i++){
@@ -360,8 +360,6 @@ void ICProgramPage::SaveConfigPoint()
     quint64 config1 = 0;
     quint64 config2 = 0;
 
-
-
     for(int i=0;i<pointTypes.size();i++){
         if(i < 16){
             quint64 type =  pointTypes.at(i);
@@ -374,17 +372,16 @@ void ICProgramPage::SaveConfigPoint()
     }
 
 
-    if(_MoldParam(ICMold::pointCount) != ROW_COUNTS)
-        _SetMoldParam(ICMold::pointCount, ROW_COUNTS);
-    if(_MoldParam(ICMold::pointConfig1) != config1 & 0xFFFFFFFF)
-        _SetMoldParam(ICMold::pointConfig1,config1 & 0xFFFFFFFF);
-    if(_MoldParam(ICMold::pointConfig2) != (config1 >> 32) & 0xFFFFFFFF)
-        _SetMoldParam(ICMold::pointConfig2,(config1 >> 32) & 0xFFFFFFFF);
-    if(_MoldParam(ICMold::pointConfig3) != config2 & 0xFFFFFFFF)
-        _SetMoldParam(ICMold::pointConfig3,config2 & 0xFFFFFFFF);
-    if(_MoldParam(ICMold::pointConfig4) != (config2 >> 32) & 0xFFFFFFFF)
-        _SetMoldParam(ICMold::pointConfig4,(config2 >> 32) & 0xFFFFFFFF);
-
+    if(_NativeMoldParam(ICMold::pointCount) != ROW_COUNTS)
+        _SetNativeMoldParam(ICMold::pointCount, ROW_COUNTS);
+    if(_NativeMoldParam(ICMold::pointConfig1) != config1 & 0xFFFFFFFF)
+        _SetNativeMoldParam(ICMold::pointConfig1,config1 & 0xFFFFFFFF);
+    if(_NativeMoldParam(ICMold::pointConfig2) != (config1 >> 32) & 0xFFFFFFFF)
+        _SetNativeMoldParam(ICMold::pointConfig2,(config1 >> 32) & 0xFFFFFFFF);
+    if(_NativeMoldParam(ICMold::pointConfig3) != config2 & 0xFFFFFFFF)
+        _SetNativeMoldParam(ICMold::pointConfig3,config2 & 0xFFFFFFFF);
+    if(_NativeMoldParam(ICMold::pointConfig4) != (config2 >> 32) & 0xFFFFFFFF)
+        _SetNativeMoldParam(ICMold::pointConfig4,(config2 >> 32) & 0xFFFFFFFF);
 
 
     //保存点坐标
@@ -444,15 +441,15 @@ ICMoldItem ICProgramPage::MK_MoldItem(uint seq, uint num, uint8_t subNum, uint g
 
 void ICProgramPage::InitFixMoldItems()
 {
-    waitM10   = MK_MoldItem(6,2,0,24,0,1,0,0,300,33);
+    waitM10   = MK_MoldItem(6,2,0,24,0,1,0,0,30000,33);
     outY37On  = MK_MoldItem(7,3,23,11,0,1,0,0,0,45);
-    outM11    = MK_MoldItem(8,4,1,25,0,1,0,0,300,204);
-    waitM12   = MK_MoldItem(9,5,2,25,0,1,0,0,300,207);
+    outM11    = MK_MoldItem(8,4,1,25,0,1,0,0,0,204);
+    waitM12   = MK_MoldItem(9,5,2,25,0,1,0,0,30000,207);
     outY37Off = MK_MoldItem(10,6,23,11,0,0,0,0,0,50);
     outY31On  = MK_MoldItem(11,7,17,11,0,1,0,0,0,47);
-    outY31Off = MK_MoldItem(12,8,17,11,0,0,0,0,50,98);
-    waitM14   = MK_MoldItem(13,9,4,24,0,1,0,0,300,246);
-    outPermit = MK_MoldItem(14,10,3,25,0,1,0,0,50,103);
+    outY31Off = MK_MoldItem(12,8,17,11,0,0,0,0,0,98);
+    waitM14   = MK_MoldItem(13,9,4,24,0,1,0,0,30000,246);
+    outPermit = MK_MoldItem(14,10,3,25,0,1,0,0,0,103);
 
 }
 
@@ -615,4 +612,9 @@ bool ICProgramPage::MoldChanged(QList<ICMoldItem>& items)
     }
 
     return false;
+}
+
+bool ICProgramPage::MoldConfigChanged()
+{
+    return true;
 }
