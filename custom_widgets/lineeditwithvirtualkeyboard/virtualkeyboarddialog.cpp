@@ -119,7 +119,7 @@ QString VirtualKeyboardDialog::GetCurrentText() const
     return ui->display->text();
 }
 
-void VirtualKeyboardDialog::on_del_clicked()
-{
-    ui->display->del();
-}
+//void VirtualKeyboardDialog::on_del_clicked()
+//{
+//    ui->display->del();
+//}

@@ -681,6 +681,7 @@ void MoldInformation::on_importToolButton_clicked()
             selectedImportItemName_.append(item_text + ".act");
             selectedImportItemName_.append(item_text + ".fnc");
             selectedImportItemName_.append(item_text + ".sub");
+            selectedImportItemName_.append(item_text + ".cfg");
             selectedImportItemName_.append(item_text + ".reserve1");
             selectedImportItemName_.append(item_text + ".reserve2");
             selectedImportItemName_.append(item_text + ".reserve3");
@@ -719,6 +720,7 @@ void MoldInformation::on_importToolButton_clicked()
         selectedImportItemName_.append(str + ".act");
         selectedImportItemName_.append(str + ".fnc");
         selectedImportItemName_.append(str + ".sub");
+        selectedImportItemName_.append(str + ".cfg");
         selectedImportItemName_.append(str + ".reserve1");
         selectedImportItemName_.append(str + ".reserve2");
         selectedImportItemName_.append(str + ".reserve3");
@@ -880,6 +882,7 @@ void MoldInformation::on_exportToolButton_clicked()
             selectedExportItemName_.append(item_text + ".act");
             selectedExportItemName_.append(item_text + ".fnc");
             selectedExportItemName_.append(item_text + ".sub");
+            selectedExportItemName_.append(item_text + ".cfg");
             selectedExportItemName_.append(item_text + ".reserve1");
             selectedExportItemName_.append(item_text + ".reserve2");
             selectedExportItemName_.append(item_text + ".reserve3");
@@ -908,6 +911,7 @@ void MoldInformation::on_exportToolButton_clicked()
         selectedExportItemName_.append(str + ".act");
         selectedExportItemName_.append(str + ".fnc");
         selectedExportItemName_.append(str + ".sub");
+        selectedExportItemName_.append(str + ".cfg");
         selectedExportItemName_.append(str + ".reserve1");
         selectedExportItemName_.append(str + ".reserve2");
         selectedExportItemName_.append(str + ".reserve3");

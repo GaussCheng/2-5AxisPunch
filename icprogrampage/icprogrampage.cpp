@@ -118,12 +118,11 @@ void ICProgramPage::hideEvent(QHideEvent *e)
     QList<ICMoldItem> items = GT_AllMoldItems();
     if(MoldChanged(items)){
         ICMold::CurrentMold()->SetMoldContent(items);
-        qDebug() << "SaveProgramToFiles: " << ICMold::CurrentMold()->SaveMoldFile();
+        qDebug() << "SaveProgramToFiles: " << ICMold::CurrentMold()->SaveMoldFile(false);
         ICMold::CurrentMold()->SaveMoldConfigFile();
         ICVirtualHost::GlobalVirtualHost()->ReConfigure();
 
     }
-
     QWidget::hideEvent(e);
 
 }
@@ -383,16 +382,21 @@ void ICProgramPage::SaveConfigPoint()
     if(_NativeMoldParam(ICMold::pointConfig4) != (config2 >> 32) & 0xFFFFFFFF)
         _SetNativeMoldParam(ICMold::pointConfig4,(config2 >> 32) & 0xFFFFFFFF);
 
+    bool saved = false;
 
     //保存点坐标
     for(int i=0;i<ROW_COUNTS;i++){
         for(int j=0;j<AXIS_COUNTS;j++){
             int16_t pos = ui->tableWidget->item(i,j+1)->text().remove(".").toInt();
             int16_t oldPos = _MoldParam(_index * 6 * MAX_POINTS + i * 6 + j);
-            if(pos != oldPos)
+            if(pos != oldPos){
+                saved = true;
                 _SetMoldParam(_index * 6 * MAX_POINTS + i * 6 + j,pos);
-
+            }
         }
+    }
+    if(saved){
+        ICMold::CurrentMold()->SaveMoldParamsFile();
     }
 }
 

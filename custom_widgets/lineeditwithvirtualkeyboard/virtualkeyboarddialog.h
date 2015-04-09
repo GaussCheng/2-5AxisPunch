@@ -42,7 +42,7 @@ private slots:
     void on_ok_clicked();
 
     void KeyboardClicked();
-    void on_del_clicked();
+//    void on_del_clicked();
 
 private:
     static VirtualKeyboardDialog * instance_;
