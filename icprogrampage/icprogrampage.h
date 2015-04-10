@@ -100,6 +100,8 @@ private slots:
     void on_saveButton_clicked();
     void MoldChanged(QString);
 
+    void on_startEdit_clicked(bool checked);
+
 private:
     explicit ICProgramPage(QWidget *parent = 0,int pageIndex = 0,QString pageName = "");
     void InitTableWidget();

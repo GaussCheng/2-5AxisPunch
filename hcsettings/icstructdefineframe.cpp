@@ -185,6 +185,8 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     ui->originSpd->setValidator(new QIntValidator(0, 10, this));
     ui->originSpd->SetThisIntToThisText(host->SystemParameter(ICVirtualHost::SYS_OriginSpeed).toInt());
     ui->tryRunBox->setChecked(host->IsMidMoldCheck());
+
+    ui->tabWidget->removeTab(1);
 }
 
 ICStructDefineFrame::~ICStructDefineFrame()

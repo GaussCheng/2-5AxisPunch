@@ -8,6 +8,7 @@ QT += sql
 
 SK_SIZE = 8
 
+
 OBJECTS_DIR = temp_$${SK_SIZE}
 UI_DIR = temp_$${SK_SIZE}
 MOC_DIR = temp_$${SK_SIZE}

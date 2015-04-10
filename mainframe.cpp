@@ -1215,7 +1215,10 @@ void MainFrame::LevelChanged(int level)
         //        ui->functionPageButton->setEnabled(false);
         //        ui->recordPageButton->setEnabled(false);
         ui->settingsButton->setEnabled(false);
+#ifdef Q_WS_QWS
         ui->teachButton->setEnabled(false);
+#endif
+
 #ifndef Q_WS_X11
         //        if(!functionPage_->isHidden() ||
         //                !instructPage_->isHidden() ||
@@ -1248,7 +1251,10 @@ void MainFrame::LevelChanged(int level)
         if(ICKeyboard::Instace()->CurrentSwitchStatus() == ICKeyboard::KS_StopStatu)
         {
             ui->settingsButton->setEnabled(true);
+#ifdef Q_WS_QWS
             ui->teachButton->setEnabled(false);
+#endif
+
 //            settingsPage_->SetToShowAll(true);
             //            ui->functionPageButton->setEnabled(true);
         }
@@ -1266,7 +1272,9 @@ void MainFrame::LevelChanged(int level)
         }
         else
         {
+#ifdef Q_WS_QWS
             ui->teachButton->setEnabled(false);
+#endif
             //            ui->recordPageButton->setEnabled(false);
         }
     }

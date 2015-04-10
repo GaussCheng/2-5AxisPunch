@@ -160,6 +160,9 @@ void ICProgramPage::showEvent(QShowEvent *e)
 
 void ICProgramPage::hideEvent(QHideEvent *e)
 {
+    ui->startEdit->setChecked(false);
+    ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
+
     QList<ICMoldItem> items = GT_AllMoldItems();
     if(MoldChanged(items)){
         ICMold::CurrentMold()->SetMoldContent(items);
@@ -174,24 +177,27 @@ void ICProgramPage::hideEvent(QHideEvent *e)
 
 void ICProgramPage::itemClicked(QTableWidgetItem *item)
 {
-//    if((item->row() >=0 && item->row() < ROW_COUNTS)  &&
-//        (item->column() >0 && item->column() < AXIS_COUNTS + 1)){
+    if(!ui->startEdit->isChecked())
+        return;
 
-//        if(!_dialog->isVisible()){
-//            _dialog->move(200,200);
-//            _dialog->exec();
-//        }
+    if((item->row() >=0 && item->row() < ROW_COUNTS)  &&
+        (item->column() >0 && item->column() < AXIS_COUNTS + 1)){
+
+        if(!_dialog->isVisible()){
+            _dialog->move(200,200);
+            _dialog->exec();
+        }
 
 
-//        QString text = _dialog->GetCurrentText();
+        QString text = _dialog->GetCurrentText();
 
-//        if(!text.isEmpty() && (text != item->text())){
-//            if(!text.contains(QChar('.'))){
-//                text += ".0";
-//            }
-//            item->setText(text);
-//        }
-//    }
+        if(!text.isEmpty() && (text != item->text())){
+            if(!text.contains(QChar('.'))){
+                text += ".0";
+            }
+            item->setText(text);
+        }
+    }
 
 }
 
@@ -492,14 +498,14 @@ ICMoldItem ICProgramPage::MK_MoldItem(uint seq, uint num, uint8_t subNum, uint g
 
 void ICProgramPage::InitFixMoldItems()
 {
-    waitM10   = MK_MoldItem(6,2,0,24,0,1,0,0,30000,33);
+    waitM10   = MK_MoldItem(6,2,0,24,0,1,0,0,3000,33);
     outY37On  = MK_MoldItem(7,3,23,12,0,1,0,0,0,45);
     outM11    = MK_MoldItem(8,4,1,25,0,1,0,0,0,204);
-    waitM12   = MK_MoldItem(9,5,2,24,0,1,0,0,30000,207);
+    waitM12   = MK_MoldItem(9,5,2,24,0,1,0,0,3000,207);
     outY37Off = MK_MoldItem(10,6,23,11,0,0,0,0,0,50);
     outY31On  = MK_MoldItem(11,7,17,11,0,1,0,0,0,47);
     outY31Off = MK_MoldItem(12,8,17,11,0,0,0,0,0,98);
-    waitM14   = MK_MoldItem(13,9,4,24,0,1,0,0,30000,246);
+    waitM14   = MK_MoldItem(13,9,4,24,0,1,0,0,3000,246);
     outPermit = MK_MoldItem(14,10,0,27,0,1,0,0,0,103);
 
 }
@@ -670,4 +676,16 @@ bool ICProgramPage::MoldChanged(QList<ICMoldItem>& items)
 bool ICProgramPage::MoldConfigChanged()
 {
     return true;
+}
+
+
+
+void ICProgramPage::on_startEdit_clicked(bool checked)
+{
+    if(checked){
+        ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectItems);
+    }
+    else{
+        ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
+    }
 }
