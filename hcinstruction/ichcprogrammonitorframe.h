@@ -6,6 +6,7 @@
 #include <QMap>
 #include <QTimer>
 #include "icmold.h"
+#include <QTableWidget>
 
 namespace Ui {
     class ICHCProgramMonitorFrame;
@@ -67,11 +68,13 @@ private slots:
 
     void on_allowSet_clicked();
 
+    void on_singleCycle_clicked();
+
 private:
     void InitSignal();
     void UpdateUIProgramList_();
     void FindIndex_(int currentIndex, int& groupItemIndex, int& topItemIndex, int& subItemIndex);
-
+    void InitTableWidget();
 //    void AddCommandStr(const QString & commandStr);
 
 public Q_SLOTS:
@@ -106,6 +109,7 @@ private:
     QMap<int, QString> checkResultMap_;
     int fixtureCount_[6];
     QTimer refreshTimer_;
+    QTableWidget *tableWidget;
 //    QMap<ICMoldItem*, ICMoldItem> modifyMap_;
 };
 #endif // ICHCPROGRAMMONITORFRAME_H

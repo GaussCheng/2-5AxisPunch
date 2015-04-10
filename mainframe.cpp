@@ -544,7 +544,7 @@ void MainFrame::InitCategoryPage()
 
 
     emit LoadMessage("Start to Initialize instruct pages");
-    instructPage_ = new ICProgramPage();//ICHCInstructionPageFrame  ICProgramMainPage
+    instructPage_ =  ICProgramPage::Instance_();//ICHCInstructionPageFrame  ICProgramMainPage
     functionButtonToPage_.insert(ui->teachButton, instructPage_);
     centerStackedLayout_->addWidget(instructPage_);
 
@@ -1248,6 +1248,7 @@ void MainFrame::LevelChanged(int level)
         if(ICKeyboard::Instace()->CurrentSwitchStatus() == ICKeyboard::KS_StopStatu)
         {
             ui->settingsButton->setEnabled(true);
+            ui->teachButton->setEnabled(false);
 //            settingsPage_->SetToShowAll(true);
             //            ui->functionPageButton->setEnabled(true);
         }
@@ -1258,7 +1259,9 @@ void MainFrame::LevelChanged(int level)
         }
         if(ICKeyboard::Instace()->CurrentSwitchStatus() != ICKeyboard::KS_AutoStatu)
         {
-            ui->teachButton->setEnabled(true);
+            if(ICKeyboard::Instace()->CurrentSwitchStatus() == ICKeyboard::KS_ManualStatu){
+                ui->teachButton->setEnabled(true);
+            }
             //            ui->recordPageButton->setEnabled(true);
         }
         else

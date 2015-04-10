@@ -28,33 +28,33 @@ ICProgramMainPage::ICProgramMainPage(QWidget *parent) :
           << tr("Reserve") << tr("Reserve") << tr("Reserve") << tr("Reserve");
     setVerticalNames(ql);
 
-    for(int i=0;i < MAX_ROWS;i++){
-        usedButtons.append(new ICCheckedButton);
-        usedButtons[i]->setName(tr("Skiped"));
-        usedButtons[i]->setCheckedName(tr("Used"));
-        usedButtons[i]->setFocusPolicy(Qt::NoFocus);
-        usedButtons[i]->setMinimumHeight(40);
-        connect(usedButtons[i],SIGNAL(clicked(bool)),
-                SLOT(usedButtonClicked(bool)));
+//    for(int i=0;i < MAX_ROWS;i++){
+//        usedButtons.append(new ICCheckedButton);
+//        usedButtons[i]->setName(tr("Skiped"));
+//        usedButtons[i]->setCheckedName(tr("Used"));
+//        usedButtons[i]->setFocusPolicy(Qt::NoFocus);
+//        usedButtons[i]->setMinimumHeight(40);
+//        connect(usedButtons[i],SIGNAL(clicked(bool)),
+//                SLOT(usedButtonClicked(bool)));
 
-        programButtons.append(new QPushButton);
-        programButtons[i]->setFocusPolicy(Qt::NoFocus);
-        programButtons[i]->setEnabled(false);
-        connect(programButtons[i],SIGNAL(clicked()),
-                SLOT(programButtonClicked()));
+//        programButtons.append(new QPushButton);
+//        programButtons[i]->setFocusPolicy(Qt::NoFocus);
+//        programButtons[i]->setEnabled(false);
+//        connect(programButtons[i],SIGNAL(clicked()),
+//                SLOT(programButtonClicked()));
 
-        programButtons[i]->setText(tr("Jump Program"));
-        programButtons[i]->setMinimumHeight(40);
+//        programButtons[i]->setText(tr("Jump Program"));
+//        programButtons[i]->setMinimumHeight(40);
 
-        ui->tableWidget->setCellWidget(i,1,usedButtons[i]);
-        ui->tableWidget->setCellWidget(i,2,programButtons[i]);
+//        ui->tableWidget->setCellWidget(i,1,usedButtons[i]);
+//        ui->tableWidget->setCellWidget(i,2,programButtons[i]);
 
-        ICProgramPage * page = new ICProgramPage(this,i,ui->tableWidget->item(i,0)->text());
-        programPages.append(page);
-        ui->stackedWidget->addWidget(page);
-        connect(page,SIGNAL(returnProgram()),
-                SLOT(showMainProgram()));
-    }
+//        ICProgramPage * page = new ICProgramPage(this,i,ui->tableWidget->item(i,0)->text());
+//        programPages.append(page);
+//        ui->stackedWidget->addWidget(page);
+//        connect(page,SIGNAL(returnProgram()),
+//                SLOT(showMainProgram()));
+//    }
 
 
 //     oldUsed  = ICMold::CurrentMold()->MoldParam(static_cast<ICMold::ICMoldParam>(ICMold::programInnerUsed));

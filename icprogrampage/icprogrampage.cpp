@@ -6,6 +6,8 @@
 #include <QMessageBox>
 #include "moldinformation.h"
 
+ICProgramPage * ICProgramPage::instance_;
+
 
 ICProgramPage::ICProgramPage(QWidget *parent,int _pageIndex,QString pageName) :
     QWidget(parent),
@@ -22,6 +24,17 @@ ICProgramPage::ICProgramPage(QWidget *parent,int _pageIndex,QString pageName) :
     ui->modiifyButton->hide();
     ui->pushButton->hide();
 
+    QFile file("./sysconfig/StandPrograms");
+    if(file.open(QFile::ReadOnly | QFile::Text))
+    {
+        QTextStream in(&file);
+        QString tmp;
+        while(!(in>>tmp).atEnd())
+        {
+            standPrograms_.append(tmp);
+        }
+        file.close();
+    }
 
     InitTableWidget();
     InitPoint();
@@ -29,6 +42,10 @@ ICProgramPage::ICProgramPage(QWidget *parent,int _pageIndex,QString pageName) :
     InitPointToItem();
     connect(MoldInformation::Instance(),SIGNAL(MoldChanged(QString)),
             SLOT(MoldChanged(QString)));
+
+    allItems = GT_AllMoldItems();
+//    ui->tableWidget->setCurrentIndex(ui->tableWidget->model()->index(3,0));
+
 }
 
 
@@ -59,6 +76,31 @@ QList<ICMoldItem> ICProgramPage::GT_TailMoldItems()
     QList<ICMoldItem> items;
     items << MK_MoldItem(5,5,255,32,0,0,0,0,0,42);
     return items;
+}
+
+void ICProgramPage::refreshCurrentRow(int step)
+{
+//    int step = _host->HostStatus(ICVirtualHost::ICStatus(ICVirtualHost::Step)).toInt();
+//    if(step > allItems.size()){
+//        Q_ASSERT(false);
+//    }
+    if(step >= allItems.size() || step < 0){
+        return;
+    }
+    while(allItems.at(step).GMVal() != 22){
+        step --;
+    }
+    if(step >= allItems.size() || step < 0){
+        return;
+    }
+    int row = allItems.at(step).SubNum();
+    ui->tableWidget->setCurrentIndex(ui->tableWidget->model()->index(row,0));
+
+}
+
+QTableWidget *ICProgramPage::TableWidget()
+{
+    return ui->tableWidget;
 }
 
 QList<ICMoldItem> ICProgramPage::MK_PosItem(int pos)
@@ -109,6 +151,9 @@ void ICProgramPage::showEvent(QShowEvent *e)
         }
     }
 
+    ui->verticalLayout->insertWidget(0,ui->tableWidget);
+    ui->tableWidget->setColumnHidden(6,false);
+    ui->tableWidget->setColumnHidden(7,false);
 
     QWidget::showEvent(e);
 }
@@ -158,7 +203,7 @@ void ICProgramPage::saveButtonsCliked()
     for(int i=0; i < AXIS_COUNTS;i++){
         int16_t pos = _host->HostStatus(ICVirtualHost::ICStatus(ICVirtualHost::XPos + i)).toInt();
         ui->tableWidget->item(index,1+i)->setText(QString::number(pos / 10.0, 'f', 1));
-//        ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(_index * 6 * MAX_POINTS + index * 6 + i),pos);
+        ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(_index * 6 * MAX_POINTS + index * 6 + i),pos);
 
     }
 }
@@ -215,7 +260,8 @@ void ICProgramPage::InitTableWidget()
         ui->tableWidget->setHorizontalHeaderItem(i,new QTableWidgetItem(headerContents[i]));
     }
 
-    ui->tableWidget->insertRow(0);
+    if(USE_SPACE_ROW)
+        ui->tableWidget->insertRow(0);
     connect(ui->tableWidget,SIGNAL(itemClicked(QTableWidgetItem*)),
             this,SLOT(itemClicked(QTableWidgetItem*)));
 }
@@ -341,11 +387,11 @@ void ICProgramPage::InitPointToItem()
 {
     QList<ICMoldItem> items;
     pointToItem.insert(Get_Wait,(items << waitM10)); items.clear();
-    pointToItem.insert(Get_Up,items); items.clear();
+//    pointToItem.insert(Get_Up,items); items.clear();
     pointToItem.insert(Get,(items << outY37On)); items.clear();
-    pointToItem.insert(Get_Finish,(items << outM11 << waitM12)); items.clear();
-    pointToItem.insert(Put_Wait,items); items.clear();
-    pointToItem.insert(Put_Up,items); items.clear();
+    pointToItem.insert(Put_Wait,(items << outM11 << waitM12)); items.clear();
+//    pointToItem.insert(Put_Wait,items); items.clear();
+//    pointToItem.insert(Put_Up,items); items.clear();
     pointToItem.insert(Put,(items << outY37Off)); items.clear();
     pointToItem.insert(Put_Finish,(items << waitM14 << outPermit)); items.clear();
     pointToItem.insert(Reserve,items); items.clear();
@@ -408,6 +454,7 @@ QList<ICMoldItem> ICProgramPage::GT_AllMoldItems()
             +  GT_TailMoldItems();
     GT_CalculateItem(items);
     ICMold::MoldReSum(items);
+    allItems = items;
     return items;
 }
 
@@ -446,14 +493,14 @@ ICMoldItem ICProgramPage::MK_MoldItem(uint seq, uint num, uint8_t subNum, uint g
 void ICProgramPage::InitFixMoldItems()
 {
     waitM10   = MK_MoldItem(6,2,0,24,0,1,0,0,30000,33);
-    outY37On  = MK_MoldItem(7,3,23,11,0,1,0,0,0,45);
+    outY37On  = MK_MoldItem(7,3,23,12,0,1,0,0,0,45);
     outM11    = MK_MoldItem(8,4,1,25,0,1,0,0,0,204);
-    waitM12   = MK_MoldItem(9,5,2,25,0,1,0,0,30000,207);
+    waitM12   = MK_MoldItem(9,5,2,24,0,1,0,0,30000,207);
     outY37Off = MK_MoldItem(10,6,23,11,0,0,0,0,0,50);
     outY31On  = MK_MoldItem(11,7,17,11,0,1,0,0,0,47);
     outY31Off = MK_MoldItem(12,8,17,11,0,0,0,0,0,98);
     waitM14   = MK_MoldItem(13,9,4,24,0,1,0,0,30000,246);
-    outPermit = MK_MoldItem(14,10,3,25,0,1,0,0,0,103);
+    outPermit = MK_MoldItem(14,10,0,27,0,1,0,0,0,103);
 
 }
 
@@ -467,55 +514,50 @@ void ICProgramPage::on_newButton_clicked()
 {
     int index = ui->tableWidget->currentIndex().row();
     if(index == -1) index ++;
-    if(_typeDialog->exec() == QDialog::Accepted){
+    QString moldName = ICMold::CurrentMold()->MoldName().split("/")[2];
+    if(standPrograms_.contains(moldName)){
+        QMessageBox::information(this,tr("Information"),tr("Standard Mold Cannot Modify!"));
+        return;
+    }
 
-    if(ui->tableWidget->rowCount() == MAX_ROWCOUNT + 1){
+    if(ui->tableWidget->rowCount() == MAX_ROWCOUNT){
         QMessageBox::information(this,tr("Information"),tr("Max Rows Beyond %1!").arg(MAX_ROWCOUNT));
         return;
     }
-//        if(_typeDialog->currentType() == Get_Wait ||
-//           _typeDialog->currentType() == Get ||
-//                _typeDialog->currentType() == Get_Finish ||
-//                _typeDialog->currentType() == Put ||
-//                _typeDialog->currentType() == Put_Finish ){
-//            QMessageBox::information(this,tr("Information"),tr("Canot insert %1 action!").arg( _typeDialog->toString()));
-//            return;
-//        }
 
-        ui->tableWidget->insertRow(index);
-        ui->tableWidget->setItem(index,0,new QTableWidgetItem(_typeDialog->toString()));
-        ui->tableWidget->item(index,0)->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-        for(int i = 0 ;i < AXIS_COUNTS; i++){
-            QTableWidgetItem *item = new QTableWidgetItem("") ;
-            item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-            item->setText("0.0");
-            ui->tableWidget->setItem(index,i+1,item);
-        }
-        QPushButton *button = new QPushButton;
-        saveButtons.insert(index,button);
-        saveButtons[index]->setText(tr("save"));
-        saveButtons[index]->setMinimumHeight(40);
-        saveButtons[index]->setFocusPolicy(Qt::NoFocus);
-        connect(saveButtons[index],SIGNAL(clicked()),
-                SLOT(saveButtonsCliked()));
-        ui->tableWidget->setCellWidget(index,AXIS_COUNTS + 1,saveButtons[index]);
-
-        button = new QPushButton;
-        testButtons.insert(index,button);
-        testButtons[index]->setText(tr("test"));
-        testButtons[index]->setMinimumHeight(40);
-        testButtons[index]->setFocusPolicy(Qt::NoFocus);
-        connect(testButtons[index],SIGNAL(clicked()),
-                SLOT(testButonsClicked()));
-        ui->tableWidget->setCellWidget(index,AXIS_COUNTS + 2,testButtons[index]);
-        pointTypes.insert(index,_typeDialog->currentType());
-
-
-        for(int k=0;k< ui->tableWidget->verticalHeader()->count();k++){
-            ui->tableWidget->verticalHeader()->resizeSection(k,40);
-        }
-        DisableTestButtons();
+    ui->tableWidget->insertRow(index);
+    ui->tableWidget->setItem(index,0,new QTableWidgetItem(_typeDialog->toString(Reserve)));
+    ui->tableWidget->item(index,0)->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+    for(int i = 0 ;i < AXIS_COUNTS; i++){
+        QTableWidgetItem *item = new QTableWidgetItem("") ;
+        item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+        item->setText("0.0");
+        ui->tableWidget->setItem(index,i+1,item);
     }
+    QPushButton *button = new QPushButton;
+    saveButtons.insert(index,button);
+    saveButtons[index]->setText(tr("save"));
+    saveButtons[index]->setMinimumHeight(40);
+    saveButtons[index]->setFocusPolicy(Qt::NoFocus);
+    connect(saveButtons[index],SIGNAL(clicked()),
+            SLOT(saveButtonsCliked()));
+    ui->tableWidget->setCellWidget(index,AXIS_COUNTS + 1,saveButtons[index]);
+
+    button = new QPushButton;
+    testButtons.insert(index,button);
+    testButtons[index]->setText(tr("test"));
+    testButtons[index]->setMinimumHeight(40);
+    testButtons[index]->setFocusPolicy(Qt::NoFocus);
+    connect(testButtons[index],SIGNAL(clicked()),
+            SLOT(testButonsClicked()));
+    ui->tableWidget->setCellWidget(index,AXIS_COUNTS + 2,testButtons[index]);
+    pointTypes.insert(index,Reserve);
+
+
+    for(int k=0;k< ui->tableWidget->verticalHeader()->count();k++){
+        ui->tableWidget->verticalHeader()->resizeSection(k,40);
+    }
+    DisableTestButtons();
 
 }
 
@@ -531,17 +573,24 @@ void ICProgramPage::on_modiifyButton_clicked()
 
 void ICProgramPage::on_deleteButton_clicked()
 {
+
     int index = ui->tableWidget->currentIndex().row();
     if(index == -1) index ++;
 
-//    if(pointTypes.at(index) == Get_Wait ||
-//        pointTypes.at(index)== Get ||
-//        pointTypes.at(index) == Get_Finish ||
-//        pointTypes.at(index) == Put ||
-//        pointTypes.at(index) == Put_Finish ){
-//        QMessageBox::information(this,tr("Information"),tr("Canot insert %1 action!").arg( _typeDialog->toString(pointTypes.at(index) )));
-//        return;
-//    }
+    QString moldName = ICMold::CurrentMold()->MoldName().split("/")[2];
+    if(standPrograms_.contains(moldName)){
+        QMessageBox::information(this,tr("Information"),tr("Standard Mold Cannot Modify!"));
+        return;
+    }
+
+    if(pointTypes.at(index) == Get_Wait ||
+        pointTypes.at(index)== Get ||
+        pointTypes.at(index) == Put_Wait ||
+        pointTypes.at(index) == Put ||
+        pointTypes.at(index) == Put_Finish ){
+        QMessageBox::information(this,tr("Information"),tr("Canot Delete %1 action!").arg( _typeDialog->toString(pointTypes.at(index) )));
+        return;
+    }
 
     if(QMessageBox::information(this,tr("Information"),tr("If Delete current Row?"),
                                 QMessageBox::Ok | QMessageBox::Cancel) != QMessageBox::Ok)
@@ -585,19 +634,19 @@ void ICProgramPage::MoldChanged(QString s)
 
 void ICProgramPage::GT_CalculateItem(QList<ICMoldItem>& items)
 {
-    uint oldNum = 0;
+//    uint oldNum = 0;
     //计算num
     for(int i=0;i<items.size();i++){
-        if(items.at(i).GMVal() == ICMold::GARC){
-            items[i].SetNum(oldNum);
-            if(items.at(i).IFPos()  == 5){
-                oldNum ++;
-            }
-        }
-        else{
-            items[i].SetNum(oldNum);
-            oldNum ++;
-        }
+//        if(items.at(i).GMVal() == ICMold::GARC){
+            items[i].SetNum(i);
+//            if(items.at(i).IFPos()  == 5){
+//                oldNum ++;
+//            }
+//        }
+//        else{
+//            items[i].SetNum(oldNum);
+//            oldNum ++;
+//        }
 
     }
 }

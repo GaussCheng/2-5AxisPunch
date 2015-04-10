@@ -69,6 +69,8 @@ ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
 
     ui->groupBox->hide();
     ui->groupBox_2->hide();
+    ui->return0Button->hide();
+    ui->singleButton->hide();
 }
 
 ICHCManualOperationPageFrame::~ICHCManualOperationPageFrame()

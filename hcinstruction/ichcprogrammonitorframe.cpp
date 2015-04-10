@@ -13,6 +13,7 @@
 #include <QMessageBox>
 #include "icprogramheadframe.h"
 #include "icparameterssave.h"
+#include "icprogrampage.h"
 
 ICHCProgramMonitorFrame::ICHCProgramMonitorFrame(QWidget *parent) :
     QFrame(parent),
@@ -73,6 +74,7 @@ ICHCProgramMonitorFrame::ICHCProgramMonitorFrame(QWidget *parent) :
             SLOT(LevelChanged(int)));
     LevelChanged(ICProgramHeadFrame::Instance()->CurrentLevel());
     ui->moldContentListWidget->hide();
+    InitTableWidget();
 //    ui->tSpeed->hide();
 //    ui->rsSpeed->hide();
 }
@@ -103,6 +105,21 @@ void ICHCProgramMonitorFrame::changeEvent(QEvent *e)
 
 void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
 {
+    ui->verticalLayout->insertWidget(2,tableWidget);
+    //隐藏列
+    for(int i=0;i < AXIS_COUNTS;i++){
+        if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisX1 + i)) != ICVirtualHost::ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisX1)))
+        {
+            tableWidget->setColumnHidden(i + 1,true);
+        }
+        else{
+            tableWidget->setColumnHidden(i + 1,false);
+        }
+    }
+
+    tableWidget->setColumnHidden(6,true);
+    tableWidget->setColumnHidden(7,true);
+
     //    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
 //    int currentTuneType = ICKeyboard::Instace()->CurrentTuneSpeedType();
 //    if(currentTuneType < 0)
@@ -120,6 +137,10 @@ void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
 //        ui->xSpeed->setChecked(false);
 //        ui->ySpeed->setChecked(true);
 //    }
+
+//    tableWidget->setColumnHidden(6,true);
+//    tableWidget->setColumnHidden(7,true);
+
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     ICVirtualHost::GlobalVirtualHost()->SetSpeedEnable(true);
 
@@ -480,46 +501,47 @@ void ICHCProgramMonitorFrame::SelectCurrentStep(int currentStep)
 //        //        modifyMap_.clear();
 //    }
     if(!this->isVisible()) return;
-    oldStep_ = currentStep;
-    if(currentStep < 0 || currentStep >= programList_.size())
-    {
-        qDebug()<<"current step wrong"<<currentStep;
-        return;
-    }
-    if(!isFollow_)
-    {
-        return;
-    }
-    ui->moldContentListWidget->clearSelection();
-    ICGroupMoldUIItem* gItem = &programList_[currentStep];
-    currentStepItem_ = gItem;
-    //    int selectedCount = gItem->ItemCount();
-    startIndex_ = 0;
-    for(int i = 0; i != currentStep; ++i)
-    {
-        startIndex_ += programList_.at(i).ItemCount();
-    }
-    if(startIndex_ < ui->moldContentListWidget->count())
-    {
-        ui->moldContentListWidget->scrollToItem(ui->moldContentListWidget->item(startIndex_));
-    }
-    const int topItemCount = gItem->TopItemCount();
-    int nextTopItemIndex = startIndex_;
-    for(int i = 0; i != topItemCount; ++i)
-    {
-        if(nextTopItemIndex < ui->moldContentListWidget->count())
-        {
-            ui->moldContentListWidget->item(nextTopItemIndex)->setSelected(true);
-        }
-        if(gItem->at(i).SubItemCount() != 0)
-        {
-            nextTopItemIndex += gItem->at(i).ItemCount();
-        }
-        else
-        {
-            ++nextTopItemIndex;
-        }
-    }
+    ICProgramPage::Instance_()->refreshCurrentRow(currentStep);
+//    oldStep_ = currentStep;
+//    if(currentStep < 0 || currentStep >= programList_.size())
+//    {
+//        qDebug()<<"current step wrong"<<currentStep;
+//        return;
+//    }
+//    if(!isFollow_)
+//    {
+//        return;
+//    }
+//    ui->moldContentListWidget->clearSelection();
+//    ICGroupMoldUIItem* gItem = &programList_[currentStep];
+//    currentStepItem_ = gItem;
+//    //    int selectedCount = gItem->ItemCount();
+//    startIndex_ = 0;
+//    for(int i = 0; i != currentStep; ++i)
+//    {
+//        startIndex_ += programList_.at(i).ItemCount();
+//    }
+//    if(startIndex_ < ui->moldContentListWidget->count())
+//    {
+//        ui->moldContentListWidget->scrollToItem(ui->moldContentListWidget->item(startIndex_));
+//    }
+//    const int topItemCount = gItem->TopItemCount();
+//    int nextTopItemIndex = startIndex_;
+//    for(int i = 0; i != topItemCount; ++i)
+//    {
+//        if(nextTopItemIndex < ui->moldContentListWidget->count())
+//        {
+//            ui->moldContentListWidget->item(nextTopItemIndex)->setSelected(true);
+//        }
+//        if(gItem->at(i).SubItemCount() != 0)
+//        {
+//            nextTopItemIndex += gItem->at(i).ItemCount();
+//        }
+//        else
+//        {
+//            ++nextTopItemIndex;
+//        }
+//    }
 }
 
 void ICHCProgramMonitorFrame::SubStepChanged(uint8_t* subStep)
@@ -859,6 +881,12 @@ void ICHCProgramMonitorFrame::FindIndex_(int currentIndex, int& groupItemIndex, 
     }
 }
 
+void ICHCProgramMonitorFrame::InitTableWidget()
+{
+    tableWidget = ICProgramPage::Instance_()->TableWidget();
+    ui->verticalLayout->insertWidget(2,tableWidget);
+}
+
 void ICHCProgramMonitorFrame::MoldNumChanged(int mold)
 {
     this->blockSignals(true);
@@ -1065,4 +1093,10 @@ void ICHCProgramMonitorFrame::on_allowGet_clicked()
 void ICHCProgramMonitorFrame::on_allowSet_clicked()
 {
     ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_ALLOWPUT);
+}
+
+void ICHCProgramMonitorFrame::on_singleCycle_clicked()
+{
+    ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_SINGLECYCLE);
+
 }

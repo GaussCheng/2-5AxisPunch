@@ -120,7 +120,9 @@ enum ICVirtualKey
     VKEY_ALLOWPUT,//允许置物
 
     VKEY_LHORIGIN = 0xAA,
-    VKEY_RHORIGIN = 0xAB
+    VKEY_RHORIGIN = 0xAB,
+    VKEY_SINGLECYCLE //单循环
+
 };
 
 }//namespace IC{

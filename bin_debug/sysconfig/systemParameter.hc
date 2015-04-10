@@ -1,8 +1,8 @@
 [BootParameter]
-moldName=Default.act
+moldName=\x65b0\x5efa.act
 
 [SystemMachine]
-BootDatetime=@Variant(\0\0\0\x10\0%~\"\x3\xb8]\x98\0)
+BootDatetime="@Variant(\0\0\0\x10\0%~#\x3<,\x9d\0)"
 
 [ProductConfig]
 KeyTone=true

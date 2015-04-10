@@ -17,7 +17,8 @@
 #define COLUMN_COUNTS (AXIS_COUNTS + 3)
 #define RESERVE_COUNTS (MAX_POINTS - 3)
 #define PAGE_MAX_COUNT 8
-#define ROW_COUNTS ui->tableWidget->rowCount() - 1
+#define USE_SPACE_ROW  0
+#define ROW_COUNTS ui->tableWidget->rowCount() - USE_SPACE_ROW
 
 namespace Ui {
 class ICProgramPage;
@@ -47,12 +48,20 @@ class ICProgramPage : public QWidget
     Q_OBJECT
 
 public:
-    explicit ICProgramPage(QWidget *parent = 0,int pageIndex = 0,QString pageName = "");
     QList<ICMoldItem> GT_MoldItems();
     QList<ICMoldItem> GT_HeaderItems();
     QList<ICMoldItem> GT_TailMoldItems();
 
+    void refreshCurrentRow(int step);
 
+    QTableWidget * TableWidget();
+    static ICProgramPage * Instance_(){
+        if(instance_ == NULL)
+        {
+            instance_ = new ICProgramPage();
+        }
+        return instance_;
+    }
 
     QList<ICMoldItem> MK_PosItem(int pos);
     PointPtr MK_Point(qint16 x,qint16 y,qint16 s,qint16 r,qint16 t);
@@ -92,6 +101,7 @@ private slots:
     void MoldChanged(QString);
 
 private:
+    explicit ICProgramPage(QWidget *parent = 0,int pageIndex = 0,QString pageName = "");
     void InitTableWidget();
     void InitPoint();
     void DisableTestButtons();
@@ -116,6 +126,8 @@ private:
     QList<QPushButton*> testButtons;
     QList<PointType> pointTypes;
     QMap<PointType,QList<ICMoldItem> > pointToItem;
+    QStringList standPrograms_;
+    static ICProgramPage * instance_;
 
     ICVirtualHost *_host;
     int _index;
