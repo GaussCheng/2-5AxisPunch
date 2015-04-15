@@ -36,6 +36,10 @@ public:
     QString toString(PointType type = NULL_Type);
     PointType currentType();
 
+protected:
+    void changeEvent(QEvent *);
+private:
+    void Init_();
 private slots:
     void stateChanged(int status);
     

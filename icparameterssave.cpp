@@ -26,6 +26,7 @@ ICParametersSave::ICParametersSave(const QString fileName)
 {
 //    SetFileName("./sysconfig/systemParameter.hc");
     QFile file("./sysconfig/DistanceRotation");
+    setIniCodec("UTF-8");
     if(file.open(QFile::ReadOnly | QFile::Text))
     {
         QTextStream in(&file);

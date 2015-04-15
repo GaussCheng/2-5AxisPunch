@@ -1270,6 +1270,7 @@ void MainFrame::LevelChanged(int level)
         {
             if(ICKeyboard::Instace()->CurrentSwitchStatus() == ICKeyboard::KS_ManualStatu){
                 ui->teachButton->setEnabled(true);
+                ui->stackedWidget->setCurrentWidget(ui->page);
             }
             //            ui->recordPageButton->setEnabled(true);
         }
@@ -1277,6 +1278,7 @@ void MainFrame::LevelChanged(int level)
         {
 #ifdef Q_WS_QWS
             ui->teachButton->setEnabled(false);
+            ui->stackedWidget->setCurrentWidget(ui->page);
 #endif
             //            ui->recordPageButton->setEnabled(false);
         }

@@ -5,6 +5,7 @@
 #include "iciomonitorpagebase.h"
 #include "config.h"
 #include "icsystemconfig.h"
+#include "icparameterssave.h"
 
 ICMonitorPageFrame::ICMonitorPageFrame(QWidget *parent) :
     QFrame(parent),
@@ -40,13 +41,17 @@ void ICMonitorPageFrame::changeEvent(QEvent *e)
 
 void ICMonitorPageFrame::Init_()
 {
+    ICParametersSave* paraSave = ICParametersSave::Instance();
+    QLocale local = QLocale(paraSave->Language());
+    QString prefix = local.name().split("_")[0];
+
     QList<ICIOPoint> points;
     ICUserDefineConfigSPTR config = ICUserDefineConfig::Instance();
     QList<ICUserIOInfo> xInfos = config->AllXInfos();
     const int xSize = xInfos.size();
     for(int i = 0; i != xSize; ++i)
     {
-        points.append(ICIOPoint(xInfos.at(i).code, xInfos.at(i).GetLocaleName("zh"), i));
+        points.append(ICIOPoint(xInfos.at(i).code, xInfos.at(i).GetLocaleName(prefix), i));
     }
 //    points.append(ICIOPoint("X010", tr("Horizontal-1"), 0));
 //    points.append(ICIOPoint("X011", tr("Vertical-1"), 1));
@@ -103,7 +108,7 @@ void ICMonitorPageFrame::Init_()
     const int ySize = yInfos.size();
     for(int i = 0; i != ySize; ++i)
     {
-        points.append(ICIOPoint(yInfos.at(i).code, yInfos.at(i).GetLocaleName("zh"), i));
+        points.append(ICIOPoint(yInfos.at(i).code, yInfos.at(i).GetLocaleName(prefix), i));
     }
 //    points.append(ICIOPoint("Y010", tr("Horizontal-1 Valve"), 0));
 //    points.append(ICIOPoint("Y011", tr("Vertical-1 Valve"), 1));

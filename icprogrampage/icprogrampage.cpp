@@ -200,6 +200,28 @@ void ICProgramPage::hideEvent(QHideEvent *e)
 
 }
 
+void ICProgramPage::changeEvent(QEvent *e)
+{
+    QWidget::changeEvent(e);
+    switch (e->type()) {
+    case QEvent::LanguageChange:{
+        ui->retranslateUi(this);
+        QStringList headerContents;
+        headerContents  <<  tr("Type") << tr("FrontBack") << tr("UpDown") << tr("Windup") <<  tr("Rotated")
+                        << tr("Rollovers")  << tr("Save") << tr("Tested");
+
+        for(int i=0;i<headerContents.size();i++){
+            ui->tableWidget->horizontalHeaderItem(i)->setText(headerContents.at(i));
+        }
+
+        InitPoint();
+    }
+        break;
+    default:
+        break;
+    }
+}
+
 void ICProgramPage::itemClicked(QTableWidgetItem *item)
 {
     if(!ui->startEdit->isChecked())

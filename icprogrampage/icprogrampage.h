@@ -84,6 +84,7 @@ public slots:
 protected:
     void showEvent(QShowEvent *);
     void hideEvent(QHideEvent *);
+    void changeEvent(QEvent *e);
     
 
 signals:

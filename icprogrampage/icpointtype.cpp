@@ -6,17 +6,9 @@ ICPointType::ICPointType(QWidget *parent) :
     ui(new Ui::ICPointType)
 {
     ui->setupUi(this);
-    _box = ui->getWaitBox;
+    Init_();
 
-    typeToStr.insert(Get_Wait,tr("Get_Wait"));
-    typeToStr.insert(Get_Up,tr("Get_Up"));
-    typeToStr.insert(Get,tr("Get"));
-    typeToStr.insert(Get_Finish,tr("Get_Finish"));
-    typeToStr.insert(Put_Wait,tr("Put_Wait"));
-    typeToStr.insert(Put_Up,tr("Put_Up"));
-    typeToStr.insert(Put,tr("Put"));
-    typeToStr.insert(Put_Finish,tr("Put_Finish"));
-    typeToStr.insert(Reserve,tr("Reserve"));
+    _box = ui->getWaitBox;
 
     boxToType.insert(ui->getWaitBox,Get_Wait);
     boxToType.insert(ui->getUpBox,Get_Up);
@@ -37,6 +29,19 @@ ICPointType::ICPointType(QWidget *parent) :
 
 }
 
+void ICPointType::Init_()
+{
+    typeToStr.insert(Get_Wait,tr("Get_Wait"));
+    typeToStr.insert(Get_Up,tr("Get_Up"));
+    typeToStr.insert(Get,tr("Get"));
+    typeToStr.insert(Get_Finish,tr("Get_Finish"));
+    typeToStr.insert(Put_Wait,tr("Put_Wait"));
+    typeToStr.insert(Put_Up,tr("Put_Up"));
+    typeToStr.insert(Put,tr("Put"));
+    typeToStr.insert(Put_Finish,tr("Put_Finish"));
+    typeToStr.insert(Reserve,tr("Reserve"));
+}
+
 ICPointType::~ICPointType()
 {
     delete ui;
@@ -54,6 +59,20 @@ QString ICPointType::toString(PointType type)
 PointType ICPointType::currentType()
 {
     return boxToType.value(_box,NULL_Type);
+}
+
+void ICPointType::changeEvent(QEvent *e)
+{
+    QDialog::changeEvent(e);
+    switch (e->type()) {
+    case QEvent::LanguageChange:{
+        Init_();
+        ui->retranslateUi(this);
+    }
+        break;
+    default:
+        break;
+    }
 }
 
 void ICPointType::stateChanged(int status)
