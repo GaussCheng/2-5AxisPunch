@@ -1,10 +1,6 @@
-0,点位1,Point1
-1,点位2,Point2
-2,点位3,Point3
-3,点位4,Point4
-4,点位5,Point5
-5,点位6,Point6
-6,点位7,Point7
-7,点位8,Point8
-8,点位9,Point9
-9,点位10,Point10
+0,取料位,Point1
+1,放料位,Point2
+2,安全位,Point3
+3,取料位,Point1
+4,放料位,Point2
+5,安全位,Point3
