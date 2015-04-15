@@ -29,6 +29,10 @@ private:
     void InitInterface();
     void InitSignal();
 
+
+signals:
+    void ChangeDelay(int delay);
+
 private slots:
     void StatusRefreshed();
 
@@ -84,6 +88,8 @@ private slots:
     void on_showMore_clicked();
     void on_returnManual_clicked();
 
+
+    void on_delayEdit_textChanged(const QString &arg1);
 
 private:
     Ui::ICHCManualOperationPageFrame *ui;

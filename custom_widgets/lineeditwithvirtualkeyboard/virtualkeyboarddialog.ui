@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>616</width>
-    <height>305</height>
+    <width>710</width>
+    <height>356</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,166 +22,30 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>211</width>
-     <height>31</height>
+     <width>621</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="focusPolicy">
     <enum>Qt::NoFocus</enum>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="home">
-   <property name="geometry">
-    <rect>
-     <x>230</x>
-     <y>10</y>
-     <width>50</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>0</width>
-     <height>32</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>50</width>
-     <height>16777215</height>
-    </size>
-   </property>
-   <property name="focusPolicy">
-    <enum>Qt::NoFocus</enum>
-   </property>
-   <property name="text">
-    <string>Home</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="prior">
-   <property name="geometry">
-    <rect>
-     <x>280</x>
-     <y>10</y>
-     <width>50</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>0</width>
-     <height>32</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>50</width>
-     <height>16777215</height>
-    </size>
-   </property>
-   <property name="focusPolicy">
-    <enum>Qt::NoFocus</enum>
-   </property>
-   <property name="text">
-    <string>&lt;&lt;</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="next">
-   <property name="geometry">
-    <rect>
-     <x>330</x>
-     <y>10</y>
-     <width>50</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>0</width>
-     <height>32</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>50</width>
-     <height>16777215</height>
-    </size>
-   </property>
-   <property name="focusPolicy">
-    <enum>Qt::NoFocus</enum>
-   </property>
-   <property name="text">
-    <string>&gt;&gt;</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="end">
-   <property name="geometry">
-    <rect>
-     <x>380</x>
-     <y>10</y>
-     <width>50</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>0</width>
-     <height>32</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>50</width>
-     <height>16777215</height>
-    </size>
-   </property>
-   <property name="focusPolicy">
-    <enum>Qt::NoFocus</enum>
-   </property>
-   <property name="text">
-    <string>End</string>
    </property>
   </widget>
   <widget class="QWidget" name="buttonBoxWidget" native="true">
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>50</y>
-     <width>501</width>
-     <height>241</height>
+     <y>70</y>
+     <width>801</width>
+     <height>271</height>
     </rect>
    </property>
    <widget class="QPushButton" name="letterV">
     <property name="geometry">
      <rect>
-      <x>172</x>
-      <y>181</y>
-      <width>41</width>
-      <height>41</height>
+      <x>240</x>
+      <y>193</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -192,14 +56,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -212,10 +76,10 @@
    <widget class="QPushButton" name="letterH">
     <property name="geometry">
      <rect>
-      <x>256</x>
-      <y>121</y>
-      <width>41</width>
-      <height>41</height>
+      <x>330</x>
+      <y>133</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -226,14 +90,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -246,10 +110,10 @@
    <widget class="QPushButton" name="letterO">
     <property name="geometry">
      <rect>
-      <x>387</x>
-      <y>61</y>
-      <width>41</width>
-      <height>41</height>
+      <x>500</x>
+      <y>73</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -260,14 +124,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -280,10 +144,10 @@
    <widget class="QPushButton" name="letterB">
     <property name="geometry">
      <rect>
-      <x>219</x>
-      <y>181</y>
-      <width>41</width>
-      <height>41</height>
+      <x>300</x>
+      <y>193</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -294,14 +158,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -314,10 +178,10 @@
    <widget class="QPushButton" name="letterE">
     <property name="geometry">
      <rect>
-      <x>105</x>
-      <y>61</y>
-      <width>41</width>
-      <height>41</height>
+      <x>140</x>
+      <y>73</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -328,14 +192,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -348,10 +212,10 @@
    <widget class="QPushButton" name="letterP">
     <property name="geometry">
      <rect>
-      <x>434</x>
-      <y>61</y>
-      <width>41</width>
-      <height>41</height>
+      <x>560</x>
+      <y>73</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -362,14 +226,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -382,10 +246,10 @@
    <widget class="QPushButton" name="letterR">
     <property name="geometry">
      <rect>
-      <x>152</x>
-      <y>61</y>
-      <width>41</width>
-      <height>41</height>
+      <x>200</x>
+      <y>73</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -396,14 +260,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -416,10 +280,10 @@
    <widget class="QPushButton" name="letterW">
     <property name="geometry">
      <rect>
-      <x>58</x>
-      <y>61</y>
-      <width>41</width>
-      <height>41</height>
+      <x>80</x>
+      <y>73</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -430,14 +294,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -450,10 +314,10 @@
    <widget class="QPushButton" name="letterI">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>61</y>
-      <width>41</width>
-      <height>41</height>
+      <x>440</x>
+      <y>73</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -464,14 +328,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -481,47 +345,13 @@
      <string>I</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="backslash">
-    <property name="geometry">
-     <rect>
-      <x>454</x>
-      <y>181</y>
-      <width>41</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>41</width>
-      <height>41</height>
-     </size>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>41</width>
-      <height>41</height>
-     </size>
-    </property>
-    <property name="focusPolicy">
-     <enum>Qt::NoFocus</enum>
-    </property>
-    <property name="text">
-     <string>/</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="num7">
     <property name="geometry">
      <rect>
-      <x>283</x>
-      <y>1</y>
-      <width>41</width>
-      <height>41</height>
+      <x>370</x>
+      <y>10</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -532,14 +362,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -552,10 +382,10 @@
    <widget class="QPushButton" name="letterA">
     <property name="geometry">
      <rect>
-      <x>21</x>
-      <y>121</y>
-      <width>41</width>
-      <height>41</height>
+      <x>30</x>
+      <y>133</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -566,14 +396,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -586,10 +416,10 @@
    <widget class="QPushButton" name="letterF">
     <property name="geometry">
      <rect>
-      <x>162</x>
-      <y>121</y>
-      <width>41</width>
-      <height>41</height>
+      <x>210</x>
+      <y>133</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -600,14 +430,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -620,10 +450,10 @@
    <widget class="QPushButton" name="letterJ">
     <property name="geometry">
      <rect>
-      <x>303</x>
-      <y>121</y>
-      <width>41</width>
-      <height>41</height>
+      <x>390</x>
+      <y>133</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -634,14 +464,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -654,10 +484,10 @@
    <widget class="QPushButton" name="letterY">
     <property name="geometry">
      <rect>
-      <x>246</x>
-      <y>61</y>
-      <width>41</width>
-      <height>41</height>
+      <x>320</x>
+      <y>73</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -668,14 +498,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -688,10 +518,10 @@
    <widget class="QPushButton" name="num2">
     <property name="geometry">
      <rect>
-      <x>48</x>
-      <y>1</y>
-      <width>41</width>
-      <height>41</height>
+      <x>70</x>
+      <y>10</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -702,14 +532,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -722,10 +552,10 @@
    <widget class="QPushButton" name="num0">
     <property name="geometry">
      <rect>
-      <x>424</x>
-      <y>1</y>
-      <width>41</width>
-      <height>41</height>
+      <x>550</x>
+      <y>10</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -736,14 +566,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -756,10 +586,10 @@
    <widget class="QPushButton" name="letterN">
     <property name="geometry">
      <rect>
-      <x>266</x>
-      <y>181</y>
-      <width>41</width>
-      <height>41</height>
+      <x>360</x>
+      <y>193</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -770,14 +600,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -790,10 +620,10 @@
    <widget class="QPushButton" name="num5">
     <property name="geometry">
      <rect>
-      <x>189</x>
-      <y>1</y>
-      <width>41</width>
-      <height>41</height>
+      <x>250</x>
+      <y>10</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -804,14 +634,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -824,10 +654,10 @@
    <widget class="QPushButton" name="letterC">
     <property name="geometry">
      <rect>
-      <x>125</x>
-      <y>181</y>
-      <width>41</width>
-      <height>41</height>
+      <x>180</x>
+      <y>193</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -838,14 +668,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -858,10 +688,10 @@
    <widget class="QPushButton" name="letterL">
     <property name="geometry">
      <rect>
-      <x>397</x>
-      <y>121</y>
-      <width>41</width>
-      <height>41</height>
+      <x>510</x>
+      <y>133</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -872,14 +702,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -892,10 +722,10 @@
    <widget class="QPushButton" name="letterS">
     <property name="geometry">
      <rect>
-      <x>68</x>
-      <y>121</y>
-      <width>41</width>
-      <height>41</height>
+      <x>90</x>
+      <y>133</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -906,14 +736,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -926,10 +756,10 @@
    <widget class="QPushButton" name="num8">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>1</y>
-      <width>41</width>
-      <height>41</height>
+      <x>430</x>
+      <y>10</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -940,14 +770,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -960,10 +790,10 @@
    <widget class="QPushButton" name="num6">
     <property name="geometry">
      <rect>
-      <x>236</x>
-      <y>1</y>
-      <width>41</width>
-      <height>41</height>
+      <x>310</x>
+      <y>10</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -974,14 +804,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -991,47 +821,13 @@
      <string>6</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="semicolon">
-    <property name="geometry">
-     <rect>
-      <x>444</x>
-      <y>121</y>
-      <width>41</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>41</width>
-      <height>41</height>
-     </size>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>41</width>
-      <height>41</height>
-     </size>
-    </property>
-    <property name="focusPolicy">
-     <enum>Qt::NoFocus</enum>
-    </property>
-    <property name="text">
-     <string>;</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="mum3">
     <property name="geometry">
      <rect>
-      <x>95</x>
-      <y>1</y>
-      <width>41</width>
-      <height>41</height>
+      <x>130</x>
+      <y>10</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -1042,14 +838,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -1062,10 +858,10 @@
    <widget class="QPushButton" name="letterZ">
     <property name="geometry">
      <rect>
-      <x>31</x>
-      <y>181</y>
-      <width>41</width>
-      <height>41</height>
+      <x>61</x>
+      <y>193</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -1076,14 +872,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -1096,10 +892,10 @@
    <widget class="QPushButton" name="letterM">
     <property name="geometry">
      <rect>
-      <x>313</x>
-      <y>181</y>
-      <width>41</width>
-      <height>41</height>
+      <x>420</x>
+      <y>193</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -1110,14 +906,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -1130,10 +926,10 @@
    <widget class="QPushButton" name="letterT">
     <property name="geometry">
      <rect>
-      <x>199</x>
-      <y>61</y>
-      <width>41</width>
-      <height>41</height>
+      <x>260</x>
+      <y>73</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -1144,14 +940,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -1164,10 +960,10 @@
    <widget class="QPushButton" name="num1">
     <property name="geometry">
      <rect>
-      <x>1</x>
-      <y>1</y>
-      <width>41</width>
-      <height>41</height>
+      <x>10</x>
+      <y>10</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -1178,14 +974,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -1198,10 +994,10 @@
    <widget class="QPushButton" name="letterQ">
     <property name="geometry">
      <rect>
-      <x>11</x>
-      <y>61</y>
-      <width>41</width>
-      <height>41</height>
+      <x>20</x>
+      <y>73</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -1212,14 +1008,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -1232,10 +1028,10 @@
    <widget class="QPushButton" name="num9">
     <property name="geometry">
      <rect>
-      <x>377</x>
-      <y>1</y>
-      <width>41</width>
-      <height>41</height>
+      <x>490</x>
+      <y>10</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -1246,14 +1042,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -1263,81 +1059,13 @@
      <string>9</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="dot">
-    <property name="geometry">
-     <rect>
-      <x>407</x>
-      <y>181</y>
-      <width>41</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>41</width>
-      <height>41</height>
-     </size>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>41</width>
-      <height>41</height>
-     </size>
-    </property>
-    <property name="focusPolicy">
-     <enum>Qt::NoFocus</enum>
-    </property>
-    <property name="text">
-     <string>.</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="comma">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>181</y>
-      <width>41</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>41</width>
-      <height>41</height>
-     </size>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>41</width>
-      <height>41</height>
-     </size>
-    </property>
-    <property name="focusPolicy">
-     <enum>Qt::NoFocus</enum>
-    </property>
-    <property name="text">
-     <string>,</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="letterG">
     <property name="geometry">
      <rect>
-      <x>209</x>
-      <y>121</y>
-      <width>41</width>
-      <height>41</height>
+      <x>270</x>
+      <y>133</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -1348,14 +1076,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -1368,10 +1096,10 @@
    <widget class="QPushButton" name="letterK">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>121</y>
-      <width>41</width>
-      <height>41</height>
+      <x>450</x>
+      <y>133</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -1382,14 +1110,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -1402,10 +1130,10 @@
    <widget class="QPushButton" name="num4">
     <property name="geometry">
      <rect>
-      <x>142</x>
-      <y>1</y>
-      <width>41</width>
-      <height>41</height>
+      <x>190</x>
+      <y>10</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -1416,14 +1144,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -1436,10 +1164,10 @@
    <widget class="QPushButton" name="letterU">
     <property name="geometry">
      <rect>
-      <x>293</x>
-      <y>61</y>
-      <width>41</width>
-      <height>41</height>
+      <x>380</x>
+      <y>73</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -1450,14 +1178,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -1470,10 +1198,10 @@
    <widget class="QPushButton" name="letterX">
     <property name="geometry">
      <rect>
-      <x>78</x>
-      <y>181</y>
-      <width>41</width>
-      <height>41</height>
+      <x>120</x>
+      <y>193</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -1484,14 +1212,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -1504,10 +1232,10 @@
    <widget class="QPushButton" name="letterD">
     <property name="geometry">
      <rect>
-      <x>115</x>
-      <y>121</y>
-      <width>41</width>
-      <height>41</height>
+      <x>150</x>
+      <y>133</y>
+      <width>50</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -1518,14 +1246,14 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>41</width>
-      <height>41</height>
+      <width>50</width>
+      <height>45</height>
      </size>
     </property>
     <property name="focusPolicy">
@@ -1535,98 +1263,182 @@
      <string>D</string>
     </property>
    </widget>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>510</x>
-     <y>30</y>
-     <width>93</width>
-     <height>261</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QPushButton" name="backspace">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="focusPolicy">
-       <enum>Qt::NoFocus</enum>
-      </property>
-      <property name="text">
-       <string>Backspace</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="del">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="focusPolicy">
-       <enum>Qt::NoFocus</enum>
-      </property>
-      <property name="text">
-       <string>Del</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="space">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="focusPolicy">
-       <enum>Qt::NoFocus</enum>
-      </property>
-      <property name="text">
-       <string>Space</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="cancel">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="focusPolicy">
-       <enum>Qt::NoFocus</enum>
-      </property>
-      <property name="text">
-       <string>Cancel</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="ok">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="focusPolicy">
-       <enum>Qt::NoFocus</enum>
-      </property>
-      <property name="text">
-       <string>OK</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
+   <widget class="QToolButton" name="backspace">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>10</y>
+      <width>80</width>
+      <height>45</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*#ok{
+     border-style: outset;
+     border-width: 2px;
+     border-radius: 6px;
+     border-color: gray;
+	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(29, 212, 61, 255), stop:1 rgba(193, 255, 142, 255));
+}
+#ok:pressed{
+     border-style: inset;
+	background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(29, 212, 61, 255), stop:1 rgba(193, 255, 142, 255));
+	color:black;
+}*/</string>
+    </property>
+    <property name="text">
+     <string>Backspace</string>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="cancel">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>73</y>
+      <width>70</width>
+      <height>45</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*#ok{
+     border-style: outset;
+     border-width: 2px;
+     border-radius: 6px;
+     border-color: gray;
+	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(29, 212, 61, 255), stop:1 rgba(193, 255, 142, 255));
+}
+#ok:pressed{
+     border-style: inset;
+	background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(29, 212, 61, 255), stop:1 rgba(193, 255, 142, 255));
+	color:black;
+}*/</string>
+    </property>
+    <property name="text">
+     <string>Cancel</string>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="ok">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>133</y>
+      <width>121</width>
+      <height>45</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*#ok{
+     border-style: outset;
+     border-width: 2px;
+     border-radius: 6px;
+     border-color: gray;
+	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(29, 212, 61, 255), stop:1 rgba(193, 255, 142, 255));
+}
+#ok:pressed{
+     border-style: inset;
+	background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(29, 212, 61, 255), stop:1 rgba(193, 255, 142, 255));
+	color:black;
+}*/</string>
+    </property>
+    <property name="text">
+     <string>OK</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="letterM_3">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>193</y>
+      <width>50</width>
+      <height>45</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>50</width>
+      <height>45</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>50</width>
+      <height>45</height>
+     </size>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="text">
+     <string>(</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="letterM_4">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>193</y>
+      <width>50</width>
+      <height>45</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>50</width>
+      <height>45</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>50</width>
+      <height>45</height>
+     </size>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="text">
+     <string>)</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources>

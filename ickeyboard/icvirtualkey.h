@@ -46,7 +46,7 @@ enum ICVirtualKey
     VKEY_CURVEY,
     VKEY_CURVEZ,
 
-    VKEY_JOGEn = 0xE6,  //ä½¿èƒ½
+    VKEY_JOGEn = 0xE6,  //Ê¹ÄÜ
     VKEY_JOG0,        //AubBack+
     VKEY_JOG1,      //AubBack-
     VKEY_JOG2,      //Forward+
@@ -116,12 +116,12 @@ enum ICVirtualKey
     VKEY_ORIGIN_Y2,
     VKEY_SERVO_ON,
     VKEY_SERVO_OFF,
-    VKEY_ALLOWTACK,//å…è®¸å–ç‰©
-    VKEY_ALLOWPUT,//å…è®¸ç½®ç‰©
+    VKEY_ALLOWTACK,//ÔÊĞíÈ¡Îï
+    VKEY_ALLOWPUT,//ÔÊĞíÖÃÎï
 
     VKEY_LHORIGIN = 0xAA,
     VKEY_RHORIGIN = 0xAB,
-    VKEY_SINGLECYCLE //å•å¾ªç¯
+    VKEY_SINGLECYCLE //µ¥Ñ­»·
 
 };
 

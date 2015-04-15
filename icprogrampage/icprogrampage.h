@@ -79,11 +79,13 @@ public:
     void InitFixMoldItems();
     void SetPageMaxCount(int count);
     ~ICProgramPage();
-
+public slots:
+    void ChangeDelay(int delay);
 protected:
     void showEvent(QShowEvent *);
     void hideEvent(QHideEvent *);
     
+
 signals:
     void returnProgram();
 
@@ -148,6 +150,7 @@ private:
     ICMoldItem outY37Off;
     ICMoldItem outY31On;
     ICMoldItem outY31Off;
+    ICMoldItem outM27On;
     ICMoldItem waitM14;
     ICMoldItem outPermit;
 

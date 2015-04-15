@@ -273,6 +273,10 @@ bool ICMold::ReadConfigFile(const QString &fileName)
     }
 
     QStringList records = content.split("\n", QString::SkipEmptyParts);
+
+    if(records.size() < MoldNativeParamCount){
+        return false;
+    }
     for(int i = 0; i != records.size(); ++i)
     {
         moldNativeParams_.append(records.at(i).toInt());

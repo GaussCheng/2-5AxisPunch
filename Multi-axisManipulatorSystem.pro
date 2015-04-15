@@ -87,7 +87,7 @@ DEFINES += HC_AXIS_COUNT_2
 equals(SK_SIZE, 8){
 message("Define 8")
 DEFINES += HC_SK_8
-FORMS    += mainframe_8.ui \
+FORMS    += mainframe.ui \
     #icalarmdescriptiondialog.ui \
     icorigindialog.ui \
     icreturnpage.ui \
@@ -100,7 +100,7 @@ FORMS    += mainframe_8.ui \
 equals(SK_SIZE ,5){
 message("Define 5")
 DEFINES += HC_SK_5
-FORMS    += mainframe.ui \
+FORMS    += mainframe_5.ui \
     #icalarmdescriptiondialog.ui \
     icorigindialog.ui \
     icreturnpage.ui \
@@ -152,7 +152,7 @@ OTHER_FILES += \
 
 QMAKE_POST_LINK += "cp *.qm $$DESTDIR"
 CONFIG(debug, debug|release){
-system("python rename_ui.py $$UI_DIR")
+#system("python rename_ui.py $$UI_DIR")
 #QMAKE_POST_LINK += "cp *.qm bin_debug"
 }else{
 system("python rename_ui.py $${UI_DIR}")

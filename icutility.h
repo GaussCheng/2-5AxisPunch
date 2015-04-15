@@ -8,11 +8,11 @@
 class ICUtility {
 public:
 	/**
-	 * å±ä¿å›¾ç‰‡è·¯å¾„
+	 * ÆÁ±£Í¼Æ¬Â·¾¶
 	 */
     static const QString ScreenSaverImgPath;
 	/**
-	 * å±ä¿è¿›ç¨‹å‰¯æœ¬é”æ–‡ä»¶è·¯å¾„
+	 * ÆÁ±£½ø³Ì¸±±¾ËøÎÄ¼şÂ·¾¶
 	 */
     static const QString ScreenSaverInstanceLockFile;
 	static bool LockFile(int fd);

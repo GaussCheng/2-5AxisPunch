@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
-    <height>50</height>
+    <width>800</width>
+    <height>48</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,7 +21,7 @@
 }
 </string>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout_2">
+  <layout class="QHBoxLayout" name="horizontalLayout">
    <property name="spacing">
     <number>1</number>
    </property>
@@ -59,13 +59,6 @@
      <property name="spacing">
       <number>2</number>
      </property>
-     <item row="0" column="1">
-      <widget class="QLabel" name="label_3">
-       <property name="text">
-        <string>Origin</string>
-       </property>
-      </widget>
-     </item>
      <item row="0" column="0">
       <widget class="QLabel" name="robotOrigin">
        <property name="text">
@@ -76,10 +69,10 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="1">
-      <widget class="QLabel" name="label_4">
+     <item row="0" column="1" colspan="2">
+      <widget class="QLabel" name="label_3">
        <property name="text">
-        <string>Punch Origin</string>
+        <string>Origin</string>
        </property>
       </widget>
      </item>
@@ -90,6 +83,13 @@
        </property>
        <property name="pixmap">
         <pixmap resource="../iciomonitor/iciomonitor.qrc">:/resource/ledgray(16).png</pixmap>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1" colspan="2">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Punch Origin</string>
        </property>
       </widget>
      </item>
@@ -106,13 +106,13 @@
     <widget class="QLabel" name="statusLabel">
      <property name="minimumSize">
       <size>
-       <width>60</width>
+       <width>80</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>60</width>
+       <width>80</width>
        <height>16777215</height>
       </size>
      </property>
@@ -552,13 +552,13 @@
     <widget class="QLabel" name="controlStatus">
      <property name="minimumSize">
       <size>
-       <width>60</width>
+       <width>80</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>60</width>
+       <width>80</width>
        <height>16777215</height>
       </size>
      </property>
@@ -1005,88 +1005,83 @@
     </widget>
    </item>
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <property name="spacing">
-      <number>2</number>
+    <widget class="QPushButton" name="moldNameLabel">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>PushButton</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="ICComboBox" name="handSelect">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
      </property>
      <item>
-      <widget class="QPushButton" name="moldNameLabel">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>PushButton</string>
-       </property>
-      </widget>
+      <property name="text">
+       <string>H:X</string>
+      </property>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="ICComboBox" name="handSelect">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <item>
-          <property name="text">
-           <string notr="true">H:X</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string notr="true">H:Y</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string notr="true">H:S</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string notr="true">H:R</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string notr="true">H:T</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item>
-        <widget class="ICComboBox" name="handSpeed">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <item>
-          <property name="text">
-           <string notr="true">X1</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string notr="true">X5</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string notr="true">X10</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-      </layout>
+      <property name="text">
+       <string>H:Y</string>
+      </property>
      </item>
-    </layout>
+     <item>
+      <property name="text">
+       <string>H:S</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>H:R</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>H:T</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item>
+    <widget class="ICComboBox" name="handSpeed">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>55</width>
+       <height>0</height>
+      </size>
+     </property>
+     <item>
+      <property name="text">
+       <string notr="true">X1</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string notr="true">X5</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string notr="true">X10</string>
+      </property>
+     </item>
+    </widget>
    </item>
    <item>
     <widget class="PasswdLevelLabel" name="passwdLevelLabel">
@@ -1119,14 +1114,14 @@ padding-left:6px;
  </widget>
  <customwidgets>
   <customwidget>
-   <class>PasswdLevelLabel</class>
-   <extends>QLabel</extends>
-   <header>passwdlevellabel.h</header>
-  </customwidget>
-  <customwidget>
    <class>ICComboBox</class>
    <extends>QComboBox</extends>
    <header>iccombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>PasswdLevelLabel</class>
+   <extends>QLabel</extends>
+   <header>passwdlevellabel.h</header>
   </customwidget>
  </customwidgets>
  <resources>

@@ -318,7 +318,9 @@ public:
         pointConfig1,
         pointConfig2,
         pointConfig3,
-        pointConfig4
+        pointConfig4,
+        ClipDelay,
+        MoldNativeParamCount
     };
 
     enum ICStatckParam

@@ -56,7 +56,6 @@
 #include "icmachinestructpage.h"
 #include "icupdatesystempage.h"
 #include "icmachineconfigpage.h"
-#include "icprogrammainpage.h"
 #include "icautoactionpage.h"
 #include "icmaualactionpage.h"
 
@@ -522,6 +521,7 @@ void MainFrame::InitCategoryPage()
     manualPage_ = new ICHCManualOperationPageFrame();//ICHCManualOperationPageFrame
     centerStackedLayout_->addWidget(manualPage_);
 
+
     emit LoadMessage("Start to Initialize auto pages");
     autoPage_ = new ICHCProgramMonitorFrame();
     centerStackedLayout_->addWidget(autoPage_);
@@ -578,6 +578,9 @@ void MainFrame::InitCategoryPage()
     originExecutingPage_ = new ICOriginDialog();
     emit LoadMessage("end to Initialize  pages");
 
+
+    connect(manualPage_,SIGNAL(ChangeDelay(int)),
+            instructPage_,SLOT(ChangeDelay(int)));
 
 }
 

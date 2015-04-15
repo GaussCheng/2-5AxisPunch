@@ -47,7 +47,7 @@ SOURCES += \
 
 contains(DEFINES, HC_SK_5){
 FORMS += \
-    function_settings/moldinformation.ui
+    function_settings/moldinformation_5.ui
     #function_settings/icstacksettingpageframe.ui \
     #function_settings/icstandbysettingframe.ui \
     #function_settings/icsystemsettingframe.ui \
@@ -71,5 +71,5 @@ FORMS += \
 
 contains(DEFINES, HC_SK_8){
 FORMS += \
-    function_settings/moldinformation_8.ui
+    function_settings/moldinformation.ui
 }

@@ -137,6 +137,31 @@ ICProgramPage::~ICProgramPage()
     delete ui;
 }
 
+void ICProgramPage::ChangeDelay(int delay)
+{
+    //发送教导修改指令
+    outY37On.SetDVal(delay * 100);
+    outY37Off.SetDVal(delay * 100);
+
+    ICAutoAdjustCommand command;
+    ICCommandProcessor* processor;
+    processor = ICCommandProcessor::Instance();
+
+    allItems = GT_AllMoldItems();
+    for(int i=0;i < allItems.size();i++){
+        ICMoldItem item  = allItems.at(i);
+        if(item.SubNum() == 23){
+            command.SetSlave(processor->SlaveID());
+            command.SetSequence(item.Seq());
+            command.SetDelayTime(item.DVal());
+            command.SetCheckSum(item.Sum());
+
+        }
+    }
+
+    qDebug() <<  processor->ExecuteCommand(command).toBool();
+}
+
 void ICProgramPage::showEvent(QShowEvent *e)
 {
     //隐藏列
@@ -399,7 +424,7 @@ void ICProgramPage::InitPointToItem()
 //    pointToItem.insert(Put_Wait,items); items.clear();
 //    pointToItem.insert(Put_Up,items); items.clear();
     pointToItem.insert(Put,(items << outY37Off)); items.clear();
-    pointToItem.insert(Put_Finish,(items << waitM14 << outPermit)); items.clear();
+    pointToItem.insert(Put_Finish,(items << outM27On << waitM14 << outPermit)); items.clear();
     pointToItem.insert(Reserve,items); items.clear();
 
 
@@ -505,8 +530,12 @@ void ICProgramPage::InitFixMoldItems()
     outY37Off = MK_MoldItem(10,6,23,11,0,0,0,0,0,50);
     outY31On  = MK_MoldItem(11,7,17,11,0,1,0,0,0,47);
     outY31Off = MK_MoldItem(12,8,17,11,0,0,0,0,0,98);
+    outM27On  = MK_MoldItem(13,9,23,25,0,1,0,0,0,246); //新添加
     waitM14   = MK_MoldItem(13,9,4,24,0,1,0,0,3000,246);
     outPermit = MK_MoldItem(14,10,0,27,0,1,0,0,0,103);
+
+    outY37On.SetDVal(_NativeMoldParam(ICMold::ClipDelay) * 100);
+    outY37Off.SetDVal(_NativeMoldParam(ICMold::ClipDelay) * 100);
 
 }
 
@@ -640,19 +669,19 @@ void ICProgramPage::MoldChanged(QString s)
 
 void ICProgramPage::GT_CalculateItem(QList<ICMoldItem>& items)
 {
-//    uint oldNum = 0;
+    uint oldNum = 0;
     //计算num
     for(int i=0;i<items.size();i++){
-//        if(items.at(i).GMVal() == ICMold::GARC){
-            items[i].SetNum(i);
-//            if(items.at(i).IFPos()  == 5){
-//                oldNum ++;
-//            }
-//        }
-//        else{
-//            items[i].SetNum(oldNum);
-//            oldNum ++;
-//        }
+        if(items.at(i).GMVal() == ICMold::GARC){
+            items[i].SetNum(oldNum);
+            if(items.at(i).IFPos()  == 5){
+                oldNum ++;
+            }
+        }
+        else{
+            items[i].SetNum(oldNum);
+            oldNum ++;
+        }
 
     }
 }

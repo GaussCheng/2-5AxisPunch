@@ -13,8 +13,8 @@ FORMS += \
     hcmaintains/icupdatelogodialog.ui
 
 contains(DEFINES, HC_SK_8){
-FORMS += hcmaintains/icupdatesystempage_8.ui
+FORMS += hcmaintains/icupdatesystempage.ui
 }
 contains(DEFINES, HC_SK_5){
-FORMS += hcmaintains/icupdatesystempage.ui
+FORMS += hcmaintains/icupdatesystempage_5.ui
 }

@@ -61,14 +61,14 @@ SOURCES += \
 contains(DEFINES, HC_SK_8){
 
 FORMS += \
-    hcinstruction/ichcinstructionpageframe_8.ui \
-    hcinstruction/actionsettingframe_8.ui \
+    hcinstruction/ichcinstructionpageframe.ui \
+    hcinstruction/actionsettingframe.ui \
     #hcinstruction/ichcparametersframe.ui \
     #hcinstruction/routesettingdialog.ui \
     hcinstruction/ichcinjectionpage.ui \
     hcinstruction/ichcfixturepage.ui \
     hcinstruction/ichcconditionpage.ui \
-    hcinstruction/ichcprogrammonitorframe_8.ui \
+    hcinstruction/ichcprogrammonitorframe.ui \
     #hcinstruction/ichceditordialog.ui \
     #hcinstruction/icmacroparameditorframe.ui \
     hcinstruction/icautorunrevise.ui \
@@ -88,14 +88,14 @@ FORMS += \
 contains(DEFINES, HC_SK_5){
 
 FORMS += \
-    hcinstruction/ichcinstructionpageframe.ui \
-    hcinstruction/actionsettingframe.ui \
+    hcinstruction/ichcinstructionpageframe_5.ui \
+    hcinstruction/actionsettingframe_5.ui \
     #hcinstruction/ichcparametersframe.ui \
     #hcinstruction/routesettingdialog.ui \
     hcinstruction/ichcinjectionpage.ui \
     hcinstruction/ichcfixturepage.ui \
     hcinstruction/ichcconditionpage.ui \
-    hcinstruction/ichcprogrammonitorframe.ui \
+    hcinstruction/ichcprogrammonitorframe_5.ui \
     #hcinstruction/ichceditordialog.ui \
     #hcinstruction/icmacroparameditorframe.ui \
     hcinstruction/icautorunrevise.ui \

@@ -4,33 +4,33 @@
 namespace IC{
 enum ICActionCommand
 {
-    CMD_NULL            = 0x0,      //æ— å‘½ä»¤
-    CMD_TurnAuto        = 0x80,     //è½¬è‡ªåŠ¨
-    CMD_TurnManual      = 0x81,     //è½¬æ‰‹åŠ¨
-    CMD_TurnStop        = 0x82,     //è½¬åœæ­¢
-    CMD_TurnTeach       = 0x83,     //è½¬æ•™å¯¼
-    CMD_TurnZero        = 0x84,     //åŸç‚¹
-    CMD_TurnRet         = 0x85,     //å¤å½’
-    CMD_TurntchSub0     = 0x90,     //è½¬æ•™å¯¼å·¨é›†0
-    CMD_TurntchSub1     = 0x91,     //è½¬æ•™å¯¼å·¨é›†1
-    CMD_TurntchSub2     = 0x92,     //è½¬æ•™å¯¼å·¨é›†2
-    CMD_TurntchSub3     = 0x93,     //è½¬æ•™å¯¼å·¨é›†3
-    CMD_TurntchSub4     = 0x94,     //è½¬æ•™å¯¼å·¨é›†4
-    CMD_TurntchSub5     = 0x95,     //è½¬æ•™å¯¼å·¨é›†5
-    CMD_TurntchSub6     = 0x96,     //è½¬æ•™å¯¼å·¨é›†6
-    CMD_TurntchSub7     = 0x97,     //è½¬æ•™å¯¼å·¨é›†7
-    CMD_TurntchSub8     = 0x98,     //è½¬æ•™å¯¼
+    CMD_NULL            = 0x0,      //ÎŞÃüÁî
+    CMD_TurnAuto        = 0x80,     //×ª×Ô¶¯
+    CMD_TurnManual      = 0x81,     //×ªÊÖ¶¯
+    CMD_TurnStop        = 0x82,     //×ªÍ£Ö¹
+    CMD_TurnTeach       = 0x83,     //×ª½Ìµ¼
+    CMD_TurnZero        = 0x84,     //Ô­µã
+    CMD_TurnRet         = 0x85,     //¸´¹é
+    CMD_TurntchSub0     = 0x90,     //×ª½Ìµ¼¾Ş¼¯0
+    CMD_TurntchSub1     = 0x91,     //×ª½Ìµ¼¾Ş¼¯1
+    CMD_TurntchSub2     = 0x92,     //×ª½Ìµ¼¾Ş¼¯2
+    CMD_TurntchSub3     = 0x93,     //×ª½Ìµ¼¾Ş¼¯3
+    CMD_TurntchSub4     = 0x94,     //×ª½Ìµ¼¾Ş¼¯4
+    CMD_TurntchSub5     = 0x95,     //×ª½Ìµ¼¾Ş¼¯5
+    CMD_TurntchSub6     = 0x96,     //×ª½Ìµ¼¾Ş¼¯6
+    CMD_TurntchSub7     = 0x97,     //×ª½Ìµ¼¾Ş¼¯7
+    CMD_TurntchSub8     = 0x98,     //×ª½Ìµ¼
 
-    CMD_Action          = 0x40,     //åŠ¨ä½œç±»
+    CMD_Action          = 0x40,     //¶¯×÷Àà
 
-    CMD_TestDone        = 0x20,     //æµ‹è¯•ç»“æŸ
-    CMD_TestX           = 0x21,     //æµ‹è¯•Xè½´è„‰å†²
-    CMD_TestY           = 0x22,     //æµ‹è¯•Yè½´è„‰å†²
-    CMD_TestZ           = 0x23,     //æµ‹è¯•Zè½´è„‰å†²
-    CMD_TestxRev        = 0x2c,     //æµ‹è¯•Xè½´åå‘
-    CMD_TestzRev        = 0x2d,     //æµ‹è¯•Zè½´åå‘
+    CMD_TestDone        = 0x20,     //²âÊÔ½áÊø
+    CMD_TestX           = 0x21,     //²âÊÔXÖáÂö³å
+    CMD_TestY           = 0x22,     //²âÊÔYÖáÂö³å
+    CMD_TestZ           = 0x23,     //²âÊÔZÖáÂö³å
+    CMD_TestxRev        = 0x2c,     //²âÊÔXÖá·´Ïò
+    CMD_TestzRev        = 0x2d,     //²âÊÔZÖá·´Ïò
     CMD_TestyRev        = 0x2e,
-    CMD_TestClr         = 0x24,     //æ¸…æµ‹è¯•è„‰å†²
+    CMD_TestClr         = 0x24,     //Çå²âÊÔÂö³å
 
     CMD_X1SubLmt        = 0x25,
     CMD_X1AddLmt        = 0x26,
@@ -48,22 +48,22 @@ enum ICActionCommand
     CMD_Y2SubLmt        = 0x37,
     CMD_Y2AddLmt        = 0x38,
 
-    CMD_TestX2          = 0x39,     //æµ‹è¯•Xè½´è„‰å†²
-    CMD_TestY2          = 0x3a,     //æµ‹è¯•Yè½´è„‰å†²
-    CMD_TestZ2          = 0x3b,     //æµ‹è¯•Zè½´è„‰å†²
-    CMD_TestX2Rev       = 0x3c,     //æµ‹è¯•Xè½´åå‘
-    CMD_TestY2Rev       = 0x3d,     //æµ‹è¯•Zè½´åå‘
+    CMD_TestX2          = 0x39,     //²âÊÔXÖáÂö³å
+    CMD_TestY2          = 0x3a,     //²âÊÔYÖáÂö³å
+    CMD_TestZ2          = 0x3b,     //²âÊÔZÖáÂö³å
+    CMD_TestX2Rev       = 0x3c,     //²âÊÔXÖá·´Ïò
+    CMD_TestY2Rev       = 0x3d,     //²âÊÔZÖá·´Ïò
     CMD_TestZ2Rev       = 0x3e,
 
-    CMD_TestA           = 0x50,     //æµ‹è¯•Xè½´è„‰å†²
-    CMD_TestB           = 0x51,     //æµ‹è¯•Yè½´è„‰å†²
-    CMD_TestC           = 0x52,     //æµ‹è¯•Zè½´è„‰å†²
-    CMD_TestARev        = 0x53,     //æµ‹è¯•Xè½´åå‘
-    CMD_TestBRev        = 0x54,     //æµ‹è¯•Zè½´åå‘
+    CMD_TestA           = 0x50,     //²âÊÔXÖáÂö³å
+    CMD_TestB           = 0x51,     //²âÊÔYÖáÂö³å
+    CMD_TestC           = 0x52,     //²âÊÔZÖáÂö³å
+    CMD_TestARev        = 0x53,     //²âÊÔXÖá·´Ïò
+    CMD_TestBRev        = 0x54,     //²âÊÔZÖá·´Ïò
     CMD_TestCRev        = 0x55,
 
-    CMD_PulseA          = 0x60,     //è„‰å†²å‘½ä»¤A
-    CMD_PulseB          = 0x61,     //è„‰å†²å‘½ä»¤B
+    CMD_PulseA          = 0x60,     //Âö³åÃüÁîA
+    CMD_PulseB          = 0x61,     //Âö³åÃüÁîB
 };
 }//namespace IC{
 

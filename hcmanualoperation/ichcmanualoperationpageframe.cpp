@@ -67,6 +67,7 @@ ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     ui->runButton->hide();
     ui->uncheckRunButton->hide();
 
+
     ui->groupBox->hide();
     ui->groupBox_2->hide();
     ui->return0Button->hide();
@@ -99,6 +100,10 @@ void ICHCManualOperationPageFrame::showEvent(QShowEvent *e)
 //        ui->ySpeed->setChecked(true);
 //    }
     QFrame::showEvent(e);
+    ui->delayEdit->blockSignals(true);
+    ui->delayEdit->setText(QString("%1")
+                           .arg(ICMold::CurrentMold()->MoldNativeParam(ICMold::ClipDelay)));
+    ui->delayEdit->blockSignals(false);
     ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnManual, 0);
 //    currentStep = 0;
     timerID_ = startTimer(100);
@@ -970,4 +975,12 @@ void ICHCManualOperationPageFrame::on_showMore_clicked()
 void ICHCManualOperationPageFrame::on_returnManual_clicked()
 {
     ui->tabWidget->setCurrentIndex(0);
+}
+
+void ICHCManualOperationPageFrame::on_delayEdit_textChanged(const QString &text)
+{
+    ICMold::CurrentMold()->SetMoldNativeParam(ICMold::ClipDelay,text.toInt());
+    ICMold::CurrentMold()->SaveMoldConfigFile();
+    emit ChangeDelay(text.toInt());
+
 }

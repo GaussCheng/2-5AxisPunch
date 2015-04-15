@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////
 //  ICTimerPool.h
 //  Implementation of the Class ICTimerPool
-//  Created on:      05-ä¹æœˆ-2011 10:05:53
+//  Created on:      05-¾ÅÔÂ-2011 10:05:53
 //  Original author: GaussCheng
 ///////////////////////////////////////////////////////////
 
@@ -9,10 +9,10 @@
 #define EA_FCCA4848_BA70_457b_A961_BE421B64C3EA__INCLUDED_
 
 /**
- * å®šæ—¶å™¨æ± ï¼Œç”¨äºå¸®åŠ©ç®¡ç†æ¡†æ¶ä¸­çš„å®šæ—¶å™¨
+ * ¶¨Ê±Æ÷³Ø£¬ÓÃÓÚ°ïÖú¹ÜÀí¿ò¼ÜÖĞµÄ¶¨Ê±Æ÷
  * @author GaussCheng
  * @version 1.0
- * @updated 05-ä¹æœˆ-2011 10:21:19
+ * @updated 05-¾ÅÔÂ-2011 10:21:19
  */
 
 
@@ -23,10 +23,10 @@
 #include <QDebug>
 
 /**
- * å®šæ—¶å™¨æ± ï¼Œç”¨äºå¸®åŠ©ç®¡ç†æ¡†æ¶ä¸­çš„å®šæ—¶å™¨
+ * ¶¨Ê±Æ÷³Ø£¬ÓÃÓÚ°ïÖú¹ÜÀí¿ò¼ÜÖĞµÄ¶¨Ê±Æ÷
  * @author GaussCheng
  * @version 1.0
- * @updated 06-ä¹æœˆ-2011 10:34:34
+ * @updated 06-¾ÅÔÂ-2011 10:34:34
  */
 class ICTimerPool
 {
@@ -43,11 +43,11 @@ private:
     QTimer* GetTimer_(int &id);
     static QScopedPointer<ICTimerPool> instance_;
 	/**
-	 * å®šæ—¶å™¨æ± 
+	 * ¶¨Ê±Æ÷³Ø
 	 */
     const static uint DefaultSize = 32;
 	/**
-	 * å®šæ—¶å™¨æ± 
+	 * ¶¨Ê±Æ÷³Ø
 	 */
     QVarLengthArray<QTimer*, DefaultSize> timerPool_;
     QBitArray flags_;
@@ -56,7 +56,7 @@ private:
 };
 
 /**
- * è·å–å®šæ—¶å™¨æ± çš„å®ä¾‹
+ * »ñÈ¡¶¨Ê±Æ÷³ØµÄÊµÀı
  */
 inline ICTimerPool* ICTimerPool::Instance()
 {
@@ -64,11 +64,11 @@ inline ICTimerPool* ICTimerPool::Instance()
 }
 
 /**
- * åˆ†é…å¹¶å¯åŠ¨ä¸€ä¸ªå®šæ—¶å™¨ï¼Œå¯åŠ¨ä¸€ä¸ªå®šæ—¶å™¨
+ * ·ÖÅä²¢Æô¶¯Ò»¸ö¶¨Ê±Æ÷£¬Æô¶¯Ò»¸ö¶¨Ê±Æ÷
  * 
- * @param timeout    å®šæ—¶å™¨æ—¶é—´
+ * @param timeout    ¶¨Ê±Æ÷Ê±¼ä
  * @param receiver
- * @param handler    å®šæ—¶å™¨æ—¶é—´åˆ°åçš„å¤„ç†å‡½æ•°
+ * @param handler    ¶¨Ê±Æ÷Ê±¼äµ½ºóµÄ´¦Àíº¯Êı
  */
 inline int ICTimerPool::Start(uint timeout, const QObject * receiver, const char* handler)
 {
@@ -84,9 +84,9 @@ inline int ICTimerPool::Start(uint timeout, const QObject * receiver, const char
 }
 
 /**
- * åœæ­¢IDä¸ºtimerIDçš„å®šæ—¶å™¨
+ * Í£Ö¹IDÎªtimerIDµÄ¶¨Ê±Æ÷
  * 
- * @param timerID    å®šæ—¶å™¨ID
+ * @param timerID    ¶¨Ê±Æ÷ID
  */
 inline void ICTimerPool::Stop(int timerID, const QObject * receiver, const char* handler)
 {

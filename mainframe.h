@@ -9,7 +9,7 @@
 #include "ichcmanualoperationpageframe.h"
 #include "ichcprogrammonitorframe.h"
 #include "icsettingsframe.h"
-
+#include "icprogrampage.h"
 
 class QStackedLayout;
 class QDialog;
@@ -105,7 +105,7 @@ private:
     QWidget * alarmPage_;
     QWidget * recordPage_;
     QWidget * monitorPage_;
-    QWidget * instructPage_;
+    ICProgramPage * instructPage_;
 
     QWidget * baseFuncPage_;
     QWidget * axisPage_;
@@ -115,7 +115,7 @@ private:
 
     QWidget * autoPage_;
 //    QWidget * returnPage_;
-    QWidget * manualPage_;
+    ICHCManualOperationPageFrame * manualPage_;
     QDialog *originExecutingPage_;
     QDialog *returnExecutingPage_;
     QDialog *actionDialog_;

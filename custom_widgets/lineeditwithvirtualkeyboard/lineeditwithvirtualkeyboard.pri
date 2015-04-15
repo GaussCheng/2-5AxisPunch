@@ -11,9 +11,9 @@ SOURCES += \
 
 contains(DEFINES, HC_SK_8){
 FORMS += \
-    $$PWD/virtualkeyboarddialog_8.ui
+    $$PWD/virtualkeyboarddialog.ui
 }else{
 FORMS += \
-    $$PWD/virtualkeyboarddialog.ui
+    $$PWD/virtualkeyboarddialog_5.ui
 }
 
