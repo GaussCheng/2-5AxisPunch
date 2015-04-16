@@ -1823,7 +1823,7 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="843"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="894"/>
         <source>Servo On</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2060,32 +2060,32 @@ Infomation</source>
         <translation type="obsolete">Manipulator I/O</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="465"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="516"/>
         <source>Single(%1/%2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="655"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="676"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="698"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="719"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="740"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="792"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="706"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="727"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="749"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="770"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="791"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="843"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="656"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="677"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="699"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="720"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="741"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="793"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="707"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="728"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="750"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="771"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="792"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="844"/>
         <source>Has not been origin!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="838"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="889"/>
         <source>Servo OFF</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4324,47 +4324,47 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.cpp" line="34"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="37"/>
         <source>Get_Wait</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.cpp" line="35"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="38"/>
         <source>Get_Up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.cpp" line="36"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="39"/>
         <source>Get</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.cpp" line="37"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="40"/>
         <source>Get_Finish</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.cpp" line="38"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="41"/>
         <source>Put_Wait</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.cpp" line="39"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="42"/>
         <source>Put_Up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.cpp" line="40"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="43"/>
         <source>Put</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.cpp" line="41"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="44"/>
         <source>Put_Finish</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.cpp" line="42"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="45"/>
         <source>Reserve</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4497,114 +4497,118 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="213"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="335"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="215"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="342"/>
         <source>UpDown</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="213"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="335"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="215"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="342"/>
         <source>Rotated</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="213"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="335"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="215"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="342"/>
         <source>Windup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="213"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="335"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="215"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="342"/>
         <source>Type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="214"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="336"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="216"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="343"/>
         <source>Rollovers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="214"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="336"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="216"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="343"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="250"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="264"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="252"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="269"/>
         <source>information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="250"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="264"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="252"/>
         <source>Input Error!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="602"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="607"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="665"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="674"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="678"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="269"/>
+        <source>Input Value Not %1 To %2 Range!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrampage.cpp" line="610"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="615"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="673"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="682"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="686"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="602"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="665"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="610"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="673"/>
         <source>Standard Mold Cannot Modify!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="607"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="615"/>
         <source>Max Rows Beyond %1!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="674"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="682"/>
         <source>Canot Delete %1 action!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="678"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="686"/>
         <source>If Delete current Row?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="213"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="335"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="215"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="342"/>
         <source>FrontBack</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="302"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="309"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="303"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="310"/>
         <source>Has not been origin!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="214"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="336"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="216"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="343"/>
         <source>Tested</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="377"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="622"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="384"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="630"/>
         <source>save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="385"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="631"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="392"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="639"/>
         <source>test</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5860,20 +5864,20 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="1121"/>
-        <location filename="mainframe.cpp" line="1197"/>
+        <location filename="mainframe.cpp" line="1151"/>
+        <location filename="mainframe.cpp" line="1227"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="1122"/>
-        <location filename="mainframe.cpp" line="1198"/>
+        <location filename="mainframe.cpp" line="1152"/>
+        <location filename="mainframe.cpp" line="1228"/>
         <source>Controlled, Can&apos;t modify!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="827"/>
-        <location filename="mainframe.cpp" line="834"/>
+        <location filename="mainframe.cpp" line="857"/>
+        <location filename="mainframe.cpp" line="864"/>
         <source>Hint</source>
         <translation type="unfinished"></translation>
     </message>

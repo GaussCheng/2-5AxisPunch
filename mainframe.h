@@ -94,7 +94,7 @@ private:
     void InitCategoryPage();
     void InitInterface();
     void InitSignal();
-
+    void BindShortcutKey();
 
     void UpdateTranslate();
     void ShowWidgets_(QList<QWidget*>& widgets);

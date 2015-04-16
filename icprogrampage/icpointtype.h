@@ -29,17 +29,26 @@ class ICPointType : public QDialog
 {
     Q_OBJECT
 
-
 public:
-    explicit ICPointType(QWidget *parent = 0);
+    static ICPointType* Instance(QWidget *parent = 0)
+    {
+        if(!instance_)
+        {
+            instance_ = new ICPointType(parent);
+        }
+        return instance_;
+    }
     ~ICPointType();
+    void Init_();
+
     QString toString(PointType type = NULL_Type);
     PointType currentType();
+
 
 protected:
     void changeEvent(QEvent *);
 private:
-    void Init_();
+    explicit ICPointType(QWidget *parent = 0);
 private slots:
     void stateChanged(int status);
     
@@ -48,6 +57,8 @@ private:
     QMap<PointType,QString> typeToStr;
     QMap<QCheckBox*,PointType> boxToType;
     QCheckBox * _box;
+    static ICPointType *instance_;
+
 };
 
 #endif // ICPOINTTYPE_H

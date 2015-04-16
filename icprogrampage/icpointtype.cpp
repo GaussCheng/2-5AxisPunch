@@ -1,6 +1,9 @@
 #include "icpointtype.h"
 #include "ui_icpointtype.h"
 
+ICPointType* ICPointType::instance_;
+
+
 ICPointType::ICPointType(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ICPointType)
@@ -66,7 +69,6 @@ void ICPointType::changeEvent(QEvent *e)
     QDialog::changeEvent(e);
     switch (e->type()) {
     case QEvent::LanguageChange:{
-        Init_();
         ui->retranslateUi(this);
     }
         break;

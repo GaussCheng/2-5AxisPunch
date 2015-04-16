@@ -21,11 +21,10 @@ ICProgramPage::ICProgramPage(QWidget *parent,int _pageIndex,QString pageName) :
 {
     ui->setupUi(this);
     _dialog =  VirtualNumericKeypadDialog::Instance();
-    _typeDialog = new ICPointType(this);
+    _typeDialog =  ICPointType::Instance(this);
     _host = ICVirtualHost::GlobalVirtualHost();
     ui->modiifyButton->hide();
     ui->pushButton->hide();
-    validator_ = new QIntValidator(-32760, 32760, this);
 
     QFile file("./sysconfig/StandPrograms");
     if(file.open(QFile::ReadOnly | QFile::Text))
@@ -47,6 +46,10 @@ ICProgramPage::ICProgramPage(QWidget *parent,int _pageIndex,QString pageName) :
             SLOT(MoldChanged(QString)));
 
     allItems = GT_AllMoldItems();
+
+
+    for(int i=0;i<AXIS_COUNTS;i++)
+        validators_.append(new  QIntValidator(0,10000,this));
 //    ui->tableWidget->setCurrentIndex(ui->tableWidget->model()->index(3,0));
 
 }
@@ -87,16 +90,28 @@ void ICProgramPage::refreshCurrentRow(int step)
 //    if(step > allItems.size()){
 //        Q_ASSERT(false);
 //    }
+    QMap<int,int> stepToRow;
     if(step >= allItems.size() || step < 0){
         return;
     }
-    while(allItems.at(step).GMVal() != 22){
-        step --;
+
+    int startIndex = 0,oldIndex = 0,oldPoint=0;
+    foreach(ICMoldItem item,allItems){
+        if(item.GMVal() != 22){
+            stepToRow.insert(item.Num(),oldIndex);
+        }
+        else{
+            stepToRow.insert(item.Num(),startIndex);
+            if(oldPoint != item.SubNum()){
+                startIndex++;
+            }
+            oldIndex = startIndex;
+            oldPoint = item.SubNum();
+
+        }
     }
-    if(step >= allItems.size() || step < 0){
-        return;
-    }
-    int row = allItems.at(step).SubNum();
+
+    int row = stepToRow.value(step);
     ui->tableWidget->setCurrentIndex(ui->tableWidget->model()->index(row,0));
 
 }
@@ -138,6 +153,8 @@ QList<ICMoldItem> ICProgramPage::MK_PosItem(int pos)
 ICProgramPage::~ICProgramPage()
 {
     delete ui;
+    for(int i=0;i<AXIS_COUNTS;i++)
+        delete validators_[i];
 }
 
 void ICProgramPage::ChangeDelay(int delay)
@@ -145,24 +162,9 @@ void ICProgramPage::ChangeDelay(int delay)
     //发送教导修改指令
     outY37On.SetDVal(delay / 10);
     outY37Off.SetDVal(delay / 10);
+    InitPointToItem();
+    ReConfigure();
 
-    ICAutoAdjustCommand command;
-    ICCommandProcessor* processor;
-    processor = ICCommandProcessor::Instance();
-
-    allItems = GT_AllMoldItems();
-    for(int i=0;i < allItems.size();i++){
-        ICMoldItem item  = allItems.at(i);
-        if(item.SubNum() == 23){
-            command.SetSlave(processor->SlaveID());
-            command.SetSequence(item.Seq());
-            command.SetDelayTime(item.DVal());
-            command.SetCheckSum(item.Sum());
-
-        }
-    }
-
-    qDebug() <<  processor->ExecuteCommand(command).toBool();
 }
 
 void ICProgramPage::showEvent(QShowEvent *e)
@@ -183,6 +185,13 @@ void ICProgramPage::showEvent(QShowEvent *e)
     ui->tableWidget->setColumnHidden(6,false);
     ui->tableWidget->setColumnHidden(7,false);
 
+    for(int i=0;i<AXIS_COUNTS;i++){
+        int top = ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::ICSystemParameter(ICVirtualHost::SYS_X_Length + i * 7)).toInt();
+        int bottom = ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::ICSystemParameter(ICVirtualHost::SYS_X_Maxium + i * 7)).toInt();
+        validators_.at(i)->setTop(top);
+        validators_.at(i)->setBottom(bottom);
+    }
+
     QWidget::showEvent(e);
 }
 
@@ -190,15 +199,8 @@ void ICProgramPage::hideEvent(QHideEvent *e)
 {
     ui->startEdit->setChecked(false);
     ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ReConfigure();
 
-    QList<ICMoldItem> items = GT_AllMoldItems();
-    if(MoldChanged(items)){
-        ICMold::CurrentMold()->SetMoldContent(items);
-        qDebug() << "SaveProgramToFiles: " << ICMold::CurrentMold()->SaveMoldFile(false);
-        ICMold::CurrentMold()->SaveMoldConfigFile();
-        ICVirtualHost::GlobalVirtualHost()->ReConfigure();
-
-    }
     QWidget::hideEvent(e);
 
 }
@@ -216,7 +218,7 @@ void ICProgramPage::changeEvent(QEvent *e)
         for(int i=0;i<headerContents.size();i++){
             ui->tableWidget->horizontalHeaderItem(i)->setText(headerContents.at(i));
         }
-
+        _typeDialog->Init_();
         InitPoint();
     }
         break;
@@ -225,7 +227,6 @@ void ICProgramPage::changeEvent(QEvent *e)
     }
 }
 
-#define POINT_SIZE 1
 void ICProgramPage::itemClicked(QTableWidgetItem *item)
 {
     if(!ui->startEdit->isChecked())
@@ -239,6 +240,7 @@ void ICProgramPage::itemClicked(QTableWidgetItem *item)
             _dialog->exec();
         }
 
+        int column = item->column();
 
         QString text = _dialog->GetCurrentText();
 
@@ -260,8 +262,17 @@ void ICProgramPage::itemClicked(QTableWidgetItem *item)
                 value = text.toInt() * qPow(10,POINT_SIZE);
             }
 
-            if(value > validator_->top() || value < validator_->bottom()){
-                QMessageBox::information(this,tr("information"),tr("Input Error!"));
+
+            QIntValidator *v = validators_[column-1];
+            qDebug() << v->bottom() << v->top();
+            if(value > v->top() || value < v->bottom()){
+                QString format = QString("%.%1f").arg(POINT_SIZE);
+                QString bottom =   QString().sprintf(format.toAscii(), v->bottom() / static_cast<qreal>(qPow(10, POINT_SIZE)));
+                QString top =   QString().sprintf(format.toAscii(), v->top() / static_cast<qreal>(qPow(10, POINT_SIZE)));
+
+                QMessageBox::information(this,tr("information"),tr("Input Value Not %1 To %2 Range!")
+                                         .arg(bottom)
+                                         .arg(top));
                 _dialog->ResetDisplay();
                 return;
             }
@@ -465,6 +476,7 @@ void ICProgramPage::DeleteWidgets()
 void ICProgramPage::InitPointToItem()
 {
     QList<ICMoldItem> items;
+    pointToItem.clear();
     pointToItem.insert(Get_Wait,(items << waitM10)); items.clear();
 //    pointToItem.insert(Get_Up,items); items.clear();
     pointToItem.insert(Get,(items << outY37On)); items.clear();
@@ -764,5 +776,17 @@ void ICProgramPage::on_startEdit_clicked(bool checked)
     }
     else{
         ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
+    }
+}
+
+void ICProgramPage::ReConfigure()
+{
+    allItems = GT_AllMoldItems();
+    if(MoldChanged(allItems)){
+        ICMold::CurrentMold()->SetMoldContent(allItems);
+        qDebug() << "SaveProgramToFiles: " << ICMold::CurrentMold()->SaveMoldFile(false);
+        ICMold::CurrentMold()->SaveMoldConfigFile();
+        ICVirtualHost::GlobalVirtualHost()->ReConfigure();
+
     }
 }

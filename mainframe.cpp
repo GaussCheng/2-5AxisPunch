@@ -62,6 +62,7 @@
 #include <QDebug>
 
 QMap<int, int> keyMap;
+QMap<int, int> keyToMap;
 QMap<int, int> knobMap;
 QMap<int, int> pulleyMap;
 QList<int> currentKeySeq;
@@ -207,6 +208,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     //    timerID_ = ICTimerPool::Instance()->Start(ICTimerPool::RefreshTime, this, SLOT(StatusRefreshed()));
     emit LoadMessage("Ready to Refresh");
     InitCategoryPage();
+    BindShortcutKey();
     InitInterface();
     UpdateTranslate();
     emit LoadMessage("Translation Loaded");
@@ -236,8 +238,8 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     recordPage_ =  NULL;
     UpdateAxisDefine_();
     ICKeyboard::Instace()->Receive();
-    QTimer::singleShot(ICParametersSave::Instance()->BackLightTime() * 60000, this, SLOT(CheckedInput()));
-    QTimer::singleShot(1000, this, SLOT(ClearPosColor()));
+//    QTimer::singleShot(ICParametersSave::Instance()->BackLightTime() * 60000, this, SLOT(CheckedInput()));
+//    QTimer::singleShot(1000, this, SLOT(ClearPosColor()));
     oldFinishCount_ = ICVirtualHost::GlobalVirtualHost()->FinishProductCount();
     finishCount_ = oldFinishCount_;
     ui->cycleTimeAndFinistWidget->SetFinished(oldFinishCount_);
@@ -318,6 +320,15 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     keyMap.insert(Qt::Key_M, ICKeyboard::FB_F4);
     keyMap.insert(Qt::Key_H, ICKeyboard::FB_F5);
 
+
+
+    keyToMap.insert(ICKeyboard::FB_F1,Qt::Key_C);
+    keyToMap.insert(ICKeyboard::FB_F2,Qt::Key_W);
+    keyToMap.insert(ICKeyboard::FB_F3,Qt::Key_R);
+    keyToMap.insert(ICKeyboard::FB_F4,Qt::Key_M);
+    keyToMap.insert(ICKeyboard::FB_F5,Qt::Key_H);
+
+
     knobMap.insert(Qt::Key_F4, ICKeyboard::KS_ManualStatu);
     knobMap.insert(Qt::Key_F7, ICKeyboard::KS_StopStatu);
     knobMap.insert(Qt::Key_F5, ICKeyboard::KS_AutoStatu);
@@ -356,6 +367,7 @@ void MainFrame::changeEvent(QEvent *e)
     case QEvent::LanguageChange:
     {
         ui->retranslateUi(this);
+        BindShortcutKey();
         UpdateTranslate();
     }
         break;
@@ -401,31 +413,31 @@ void MainFrame::keyPressEvent(QKeyEvent *e)
         qDebug()<<"Key:"<<key;
         switch(key)
         {
-        case ICKeyboard::FB_F1:
-        {
-            ui->teachButton->click();
-        }
-            break;
-        case ICKeyboard::FB_F2:
-        {
-            ui->ioMonitorButton->click();
-        }
-            break;
-        case ICKeyboard::FB_F3:
-        {
-            ui->alarmButton->click();
-        }
-            break;
-        case ICKeyboard::FB_F4:
-        {
-            ui->settingsButton->click();
-        }
-            break;
-        case ICKeyboard::FB_F5:
-        {
-            ui->returnButton->click();
-        }
-            break;
+//        case ICKeyboard::FB_F1:
+//        {
+//            ui->teachButton->click();
+//        }
+//            break;
+//        case ICKeyboard::FB_F2:
+//        {
+//            ui->ioMonitorButton->click();
+//        }
+//            break;
+//        case ICKeyboard::FB_F3:
+//        {
+//            ui->alarmButton->click();
+//        }
+//            break;
+//        case ICKeyboard::FB_F4:
+//        {
+//            ui->settingsButton->click();
+//        }
+//            break;
+//        case ICKeyboard::FB_F5:
+//        {
+//            ui->returnButton->click();
+//        }
+//            break;
         default:
         {
             ICKeyboard *keyboard = ICKeyboard::Instace();
@@ -617,6 +629,24 @@ void MainFrame::InitSignal()
         connect(btn,SIGNAL(clicked()),
                 SLOT(SettingButtonClicked()));
     }
+}
+
+
+void MainFrame::BindShortcutKey()
+{
+    ui->teachButton->setShortcut(keyToMap.value(ICKeyboard::FB_F1));
+    ui->ioMonitorButton->setShortcut(keyToMap.value(ICKeyboard::FB_F2));
+    ui->alarmButton->setShortcut(keyToMap.value(ICKeyboard::FB_F3));
+    ui->settingsButton->setShortcut(keyToMap.value(ICKeyboard::FB_F4));
+    ui->returnButton->setShortcut(keyToMap.value(ICKeyboard::FB_F5));
+
+    ui->baseButton->setShortcut(keyToMap.value(ICKeyboard::FB_F1));
+    ui->axisButton->setShortcut(keyToMap.value(ICKeyboard::FB_F2));
+    ui->servoButton->setShortcut(keyToMap.value(ICKeyboard::FB_F3));
+    ui->updateButton->setShortcut(keyToMap.value(ICKeyboard::FB_F4));
+    ui->SettingReturn->setShortcut(keyToMap.value(ICKeyboard::FB_F5));
+
+
 }
 
 void MainFrame::UpdateTranslate()

@@ -155,7 +155,7 @@ CONFIG(debug, debug|release){
 #system("python rename_ui.py $$UI_DIR")
 #QMAKE_POST_LINK += "cp *.qm bin_debug"
 }else{
-system("python rename_ui.py $${UI_DIR}")
+#system("python rename_ui.py $${UI_DIR}")
 #QMAKE_POST_LINK += "&& arm-linux-gnueabihf-strip $$DESTDIR/$$TARGET && HCbcrypt.sh -r $$DESTDIR/$$TARGET"
 #QMAKE_POST_LINK += "&& chmod +x tools/make_target && tools/make_target"
 }

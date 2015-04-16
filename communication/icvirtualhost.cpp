@@ -1084,7 +1084,7 @@ void ICVirtualHost::InitAddrToSysPosMap_()
     addrToSysPos_.insert(SM_C_SEC2, ACT_C_Sec2);
     addrToSysPos_.insert(SM_C_SEC3, ACT_C_Sec3);
     addrToSysPos_.insert(SM_C_SEC4, ACT_C_Sec4);
-    for(int i = 0; i != 33; ++i)
+    for(int i = 0; i != ICMold::point19 + 1; ++i)
     {
         moldParamToAddrPos_.insert(ICMold::point0 + i, static_cast<ICSystemParameterAddr>(SM_Position_DOWN + i));
     }

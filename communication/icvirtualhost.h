@@ -368,51 +368,51 @@ public:
 
     enum ICSystemParameterAddr
     {
-        SM_Global_Speed,			//¼Ó¼õËÙÊ±¼ä
-        SM_XLMT,			//X¼«ÏÞ
-        SM_XMAX,			//X×î´óÖµ
-        SM_YLMT,			//Y¼«ÏÞ
-        SM_YMAX,			//Y¼«ÏÞ
-        SM_ZLMT,			//Z¼«ÏÞ
-        SM_ZMAX,			//Z¼«ÏÞ
-        SM_ZINSAFE,			//ÐÍÄÚ°²È«Çø
-        SM_ZOUTSAFE,		//ÐÍÍâ°²È«Çø
-        SM_Position_DOWN,			//Ö÷ÉÏÏÞÖÆ
-        SM_MAINDOWN,		//Ö÷ÏÂÏÞÖÆ
-        SM_MAININ,			//Ö÷ÈëÏÞÖÆ
-        SM_MAINOUT,			//Ö÷³öÏÞÖÆ
-        SM_VICEUP,			//¸±ÉÏÏÞÖÆ
-        SM_VICEDOWN,		//¸±ÏÂÏÞÖÆ
-        SM_VICEIN,			//¸±ÈëÏÞÖÆ
-        SM_VICEOUT,			//¸±³öÏÞÖÆ
-        SM_LAYSEQ,			//ÖÃ·ÅË³Ðò
-        SM_LAYXARRAY,		//ÖÃ·ÅµãÕóX
-        SM_LAYYARRAY,		//ÖÃ·ÅµãÕóY
-        SM_LAYZARRAY,		//ÖÃ·ÅµãÕóZ
-        SM_LAYXGAP,			//ÖÃ·Å³¤¶ÈX
-        SM_LAYYGAP,			//ÖÃ·Å³¤¶ÈY
-        SM_LAYZGAP,			//ÖÃ·Å³¤¶ÈZ
-        SM_LAYXCNT,			//ÖÃ·Å¼ÆÊýX
-        SM_LAYYCNT,			//ÖÃ·Å¼ÆÊýY
-        SM_LAYZCNT,			//ÖÃ·Å¼ÆÊýZ
-        SM_CHKCLIP1,		//¼Ð¼ì²â1
-        SM_CHKCLIP2,		//¼Ð¼ì²â2
-        SM_CHKCLIP3,		//¼Ð¼ì²â3
-        SM_CHKCLIP4,		//¼Ð¼ì²â4
-        SM_CHKCLIP5,		//¼Ð¼ì²â5
-        SM_CHKCLIP6,		//¼Ð¼ì²â6
-        SM_CHKCLIP7,		//¼Ð¼ì²â7
-        SM_CHKCLIP8,		//¼Ð¼ì²â8
-        SM_PRODUCT,			//Éè¶¨²úÁ¿
-        SM_TIMECLIP1,		//¼ÐÏÞÊ±1
-        SM_TIMECLIP2,		//¼ÐÏÞÊ±2
+        SM_Global_Speed,			//åŠ å‡é€Ÿæ—¶é—´
+        SM_XLMT,			//Xæžé™
+        SM_XMAX,			//Xæœ€å¤§å€¼
+        SM_YLMT,			//Yæžé™
+        SM_YMAX,			//Yæžé™
+        SM_ZLMT,			//Zæžé™
+        SM_ZMAX,			//Zæžé™
+        SM_ZINSAFE,			//åž‹å†…å®‰å…¨åŒº
+        SM_ZOUTSAFE,		//åž‹å¤–å®‰å…¨åŒº
+        SM_Position_DOWN,			//ä¸»ä¸Šé™åˆ¶
+        SM_MAINDOWN,		//ä¸»ä¸‹é™åˆ¶
+        SM_MAININ,			//ä¸»å…¥é™åˆ¶
+        SM_MAINOUT,			//ä¸»å‡ºé™åˆ¶
+        SM_VICEUP,			//å‰¯ä¸Šé™åˆ¶
+        SM_VICEDOWN,		//å‰¯ä¸‹é™åˆ¶
+        SM_VICEIN,			//å‰¯å…¥é™åˆ¶
+        SM_VICEOUT,			//å‰¯å‡ºé™åˆ¶
+        SM_LAYSEQ,			//ç½®æ”¾é¡ºåº
+        SM_LAYXARRAY,		//ç½®æ”¾ç‚¹é˜µX
+        SM_LAYYARRAY,		//ç½®æ”¾ç‚¹é˜µY
+        SM_LAYZARRAY,		//ç½®æ”¾ç‚¹é˜µZ
+        SM_LAYXGAP,			//ç½®æ”¾é•¿åº¦X
+        SM_LAYYGAP,			//ç½®æ”¾é•¿åº¦Y
+        SM_LAYZGAP,			//ç½®æ”¾é•¿åº¦Z
+        SM_LAYXCNT,			//ç½®æ”¾è®¡æ•°X
+        SM_LAYYCNT,			//ç½®æ”¾è®¡æ•°Y
+        SM_LAYZCNT,			//ç½®æ”¾è®¡æ•°Z
+        SM_CHKCLIP1,		//å¤¹æ£€æµ‹1
+        SM_CHKCLIP2,		//å¤¹æ£€æµ‹2
+        SM_CHKCLIP3,		//å¤¹æ£€æµ‹3
+        SM_CHKCLIP4,		//å¤¹æ£€æµ‹4
+        SM_CHKCLIP5,		//å¤¹æ£€æµ‹5
+        SM_CHKCLIP6,		//å¤¹æ£€æµ‹6
+        SM_CHKCLIP7,		//å¤¹æ£€æµ‹7
+        SM_CHKCLIP8,		//å¤¹æ£€æµ‹8
+        SM_PRODUCT,			//è®¾å®šäº§é‡
+        SM_TIMECLIP1,		//å¤¹é™æ—¶1
+        SM_TIMECLIP2,		//å¤¹é™æ—¶2
         SM_TIMECLIP3,
         SM_TIMECLIP4,
         SM_TIMECLIP5,
         SM_TIMECLIP6,
         SM_TIMECLIP7,
         SM_TIMECLIP8,
-        SM_TIMEPUT1,		//·ÅÏÞÊ±1
+        SM_TIMEPUT1,		//æ”¾é™æ—¶1
         SM_TIMEPUT2,
         SM_TIMEPUT3,
         SM_TIMEPUT4,
@@ -432,7 +432,7 @@ public:
         SM_XOUTSAFE,
         SM_YINSAFE,
         SM_YOUTSAFE,
-        SM_ALLOWANCE,			//ÈÝ²î
+        SM_ALLOWANCE,			//å®¹å·®
         SM_TIMEMUP,
         SM_TIMEMDOWN,
         SM_TIMEMFOR,
@@ -493,9 +493,9 @@ public:
         SM_C_SEC3,
         SM_C_SEC4,
 #endif
-        SM_StandBy,  //´ý»ú×ËÊÆ
-        SM_TryProduct, //ÊÔ²ú
-        SM_Sampling //È¡Ñù
+        SM_StandBy,  //å¾…æœºå§¿åŠ¿
+        SM_TryProduct, //è¯•äº§
+        SM_Sampling //å–æ ·
     };
 
     enum ICTeachParamAddr
@@ -526,12 +526,12 @@ public:
         ST_DLY_CLIP14,
         ST_COUNT7,
         ST_COUNT8,
-        //¼ì²âµã
+        //æ£€æµ‹ç‚¹
         ST_CHECKUSE,
         ST_CHECKSEL,
         ST_CHECKASON,
         ST_CHECKASOFF,
-        //ËÙ¶È
+        //é€Ÿåº¦
         ST_SPD_CLIP1,
         ST_SPD_CLIP2,
         ST_SPD_CLIP3,
