@@ -45,7 +45,8 @@ HEADERS += \
     custom_widgets/ictabwidget.h \
     custom_widgets/icinputmethodkeyboard.h \
     custom_widgets/icplaintextedit.h \
-    custom_widgets/icinputmethodedit.h
+    custom_widgets/icinputmethodedit.h \
+    custom_widgets/icmainframe.h
 
 SOURCES += \
     custom_widgets/ictablewidget.cpp \
@@ -58,4 +59,5 @@ SOURCES += \
     custom_widgets/ictabwidget.cpp \
     custom_widgets/icinputmethodkeyboard.cpp \
     custom_widgets/icplaintextedit.cpp \
-    custom_widgets/icinputmethodedit.cpp
+    custom_widgets/icinputmethodedit.cpp \
+    custom_widgets/icmainframe.cpp

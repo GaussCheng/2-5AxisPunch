@@ -72,6 +72,10 @@ ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     ui->groupBox_2->hide();
     ui->return0Button->hide();
     ui->singleButton->hide();
+    delayValidator = new QIntValidator(0, 30000, this);
+
+    ui->delayEdit->SetDecimalPlaces(2);
+    ui->delayEdit->setValidator(delayValidator);
 }
 
 ICHCManualOperationPageFrame::~ICHCManualOperationPageFrame()
@@ -79,6 +83,7 @@ ICHCManualOperationPageFrame::~ICHCManualOperationPageFrame()
     delete ui;
     delete nullButton_;
     delete modifyDialog_;
+    delete delayValidator;
 }
 
 void ICHCManualOperationPageFrame::showEvent(QShowEvent *e)
@@ -101,8 +106,7 @@ void ICHCManualOperationPageFrame::showEvent(QShowEvent *e)
 //    }
     QFrame::showEvent(e);
     ui->delayEdit->blockSignals(true);
-    ui->delayEdit->setText(QString("%1")
-                           .arg(ICMold::CurrentMold()->MoldNativeParam(ICMold::ClipDelay)));
+    ui->delayEdit->SetThisIntToThisText(ICMold::CurrentMold()->MoldNativeParam(ICMold::ClipDelay));
     ui->delayEdit->blockSignals(false);
     ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnManual, 0);
 //    currentStep = 0;
@@ -203,7 +207,8 @@ void ICHCManualOperationPageFrame::changeEvent(QEvent *e)
     switch (e->type()) {
     case QEvent::LanguageChange:
     {
-        //        ui->retranslateUi(this);
+        ui->retranslateUi(this);
+        Init_();
     }
         break;
     default:
@@ -383,6 +388,56 @@ void ICHCManualOperationPageFrame::InitInterface()
 void ICHCManualOperationPageFrame::InitSignal()
 {
 
+}
+
+void ICHCManualOperationPageFrame::Init_()
+{
+    ICParametersSave* paraSave = ICParametersSave::Instance();
+    QLocale local = QLocale(paraSave->Language());
+    QString language = local.name().split("_")[0];
+
+    ICUserDefineConfigSPTR config = ICUserDefineConfig::Instance();
+    QList<QAbstractButton*> buttons = ui->buttonGroup->buttons();
+    buttons.removeOne(nullButton_);
+    const int bsize = buttons.size();
+    int tmp;
+    QString name;
+    for(int i = 0; i != bsize; ++i)
+    {
+        tmp = ui->buttonGroup->id(buttons.at(i));
+        name = config->GetPointsLocaleName(tmp,language);
+        if(!name.isEmpty())
+        {
+            buttons[i]->setText(name);
+        }
+
+    }
+
+    QList<QAbstractButton*> actions = ui->actionGroup->buttons();
+    const int asize = actions.size();
+    for(int i = 0; i != asize; ++i)
+    {
+        tmp = ui->actionGroup->id(actions.at(i));
+        name = config->GetIOActionLocaleNameByID(tmp,language);
+        if(!name.isEmpty())
+        {
+            actions[i]->setText(name);
+        }
+
+    }
+
+    QList<QAbstractButton*> shortcuts = ui->shortcutGroup->buttons();
+    const int ssize = shortcuts.size();
+    for(int i = 0; i != ssize; ++i)
+    {
+        tmp = ui->shortcutGroup->id(shortcuts.at(i));
+        name = config->GetIOActionShortcutLocaleNameByID(tmp,language);
+        if(!name.isEmpty())
+        {
+            shortcuts[i]->setText(name);
+        }
+
+    }
 }
 
 static uint16_t oldX = -1;
@@ -979,8 +1034,9 @@ void ICHCManualOperationPageFrame::on_returnManual_clicked()
 
 void ICHCManualOperationPageFrame::on_delayEdit_textChanged(const QString &text)
 {
-    ICMold::CurrentMold()->SetMoldNativeParam(ICMold::ClipDelay,text.toInt());
+    int delay = ui->delayEdit->TransThisTextToThisInt();
+    ICMold::CurrentMold()->SetMoldNativeParam(ICMold::ClipDelay,delay);
     ICMold::CurrentMold()->SaveMoldConfigFile();
-    emit ChangeDelay(text.toInt());
+    emit ChangeDelay(delay);
 
 }

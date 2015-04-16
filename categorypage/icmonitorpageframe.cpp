@@ -155,22 +155,22 @@ void ICMonitorPageFrame::Init_()
 //    const int euXSize = euXInfos.size();
 //    for(int i = 0; i != euXSize; ++i)
 //    {
-    points.append(ICIOPoint(euXInfos.at(0).code, euXInfos.at(0).GetLocaleName("zh"), 64));
-    points.append(ICIOPoint(euXInfos.at(1).code, euXInfos.at(1).GetLocaleName("zh"), 67));
-    points.append(ICIOPoint(euXInfos.at(2).code, euXInfos.at(2).GetLocaleName("zh"), 66));
-    points.append(ICIOPoint(euXInfos.at(3).code, euXInfos.at(3).GetLocaleName("zh"), 71));
-    points.append(ICIOPoint(euXInfos.at(4).code, euXInfos.at(4).GetLocaleName("zh"), 70));
-    points.append(ICIOPoint(euXInfos.at(5).code, euXInfos.at(5).GetLocaleName("zh"), 68));
-    points.append(ICIOPoint(euXInfos.at(6).code, euXInfos.at(6).GetLocaleName("zh"), 65));
-    points.append(ICIOPoint(euXInfos.at(7).code, euXInfos.at(7).GetLocaleName("zh"), 69));
-    points.append(ICIOPoint(euXInfos.at(8).code, euXInfos.at(8).GetLocaleName("zh"), 78));
-    points.append(ICIOPoint(euXInfos.at(9).code, euXInfos.at(9).GetLocaleName("zh"), 77));
-    points.append(ICIOPoint(euXInfos.at(10).code, euXInfos.at(10).GetLocaleName("zh"), 72));
-    points.append(ICIOPoint(euXInfos.at(11).code, euXInfos.at(11).GetLocaleName("zh"), 73));
-    points.append(ICIOPoint(euXInfos.at(12).code, euXInfos.at(12).GetLocaleName("zh"), 74));
-    points.append(ICIOPoint(euXInfos.at(13).code, euXInfos.at(13).GetLocaleName("zh"), 75));
-    points.append(ICIOPoint(euXInfos.at(14).code, euXInfos.at(14).GetLocaleName("zh"), 76));
-    points.append(ICIOPoint(euXInfos.at(15).code, euXInfos.at(15).GetLocaleName("zh"), 79));
+    points.append(ICIOPoint(euXInfos.at(0).code, euXInfos.at(0).GetLocaleName(prefix), 64));
+    points.append(ICIOPoint(euXInfos.at(1).code, euXInfos.at(1).GetLocaleName(prefix), 67));
+    points.append(ICIOPoint(euXInfos.at(2).code, euXInfos.at(2).GetLocaleName(prefix), 66));
+    points.append(ICIOPoint(euXInfos.at(3).code, euXInfos.at(3).GetLocaleName(prefix), 71));
+    points.append(ICIOPoint(euXInfos.at(4).code, euXInfos.at(4).GetLocaleName(prefix), 70));
+    points.append(ICIOPoint(euXInfos.at(5).code, euXInfos.at(5).GetLocaleName(prefix), 68));
+    points.append(ICIOPoint(euXInfos.at(6).code, euXInfos.at(6).GetLocaleName(prefix), 65));
+    points.append(ICIOPoint(euXInfos.at(7).code, euXInfos.at(7).GetLocaleName(prefix), 69));
+    points.append(ICIOPoint(euXInfos.at(8).code, euXInfos.at(8).GetLocaleName(prefix), 78));
+    points.append(ICIOPoint(euXInfos.at(9).code, euXInfos.at(9).GetLocaleName(prefix), 77));
+    points.append(ICIOPoint(euXInfos.at(10).code, euXInfos.at(10).GetLocaleName(prefix), 72));
+    points.append(ICIOPoint(euXInfos.at(11).code, euXInfos.at(11).GetLocaleName(prefix), 73));
+    points.append(ICIOPoint(euXInfos.at(12).code, euXInfos.at(12).GetLocaleName(prefix), 74));
+    points.append(ICIOPoint(euXInfos.at(13).code, euXInfos.at(13).GetLocaleName(prefix), 75));
+    points.append(ICIOPoint(euXInfos.at(14).code, euXInfos.at(14).GetLocaleName(prefix), 76));
+    points.append(ICIOPoint(euXInfos.at(15).code, euXInfos.at(15).GetLocaleName(prefix), 79));
 
 //    }
 //    points.append(ICIOPoint("", tr("Mold Opened"), 35));
@@ -201,22 +201,22 @@ void ICMonitorPageFrame::Init_()
 //    const int euYSize = euYInfos.size();
 //    for(int i = 0; i != euYSize; ++i)
 //    {
-    points.append(ICIOPoint(euYInfos.at(0).code, euYInfos.at(0).GetLocaleName("zh"), 64));
-    points.append(ICIOPoint(euYInfos.at(1).code, euYInfos.at(1).GetLocaleName("zh"), 70));
-    points.append(ICIOPoint(euYInfos.at(2).code, euYInfos.at(2).GetLocaleName("zh"), 71));
-    points.append(ICIOPoint(euYInfos.at(3).code, euYInfos.at(3).GetLocaleName("zh"), 65));
-    points.append(ICIOPoint(euYInfos.at(4).code, euYInfos.at(4).GetLocaleName("zh"), 69));
-    points.append(ICIOPoint(euYInfos.at(5).code, euYInfos.at(5).GetLocaleName("zh"), 72));
-    points.append(ICIOPoint(euYInfos.at(6).code, euYInfos.at(6).GetLocaleName("zh"), 78));
-    points.append(ICIOPoint(euYInfos.at(7).code, euYInfos.at(7).GetLocaleName("zh"), 66));
-    points.append(ICIOPoint(euYInfos.at(8).code, euYInfos.at(8).GetLocaleName("zh"), 67));
-    points.append(ICIOPoint(euYInfos.at(9).code, euYInfos.at(9).GetLocaleName("zh"), 68));
-    points.append(ICIOPoint(euYInfos.at(10).code, euYInfos.at(10).GetLocaleName("zh"), 76));
-    points.append(ICIOPoint(euYInfos.at(11).code, euYInfos.at(11).GetLocaleName("zh"), 73));
-    points.append(ICIOPoint(euYInfos.at(12).code, euYInfos.at(12).GetLocaleName("zh"), 74));
-    points.append(ICIOPoint(euYInfos.at(13).code, euYInfos.at(13).GetLocaleName("zh"), 75));
-    points.append(ICIOPoint(euYInfos.at(14).code, euYInfos.at(14).GetLocaleName("zh"), 77));
-    points.append(ICIOPoint(euYInfos.at(15).code, euYInfos.at(15).GetLocaleName("zh"), 79));
+    points.append(ICIOPoint(euYInfos.at(0).code, euYInfos.at(0).GetLocaleName(prefix), 64));
+    points.append(ICIOPoint(euYInfos.at(1).code, euYInfos.at(1).GetLocaleName(prefix), 70));
+    points.append(ICIOPoint(euYInfos.at(2).code, euYInfos.at(2).GetLocaleName(prefix), 71));
+    points.append(ICIOPoint(euYInfos.at(3).code, euYInfos.at(3).GetLocaleName(prefix), 65));
+    points.append(ICIOPoint(euYInfos.at(4).code, euYInfos.at(4).GetLocaleName(prefix), 69));
+    points.append(ICIOPoint(euYInfos.at(5).code, euYInfos.at(5).GetLocaleName(prefix), 72));
+    points.append(ICIOPoint(euYInfos.at(6).code, euYInfos.at(6).GetLocaleName(prefix), 78));
+    points.append(ICIOPoint(euYInfos.at(7).code, euYInfos.at(7).GetLocaleName(prefix), 66));
+    points.append(ICIOPoint(euYInfos.at(8).code, euYInfos.at(8).GetLocaleName(prefix), 67));
+    points.append(ICIOPoint(euYInfos.at(9).code, euYInfos.at(9).GetLocaleName(prefix), 68));
+    points.append(ICIOPoint(euYInfos.at(10).code, euYInfos.at(10).GetLocaleName(prefix), 76));
+    points.append(ICIOPoint(euYInfos.at(11).code, euYInfos.at(11).GetLocaleName(prefix), 73));
+    points.append(ICIOPoint(euYInfos.at(12).code, euYInfos.at(12).GetLocaleName(prefix), 74));
+    points.append(ICIOPoint(euYInfos.at(13).code, euYInfos.at(13).GetLocaleName(prefix), 75));
+    points.append(ICIOPoint(euYInfos.at(14).code, euYInfos.at(14).GetLocaleName(prefix), 77));
+    points.append(ICIOPoint(euYInfos.at(15).code, euYInfos.at(15).GetLocaleName(prefix), 79));
 
 
 

@@ -79,7 +79,7 @@ ICUpdateSystemPage::ICUpdateSystemPage(QWidget *parent) :
     model_->setHeaderData(1, Qt::Horizontal, tr("Create Time"));
     ui->packetTable->setModel(model_);
 
-//    ui->registerContainer->hide();
+    ui->registerContainer->hide();
 }
 
 ICUpdateSystemPage::~ICUpdateSystemPage()

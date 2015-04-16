@@ -5,6 +5,8 @@
 #include "icmold.h"
 #include <QMessageBox>
 #include "moldinformation.h"
+#include "icparameterconversion.h"
+#include "QtCore/qmath.h"
 
 ICProgramPage * ICProgramPage::instance_;
 
@@ -23,6 +25,7 @@ ICProgramPage::ICProgramPage(QWidget *parent,int _pageIndex,QString pageName) :
     _host = ICVirtualHost::GlobalVirtualHost();
     ui->modiifyButton->hide();
     ui->pushButton->hide();
+    validator_ = new QIntValidator(-32760, 32760, this);
 
     QFile file("./sysconfig/StandPrograms");
     if(file.open(QFile::ReadOnly | QFile::Text))
@@ -140,8 +143,8 @@ ICProgramPage::~ICProgramPage()
 void ICProgramPage::ChangeDelay(int delay)
 {
     //发送教导修改指令
-    outY37On.SetDVal(delay * 100);
-    outY37Off.SetDVal(delay * 100);
+    outY37On.SetDVal(delay / 10);
+    outY37Off.SetDVal(delay / 10);
 
     ICAutoAdjustCommand command;
     ICCommandProcessor* processor;
@@ -222,6 +225,7 @@ void ICProgramPage::changeEvent(QEvent *e)
     }
 }
 
+#define POINT_SIZE 1
 void ICProgramPage::itemClicked(QTableWidgetItem *item)
 {
     if(!ui->startEdit->isChecked())
@@ -239,11 +243,33 @@ void ICProgramPage::itemClicked(QTableWidgetItem *item)
         QString text = _dialog->GetCurrentText();
 
         if(!text.isEmpty() && (text != item->text())){
-            if(!text.contains(QChar('.'))){
-                text += ".0";
+            int value;
+            if(text.contains(QChar('.'))){
+                int pointSize = text.split(".").at(1).size();
+                if(pointSize > POINT_SIZE || pointSize==0){
+                    QMessageBox::information(this,tr("information"),tr("Input Error!"));
+                    _dialog->ResetDisplay();
+                    return;
+                }
+                else{
+                    value = text.remove(".").toInt();
+                }
+
             }
-            item->setText(text);
+            else{
+                value = text.toInt() * qPow(10,POINT_SIZE);
+            }
+
+            if(value > validator_->top() || value < validator_->bottom()){
+                QMessageBox::information(this,tr("information"),tr("Input Error!"));
+                _dialog->ResetDisplay();
+                return;
+            }
+            item->setText(ICParameterConversion::TransThisIntToThisText(value, POINT_SIZE));
         }
+
+        _dialog->ResetDisplay();
+
     }
 
 }
@@ -442,11 +468,11 @@ void ICProgramPage::InitPointToItem()
     pointToItem.insert(Get_Wait,(items << waitM10)); items.clear();
 //    pointToItem.insert(Get_Up,items); items.clear();
     pointToItem.insert(Get,(items << outY37On)); items.clear();
-    pointToItem.insert(Put_Wait,(items << outM11 << waitM12)); items.clear();
+    pointToItem.insert(Put_Wait,(items << outM27On << outM11 << waitM12)); items.clear();
 //    pointToItem.insert(Put_Wait,items); items.clear();
 //    pointToItem.insert(Put_Up,items); items.clear();
     pointToItem.insert(Put,(items << outY37Off)); items.clear();
-    pointToItem.insert(Put_Finish,(items << outM27On << waitM14 << outPermit)); items.clear();
+    pointToItem.insert(Put_Finish,(items  << waitM14 << outPermit)); items.clear();
     pointToItem.insert(Reserve,items); items.clear();
 
 
@@ -556,8 +582,8 @@ void ICProgramPage::InitFixMoldItems()
     waitM14   = MK_MoldItem(13,9,4,24,0,1,0,0,3000,246);
     outPermit = MK_MoldItem(14,10,0,27,0,1,0,0,0,103);
 
-    outY37On.SetDVal(_NativeMoldParam(ICMold::ClipDelay) * 100);
-    outY37Off.SetDVal(_NativeMoldParam(ICMold::ClipDelay) * 100);
+    outY37On.SetDVal(_NativeMoldParam(ICMold::ClipDelay) / 10);
+    outY37Off.SetDVal(_NativeMoldParam(ICMold::ClipDelay) / 10);
 
 }
 

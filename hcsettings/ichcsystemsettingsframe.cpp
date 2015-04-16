@@ -167,6 +167,7 @@ void ICHCSystemSettingsFrame::on_saveButton_clicked()
     dateTimeCmd += " && hwclock -w";
     ::system(dateTimeCmd.toAscii());
     ICParametersSave::Instance()->SetBackLightTime(ui->backLightTimeEdit->TransThisTextToThisInt());
+    ICMainFrame::SetScreenSaverInterval(ui->backLightTimeEdit->TransThisTextToThisInt() * 60000);
 }
 
 void ICHCSystemSettingsFrame::on_keyToneButton_toggled(bool checked)

@@ -132,6 +132,7 @@ private:
     QList<PointType> pointTypes;
     QMap<PointType,QList<ICMoldItem> > pointToItem;
     QStringList standPrograms_;
+    QIntValidator *validator_;
     static ICProgramPage * instance_;
 
     ICVirtualHost *_host;

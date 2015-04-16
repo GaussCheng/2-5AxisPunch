@@ -28,6 +28,7 @@ protected:
 private:
     void InitInterface();
     void InitSignal();
+    void Init_();
 
 
 signals:
@@ -101,6 +102,7 @@ private:
     QSignalMapper releaseShortcutSignalMapper_;
     QPushButton* nullButton_;
     AxisModifyDialog* modifyDialog_;
+    QIntValidator *delayValidator;
 };
 
 #endif // ICHCMANUALOPERATIONPAGEFRAME_H
