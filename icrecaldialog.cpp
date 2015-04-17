@@ -30,10 +30,18 @@ void ICRecalDialog::changeEvent(QEvent *e)
 void ICRecalDialog::keyPressEvent(QKeyEvent *e)
 {
     switch (e->key()) {
+#ifdef Q_WS_QWS
     case Qt::Key_M://No
+#else
+    case Qt::Key_F4:
+#endif
         this->reject();
         break;
+#ifdef Q_WS_QWS
     case Qt::Key_H://Yes
+#else
+    case Qt::Key_F5:
+#endif
         ::system("touch /home/szhc/recal && sync && reboot");
         this->accept();
         break;

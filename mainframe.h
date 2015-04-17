@@ -70,6 +70,7 @@ protected:
     void changeEvent(QEvent *e);
     void keyPressEvent(QKeyEvent *e);
     void keyReleaseEvent(QKeyEvent *e);
+    bool eventFilter(QObject *, QEvent *);
     void closeEvent(QCloseEvent *e);
 
 Q_SIGNALS:
@@ -171,6 +172,8 @@ private:
     QList<uint> compareAlarmNums_;
     QTimer refreshTimer_;
     bool isblockOriginShow_;
+
+
 #ifdef HC_SK_8_SC
     int oldSw_;
     int oldKey_;

@@ -17,10 +17,7 @@
    <property name="spacing">
     <number>1</number>
    </property>
-   <property name="topMargin">
-    <number>1</number>
-   </property>
-   <property name="bottomMargin">
+   <property name="margin">
     <number>1</number>
    </property>
    <item>
@@ -823,24 +820,27 @@
      <widget class="QWidget" name="page">
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <property name="spacing">
-        <number>2</number>
+        <number>1</number>
        </property>
-       <property name="leftMargin">
-        <number>2</number>
-       </property>
-       <property name="topMargin">
-        <number>2</number>
-       </property>
-       <property name="rightMargin">
-        <number>2</number>
+       <property name="margin">
+        <number>1</number>
        </property>
        <item>
         <widget class="QPushButton" name="teachButton">
          <property name="minimumSize">
           <size>
            <width>0</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
            <height>48</height>
           </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
          </property>
          <property name="text">
           <string>Teach</string>
@@ -858,8 +858,17 @@
          <property name="minimumSize">
           <size>
            <width>0</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
            <height>48</height>
           </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
          </property>
          <property name="text">
           <string>I/O Monitor</string>
@@ -877,8 +886,17 @@
          <property name="minimumSize">
           <size>
            <width>0</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
            <height>48</height>
           </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
          </property>
          <property name="text">
           <string>Alarm</string>
@@ -896,8 +914,17 @@
          <property name="minimumSize">
           <size>
            <width>0</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
            <height>48</height>
           </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
          </property>
          <property name="text">
           <string>Settings</string>
@@ -915,8 +942,17 @@
          <property name="minimumSize">
           <size>
            <width>0</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
            <height>48</height>
           </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
          </property>
          <property name="text">
           <string>Return</string>
@@ -926,19 +962,25 @@
       </layout>
      </widget>
      <widget class="QWidget" name="page_6">
-      <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,0,0,0,0">
        <property name="spacing">
-        <number>2</number>
+        <number>1</number>
        </property>
        <property name="margin">
-        <number>2</number>
+        <number>1</number>
        </property>
        <item>
         <widget class="QPushButton" name="baseButton">
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>45</height>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>48</height>
           </size>
          </property>
          <property name="focusPolicy">
@@ -960,7 +1002,13 @@
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>45</height>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>48</height>
           </size>
          </property>
          <property name="focusPolicy">
@@ -982,7 +1030,13 @@
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>45</height>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>48</height>
           </size>
          </property>
          <property name="focusPolicy">
@@ -1004,7 +1058,13 @@
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>45</height>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>48</height>
           </size>
          </property>
          <property name="focusPolicy">
@@ -1026,7 +1086,13 @@
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>45</height>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>48</height>
           </size>
          </property>
          <property name="focusPolicy">

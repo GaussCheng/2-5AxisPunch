@@ -34,10 +34,18 @@ void ICBackupDialog::changeEvent(QEvent *e)
 void ICBackupDialog::keyPressEvent(QKeyEvent *e)
 {
     switch (e->key()) {
+#ifdef Q_WS_QWS
     case Qt::Key_M://No
+#else
+    case Qt::Key_F4:
+#endif
         this->reject();
         break;
+#ifdef Q_WS_QWS
     case Qt::Key_H://Yes
+#else
+    case Qt::Key_F5:
+#endif
     {
 //        ::system("touch /home/root/recal && sync && reboot");if(!CheckIsUsbAttached())
         if(!ICUtility::IsUsbAttached())

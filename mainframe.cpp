@@ -85,13 +85,13 @@ const QList<int> backupKeySeq = QList<int>()<<ICKeyboard::FB_F5
                                      <<ICKeyboard::FB_F5;
 
 const QList<int> testKeySeq = QList<int>()<<ICKeyboard::FB_F5
-                                           <<ICKeyboard::FB_F3
-                                          <<ICKeyboard::FB_F4
                                          <<ICKeyboard::FB_F3
-                                        <<ICKeyboard::FB_F2
+                                        <<ICKeyboard::FB_F4
                                        <<ICKeyboard::FB_F3
-                                      <<ICKeyboard::FB_F1
-                                     <<ICKeyboard::FB_F5;
+                                      <<ICKeyboard::FB_F2
+                                     <<ICKeyboard::FB_F3
+                                    <<ICKeyboard::FB_F1
+                                   <<ICKeyboard::FB_F5;
 
 MainFrame *icMainFrame = NULL;
 MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
@@ -238,8 +238,8 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     recordPage_ =  NULL;
     UpdateAxisDefine_();
     ICKeyboard::Instace()->Receive();
-//    QTimer::singleShot(ICParametersSave::Instance()->BackLightTime() * 60000, this, SLOT(CheckedInput()));
-//    QTimer::singleShot(1000, this, SLOT(ClearPosColor()));
+    //    QTimer::singleShot(ICParametersSave::Instance()->BackLightTime() * 60000, this, SLOT(CheckedInput()));
+    //    QTimer::singleShot(1000, this, SLOT(ClearPosColor()));
     oldFinishCount_ = ICVirtualHost::GlobalVirtualHost()->FinishProductCount();
     finishCount_ = oldFinishCount_;
     ui->cycleTimeAndFinistWidget->SetFinished(oldFinishCount_);
@@ -314,20 +314,31 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
 #endif
     keyMap.insert(Qt::Key_L, ICKeyboard::VFB_Y2Add);
 
+
+
+#ifdef Q_WS_QWS
     keyMap.insert(Qt::Key_C, ICKeyboard::FB_F1);
     keyMap.insert(Qt::Key_W, ICKeyboard::FB_F2);
     keyMap.insert(Qt::Key_R, ICKeyboard::FB_F3);
     keyMap.insert(Qt::Key_M, ICKeyboard::FB_F4);
     keyMap.insert(Qt::Key_H, ICKeyboard::FB_F5);
-
-
-
     keyToMap.insert(ICKeyboard::FB_F1,Qt::Key_C);
     keyToMap.insert(ICKeyboard::FB_F2,Qt::Key_W);
     keyToMap.insert(ICKeyboard::FB_F3,Qt::Key_R);
     keyToMap.insert(ICKeyboard::FB_F4,Qt::Key_M);
     keyToMap.insert(ICKeyboard::FB_F5,Qt::Key_H);
-
+#else
+    keyMap.insert(Qt::Key_F1, ICKeyboard::FB_F1);
+    keyMap.insert(Qt::Key_F2, ICKeyboard::FB_F2);
+    keyMap.insert(Qt::Key_F3, ICKeyboard::FB_F3);
+    keyMap.insert(Qt::Key_F4, ICKeyboard::FB_F4);
+    keyMap.insert(Qt::Key_F5, ICKeyboard::FB_F5);
+    keyToMap.insert(ICKeyboard::FB_F1,Qt::Key_F1);
+    keyToMap.insert(ICKeyboard::FB_F2,Qt::Key_F2);
+    keyToMap.insert(ICKeyboard::FB_F3,Qt::Key_F3);
+    keyToMap.insert(ICKeyboard::FB_F4,Qt::Key_F4);
+    keyToMap.insert(ICKeyboard::FB_F5,Qt::Key_F5);
+#endif
 
     knobMap.insert(Qt::Key_F4, ICKeyboard::KS_ManualStatu);
     knobMap.insert(Qt::Key_F7, ICKeyboard::KS_StopStatu);
@@ -335,6 +346,9 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
 
     pulleyMap.insert(Qt::Key_F13, 1);
     pulleyMap.insert(Qt::Key_F14, -1);
+
+    installEventFilter(this);
+
 
 }
 
@@ -378,66 +392,12 @@ void MainFrame::changeEvent(QEvent *e)
 
 void MainFrame::keyPressEvent(QKeyEvent *e)
 {
-//    qDebug()<<"KeyEvent:"<<e->key();
     SetHasInput(true);
     if(keyMap.contains(e->key()))
     {
         int key = keyMap.value(e->key());
-        currentKeySeq.append(key);
-        if(currentKeySeq.size() == recalKeySeq.size())
-        {
-            if(currentKeySeq == recalKeySeq)
-            {
-                ICRecalDialog recalDialog;
-                recalDialog.exec();
-                //                ::system("touch /mnt/config_data/recal");
-                //                int ret = QMessageBox::warning(this,
-                //                                     tr("Recal"),
-                //                                     tr("You have press the recal sequence, recal after reboot"),
-                //                                     QMessageBox::Yes | QMessageBox::No);
-                //                if(ret == QMessageBox::Yes) ::system("reboot");
-
-            }
-            else if(currentKeySeq == backupKeySeq)
-            {
-                ICBackupDialog backupDialog;
-                backupDialog.exec();
-            }
-            else if(currentKeySeq == testKeySeq)
-            {
-                ::system("chmod +x ./test_robot.sh && ./test_robot.sh");
-//                exit(0);
-            }
-            currentKeySeq.clear();
-        }
-        qDebug()<<"Key:"<<key;
         switch(key)
         {
-//        case ICKeyboard::FB_F1:
-//        {
-//            ui->teachButton->click();
-//        }
-//            break;
-//        case ICKeyboard::FB_F2:
-//        {
-//            ui->ioMonitorButton->click();
-//        }
-//            break;
-//        case ICKeyboard::FB_F3:
-//        {
-//            ui->alarmButton->click();
-//        }
-//            break;
-//        case ICKeyboard::FB_F4:
-//        {
-//            ui->settingsButton->click();
-//        }
-//            break;
-//        case ICKeyboard::FB_F5:
-//        {
-//            ui->returnButton->click();
-//        }
-//            break;
         default:
         {
             ICKeyboard *keyboard = ICKeyboard::Instace();
@@ -526,6 +486,40 @@ void MainFrame::keyReleaseEvent(QKeyEvent *e)
     }
 }
 
+bool MainFrame::eventFilter(QObject *obj, QEvent *event)
+{
+    QKeyEvent *e = dynamic_cast<QKeyEvent*>(event);
+    if(e){
+        //        qDebug() << e->type();
+        if(keyToMap.values().contains(e->key()) && e->type() == QKeyEvent::KeyRelease)
+        {
+            int key = keyMap.value(e->key());
+            currentKeySeq.append(key);
+            if(currentKeySeq.size() == recalKeySeq.size())
+            {
+                if(currentKeySeq == recalKeySeq)
+                {
+                    ICRecalDialog recalDialog;
+                    recalDialog.exec();
+
+                }
+                else if(currentKeySeq == backupKeySeq)
+                {
+                    ICBackupDialog backupDialog;
+                    backupDialog.exec();
+                }
+                else if(currentKeySeq == testKeySeq)
+                {
+                    ::system("chmod +x ./test_robot.sh && ./test_robot.sh");
+                    //                exit(0);
+                }
+                currentKeySeq.clear();
+            }
+        }
+    }
+    return ICMainFrame::eventFilter(obj,event);
+}
+
 void MainFrame::InitCategoryPage()
 {
     emit LoadMessage("Start to Initialize category pages");
@@ -545,9 +539,9 @@ void MainFrame::InitCategoryPage()
     autoPage_ = new ICHCProgramMonitorFrame();
     centerStackedLayout_->addWidget(autoPage_);
 
-//    settingsPage_ = new ICSettingsFrame();
-//    functionButtonToPage_.insert(ui->settingsButton, settingsPage_);
-//    centerStackedLayout_->addWidget(settingsPage_);
+    //    settingsPage_ = new ICSettingsFrame();
+    //    functionButtonToPage_.insert(ui->settingsButton, settingsPage_);
+    //    centerStackedLayout_->addWidget(settingsPage_);
 
     emit LoadMessage("Start to Initialize alarm pages");
     alarmPage_ = ICAlarmFrame::Instance();
@@ -557,7 +551,7 @@ void MainFrame::InitCategoryPage()
 
     emit LoadMessage("Start to Initialize monitor pages");
     monitorPage_ = new ICMonitorPageFrame();
-//    monitorPage_ = new ICProgramMainPage();
+    //    monitorPage_ = new ICProgramMainPage();
     functionButtonToPage_.insert(ui->ioMonitorButton, monitorPage_);
     centerStackedLayout_->addWidget(monitorPage_);
 
@@ -586,9 +580,9 @@ void MainFrame::InitCategoryPage()
     centerStackedLayout_->addWidget(updatePage_);
 
 
-//      updatePage_ =  new ICProgramPage();
-//      settingButtonToPage_.insert(ui->updateButton,updatePage_);
-//      centerStackedLayout_->addWidget(updatePage_);
+    //      updatePage_ =  new ICProgramPage();
+    //      settingButtonToPage_.insert(ui->updateButton,updatePage_);
+    //      centerStackedLayout_->addWidget(updatePage_);
 
     settingButtonToPage_.insert(ui->SettingReturn,NULL);
 
@@ -666,17 +660,17 @@ void MainFrame::CategoryButtonClicked()
 
     if(functionButtonToPage_.contains(clickedButton))
     {
-//        if(clickedButton == ui->settingsButton ||
-//                clickedButton == ui->teachButton)
-//        {
-//            if(ICVirtualHost::GlobalVirtualHost()->DoseControled())
-//            {
-//                QMessageBox::warning(this,
-//                                     tr("Warning"),
-//                                     tr("Controlled, Can't modify!"));
-//                return;
-//            }
-//        }
+        //        if(clickedButton == ui->settingsButton ||
+        //                clickedButton == ui->teachButton)
+        //        {
+        //            if(ICVirtualHost::GlobalVirtualHost()->DoseControled())
+        //            {
+        //                QMessageBox::warning(this,
+        //                                     tr("Warning"),
+        //                                     tr("Controlled, Can't modify!"));
+        //                return;
+        //            }
+        //        }
         centerStackedLayout_->setCurrentWidget(functionButtonToPage_.value(clickedButton));
     }
     //    else if(clickedButton == ui->monitorPageButton)
@@ -797,21 +791,21 @@ void MainFrame::StatusRefreshed()
     {
         oldP = pos;
         ui->rCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
-//        ui->rCurrentPos->setText(QString::number(host->HostStatus(ICVirtualHost::DbgY0).toUInt()));
+        //        ui->rCurrentPos->setText(QString::number(host->HostStatus(ICVirtualHost::DbgY0).toUInt()));
     }
 #endif
-//    int speed = host->GlobalSpeed();
-//    if(speed != oldS)
-//    {
-//        oldS = pos;
-//        ui->xSpeedLabel->setText(QString::number((speed >> 8) & 0xFF));
-//        ui->ySpeedLabel->setText(QString::number(speed & 0xFF));
-//#ifdef HC_AXIS_COUNT_5
-//        ui->zSpeedLabel->setText(QString::number((speed >> 16) & 0xFF));
-//        ui->x2SpeedLabel->setText(ui->xSpeedLabel->text());
-//        ui->tSpeedLabel->setText(ui->ySpeedLabel->text());
-//#endif
-//    }
+    //    int speed = host->GlobalSpeed();
+    //    if(speed != oldS)
+    //    {
+    //        oldS = pos;
+    //        ui->xSpeedLabel->setText(QString::number((speed >> 8) & 0xFF));
+    //        ui->ySpeedLabel->setText(QString::number(speed & 0xFF));
+    //#ifdef HC_AXIS_COUNT_5
+    //        ui->zSpeedLabel->setText(QString::number((speed >> 16) & 0xFF));
+    //        ui->x2SpeedLabel->setText(ui->xSpeedLabel->text());
+    //        ui->tSpeedLabel->setText(ui->ySpeedLabel->text());
+    //#endif
+    //    }
 
     bool isControled = virtualHost->DoseControled();
     ICProgramHeadFrame::Instance()->ChangeControlStatus(isControled);
@@ -833,7 +827,7 @@ void MainFrame::StatusRefreshed()
 #endif
 #endif
     }
-//    ioctl(ledFD_, 0, ledFlags_);
+    //    ioctl(ledFD_, 0, ledFlags_);
     errCode_ = virtualHost->AlarmNum();
     if(compareAlarmNums_.indexOf(errCode_) != -1)
     {
@@ -890,24 +884,24 @@ void MainFrame::StatusRefreshed()
         //        statusStr_ = tr("Manual");
         ICProgramHeadFrame::Instance()->ChangStatusmoldNameLabelOperation(false);
         ICProgramHeadFrame::Instance()->SetHanSelectEnable(true);
-//        ui->teachButton->setEnabled(true);
+        //        ui->teachButton->setEnabled(true);
     }
     else if(runningStatus_ == ICVirtualHost::Stop)
     {
         speed_ = "0";
         ICProgramHeadFrame::Instance()->ChangStatusmoldNameLabelOperation(true);
         ICProgramHeadFrame::Instance()->SetHanSelectEnable(false);
-//        ui->teachButton->setEnabled(false);
+        //        ui->teachButton->setEnabled(false);
         //        statusStr_ = tr("Stop");
         //<<<<<<< HEAD
-//#ifdef Q_WS_X11
-//        finishCount_ = virtualHost->FinishProductCount();
-//        if(finishCount_ != oldFinishCount_)
-//        {
-//            ui->cycleTimeAndFinistWidget->SetFinished(finishCount_);
-//            oldFinishCount_ = finishCount_;
-//        }
-//#endif
+        //#ifdef Q_WS_X11
+        //        finishCount_ = virtualHost->FinishProductCount();
+        //        if(finishCount_ != oldFinishCount_)
+        //        {
+        //            ui->cycleTimeAndFinistWidget->SetFinished(finishCount_);
+        //            oldFinishCount_ = finishCount_;
+        //        }
+        //#endif
         //=======
         //        ui->cycleTimeAndFinistWidget->SetFinished(oldFinishCount_);
         //        ui->systemStatusFrame->SetProgramStatus(StatusLabel::ONSTATUS);
@@ -917,7 +911,7 @@ void MainFrame::StatusRefreshed()
     {
         ICProgramHeadFrame::Instance()->ChangStatusmoldNameLabelOperation(false);
         ICProgramHeadFrame::Instance()->SetHanSelectEnable(false);
-//        ui->teachButton->setEnabled(false);
+        //        ui->teachButton->setEnabled(false);
         if((virtualHost->HostStatus(ICVirtualHost::ClipL).toInt() >> 15) && errCode_ == 2423)
         {
             if(actionDialog_->isHidden())
@@ -1152,7 +1146,7 @@ void MainFrame::ShowFunctionPage()
                              tr("Controlled, Can't modify!"));
         return;
     }
-//    centerStackedLayout_->setCurrentWidget(settingsPage_);
+    //    centerStackedLayout_->setCurrentWidget(settingsPage_);
     //    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(ui->functionPageButton->text());
 }
 
@@ -1275,11 +1269,11 @@ void MainFrame::LevelChanged(int level)
         {
             ui->teachButton->setEnabled(true);
             ui->settingsButton->setEnabled(true);
-//            settingsPage_->SetToShowAll(false);
+            //            settingsPage_->SetToShowAll(false);
         }
         else
         {
-//            ui->teachButton->setEnabled(false);
+            //            ui->teachButton->setEnabled(false);
         }
 
     }
@@ -1287,7 +1281,7 @@ void MainFrame::LevelChanged(int level)
     case ICParametersSave::AdvanceAdmin:
     {
         ui->settingsButton->setEnabled(true);
-//        ui->teachButton->setEnabled(true);
+        //        ui->teachButton->setEnabled(true);
         if(ICKeyboard::Instace()->CurrentSwitchStatus() == ICKeyboard::KS_StopStatu)
         {
             ui->settingsButton->setEnabled(true);
@@ -1295,7 +1289,7 @@ void MainFrame::LevelChanged(int level)
             ui->teachButton->setEnabled(false);
 #endif
 
-//            settingsPage_->SetToShowAll(true);
+            //            settingsPage_->SetToShowAll(true);
             //            ui->functionPageButton->setEnabled(true);
         }
         else
@@ -1378,7 +1372,7 @@ void MainFrame::CheckedInput()
     if(!IsInput())
     {
         ShowScreenSaver();
-//        system("BackLight off");
+        //        system("BackLight off");
         system("BackLight.sh 0");
         SetBackLightOff(true);
     }
@@ -1447,7 +1441,7 @@ void MainFrame::UpdateAxisDefine_()
 void MainFrame::KeyToInstructEditor(int key)
 {
     Q_UNUSED(key);
-//    instructPage_->ShowServoAction(key);
+    //    instructPage_->ShowServoAction(key);
 }
 
 
@@ -1515,6 +1509,8 @@ void MainFrame::CountRestTime()
     ICParametersSave::Instance()->SetRestTime(restTime);
     ICParametersSave::Instance()->SetBootDatetime(QDateTime::currentDateTime());
 }
+
+
 
 void MainFrame::OnMoldButtonClicked()
 {

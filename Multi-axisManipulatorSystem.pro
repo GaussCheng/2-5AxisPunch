@@ -6,7 +6,7 @@ TEMPLATE = app
 QMAKE_CFLAGS += -std=c99
 QT += sql
 
-SK_SIZE = 5
+SK_SIZE = 8
 
 
 OBJECTS_DIR = temp_$${SK_SIZE}
@@ -155,7 +155,7 @@ CONFIG(debug, debug|release){
 #system("python rename_ui.py $$UI_DIR")
 #QMAKE_POST_LINK += "cp *.qm bin_debug"
 }else{
-system("python rename_ui.py $${UI_DIR}")
+#system("python rename_ui.py $${UI_DIR}")
 #QMAKE_POST_LINK += "&& arm-linux-gnueabihf-strip $$DESTDIR/$$TARGET && HCbcrypt.sh -r $$DESTDIR/$$TARGET"
 #QMAKE_POST_LINK += "&& chmod +x tools/make_target && tools/make_target"
 }
