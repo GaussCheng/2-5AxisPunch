@@ -160,8 +160,8 @@ ICProgramPage::~ICProgramPage()
 void ICProgramPage::ChangeDelay(int delay)
 {
     //发送教导修改指令
-    outY37On.SetDVal(delay / 10);
-    outY37Off.SetDVal(delay / 10);
+    outY37On.SetDVal(delay);
+    outY37Off.SetDVal(delay);
     InitPointToItem();
     ReConfigure();
 
@@ -587,15 +587,15 @@ void ICProgramPage::InitFixMoldItems()
     outY37On  = MK_MoldItem(7,3,23,12,0,1,0,0,0,45);
     outM11    = MK_MoldItem(8,4,1,25,0,1,0,0,0,204);
     waitM12   = MK_MoldItem(9,5,2,24,0,1,0,0,3000,207);
-    outY37Off = MK_MoldItem(10,6,23,11,0,0,0,0,0,50);
+    outY37Off = MK_MoldItem(10,6,23,12,0,0,0,0,0,50);
     outY31On  = MK_MoldItem(11,7,17,11,0,1,0,0,0,47);
     outY31Off = MK_MoldItem(12,8,17,11,0,0,0,0,0,98);
     outM27On  = MK_MoldItem(13,9,23,25,0,1,0,0,0,246); //新添加
     waitM14   = MK_MoldItem(13,9,4,24,0,1,0,0,3000,246);
     outPermit = MK_MoldItem(14,10,0,27,0,1,0,0,0,103);
 
-    outY37On.SetDVal(_NativeMoldParam(ICMold::ClipDelay) / 10);
-    outY37Off.SetDVal(_NativeMoldParam(ICMold::ClipDelay) / 10);
+    outY37On.SetDVal(_NativeMoldParam(ICMold::ClipDelay));
+    outY37Off.SetDVal(_NativeMoldParam(ICMold::ClipDelay));
 
 }
 

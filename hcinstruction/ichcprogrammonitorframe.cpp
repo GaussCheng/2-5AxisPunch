@@ -371,6 +371,11 @@ static int64_t oldS = -1;
 void ICHCProgramMonitorFrame::StatusRefreshed()
 {
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+
+    int  runningStatus_ = host->CurrentStatus();
+    if(runningStatus_ == ICVirtualHost::Stop){
+        ui->cycle->setChecked(true);
+    }
 //    int16_t pos = host->HostStatus(ICVirtualHost::XPos).toInt();
 //    if(pos != oldX)
 //    {
@@ -427,7 +432,7 @@ void ICHCProgramMonitorFrame::StatusRefreshed()
 //        SetTime(newTime_);
 //    }
 //    ui->getTime->setText(ICParameterConversion::TransThisIntToThisText(host->HostStatus(ICVirtualHost::DbgY1).toUInt(), 2));
-//    newCycleTimes_ = host->HostStatus(ICVirtualHost::DbgX1).toUInt();
+//    newTimes_ = host->HostStatus(ICVirtualHost::DbgX1).toUInt();
 //    if(newCycleTimes_ != oldCycleTimes_)
 //    {
 
