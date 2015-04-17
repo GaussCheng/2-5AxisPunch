@@ -199,6 +199,8 @@ void ICProgramPage::hideEvent(QHideEvent *e)
 {
     ui->startEdit->setChecked(false);
     ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
+
+    SaveConfigPoint();
     ReConfigure();
 
     QWidget::hideEvent(e);
@@ -507,20 +509,38 @@ void ICProgramPage::SaveConfigPoint()
         }
     }
 
-
-    if(_NativeMoldParam(ICMold::pointCount) != ROW_COUNTS)
-        _SetNativeMoldParam(ICMold::pointCount, ROW_COUNTS);
-    if(_NativeMoldParam(ICMold::pointConfig1) != config1 & 0xFFFFFFFF)
-        _SetNativeMoldParam(ICMold::pointConfig1,config1 & 0xFFFFFFFF);
-    if(_NativeMoldParam(ICMold::pointConfig2) != (config1 >> 32) & 0xFFFFFFFF)
-        _SetNativeMoldParam(ICMold::pointConfig2,(config1 >> 32) & 0xFFFFFFFF);
-    if(_NativeMoldParam(ICMold::pointConfig3) != config2 & 0xFFFFFFFF)
-        _SetNativeMoldParam(ICMold::pointConfig3,config2 & 0xFFFFFFFF);
-    if(_NativeMoldParam(ICMold::pointConfig4) != (config2 >> 32) & 0xFFFFFFFF)
-        _SetNativeMoldParam(ICMold::pointConfig4,(config2 >> 32) & 0xFFFFFFFF);
-
     bool saved = false;
+    if(_NativeMoldParam(ICMold::pointCount) != ROW_COUNTS){
+        _SetNativeMoldParam(ICMold::pointCount, ROW_COUNTS);
+        saved = true;
+    }
 
+    if(_NativeMoldParam(ICMold::pointConfig1) != config1 & 0xFFFFFFFF){
+        _SetNativeMoldParam(ICMold::pointConfig1,config1 & 0xFFFFFFFF);
+        saved = true;
+    }
+
+    if(_NativeMoldParam(ICMold::pointConfig2) != (config1 >> 32) & 0xFFFFFFFF){
+        _SetNativeMoldParam(ICMold::pointConfig2,(config1 >> 32) & 0xFFFFFFFF);
+        saved = true;
+    }
+
+    if(_NativeMoldParam(ICMold::pointConfig3) != config2 & 0xFFFFFFFF){
+        _SetNativeMoldParam(ICMold::pointConfig3,config2 & 0xFFFFFFFF);
+        saved = true;
+
+    }
+    if(_NativeMoldParam(ICMold::pointConfig4) != (config2 >> 32) & 0xFFFFFFFF){
+        _SetNativeMoldParam(ICMold::pointConfig4,(config2 >> 32) & 0xFFFFFFFF);
+        saved = true;
+    }
+
+    if(saved){
+        ICMold::CurrentMold()->SaveMoldConfigFile();
+    }
+
+
+    saved = false;
     //保存点坐标
     for(int i=0;i<ROW_COUNTS;i++){
         for(int j=0;j<AXIS_COUNTS;j++){
@@ -718,6 +738,7 @@ void ICProgramPage::on_deleteButton_clicked()
 void ICProgramPage::on_saveButton_clicked()
 {
     SaveConfigPoint();
+    ReConfigure();
     EnableTestButtons();
 }
 
@@ -785,7 +806,6 @@ void ICProgramPage::ReConfigure()
     if(MoldChanged(allItems)){
         ICMold::CurrentMold()->SetMoldContent(allItems);
         qDebug() << "SaveProgramToFiles: " << ICMold::CurrentMold()->SaveMoldFile(false);
-        ICMold::CurrentMold()->SaveMoldConfigFile();
         ICVirtualHost::GlobalVirtualHost()->ReConfigure();
 
     }

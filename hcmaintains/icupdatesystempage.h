@@ -38,6 +38,12 @@ private:
     void InitInterface();
     int Register(const QString& , const QString& );
 
+private slots:
+    void on_generateBtn_clicked();
+    void on_registerBtn_clicked();
+    void RefreshRestTime();
+
+
 private:
     Ui::ICUpdateSystemPage *ui;
     static ICUpdateSystemPage * instance_;
@@ -58,6 +64,7 @@ private:
     QString fileName;
     ICUpdatePackModel* model_;
     ICUpdateSystem* updateSystem_;
+    QTimer *refresh_restTimer;
 
     void updateHostButton();
     void writeHostButton();

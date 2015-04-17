@@ -194,13 +194,16 @@ ICStructDefineFrame::~ICStructDefineFrame()
     delete ui;
 }
 
+
 void ICStructDefineFrame::changeEvent(QEvent *e)
 {
     QWidget::changeEvent(e);
     switch (e->type()) {
+
     case QEvent::LanguageChange:
-     //  ui->retranslateUi(this);
+       ui->retranslateUi(this);
        retranslateUi_();
+       InitCombobox();
         break;
     default:
         break;
@@ -470,6 +473,50 @@ void ICStructDefineFrame::InitEscapeBox()
                 SLOT(escapeBoxChange()));
     }
     buttongroup_->setExclusive(true);
+}
+
+void ICStructDefineFrame::InitCombobox()
+{
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+
+    QList<QComboBox*> boxs = ui->armDefineBox->findChildren<QComboBox*>();
+    for(int i = 0; i != boxs.size(); ++i)
+    {
+        boxs[i]->blockSignals(true);
+        boxs[i]->setCurrentIndex(armDefineToIndex_.value(host->AxisDefine(static_cast<ICVirtualHost::ICAxis>(boxToAxis_.value(boxs.at(i))))));
+        boxs[i]->blockSignals(false);
+    }
+    CanConfig canConfig;
+    canConfig.all = ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::SYS_Config_Resv1).toInt();
+    ui->canType->blockSignals(true);
+    ui->canType->setCurrentIndex(canConfig.b.canType);
+    ui->canType->blockSignals(false);
+
+    ui->pressureMode->blockSignals(true);
+    ui->pressureMode->setCurrentIndex(host->PressureCheckMode());
+    ui->pressureMode->blockSignals(false);
+
+    AxisMode axisMode;
+    axisMode.allMode = host->SystemParameter(ICVirtualHost::SYS_Config_Out).toInt();
+
+    ui->os1->blockSignals(true);
+    ui->os2->blockSignals(true);
+    ui->os3->blockSignals(true);
+    ui->os4->blockSignals(true);
+    ui->os5->blockSignals(true);
+
+    ui->os1->setCurrentIndex(axisMode.mode.a1);
+    ui->os2->setCurrentIndex(axisMode.mode.a2);
+    ui->os3->setCurrentIndex(axisMode.mode.a3);
+    ui->os4->setCurrentIndex(axisMode.mode.a4);
+    ui->os5->setCurrentIndex(axisMode.mode.a5);
+
+    ui->os1->blockSignals(false);
+    ui->os2->blockSignals(false);
+    ui->os3->blockSignals(false);
+    ui->os4->blockSignals(false);
+    ui->os5->blockSignals(false);
+
 }
 
 //void ICStructDefineFrame::on_adjUse_toggled(bool checked)

@@ -61,12 +61,14 @@ ICUpdateSystemPage::ICUpdateSystemPage(QWidget *parent) :
     connect(&timer_,
             SIGNAL(timeout()),
             SLOT(QueryStatus()));
-//    RefreshRestTime();
-//    connect(&(ICProgramHeadFrame::Instance()->restTime_),
+
+//    refresh_restTimer = new QTimer();
+//    refresh_restTimer->start(1000*60*60);
+//    connect(refresh_restTimer,
 //            SIGNAL(timeout()),
 //            this,
 //            SLOT(RefreshRestTime()));
-//    refresh_restTimer->start(1000*60*60);
+
     updateSystem_ = new ICUpdateSystem();
 #ifdef Q_WS_X11
     model_ = new ICUpdatePackModel(QDir::homePath() + "/HCUpdate_UpdateTest");
@@ -78,10 +80,6 @@ ICUpdateSystemPage::ICUpdateSystemPage(QWidget *parent) :
     model_->setHeaderData(0, Qt::Horizontal, tr("Name"));
     model_->setHeaderData(1, Qt::Horizontal, tr("Create Time"));
     ui->packetTable->setModel(model_);
-
-#ifndef HC_SK_5
-    ui->registerContainer->hide();
-#endif
 }
 
 ICUpdateSystemPage::~ICUpdateSystemPage()
@@ -105,6 +103,8 @@ void ICUpdateSystemPage::changeEvent(QEvent *e)
     switch (e->type()) {
     case QEvent::LanguageChange:
         ui->retranslateUi(this);
+        model_->setHeaderData(0, Qt::Horizontal, tr("Name"));
+        model_->setHeaderData(1, Qt::Horizontal, tr("Create Time"));
         break;
     default:
         break;
@@ -123,6 +123,8 @@ void ICUpdateSystemPage::showEvent(QShowEvent *e)
 //        ui->registerContainer->hide();
 //    }
 //    ICVirtualHost::GlobalVirtualHost()->StopRefreshStatus();
+    RefreshRestTime();
+
     QFrame::showEvent(e);
 }
 
@@ -206,13 +208,13 @@ void ICUpdateSystemPage::RefreshUSBIniInfo()
 //        ui->connectHostButton->setEnabled(false);
     }
     /*******************************************/
-        QStringList updateFileList = updateSettings_->childGroups();
+//        QStringList updateFileList = updateSettings_->childGroups();
 
-        if(updateFileList.count() > 0)
-        {
-            ui->copyFilesProgressBar->setRange(0, updateFileList.count());
-            ui->copyFilesProgressBar->setValue(0);
-        }
+//        if(updateFileList.count() > 0)
+//        {
+//            ui->copyFilesProgressBar->setRange(0, updateFileList.count());
+//            ui->copyFilesProgressBar->setValue(0);
+//        }
 }
 
 void ICUpdateSystemPage::RestartAndUpdateTheProgram()
@@ -223,7 +225,7 @@ void ICUpdateSystemPage::RestartAndUpdateTheProgram()
 
 void ICUpdateSystemPage::InitInterface()
 {
-    ui->copyFilesProgressBar->setValue(0);
+//    ui->copyFilesProgressBar->setValue(0);
 
 //    ui->versionLabel->setEnabled(false);
 //    ui->versionShowLabel->setEnabled(false);
@@ -269,7 +271,7 @@ void ICUpdateSystemPage::updateHostButton()
         return;
     }
 //    timer_.stop();
-    ui->copyFilesProgressBar->setValue(0);
+//    ui->copyFilesProgressBar->setValue(0);
     QFile file(updateHostPath_ + updateFileList.at(0));
     if(file.open(QFile::ReadOnly))
     {
@@ -282,7 +284,7 @@ void ICUpdateSystemPage::updateHostButton()
             QByteArray readySend(file.readAll());
             file.close();
             bool isTranSuccessful = true;
-            ui->copyFilesProgressBar->setRange(0, readySend.size() / 32);
+//            ui->copyFilesProgressBar->setRange(0, readySend.size() / 32);
             for(int addr = 0; addr != readySend.size() / 32; ++addr)
             {
                 tranCommand.SetDataBuffer(readySend.mid(addr << 5, 32));
@@ -290,7 +292,7 @@ void ICUpdateSystemPage::updateHostButton()
                 isTranSuccessful = isTranSuccessful && processor->ExecuteCommand(tranCommand).toBool();
                 if(isTranSuccessful)
                 {
-                    ui->copyFilesProgressBar->setValue(addr + 1);
+//                    ui->copyFilesProgressBar->setValue(addr + 1);
                 }
                 else
                 {
@@ -423,84 +425,24 @@ void ICUpdateSystemPage::on_updateLogoButton_clicked()
 }
 
 
-//void ICUpdateSystemPage::on_generateBtn_clicked()
-//{
-//    QString ret;
-//    qsrand(QDateTime::currentDateTime().toMSecsSinceEpoch());
+void ICUpdateSystemPage::on_generateBtn_clicked()
+{
+    QString ret;
+    qsrand(QDateTime::currentDateTime().toMSecsSinceEpoch());
+    for(int i = 0; i != 10; ++i)
+    {
+        ret.append(QString::number(qrand() % 10));
+    }
+    ui->machineCode->setText(ret);
+}
+
+int ICUpdateSystemPage::Register(const QString& code, const QString& machineCode)
+{
+//    int pMap[10];
 //    for(int i = 0; i != 10; ++i)
 //    {
-//        ret.append(QString::number(qrand() % 10));
+//        pMap[i] = i;
 //    }
-//    ui->machineCode->setText(ret);
-//}
-
-//int ICUpdateSystemPage::Register(const QString& code, const QString& machineCode)
-//{
-////    int pMap[10];
-////    for(int i = 0; i != 10; ++i)
-////    {
-////        pMap[i] = i;
-////    }
-////    int sortMap[16];
-////    sortMap[0] = 1;
-////    sortMap[1] = 2;
-////    sortMap[2] = 3;
-////    sortMap[3] = 5;
-////    sortMap[4] = 7;
-////    sortMap[5] = 11;
-////    sortMap[6] = 13;
-////    sortMap[7] = 0;
-////    sortMap[8] = 4;
-////    sortMap[9] = 6;
-////    sortMap[10] = 8;
-////    sortMap[11] = 10;
-////    sortMap[12] = 12;
-////    sortMap[13] = 14;
-////    sortMap[14] = 9;
-////    sortMap[15] = 15;
-////    QString rC = code;
-////    QString sortRet(16, '0');
-////    int beg;
-////    if(rC.size() != 16)
-////    {
-////        return - 1;
-////    }
-////    for(int i = 0; i != sortRet.size(); ++i)
-////    {
-////        sortRet[sortMap[i]] = rC.at(i);
-////    }
-////    qDebug()<<sortRet;
-////    QString mCode = machineCode.simplified();
-////    mCode = mCode.remove(" ");
-////    beg = 0;
-////    for(int i = 0; i != mCode.size(); ++i)
-////    {
-////        if(!mCode.at(i).isDigit())
-////        {
-////            return -1;
-////        }
-////        beg += mCode.at(i).digitValue();
-////    }
-////    beg /= mCode.size();
-////    beg %= 10;
-////    for(int i = 0; i != sortRet.size(); ++i)
-////    {
-////        for(int j = 0; j != 10; ++j)
-////        {
-////            if(((pMap[j] + beg) % 10) == sortRet.at(i).digitValue())
-////            {
-////                sortRet[i] = QString::number(pMap[j]).at(0);
-////                break;
-////            }
-////        }
-////    }
-////    if(sortRet.left(10) != mCode)
-////    {
-////        return -1;
-////    }
-////    return sortRet.right(6).toInt();
-////    return sortRet.right(6).toInt() *24*7;
-
 //    int sortMap[16];
 //    sortMap[0] = 1;
 //    sortMap[1] = 2;
@@ -529,6 +471,7 @@ void ICUpdateSystemPage::on_updateLogoButton_clicked()
 //    {
 //        sortRet[sortMap[i]] = rC.at(i);
 //    }
+//    qDebug()<<sortRet;
 //    QString mCode = machineCode.simplified();
 //    mCode = mCode.remove(" ");
 //    beg = 0;
@@ -542,13 +485,11 @@ void ICUpdateSystemPage::on_updateLogoButton_clicked()
 //    }
 //    beg /= mCode.size();
 //    beg %= 10;
-//    int pMap[10];
-//    BuildShiftMap(beg, pMap);
 //    for(int i = 0; i != sortRet.size(); ++i)
 //    {
 //        for(int j = 0; j != 10; ++j)
 //        {
-//            if(j == sortRet.at(i).digitValue())
+//            if(((pMap[j] + beg) % 10) == sortRet.at(i).digitValue())
 //            {
 //                sortRet[i] = QString::number(pMap[j]).at(0);
 //                break;
@@ -559,54 +500,117 @@ void ICUpdateSystemPage::on_updateLogoButton_clicked()
 //    {
 //        return -1;
 //    }
-////    return sortRet.right(6).toInt();
-//    return sortRet.right(6).toInt() * 24 * 7;
-//}
+//    return sortRet.right(6).toInt();
+//    return sortRet.right(6).toInt() *24*7;
 
-//void ICUpdateSystemPage::on_registerBtn_clicked()
-//{
-//    if(ui->machineCode->text().isNull())
-//    {
-//        ui->tipLabel->setText(tr("Wrong Register Code!"));
-//        return;
-//    }
-//    int hour = Register(ui->registerCode->text(), ui->machineCode->text());
-//    if(hour == -1)
-//    {
-//        ui->tipLabel->setText(tr("Wrong Register Code!"));
-//    }
-//    else
-//    {
-////        ICAppSettings().SetUsedTime(hour);
-//        ICParametersSave::Instance()->SetRestTime(hour);
-//        ui->tipLabel->setText(tr("Register Success!"));
-//        if(hour == 0)
-//        {
-//            ui->restTime->setText(tr("No Limit"));
-//        }
-//        else
-//        {
-//            ui->restTime->setText(QString::number(hour) + tr("hour"));
-//        }
-//        emit RegisterSucceed();
-//        ui->machineCode->clear();
-//        ui->registerCode->clear();
+    int sortMap[16];
+    sortMap[0] = 1;
+    sortMap[1] = 2;
+    sortMap[2] = 3;
+    sortMap[3] = 5;
+    sortMap[4] = 7;
+    sortMap[5] = 11;
+    sortMap[6] = 13;
+    sortMap[7] = 0;
+    sortMap[8] = 4;
+    sortMap[9] = 6;
+    sortMap[10] = 8;
+    sortMap[11] = 10;
+    sortMap[12] = 12;
+    sortMap[13] = 14;
+    sortMap[14] = 9;
+    sortMap[15] = 15;
+    QString rC = code;
+    QString sortRet(16, '0');
+    int beg;
+    if(rC.size() != 16)
+    {
+        return - 1;
+    }
+    for(int i = 0; i != sortRet.size(); ++i)
+    {
+        sortRet[sortMap[i]] = rC.at(i);
+    }
+    QString mCode = machineCode.simplified();
+    mCode = mCode.remove(" ");
+    beg = 0;
+    for(int i = 0; i != mCode.size(); ++i)
+    {
+        if(!mCode.at(i).isDigit())
+        {
+            return -1;
+        }
+        beg += mCode.at(i).digitValue();
+    }
+    beg /= mCode.size();
+    beg %= 10;
+    int pMap[10];
+    BuildShiftMap(beg, pMap);
+    for(int i = 0; i != sortRet.size(); ++i)
+    {
+        for(int j = 0; j != 10; ++j)
+        {
+            if(j == sortRet.at(i).digitValue())
+            {
+                sortRet[i] = QString::number(pMap[j]).at(0);
+                break;
+            }
+        }
+    }
+    if(sortRet.left(10) != mCode)
+    {
+        return -1;
+    }
+//    return sortRet.right(6).toInt();
+    return sortRet.right(6).toInt() * 24 * 7;
+}
 
-////        ICDALHelper::UpdateConfigValue(ICAddr_System_OtherUsedTime, hour);
-//    }
-////    ICProgramHeadFrame::Instance()->ReashRestTime();
-//}
+void ICUpdateSystemPage::on_registerBtn_clicked()
+{
+    if(ui->machineCode->text().isNull())
+    {
+        ui->tipLabel->setText(tr("Wrong Register Code!"));
+        return;
+    }
+    int hour = Register(ui->registerCode->text(), ui->machineCode->text());
+    if(hour == -1)
+    {
+        ui->tipLabel->setText(tr("Wrong Register Code!"));
+    }
+    else
+    {
+//        ICAppSettings().SetUsedTime(hour);
+        ICParametersSave::Instance()->SetRestTime(hour);
+        ui->tipLabel->setText(tr("Register Success!"));
+        if(hour == 0)
+        {
+            ui->restTime->setText(tr("No Limit"));
+        }
+        else
+        {
+            ui->restTime->setText(QString::number(hour) + tr("hour"));
+        }
+        emit RegisterSucceed();
+        ui->machineCode->clear();
+        ui->registerCode->clear();
 
-//void ICUpdateSystemPage::RefreshRestTime()
-//{
-//    int rest_time = ICParametersSave::Instance()->RestTime(0);
-//    if(rest_time == 0)
-//        ui->restTime->setText(tr("No Limit"));
-//    else if(rest_time > 0)
-//        ui->restTime->setText(QString::number(rest_time) + tr("hour"));
-//    else
-//        ui->restTime->setText(tr("No Register!"));
-//}
+//        ICDALHelper::UpdateConfigValue(ICAddr_System_OtherUsedTime, hour);
+    }
+//    ICProgramHeadFrame::Instance()->ReashRestTime();
+}
+
+void ICUpdateSystemPage::RefreshRestTime()
+{
+    int rest_time = ICParametersSave::Instance()->RestTime(0);
+    if(rest_time == 0){
+        ui->restTime->setText(tr("No Limit"));
+    }
+
+    else if(rest_time > 0)
+        ui->restTime->setText(QString::number(rest_time) + tr("hour"));
+    else
+        ui->restTime->setText(tr("No Register!"));
+}
 
 //int pMap_[10];
 //int sortMap_[16] = {1,2,3,5,7,11,13,0,4,6,8,10,12,14,9,15};

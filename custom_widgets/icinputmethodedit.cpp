@@ -13,7 +13,7 @@ void ICInputMethodEdit::mousePressEvent(QMouseEvent *e)
 {
     if(!keyboard_->isVisible())
     {
-        keyboard_->move(0, 140);
+        keyboard_->move(0, 100);
         keyboard_->exec();
     }
     QLineEdit::mousePressEvent(e);

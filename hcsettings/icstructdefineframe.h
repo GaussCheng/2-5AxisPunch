@@ -67,6 +67,7 @@ private:
 
     QList<QList<QAbstractButton*> >buttonslist_ ;
     void InitEscapeBox() ;
+    void InitCombobox();
     QList<QPushButton*> punchButtons_;
     int timerID_;
 
