@@ -45,6 +45,9 @@ void ICProgramHeadFrame::changeEvent(QEvent *e)
     QFrame::changeEvent(e);
     switch (e->type()) {
     case QEvent::LanguageChange:
+        statusToStringMap.insert(0, tr("Stop"));
+        statusToStringMap.insert(1, tr("Manual"));
+        statusToStringMap.insert(2, tr("Auto"));
         ui->retranslateUi(this);
         SetCurrentMoldName(currentMoldName_);
         UpdateDateTime();

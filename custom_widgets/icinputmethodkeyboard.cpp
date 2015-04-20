@@ -11,8 +11,9 @@ ICInputMethodKeyboard::ICInputMethodKeyboard(QWidget *parent) :
     ui(new Ui::ICInputMethodKeyboard)
 {
     ui->setupUi(this);
-//    this->setWindowFlags(this->windowFlags() | Qt::Tool);
-    this->setFocusPolicy(Qt::NoFocus);
+    this->setWindowFlags(this->windowFlags() | Qt::Tool);
+//    setWindowFlags(Qt::X11BypassWindowManagerHint | Qt::Tool);
+    setFocusPolicy(Qt::NoFocus);
     QList<QToolButton*> inputButtons = findChildren<QToolButton*>();
     for(int i = 0; i != inputButtons.size(); ++i)
     {

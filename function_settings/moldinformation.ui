@@ -433,7 +433,7 @@ QMessageBox QAbstractButton
         </sizepolicy>
        </property>
        <property name="focusPolicy">
-        <enum>Qt::TabFocus</enum>
+        <enum>Qt::ClickFocus</enum>
        </property>
       </widget>
      </item>

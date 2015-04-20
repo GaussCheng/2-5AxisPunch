@@ -200,10 +200,20 @@ void ICStructDefineFrame::changeEvent(QEvent *e)
     QWidget::changeEvent(e);
     switch (e->type()) {
 
-    case QEvent::LanguageChange:
-       ui->retranslateUi(this);
-       retranslateUi_();
-       InitCombobox();
+    case QEvent::LanguageChange:{
+        QList<QComboBox*> boxs = boxToAxis_.keys();
+        for(int i=0;i<boxs.size();i++){
+            boxs.at(i)->blockSignals(true);
+        }
+        ui->retranslateUi(this);
+        for(int i=0;i<boxs.size();i++){
+            boxs.at(i)->blockSignals(false);
+        }
+        retranslateUi_();
+        InitCombobox();
+
+    }
+
         break;
     default:
         break;
@@ -293,35 +303,35 @@ void ICStructDefineFrame::retranslateUi_()
 {
     this->setWindowTitle(tr("Form"));
     ui->armDefineBox->setTitle(tr("Arm Define"));
-    ui->label_5->setText(tr("X1"));
+//    ui->label_5->setText(tr("X1"));
     ui->x1Box->setItemText(0,tr("None"));
     ui->x1Box->setItemText(1,tr("Pneumatic"));
     ui->x1Box->setItemText(2,tr("Servo"));
-    ui->label_14->setText(tr("C"));
+//    ui->label_14->setText(tr("C"));
     ui->y1Box->setItemText(0,tr("None"));
     ui->y1Box->setItemText(1,tr("Pneumatic"));
     ui->y1Box->setItemText(2,tr("Servo"));
-    ui->label_13->setText(tr("Z"));
+//    ui->label_13->setText(tr("Z"));
     ui->cBox->setItemText(0,tr("None"));
     ui->cBox->setItemText(1,tr("Pneumatic"));
     ui->cBox->setItemText(2,tr("Servo"));
-    ui->label_15->setText(tr("A"));
+//    ui->label_15->setText(tr("A"));
     ui->aBox->setItemText(0,tr("None"));
     ui->aBox->setItemText(1,tr("Pneumatic"));
     ui->aBox->setItemText(2,tr("Servo"));
-    ui->label_16->setText(tr("B"));
+//    ui->label_16->setText(tr("B"));
     ui->zBox->setItemText(0,tr("None"));
     ui->zBox->setItemText(1,tr("Pneumatic"));
     ui->zBox->setItemText(2,tr("Servo"));
-    ui->label_7->setText(tr("Y1"));
+//    ui->label_7->setText(tr("Y1"));
     ui->bBox->setItemText(0,tr("None"));
     ui->bBox->setItemText(1,tr("Pneumatic"));
     ui->bBox->setItemText(2,tr("Servo"));
-    ui->label_6->setText(tr("X2"));
+//    ui->label_6->setText(tr("X2"));
     ui->x2Box->setItemText(0,tr("None"));
     ui->x2Box->setItemText(1,tr("Pneumatic"));
     ui->x2Box->setItemText(2,tr("Servo"));
-    ui->label_12->setText(tr("Y2"));
+//    ui->label_12->setText(tr("Y2"));
     ui->y2Box->setItemText(0,tr("None"));
     ui->y2Box->setItemText(1,tr("Pneumatic"));
     ui->y2Box->setItemText(2,tr("Servo"));

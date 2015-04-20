@@ -436,7 +436,7 @@ QMessageBox QAbstractButton
         </sizepolicy>
        </property>
        <property name="focusPolicy">
-        <enum>Qt::TabFocus</enum>
+        <enum>Qt::NoFocus</enum>
        </property>
       </widget>
      </item>
@@ -446,14 +446,14 @@ QMessageBox QAbstractButton
  </widget>
  <customwidgets>
   <customwidget>
-   <class>ICTableWidget</class>
-   <extends>QTableWidget</extends>
-   <header>ictablewidget.h</header>
-  </customwidget>
-  <customwidget>
    <class>ICInputMethodEdit</class>
    <extends>QLineEdit</extends>
    <header>icinputmethodedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ICTableWidget</class>
+   <extends>QTableWidget</extends>
+   <header>ictablewidget.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

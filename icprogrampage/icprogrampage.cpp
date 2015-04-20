@@ -200,7 +200,7 @@ void ICProgramPage::hideEvent(QHideEvent *e)
     ui->startEdit->setChecked(false);
     ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
 
-    SaveConfigPoint();
+//    SaveConfigPoint();
     ReConfigure();
 
     QWidget::hideEvent(e);
@@ -366,17 +366,17 @@ void ICProgramPage::InitPoint()
     uint pointCount = _NativeMoldParam(ICMold::pointCount);
     quint64 pointConfig = _NativeMoldParam(ICMold::pointConfig1)  |
                           ((quint64)(_NativeMoldParam(ICMold::pointConfig2)) << 32);
-    quint64 pointConfig2 = _NativeMoldParam(ICMold::pointConfig3)  |
-                              ((quint64)(_NativeMoldParam(ICMold::pointConfig4)) << 32);
+//    quint64 pointConfig2 = _NativeMoldParam(ICMold::pointConfig3)  |
+//                              ((quint64)(_NativeMoldParam(ICMold::pointConfig4)) << 32);
 
 
     for(int i =0 ;i < pointCount;i++){
         if(i < 16){
-            pointTypes.append((PointType)(pointConfig >> (i *4) & 0xF));
+            pointTypes.append((PointType)(pointConfig >> (i * 4) & 0xF));
         }
-        else{
-            pointTypes.append((PointType)(pointConfig2 >> ((i- 16) * 4) & 0xF));
-        }
+//        else{
+//            pointTypes.append((PointType)(pointConfig2 >> ((i- 16) * 4) & 0xF));
+//        }
     }
 
 
@@ -496,17 +496,17 @@ void ICProgramPage::SaveConfigPoint()
 {
     //保存点配置
     quint64 config1 = 0;
-    quint64 config2 = 0;
+//    quint64 config2 = 0;
 
     for(int i=0;i<pointTypes.size();i++){
         if(i < 16){
             quint64 type =  pointTypes.at(i);
             config1 |= (type  << (i *4));
         }
-        else{
-            quint64 type =  pointTypes.at(i);
-            config2 |= (type  << (i-16) * 4);
-        }
+//        else{
+//            quint64 type =  pointTypes.at(i);
+//            config2 |= (type  << (i-16) * 4);
+//        }
     }
 
     bool saved = false;
@@ -525,15 +525,15 @@ void ICProgramPage::SaveConfigPoint()
         saved = true;
     }
 
-    if(_NativeMoldParam(ICMold::pointConfig3) != config2 & 0xFFFFFFFF){
-        _SetNativeMoldParam(ICMold::pointConfig3,config2 & 0xFFFFFFFF);
-        saved = true;
+//    if(_NativeMoldParam(ICMold::pointConfig3) != config2 & 0xFFFFFFFF){
+//        _SetNativeMoldParam(ICMold::pointConfig3,config2 & 0xFFFFFFFF);
+//        saved = true;
 
-    }
-    if(_NativeMoldParam(ICMold::pointConfig4) != (config2 >> 32) & 0xFFFFFFFF){
-        _SetNativeMoldParam(ICMold::pointConfig4,(config2 >> 32) & 0xFFFFFFFF);
-        saved = true;
-    }
+//    }
+//    if(_NativeMoldParam(ICMold::pointConfig4) != (config2 >> 32) & 0xFFFFFFFF){
+//        _SetNativeMoldParam(ICMold::pointConfig4,(config2 >> 32) & 0xFFFFFFFF);
+//        saved = true;
+//    }
 
     if(saved){
         ICMold::CurrentMold()->SaveMoldConfigFile();
@@ -610,7 +610,7 @@ void ICProgramPage::InitFixMoldItems()
     outY37Off = MK_MoldItem(10,6,23,12,0,0,0,0,0,50);
     outY31On  = MK_MoldItem(11,7,17,11,0,1,0,0,0,47);
     outY31Off = MK_MoldItem(12,8,17,11,0,0,0,0,0,98);
-    outM27On  = MK_MoldItem(13,9,23,25,0,1,0,0,0,246); //新添加
+    outM27On  = MK_MoldItem(13,9,15,25,0,1,0,0,0,246); //新添加
     waitM14   = MK_MoldItem(13,9,4,24,0,1,0,0,3000,246);
     outPermit = MK_MoldItem(14,10,0,27,0,1,0,0,0,103);
 
@@ -745,6 +745,8 @@ void ICProgramPage::on_saveButton_clicked()
 void ICProgramPage::MoldChanged(QString s)
 {
     InitPoint();
+    allItems = GT_AllMoldItems();
+
 }
 
 

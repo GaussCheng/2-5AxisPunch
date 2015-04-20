@@ -1095,7 +1095,7 @@ void ICVirtualHost::InitAddrToSysPosMap_()
 //    moldParamToAddrPos_.insert(ICMold::CheckClip6, SM_CHKCLIP6);
 //    moldParamToAddrPos_.insert(ICMold::CheckClip7, SM_CHKCLIP7);
 //    moldParamToAddrPos_.insert(ICMold::CheckClip8, SM_CHKCLIP8);
-//    moldParamToAddrPos_.insert(ICMold::Product, SM_PRODUCT);			//设定产量
+    moldParamToAddrPos_.insert(ICMold::Product,  static_cast<ICSystemParameterAddr>(SM_Position_DOWN + ICMold::point19 + 1 ));			//设定产量
 //    moldParamToAddrPos_.insert(ICMold::CountUnit, SM_Position_DOWN);
 
 //    moldParamToAddrPos_.insert(ICMold::StandbyPose, SM_StandBy);  //待机姿势
