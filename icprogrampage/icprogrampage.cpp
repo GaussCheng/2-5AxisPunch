@@ -364,7 +364,7 @@ void ICProgramPage::InitPoint()
     allPoints.clear();
 
     uint pointCount = _NativeMoldParam(ICMold::pointCount);
-    quint64 pointConfig = _NativeMoldParam(ICMold::pointConfig1)  |
+    quint64 pointConfig = (quint32)_NativeMoldParam(ICMold::pointConfig1)  |
                           ((quint64)(_NativeMoldParam(ICMold::pointConfig2)) << 32);
 //    quint64 pointConfig2 = _NativeMoldParam(ICMold::pointConfig3)  |
 //                              ((quint64)(_NativeMoldParam(ICMold::pointConfig4)) << 32);
@@ -378,9 +378,6 @@ void ICProgramPage::InitPoint()
 //            pointTypes.append((PointType)(pointConfig2 >> ((i- 16) * 4) & 0xF));
 //        }
     }
-
-
-
 
     for(int i = 0 ;i < pointCount;i++){
         ui->tableWidget->insertRow(ROW_COUNTS);
