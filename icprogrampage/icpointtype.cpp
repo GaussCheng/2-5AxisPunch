@@ -11,7 +11,7 @@ ICPointType::ICPointType(QWidget *parent) :
     ui->setupUi(this);
     Init_();
 
-    _box = ui->getWaitBox;
+    _box = ui->getUpBox;
 
     boxToType.insert(ui->getWaitBox,Get_Wait);
     boxToType.insert(ui->getUpBox,Get_Up);
@@ -25,10 +25,14 @@ ICPointType::ICPointType(QWidget *parent) :
 
     foreach(QCheckBox *box,boxToType.keys()){
          box->setText(typeToStr.value(boxToType.value(box)));
+         box->hide();
 
          connect(box,SIGNAL(stateChanged(int)),
                  SLOT(stateChanged(int)));
     }
+    ui->getUpBox->setVisible(true);
+    ui->putUpBox->setVisible(true);
+    ui->reserveBox->setVisible(true);
 
 }
 
@@ -69,7 +73,7 @@ void ICPointType::changeEvent(QEvent *e)
     QDialog::changeEvent(e);
     switch (e->type()) {
     case QEvent::LanguageChange:{
-        ui->retranslateUi(this);
+//        ui->retranslateUi(this);
     }
         break;
     default:

@@ -184,6 +184,7 @@ void ICProgramPage::showEvent(QShowEvent *e)
     ui->verticalLayout->insertWidget(0,ui->tableWidget);
     ui->tableWidget->setColumnHidden(6,false);
     ui->tableWidget->setColumnHidden(7,false);
+    ui->tableWidget->setRowHidden(ui->tableWidget->rowCount() - 1,false);
 
     for(int i=0;i<AXIS_COUNTS;i++){
         int top = ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::ICSystemParameter(ICVirtualHost::SYS_X_Length + i * 7)).toInt();
@@ -477,11 +478,11 @@ void ICProgramPage::InitPointToItem()
     QList<ICMoldItem> items;
     pointToItem.clear();
     pointToItem.insert(Get_Wait,(items << waitM10)); items.clear();
-//    pointToItem.insert(Get_Up,items); items.clear();
+    pointToItem.insert(Get_Up,items); items.clear();
     pointToItem.insert(Get,(items << outY37On)); items.clear();
     pointToItem.insert(Put_Wait,(items << outM27On << outM11 << waitM12)); items.clear();
 //    pointToItem.insert(Put_Wait,items); items.clear();
-//    pointToItem.insert(Put_Up,items); items.clear();
+    pointToItem.insert(Put_Up,items); items.clear();
     pointToItem.insert(Put,(items << outY37Off)); items.clear();
     pointToItem.insert(Put_Finish,(items  << waitM14 << outPermit)); items.clear();
     pointToItem.insert(Reserve,items); items.clear();
@@ -637,39 +638,43 @@ void ICProgramPage::on_newButton_clicked()
         return;
     }
 
-    ui->tableWidget->insertRow(index);
-    ui->tableWidget->setItem(index,0,new QTableWidgetItem(_typeDialog->toString(Reserve)));
-    ui->tableWidget->item(index,0)->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-    for(int i = 0 ;i < AXIS_COUNTS; i++){
-        QTableWidgetItem *item = new QTableWidgetItem("") ;
-        item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-        item->setText("0.0");
-        ui->tableWidget->setItem(index,i+1,item);
+    if(_typeDialog->exec() == QDialog::Accepted){
+        ui->tableWidget->insertRow(index);
+        ui->tableWidget->setItem(index,0,new QTableWidgetItem(_typeDialog->toString()));
+        ui->tableWidget->item(index,0)->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+        for(int i = 0 ;i < AXIS_COUNTS; i++){
+            QTableWidgetItem *item = new QTableWidgetItem("") ;
+            item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+            item->setText("0.0");
+            ui->tableWidget->setItem(index,i+1,item);
+        }
+        QPushButton *button = new QPushButton;
+        saveButtons.insert(index,button);
+        saveButtons[index]->setText(tr("save"));
+        saveButtons[index]->setMinimumHeight(40);
+        saveButtons[index]->setFocusPolicy(Qt::NoFocus);
+        connect(saveButtons[index],SIGNAL(clicked()),
+                SLOT(saveButtonsCliked()));
+        ui->tableWidget->setCellWidget(index,AXIS_COUNTS + 1,saveButtons[index]);
+
+        button = new QPushButton;
+        testButtons.insert(index,button);
+        testButtons[index]->setText(tr("test"));
+        testButtons[index]->setMinimumHeight(40);
+        testButtons[index]->setFocusPolicy(Qt::NoFocus);
+        connect(testButtons[index],SIGNAL(clicked()),
+                SLOT(testButonsClicked()));
+        ui->tableWidget->setCellWidget(index,AXIS_COUNTS + 2,testButtons[index]);
+        pointTypes.insert(index,_typeDialog->currentType());
+
+
+        for(int k=0;k< ui->tableWidget->verticalHeader()->count();k++){
+            ui->tableWidget->verticalHeader()->resizeSection(k,40);
+        }
+        DisableTestButtons();
+
     }
-    QPushButton *button = new QPushButton;
-    saveButtons.insert(index,button);
-    saveButtons[index]->setText(tr("save"));
-    saveButtons[index]->setMinimumHeight(40);
-    saveButtons[index]->setFocusPolicy(Qt::NoFocus);
-    connect(saveButtons[index],SIGNAL(clicked()),
-            SLOT(saveButtonsCliked()));
-    ui->tableWidget->setCellWidget(index,AXIS_COUNTS + 1,saveButtons[index]);
 
-    button = new QPushButton;
-    testButtons.insert(index,button);
-    testButtons[index]->setText(tr("test"));
-    testButtons[index]->setMinimumHeight(40);
-    testButtons[index]->setFocusPolicy(Qt::NoFocus);
-    connect(testButtons[index],SIGNAL(clicked()),
-            SLOT(testButonsClicked()));
-    ui->tableWidget->setCellWidget(index,AXIS_COUNTS + 2,testButtons[index]);
-    pointTypes.insert(index,Reserve);
-
-
-    for(int k=0;k< ui->tableWidget->verticalHeader()->count();k++){
-        ui->tableWidget->verticalHeader()->resizeSection(k,40);
-    }
-    DisableTestButtons();
 
 }
 

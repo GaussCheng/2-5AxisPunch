@@ -17,7 +17,7 @@
 #define COLUMN_COUNTS (AXIS_COUNTS + 3)
 #define RESERVE_COUNTS (MAX_POINTS - 3)
 #define PAGE_MAX_COUNT 8
-#define USE_SPACE_ROW  0
+#define USE_SPACE_ROW  1
 #define POINT_SIZE 1
 #define ROW_COUNTS ui->tableWidget->rowCount() - USE_SPACE_ROW
 

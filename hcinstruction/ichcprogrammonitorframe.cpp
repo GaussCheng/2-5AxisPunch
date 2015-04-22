@@ -119,6 +119,7 @@ void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
 
     tableWidget->setColumnHidden(6,true);
     tableWidget->setColumnHidden(7,true);
+    tableWidget->setRowHidden(tableWidget->rowCount() - 1,true);
 
     //    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
 //    int currentTuneType = ICKeyboard::Instace()->CurrentTuneSpeedType();
