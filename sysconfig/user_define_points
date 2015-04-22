@@ -1,6 +1,5 @@
 0,取料位,Point1
 1,放料位,Point2
 2,安全位,Point3
-3,取料位,Point1
-4,放料位,Point2
-5,安全位,Point3
+3,取物安全,Point4
+4,置物安全,Point5
