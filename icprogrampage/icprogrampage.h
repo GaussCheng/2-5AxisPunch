@@ -106,6 +106,8 @@ private slots:
 
     void on_startEdit_clicked(bool checked);
 
+    void on_seveoEdit_toggled(bool checked);
+
 private:
     explicit ICProgramPage(QWidget *parent = 0,int pageIndex = 0,QString pageName = "");
     void InitTableWidget();

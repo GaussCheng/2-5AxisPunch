@@ -7,7 +7,7 @@
 #include "moldinformation.h"
 #include "icparameterconversion.h"
 #include "QtCore/qmath.h"
-
+#include "icvirtualkey.h"
 ICProgramPage * ICProgramPage::instance_;
 
 
@@ -25,6 +25,8 @@ ICProgramPage::ICProgramPage(QWidget *parent,int _pageIndex,QString pageName) :
     _host = ICVirtualHost::GlobalVirtualHost();
     ui->modiifyButton->hide();
     ui->pushButton->hide();
+    ui->seveoEdit->setCheckedName(tr("Servo Off"));
+    ui->seveoEdit->setName(tr("Servo On"));
 
     QFile file("./sysconfig/StandPrograms");
     if(file.open(QFile::ReadOnly | QFile::Text))
@@ -812,5 +814,19 @@ void ICProgramPage::ReConfigure()
         qDebug() << "SaveProgramToFiles: " << ICMold::CurrentMold()->SaveMoldFile(false);
         ICVirtualHost::GlobalVirtualHost()->ReConfigure();
 
+    }
+}
+
+
+
+void ICProgramPage::on_seveoEdit_toggled(bool checked)
+{
+    if(checked)
+    {
+        ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_SERVO_OFF);
+    }
+    else
+    {
+        ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_SERVO_ON);
     }
 }

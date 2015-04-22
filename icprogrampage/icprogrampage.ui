@@ -109,6 +109,25 @@
       </widget>
      </item>
      <item>
+      <widget class="ICCheckedButton" name="seveoEdit">
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="text">
+        <string>Servo On</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
       <spacer name="horizontalSpacer_2">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -157,6 +176,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ICCheckedButton</class>
+   <extends>QPushButton</extends>
+   <header>iccheckedbutton.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
