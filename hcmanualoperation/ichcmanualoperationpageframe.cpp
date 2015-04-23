@@ -524,7 +524,17 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
         for(int i = 0; i != buttons.size(); ++i)
         {
             info = config->GetActionShortcutByID(ui->shortcutGroup->id(buttons.at(i)));
-            p = (info.type == 2) ? info.pointNum << 1 : info.pointNum;
+//            p = (info.type == 2) ? info.pointNum << 1 : info.pointNum;
+
+            if((info.type + ICMold::GOutY) == ICMold::GTwoXTwoY){
+                p = info.pointNum * 2;
+            }
+            else if((info.type + ICMold::GOutY) == ICMold::GEuOut){
+                p = info.pointNum + 64;
+            }
+            else{
+                p = info.pointNum;
+            }
 
             if(host->IsOutputOn(p))
             {
@@ -544,8 +554,15 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
         for(int i = 0; i != buttons.size(); ++i)
         {
             info = config->GetActionByID(ui->actionGroup->id(buttons.at(i)));
-            p = (info.type == 2) ? info.pointNum << 1 : info.pointNum;
-
+            if((info.type + ICMold::GOutY) == ICMold::GTwoXTwoY){
+                p = info.pointNum * 2;
+            }
+            else if((info.type + ICMold::GOutY) == ICMold::GEuOut){
+                p = info.pointNum + 64;
+            }
+            else{
+                p = info.pointNum;
+            }
             if(host->IsOutputOn(p))
             {
 //                buttons[i]->setPalette(yOnPalette);
@@ -630,7 +647,16 @@ void ICHCManualOperationPageFrame::OnShortcutTriggered(int id)
     cmd.SetGM(ICMold::GOutY + info.type);
     cmd.SetPoint(info.pointNum);
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    int p = (cmd.GM() == ICMold::GTwoXTwoY) ? info.pointNum * 2 : info.pointNum;
+    int p;
+    if(cmd.GM() == ICMold::GTwoXTwoY){
+        p = info.pointNum * 2;
+    }
+    else if(cmd.GM() == ICMold::GEuOut){
+        p = info.pointNum + 64;
+    }
+    else{
+        p = info.pointNum;
+    }
     if(host->IsOutputOn(p))
     {
         cmd.SetIFVal(0);
