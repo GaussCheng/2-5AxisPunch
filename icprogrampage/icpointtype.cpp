@@ -16,36 +16,36 @@ ICPointType::ICPointType(QWidget *parent) :
     boxToType.insert(ui->getWaitBox,Get_Wait);
     boxToType.insert(ui->getUpBox,Get_Up);
     boxToType.insert(ui->GetBox,Get);
-    boxToType.insert(ui->getFinishBOx,Get_Finish);
     boxToType.insert(ui->putWaitBox,Put_Wait);
     boxToType.insert(ui->putUpBox,Put_Up);
     boxToType.insert(ui->putBox,Put);
-    boxToType.insert(ui->putFinishbox,Put_Finish);
     boxToType.insert(ui->reserveBox,Reserve);
+    boxToType.insert(ui->getWaitBox2,Get_Wait2);
+    boxToType.insert(ui->putWaitBox2,Put_Wait2);
 
     foreach(QCheckBox *box,boxToType.keys()){
          box->setText(typeToStr.value(boxToType.value(box)));
-         box->hide();
+//         box->hide();
 
          connect(box,SIGNAL(stateChanged(int)),
                  SLOT(stateChanged(int)));
     }
-    ui->getUpBox->setVisible(true);
-    ui->putUpBox->setVisible(true);
-    ui->reserveBox->setVisible(true);
+//    ui->getUpBox->setVisible(true);
+//    ui->putUpBox->setVisible(true);
+//    ui->reserveBox->setVisible(true);
 
 }
 
 void ICPointType::Init_()
 {
     typeToStr.insert(Get_Wait,tr("Get_Wait"));
+    typeToStr.insert(Get_Wait2,tr("Get_Wait"));
     typeToStr.insert(Get_Up,tr("Get_Up"));
     typeToStr.insert(Get,tr("Get"));
-    typeToStr.insert(Get_Finish,tr("Get_Finish"));
     typeToStr.insert(Put_Wait,tr("Put_Wait"));
+    typeToStr.insert(Put_Wait2,tr("Put_Wait"));
     typeToStr.insert(Put_Up,tr("Put_Up"));
     typeToStr.insert(Put,tr("Put"));
-    typeToStr.insert(Put_Finish,tr("Put_Finish"));
     typeToStr.insert(Reserve,tr("Reserve"));
 }
 

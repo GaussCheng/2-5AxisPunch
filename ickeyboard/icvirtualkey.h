@@ -121,7 +121,9 @@ enum ICVirtualKey
 
     VKEY_LHORIGIN = 0xAA,
     VKEY_RHORIGIN = 0xAB,
-    VKEY_SINGLECYCLE //单循环
+    VKEY_SINGLECYCLE, //单循环
+    VKEY_TESTSTOP =  0xAD//测试按钮松开发送键值
+
 
 };
 

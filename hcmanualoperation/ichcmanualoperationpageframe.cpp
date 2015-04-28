@@ -72,6 +72,7 @@ ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     ui->groupBox_2->hide();
     ui->return0Button->hide();
     ui->singleButton->hide();
+    ui->serveControl->hide();
     delayValidator = new QIntValidator(0, 30000, this);
 
     ui->delayEdit->SetDecimalPlaces(2);

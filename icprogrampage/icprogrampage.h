@@ -94,7 +94,9 @@ signals:
 private slots:
     void itemClicked(QTableWidgetItem*);
     void saveButtonsCliked();
-    void testButonsClicked();
+    void testButonsPressed();
+    void testButonsReleased();
+
     void on_pushButton_clicked();
     void on_newButton_clicked();
     void on_modiifyButton_clicked();

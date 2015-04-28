@@ -186,6 +186,7 @@ void ICProgramPage::showEvent(QShowEvent *e)
     ui->verticalLayout->insertWidget(0,ui->tableWidget);
     ui->tableWidget->setColumnHidden(6,false);
     ui->tableWidget->setColumnHidden(7,false);
+    if(USE_SPACE_ROW)
     ui->tableWidget->setRowHidden(ui->tableWidget->rowCount() - 1,false);
 
     for(int i=0;i<AXIS_COUNTS;i++){
@@ -303,7 +304,7 @@ void ICProgramPage::saveButtonsCliked()
     }
 }
 
-void ICProgramPage::testButonsClicked()
+void ICProgramPage::testButonsPressed()
 {
     QPushButton *button = qobject_cast<QPushButton*>(sender());
     int index = testButtons.indexOf(button);
@@ -398,9 +399,10 @@ void ICProgramPage::InitPoint()
         testButtons[i]->setText(tr("test"));
         testButtons[i]->setMinimumHeight(40);
         testButtons[i]->setFocusPolicy(Qt::NoFocus);
-        connect(testButtons[i],SIGNAL(clicked()),
-                SLOT(testButonsClicked()));
-
+        connect(testButtons[i],SIGNAL(pressed()),
+                SLOT(testButonsPressed()));
+        connect(testButtons[i],SIGNAL(released()),
+                SLOT(testButonsReleased()));
 
         allPoints.append(MK_Point(_MoldParam(ICMold::point0 + i * 6 + 0 + _index * 6 * MAX_POINTS),
                                   _MoldParam(ICMold::point0 + i * 6 + 1 + _index * 6 * MAX_POINTS),
@@ -486,7 +488,7 @@ void ICProgramPage::InitPointToItem()
 //    pointToItem.insert(Put_Wait,items); items.clear();
     pointToItem.insert(Put_Up,items); items.clear();
     pointToItem.insert(Put,(items << outY37Off)); items.clear();
-    pointToItem.insert(Put_Finish,(items  << waitM14 << outPermit)); items.clear();
+    pointToItem.insert(Put_Wait2,(items  << waitM14 << outPermit)); items.clear();
     pointToItem.insert(Reserve,items); items.clear();
 
 
@@ -640,9 +642,16 @@ void ICProgramPage::on_newButton_clicked()
         return;
     }
 
+#ifndef Q_WS_QWS
     if(_typeDialog->exec() == QDialog::Accepted){
         ui->tableWidget->insertRow(index);
         ui->tableWidget->setItem(index,0,new QTableWidgetItem(_typeDialog->toString()));
+#else
+      ui->tableWidget->insertRow(index);
+      ui->tableWidget->setItem(index,0,new QTableWidgetItem(_typeDialog->toString(Reserve)));
+
+#endif
+
         ui->tableWidget->item(index,0)->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
         for(int i = 0 ;i < AXIS_COUNTS; i++){
             QTableWidgetItem *item = new QTableWidgetItem("") ;
@@ -664,19 +673,24 @@ void ICProgramPage::on_newButton_clicked()
         testButtons[index]->setText(tr("test"));
         testButtons[index]->setMinimumHeight(40);
         testButtons[index]->setFocusPolicy(Qt::NoFocus);
-        connect(testButtons[index],SIGNAL(clicked()),
-                SLOT(testButonsClicked()));
+        connect(testButtons[index],SIGNAL(pressed()),
+                SLOT(testButonsPressed()));
+        connect(testButtons[index],SIGNAL(released()),
+                SLOT(testButonsReleased()));
         ui->tableWidget->setCellWidget(index,AXIS_COUNTS + 2,testButtons[index]);
+#ifndef Q_WS_QWS
         pointTypes.insert(index,_typeDialog->currentType());
-
-
+#else
+        pointTypes.insert(index,Reserve);
+#endif
         for(int k=0;k< ui->tableWidget->verticalHeader()->count();k++){
             ui->tableWidget->verticalHeader()->resizeSection(k,40);
         }
         DisableTestButtons();
 
+#ifndef Q_WS_QWS
     }
-
+#endif
 
 }
 
@@ -702,14 +716,19 @@ void ICProgramPage::on_deleteButton_clicked()
         return;
     }
 
+#ifdef Q_WS_QWS
     if(pointTypes.at(index) == Get_Wait ||
         pointTypes.at(index)== Get ||
+        pointTypes.at(index)== Get_Up ||
+        pointTypes.at(index)== Get_Wait2 ||
         pointTypes.at(index) == Put_Wait ||
         pointTypes.at(index) == Put ||
-        pointTypes.at(index) == Put_Finish ){
+        pointTypes.at(index) == Put_Up ||
+        pointTypes.at(index) == Put_Wait2 ){
         QMessageBox::information(this,tr("Information"),tr("Canot Delete %1 action!").arg( _typeDialog->toString(pointTypes.at(index) )));
         return;
     }
+#endif
 
     if(QMessageBox::information(this,tr("Information"),tr("If Delete current Row?"),
                                 QMessageBox::Ok | QMessageBox::Cancel) != QMessageBox::Ok)
@@ -731,7 +750,8 @@ void ICProgramPage::on_deleteButton_clicked()
 
     }
     else{
-        qDebug() << "Not  Delete Space Line";
+        QMessageBox::information(this,tr("Information"),tr("Canot Delete Space Row!"));
+        return;
     }
     ui->tableWidget->hide();
     ui->tableWidget->show();
@@ -829,4 +849,10 @@ void ICProgramPage::on_seveoEdit_toggled(bool checked)
     {
         ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_SERVO_ON);
     }
+}
+
+void ICProgramPage::testButonsReleased()
+{
+    ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_TESTSTOP);
+
 }

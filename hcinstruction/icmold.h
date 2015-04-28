@@ -526,11 +526,11 @@ inline void ICMold::SetMoldParam(ICMoldParam param, int value)
 //    Q_ASSERT_X(param < moldParams_.size(), "ICMold::SetMoldParams", "param is out of range");
     if(param >= moldParams_.size()) { return ;}
     moldParams_[param] = value;
-    UpdateSyncSum();
+//    UpdateSyncSum();
     if(param < MoldParamCount)
     {
         emit MoldPramChanged(param, value);
-        emit MoldPramChanged(MoldParamCount, checkSum_);
+//        emit MoldPramChanged(MoldParamCount, checkSum_);
     }
 }
 

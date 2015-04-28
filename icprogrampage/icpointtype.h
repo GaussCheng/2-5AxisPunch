@@ -12,16 +12,17 @@ class ICPointType;
 
 
 enum PointType{
-   Get_Wait,
-   Get_Up,
-   Get,
-   Get_Finish,
-   Put_Wait,
-   Put_Up,
-   Put,
-   Put_Finish,
-   Reserve,
-   NULL_Type = -1
+    Get_Wait,
+    Get_Up,
+    Get,
+    Get_Wait2,
+    Put_Wait,
+    Put_Up,
+    Put,
+    Put_Wait2,
+    Reserve,
+
+    NULL_Type = -1
 
 } ;
 
