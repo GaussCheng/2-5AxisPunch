@@ -4,11 +4,31 @@
 #include <QDialog>
 #include <QCheckBox>
 #include <QMap>
-
+#include "icmold.h"
 
 namespace Ui {
 class ICPointType;
 }
+
+
+enum PointProperty{
+    OUYY37_ON,  //吸1阀
+    OUYY37_OFF,
+    OUYY40_ON,  //吸2阀
+    OUYY40_OFF,
+    OUYY22_ON,  //夹1阀
+    OUYY22_OFF,
+    OUYY23_ON,  //预留阀
+    OUYY23_OFF,
+    WAIT_X41,
+    WAIT_X42,
+    WAIT_X43,
+    WAIT_X44,
+    RESEARVE,
+
+    NULL_Property = -1
+
+} ;
 
 
 enum PointType{
@@ -20,6 +40,7 @@ enum PointType{
     Put_Up,
     Put,
     Put_Wait2,
+    Point_Property,
     Reserve,
 
     NULL_Type = -1
@@ -43,7 +64,13 @@ public:
     void Init_();
 
     QString toString(PointType type = NULL_Type);
-    PointType currentType();
+    QString toString(PointProperty type = NULL_Property);
+    QString toPropertyString(PointProperty type = NULL_Property,quint32 delay = 0);
+
+
+    ICPointConfig config() ;
+
+    PointProperty currentPropertyType();
 
 
 protected:
@@ -56,8 +83,12 @@ private slots:
 private:
     Ui::ICPointType *ui;
     QMap<PointType,QString> typeToStr;
-    QMap<QCheckBox*,PointType> boxToType;
-    QCheckBox * _box;
+    QMap<PointProperty,QString> propertyToStr;
+
+    QMap<QCheckBox*,PointProperty> boxToType;
+    QList<QCheckBox*> boxs;
+    QCheckBox* _box;
+
     static ICPointType *instance_;
 
 };

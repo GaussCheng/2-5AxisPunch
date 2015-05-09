@@ -24,7 +24,6 @@ ICProgramPage::ICProgramPage(QWidget *parent,int _pageIndex,QString pageName) :
     _typeDialog =  ICPointType::Instance(this);
     _host = ICVirtualHost::GlobalVirtualHost();
     ui->modiifyButton->hide();
-    ui->pushButton->hide();
     ui->seveoEdit->setCheckedName(tr("Servo Off"));
     ui->seveoEdit->setName(tr("Servo On"));
 
@@ -47,6 +46,13 @@ ICProgramPage::ICProgramPage(QWidget *parent,int _pageIndex,QString pageName) :
     connect(MoldInformation::Instance(),SIGNAL(MoldChanged(QString)),
             SLOT(MoldChanged(QString)));
 
+    connect(ui->injectButton,SIGNAL(clicked()),
+            SLOT(saveButtonsCliked()));
+    connect(ui->testButton,SIGNAL(pressed()),
+            SLOT(testButonsPressed()));
+    connect(ui->testButton,SIGNAL(released()),
+            SLOT(testButonsReleased()));
+
     allItems = GT_AllMoldItems();
 
 
@@ -61,12 +67,20 @@ QList<ICMoldItem> ICProgramPage::GT_MoldItems()
 {
     QList<ICMoldItem> items;
     QList<ICMoldItem> fixItems;
+    ICMoldItem propertyItems;
 
     for(int i=0;i < ROW_COUNTS;i++){
-        items += MK_PosItem(i);
-        fixItems = pointToItem.value(pointTypes.at(i));
-        if(fixItems.size()){
-            items += fixItems;
+        if(pointConfigs[i].Type() != Point_Property){
+            items += MK_PosItem(i);
+            fixItems = pointToItem.value((PointType)pointConfigs[i].Type());
+            if(fixItems.size()){
+                items += fixItems;
+            }
+        }
+        else{
+            propertyItems = propertyToItem.value((PointProperty)pointConfigs[i].Property());
+            propertyItems.SetDVal(pointConfigs[i].Delay());
+            items += propertyItems;
         }
     }
 
@@ -159,15 +173,6 @@ ICProgramPage::~ICProgramPage()
         delete validators_[i];
 }
 
-void ICProgramPage::ChangeDelay(int delay)
-{
-    //发送教导修改指令
-    outY37On.SetDVal(delay);
-    outY37Off.SetDVal(delay);
-    InitPointToItem();
-    ReConfigure();
-
-}
 
 void ICProgramPage::showEvent(QShowEvent *e)
 {
@@ -205,7 +210,7 @@ void ICProgramPage::hideEvent(QHideEvent *e)
     ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
 
 //    SaveConfigPoint();
-    ReConfigure();
+//    ReConfigure();
 
     QWidget::hideEvent(e);
 
@@ -219,13 +224,13 @@ void ICProgramPage::changeEvent(QEvent *e)
         ui->retranslateUi(this);
         QStringList headerContents;
         headerContents  <<  tr("Type") << tr("FrontBack") << tr("UpDown") << tr("Windup") <<  tr("Rotated")
-                        << tr("Rollovers")  << tr("Save") << tr("Tested");
+                        << tr("Rollovers")/*  << tr("Save") << tr("Tested")*/;
 
         for(int i=0;i<headerContents.size();i++){
             ui->tableWidget->horizontalHeaderItem(i)->setText(headerContents.at(i));
         }
         _typeDialog->Init_();
-        InitPoint();
+//        InitPoint();
     }
         break;
     default:
@@ -293,8 +298,17 @@ void ICProgramPage::itemClicked(QTableWidgetItem *item)
 
 void ICProgramPage::saveButtonsCliked()
 {
-    QPushButton *button = qobject_cast<QPushButton*>(sender());
-    int index = saveButtons.indexOf(button);
+    int index = ui->tableWidget->currentIndex().row();
+    if(index < 0)
+    {
+        return;
+    }
+
+    if(pointConfigs[index].Type() == Point_Property){
+        QMessageBox::information(this,tr("information"),
+                                 tr("Illegality Point Setting!"));
+        return;
+    }
 
     for(int i=0; i < AXIS_COUNTS;i++){
         int16_t pos = _host->HostStatus(ICVirtualHost::ICStatus(ICVirtualHost::XPos + i)).toInt();
@@ -306,11 +320,15 @@ void ICProgramPage::saveButtonsCliked()
 
 void ICProgramPage::testButonsPressed()
 {
-    QPushButton *button = qobject_cast<QPushButton*>(sender());
-    int index = testButtons.indexOf(button);
+    int index = ui->tableWidget->currentIndex().row();
 
     if(index < 0)
     {
+        return;
+    }
+    if(pointConfigs[index].Type() == Point_Property){
+        QMessageBox::information(this,tr("information"),
+                                 tr("Illegality Point Setting!"));
         return;
     }
     if(!ICVirtualHost::GlobalVirtualHost()->IsOrigined())
@@ -329,10 +347,6 @@ void ICProgramPage::testButonsPressed()
 }
 
 
-void ICProgramPage::on_pushButton_clicked()
-{
-    emit returnProgram();
-}
 
 void ICProgramPage::InitTableWidget()
 {
@@ -367,59 +381,37 @@ void ICProgramPage::InitPoint()
     DeleteWidgets();
     allPoints.clear();
 
-    uint pointCount = _NativeMoldParam(ICMold::pointCount);
-    quint64 pointConfig = (quint32)_NativeMoldParam(ICMold::pointConfig1)  |
-                          ((quint64)(_NativeMoldParam(ICMold::pointConfig2)) << 32);
-//    quint64 pointConfig2 = _NativeMoldParam(ICMold::pointConfig3)  |
-//                              ((quint64)(_NativeMoldParam(ICMold::pointConfig4)) << 32);
+    int pointCount=0,start=0;
 
-
-    for(int i =0 ;i < pointCount;i++){
-        if(i < 16){
-            pointTypes.append((PointType)(pointConfig >> (i * 4) & 0xF));
-        }
-//        else{
-//            pointTypes.append((PointType)(pointConfig2 >> ((i- 16) * 4) & 0xF));
-//        }
-    }
-
-    for(int i = 0 ;i < pointCount;i++){
+    pointConfigs = ICMold::CurrentMold()->MoldPointConfig();
+    for(int i=0;i<pointConfigs.size();i++){
         ui->tableWidget->insertRow(ROW_COUNTS);
 
-        QPushButton *button = new QPushButton(this);
-        saveButtons.append(button);
-        saveButtons[i]->setText(tr("save"));
-        saveButtons[i]->setMinimumHeight(40);
-        saveButtons[i]->setFocusPolicy(Qt::NoFocus);
-        connect(saveButtons[i],SIGNAL(clicked()),
-                SLOT(saveButtonsCliked()));
+        if(pointConfigs[i].Type() != Point_Property){
+            pointCount ++;
+        }
 
-        button = new QPushButton(this);
-        testButtons.append(button);
-        testButtons[i]->setText(tr("test"));
-        testButtons[i]->setMinimumHeight(40);
-        testButtons[i]->setFocusPolicy(Qt::NoFocus);
-        connect(testButtons[i],SIGNAL(pressed()),
-                SLOT(testButonsPressed()));
-        connect(testButtons[i],SIGNAL(released()),
-                SLOT(testButonsReleased()));
+    }
 
-        allPoints.append(MK_Point(_MoldParam(ICMold::point0 + i * 6 + 0 + _index * 6 * MAX_POINTS),
-                                  _MoldParam(ICMold::point0 + i * 6 + 1 + _index * 6 * MAX_POINTS),
-                                  _MoldParam(ICMold::point0 + i * 6 + 2 + _index * 6 * MAX_POINTS),
-                                  _MoldParam(ICMold::point0 + i * 6 + 3 + _index * 6 * MAX_POINTS),
-                                  _MoldParam(ICMold::point0 + i * 6 + 4 + _index * 6 * MAX_POINTS)
+    //初始化点位
+    for(int i=0;i<pointCount;i++){
+        allPoints.append(MK_Point(_MoldParam(ICMold::point0 + i * 6 + 0 ),
+                                  _MoldParam(ICMold::point0 + i * 6 + 1 ),
+                                  _MoldParam(ICMold::point0 + i * 6 + 2 ),
+                                  _MoldParam(ICMold::point0 + i * 6 + 3 ),
+                                  _MoldParam(ICMold::point0 + i * 6 + 4 )
                                   ));
 
-        ui->tableWidget->setCellWidget(i,AXIS_COUNTS + 1,saveButtons[i]);
-        ui->tableWidget->setCellWidget(i,AXIS_COUNTS + 2,testButtons[i]);
+
     }
+
+    //重新设置行高
     for(int k=0;k< ui->tableWidget->verticalHeader()->count();k++){
-        ui->tableWidget->verticalHeader()->resizeSection(k,40);
+        ui->tableWidget->verticalHeader()->resizeSection(k,ROW_HIGHT);
     }
 
 
-    for(int j =0; j< pointCount;j++){
+    for(int j =0; j< pointConfigs.size();j++){
         for(int i=0;i <COLUMN_COUNTS ; i++){
             if(!ui->tableWidget->cellWidget(j,i) && !ui->tableWidget->item(j,i)){
                 QTableWidgetItem * item = new QTableWidgetItem();
@@ -428,16 +420,34 @@ void ICProgramPage::InitPoint()
                 ui->tableWidget->setItem(j,i,item);
             }
         }
-        ui->tableWidget->item(j,0)->setText(_typeDialog->toString(pointTypes.at(j)));
+        if(pointConfigs[j].Type() != Point_Property)
+            ui->tableWidget->item(j,0)->setText(_typeDialog->toString((PointType)pointConfigs[j].Type()));
+        else{
+            ui->tableWidget->item(j,0)->setText(_typeDialog->toString((PointProperty)pointConfigs[j].Property()));
+
+            ui->tableWidget->item(j,1)->setText(QString("%1s")
+                                                .arg(ICParameterConversion::TransThisIntToThisText(pointConfigs[j].Delay(), 2)));
+
+        }
     }
 
 
-    for(int i=0;i<pointCount;i++){
-        ui->tableWidget->item(i,1)->setText(QString::number(allPoints[i]->x / 10.0, 'f', 1));
-        ui->tableWidget->item(i,2)->setText(QString::number(allPoints[i]->y / 10.0, 'f', 1));
-        ui->tableWidget->item(i,3)->setText(QString::number(allPoints[i]->s / 10.0, 'f', 1));
-        ui->tableWidget->item(i,4)->setText(QString::number(allPoints[i]->r / 10.0, 'f', 1));
-        ui->tableWidget->item(i,5)->setText(QString::number(allPoints[i]->t / 10.0, 'f', 1));
+    for(int i=0;i<pointConfigs.size();i++){
+        if(pointConfigs[i].Type() != Point_Property){
+            ui->tableWidget->item(i,1)->setText(QString::number(allPoints[start]->x / 10.0, 'f', 1));
+            ui->tableWidget->item(i,2)->setText(QString::number(allPoints[start]->y / 10.0, 'f', 1));
+            ui->tableWidget->item(i,3)->setText(QString::number(allPoints[start]->s / 10.0, 'f', 1));
+            ui->tableWidget->item(i,4)->setText(QString::number(allPoints[start]->r / 10.0, 'f', 1));
+            ui->tableWidget->item(i,5)->setText(QString::number(allPoints[start]->t / 10.0, 'f', 1));
+            start++;
+        }
+        else{
+//            ui->tableWidget->item(i,1)->setText("-");
+            ui->tableWidget->item(i,2)->setText("-");
+            ui->tableWidget->item(i,3)->setText("-");
+            ui->tableWidget->item(i,4)->setText("-");
+            ui->tableWidget->item(i,5)->setText("-");
+        }
     }
 }
 
@@ -463,16 +473,12 @@ void ICProgramPage::DeleteWidgets()
             if(ui->tableWidget->item(index,i))
             delete ui->tableWidget->item(index,i);
         }
-        delete saveButtons[0];
-        delete testButtons[0];
 
-        saveButtons.removeAt(0);
-        testButtons.removeAt(0);
         ui->tableWidget->removeRow(0);
         pointTypes.removeAt(0);
     }
 //    for(int k=0;k< ui->tableWidget->verticalHeader()->count();k++){
-//        ui->tableWidget->verticalHeader()->resizeSection(k,40);
+//        ui->tableWidget->verticalHeader()->resizeSection(k,ROW_HIGHT);
 //    }
 
 }
@@ -483,76 +489,57 @@ void ICProgramPage::InitPointToItem()
     pointToItem.clear();
     pointToItem.insert(Get_Wait,(items << waitM10)); items.clear();
     pointToItem.insert(Get_Up,items); items.clear();
-    pointToItem.insert(Get,(items << outY37On)); items.clear();
-    pointToItem.insert(Put_Wait,(items << outM27On << outM11 << waitM12)); items.clear();
-//    pointToItem.insert(Put_Wait,items); items.clear();
+    pointToItem.insert(Get,items); items.clear();
+    pointToItem.insert(Put_Wait,(items << outM11 << waitM12)); items.clear();
     pointToItem.insert(Put_Up,items); items.clear();
-    pointToItem.insert(Put,(items << outY37Off)); items.clear();
-    pointToItem.insert(Put_Wait2,(items  << waitM14 << outPermit)); items.clear();
+    pointToItem.insert(Put,items); items.clear();
+    pointToItem.insert(Put_Wait2,(items << outPermit)); items.clear();
     pointToItem.insert(Reserve,items); items.clear();
+
+    propertyToItem.clear();
+    propertyToItem.insert(OUYY37_ON,outY37On);
+    propertyToItem.insert(OUYY37_OFF,outY37Off);
+    propertyToItem.insert(OUYY40_ON,outY40On);
+    propertyToItem.insert(OUYY40_OFF,outY40Off);
+    propertyToItem.insert(OUYY22_ON,outY22On);
+    propertyToItem.insert(OUYY22_OFF,outY22Off);
+    propertyToItem.insert(OUYY23_ON,outY23On);
+    propertyToItem.insert(OUYY23_OFF,outY23Off);
+    propertyToItem.insert(WAIT_X41,waitX41);
+    propertyToItem.insert(WAIT_X42,waitX42);
+    propertyToItem.insert(WAIT_X43,waitX43);
+    propertyToItem.insert(WAIT_X44,waitX44);
+
 
 
 }
 
 void ICProgramPage::SaveConfigPoint()
 {
-    //保存点配置
-    quint64 config1 = 0;
-//    quint64 config2 = 0;
-
-    for(int i=0;i<pointTypes.size();i++){
-        if(i < 16){
-            quint64 type =  pointTypes.at(i);
-            config1 |= (type  << (i *4));
-        }
-//        else{
-//            quint64 type =  pointTypes.at(i);
-//            config2 |= (type  << (i-16) * 4);
-//        }
+    //保存点配置文件
+    if(PointConfigChanged(pointConfigs)){
+        ICMold::CurrentMold()->SetMoldPointConfig(pointConfigs);
+        ICMold::CurrentMold()->SaveMoldPointFile();
     }
 
     bool saved = false;
-    if(_NativeMoldParam(ICMold::pointCount) != ROW_COUNTS){
-        _SetNativeMoldParam(ICMold::pointCount, ROW_COUNTS);
-        saved = true;
-    }
-
-    if(_NativeMoldParam(ICMold::pointConfig1) != config1 & 0xFFFFFFFF){
-        _SetNativeMoldParam(ICMold::pointConfig1,config1 & 0xFFFFFFFF);
-        saved = true;
-    }
-
-    if(_NativeMoldParam(ICMold::pointConfig2) != (config1 >> 32) & 0xFFFFFFFF){
-        _SetNativeMoldParam(ICMold::pointConfig2,(config1 >> 32) & 0xFFFFFFFF);
-        saved = true;
-    }
-
-//    if(_NativeMoldParam(ICMold::pointConfig3) != config2 & 0xFFFFFFFF){
-//        _SetNativeMoldParam(ICMold::pointConfig3,config2 & 0xFFFFFFFF);
-//        saved = true;
-
-//    }
-//    if(_NativeMoldParam(ICMold::pointConfig4) != (config2 >> 32) & 0xFFFFFFFF){
-//        _SetNativeMoldParam(ICMold::pointConfig4,(config2 >> 32) & 0xFFFFFFFF);
-//        saved = true;
-//    }
-
-    if(saved){
-        ICMold::CurrentMold()->SaveMoldConfigFile();
-    }
-
-
-    saved = false;
+    int start = 0;
     //保存点坐标
     for(int i=0;i<ROW_COUNTS;i++){
         for(int j=0;j<AXIS_COUNTS;j++){
-            int16_t pos = ui->tableWidget->item(i,j+1)->text().remove(".").toInt();
-            int16_t oldPos = _MoldParam(_index * 6 * MAX_POINTS + i * 6 + j);
-            if(pos != oldPos){
-                saved = true;
-                _SetMoldParam(_index * 6 * MAX_POINTS + i * 6 + j,pos);
+            if(pointConfigs[i].Type() != Point_Property){
+                int16_t pos = ui->tableWidget->item(i,j+1)->text().remove(".").toInt();
+                int16_t oldPos = _MoldParam(start * 6 + j);
+                if(pos != oldPos){
+                    saved = true;
+                    _SetMoldParam(start * 6 + j,pos);
+                }
             }
         }
+        if(pointConfigs[i].Type() != Point_Property){
+            start++;
+        }
+
     }
     if(saved){
         ICMold::CurrentMold()->SaveMoldParamsFile();
@@ -606,18 +593,29 @@ ICMoldItem ICProgramPage::MK_MoldItem(uint seq, uint num, uint8_t subNum, uint g
 void ICProgramPage::InitFixMoldItems()
 {
     waitM10   = MK_MoldItem(6,2,0,24,0,1,0,0,3000,33);
-    outY37On  = MK_MoldItem(7,3,23,12,0,1,0,0,0,45);
     outM11    = MK_MoldItem(8,4,1,25,0,1,0,0,0,204);
     waitM12   = MK_MoldItem(9,5,2,24,0,1,0,0,3000,207);
-    outY37Off = MK_MoldItem(10,6,23,12,0,0,0,0,0,50);
-    outY31On  = MK_MoldItem(11,7,17,11,0,1,0,0,0,47);
-    outY31Off = MK_MoldItem(12,8,17,11,0,0,0,0,0,98);
-    outM27On  = MK_MoldItem(13,9,15,25,0,1,0,0,0,246); //新添加
     waitM14   = MK_MoldItem(13,9,4,24,0,1,0,0,3000,246);
     outPermit = MK_MoldItem(14,10,0,27,0,1,0,0,0,103);
 
-    outY37On.SetDVal(_NativeMoldParam(ICMold::ClipDelay));
-    outY37Off.SetDVal(_NativeMoldParam(ICMold::ClipDelay));
+    outY37On  = MK_MoldItem(7,3,23,12,0,1,0,0,0,45);
+    outY37Off = MK_MoldItem(10,6,23,12,0,0,0,0,0,50);
+    outY40On  = MK_MoldItem(7,3,24,12,0,1,0,0,0,45);
+    outY40Off = MK_MoldItem(7,3,24,12,0,0,0,0,0,45);
+    outY22On  = MK_MoldItem(7,3,18,12,0,1,0,0,0,45);
+    outY22Off = MK_MoldItem(7,3,18,12,0,0,0,0,0,45);
+    outY23On  = MK_MoldItem(7,3,19,12,0,1,0,0,0,45);
+    outY23Off = MK_MoldItem(7,3,19,12,0,0,0,0,0,45);
+
+    waitX41   = MK_MoldItem(9,9,25,10,0,1,0,0,3000,54);
+    waitX42   = MK_MoldItem(10,10,26,10,0,1,0,3000,0,57);
+    waitX43   = MK_MoldItem(9,9,27,10,0,1,0,0,3000,54);
+    waitX44   = MK_MoldItem(10,10,28,10,0,1,0,3000,0,57);
+
+
+    //遗弃
+    outM27On  = MK_MoldItem(13,9,15,25,0,1,0,0,0,246);
+
 
 }
 
@@ -642,66 +640,59 @@ void ICProgramPage::on_newButton_clicked()
         return;
     }
 
-#ifndef Q_WS_QWS
     if(_typeDialog->exec() == QDialog::Accepted){
-        ui->tableWidget->insertRow(index);
-        ui->tableWidget->setItem(index,0,new QTableWidgetItem(_typeDialog->toString()));
-#else
-      ui->tableWidget->insertRow(index);
-      ui->tableWidget->setItem(index,0,new QTableWidgetItem(_typeDialog->toString(Reserve)));
 
-#endif
+        if(_typeDialog->currentPropertyType() == NULL_Property){
+            return;
+        }
+        ui->tableWidget->insertRow(index);
+        ui->tableWidget->setItem(index,0,new QTableWidgetItem(_typeDialog->toString(_typeDialog->currentPropertyType())));
+
 
         ui->tableWidget->item(index,0)->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+        pointConfigs.insert(index,_typeDialog->config());
+
+
         for(int i = 0 ;i < AXIS_COUNTS; i++){
             QTableWidgetItem *item = new QTableWidgetItem("") ;
             item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-            item->setText("0.0");
             ui->tableWidget->setItem(index,i+1,item);
-        }
-        QPushButton *button = new QPushButton;
-        saveButtons.insert(index,button);
-        saveButtons[index]->setText(tr("save"));
-        saveButtons[index]->setMinimumHeight(40);
-        saveButtons[index]->setFocusPolicy(Qt::NoFocus);
-        connect(saveButtons[index],SIGNAL(clicked()),
-                SLOT(saveButtonsCliked()));
-        ui->tableWidget->setCellWidget(index,AXIS_COUNTS + 1,saveButtons[index]);
+            if(_typeDialog->currentPropertyType() != RESEARVE){
+                if(i==0){
+                    ui->tableWidget->item(index,i+1)->setText(QString("%1s")
+                                                        .arg(ICParameterConversion::TransThisIntToThisText(pointConfigs[index].Delay(), 2)));
 
-        button = new QPushButton;
-        testButtons.insert(index,button);
-        testButtons[index]->setText(tr("test"));
-        testButtons[index]->setMinimumHeight(40);
-        testButtons[index]->setFocusPolicy(Qt::NoFocus);
-        connect(testButtons[index],SIGNAL(pressed()),
-                SLOT(testButonsPressed()));
-        connect(testButtons[index],SIGNAL(released()),
-                SLOT(testButonsReleased()));
-        ui->tableWidget->setCellWidget(index,AXIS_COUNTS + 2,testButtons[index]);
-#ifndef Q_WS_QWS
-        pointTypes.insert(index,_typeDialog->currentType());
-#else
-        pointTypes.insert(index,Reserve);
-#endif
+
+                }
+                else{
+                    item->setText("-");
+                }
+            }
+            else{
+                item->setText("0.0");
+            }
+        }
+
         for(int k=0;k< ui->tableWidget->verticalHeader()->count();k++){
-            ui->tableWidget->verticalHeader()->resizeSection(k,40);
+            ui->tableWidget->verticalHeader()->resizeSection(k,ROW_HIGHT);
         }
         DisableTestButtons();
 
-#ifndef Q_WS_QWS
     }
-#endif
 
 }
 
 void ICProgramPage::on_modiifyButton_clicked()
 {
-    int index = ui->tableWidget->currentIndex().row();
-    if(index == -1) index ++;
-    if(_typeDialog->exec() == QDialog::Accepted){
-        pointTypes[index] = _typeDialog->currentType();
-        ui->tableWidget->item(index,0)->setText(_typeDialog->toString());
-    }
+//    int index = ui->tableWidget->currentIndex().row();
+//    if(index == -1) index ++;
+//    if(index == ROW_COUNTS){
+//        return;
+//    }
+//    _propertyDialog->SetPointProperty(pointProperty.at(index));
+//    if(_propertyDialog->exec() == QDialog::Accepted){
+//        pointProperty[index] = _propertyDialog->GetPointProperty();
+//    }
 }
 
 void ICProgramPage::on_deleteButton_clicked()
@@ -716,19 +707,19 @@ void ICProgramPage::on_deleteButton_clicked()
         return;
     }
 
-#ifdef Q_WS_QWS
-    if(pointTypes.at(index) == Get_Wait ||
-        pointTypes.at(index)== Get ||
-        pointTypes.at(index)== Get_Up ||
-        pointTypes.at(index)== Get_Wait2 ||
-        pointTypes.at(index) == Put_Wait ||
-        pointTypes.at(index) == Put ||
-        pointTypes.at(index) == Put_Up ||
-        pointTypes.at(index) == Put_Wait2 ){
-        QMessageBox::information(this,tr("Information"),tr("Canot Delete %1 action!").arg( _typeDialog->toString(pointTypes.at(index) )));
+//#ifdef Q_WS_QWS
+    if(pointConfigs[index].Type() == Get_Wait ||
+        pointConfigs[index].Type() == Get ||
+        pointConfigs[index].Type() == Get_Up ||
+        pointConfigs[index].Type() == Get_Wait2 ||
+        pointConfigs[index].Type() == Put_Wait ||
+        pointConfigs[index].Type() == Put ||
+        pointConfigs[index].Type() == Put_Up ||
+        pointConfigs[index].Type() == Put_Wait2 ){
+        QMessageBox::information(this,tr("Information"),tr("Canot Delete %1 action!").arg( _typeDialog->toString((PointType)pointConfigs[index].Property() )));
         return;
     }
-#endif
+//#endif
 
     if(QMessageBox::information(this,tr("Information"),tr("If Delete current Row?"),
                                 QMessageBox::Ok | QMessageBox::Cancel) != QMessageBox::Ok)
@@ -740,13 +731,9 @@ void ICProgramPage::on_deleteButton_clicked()
         for(int i=0;i < ui->tableWidget->columnCount();i++){
             delete ui->tableWidget->item(index,i);
         }
-        delete saveButtons[index];
-        delete testButtons[index];
 
-        saveButtons.removeAt(index);
-        testButtons.removeAt(index);
+        pointConfigs.removeAt(index);
         ui->tableWidget->removeRow(index);
-        pointTypes.removeAt(index);
 
     }
     else{
@@ -755,7 +742,6 @@ void ICProgramPage::on_deleteButton_clicked()
     }
     ui->tableWidget->hide();
     ui->tableWidget->show();
-    DisableTestButtons();
 
 }
 
@@ -784,6 +770,7 @@ void ICProgramPage::GT_CalculateItem(QList<ICMoldItem>& items)
             if(items.at(i).IFPos()  == 5){
                 oldNum ++;
             }
+
         }
         else{
             items[i].SetNum(oldNum);
@@ -797,6 +784,21 @@ void ICProgramPage::GT_CalculateItem(QList<ICMoldItem>& items)
 bool ICProgramPage::MoldChanged(QList<ICMoldItem>& items)
 {
     QList<ICMoldItem> oldItems = ICMold::CurrentMold()->MoldContent();
+    if(items.size() != oldItems.size()){
+        return true;
+    }
+    for(int i=0;i<items.size();i++){
+        if(!(items.at(i) == oldItems.at(i))){
+            return true;
+        }
+    }
+
+    return false;
+}
+
+bool ICProgramPage::PointConfigChanged(QList<ICPointConfig> &items)
+{
+    QList<ICPointConfig> oldItems = ICMold::CurrentMold()->MoldPointConfig();
     if(items.size() != oldItems.size()){
         return true;
     }

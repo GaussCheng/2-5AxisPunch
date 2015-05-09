@@ -31,8 +31,8 @@ private:
     void Init_();
 
 
-signals:
-    void ChangeDelay(int delay);
+
+
 
 private slots:
     void StatusRefreshed();
@@ -92,6 +92,8 @@ private slots:
 
     void on_delayEdit_textChanged(const QString &arg1);
 
+    void on_checkBox_toggled(bool checked);
+
 private:
     Ui::ICHCManualOperationPageFrame *ui;
     int timerID_;
@@ -102,7 +104,6 @@ private:
     QSignalMapper releaseShortcutSignalMapper_;
     QPushButton* nullButton_;
     AxisModifyDialog* modifyDialog_;
-    QIntValidator *delayValidator;
 };
 
 #endif // ICHCMANUALOPERATIONPAGEFRAME_H

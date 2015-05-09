@@ -592,8 +592,11 @@ void MainFrame::InitCategoryPage()
     emit LoadMessage("end to Initialize  pages");
 
 
-    connect(manualPage_,SIGNAL(ChangeDelay(int)),
-            instructPage_,SLOT(ChangeDelay(int)));
+//    connect(manualPage_,SIGNAL(ChangeDelay(int)),
+//            instructPage_,SLOT(ChangeDelay(int)));
+
+//    connect(manualPage_,SIGNAL(ChangeWaste(bool)),
+//            instructPage_,SLOT(ChangeWaste(bool)));
 
 }
 

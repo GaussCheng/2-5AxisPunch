@@ -73,10 +73,6 @@ ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     ui->return0Button->hide();
     ui->singleButton->hide();
     ui->serveControl->hide();
-    delayValidator = new QIntValidator(0, 30000, this);
-
-    ui->delayEdit->SetDecimalPlaces(2);
-    ui->delayEdit->setValidator(delayValidator);
 }
 
 ICHCManualOperationPageFrame::~ICHCManualOperationPageFrame()
@@ -84,7 +80,6 @@ ICHCManualOperationPageFrame::~ICHCManualOperationPageFrame()
     delete ui;
     delete nullButton_;
     delete modifyDialog_;
-    delete delayValidator;
 }
 
 void ICHCManualOperationPageFrame::showEvent(QShowEvent *e)
@@ -106,9 +101,10 @@ void ICHCManualOperationPageFrame::showEvent(QShowEvent *e)
 //        ui->ySpeed->setChecked(true);
 //    }
     QFrame::showEvent(e);
-    ui->delayEdit->blockSignals(true);
-    ui->delayEdit->SetThisIntToThisText(ICMold::CurrentMold()->MoldNativeParam(ICMold::ClipDelay));
-    ui->delayEdit->blockSignals(false);
+
+
+
+
     ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnManual, 0);
 //    currentStep = 0;
     timerID_ = startTimer(100);
@@ -1061,9 +1057,17 @@ void ICHCManualOperationPageFrame::on_returnManual_clicked()
 
 void ICHCManualOperationPageFrame::on_delayEdit_textChanged(const QString &text)
 {
-    int delay = ui->delayEdit->TransThisTextToThisInt();
-    ICMold::CurrentMold()->SetMoldNativeParam(ICMold::ClipDelay,delay);
-    ICMold::CurrentMold()->SaveMoldConfigFile();
-    emit ChangeDelay(delay);
+//    int delay = ui->delayEdit->TransThisTextToThisInt();
+//    ICMold::CurrentMold()->SetMoldNativeParam(ICMold::ClipDelay,delay);
+//    ICMold::CurrentMold()->SaveMoldConfigFile();
+//    emit ChangeDelay(delay);
+
+}
+
+void ICHCManualOperationPageFrame::on_checkBox_toggled(bool checked)
+{
+//    ICMold::CurrentMold()->SetMoldNativeParam(ICMold::WasteUsed,checked);
+//    ICMold::CurrentMold()->SaveMoldConfigFile();
+//    emit ChangeWaste(checked);
 
 }

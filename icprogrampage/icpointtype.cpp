@@ -1,5 +1,6 @@
 #include "icpointtype.h"
 #include "ui_icpointtype.h"
+#include "icparameterconversion.h"
 
 ICPointType* ICPointType::instance_;
 
@@ -11,28 +12,29 @@ ICPointType::ICPointType(QWidget *parent) :
     ui->setupUi(this);
     Init_();
 
-    _box = ui->getUpBox;
-
-    boxToType.insert(ui->getWaitBox,Get_Wait);
-    boxToType.insert(ui->getUpBox,Get_Up);
-    boxToType.insert(ui->GetBox,Get);
-    boxToType.insert(ui->putWaitBox,Put_Wait);
-    boxToType.insert(ui->putUpBox,Put_Up);
-    boxToType.insert(ui->putBox,Put);
-    boxToType.insert(ui->reserveBox,Reserve);
-    boxToType.insert(ui->getWaitBox2,Get_Wait2);
-    boxToType.insert(ui->putWaitBox2,Put_Wait2);
-
+    boxToType.insert(ui->checkbox_1,OUYY37_ON);
+    boxToType.insert(ui->checkbox_2,OUYY37_OFF);
+    boxToType.insert(ui->checkbox_3,OUYY40_ON);
+    boxToType.insert(ui->checkbox_4,OUYY40_OFF);
+    boxToType.insert(ui->checkbox_5,OUYY22_ON);
+    boxToType.insert(ui->checkbox_6,OUYY22_OFF);
+    boxToType.insert(ui->checkbox_7,OUYY23_ON);
+    boxToType.insert(ui->checkbox_8,OUYY23_OFF);
+    boxToType.insert(ui->checkbox_9,WAIT_X41);
+    boxToType.insert(ui->checkbox_10,WAIT_X42);
+    boxToType.insert(ui->checkbox_11,WAIT_X43);
+    boxToType.insert(ui->checkbox_12,WAIT_X44);
+    boxToType.insert(ui->checkbox_13,RESEARVE);
     foreach(QCheckBox *box,boxToType.keys()){
-         box->setText(typeToStr.value(boxToType.value(box)));
-//         box->hide();
+        box->setText(propertyToStr.value(boxToType.value(box)));
+        connect(box,SIGNAL(stateChanged(int)),
+                SLOT(stateChanged(int)));
 
-         connect(box,SIGNAL(stateChanged(int)),
-                 SLOT(stateChanged(int)));
     }
-//    ui->getUpBox->setVisible(true);
-//    ui->putUpBox->setVisible(true);
-//    ui->reserveBox->setVisible(true);
+    QIntValidator * validator = new QIntValidator(0, 30000, this);
+    ui->delayEdit->SetDecimalPlaces(2);
+    ui->delayEdit->setValidator(validator);
+    ui->delayEdit->SetThisIntToThisText(0);
 
 }
 
@@ -47,6 +49,23 @@ void ICPointType::Init_()
     typeToStr.insert(Put_Up,tr("Put_Up"));
     typeToStr.insert(Put,tr("Put"));
     typeToStr.insert(Reserve,tr("Reserve"));
+
+    propertyToStr.insert(OUYY37_ON,tr("OUYY37_ON"));
+    propertyToStr.insert(OUYY37_OFF,tr("OUYY37_OFF"));
+    propertyToStr.insert(OUYY40_ON,tr("OUYY40_ON"));
+    propertyToStr.insert(OUYY40_OFF,tr("OUYY40_OFF"));
+    propertyToStr.insert(OUYY22_ON,tr("OUYY22_ON"));
+    propertyToStr.insert(OUYY22_OFF,tr("OUYY22_OFF"));
+    propertyToStr.insert(OUYY23_ON,tr("OUYY23_ON"));
+    propertyToStr.insert(OUYY23_OFF,tr("OUYY23_OFF"));
+    propertyToStr.insert(WAIT_X41,tr("WAIT_X41"));
+    propertyToStr.insert(WAIT_X42,tr("WAIT_X42"));
+    propertyToStr.insert(WAIT_X43,tr("WAIT_X43"));
+    propertyToStr.insert(WAIT_X44,tr("WAIT_X44"));
+    propertyToStr.insert(RESEARVE,tr("NULL_Property"));
+
+
+
 }
 
 ICPointType::~ICPointType()
@@ -57,15 +76,39 @@ ICPointType::~ICPointType()
 QString ICPointType::toString(PointType type)
 {
     if(type == NULL_Type)
-        return typeToStr.value(boxToType.value(_box));
+        return typeToStr.value(Reserve);
     else
         return typeToStr.value(type);
 }
 
-
-PointType ICPointType::currentType()
+QString ICPointType::toString(PointProperty type)
 {
-    return boxToType.value(_box,NULL_Type);
+    if(type == NULL_Property)
+        return propertyToStr.value(NULL_Property);
+    else
+        return propertyToStr.value(type);
+}
+
+QString ICPointType::toPropertyString(PointProperty type,quint32 delay)
+{
+    if(type == NULL_Property)
+        return propertyToStr.value(NULL_Property);
+    else
+        return propertyToStr.value(type) + QString("%1s").arg(ICParameterConversion::TransThisIntToThisText(delay, 2));
+}
+
+ICPointConfig ICPointType::config()
+{
+    ICPointConfig config(currentPropertyType() == RESEARVE ? Reserve : Point_Property  ,
+                         currentPropertyType(),
+                         ui->delayEdit->TransThisTextToThisInt());
+    return config;
+}
+
+
+PointProperty ICPointType::currentPropertyType()
+{
+    return boxToType.value(_box,NULL_Property);
 }
 
 void ICPointType::changeEvent(QEvent *e)
@@ -73,7 +116,10 @@ void ICPointType::changeEvent(QEvent *e)
     QDialog::changeEvent(e);
     switch (e->type()) {
     case QEvent::LanguageChange:{
-//        ui->retranslateUi(this);
+        ui->retranslateUi(this);
+        foreach(QCheckBox *box,boxToType.keys()){
+             box->setText(propertyToStr.value(boxToType.value(box)));
+        }
     }
         break;
     default:

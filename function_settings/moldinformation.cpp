@@ -161,6 +161,7 @@ bool MoldInformation::CreateNewSourceFile(const QString & fileName)
         QFile::copy(recordFilePath_ + "/Base.sub", recordFilePath_ + "/" + fileNameNoExtent + "reserve6");
         QFile::copy(recordFilePath_ + "/Base.sub", recordFilePath_ + "/" + fileNameNoExtent + "reserve7");
         QFile::copy(recordFilePath_ + "/Base.cfg", recordFilePath_ + "/" + fileNameNoExtent + "cfg");
+        QFile::copy(recordFilePath_ + "/Base.pt", recordFilePath_ + "/" + fileNameNoExtent + "pt");
 
         newFile.close();
         ::system("sync");
@@ -228,6 +229,13 @@ bool MoldInformation::CopySourceFile(const QString & originFileName, const QStri
     QString targetCfgFilePath = targetFilePathName;
     targetCfgFilePath.chop(3);
     targetCfgFilePath += "cfg";
+    QString originPointFilePath = originFilePathName;
+    originPointFilePath.chop(3);
+    originPointFilePath += "pt";
+    QString targetPointFilePath = targetFilePathName;
+    targetPointFilePath.chop(3);
+    targetPointFilePath += "pt";
+
 
     QString originResvFilePath = originFilePathName;
     originResvFilePath.chop(3);
@@ -255,6 +263,8 @@ bool MoldInformation::CopySourceFile(const QString & originFileName, const QStri
 //                    }
                 }
                 isOk = isOk && QFile::copy(originCfgFilePath, targetCfgFilePath);
+                isOk = isOk && QFile::copy(originPointFilePath, targetPointFilePath);
+
                 if(isOk) return true;
                 system(QString("rm %1*").arg(targetResvFilePath).toLatin1());
                 QFile::remove(targetSubFilePath);
@@ -288,6 +298,7 @@ bool MoldInformation::DeleteSourceFile(const QString & fileName)
     QString subFile = configFile + "sub";
     QString resvFile = configFile + "reserve";
     QString cfgFile = configFile + "cfg";
+    QString pointFile = configFile + "pt";
 
     configFile += "fnc";
     if(QFile::exists(filePathName))
@@ -296,6 +307,8 @@ bool MoldInformation::DeleteSourceFile(const QString & fileName)
         QFile::remove(configFile);
         QFile::remove(subFile);
         QFile::remove(cfgFile);
+        QFile::remove(pointFile);
+
 
 //        QFile::remove(resvFile);
         QString toRm = QString("rm %1*").arg(resvFile);
@@ -412,10 +425,20 @@ void MoldInformation::on_loadToolButton_clicked()
                 //                ICMold::CurrentMold()->ReadMoldFile(
                 return;
             }
+//            QString configFile = filePathName;
+//            configFile.chop(3);
+//            configFile += "cfg";
+//            if(!ICMold::CurrentMold()->ReadConfigFile(configFile))
+//            {
+//                QMessageBox::critical(this, tr("critical"), tr("Read mold or mold para fail! Please change other mold!"));
+//                //                ICMold::CurrentMold()->ReadMoldFile(
+//                return;
+//            }
+
             QString configFile = filePathName;
             configFile.chop(3);
-            configFile += "cfg";
-            if(!ICMold::CurrentMold()->ReadConfigFile(configFile))
+            configFile += "pt";
+            if(!ICMold::CurrentMold()->ReadPointConfigFile(configFile))
             {
                 QMessageBox::critical(this, tr("critical"), tr("Read mold or mold para fail! Please change other mold!"));
                 //                ICMold::CurrentMold()->ReadMoldFile(
@@ -682,6 +705,7 @@ void MoldInformation::on_importToolButton_clicked()
             selectedImportItemName_.append(item_text + ".fnc");
             selectedImportItemName_.append(item_text + ".sub");
             selectedImportItemName_.append(item_text + ".cfg");
+            selectedExportItemName_.append(item_text + ".pt");
             selectedImportItemName_.append(item_text + ".reserve1");
             selectedImportItemName_.append(item_text + ".reserve2");
             selectedImportItemName_.append(item_text + ".reserve3");
@@ -721,6 +745,7 @@ void MoldInformation::on_importToolButton_clicked()
         selectedImportItemName_.append(str + ".fnc");
         selectedImportItemName_.append(str + ".sub");
         selectedImportItemName_.append(str + ".cfg");
+        selectedImportItemName_.append(str + ".pt");
         selectedImportItemName_.append(str + ".reserve1");
         selectedImportItemName_.append(str + ".reserve2");
         selectedImportItemName_.append(str + ".reserve3");
@@ -883,6 +908,7 @@ void MoldInformation::on_exportToolButton_clicked()
             selectedExportItemName_.append(item_text + ".fnc");
             selectedExportItemName_.append(item_text + ".sub");
             selectedExportItemName_.append(item_text + ".cfg");
+            selectedExportItemName_.append(item_text + ".pt");
             selectedExportItemName_.append(item_text + ".reserve1");
             selectedExportItemName_.append(item_text + ".reserve2");
             selectedExportItemName_.append(item_text + ".reserve3");
@@ -912,6 +938,7 @@ void MoldInformation::on_exportToolButton_clicked()
         selectedExportItemName_.append(str + ".fnc");
         selectedExportItemName_.append(str + ".sub");
         selectedExportItemName_.append(str + ".cfg");
+        selectedExportItemName_.append(str + ".pt");
         selectedExportItemName_.append(str + ".reserve1");
         selectedExportItemName_.append(str + ".reserve2");
         selectedExportItemName_.append(str + ".reserve3");

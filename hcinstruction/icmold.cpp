@@ -274,15 +274,55 @@ bool ICMold::ReadConfigFile(const QString &fileName)
 
     QStringList records = content.split("\n", QString::SkipEmptyParts);
 
-    if(records.size() < MoldNativeParamCount){
-        return false;
-    }
+//    if(records.size() < MoldNativeParamCount){
+//        return false;
+//    }
     for(int i = 0; i != records.size(); ++i)
     {
         moldNativeParams_.append(records.at(i).toInt());
     }
+    if(records.size() < MoldNativeParamCount){
+        for(int i=0;i< MoldNativeParamCount - records.size();i++){
+            moldNativeParams_.append(0);
+        }
+    }
+
     moldConfigName_ = fileName;
 
+    return true;
+}
+
+bool ICMold::ReadPointConfigFile(const QString &fileName)
+{
+    QFile file(fileName);
+
+    if(!file.open(QFile::ReadOnly | QFile::Text))
+    {
+        return false;
+    }
+    pointConfigs.clear();
+    QString content = QString::fromUtf8(file.readAll());
+    file.close();
+
+    if(content.isNull())
+    {
+        qDebug("mold point configure is  null");
+        return false;
+    }
+
+    QStringList ql = content.split("\n", QString::SkipEmptyParts);
+    foreach(QString line,ql){
+        QStringList items = line.split(" ", QString::SkipEmptyParts);
+        if(items.size() != 3){
+            qDebug() << "point configure file init failed!";
+            return false;
+        }
+
+        ICPointConfig config(items.at(0).toInt(),items.at(1).toInt(),items.at(2).toInt());
+        pointConfigs.append(config);
+
+    }
+    moldPointName_ = fileName;
     return true;
 }
 
@@ -417,6 +457,20 @@ bool ICMold::SaveMoldConfigFile()
         toWrite += QByteArray::number(moldNativeParams_.at(i)) + "\n";
     }
     ICFile file(moldConfigName_);
+    ret = file.ICWrite(toWrite);
+
+    return ret;
+}
+
+bool ICMold::SaveMoldPointFile()
+{
+    bool ret = false;
+    QByteArray toWrite;
+    for(int i = 0; i != pointConfigs.size(); ++i)
+    {
+        toWrite += pointConfigs.at(i).ToString() + "\n";
+    }
+    ICFile file(moldPointName_);
     ret = file.ICWrite(toWrite);
 
     return ret;

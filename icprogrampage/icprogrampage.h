@@ -9,17 +9,19 @@
 #include <virtualnumerickeypaddialog.h>
 #include "icvirtualhost.h"
 #include "icpointtype.h"
+//#include "icpointpproperty.h"
 
 
 #define MAX_POINTS 8
 #define AXIS_COUNTS 5
 #define MAX_ROWCOUNT 16
-#define COLUMN_COUNTS (AXIS_COUNTS + 3)
+#define COLUMN_COUNTS (AXIS_COUNTS + 1)
 #define RESERVE_COUNTS (MAX_POINTS - 3)
 #define PAGE_MAX_COUNT 8
-#define USE_SPACE_ROW  1
+#define USE_SPACE_ROW  0
 #define POINT_SIZE 1
 #define ROW_COUNTS ui->tableWidget->rowCount() - USE_SPACE_ROW
+#define ROW_HIGHT 40
 
 namespace Ui {
 class ICProgramPage;
@@ -80,8 +82,9 @@ public:
     void InitFixMoldItems();
     void SetPageMaxCount(int count);
     ~ICProgramPage();
-public slots:
-    void ChangeDelay(int delay);
+
+
+
 protected:
     void showEvent(QShowEvent *);
     void hideEvent(QHideEvent *);
@@ -97,7 +100,6 @@ private slots:
     void testButonsPressed();
     void testButonsReleased();
 
-    void on_pushButton_clicked();
     void on_newButton_clicked();
     void on_modiifyButton_clicked();
     void on_deleteButton_clicked();
@@ -120,11 +122,16 @@ private:
     void NextPage();
     void ReConfigure();
 
+
+
     void DeleteWidgets();
     void InitPointToItem();
     void SaveConfigPoint();
     QList<ICMoldItem> GT_AllMoldItems();
+
     bool MoldChanged(QList<ICMoldItem>& items);
+    bool PointConfigChanged(QList<ICPointConfig>& items);
+
     bool MoldConfigChanged();
 
     void GT_CalculateItem(QList<ICMoldItem>& items);
@@ -136,7 +143,10 @@ private:
     QList<QPushButton*> saveButtons;
     QList<QPushButton*> testButtons;
     QList<PointType> pointTypes;
+    QList<ICPointConfig> pointConfigs;
     QMap<PointType,QList<ICMoldItem> > pointToItem;
+    QMap<PointProperty,ICMoldItem > propertyToItem;
+
     QStringList standPrograms_;
     QList<QIntValidator *> validators_;
     static ICProgramPage * instance_;
@@ -152,17 +162,27 @@ private:
 
 
     ICMoldItem waitM10;
-    ICMoldItem outY37On;
     ICMoldItem outM11;
     ICMoldItem waitM12;
-    ICMoldItem outY37Off;
-    ICMoldItem outY31On;
-    ICMoldItem outY31Off;
-    ICMoldItem outM27On;
-    ICMoldItem waitM14;
     ICMoldItem outPermit;
 
+    ICMoldItem outY37On;  //输出
+    ICMoldItem outY37Off;
+    ICMoldItem outY40On;
+    ICMoldItem outY40Off;
+    ICMoldItem outY22On;
+    ICMoldItem outY22Off;
+    ICMoldItem outY23On;
+    ICMoldItem outY23Off;
 
+    ICMoldItem waitX41;  //等待
+    ICMoldItem waitX42;
+    ICMoldItem waitX43;
+    ICMoldItem waitX44;
+
+    //遗弃
+    ICMoldItem outM27On;
+    ICMoldItem waitM14;
 
 
 };

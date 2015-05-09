@@ -13,6 +13,6 @@ SOURCES += \
 
 
 FORMS += \
-    icprogrampage/icprogrampage.ui \
     icprogrampage/icpointtype.ui \
-    icprogrampage/icpointpproperty.ui
+    icprogrampage/icpointpproperty.ui  \
+    icprogrampage/icprogrampage.ui

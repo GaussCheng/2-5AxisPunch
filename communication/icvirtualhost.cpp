@@ -869,6 +869,17 @@ void ICVirtualHost::InitMold_()
         return;
     }
 
+
+    configPath = path;
+    configPath.chop(3);
+    configPath += "pt";
+
+    if(!currentMold_->ReadPointConfigFile(configPath)){
+        qDebug("Init Point Config  fail!");
+        return;
+    }
+
+
     WriteMoldTohost_();
 
     qDebug("Init mold finish");

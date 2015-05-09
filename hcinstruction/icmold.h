@@ -245,6 +245,9 @@ private:
     QList<ICSubMoldUIItem> subItems_;
 };
 
+
+
+
 class ICGroupMoldUIItem
 {
 public://ICTopMoldUIItem * topItem = &programList_[gIndex].at(tIndex);
@@ -270,6 +273,45 @@ public://ICTopMoldUIItem * topItem = &programList_[gIndex].at(tIndex);
 private:
     QList<ICTopMoldUIItem> topItems_;
 };
+
+class ICPointConfig{
+
+public:
+    ICPointConfig(quint32 type_,quint32 property_,quint32 delay_):
+        type(type_),
+        property(property_),
+        delay(delay_){
+
+
+    }
+     qint32 Type() { return type;}
+     qint32 Property() { return property;}
+     qint32 Delay() { return delay;}
+
+     bool operator == (const ICPointConfig &t)const{
+         return ((type == t.type) &&
+                 (property == t.property) &&
+                 (delay == t.delay));
+     }
+    QByteArray ToString() const;
+
+private:
+    qint32 type;
+    qint32 property;
+    qint32 delay;
+};
+
+
+inline QByteArray ICPointConfig::ToString() const{
+    QByteArray ret;
+
+    QString tmp = (QString().sprintf("%u %u %u",
+                                     type, property, delay));
+    ret = tmp.toUtf8();
+
+    return ret;
+}
+
 
 
 inline QByteArray ICMoldItem::ToString() const
@@ -320,6 +362,9 @@ public:
         pointConfig3,
         pointConfig4,
         ClipDelay,
+        WasteUsed,
+        pointProperty0,
+        pointProperty19 = pointProperty0 + 19,
         MoldNativeParamCount
     };
 
@@ -433,6 +478,8 @@ public:
         ACT_AUX6,
         ACTCLIPEND
     };
+
+
     explicit ICMold(QObject *parent = 0);
 
     static ICMold* CurrentMold() { return currentMold_;}
@@ -444,12 +491,15 @@ public:
     void MoldReSum() {MoldReSum(moldContent_);}
     bool ReadMoldFile(const QString& fileName, bool isLoadParams = true);
     bool ReadConfigFile(const QString& fileName);
+    bool ReadPointConfigFile(const QString& fileName);
+
 
     bool ReadMoldParamsFile(const QString& fileName);
 
     bool SaveMoldFile(bool isSaveParams = true);
     bool SaveMoldParamsFile();
     bool SaveMoldConfigFile();
+    bool SaveMoldPointFile();
 
 
     QList<ICMoldItem> MoldContent() const { return moldContent_;}
@@ -480,6 +530,10 @@ public:
     int MoldNativeParam(ICMoldNativeParam param) const;
     void SetMoldNativeParam(ICMoldNativeParam param, int value);
 
+    QList<ICPointConfig> MoldPointConfig() const { return pointConfigs;}
+    void SetMoldPointConfig(const QList<ICPointConfig>& configs) { pointConfigs = configs;}
+
+
     void UpdateSyncSum();
 
     int StackParam(int group, ICStatckParam param) const;
@@ -492,6 +546,7 @@ signals:
 public slots:
 private:
     QList<ICMoldItem> moldContent_;
+    QList<ICPointConfig> pointConfigs;
     QList<int> moldParams_;
     QList<int> moldNativeParams_;
 
@@ -499,6 +554,8 @@ private:
     int checkSum_;
     QString moldName_;
     QString moldConfigName_;
+    QString moldPointName_;
+
     QString moldParamName_;
 //    QList<ACTGROUP> axisActions_;
     static ICMold* currentMold_;
