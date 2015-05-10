@@ -132,4 +132,10 @@ void ICPointType::stateChanged(int status)
     if(status){
         _box = qobject_cast<QCheckBox*> (sender());
     }
+    if(_box == ui->checkbox_13){
+        ui->delayEdit->setEnabled(false);
+    }
+    else{
+        ui->delayEdit->setEnabled(true);
+    }
 }

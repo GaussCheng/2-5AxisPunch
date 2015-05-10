@@ -21,7 +21,7 @@
 #define USE_SPACE_ROW  0
 #define POINT_SIZE 1
 #define ROW_COUNTS ui->tableWidget->rowCount() - USE_SPACE_ROW
-#define ROW_HIGHT 40
+#define ROW_HIGHT 38
 
 namespace Ui {
 class ICProgramPage;

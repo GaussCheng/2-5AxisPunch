@@ -1643,87 +1643,85 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3260"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="545"/>
         <source>Delay</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2953"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2972"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="771"/>
         <source>Position</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3392"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3318"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="603"/>
         <source>Points</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3444"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3370"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="705"/>
         <source>Point-2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3419"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3345"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="680"/>
         <source>Point-1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3544"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3470"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="655"/>
         <source>Point-6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3494"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3420"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="755"/>
         <source>Point-4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3469"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3395"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="730"/>
         <source>Point-3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3519"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3445"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="630"/>
         <source>Point-5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3210"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3229"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="828"/>
         <source>X:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3298"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="571"/>
         <source>s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2985"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3118"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3004"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3137"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="868"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1090"/>
         <source>mm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2992"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3011"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="967"/>
         <source>Y:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3236"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3255"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="861"/>
         <source>Modify</source>
         <translation type="unfinished"></translation>
@@ -1743,24 +1741,24 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2430"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2449"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="41"/>
         <source>Binary</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2466"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2494"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2522"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2550"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2578"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2606"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2634"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2662"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2690"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2718"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2746"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2774"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2485"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2513"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2541"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2569"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2597"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2625"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2653"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2681"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2709"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2737"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2765"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2793"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="77"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="105"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="133"/>
@@ -1777,251 +1775,246 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2887"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2906"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="483"/>
         <source>Product</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3351"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3277"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="994"/>
         <source>Single</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3572"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3498"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="815"/>
         <source>Check Run</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2978"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2997"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="941"/>
         <source>Y Run</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3071"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3090"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="802"/>
         <source>X Run</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3184"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3203"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="960"/>
         <source>S Run</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3217"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3236"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1097"/>
         <source>S:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3332"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2442"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1021"/>
         <source>Return 0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="926"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="917"/>
         <source>Servo On</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3955"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3832"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1439"/>
         <source>Action-20</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4219"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4096"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1738"/>
         <source>Action-21</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3867"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3744"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1760"/>
         <source>Action-22</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4087"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3964"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1518"/>
         <source>Action-23</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3801"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3678"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1351"/>
         <source>Action-24</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3625"/>
-        <source>wasteUsed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4065"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3942"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1395"/>
         <source>Action-25</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4153"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4030"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1329"/>
         <source>Action-9</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4254"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4131"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1562"/>
         <source>Action-10</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3669"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3546"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1672"/>
         <source>Action-11</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4197"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4074"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1782"/>
         <source>Action-1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3999"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3876"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1219"/>
         <source>Action-2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3735"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3612"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1307"/>
         <source>Action-4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3977"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3854"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1175"/>
         <source>Action-5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3845"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3722"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1153"/>
         <source>Action-3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4175"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4052"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1241"/>
         <source>Action-12</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3823"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3700"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1496"/>
         <source>Action-13</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4131"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4008"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1584"/>
         <source>Action-26</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4276"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4153"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1197"/>
         <source>Action-6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3713"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3590"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1373"/>
         <source>Action-7</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3779"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3656"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1628"/>
         <source>Action-14</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4298"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4175"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1131"/>
         <source>Action-8</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4320"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4197"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1285"/>
         <source>Action-17</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3933"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3810"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1650"/>
         <source>Action-18</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4043"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3920"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1461"/>
         <source>Action-19</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4109"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3986"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1540"/>
         <source>Action-30</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3691"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3568"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1694"/>
         <source>Action-15</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3757"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3634"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1606"/>
         <source>Action-16</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4364"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4241"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1826"/>
         <source>Action-27</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4342"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4219"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1716"/>
         <source>Action-28</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3911"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3788"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1417"/>
         <source>Action-29</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4021"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3898"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1263"/>
         <source>Action-31</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3889"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3766"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1804"/>
         <source>Action-32</source>
         <translation type="unfinished"></translation>
@@ -2039,7 +2032,7 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2931"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2950"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="515"/>
         <source>P.Clear</source>
         <translation type="unfinished"></translation>
@@ -2067,45 +2060,45 @@ Infomation</source>
         <translation type="obsolete">Manipulator I/O</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="522"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="513"/>
         <source>Single(%1/%2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="738"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="759"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="781"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="802"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="823"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="875"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="729"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="750"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="772"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="793"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="814"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="866"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="739"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="760"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="782"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="803"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="824"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="876"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="730"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="751"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="773"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="794"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="815"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="867"/>
         <source>Has not been origin!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="921"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="912"/>
         <source>Servo OFF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2861"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2880"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="463"/>
         <source>More</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2959"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3151"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3158"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2978"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3170"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3177"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="783"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="875"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1050"/>
@@ -2113,43 +2106,43 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3137"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3156"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1083"/>
         <source>R Run</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3144"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3163"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="889"/>
         <source>R:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3165"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3184"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="882"/>
         <source>T:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3203"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3222"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="908"/>
         <source>T Run</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2810"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="2829"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="412"/>
         <source>Serve On</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3370"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="3296"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1034"/>
         <source>Uncheck Run</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4380"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.ui" line="4257"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe_5.ui" line="1477"/>
         <source>Return Manual</source>
         <translation type="unfinished"></translation>
@@ -4329,47 +4322,52 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.ui" line="77"/>
+        <location filename="icprogrampage/icpointtype.ui" line="93"/>
         <source>CheckBox3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.ui" line="93"/>
+        <location filename="icprogrampage/icpointtype.ui" line="109"/>
         <source>CheckBox4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.ui" line="106"/>
+        <location filename="icprogrampage/icpointtype.ui" line="135"/>
         <source>CheckBox5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.ui" line="122"/>
+        <location filename="icprogrampage/icpointtype.ui" line="151"/>
         <source>CheckBox6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.ui" line="138"/>
+        <location filename="icprogrampage/icpointtype.ui" line="180"/>
         <source>CheckBox7</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.ui" line="154"/>
+        <location filename="icprogrampage/icpointtype.ui" line="196"/>
         <source>CheckBox8</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.ui" line="170"/>
+        <location filename="icprogrampage/icpointtype.ui" line="247"/>
+        <source>s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icpointtype.ui" line="77"/>
         <source>CheckBox9</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.ui" line="186"/>
+        <location filename="icprogrampage/icpointtype.ui" line="122"/>
         <source>CheckBox10</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.ui" line="199"/>
+        <location filename="icprogrampage/icpointtype.ui" line="167"/>
         <source>CheckBox11</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4389,104 +4387,104 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.cpp" line="36"/>
-        <location filename="icprogrampage/icpointtype.cpp" line="37"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="43"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="44"/>
         <source>Get_Wait</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.cpp" line="38"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="45"/>
         <source>Get_Up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.cpp" line="39"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="46"/>
         <source>Get</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.cpp" line="40"/>
-        <location filename="icprogrampage/icpointtype.cpp" line="41"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="47"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="48"/>
         <source>Put_Wait</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.cpp" line="42"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="49"/>
         <source>Put_Up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.cpp" line="43"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="50"/>
         <source>Put</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.cpp" line="44"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="51"/>
         <source>Reserve</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.cpp" line="46"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="53"/>
         <source>OUYY37_ON</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.cpp" line="47"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="54"/>
         <source>OUYY37_OFF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.cpp" line="48"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="55"/>
         <source>OUYY40_ON</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.cpp" line="49"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="56"/>
         <source>OUYY40_OFF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.cpp" line="50"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="57"/>
         <source>OUYY22_ON</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.cpp" line="51"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="58"/>
         <source>OUYY22_OFF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.cpp" line="52"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="59"/>
         <source>OUYY23_ON</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.cpp" line="53"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="60"/>
         <source>OUYY23_OFF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.cpp" line="54"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="61"/>
         <source>WAIT_X41</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.cpp" line="55"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="62"/>
         <source>WAIT_X42</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.cpp" line="56"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="63"/>
         <source>WAIT_X43</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.cpp" line="57"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="64"/>
         <source>WAIT_X44</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icpointtype.cpp" line="58"/>
+        <location filename="icprogrampage/icpointtype.cpp" line="65"/>
         <source>NULL_Property</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4660,121 +4658,139 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="235"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="362"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="226"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="377"/>
         <source>UpDown</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="235"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="362"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="226"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="377"/>
         <source>Rotated</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="235"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="362"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="226"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="377"/>
         <source>Windup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="235"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="362"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="226"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="377"/>
         <source>Type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="236"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="363"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="227"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="378"/>
         <source>Rollovers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="363"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="378"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="272"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="293"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="250"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="271"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="292"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="316"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="339"/>
         <source>information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="272"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="251"/>
+        <source>%1Can not Edit Point!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrampage.cpp" line="271"/>
         <source>Input Error!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="293"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="292"/>
         <source>Input Value Not %1 To %2 Range!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="670"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="675"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="750"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="763"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="768"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="790"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="317"/>
+        <source>%1Can not Setting Point!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrampage.cpp" line="340"/>
+        <source>%1Can not Test Point!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrampage.cpp" line="645"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="650"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="717"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="730"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="735"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="751"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="670"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="750"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="645"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="717"/>
         <source>Standard Mold Cannot Modify!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="675"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="650"/>
         <source>Max Rows Beyond %1!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="763"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="730"/>
         <source>Canot Delete %1 action!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="768"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="735"/>
         <source>If Delete current Row?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="790"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="751"/>
         <source>Canot Delete Space Row!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="235"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="362"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="226"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="377"/>
         <source>FrontBack</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="28"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="27"/>
         <source>Servo Off</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="icprogrampage/icprogrampage.ui" line="123"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="29"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="28"/>
         <source>Servo On</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="333"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="348"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="334"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="349"/>
         <source>Has not been origin!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="363"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="378"/>
         <source>Tested</source>
         <translation type="unfinished"></translation>
     </message>

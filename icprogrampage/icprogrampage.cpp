@@ -210,7 +210,7 @@ void ICProgramPage::hideEvent(QHideEvent *e)
     ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
 
 //    SaveConfigPoint();
-//    ReConfigure();
+    ReConfigure();
 
     QWidget::hideEvent(e);
 
@@ -245,6 +245,14 @@ void ICProgramPage::itemClicked(QTableWidgetItem *item)
 
     if((item->row() >=0 && item->row() < ROW_COUNTS)  &&
         (item->column() >0 && item->column() < AXIS_COUNTS + 1)){
+
+        if(pointConfigs[item->row()].Type() == Point_Property){
+            QMessageBox::information(this,tr("information"),
+                                     tr("%1Can not Edit Point!")
+                                     .arg(_typeDialog->toString((PointProperty)pointConfigs[item->row()].Property())));
+
+            return;
+        }
 
         if(!_dialog->isVisible()){
             _dialog->move(200,200);
@@ -306,7 +314,8 @@ void ICProgramPage::saveButtonsCliked()
 
     if(pointConfigs[index].Type() == Point_Property){
         QMessageBox::information(this,tr("information"),
-                                 tr("Illegality Point Setting!"));
+                                 tr("%1Can not Setting Point!")
+                                 .arg(_typeDialog->toString((PointProperty)pointConfigs[index].Property())));
         return;
     }
 
@@ -328,7 +337,9 @@ void ICProgramPage::testButonsPressed()
     }
     if(pointConfigs[index].Type() == Point_Property){
         QMessageBox::information(this,tr("information"),
-                                 tr("Illegality Point Setting!"));
+                                 tr("%1Can not Test Point!")
+                                 .arg(_typeDialog->toString((PointProperty)pointConfigs[index].Property())));
+
         return;
     }
     if(!ICVirtualHost::GlobalVirtualHost()->IsOrigined())
