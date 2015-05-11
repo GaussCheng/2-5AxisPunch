@@ -53,8 +53,6 @@ private slots:
     void on_oY2Btn_clicked();
 
     void on_setOrigin_clicked();
-
-
 private:
     Ui::ICStructDefineFrame *ui;
     int axisDefine_;

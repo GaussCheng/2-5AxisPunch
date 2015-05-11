@@ -894,21 +894,7 @@ void MainFrame::StatusRefreshed()
         speed_ = "0";
         ICProgramHeadFrame::Instance()->ChangStatusmoldNameLabelOperation(true);
         ICProgramHeadFrame::Instance()->SetHanSelectEnable(false);
-        //        ui->teachButton->setEnabled(false);
-        //        statusStr_ = tr("Stop");
-        //<<<<<<< HEAD
-        //#ifdef Q_WS_X11
-        //        finishCount_ = virtualHost->FinishProductCount();
-        //        if(finishCount_ != oldFinishCount_)
-        //        {
-        //            ui->cycleTimeAndFinistWidget->SetFinished(finishCount_);
-        //            oldFinishCount_ = finishCount_;
-        //        }
-        //#endif
-        //=======
-        //        ui->cycleTimeAndFinistWidget->SetFinished(oldFinishCount_);
-        //        ui->systemStatusFrame->SetProgramStatus(StatusLabel::ONSTATUS);
-        //>>>>>>> 7eb8511... 1.版本升级为4.1.8_SC
+
     }
     else if(runningStatus_ == ICVirtualHost::Auto)
     {

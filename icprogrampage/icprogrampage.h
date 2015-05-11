@@ -14,7 +14,7 @@
 
 #define MAX_POINTS 8
 #define AXIS_COUNTS 5
-#define MAX_ROWCOUNT 16
+#define MAX_ROWCOUNT 20
 #define COLUMN_COUNTS (AXIS_COUNTS + 1)
 #define RESERVE_COUNTS (MAX_POINTS - 3)
 #define PAGE_MAX_COUNT 8
@@ -121,6 +121,8 @@ private:
     void PreviousPage();
     void NextPage();
     void ReConfigure();
+    int GT_PointCount();
+    int GT_PointIndexFromRow(int row);
 
 
 
@@ -149,6 +151,7 @@ private:
 
     QStringList standPrograms_;
     QList<QIntValidator *> validators_;
+    QIntValidator *dValidator;
     static ICProgramPage * instance_;
 
     ICVirtualHost *_host;

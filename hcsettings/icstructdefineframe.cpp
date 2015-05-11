@@ -185,6 +185,19 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     ui->originSpd->setValidator(new QIntValidator(0, 10, this));
     ui->originSpd->SetThisIntToThisText(host->SystemParameter(ICVirtualHost::SYS_OriginSpeed).toInt());
     ui->tryRunBox->setChecked(host->IsMidMoldCheck());
+    ui->syncBox->setChecked(host->IsOrignSyncCheck());
+    ui->punchType->setCurrentIndex(host->PunchCheckMode());
+
+
+    quint32 check1,check2;
+    check1 = ICMold::CurrentMold()->MoldParam(ICMold::check1);
+    check2 = ICMold::CurrentMold()->MoldParam(ICMold::check2);
+
+    ui->x37Box->setChecked(check2&(1 << (23 - 16)));
+    ui->x40Box->setChecked(check2&(1 << (24 - 16)));
+    ui->x22Box->setChecked(check1&(1 << 10));
+    ui->x23Box->setChecked(check1&(1 << 11));
+
 
     ui->tabWidget->removeTab(1);
 }
@@ -230,7 +243,7 @@ void ICStructDefineFrame::hideEvent(QHideEvent *e)
 
 void ICStructDefineFrame::timerEvent(QTimerEvent *)
 {
-    if(ui->tabWidget->currentIndex() != 3) return;
+    if(ui->tabWidget->currentWidget() != ui->origin) return;
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     if(host->CurrentStatus() == ICVirtualHost::Origin)
     {
@@ -251,6 +264,7 @@ void ICStructDefineFrame::timerEvent(QTimerEvent *)
 
     OriginStatus os;
     os.combine = host->HostStatus(ICVirtualHost::DbgX1).toUInt();
+    ui->orignStatus->setText(QString::number(host->HostStatus(ICVirtualHost::DbgX1).toInt(),16));
     if(os.b.x)
     {
         ui->oX1Btn->setStyleSheet(newStyle);
@@ -435,6 +449,9 @@ void ICStructDefineFrame::on_saveButton_clicked()
         host->SetPressureCheckMode(ui->pressureMode->currentIndex());
         host->SetSystemParameter(ICVirtualHost::SYS_OriginSpeed, ui->originSpd->TransThisTextToThisInt());
         host->SetMidMoldCheck(ui->tryRunBox->isChecked());
+        host->SetOrignSyncCheck(ui->syncBox->isChecked());
+        host->SetPunchCheckMode(ui->punchType->currentIndex());
+
         //        host->SystemParameter(ICVirtualHost::SYS_Function);
         host->SaveSystemConfig();
         QMessageBox::information(this, tr("Tips"), tr("Save Sucessfully!"));
@@ -452,6 +469,41 @@ void ICStructDefineFrame::on_saveButton_clicked()
     else ui->rLimit->hide();
     if(host->AxisDefine(ICVirtualHost::ICAxis_AxisY2) == ICVirtualHost::ICAxisDefine_Servo)  ui->tLimit->show();
     else ui->tLimit->hide();
+
+    quint32 check1,check2;
+    check1 = ICMold::CurrentMold()->MoldParam(ICMold::check1);
+    check2 = ICMold::CurrentMold()->MoldParam(ICMold::check2);
+
+    if(ui->x22Box->isChecked()){
+        check1 |= (1 << 10);
+    }
+    else{
+        check1 &= ~(1 << 10);
+    }
+    if(ui->x23Box->isChecked()){
+        check1 |= (1 << 11);
+    }
+    else{
+        check1 &= ~(1 << 11);
+    }
+    if(ui->x37Box->isChecked()){
+        check2 |= (1 << (23 - 16));
+    }
+    else{
+        check2 &= ~(1 << (23 - 16));
+    }
+    if(ui->x40Box->isChecked()){
+        check2 |= (1 << (24 - 16));
+    }
+    else{
+        check2 &= ~(1 << (24 - 16));
+    }
+
+    ICMold::CurrentMold()->SetMoldParam(ICMold::check1,check1);
+    ICMold::CurrentMold()->SetMoldParam(ICMold::check2,check2);
+
+    ICMold::CurrentMold()->SaveMoldParamsFile();
+
 }
 
 
@@ -527,6 +579,9 @@ void ICStructDefineFrame::InitCombobox()
     ui->os4->blockSignals(false);
     ui->os5->blockSignals(false);
 
+    ui->tryRunBox->setChecked(host->IsMidMoldCheck());
+    ui->syncBox->setChecked(host->IsOrignSyncCheck());
+    ui->punchType->setCurrentIndex(host->PunchCheckMode());
 }
 
 //void ICStructDefineFrame::on_adjUse_toggled(bool checked)
@@ -536,7 +591,7 @@ void ICStructDefineFrame::InitCombobox()
 
 void ICStructDefineFrame::on_tabWidget_currentChanged(int index)
 {
-    if(index == 3)
+    if(ui->tabWidget->currentWidget() == ui->origin)
     {
         timerID_ = startTimer(50);
     }
@@ -584,4 +639,5 @@ void ICStructDefineFrame::on_setOrigin_clicked()
 {
     ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_SET_ORIGIN);
 }
+
 

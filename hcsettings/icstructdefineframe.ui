@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>640</width>
-    <height>243</height>
+    <height>298</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -28,9 +28,9 @@
    <item>
     <widget class="ICTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
-     <widget class="QWidget" name="tab">
+     <widget class="QWidget" name="arm">
       <attribute name="title">
        <string>Arm Define</string>
       </attribute>
@@ -490,7 +490,7 @@
        </layout>
       </widget>
      </widget>
-     <widget class="QWidget" name="tab_2">
+     <widget class="QWidget" name="reserve">
       <attribute name="title">
        <string>Reserve Prog</string>
       </attribute>
@@ -723,7 +723,7 @@
        </layout>
       </widget>
      </widget>
-     <widget class="QWidget" name="tab_3">
+     <widget class="QWidget" name="punch">
       <attribute name="title">
        <string>Other Define</string>
       </attribute>
@@ -1071,40 +1071,20 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>115</y>
+         <y>100</y>
          <width>219</width>
-         <height>72</height>
+         <height>135</height>
         </rect>
        </property>
        <layout class="QGridLayout" name="gridLayout_6">
-        <item row="0" column="0">
-         <widget class="QLabel" name="label_10">
-          <property name="text">
-           <string>Pressure Check</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="ICComboBox" name="pressureMode">
-          <item>
-           <property name="text">
-            <string>Disable</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Always ON</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Always OFF</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="1" column="1">
+        <property name="horizontalSpacing">
+         <number>2</number>
+        </property>
+        <item row="3" column="1">
          <widget class="QCheckBox" name="tryRunBox">
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
           <property name="styleSheet">
            <string notr="true">::indicator {
      width: 32px;
@@ -1135,10 +1115,81 @@
           </property>
          </widget>
         </item>
+        <item row="1" column="1">
+         <widget class="ICComboBox" name="pressureMode">
+          <item>
+           <property name="text">
+            <string>Disable</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Always ON</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Always OFF</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_10">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>80</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Pressure Check</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_22">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>80</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Punch Type</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QComboBox" name="punchType">
+          <item>
+           <property name="text">
+            <string>Pulse</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Continuous </string>
+           </property>
+          </item>
+         </widget>
+        </item>
        </layout>
       </widget>
      </widget>
-     <widget class="QWidget" name="tab_4">
+     <widget class="QWidget" name="origin">
       <attribute name="title">
        <string>Origin</string>
       </attribute>
@@ -1501,8 +1552,8 @@
       <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>170</y>
+         <x>30</x>
+         <y>210</y>
          <width>241</width>
          <height>33</height>
         </rect>
@@ -1522,6 +1573,218 @@
          <widget class="QLabel" name="label_21">
           <property name="text">
            <string>%</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QCheckBox" name="syncBox">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>160</y>
+         <width>141</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">::indicator {
+     width: 32px;
+     height: 32px;
+ }
+
+::indicator:unchecked 
+{
+     image: url(:/resource/check_unchecked.png);
+ }
+::indicator:checked 
+{
+     image: url(:/resource/check_checked.png);
+ }
+
+QRadioButton::indicator:checked:disabled
+{
+ image: url(:/resource/check_checked_disable.png);
+}
+
+QRadioButton::indicator:unchecked:disabled
+{
+ image: url(:/resource/check_unchecked_disable.png);
+}</string>
+       </property>
+       <property name="text">
+        <string>Orign Sync </string>
+       </property>
+      </widget>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>212</y>
+         <width>251</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QLabel" name="label_23">
+          <property name="text">
+           <string>status</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="orignStatus">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="iocheck">
+      <attribute name="title">
+       <string>I/O Checked</string>
+      </attribute>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>151</width>
+         <height>148</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QCheckBox" name="x37Box">
+          <property name="styleSheet">
+           <string notr="true">::indicator {
+     width: 32px;
+     height: 32px;
+ }
+
+::indicator:unchecked 
+{
+     image: url(:/resource/check_unchecked.png);
+ }
+::indicator:checked 
+{
+     image: url(:/resource/check_checked.png);
+ }
+
+::indicator:checked:disabled
+{
+ image: url(:/resource/check_checked_disable.png);
+}
+
+::indicator:unchecked:disabled
+{
+ image: url(:/resource/check_unchecked_disable.png);
+}</string>
+          </property>
+          <property name="text">
+           <string>X037</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="x40Box">
+          <property name="styleSheet">
+           <string notr="true">::indicator {
+     width: 32px;
+     height: 32px;
+ }
+
+::indicator:unchecked 
+{
+     image: url(:/resource/check_unchecked.png);
+ }
+::indicator:checked 
+{
+     image: url(:/resource/check_checked.png);
+ }
+
+::indicator:checked:disabled
+{
+ image: url(:/resource/check_checked_disable.png);
+}
+
+::indicator:unchecked:disabled
+{
+ image: url(:/resource/check_unchecked_disable.png);
+}</string>
+          </property>
+          <property name="text">
+           <string>X040</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="x22Box">
+          <property name="styleSheet">
+           <string notr="true">::indicator {
+     width: 32px;
+     height: 32px;
+ }
+
+::indicator:unchecked 
+{
+     image: url(:/resource/check_unchecked.png);
+ }
+::indicator:checked 
+{
+     image: url(:/resource/check_checked.png);
+ }
+
+::indicator:checked:disabled
+{
+ image: url(:/resource/check_checked_disable.png);
+}
+
+::indicator:unchecked:disabled
+{
+ image: url(:/resource/check_unchecked_disable.png);
+}</string>
+          </property>
+          <property name="text">
+           <string>X022</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="x23Box">
+          <property name="styleSheet">
+           <string notr="true">::indicator {
+     width: 32px;
+     height: 32px;
+ }
+
+::indicator:unchecked 
+{
+     image: url(:/resource/check_unchecked.png);
+ }
+::indicator:checked 
+{
+     image: url(:/resource/check_checked.png);
+ }
+
+::indicator:checked:disabled
+{
+ image: url(:/resource/check_checked_disable.png);
+}
+
+::indicator:unchecked:disabled
+{
+ image: url(:/resource/check_unchecked_disable.png);
+}</string>
+          </property>
+          <property name="text">
+           <string>X023</string>
           </property>
          </widget>
         </item>
@@ -1570,14 +1833,14 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>ICComboBox</class>
-   <extends>QComboBox</extends>
-   <header>iccombobox.h</header>
-  </customwidget>
-  <customwidget>
    <class>ICLineEditWithVirtualNumericKeypad</class>
    <extends>QLineEdit</extends>
    <header>iclineeditwithvirtualnumerickeypad.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ICComboBox</class>
+   <extends>QComboBox</extends>
+   <header>iccombobox.h</header>
   </customwidget>
   <customwidget>
    <class>ICTabWidget</class>

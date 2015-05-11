@@ -18,12 +18,6 @@ ICMachineStructPage::ICMachineStructPage(QWidget *parent) :
     axisDefine_(-1)
 {
     ui->setupUi(this);
-    ui->minLabel->hide();
-    ui->minUnitLabel->hide();
-    ui->internalSecurityZoneLineEdit->hide();
-    ui->maxLabel->hide();
-    ui->maxUnitLabel->hide();
-    ui->externalSecurityZoneLineEdit->hide();
     InitInterface();
     buttonGroup_ = new QButtonGroup();
 
@@ -172,41 +166,49 @@ void ICMachineStructPage::showEvent(QShowEvent *e)
 
 void ICMachineStructPage::on_axisXToolButton_clicked()
 {
+    HideSafeZone();
     SetCurrentAxis(ICVirtualHost::ICAxis_AxisX1);
 }
 
 void ICMachineStructPage::on_axisYToolButton_clicked()
 {
+    HideSafeZone();
     SetCurrentAxis(ICVirtualHost::ICAxis_AxisY1);
 }
 
 void ICMachineStructPage::on_axisZToolButton_clicked()
 {
+    ShowSafeZone();
     SetCurrentAxis(ICVirtualHost::ICAxis_AxisZ);
 }
 
 void ICMachineStructPage::on_axisPToolButton_clicked()
 {
+    HideSafeZone();
     SetCurrentAxis(ICVirtualHost::ICAxis_AxisX2);
 }
 
 void ICMachineStructPage::on_axisQToolButton_clicked()
 {
+    HideSafeZone();
     SetCurrentAxis(ICVirtualHost::ICAxis_AxisY2);
 }
 
 void ICMachineStructPage::on_axisAToolButton_clicked()
 {
+    HideSafeZone();
     SetCurrentAxis(ICVirtualHost::ICAxis_AxisA);
 }
 
 void ICMachineStructPage::on_axisBToolButton_clicked()
 {
+    HideSafeZone();
     SetCurrentAxis(ICVirtualHost::ICAxis_AxisB);
 }
 
 void ICMachineStructPage::on_axisCToolButton_clicked()
 {
+    HideSafeZone();
     SetCurrentAxis(ICVirtualHost::ICAxis_AxisC);
 }
 
@@ -314,12 +316,15 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         ui->distanceRotationEdit->SetDecimalPlaces(2);
         ui->label_2->setText(tr("Maximum displacement"));
         maxMoveValidator_->setBottom(-3600);
-         intValidator->setTop(3600);
-         ui->minUnitLabel->setText(tr("deg"));
-         ui->maxUnitLabel->setText(tr("deg"));
-         ui->label_3->setText(tr("deg"));
-         ui->label_4->setText(tr("deg"));
-         ui->label_11->setText(tr("deg"));
+        intValidator->setTop(3600);
+        ui->minUnitLabel->setText(tr("deg"));
+        ui->maxUnitLabel->setText(tr("deg"));
+        ui->label_3->setText(tr("deg"));
+        ui->label_4->setText(tr("deg"));
+        ui->label_11->setText(tr("deg"));
+
+        ui->minLabel->setText(minText);
+        ui->maxLabel->setText(maxText);
 
     }
     else if(currentAxis_ == ICVirtualHost::ICAxis_AxisX2)
@@ -424,8 +429,8 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         iSafe = ICVirtualHost::SYS_C_InSafe;
         oSafe = ICVirtualHost::SYS_C_OutSafe;
         total = ICParametersSave::Instance()->DistanceRotation("C");
-        minText = tr("Transever security zone(Less)");
-        maxText = tr("Transever security zone(Lagger)");
+//        minText = tr("Transever security zone(Less)");
+//        maxText = tr("Transever security zone(Lagger)");
         ui->distanceRotationEdit->SetDecimalPlaces(1);
         rotateValidator_->setTop(3600);
         intValidator->setTop(3600);
@@ -453,8 +458,6 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
     QString format = QString("%.%1f").arg(ui->distanceRotationEdit->DecimalPlaces());
     ui->distanceRotationEdit->setText(QString().sprintf(format.toAscii(), total));
     //    ui->distanceRotationEdit->SetThisIntToThisText(total);
-    ui->minLabel->setText(minText);
-    ui->maxLabel->setText(maxText);
     /*********BUG#186.同791行一起**************/
     intValidator->setBottom(ui->maximumDisplacementLineEdit->TransThisTextToThisInt());
     maxMoveValidator_->setTop(ui->mechanicalLengthLineEdit->TransThisTextToThisInt());
@@ -661,6 +664,26 @@ void ICMachineStructPage::InitInterface()
     rotateValidator_ = new QIntValidator(0, 65530, this);
     ui->distanceRotationEdit->SetDecimalPlaces(2);
     ui->distanceRotationEdit->setValidator(rotateValidator_);
+}
+
+void ICMachineStructPage::HideSafeZone()
+{
+    ui->minLabel->hide();
+    ui->minUnitLabel->hide();
+    ui->internalSecurityZoneLineEdit->hide();
+    ui->maxLabel->hide();
+    ui->maxUnitLabel->hide();
+    ui->externalSecurityZoneLineEdit->hide();
+}
+
+void ICMachineStructPage::ShowSafeZone()
+{
+    ui->minLabel->show();
+    ui->minUnitLabel->show();
+    ui->internalSecurityZoneLineEdit->show();
+    ui->maxLabel->show();
+    ui->maxUnitLabel->show();
+    ui->externalSecurityZoneLineEdit->show();
 }
 
 void ICMachineStructPage::UpdateAxisDefine_()
@@ -915,6 +938,9 @@ void ICMachineStructPage::on_maximumDisplacementLineEdit_textChanged(const QStri
 {
     Q_UNUSED(arg1);
     intValidator->setBottom(ui->maximumDisplacementLineEdit->TransThisTextToThisInt());
+    minSecValidator_->setBottom(ui->maximumDisplacementLineEdit->TransThisTextToThisInt());
+    maxSecValidator_->setBottom(ui->maximumDisplacementLineEdit->TransThisTextToThisInt());
+
 }
 
 //void ICMachineStructPage::on_punch_clicked()

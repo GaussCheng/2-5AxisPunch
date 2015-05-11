@@ -288,6 +288,11 @@ public:
      qint32 Property() { return property;}
      qint32 Delay() { return delay;}
 
+     void setType(quint32 type_) { type = type_;}
+     void setProperty(quint32 property_) { property = property_;}
+     void setDelay(quint32 delay_) { delay = delay_;}
+
+
      bool operator == (const ICPointConfig &t)const{
          return ((type == t.type) &&
                  (property == t.property) &&

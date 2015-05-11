@@ -58,6 +58,8 @@ ICProgramPage::ICProgramPage(QWidget *parent,int _pageIndex,QString pageName) :
 
     for(int i=0;i<AXIS_COUNTS;i++)
         validators_.append(new  QIntValidator(0,10000,this));
+
+    dValidator = new QIntValidator(0,3000,this);
 //    ui->tableWidget->setCurrentIndex(ui->tableWidget->model()->index(3,0));
 
 }
@@ -113,8 +115,15 @@ void ICProgramPage::refreshCurrentRow(int step)
 
     int startIndex = 0,oldIndex = 0,oldPoint=0;
     foreach(ICMoldItem item,allItems){
-        if(item.GMVal() != 22){
-            stepToRow.insert(item.Num(),oldIndex);
+        if(item.GMVal() != 22  ){
+            if(item.GMVal() >=24 && item.GMVal()<=27){
+                stepToRow.insert(item.Num(),oldIndex);
+            }
+            else{
+                startIndex++;
+                oldIndex = startIndex;
+                stepToRow.insert(item.Num(),oldIndex);
+            }
         }
         else{
             stepToRow.insert(item.Num(),startIndex);
@@ -128,7 +137,8 @@ void ICProgramPage::refreshCurrentRow(int step)
     }
 
     int row = stepToRow.value(step);
-    ui->tableWidget->setCurrentIndex(ui->tableWidget->model()->index(row,0));
+    if(row < ui->tableWidget->rowCount())
+        ui->tableWidget->setCurrentIndex(ui->tableWidget->model()->index(row,0));
 
 }
 
@@ -171,6 +181,7 @@ ICProgramPage::~ICProgramPage()
     delete ui;
     for(int i=0;i<AXIS_COUNTS;i++)
         delete validators_[i];
+    delete dValidator;
 }
 
 
@@ -192,7 +203,7 @@ void ICProgramPage::showEvent(QShowEvent *e)
     ui->tableWidget->setColumnHidden(6,false);
     ui->tableWidget->setColumnHidden(7,false);
     if(USE_SPACE_ROW)
-    ui->tableWidget->setRowHidden(ui->tableWidget->rowCount() - 1,false);
+         ui->tableWidget->setRowHidden(ui->tableWidget->rowCount() - 1,false);
 
     for(int i=0;i<AXIS_COUNTS;i++){
         int top = ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::ICSystemParameter(ICVirtualHost::SYS_X_Length + i * 7)).toInt();
@@ -230,7 +241,7 @@ void ICProgramPage::changeEvent(QEvent *e)
             ui->tableWidget->horizontalHeaderItem(i)->setText(headerContents.at(i));
         }
         _typeDialog->Init_();
-//        InitPoint();
+        InitPoint();
     }
         break;
     default:
@@ -247,15 +258,73 @@ void ICProgramPage::itemClicked(QTableWidgetItem *item)
         (item->column() >0 && item->column() < AXIS_COUNTS + 1)){
 
         if(pointConfigs[item->row()].Type() == Point_Property){
-            QMessageBox::information(this,tr("information"),
-                                     tr("%1Can not Edit Point!")
-                                     .arg(_typeDialog->toString((PointProperty)pointConfigs[item->row()].Property())));
 
-            return;
+            ICMoldItem moldItem = propertyToItem.value((PointProperty)pointConfigs[item->row()].Property());
+
+            if((moldItem.GMVal() == ICMold::GOneXOneY ||
+               moldItem.GMVal() == ICMold::GCheckX) && item->column() == 1)
+
+            {
+
+                if(!_dialog->isVisible()){
+                    _dialog->move(200,200);
+                    _dialog->ResetDisplay();
+                    _dialog->exec();
+                }
+
+
+                QString text = _dialog->GetCurrentText();
+
+                if(!text.isEmpty() && (text != item->text())){
+                    int value;
+                    if(text.contains(QChar('.'))){
+                        int pointSize = text.split(".").at(1).size();
+                        if(pointSize > 2 || pointSize==0){
+                            QMessageBox::information(this,tr("information"),tr("Input Error!"));
+                            _dialog->ResetDisplay();
+                            return;
+                        }
+                        else{
+                            value = text.remove(".").toInt();
+                        }
+
+                    }
+                    else{
+                        value = text.toInt() * qPow(10,2);
+                    }
+
+
+                    if(value > dValidator->top() || value < dValidator->bottom()){
+                        QString format = QString("%.%1f").arg(2);
+                        QString bottom =   QString().sprintf(format.toAscii(), dValidator->bottom() / static_cast<qreal>(qPow(10, 2)));
+                        QString top =   QString().sprintf(format.toAscii(), dValidator->top() / static_cast<qreal>(qPow(10, 2)));
+
+                        QMessageBox::information(this,tr("information"),tr("Input Value Not %1 To %2 Range!")
+                                                 .arg(bottom)
+                                                 .arg(top));
+                        _dialog->ResetDisplay();
+                        return;
+                    }
+                    item->setText(ICParameterConversion::TransThisIntToThisText(value, 2) + tr("s"));
+                    pointConfigs[item->row()].setDelay(value);
+
+                }
+
+                return;
+
+            }
+            else{
+                QMessageBox::information(this,tr("information"),
+                                         tr("%1Can not Edit Point!")
+                                         .arg(_typeDialog->toString((PointProperty)pointConfigs[item->row()].Property())));
+
+                return;
+            }
         }
 
         if(!_dialog->isVisible()){
             _dialog->move(200,200);
+            _dialog->ResetDisplay();
             _dialog->exec();
         }
 
@@ -298,7 +367,6 @@ void ICProgramPage::itemClicked(QTableWidgetItem *item)
             item->setText(ICParameterConversion::TransThisIntToThisText(value, POINT_SIZE));
         }
 
-        _dialog->ResetDisplay();
 
     }
 
@@ -335,10 +403,27 @@ void ICProgramPage::testButonsPressed()
     {
         return;
     }
+
     if(pointConfigs[index].Type() == Point_Property){
-        QMessageBox::information(this,tr("information"),
-                                 tr("%1Can not Test Point!")
-                                 .arg(_typeDialog->toString((PointProperty)pointConfigs[index].Property())));
+        ICMoldItem moldItem = propertyToItem.value((PointProperty)pointConfigs[index].Property());
+        if(moldItem.GMVal() == ICMold::GOneXOneY){
+            ICManualRun cmd;
+            cmd.SetSlave(1);
+            cmd.SetGM(ICMold::GOneXOneY);
+            cmd.SetPoint(moldItem.SubNum());
+            cmd.SetIFVal(moldItem.IFVal());
+            if(!ICCommandProcessor::Instance()->ExecuteCommand(cmd).toBool())
+            {
+                QMessageBox::warning(this,
+                                         tr("warning"),
+                                         tr("Execute Manual Cmd failed!"));
+            }
+        }
+        else{
+            QMessageBox::information(this,tr("information"),
+                                     tr("%1Can not Test Point!")
+                                     .arg(_typeDialog->toString((PointProperty)pointConfigs[index].Property())));
+        }
 
         return;
     }
@@ -352,7 +437,7 @@ void ICProgramPage::testButonsPressed()
     ICManualRun cmd;
     cmd.SetSlave(1);
     cmd.SetGM(ICMold::GARC);
-    cmd.SetPoint(index);
+    cmd.SetPoint(GT_PointIndexFromRow(index));
     //    cmd.SetIFVal(1);
     ICCommandProcessor::Instance()->ExecuteCommand(cmd);
 }
@@ -501,6 +586,7 @@ void ICProgramPage::InitPointToItem()
     pointToItem.insert(Get_Wait,(items << waitM10)); items.clear();
     pointToItem.insert(Get_Up,items); items.clear();
     pointToItem.insert(Get,items); items.clear();
+    pointToItem.insert(Get_Wait2,(items << outM27On)); items.clear();
     pointToItem.insert(Put_Wait,(items << outM11 << waitM12)); items.clear();
     pointToItem.insert(Put_Up,items); items.clear();
     pointToItem.insert(Put,items); items.clear();
@@ -613,15 +699,15 @@ void ICProgramPage::InitFixMoldItems()
     outY37Off = MK_MoldItem(10,6,23,12,0,0,0,0,0,50);
     outY40On  = MK_MoldItem(7,3,24,12,0,1,0,0,0,45);
     outY40Off = MK_MoldItem(7,3,24,12,0,0,0,0,0,45);
-    outY22On  = MK_MoldItem(7,3,18,12,0,1,0,0,0,45);
-    outY22Off = MK_MoldItem(7,3,18,12,0,0,0,0,0,45);
-    outY23On  = MK_MoldItem(7,3,19,12,0,1,0,0,0,45);
-    outY23Off = MK_MoldItem(7,3,19,12,0,0,0,0,0,45);
+    outY22On  = MK_MoldItem(7,3,10,12,0,1,0,0,0,45);
+    outY22Off = MK_MoldItem(7,3,10,12,0,0,0,0,0,45);
+    outY23On  = MK_MoldItem(7,3,11,12,0,1,0,0,0,45);
+    outY23Off = MK_MoldItem(7,3,11,12,0,0,0,0,0,45);
 
     waitX41   = MK_MoldItem(9,9,25,10,0,1,0,0,3000,54);
-    waitX42   = MK_MoldItem(10,10,26,10,0,1,0,3000,0,57);
+    waitX42   = MK_MoldItem(10,10,26,10,0,1,0,0,3000,57);
     waitX43   = MK_MoldItem(9,9,27,10,0,1,0,0,3000,54);
-    waitX44   = MK_MoldItem(10,10,28,10,0,1,0,3000,0,57);
+    waitX44   = MK_MoldItem(10,10,28,10,0,1,0,0,3000,57);
 
 
     //遗弃
@@ -646,8 +732,8 @@ void ICProgramPage::on_newButton_clicked()
         return;
     }
 
-    if(ui->tableWidget->rowCount() == MAX_ROWCOUNT){
-        QMessageBox::information(this,tr("Information"),tr("Max Rows Beyond %1!").arg(MAX_ROWCOUNT));
+    if(GT_PointCount() == MAX_ROWCOUNT){
+        QMessageBox::information(this,tr("Information"),tr("Max Point Count Beyond %1!").arg(MAX_ROWCOUNT));
         return;
     }
 
@@ -848,6 +934,28 @@ void ICProgramPage::ReConfigure()
         ICVirtualHost::GlobalVirtualHost()->ReConfigure();
 
     }
+}
+
+int ICProgramPage::GT_PointCount()
+{
+    int count = 0;
+    for(int i=0;i<pointConfigs.size();i++){
+        if(pointConfigs[i].Type() != Point_Property){
+            count++;
+        }
+    }
+    return count;
+}
+
+int ICProgramPage::GT_PointIndexFromRow(int row)
+{
+    int count = 0;
+    for(int i=0;i<row;i++){
+        if(pointConfigs[i].Type() != Point_Property){
+            count++;
+        }
+    }
+    return count;
 }
 
 

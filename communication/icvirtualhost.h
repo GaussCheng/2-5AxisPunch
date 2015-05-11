@@ -310,12 +310,12 @@ public:
         DbgP1,
         DbgQ0,
         DbgQ1,
-//        DbgA0,
-//        DbgA1,
-//        DbgB0,
-//        DbgB1,
-//        DbgC0,
-//        DbgC1,
+        DbgA0,
+        DbgA1,
+        DbgB0,
+        DbgB1,
+        DbgC0,
+        DbgC1,
 
 #else
         DbgX0,
@@ -593,6 +593,10 @@ public:
     void SetSecurityCheck(bool isCheck);
     bool IsMidMoldCheck() const {return (SystemParameter(SYS_Function).toInt() & 0x00000004) != 0;}
     void SetMidMoldCheck(bool isCheck);
+    bool IsOrignSyncCheck() const {return (SystemParameter(SYS_Function).toInt() & 0x00000008) != 0;}
+    void SetOrignSyncCheck(bool isCheck);
+    bool PunchCheckMode() const {return (SystemParameter(SYS_Function).toInt() & 0x000000010) != 0;}
+    void SetPunchCheckMode(bool mode);
     bool IsEjectionLink() const { return (SystemParameter(SYS_Function).toInt() & 0x00000040) != 0;}
     void SetEjectionLink(bool permit);
     bool IsAlarmWhenOrigin() const { return (SystemParameter(SYS_Function).toInt() & 0x00000300) != 0;}
@@ -947,6 +951,27 @@ inline void ICVirtualHost::SetMidMoldCheck(bool isCheck)
     systemParamMap_.insert(SYS_Function, val);
     isParamChanged_ = true;
 }
+
+
+inline void ICVirtualHost::SetOrignSyncCheck(bool isCheck)
+{
+    int val = SystemParameter(SYS_Function).toInt();
+    val &= 0xFFFFFFF7;
+    (isCheck ? val |= 0x00000008 : val &= 0xFFFFFFF7);
+    systemParamMap_.insert(SYS_Function, val);
+    isParamChanged_ = true;
+}
+
+
+inline void ICVirtualHost::SetPunchCheckMode(bool isCheck)
+{
+    int val = SystemParameter(SYS_Function).toInt();
+    val &= 0xFFFFFFEF;
+    (isCheck ? val |= 0x000000010 : val &= 0xFFFFFFEF);
+    systemParamMap_.insert(SYS_Function, val);
+    isParamChanged_ = true;
+}
+
 
 inline void ICVirtualHost::SetEjectionLink(bool permit)
 {

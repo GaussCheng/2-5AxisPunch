@@ -61,6 +61,9 @@ private Q_SLOTS:
 
 private:
     void InitInterface();
+    void HideSafeZone();
+    void ShowSafeZone();
+
     QList<uint> GetCurrentStatus_() const;
     bool SetCurrentStatus_(const QList<uint> &status);
     Ui::ICMachineStructPage *ui;

@@ -26,7 +26,7 @@ ICHCTimeFrame::ICHCTimeFrame(QWidget *parent) :
     ui->horizontal2LineEdit->hide();
     ui->vertical2LineEdit->hide();
     ui->horizontalLineEdit->hide();
-    ui->verticalineEdit->hide();
+//    ui->verticalineEdit->hide();
 
     InitInterFace();
 }
@@ -53,7 +53,7 @@ void ICHCTimeFrame::InitInterFace()
     }
 
     BindingParam_(ui->horizontalLineEdit, ICVirtualHost::SM_TIMEHORI);
-    BindingParam_(ui->verticalineEdit, ICVirtualHost::SM_TIMEVERT);
+    BindingParam_(ui->verticalineEdit, ICVirtualHost::SM_TIMEHORI);
     BindingParam_(ui->horizontal2LineEdit, ICVirtualHost::SM_TIMEHORI2);
     BindingParam_(ui->vertical2LineEdit, ICVirtualHost::SM_TIMEVERT2);
     BindingParam_(ui->secondaryArmDownLineEdit, ICVirtualHost::SM_TIMEVDOWN);
