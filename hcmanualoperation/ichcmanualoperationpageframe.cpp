@@ -665,9 +665,9 @@ void ICHCManualOperationPageFrame::OnShortcutTriggered(int id)
     //    cmd.SetIFVal(info.dir);
     if(!ICCommandProcessor::Instance()->ExecuteCommand(cmd).toBool())
     {
-        QMessageBox::information(this,
-                                 "tr",
-                                 "err");
+        QMessageBox::warning(this,
+                                 tr("warning"),
+                                 tr("err"));
     }
 }
 
@@ -684,9 +684,9 @@ void ICHCManualOperationPageFrame::OnShortcutReleased(int id)
     cmd.SetIFVal(0);
     if(!ICCommandProcessor::Instance()->ExecuteCommand(cmd).toBool())
     {
-        QMessageBox::information(this,
-                                 "tr",
-                                 "err");
+        QMessageBox::warning(this,
+                                 tr("warning"),
+                                 tr("err"));
     }
 }
 

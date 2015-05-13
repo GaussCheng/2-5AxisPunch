@@ -200,6 +200,8 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
 
 
     ui->tabWidget->removeTab(1);
+    ui->label_23->hide();
+    ui->orignStatus->hide();
 }
 
 ICStructDefineFrame::~ICStructDefineFrame()

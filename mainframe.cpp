@@ -1254,7 +1254,7 @@ void MainFrame::LevelChanged(int level)
         break;
     case ICParametersSave::MachineAdmin:
     {
-        if(ICKeyboard::Instace()->CurrentSwitchStatus() != ICKeyboard::KS_AutoStatu)
+        if(ICVirtualHost::GlobalVirtualHost()->CurrentStatus() != ICVirtualHost::Auto)
         {
             ui->teachButton->setEnabled(true);
             ui->settingsButton->setEnabled(true);
@@ -1270,39 +1270,60 @@ void MainFrame::LevelChanged(int level)
     case ICParametersSave::AdvanceAdmin:
     {
         ui->settingsButton->setEnabled(true);
-        //        ui->teachButton->setEnabled(true);
-        if(ICKeyboard::Instace()->CurrentSwitchStatus() == ICKeyboard::KS_StopStatu)
-        {
+
+        if(ICVirtualHost::GlobalVirtualHost()->CurrentStatus() == ICVirtualHost::Stop){
             ui->settingsButton->setEnabled(true);
 #ifdef Q_WS_QWS
             ui->teachButton->setEnabled(false);
 #endif
 
-            //            settingsPage_->SetToShowAll(true);
-            //            ui->functionPageButton->setEnabled(true);
         }
-        else
-        {
+        else if(ICVirtualHost::GlobalVirtualHost()->CurrentStatus() == ICVirtualHost::Auto){
             ui->settingsButton->setEnabled(false);
-            //            ui->functionPageButton->setEnabled(false);
-        }
-        if(ICKeyboard::Instace()->CurrentSwitchStatus() != ICKeyboard::KS_AutoStatu)
-        {
-            if(ICKeyboard::Instace()->CurrentSwitchStatus() == ICKeyboard::KS_ManualStatu){
-                ui->teachButton->setEnabled(true);
-                ui->stackedWidget->setCurrentWidget(ui->page);
-            }
-            //            ui->recordPageButton->setEnabled(true);
-        }
-        else
-        {
 #ifdef Q_WS_QWS
             ui->teachButton->setEnabled(false);
-            ui->stackedWidget->setCurrentWidget(ui->page);
 #endif
-            //            ui->recordPageButton->setEnabled(false);
+            ui->stackedWidget->setCurrentWidget(ui->page);
         }
+        else if(ICVirtualHost::GlobalVirtualHost()->CurrentStatus() == ICVirtualHost::Manual){
+            ui->settingsButton->setEnabled(true);
+            ui->teachButton->setEnabled(true);
+            ui->stackedWidget->setCurrentWidget(ui->page);
+        }
+
     }
+//        if(ICVirtualHost::GlobalVirtualHost()->CurrentStatus() == ICVirtualHost::Stop)
+//        {
+//            ui->settingsButton->setEnabled(true);
+//#ifdef Q_WS_QWS
+//            ui->teachButton->setEnabled(false);
+//#endif
+
+//            //            settingsPage_->SetToShowAll(true);
+//            //            ui->functionPageButton->setEnabled(true);
+//        }
+//        else
+//        {
+//            ui->settingsButton->setEnabled(false);
+//            //            ui->functionPageButton->setEnabled(false);
+//        }
+//        if(ICVirtualHost::GlobalVirtualHost()->CurrentStatus() != ICVirtualHost::Auto)
+//        {
+//            if(ICVirtualHost::GlobalVirtualHost()->CurrentStatus() == ICVirtualHost::Manual){
+//                ui->teachButton->setEnabled(true);
+//                ui->stackedWidget->setCurrentWidget(ui->page);
+//            }
+//            //            ui->recordPageButton->setEnabled(true);
+//        }
+//        else
+//        {
+//#ifdef Q_WS_QWS
+//            ui->teachButton->setEnabled(false);
+//            ui->stackedWidget->setCurrentWidget(ui->page);
+//#endif
+//            //            ui->recordPageButton->setEnabled(false);
+//        }
+//    }
         break;
     default:
     {

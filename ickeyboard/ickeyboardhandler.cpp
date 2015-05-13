@@ -262,12 +262,12 @@ void ICKeyboardHandler::Keypressed(int keyValue)
             commandProcessor->ExecuteVirtualKeyCommand(IC::VKEY_STOP);
         }
 
-        if(status == ICVirtualHost::Stop){
-            if(virtualHost->AlarmNum() && virtualHost->HostStatus(ICVirtualHost::DbgA0).toInt()){
-                QMessageBox::information(NULL,tr("information"),tr("Please press start key to recover auto state"));
-            }
+//        if(status == ICVirtualHost::Stop){
+//            if(virtualHost->AlarmNum() && virtualHost->HostStatus(ICVirtualHost::DbgA0).toInt()){
+//                QMessageBox::information(NULL,tr("information"),tr("Please press start key to recover auto state"));
+//            }
 
-        }
+//        }
         return;
     }
 

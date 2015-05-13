@@ -73,7 +73,7 @@ QList<ICMoldItem> ICProgramPage::GT_MoldItems()
 
     for(int i=0;i < ROW_COUNTS;i++){
         if(pointConfigs[i].Type() != Point_Property){
-            items += MK_PosItem(i);
+            items += MK_PosItem(GT_PointIndexFromRow(i));
             fixItems = pointToItem.value((PointType)pointConfigs[i].Type());
             if(fixItems.size()){
                 items += fixItems;
@@ -549,16 +549,13 @@ void ICProgramPage::InitPoint()
 
 void ICProgramPage::DisableTestButtons()
 {
-    foreach(QPushButton *button,testButtons){
-        button->setEnabled(false);
-    }
+    ui->testButton->setEnabled(false);
 }
 
 void ICProgramPage::EnableTestButtons()
 {
-    foreach(QPushButton *button,testButtons){
-        button->setEnabled(true);
-    }
+    ui->testButton->setEnabled(true);
+
 }
 
 void ICProgramPage::DeleteWidgets()
@@ -839,6 +836,8 @@ void ICProgramPage::on_deleteButton_clicked()
     }
     ui->tableWidget->hide();
     ui->tableWidget->show();
+
+    DisableTestButtons();
 
 }
 

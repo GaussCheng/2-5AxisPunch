@@ -149,14 +149,15 @@ OTHER_FILES += \
     Multi-axisManipulatorSystem_ch.ts \
     bin_debug/stylesheet/global.qss \
     bin_debug/sysconfig/systemParameter.hc \
-    版本日志.txt
+    版本日志.txt \
+    问题.txt
 
 QMAKE_POST_LINK += "cp *.qm $$DESTDIR"
 CONFIG(debug, debug|release){
 #system("python rename_ui.py $$UI_DIR")
 #QMAKE_POST_LINK += "cp *.qm bin_debug"
 }else{
-#system("python rename_ui.py $${UI_DIR}")
+#    system("python rename_ui.py $${UI_DIR}")
 #QMAKE_POST_LINK += "&& arm-linux-gnueabihf-strip $$DESTDIR/$$TARGET && HCbcrypt.sh -r $$DESTDIR/$$TARGET"
 #QMAKE_POST_LINK += "&& chmod +x tools/make_target && tools/make_target"
 }
