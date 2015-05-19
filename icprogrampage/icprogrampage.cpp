@@ -187,9 +187,11 @@ ICProgramPage::~ICProgramPage()
 
 void ICProgramPage::showEvent(QShowEvent *e)
 {
+    timerId = startTimer(1000);
     //隐藏列
     for(int i=0;i < AXIS_COUNTS;i++){
-        if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisX1 + i)) != ICVirtualHost::ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisX1)))
+        if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisX1 + i)) !=
+           ICVirtualHost::ICAxisDefine_Servo)
         {
             ui->tableWidget->setColumnHidden(i + 1,true);
         }
@@ -217,6 +219,7 @@ void ICProgramPage::showEvent(QShowEvent *e)
 
 void ICProgramPage::hideEvent(QHideEvent *e)
 {
+    killTimer(timerId);
     ui->startEdit->setChecked(false);
     ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
 
@@ -247,6 +250,16 @@ void ICProgramPage::changeEvent(QEvent *e)
     default:
         break;
     }
+}
+
+void ICProgramPage::timerEvent(QTimerEvent *e)
+{
+    Q_UNUSED(e);
+    bool isSingleRunFinished = ICVirtualHost::GlobalVirtualHost()->HostStatus(ICVirtualHost::ActL).toInt() == 0;
+    if(isSingleRunFinished){
+        ui->testButton->setEnabled(true);
+    }
+
 }
 
 void ICProgramPage::itemClicked(QTableWidgetItem *item)
@@ -397,6 +410,7 @@ void ICProgramPage::saveButtonsCliked()
 
 void ICProgramPage::testButonsPressed()
 {
+    ui->testButton->setEnabled(false);
     int index = ui->tableWidget->currentIndex().row();
 
     if(index < 0)

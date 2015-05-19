@@ -1288,7 +1288,7 @@ void MainFrame::LevelChanged(int level)
         else if(ICVirtualHost::GlobalVirtualHost()->CurrentStatus() == ICVirtualHost::Manual){
             ui->settingsButton->setEnabled(true);
             ui->teachButton->setEnabled(true);
-            ui->stackedWidget->setCurrentWidget(ui->page);
+//            ui->stackedWidget->setCurrentWidget(ui->page);
         }
 
     }

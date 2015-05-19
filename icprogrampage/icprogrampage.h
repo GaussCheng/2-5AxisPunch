@@ -89,7 +89,7 @@ protected:
     void showEvent(QShowEvent *);
     void hideEvent(QHideEvent *);
     void changeEvent(QEvent *e);
-    
+    void timerEvent(QTimerEvent *);
 
 signals:
     void returnProgram();
@@ -186,7 +186,7 @@ private:
     //遗弃
     ICMoldItem outM27On;
     ICMoldItem waitM14;
-
+    int timerId;
 
 };
 

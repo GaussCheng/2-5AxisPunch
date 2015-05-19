@@ -108,7 +108,7 @@ void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
     ui->verticalLayout->insertWidget(2,tableWidget);
     //隐藏列
     for(int i=0;i < AXIS_COUNTS;i++){
-        if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisX1 + i)) != ICVirtualHost::ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisX1)))
+        if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisX1 + i)) != ICVirtualHost::ICAxisDefine_Servo)
         {
             tableWidget->setColumnHidden(i + 1,true);
         }
