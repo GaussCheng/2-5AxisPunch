@@ -486,7 +486,7 @@ void ICHCManualOperationPageFrame::StatusRefreshed()
             (host->HostStatus(ICVirtualHost::DbgX1).toUInt() << 16) |
             (((int64_t)(host->HostStatus(ICVirtualHost::DbgY0).toUInt())) << 32);
 //    speed = 0;
-    if(speed != oldS)
+    if(speed != oldS && (ICVirtualHost::GlobalVirtualHost()->CurrentStatus() == ICVirtualHost::Manual))
     {
         oldS = speed;
         //        ui->speed->setText(QString::number(pos));
