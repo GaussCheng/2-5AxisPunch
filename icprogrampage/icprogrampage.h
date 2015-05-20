@@ -112,6 +112,10 @@ private slots:
 
     void on_seveoEdit_toggled(bool checked);
 
+    void on_manualButton_pressed();
+
+    void on_manualButton_released();
+
 private:
     explicit ICProgramPage(QWidget *parent = 0,int pageIndex = 0,QString pageName = "");
     void InitTableWidget();
@@ -187,6 +191,9 @@ private:
     ICMoldItem outM27On;
     ICMoldItem waitM14;
     int timerId;
+
+    QString oriStyle;
+    QString yOnStyle;
 
 };
 

@@ -8,6 +8,7 @@
 #include "icparameterconversion.h"
 #include "QtCore/qmath.h"
 #include "icvirtualkey.h"
+#include "icsystemconfig.h"
 ICProgramPage * ICProgramPage::instance_;
 
 
@@ -60,6 +61,15 @@ ICProgramPage::ICProgramPage(QWidget *parent,int _pageIndex,QString pageName) :
         validators_.append(new  QIntValidator(0,10000,this));
 
     dValidator = new QIntValidator(0,3000,this);
+
+    oriStyle = ui->manualButton->styleSheet();
+    yOnStyle = "border-style: outset;"
+            "border-width: 2px;"
+            "border-radius: 6px;"
+            "border-color: gray;"
+            "background-color: green;"
+            "padding-right: 6px;"
+            "padding-left:6px;";
 //    ui->tableWidget->setCurrentIndex(ui->tableWidget->model()->index(3,0));
 
 }
@@ -189,7 +199,7 @@ ICProgramPage::~ICProgramPage()
 
 void ICProgramPage::showEvent(QShowEvent *e)
 {
-//    timerId = startTimer(1000);
+    timerId = startTimer(200);
     //隐藏列
     for(int i=0;i < AXIS_COUNTS;i++){
         if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisX1 + i)) !=
@@ -221,7 +231,7 @@ void ICProgramPage::showEvent(QShowEvent *e)
 
 void ICProgramPage::hideEvent(QHideEvent *e)
 {
-//    killTimer(timerId);
+    killTimer(timerId);
     ui->startEdit->setChecked(false);
     ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
 
@@ -257,10 +267,35 @@ void ICProgramPage::changeEvent(QEvent *e)
 void ICProgramPage::timerEvent(QTimerEvent *e)
 {
     Q_UNUSED(e);
-//    bool isSingleRunFinished = ICVirtualHost::GlobalVirtualHost()->HostStatus(ICVirtualHost::ActL).toInt() == 0;
-//    if(isSingleRunFinished){
-//        ui->testButton->setEnabled(true);
-//    }
+    static ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+
+    ICUserActionInfo info;
+    ICUserDefineConfigSPTR config = ICUserDefineConfig::Instance();
+
+    int p;
+    info = config->GetActionShortcutByID(0);
+    //            p = (info.type == 2) ? info.pointNum << 1 : info.pointNum;
+
+    if((info.type + ICMold::GOutY) == ICMold::GTwoXTwoY){
+        p = info.pointNum * 2;
+    }
+    else if((info.type + ICMold::GOutY) == ICMold::GEuOut){
+        p = info.pointNum + 64;
+    }
+    else{
+        p = info.pointNum;
+    }
+
+    if(host->IsOutputOn(p))
+    {
+        //                buttons[i]->setPalette(yOnPalette);
+        ui->manualButton->setStyleSheet(yOnStyle);
+    }
+    else
+    {
+        //                buttons[i]->setPalette(oriPalette);
+        ui->manualButton->setStyleSheet(oriStyle);
+    }
 
 }
 
@@ -430,9 +465,9 @@ void ICProgramPage::testButonsPressed()
             cmd.SetIFVal(moldItem.IFVal());
             if(!ICCommandProcessor::Instance()->ExecuteCommand(cmd).toBool())
             {
-                QMessageBox::warning(this,
-                                         tr("warning"),
-                                         tr("Execute Manual Cmd failed!"));
+//                QMessageBox::warning(this,
+//                                         tr("warning"),
+//                                         tr("Execute Manual Cmd failed!"));
             }
         }
         else{
@@ -596,15 +631,16 @@ void ICProgramPage::InitPointToItem()
 {
     QList<ICMoldItem> items;
     pointToItem.clear();
-    pointToItem.insert(Get_Wait,(items << waitM10)); items.clear();
+    pointToItem.insert(Get_Wait,(items << waitM10)); items.clear();  //第一个取料待机
     pointToItem.insert(Get_Up,items); items.clear();
     pointToItem.insert(Get,items); items.clear();
-    pointToItem.insert(Get_Wait2,(items << outM27On)); items.clear();
-    pointToItem.insert(Put_Wait,(items << outM11 << waitM12)); items.clear();
+    pointToItem.insert(Get_Wait2,(items << outM11 <<  outM27On)); items.clear();    //第二个取料待机
+    pointToItem.insert(Put_Wait,(items << waitM12)); items.clear();    //第一个放料待机
     pointToItem.insert(Put_Up,items); items.clear();
     pointToItem.insert(Put,items); items.clear();
     pointToItem.insert(Reserve,items); items.clear();
-    qDebug() << ICMold::CurrentMold()->MoldName();
+//    qDebug() << ICMold::CurrentMold()->MoldName();
+    //第二个放料待机
     if(ICMold::CurrentMold()->MoldName() == QString::fromUtf8("./records/冲床上下料.act")){
         pointToItem.insert(Put_Wait2,(items << outPermit << waitM10)); items.clear();
     }
@@ -1001,4 +1037,60 @@ void ICProgramPage::testButonsReleased()
 {
     ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_TESTSTOP);
 
+}
+
+void ICProgramPage::on_manualButton_pressed()
+{
+    ICUserDefineConfigSPTR config = ICUserDefineConfig::Instance();
+    ICUserActionInfo info = config->GetActionShortcutByID(0);
+
+    ICManualRun cmd;
+    cmd.SetSlave(1);
+    cmd.SetGM(ICMold::GOutY + info.type);
+    cmd.SetPoint(info.pointNum);
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    int p;
+    if(cmd.GM() == ICMold::GTwoXTwoY){
+        p = info.pointNum * 2;
+    }
+    else if(cmd.GM() == ICMold::GEuOut){
+        p = info.pointNum + 64;
+    }
+    else{
+        p = info.pointNum;
+    }
+    if(host->IsOutputOn(p))
+    {
+        cmd.SetIFVal(0);
+    }
+    else
+    {
+        cmd.SetIFVal(1);
+    }
+    //    cmd.SetIFVal(info.dir);
+    if(!ICCommandProcessor::Instance()->ExecuteCommand(cmd).toBool())
+    {
+//        QMessageBox::warning(this,
+//                                 tr("warning"),
+//                                 tr("err"));
+    }
+}
+
+void ICProgramPage::on_manualButton_released()
+{
+    ICUserDefineConfigSPTR config = ICUserDefineConfig::Instance();
+    ICUserActionInfo info = config->GetActionShortcutByID(0);
+    if(info.type != 0) return;
+    if(info.pointNum != 10 && info.pointNum != 11) return;
+    ICManualRun cmd;
+    cmd.SetSlave(1);
+    cmd.SetGM(ICMold::GOutY + info.type);
+    cmd.SetPoint(info.pointNum);
+    cmd.SetIFVal(0);
+    if(!ICCommandProcessor::Instance()->ExecuteCommand(cmd).toBool())
+    {
+//        QMessageBox::warning(this,
+//                                 tr("warning"),
+//                                 tr("err"));
+    }
 }

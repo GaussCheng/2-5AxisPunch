@@ -3273,16 +3273,12 @@ Reason</source>
         <translation>单步(%1/%2)</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="669"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="688"/>
         <source>warning</source>
-        <translation>警告</translation>
+        <translation type="obsolete">警告</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="670"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="689"/>
         <source>err</source>
-        <translation>执行手动命令失败！</translation>
+        <translation type="obsolete">执行手动命令失败！</translation>
     </message>
     <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="729"/>
@@ -7687,7 +7683,12 @@ Please enter an digit between </source>
         <translation>测试</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.ui" line="193"/>
+        <location filename="icprogrampage/icprogrampage.ui" line="180"/>
+        <source>Manual</source>
+        <translation>手1阀</translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrampage.ui" line="212"/>
         <source>Save Point</source>
         <translation>保存</translation>
     </message>
@@ -7696,8 +7697,8 @@ Please enter an digit between </source>
         <translation type="obsolete">返回主编程页面</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="237"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="462"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="252"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="513"/>
         <source>UpDown</source>
         <translation>上下轴</translation>
     </message>
@@ -7706,121 +7707,119 @@ Please enter an digit between </source>
         <translation type="obsolete">前后轴</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="433"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="484"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="434"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="485"/>
         <source>Has not been origin!</source>
         <translation>还没原点复归!</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="237"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="462"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="252"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="513"/>
         <source>Rotated</source>
         <translation>旋转轴</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="27"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="28"/>
         <source>Servo Off</source>
         <translation>伺服关</translation>
     </message>
     <message>
         <location filename="icprogrampage/icprogrampage.ui" line="123"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="28"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="29"/>
         <source>Servo On</source>
         <translation>伺服开</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="237"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="462"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="252"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="513"/>
         <source>Windup</source>
         <translation>摆臂轴</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="237"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="462"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="252"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="513"/>
         <source>Type</source>
         <translation>点类型</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="238"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="463"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="253"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="514"/>
         <source>Rollovers</source>
         <translation>校正轴</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="283"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="302"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="317"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="340"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="361"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="384"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="423"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="333"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="352"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="367"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="390"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="411"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="434"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="474"/>
         <source>information</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="318"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="368"/>
         <source>%1Can not Edit Point!</source>
         <translation>%1不能编辑！</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="283"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="340"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="333"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="390"/>
         <source>Input Error!</source>
         <translation>输入值错误！</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="302"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="361"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="352"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="411"/>
         <source>Input Value Not %1 To %2 Range!</source>
         <translation>输入有效值范围%1～%2！</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="308"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="358"/>
         <source>s</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="385"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="435"/>
         <source>%1Can not Setting Point!</source>
         <translation>%1不能设入点坐标！</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="418"/>
         <source>warning</source>
-        <translation>警告</translation>
+        <translation type="obsolete">警告</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="419"/>
         <source>Execute Manual Cmd failed!</source>
-        <translation>执行手动命令失败！</translation>
+        <translation type="obsolete">执行手动命令失败！</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="424"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="475"/>
         <source>%1Can not Test Point!</source>
         <translation>%1不能测试！</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="731"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="736"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="803"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="816"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="821"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="837"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="789"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="794"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="861"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="874"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="879"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="895"/>
         <source>Information</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="731"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="803"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="789"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="861"/>
         <source>Standard Mold Cannot Modify!</source>
         <translation>标准模号不能修改！</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="736"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="794"/>
         <source>Max Point Count Beyond %1!</source>
         <translation>最大点位数不能超过%1！</translation>
     </message>
@@ -7829,17 +7828,17 @@ Please enter an digit between </source>
         <translation type="obsolete">最大行数不能超过 %1！</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="816"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="874"/>
         <source>Canot Delete %1 action!</source>
         <translation>不能删除%1操作！</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="821"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="879"/>
         <source>If Delete current Row?</source>
         <translation>是否删除当前行？</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="837"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="895"/>
         <source>Canot Delete Space Row!</source>
         <translation>不能删除空白行！</translation>
     </message>
@@ -7848,13 +7847,13 @@ Please enter an digit between </source>
         <translation type="obsolete">使用</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="463"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="514"/>
         <source>Save</source>
         <translation>坐标保存</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="237"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="462"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="252"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="513"/>
         <source>FrontBack</source>
         <translation>前后轴</translation>
     </message>
@@ -7867,7 +7866,7 @@ Please enter an digit between </source>
         <translation type="obsolete">放料操作</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="463"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="514"/>
         <source>Tested</source>
         <translation>定位测试</translation>
     </message>

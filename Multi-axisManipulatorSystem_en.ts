@@ -2065,18 +2065,6 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="669"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="688"/>
-        <source>warning</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="670"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="689"/>
-        <source>err</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="729"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="750"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="772"/>
@@ -4669,163 +4657,158 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.ui" line="193"/>
+        <location filename="icprogrampage/icprogrampage.ui" line="180"/>
+        <source>Manual</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrampage.ui" line="212"/>
         <source>Save Point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="237"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="462"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="252"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="513"/>
         <source>UpDown</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="237"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="462"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="252"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="513"/>
         <source>Rotated</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="237"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="462"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="252"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="513"/>
         <source>Windup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="237"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="462"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="252"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="513"/>
         <source>Type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="238"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="463"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="253"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="514"/>
         <source>Rollovers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="463"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="514"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="283"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="302"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="317"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="340"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="361"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="384"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="423"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="333"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="352"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="367"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="390"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="411"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="434"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="474"/>
         <source>information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="318"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="368"/>
         <source>%1Can not Edit Point!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="283"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="340"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="333"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="390"/>
         <source>Input Error!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="302"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="361"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="352"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="411"/>
         <source>Input Value Not %1 To %2 Range!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="308"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="358"/>
         <source>s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="385"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="435"/>
         <source>%1Can not Setting Point!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="418"/>
-        <source>warning</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="419"/>
-        <source>Execute Manual Cmd failed!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="424"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="475"/>
         <source>%1Can not Test Point!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="731"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="736"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="803"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="816"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="821"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="837"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="789"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="794"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="861"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="874"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="879"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="895"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="731"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="803"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="789"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="861"/>
         <source>Standard Mold Cannot Modify!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="736"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="794"/>
         <source>Max Point Count Beyond %1!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="816"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="874"/>
         <source>Canot Delete %1 action!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="821"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="879"/>
         <source>If Delete current Row?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="837"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="895"/>
         <source>Canot Delete Space Row!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="237"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="462"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="252"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="513"/>
         <source>FrontBack</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="27"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="28"/>
         <source>Servo Off</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="icprogrampage/icprogrampage.ui" line="123"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="28"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="29"/>
         <source>Servo On</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="433"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="484"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="434"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="485"/>
         <source>Has not been origin!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="463"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="514"/>
         <source>Tested</source>
         <translation type="unfinished"></translation>
     </message>
