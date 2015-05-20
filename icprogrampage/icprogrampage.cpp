@@ -71,6 +71,8 @@ QList<ICMoldItem> ICProgramPage::GT_MoldItems()
     QList<ICMoldItem> fixItems;
     ICMoldItem propertyItems;
 
+
+
     for(int i=0;i < ROW_COUNTS;i++){
         if(pointConfigs[i].Type() != Point_Property){
             items += MK_PosItem(GT_PointIndexFromRow(i));
@@ -187,7 +189,7 @@ ICProgramPage::~ICProgramPage()
 
 void ICProgramPage::showEvent(QShowEvent *e)
 {
-    timerId = startTimer(1000);
+//    timerId = startTimer(1000);
     //隐藏列
     for(int i=0;i < AXIS_COUNTS;i++){
         if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisX1 + i)) !=
@@ -219,7 +221,7 @@ void ICProgramPage::showEvent(QShowEvent *e)
 
 void ICProgramPage::hideEvent(QHideEvent *e)
 {
-    killTimer(timerId);
+//    killTimer(timerId);
     ui->startEdit->setChecked(false);
     ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
 
@@ -255,10 +257,10 @@ void ICProgramPage::changeEvent(QEvent *e)
 void ICProgramPage::timerEvent(QTimerEvent *e)
 {
     Q_UNUSED(e);
-    bool isSingleRunFinished = ICVirtualHost::GlobalVirtualHost()->HostStatus(ICVirtualHost::ActL).toInt() == 0;
-    if(isSingleRunFinished){
-        ui->testButton->setEnabled(true);
-    }
+//    bool isSingleRunFinished = ICVirtualHost::GlobalVirtualHost()->HostStatus(ICVirtualHost::ActL).toInt() == 0;
+//    if(isSingleRunFinished){
+//        ui->testButton->setEnabled(true);
+//    }
 
 }
 
@@ -410,7 +412,7 @@ void ICProgramPage::saveButtonsCliked()
 
 void ICProgramPage::testButonsPressed()
 {
-    ui->testButton->setEnabled(false);
+//    ui->testButton->setEnabled(false);
     int index = ui->tableWidget->currentIndex().row();
 
     if(index < 0)
@@ -601,8 +603,17 @@ void ICProgramPage::InitPointToItem()
     pointToItem.insert(Put_Wait,(items << outM11 << waitM12)); items.clear();
     pointToItem.insert(Put_Up,items); items.clear();
     pointToItem.insert(Put,items); items.clear();
-    pointToItem.insert(Put_Wait2,(items << outPermit)); items.clear();
     pointToItem.insert(Reserve,items); items.clear();
+    qDebug() << ICMold::CurrentMold()->MoldName();
+    if(ICMold::CurrentMold()->MoldName() == QString::fromUtf8("./records/冲床上下料.act")){
+        pointToItem.insert(Put_Wait2,(items << outPermit << waitM10)); items.clear();
+    }
+    else{
+        pointToItem.insert(Put_Wait2,(items << outPermit)); items.clear();
+    }
+
+
+
 
     propertyToItem.clear();
     propertyToItem.insert(OUYY37_ON,outY37On);
@@ -865,6 +876,7 @@ void ICProgramPage::on_saveButton_clicked()
 void ICProgramPage::MoldChanged(QString s)
 {
     InitPoint();
+    InitPointToItem();
     allItems = GT_AllMoldItems();
 
 }

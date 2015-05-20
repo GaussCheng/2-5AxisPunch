@@ -32,16 +32,16 @@ enum PointProperty{
 
 
 enum PointType{
-    Get_Wait,
-    Get_Up,
-    Get,
-    Get_Wait2,
-    Put_Wait,
-    Put_Up,
-    Put,
-    Put_Wait2,
-    Point_Property,
-    Reserve,
+    Get_Wait,   //0
+    Get_Up,     //1
+    Get,        //2
+    Get_Wait2,  //3
+    Put_Wait,   //4
+    Put_Up,     //5
+    Put,        //6
+    Put_Wait2,  //7
+    Point_Property, //8
+    Reserve,   //9
 
     NULL_Type = -1
 
