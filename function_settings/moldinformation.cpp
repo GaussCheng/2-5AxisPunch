@@ -425,17 +425,17 @@ void MoldInformation::on_loadToolButton_clicked()
                 //                ICMold::CurrentMold()->ReadMoldFile(
                 return;
             }
-//            QString configFile = filePathName;
-//            configFile.chop(3);
-//            configFile += "cfg";
-//            if(!ICMold::CurrentMold()->ReadConfigFile(configFile))
-//            {
-//                QMessageBox::critical(this, tr("critical"), tr("Read mold or mold para fail! Please change other mold!"));
-//                //                ICMold::CurrentMold()->ReadMoldFile(
-//                return;
-//            }
-
             QString configFile = filePathName;
+            configFile.chop(3);
+            configFile += "cfg";
+            if(!ICMold::CurrentMold()->ReadConfigFile(configFile))
+            {
+                QMessageBox::critical(this, tr("critical"), tr("Read mold or mold para fail! Please change other mold!"));
+                //                ICMold::CurrentMold()->ReadMoldFile(
+                return;
+            }
+
+            configFile = filePathName;
             configFile.chop(3);
             configFile += "pt";
             if(!ICMold::CurrentMold()->ReadPointConfigFile(configFile))
