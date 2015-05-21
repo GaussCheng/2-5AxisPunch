@@ -360,8 +360,13 @@ public:
         MoldParamCount
 
     };
+    enum ICMoldType{
+        standardType, //
+        punchType   //冲床上下料类型
+    };
+
     enum ICMoldNativeParam{
-        pointCount,
+        moldType, //标准模号为0，冲床上下料为1
         pointConfig1,
         pointConfig2,
         pointConfig3,

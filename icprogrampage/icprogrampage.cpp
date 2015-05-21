@@ -641,7 +641,7 @@ void ICProgramPage::InitPointToItem()
     pointToItem.insert(Reserve,items); items.clear();
 //    qDebug() << ICMold::CurrentMold()->MoldName();
     //第二个放料待机
-    if(ICMold::CurrentMold()->MoldName() == QString::fromUtf8("./records/冲床上下料.act")){
+    if(ICMold::CurrentMold()->MoldNativeParam(ICMold::moldType) == ICMold::punchType){
         pointToItem.insert(Put_Wait2,(items << outPermit << waitM10)); items.clear();
     }
     else{
