@@ -16,6 +16,8 @@
 #include "icconfigformatchecker.h"
 #include <QDebug>
 #include "mainframe.h"
+#include "icutility.h"
+
 
 ICHCSystemSettingsFrame::ICHCSystemSettingsFrame(QWidget *parent) :
     QFrame(parent),
@@ -165,7 +167,7 @@ void ICHCSystemSettingsFrame::on_saveButton_clicked()
 {
     QString dateTimeCmd = "date -s " + ui->dateTimeEdit->dateTime().toString("yyyy.MM.dd-hh:mm:ss");
     dateTimeCmd += " && hwclock -w";
-    ::system(dateTimeCmd.toAscii());
+    ICUtility::system(dateTimeCmd.toAscii());
     ICParametersSave::Instance()->SetBackLightTime(ui->backLightTimeEdit->TransThisTextToThisInt());
     ICMainFrame::SetScreenSaverInterval(ui->backLightTimeEdit->TransThisTextToThisInt() * 60000);
 }
@@ -588,7 +590,7 @@ void ICHCSystemSettingsFrame::on_restoreAllButton_clicked()
         Information(ret);
         if(ret)
         {
-            system("reboot");
+            ICUtility::system("reboot");
         }
 
     }
@@ -601,7 +603,7 @@ void ICHCSystemSettingsFrame::on_restoreAllButton_clicked()
 
 void ICHCSystemSettingsFrame::on_umountButton_clicked()
 {
-    system("umount /mnt/udisk");
+    ICUtility::system("umount /mnt/udisk");
 }
 
 void ICHCSystemSettingsFrame::OnLevelChanged(int level)
@@ -641,7 +643,7 @@ void ICHCSystemSettingsFrame::on_calibrationBtn_clicked()
                             tr("The system will be reboot to calibrate! Do you want to continue?"),
                             QMessageBox::Ok | QMessageBox::Cancel) == QMessageBox::Ok)
     {
-        ::system("cd /home/szhc && echo recal >>recal && sync && reboot");
+        ICUtility::system("cd /home/szhc && echo recal >>recal && sync && reboot");
     }
 
 }

@@ -1,6 +1,7 @@
 
 #include "icrecaldialog.h"
 #include "ui_icrecaldialog.h"
+#include "icutility.h"
 #include <QKeyEvent>
 
 ICRecalDialog::ICRecalDialog(QWidget *parent) :
@@ -42,7 +43,7 @@ void ICRecalDialog::keyPressEvent(QKeyEvent *e)
 #else
     case Qt::Key_F5:
 #endif
-        ::system("touch /home/szhc/recal && sync && reboot");
+        ICUtility::system("touch /home/szhc/recal && sync && reboot");
         this->accept();
         break;
     default:

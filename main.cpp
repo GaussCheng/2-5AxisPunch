@@ -30,14 +30,14 @@ int main(int argc, char *argv[])
         qCritical("Open Database fail!!");
         QMessageBox::critical(NULL, QT_TR_NOOP("Error"), QT_TR_NOOP("Open Database fail!!"));
     }
-//#ifdef Q_WS_WIN
+#ifdef Q_WS_WIN
     QFile file("./stylesheet/global.qss");
     if(file.open(QFile::ReadOnly))
     {
         qApp->setStyleSheet(file.readAll());
         file.close();
     }
-//#endif
+#endif
 //    qApp->setStyleSheet("./stylesheet/global.qss");
     ICParametersSave* paraSave = ICParametersSave::Instance();
     paraSave->SetCountry(paraSave->Country(), false);

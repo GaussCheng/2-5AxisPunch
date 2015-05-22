@@ -9,6 +9,7 @@
 #include "icprogramheadframe.h"
 #include "icvirtualhost.h"
 #include "config.h"
+#include "icutility.h"
 #include "ictipswidget.h"
 #include "icbackuputility.h"
 #include "icprogramformatchecker.h"
@@ -164,7 +165,7 @@ bool MoldInformation::CreateNewSourceFile(const QString & fileName)
         QFile::copy(recordFilePath_ + "/Base.pt", recordFilePath_ + "/" + fileNameNoExtent + "pt");
 
         newFile.close();
-        ::system("sync");
+        ICUtility::system("sync");
         QMessageBox::warning(this, tr("Success"),
                              tr("New file success."),
                              QMessageBox::Ok);
@@ -266,14 +267,14 @@ bool MoldInformation::CopySourceFile(const QString & originFileName, const QStri
                 isOk = isOk && QFile::copy(originPointFilePath, targetPointFilePath);
 
                 if(isOk) return true;
-                system(QString("rm %1*").arg(targetResvFilePath).toLatin1());
+                ICUtility::system(QString("rm %1*").arg(targetResvFilePath).toLatin1());
                 QFile::remove(targetSubFilePath);
             }
             QFile::remove(targetConfigFilePath);
         }
         QFile::remove(targetFilePathName);
     }
-    ::system("sync");
+    ICUtility::system("sync");
     QMessageBox::information(this, tr("warning"),
                              tr("Destination file already exists!\n"
                                 "Please try a new name"),
@@ -313,12 +314,12 @@ bool MoldInformation::DeleteSourceFile(const QString & fileName)
 //        QFile::remove(resvFile);
         QString toRm = QString("rm %1*").arg(resvFile);
 //        qDebug() << toRm.toUtf8();
-        system(toRm.toUtf8()); //中文采用utf-8编码
+        ICUtility::system(toRm.toUtf8()); //中文采用utf-8编码
         //        QFile::remove(ICSettingConfig::ConfigPath() + fileName);
         //        QMessageBox::information(this, tr("Success"),
         //                                 tr("File deleted success!"),
         //                                 QMessageBox::Ok);
-        system("sync");
+        ICUtility::system("sync");
         return true;
     }
     else
@@ -456,14 +457,14 @@ void MoldInformation::on_loadToolButton_clicked()
                 QMessageBox::critical(this, tr("critical"), tr("Mold is break, please remove it!"));
                 return;
             }
-            system(QString("cp ./records/%1 ./subs/sub7.prg -f").arg(subName).toLatin1());
-            system(QString("cp ./records/%1%2 ./subs/sub0.prg -f").arg(resvName).arg(1).toLatin1());
-            system(QString("cp ./records/%1%2 ./subs/sub1.prg -f").arg(resvName).arg(2).toLatin1());
-            system(QString("cp ./records/%1%2 ./subs/sub2.prg -f").arg(resvName).arg(3).toLatin1());
-            system(QString("cp ./records/%1%2 ./subs/sub3.prg -f").arg(resvName).arg(4).toLatin1());
-            system(QString("cp ./records/%1%2 ./subs/sub4.prg -f").arg(resvName).arg(5).toLatin1());
-            system(QString("cp ./records/%1%2 ./subs/sub5.prg -f").arg(resvName).arg(6).toLatin1());
-            system(QString("cp ./records/%1%2 ./subs/sub6.prg -f").arg(resvName).arg(7).toLatin1());
+            ICUtility::system(QString("cp ./records/%1 ./subs/sub7.prg -f").arg(subName).toLatin1());
+            ICUtility::system(QString("cp ./records/%1%2 ./subs/sub0.prg -f").arg(resvName).arg(1).toLatin1());
+            ICUtility::system(QString("cp ./records/%1%2 ./subs/sub1.prg -f").arg(resvName).arg(2).toLatin1());
+            ICUtility::system(QString("cp ./records/%1%2 ./subs/sub2.prg -f").arg(resvName).arg(3).toLatin1());
+            ICUtility::system(QString("cp ./records/%1%2 ./subs/sub3.prg -f").arg(resvName).arg(4).toLatin1());
+            ICUtility::system(QString("cp ./records/%1%2 ./subs/sub4.prg -f").arg(resvName).arg(5).toLatin1());
+            ICUtility::system(QString("cp ./records/%1%2 ./subs/sub5.prg -f").arg(resvName).arg(6).toLatin1());
+            ICUtility::system(QString("cp ./records/%1%2 ./subs/sub6.prg -f").arg(resvName).arg(7).toLatin1());
             ICMacroSubroutine::Instance()->ReadMacroSubroutieFiles("./subs");
             ICTipsWidget tipsWidget(tr("Loading..."));
             tipsWidget.show();qApp->processEvents();
@@ -478,7 +479,7 @@ void MoldInformation::on_loadToolButton_clicked()
         }
         ICVirtualHost::GlobalVirtualHost()->SetFixtureCheck(true);
         qDebug("after load");
-        system("sync");
+        ICUtility::system("sync");
     }
 }
 
@@ -860,7 +861,7 @@ void MoldInformation::on_importToolButton_clicked()
 #endif
     if(!flagItem || !flagItem_)
     {
-        ::system("sync");
+        ICUtility::system("sync");
         QMessageBox::information(this,tr("Information"), tr("Operation finished!"));
     }
 }
@@ -881,7 +882,7 @@ void MoldInformation::on_exportToolButton_clicked()
     QDir dir("/mnt/udisk/HC5ABackup/records");
     if(!dir.exists())
     {
-        system("mkdir -p /mnt/udisk/HC5ABackup/records");
+        ICUtility::system("mkdir -p /mnt/udisk/HC5ABackup/records");
     }
 #endif
     acts_ = dir.entryList(QStringList()<<"*.act");
@@ -981,7 +982,7 @@ void MoldInformation::on_exportToolButton_clicked()
     if(!flagItem || !flagItem_)
     {
 //        system("umount /mnt/udisk");
-        system("sync");
+        ICUtility::system("sync");
         QMessageBox::information(this,tr("Information"), tr("Operation finished!"));
     }
 

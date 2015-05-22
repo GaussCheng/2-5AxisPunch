@@ -1,6 +1,6 @@
 #include "icalarmframe.h"
 #include "ui_icalarmframe.h"
-
+#include "icutility.h"
 #include <QFile>
 #include <QTextStream>
 #include <QDateTime>
@@ -120,7 +120,7 @@ void ICAlarmFrame::ReadAlarmInfoInFile()
         alarmLogFile.write(alarmsOrigin.join("\n").toLatin1());
         alarmLogFile.write("\n");
         alarmLogFile.close();
-        ::system("sync");
+        ICUtility::system("sync");
     }
 
 
@@ -149,7 +149,7 @@ void ICAlarmFrame::RestoreAlarmInfoInLog(int currentAlarmNum, QString alarmDateT
         QTextStream alarmTextStream(&alarmLogFile);
         alarmTextStream << currentAlarmNum << ' ' << alarmDateTime.replace(' ','_') << ' ' << alarmModifyTime.replace(' ','_') << endl;
         alarmLogFile.close();
-        ::system("sync");
+        ICUtility::system("sync");
         alarms_.push_back(QString("%1 %2 %3").arg(currentAlarmNum).arg(alarmDateTime.replace(' ','_')).arg(alarmModifyTime.replace(' ','_')));
 //        alarmsNoSolve_.append(alarms_.count() - 1);
 //        if(alarmsNoSolve_.size() > 50)
@@ -211,7 +211,7 @@ void ICAlarmFrame::OnCurrentAlarmChanged(int currentAlarmNum)
             {
                 alarmTextStream<<alarms;
                 alarmLogFile.close();
-                ::system("sync");
+                ICUtility::system("sync");
             }
         }
     }
@@ -305,7 +305,7 @@ void ICAlarmFrame::AlarmModifyTime()
         QByteArray toWrite = alarms_.join("\n").toAscii() + "\n";
         alarmLogFile.write(toWrite);
         alarmLogFile.close();
-        ::system("sync");
+        ICUtility::system("sync");
         alarmsNoSolve_.clear();
     }
 //    temporaryFile.close();

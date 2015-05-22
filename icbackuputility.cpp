@@ -2,6 +2,7 @@
 #include <QDir>
 #include <QFile>
 #include <QDebug>
+#include "icutility.h"
 
 ICBackupUtility::ICBackupUtility()
 {
@@ -33,7 +34,7 @@ bool ICBackupUtility::BackupDir(const QStringList &nameFilter) const
     }
     end.write("CopyEnd");
     end.close();
-    ::system("sync");
+    ICUtility::system("sync");
     return ret;
 }
 

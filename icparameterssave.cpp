@@ -5,6 +5,7 @@
 #include <QTextStream>
 #include <QDebug>
 #include "icfile.h"
+#include "icutility.h"
 
 ICParametersSave * ICParametersSave::instance_ = NULL;
 
@@ -43,7 +44,7 @@ ICParametersSave::ICParametersSave(const QString fileName)
 #else
     beepFD_ = 0;
 #endif
-    SetKeyTone(KeyTone(), false);
+    SetKeyTone(KeyTone());
 }
 
 ICParametersSave::~ICParametersSave()
@@ -242,7 +243,7 @@ void ICParametersSave::SetBrightness(uint brightness, bool isSync)
 //    QString cmd("BackLight on ");
     QString cmd("BackLight.sh  ");
     cmd += QString::number(brightness);
-    ::system(cmd.toAscii());
+    ICUtility::system(cmd.toAscii());
     if(isSync)
         SaveParameter(ProductConfig, "Brightness", brightness, isSync);
 }

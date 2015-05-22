@@ -21,6 +21,7 @@
 #include "ickeyboard.h"
 #include "icparameterssave.h"
 #include "icupdatesystem.h"
+#include "icutility.h"
 
 #define BEEP_ON 0
 #define BEEP_OFF 1
@@ -68,9 +69,9 @@ void ICKeyboardReceiver::run()
         while(1)
         {
             bzero(keyValue, 5);
-//            ::system("echo before readkey >> keylog");
+//            ICUtility::system("echo before readkey >> keylog");
             read(fd, keyValue, 5);
-//            ::system("echo after readkey >> keylog");
+//            ICUtility::system("echo after readkey >> keylog");
             key = QString(keyValue).toInt();
             qDebug()<<"key"<<key;
             if(config->KeyTone())
@@ -122,7 +123,7 @@ void ICKeyboardReceiver::run()
 //                    icMainFrame->KeyToInstructEditor(key);
                 }
 //                msleep(100);
-//                ::system("echo after readkey--VFB_X-P >> keylog");
+//                ICUtility::system("echo after readkey--VFB_X-P >> keylog");
                 continue;
             }
 //            if(key == ICKeyboard::FB_Up ||
@@ -143,7 +144,7 @@ void ICKeyboardReceiver::run()
                 if(key == ICKeyboard::FB_NULL)
                 {
                     keyboard->SetPressed(false);
-//                    ::system("echo after readkey--NULL >> keylog");
+//                    ICUtility::system("echo after readkey--NULL >> keylog");
                     continue;
                 }
                 if(key >= ICKeyboard::FB_F1 && key <= ICKeyboard::FB_F5)
@@ -157,7 +158,7 @@ void ICKeyboardReceiver::run()
                     }
                     specialKeyCount_ = 0;
 //                    msleep(100);
-//                    ::system("echo after readkey-F1--F5 >> keylog");
+//                    ICUtility::system("echo after readkey-F1--F5 >> keylog");
                     continue;
                 }
                 //                if(key == ICKeyboard::FB_Down || key == ICKeyboard::FB_Up)
@@ -176,12 +177,12 @@ void ICKeyboardReceiver::run()
                     ++specialKeyCount_;
                     if(specialKeyCount_ == 500)
                     {
-                        ::system("cd /home/szhc && echo recal >>recal");
+                        ICUtility::system("cd /home/szhc && echo recal >>recal");
                         specialKeyCount_ = 0;
                     }
                 }
             }
-//            ::system("echo end readkey >> keylog");
+//            ICUtility::system("echo end readkey >> keylog");
             msleep(20);
         }
     }
@@ -238,5 +239,5 @@ void ICKeyboardReceiver::BeepStop()
 
 void ICKeyboardReceiver::on_finished()
 {
-    ::system("touch key_finished");
+    ICUtility::system("touch key_finished");
 }

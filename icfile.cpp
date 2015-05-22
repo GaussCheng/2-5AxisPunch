@@ -4,6 +4,9 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <stdio.h>
+#include <QFile>
+#include <QTextStream>
+
 
 ICFile::ICFile(const QString& filename):
     fileName_(filename)
@@ -12,6 +15,8 @@ ICFile::ICFile(const QString& filename):
 
 bool ICFile::ICWrite(const QByteArray &toWrite)
 {
+
+#ifndef Q_WS_WIN32
     int fd = open(QString(fileName_ + ".bak").toUtf8(),
                   O_WRONLY | O_CREAT | O_TRUNC,
                   S_IWUSR | S_IRUSR | S_IRGRP | S_IROTH);
@@ -33,4 +38,17 @@ bool ICFile::ICWrite(const QByteArray &toWrite)
     close(fd);
     rename(QString(fileName_ + ".bak").toUtf8(), fileName_.toUtf8());
     return true;
+#else
+
+    QFile file(fileName_);
+    //QIODevice::ReadWrite 一般不要用
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+        return false;
+
+    file.write(toWrite);
+    file.flush();
+    file.close();
+
+    return true;
+#endif
 }

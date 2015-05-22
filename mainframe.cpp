@@ -58,6 +58,7 @@
 #include "icmachineconfigpage.h"
 #include "icautoactionpage.h"
 #include "icmaualactionpage.h"
+#include "icutility.h"
 
 #include <QDebug>
 
@@ -465,16 +466,16 @@ void MainFrame::keyPressEvent(QKeyEvent *e)
     {
         if(keylog.size() >= 1048576)
         {
-            system(QString("echo %1,%2 > %3").arg(e->key()).arg(QDateTime::currentDateTime().toString()).arg("./keylog").toAscii());
+            ICUtility::system(QString("echo %1,%2 > %3").arg(e->key()).arg(QDateTime::currentDateTime().toString()).arg("./keylog").toAscii());
         }
         else
         {
-            system(QString("echo %1,%2 >> %3").arg(e->key()).arg(QDateTime::currentDateTime().toString()).arg("./keylog").toAscii());
+            ICUtility::system(QString("echo %1,%2 >> %3").arg(e->key()).arg(QDateTime::currentDateTime().toString()).arg("./keylog").toAscii());
         }
     }
     else
     {
-        system(QString("echo %1,%2 >> %3").arg(e->key()).arg(QDateTime::currentDateTime().toString()).arg("./keylog").toAscii());
+        ICUtility::system(QString("echo %1,%2 >> %3").arg(e->key()).arg(QDateTime::currentDateTime().toString()).arg("./keylog").toAscii());
     }
 }
 
@@ -510,7 +511,7 @@ bool MainFrame::eventFilter(QObject *obj, QEvent *event)
                 }
                 else if(currentKeySeq == testKeySeq)
                 {
-                    ::system("chmod +x ./test_robot.sh && ./test_robot.sh");
+                    ICUtility::system("chmod +x ./test_robot.sh && ./test_robot.sh");
                     //                exit(0);
                 }
                 currentKeySeq.clear();
@@ -1383,7 +1384,7 @@ void MainFrame::CheckedInput()
     {
         ShowScreenSaver();
         //        system("BackLight off");
-        system("BackLight.sh 0");
+        ICUtility::system("BackLight.sh 0");
         SetBackLightOff(true);
     }
     SetHasInput(false);
@@ -1466,7 +1467,7 @@ void MainFrame::CloseBackLight()
 {
 #ifdef Q_WS_QWS
     ShowScreenSaver();
-    system("BackLight.sh 0");
+    ICUtility::system("BackLight.sh 0");
     SetBackLightOff(true);
 #endif
 }

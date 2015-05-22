@@ -15,40 +15,40 @@
 
 typedef union {
      struct {
-        u_int16_t xLimit : 2;
-        u_int16_t yLimit : 2;
-        u_int16_t sLimit : 2;
-        u_int16_t rLimit : 2;
-        u_int16_t tLimit : 2;
-        u_int16_t rev : 6;
+        uint16_t xLimit : 2;
+        uint16_t yLimit : 2;
+        uint16_t sLimit : 2;
+        uint16_t rLimit : 2;
+        uint16_t tLimit : 2;
+        uint16_t rev : 6;
     }b;
-    u_int16_t all;
+    uint16_t all;
 }AxisLimitConfig;
 
 typedef union{
     struct {
-        u_int16_t x : 2;
-        u_int16_t y : 2;
-        u_int16_t z : 2;
-        u_int16_t p : 2;
-        u_int16_t q : 2;
-        u_int16_t a : 2;
-        u_int16_t b : 2;
-        u_int16_t c : 2;
+        uint16_t x : 2;
+        uint16_t y : 2;
+        uint16_t z : 2;
+        uint16_t p : 2;
+        uint16_t q : 2;
+        uint16_t a : 2;
+        uint16_t b : 2;
+        uint16_t c : 2;
     }b;
-    u_int16_t combine;
+    uint16_t combine;
 }OriginStatus;
 
 typedef union{
     struct {
-        u_int16_t a1 : 3;
-        u_int16_t a2 : 3;
-        u_int16_t a3 : 3;
-        u_int16_t a4 : 3;
-        u_int16_t a5 : 3;
-        u_int16_t resv : 1;
+        uint16_t a1 : 3;
+        uint16_t a2 : 3;
+        uint16_t a3 : 3;
+        uint16_t a4 : 3;
+        uint16_t a5 : 3;
+        uint16_t resv : 1;
     }mode;
-    u_int16_t allMode;
+    uint16_t allMode;
 }AxisMode;
 
 QString newStyle;

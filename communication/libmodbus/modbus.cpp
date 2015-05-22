@@ -155,8 +155,9 @@ static uint8_t table_crc_lo[] = {
 /* Treats errors and flush or close connection if necessary */
 static void error_treat(modbus_param_t *mb_param, int code, const char *string)
 {
-	printf("\nERROR %s (%d)\n", string, code);
-
+#ifdef Q_WS_QWS
+    printf("\nERROR %s (%d)\n", string, code);
+#endif
 	if (mb_param->error_handling == FLUSH_OR_RECONNECT_ON_ERROR) {
 		switch (code) {
 		case ILLEGAL_DATA_VALUE:
@@ -2432,6 +2433,64 @@ int hc_get_axis_parameter(modbus_param_t *mb_param, int slave, int axis, uint16_
     }
     return -1;
 }
+
+
+int hc_manual_run(modbus_param_t *mb_param,
+                                   int slave,
+                                   int num,
+                                   int gm,
+                                   int sub,
+                                   int pos,
+                                   int ifval)
+{
+    int ret;
+    int query_length;
+    uint8_t query[16];
+    uint8_t response[MAX_MESSAGE_LENGTH];
+
+    query[0]  = slave;
+    query[1]  = FC_HC_MANUAL_RUN;
+    query[2]  = num;
+    query[3]  = gm;
+    query[4]  = sub;
+    query[5]  = pos >> 8;
+    query[6]  = pos & 0x00ff;
+    query[7] = ifval;
+
+    query_length = 8;
+
+    ret = modbus_send(mb_param, query, query_length);
+    if (ret > 0)
+    {
+        int i;
+
+        ret = modbus_receive(mb_param, query, response);
+//        qDebug()<<"ret"
+        printf("ret: %d\n", ret);
+        if(ret < 0) return -1;
+        for(int i = 0; i != ret; ++i)
+        {
+            printf("i:%d ", response[i]);
+        }
+        printf("\n");
+
+//        if(ret != query_length) return -1;
+
+        /* If ret is negative, the loop is jumped ! */
+        for (i = 0; i < ret; i++)
+        {
+            if(response[i] != query[i])
+            {
+                return -1;
+            }
+        }
+        return ret;
+    }
+
+    return -1;
+}
+
+
 
 int hc_select_axis_config(modbus_param_t *mb_param, int slave, int selected)
 {

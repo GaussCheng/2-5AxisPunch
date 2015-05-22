@@ -47,7 +47,7 @@ void ICBackupDialog::keyPressEvent(QKeyEvent *e)
     case Qt::Key_F5:
 #endif
     {
-//        ::system("touch /home/root/recal && sync && reboot");if(!CheckIsUsbAttached())
+//        ICUtility::system("touch /home/root/recal && sync && reboot");if(!CheckIsUsbAttached())
         if(!ICUtility::IsUsbAttached())
         {
             QMessageBox::warning(this, tr("Warning"), tr("USB is not connected!"));

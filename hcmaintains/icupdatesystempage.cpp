@@ -20,6 +20,7 @@
 #include <QTextStream>
 #include "icparameterssave.h"
 #include <QRegExp>
+#include <icutility.h>
 #include "ictipswidget.h"
 #include "icpasswordmodifydialog.h"
 //ICUpdateSystemPage *ICUpdateSystemPage = NULL;
@@ -220,7 +221,7 @@ void ICUpdateSystemPage::RefreshUSBIniInfo()
 void ICUpdateSystemPage::RestartAndUpdateTheProgram()
 {
     //    qApp->notify(qApp, new QCloseEvent());
-    system("reboot");
+    ICUtility::system("reboot");
 }
 
 void ICUpdateSystemPage::InitInterface()

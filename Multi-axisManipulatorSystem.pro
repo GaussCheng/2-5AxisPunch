@@ -46,7 +46,6 @@ SOURCES += main.cpp \
     icprogramformatchecker.cpp \
     icconfigformatchecker.cpp \
     simulateknob.cpp\
-    icutility.cpp \
     icrecaldialog.cpp \
     icfile.cpp \
     icbackupdialog.cpp
@@ -70,7 +69,6 @@ HEADERS += mainframe.h \
     icprogramformatchecker.h \
     icconfigformatchecker.h \
     simulateknob.h \
-    icutility.h \
     icrecaldialog.h \
     icfile.h \
     icbackupdialog.h

@@ -1,5 +1,6 @@
 #include "icupdatelogodialog.h"
 #include "ui_icupdatelogodialog.h"
+#include "icutility.h"
 #include <QMessageBox>
 
 ICUpdateLogoDialog::ICUpdateLogoDialog(QWidget *parent) :
@@ -45,7 +46,7 @@ void ICUpdateLogoDialog::on_setToStartup_clicked()
     startupPage_ = ui->picView->CurrentSelectedPicture();
     ui->startupPage->setText(startupPage_);
 
-    ::system("rm /opt/Qt/apps/resource/startup_page.png");
+    ICUtility::system("rm /opt/Qt/apps/resource/startup_page.png");
     if(!startupPage_.isEmpty())
     {
 #ifdef Q_WS_X11
@@ -55,7 +56,7 @@ void ICUpdateLogoDialog::on_setToStartup_clicked()
 #endif
     }
     QMessageBox::information(this,tr("Tips"),tr("Setting success,In operation after reboot!"));
-    ::system("sync");
+    ICUtility::system("sync");
 }
 
 void ICUpdateLogoDialog::on_setToStandby_clicked()
@@ -68,7 +69,7 @@ void ICUpdateLogoDialog::on_setToStandby_clicked()
     standbyPage_ = ui->picView->CurrentSelectedPicture();
     ui->standbyPage->setText(standbyPage_);
 
-    ::system("rm /opt/Qt/apps/resource/Standby.png");
+    ICUtility::system("rm /opt/Qt/apps/resource/Standby.png");
     if(!standbyPage_.isEmpty())
     {
 #ifdef Q_WS_X11
@@ -78,12 +79,12 @@ void ICUpdateLogoDialog::on_setToStandby_clicked()
 #endif
     }
     QMessageBox::information(this,tr("Tips"),tr("Setting success,In operation after reboot!"));
-     ::system("sync");
+     ICUtility::system("sync");
 }
 
 //void ICUpdateLogoDialog::on_okButton_clicked()
 //{
-//    ::system("rm /opt/Qt/bin/resource/*");
+//    ICUtility::system("rm /opt/Qt/bin/resource/*");
 //    if(!startupPage_.isEmpty())
 //    {
 //#ifdef Q_WS_X11
