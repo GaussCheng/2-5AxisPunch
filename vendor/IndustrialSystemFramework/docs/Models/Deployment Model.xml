@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<XMI xmi.version="1.1" xmlns:UML="omg.org/UML1.3">
+	<XMI.header>
+		<XMI.documentation>
+			<XMI.exporter>Enterprise Architect</XMI.exporter>
+			<XMI.exporterVersion>2.5</XMI.exporterVersion>
+		</XMI.documentation>
+	</XMI.header>
+	<XMI.content>
+		<UML:Model name="EA Model" xmi.id="MX_EAID_C1978465_6E41_4013_ABF6_B2D7E930F5FB">
+			<UML:Namespace.ownedElement>
+				<UML:Class name="EARootClass" xmi.id="EAID_11111111_5487_4080_A7F4_41526CB0AA00" isRoot="true" isLeaf="false" isAbstract="false"/>
+				<UML:Package name="Deployment Model" xmi.id="EAPK_C1978465_6E41_4013_ABF6_B2D7E930F5FB" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
+					<UML:ModelElement.taggedValue>
+						<UML:TaggedValue tag="parent" value="EAPK_3166B77C_A2ED_4b00_8667_620A2F0DB635"/>
+						<UML:TaggedValue tag="ea_package_id" value="34"/>
+						<UML:TaggedValue tag="created" value="2011-07-18 12:25:41"/>
+						<UML:TaggedValue tag="modified" value="2011-07-18 12:25:41"/>
+						<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
+						<UML:TaggedValue tag="xmlpath" value="Deployment Model.xml"/>
+						<UML:TaggedValue tag="lastloaddate" value="2011-07-18 12:25:41"/>
+						<UML:TaggedValue tag="lastsavedate" value="2011-07-18 12:25:41"/>
+						<UML:TaggedValue tag="version" value="1.0"/>
+						<UML:TaggedValue tag="isprotected" value="FALSE"/>
+						<UML:TaggedValue tag="usedtd" value="FALSE"/>
+						<UML:TaggedValue tag="owner" value="GaussCheng"/>
+						<UML:TaggedValue tag="xmiver" value="Enterprise Architect XMI/UML 1.3"/>
+						<UML:TaggedValue tag="logxml" value="FALSE"/>
+						<UML:TaggedValue tag="tpos" value="8"/>
+						<UML:TaggedValue tag="packageFlags" value="isModel=1;VICON=5;Recurse=0;VCCFG=GaussCheng;CheckedOutTo=Administrator;CRC=0;"/>
+						<UML:TaggedValue tag="batchsave" value="0"/>
+						<UML:TaggedValue tag="batchload" value="0"/>
+						<UML:TaggedValue tag="phase" value="1.0"/>
+						<UML:TaggedValue tag="status" value="Proposed"/>
+						<UML:TaggedValue tag="complexity" value="1"/>
+						<UML:TaggedValue tag="ea_stype" value="Public"/>
+						<UML:TaggedValue tag="tpos" value="8"/>
+					</UML:ModelElement.taggedValue>
+					<UML:Namespace.ownedElement>
+						<UML:Comment xmi.id="EAID_08A3C972_42AD_4753_B106_DC48DC79B7DC" visibility="public" namespace="EAPK_C1978465_6E41_4013_ABF6_B2D7E930F5FB">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="documentation" value="The Nodes package contains models of all the processors, devices and hardware components that are required to be deployed or utilized in the final implementation of the modeled system."/>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="Note"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="package" value="EAPK_C1978465_6E41_4013_ABF6_B2D7E930F5FB"/>
+								<UML:TaggedValue tag="date_created" value="2006-01-05 10:13:54"/>
+								<UML:TaggedValue tag="date_modified" value="2006-01-05 12:31:55"/>
+								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="Deployment Model"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="135"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="eventflags" value="LNK=8551;"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Comment>
+						<UML:Collaboration xmi.id="EAID_C1978465_6E41_4013_ABF6_B2D7E930F5FB_Collaboration" name="Collaborations">
+							<UML:Namespace.ownedElement>
+								<UML:ClassifierRole name="Nodes" xmi.id="EAID_3078DF42_84B3_4d79_BD8B_71B11DC5563B" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="isAbstract" value="false"/>
+										<UML:TaggedValue tag="isSpecification" value="false"/>
+										<UML:TaggedValue tag="ea_stype" value="Package"/>
+										<UML:TaggedValue tag="ea_ntype" value="0"/>
+										<UML:TaggedValue tag="version" value="1.0"/>
+										<UML:TaggedValue tag="package" value="EAPK_C1978465_6E41_4013_ABF6_B2D7E930F5FB"/>
+										<UML:TaggedValue tag="date_created" value="2006-01-05 10:09:29"/>
+										<UML:TaggedValue tag="date_modified" value="2006-01-05 10:09:29"/>
+										<UML:TaggedValue tag="gentype" value="Java"/>
+										<UML:TaggedValue tag="tagged" value="0"/>
+										<UML:TaggedValue tag="package2" value="EAID_3078DF42_84B3_4d79_BD8B_71B11DC5563B"/>
+										<UML:TaggedValue tag="package_name" value="Deployment Model"/>
+										<UML:TaggedValue tag="phase" value="1.0"/>
+										<UML:TaggedValue tag="complexity" value="1"/>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+										<UML:TaggedValue tag="tpos" value="1"/>
+										<UML:TaggedValue tag="ea_localid" value="35"/>
+										<UML:TaggedValue tag="ea_eleType" value="package"/>
+										<UML:TaggedValue tag="eventflags" value="LNK=8551;"/>
+										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+									</UML:ModelElement.taggedValue>
+								</UML:ClassifierRole>
+								<UML:ClassifierRole name="Artifacts" xmi.id="EAID_322BCA84_7F7D_46fe_AEF9_F572A0E1DA85" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="isAbstract" value="false"/>
+										<UML:TaggedValue tag="isSpecification" value="false"/>
+										<UML:TaggedValue tag="ea_stype" value="Package"/>
+										<UML:TaggedValue tag="ea_ntype" value="0"/>
+										<UML:TaggedValue tag="version" value="1.0"/>
+										<UML:TaggedValue tag="package" value="EAPK_C1978465_6E41_4013_ABF6_B2D7E930F5FB"/>
+										<UML:TaggedValue tag="date_created" value="2006-01-05 10:10:39"/>
+										<UML:TaggedValue tag="date_modified" value="2006-01-05 10:10:39"/>
+										<UML:TaggedValue tag="gentype" value="Java"/>
+										<UML:TaggedValue tag="tagged" value="0"/>
+										<UML:TaggedValue tag="package2" value="EAID_322BCA84_7F7D_46fe_AEF9_F572A0E1DA85"/>
+										<UML:TaggedValue tag="package_name" value="Deployment Model"/>
+										<UML:TaggedValue tag="phase" value="1.0"/>
+										<UML:TaggedValue tag="complexity" value="1"/>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+										<UML:TaggedValue tag="tpos" value="2"/>
+										<UML:TaggedValue tag="ea_localid" value="39"/>
+										<UML:TaggedValue tag="ea_eleType" value="package"/>
+										<UML:TaggedValue tag="eventflags" value="LNK=ada4;"/>
+										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+									</UML:ModelElement.taggedValue>
+								</UML:ClassifierRole>
+								<UML:ClassifierRole name="Topology" xmi.id="EAID_FF31347F_BF1E_4fe3_AFE1_C5B21FD9D88C" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="isAbstract" value="false"/>
+										<UML:TaggedValue tag="isSpecification" value="false"/>
+										<UML:TaggedValue tag="ea_stype" value="Package"/>
+										<UML:TaggedValue tag="ea_ntype" value="0"/>
+										<UML:TaggedValue tag="version" value="1.0"/>
+										<UML:TaggedValue tag="package" value="EAPK_C1978465_6E41_4013_ABF6_B2D7E930F5FB"/>
+										<UML:TaggedValue tag="date_created" value="2005-11-19 10:07:43"/>
+										<UML:TaggedValue tag="date_modified" value="2005-11-19 10:07:43"/>
+										<UML:TaggedValue tag="gentype" value="Java"/>
+										<UML:TaggedValue tag="tagged" value="0"/>
+										<UML:TaggedValue tag="package2" value="EAID_FF31347F_BF1E_4fe3_AFE1_C5B21FD9D88C"/>
+										<UML:TaggedValue tag="package_name" value="Deployment Model"/>
+										<UML:TaggedValue tag="phase" value="1.0"/>
+										<UML:TaggedValue tag="complexity" value="1"/>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+										<UML:TaggedValue tag="tpos" value="3"/>
+										<UML:TaggedValue tag="ea_localid" value="40"/>
+										<UML:TaggedValue tag="ea_eleType" value="package"/>
+										<UML:TaggedValue tag="eventflags" value="LNK=caba;"/>
+										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+									</UML:ModelElement.taggedValue>
+								</UML:ClassifierRole>
+							</UML:Namespace.ownedElement>
+							<UML:Collaboration.interaction/>
+						</UML:Collaboration>
+						<UML:Comment xmi.id="EAID_39961938_92F7_44c1_99F6_58FDF78BCE1E" visibility="public" namespace="EAPK_C1978465_6E41_4013_ABF6_B2D7E930F5FB">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="documentation" value="The Topology package models the connectivity, networks, physical locations and spatial characteristics of the system to be implemented. "/>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="Note"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="package" value="EAPK_C1978465_6E41_4013_ABF6_B2D7E930F5FB"/>
+								<UML:TaggedValue tag="date_created" value="2006-01-05 10:18:34"/>
+								<UML:TaggedValue tag="date_modified" value="2006-01-05 12:33:05"/>
+								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="Deployment Model"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="137"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="eventflags" value="LNK=caba;"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Comment>
+						<UML:Comment name="Note" xmi.id="EAID_42E115B9_A045_4b72_AC10_40917580D33F" visibility="public" namespace="EAPK_C1978465_6E41_4013_ABF6_B2D7E930F5FB">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="documentation" value="The Deployment model describes how and where the system will be deployed. &#xA;&#xA;Physical machines, devices and processors are reflected as nodes, and the internal construction can be depicted by embedding additional nodes or artifacts. &#xA;&#xA;Artifacts, such as executables, are allocated to nodes to model the system's run-time configuration. The allocation is guided by the use of deployment specifications.&#xA;&#xA;The physical locations, deployment of artifacts and connectivity between nodes of the final deployed system is depicted in the Topology package. &#xA;&#xA;"/>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="Note"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="package" value="EAPK_C1978465_6E41_4013_ABF6_B2D7E930F5FB"/>
+								<UML:TaggedValue tag="date_created" value="2005-11-20 08:49:20"/>
+								<UML:TaggedValue tag="date_modified" value="2006-01-05 10:30:43"/>
+								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="Deployment Model"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="133"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Comment>
+						<UML:Comment xmi.id="EAID_6959B85D_D12A_4350_BAEA_6A75169A8910" visibility="public" namespace="EAPK_C1978465_6E41_4013_ABF6_B2D7E930F5FB">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="documentation" value="The Artifacts package contains models of all software and related components that will be deployed onto the Nodes."/>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="Note"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="package" value="EAPK_C1978465_6E41_4013_ABF6_B2D7E930F5FB"/>
+								<UML:TaggedValue tag="date_created" value="2006-01-05 10:15:10"/>
+								<UML:TaggedValue tag="date_modified" value="2006-01-05 12:30:57"/>
+								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="Deployment Model"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="138"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="eventflags" value="LNK=adae;"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Comment>
+						<UML:Comment name="$help://deployment_model_pattern.htm" xmi.id="EAID_7EEC2678_51F5_4e39_95AF_9ACDDFBD5404" visibility="public" namespace="EAPK_C1978465_6E41_4013_ABF6_B2D7E930F5FB">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="Text"/>
+								<UML:TaggedValue tag="ea_ntype" value="19"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="package" value="EAPK_C1978465_6E41_4013_ABF6_B2D7E930F5FB"/>
+								<UML:TaggedValue tag="date_created" value="2005-12-21 11:35:47"/>
+								<UML:TaggedValue tag="date_modified" value="2006-01-06 15:58:27"/>
+								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="Deployment Model"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="alias" value="Read about Deployment Modeling"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="134"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Comment>
+						<UML:Comment name="$help://deploymentdiagram.htm" xmi.id="EAID_9BFE053D_D4CD_4f98_8E5D_ACB6AD4AA282" visibility="public" namespace="EAPK_C1978465_6E41_4013_ABF6_B2D7E930F5FB">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="Text"/>
+								<UML:TaggedValue tag="ea_ntype" value="19"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="package" value="EAPK_C1978465_6E41_4013_ABF6_B2D7E930F5FB"/>
+								<UML:TaggedValue tag="date_created" value="2005-11-20 08:51:22"/>
+								<UML:TaggedValue tag="date_modified" value="2006-01-10 12:32:11"/>
+								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="Deployment Model"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="alias" value="View Further Examples"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="136"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Comment>
+						<UML:Package name="Nodes" xmi.id="EAPK_3078DF42_84B3_4d79_BD8B_71B11DC5563B" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="parent" value="EAPK_C1978465_6E41_4013_ABF6_B2D7E930F5FB"/>
+								<UML:TaggedValue tag="created" value="2011-07-18 12:25:41"/>
+								<UML:TaggedValue tag="modified" value="2011-07-18 12:25:41"/>
+								<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
+								<UML:TaggedValue tag="xmlpath" value="Nodes.xml"/>
+								<UML:TaggedValue tag="lastloaddate" value="2011-07-18 12:25:41"/>
+								<UML:TaggedValue tag="lastsavedate" value="2011-07-18 12:25:41"/>
+								<UML:TaggedValue tag="isprotected" value="FALSE"/>
+								<UML:TaggedValue tag="usedtd" value="FALSE"/>
+								<UML:TaggedValue tag="owner" value="GaussCheng"/>
+								<UML:TaggedValue tag="xmiver" value="Enterprise Architect XMI/UML 1.3"/>
+								<UML:TaggedValue tag="logxml" value="FALSE"/>
+								<UML:TaggedValue tag="tpos" value="1"/>
+								<UML:TaggedValue tag="batchsave" value="0"/>
+								<UML:TaggedValue tag="batchload" value="0"/>
+								<UML:TaggedValue tag="packageFlags" value="Recurse=0;VCCFG=GaussCheng;CheckedOutTo=Administrator;"/>
+								<UML:TaggedValue tag="savedasstub" value="true"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="ea_stype" value="Public"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Package>
+						<UML:Package name="Artifacts" xmi.id="EAPK_322BCA84_7F7D_46fe_AEF9_F572A0E1DA85" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="parent" value="EAPK_C1978465_6E41_4013_ABF6_B2D7E930F5FB"/>
+								<UML:TaggedValue tag="created" value="2011-07-18 12:25:42"/>
+								<UML:TaggedValue tag="modified" value="2011-07-18 12:25:42"/>
+								<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
+								<UML:TaggedValue tag="xmlpath" value="Artifacts.xml"/>
+								<UML:TaggedValue tag="lastloaddate" value="2011-07-18 12:25:42"/>
+								<UML:TaggedValue tag="lastsavedate" value="2011-07-18 12:25:42"/>
+								<UML:TaggedValue tag="isprotected" value="FALSE"/>
+								<UML:TaggedValue tag="usedtd" value="FALSE"/>
+								<UML:TaggedValue tag="owner" value="GaussCheng"/>
+								<UML:TaggedValue tag="xmiver" value="Enterprise Architect XMI/UML 1.3"/>
+								<UML:TaggedValue tag="logxml" value="FALSE"/>
+								<UML:TaggedValue tag="tpos" value="2"/>
+								<UML:TaggedValue tag="batchsave" value="0"/>
+								<UML:TaggedValue tag="batchload" value="0"/>
+								<UML:TaggedValue tag="packageFlags" value="Recurse=0;VCCFG=GaussCheng;CheckedOutTo=Administrator;"/>
+								<UML:TaggedValue tag="savedasstub" value="true"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="ea_stype" value="Public"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Package>
+						<UML:Package name="Topology" xmi.id="EAPK_FF31347F_BF1E_4fe3_AFE1_C5B21FD9D88C" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="parent" value="EAPK_C1978465_6E41_4013_ABF6_B2D7E930F5FB"/>
+								<UML:TaggedValue tag="created" value="2011-07-18 12:25:42"/>
+								<UML:TaggedValue tag="modified" value="2011-07-18 12:25:42"/>
+								<UML:TaggedValue tag="iscontrolled" value="FALSE"/>
+								<UML:TaggedValue tag="lastloaddate" value="2011-07-18 12:25:42"/>
+								<UML:TaggedValue tag="lastsavedate" value="2011-07-18 12:25:42"/>
+								<UML:TaggedValue tag="isprotected" value="FALSE"/>
+								<UML:TaggedValue tag="usedtd" value="FALSE"/>
+								<UML:TaggedValue tag="logxml" value="FALSE"/>
+								<UML:TaggedValue tag="tpos" value="3"/>
+								<UML:TaggedValue tag="batchsave" value="0"/>
+								<UML:TaggedValue tag="batchload" value="0"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="ea_stype" value="Public"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Namespace.ownedElement/>
+						</UML:Package>
+					</UML:Namespace.ownedElement>
+				</UML:Package>
+			</UML:Namespace.ownedElement>
+		</UML:Model>
+		<UML:Diagram name="Deployment Model" xmi.id="EAID_DADF5597_EC58_494b_853B_6E1C3D5A1445" diagramType="DeploymentDiagram" owner="EAPK_C1978465_6E41_4013_ABF6_B2D7E930F5FB" toolName="Enterprise Architect 2.5">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="version" value="1.0"/>
+				<UML:TaggedValue tag="author" value="GaussCheng"/>
+				<UML:TaggedValue tag="created_date" value="2005-11-19 00:00:00"/>
+				<UML:TaggedValue tag="modified_date" value="2011-07-21 09:09:52"/>
+				<UML:TaggedValue tag="package" value="EAPK_C1978465_6E41_4013_ABF6_B2D7E930F5FB"/>
+				<UML:TaggedValue tag="type" value="Deployment"/>
+				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
+				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
+				<UML:TaggedValue tag="ea_localid" value="34"/>
+				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=0;HighlightForeign=0;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=0;PPgs.cy=0;DocSize.cx=827;DocSize.cy=1169;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.0;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<UML:TaggedValue tag="styleex" value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.0;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+			</UML:ModelElement.taggedValue>
+			<UML:Diagram.element>
+				<UML:DiagramElement geometry="Left=557;Top=316;Right=764;Bottom=387;" subject="EAID_39961938_92F7_44c1_99F6_58FDF78BCE1E" seqno="1" style="DUID=F6E792D0;"/>
+				<UML:DiagramElement geometry="Left=554;Top=147;Right=761;Bottom=218;" subject="EAID_6959B85D_D12A_4350_BAEA_6A75169A8910" seqno="2" style="DUID=807B5C04;"/>
+				<UML:DiagramElement geometry="Left=554;Top=32;Right=761;Bottom=126;" subject="EAID_08A3C972_42AD_4753_B106_DC48DC79B7DC" seqno="3" style="DUID=2175DB37;"/>
+				<UML:DiagramElement geometry="Left=361;Top=304;Right=491;Bottom=384;" subject="EAID_FF31347F_BF1E_4fe3_AFE1_C5B21FD9D88C" seqno="4" style="DUID=A9A826CD;"/>
+				<UML:DiagramElement geometry="Left=365;Top=135;Right=495;Bottom=244;" subject="EAID_322BCA84_7F7D_46fe_AEF9_F572A0E1DA85" seqno="5" style="DUID=AD3FB70F;"/>
+				<UML:DiagramElement geometry="Left=364;Top=37;Right=494;Bottom=130;" subject="EAID_3078DF42_84B3_4d79_BD8B_71B11DC5563B" seqno="6" style="DUID=8FD93A3D;"/>
+				<UML:DiagramElement geometry="Left=28;Top=269;Right=230;Bottom=295;" subject="EAID_7EEC2678_51F5_4e39_95AF_9ACDDFBD5404" seqno="7" style="DUID=A861FDF8;HideIcon=0;NSL=0;"/>
+				<UML:DiagramElement geometry="Left=28;Top=295;Right=261;Bottom=316;" subject="EAID_9BFE053D_D4CD_4f98_8E5D_ACB6AD4AA282" seqno="8" style="DUID=94364C25;HideIcon=0;NSL=0;"/>
+				<UML:DiagramElement geometry="Left=28;Top=30;Right=336;Bottom=252;" subject="EAID_42E115B9_A045_4b72_AC10_40917580D33F" seqno="9" style="DUID=73E8F1E2;LWth=1;LCol=8355711;BFol=2631720;BCol=14745599;NSL=0;"/>
+				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_B9C69C31_322F_4335_86B9_6CD4E7B0610B" style="Mode=3;EOID=2175DB37;SOID=8FD93A3D;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_A020B2B3_A668_4cef_8841_1E4454900080" style="Mode=3;EOID=807B5C04;SOID=AD3FB70F;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_FDBF6130_AE52_4817_8664_F6982AE62841" style="Mode=3;EOID=F6E792D0;SOID=A9A826CD;Color=-1;LWidth=0;Hidden=0;"/>
+			</UML:Diagram.element>
+		</UML:Diagram>
+		<UML:Diagram name="Network" xmi.id="EAID_5514725F_98D7_48fb_A0ED_A942B18BD687" diagramType="DeploymentDiagram" owner="EAPK_FF31347F_BF1E_4fe3_AFE1_C5B21FD9D88C" toolName="Enterprise Architect 2.5">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="version" value="1.0"/>
+				<UML:TaggedValue tag="author" value="GaussCheng"/>
+				<UML:TaggedValue tag="created_date" value="2005-11-20 00:00:00"/>
+				<UML:TaggedValue tag="modified_date" value="2006-01-05 00:00:00"/>
+				<UML:TaggedValue tag="package" value="EAPK_FF31347F_BF1E_4fe3_AFE1_C5B21FD9D88C"/>
+				<UML:TaggedValue tag="type" value="Deployment"/>
+				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
+				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
+				<UML:TaggedValue tag="ea_localid" value="40"/>
+				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=0;HighlightForeign=0;PackageContents=0;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=0;PPgs.cy=0;DocSize.cx=795;DocSize.cy=1138;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<UML:TaggedValue tag="styleex" value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=0;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+			</UML:ModelElement.taggedValue>
+		</UML:Diagram>
+	</XMI.content>
+	<XMI.difference/>
+	<XMI.extensions xmi.extender="Enterprise Architect 2.5">
+		<EANoteLink xmi.id="EAID_B9C69C31_322F_4335_86B9_6CD4E7B0610B" source="EAPK_3078DF42_84B3_4d79_BD8B_71B11DC5563B" target="EAID_08A3C972_42AD_4753_B106_DC48DC79B7DC"/>
+		<EANoteLink xmi.id="EAID_A020B2B3_A668_4cef_8841_1E4454900080" source="EAPK_322BCA84_7F7D_46fe_AEF9_F572A0E1DA85" target="EAID_6959B85D_D12A_4350_BAEA_6A75169A8910"/>
+		<EANoteLink xmi.id="EAID_FDBF6130_AE52_4817_8664_F6982AE62841" source="EAPK_FF31347F_BF1E_4fe3_AFE1_C5B21FD9D88C" target="EAID_39961938_92F7_44c1_99F6_58FDF78BCE1E"/>
+	</XMI.extensions>
+</XMI>

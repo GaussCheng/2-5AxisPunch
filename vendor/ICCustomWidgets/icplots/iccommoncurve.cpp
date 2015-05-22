@@ -1,0 +1,2 @@
+#include "iccommoncurve.h"
+

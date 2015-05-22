@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resource/machine_desk.png</file>
+        <file>resource/machine_ejector.png</file>
+        <file>resource/machine_ejector_base.png</file>
+        <file>resource/machine_screw.png</file>
+        <file>resource/machine_screw_base.png</file>
+        <file>resource/machine_desk_ef.png</file>
+    </qresource>
+</RCC>

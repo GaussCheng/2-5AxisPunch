@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resource/spinbox_focus.png</file>
+        <file>resource/spinbox_normal.png</file>
+        <file>resource/combobox_arrow.png</file>
+        <file>resource/combobox_focus.png</file>
+        <file>resource/combobox_normal.png</file>
+        <file>resource/lineedit_focus.png</file>
+        <file>resource/lineedit_normal.png</file>
+        <file>resource/current_selected.png</file>
+    </qresource>
+</RCC>

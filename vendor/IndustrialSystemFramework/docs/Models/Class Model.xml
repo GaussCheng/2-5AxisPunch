@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<XMI xmi.version="1.1" xmlns:UML="omg.org/UML1.3">
+	<XMI.header>
+		<XMI.documentation>
+			<XMI.exporter>Enterprise Architect</XMI.exporter>
+			<XMI.exporterVersion>2.5</XMI.exporterVersion>
+		</XMI.documentation>
+	</XMI.header>
+	<XMI.content>
+		<UML:Model name="EA Model" xmi.id="MX_EAID_7DE172B4_4028_490e_9BB5_726D3A2C02E3">
+			<UML:Namespace.ownedElement>
+				<UML:Class name="EARootClass" xmi.id="EAID_11111111_5487_4080_A7F4_41526CB0AA00" isRoot="true" isLeaf="false" isAbstract="false"/>
+				<UML:Package name="Class Model" xmi.id="EAPK_7DE172B4_4028_490e_9BB5_726D3A2C02E3" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
+					<UML:ModelElement.taggedValue>
+						<UML:TaggedValue tag="parent" value="EAPK_3166B77C_A2ED_4b00_8667_620A2F0DB635"/>
+						<UML:TaggedValue tag="ea_package_id" value="25"/>
+						<UML:TaggedValue tag="created" value="2011-07-18 12:25:38"/>
+						<UML:TaggedValue tag="modified" value="2011-07-18 12:25:38"/>
+						<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
+						<UML:TaggedValue tag="isnamespace" value="1"/>
+						<UML:TaggedValue tag="xmlpath" value="Class Model.xml"/>
+						<UML:TaggedValue tag="lastloaddate" value="2011-07-18 12:25:38"/>
+						<UML:TaggedValue tag="lastsavedate" value="2011-07-18 12:25:38"/>
+						<UML:TaggedValue tag="isprotected" value="FALSE"/>
+						<UML:TaggedValue tag="usedtd" value="FALSE"/>
+						<UML:TaggedValue tag="owner" value="Administrator"/>
+						<UML:TaggedValue tag="xmiver" value="Enterprise Architect XMI/UML 1.3"/>
+						<UML:TaggedValue tag="logxml" value="FALSE"/>
+						<UML:TaggedValue tag="tpos" value="6"/>
+						<UML:TaggedValue tag="packageFlags" value="isModel=1;VICON=3;Recurse=0;VCCFG=GaussCheng;CheckedOutTo=Administrator;CRC=0;"/>
+						<UML:TaggedValue tag="batchsave" value="0"/>
+						<UML:TaggedValue tag="batchload" value="0"/>
+						<UML:TaggedValue tag="phase" value="1.0"/>
+						<UML:TaggedValue tag="status" value="Proposed"/>
+						<UML:TaggedValue tag="complexity" value="1"/>
+						<UML:TaggedValue tag="ea_stype" value="Public"/>
+						<UML:TaggedValue tag="tpos" value="6"/>
+					</UML:ModelElement.taggedValue>
+					<UML:Namespace.ownedElement>
+						<UML:Collaboration xmi.id="EAID_7DE172B4_4028_490e_9BB5_726D3A2C02E3_Collaboration" name="Collaborations">
+							<UML:Namespace.ownedElement>
+								<UML:ClassifierRole name="ICCore" xmi.id="EAID_7BF1C957_83F0_43ad_A6EF_C36CFD63230D" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="documentation" value="&#24037;&#25511;&#31995;&#32479;&#26680;&#24515;&#21253;&#65292;&#20854;&#20026;&#24037;&#25511;&#31995;&#32479;&#25552;&#20379;&#22522;&#26412;&#30340;&#26680;&#24515;&#21151;&#33021;&#30340;&#25903;&#25345;&#65292;&#20027;&#35201;&#21253;&#25324;&#22914;&#19979;&#21151;&#33021;&#65306;&#xA;&lt;ol&gt;&#xA;	&lt;li&gt;&#20027;&#26426;&#36890;&#35759;&#25509;&#21475;&lt;/li&gt;&#xA;	&lt;li&gt;&#22806;&#35774;&#25805;&#20316;&lt;/li&gt;&#xA;&lt;/ol&gt;"/>
+										<UML:TaggedValue tag="isAbstract" value="false"/>
+										<UML:TaggedValue tag="isSpecification" value="false"/>
+										<UML:TaggedValue tag="ea_stype" value="Package"/>
+										<UML:TaggedValue tag="ea_ntype" value="0"/>
+										<UML:TaggedValue tag="version" value="1.0"/>
+										<UML:TaggedValue tag="package" value="EAPK_7DE172B4_4028_490e_9BB5_726D3A2C02E3"/>
+										<UML:TaggedValue tag="date_created" value="2011-07-18 14:03:19"/>
+										<UML:TaggedValue tag="date_modified" value="2011-07-22 09:02:21"/>
+										<UML:TaggedValue tag="gentype" value="C++"/>
+										<UML:TaggedValue tag="tagged" value="0"/>
+										<UML:TaggedValue tag="package2" value="EAID_7BF1C957_83F0_43ad_A6EF_C36CFD63230D"/>
+										<UML:TaggedValue tag="package_name" value="Class Model"/>
+										<UML:TaggedValue tag="phase" value="1.0"/>
+										<UML:TaggedValue tag="alias" value="&#24037;&#25511;&#31995;&#32479;&#26680;&#24515;&#21253;"/>
+										<UML:TaggedValue tag="author" value="GaussCheng"/>
+										<UML:TaggedValue tag="complexity" value="2"/>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+										<UML:TaggedValue tag="tpos" value="0"/>
+										<UML:TaggedValue tag="ea_localid" value="54"/>
+										<UML:TaggedValue tag="ea_eleType" value="package"/>
+										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+									</UML:ModelElement.taggedValue>
+								</UML:ClassifierRole>
+								<UML:ClassifierRole name="ICGUI" xmi.id="EAID_846F878D_2FF4_48b5_A1FA_E7FE36004A23" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="isAbstract" value="false"/>
+										<UML:TaggedValue tag="isSpecification" value="false"/>
+										<UML:TaggedValue tag="ea_stype" value="Package"/>
+										<UML:TaggedValue tag="ea_ntype" value="0"/>
+										<UML:TaggedValue tag="version" value="1.0"/>
+										<UML:TaggedValue tag="package" value="EAPK_7DE172B4_4028_490e_9BB5_726D3A2C02E3"/>
+										<UML:TaggedValue tag="date_created" value="2011-07-18 14:24:37"/>
+										<UML:TaggedValue tag="date_modified" value="2011-07-18 14:24:37"/>
+										<UML:TaggedValue tag="gentype" value="C++"/>
+										<UML:TaggedValue tag="tagged" value="0"/>
+										<UML:TaggedValue tag="package2" value="EAID_846F878D_2FF4_48b5_A1FA_E7FE36004A23"/>
+										<UML:TaggedValue tag="package_name" value="Class Model"/>
+										<UML:TaggedValue tag="phase" value="1.0"/>
+										<UML:TaggedValue tag="author" value="Administrator"/>
+										<UML:TaggedValue tag="complexity" value="1"/>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+										<UML:TaggedValue tag="tpos" value="0"/>
+										<UML:TaggedValue tag="ea_localid" value="57"/>
+										<UML:TaggedValue tag="ea_eleType" value="package"/>
+										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+									</UML:ModelElement.taggedValue>
+								</UML:ClassifierRole>
+								<UML:ClassifierRole name="ICUtility" xmi.id="EAID_AE3562FA_A383_415c_8D85_5D68843017A2" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="isAbstract" value="false"/>
+										<UML:TaggedValue tag="isSpecification" value="false"/>
+										<UML:TaggedValue tag="ea_stype" value="Package"/>
+										<UML:TaggedValue tag="ea_ntype" value="0"/>
+										<UML:TaggedValue tag="version" value="1.0"/>
+										<UML:TaggedValue tag="package" value="EAPK_7DE172B4_4028_490e_9BB5_726D3A2C02E3"/>
+										<UML:TaggedValue tag="date_created" value="2011-07-19 14:50:41"/>
+										<UML:TaggedValue tag="date_modified" value="2011-07-19 14:50:41"/>
+										<UML:TaggedValue tag="gentype" value="C++"/>
+										<UML:TaggedValue tag="tagged" value="0"/>
+										<UML:TaggedValue tag="package2" value="EAID_AE3562FA_A383_415c_8D85_5D68843017A2"/>
+										<UML:TaggedValue tag="package_name" value="Class Model"/>
+										<UML:TaggedValue tag="phase" value="1.0"/>
+										<UML:TaggedValue tag="author" value="GaussCheng"/>
+										<UML:TaggedValue tag="complexity" value="1"/>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+										<UML:TaggedValue tag="tpos" value="0"/>
+										<UML:TaggedValue tag="ea_localid" value="58"/>
+										<UML:TaggedValue tag="ea_eleType" value="package"/>
+										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+									</UML:ModelElement.taggedValue>
+								</UML:ClassifierRole>
+							</UML:Namespace.ownedElement>
+							<UML:Collaboration.interaction/>
+						</UML:Collaboration>
+						<UML:Package name="ICCore" xmi.id="EAPK_7BF1C957_83F0_43ad_A6EF_C36CFD63230D" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="documentation" value="&#24037;&#25511;&#31995;&#32479;&#26680;&#24515;&#21253;&#65292;&#20854;&#20026;&#24037;&#25511;&#31995;&#32479;&#25552;&#20379;&#22522;&#26412;&#30340;&#26680;&#24515;&#21151;&#33021;&#30340;&#25903;&#25345;&#65292;&#20027;&#35201;&#21253;&#25324;&#22914;&#19979;&#21151;&#33021;&#65306;&#xA;&lt;ol&gt;&#xA;	&lt;li&gt;&#20027;&#26426;&#36890;&#35759;&#25509;&#21475;&lt;/li&gt;&#xA;	&lt;li&gt;&#22806;&#35774;&#25805;&#20316;&lt;/li&gt;&#xA;&lt;/ol&gt;"/>
+								<UML:TaggedValue tag="parent" value="EAPK_7DE172B4_4028_490e_9BB5_726D3A2C02E3"/>
+								<UML:TaggedValue tag="created" value="2011-07-18 14:03:19"/>
+								<UML:TaggedValue tag="modified" value="2011-07-18 14:03:19"/>
+								<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
+								<UML:TaggedValue tag="isnamespace" value="1"/>
+								<UML:TaggedValue tag="xmlpath" value="ICCore.xml"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="isprotected" value="FALSE"/>
+								<UML:TaggedValue tag="usedtd" value="FALSE"/>
+								<UML:TaggedValue tag="owner" value="Administrator"/>
+								<UML:TaggedValue tag="xmiver" value="Enterprise Architect XMI/UML 1.3"/>
+								<UML:TaggedValue tag="logxml" value="FALSE"/>
+								<UML:TaggedValue tag="batchsave" value="0"/>
+								<UML:TaggedValue tag="batchload" value="0"/>
+								<UML:TaggedValue tag="packageFlags" value="Recurse=0;VCCFG=GaussCheng;CheckedOutTo=Administrator;"/>
+								<UML:TaggedValue tag="savedasstub" value="true"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="author" value="GaussCheng"/>
+								<UML:TaggedValue tag="alias" value="&#24037;&#25511;&#31995;&#32479;&#26680;&#24515;&#21253;"/>
+								<UML:TaggedValue tag="complexity" value="2"/>
+								<UML:TaggedValue tag="ea_stype" value="Public"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Package>
+						<UML:Package name="ICGUI" xmi.id="EAPK_846F878D_2FF4_48b5_A1FA_E7FE36004A23" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="parent" value="EAPK_7DE172B4_4028_490e_9BB5_726D3A2C02E3"/>
+								<UML:TaggedValue tag="created" value="2011-07-18 14:24:37"/>
+								<UML:TaggedValue tag="modified" value="2011-07-18 14:24:37"/>
+								<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
+								<UML:TaggedValue tag="isnamespace" value="1"/>
+								<UML:TaggedValue tag="xmlpath" value="ICGUI.xml"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="isprotected" value="FALSE"/>
+								<UML:TaggedValue tag="usedtd" value="FALSE"/>
+								<UML:TaggedValue tag="owner" value="GaussCheng"/>
+								<UML:TaggedValue tag="xmiver" value="Enterprise Architect XMI/UML 1.3"/>
+								<UML:TaggedValue tag="logxml" value="FALSE"/>
+								<UML:TaggedValue tag="batchsave" value="0"/>
+								<UML:TaggedValue tag="batchload" value="0"/>
+								<UML:TaggedValue tag="packageFlags" value="Recurse=0;VCCFG=GaussCheng;CheckedOutTo=Administrator;AN=0;"/>
+								<UML:TaggedValue tag="savedasstub" value="true"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="author" value="Administrator"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="ea_stype" value="Public"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Package>
+						<UML:Package name="ICUtility" xmi.id="EAPK_AE3562FA_A383_415c_8D85_5D68843017A2" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="parent" value="EAPK_7DE172B4_4028_490e_9BB5_726D3A2C02E3"/>
+								<UML:TaggedValue tag="created" value="2011-07-19 14:50:41"/>
+								<UML:TaggedValue tag="modified" value="2011-07-19 14:50:41"/>
+								<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
+								<UML:TaggedValue tag="xmlpath" value="ICUtility.xml"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="isprotected" value="FALSE"/>
+								<UML:TaggedValue tag="usedtd" value="FALSE"/>
+								<UML:TaggedValue tag="owner" value="GaussCheng"/>
+								<UML:TaggedValue tag="xmiver" value="Enterprise Architect XMI/UML 1.3"/>
+								<UML:TaggedValue tag="logxml" value="FALSE"/>
+								<UML:TaggedValue tag="batchsave" value="0"/>
+								<UML:TaggedValue tag="batchload" value="0"/>
+								<UML:TaggedValue tag="packageFlags" value="Recurse=0;VCCFG=GaussCheng;CheckedOutTo=Administrator;"/>
+								<UML:TaggedValue tag="savedasstub" value="true"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="author" value="GaussCheng"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="ea_stype" value="Public"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Package>
+					</UML:Namespace.ownedElement>
+				</UML:Package>
+			</UML:Namespace.ownedElement>
+		</UML:Model>
+		<UML:Diagram name="Class Model" xmi.id="EAID_9D65FD96_1FCD_4bfa_BD25_6ED8E71D42C6" diagramType="ClassDiagram" owner="EAPK_7DE172B4_4028_490e_9BB5_726D3A2C02E3" toolName="Enterprise Architect 2.5">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="version" value="1.0"/>
+				<UML:TaggedValue tag="author" value="Administrator"/>
+				<UML:TaggedValue tag="created_date" value="2005-11-19 00:00:00"/>
+				<UML:TaggedValue tag="modified_date" value="2011-07-22 09:12:25"/>
+				<UML:TaggedValue tag="package" value="EAPK_7DE172B4_4028_490e_9BB5_726D3A2C02E3"/>
+				<UML:TaggedValue tag="type" value="Logical"/>
+				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
+				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
+				<UML:TaggedValue tag="ea_localid" value="25"/>
+				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=0;HighlightForeign=0;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=0;PPgs.cy=0;DocSize.cx=827;DocSize.cy=1169;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.0;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<UML:TaggedValue tag="styleex" value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.0;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+			</UML:ModelElement.taggedValue>
+			<UML:Diagram.element>
+				<UML:DiagramElement geometry="Left=284;Top=284;Right=414;Bottom=364;" subject="EAID_AE3562FA_A383_415c_8D85_5D68843017A2" seqno="1" style="DUID=EFF5C7A8;"/>
+				<UML:DiagramElement geometry="Left=369;Top=154;Right=499;Bottom=234;" subject="EAID_846F878D_2FF4_48b5_A1FA_E7FE36004A23" seqno="2" style="DUID=EB1FD679;"/>
+				<UML:DiagramElement geometry="Left=151;Top=144;Right=281;Bottom=224;" subject="EAID_7BF1C957_83F0_43ad_A6EF_C36CFD63230D" seqno="3" style="DUID=C9BC6AF8;"/>
+			</UML:Diagram.element>
+		</UML:Diagram>
+	</XMI.content>
+	<XMI.difference/>
+	<XMI.extensions xmi.extender="Enterprise Architect 2.5"/>
+</XMI>
