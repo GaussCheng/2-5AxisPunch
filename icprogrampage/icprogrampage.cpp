@@ -440,10 +440,10 @@ void ICProgramPage::saveButtonsCliked()
     for(int i=0; i < AXIS_COUNTS;i++){
         int16_t pos = _host->HostStatus(ICVirtualHost::ICStatus(ICVirtualHost::XPos + i)).toInt();
         ui->tableWidget->item(index,1+i)->setText(QString::number(pos / 10.0, 'f', 1));
-//        ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(_index * 6 * MAX_POINTS + index * 6 + i),pos);
+        ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(GT_PointIndexFromRow(index) * 6 + i),pos);
 
     }
-//    ICMold::CurrentMold()->SaveMoldParamsFile();
+    ICMold::CurrentMold()->SaveMoldParamsFile();
 }
 
 void ICProgramPage::testButonsPressed()
