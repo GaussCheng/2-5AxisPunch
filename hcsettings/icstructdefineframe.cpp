@@ -182,7 +182,7 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     timerID_ = -1;
 
     ui->pressureMode->setCurrentIndex(host->PressureCheckMode());
-    ui->originSpd->setValidator(new QIntValidator(0, 10, this));
+    ui->originSpd->setValidator(new QIntValidator(0, 30, this));
     ui->originSpd->SetThisIntToThisText(host->SystemParameter(ICVirtualHost::SYS_OriginSpeed).toInt());
     ui->tryRunBox->setChecked(host->IsMidMoldCheck());
     ui->syncBox->setChecked(host->IsOrignSyncCheck());
