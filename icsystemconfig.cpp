@@ -20,7 +20,11 @@ ICSerialPortConfig ICSystemConfig::SerialPortConfig() const
 {
     ICSerialPortConfig config;
     sysSetting_.beginGroup(CommunicationConfigGroup);
+#ifndef Q_WS_WIN32
     config.SetDevice(sysSetting_.value("Device", "/dev/ttySZHC0").toString());
+#else
+    config.SetDevice(sysSetting_.value("Device", "COM3").toString());
+#endif
     config.SetBaudRate(sysSetting_.value("BaudRate", 115200).toInt());
     config.SetParity(sysSetting_.value("Parity", "none").toString());
     config.SetDataBit(sysSetting_.value("DataBit", 8).toInt());
