@@ -706,7 +706,7 @@ void MoldInformation::on_importToolButton_clicked()
             selectedImportItemName_.append(item_text + ".fnc");
             selectedImportItemName_.append(item_text + ".sub");
             selectedImportItemName_.append(item_text + ".cfg");
-            selectedExportItemName_.append(item_text + ".pt");
+            selectedImportItemName_.append(item_text + ".pt");
             selectedImportItemName_.append(item_text + ".reserve1");
             selectedImportItemName_.append(item_text + ".reserve2");
             selectedImportItemName_.append(item_text + ".reserve3");

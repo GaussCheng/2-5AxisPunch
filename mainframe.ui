@@ -144,7 +144,7 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <property name="spacing">
-      <number>4</number>
+      <number>0</number>
      </property>
      <item>
       <widget class="QLabel" name="label_7">
@@ -230,7 +230,7 @@
       <widget class="QLabel" name="xCurrentPos">
        <property name="minimumSize">
         <size>
-         <width>70</width>
+         <width>75</width>
          <height>28</height>
         </size>
        </property>
@@ -351,7 +351,7 @@
       <widget class="QLabel" name="yCurrentPos">
        <property name="minimumSize">
         <size>
-         <width>70</width>
+         <width>75</width>
          <height>0</height>
         </size>
        </property>
@@ -472,7 +472,7 @@
       <widget class="QLabel" name="zCurrentPos">
        <property name="minimumSize">
         <size>
-         <width>70</width>
+         <width>75</width>
          <height>0</height>
         </size>
        </property>
@@ -593,7 +593,7 @@
       <widget class="QLabel" name="rCurrentPos">
        <property name="minimumSize">
         <size>
-         <width>70</width>
+         <width>75</width>
          <height>0</height>
         </size>
        </property>
@@ -714,7 +714,7 @@
       <widget class="QLabel" name="tCurrentPos">
        <property name="minimumSize">
         <size>
-         <width>70</width>
+         <width>75</width>
          <height>0</height>
         </size>
        </property>

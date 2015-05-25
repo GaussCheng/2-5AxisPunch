@@ -1255,17 +1255,27 @@ void MainFrame::LevelChanged(int level)
         break;
     case ICParametersSave::MachineAdmin:
     {
-        if(ICVirtualHost::GlobalVirtualHost()->CurrentStatus() != ICVirtualHost::Auto)
-        {
-            ui->teachButton->setEnabled(true);
-            ui->settingsButton->setEnabled(true);
-            //            settingsPage_->SetToShowAll(false);
-        }
-        else
-        {
-            //            ui->teachButton->setEnabled(false);
-        }
+        ui->settingsButton->setEnabled(true);
 
+        if(ICVirtualHost::GlobalVirtualHost()->CurrentStatus() == ICVirtualHost::Stop){
+            ui->settingsButton->setEnabled(true);
+#ifdef Q_WS_QWS
+            ui->teachButton->setEnabled(false);
+#endif
+
+        }
+        else if(ICVirtualHost::GlobalVirtualHost()->CurrentStatus() == ICVirtualHost::Auto){
+            ui->settingsButton->setEnabled(false);
+#ifdef Q_WS_QWS
+            ui->teachButton->setEnabled(false);
+#endif
+            ui->stackedWidget->setCurrentWidget(ui->page);
+        }
+        else if(ICVirtualHost::GlobalVirtualHost()->CurrentStatus() == ICVirtualHost::Manual){
+            ui->settingsButton->setEnabled(false);
+            ui->teachButton->setEnabled(true);
+            ui->stackedWidget->setCurrentWidget(ui->page);
+        }
     }
         break;
     case ICParametersSave::AdvanceAdmin:

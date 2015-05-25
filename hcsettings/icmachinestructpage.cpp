@@ -166,7 +166,7 @@ void ICMachineStructPage::showEvent(QShowEvent *e)
 
 void ICMachineStructPage::on_axisXToolButton_clicked()
 {
-    HideSafeZone();
+    ShowSafeZone();
     SetCurrentAxis(ICVirtualHost::ICAxis_AxisX1);
 }
 
