@@ -297,7 +297,7 @@ bool MoldInformation::DeleteSourceFile(const QString & fileName)
     QString configFile = filePathName;
     configFile.chop(3);
     QString subFile = configFile + "sub";
-//    QString resvFile = configFile + "reserve";
+    QString resvFile = configFile + "reserve";
     QString cfgFile = configFile + "cfg";
     QString pointFile = configFile + "pt";
 
@@ -314,6 +314,7 @@ bool MoldInformation::DeleteSourceFile(const QString & fileName)
 //        QFile::remove(resvFile);
 #ifndef Q_WS_WIN32
         QString toRm = QString("rm %1*").arg(resvFile);//中文采用utf-8编码
+        ICUtility::system(toRm.toUtf8()); //中文采用utf-8编码
 #else
         configFile.chop(3);
         QFile::remove(configFile + "reserve1");
