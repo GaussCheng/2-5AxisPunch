@@ -625,7 +625,7 @@ public:
     int64_t GlobalSpeed() const {return systemParamMap_.value(SYS_Global_Speed).toInt() |
              (systemParamMap_.value(SYS_RsvReadMold).toInt() << 16) |
                 ((int64_t)(systemParamMap_.value(SYS_Language).toInt()) << 32);}
-    void SetGlobalSpeed(int64_t speed);
+    void SetGlobalSpeed(quint64 speed);
 
     void SaveSystemConfig();
     void SaveAxisParam(int axis);
@@ -767,7 +767,7 @@ inline void ICVirtualHost::ReConfigure()
 //    WriteSystemTohost_();
 }
 
-inline void ICVirtualHost::SetGlobalSpeed(int64_t speed)
+inline void ICVirtualHost::SetGlobalSpeed(quint64 speed)
 {
     if(ICCommandProcessor::Instance()->ModifySysParam(SYS_Global_Speed, speed & 0x0000FFFF))
     {
