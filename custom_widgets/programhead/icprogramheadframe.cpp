@@ -7,6 +7,7 @@
 #include "operatingratiosetdialog.h"
 #include "iccommandprocessor.h"
 #include "icvirtualkey.h"
+#include "icvirtualhost.h"
 
 ICProgramHeadFrame * ICProgramHeadFrame::instance_ = NULL;
 static QMap<int, QString> statusToStringMap;
@@ -122,8 +123,21 @@ void ICProgramHeadFrame::ChangeControlStatus(bool isControled)
     if(isControled != this->isControled_)
     {
         this->isControled_ = isControled;
-        ui->controlStatus->setText(isControled ? tr("Controled") : tr("Single"));
+        if(isControled){
+            CanConfig canConfig;
+            canConfig.all = ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::SYS_Config_Resv1).toInt();
+            if(canConfig.b.canType == 1){
+                ui->controlStatus->setText(tr("Host"));
+            }
+            else if(canConfig.b.canType == 2){
+                ui->controlStatus->setText(tr("Aux%1").arg(canConfig.b.canAddr));
+            }
+        }
+        else{
+            ui->controlStatus->setText(tr("Single"));
+        }
     }
+
 }
 
 void ICProgramHeadFrame::ChangeRobotOrigin(bool isOrigin)
