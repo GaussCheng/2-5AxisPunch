@@ -125,16 +125,23 @@ void ICProgramPage::refreshCurrentRow(int step)
         return;
     }
 
-    int startIndex = 0,oldIndex = 0,oldPoint=0;
+    int startIndex = 0,oldPoint=0;
     foreach(ICMoldItem item,allItems){
         if(item.GMVal() != 22  ){
+            //M值跟随上一个位置
             if(item.GMVal() >=24 && item.GMVal()<=27){
-                stepToRow.insert(item.Num(),oldIndex);
+                stepToRow.insert(item.Num(),startIndex);
             }
             else{
-                startIndex++;
-                oldIndex = startIndex;
-                stepToRow.insert(item.Num(),oldIndex);
+                if(startIndex == 0){
+                    //等待，夹吸跟随当前位置
+                    stepToRow.insert(item.Num(),startIndex++);
+                }
+                else{
+                    //等待，夹吸跟随下一个位置
+                    stepToRow.insert(item.Num(),++startIndex);
+                }
+
             }
         }
         else{
@@ -142,13 +149,12 @@ void ICProgramPage::refreshCurrentRow(int step)
             if(oldPoint != item.SubNum()){
                 startIndex++;
             }
-            oldIndex = startIndex;
             oldPoint = item.SubNum();
 
         }
     }
 
-    int row = stepToRow.value(step);
+    quint32 row = stepToRow.value(step);
     if(row < ui->tableWidget->rowCount())
         ui->tableWidget->setCurrentIndex(ui->tableWidget->model()->index(row,0));
 
@@ -324,18 +330,18 @@ void ICProgramPage::itemClicked(QTableWidgetItem *item)
 
 
                 QString text = _dialog->GetCurrentText();
-
+                int pointSize;
                 if(!text.isEmpty() && (text != item->text())){
                     int value;
                     if(text.contains(QChar('.'))){
-                        int pointSize = text.split(".").at(1).size();
+                        pointSize = text.split(".").at(1).size();
                         if(pointSize > 2 || pointSize==0){
                             QMessageBox::information(this,tr("information"),tr("Input Error!"));
                             _dialog->ResetDisplay();
                             return;
                         }
                         else{
-                            value = text.remove(".").toInt();
+                            value = text.remove(".").toInt() * qPow(10,2-pointSize);
                         }
 
                     }
@@ -440,10 +446,13 @@ void ICProgramPage::saveButtonsCliked()
     for(int i=0; i < AXIS_COUNTS;i++){
         int16_t pos = _host->HostStatus(ICVirtualHost::ICStatus(ICVirtualHost::XPos + i)).toInt();
         ui->tableWidget->item(index,1+i)->setText(QString::number(pos / 10.0, 'f', 1));
-        ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(GT_PointIndexFromRow(index) * 6 + i),pos);
+//        ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(GT_PointIndexFromRow(index) * 6 + i),pos);
 
     }
-    ICMold::CurrentMold()->SaveMoldParamsFile();
+//    ICMold::CurrentMold()->SaveMoldParamsFile();
+    //调用点保存和下发
+    SaveConfigPoint();
+
 }
 
 void ICProgramPage::testButonsPressed()
@@ -908,6 +917,7 @@ void ICProgramPage::on_saveButton_clicked()
     SaveConfigPoint();
     ReConfigure();
     EnableTestButtons();
+    QMessageBox::information(this,tr("Information"),tr("Save success!"));
 }
 
 void ICProgramPage::MoldChanged(QString s)

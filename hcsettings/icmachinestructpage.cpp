@@ -462,6 +462,11 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
     intValidator->setBottom(ui->maximumDisplacementLineEdit->TransThisTextToThisInt());
     maxMoveValidator_->setTop(ui->mechanicalLengthLineEdit->TransThisTextToThisInt());
 
+    minSecValidator_->setBottom(ui->maximumDisplacementLineEdit->TransThisTextToThisInt());
+    minSecValidator_->setTop(ui->mechanicalLengthLineEdit->TransThisTextToThisInt());
+    maxSecValidator_->setBottom(ui->maximumDisplacementLineEdit->TransThisTextToThisInt());
+    maxSecValidator_->setTop(ui->mechanicalLengthLineEdit->TransThisTextToThisInt());
+
 }
 
 QList<uint> ICMachineStructPage::GetCurrentStatus_() const
