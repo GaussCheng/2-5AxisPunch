@@ -1184,6 +1184,11 @@
             <string>Continuous </string>
            </property>
           </item>
+          <item>
+           <property name="text">
+            <string>Gear</string>
+           </property>
+          </item>
          </widget>
         </item>
        </layout>

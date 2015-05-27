@@ -363,6 +363,7 @@ void ICProgramPage::itemClicked(QTableWidgetItem *item)
                     }
                     item->setText(ICParameterConversion::TransThisIntToThisText(value, 2) + tr("s"));
                     pointConfigs[item->row()].setDelay(value);
+                    SaveConfigPoint();
 
                 }
 
@@ -421,6 +422,8 @@ void ICProgramPage::itemClicked(QTableWidgetItem *item)
                 return;
             }
             item->setText(ICParameterConversion::TransThisIntToThisText(value, POINT_SIZE));
+            //调用点保存和下发
+            SaveConfigPoint();
         }
 
 

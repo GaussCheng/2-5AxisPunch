@@ -595,8 +595,8 @@ public:
     void SetMidMoldCheck(bool isCheck);
     bool IsOrignSyncCheck() const {return (SystemParameter(SYS_Function).toInt() & 0x00000008) != 0;}
     void SetOrignSyncCheck(bool isCheck);
-    bool PunchCheckMode() const {return (SystemParameter(SYS_Function).toInt() & 0x000000010) != 0;}
-    void SetPunchCheckMode(bool mode);
+    int PunchCheckMode() const {return ((SystemParameter(SYS_Function).toInt() & 0x000000030)) >> 4;}
+    void SetPunchCheckMode(int mode);
     bool IsEjectionLink() const { return (SystemParameter(SYS_Function).toInt() & 0x00000040) != 0;}
     void SetEjectionLink(bool permit);
     bool IsAlarmWhenOrigin() const { return (SystemParameter(SYS_Function).toInt() & 0x00000300) != 0;}
@@ -963,11 +963,12 @@ inline void ICVirtualHost::SetOrignSyncCheck(bool isCheck)
 }
 
 
-inline void ICVirtualHost::SetPunchCheckMode(bool isCheck)
+inline void ICVirtualHost::SetPunchCheckMode(int isCheck)
 {
     int val = SystemParameter(SYS_Function).toInt();
-    val &= 0xFFFFFFEF;
-    (isCheck ? val |= 0x000000010 : val &= 0xFFFFFFEF);
+    val &= 0xFFFFFFCF;
+    val |= isCheck<<4;
+//    (isCheck ? val |= 0x000000030 : val &= 0xFFFFFFCF);
     systemParamMap_.insert(SYS_Function, val);
     isParamChanged_ = true;
 }
