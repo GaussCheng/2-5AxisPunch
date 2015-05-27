@@ -902,7 +902,13 @@ void MainFrame::StatusRefreshed()
         ICProgramHeadFrame::Instance()->ChangStatusmoldNameLabelOperation(false);
         ICProgramHeadFrame::Instance()->SetHanSelectEnable(false);
         //        ui->teachButton->setEnabled(false);
-        if((virtualHost->HostStatus(ICVirtualHost::ClipL).toInt() >> 15) && errCode_ == 2423)
+        if((virtualHost->HostStatus(ICVirtualHost::ClipL).toInt() >> 15)
+                     && ( (errCode_ == 2423)
+                     ||   (errCode_ == 2424)
+                     ||   (errCode_ == 2310)
+                     ||   (errCode_ == 2311)
+                        )
+                )
         {
             if(actionDialog_->isHidden())
             {
