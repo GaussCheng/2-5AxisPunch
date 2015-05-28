@@ -813,6 +813,8 @@ void MainFrame::StatusRefreshed()
 
     bool isControled = virtualHost->DoseControled();
     ICProgramHeadFrame::Instance()->ChangeControlStatus(isControled);
+    ICProgramHeadFrame::Instance()->RefreshSingleStatus();
+
     newLedFlags_ = 0;
     newLedFlags_ |= (virtualHost->IsInputOn(64)? 8 : 0);
     newLedFlags_ |= (virtualHost->IsInputOn(67)? 4 : 0);
@@ -895,6 +897,9 @@ void MainFrame::StatusRefreshed()
         speed_ = "0";
         ICProgramHeadFrame::Instance()->ChangStatusmoldNameLabelOperation(true);
         ICProgramHeadFrame::Instance()->SetHanSelectEnable(false);
+        if(!actionDialog_->isHidden()){
+            actionDialog_->hide();
+        }
 
     }
     else if(runningStatus_ == ICVirtualHost::Auto)

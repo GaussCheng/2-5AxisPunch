@@ -453,7 +453,9 @@ void ICStructDefineFrame::on_saveButton_clicked()
         host->SetMidMoldCheck(ui->tryRunBox->isChecked());
         host->SetOrignSyncCheck(ui->syncBox->isChecked());
         host->SetPunchCheckMode(ui->punchType->currentIndex());
-
+        if(ui->canType->currentIndex() == 0){
+            host->SetEjectionLink(0);
+        }
         //        host->SystemParameter(ICVirtualHost::SYS_Function);
         host->SaveSystemConfig();
         QMessageBox::information(this, tr("Tips"), tr("Save Sucessfully!"));

@@ -34,6 +34,7 @@ ICProgramHeadFrame::ICProgramHeadFrame(QWidget *parent) :
     ui->moldNameLabel->setEnabled(false);
     ui->handSelect->setCurrentIndex(-1);
 //    ChangeCurrentStatus(0);
+
 }
 
 ICProgramHeadFrame::~ICProgramHeadFrame()
@@ -57,6 +58,27 @@ void ICProgramHeadFrame::changeEvent(QEvent *e)
         break;
     }
 }
+
+void ICProgramHeadFrame::RefreshSingleStatus()
+{
+    int runningStatus_ = ICVirtualHost::GlobalVirtualHost()->CurrentStatus();
+
+    if(runningStatus_ == ICVirtualHost::Stop){
+        ui->singleButton->setEnabled(true);
+    }
+    else{
+        ui->singleButton->setEnabled(false);
+        return;
+    }
+
+    if(ICVirtualHost::GlobalVirtualHost()->IsEjectionLink()){
+        ui->singleButton->setText(tr("Connect"));
+    }
+    else{
+        ui->singleButton->setText(tr("Single"));
+    }
+}
+
 
 void ICProgramHeadFrame::SetCurrentMoldName(const QString & moldName)
 {
@@ -130,7 +152,7 @@ void ICProgramHeadFrame::ChangeControlStatus(bool isControled)
                 ui->controlStatus->setText(tr("Host"));
             }
             else if(canConfig.b.canType == 2){
-                ui->controlStatus->setText(tr("Aux%1").arg(canConfig.b.canAddr));
+                ui->controlStatus->setText(tr("Aux%1").arg(canConfig.b.canAddr - 1));
             }
         }
         else{
@@ -220,5 +242,27 @@ int ICProgramHeadFrame::HandSpeed()
         return 10;
     default:
         return 1;
+    }
+}
+
+void ICProgramHeadFrame::on_singleButton_clicked()
+{
+    CanConfig canConfig;
+    canConfig.all = ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::SYS_Config_Resv1).toInt();
+    if(canConfig.b.canType > 0){
+        if(ui->singleButton->text() == tr("Single")){
+            ui->singleButton->setText(tr("Connect"));
+            ICVirtualHost::GlobalVirtualHost()->SetEjectionLink(1);
+
+        }
+        else if(ui->singleButton->text() == tr("Connect")){
+            ui->singleButton->setText(tr("Single"));
+            ICVirtualHost::GlobalVirtualHost()->SetEjectionLink(0);
+        }
+    }
+    if(ICVirtualHost::GlobalVirtualHost()->IsParamChanged())
+    {
+        ICVirtualHost::GlobalVirtualHost()->SaveSystemConfig();
+        ICVirtualHost::GlobalVirtualHost()->ReConfigure();
     }
 }

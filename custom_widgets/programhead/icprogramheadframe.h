@@ -38,6 +38,7 @@ public:
     void ChangePunchOrigin(bool isOrigin);
     void ChangeControlStatus(bool isControled);
     void ChangStatusmoldNameLabelOperation(bool s);
+    void RefreshSingleStatus();
 
 public slots:
     void OnLevelChanged(int level);
@@ -59,6 +60,8 @@ private slots:
     void UpdateDateTime();
     void on_handSelect_currentIndexChanged(int index);
 
+
+    void on_singleButton_clicked();
 
 private:
     Ui::ICProgramHeadFrame *ui;
