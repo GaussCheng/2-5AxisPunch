@@ -225,9 +225,11 @@ void ICVirtualHost::RefreshStatus()
         {
             swKey = keyboard->CurrentSwitchStatus();
 //            qDebug()<<"swKey"<<swKey<<CurrentStatus();
-
-            int isCan = SystemParameter(ICVirtualHost::SYS_Config_Resv1).toInt()  & 0xFF;
-            if(StatusToKey(CurrentStatus()) != swKey && (isCan) < 2 )
+            CanConfig canConfig;
+            canConfig.all = SystemParameter(ICVirtualHost::SYS_Config_Resv1).toInt();
+            bool isSingle = !IsEjectionLink();
+            if(StatusToKey(CurrentStatus()) != swKey &&
+                    ((canConfig.b.canType) < 2 ) || (canConfig.b.canType == 2 && isSingle))
             {
                 switch(swKey)
                 {
