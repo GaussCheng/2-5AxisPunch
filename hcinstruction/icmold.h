@@ -38,6 +38,15 @@ public:
     bool IsEarlyEnd() const { return (IFVal() & 0x80 ) == 0x80;}
     bool IsEarlySpeedDown() const { return (IFVal() & 0x20 ) == 0x20;}
 
+    /**
+      ifVal 说明
+      bit
+      8   平滑处理
+      7   提前结束
+      6   BadProduct(点位操作)
+      5   提前减速
+    **/
+
     uint GetEarlyDownSpeed() const { return (IFVal() & 0x1F );}
     void SetEarlyEnd(bool earlyEnd) { earlyEnd ? ifVal_ |= 0x80 : ifVal_ &= 0x7F;}
     void SetEarlySpeedDown(bool earlySpeedDown) { earlySpeedDown ? ifVal_ |= 0x20 : ifVal_ &= 0xDF;}
@@ -46,6 +55,10 @@ public:
     void SetBadProduct(bool badProduct) { badProduct ? ifVal_ |= 0x40 : ifVal_ &= 0xBF;}
     uint IFOtherVal() const { return IFVal() & 0x1F;}
     void SetIFOtherVal(uint val) { ifVal_ &= 0xE0; ifVal_ |= (val & 0x1F);}
+
+    bool GetSmooth() const { return (IFVal() & 0x80) == 0x80;}
+    void SetSmooth(bool smooth) { smooth ? ifVal_ |= 0x80 : ifVal_ &= 0x7F;}
+
     uint Action() const
     {
         if(!IsAction())

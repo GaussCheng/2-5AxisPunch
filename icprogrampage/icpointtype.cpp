@@ -25,6 +25,8 @@ ICPointType::ICPointType(QWidget *parent) :
     boxToType.insert(ui->checkbox_11,WAIT_X43);
     boxToType.insert(ui->checkbox_12,WAIT_X44);
     boxToType.insert(ui->checkbox_13,RESEARVE);
+    boxToType.insert(ui->checkbox_14,SMOOTH);
+
     foreach(QCheckBox *box,boxToType.keys()){
         box->setText(propertyToStr.value(boxToType.value(box)));
         connect(box,SIGNAL(stateChanged(int)),
@@ -42,6 +44,7 @@ void ICPointType::Init_()
 {
     typeToStr.insert(Get_Wait,tr("Get_Wait"));
     typeToStr.insert(Get_Wait2,tr("Get_Wait"));
+    typeToStr.insert(Get_Wait3,tr("Get_Wait"));
     typeToStr.insert(Get_Up,tr("Get_Up"));
     typeToStr.insert(Get,tr("Get"));
     typeToStr.insert(Put_Wait,tr("Put_Wait"));
@@ -63,7 +66,7 @@ void ICPointType::Init_()
     propertyToStr.insert(WAIT_X43,tr("WAIT_X43"));
     propertyToStr.insert(WAIT_X44,tr("WAIT_X44"));
     propertyToStr.insert(RESEARVE,tr("NULL_Property"));
-
+    propertyToStr.insert(SMOOTH,tr("SMOOTH"));
 
 
 }

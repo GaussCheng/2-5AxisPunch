@@ -66,7 +66,7 @@ public:
         return instance_;
     }
 
-    QList<ICMoldItem> MK_PosItem(int pos);
+    QList<ICMoldItem> MK_PosItem(int row,int pos);
     PointPtr MK_Point(qint16 x,qint16 y,qint16 s,qint16 r,qint16 t);
     ICMoldItem MK_MoldItem(uint seq,
                             uint num,
@@ -141,6 +141,9 @@ private:
     bool MoldConfigChanged();
 
     void GT_CalculateItem(QList<ICMoldItem>& items);
+    void SetRowSMooth(int index,bool s);
+
+    quint32 GT_LastAxisNum();
 
 private:
     Ui::ICProgramPage *ui;

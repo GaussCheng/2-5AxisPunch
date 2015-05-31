@@ -85,7 +85,7 @@ QList<ICMoldItem> ICProgramPage::GT_MoldItems()
 
     for(int i=0;i < ROW_COUNTS;i++){
         if(pointConfigs[i].Type() != Point_Property){
-            items += MK_PosItem(GT_PointIndexFromRow(i));
+            items += MK_PosItem(i,GT_PointIndexFromRow(i));
             fixItems = pointToItem.value((PointType)pointConfigs[i].Type());
             if(fixItems.size()){
                 items += fixItems;
@@ -127,7 +127,7 @@ void ICProgramPage::refreshCurrentRow(int step)
 
     int startIndex = 0,oldPoint=0;
     foreach(ICMoldItem item,allItems){
-        if(item.GMVal() != 22  ){
+        if(item.GMVal() < ICMold::GX || item.GMVal() > ICMold::GC ){
             //M值跟随上一个位置
             if(item.GMVal() >=24 && item.GMVal()<=27){
                 stepToRow.insert(item.Num(),startIndex);
@@ -165,32 +165,62 @@ QTableWidget *ICProgramPage::TableWidget()
     return ui->tableWidget;
 }
 
-QList<ICMoldItem> ICProgramPage::MK_PosItem(int pos)
+QList<ICMoldItem> ICProgramPage::MK_PosItem(int row,int pos)
 {
     QList<ICMoldItem> items;
 
     if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisY1)) ==
-            ICVirtualHost::ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisY1))){
-        items << MK_MoldItem(1,1,pos,22,0,64,2,100,0,172);  //3D教导
+            ICVirtualHost::ICAxisDefine_Servo){
+#ifdef TEACH_3D
+        items << MK_MoldItem(1,1,pos,ICMold::GARC,0,64,ICMold::GY,100,0,172);  //3D教导
+#else
+        items << MK_MoldItem(1,1,pos,ICMold::GY,0,64,0,100,0,172);  //组合教导
+#endif
     }
     if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisX1)) ==
-            ICVirtualHost::ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisX1))){
-        items  << MK_MoldItem(2,1,pos,22,0,64,1,100,0,174);//3D教导
+            ICVirtualHost::ICAxisDefine_Servo){
+#ifdef TEACH_3D
+        items  << MK_MoldItem(2,1,pos,ICMold::GARC,0,64,ICMold::GX,100,0,174);//3D教导
+#else
+        items  << MK_MoldItem(2,1,pos,ICMold::GX,0,64,0,100,0,174);//组合教导
+#endif
     }
     if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisZ)) ==
-            ICVirtualHost::ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisZ))){
-        items  << MK_MoldItem(3,1,pos,22,0,64,3,100,0,176);  //3D教导
+            ICVirtualHost::ICAxisDefine_Servo){
+#ifdef TEACH_3D
+        items  << MK_MoldItem(3,1,pos,ICMold::GARC,0,64,ICMold::GZ,100,0,176);  //3D教导
+#else
+        items  << MK_MoldItem(3,1,pos,ICMold::GZ,0,64,0,100,0,176);  //组合教导
+#endif
     }
     if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisX2)) ==
-            ICVirtualHost::ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisX2))){
-        items  << MK_MoldItem(4,1,pos,22,0,64,4,100,0,178);  //3D教导
+            ICVirtualHost::ICAxisDefine_Servo){
+#ifdef TEACH_3D
+        items  << MK_MoldItem(4,1,pos,ICMold::GARC,0,64,ICMold::GP,100,0,178);  //3D教导
+#else
+        items  << MK_MoldItem(4,1,pos,ICMold::GP,0,64,0,100,0,178);  //组合教导
+#endif
     }
     if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisY2)) ==
-            ICVirtualHost::ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisY2))){
-        items  << MK_MoldItem(5,1,pos,22,0,64,5,100,0,180);  //3D教导
+            ICVirtualHost::ICAxisDefine_Servo){
+#ifdef TEACH_3D
+        items  << MK_MoldItem(5,1,pos,ICMold::GARC,0,64,ICMold::GQ,100,0,180);  //3D教导
+#else
+        items  << MK_MoldItem(5,1,pos,ICMold::GQ,0,64,0,100,0,180);  //组合教导
+#endif
     }
 
+    PointType t = (PointType)pointConfigs[row].Type();
+    quint32 d = pointConfigs[row].Delay();
 
+    if(t == Get_Wait ||
+       t == Get_Wait2 ||
+       t == Get_Wait3 ||
+       t == Put_Wait ||
+       t == Put_Wait2){
+        for(int i = 0; i < items.size();i++)
+            items[i].SetSmooth(d);
+    }
     return items;
 }
 
@@ -609,6 +639,19 @@ void ICProgramPage::InitPoint()
             ui->tableWidget->item(i,5)->setText("-");
         }
     }
+
+    //初始化平滑
+    for(int i=0; i <pointConfigs.size();i++){
+        PointType t = (PointType)pointConfigs[i].Type();
+        if(t == Get_Wait ||
+           t == Get_Wait2 ||
+           t == Get_Wait3 ||
+           t == Put_Wait ||
+           t == Put_Wait2){
+            quint32 d = pointConfigs[i].Delay();
+            SetRowSMooth(i,d);
+        }
+    }
 }
 
 void ICProgramPage::DisableTestButtons()
@@ -647,6 +690,7 @@ void ICProgramPage::InitPointToItem()
     pointToItem.insert(Get_Wait,(items << waitM10)); items.clear();  //第一个取料待机
     pointToItem.insert(Get_Up,items); items.clear();
     pointToItem.insert(Get,items); items.clear();
+    pointToItem.insert(Get_Wait3,items); items.clear();
     pointToItem.insert(Get_Wait2,(items << outM11 <<  outM27On)); items.clear();    //第二个取料待机
     pointToItem.insert(Put_Wait,(items << waitM12)); items.clear();    //第一个放料待机
     pointToItem.insert(Put_Up,items); items.clear();
@@ -813,6 +857,26 @@ void ICProgramPage::on_newButton_clicked()
         if(_typeDialog->currentPropertyType() == NULL_Property){
             return;
         }
+        else if(_typeDialog->currentPropertyType() == SMOOTH){
+            quint32 t = pointConfigs[index].Type();
+            quint32 s = pointConfigs[index].Delay();
+            if(t == Get_Wait ||
+               t == Get_Wait2 ||
+               t == Get_Wait3 ||
+               t == Put_Wait ||
+               t == Put_Wait2){
+                if(s == 1)  //动作重复
+                    return;
+                pointConfigs[index].setDelay(1); //设置平滑
+                SetRowSMooth(index,true);
+            }
+            else{
+                QMessageBox::warning(this,tr("warning"),
+                                     tr("Not wait point Can Set Smooth!"));
+                return;
+            }
+            return;
+        }
         ui->tableWidget->insertRow(index);
         ui->tableWidget->setItem(index,0,new QTableWidgetItem(_typeDialog->toString(_typeDialog->currentPropertyType())));
 
@@ -875,11 +939,31 @@ void ICProgramPage::on_deleteButton_clicked()
         return;
     }
 
+
+    PointType t = (PointType)pointConfigs[index].Type();
+    quint32 d = pointConfigs[index].Delay();
+
+    if((t == Get_Wait ||
+       t == Get_Wait2 ||
+       t == Get_Wait3 ||
+       t == Put_Wait ||
+       t == Put_Wait2) && d){
+        if(QMessageBox::information(this,tr("Information"),tr("IS Delete %1 Smooth Action !")
+                        .arg( _typeDialog->toString((PointType)pointConfigs[index].Property())),
+                        QMessageBox::Ok | QMessageBox::Cancel) != QMessageBox::Ok){
+            return;
+        }
+        pointConfigs[index].setDelay(0);
+        SetRowSMooth(index,false);
+        return;
+    }
+
 //#ifdef Q_WS_QWS
     if(pointConfigs[index].Type() == Get_Wait ||
         pointConfigs[index].Type() == Get ||
         pointConfigs[index].Type() == Get_Up ||
         pointConfigs[index].Type() == Get_Wait2 ||
+        pointConfigs[index].Type() == Get_Wait3 ||
         pointConfigs[index].Type() == Put_Wait ||
         pointConfigs[index].Type() == Put ||
         pointConfigs[index].Type() == Put_Up ||
@@ -937,12 +1021,20 @@ void ICProgramPage::GT_CalculateItem(QList<ICMoldItem>& items)
     uint oldNum = 0;
     //计算num
     for(int i=0;i<items.size();i++){
-        if(items.at(i).GMVal() == ICMold::GARC){
+#ifdef TEACH_3D
+        if(items.at(i).GMVal() == ICMold::GARC)
+#else
+        if(items.at(i).GMVal() >= ICMold::GX && items.at(i).GMVal() <= ICMold::GC)
+#endif
+        {
             items[i].SetNum(oldNum);
-            if(items.at(i).IFPos()  == 5){
+            if(items.at(i).GMVal()  == GT_LastAxisNum()){
                 oldNum ++;
             }
 
+        }
+        else if(items.at(i).GMVal() == ICMold::GEuOut){
+            items[i].SetNum(oldNum);
         }
         else{
             items[i].SetNum(oldNum);
@@ -950,6 +1042,45 @@ void ICProgramPage::GT_CalculateItem(QList<ICMoldItem>& items)
         }
 
     }
+}
+
+void ICProgramPage::SetRowSMooth(int index, bool smooth)
+{
+    PointType t = (PointType)(pointConfigs[index].Type());
+    QString s  = ICPointType::Instance()->toString(t);
+    if(smooth)
+        s += tr("(SMOOTH)");
+    ui->tableWidget->item(index,0)->setText(s);
+}
+
+quint32 ICProgramPage::GT_LastAxisNum()
+{
+    uint lastAxis = 0;
+    if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisY2)) ==
+            ICVirtualHost::ICAxisDefine_Servo){
+        lastAxis = 5;
+
+    }
+    else     if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisX2)) ==
+                ICVirtualHost::ICAxisDefine_Servo){
+        lastAxis = 4;
+
+    }
+    else     if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisZ)) ==
+                ICVirtualHost::ICAxisDefine_Servo){
+        lastAxis = 3;
+
+    }
+    else     if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisX1)) ==
+                ICVirtualHost::ICAxisDefine_Servo){
+        lastAxis = 1;
+    }
+    else     if(ICVirtualHost::GlobalVirtualHost()->AxisDefine(ICVirtualHost::ICAxis(ICVirtualHost::ICAxis_AxisY1)) ==
+                ICVirtualHost::ICAxisDefine_Servo){
+        lastAxis = 2;
+    }
+
+    return lastAxis;
 }
 
 
