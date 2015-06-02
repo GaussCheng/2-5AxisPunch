@@ -229,7 +229,10 @@ void ICVirtualHost::RefreshStatus()
             canConfig.all = SystemParameter(ICVirtualHost::SYS_Config_Resv1).toInt();
             bool isSingle = !IsEjectionLink();
             if(StatusToKey(CurrentStatus()) != swKey &&
-                    ((canConfig.b.canType) < 2 ) || (canConfig.b.canType == 2 && isSingle))
+                    ((canConfig.b.canType) < 2  ||
+                     (canConfig.b.canType == 2 && isSingle)
+                    )
+              )
             {
                 switch(swKey)
                 {

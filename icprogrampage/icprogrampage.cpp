@@ -213,13 +213,15 @@ QList<ICMoldItem> ICProgramPage::MK_PosItem(int row,int pos)
     PointType t = (PointType)pointConfigs[row].Type();
     quint32 d = pointConfigs[row].Delay();
 
-    if(t == Get_Wait ||
-       t == Get_Wait2 ||
-       t == Get_Wait3 ||
-       t == Put_Wait ||
-       t == Put_Wait2){
-        for(int i = 0; i < items.size();i++)
+    if(t != Point_Property){
+        for(int i = 0; i < items.size();i++){
             items[i].SetSmooth(d);
+            if(t == Get_Up ||
+               t == Put_Up)
+            {
+                items[i].SetEarlySpeedDown(d);
+            }
+        }
     }
     return items;
 }
@@ -643,11 +645,7 @@ void ICProgramPage::InitPoint()
     //初始化平滑
     for(int i=0; i <pointConfigs.size();i++){
         PointType t = (PointType)pointConfigs[i].Type();
-        if(t == Get_Wait ||
-           t == Get_Wait2 ||
-           t == Get_Wait3 ||
-           t == Put_Wait ||
-           t == Put_Wait2){
+        if(t != Point_Property){
             quint32 d = pointConfigs[i].Delay();
             SetRowSMooth(i,d);
         }
@@ -860,11 +858,7 @@ void ICProgramPage::on_newButton_clicked()
         else if(_typeDialog->currentPropertyType() == SMOOTH){
             quint32 t = pointConfigs[index].Type();
             quint32 s = pointConfigs[index].Delay();
-            if(t == Get_Wait ||
-               t == Get_Wait2 ||
-               t == Get_Wait3 ||
-               t == Put_Wait ||
-               t == Put_Wait2){
+            if(t != Point_Property){
                 if(s == 1)  //动作重复
                     return;
                 pointConfigs[index].setDelay(1); //设置平滑
@@ -943,13 +937,9 @@ void ICProgramPage::on_deleteButton_clicked()
     PointType t = (PointType)pointConfigs[index].Type();
     quint32 d = pointConfigs[index].Delay();
 
-    if((t == Get_Wait ||
-       t == Get_Wait2 ||
-       t == Get_Wait3 ||
-       t == Put_Wait ||
-       t == Put_Wait2) && d){
+    if(t != Point_Property  && d){
         if(QMessageBox::information(this,tr("Information"),tr("IS Delete %1 Smooth Action !")
-                        .arg( _typeDialog->toString((PointType)pointConfigs[index].Property())),
+                        .arg( _typeDialog->toString(t)),
                         QMessageBox::Ok | QMessageBox::Cancel) != QMessageBox::Ok){
             return;
         }
