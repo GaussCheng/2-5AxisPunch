@@ -139,7 +139,7 @@ private:
     bool PointConfigChanged(QList<ICPointConfig>& items);
 
     bool MoldConfigChanged();
-
+    bool LastIsSmooth();
     void GT_CalculateItem(QList<ICMoldItem>& items);
     void SetRowSMooth(int index,bool s);
 

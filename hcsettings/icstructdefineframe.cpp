@@ -186,6 +186,7 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     ui->originSpd->SetThisIntToThisText(host->SystemParameter(ICVirtualHost::SYS_OriginSpeed).toInt());
     ui->tryRunBox->setChecked(host->IsMidMoldCheck());
     ui->syncBox->setChecked(host->IsOrignSyncCheck());
+    ui->downModeBox->setChecked(host->IsCloseMoldEn());
     ui->punchType->setCurrentIndex(host->PunchCheckMode());
 
 
@@ -451,6 +452,7 @@ void ICStructDefineFrame::on_saveButton_clicked()
         host->SetPressureCheckMode(ui->pressureMode->currentIndex());
         host->SetSystemParameter(ICVirtualHost::SYS_OriginSpeed, ui->originSpd->TransThisTextToThisInt());
         host->SetMidMoldCheck(ui->tryRunBox->isChecked());
+        host->SetCloseMoldEn(ui->downModeBox->isChecked());
         host->SetOrignSyncCheck(ui->syncBox->isChecked());
         host->SetPunchCheckMode(ui->punchType->currentIndex());
         if(ui->canType->currentIndex() == 0){
@@ -584,6 +586,7 @@ void ICStructDefineFrame::InitCombobox()
     ui->os5->blockSignals(false);
 
     ui->tryRunBox->setChecked(host->IsMidMoldCheck());
+    ui->downModeBox->setChecked(host->IsCloseMoldEn());
     ui->syncBox->setChecked(host->IsOrignSyncCheck());
     ui->punchType->setCurrentIndex(host->PunchCheckMode());
 }

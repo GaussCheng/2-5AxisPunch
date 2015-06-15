@@ -1037,7 +1037,13 @@ void ICProgramPage::GT_CalculateItem(QList<ICMoldItem>& items)
 
         }
         else if(items.at(i).GMVal() == ICMold::GEuOut){
-            items[i].SetNum(oldNum-1);
+            if(LastIsSmooth()){
+                items[i].SetNum(oldNum-1);
+            }
+            else {
+                items[i].SetNum(oldNum);
+                oldNum ++;
+            }
         }
         else{
             items[i].SetNum(oldNum);
@@ -1120,6 +1126,12 @@ bool ICProgramPage::PointConfigChanged(QList<ICPointConfig> &items)
 bool ICProgramPage::MoldConfigChanged()
 {
     return true;
+}
+
+bool ICProgramPage::LastIsSmooth()
+{
+    int size = pointConfigs.size();
+    return (pointConfigs[size - 1].Delay() == 1);
 }
 
 

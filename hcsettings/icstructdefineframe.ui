@@ -1073,13 +1073,32 @@
          <x>10</x>
          <y>100</y>
          <width>219</width>
-         <height>135</height>
+         <height>161</height>
         </rect>
        </property>
        <layout class="QGridLayout" name="gridLayout_6">
         <property name="horizontalSpacing">
          <number>2</number>
         </property>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_10">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>80</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Pressure Check</string>
+          </property>
+         </widget>
+        </item>
         <item row="3" column="1">
          <widget class="QCheckBox" name="tryRunBox">
           <property name="focusPolicy">
@@ -1134,25 +1153,6 @@
           </item>
          </widget>
         </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="label_10">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>80</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>Pressure Check</string>
-          </property>
-         </widget>
-        </item>
         <item row="0" column="0">
          <widget class="QLabel" name="label_22">
           <property name="minimumSize">
@@ -1189,6 +1189,41 @@
             <string>Gear</string>
            </property>
           </item>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QCheckBox" name="downModeBox">
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">::indicator {
+     width: 32px;
+     height: 32px;
+ }
+
+::indicator:unchecked 
+{
+     image: url(:/resource/check_unchecked.png);
+ }
+::indicator:checked 
+{
+     image: url(:/resource/check_checked.png);
+ }
+
+::indicator:checked:disabled
+{
+ image: url(:/resource/check_checked_disable.png);
+}
+
+::indicator:unchecked:disabled
+{
+ image: url(:/resource/check_unchecked_disable.png);
+}</string>
+          </property>
+          <property name="text">
+           <string>Down Mode</string>
+          </property>
          </widget>
         </item>
        </layout>
