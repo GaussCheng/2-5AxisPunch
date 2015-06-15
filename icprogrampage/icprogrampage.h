@@ -175,6 +175,8 @@ private:
     ICMoldItem outM11;
     ICMoldItem waitM12;
     ICMoldItem outPermit;
+    ICMoldItem checkM15;
+
 
     ICMoldItem outY37On;  //输出
     ICMoldItem outY37Off;

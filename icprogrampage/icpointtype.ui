@@ -231,8 +231,21 @@ QRadioButton::indicator:unchecked:disabled
        </attribute>
       </widget>
      </item>
-     <item row="4" column="1">
+     <item row="4" column="2">
       <widget class="QCheckBox" name="checkbox_14">
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="text">
+        <string>CheckBox14</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QCheckBox" name="checkbox_15">
        <property name="focusPolicy">
         <enum>Qt::NoFocus</enum>
        </property>

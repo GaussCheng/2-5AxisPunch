@@ -26,6 +26,7 @@ enum PointProperty{
     WAIT_X44,
     RESEARVE,
     SMOOTH,
+    WAITSAFE,
 
     NULL_Property = -1
 
@@ -44,6 +45,7 @@ enum PointType{
     Point_Property, //8
     Reserve,   //9
     Get_Wait3,   //10
+    Wait_Safe,  //11
 
     NULL_Type = -1
 

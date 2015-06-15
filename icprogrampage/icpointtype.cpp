@@ -26,6 +26,7 @@ ICPointType::ICPointType(QWidget *parent) :
     boxToType.insert(ui->checkbox_12,WAIT_X44);
     boxToType.insert(ui->checkbox_13,RESEARVE);
     boxToType.insert(ui->checkbox_14,SMOOTH);
+    boxToType.insert(ui->checkbox_15,WAITSAFE);
 
     foreach(QCheckBox *box,boxToType.keys()){
         box->setText(propertyToStr.value(boxToType.value(box)));
@@ -52,6 +53,8 @@ void ICPointType::Init_()
     typeToStr.insert(Put_Up,tr("Put_Up"));
     typeToStr.insert(Put,tr("Put"));
     typeToStr.insert(Reserve,tr("Reserve"));
+    typeToStr.insert(Wait_Safe,tr("WAIT_SAFE"));
+
 
     propertyToStr.insert(OUYY37_ON,tr("OUYY37_ON"));
     propertyToStr.insert(OUYY37_OFF,tr("OUYY37_OFF"));
@@ -67,6 +70,7 @@ void ICPointType::Init_()
     propertyToStr.insert(WAIT_X44,tr("WAIT_X44"));
     propertyToStr.insert(RESEARVE,tr("NULL_Property"));
     propertyToStr.insert(SMOOTH,tr("SMOOTH"));
+    propertyToStr.insert(WAITSAFE,tr("WAIT_SAFE"));
 
 
 }
@@ -102,9 +106,21 @@ QString ICPointType::toPropertyString(PointProperty type,quint32 delay)
 
 ICPointConfig ICPointType::config()
 {
-    ICPointConfig config(currentPropertyType() == RESEARVE ? Reserve : Point_Property  ,
+    PointType p;
+    int delay = 0;
+    if(currentPropertyType() == RESEARVE){
+        p = Reserve;
+    }
+    else if(currentPropertyType() == WAITSAFE){
+        p = Wait_Safe;
+    }
+    else{
+        p = Point_Property;
+        delay = ui->delayEdit->TransThisTextToThisInt();
+    }
+    ICPointConfig config(p ,
                          currentPropertyType(),
-                         ui->delayEdit->TransThisTextToThisInt());
+                         delay);
     return config;
 }
 
@@ -135,7 +151,8 @@ void ICPointType::stateChanged(int status)
     if(status){
         _box = qobject_cast<QCheckBox*> (sender());
     }
-    if(_box == ui->checkbox_13){
+    if(_box == ui->checkbox_13 || _box == ui->checkbox_14
+            || _box == ui->checkbox_15){
         ui->delayEdit->setEnabled(false);
     }
     else{

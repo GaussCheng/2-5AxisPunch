@@ -82,13 +82,21 @@ QList<ICMoldItem> ICProgramPage::GT_MoldItems()
     ICMoldItem propertyItems;
 
 
-
     for(int i=0;i < ROW_COUNTS;i++){
         if(pointConfigs[i].Type() != Point_Property){
-            items += MK_PosItem(i,GT_PointIndexFromRow(i));
-            fixItems = pointToItem.value((PointType)pointConfigs[i].Type());
-            if(fixItems.size()){
-                items += fixItems;
+            if(pointConfigs[i].Type() == Wait_Safe){
+                fixItems = pointToItem.value((PointType)pointConfigs[i].Type());
+                if(fixItems.size()){
+                    items += fixItems;
+                }
+                items += MK_PosItem(i,GT_PointIndexFromRow(i));
+            }
+            else{
+                items += MK_PosItem(i,GT_PointIndexFromRow(i));
+                fixItems = pointToItem.value((PointType)pointConfigs[i].Type());
+                if(fixItems.size()){
+                    items += fixItems;
+                }
             }
         }
         else{
@@ -129,7 +137,8 @@ void ICProgramPage::refreshCurrentRow(int step)
     foreach(ICMoldItem item,allItems){
         if(item.GMVal() < ICMold::GX || item.GMVal() > ICMold::GC ){
             //M值跟随上一个位置
-            if(item.GMVal() >=24 && item.GMVal()<=27){
+            if((item.GMVal() >=ICMold::GMWait && item.GMVal()<=ICMold::GEuOut)
+                    || item.GMVal() == ICMold::GCondition){
                 stepToRow.insert(item.Num(),startIndex);
             }
             else{
@@ -694,6 +703,8 @@ void ICProgramPage::InitPointToItem()
     pointToItem.insert(Put_Up,items); items.clear();
     pointToItem.insert(Put,items); items.clear();
     pointToItem.insert(Reserve,items); items.clear();
+    pointToItem.insert(Wait_Safe,items << checkM15); items.clear();
+
 //    qDebug() << ICMold::CurrentMold()->MoldName();
     //第二个放料待机
     if(ICMold::CurrentMold()->MoldNativeParam(ICMold::moldType) == ICMold::punchType){
@@ -803,6 +814,7 @@ ICMoldItem ICProgramPage::MK_MoldItem(uint seq, uint num, uint8_t subNum, uint g
 void ICProgramPage::InitFixMoldItems()
 {
     waitM10   = MK_MoldItem(6,2,0,24,0,1,0,0,3000,33);
+    checkM15  = MK_MoldItem(3,1,5,14,0,129,0,2,0,154);
     outM11    = MK_MoldItem(8,4,1,25,0,1,0,0,0,204);
     waitM12   = MK_MoldItem(9,5,2,24,0,1,0,0,3000,207);
     waitM14   = MK_MoldItem(13,9,4,24,0,1,0,0,3000,246);
@@ -883,7 +895,8 @@ void ICProgramPage::on_newButton_clicked()
             QTableWidgetItem *item = new QTableWidgetItem("") ;
             item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
             ui->tableWidget->setItem(index,i+1,item);
-            if(_typeDialog->currentPropertyType() != RESEARVE){
+            if(_typeDialog->currentPropertyType() != RESEARVE &&
+               _typeDialog->currentPropertyType() != WAITSAFE){
                 if(i==0){
                     ui->tableWidget->item(index,i+1)->setText(QString("%1s")
                                                         .arg(ICParameterConversion::TransThisIntToThisText(pointConfigs[index].Delay(), 2)));
@@ -1024,7 +1037,7 @@ void ICProgramPage::GT_CalculateItem(QList<ICMoldItem>& items)
 
         }
         else if(items.at(i).GMVal() == ICMold::GEuOut){
-            items[i].SetNum(oldNum);
+            items[i].SetNum(oldNum-1);
         }
         else{
             items[i].SetNum(oldNum);
