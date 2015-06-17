@@ -2,6 +2,7 @@
 #include "ui_icactiondialog.h"
 #include "iccommandprocessor.h"
 #include "icactioncommand.h"
+#include <QDebug>
 
 ICActionDialog::ICActionDialog(QWidget *parent) :
     QDialog(parent),
@@ -25,6 +26,18 @@ void ICActionDialog::changeEvent(QEvent *e)
     default:
         break;
     }
+}
+
+void ICActionDialog::keyPressEvent(QKeyEvent *e)
+{
+    QKeyEvent* ke = new QKeyEvent(*e);
+    qApp->postEvent(this->parentWidget(), ke);
+}
+
+void ICActionDialog::keyReleaseEvent(QKeyEvent *e)
+{
+    QKeyEvent* ke = new QKeyEvent(*e);
+    qApp->postEvent(this->parentWidget(), ke);
 }
 
 void ICActionDialog::on_goOnButton_clicked()

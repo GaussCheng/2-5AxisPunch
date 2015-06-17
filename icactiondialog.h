@@ -2,6 +2,7 @@
 #define ICACTIONDIALOG_H
 
 #include <QDialog>
+#include <QKeyEvent>
 
 namespace Ui {
     class ICActionDialog;
@@ -17,6 +18,8 @@ public:
 
 protected:
     void changeEvent(QEvent *e);
+    void keyPressEvent(QKeyEvent *e);
+    void keyReleaseEvent(QKeyEvent *);
 
 private slots:
     void on_goOnButton_clicked();

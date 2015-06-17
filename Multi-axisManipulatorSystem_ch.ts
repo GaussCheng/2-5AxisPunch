@@ -919,12 +919,12 @@
     <message>
         <location filename="icactiondialog.ui" line="35"/>
         <source>Go On</source>
-        <translation>继续</translation>
+        <translation>继续运行</translation>
     </message>
     <message>
         <location filename="icactiondialog.ui" line="48"/>
         <source>Give Up</source>
-        <translation>放弃</translation>
+        <translation>再次取物</translation>
     </message>
 </context>
 <context>
