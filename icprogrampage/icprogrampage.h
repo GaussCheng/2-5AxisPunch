@@ -19,7 +19,9 @@
 #define RESERVE_COUNTS (MAX_POINTS - 3)
 #define PAGE_MAX_COUNT 8
 #define USE_SPACE_ROW  0
-#define POINT_SIZE 1
+#define POINT_SIZE 2
+#define TOTOAL_POINT_SIZE 1
+
 #define ROW_COUNTS ui->tableWidget->rowCount() - USE_SPACE_ROW
 #define ROW_HIGHT 38
 
@@ -29,17 +31,20 @@ class ICProgramPage;
 
 #define _MoldParam(addr) ICMold::CurrentMold()->MoldParam(static_cast<ICMold::ICMoldParam>(addr))
 #define _SetMoldParam(addr,value) ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(addr),value)
-
+#define _LOW16_INT32(v)  (v & 0xFFFF)
+#define _HIGH16_INT32(v) ((v >> 16) & 0xFFFF)
 
 #define _NativeMoldParam(addr) ICMold::CurrentMold()->MoldNativeParam(static_cast<ICMold::ICMoldNativeParam>(addr))
 #define _SetNativeMoldParam(addr,value) ICMold::CurrentMold()->SetMoldNativeParam(static_cast<ICMold::ICMoldNativeParam>(addr),value)
 
+
+
 typedef struct{
-   qint16 x;
-   qint16 y;
-   qint16 s;
-   qint16 r;
-   qint16 t;
+   qint32 x;
+   qint32 y;
+   qint32 s;
+   qint32 r;
+   qint32 t;
 } ICPoint_;
 
 typedef QSharedPointer<ICPoint_>  PointPtr;
@@ -67,7 +72,7 @@ public:
     }
 
     QList<ICMoldItem> MK_PosItem(int row,int pos);
-    PointPtr MK_Point(qint16 x,qint16 y,qint16 s,qint16 r,qint16 t);
+    PointPtr MK_Point(quint32 x,quint32 y,quint32 s,quint32 r,quint32 t);
     ICMoldItem MK_MoldItem(uint seq,
                             uint num,
                             uint8_t subNum,
@@ -127,6 +132,8 @@ private:
     void ReConfigure();
     int GT_PointCount();
     int GT_PointIndexFromRow(int row);
+    quint32 GetPointValue(quint16 pos);
+    qint32 GetPosValue(ICVirtualHost::ICStatus status);
 
 
 

@@ -340,6 +340,9 @@ bool ICMold::ReadMoldParamsFile(const QString &fileName)
 
     QStringList items = fileContent.split('\n', QString::SkipEmptyParts);
     int diff = (MoldParamCount + StackParamCount * 4 + 1) - items.size();
+    if(diff  >  4){
+        return false;
+    }
     for(int i = 0; i < diff; ++i)
     {
         items.append("0");

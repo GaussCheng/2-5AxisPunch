@@ -12,6 +12,13 @@
 ICProgramPage * ICProgramPage::instance_;
 
 
+quint32 _BUILD_INT32(quint32 low,quint32 high){
+        quint32 temp;
+        temp = ( high << 16 )  |  low;
+        return temp;
+}
+
+
 ICProgramPage::ICProgramPage(QWidget *parent,int _pageIndex,QString pageName) :
     QWidget(parent),
     ui(new Ui::ICProgramPage),
@@ -244,6 +251,31 @@ ICProgramPage::~ICProgramPage()
 }
 
 
+quint32 ICProgramPage::GetPointValue(quint16 pos)
+{
+     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    quint32 s  = host->HostStatus(ICVirtualHost::DbgB0).toUInt() << 16;
+    s = s + host->HostStatus(ICVirtualHost::DbgA1).toUInt();
+
+    return ( (s >>( (pos -  ICVirtualHost::XPos)* 4 ) )& 0xF);
+}
+
+qint32 ICProgramPage::GetPosValue(ICVirtualHost::ICStatus status)
+{
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    qint16  p =  host->HostStatus(status).toInt() ;
+    if(p < 0){
+       qint32 v = p * 10 -  GetPointValue(status) ;
+        return v;
+    }
+    else{
+        qint32 v = p * 10 + GetPointValue(status) ;
+         return v;
+    }
+}
+
+
+
 void ICProgramPage::showEvent(QShowEvent *e)
 {
     timerId = startTimer(200);
@@ -269,8 +301,8 @@ void ICProgramPage::showEvent(QShowEvent *e)
     for(int i=0;i<AXIS_COUNTS;i++){
         int top = ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::ICSystemParameter(ICVirtualHost::SYS_X_Length + i * 7)).toInt();
         int bottom = ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::ICSystemParameter(ICVirtualHost::SYS_X_Maxium + i * 7)).toInt();
-        validators_.at(i)->setTop(top);
-        validators_.at(i)->setBottom(bottom);
+        validators_.at(i)->setTop(top * 10);
+        validators_.at(i)->setBottom(bottom * 10);
     }
 
     QWidget::showEvent(e);
@@ -488,8 +520,8 @@ void ICProgramPage::saveButtonsCliked()
     }
 
     for(int i=0; i < AXIS_COUNTS;i++){
-        int16_t pos = _host->HostStatus(ICVirtualHost::ICStatus(ICVirtualHost::XPos + i)).toInt();
-        ui->tableWidget->item(index,1+i)->setText(QString::number(pos / 10.0, 'f', 1));
+        int32_t pos = GetPosValue(ICVirtualHost::ICStatus(ICVirtualHost::XPos + i));
+        ui->tableWidget->item(index,1+i)->setText(QString::number(pos / 100.0, 'f', 2));
 //        ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(GT_PointIndexFromRow(index) * 6 + i),pos);
 
     }
@@ -594,15 +626,15 @@ void ICProgramPage::InitPoint()
 
     }
 
+
     //初始化点位
     for(int i=0;i<pointCount;i++){
-        allPoints.append(MK_Point(_MoldParam(ICMold::point0 + i * 6 + 0 ),
-                                  _MoldParam(ICMold::point0 + i * 6 + 1 ),
-                                  _MoldParam(ICMold::point0 + i * 6 + 2 ),
-                                  _MoldParam(ICMold::point0 + i * 6 + 3 ),
-                                  _MoldParam(ICMold::point0 + i * 6 + 4 )
+        allPoints.append(MK_Point(_BUILD_INT32(_MoldParam(ICMold::point0 + i * 12 + 0 ),_MoldParam(ICMold::point0 + i * 12 + 1 )),
+                                                      _BUILD_INT32(_MoldParam(ICMold::point0 + i * 12 + 2 ),_MoldParam(ICMold::point0 + i * 12 + 3 )),
+                                                      _BUILD_INT32(_MoldParam(ICMold::point0 + i * 12 + 4 ),_MoldParam(ICMold::point0 + i * 12 + 5 )),
+                                                      _BUILD_INT32(_MoldParam(ICMold::point0 + i * 12 + 6 ),_MoldParam(ICMold::point0 + i * 12 + 7 )),
+                                                      _BUILD_INT32(_MoldParam(ICMold::point0 + i * 12 + 8),_MoldParam(ICMold::point0 + i * 12 + 9 ))
                                   ));
-
 
     }
 
@@ -635,11 +667,11 @@ void ICProgramPage::InitPoint()
 
     for(int i=0;i<pointConfigs.size();i++){
         if(pointConfigs[i].Type() != Point_Property){
-            ui->tableWidget->item(i,1)->setText(QString::number(allPoints[start]->x / 10.0, 'f', 1));
-            ui->tableWidget->item(i,2)->setText(QString::number(allPoints[start]->y / 10.0, 'f', 1));
-            ui->tableWidget->item(i,3)->setText(QString::number(allPoints[start]->s / 10.0, 'f', 1));
-            ui->tableWidget->item(i,4)->setText(QString::number(allPoints[start]->r / 10.0, 'f', 1));
-            ui->tableWidget->item(i,5)->setText(QString::number(allPoints[start]->t / 10.0, 'f', 1));
+            ui->tableWidget->item(i,1)->setText(QString::number(allPoints[start]->x / qPow(10,POINT_SIZE), 'f', POINT_SIZE));
+            ui->tableWidget->item(i,2)->setText(QString::number(allPoints[start]->y / qPow(10,POINT_SIZE), 'f', POINT_SIZE));
+            ui->tableWidget->item(i,3)->setText(QString::number(allPoints[start]->s / qPow(10,POINT_SIZE), 'f', POINT_SIZE));
+            ui->tableWidget->item(i,4)->setText(QString::number(allPoints[start]->r / qPow(10,POINT_SIZE), 'f', POINT_SIZE));
+            ui->tableWidget->item(i,5)->setText(QString::number(allPoints[start]->t / qPow(10,POINT_SIZE), 'f', POINT_SIZE));
             start++;
         }
         else{
@@ -749,11 +781,12 @@ void ICProgramPage::SaveConfigPoint()
     for(int i=0;i<ROW_COUNTS;i++){
         for(int j=0;j<AXIS_COUNTS;j++){
             if(pointConfigs[i].Type() != Point_Property){
-                int16_t pos = ui->tableWidget->item(i,j+1)->text().remove(".").toInt();
-                int16_t oldPos = _MoldParam(start * 6 + j);
+                int32_t pos = ui->tableWidget->item(i,j+1)->text().remove(".").toInt();
+                int32_t oldPos  = _BUILD_INT32( _MoldParam(start * 12 + j * 2) ,  _MoldParam(start * 12 + j * 2 + 1)) ;
                 if(pos != oldPos){
                     saved = true;
-                    _SetMoldParam(start * 6 + j,pos);
+                    _SetMoldParam(start * 12 + j * 2,_LOW16_INT32(pos));
+                    _SetMoldParam(start * 12 + j * 2  + 1,_HIGH16_INT32(pos));
                 }
             }
         }
@@ -781,7 +814,7 @@ QList<ICMoldItem> ICProgramPage::GT_AllMoldItems()
 
 
 
-PointPtr ICProgramPage::MK_Point(qint16 x, qint16 y, qint16 s, qint16 r, qint16 t)
+PointPtr ICProgramPage::MK_Point(quint32 x, quint32 y, quint32 s, quint32 r, quint32 t)
 {
     PointPtr p(new ICPoint_);
     p->x = x;

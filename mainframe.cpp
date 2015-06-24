@@ -62,11 +62,13 @@
 
 #include <QDebug>
 
+
 QMap<int, int> keyMap;
 QMap<int, int> keyToMap;
 QMap<int, int> knobMap;
 QMap<int, int> pulleyMap;
 QList<int> currentKeySeq;
+
 const QList<int> recalKeySeq = QList<int>()<<ICKeyboard::FB_F5
                                           <<ICKeyboard::FB_F1
                                          <<ICKeyboard::FB_F4
@@ -647,6 +649,29 @@ void MainFrame::BindShortcutKey()
 
 }
 
+quint32 MainFrame::GetPointValue(quint16 pos)
+{
+     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+     quint32 s  = host->HostStatus(ICVirtualHost::DbgB0).toUInt() << 16;
+     s = s + host->HostStatus(ICVirtualHost::DbgA1).toUInt();
+
+    return ( (s >>( (pos -  ICVirtualHost::XPos)* 4 ) )& 0xF);
+}
+
+qint32 MainFrame::GetPosValue(ICVirtualHost::ICStatus status)
+{
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    qint16  p =  host->HostStatus(status).toInt() ;
+    if(p < 0){
+       qint32 v = p * 10 -  GetPointValue(status) ;
+        return v;
+    }
+    else{
+        qint32 v = p * 10 + GetPointValue(status) ;
+         return v;
+    }
+}
+
 void MainFrame::UpdateTranslate()
 {
 }
@@ -702,11 +727,11 @@ void MainFrame::SettingButtonClicked()
     }
 }
 
-static int16_t oldX = -1;
-static int16_t oldY = -1;
-static int16_t oldZ = -1;
-static int16_t oldQ = -1;
-static int16_t oldP = -1;
+static int32_t oldX = -1;
+static int32_t oldY = -1;
+static int32_t oldZ = -1;
+static int32_t oldQ = -1;
+static int32_t oldP = -1;
 //static int oldS = -1;
 void MainFrame::StatusRefreshed()
 {
@@ -764,37 +789,37 @@ void MainFrame::StatusRefreshed()
     {
         ui->tCurrentPos->hide();ui->label_20->hide();ui->label_19->hide();
     }
-    int16_t pos = host->HostStatus(ICVirtualHost::XPos).toInt();
+    int32_t pos = GetPosValue(ICVirtualHost::XPos) ;
     if(pos != oldX)
     {
         oldX = pos;
-        ui->xCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
+        ui->xCurrentPos->setText(QString::number(pos / 100.0, 'f', 2));
     }
-    int16_t posy = host->HostStatus(ICVirtualHost::YPos).toInt();
+    int32_t posy = GetPosValue(ICVirtualHost::YPos) ;
     if(posy != oldY)
     {
         oldY = posy;
-        ui->yCurrentPos->setText(QString::number(posy / 10.0, 'f', 1));
+        ui->yCurrentPos->setText(QString::number(posy / 100.0, 'f', 2));
     }
 #ifdef HC_AXIS_COUNT_5
-    int16_t posz = host->HostStatus(ICVirtualHost::ZPos).toInt();
+    int32_t posz =  GetPosValue(ICVirtualHost::ZPos) ;
     if(posz != oldZ)
     {
         oldZ = posz;
-        ui->zCurrentPos->setText(QString::number(posz / 10.0, 'f', 1));
+        ui->zCurrentPos->setText(QString::number(posz / 100.0, 'f', 2));
     }
-    pos = host->HostStatus(ICVirtualHost::QPos).toInt();
+    pos = GetPosValue(ICVirtualHost::QPos) ;
     if(pos != oldQ)
     {
         oldQ = pos;
-        ui->tCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
+        ui->tCurrentPos->setText(QString::number(pos / 100.0, 'f', 2));
     }
 
-    pos = host->HostStatus(ICVirtualHost::PPos).toInt();
+    pos =  GetPosValue(ICVirtualHost::PPos) ;
     if(pos != oldP)
     {
         oldP = pos;
-        ui->rCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
+        ui->rCurrentPos->setText(QString::number(pos / 100.0, 'f', 2));
         //        ui->rCurrentPos->setText(QString::number(host->HostStatus(ICVirtualHost::DbgY0).toUInt()));
     }
 #endif

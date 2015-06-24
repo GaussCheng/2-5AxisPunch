@@ -96,6 +96,8 @@ private:
     void InitInterface();
     void InitSignal();
     void BindShortcutKey();
+    quint32 GetPointValue(quint16 pos);
+    qint32 GetPosValue(ICVirtualHost::ICStatus pos);
 
     void UpdateTranslate();
     void ShowWidgets_(QList<QWidget*>& widgets);
