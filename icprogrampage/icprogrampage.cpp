@@ -472,7 +472,12 @@ void ICProgramPage::itemClicked(QTableWidgetItem *item)
                     return;
                 }
                 else{
-                    value = text.remove(".").toInt();
+                    if(POINT_SIZE != pointSize){
+                        value = text.remove(".").toInt() * qPow(10,POINT_SIZE - pointSize);
+                    }
+                    else{
+                        value = text.remove(".").toInt() ;
+                    }
                 }
 
             }
@@ -482,7 +487,7 @@ void ICProgramPage::itemClicked(QTableWidgetItem *item)
 
 
             QIntValidator *v = validators_[column-1];
-            qDebug() << v->bottom() << v->top();
+//            qDebug() << v->bottom() << v->top();
             if(value > v->top() || value < v->bottom()){
                 QString format = QString("%.%1f").arg(POINT_SIZE);
                 QString bottom =   QString().sprintf(format.toAscii(), v->bottom() / static_cast<qreal>(qPow(10, POINT_SIZE)));
