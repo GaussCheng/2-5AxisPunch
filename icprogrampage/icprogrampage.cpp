@@ -767,6 +767,7 @@ void ICProgramPage::InitPointToItem()
     propertyToItem.insert(WAIT_X42,waitX42);
     propertyToItem.insert(WAIT_X43,waitX43);
     propertyToItem.insert(WAIT_X44,waitX44);
+    propertyToItem.insert(PUNCHPERMIT,outPermit2);
 
 
 
@@ -857,6 +858,8 @@ void ICProgramPage::InitFixMoldItems()
     waitM12   = MK_MoldItem(9,5,2,24,0,1,0,0,3000,207);
     waitM14   = MK_MoldItem(13,9,4,24,0,1,0,0,3000,246);
     outPermit = MK_MoldItem(14,10,0,27,0,1,0,0,0,103);
+    outPermit2 = MK_MoldItem(14,10,1,27,0,1,0,0,0,103);
+
 
     outY37On  = MK_MoldItem(7,3,23,12,0,1,0,0,0,45);
     outY37Off = MK_MoldItem(10,6,23,12,0,0,0,0,0,50);

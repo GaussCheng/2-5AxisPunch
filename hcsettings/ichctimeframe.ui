@@ -152,6 +152,20 @@
      </property>
     </widget>
    </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="label_10">
+     <property name="text">
+      <string>Fetch Time</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="2">
+    <widget class="QLabel" name="label_28">
+     <property name="text">
+      <string>s</string>
+     </property>
+    </widget>
+   </item>
   </layout>
  </widget>
  <customwidgets>

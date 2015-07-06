@@ -27,6 +27,8 @@ ICPointType::ICPointType(QWidget *parent) :
     boxToType.insert(ui->checkbox_13,RESEARVE);
     boxToType.insert(ui->checkbox_14,SMOOTH);
     boxToType.insert(ui->checkbox_15,WAITSAFE);
+    boxToType.insert(ui->checkbox_16,PUNCHPERMIT);
+
 
     foreach(QCheckBox *box,boxToType.keys()){
         box->setText(propertyToStr.value(boxToType.value(box)));
@@ -71,6 +73,7 @@ void ICPointType::Init_()
     propertyToStr.insert(RESEARVE,tr("NULL_Property"));
     propertyToStr.insert(SMOOTH,tr("SMOOTH"));
     propertyToStr.insert(WAITSAFE,tr("WAIT_SAFE"));
+    propertyToStr.insert(PUNCHPERMIT,tr("PUNCH_PERMIT"));
 
 
 }

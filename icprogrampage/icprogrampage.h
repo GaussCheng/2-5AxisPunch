@@ -199,6 +199,9 @@ private:
     ICMoldItem waitX43;
     ICMoldItem waitX44;
 
+    ICMoldItem outPermit2;
+
+
     //遗弃
     ICMoldItem outM27On;
     ICMoldItem waitM14;

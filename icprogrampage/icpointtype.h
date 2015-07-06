@@ -27,6 +27,7 @@ enum PointProperty{
     RESEARVE,
     SMOOTH,
     WAITSAFE,
+    PUNCHPERMIT,
 
     NULL_Property = -1
 
