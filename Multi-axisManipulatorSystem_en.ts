@@ -4743,11 +4743,6 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="605"/>
-        <source>Save</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="icprogrampage/icprogrampage.cpp" line="412"/>
         <location filename="icprogrampage/icprogrampage.cpp" line="431"/>
         <location filename="icprogrampage/icprogrampage.cpp" line="447"/>
@@ -4791,65 +4786,75 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="894"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="899"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="983"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="992"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1012"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1017"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1033"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1048"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="605"/>
+        <source>Delay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrampage.cpp" line="605"/>
+        <source>Speed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrampage.cpp" line="897"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="902"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="986"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="995"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1015"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1020"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1036"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1051"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="894"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="983"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="897"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="986"/>
         <source>Standard Mold Cannot Modify!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="899"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="902"/>
         <source>Max Point Count Beyond %1!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="918"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="921"/>
         <source>warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="919"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="922"/>
         <source>Not wait point Can Set Smooth!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="992"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="995"/>
         <source>IS Delete %1 Smooth Action !</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1012"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1015"/>
         <source>Canot Delete %1 action!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1017"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1020"/>
         <source>If Delete current Row?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1033"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1036"/>
         <source>Canot Delete Space Row!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1048"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1051"/>
         <source>Save success!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1099"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1102"/>
         <source>(SMOOTH)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4878,11 +4883,6 @@ Please enter an digit between </source>
     <message>
         <location filename="icprogrampage/icprogrampage.cpp" line="576"/>
         <source>Has not been origin!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="605"/>
-        <source>Tested</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

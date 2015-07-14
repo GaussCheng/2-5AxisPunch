@@ -36,8 +36,8 @@ ICPointType::ICPointType(QWidget *parent) :
                 SLOT(stateChanged(int)));
 
     }
-    QIntValidator * validator = new QIntValidator(0, 30000, this);
-    ui->delayEdit->SetDecimalPlaces(2);
+    QIntValidator * validator = new QIntValidator(0, MAX_DEALY, this);
+    ui->delayEdit->SetDecimalPlaces(1);
     ui->delayEdit->setValidator(validator);
     ui->delayEdit->SetThisIntToThisText(0);
 
@@ -119,11 +119,12 @@ ICPointConfig ICPointType::config()
     }
     else{
         p = Point_Property;
-        delay = ui->delayEdit->TransThisTextToThisInt();
     }
+    delay = ui->delayEdit->TransThisTextToThisInt();
+
     ICPointConfig config(p ,
                          currentPropertyType(),
-                         delay);
+                         delay,0,0,0);
     return config;
 }
 
@@ -154,11 +155,11 @@ void ICPointType::stateChanged(int status)
     if(status){
         _box = qobject_cast<QCheckBox*> (sender());
     }
-    if(_box == ui->checkbox_13 || _box == ui->checkbox_14
-            || _box == ui->checkbox_15){
-        ui->delayEdit->setEnabled(false);
-    }
-    else{
-        ui->delayEdit->setEnabled(true);
-    }
+//    if(_box == ui->checkbox_13 || _box == ui->checkbox_14
+//            || _box == ui->checkbox_15){
+//        ui->delayEdit->setEnabled(false);
+//    }
+//    else{
+//        ui->delayEdit->setEnabled(true);
+//    }
 }

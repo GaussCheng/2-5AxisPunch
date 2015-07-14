@@ -67,7 +67,7 @@ ICProgramPage::ICProgramPage(QWidget *parent,int _pageIndex,QString pageName) :
     for(int i=0;i<AXIS_COUNTS;i++)
         validators_.append(new  QIntValidator(0,10000,this));
 
-    dValidator = new QIntValidator(0,3000,this);
+    dValidator = new QIntValidator(0,MAX_DEALY,this);
 
     oriStyle = ui->manualButton->styleSheet();
     yOnStyle = "border-style: outset;"
@@ -86,6 +86,8 @@ QList<ICMoldItem> ICProgramPage::GT_MoldItems()
 {
     QList<ICMoldItem> items;
     QList<ICMoldItem> fixItems;
+    QList<ICMoldItem> posItems;
+
     ICMoldItem propertyItems;
 
 
@@ -96,10 +98,20 @@ QList<ICMoldItem> ICProgramPage::GT_MoldItems()
                 if(fixItems.size()){
                     items += fixItems;
                 }
-                items += MK_PosItem(i,GT_PointIndexFromRow(i));
+                posItems = MK_PosItem(i,GT_PointIndexFromRow(i));
+                for(int t =0;t < posItems.size();t++){
+                    posItems[t].SetDVal(pointConfigs[i].Delay());
+                    posItems[t].SetSVal(pointConfigs[i].Speed());
+                }
+                items += posItems;
             }
             else{
-                items += MK_PosItem(i,GT_PointIndexFromRow(i));
+                posItems = MK_PosItem(i,GT_PointIndexFromRow(i));
+                for(int t =0;t < posItems.size();t++){
+                    posItems[t].SetDVal(pointConfigs[i].Delay());
+                    posItems[t].SetSVal(pointConfigs[i].Speed());
+                }
+                items += posItems;
                 fixItems = pointToItem.value((PointType)pointConfigs[i].Type());
                 if(fixItems.size()){
                     items += fixItems;
@@ -227,7 +239,7 @@ QList<ICMoldItem> ICProgramPage::MK_PosItem(int row,int pos)
     }
 
     PointType t = (PointType)pointConfigs[row].Type();
-    quint32 d = pointConfigs[row].Delay();
+    quint32 d = pointConfigs[row].Smooth();
 
     if(t != Point_Property){
         for(int i = 0; i < items.size();i++){
@@ -408,25 +420,25 @@ void ICProgramPage::itemClicked(QTableWidgetItem *item)
                     int value;
                     if(text.contains(QChar('.'))){
                         pointSize = text.split(".").at(1).size();
-                        if(pointSize > 2 || pointSize==0){
+                        if(pointSize > DELAY_DECIMAL || pointSize==0){
                             QMessageBox::information(this,tr("information"),tr("Input Error!"));
                             _dialog->ResetDisplay();
                             return;
                         }
                         else{
-                            value = text.remove(".").toInt() * qPow(10,2-pointSize);
+                            value = text.remove(".").toInt() * qPow(10,DELAY_DECIMAL - pointSize);
                         }
 
                     }
                     else{
-                        value = text.toInt() * qPow(10,2);
+                        value = text.toInt() * qPow(10,DELAY_DECIMAL);
                     }
 
 
                     if(value > dValidator->top() || value < dValidator->bottom()){
-                        QString format = QString("%.%1f").arg(2);
-                        QString bottom =   QString().sprintf(format.toAscii(), dValidator->bottom() / static_cast<qreal>(qPow(10, 2)));
-                        QString top =   QString().sprintf(format.toAscii(), dValidator->top() / static_cast<qreal>(qPow(10, 2)));
+                        QString format = QString("%.%1f").arg(DELAY_DECIMAL);
+                        QString bottom =   QString().sprintf(format.toAscii(), dValidator->bottom() / static_cast<qreal>(qPow(10, DELAY_DECIMAL)));
+                        QString top =   QString().sprintf(format.toAscii(), dValidator->top() / static_cast<qreal>(qPow(10, DELAY_DECIMAL)));
 
                         QMessageBox::information(this,tr("information"),tr("Input Value Not %1 To %2 Range!")
                                                  .arg(bottom)
@@ -434,7 +446,7 @@ void ICProgramPage::itemClicked(QTableWidgetItem *item)
                         _dialog->ResetDisplay();
                         return;
                     }
-                    item->setText(ICParameterConversion::TransThisIntToThisText(value, 2) + tr("s"));
+                    item->setText(ICParameterConversion::TransThisIntToThisText(value, DELAY_DECIMAL) + tr("s"));
                     pointConfigs[item->row()].setDelay(value);
                     SaveConfigPoint();
 
@@ -504,6 +516,69 @@ void ICProgramPage::itemClicked(QTableWidgetItem *item)
             SaveConfigPoint();
         }
 
+
+    }
+
+    if(item->column() == DELAY_COLUMN ||
+        item->column() == SPEED_COLUMN     ){
+        if(pointConfigs[item->row()].Type() == Point_Property){
+            return;
+        }
+        if(!_dialog->isVisible()){
+            _dialog->move(200,200);
+            _dialog->ResetDisplay();
+            _dialog->exec();
+        }
+        QString text = _dialog->GetCurrentText();
+
+        if(!text.isEmpty() && (text != item->text())){
+
+            if(item->column() == DELAY_COLUMN){
+                int value;
+                if(text.contains(QChar('.'))){
+                    int pointSize = text.split(".").at(1).size();
+                    if(pointSize > DELAY_DECIMAL || pointSize==0){
+                        QMessageBox::information(this,tr("information"),tr("Input Error!"));
+                        _dialog->ResetDisplay();
+                        return;
+                    }
+                    else{
+                        if(DELAY_DECIMAL != pointSize){
+                            value = text.remove(".").toInt() * qPow(10,DELAY_DECIMAL - pointSize);
+                        }
+                        else{
+                            value = text.remove(".").toInt() ;
+                        }
+                    }
+
+            }
+            else{
+                value = text.toInt() * qPow(10,DELAY_DECIMAL);
+            }
+
+            item->setText(ICParameterConversion::TransThisIntToThisText(value, DELAY_DECIMAL) + "s");
+            pointConfigs[item->row()].setDelay(value);
+            SaveConfigPoint();
+        }
+        else  if(item->column() == SPEED_COLUMN){
+                if(text.contains(QChar('.'))){
+                        QMessageBox::information(this,tr("information"),tr("Input Error!"));
+                        _dialog->ResetDisplay();
+                        return;
+                 }
+                else{
+                     int value = text.toInt();
+                     if(value <0 || value > 100){
+                         QMessageBox::information(this,tr("information"),tr("Input Value Not %1 To %2 Range!")
+                                                  .arg(0)
+                                                  .arg(100));
+                         return;
+                     }
+                     item->setText(text + "%");
+                     pointConfigs[item->row()].setSpeed(value);
+                }
+            }
+       }
 
     }
 
@@ -602,7 +677,7 @@ void ICProgramPage::InitTableWidget()
 
     QStringList headerContents;
     headerContents  <<  tr("Type") << tr("FrontBack") << tr("UpDown") << tr("Windup") <<  tr("Rotated")
-                    << tr("Rollovers")  << tr("Save") << tr("Tested");
+                    << tr("Rollovers")  << tr("Delay") << tr("Speed");
 
     for(int i=0;i<headerContents.size();i++){
         ui->tableWidget->setHorizontalHeaderItem(i,new QTableWidgetItem(headerContents[i]));
@@ -664,7 +739,7 @@ void ICProgramPage::InitPoint()
             ui->tableWidget->item(j,0)->setText(_typeDialog->toString((PointProperty)pointConfigs[j].Property()));
 
             ui->tableWidget->item(j,1)->setText(QString("%1s")
-                                                .arg(ICParameterConversion::TransThisIntToThisText(pointConfigs[j].Delay(), 2)));
+                                                .arg(ICParameterConversion::TransThisIntToThisText(pointConfigs[j].Delay(), DELAY_DECIMAL)));
 
         }
     }
@@ -677,6 +752,9 @@ void ICProgramPage::InitPoint()
             ui->tableWidget->item(i,3)->setText(QString::number(allPoints[start]->s / qPow(10,POINT_SIZE), 'f', POINT_SIZE));
             ui->tableWidget->item(i,4)->setText(QString::number(allPoints[start]->r / qPow(10,POINT_SIZE), 'f', POINT_SIZE));
             ui->tableWidget->item(i,5)->setText(QString::number(allPoints[start]->t / qPow(10,POINT_SIZE), 'f', POINT_SIZE));
+            ui->tableWidget->item(i,6)->setText(ICParameterConversion::TransThisIntToThisText(pointConfigs[i].Delay(), DELAY_DECIMAL)+ "s");
+            ui->tableWidget->item(i,7)->setText(QString::number(pointConfigs[i].Speed(), 'f', 0) + "%");
+
             start++;
         }
         else{
@@ -685,6 +763,8 @@ void ICProgramPage::InitPoint()
             ui->tableWidget->item(i,3)->setText("-");
             ui->tableWidget->item(i,4)->setText("-");
             ui->tableWidget->item(i,5)->setText("-");
+            ui->tableWidget->item(i,6)->setText("-");
+            ui->tableWidget->item(i,7)->setText("-");
         }
     }
 
@@ -692,7 +772,7 @@ void ICProgramPage::InitPoint()
     for(int i=0; i <pointConfigs.size();i++){
         PointType t = (PointType)pointConfigs[i].Type();
         if(t != Point_Property){
-            quint32 d = pointConfigs[i].Delay();
+            quint32 d = pointConfigs[i].Smooth();
             SetRowSMooth(i,d);
         }
     }
@@ -910,11 +990,11 @@ void ICProgramPage::on_newButton_clicked()
         }
         else if(_typeDialog->currentPropertyType() == SMOOTH){
             quint32 t = pointConfigs[index].Type();
-            quint32 s = pointConfigs[index].Delay();
+            quint32 s = pointConfigs[index].Smooth();
             if(t != Point_Property){
                 if(s == 1)  //动作重复
                     return;
-                pointConfigs[index].setDelay(1); //设置平滑
+                pointConfigs[index].setSmooth(1); //设置平滑
                 SetRowSMooth(index,true);
             }
             else{
@@ -940,7 +1020,7 @@ void ICProgramPage::on_newButton_clicked()
                _typeDialog->currentPropertyType() != WAITSAFE){
                 if(i==0){
                     ui->tableWidget->item(index,i+1)->setText(QString("%1s")
-                                                        .arg(ICParameterConversion::TransThisIntToThisText(pointConfigs[index].Delay(), 2)));
+                                                        .arg(ICParameterConversion::TransThisIntToThisText(pointConfigs[index].Delay(), DELAY_DECIMAL)));
 
 
                 }
@@ -950,6 +1030,24 @@ void ICProgramPage::on_newButton_clicked()
             }
             else{
                 item->setText("0.0");
+            }
+        }
+        for(int i=AXIS_COUNTS+1;i < COLUMN_COUNTS;i++){
+            QTableWidgetItem *item = new QTableWidgetItem("") ;
+            item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+            ui->tableWidget->setItem(index,i,item);
+            if(_typeDialog->currentPropertyType() != RESEARVE &&
+               _typeDialog->currentPropertyType() != WAITSAFE){
+                    item->setText("-");
+            }
+            else{
+                if(i == AXIS_COUNTS+1 ){
+                    item->setText(ICParameterConversion::TransThisIntToThisText(pointConfigs[index].Delay(), DELAY_DECIMAL) +"s");
+                }
+                else{
+                    item->setText("100%");
+                    pointConfigs[index].setSpeed(100);
+                }
             }
         }
 
@@ -989,7 +1087,7 @@ void ICProgramPage::on_deleteButton_clicked()
 
 
     PointType t = (PointType)pointConfigs[index].Type();
-    quint32 d = pointConfigs[index].Delay();
+    quint32 d = pointConfigs[index].Smooth();
 
     if(t != Point_Property  && d){
         if(QMessageBox::information(this,tr("Information"),tr("IS Delete %1 Smooth Action !")
@@ -997,7 +1095,7 @@ void ICProgramPage::on_deleteButton_clicked()
                         QMessageBox::Ok | QMessageBox::Cancel) != QMessageBox::Ok){
             return;
         }
-        pointConfigs[index].setDelay(0);
+        pointConfigs[index].setSmooth(0);
         SetRowSMooth(index,false);
         return;
     }
@@ -1172,7 +1270,7 @@ bool ICProgramPage::MoldConfigChanged()
 bool ICProgramPage::LastIsSmooth()
 {
     int size = pointConfigs.size();
-    return (pointConfigs[size - 1].Delay() == 1);
+    return (pointConfigs[size - 1].Smooth() == 1);
 }
 
 

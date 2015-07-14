@@ -6,6 +6,8 @@
 #include <QMap>
 #include "icmold.h"
 
+#define MAX_DEALY 60000
+
 namespace Ui {
 class ICPointType;
 }

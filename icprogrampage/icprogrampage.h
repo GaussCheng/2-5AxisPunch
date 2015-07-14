@@ -15,12 +15,15 @@
 #define MAX_POINTS 8
 #define AXIS_COUNTS 5
 #define MAX_ROWCOUNT 20
-#define COLUMN_COUNTS (AXIS_COUNTS + 1)
+#define COLUMN_COUNTS (AXIS_COUNTS + 1 + 2)
 #define RESERVE_COUNTS (MAX_POINTS - 3)
 #define PAGE_MAX_COUNT 8
 #define USE_SPACE_ROW  0
 #define POINT_SIZE 2
 #define TOTOAL_POINT_SIZE 1
+#define DELAY_COLUMN 6
+#define SPEED_COLUMN 7
+
 
 #define ROW_COUNTS ui->tableWidget->rowCount() - USE_SPACE_ROW
 #define ROW_HIGHT 38
@@ -37,6 +40,7 @@ class ICProgramPage;
 #define _NativeMoldParam(addr) ICMold::CurrentMold()->MoldNativeParam(static_cast<ICMold::ICMoldNativeParam>(addr))
 #define _SetNativeMoldParam(addr,value) ICMold::CurrentMold()->SetMoldNativeParam(static_cast<ICMold::ICMoldNativeParam>(addr),value)
 
+#define DELAY_DECIMAL 1
 
 
 typedef struct{

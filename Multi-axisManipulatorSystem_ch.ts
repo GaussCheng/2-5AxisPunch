@@ -7826,22 +7826,32 @@ Please enter an digit between </source>
         <translation>%1不能编辑！</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="919"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="605"/>
+        <source>Delay</source>
+        <translation>延时</translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrampage.cpp" line="605"/>
+        <source>Speed</source>
+        <translation>速度</translation>
+    </message>
+    <message>
+        <location filename="icprogrampage/icprogrampage.cpp" line="922"/>
         <source>Not wait point Can Set Smooth!</source>
         <translation>非待机点设置平滑！</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="992"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="995"/>
         <source>IS Delete %1 Smooth Action !</source>
         <translation>是否删除%1平滑操作?</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1048"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1051"/>
         <source>Save success!</source>
         <translation>保存成功！</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1099"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1102"/>
         <source>(SMOOTH)</source>
         <translation>(平滑)</translation>
     </message>
@@ -7868,7 +7878,7 @@ Please enter an digit between </source>
         <translation>%1不能设入点坐标！</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="918"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="921"/>
         <source>warning</source>
         <translation>警告</translation>
     </message>
@@ -7882,25 +7892,25 @@ Please enter an digit between </source>
         <translation>%1不能测试！</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="894"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="899"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="983"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="992"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1012"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1017"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1033"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1048"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="897"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="902"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="986"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="995"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1015"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1020"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1036"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1051"/>
         <source>Information</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="894"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="983"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="897"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="986"/>
         <source>Standard Mold Cannot Modify!</source>
         <translation>标准模号不能修改！</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="899"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="902"/>
         <source>Max Point Count Beyond %1!</source>
         <translation>最大点位数不能超过%1！</translation>
     </message>
@@ -7909,17 +7919,17 @@ Please enter an digit between </source>
         <translation type="obsolete">最大行数不能超过 %1！</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1012"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1015"/>
         <source>Canot Delete %1 action!</source>
         <translation>不能删除%1操作！</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1017"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1020"/>
         <source>If Delete current Row?</source>
         <translation>是否删除当前行？</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1033"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1036"/>
         <source>Canot Delete Space Row!</source>
         <translation>不能删除空白行！</translation>
     </message>
@@ -7928,9 +7938,8 @@ Please enter an digit between </source>
         <translation type="obsolete">使用</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="605"/>
         <source>Save</source>
-        <translation>坐标保存</translation>
+        <translation type="obsolete">坐标保存</translation>
     </message>
     <message>
         <location filename="icprogrampage/icprogrampage.cpp" line="331"/>
@@ -7947,9 +7956,8 @@ Please enter an digit between </source>
         <translation type="obsolete">放料操作</translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="605"/>
         <source>Tested</source>
-        <translation>定位测试</translation>
+        <translation type="obsolete">定位测试</translation>
     </message>
     <message>
         <source>Used Stoped</source>

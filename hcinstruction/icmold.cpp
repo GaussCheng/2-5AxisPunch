@@ -313,12 +313,13 @@ bool ICMold::ReadPointConfigFile(const QString &fileName)
     QStringList ql = content.split("\n", QString::SkipEmptyParts);
     foreach(QString line,ql){
         QStringList items = line.split(" ", QString::SkipEmptyParts);
-        if(items.size() != 3){
+        if(items.size() != 6){
             qDebug() << "point configure file init failed!";
             return false;
         }
 
-        ICPointConfig config(items.at(0).toInt(),items.at(1).toInt(),items.at(2).toInt());
+        ICPointConfig config(items.at(0).toInt(),items.at(1).toInt(),items.at(2).toInt(),
+                             items.at(3).toInt(),items.at(4).toInt(),items.at(5).toInt());
         pointConfigs.append(config);
 
     }
