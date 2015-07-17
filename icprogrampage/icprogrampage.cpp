@@ -555,7 +555,17 @@ void ICProgramPage::itemClicked(QTableWidgetItem *item)
             else{
                 value = text.toInt() * qPow(10,DELAY_DECIMAL);
             }
+            if(value > dValidator->top() || value < dValidator->bottom()){
+                QString format = QString("%.%1f").arg(DELAY_DECIMAL);
+                QString bottom =   QString().sprintf(format.toAscii(), dValidator->bottom() / static_cast<qreal>(qPow(10, DELAY_DECIMAL)));
+                QString top =   QString().sprintf(format.toAscii(), dValidator->top() / static_cast<qreal>(qPow(10, DELAY_DECIMAL)));
 
+                QMessageBox::information(this,tr("information"),tr("Input Value Not %1 To %2 Range!")
+                                         .arg(bottom)
+                                         .arg(top));
+                _dialog->ResetDisplay();
+                return;
+            }
             item->setText(ICParameterConversion::TransThisIntToThisText(value, DELAY_DECIMAL) + "s");
             pointConfigs[item->row()].setDelay(value);
             SaveConfigPoint();
@@ -568,9 +578,9 @@ void ICProgramPage::itemClicked(QTableWidgetItem *item)
                  }
                 else{
                      int value = text.toInt();
-                     if(value <0 || value > 100){
+                     if(value <1 || value > 100){
                          QMessageBox::information(this,tr("information"),tr("Input Value Not %1 To %2 Range!")
-                                                  .arg(0)
+                                                  .arg(1)
                                                   .arg(100));
                          return;
                      }

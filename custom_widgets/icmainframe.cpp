@@ -65,7 +65,7 @@ ICMainFrame::ICMainFrame(QWidget *parent)
             SIGNAL(ScreenRestored()),
             SIGNAL(ScreenRestore()));
     QWSServer::setScreenSaver(screenSaver_);
-    QWSServer::setScreenSaverBlockLevel(0);
+//    QWSServer::setScreenSaverBlockLevel(0);
 #endif
 }
 
