@@ -6,9 +6,9 @@ ICCheckedButton::ICCheckedButton(QWidget *parent) :
     _name(""),
     _checkedName("")
 {
-    QFont f = font();
-    f.setPointSize(12);
-    SetTextFont(f);
+//    QFont f = font();
+//    f.setPointSize(12);
+//    SetTextFont(f);
     setCheckable(true);
     connect(this,SIGNAL(toggled(bool)),
             this,SLOT(OnButtonToggled(bool)));

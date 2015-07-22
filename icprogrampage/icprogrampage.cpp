@@ -78,6 +78,12 @@ ICProgramPage::ICProgramPage(QWidget *parent,int _pageIndex,QString pageName) :
             "padding-right: 6px;"
             "padding-left:6px;";
 //    ui->tableWidget->setCurrentIndex(ui->tableWidget->model()->index(3,0));
+    manualButtons << ui->manualButton << ui->manual2Button;
+    for(int i=0;i < manualButtons.size();i++){
+        connect(manualButtons.at(i),SIGNAL(clicked()),
+                this,SLOT(OnShortcutTriggered()));
+        connect(manualButtons.at(i),SIGNAL(clicked()),
+                this,SLOT(OnShortcutReleased()));    }
 
 }
 
@@ -1167,6 +1173,64 @@ void ICProgramPage::MoldChanged(QString s)
 
 }
 
+void ICProgramPage::OnShortcutTriggered()
+{
+    int id = manualButtons.indexOf(qobject_cast<QPushButton*>( sender()));
+    ICUserDefineConfigSPTR config = ICUserDefineConfig::Instance();
+    ICUserActionInfo info = config->GetActionShortcutByID(id);
+
+    ICManualRun cmd;
+    cmd.SetSlave(1);
+    cmd.SetGM(ICMold::GOutY + info.type);
+    cmd.SetPoint(info.pointNum);
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    int p;
+    if(cmd.GM() == ICMold::GTwoXTwoY){
+        p = info.pointNum * 2;
+    }
+    else if(cmd.GM() == ICMold::GEuOut){
+        p = info.pointNum + 64;
+    }
+    else{
+        p = info.pointNum;
+    }
+    if(host->IsOutputOn(p))
+    {
+        cmd.SetIFVal(0);
+    }
+    else
+    {
+        cmd.SetIFVal(1);
+    }
+    //    cmd.SetIFVal(info.dir);
+    if(!ICCommandProcessor::Instance()->ExecuteCommand(cmd).toBool())
+    {
+//        QMessageBox::warning(this,
+//                                 tr("warning"),
+//                                 tr("err"));
+    }
+}
+
+void ICProgramPage::OnShortcutReleased()
+{
+    int id = manualButtons.indexOf(qobject_cast<QPushButton*>( sender()));
+    ICUserDefineConfigSPTR config = ICUserDefineConfig::Instance();
+    ICUserActionInfo info = config->GetActionShortcutByID(id);
+    if(info.type != 0) return;
+    if(info.pointNum != 10 && info.pointNum != 11) return;
+    ICManualRun cmd;
+    cmd.SetSlave(1);
+    cmd.SetGM(ICMold::GOutY + info.type);
+    cmd.SetPoint(info.pointNum);
+    cmd.SetIFVal(0);
+    if(!ICCommandProcessor::Instance()->ExecuteCommand(cmd).toBool())
+    {
+//        QMessageBox::warning(this,
+//                                 tr("warning"),
+//                                 tr("err"));
+    }
+}
+
 
 void ICProgramPage::GT_CalculateItem(QList<ICMoldItem>& items)
 {
@@ -1346,60 +1410,4 @@ void ICProgramPage::testButonsReleased()
 {
     ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_TESTSTOP);
 
-}
-
-void ICProgramPage::on_manualButton_pressed()
-{
-    ICUserDefineConfigSPTR config = ICUserDefineConfig::Instance();
-    ICUserActionInfo info = config->GetActionShortcutByID(0);
-
-    ICManualRun cmd;
-    cmd.SetSlave(1);
-    cmd.SetGM(ICMold::GOutY + info.type);
-    cmd.SetPoint(info.pointNum);
-    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    int p;
-    if(cmd.GM() == ICMold::GTwoXTwoY){
-        p = info.pointNum * 2;
-    }
-    else if(cmd.GM() == ICMold::GEuOut){
-        p = info.pointNum + 64;
-    }
-    else{
-        p = info.pointNum;
-    }
-    if(host->IsOutputOn(p))
-    {
-        cmd.SetIFVal(0);
-    }
-    else
-    {
-        cmd.SetIFVal(1);
-    }
-    //    cmd.SetIFVal(info.dir);
-    if(!ICCommandProcessor::Instance()->ExecuteCommand(cmd).toBool())
-    {
-//        QMessageBox::warning(this,
-//                                 tr("warning"),
-//                                 tr("err"));
-    }
-}
-
-void ICProgramPage::on_manualButton_released()
-{
-    ICUserDefineConfigSPTR config = ICUserDefineConfig::Instance();
-    ICUserActionInfo info = config->GetActionShortcutByID(0);
-    if(info.type != 0) return;
-    if(info.pointNum != 10 && info.pointNum != 11) return;
-    ICManualRun cmd;
-    cmd.SetSlave(1);
-    cmd.SetGM(ICMold::GOutY + info.type);
-    cmd.SetPoint(info.pointNum);
-    cmd.SetIFVal(0);
-    if(!ICCommandProcessor::Instance()->ExecuteCommand(cmd).toBool())
-    {
-//        QMessageBox::warning(this,
-//                                 tr("warning"),
-//                                 tr("err"));
-    }
 }

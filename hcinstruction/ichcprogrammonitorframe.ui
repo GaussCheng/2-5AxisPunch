@@ -245,6 +245,22 @@
        </property>
       </spacer>
      </item>
+     <item>
+      <widget class="QPushButton" name="punchPause">
+       <property name="minimumSize">
+        <size>
+         <width>120</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="text">
+        <string>Punch Pause</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item>

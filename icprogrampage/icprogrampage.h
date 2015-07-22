@@ -108,22 +108,16 @@ private slots:
     void saveButtonsCliked();
     void testButonsPressed();
     void testButonsReleased();
+    void MoldChanged(QString);
+    void OnShortcutTriggered();
+    void OnShortcutReleased();
 
     void on_newButton_clicked();
     void on_modiifyButton_clicked();
     void on_deleteButton_clicked();
-
-
     void on_saveButton_clicked();
-    void MoldChanged(QString);
-
     void on_startEdit_clicked(bool checked);
-
     void on_seveoEdit_toggled(bool checked);
-
-    void on_manualButton_pressed();
-
-    void on_manualButton_released();
 
 private:
     explicit ICProgramPage(QWidget *parent = 0,int pageIndex = 0,QString pageName = "");
@@ -213,6 +207,7 @@ private:
 
     QString oriStyle;
     QString yOnStyle;
+    QList<QPushButton *> manualButtons;
 
 };
 

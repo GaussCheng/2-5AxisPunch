@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>812</width>
+    <width>854</width>
     <height>391</height>
    </rect>
   </property>
@@ -93,7 +93,7 @@
       <widget class="QPushButton" name="startEdit">
        <property name="minimumSize">
         <size>
-         <width>100</width>
+         <width>85</width>
          <height>45</height>
         </size>
        </property>
@@ -112,7 +112,7 @@
       <widget class="ICCheckedButton" name="seveoEdit">
        <property name="minimumSize">
         <size>
-         <width>100</width>
+         <width>85</width>
          <height>45</height>
         </size>
        </property>
@@ -131,7 +131,7 @@
       <widget class="QPushButton" name="manualButton">
        <property name="minimumSize">
         <size>
-         <width>90</width>
+         <width>85</width>
          <height>45</height>
         </size>
        </property>
@@ -139,7 +139,26 @@
         <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
-        <string>Manual</string>
+        <string>Manual1</string>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="manual2Button">
+       <property name="minimumSize">
+        <size>
+         <width>85</width>
+         <height>45</height>
+        </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="text">
+        <string>Manual2</string>
        </property>
        <property name="checkable">
         <bool>false</bool>
@@ -150,7 +169,7 @@
       <widget class="QPushButton" name="injectButton">
        <property name="minimumSize">
         <size>
-         <width>90</width>
+         <width>85</width>
          <height>45</height>
         </size>
        </property>
@@ -169,7 +188,7 @@
       <widget class="QPushButton" name="testButton">
        <property name="minimumSize">
         <size>
-         <width>90</width>
+         <width>85</width>
          <height>45</height>
         </size>
        </property>
@@ -201,7 +220,7 @@
       <widget class="QPushButton" name="saveButton">
        <property name="minimumSize">
         <size>
-         <width>100</width>
+         <width>85</width>
          <height>45</height>
         </size>
        </property>
