@@ -40,6 +40,7 @@
 #include "icparameterssave.h"
 #include "icprogramheadframe.h"
 #include "icreturnpage.h"
+#include "icmodifyframe.h"
 #include "icsystemstatusframe.h"
 #include "icvirtualhost.h"
 #include "mainframe.h"
@@ -186,7 +187,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     nullButton_->hide();
     buttonGroup_->addButton(ui->teachButton);
     buttonGroup_->addButton(ui->ioMonitorButton);
-    buttonGroup_->addButton(ui->alarmButton);
+    buttonGroup_->addButton(ui->recordButton);
     buttonGroup_->addButton(ui->settingsButton);
     buttonGroup_->addButton(nullButton_);
     buttonGroup_->setExclusive(true);
@@ -547,10 +548,17 @@ void MainFrame::InitCategoryPage()
     //    centerStackedLayout_->addWidget(settingsPage_);
 
     emit LoadMessage("Start to Initialize alarm pages");
+//    functionButtonToPage_.insert(ui->recordButton, NULL);
+
+    alarmButtonToPage_.insert(ui->alarmReturn,NULL);
     alarmPage_ = ICAlarmFrame::Instance();
-    functionButtonToPage_.insert(ui->alarmButton, alarmPage_);
+    alarmButtonToPage_.insert(ui->alarmButton,alarmPage_);
     centerStackedLayout_->addWidget(alarmPage_);
 
+    emit LoadMessage("Start to Initialize modify pages");
+    modifyPage_ = ICModifyFrame::Instance();
+    alarmButtonToPage_.insert(ui->modifyButton,modifyPage_);
+    centerStackedLayout_->addWidget(modifyPage_);
 
     emit LoadMessage("Start to Initialize monitor pages");
     monitorPage_ = new ICMonitorPageFrame();
@@ -615,7 +623,7 @@ void MainFrame::InitSignal()
     connect(ui->ioMonitorButton,
             SIGNAL(clicked()),
             SLOT(CategoryButtonClicked()));
-    connect(ui->alarmButton,
+    connect(ui->recordButton,
             SIGNAL(clicked()),
             SLOT(CategoryButtonClicked()));
     connect(ui->teachButton,
@@ -629,6 +637,12 @@ void MainFrame::InitSignal()
         connect(btn,SIGNAL(clicked()),
                 SLOT(SettingButtonClicked()));
     }
+
+    foreach(QAbstractButton *btn,alarmButtonToPage_.keys()){
+        connect(btn,SIGNAL(clicked()),
+                SLOT(RecordsButtonClicked()));
+    }
+
 }
 
 
@@ -636,7 +650,7 @@ void MainFrame::BindShortcutKey()
 {
     ui->teachButton->setShortcut(keyToMap.value(ICKeyboard::FB_F1));
     ui->ioMonitorButton->setShortcut(keyToMap.value(ICKeyboard::FB_F2));
-    ui->alarmButton->setShortcut(keyToMap.value(ICKeyboard::FB_F3));
+    ui->recordButton->setShortcut(keyToMap.value(ICKeyboard::FB_F3));
     ui->settingsButton->setShortcut(keyToMap.value(ICKeyboard::FB_F4));
     ui->returnButton->setShortcut(keyToMap.value(ICKeyboard::FB_F5));
 
@@ -685,30 +699,38 @@ void MainFrame::CategoryButtonClicked()
         ui->baseButton->click();
 
     }
-
+    if(clickedButton == ui->recordButton){
+        ui->stackedWidget->setCurrentIndex(2);
+        ui->alarmButton->click();
+    }
 
     if(functionButtonToPage_.contains(clickedButton))
     {
-        //        if(clickedButton == ui->settingsButton ||
-        //                clickedButton == ui->teachButton)
-        //        {
-        //            if(ICVirtualHost::GlobalVirtualHost()->DoseControled())
-        //            {
-        //                QMessageBox::warning(this,
-        //                                     tr("Warning"),
-        //                                     tr("Controlled, Can't modify!"));
-        //                return;
-        //            }
-        //        }
         centerStackedLayout_->setCurrentWidget(functionButtonToPage_.value(clickedButton));
     }
-    //    else if(clickedButton == ui->monitorPageButton)
-    //    {
-    //        monitorPage_ = new ICMonitorPageFrame();
-    //        functionButtonToPage_.insert(ui->monitorPageButton, monitorPage_);
-    //        centerStackedLayout_->addWidget(monitorPage_);
-    //    }
-    //    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(clickedButton->text());
+
+
+    if(alarmButtonToPage_.contains(clickedButton))
+    {
+        centerStackedLayout_->setCurrentWidget(alarmButtonToPage_.value(clickedButton));
+    }
+
+}
+
+void MainFrame::RecordsButtonClicked()
+{
+    QAbstractButton *clickedButton = qobject_cast<QAbstractButton *>(sender());
+
+    if(alarmButtonToPage_.contains(clickedButton))
+    {
+        if(alarmButtonToPage_.value(clickedButton)){
+            centerStackedLayout_->setCurrentWidget(alarmButtonToPage_.value(clickedButton));
+        }
+        else{
+            ui->stackedWidget->setCurrentIndex(0);
+            ReturnButtonClicked();
+        }
+    }
 }
 
 void MainFrame::SettingButtonClicked()

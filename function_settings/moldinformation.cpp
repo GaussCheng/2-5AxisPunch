@@ -15,6 +15,7 @@
 #include "icprogramformatchecker.h"
 #include "icconfigformatchecker.h"
 #include "icmacrosubroutine.h"
+#include "icmodifyframe.h"
 #include <QFileDialog>
 
 
@@ -482,6 +483,15 @@ void MoldInformation::on_loadToolButton_clicked()
             ICVirtualHost::GlobalVirtualHost()->ReConfigure();
             qDebug("after emit updatehostparam");
             //        UpdateHostParam();
+
+            QString newMoldName = moldName;
+            newMoldName.chop(4);
+            QString oldMoldName = ICParametersSave::Instance()->MoldName("");
+            oldMoldName.chop(4);
+
+            ICModifyFrame::Instance()->OnActionTriggered(ICConfigString::kCS_Mold_Changed,
+                                                        newMoldName,
+                                                        oldMoldName);
 
             ICParametersSave::Instance()->SetMoldName(moldName);
             ICProgramHeadFrame::Instance()->SetCurrentMoldName(moldName);

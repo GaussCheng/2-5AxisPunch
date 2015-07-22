@@ -1,6 +1,7 @@
 #include <QEvent>
 #include "passwdlevellabel.h"
 #include "icparameterssave.h"
+#include "icmodifyframe.h"
 
 
 PasswdLevelLabel::PasswdLevelLabel(QWidget * parent)
@@ -50,18 +51,32 @@ void PasswdLevelLabel::changeEvent(QEvent *e)
 
 void PasswdLevelLabel::PasswdLevelChenged(int level)
 {
-    currentLevel_ = level;
-    if(level == ICParametersSave::MachineOperator)
-    {
-        setText(tr("Machine Operator"));
-    }
-    else if(level == ICParametersSave::MachineAdmin)
-    {
-        setText(tr("Machine Admin"));
-    }
-    else if(level == ICParametersSave::AdvanceAdmin)
-    {
-        setText(tr("Advance Admin"));
-    }
-    emit Levelchenged(currentLevel_);
+       QString oldLevel, newLevel;
+        if(currentLevel_ == ICParametersSave::MachineOperator)
+            oldLevel = tr("Machine Operator");
+        else if(currentLevel_ == ICParametersSave::MachineAdmin)
+            oldLevel = tr("Machine Admin");
+        else if(currentLevel_ == ICParametersSave::AdvanceAdmin)
+            oldLevel = tr("Advance Admin");
+        else
+            oldLevel = tr("None Level");
+        currentLevel_ = level;
+        if(level == ICParametersSave::MachineOperator)
+        {
+            newLevel = tr("Machine Operator");
+        }
+        else if(level == ICParametersSave::MachineAdmin)
+        {
+            newLevel = (tr("Machine Admin"));
+        }
+        else if(level == ICParametersSave::AdvanceAdmin)
+        {
+            newLevel = (tr("Advance Admin"));
+        }
+
+        setText(newLevel);
+        ICModifyFrame::Instance()->OnActionTriggered(ICConfigString::kCS_User_Changed,
+                                        newLevel,
+                                        oldLevel);
+        emit Levelchenged(currentLevel_);
 }

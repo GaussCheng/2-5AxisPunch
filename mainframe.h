@@ -78,6 +78,7 @@ Q_SIGNALS:
 
 private slots:
     void CategoryButtonClicked();
+    void RecordsButtonClicked();
     void SettingButtonClicked();
 
     void ReturnButtonClicked();
@@ -110,6 +111,7 @@ private:
     QWidget * initialPage_;
     ICSettingsFrame * settingsPage_;
     QWidget * alarmPage_;
+    QWidget * modifyPage_;
     QWidget * recordPage_;
     QWidget * monitorPage_;
     ICProgramPage * instructPage_;
@@ -129,6 +131,7 @@ private:
     QDialog *hostCompareDialog_;
 
     QMap <QWidget *, QWidget *> functionButtonToPage_;
+    QMap <QAbstractButton *, QWidget *> alarmButtonToPage_;
     QMap <QAbstractButton *, QWidget *> settingButtonToPage_;
 
     QStackedLayout * centerStackedLayout_;
