@@ -369,30 +369,30 @@ void ICProgramPage::timerEvent(QTimerEvent *e)
     ICUserActionInfo info;
     ICUserDefineConfigSPTR config = ICUserDefineConfig::Instance();
 
-    int p;
-    info = config->GetActionShortcutByID(0);
-    //            p = (info.type == 2) ? info.pointNum << 1 : info.pointNum;
+    for(int i =0;i < manualButtons.size();i++){
+        int p;
+        info = config->GetActionShortcutByID(i);
 
-    if((info.type + ICMold::GOutY) == ICMold::GTwoXTwoY){
-        p = info.pointNum * 2;
-    }
-    else if((info.type + ICMold::GOutY) == ICMold::GEuOut){
-        p = info.pointNum + 64;
-    }
-    else{
-        p = info.pointNum;
+        if((info.type + ICMold::GOutY) == ICMold::GTwoXTwoY){
+            p = info.pointNum * 2;
+        }
+        else if((info.type + ICMold::GOutY) == ICMold::GEuOut){
+            p = info.pointNum + 64;
+        }
+        else{
+            p = info.pointNum;
+        }
+
+        if(host->IsOutputOn(p))
+        {
+            manualButtons.at(i)->setStyleSheet(yOnStyle);
+        }
+        else
+        {
+            manualButtons.at(i)->setStyleSheet(oriStyle);
+        }
     }
 
-    if(host->IsOutputOn(p))
-    {
-        //                buttons[i]->setPalette(yOnPalette);
-        ui->manualButton->setStyleSheet(yOnStyle);
-    }
-    else
-    {
-        //                buttons[i]->setPalette(oriPalette);
-        ui->manualButton->setStyleSheet(oriStyle);
-    }
 
 }
 

@@ -21,6 +21,8 @@ public:
     void SetThisIntToThisText(int inputNum);
     bool SetCurrentText(const QString &currentText);
 
+    QString LastValue() const { return oldVal_;}
+
 protected:
 //    void mouseReleaseEvent(QMouseEvent *);
     void mousePressEvent(QMouseEvent *);
@@ -30,6 +32,7 @@ private:
     VirtualNumericKeypadDialog * virtualNumericKeypadDialog_;
     int decimalPlaces_;
     bool isModalKeyboard_;
+    QString oldVal_;
 
 public slots:
 };

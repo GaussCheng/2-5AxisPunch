@@ -9,8 +9,14 @@
 #include "icparameterconversion.h"
 
 #include <QDebug>
-#define SCREEN_WIDTH 600
-#define SCREEN_HEIGHT 460
+#ifdef HC_SK_5
+#define WIDTH 640
+#define HEIGHT 480
+#else
+#define WIDTH 800
+#define HEIGHT 600
+#endif
+
 
 //public:
 ICLineEditWithVirtualNumericKeypad::ICLineEditWithVirtualNumericKeypad(QWidget * parent)
@@ -33,6 +39,7 @@ int ICLineEditWithVirtualNumericKeypad::TransThisTextToThisInt() const
 
 void ICLineEditWithVirtualNumericKeypad::SetThisIntToThisText(int inputNum)
 {
+    oldVal_ = this->text();
     this->setText(ICParameterConversion::TransThisIntToThisText(inputNum, this->DecimalPlaces()));
 }
 
@@ -43,7 +50,7 @@ void ICLineEditWithVirtualNumericKeypad::mousePressEvent(QMouseEvent *e)
     virtualNumericKeypadDialog_->ResetDisplay();
     QPoint topLeft = this->mapToGlobal(this->rect().topLeft());
     QPoint toMove;
-    if(topLeft.x() + virtualNumericKeypadDialog_->width() <= SCREEN_WIDTH)
+    if(topLeft.x() + virtualNumericKeypadDialog_->width() <= WIDTH)
     {
         toMove.setX(topLeft.x());
     }
@@ -53,20 +60,20 @@ void ICLineEditWithVirtualNumericKeypad::mousePressEvent(QMouseEvent *e)
     }
     else
     {
-        toMove.setX(230);
+        toMove.setX(HEIGHT/2);
     }
-    if(topLeft.y() + 48 + virtualNumericKeypadDialog_->height() <= SCREEN_HEIGHT)
+    if(topLeft.y() + 48 + virtualNumericKeypadDialog_->height() <= HEIGHT)
     {
         toMove.setY(topLeft.y() + 48);
     }
     else
     {
-        toMove.setY(SCREEN_HEIGHT - virtualNumericKeypadDialog_->height());
+        toMove.setY(HEIGHT - virtualNumericKeypadDialog_->height());
         if(topLeft.x() - virtualNumericKeypadDialog_->width() >= 0)
         {
             toMove.setX(topLeft.x() - virtualNumericKeypadDialog_->width());
         }
-        else if(topLeft.x() + this->width() + virtualNumericKeypadDialog_->width() <= SCREEN_WIDTH)
+        else if(topLeft.x() + this->width() + virtualNumericKeypadDialog_->width() <= WIDTH)
         {
             toMove.setX(topLeft.x() + this->width());
         }
@@ -106,6 +113,7 @@ bool ICLineEditWithVirtualNumericKeypad::SetCurrentText(const QString &currentTe
     {
         return true;
     }
+    oldVal_ = this->text();
     QIntValidator * intValidator = (QIntValidator *)this->validator();
     if(intValidator != NULL)
     {
@@ -173,7 +181,7 @@ bool ICLineEditWithVirtualNumericKeypad::SetCurrentText(const QString &currentTe
         }
 
         this->setText(ICParameterConversion::TransThisIntToThisText(currentValue, DecimalPlaces()));
-        this->setText(valueStr);
+//        this->setText(valueStr);
     }
     else
     {

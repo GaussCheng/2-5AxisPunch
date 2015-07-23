@@ -1249,7 +1249,7 @@ Reason</source>
         <translation>安全门检测</translation>
     </message>
     <message>
-        <location filename="icconfigstring.cpp" line="28"/>
+        <location filename="categorypage/icconfigstring.cpp" line="28"/>
         <source>kCS_SIG_Press</source>
         <translation>压力检测</translation>
     </message>
@@ -1336,27 +1336,27 @@ Reason</source>
     <message>
         <location filename="categorypage/icconfigstring.cpp" line="45"/>
         <source>kCS_RUN_Acc_Time_X1</source>
-        <translation>X1轴加减速时间</translation>
+        <translation>X轴加减速时间</translation>
     </message>
     <message>
         <location filename="categorypage/icconfigstring.cpp" line="46"/>
         <source>kCS_RUN_Acc_Time_Y1</source>
-        <translation>Y1轴加减速时间</translation>
+        <translation>Y轴加减速时间</translation>
     </message>
     <message>
         <location filename="categorypage/icconfigstring.cpp" line="47"/>
         <source>kCS_RUN_Acc_Time_Z</source>
-        <translation>Z轴加减速时间</translation>
+        <translation>S轴加减速时间</translation>
     </message>
     <message>
         <location filename="categorypage/icconfigstring.cpp" line="48"/>
         <source>kCS_RUN_Acc_Time_X2</source>
-        <translation>X2轴加减速时间</translation>
+        <translation>R轴加减速时间</translation>
     </message>
     <message>
         <location filename="categorypage/icconfigstring.cpp" line="49"/>
         <source>kCS_RUN_Acc_Time_Y2</source>
-        <translation>Y2轴加减速时间</translation>
+        <translation>T轴加减速时间</translation>
     </message>
     <message>
         <location filename="categorypage/icconfigstring.cpp" line="50"/>
@@ -1376,27 +1376,27 @@ Reason</source>
     <message>
         <location filename="categorypage/icconfigstring.cpp" line="53"/>
         <source>kCS_RUN_Speed_Limit_X1</source>
-        <translation>X1最高速度</translation>
+        <translation>X最高速度</translation>
     </message>
     <message>
         <location filename="categorypage/icconfigstring.cpp" line="54"/>
         <source>kCS_RUN_Speed_Limit_Y1</source>
-        <translation>Y1最高速度</translation>
+        <translation>Y最高速度</translation>
     </message>
     <message>
         <location filename="categorypage/icconfigstring.cpp" line="55"/>
         <source>kCS_RUN_Speed_Limit_Z</source>
-        <translation>Z最高速度</translation>
+        <translation>S最高速度</translation>
     </message>
     <message>
         <location filename="categorypage/icconfigstring.cpp" line="56"/>
         <source>kCS_RUN_Speed_Limit_X2</source>
-        <translation>X2最高速度</translation>
+        <translation>R最高速度</translation>
     </message>
     <message>
         <location filename="categorypage/icconfigstring.cpp" line="57"/>
         <source>kCS_RUN_Speed_Limit_Y2</source>
-        <translation>Y2最高速度</translation>
+        <translation>T最高速度</translation>
     </message>
     <message>
         <location filename="categorypage/icconfigstring.cpp" line="58"/>
@@ -1436,27 +1436,27 @@ Reason</source>
     <message>
         <location filename="categorypage/icconfigstring.cpp" line="65"/>
         <source>kCS_STRUCT_Axis_Define_X1</source>
-        <translation>X1轴定义</translation>
+        <translation>X轴定义</translation>
     </message>
     <message>
         <location filename="categorypage/icconfigstring.cpp" line="66"/>
         <source>kCS_STRUCT_Axis_Define_Y1</source>
-        <translation>Y1轴定义</translation>
+        <translation>Y轴定义</translation>
     </message>
     <message>
         <location filename="categorypage/icconfigstring.cpp" line="67"/>
         <source>kCS_STRUCT_Axis_Define_Z</source>
-        <translation>Z轴定义</translation>
+        <translation>S轴定义</translation>
     </message>
     <message>
         <location filename="categorypage/icconfigstring.cpp" line="68"/>
         <source>kCS_STRUCT_Axis_Define_X2</source>
-        <translation>X2轴定义</translation>
+        <translation>R轴定义</translation>
     </message>
     <message>
         <location filename="categorypage/icconfigstring.cpp" line="69"/>
         <source>kCS_STRUCT_Axis_Define_Y2</source>
-        <translation>Y2轴定义</translation>
+        <translation>T轴定义</translation>
     </message>
     <message>
         <location filename="categorypage/icconfigstring.cpp" line="70"/>
@@ -1520,676 +1520,781 @@ Reason</source>
     </message>
     <message>
         <location filename="categorypage/icconfigstring.cpp" line="82"/>
-        <source>kCS_STRUCT_Limit_Define_MArm_DW_Limit</source>
-        <translation>主臂下降限</translation>
+        <source>kCS_STRUCT_Limit_Define_Arm_X_Limit</source>
+        <oldsource>kCS_STRUCT_Limit_Define_MArm_DW_Limit</oldsource>
+        <translation>X轴负极限</translation>
     </message>
     <message>
         <location filename="categorypage/icconfigstring.cpp" line="83"/>
-        <source>kCS_STRUCT_Limit_Define_MArm_FW_Limit</source>
-        <translation>主臂前进限</translation>
+        <source>kCS_STRUCT_Limit_Define_Arm_Y_Limit</source>
+        <oldsource>kCS_STRUCT_Limit_Define_MArm_FW_Limit</oldsource>
+        <translation>Y轴负极限</translation>
     </message>
     <message>
         <location filename="categorypage/icconfigstring.cpp" line="84"/>
-        <source>kCS_STRUCT_Limit_Define_MArm_BW_Limit</source>
-        <translation>主臂后退限</translation>
+        <source>kCS_STRUCT_Limit_Define_Arm_S_Limit</source>
+        <oldsource>kCS_STRUCT_Limit_Define_MArm_BW_Limit</oldsource>
+        <translation>S轴负极限</translation>
     </message>
     <message>
         <location filename="categorypage/icconfigstring.cpp" line="85"/>
-        <source>kCS_STRUCT_Limit_Define_SArm_DW_Limit</source>
-        <translation>副臂下降限</translation>
+        <source>kCS_STRUCT_Limit_Define_Arm_R_Limit</source>
+        <oldsource>kCS_STRUCT_Limit_Define_SArm_DW_Limit</oldsource>
+        <translation>R轴负极限</translation>
     </message>
     <message>
         <location filename="categorypage/icconfigstring.cpp" line="86"/>
-        <source>kCS_STRUCT_Limit_Define_SArm_FW_Limit</source>
-        <translation>副臂前进限</translation>
+        <source>kCS_STRUCT_Limit_Define_Arm_T_Limit</source>
+        <oldsource>kCS_STRUCT_Limit_Define_SArm_FW_Limit</oldsource>
+        <translation>T轴负极限</translation>
     </message>
     <message>
         <location filename="categorypage/icconfigstring.cpp" line="87"/>
+        <source>kCS_STRUCT_Config_CanType</source>
+        <translation>Can类型</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icconfigstring.cpp" line="88"/>
+        <source>kCS_STRUCT_Config_CanId</source>
+        <translation>Can ID</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icconfigstring.cpp" line="89"/>
+        <source>kCS_STRUCT_Config_PunchType</source>
+        <translation>冲床类型</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icconfigstring.cpp" line="90"/>
+        <source>kCS_STRUCT_Config_PressureCheck</source>
+        <translation>压力检测</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icconfigstring.cpp" line="91"/>
+        <source>kCS_STRUCT_Config_TryRun</source>
+        <translation>试运行</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icconfigstring.cpp" line="92"/>
+        <source>kCS_STRUCT_Config_DownMode</source>
+        <translation>下料模式</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icconfigstring.cpp" line="93"/>
+        <source>kCS_STRUCT_Config_Flee</source>
+        <translation>模内逃跑</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icconfigstring.cpp" line="94"/>
+        <source>kCS_STRUCT_Config_Origin</source>
+        <translation>原点信号</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icconfigstring.cpp" line="95"/>
+        <source>kCS_STRUCT_Config_Auto</source>
+        <translation>全自动信号</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icconfigstring.cpp" line="96"/>
+        <source>kCS_STRUCT_Config_OriginX</source>
+        <translation>X轴原点</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icconfigstring.cpp" line="97"/>
+        <source>kCS_STRUCT_Config_OriginY</source>
+        <translation>Y轴原点</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icconfigstring.cpp" line="98"/>
+        <source>kCS_STRUCT_Config_OriginS</source>
+        <translation>S轴原点</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icconfigstring.cpp" line="99"/>
+        <source>kCS_STRUCT_Config_OriginR</source>
+        <translation>R轴原点</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icconfigstring.cpp" line="100"/>
+        <source>kCS_STRUCT_Config_OriginT</source>
+        <translation>T轴原点</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icconfigstring.cpp" line="101"/>
+        <source>kCS_STRUCT_Config_SyncOrigin</source>
+        <translation>同步回原点</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icconfigstring.cpp" line="102"/>
+        <source>kCS_STRUCT_Config_OriginSpeed</source>
+        <translation>回原点速度</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icconfigstring.cpp" line="103"/>
+        <source>kCS_STRUCT_Config_Suck1</source>
+        <translation>吸1阀检测</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icconfigstring.cpp" line="104"/>
+        <source>kCS_STRUCT_Config_Suck2</source>
+        <translation>吸2阀检测</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icconfigstring.cpp" line="105"/>
+        <source>kCS_STRUCT_Config_Clip1</source>
+        <translation>夹1阀检测</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icconfigstring.cpp" line="106"/>
+        <source>kCS_STRUCT_Config_Clip2</source>
+        <translation>夹2阀检测</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icconfigstring.cpp" line="107"/>
         <source>kCS_STRUCT_Limit_Define_SArm_BW_Limit</source>
         <translation>副臂后退限</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="88"/>
+        <location filename="categorypage/icconfigstring.cpp" line="108"/>
         <source>kCS_STRUCT_Other_Define_Escape</source>
         <translation>型内逃跑</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="89"/>
+        <location filename="categorypage/icconfigstring.cpp" line="109"/>
         <source>kCS_STRUCT_Other_Define_Tune_bit</source>
         <translation>调位</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="90"/>
+        <location filename="categorypage/icconfigstring.cpp" line="110"/>
         <source>kCS_STRUCT_Other_Define_Inside_Position</source>
         <translation>模内侧姿</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="91"/>
+        <location filename="categorypage/icconfigstring.cpp" line="111"/>
         <source>kCS_STRUCT_Other_Define_Servo_Flex</source>
         <translation>运动刚性</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="92"/>
+        <location filename="categorypage/icconfigstring.cpp" line="112"/>
         <source>kCS_STRUCT_Config_Save</source>
-        <translation>结果参数</translation>
+        <translation>结构参数</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="93"/>
+        <location filename="categorypage/icconfigstring.cpp" line="113"/>
         <source>kCS_TIME_Ver1</source>
-        <translation>垂直1限制时间</translation>
+        <translation>冲压时间</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="94"/>
+        <location filename="categorypage/icconfigstring.cpp" line="114"/>
         <source>kCS_TIME_Hor1</source>
         <translation>水平1限制时间</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="95"/>
+        <location filename="categorypage/icconfigstring.cpp" line="115"/>
         <source>kCS_TIME_Ver2</source>
         <translation>垂直2限制时间</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="96"/>
+        <location filename="categorypage/icconfigstring.cpp" line="116"/>
         <source>kCS_TIME_Hor2</source>
-        <translation>水平2限制时间</translation>
+        <translation>模内取物限制时间</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="97"/>
+        <location filename="categorypage/icconfigstring.cpp" line="117"/>
         <source>kCS_TIME_MArm_UP</source>
-        <translation>主臂上升限制时间</translation>
+        <translation>单头阀限制时间</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="98"/>
+        <location filename="categorypage/icconfigstring.cpp" line="118"/>
         <source>kCS_TIME_MArm_Dw</source>
-        <translation>主臂下降限制时间</translation>
+        <translation>双头阀限制时间</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="99"/>
+        <location filename="categorypage/icconfigstring.cpp" line="119"/>
         <source>kCS_TIME_MArm_FW</source>
-        <translation>主臂前进限制时间</translation>
+        <translation>上平衡气缸限制时间</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="100"/>
+        <location filename="categorypage/icconfigstring.cpp" line="120"/>
         <source>kCS_TIME_MArm_BW</source>
-        <translation>主臂后退限制时间</translation>
+        <translation>下平衡气缸限制时间</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="101"/>
+        <location filename="categorypage/icconfigstring.cpp" line="121"/>
         <source>kCS_TIME_Z_FW</source>
         <translation>横出限制时间</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="102"/>
+        <location filename="categorypage/icconfigstring.cpp" line="122"/>
         <source>kCS_TIME_Z_BW</source>
         <translation>横入限制时间</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="103"/>
+        <location filename="categorypage/icconfigstring.cpp" line="123"/>
         <source>kCS_TIME_SArm_UP</source>
         <translation>副臂上升限制时间</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="104"/>
+        <location filename="categorypage/icconfigstring.cpp" line="124"/>
         <source>kCS_TIME_SArm_DW</source>
         <translation>副臂下降限制时间</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="105"/>
+        <location filename="categorypage/icconfigstring.cpp" line="125"/>
         <source>kCS_TIME_SArm_FW</source>
         <translation>副臂前进限制时间</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="106"/>
+        <location filename="categorypage/icconfigstring.cpp" line="126"/>
         <source>kCS_TIME_SArm_BW</source>
         <translation>副臂后退限制时间</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="107"/>
+        <location filename="categorypage/icconfigstring.cpp" line="127"/>
         <source>kCS_STACK_Group1_Seq</source>
         <translation>堆叠1组顺序</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="108"/>
+        <location filename="categorypage/icconfigstring.cpp" line="128"/>
         <source>kCS_STACK_Group2_Seq</source>
         <translation>堆叠2组顺序</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="109"/>
+        <location filename="categorypage/icconfigstring.cpp" line="129"/>
         <source>kCS_STACK_Group3_Seq</source>
         <translation>堆叠3组顺序</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="110"/>
+        <location filename="categorypage/icconfigstring.cpp" line="130"/>
         <source>kCS_STACK_Group4_Seq</source>
         <translation>堆叠4组顺序</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="111"/>
+        <location filename="categorypage/icconfigstring.cpp" line="131"/>
         <source>kCS_STACK_Group1_X_Dir</source>
         <translation>堆叠1组X轴方向</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="112"/>
+        <location filename="categorypage/icconfigstring.cpp" line="132"/>
         <source>kCS_STACK_Group2_X_Dir</source>
         <translation>堆叠2组X轴方向</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="113"/>
+        <location filename="categorypage/icconfigstring.cpp" line="133"/>
         <source>kCS_STACK_Group3_X_Dir</source>
         <translation>堆叠3组X轴方向</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="114"/>
+        <location filename="categorypage/icconfigstring.cpp" line="134"/>
         <source>kCS_STACK_Group4_X_Dir</source>
         <translation>堆叠4组X轴方向</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="115"/>
+        <location filename="categorypage/icconfigstring.cpp" line="135"/>
         <source>kCS_STACK_Group1_Y_Dir</source>
         <translation>堆叠1组Y轴方向</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="116"/>
+        <location filename="categorypage/icconfigstring.cpp" line="136"/>
         <source>kCS_STACK_Group2_Y_Dir</source>
         <translation>堆叠2组Y轴方向</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="117"/>
+        <location filename="categorypage/icconfigstring.cpp" line="137"/>
         <source>kCS_STACK_Group3_Y_Dir</source>
         <translation>堆叠3组Y轴方向</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="118"/>
+        <location filename="categorypage/icconfigstring.cpp" line="138"/>
         <source>kCS_STACK_Group4_Y_Dir</source>
         <translation>堆叠4组Y轴方向</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="119"/>
+        <location filename="categorypage/icconfigstring.cpp" line="139"/>
         <source>kCS_STACK_Group1_Z_Dir</source>
         <translation>堆叠1组Z轴方向</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="120"/>
+        <location filename="categorypage/icconfigstring.cpp" line="140"/>
         <source>kCS_STACK_Group2_Z_Dir</source>
         <translation>堆叠2组Z轴方向</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="121"/>
+        <location filename="categorypage/icconfigstring.cpp" line="141"/>
         <source>kCS_STACK_Group3_Z_Dir</source>
         <translation>堆叠3组Z轴方向</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="122"/>
+        <location filename="categorypage/icconfigstring.cpp" line="142"/>
         <source>kCS_STACK_Group4_Z_Dir</source>
         <translation>堆叠4组Z轴方向</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="123"/>
+        <location filename="categorypage/icconfigstring.cpp" line="143"/>
         <source>kCS_STACK_Group1_X_Number</source>
         <translation>堆叠1组X轴个数</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="124"/>
+        <location filename="categorypage/icconfigstring.cpp" line="144"/>
         <source>kCS_STACK_Group2_X_Number</source>
         <translation>堆叠2组X轴个数</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="125"/>
+        <location filename="categorypage/icconfigstring.cpp" line="145"/>
         <source>kCS_STACK_Group3_X_Number</source>
         <translation>堆叠3组X轴个数</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="126"/>
+        <location filename="categorypage/icconfigstring.cpp" line="146"/>
         <source>kCS_STACK_Group4_X_Number</source>
         <translation>堆叠4组X轴个数</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="127"/>
+        <location filename="categorypage/icconfigstring.cpp" line="147"/>
         <source>kCS_STACK_Group1_Y_Number</source>
         <translation>堆叠1组Y轴个数</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="128"/>
+        <location filename="categorypage/icconfigstring.cpp" line="148"/>
         <source>kCS_STACK_Group2_Y_Number</source>
         <translation>堆叠2组Y轴个数</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="129"/>
+        <location filename="categorypage/icconfigstring.cpp" line="149"/>
         <source>kCS_STACK_Group3_Y_Number</source>
         <translation>堆叠3组Y轴个数</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="130"/>
+        <location filename="categorypage/icconfigstring.cpp" line="150"/>
         <source>kCS_STACK_Group4_Y_Number</source>
         <translation>堆叠4组Y轴个数</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="131"/>
+        <location filename="categorypage/icconfigstring.cpp" line="151"/>
         <source>kCS_STACK_Group1_Z_Number</source>
         <translation>堆叠1组Z轴个数</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="132"/>
+        <location filename="categorypage/icconfigstring.cpp" line="152"/>
         <source>kCS_STACK_Group2_Z_Number</source>
         <translation>堆叠2组Z轴个数</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="133"/>
+        <location filename="categorypage/icconfigstring.cpp" line="153"/>
         <source>kCS_STACK_Group3_Z_Number</source>
         <translation>堆叠3组Z轴个数</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="134"/>
+        <location filename="categorypage/icconfigstring.cpp" line="154"/>
         <source>kCS_STACK_Group4_Z_Number</source>
         <translation>堆叠4组Z轴个数</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="135"/>
+        <location filename="categorypage/icconfigstring.cpp" line="155"/>
         <source>kCS_STACK_Group1_X_Space</source>
         <translation>堆叠1组X轴间距</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="136"/>
+        <location filename="categorypage/icconfigstring.cpp" line="156"/>
         <source>kCS_STACK_Group2_X_Space</source>
         <translation>堆叠2组X轴间距</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="137"/>
+        <location filename="categorypage/icconfigstring.cpp" line="157"/>
         <source>kCS_STACK_Group3_X_Space</source>
         <translation>堆叠3组X轴间距</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="138"/>
+        <location filename="categorypage/icconfigstring.cpp" line="158"/>
         <source>kCS_STACK_Group4_X_Space</source>
         <translation>堆叠4组X轴间距</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="139"/>
+        <location filename="categorypage/icconfigstring.cpp" line="159"/>
         <source>kCS_STACK_Group1_Y_Space</source>
         <translation>堆叠1组Y轴间距</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="140"/>
+        <location filename="categorypage/icconfigstring.cpp" line="160"/>
         <source>kCS_STACK_Group2_Y_Space</source>
         <translation>堆叠2组Y轴间距</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="141"/>
+        <location filename="categorypage/icconfigstring.cpp" line="161"/>
         <source>kCS_STACK_Group3_Y_Space</source>
         <translation>堆叠3组Y轴间距</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="142"/>
+        <location filename="categorypage/icconfigstring.cpp" line="162"/>
         <source>kCS_STACK_Group4_Y_Space</source>
         <translation>堆叠4组Y轴间距</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="143"/>
+        <location filename="categorypage/icconfigstring.cpp" line="163"/>
         <source>kCS_STACK_Group1_Z_Space</source>
         <translation>堆叠1组Z轴间距</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="144"/>
+        <location filename="categorypage/icconfigstring.cpp" line="164"/>
         <source>kCS_STACK_Group2_Z_Space</source>
         <translation>堆叠2组Z轴间距</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="145"/>
+        <location filename="categorypage/icconfigstring.cpp" line="165"/>
         <source>kCS_STACK_Group3_Z_Space</source>
         <translation>堆叠3组Z轴间距</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="146"/>
+        <location filename="categorypage/icconfigstring.cpp" line="166"/>
         <source>kCS_STACK_Group4_Z_Space</source>
         <translation>堆叠4组Z轴间距</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="147"/>
+        <location filename="categorypage/icconfigstring.cpp" line="167"/>
         <source>kCS_STACK_Group1_Is_SArm</source>
         <translation>堆叠1组是否副臂堆叠</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="148"/>
+        <location filename="categorypage/icconfigstring.cpp" line="168"/>
         <source>kCS_STACK_Group2_Is_SArm</source>
         <translation>堆叠2组是否副臂堆叠</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="149"/>
+        <location filename="categorypage/icconfigstring.cpp" line="169"/>
         <source>kCS_STACK_Group3_Is_SArm</source>
         <translation>堆叠3组是否副臂堆叠</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="150"/>
+        <location filename="categorypage/icconfigstring.cpp" line="170"/>
         <source>kCS_STACK_Group4_Is_SArm</source>
         <translation>堆叠4组是否副臂堆叠</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="151"/>
+        <location filename="categorypage/icconfigstring.cpp" line="171"/>
         <source>kCS_STACK_Group1_Count_Way</source>
         <translation>堆叠1组堆叠计数器</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="152"/>
+        <location filename="categorypage/icconfigstring.cpp" line="172"/>
         <source>kCS_STACK_Group2_Count_Way</source>
         <translation>堆叠2组堆叠计数器</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="153"/>
+        <location filename="categorypage/icconfigstring.cpp" line="173"/>
         <source>kCS_STACK_Group3_Count_Way</source>
         <translation>堆叠3组堆叠计数器</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="154"/>
+        <location filename="categorypage/icconfigstring.cpp" line="174"/>
         <source>kCS_STACK_Group4_Count_Way</source>
         <translation>堆叠4组堆叠计数器</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="155"/>
+        <location filename="categorypage/icconfigstring.cpp" line="175"/>
         <source>kCS_AXIS_Length_X1</source>
-        <translation>X1轴机器长度</translation>
+        <translation>X轴最大移动</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="156"/>
+        <location filename="categorypage/icconfigstring.cpp" line="176"/>
         <source>kCS_AXIS_Length_Y1</source>
-        <translation>Y1轴机器长度</translation>
+        <translation>Y轴最大移动</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="157"/>
+        <location filename="categorypage/icconfigstring.cpp" line="177"/>
         <source>kCS_AXIS_Length_Z</source>
-        <translation>Z轴机器长度</translation>
+        <translation>S轴最大移动</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="158"/>
+        <location filename="categorypage/icconfigstring.cpp" line="178"/>
         <source>kCS_AXIS_Length_X2</source>
-        <translation>X2轴机器长度</translation>
+        <translation>R轴最大移动</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="159"/>
+        <location filename="categorypage/icconfigstring.cpp" line="179"/>
         <source>kCS_AXIS_Length_Y2</source>
-        <translation>Y2轴机器长度</translation>
+        <translation>T轴最大移动</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="160"/>
+        <location filename="categorypage/icconfigstring.cpp" line="180"/>
         <source>kCS_AXIS_Length_A</source>
         <translation>A轴最大旋转</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="161"/>
+        <location filename="categorypage/icconfigstring.cpp" line="181"/>
         <source>kCS_AXIS_Length_B</source>
         <translation>B轴最大旋转</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="162"/>
+        <location filename="categorypage/icconfigstring.cpp" line="182"/>
         <source>kCS_AXIS_Length_C</source>
         <translation>C轴最大旋转</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="163"/>
+        <location filename="categorypage/icconfigstring.cpp" line="183"/>
         <source>kCS_AXIS_Move_Limit_X1</source>
-        <translation>X1轴最大移动</translation>
+        <translation>X轴最小移动</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="164"/>
+        <location filename="categorypage/icconfigstring.cpp" line="184"/>
         <source>kCS_AXIS_Move_Limit_Y1</source>
-        <translation>Y1轴最大移动</translation>
+        <translation>Y轴最小移动</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="165"/>
+        <location filename="categorypage/icconfigstring.cpp" line="185"/>
         <source>kCS_AXIS_Move_Limit_Z</source>
-        <translation>Z轴最大移动</translation>
+        <translation>S轴最小移动</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="166"/>
+        <location filename="categorypage/icconfigstring.cpp" line="186"/>
         <source>kCS_AXIS_Move_Limit_X2</source>
-        <translation>X2轴最大移动</translation>
+        <translation>R轴最小移动</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="167"/>
+        <location filename="categorypage/icconfigstring.cpp" line="187"/>
         <source>kCS_AXIS_Move_Limit_Y2</source>
-        <translation>Y2轴最大移动</translation>
+        <translation>T轴最小移动</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="168"/>
+        <location filename="categorypage/icconfigstring.cpp" line="188"/>
         <source>kCS_AXIS_Move_Limit_A</source>
         <translation>A轴原点偏置</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="169"/>
+        <location filename="categorypage/icconfigstring.cpp" line="189"/>
         <source>kCS_AXIS_Move_Limit_B</source>
         <translation>B轴原点偏置</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="170"/>
+        <location filename="categorypage/icconfigstring.cpp" line="190"/>
         <source>kCS_AXIS_Move_Limit_C</source>
         <translation>C轴原点偏置</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="171"/>
+        <location filename="categorypage/icconfigstring.cpp" line="191"/>
         <source>kCS_AXIS_Min_X1</source>
-        <translation>X1轴模内最小位置</translation>
+        <translation>X轴取料安全点</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="172"/>
+        <location filename="categorypage/icconfigstring.cpp" line="192"/>
         <source>kCS_AXIS_Min_Y1</source>
-        <translation>Y1轴最大待机位置</translation>
+        <translation>Y轴取料安全点</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="173"/>
+        <location filename="categorypage/icconfigstring.cpp" line="193"/>
         <source>kCS_AXIS_Min_Z</source>
-        <translation>Z轴型内安全区</translation>
+        <translation>S轴取料安全点</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="174"/>
+        <location filename="categorypage/icconfigstring.cpp" line="194"/>
         <source>kCS_AXIS_Min_X2</source>
-        <translation>X2轴模内最小位置</translation>
+        <translation>R轴取料安全点</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="175"/>
+        <location filename="categorypage/icconfigstring.cpp" line="195"/>
         <source>kCS_AXIS_Min_Y2</source>
-        <translation>Y2轴最大待机位置</translation>
+        <translation>T轴取料安全点</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="176"/>
+        <location filename="categorypage/icconfigstring.cpp" line="196"/>
         <source>kCS_AXIS_Min_A</source>
         <translation>A轴横行安全范围(小于)</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="177"/>
+        <location filename="categorypage/icconfigstring.cpp" line="197"/>
         <source>kCS_AXIS_Min_B</source>
         <translation>B轴横行安全范围(小于)</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="178"/>
+        <location filename="categorypage/icconfigstring.cpp" line="198"/>
         <source>kCS_AXIS_Min_C</source>
         <translation>C轴横行安全范围(小于)</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="179"/>
+        <location filename="categorypage/icconfigstring.cpp" line="199"/>
         <source>kCS_AXIS_Max_X1</source>
-        <translation>X1轴模内最大位置</translation>
+        <translation>X轴放料安全点</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="180"/>
+        <location filename="categorypage/icconfigstring.cpp" line="200"/>
         <source>kCS_AXIS_Max_Y1</source>
-        <translation>Y1轴离开原点位置</translation>
+        <translation>Y轴放料安全点</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="181"/>
+        <location filename="categorypage/icconfigstring.cpp" line="201"/>
         <source>kCS_AXIS_Max_Z</source>
-        <translation>Z轴型外安全区</translation>
+        <translation>S轴放料安全点</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="182"/>
+        <location filename="categorypage/icconfigstring.cpp" line="202"/>
         <source>kCS_AXIS_Max_X2</source>
-        <translation>21轴模内最大位置</translation>
+        <translation>R轴放料安全点</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="183"/>
+        <location filename="categorypage/icconfigstring.cpp" line="203"/>
         <source>kCS_AXIS_Max_Y2</source>
-        <translation>Y2轴离开原点位置</translation>
+        <translation>T轴放料安全点</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="184"/>
+        <location filename="categorypage/icconfigstring.cpp" line="204"/>
         <source>kCS_AXIS_Max_A</source>
         <translation>A轴横行安全范围(大于)</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="185"/>
+        <location filename="categorypage/icconfigstring.cpp" line="205"/>
         <source>kCS_AXIS_Max_B</source>
         <translation>B轴横行安全范围(大于)</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="186"/>
+        <location filename="categorypage/icconfigstring.cpp" line="206"/>
         <source>kCS_AXIS_Max_C</source>
         <translation>C轴横行安全范围(大于)</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="187"/>
+        <location filename="categorypage/icconfigstring.cpp" line="207"/>
         <source>kCS_AXIS_Rotate_X1</source>
-        <translation>X1轴每转距离</translation>
+        <translation>X轴每转距离</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="188"/>
+        <location filename="categorypage/icconfigstring.cpp" line="208"/>
         <source>kCS_AXIS_Rotate_Y1</source>
-        <translation>Y1轴每转距离</translation>
+        <translation>Y轴每转距离</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="189"/>
+        <location filename="categorypage/icconfigstring.cpp" line="209"/>
         <source>kCS_AXIS_Rotate_Z</source>
-        <translation>Z轴每转距离</translation>
+        <translation>S轴每转距离</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="190"/>
+        <location filename="categorypage/icconfigstring.cpp" line="210"/>
         <source>kCS_AXIS_Rotate_X2</source>
-        <translation>X2轴每转距离</translation>
+        <translation>R轴每转距离</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="191"/>
+        <location filename="categorypage/icconfigstring.cpp" line="211"/>
         <source>kCS_AXIS_Rotate_Y2</source>
-        <translation>Y2轴每转距离</translation>
+        <translation>T轴每转距离</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="192"/>
+        <location filename="categorypage/icconfigstring.cpp" line="212"/>
         <source>kCS_AXIS_Rotate_A</source>
         <translation>A轴电机每圈</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="193"/>
+        <location filename="categorypage/icconfigstring.cpp" line="213"/>
         <source>kCS_AXIS_Rotate_B</source>
         <translation>B轴电机每圈</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="194"/>
+        <location filename="categorypage/icconfigstring.cpp" line="214"/>
         <source>kCS_AXIS_Rotate_C</source>
         <translation>C轴电机每圈</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="195"/>
+        <location filename="categorypage/icconfigstring.cpp" line="215"/>
         <source>kCS_AXIS_Config_Save</source>
         <translation>轴参数</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="196"/>
+        <location filename="categorypage/icconfigstring.cpp" line="216"/>
         <source>kCS_PANEL_Key_Tone</source>
         <translation>按键音</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="197"/>
+        <location filename="categorypage/icconfigstring.cpp" line="217"/>
         <source>kCS_PANEL_Touch_Recal</source>
         <translation>触摸屏</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="198"/>
+        <location filename="categorypage/icconfigstring.cpp" line="218"/>
         <source>kCS_PANEL_Language</source>
         <translation>面板语言</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="199"/>
+        <location filename="categorypage/icconfigstring.cpp" line="219"/>
         <source>kCS_PANEL_Datetime</source>
         <translation>面板日期</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="200"/>
+        <location filename="categorypage/icconfigstring.cpp" line="220"/>
         <source>kCS_PANEL_Backlight</source>
         <translation>屏幕背光时间</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="201"/>
+        <location filename="categorypage/icconfigstring.cpp" line="221"/>
         <source>kCS_PANEL_Bright</source>
         <translation>屏幕亮度</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="202"/>
+        <location filename="categorypage/icconfigstring.cpp" line="222"/>
         <source>kCS_PANEL_Admin_Password</source>
         <translation>管理员密码</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="203"/>
+        <location filename="categorypage/icconfigstring.cpp" line="223"/>
         <source>kCS_PANEL_Root_Password</source>
         <translation>高级管理员密码</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="204"/>
+        <location filename="categorypage/icconfigstring.cpp" line="224"/>
         <source>kCS_PANEL_Super_Password</source>
         <translation>超级密码</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="205"/>
+        <location filename="categorypage/icconfigstring.cpp" line="225"/>
         <source>kCS_PANEL_Function_Extent</source>
         <translation>功能扩展</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="206"/>
+        <location filename="categorypage/icconfigstring.cpp" line="226"/>
         <source>kCS_PANEL_Register_Extent</source>
         <translation>注册功能</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="207"/>
+        <location filename="categorypage/icconfigstring.cpp" line="227"/>
         <source>kCS_PANEL_Config_Save</source>
         <translation>面板参数</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="208"/>
+        <location filename="categorypage/icconfigstring.cpp" line="228"/>
         <source>kCS_CARE_Item1_Cycle</source>
         <translation>保养项目1周期</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="209"/>
+        <location filename="categorypage/icconfigstring.cpp" line="229"/>
         <source>kCS_CARE_Item2_Cycle</source>
         <translation>保养项目2周期</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="210"/>
+        <location filename="categorypage/icconfigstring.cpp" line="230"/>
         <source>kCS_CARE_Item3_Cycle</source>
         <translation>保养项目3周期</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="211"/>
+        <location filename="categorypage/icconfigstring.cpp" line="231"/>
         <source>kCS_CARE_Item4_Cycle</source>
         <translation>保养项目4周期</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="212"/>
+        <location filename="categorypage/icconfigstring.cpp" line="232"/>
         <source>kCS_CARE_Item5_Cycle</source>
         <translation>保养项目5周期</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="213"/>
+        <location filename="categorypage/icconfigstring.cpp" line="233"/>
         <source>kCS_CARE_Item6_Cycle</source>
         <translation>保养项目6周期</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="214"/>
+        <location filename="categorypage/icconfigstring.cpp" line="234"/>
         <source>kCS_CARE_Item7_Cycle</source>
         <translation>保养项目7周期</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="215"/>
+        <location filename="categorypage/icconfigstring.cpp" line="235"/>
         <source>kCS_Err</source>
         <translation>非内部参数</translation>
     </message>
     <message>
-        <location filename="categorypage/icconfigstring.cpp" line="216"/>
+        <location filename="categorypage/icconfigstring.cpp" line="236"/>
         <source>No IMPL</source>
         <translation>没有实现</translation>
     </message>
@@ -3925,7 +4030,7 @@ Reason</source>
         <translation>回零步</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="917"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="921"/>
         <source>Servo On</source>
         <translation>伺服开</translation>
     </message>
@@ -4286,7 +4391,7 @@ Reason</source>
         <translation type="obsolete">吸</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="513"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="514"/>
         <source>Single(%1/%2)</source>
         <translation>单步(%1/%2)</translation>
     </message>
@@ -4299,24 +4404,29 @@ Reason</source>
         <translation type="obsolete">执行手动命令失败！</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="729"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="750"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="772"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="793"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="814"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="866"/>
-        <source>Warning</source>
-        <translation>警告</translation>
-    </message>
-    <message>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="730"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="751"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="773"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="794"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="815"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="867"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="870"/>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="731"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="752"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="774"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="795"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="816"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="871"/>
         <source>Has not been origin!</source>
         <translation>还没原点复归!</translation>
+    </message>
+    <message>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="861"/>
+        <source>Product clear</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>No Check</source>
@@ -4327,7 +4437,7 @@ Reason</source>
         <translation type="obsolete">料感运行</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="912"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="916"/>
         <source>Servo OFF</source>
         <translation>伺服关</translation>
     </message>
@@ -6456,40 +6566,40 @@ Reason</source>
 <context>
     <name>ICLineEditWithVirtualNumericKeypad</name>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="116"/>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="129"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="124"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="137"/>
         <source>Input Error</source>
         <translation>输入有误</translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="117"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="125"/>
         <source>There are only </source>
         <translation>仅有</translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="119"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="127"/>
         <source> decimal place
 </source>
         <translation>位小数</translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="120"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="128"/>
         <source>Please enter an digit between </source>
         <translation>请输入数值为</translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="130"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="138"/>
         <source>The value must be an integer
 Please enter an integer between </source>
         <translation>该值必须是整数</translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="142"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="150"/>
         <source>Out of range</source>
         <translation>越界</translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="143"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/iclineeditwithvirtualnumerickeypad.cpp" line="151"/>
         <source>The value you entered out of range.
 Please enter an digit between </source>
         <translation>该值越界</translation>
@@ -6721,6 +6831,7 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcsettings/icmachinestructpage.ui" line="568"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="660"/>
         <source>Save</source>
         <translation>保存</translation>
     </message>
@@ -6760,66 +6871,66 @@ Please enter an digit between </source>
         <translation>清除测试</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="24"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="25"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="80"/>
         <source>X Axis</source>
         <oldsource>X1 Axis</oldsource>
         <translation>X轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="25"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="26"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="81"/>
         <source>Y Axis</source>
         <oldsource>Y1 Axis</oldsource>
         <translation>Y轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="28"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="29"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="84"/>
         <source>T Axis</source>
         <oldsource>Z Axis</oldsource>
         <translation>T轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="27"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="28"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="83"/>
         <source>R Axis</source>
         <oldsource>X2 Axis</oldsource>
         <translation>R轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="26"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="27"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="82"/>
         <source>S Axis</source>
         <oldsource>Y2 Axis</oldsource>
         <translation>S轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="29"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="30"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="85"/>
         <source>A Axis</source>
         <translation>A轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="30"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="31"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="86"/>
         <source>B Axis</source>
         <translation>B轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="31"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="32"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="87"/>
         <source>C Axis</source>
         <translation>C轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="32"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="33"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="88"/>
         <source>Struct Define</source>
         <translation>结构</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="33"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="34"/>
         <location filename="hcsettings/icmachinestructpage.cpp" line="89"/>
         <source>Time</source>
         <translation>时间</translation>
@@ -6920,12 +7031,12 @@ Please enter an digit between </source>
         <translation>原点偏置</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="644"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="658"/>
         <source>Information</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="hcsettings/icmachinestructpage.cpp" line="644"/>
+        <location filename="hcsettings/icmachinestructpage.cpp" line="658"/>
         <source>Save Successfully!</source>
         <translation>保存成功!</translation>
     </message>
@@ -7076,20 +7187,8 @@ ModifyTime</source>
         <translation type="obsolete">报警解除时间</translation>
     </message>
     <message>
-        <location filename="categorypage/icmodifyframe.cpp" line="139"/>
-        <location filename="categorypage/icmodifyframe.cpp" line="257"/>
         <source>no-solve</source>
-        <translation type="unfinished">未解决</translation>
-    </message>
-    <message>
-        <location filename="categorypage/icmodifyframe.cpp" line="357"/>
-        <source>%1    %2[%3]    from    %4 to %5</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="categorypage/icmodifyframe.cpp" line="366"/>
-        <source>%1    %2[%3]    %4</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">未解决</translation>
     </message>
 </context>
 <context>
@@ -9498,41 +9597,41 @@ ModifyTime</source>
     <name>ICStructDefineFrame</name>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="14"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="321"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="364"/>
         <source>Form</source>
         <translation>组合动作选择</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="35"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="47"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="322"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="44"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="56"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="365"/>
         <source>Arm Define</source>
         <oldsource>Signal Define</oldsource>
         <translation>轴定义</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="69"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="101"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="133"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="165"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="190"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="229"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="254"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="293"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="754"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1372"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1433"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1473"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1520"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1560"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="324"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="328"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="332"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="336"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="340"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="344"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="348"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="352"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="78"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="110"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="142"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="174"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="199"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="238"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="263"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="302"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="771"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1696"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1757"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1797"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1844"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1884"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="367"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="371"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="375"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="379"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="383"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="387"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="391"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="395"/>
         <source>None</source>
         <translation>无</translation>
     </message>
@@ -9570,8 +9669,8 @@ ModifyTime</source>
         <translation type="obsolete">需上升和下降限位</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1866"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="380"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="2190"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="423"/>
         <source>Save</source>
         <translation>保存</translation>
     </message>
@@ -9616,407 +9715,432 @@ ModifyTime</source>
         <translation type="obsolete">前进限</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="74"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="106"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="138"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="170"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="195"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="234"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="259"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="298"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="325"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="329"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="333"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="337"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="341"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="345"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="349"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="353"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="83"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="115"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="147"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="179"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="204"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="243"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="268"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="307"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="368"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="372"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="376"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="380"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="384"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="388"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="392"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="396"/>
         <source>Pneumatic</source>
         <translation>气动轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="79"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="111"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="143"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="175"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="200"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="239"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="264"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="303"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="326"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="330"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="334"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="338"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="342"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="346"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="350"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="354"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="88"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="120"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="152"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="184"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="209"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="248"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="273"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="312"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="369"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="373"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="377"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="381"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="385"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="389"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="393"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="397"/>
         <source>Servo</source>
         <translation>伺服轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="215"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="224"/>
         <source>S</source>
         <translation>S轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="311"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="320"/>
         <source>T</source>
         <translation>T轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="151"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="160"/>
         <source>C</source>
         <translation>C轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="949"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1162"/>
         <source>Punch-9</source>
         <translation>冲床9</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="933"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1134"/>
         <source>Punch-8</source>
         <translation>冲床8</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="869"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1022"/>
         <source>Punch-1</source>
         <translation>冲床1</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="853"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="994"/>
         <source>Punch-2</source>
         <translation>冲床2</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="821"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="938"/>
         <source>Punch-4</source>
         <translation>冲床4</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="917"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1106"/>
         <source>Punch-5</source>
         <translation>冲床5</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="837"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="966"/>
         <source>Punch-3</source>
         <translation>冲床3</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="901"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1078"/>
         <source>Punch-6</source>
         <translation>冲床6</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="965"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1190"/>
         <source>Punch-10</source>
         <translation>冲床10</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="885"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1050"/>
         <source>Punch-7</source>
         <translation>冲床7</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="208"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="217"/>
         <source>X</source>
         <translation>X轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="272"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="281"/>
         <source>Y</source>
         <translation>Y轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="279"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="288"/>
         <source>R</source>
         <translation>R轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="740"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="751"/>
         <source>Can Define</source>
         <translation>Can端口定义</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="746"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="763"/>
         <source>Can Type</source>
         <translation>CAN 类型</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="759"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="776"/>
         <source>Master</source>
         <translation>主机</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="764"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="781"/>
         <source>Slave</source>
         <translation>从机</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="772"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="795"/>
         <source>Can ID</source>
         <translation>CAN ID</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="87"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="96"/>
         <source>A</source>
         <translation>A轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="119"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="128"/>
         <source>B</source>
         <translation>B轴</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="327"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="336"/>
         <source>Limit Define</source>
         <translation>限制定义</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="358"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="367"/>
         <source>X -Limit</source>
         <translation>X轴负极限</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="422"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="431"/>
         <source>S -Limit</source>
         <translation>S轴负极限</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="390"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="399"/>
         <source>Y -Limit</source>
         <translation>Y轴负极限</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="486"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="495"/>
         <source>T -Limit</source>
         <translation>T轴负极限</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="454"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="463"/>
         <source>R -Limit</source>
         <translation>R轴负极限</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="495"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="504"/>
         <source>Reserve Prog</source>
         <translation>预留程序配置</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="510"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="519"/>
         <source>RP7</source>
         <translation>原点偏置</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="524"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="544"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="585"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="619"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="639"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="659"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="679"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="713"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="533"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="553"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="594"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="628"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="648"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="668"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="688"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="722"/>
         <source>Un</source>
         <translation>不使用</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="529"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="549"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="590"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="624"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="644"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="664"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="684"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="718"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="538"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="558"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="599"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="633"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="653"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="673"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="693"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="727"/>
         <source>En</source>
         <translation>使用</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="557"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="566"/>
         <source>RP3</source>
         <translation>预留程序3</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="564"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="573"/>
         <source>RP5</source>
         <translation>预留程序5</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="571"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="580"/>
         <source>RP6</source>
         <translation>预留程序6</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="598"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="607"/>
         <source>RP1</source>
         <translation>预留程序1</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="605"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="614"/>
         <source>RP2</source>
         <translation>预留程序2</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="692"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="701"/>
         <source>RP4</source>
         <translation>预留程序4</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="699"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="708"/>
         <source>Auto Mat</source>
         <translation>送料程序</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="981"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="902"/>
+        <source>Select</source>
+        <translation>冲床选择</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1218"/>
         <source>Punch-11</source>
         <translation>冲床11</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="997"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1246"/>
         <source>Punch-12</source>
         <translation>冲床12</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1013"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1274"/>
         <source>Punch-13</source>
         <translation>冲床13</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1029"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1302"/>
         <source>Punch-14</source>
         <translation>冲床14</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1045"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1330"/>
         <source>Punch-15</source>
         <translation>冲床15</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1061"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1358"/>
         <source>Punch-16</source>
         <translation>冲床16</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1098"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="866"/>
         <source>Pressure Check</source>
         <translation>压力检测</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1189"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="846"/>
         <source>Gear</source>
         <translation>齿轮型</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1225"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1371"/>
+        <source>Switch</source>
+        <translation>开关</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1405"/>
+        <source>Automatic</source>
+        <translation>全自动信号</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1440"/>
         <source>Down Mode</source>
         <translation>下料模式</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1675"/>
-        <source>status</source>
-        <translation type="unfinished"></translation>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1510"/>
+        <source>OriginSignal</source>
+        <translation>原点信号</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1691"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1545"/>
+        <source>Flee</source>
+        <translation>模内逃跑</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1999"/>
+        <source>status</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/icstructdefineframe.ui" line="2015"/>
         <source>I/O Checked</source>
         <translation>I/O检测</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1731"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="2055"/>
         <source>X037</source>
         <translation>吸1阀检测</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1763"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="2087"/>
         <source>X040</source>
         <translation>吸2阀检测</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1795"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="2119"/>
         <source>X022</source>
         <translation>夹1阀检测</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1827"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="2151"/>
         <source>X023</source>
         <translation>预留阀检测</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1141"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="874"/>
         <source>Disable</source>
         <translation>不使用</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1146"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="879"/>
         <source>Always ON</source>
         <translation>常开</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1151"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="884"/>
         <source>Always OFF</source>
         <translation>常闭</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1133"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1475"/>
         <source>Try Run</source>
         <translation>试运行</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1171"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="828"/>
         <source>Punch Type</source>
         <translation>冲床类型</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1179"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="836"/>
         <source>Pulse</source>
         <translation>脉冲型</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1184"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="841"/>
         <source>Continuous </source>
         <translation>连续型</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1234"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1558"/>
         <source>Origin</source>
         <translation>原点设定</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1246"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1570"/>
         <source>Manual Origin</source>
         <translation>手动原点</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1605"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1929"/>
         <source>Origin SPD</source>
         <translation>原点速度</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1615"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1939"/>
         <source>%</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1659"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1983"/>
         <source>Orign Sync </source>
         <translation>同步回原点</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1323"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="264"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1647"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="307"/>
         <source>Start</source>
         <translation>开始原点</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1284"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1608"/>
         <source>Set Origined</source>
         <translation>设为原点</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1352"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1676"/>
         <source>Origin Sequence</source>
         <translation>原点顺序</translation>
     </message>
@@ -10081,9 +10205,8 @@ ModifyTime</source>
         <translation type="obsolete">正相</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="728"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="797"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="379"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="737"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="422"/>
         <source>Other Define</source>
         <translation>冲床配置</translation>
     </message>
@@ -10104,17 +10227,17 @@ ModifyTime</source>
         <translation type="obsolete">手臂结构选择</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="254"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="297"/>
         <source>Origining</source>
         <translation>原点中...</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="463"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="509"/>
         <source>Tips</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="463"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="509"/>
         <source>Save Sucessfully!</source>
         <translation>保存成功!</translation>
     </message>
@@ -10542,43 +10665,43 @@ Would you want to restart now?</source>
         <translation type="obsolete">更新进度：</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="81"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="107"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="82"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="108"/>
         <source>Name</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="82"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="108"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="83"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="109"/>
         <source>Create Time</source>
         <translation>创建日期</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="153"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="387"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="154"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="388"/>
         <source>System Updating...</source>
         <translation>系统更新中...</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="183"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="184"/>
         <source>No available New SuperPassward</source>
         <translation>没有可以用的超级密码</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="185"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="186"/>
         <source>New SuperPassward</source>
         <translation>新超级密码</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="300"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="322"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="655"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="301"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="323"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="659"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="300"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="322"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="301"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="323"/>
         <source>Update Host fail!</source>
         <translation>更新主机失败！</translation>
     </message>
@@ -10587,12 +10710,12 @@ Would you want to restart now?</source>
         <translation type="obsolete">打开更新文件失败！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="349"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="350"/>
         <source>tips</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="349"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="350"/>
         <source>Update Host Successful!</source>
         <translation>主机更新成功！</translation>
     </message>
@@ -10601,51 +10724,51 @@ Would you want to restart now?</source>
         <translation type="obsolete">U盘目录不存在...</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="417"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="418"/>
         <source>warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="417"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="418"/>
         <source>USB is not exist!</source>
         <translation>没有找到U盘！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="573"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="579"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="574"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="580"/>
         <source>Wrong Register Code!</source>
         <translation>注册码错误！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="585"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="586"/>
         <source>Register Success!</source>
         <translation>注册成功！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="588"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="607"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="589"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="608"/>
         <source>No Limit</source>
         <translation>无限制</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="592"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="611"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="593"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="612"/>
         <source>hour</source>
         <translation>小时</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="613"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="614"/>
         <source>No Register!</source>
         <translation>没有注册！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="656"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="660"/>
         <source>Old password is wrong</source>
         <translation>旧密码错误！</translation>
     </message>
     <message>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="663"/>
-        <location filename="hcmaintains/icupdatesystempage.cpp" line="674"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="667"/>
+        <location filename="hcmaintains/icupdatesystempage.cpp" line="678"/>
         <source>Scanning...</source>
         <translation>扫描中...</translation>
     </message>
@@ -11246,100 +11369,100 @@ Would you want to restart now?</source>
         <translation>新文件名</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="85"/>
-        <location filename="function_settings/moldinformation.cpp" line="197"/>
-        <location filename="function_settings/moldinformation.cpp" line="205"/>
-        <location filename="function_settings/moldinformation.cpp" line="278"/>
-        <location filename="function_settings/moldinformation.cpp" line="289"/>
-        <location filename="function_settings/moldinformation.cpp" line="338"/>
-        <location filename="function_settings/moldinformation.cpp" line="517"/>
-        <location filename="function_settings/moldinformation.cpp" line="530"/>
-        <location filename="function_settings/moldinformation.cpp" line="549"/>
+        <location filename="function_settings/moldinformation.cpp" line="86"/>
+        <location filename="function_settings/moldinformation.cpp" line="198"/>
+        <location filename="function_settings/moldinformation.cpp" line="206"/>
+        <location filename="function_settings/moldinformation.cpp" line="279"/>
+        <location filename="function_settings/moldinformation.cpp" line="290"/>
+        <location filename="function_settings/moldinformation.cpp" line="339"/>
+        <location filename="function_settings/moldinformation.cpp" line="527"/>
+        <location filename="function_settings/moldinformation.cpp" line="540"/>
         <location filename="function_settings/moldinformation.cpp" line="559"/>
         <location filename="function_settings/moldinformation.cpp" line="569"/>
-        <location filename="function_settings/moldinformation.cpp" line="699"/>
-        <location filename="function_settings/moldinformation.cpp" line="747"/>
+        <location filename="function_settings/moldinformation.cpp" line="579"/>
+        <location filename="function_settings/moldinformation.cpp" line="709"/>
+        <location filename="function_settings/moldinformation.cpp" line="757"/>
         <source>warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="86"/>
+        <location filename="function_settings/moldinformation.cpp" line="87"/>
         <source>New file name is empty,
 Please input the file name.</source>
         <translation>新文件名为空,请输入文件名.</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="107"/>
-        <location filename="function_settings/moldinformation.cpp" line="651"/>
-        <location filename="function_settings/moldinformation.cpp" line="786"/>
-        <location filename="function_settings/moldinformation.cpp" line="794"/>
-        <location filename="function_settings/moldinformation.cpp" line="799"/>
-        <location filename="function_settings/moldinformation.cpp" line="814"/>
-        <location filename="function_settings/moldinformation.cpp" line="853"/>
-        <location filename="function_settings/moldinformation.cpp" line="1059"/>
-        <location filename="function_settings/moldinformation.cpp" line="1076"/>
-        <location filename="function_settings/moldinformation.cpp" line="1087"/>
+        <location filename="function_settings/moldinformation.cpp" line="108"/>
+        <location filename="function_settings/moldinformation.cpp" line="661"/>
+        <location filename="function_settings/moldinformation.cpp" line="796"/>
+        <location filename="function_settings/moldinformation.cpp" line="804"/>
+        <location filename="function_settings/moldinformation.cpp" line="809"/>
+        <location filename="function_settings/moldinformation.cpp" line="824"/>
+        <location filename="function_settings/moldinformation.cpp" line="863"/>
+        <location filename="function_settings/moldinformation.cpp" line="1069"/>
+        <location filename="function_settings/moldinformation.cpp" line="1086"/>
+        <location filename="function_settings/moldinformation.cpp" line="1097"/>
         <source>Warnning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="107"/>
+        <location filename="function_settings/moldinformation.cpp" line="108"/>
         <source>This name can&apos;t not be accept!</source>
         <translation>名子不能用！</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="169"/>
+        <location filename="function_settings/moldinformation.cpp" line="170"/>
         <source>Success</source>
         <translation>成功</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="170"/>
+        <location filename="function_settings/moldinformation.cpp" line="171"/>
         <source>New file success.</source>
         <translation>新建文件成功.</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="176"/>
+        <location filename="function_settings/moldinformation.cpp" line="177"/>
         <source>The file has been existing</source>
         <translation>文件已存在</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="177"/>
+        <location filename="function_settings/moldinformation.cpp" line="178"/>
         <source>File already exists,
 Please change a new name.</source>
         <translation>文件已存在,请输入一个新的文件名.</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="198"/>
-        <location filename="function_settings/moldinformation.cpp" line="290"/>
+        <location filename="function_settings/moldinformation.cpp" line="199"/>
+        <location filename="function_settings/moldinformation.cpp" line="291"/>
         <source>Source file name is empty,
 Please choose an existing file.</source>
         <translation>源文件名为空,请选择一个存在的文件.</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="206"/>
+        <location filename="function_settings/moldinformation.cpp" line="207"/>
         <source>New file name is empty,
 Please write the destination file name.</source>
         <translation>文件名为空,请输入文件名.</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="468"/>
+        <location filename="function_settings/moldinformation.cpp" line="469"/>
         <source>Mold is break, please remove it!</source>
         <translation>程序数据损坏，请删除该程序！</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="786"/>
-        <location filename="function_settings/moldinformation.cpp" line="814"/>
+        <location filename="function_settings/moldinformation.cpp" line="796"/>
+        <location filename="function_settings/moldinformation.cpp" line="824"/>
         <source>%1 Wrong program format!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="794"/>
-        <location filename="function_settings/moldinformation.cpp" line="799"/>
+        <location filename="function_settings/moldinformation.cpp" line="804"/>
+        <location filename="function_settings/moldinformation.cpp" line="809"/>
         <source>%1 Wrong config format!!!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="1176"/>
+        <location filename="function_settings/moldinformation.cpp" line="1186"/>
         <source>Only accept number and word</source>
         <translation>只能输入字母和数字！</translation>
     </message>
@@ -11348,7 +11471,7 @@ Please write the destination file name.</source>
         <translation type="obsolete">复制文件成功!</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="279"/>
+        <location filename="function_settings/moldinformation.cpp" line="280"/>
         <source>Destination file already exists!
 Please try a new name</source>
         <translation>目标文件已存在！请重试</translation>
@@ -11358,13 +11481,13 @@ Please try a new name</source>
         <translation type="obsolete">没有选择文件</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="570"/>
+        <location filename="function_settings/moldinformation.cpp" line="580"/>
         <source>Are you sure to delete the selected files?</source>
         <oldsource>Are you sure to delete the selected files </oldsource>
         <translation>确定删除选择的文件吗?</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="820"/>
+        <location filename="function_settings/moldinformation.cpp" line="830"/>
         <source>Restoring, please wait...</source>
         <translation>还原中，请稍后...</translation>
     </message>
@@ -11373,7 +11496,7 @@ Please try a new name</source>
         <translation type="obsolete">错误的程序格式！</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="426"/>
+        <location filename="function_settings/moldinformation.cpp" line="427"/>
         <source>On the Current mold already!</source>
         <translation>已经在当前程序上！</translation>
     </message>
@@ -11386,36 +11509,36 @@ Please try a new name</source>
         <translation type="obsolete">错误的程序参数格式！</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="709"/>
-        <location filename="function_settings/moldinformation.cpp" line="740"/>
-        <location filename="function_settings/moldinformation.cpp" line="912"/>
-        <location filename="function_settings/moldinformation.cpp" line="943"/>
+        <location filename="function_settings/moldinformation.cpp" line="719"/>
+        <location filename="function_settings/moldinformation.cpp" line="750"/>
+        <location filename="function_settings/moldinformation.cpp" line="922"/>
+        <location filename="function_settings/moldinformation.cpp" line="953"/>
         <source>tips</source>
         <oldsource>t1ips</oldsource>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="709"/>
-        <location filename="function_settings/moldinformation.cpp" line="740"/>
-        <location filename="function_settings/moldinformation.cpp" line="912"/>
-        <location filename="function_settings/moldinformation.cpp" line="943"/>
+        <location filename="function_settings/moldinformation.cpp" line="719"/>
+        <location filename="function_settings/moldinformation.cpp" line="750"/>
+        <location filename="function_settings/moldinformation.cpp" line="922"/>
+        <location filename="function_settings/moldinformation.cpp" line="953"/>
         <source>%1 is exist,replace it?</source>
         <translation>%1文件存在，是否替换？</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="853"/>
+        <location filename="function_settings/moldinformation.cpp" line="863"/>
         <source>Wrong program format!!!</source>
         <translation>错误的程序格式!!!</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="876"/>
-        <location filename="function_settings/moldinformation.cpp" line="997"/>
+        <location filename="function_settings/moldinformation.cpp" line="886"/>
+        <location filename="function_settings/moldinformation.cpp" line="1007"/>
         <source>Information</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="876"/>
-        <location filename="function_settings/moldinformation.cpp" line="997"/>
+        <location filename="function_settings/moldinformation.cpp" line="886"/>
+        <location filename="function_settings/moldinformation.cpp" line="1007"/>
         <source>Operation finished!</source>
         <translation>操作完成！</translation>
     </message>
@@ -11424,8 +11547,8 @@ Please try a new name</source>
         <translation type="obsolete">备份文件不完整！</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="890"/>
-        <location filename="function_settings/moldinformation.cpp" line="1035"/>
+        <location filename="function_settings/moldinformation.cpp" line="900"/>
+        <location filename="function_settings/moldinformation.cpp" line="1045"/>
         <source>USB is not connected!</source>
         <translation>没有检测到U盘！</translation>
     </message>
@@ -11434,24 +11557,24 @@ Please try a new name</source>
         <translation type="obsolete">没有勾选模号</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="968"/>
+        <location filename="function_settings/moldinformation.cpp" line="978"/>
         <source>Backuping, please wait...</source>
         <translation>备份中，请稍后...</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="1062"/>
+        <location filename="function_settings/moldinformation.cpp" line="1072"/>
         <source>Refresh File List, please wait...</source>
         <translation>刷新文件列表，请稍后...</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="1076"/>
-        <location filename="function_settings/moldinformation.cpp" line="1087"/>
+        <location filename="function_settings/moldinformation.cpp" line="1086"/>
+        <location filename="function_settings/moldinformation.cpp" line="1097"/>
         <source>Backup files is incomplete!</source>
         <translation>备份文件不完整！</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="651"/>
-        <location filename="function_settings/moldinformation.cpp" line="1059"/>
+        <location filename="function_settings/moldinformation.cpp" line="661"/>
+        <location filename="function_settings/moldinformation.cpp" line="1069"/>
         <source>Backup files is not exists!</source>
         <translation>没有可用的备份文件!</translation>
     </message>
@@ -11460,47 +11583,47 @@ Please try a new name</source>
         <translation type="obsolete">删除文件成功!</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="339"/>
+        <location filename="function_settings/moldinformation.cpp" line="340"/>
         <source>File does not exist!</source>
         <translation>文件不存在!</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="384"/>
-        <location filename="function_settings/moldinformation.cpp" line="401"/>
-        <location filename="function_settings/moldinformation.cpp" line="890"/>
-        <location filename="function_settings/moldinformation.cpp" line="1035"/>
-        <location filename="function_settings/moldinformation.cpp" line="1175"/>
+        <location filename="function_settings/moldinformation.cpp" line="385"/>
+        <location filename="function_settings/moldinformation.cpp" line="402"/>
+        <location filename="function_settings/moldinformation.cpp" line="900"/>
+        <location filename="function_settings/moldinformation.cpp" line="1045"/>
+        <location filename="function_settings/moldinformation.cpp" line="1185"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="384"/>
-        <location filename="function_settings/moldinformation.cpp" line="401"/>
+        <location filename="function_settings/moldinformation.cpp" line="385"/>
+        <location filename="function_settings/moldinformation.cpp" line="402"/>
         <source>file name is empty</source>
         <translation>文件名空</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="436"/>
-        <location filename="function_settings/moldinformation.cpp" line="445"/>
-        <location filename="function_settings/moldinformation.cpp" line="455"/>
-        <location filename="function_settings/moldinformation.cpp" line="468"/>
+        <location filename="function_settings/moldinformation.cpp" line="437"/>
+        <location filename="function_settings/moldinformation.cpp" line="446"/>
+        <location filename="function_settings/moldinformation.cpp" line="456"/>
+        <location filename="function_settings/moldinformation.cpp" line="469"/>
         <source>critical</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="436"/>
-        <location filename="function_settings/moldinformation.cpp" line="445"/>
-        <location filename="function_settings/moldinformation.cpp" line="455"/>
+        <location filename="function_settings/moldinformation.cpp" line="437"/>
+        <location filename="function_settings/moldinformation.cpp" line="446"/>
+        <location filename="function_settings/moldinformation.cpp" line="456"/>
         <source>Read mold or mold para fail! Please change other mold!</source>
         <translation>程序数据已损坏，请更换其它程序!</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="480"/>
+        <location filename="function_settings/moldinformation.cpp" line="481"/>
         <source>Loading...</source>
         <translation>载入中...</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="426"/>
+        <location filename="function_settings/moldinformation.cpp" line="427"/>
         <source>Tips</source>
         <translation>提示</translation>
     </message>
@@ -11509,24 +11632,24 @@ Please try a new name</source>
         <translation type="obsolete">装载模号成功！</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="518"/>
-        <location filename="function_settings/moldinformation.cpp" line="550"/>
-        <location filename="function_settings/moldinformation.cpp" line="700"/>
-        <location filename="function_settings/moldinformation.cpp" line="748"/>
+        <location filename="function_settings/moldinformation.cpp" line="528"/>
+        <location filename="function_settings/moldinformation.cpp" line="560"/>
+        <location filename="function_settings/moldinformation.cpp" line="710"/>
+        <location filename="function_settings/moldinformation.cpp" line="758"/>
         <source>The mold file </source>
         <translation>程序文件</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="520"/>
-        <location filename="function_settings/moldinformation.cpp" line="552"/>
-        <location filename="function_settings/moldinformation.cpp" line="702"/>
-        <location filename="function_settings/moldinformation.cpp" line="750"/>
+        <location filename="function_settings/moldinformation.cpp" line="530"/>
+        <location filename="function_settings/moldinformation.cpp" line="562"/>
+        <location filename="function_settings/moldinformation.cpp" line="712"/>
+        <location filename="function_settings/moldinformation.cpp" line="760"/>
         <source> is being used</source>
         <translation>正被使用</translation>
     </message>
     <message>
-        <location filename="function_settings/moldinformation.cpp" line="531"/>
-        <location filename="function_settings/moldinformation.cpp" line="560"/>
+        <location filename="function_settings/moldinformation.cpp" line="541"/>
+        <location filename="function_settings/moldinformation.cpp" line="570"/>
         <source>Stand programs can not be delete!</source>
         <translation>标准程序不能删除！</translation>
     </message>
@@ -11706,18 +11829,26 @@ Please try a new name</source>
     <name>PasswdLevelLabel</name>
     <message>
         <location filename="custom_widgets/programhead/passwdlevellabel.cpp" line="56"/>
+        <location filename="custom_widgets/programhead/passwdlevellabel.cpp" line="66"/>
         <source>Machine Operator</source>
         <translation>操作员</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/passwdlevellabel.cpp" line="60"/>
+        <location filename="custom_widgets/programhead/passwdlevellabel.cpp" line="58"/>
+        <location filename="custom_widgets/programhead/passwdlevellabel.cpp" line="70"/>
         <source>Machine Admin</source>
         <translation>管理员</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/passwdlevellabel.cpp" line="64"/>
+        <location filename="custom_widgets/programhead/passwdlevellabel.cpp" line="60"/>
+        <location filename="custom_widgets/programhead/passwdlevellabel.cpp" line="74"/>
         <source>Advance Admin</source>
         <translation>高级管理员</translation>
+    </message>
+    <message>
+        <location filename="custom_widgets/programhead/passwdlevellabel.cpp" line="62"/>
+        <source>None Level</source>
+        <translation>无</translation>
     </message>
 </context>
 <context>
@@ -12291,6 +12422,18 @@ Admin</source>
         <source>Clip End</source>
         <translation type="obsolete">夹放</translation>
     </message>
+    <message>
+        <location filename="categorypage/icconfigstring.h" line="84"/>
+        <location filename="categorypage/icconfigstring.h" line="85"/>
+        <source>Not Used</source>
+        <translation>不使用</translation>
+    </message>
+    <message>
+        <location filename="categorypage/icconfigstring.h" line="84"/>
+        <location filename="categorypage/icconfigstring.h" line="85"/>
+        <source>Used</source>
+        <translation>使用</translation>
+    </message>
 </context>
 <context>
     <name>RouteSettingDialog</name>
@@ -12774,6 +12917,17 @@ Admin</source>
         <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="572"/>
         <source>OK</source>
         <translation>确定</translation>
+    </message>
+</context>
+<context>
+    <name>cl</name>
+    <message>
+        <source>Not Used</source>
+        <translation type="obsolete">不使用</translation>
+    </message>
+    <message>
+        <source>Used</source>
+        <translation type="obsolete">使用</translation>
     </message>
 </context>
 </TS>

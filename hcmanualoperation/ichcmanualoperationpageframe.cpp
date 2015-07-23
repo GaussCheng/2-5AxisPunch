@@ -14,6 +14,7 @@
 #include "iccommandprocessor.h"
 #include "icsystemconfig.h"
 #include "icvirtualkey.h"
+#include "icmodifyframe.h"
 #include <QMessageBox>
 
 #ifdef HC_SK_8_SC
@@ -856,6 +857,9 @@ void ICHCManualOperationPageFrame::on_productClear_clicked()
 {
     ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_PRODUCT_CLEAR);
     ICVirtualHost::GlobalVirtualHost()->SetFinishProductCount(0);
+    ICModifyFrame::Instance()->OnActionTriggered(ICConfigString::kCS_PRD_Product_Clear,
+                                                tr("Product clear"),
+                                                "");
 }
 
 void ICHCManualOperationPageFrame::on_singleButton_clicked()

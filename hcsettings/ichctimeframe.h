@@ -3,6 +3,8 @@
 
 #include <QFrame>
 #include <QList>
+#include <QMap>
+
 
 class QLineEdit;
 class ICLineEditWrapper;
@@ -29,6 +31,15 @@ private:
 private:
     Ui::ICHCTimeFrame *ui;
     QList<ICLineEditWrapper*> wrappers_;
+
+private slots:
+    void OnConfigChanged(QObject* w, const QString& newV, const QString& oldV);
+    void OnConfigChanged(const QString& text);
+    void OnConfigChanged(int v);
+    void OnConfigChanged(int v, int ov);
+    void OnConfigChanged(bool b);
+private:
+    QMap<QObject*, int> editorToConfigIDs_;
 };
 
 #endif // ICHCTIMEFRAME_H

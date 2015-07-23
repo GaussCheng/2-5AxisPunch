@@ -16,3 +16,10 @@ void ICComboBox::keyReleaseEvent(QKeyEvent *e)
 {
     e->ignore();
 }
+
+void ICComboBox::focusInEvent(QFocusEvent *e)
+{
+    oldValue_ = currentIndex();
+    QComboBox::focusInEvent(e);
+}
+

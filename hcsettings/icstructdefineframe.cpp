@@ -12,6 +12,7 @@
 #include "mainframe.h"
 #include "icactioncommand.h"
 #include "icvirtualkey.h"
+#include "icmodifyframe.h"
 
 typedef union {
      struct {
@@ -187,7 +188,11 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     ui->tryRunBox->setChecked(host->IsMidMoldCheck());
     ui->syncBox->setChecked(host->IsOrignSyncCheck());
     ui->downModeBox->setChecked(host->IsCloseMoldEn());
+    ui->fleeBox->setChecked(host->IsFleeEn());
+    ui->originBox->setChecked(host->IsOriginModeEn());
+    ui->autoBox->setChecked(host->IsAutoModeEn());
     ui->punchType->setCurrentIndex(host->PunchCheckMode());
+
 
 
     quint32 check1,check2;
@@ -198,6 +203,44 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     ui->x40Box->setChecked(check2&(1 << (24 - 16)));
     ui->x22Box->setChecked(check1&(1 << 10));
     ui->x23Box->setChecked(check1&(1 << 11));
+
+
+    editorToConfigIDs_.insert(ui->x1Box, ICConfigString::kCS_STRUCT_Axis_Define_X1);
+    editorToConfigIDs_.insert(ui->y1Box, ICConfigString::kCS_STRUCT_Axis_Define_Y1);
+    editorToConfigIDs_.insert(ui->zBox, ICConfigString::kCS_STRUCT_Axis_Define_Z);
+    editorToConfigIDs_.insert(ui->x2Box, ICConfigString::kCS_STRUCT_Axis_Define_X2);
+    editorToConfigIDs_.insert(ui->y2Box, ICConfigString::kCS_STRUCT_Axis_Define_Y2);
+    editorToConfigIDs_.insert(ui->aBox, ICConfigString::kCS_STRUCT_Axis_Define_A);
+    editorToConfigIDs_.insert(ui->bBox, ICConfigString::kCS_STRUCT_Axis_Define_B);
+    editorToConfigIDs_.insert(ui->cBox, ICConfigString::kCS_STRUCT_Axis_Define_C);
+    editorToConfigIDs_.insert(ui->xLimit, ICConfigString::kCS_STRUCT_Limit_Define_Arm_X_Limit);
+    editorToConfigIDs_.insert(ui->yLimit, ICConfigString::kCS_STRUCT_Limit_Define_Arm_Y_Limit);
+    editorToConfigIDs_.insert(ui->rLimit, ICConfigString::kCS_STRUCT_Limit_Define_Arm_R_Limit);
+    editorToConfigIDs_.insert(ui->sLimit, ICConfigString::kCS_STRUCT_Limit_Define_Arm_S_Limit);
+    editorToConfigIDs_.insert(ui->tLimit, ICConfigString::kCS_STRUCT_Limit_Define_Arm_T_Limit);
+    editorToConfigIDs_.insert(ui->canType, ICConfigString::kCS_STRUCT_Config_CanType);
+    editorToConfigIDs_.insert(ui->canID, ICConfigString::kCS_STRUCT_Config_CanId);
+    editorToConfigIDs_.insert(ui->punchType, ICConfigString::kCS_STRUCT_Config_PunchType);
+    editorToConfigIDs_.insert(ui->pressureMode, ICConfigString::kCS_STRUCT_Config_PressureCheck);
+    editorToConfigIDs_.insert(ui->tryRunBox, ICConfigString::kCS_STRUCT_Config_TryRun);
+    editorToConfigIDs_.insert(ui->downModeBox, ICConfigString::kCS_STRUCT_Config_DownMode);
+    editorToConfigIDs_.insert(ui->fleeBox, ICConfigString::kCS_STRUCT_Config_Flee);
+    editorToConfigIDs_.insert(ui->originBox, ICConfigString::kCS_STRUCT_Config_Origin);
+    editorToConfigIDs_.insert(ui->autoBox, ICConfigString::kCS_STRUCT_Config_Auto);
+    editorToConfigIDs_.insert(ui->os1, ICConfigString::kCS_STRUCT_Config_OriginX);
+    editorToConfigIDs_.insert(ui->os2, ICConfigString::kCS_STRUCT_Config_OriginY);
+    editorToConfigIDs_.insert(ui->os3, ICConfigString::kCS_STRUCT_Config_OriginS);
+    editorToConfigIDs_.insert(ui->os4, ICConfigString::kCS_STRUCT_Config_OriginR);
+    editorToConfigIDs_.insert(ui->os5, ICConfigString::kCS_STRUCT_Config_OriginT);
+    editorToConfigIDs_.insert(ui->syncBox, ICConfigString::kCS_STRUCT_Config_SyncOrigin);
+    editorToConfigIDs_.insert(ui->originSpd, ICConfigString::kCS_STRUCT_Config_OriginSpeed);
+    editorToConfigIDs_.insert(ui->x37Box, ICConfigString::kCS_STRUCT_Config_Suck1);
+    editorToConfigIDs_.insert(ui->x40Box, ICConfigString::kCS_STRUCT_Config_Suck2);
+    editorToConfigIDs_.insert(ui->x22Box, ICConfigString::kCS_STRUCT_Config_Clip1);
+    editorToConfigIDs_.insert(ui->x23Box, ICConfigString::kCS_STRUCT_Config_Clip2);
+
+    ICLogInit
+
 
 
     ui->tabWidget->removeTab(1);
@@ -455,6 +498,9 @@ void ICStructDefineFrame::on_saveButton_clicked()
         host->SetCloseMoldEn(ui->downModeBox->isChecked());
         host->SetOrignSyncCheck(ui->syncBox->isChecked());
         host->SetPunchCheckMode(ui->punchType->currentIndex());
+        host->SetFleeEn(ui->fleeBox->isChecked());
+        host->SetOriginModeEn(ui->originBox->isChecked());
+        host->SetAutoModeEn(ui->autoBox->isChecked());
         if(ui->canType->currentIndex() == 0){
             host->SetEjectionLink(0);
         }
@@ -463,7 +509,9 @@ void ICStructDefineFrame::on_saveButton_clicked()
         QMessageBox::information(this, tr("Tips"), tr("Save Sucessfully!"));
         emit StructChanged();
         icMainFrame->UpdateAxisDefine_();
+        ICModifyFrame::Instance()->OnActionTriggered(ICConfigString::kCS_STRUCT_Config_Save, tr("Save"), "");
     }
+
     qDebug()<<"Arm Define"<<axisDefine_;
     if(host->AxisDefine(ICVirtualHost::ICAxis_AxisX1) == ICVirtualHost::ICAxisDefine_Servo)  ui->xLimit->show();
     else ui->xLimit->hide();
@@ -588,6 +636,9 @@ void ICStructDefineFrame::InitCombobox()
     ui->tryRunBox->setChecked(host->IsMidMoldCheck());
     ui->downModeBox->setChecked(host->IsCloseMoldEn());
     ui->syncBox->setChecked(host->IsOrignSyncCheck());
+    ui->fleeBox->setChecked(host->IsFleeEn());
+    ui->originBox->setChecked(host->IsOriginModeEn());
+    ui->autoBox->setChecked(host->IsAutoModeEn());
     ui->punchType->setCurrentIndex(host->PunchCheckMode());
 }
 
@@ -648,3 +699,5 @@ void ICStructDefineFrame::on_setOrigin_clicked()
 }
 
 
+
+ICLogFunctions(ICStructDefineFrame)

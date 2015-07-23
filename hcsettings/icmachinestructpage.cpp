@@ -9,6 +9,7 @@
 #include "icstructdefineframe.h"
 #include "ichctimeframe.h"
 #include "icactioncommand.h"
+#include "icmodifyframe.h"
 
 ICMachineStructPage::ICMachineStructPage(QWidget *parent) :
     QWidget(parent),
@@ -53,15 +54,14 @@ ICMachineStructPage::ICMachineStructPage(QWidget *parent) :
     connect(&refreshTimer_,
             SIGNAL(timeout()),
             SLOT(StatusRefresh()));
-    //    ui->x1Box->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisX11)));
-    //    ui->y1Box->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisY11)));
-    //    ui->zBox->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisZ)));
-    //    ui->x2Box->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisX12)));
-    //    ui->y2Box->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisY12)));
-    //    ui->aBox->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisA)));
-    //    ui->bBox->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisB)));
-    //    ui->cBox->setCurrentIndex(defineToIndex_.value(host->AxisDefine(ICVirtualHost::ICAxis_ICVirtualHost::ICAxis_AxisC)));
 
+    editorToConfigIDs_.insert(ui->mechanicalLengthLineEdit, ICConfigString::kCS_AXIS_Length_X1);
+    editorToConfigIDs_.insert(ui->maximumDisplacementLineEdit, ICConfigString::kCS_AXIS_Move_Limit_X1);
+    editorToConfigIDs_.insert(ui->internalSecurityZoneLineEdit, ICConfigString::kCS_AXIS_Min_X1);
+    editorToConfigIDs_.insert(ui->externalSecurityZoneLineEdit, ICConfigString::kCS_AXIS_Max_X1);
+    editorToConfigIDs_.insert(ui->distanceRotationEdit, ICConfigString::kCS_AXIS_Rotate_X1);
+
+    ICLogInit
 
 }
 
@@ -451,6 +451,13 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
     {
         return;
     }
+    QMap<QObject*, int>::iterator p = editorToConfigIDs_.begin();
+    while(p != editorToConfigIDs_.end())
+    {
+        p.key()->blockSignals(true);
+        ++p;
+    }
+
     ui->mechanicalLengthLineEdit->SetThisIntToThisText(host->SystemParameter(machineLangth).toInt());
     ui->maximumDisplacementLineEdit->SetThisIntToThisText(host->SystemParameter(maxLangth).toInt());
     ui->internalSecurityZoneLineEdit->SetThisIntToThisText(host->SystemParameter(iSafe).toInt());
@@ -467,6 +474,13 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
     maxSecValidator_->setBottom(ui->maximumDisplacementLineEdit->TransThisTextToThisInt());
     maxSecValidator_->setTop(ui->mechanicalLengthLineEdit->TransThisTextToThisInt());
 
+
+    p = editorToConfigIDs_.begin();
+    while(p != editorToConfigIDs_.end())
+    {
+        p.key()->blockSignals(false);
+        ++p;
+    }
 }
 
 QList<uint> ICMachineStructPage::GetCurrentStatus_() const
@@ -643,6 +657,8 @@ void ICMachineStructPage::on_saveToolButton_clicked()
         //        host->ReConfigure();
         QMessageBox::information(this, tr("Information"), tr("Save Successfully!"));
         //        UpdateAxisDefine_();
+        ICModifyFrame::Instance()->OnActionTriggered(ICConfigString::kCS_AXIS_Config_Save, tr("Save"), tr(""));
+
     }
 }
 
@@ -948,7 +964,36 @@ void ICMachineStructPage::on_maximumDisplacementLineEdit_textChanged(const QStri
 
 }
 
-//void ICMachineStructPage::on_punch_clicked()
-//{
-//    ui->content->setCurrentIndex(1);
-//}
+void ICMachineStructPage::OnConfigChanged(QObject *w, const QString& newV, const QString& oldV)
+{
+    ICModifyFrame::Instance()->OnActionTriggered(editorToConfigIDs_.value(w, ICConfigString::kCS_Err) + currentAxis_,
+                                                newV,
+                                                oldV);
+}
+
+void ICMachineStructPage::OnConfigChanged(const QString &text)
+{
+    ICLineEditWithVirtualNumericKeypad* edit = qobject_cast<ICLineEditWithVirtualNumericKeypad*>(sender());
+    OnConfigChanged(edit, text, edit->LastValue());
+}
+
+void ICMachineStructPage::OnConfigChanged(int v, int ov)
+{
+    ICButtonGroup* icbg = qobject_cast<ICButtonGroup*>(sender());
+    QButtonGroup* bg = icbg->ButtongGroup();
+    OnConfigChanged(bg, bg->button(v)->text(), bg->button(ov)->text());
+}
+
+void ICMachineStructPage::OnConfigChanged(int v)
+{
+    ICComboBox* edit = qobject_cast<ICComboBox*>(sender());
+    OnConfigChanged(edit, edit->currentText(), edit->itemText(edit->LastValue()));
+}
+
+void ICMachineStructPage::OnConfigChanged(bool b)
+{
+    QCheckBox* edit = qobject_cast<QCheckBox*>(sender());
+    QString oldVal = b ? QObject::tr("Not Used") : QObject::tr("Used");
+    QString newVal = b ? QObject::tr("Used") : QObject::tr("Not Used");
+    OnConfigChanged(edit, newVal, oldVal);
+}

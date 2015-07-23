@@ -82,6 +82,14 @@ private:
 
     int axisDefine_;
     QTimer refreshTimer_;
+private slots:
+    void OnConfigChanged(QObject* w, const QString& newV, const QString& oldV);
+    void OnConfigChanged(const QString& text);
+    void OnConfigChanged(int v);
+    void OnConfigChanged(int v, int ov);
+    void OnConfigChanged(bool b);
+private:
+    QMap<QObject*, int> editorToConfigIDs_;
 };
 
 #endif // ICMACHINESTRUCTPAGE_H

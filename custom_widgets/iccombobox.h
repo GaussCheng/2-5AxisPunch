@@ -9,6 +9,8 @@ class ICComboBox : public QComboBox
 public:
     explicit ICComboBox(QWidget *parent = 0);
 
+    int LastValue() const { return oldValue_;}
+
 signals:
 
 public slots:
@@ -16,6 +18,10 @@ public slots:
 protected:
     void keyPressEvent(QKeyEvent* e);
     void keyReleaseEvent(QKeyEvent* e);
+    void focusInEvent(QFocusEvent *e);
+
+
+    int oldValue_;
 
 };
 

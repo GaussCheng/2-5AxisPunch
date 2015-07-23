@@ -557,6 +557,12 @@ public:
         ST_END
     };
 
+    enum FunctionBits{
+        FLEEBIT    = 0x00000100,
+        ORIGINBIT  = 0x00000200,
+        AUTOBIT   = 0x00000400
+    };
+
     typedef QMap<ICSystemParameter, QVariant> ICSystemParameterMap ;
     typedef QMap<ICStatus, QVariant> ICStatusMap;
 
@@ -615,6 +621,12 @@ public:
     void SetGetFailAlarmWay(int way);
     bool IsCloseMoldEn() const { return (SystemParameter((SYS_Function)).toInt() & 0x80 ) != 0;}
     void SetCloseMoldEn(bool isEn);
+    bool IsFleeEn() const { return (SystemParameter((SYS_Function)).toInt() & FLEEBIT ) != 0;}   //逃跑
+    void SetFleeEn(bool isEn);
+    bool IsOriginModeEn() const { return (SystemParameter((SYS_Function)).toInt() & ORIGINBIT ) != 0;} //原点信号
+    void SetOriginModeEn(bool isEn);
+    bool IsAutoModeEn() const { return (SystemParameter((SYS_Function)).toInt() & AUTOBIT ) != 0;} //全自动信号
+    void SetAutoModeEn(bool isEn);
 
     int CurrentStep() const { return (statusMap_.value(Step).toInt() & 0x00FF);}
     int CurrentStatus() const { return (statusMap_.value(Status).toUInt() & 0x0FFF);}
@@ -1051,6 +1063,35 @@ inline void ICVirtualHost::SetCloseMoldEn(bool isEn)
     int val = SystemParameter(SYS_Function).toInt();
     val &= 0xFFFFFF7F;
     (isEn ? val |= 0x00000080 : val &= 0xFFFFFF7F);
+    systemParamMap_.insert(SYS_Function, val);
+    isParamChanged_ = true;
+}
+
+
+inline void ICVirtualHost::SetFleeEn(bool isEn)
+{
+    int val = SystemParameter(SYS_Function).toInt();
+    val &= (~FLEEBIT);
+    (isEn ? val |= FLEEBIT : val &= (~FLEEBIT));
+    systemParamMap_.insert(SYS_Function, val);
+    isParamChanged_ = true;
+}
+
+inline void ICVirtualHost::SetOriginModeEn(bool isEn)
+{
+    int val = SystemParameter(SYS_Function).toInt();
+    val &= (~ORIGINBIT);
+    (isEn ? val |= ORIGINBIT : val &= (~ORIGINBIT));
+    systemParamMap_.insert(SYS_Function, val);
+    isParamChanged_ = true;
+}
+
+
+inline void ICVirtualHost::SetAutoModeEn(bool isEn)
+{
+    int val = SystemParameter(SYS_Function).toInt();
+    val &= (~AUTOBIT);
+    (isEn ? val |= AUTOBIT : val &= (~AUTOBIT));
     systemParamMap_.insert(SYS_Function, val);
     isParamChanged_ = true;
 }

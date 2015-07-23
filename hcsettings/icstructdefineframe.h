@@ -68,7 +68,14 @@ private:
     void InitCombobox();
     QList<QPushButton*> punchButtons_;
     int timerID_;
-
+private slots:
+    void OnConfigChanged(QObject* w, const QString& newV, const QString& oldV);
+    void OnConfigChanged(const QString& text);
+    void OnConfigChanged(int v);
+    void OnConfigChanged(int v, int ov);
+    void OnConfigChanged(bool b);
+private:
+    QMap<QObject*, int> editorToConfigIDs_;
 };
 
 #endif // ICSTRUCTDEFINEFRAME_H

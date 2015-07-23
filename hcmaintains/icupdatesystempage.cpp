@@ -23,6 +23,7 @@
 #include <icutility.h>
 #include "ictipswidget.h"
 #include "icpasswordmodifydialog.h"
+#include "icmodifyframe.h"
 //ICUpdateSystemPage *ICUpdateSystemPage = NULL;
 
 
@@ -648,6 +649,9 @@ void ICUpdateSystemPage::on_updatePasswardButton_clicked()
                 pmD.OldPassword() == "szhcrobot")
         {
             ICParametersSave::Instance()->SetSuperPassward(pmD.NewPassword());
+            ICModifyFrame::Instance()->OnActionTriggered(ICConfigString::kCS_PANEL_Super_Password,
+                                                        QString("Supper password changed"),
+                                                        "");
         }
         else
         {

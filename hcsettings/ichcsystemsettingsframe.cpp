@@ -16,6 +16,7 @@
 #include "icconfigformatchecker.h"
 #include <QDebug>
 #include "mainframe.h"
+#include "icmodifyframe.h"
 #include "icutility.h"
 
 
@@ -170,6 +171,13 @@ void ICHCSystemSettingsFrame::on_saveButton_clicked()
     ICUtility::system(dateTimeCmd.toAscii());
     ICParametersSave::Instance()->SetBackLightTime(ui->backLightTimeEdit->TransThisTextToThisInt());
     ICMainFrame::SetScreenSaverInterval(ui->backLightTimeEdit->TransThisTextToThisInt() * 60000);
+
+    ICModifyFrame::Instance()->OnActionTriggered(ICConfigString::kCS_PANEL_Datetime,
+                                                QString(tr("%1")).arg(ui->dateTimeEdit->dateTime().toString("yyyy/MM/dd hh:mm:ss")),
+                                                "");
+    ICModifyFrame::Instance()->OnActionTriggered(ICConfigString::kCS_PANEL_Config_Save,
+                                                tr("Save"),
+                                                "");
 }
 
 void ICHCSystemSettingsFrame::on_keyToneButton_toggled(bool checked)
@@ -177,10 +185,16 @@ void ICHCSystemSettingsFrame::on_keyToneButton_toggled(bool checked)
     if(checked)
     {
         ui->keyToneButton->setText(tr("Key Tone(ON)"));
+        ICModifyFrame::Instance()->OnActionTriggered(ICConfigString::kCS_PANEL_Key_Tone,
+                                                    tr("ON"),
+                                                    tr("OFF"));
     }
     else
     {
         ui->keyToneButton->setText(tr("Key Tone(OFF)"));
+        ICModifyFrame::Instance()->OnActionTriggered(ICConfigString::kCS_PANEL_Key_Tone,
+                                                    tr("OFF"),
+                                                    tr("ON"));
     }
     ICParametersSave::Instance()->SetKeyTone(checked);
 }
@@ -220,6 +234,9 @@ void ICHCSystemSettingsFrame::on_changeButton_clicked()
     QMessageBox::information(this,
                              tr("Information"),
                              tr("Change password successfully!"));
+    ICModifyFrame::Instance()->OnActionTriggered(ui->advanceAdminBox->isChecked() ? ICConfigString::kCS_PANEL_Root_Password : ICConfigString::kCS_PANEL_Admin_Password,
+                                                QString("Changed"),
+                                                "");
 }
 
 void ICHCSystemSettingsFrame::on_extentFunctionCheckBox_toggled(bool checked)
@@ -656,6 +673,9 @@ void ICHCSystemSettingsFrame::on_brightMinus_clicked()
         return;
     }
     ui->brightnessBar->setValue((--brightness));
+    ICModifyFrame::Instance()->OnActionTriggered(ICConfigString::kCS_PANEL_Bright,
+                                                QString(tr("%1")).arg(brightness),
+                                                QString(tr("%1")).arg(brightness+1));
     ICParametersSave::Instance()->SetBrightness(brightness);
 }
 
@@ -667,6 +687,9 @@ void ICHCSystemSettingsFrame::on_brightPlus_clicked()
         return;
     }
     ui->brightnessBar->setValue((++brightness));
+    ICModifyFrame::Instance()->OnActionTriggered(ICConfigString::kCS_PANEL_Bright,
+                                                QString(tr("%1")).arg(brightness),
+                                                QString(tr("%1")).arg(brightness-1));
     ICParametersSave::Instance()->SetBrightness(brightness);
 }
 
