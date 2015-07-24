@@ -403,6 +403,14 @@ public:
         MoldNativeParamCount
     };
 
+
+    enum MoldFunctionVersion    {
+        VERSION_5_0_8,
+        VERSION_5_0_9,
+        VERSION_5_1_0,
+        VERSION_lATEST
+    };
+
     enum ICStatckParam
     {
         Seq,
@@ -592,6 +600,7 @@ private:
     QString moldPointName_;
 
     QString moldParamName_;
+    int  versoin_;
 //    QList<ACTGROUP> axisActions_;
     static ICMold* currentMold_;
 
@@ -664,7 +673,7 @@ inline QList<int> ICMold::StackParams(int group) const
 inline QList<int> ICMold::AllParams() const
 {
     QList<int> ret;
-    ret += moldParams_/*.mid(0,Native)*/;
+    ret += moldParams_;
     for(int i = 0; i != stackParams_.size(); ++i)
     {
         ret += stackParams_.at(i);

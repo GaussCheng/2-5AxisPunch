@@ -5,15 +5,19 @@
 #include "icinstructparam.h"
 #include "icfile.h"
 
+
 #define VERSION_5_0_8_PT  3
 #define VERSION_5_0_8_POINT 120
 #define VERSION_5_0_8_FNC  (VERSION_5_0_8_POINT + 6 + StackParamCount * 4 + 1)
 #define VERSION_5_0_9_PT  6
 #define VERSION_5_0_9_POINT 240
-#define VERSION_5_0_9_FNC  (240 + 6 + StackParamCount * 4 + 1)
+#define VERSION_5_0_9_FNC  (VERSION_5_0_9_POINT + 6 + StackParamCount * 4 + 1)
 #define VERSION_5_1_0_PT  6
 #define VERSION_5_1_0_POINT 240
-#define VERSION_5_1_0_FNC  (240 + 6 + StackParamCount * 4 + 1)
+#define VERSION_5_1_0_FNC  (VERSION_5_1_0_POINT + 6 + StackParamCount * 4 + 1)
+
+
+
 
 struct MoldStepData
 {
@@ -356,20 +360,24 @@ bool ICMold::ReadMoldParamsFile(const QString &fileName)
     //    fileContent = fileContent.remove('\r');
 
     QStringList items = fileContent.split('\n', QString::SkipEmptyParts);
-    if(items.size() != VERSION_5_0_9_FNC){
+    if(items.size() != VERSION_5_1_0_FNC){
         //兼容5.0.8
         if(items.size() == VERSION_5_0_8_FNC){
-                for(int t = 0; t < VERSION_5_0_8_POINT;t ++){
-                       //兼容两位小数
-                       quint32 v = items.at(t).toInt() * 10;
-                       items[t] = QString("%1").arg(v & 0xFFFF);
-                       items.insert(t, QString("%1").arg( (v >> 16) & 0xFFFF));
-                }
+            versoin_ =  VERSION_5_0_8;
+            for(int t = 0; t < VERSION_5_0_8_POINT;t ++){
+                //兼容两位小数
+                quint32 v = items.at(t * 2).toInt() * 10;
+                items[t*2] = QString("%1").arg(v & 0xFFFF);
+                items.insert(t*2 + 1,QString("%1").arg( (v >> 16) & 0xFFFF));
+            }
         }
         else{
             return false;
         }
     }
+   else{
+       versoin_ =  VERSION_lATEST;
+   }
 
 //    int diff = (MoldParamCount + StackParamCount * 4 + 1) - items.size();
 //    if(diff  >  4){
@@ -408,7 +416,10 @@ bool ICMold::ReadMoldParamsFile(const QString &fileName)
 //    moldParams_[CheckClip5] = 0;
 //    moldParams_[CheckClip6] = 0;
     checkSum_ = items.last().toUInt();
-//    UpdateSyncSum();
+    if(versoin_ != VERSION_lATEST){
+        //同步校验和
+        UpdateSyncSum();
+    }
     moldParamName_ = fileName;
     return true;
 }
