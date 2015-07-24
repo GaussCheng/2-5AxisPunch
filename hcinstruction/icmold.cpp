@@ -5,6 +5,16 @@
 #include "icinstructparam.h"
 #include "icfile.h"
 
+#define VERSION_5_0_8_PT  3
+#define VERSION_5_0_8_POINT 120
+#define VERSION_5_0_8_FNC  (VERSION_5_0_8_POINT + 6 + StackParamCount * 4 + 1)
+#define VERSION_5_0_9_PT  6
+#define VERSION_5_0_9_POINT 240
+#define VERSION_5_0_9_FNC  (240 + 6 + StackParamCount * 4 + 1)
+#define VERSION_5_1_0_PT  6
+#define VERSION_5_1_0_POINT 240
+#define VERSION_5_1_0_FNC  (240 + 6 + StackParamCount * 4 + 1)
+
 struct MoldStepData
 {
     MoldStepData():step(-1), begin(-1), end(-1){}
@@ -313,9 +323,15 @@ bool ICMold::ReadPointConfigFile(const QString &fileName)
     QStringList ql = content.split("\n", QString::SkipEmptyParts);
     foreach(QString line,ql){
         QStringList items = line.split(" ", QString::SkipEmptyParts);
-        if(items.size() != 6){
-            qDebug() << "point configure file init failed!";
-            return false;
+        if(items.size() != VERSION_5_0_9_PT){
+            //兼容5.0.8版本
+            if(items.size() == VERSION_5_0_8_PT){
+                items << "100" << "0" << "0";
+            }
+            else{
+                qDebug() << "point configure file init failed!";
+                return false;
+            }
         }
 
         ICPointConfig config(items.at(0).toInt(),items.at(1).toInt(),items.at(2).toInt(),
@@ -340,14 +356,29 @@ bool ICMold::ReadMoldParamsFile(const QString &fileName)
     //    fileContent = fileContent.remove('\r');
 
     QStringList items = fileContent.split('\n', QString::SkipEmptyParts);
-    int diff = (MoldParamCount + StackParamCount * 4 + 1) - items.size();
-    if(diff  >  4){
-        return false;
+    if(items.size() != VERSION_5_0_9_FNC){
+        //兼容5.0.8
+        if(items.size() == VERSION_5_0_8_FNC){
+                for(int t = 0; t < VERSION_5_0_8_POINT;t ++){
+                       //兼容两位小数
+                       quint32 v = items.at(t).toInt() * 10;
+                       items[t] = QString("%1").arg(v & 0xFFFF);
+                       items.insert(t, QString("%1").arg( (v >> 16) & 0xFFFF));
+                }
+        }
+        else{
+            return false;
+        }
     }
-    for(int i = 0; i < diff; ++i)
-    {
-        items.append("0");
-    }
+
+//    int diff = (MoldParamCount + StackParamCount * 4 + 1) - items.size();
+//    if(diff  >  4){
+//        return false;
+//    }
+//    for(int i = 0; i < diff; ++i)
+//    {
+//        items.append("0");
+//    }
     if(items.size() != MoldParamCount + StackParamCount * 4 + 1)
     {
         return false;

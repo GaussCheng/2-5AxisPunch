@@ -49,7 +49,7 @@ ICHCSystemSettingsFrame::ICHCSystemSettingsFrame(QWidget *parent) :
     armYStructValueToName_.insert(3, tr("Up and Donw Limit"));
     armValueToName_.insert(0, tr("Single Arm"));
     armValueToName_.insert(1, tr("Double Arm"));
-    ui->backLightTimeEdit->setValidator(new QIntValidator(1, 60, this));
+    ui->backLightTimeEdit->setValidator(new QIntValidator(0, 60, this));
     ui->backLightTimeEdit->SetThisIntToThisText(ICParametersSave::Instance()->BackLightTime());
     ui->brightnessBar->setValue((ICParametersSave::Instance()->Brightness()));
 
