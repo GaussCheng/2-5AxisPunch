@@ -1107,3 +1107,13 @@ void ICHCProgramMonitorFrame::on_singleCycle_clicked()
     ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_SINGLECYCLE);
 
 }
+
+void ICHCProgramMonitorFrame::on_punchPause_clicked(bool checked)
+{
+    if(checked){
+        ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_SOFTPAUSE);
+    }
+    else{
+        ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_SOFTSTART);
+    }
+}

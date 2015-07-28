@@ -48,7 +48,8 @@ SOURCES += main.cpp \
     simulateknob.cpp\
     icrecaldialog.cpp \
     icfile.cpp \
-    icbackupdialog.cpp
+    icbackupdialog.cpp \
+    version.cpp
 HEADERS += mainframe.h \
     icaxispositionlabel.h \
     #icalarmdescriptiondialog.h \
@@ -71,7 +72,8 @@ HEADERS += mainframe.h \
     simulateknob.h \
     icrecaldialog.h \
     icfile.h \
-    icbackupdialog.h
+    icbackupdialog.h \
+    version.h
 
 
 AXIS_COUNT = 5

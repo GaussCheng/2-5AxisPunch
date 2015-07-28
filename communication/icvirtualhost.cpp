@@ -1069,10 +1069,10 @@ void ICVirtualHost::InitAddrToSysPosMap_()
     addrToSysPos_.insert(SM_TIMEMDOWN, ACT_MainDown);
     addrToSysPos_.insert(SM_PullPushDistance, SYS_PullPushDistance);
 //    addrToSysPos_.insert(SM_X_SEC1, ACT_X_Sec2);
-    addrToSysPos_.insert(SM_X_SEC2, ACT_X_Sec2);
-    addrToSysPos_.insert(SM_X_SEC3, ACT_X_Sec3);
-    addrToSysPos_.insert(SM_X_SEC4, ACT_X_Sec4);
-    addrToSysPos_.insert(SM_Y_SEC1, ACT_Y_Sec1);
+//    addrToSysPos_.insert(SM_X_SEC2, ACT_X_Sec2);
+//    addrToSysPos_.insert(SM_X_SEC3, ACT_X_Sec3);
+//    addrToSysPos_.insert(SM_X_SEC4, ACT_X_Sec4);
+//    addrToSysPos_.insert(SM_Y_SEC1, ACT_Y_Sec1);
     addrToSysPos_.insert(SM_Y_SEC2, ACT_Y_Sec2);
     addrToSysPos_.insert(SM_Y_SEC3, ACT_Y_Sec3);
     addrToSysPos_.insert(SM_Y_SEC4, ACT_Y_Sec4);

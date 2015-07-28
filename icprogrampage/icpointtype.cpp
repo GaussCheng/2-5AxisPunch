@@ -134,6 +134,13 @@ PointProperty ICPointType::currentPropertyType()
     return boxToType.value(_box,NULL_Property);
 }
 
+bool ICPointType::currentPropertyIsPoint()
+{
+    return ( (boxToType.value(_box,NULL_Property) == RESEARVE ) ||
+                  (boxToType.value(_box,NULL_Property) == WAITSAFE ) );
+
+}
+
 void ICPointType::changeEvent(QEvent *e)
 {
     QDialog::changeEvent(e);

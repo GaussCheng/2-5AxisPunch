@@ -185,16 +185,16 @@ void ICHCSystemSettingsFrame::on_keyToneButton_toggled(bool checked)
     if(checked)
     {
         ui->keyToneButton->setText(tr("Key Tone(ON)"));
-        ICModifyFrame::Instance()->OnActionTriggered(ICConfigString::kCS_PANEL_Key_Tone,
-                                                    tr("ON"),
-                                                    tr("OFF"));
+//        ICModifyFrame::Instance()->OnActionTriggered(ICConfigString::kCS_PANEL_Key_Tone,
+//                                                    tr("ON"),
+//                                                    tr("OFF"));
     }
     else
     {
         ui->keyToneButton->setText(tr("Key Tone(OFF)"));
-        ICModifyFrame::Instance()->OnActionTriggered(ICConfigString::kCS_PANEL_Key_Tone,
-                                                    tr("OFF"),
-                                                    tr("ON"));
+//        ICModifyFrame::Instance()->OnActionTriggered(ICConfigString::kCS_PANEL_Key_Tone,
+//                                                    tr("OFF"),
+//                                                    tr("ON"));
     }
     ICParametersSave::Instance()->SetKeyTone(checked);
 }

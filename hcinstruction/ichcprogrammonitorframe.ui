@@ -259,6 +259,9 @@
        <property name="text">
         <string>Punch Pause</string>
        </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
       </widget>
      </item>
     </layout>

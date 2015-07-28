@@ -14,7 +14,7 @@
 
 #define MAX_POINTS 8
 #define AXIS_COUNTS 5
-#define MAX_ROWCOUNT 20
+#define MAX_ROWCOUNT 40
 #define COLUMN_COUNTS (AXIS_COUNTS + 1 + 2)
 #define RESERVE_COUNTS (MAX_POINTS - 3)
 #define PAGE_MAX_COUNT 8

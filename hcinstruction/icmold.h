@@ -375,7 +375,7 @@ public:
     enum ICMoldParam
     {
         point0,
-        point19 = 239, //120
+        point19 = 479, //120
         Product,
         reserve,
         check1,
@@ -403,13 +403,6 @@ public:
         MoldNativeParamCount
     };
 
-
-    enum MoldFunctionVersion    {
-        VERSION_5_0_8,
-        VERSION_5_0_9,
-        VERSION_5_1_0,
-        VERSION_lATEST
-    };
 
     enum ICStatckParam
     {

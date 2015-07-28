@@ -159,7 +159,7 @@ public:
         SYS_C_Origin,
 #endif
 
-
+        //TimeLimit[32]
         ACT_MainUp,		//8
         ACT_MainDown,	//9
         ACT_MainForward,	//10
@@ -198,11 +198,12 @@ public:
 //        ACT_End,
 //        ACT_End,
 #ifdef HC_8AXIS
+        //reserved[32]
         SYS_OriginSpeed,
-        ACT_X_Sec2,
-        ACT_X_Sec3,
-        ACT_X_Sec4,
-        ACT_Y_Sec1,
+        Sys_EnforceInput0,
+        Sys_EnforceInput1,
+        Sys_EnforceOutput0,
+        Sys_EnforceOutput1,
         ACT_Y_Sec2,
         ACT_Y_Sec3,
         ACT_Y_Sec4,

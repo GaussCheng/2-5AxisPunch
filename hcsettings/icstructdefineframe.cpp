@@ -13,6 +13,7 @@
 #include "icactioncommand.h"
 #include "icvirtualkey.h"
 #include "icmodifyframe.h"
+#include "icsystemconfig.h"
 
 typedef union {
      struct {
@@ -90,30 +91,22 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     }
     InitEscapeBox() ;
 
-
-//    outputDefineToNumber_.insert(ui->outABox, 0);
-//    outputDefineToNumber_.insert(ui->outBBox, 1);
-//    outputDefineToNumber_.insert(ui->outCBox, 2);
-//    outputDefineToNumber_.insert(ui->outDBox, 3);
-//    outputDefineToNumber_.insert(ui->outEBox, 4);
-//    outputDefineToNumber_.insert(ui->outFBox, 5);
-//    outputDefineToNumber_.insert(ui->outGBox, 6);
-//    outputDefineToNumber_.insert(ui->outHBox, 7);
-
-//    numberToOutputDefine_.insert(0, ui->outABox);
-//    numberToOutputDefine_.insert(1, ui->outBBox);
-//    numberToOutputDefine_.insert(2, ui->outCBox);
-//    numberToOutputDefine_.insert(3, ui->outDBox);
-//    numberToOutputDefine_.insert(4, ui->outEBox);
-//    numberToOutputDefine_.insert(5, ui->outFBox);
-//    numberToOutputDefine_.insert(6, ui->outGBox);
-//    numberToOutputDefine_.insert(7, ui->outHBox);
-
-//    ui->fixtureSelectBox->setCurrentIndex(host->FixtureDefine());
-  //  ui->escapeComboBox->setCurrentIndex(host->EscapeWay());
-
     punchButtons_<<ui->punch1<<ui->punch2<<ui->punch3<<ui->punch4<<ui->punch5<<ui->punch6
                    <<ui->punch7<<ui->punch8<<ui->punch9<<ui->punch10;
+
+    inputBoxs << ui->inputBox_1 << ui->inputBox_2 << ui->inputBox_3 << ui->inputBox_4 << ui->inputBox_5 << ui->inputBox_6
+              << ui->inputBox_7 << ui->inputBox_8 << ui->inputBox_9 << ui->inputBox_10 << ui->inputBox_11 << ui->inputBox_12
+              << ui->inputBox_13 << ui->inputBox_14 << ui->inputBox_15 << ui->inputBox_16 << ui->inputBox_17 << ui->inputBox_18
+              << ui->inputBox_19 << ui->inputBox_20 << ui->inputBox_21 << ui->inputBox_22 << ui->inputBox_23 << ui->inputBox_24
+              << ui->inputBox_25 << ui->inputBox_26 << ui->inputBox_27 << ui->inputBox_28 << ui->inputBox_29 << ui->inputBox_30
+              << ui->inputBox_31 << ui->inputBox_32;
+
+    ouputBoxs << ui->outputBox_1 << ui->outputBox_2 << ui->outputBox_3 << ui->outputBox_4 << ui->outputBox_5 << ui->outputBox_6
+              << ui->outputBox_7 << ui->outputBox_8 << ui->outputBox_9 << ui->outputBox_10 << ui->outputBox_11 << ui->outputBox_12
+              << ui->outputBox_13 << ui->outputBox_14 << ui->outputBox_15 << ui->outputBox_16 << ui->outputBox_17 << ui->outputBox_18
+              << ui->outputBox_19 << ui->outputBox_20 << ui->outputBox_21 << ui->outputBox_22 << ui->outputBox_23 << ui->outputBox_24
+              << ui->outputBox_25 << ui->outputBox_26 << ui->outputBox_27 << ui->outputBox_28 << ui->outputBox_29 << ui->outputBox_30
+              << ui->outputBox_31 << ui->outputBox_32;
 
     int machineCount = ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::SYS_Config_Fixture).toInt();
     for(int i = 0; i != punchButtons_.size(); ++i)
@@ -204,6 +197,7 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     ui->x22Box->setChecked(check1&(1 << 10));
     ui->x23Box->setChecked(check1&(1 << 11));
 
+    InitEnfoce();
 
     editorToConfigIDs_.insert(ui->x1Box, ICConfigString::kCS_STRUCT_Axis_Define_X1);
     editorToConfigIDs_.insert(ui->y1Box, ICConfigString::kCS_STRUCT_Axis_Define_Y1);
@@ -494,6 +488,10 @@ void ICStructDefineFrame::on_saveButton_clicked()
         host->SetSystemParameter(ICVirtualHost::SYS_Config_Out, dataBuffer.at(2));
         host->SetPressureCheckMode(ui->pressureMode->currentIndex());
         host->SetSystemParameter(ICVirtualHost::SYS_OriginSpeed, ui->originSpd->TransThisTextToThisInt());
+        host->SetSystemParameter(ICVirtualHost::Sys_EnforceInput0, enforceInputs() & 0xFFFF);
+        host->SetSystemParameter(ICVirtualHost::Sys_EnforceInput1, (enforceInputs() >> 16) & 0xFFFF);
+        host->SetSystemParameter(ICVirtualHost::Sys_EnforceOutput0, enforceOutputs() & 0xFFFF);
+        host->SetSystemParameter(ICVirtualHost::Sys_EnforceOutput1, (enforceOutputs() >> 16) & 0xFFFF);
         host->SetMidMoldCheck(ui->tryRunBox->isChecked());
         host->SetCloseMoldEn(ui->downModeBox->isChecked());
         host->SetOrignSyncCheck(ui->syncBox->isChecked());
@@ -640,6 +638,64 @@ void ICStructDefineFrame::InitCombobox()
     ui->originBox->setChecked(host->IsOriginModeEn());
     ui->autoBox->setChecked(host->IsAutoModeEn());
     ui->punchType->setCurrentIndex(host->PunchCheckMode());
+}
+
+void ICStructDefineFrame::InitEnfoce()
+{
+    ICUserDefineConfigSPTR config = ICUserDefineConfig::Instance();
+    for(int i=0;i < 32;i++){
+        QString input = config->XInfo(i).GetLocaleName("zh");
+        QString ouput = config->YInfo(i).GetLocaleName("zh");
+        inputBoxs.at(i)->setText(input);
+        ouputBoxs.at(i)->setText(ouput);
+    }
+    InitEnforceInput();
+    InitEnforceOutput();
+
+}
+
+void ICStructDefineFrame::InitEnforceInput()
+{
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+
+    quint32 inputs = host->SystemParameter(ICVirtualHost::Sys_EnforceInput0).toInt();
+    inputs |= ( host->SystemParameter(ICVirtualHost::Sys_EnforceInput1).toInt() << 16);
+    for(int i =0;i < inputBoxs.size();i++){
+        inputBoxs.at(i)->setChecked( inputs & ( 1 << i));
+    }
+}
+
+void ICStructDefineFrame::InitEnforceOutput()
+{
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+
+    quint32 outputs = host->SystemParameter(ICVirtualHost::Sys_EnforceOutput0).toInt();
+    outputs |= ( host->SystemParameter(ICVirtualHost::Sys_EnforceOutput1).toInt() << 16);
+    for(int i =0;i < ouputBoxs.size();i++){
+        ouputBoxs.at(i)->setChecked( outputs & ( 1 << i));
+    }
+}
+
+quint32 ICStructDefineFrame::enforceInputs()
+{
+    qint32 rs = 0;
+    foreach(QCheckBox *box,inputBoxs){
+        int index = inputBoxs.indexOf(box);
+        int v = box->isChecked();
+        rs  |= ( v << index);
+    }
+    return rs;
+}
+
+quint32 ICStructDefineFrame::enforceOutputs()
+{
+    qint32 rs = 0;
+    foreach(QCheckBox *box,ouputBoxs){
+        int index = ouputBoxs.indexOf(box);
+        int v = box->isChecked();
+        rs  |= ( v << index);
+    }
+    return rs;
 }
 
 //void ICStructDefineFrame::on_adjUse_toggled(bool checked)

@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <QMap>
 #include <QButtonGroup>
+#include <QCheckBox>
+
 
 class QComboBox;
 class QPushButton;
@@ -61,11 +63,17 @@ private:
     QMap<int, int> indexToArmDefine_;
     QMap<QButtonGroup*, int> outputDefineToNumber_;
     QList<QButtonGroup*>buttongrouplist ;
+    QList<QCheckBox*> inputBoxs,ouputBoxs;
     QButtonGroup* buttongroup_ ;
 
     QList<QList<QAbstractButton*> >buttonslist_ ;
     void InitEscapeBox() ;
     void InitCombobox();
+    void InitEnfoce();
+    void InitEnforceInput();
+    void InitEnforceOutput();
+    quint32 enforceInputs();
+    quint32 enforceOutputs();
     QList<QPushButton*> punchButtons_;
     int timerID_;
 private slots:

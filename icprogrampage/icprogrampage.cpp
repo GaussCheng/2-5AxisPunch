@@ -993,13 +993,11 @@ void ICProgramPage::on_newButton_clicked()
         QMessageBox::information(this,tr("Information"),tr("Standard Mold Cannot Modify!"));
         return;
     }
-
-    if(GT_PointCount() == MAX_ROWCOUNT){
-        QMessageBox::information(this,tr("Information"),tr("Max Point Count Beyond %1!").arg(MAX_ROWCOUNT));
-        return;
-    }
-
     if(_typeDialog->exec() == QDialog::Accepted){
+        if(GT_PointCount() == MAX_ROWCOUNT && _typeDialog->currentPropertyIsPoint()){
+            QMessageBox::information(this,tr("Information"),tr("Max Point Count Beyond %1!").arg(MAX_ROWCOUNT));
+            return;
+        }
 
         if(_typeDialog->currentPropertyType() == NULL_Property){
             return;
@@ -1045,7 +1043,7 @@ void ICProgramPage::on_newButton_clicked()
                 }
             }
             else{
-                item->setText("0.0");
+                item->setText(ICParameterConversion::TransThisIntToThisText(0, POINT_SIZE));
             }
         }
         for(int i=AXIS_COUNTS+1;i < COLUMN_COUNTS;i++){

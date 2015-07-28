@@ -78,6 +78,7 @@ public:
     ICPointConfig config() ;
 
     PointProperty currentPropertyType();
+    bool currentPropertyIsPoint();
 
 
 protected:
