@@ -4816,7 +4816,7 @@ Reason</source>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="260"/>
         <source>Punch Pause</source>
-        <translation>冲床暂停</translation>
+        <translation>机械手暂停</translation>
     </message>
     <message>
         <location filename="hcinstruction/ichcprogrammonitorframe.ui" line="1783"/>
