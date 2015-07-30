@@ -1,7 +1,0 @@
-#! /bin/sh
-
-cp Multi-axisManipulatorSystem* /opt/Qt/apps -f
-cp Base.fnc /opt/Qt/apps/records -f
-#cd 3a8
-#cp -rf records subs sysconfig /mnt/database
-#reboot
