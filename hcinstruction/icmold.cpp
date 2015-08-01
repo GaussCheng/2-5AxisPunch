@@ -318,7 +318,7 @@ bool ICMold::ReadPointConfigFile(const QString &fileName)
             return false;
         }
         ICPointConfig config(items.at(0).toInt(),items.at(1).toInt(),items.at(2).toInt(),
-                             items.at(3).toInt(),items.at(4).toInt(),items.at(5).toInt());
+                             items.at(3).toInt(),items.at(4).toInt(),items.at(5));
         pointConfigs.append(config);
 
     }

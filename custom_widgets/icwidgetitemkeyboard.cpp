@@ -1,13 +1,13 @@
-#include "icinputmethodkeyboard.h"
-#include "ui_icinputmethodkeyboard.h"
+#include "icwidgetitemkeyboard.h"
+#include "ui_icwidgetitemkeyboard.h"
 #include <QSqlQuery>
 #include <QDebug>
 #include <QLineEdit>
 
 
-ICInputMethodKeyboard::ICInputMethodKeyboard(QWidget *parent) :
+ICWidgetItemKeyboard::ICWidgetItemKeyboard(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::ICInputMethodKeyboard),
+    ui(new Ui::ICWidgetItemKeyboard),
     currentMachingGroup(0)
 {
     ui->setupUi(this);
@@ -36,12 +36,17 @@ ICInputMethodKeyboard::ICInputMethodKeyboard(QWidget *parent) :
     }
 }
 
-ICInputMethodKeyboard::~ICInputMethodKeyboard()
+ICWidgetItemKeyboard::~ICWidgetItemKeyboard()
 {
     delete ui;
 }
 
-void ICInputMethodKeyboard::changeEvent(QEvent *e)
+void ICWidgetItemKeyboard::Reset()
+{
+    content_ = "";
+}
+
+void ICWidgetItemKeyboard::changeEvent(QEvent *e)
 {
     QDialog::changeEvent(e);
     switch (e->type()) {
@@ -53,7 +58,8 @@ void ICInputMethodKeyboard::changeEvent(QEvent *e)
     }
 }
 
-QStringList ICInputMethodKeyboard::Matching(const QString& py)
+
+QStringList ICWidgetItemKeyboard::Matching(const QString& py)
 {
     QStringList ret;
     QSqlQuery query;
@@ -68,13 +74,13 @@ QStringList ICInputMethodKeyboard::Matching(const QString& py)
     return ret;
 }
 
-void ICInputMethodKeyboard::on_btn_ent_clicked()
+void ICWidgetItemKeyboard::on_btn_ent_clicked()
 {
     this->accept();
 }
 
 
-void ICInputMethodKeyboard::OnInputButtonClicked(const QString &text)
+void ICWidgetItemKeyboard::OnInputButtonClicked(const QString &text)
 {
     if(ui->btn_shift->isChecked())
     {
@@ -115,7 +121,7 @@ void ICInputMethodKeyboard::OnInputButtonClicked(const QString &text)
     }
 }
 
-void ICInputMethodKeyboard::on_btn_sw_clicked()
+void ICWidgetItemKeyboard::on_btn_sw_clicked()
 {
     if(IsChEn_())
     {
@@ -129,12 +135,12 @@ void ICInputMethodKeyboard::on_btn_sw_clicked()
     }
 }
 
-bool ICInputMethodKeyboard::IsChEn_() const
+bool ICWidgetItemKeyboard::IsChEn_() const
 {
     return ui->btn_sw->text() == tr("CH");
 }
 
-void ICInputMethodKeyboard::on_btn_bs_clicked()
+void ICWidgetItemKeyboard::on_btn_bs_clicked()
 {
     if(IsChEn_() && !currentPy.isEmpty())
     {
@@ -158,19 +164,17 @@ void ICInputMethodKeyboard::on_btn_bs_clicked()
     }
     else
     {
-        QKeyEvent *e = new QKeyEvent(QKeyEvent::KeyPress,
-                                     Qt::Key_Backspace,
-                                     Qt::NoModifier);
-        qApp->postEvent(editor_, e);
+        content_.chop(1);
+        editor_->setText(content_);
     }
 }
 
-void ICInputMethodKeyboard::on_btn_space_clicked()
+void ICWidgetItemKeyboard::on_btn_space_clicked()
 {
     InsertContent(" ");
 }
 
-void ICInputMethodKeyboard::ShowMaching_(const QStringList &texts)
+void ICWidgetItemKeyboard::ShowMaching_(const QStringList &texts)
 {
     int restSize = cnButtons.size() - texts.size();
     for(int i = 0 ; i != texts.size(); ++i)
@@ -184,20 +188,13 @@ void ICInputMethodKeyboard::ShowMaching_(const QStringList &texts)
     //    ui->label->setText(texts.join(" "));
 }
 
-void ICInputMethodKeyboard::InsertContent(const QString &content)
+void ICWidgetItemKeyboard::InsertContent(const QString &content)
 {
-    QPlainTextEdit *edit = qobject_cast<QPlainTextEdit*>(editor_);
-    if(edit){
-        edit->insertPlainText(content);
-    }
-    QLineEdit *editor = qobject_cast<QLineEdit*>(editor_);
-    if(editor){
-        editor->insert(content);
-    }
-
+    content_.append(content);
+    editor_->setText(content_);
 }
 
-void ICInputMethodKeyboard::on_nextGroup_clicked()
+void ICWidgetItemKeyboard::on_nextGroup_clicked()
 {
 //    int groups = matchingList.size() / cnButtons.size();
 //    groups = matchingList.size() % cnButtons.size() ? groups + 1 : groups;
@@ -208,7 +205,7 @@ void ICInputMethodKeyboard::on_nextGroup_clicked()
     ShowMaching_(matchingList.mid(0, cnButtons.size()));
 }
 
-void ICInputMethodKeyboard::on_upGroup_clicked()
+void ICWidgetItemKeyboard::on_upGroup_clicked()
 {
 //    int groups = matchingList.size() / cnButtons.size();
 //    groups = matchingList.size() % cnButtons.size() ? groups + 1 : groups;
@@ -224,7 +221,7 @@ void ICInputMethodKeyboard::on_upGroup_clicked()
     ShowMaching_(matchingList.mid(0, cnButtons.size()));
 }
 
-void ICInputMethodKeyboard::OnCnButtonClicked()
+void ICWidgetItemKeyboard::OnCnButtonClicked()
 {
     QPushButton *btn = qobject_cast<QPushButton*>(sender());
     InsertContent(btn->text());

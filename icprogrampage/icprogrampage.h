@@ -10,6 +10,7 @@
 #include "icvirtualhost.h"
 #include "icpointtype.h"
 //#include "icpointpproperty.h"
+#include "icwidgetitemkeyboard.h"
 
 
 #define MAX_POINTS 8
@@ -18,7 +19,7 @@
 #define COLUMN_COUNTS (AXIS_COUNTS + 1 + 2)
 #define RESERVE_COUNTS (MAX_POINTS - 3)
 #define PAGE_MAX_COUNT 8
-#define USE_SPACE_ROW  0
+#define USE_SPACE_ROW  1
 #define POINT_SIZE 2
 #define TOTOAL_POINT_SIZE 1
 #define DELAY_COLUMN 6
@@ -153,6 +154,8 @@ private:
 private:
     Ui::ICProgramPage *ui;
     VirtualNumericKeypadDialog *_dialog;
+    ICWidgetItemKeyboard *_itemDialog;
+
     ICPointType *_typeDialog;
     QList<QPushButton*> saveButtons;
     QList<QPushButton*> testButtons;

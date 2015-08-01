@@ -1,24 +1,24 @@
-#ifndef ICINPUTMETHODKEYBOARD_H
-#define ICINPUTMETHODKEYBOARD_H
+#ifndef ICWIDGETITEMKEYBOARD_H
+#define ICWIDGETITEMKEYBOARD_H
 
 #include <QDialog>
-#include <QPlainTextEdit>
+#include <QTableWidgetItem>
 #include <QSignalMapper>
 
 namespace Ui {
-class ICInputMethodKeyboard;
+class ICWidgetItemKeyboard;
 }
 
-class ICInputMethodKeyboard : public QDialog
+class ICWidgetItemKeyboard : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit ICInputMethodKeyboard(QWidget *parent = 0);
-    ~ICInputMethodKeyboard();
+    explicit ICWidgetItemKeyboard(QWidget *parent = 0);
+    ~ICWidgetItemKeyboard();
 
-    void SetTextEditor(QWidget* editor) { editor_ = editor;}
-
+    void SetTextEditor(QTableWidgetItem* editor) { editor_ = editor;}
+    void Reset();
 protected:
     void changeEvent(QEvent *e);
 
@@ -43,13 +43,15 @@ private slots:
 private:
     bool IsChEn_() const;
     QStringList Matching(const QString& py);
-    Ui::ICInputMethodKeyboard *ui;
-    QWidget * editor_;
+
+    Ui::ICWidgetItemKeyboard *ui;
+    QTableWidgetItem * editor_;
     QSignalMapper signalMapper_;
     QList<QPushButton*> cnButtons;
+    QString content_;
     QString currentPy;
     QStringList matchingList;
     int currentMachingGroup;
 };
 
-#endif // ICINPUTMETHODKEYBOARD_H
+#endif // ICWidgetItemKeyboard_H

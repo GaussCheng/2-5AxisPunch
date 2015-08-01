@@ -29,6 +29,7 @@ ICProgramPage::ICProgramPage(QWidget *parent,int _pageIndex,QString pageName) :
 {
     ui->setupUi(this);
     _dialog =  VirtualNumericKeypadDialog::Instance();
+    _itemDialog = new ICWidgetItemKeyboard();
     _typeDialog =  ICPointType::Instance(this);
     _host = ICVirtualHost::GlobalVirtualHost();
     ui->modiifyButton->hide();
@@ -598,6 +599,17 @@ void ICProgramPage::itemClicked(QTableWidgetItem *item)
 
     }
 
+#ifdef MODIFY_POINTNAME
+    if(item->column() == 0){
+                 _itemDialog->SetTextEditor(item);
+                if(!_itemDialog->isVisible()){
+                    _itemDialog->move(10,75);
+                    _itemDialog->Reset();
+                    _itemDialog->exec();
+                }
+    }
+#endif
+
 }
 
 void ICProgramPage::saveButtonsCliked()
@@ -749,8 +761,15 @@ void ICProgramPage::InitPoint()
                 ui->tableWidget->setItem(j,i,item);
             }
         }
-        if(pointConfigs[j].Type() != Point_Property)
-            ui->tableWidget->item(j,0)->setText(_typeDialog->toString((PointType)pointConfigs[j].Type()));
+        if(pointConfigs[j].Type() != Point_Property){
+            if(pointConfigs[j].Reserve() == "0"){
+                ui->tableWidget->item(j,0)->setText(_typeDialog->toString((PointType)pointConfigs[j].Type()));
+            }
+            else{
+                ui->tableWidget->item(j,0)->setText(pointConfigs[j].Reserve() );
+            }
+
+        }
         else{
             ui->tableWidget->item(j,0)->setText(_typeDialog->toString((PointProperty)pointConfigs[j].Property()));
 
@@ -1093,6 +1112,10 @@ void ICProgramPage::on_deleteButton_clicked()
     int index = ui->tableWidget->currentIndex().row();
     if(index == -1) index ++;
 
+    if(index == ui->tableWidget->rowCount() -1){
+        return;
+    }
+
     QString moldName = ICMold::CurrentMold()->MoldName().split("/")[2];
     if(standPrograms_.contains(moldName)){
         QMessageBox::information(this,tr("Information"),tr("Standard Mold Cannot Modify!"));
@@ -1267,7 +1290,13 @@ void ICProgramPage::GT_CalculateItem(QList<ICMoldItem>& items)
 void ICProgramPage::SetRowSMooth(int index, bool smooth)
 {
     PointType t = (PointType)(pointConfigs[index].Type());
-    QString s  = ICPointType::Instance()->toString(t);
+    QString s  = pointConfigs[index].Reserve();
+    if(s == "0"){
+        s  = ICPointType::Instance()->toString(t);
+    }
+    else{
+        s = pointConfigs[index].Reserve();
+    }
     if(smooth)
         s += tr("(SMOOTH)");
     ui->tableWidget->item(index,0)->setText(s);

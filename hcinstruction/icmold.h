@@ -290,7 +290,7 @@ private:
 class ICPointConfig{
 
 public:
-    ICPointConfig(qint32 type_,qint32 property_,qint32 delay_,qint32 speed_,qint32 smooth_,qint32 reserve_):
+    ICPointConfig(qint32 type_,qint32 property_,qint32 delay_,qint32 speed_,qint32 smooth_,QString reserve_):
         type(type_),
         property(property_),
         delay(delay_),
@@ -305,12 +305,14 @@ public:
      qint32 Delay() { return delay;}
      qint32 Speed() { return speed;}
      qint32 Smooth() { return smooth;}
+     QString Reserve() { return reserve;}
 
      void setType(quint32 type_) { type = type_;}
      void setProperty(quint32 property_) { property = property_;}
      void setSmooth(quint32 smooth_) { smooth = smooth_;}
      void setDelay(quint32 delay_) { delay = delay_;}
      void setSpeed(quint32 speed_) { speed = speed_;}
+     void setReverse(QString reserve_) {reserve = reserve_;}
 
      bool operator == (const ICPointConfig &t)const{
          return ((type == t.type) &&
@@ -328,15 +330,15 @@ private:
     qint32 delay;
     qint32 speed;
     qint32 smooth;
-    qint32 reserve;
+    QString  reserve;
 };
 
 
 inline QByteArray ICPointConfig::ToString() const{
     QByteArray ret;
 
-    QString tmp = (QString().sprintf("%u %u %u %u %u %u",
-                                     type, property, delay,speed,smooth,reserve));
+    QString tmp = (QString().sprintf("%u %u %u %u %u %s",
+                                     type, property, delay,speed,smooth,reserve.toAscii().data()));
     ret = tmp.toUtf8();
 
     return ret;

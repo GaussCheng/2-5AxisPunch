@@ -24,6 +24,8 @@ include (iccheckedbutton/iccheckedbutton.pri)
 
 contains(DEFINES, HC_SK_8){
     FORMS += custom_widgets/icinputmethodkeyboard.ui
+    FORMS += custom_widgets/icwidgetitemkeyboard.ui
+
 }
 
 contains(DEFINES, HC_SK_5){
@@ -47,6 +49,7 @@ HEADERS += \
     custom_widgets/icplaintextedit.h \
     custom_widgets/icbuttongroup.h\
     custom_widgets/icinputmethodedit.h \
+    custom_widgets/icwidgetitemkeyboard.h  \
     custom_widgets/icmainframe.h
 
 SOURCES += \
@@ -62,4 +65,5 @@ SOURCES += \
     custom_widgets/icplaintextedit.cpp \
     custom_widgets/icbuttongroup.cpp \
     custom_widgets/icinputmethodedit.cpp \
+    custom_widgets/icwidgetitemkeyboard.cpp  \
     custom_widgets/icmainframe.cpp
