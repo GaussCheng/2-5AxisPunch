@@ -338,7 +338,7 @@ inline QByteArray ICPointConfig::ToString() const{
     QByteArray ret;
 
     QString tmp = (QString().sprintf("%u %u %u %u %u %s",
-                                     type, property, delay,speed,smooth,reserve.toAscii().data()));
+                                     type, property, delay,speed,smooth,reserve.toUtf8().data()));
     ret = tmp.toUtf8();
 
     return ret;

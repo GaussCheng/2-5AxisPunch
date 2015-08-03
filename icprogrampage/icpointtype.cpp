@@ -124,7 +124,7 @@ ICPointConfig ICPointType::config()
 
     ICPointConfig config(p ,
                          currentPropertyType(),
-                         delay,0,0,0);
+                         delay,0,0,"0");
     return config;
 }
 
