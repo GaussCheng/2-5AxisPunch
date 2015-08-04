@@ -86,6 +86,7 @@ ICProgramPage::ICProgramPage(QWidget *parent,int _pageIndex,QString pageName) :
         connect(manualButtons.at(i),SIGNAL(clicked()),
                 this,SLOT(OnShortcutReleased()));    }
 
+//       ui->saveButton->hide();
 }
 
 
@@ -148,6 +149,12 @@ QList<ICMoldItem> ICProgramPage::GT_TailMoldItems()
     return items;
 }
 
+/**
+ * @brief ICProgramPage::refreshCurrentRow
+ * 1、M值 冲压允许 跟随点位
+ * 2、夹吸 等待 冲压 跟随自己
+ * @param step
+ */
 void ICProgramPage::refreshCurrentRow(int step)
 {
 //    int step = _host->HostStatus(ICVirtualHost::ICStatus(ICVirtualHost::Step)).toInt();
@@ -159,16 +166,17 @@ void ICProgramPage::refreshCurrentRow(int step)
         return;
     }
 
-    int startIndex = 0,oldPoint=0;
+    int startIndex = 0,oldPoint = 0, pStart = 0;
     foreach(ICMoldItem item,allItems){
         if(item.GMVal() < ICMold::GX || item.GMVal() > ICMold::GC ){
             //M值跟随上一个位置
-            if((item.GMVal() >=ICMold::GMWait && item.GMVal()<=ICMold::GEuOut)
-                    || item.GMVal() == ICMold::GCondition){
-                stepToRow.insert(item.Num(),startIndex);
+            if((item.GMVal() >=ICMold::GMWait &&  item.GMVal()< ICMold::GEuOut )
+                    || item.GMVal() == ICMold::GCondition
+                    || (item.GMVal() == ICMold::GEuOut && item.SubNum() == 0)){
+                         stepToRow.insert(item.Num(),startIndex); //冲压允许保持跟随上一个位置
             }
             else{
-                if(startIndex == 0){
+                if(pStart == 0){
                     //等待，夹吸跟随当前位置
                     stepToRow.insert(item.Num(),startIndex++);
                 }
@@ -176,10 +184,10 @@ void ICProgramPage::refreshCurrentRow(int step)
                     //等待，夹吸跟随下一个位置
                     stepToRow.insert(item.Num(),++startIndex);
                 }
-
             }
         }
         else{
+            pStart = 1;
             stepToRow.insert(item.Num(),startIndex);
             if(oldPoint != item.SubNum()){
                 startIndex++;
@@ -333,8 +341,9 @@ void ICProgramPage::hideEvent(QHideEvent *e)
     ui->startEdit->setChecked(false);
     ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
 
-//    SaveConfigPoint();
+    SaveConfigPoint();
     ReConfigure();
+    EnableTestButtons();
 
     QWidget::hideEvent(e);
 
