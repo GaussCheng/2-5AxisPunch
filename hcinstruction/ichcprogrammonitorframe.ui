@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>806</width>
     <height>491</height>
    </rect>
   </property>
@@ -28,6 +28,15 @@
    <enum>QFrame::Plain</enum>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>6</number>
+   </property>
+   <property name="topMargin">
+    <number>6</number>
+   </property>
+   <property name="bottomMargin">
+    <number>6</number>
+   </property>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
@@ -48,7 +57,7 @@
        <property name="minimumSize">
         <size>
          <width>120</width>
-         <height>32</height>
+         <height>38</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -56,6 +65,9 @@
          <width>120</width>
          <height>16777215</height>
         </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
         <string>CheckRun</string>
@@ -92,7 +104,7 @@
        <property name="minimumSize">
         <size>
          <width>120</width>
-         <height>32</height>
+         <height>38</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -100,6 +112,9 @@
          <width>120</width>
          <height>16777215</height>
         </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
         <string>UncheckRun</string>
@@ -139,7 +154,7 @@
        <property name="minimumSize">
         <size>
          <width>120</width>
-         <height>32</height>
+         <height>38</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -147,6 +162,9 @@
          <width>120</width>
          <height>16777215</height>
         </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
         <string>allowGet</string>
@@ -180,7 +198,7 @@
        <property name="minimumSize">
         <size>
          <width>120</width>
-         <height>32</height>
+         <height>38</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -188,6 +206,9 @@
          <width>120</width>
          <height>16777215</height>
         </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
         <string>allowSet</string>
@@ -221,7 +242,7 @@
        <property name="minimumSize">
         <size>
          <width>120</width>
-         <height>32</height>
+         <height>38</height>
         </size>
        </property>
        <property name="focusPolicy">
@@ -250,7 +271,7 @@
        <property name="minimumSize">
         <size>
          <width>120</width>
-         <height>32</height>
+         <height>38</height>
         </size>
        </property>
        <property name="focusPolicy">
@@ -263,6 +284,19 @@
         <bool>true</bool>
        </property>
       </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_6">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
      </item>
     </layout>
    </item>
@@ -326,6 +360,9 @@ padding:5px;
          <width>80</width>
          <height>16777215</height>
         </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
         <string>X.Speed</string>
@@ -811,6 +848,9 @@ padding:5px;
          <height>16777215</height>
         </size>
        </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
        <property name="text">
         <string>Y.Speed</string>
        </property>
@@ -1294,6 +1334,9 @@ padding:5px;
          <width>80</width>
          <height>16777215</height>
         </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
         <string>S.Speed</string>
@@ -1779,6 +1822,9 @@ padding:5px;
          <height>16777215</height>
         </size>
        </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
        <property name="text">
         <string>R.Speed</string>
        </property>
@@ -2262,6 +2308,9 @@ padding:5px;
          <width>80</width>
          <height>16777215</height>
         </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
         <string>T.Speed</string>
