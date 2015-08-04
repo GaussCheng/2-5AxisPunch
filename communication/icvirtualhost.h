@@ -561,7 +561,9 @@ public:
     enum FunctionBits{
         FLEEBIT    = 0x00000100,
         ORIGINBIT  = 0x00000200,
-        AUTOBIT   = 0x00000400
+        AUTOBIT   = 0x00000400,
+        WAITBIT   = 0x00000800
+
     };
 
     typedef QMap<ICSystemParameter, QVariant> ICSystemParameterMap ;
@@ -628,6 +630,9 @@ public:
     void SetOriginModeEn(bool isEn);
     bool IsAutoModeEn() const { return (SystemParameter((SYS_Function)).toInt() & AUTOBIT ) != 0;} //全自动信号
     void SetAutoModeEn(bool isEn);
+    bool IsWaitModeEn() const { return (SystemParameter((SYS_Function)).toInt() & WAITBIT ) != 0;} //全自动信号
+    void SetWaitModeEn(bool isEn);
+
 
     int CurrentStep() const { return (statusMap_.value(Step).toInt() & 0x00FF);}
     int CurrentStatus() const { return (statusMap_.value(Status).toUInt() & 0x0FFF);}
@@ -1093,6 +1098,16 @@ inline void ICVirtualHost::SetAutoModeEn(bool isEn)
     int val = SystemParameter(SYS_Function).toInt();
     val &= (~AUTOBIT);
     (isEn ? val |= AUTOBIT : val &= (~AUTOBIT));
+    systemParamMap_.insert(SYS_Function, val);
+    isParamChanged_ = true;
+}
+
+
+inline void ICVirtualHost::SetWaitModeEn(bool isEn)
+{
+    int val = SystemParameter(SYS_Function).toInt();
+    val &= (~WAITBIT);
+    (isEn ? val |= WAITBIT : val &= (~WAITBIT));
     systemParamMap_.insert(SYS_Function, val);
     isParamChanged_ = true;
 }

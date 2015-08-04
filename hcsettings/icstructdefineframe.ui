@@ -37,7 +37,7 @@
    <item>
     <widget class="ICTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="arm">
       <attribute name="title">
@@ -737,169 +737,6 @@
        <string>Other Define</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_7">
-       <item row="0" column="0">
-        <layout class="QVBoxLayout" name="verticalLayout_4">
-         <item>
-          <layout class="QGridLayout" name="gridLayout_6">
-           <property name="topMargin">
-            <number>0</number>
-           </property>
-           <property name="rightMargin">
-            <number>10</number>
-           </property>
-           <item row="3" column="1">
-            <widget class="ICComboBox" name="pressureMode">
-             <property name="maximumSize">
-              <size>
-               <width>160</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <item>
-              <property name="text">
-               <string>Disable</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Always ON</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Always OFF</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item row="2" column="1">
-            <widget class="ICComboBox" name="punchType">
-             <property name="maximumSize">
-              <size>
-               <width>160</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <item>
-              <property name="text">
-               <string>Pulse</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Continuous </string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Gear</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item row="2" column="0">
-            <widget class="QLabel" name="label_22">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>80</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="text">
-              <string>Punch Type</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="0">
-            <widget class="QLabel" name="label_10">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>80</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="text">
-              <string>Pressure Check</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="0">
-            <widget class="QLabel" name="label">
-             <property name="maximumSize">
-              <size>
-               <width>80</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="text">
-              <string>Can Type</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="ICComboBox" name="canType">
-             <property name="maximumSize">
-              <size>
-               <width>160</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <item>
-              <property name="text">
-               <string>None</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Master</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Slave</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="label_2">
-             <property name="maximumSize">
-              <size>
-               <width>80</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="text">
-              <string>Can ID</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="ICLineEditWithVirtualNumericKeypad" name="canID">
-             <property name="maximumSize">
-              <size>
-               <width>160</width>
-               <height>16777215</height>
-              </size>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </item>
        <item row="0" column="1">
         <widget class="QGroupBox" name="fixtureDefineBox_2">
          <property name="sizePolicy">
@@ -934,7 +771,7 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>85</width>
               <height>0</height>
              </size>
             </property>
@@ -962,7 +799,7 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>85</width>
               <height>0</height>
              </size>
             </property>
@@ -990,7 +827,7 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>85</width>
               <height>0</height>
              </size>
             </property>
@@ -1018,7 +855,7 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>85</width>
               <height>0</height>
              </size>
             </property>
@@ -1046,7 +883,7 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>85</width>
               <height>0</height>
              </size>
             </property>
@@ -1074,7 +911,7 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>85</width>
               <height>0</height>
              </size>
             </property>
@@ -1102,7 +939,7 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>85</width>
               <height>0</height>
              </size>
             </property>
@@ -1130,7 +967,7 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>85</width>
               <height>0</height>
              </size>
             </property>
@@ -1158,7 +995,7 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>85</width>
               <height>0</height>
              </size>
             </property>
@@ -1186,7 +1023,7 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>85</width>
               <height>0</height>
              </size>
             </property>
@@ -1214,7 +1051,7 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>85</width>
               <height>0</height>
              </size>
             </property>
@@ -1242,7 +1079,7 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>85</width>
               <height>0</height>
              </size>
             </property>
@@ -1270,7 +1107,7 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>85</width>
               <height>0</height>
              </size>
             </property>
@@ -1298,7 +1135,7 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>85</width>
               <height>0</height>
              </size>
             </property>
@@ -1326,7 +1163,7 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>85</width>
               <height>0</height>
              </size>
             </property>
@@ -1354,7 +1191,7 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>85</width>
               <height>0</height>
              </size>
             </property>
@@ -1559,9 +1396,216 @@
          </layout>
         </widget>
        </item>
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="groupBox">
+         <property name="title">
+          <string>Type</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_6">
+          <property name="leftMargin">
+           <number>4</number>
+          </property>
+          <property name="rightMargin">
+           <number>4</number>
+          </property>
+          <property name="horizontalSpacing">
+           <number>2</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label">
+            <property name="maximumSize">
+             <size>
+              <width>80</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Can Type</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="ICComboBox" name="canType">
+            <property name="maximumSize">
+             <size>
+              <width>160</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>None</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Master</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Slave</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_2">
+            <property name="maximumSize">
+             <size>
+              <width>80</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Can ID</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="ICLineEditWithVirtualNumericKeypad" name="canID">
+            <property name="maximumSize">
+             <size>
+              <width>160</width>
+              <height>16777215</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_22">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>80</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Punch Type</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="ICComboBox" name="punchType">
+            <property name="maximumSize">
+             <size>
+              <width>160</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Pulse</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Continuous </string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Gear</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_10">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>80</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Pressure Check</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="ICComboBox" name="pressureMode">
+            <property name="maximumSize">
+             <size>
+              <width>160</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Disable</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Always ON</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Always OFF</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="label_24">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>80</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Wait Type</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="ICComboBox" name="waitMode">
+            <property name="maximumSize">
+             <size>
+              <width>160</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Continuous</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Pulse</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
       </layout>
       <zorder>groupBox_5</zorder>
       <zorder>fixtureDefineBox_2</zorder>
+      <zorder>groupBox</zorder>
      </widget>
      <widget class="QWidget" name="origin">
       <attribute name="title">
@@ -4485,14 +4529,14 @@ QRadioButton::indicator:unchecked:disabled
  </widget>
  <customwidgets>
   <customwidget>
-   <class>ICLineEditWithVirtualNumericKeypad</class>
-   <extends>QLineEdit</extends>
-   <header>iclineeditwithvirtualnumerickeypad.h</header>
-  </customwidget>
-  <customwidget>
    <class>ICComboBox</class>
    <extends>QComboBox</extends>
    <header>iccombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ICLineEditWithVirtualNumericKeypad</class>
+   <extends>QLineEdit</extends>
+   <header>iclineeditwithvirtualnumerickeypad.h</header>
   </customwidget>
   <customwidget>
    <class>ICTabWidget</class>

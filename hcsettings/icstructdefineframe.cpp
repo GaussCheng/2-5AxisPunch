@@ -185,6 +185,7 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     ui->originBox->setChecked(host->IsOriginModeEn());
     ui->autoBox->setChecked(host->IsAutoModeEn());
     ui->punchType->setCurrentIndex(host->PunchCheckMode());
+    ui->waitMode->setCurrentIndex(host->IsWaitModeEn());
 
 
 
@@ -499,6 +500,7 @@ void ICStructDefineFrame::on_saveButton_clicked()
         host->SetFleeEn(ui->fleeBox->isChecked());
         host->SetOriginModeEn(ui->originBox->isChecked());
         host->SetAutoModeEn(ui->autoBox->isChecked());
+        host->SetWaitModeEn(ui->waitMode->currentIndex());
         if(ui->canType->currentIndex() == 0){
             host->SetEjectionLink(0);
         }
@@ -638,6 +640,8 @@ void ICStructDefineFrame::InitCombobox()
     ui->originBox->setChecked(host->IsOriginModeEn());
     ui->autoBox->setChecked(host->IsAutoModeEn());
     ui->punchType->setCurrentIndex(host->PunchCheckMode());
+    ui->waitMode->setCurrentIndex(host->IsWaitModeEn());
+
 }
 
 void ICStructDefineFrame::InitEnfoce()
