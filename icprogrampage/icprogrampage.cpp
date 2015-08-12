@@ -624,7 +624,7 @@ void ICProgramPage::itemClicked(QTableWidgetItem *item)
 void ICProgramPage::saveButtonsCliked()
 {
     int index = ui->tableWidget->currentIndex().row();
-    if(index < 0)
+    if(index < 0 || index == ROW_COUNTS)
     {
         return;
     }
@@ -653,7 +653,7 @@ void ICProgramPage::testButonsPressed()
 //    ui->testButton->setEnabled(false);
     int index = ui->tableWidget->currentIndex().row();
 
-    if(index < 0)
+    if(index < 0  || index == ROW_COUNTS )
     {
         return;
     }
