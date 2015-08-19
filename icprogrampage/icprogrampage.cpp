@@ -357,7 +357,7 @@ void ICProgramPage::changeEvent(QEvent *e)
         ui->retranslateUi(this);
         QStringList headerContents;
         headerContents  <<  tr("Type") << tr("FrontBack") << tr("UpDown") << tr("Windup") <<  tr("Rotated")
-                        << tr("Rollovers")/*  << tr("Save") << tr("Tested")*/;
+                        << tr("Rollovers")  << tr("Delay") << tr("Speed");
 
         for(int i=0;i<headerContents.size();i++){
             ui->tableWidget->horizontalHeaderItem(i)->setText(headerContents.at(i));

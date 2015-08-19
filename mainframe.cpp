@@ -921,12 +921,18 @@ void MainFrame::StatusRefreshed()
     //        ui->cycleTimeAndFinistWidget->SetFinished(virtualHost->HostStatus(ICVirtualHost::DbgX1).toUInt());
     //        oldFinishCount_ = finishCount_;
     //    }
-    cycleTime_ = virtualHost->HostStatus(ICVirtualHost::Time).toUInt();
-    if(cycleTime_ != oldCycleTime_)
-    {
-        ui->cycleTimeAndFinistWidget->SetCycleTime(QString().sprintf("%.2f", cycleTime_ / qreal(100)));
-        oldCycleTime_ = cycleTime_;
+    if( runningStatus_ == ICVirtualHost::Stop){
+        ui->cycleTimeAndFinistWidget->SetCycleTime("0.00");
     }
+    else{
+        cycleTime_ = virtualHost->HostStatus(ICVirtualHost::Time).toUInt();
+        if(cycleTime_ != oldCycleTime_)
+        {
+            ui->cycleTimeAndFinistWidget->SetCycleTime(QString().sprintf("%.2f", cycleTime_ / qreal(100)));
+            oldCycleTime_ = cycleTime_;
+        }
+    }
+
 
     ICProgramHeadFrame::Instance()->ChangeRobotOrigin(IsOrigined());
     runningStatus_ = virtualHost->CurrentStatus();
