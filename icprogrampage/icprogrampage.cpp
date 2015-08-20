@@ -1015,7 +1015,7 @@ void ICProgramPage::SetPageMaxCount(int count)
 void ICProgramPage::on_newButton_clicked()
 {
     int index = ui->tableWidget->currentIndex().row();
-    if(index == -1) index ++;
+    if(index == -1 ) index ++;
     QString moldName = ICMold::CurrentMold()->MoldName().split("/")[2];
     if(standPrograms_.contains(moldName)){
         QMessageBox::information(this,tr("Information"),tr("Standard Mold Cannot Modify!"));
@@ -1031,6 +1031,8 @@ void ICProgramPage::on_newButton_clicked()
             return;
         }
         else if(_typeDialog->currentPropertyType() == SMOOTH){
+            if(index == ROW_COUNTS)
+                return;
             quint32 t = pointConfigs[index].Type();
             quint32 s = pointConfigs[index].Smooth();
             if(t != Point_Property){
