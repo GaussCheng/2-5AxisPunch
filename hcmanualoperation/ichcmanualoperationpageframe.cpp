@@ -663,13 +663,28 @@ void ICHCManualOperationPageFrame::OnShortcutTriggered(int id)
     {
         cmd.SetIFVal(1);
     }
-    //    cmd.SetIFVal(info.dir);
-    if(!ICCommandProcessor::Instance()->ExecuteCommand(cmd).toBool())
-    {
-//        QMessageBox::warning(this,
-//                                 tr("warning"),
-//                                 tr("err"));
+
+    if(cmd.GM() == ICMold::GEuOut &&    info.pointNum == 0 ){
+        if(QMessageBox::information(this,tr("Information"),tr("Is Enfoce Punch?"),
+                                    QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes){
+            if(!ICCommandProcessor::Instance()->ExecuteCommand(cmd).toBool())
+            {
+        //        QMessageBox::warning(this,
+        //                                 tr("warning"),
+        //                                 tr("err"));
+            }
+        }
+
     }
+    else{
+        if(!ICCommandProcessor::Instance()->ExecuteCommand(cmd).toBool())
+        {
+    //        QMessageBox::warning(this,
+    //                                 tr("warning"),
+    //                                 tr("err"));
+        }
+    }
+
 }
 
 void ICHCManualOperationPageFrame::OnShortcutReleased(int id)

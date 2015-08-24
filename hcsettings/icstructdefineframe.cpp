@@ -92,7 +92,9 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     InitEscapeBox() ;
 
     punchButtons_<<ui->punch1<<ui->punch2<<ui->punch3<<ui->punch4<<ui->punch5<<ui->punch6
-                   <<ui->punch7<<ui->punch8<<ui->punch9<<ui->punch10;
+                   <<ui->punch7<<ui->punch8<<ui->punch9<<ui->punch10
+                  << ui->punch11 << ui->punch12 << ui->punch13 << ui->punch14
+                  << ui->punch15 << ui->punch16;
 
     inputBoxs << ui->inputBox_1 << ui->inputBox_2 << ui->inputBox_3 << ui->inputBox_4 << ui->inputBox_5 << ui->inputBox_6
               << ui->inputBox_7 << ui->inputBox_8 << ui->inputBox_9 << ui->inputBox_10 << ui->inputBox_11 << ui->inputBox_12

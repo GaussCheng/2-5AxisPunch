@@ -1057,7 +1057,7 @@
            </widget>
           </item>
           <item row="2" column="2">
-           <widget class="QPushButton" name="punch10_2">
+           <widget class="QPushButton" name="punch11">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
               <horstretch>0</horstretch>
@@ -1085,7 +1085,7 @@
            </widget>
           </item>
           <item row="3" column="2">
-           <widget class="QPushButton" name="punch10_3">
+           <widget class="QPushButton" name="punch12">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
               <horstretch>0</horstretch>
@@ -1113,7 +1113,7 @@
            </widget>
           </item>
           <item row="0" column="3">
-           <widget class="QPushButton" name="punch10_4">
+           <widget class="QPushButton" name="punch13">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
               <horstretch>0</horstretch>
@@ -1141,7 +1141,7 @@
            </widget>
           </item>
           <item row="1" column="3">
-           <widget class="QPushButton" name="punch10_5">
+           <widget class="QPushButton" name="punch14">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
               <horstretch>0</horstretch>
@@ -1169,7 +1169,7 @@
            </widget>
           </item>
           <item row="2" column="3">
-           <widget class="QPushButton" name="punch10_6">
+           <widget class="QPushButton" name="punch15">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
               <horstretch>0</horstretch>
@@ -1197,7 +1197,7 @@
            </widget>
           </item>
           <item row="3" column="3">
-           <widget class="QPushButton" name="punch10_7">
+           <widget class="QPushButton" name="punch16">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
               <horstretch>0</horstretch>

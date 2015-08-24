@@ -1094,12 +1094,19 @@ void ICHCProgramMonitorFrame::on_tSpeed_toggled(bool checked)
 
 void ICHCProgramMonitorFrame::on_allowGet_clicked()
 {
-    ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_ALLOWTACK);
+    if(QMessageBox::information(this,tr("Information"),tr("Is Enfoce Allow Get?"),
+                                QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes){
+        ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_ALLOWTACK);
+    }
 }
 
 void ICHCProgramMonitorFrame::on_allowSet_clicked()
 {
-    ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_ALLOWPUT);
+    if(QMessageBox::information(this,tr("Information"),tr("Is Enfoce Allow Set?"),
+                                QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes){
+        ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_ALLOWPUT);
+
+    }
 }
 
 void ICHCProgramMonitorFrame::on_singleCycle_clicked()

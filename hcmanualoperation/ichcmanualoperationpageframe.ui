@@ -2449,7 +2449,16 @@
           <string>Binary</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout">
-          <property name="margin">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
            <number>0</number>
           </property>
           <item>
@@ -3522,7 +3531,16 @@ color: rgb(97, 97, 97);
      </widget>
      <widget class="QWidget" name="tabWidgetPage2">
       <layout class="QGridLayout" name="gridLayout_3">
-       <property name="margin">
+       <property name="leftMargin">
+        <number>2</number>
+       </property>
+       <property name="topMargin">
+        <number>2</number>
+       </property>
+       <property name="rightMargin">
+        <number>2</number>
+       </property>
+       <property name="bottomMargin">
         <number>2</number>
        </property>
        <property name="spacing">
@@ -4274,9 +4292,9 @@ color: rgb(97, 97, 97);
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="actionGroup"/>
   <buttongroup name="buttonGroup_2"/>
-  <buttongroup name="buttonGroup"/>
   <buttongroup name="shortcutGroup"/>
+  <buttongroup name="buttonGroup"/>
+  <buttongroup name="actionGroup"/>
  </buttongroups>
 </ui>
