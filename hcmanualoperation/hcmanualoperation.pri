@@ -2,14 +2,16 @@ INCLUDEPATH += $$PWD
 
 HEADERS += \
     hcmanualoperation/ichcmanualoperationpageframe.h \
-    hcmanualoperation/axismodifydialog.h
+    hcmanualoperation/axismodifydialog.h    \
+    hcmanualoperation/icinformationdialog.h
     #hcmanualoperation/hcmanualalternateioframe.h \
     #hcmanualoperation/hcpneumaticaxiscontrolframe.h \
     #hcmanualoperation/hcmanualfunctionframe.h \
 
 SOURCES += \
     hcmanualoperation/ichcmanualoperationpageframe.cpp \
-    hcmanualoperation/axismodifydialog.cpp
+    hcmanualoperation/axismodifydialog.cpp  \
+    hcmanualoperation/icinformationdialog.cpp
     #hcmanualoperation/hcmanualalternateioframe.cpp \
     #hcmanualoperation/hcpneumaticaxiscontrolframe.cpp \
     #hcmanualoperation/hcmanualfunctionframe.cpp \
@@ -17,7 +19,8 @@ SOURCES += \
 contains(DEFINES, HC_SK_8){
 FORMS += \
     hcmanualoperation/ichcmanualoperationpageframe.ui \
-    hcmanualoperation/axismodifydialog.ui
+    hcmanualoperation/axismodifydialog.ui   \
+    hcmanualoperation/icinformationdialog.ui
     #hcmanualoperation/hcmanualalternateioframe.ui \
     #hcmanualoperation/hcpneumaticaxiscontrolframe.ui \
     #hcmanualoperation/hcmanualfunctionframe.ui \

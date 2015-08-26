@@ -38,6 +38,7 @@ ICHCProgramMonitorFrame::ICHCProgramMonitorFrame(QWidget *parent) :
 #endif
 
     autoRunRevise_ = new ICAutoRunRevise(this);
+    infoDialog_ = new ICInformationDialog(this);
     InitSignal();
     //    UpdateHostParam();
     //    ICInstructParam::Instance()->UpdateHostParam();
@@ -83,6 +84,7 @@ ICHCProgramMonitorFrame::~ICHCProgramMonitorFrame()
 {
     delete autoRunRevise_;
     delete ui;
+    delete infoDialog_;
 }
 
 void ICHCProgramMonitorFrame::changeEvent(QEvent *e)
@@ -1094,18 +1096,18 @@ void ICHCProgramMonitorFrame::on_tSpeed_toggled(bool checked)
 
 void ICHCProgramMonitorFrame::on_allowGet_clicked()
 {
-    if(QMessageBox::information(this,tr("Information"),tr("Is Enfoce Allow Get?"),
-                                QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes){
+    infoDialog_->setInfo(tr("Is Enfoce Allow Get?"));
+    if(infoDialog_->exec() == QDialog::Accepted){
         ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_ALLOWTACK);
     }
+
 }
 
 void ICHCProgramMonitorFrame::on_allowSet_clicked()
 {
-    if(QMessageBox::information(this,tr("Information"),tr("Is Enfoce Allow Set?"),
-                                QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes){
+    infoDialog_->setInfo(tr("Is Enfoce Allow Set?"));
+    if(infoDialog_->exec() == QDialog::Accepted){
         ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_ALLOWPUT);
-
     }
 }
 

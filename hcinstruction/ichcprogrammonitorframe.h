@@ -7,6 +7,7 @@
 #include <QTimer>
 #include "icmold.h"
 #include <QTableWidget>
+#include "icinformationdialog.h"
 
 namespace Ui {
     class ICHCProgramMonitorFrame;
@@ -112,6 +113,8 @@ private:
     int fixtureCount_[6];
     QTimer refreshTimer_;
     QTableWidget *tableWidget;
+    ICInformationDialog* infoDialog_;
+
 //    QMap<ICMoldItem*, ICMoldItem> modifyMap_;
 };
 #endif // ICHCPROGRAMMONITORFRAME_H

@@ -6,7 +6,7 @@
 #include <QMap>
 #include <QSignalMapper>
 #include "axismodifydialog.h"
-
+#include "icinformationdialog.h"
 namespace Ui {
     class ICHCManualOperationPageFrame;
 }
@@ -104,6 +104,8 @@ private:
     QSignalMapper releaseShortcutSignalMapper_;
     QPushButton* nullButton_;
     AxisModifyDialog* modifyDialog_;
+    ICInformationDialog* infoDialog_;
+
 };
 
 #endif // ICHCMANUALOPERATIONPAGEFRAME_H

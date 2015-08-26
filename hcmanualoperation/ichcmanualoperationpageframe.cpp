@@ -53,6 +53,7 @@ ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     //    ui->zCurrentPos->setAttribute(Qt::WA_PaintOnScreen);
     InitInterface();
     modifyDialog_ = new AxisModifyDialog();
+    infoDialog_ = new ICInformationDialog(this);
     yOnPalette.setBrush(QPalette::Button, QBrush(Qt::green));
     oriPalette = ui->b1->palette();
     oriStyle = ui->b1->styleSheet();
@@ -81,6 +82,8 @@ ICHCManualOperationPageFrame::~ICHCManualOperationPageFrame()
     delete ui;
     delete nullButton_;
     delete modifyDialog_;
+    delete infoDialog_;
+
 }
 
 void ICHCManualOperationPageFrame::showEvent(QShowEvent *e)
@@ -665,8 +668,8 @@ void ICHCManualOperationPageFrame::OnShortcutTriggered(int id)
     }
 
     if(cmd.GM() == ICMold::GEuOut &&    info.pointNum == 0 ){
-        if(QMessageBox::information(this,tr("Information"),tr("Is Enfoce Punch?"),
-                                    QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes){
+        infoDialog_->setInfo(tr("Is Enfoce Punch?"));
+        if(infoDialog_->exec() == QDialog::Accepted){
             if(!ICCommandProcessor::Instance()->ExecuteCommand(cmd).toBool())
             {
         //        QMessageBox::warning(this,
@@ -674,7 +677,6 @@ void ICHCManualOperationPageFrame::OnShortcutTriggered(int id)
         //                                 tr("err"));
             }
         }
-
     }
     else{
         if(!ICCommandProcessor::Instance()->ExecuteCommand(cmd).toBool())

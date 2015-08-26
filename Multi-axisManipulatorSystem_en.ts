@@ -2946,7 +2946,7 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="936"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="938"/>
         <source>Servo On</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3183,47 +3183,42 @@ Infomation</source>
         <translation type="obsolete">Manipulator I/O</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="514"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="517"/>
         <source>Single(%1/%2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="668"/>
-        <source>Information</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="668"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="671"/>
         <source>Is Enfoce Punch?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="745"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="766"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="788"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="809"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="830"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="885"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="747"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="768"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="790"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="811"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="832"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="887"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="746"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="767"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="789"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="810"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="831"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="886"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="748"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="769"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="791"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="812"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="833"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="888"/>
         <source>Has not been origin!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="876"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="878"/>
         <source>Product clear</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="931"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="933"/>
         <source>Servo OFF</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3571,59 +3566,53 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="64"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="94"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="65"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="96"/>
         <source>Has not teach check Fixture-1!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="65"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="95"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="66"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="97"/>
         <source>Has not teach check Fixture-2!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="66"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="96"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="67"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="98"/>
         <source>Has not teach check Fixture-3!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="67"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="97"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="68"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="99"/>
         <source>Has not teach check Fixture-4!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="68"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="98"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="69"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="100"/>
         <source>Has not teach check Sucker-1!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="69"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="99"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="70"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="101"/>
         <source>Has not teach check Sucker-2!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="269"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="271"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="1097"/>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="1105"/>
-        <source>Information</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="1097"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="1099"/>
         <source>Is Enfoce Allow Get?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="1105"/>
+        <location filename="hcinstruction/ichcprogrammonitorframe.cpp" line="1108"/>
         <source>Is Enfoce Allow Set?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4431,6 +4420,19 @@ Infomation</source>
     <message>
         <location filename="custom_widgets/iciomonitor/iciopage.cpp" line="365"/>
         <source>Y2 In Limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ICInformationDialog</name>
+    <message>
+        <location filename="hcmanualoperation/icinformationdialog.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcmanualoperation/icinformationdialog.ui" line="30"/>
+        <source>TextLabel</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
