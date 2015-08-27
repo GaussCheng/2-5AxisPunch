@@ -562,7 +562,9 @@ public:
         FLEEBIT    = 0x00000100,
         ORIGINBIT  = 0x00000200,
         AUTOBIT   = 0x00000400,
-        WAITBIT   = 0x00000800
+        WAITBIT   = 0x00000800,
+        PUNCHBIT = 0x000001000,
+        SAFEINFO  = 0x000002000
 
     };
 
@@ -630,9 +632,12 @@ public:
     void SetOriginModeEn(bool isEn);
     bool IsAutoModeEn() const { return (SystemParameter((SYS_Function)).toInt() & AUTOBIT ) != 0;} //全自动信号
     void SetAutoModeEn(bool isEn);
-    bool IsWaitModeEn() const { return (SystemParameter((SYS_Function)).toInt() & WAITBIT ) != 0;} //全自动信号
+    bool IsWaitModeEn() const { return (SystemParameter((SYS_Function)).toInt() & WAITBIT ) != 0;} //等待信号
     void SetWaitModeEn(bool isEn);
-
+    bool IsForcePunchModeEn() const { return (SystemParameter((SYS_Function)).toInt() & PUNCHBIT ) != 0;}  //强制冲压
+    void SetForcePunchModeEn(bool isEn);
+    bool IsSafeInfoModeEn() const { return (SystemParameter((SYS_Function)).toInt() & SAFEINFO ) != 0;} //安全提示
+    void SetSafeInfoModeEn(bool isEn);
 
     int CurrentStep() const { return (statusMap_.value(Step).toInt() & 0x00FF);}
     int CurrentStatus() const { return (statusMap_.value(Status).toUInt() & 0x0FFF);}
@@ -728,6 +733,7 @@ private:
     QScopedPointer<ICMold> currentMold_;
     ICMacroSubroutine* subroutines_;
     ICStatusMap statusMap_;
+
     QMap<ICSystemParameterAddr, ICSystemParameter> addrToSysPos_;
 //    QMap<int, ICSystemParameter> moldParamToAddrPos_;
     QMap<int, ICSystemParameterAddr> moldParamToAddrPos_;
@@ -1111,6 +1117,25 @@ inline void ICVirtualHost::SetWaitModeEn(bool isEn)
     systemParamMap_.insert(SYS_Function, val);
     isParamChanged_ = true;
 }
+
+inline void ICVirtualHost::SetForcePunchModeEn(bool isEn)
+{
+    int val = SystemParameter(SYS_Function).toInt();
+    val &= (~PUNCHBIT);
+    (isEn ? val |= PUNCHBIT : val &= (~PUNCHBIT));
+    systemParamMap_.insert(SYS_Function, val);
+    isParamChanged_ = true;
+}
+inline void ICVirtualHost::SetSafeInfoModeEn(bool isEn)
+{
+    int val = SystemParameter(SYS_Function).toInt();
+    val &= (~SAFEINFO);
+    (isEn ? val |= SAFEINFO : val &= (~SAFEINFO));
+    systemParamMap_.insert(SYS_Function, val);
+    isParamChanged_ = true;
+}
+
+
 
 //inline void ICVirtualHost::SetSingleArm(bool isSingle)
 //{

@@ -335,7 +335,7 @@ void ICVirtualHost::RefreshStatus()
 //            statusMap_.insert(EuIn, rand());
 //            statusMap_.insert(EuOut, rand());
 //            statusMap_.insert(ErrCode, rand());
-//            statusMap_.insert(DbgX0, rand());
+            statusMap_.insert(DbgA0, 0);
 //            statusMap_.insert(DbgX1, rand());
 //            statusMap_.insert(DbgY0, 1);
 //            statusMap_.insert(DbgY1, rand());

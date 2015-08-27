@@ -183,6 +183,7 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     ui->tryRunBox->setChecked(host->IsMidMoldCheck());
     ui->syncBox->setChecked(host->IsOrignSyncCheck());
     ui->downModeBox->setChecked(host->IsCloseMoldEn());
+    ui->safeInfoBox->setChecked(host->IsSafeInfoModeEn());
     ui->fleeBox->setChecked(host->IsFleeEn());
     ui->originBox->setChecked(host->IsOriginModeEn());
     ui->autoBox->setChecked(host->IsAutoModeEn());
@@ -503,6 +504,8 @@ void ICStructDefineFrame::on_saveButton_clicked()
         host->SetOriginModeEn(ui->originBox->isChecked());
         host->SetAutoModeEn(ui->autoBox->isChecked());
         host->SetWaitModeEn(ui->waitMode->currentIndex());
+        host->SetSafeInfoModeEn(ui->safeInfoBox->isChecked());
+
         if(ui->canType->currentIndex() == 0){
             host->SetEjectionLink(0);
         }
@@ -637,6 +640,7 @@ void ICStructDefineFrame::InitCombobox()
 
     ui->tryRunBox->setChecked(host->IsMidMoldCheck());
     ui->downModeBox->setChecked(host->IsCloseMoldEn());
+    ui->safeInfoBox->setChecked(host->IsSafeInfoModeEn());
     ui->syncBox->setChecked(host->IsOrignSyncCheck());
     ui->fleeBox->setChecked(host->IsFleeEn());
     ui->originBox->setChecked(host->IsOriginModeEn());

@@ -234,6 +234,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     //    ui->label_3->hide();
     //    ui->label_5->hide();
     actionDialog_ = new ICActionDialog(this);
+    infoDialog_ = new ICInformationDialog(this);
     //    axisWidgets_.append(QList<QWidget*>()<<ui->x1Label<<ui->x1mmLabel<<ui->xPosLabel);
     //    axisWidgets_.append(QList<QWidget*>()<<ui->y1Label<<ui->y1mmLabel<<ui->yPosLabel);
     //    axisWidgets_.append(QList<QWidget*>()<<ui->zLabel<<ui->zmmLabel<<ui->zPosLabel);
@@ -1173,6 +1174,24 @@ void MainFrame::ShowAutoPage()
     //    {
     //        QMessageBox::warning(this, tr("Warning"), tr("Need to origin!"));
     //    }
+    ICVirtualHost *host = ICVirtualHost::GlobalVirtualHost();
+    CanConfig canConfig;
+    canConfig.all = host->SystemParameter(ICVirtualHost::SYS_Config_Resv1).toInt();
+    if(canConfig.b.canType == 1){
+        QStringList ql;
+        uint16_t a0 = host->HostStatus(ICVirtualHost::DbgA0).toInt();
+        for(int i =0 ;i < 16;i ++){
+            if(a0 & (1 << i)){
+                ql.append(QString("%1").arg(i+1));
+            }
+        }
+        if(a0){
+            infoDialog_->setInfo(tr("Notic Arm %1 Is in Safe Area?").arg( ql.join(QString::fromUtf8("、 ") )));
+            infoDialog_->exec();
+        }
+
+    }
+
 }
 
 void MainFrame::ShowInstructPage()

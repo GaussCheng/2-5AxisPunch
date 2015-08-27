@@ -6449,14 +6449,14 @@ Please enter an digit between </source>
     <name>ICStructDefineFrame</name>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="14"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="361"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="362"/>
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="44"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="56"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="362"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="363"/>
         <source>Arm Define</source>
         <oldsource>Signal Define</oldsource>
         <translation type="unfinished"></translation>
@@ -6470,20 +6470,20 @@ Please enter an digit between </source>
         <location filename="hcsettings/icstructdefineframe.ui" line="238"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="263"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="302"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1458"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1771"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1832"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1872"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1919"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1959"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="364"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="368"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="372"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="376"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="380"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="384"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="388"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="392"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1493"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1806"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1867"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1907"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1954"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1994"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="365"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="369"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="373"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="377"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="381"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="385"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="389"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="393"/>
         <source>None</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6567,22 +6567,22 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1444"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1479"/>
         <source>Can Type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1463"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1498"/>
         <source>Master</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1468"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1503"/>
         <source>Slave</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1482"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1517"/>
         <source>Can ID</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6595,14 +6595,14 @@ Please enter an digit between </source>
         <location filename="hcsettings/icstructdefineframe.ui" line="243"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="268"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="307"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="365"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="369"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="373"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="377"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="381"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="385"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="389"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="393"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="366"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="370"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="374"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="378"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="382"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="386"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="390"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="394"/>
         <source>Pneumatic</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6615,14 +6615,14 @@ Please enter an digit between </source>
         <location filename="hcsettings/icstructdefineframe.ui" line="248"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="273"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="312"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="366"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="370"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="374"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="378"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="382"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="386"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="390"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="394"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="367"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="371"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="375"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="379"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="383"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="387"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="391"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="395"/>
         <source>Servo</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6738,7 +6738,7 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="737"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="419"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="420"/>
         <source>Other Define</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6773,22 +6773,22 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1555"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1590"/>
         <source>Pressure Check</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1569"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1604"/>
         <source>Disable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1574"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1609"/>
         <source>Always ON</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1579"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1614"/>
         <source>Always OFF</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6798,54 +6798,54 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1511"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1546"/>
         <source>Punch Type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1525"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1618"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1560"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1653"/>
         <source>Pulse</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1530"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1565"/>
         <source>Continuous </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1633"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1668"/>
         <source>Origin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1645"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1680"/>
         <source>Manual Origin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1722"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="304"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1757"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="305"/>
         <source>Start</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1683"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1718"/>
         <source>Set Origined</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1535"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1570"/>
         <source>Gear</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1599"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1634"/>
         <source>Wait Type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1613"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1648"/>
         <source>Continuous</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6880,67 +6880,71 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1417"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1442"/>
+        <source>safeInfo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1452"/>
         <source>Type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1751"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1786"/>
         <source>Origin Sequence</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="2004"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="2039"/>
         <source>Origin SPD</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="2014"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="2049"/>
         <source>%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="2058"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="2093"/>
         <source>Orign Sync </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="2074"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="2109"/>
         <source>status</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="2090"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="2125"/>
         <source>I/O Checked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="2130"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="2165"/>
         <source>X037</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="2162"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="2197"/>
         <source>X040</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="2194"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="2229"/>
         <source>X022</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="2226"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="2261"/>
         <source>X023</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="2235"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="2270"/>
         <source>I/O Eforce Input</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="2278"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="2313"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="2348"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="2383"/>
@@ -6972,7 +6976,7 @@ Please enter an digit between </source>
         <location filename="hcsettings/icstructdefineframe.ui" line="3293"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="3328"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="3363"/>
-        <location filename="hcsettings/icstructdefineframe.ui" line="3417"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="3398"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="3452"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="3487"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="3522"/>
@@ -7004,33 +7008,34 @@ Please enter an digit between </source>
         <location filename="hcsettings/icstructdefineframe.ui" line="4432"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="4467"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="4502"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="4537"/>
         <source>X10</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="3374"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="3409"/>
         <source>I/O Eforce Output</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="4543"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="420"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="514"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="4578"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="421"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="517"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="294"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="295"/>
         <source>Origining</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="511"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="514"/>
         <source>Tips</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="511"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="514"/>
         <source>Save Sucessfully!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7566,20 +7571,28 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="1199"/>
-        <location filename="mainframe.cpp" line="1275"/>
+        <location filename="mainframe.cpp" line="1189"/>
+        <source>Notic Arm %1 Is in Safe Area?</source>
+        <oldsource>Notic Arm 
+%1 
+Is in Safe Area?</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainframe.cpp" line="1218"/>
+        <location filename="mainframe.cpp" line="1294"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="1200"/>
-        <location filename="mainframe.cpp" line="1276"/>
+        <location filename="mainframe.cpp" line="1219"/>
+        <location filename="mainframe.cpp" line="1295"/>
         <source>Controlled, Can&apos;t modify!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="904"/>
-        <location filename="mainframe.cpp" line="911"/>
+        <location filename="mainframe.cpp" line="905"/>
+        <location filename="mainframe.cpp" line="912"/>
         <source>Hint</source>
         <translation type="unfinished"></translation>
     </message>

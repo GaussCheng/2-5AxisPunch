@@ -11,6 +11,7 @@
 #include "icsettingsframe.h"
 #include "icprogrampage.h"
 #include "icmainframe.h"
+#include "icinformationdialog.h"
 
 class QStackedLayout;
 class QDialog;
@@ -129,6 +130,7 @@ private:
     QDialog *returnExecutingPage_;
     QDialog *actionDialog_;
     QDialog *hostCompareDialog_;
+    ICInformationDialog *infoDialog_;
 
     QMap <QWidget *, QWidget *> functionButtonToPage_;
     QMap <QAbstractButton *, QWidget *> alarmButtonToPage_;
