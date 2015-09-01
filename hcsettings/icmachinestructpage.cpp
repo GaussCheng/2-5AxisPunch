@@ -458,10 +458,10 @@ void ICMachineStructPage::SetCurrentAxis(int axis)
         ++p;
     }
 
-    ui->mechanicalLengthLineEdit->SetThisIntToThisText(host->SystemParameter(machineLangth).toInt());
-    ui->maximumDisplacementLineEdit->SetThisIntToThisText(host->SystemParameter(maxLangth).toInt());
-    ui->internalSecurityZoneLineEdit->SetThisIntToThisText(host->SystemParameter(iSafe).toInt());
-    ui->externalSecurityZoneLineEdit->SetThisIntToThisText(host->SystemParameter(oSafe).toInt());
+    ui->mechanicalLengthLineEdit->SetThisIntToThisText(qint16(host->SystemParameter(machineLangth).toInt()));
+    ui->maximumDisplacementLineEdit->SetThisIntToThisText(qint16(host->SystemParameter(maxLangth).toInt()));
+    ui->internalSecurityZoneLineEdit->SetThisIntToThisText(qint16(host->SystemParameter(iSafe).toInt()));
+    ui->externalSecurityZoneLineEdit->SetThisIntToThisText(qint16(host->SystemParameter(oSafe).toInt()));
     QString format = QString("%.%1f").arg(ui->distanceRotationEdit->DecimalPlaces());
     ui->distanceRotationEdit->setText(QString().sprintf(format.toAscii(), total));
     //    ui->distanceRotationEdit->SetThisIntToThisText(total);

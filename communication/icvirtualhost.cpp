@@ -1161,13 +1161,13 @@ void ICVirtualHost::GetAxisParam_(const QString &file, int start, int end, QVect
 
 void ICVirtualHost::SaveAxisParamHelper_(const QString &fileName, int start, int end)
 {
-    QByteArray toWrite;
+    QString toWrite;
     for(ICSystemParameter i = static_cast<ICSystemParameter>(start); i != static_cast<ICSystemParameter>(end); i = static_cast<ICSystemParameter>(i + 1))
     {
-        toWrite += systemParamMap_.value(i).toByteArray() + "\n";
+        toWrite += QString("%1").arg( (quint16)systemParamMap_.value(i).toInt()) + "\n";
     }
     ICFile file("./sysconfig/" + fileName);
-    file.ICWrite(toWrite);
+    file.ICWrite(toWrite.toAscii());
 //    QFile file("./sysconfig/" + fileName);
 //    if(file.open(QFile::WriteOnly | QFile::Text))
 //    {
