@@ -326,8 +326,8 @@ void ICProgramPage::showEvent(QShowEvent *e)
          ui->tableWidget->setRowHidden(ui->tableWidget->rowCount() - 1,false);
 
     for(int i=0;i<AXIS_COUNTS;i++){
-        int top = ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::ICSystemParameter(ICVirtualHost::SYS_X_Length + i * 7)).toInt();
-        int bottom = ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::ICSystemParameter(ICVirtualHost::SYS_X_Maxium + i * 7)).toInt();
+        int top = (qint16)ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::ICSystemParameter(ICVirtualHost::SYS_X_Length + i * 7)).toInt();
+        int bottom = (qint16)ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::ICSystemParameter(ICVirtualHost::SYS_X_Maxium + i * 7)).toInt();
         validators_.at(i)->setTop(top * 10);
         validators_.at(i)->setBottom(bottom * 10);
     }
