@@ -58,6 +58,7 @@ public Q_SLOTS:
     void KeyToInstructEditor(int key);
     void ClearPosColor();
     void OnMoldButtonClicked();
+    void ShowInfoDialog();
 
     void BlockOrignShow(bool isblock) { isblockOriginShow_ = isblock;}
 
@@ -179,6 +180,7 @@ private:
     QList<uint> compareAlarmNums_;
     QTimer refreshTimer_;
     bool isblockOriginShow_;
+    bool showInfoDialog_;
 
 
 #ifdef HC_SK_8_SC

@@ -123,7 +123,8 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     isYPosChanged_(false),
     isZPosChanged_(false),
     isblockOriginShow_(false),
-    axisDefine_(-1)
+    axisDefine_(-1),
+    showInfoDialog_(0)
   //    registe_timer(new QTimer),
   //    reboot_timer(new QTimer)
   #ifdef HC_SK_8_SC
@@ -1170,6 +1171,9 @@ void MainFrame::ShowAutoPage()
     centerStackedLayout_->setCurrentWidget(autoPage_);
     //    ICProgramHeadFrame::Instance()->SetCurrentCategoryName(tr("Auto")) ;
     nullButton_->click();
+
+    if(!showInfoDialog_)
+        return;
     //    if(!IsOrigined())
     //    {
     //        QMessageBox::warning(this, tr("Warning"), tr("Need to origin!"));
@@ -1275,6 +1279,7 @@ void MainFrame::ReturnButtonClicked()
     {
         if(centerStackedLayout_->currentWidget() != autoPage_)
         {
+            showInfoDialog_ = 0;
             ShowAutoPage();
         }
     }
@@ -1625,4 +1630,9 @@ void MainFrame::OnMoldButtonClicked()
         centerStackedLayout_->addWidget(recordPage_);
     }
     centerStackedLayout_->setCurrentWidget(recordPage_);
+}
+
+void MainFrame::ShowInfoDialog()
+{
+    showInfoDialog_ = 1;
 }

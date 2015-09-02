@@ -81,6 +81,7 @@ void ICKeyboardHandler::SwitchChanged(int value)
 //        {
         ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
 //        ICProgramHeadFrame::Instance()->StartAutoTime();
+            icMainFrame->ShowInfoDialog();
             icMainFrame->ShowAutoPage();
 //            icInstructionPage->ShowProgramMonitor();
 //        }

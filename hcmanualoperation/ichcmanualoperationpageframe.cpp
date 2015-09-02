@@ -668,15 +668,16 @@ void ICHCManualOperationPageFrame::OnShortcutTriggered(int id)
     }
 
     if(cmd.GM() == ICMold::GEuOut &&    info.pointNum == 0 ){
-        infoDialog_->setInfo(tr("Is Enfoce Punch?"));
-        if(infoDialog_->exec() == QDialog::Accepted){
+//        infoDialog_->setInfo(tr("Is Enfoce Punch?"));
+//        if(infoDialog_->exec() == QDialog::Accepted){
             if(!ICCommandProcessor::Instance()->ExecuteCommand(cmd).toBool())
             {
         //        QMessageBox::warning(this,
         //                                 tr("warning"),
         //                                 tr("err"));
             }
-        }
+//        }
+
     }
     else{
         if(!ICCommandProcessor::Instance()->ExecuteCommand(cmd).toBool())
