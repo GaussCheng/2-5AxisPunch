@@ -515,8 +515,6 @@ void ICHCProgramMonitorFrame::SelectCurrentStep(int currentStep)
 #ifndef  TEACH_PAGE
     ICProgramPage::Instance_()->refreshCurrentRow(currentStep);
 #else
-
-#endif
     oldStep_ = currentStep;
     if(currentStep < 0 || currentStep >= programList_.size())
     {
@@ -557,6 +555,8 @@ void ICHCProgramMonitorFrame::SelectCurrentStep(int currentStep)
             ++nextTopItemIndex;
         }
     }
+#endif
+
 }
 
 void ICHCProgramMonitorFrame::SubStepChanged(uint8_t* subStep)
