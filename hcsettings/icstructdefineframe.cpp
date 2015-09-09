@@ -14,6 +14,7 @@
 #include "icvirtualkey.h"
 #include "icmodifyframe.h"
 #include "icsystemconfig.h"
+#include "config.h"
 
 typedef union {
      struct {
@@ -184,6 +185,7 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     ui->syncBox->setChecked(host->IsOrignSyncCheck());
     ui->downModeBox->setChecked(host->IsCloseMoldEn());
     ui->safeInfoBox->setChecked(host->IsSafeInfoModeEn());
+    ui->punchOutBox->setChecked(host->IsPunchOutModeEn());
     ui->fleeBox->setChecked(host->IsFleeEn());
     ui->originBox->setChecked(host->IsOriginModeEn());
     ui->autoBox->setChecked(host->IsAutoModeEn());
@@ -241,7 +243,9 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
 
 
 
+#ifndef TEACH_PAGE
     ui->tabWidget->removeTab(1);
+#endif
     ui->label_23->hide();
     ui->orignStatus->hide();
 }
@@ -504,6 +508,7 @@ void ICStructDefineFrame::on_saveButton_clicked()
         host->SetOriginModeEn(ui->originBox->isChecked());
         host->SetAutoModeEn(ui->autoBox->isChecked());
         host->SetWaitModeEn(ui->waitMode->currentIndex());
+        host->SetPunchOutModeEn(ui->punchOutBox->isChecked());
         host->SetSafeInfoModeEn(ui->safeInfoBox->isChecked());
 
         if(ui->canType->currentIndex() == 0){
@@ -641,6 +646,7 @@ void ICStructDefineFrame::InitCombobox()
     ui->tryRunBox->setChecked(host->IsMidMoldCheck());
     ui->downModeBox->setChecked(host->IsCloseMoldEn());
     ui->safeInfoBox->setChecked(host->IsSafeInfoModeEn());
+    ui->punchOutBox->setChecked(host->IsPunchOutModeEn());
     ui->syncBox->setChecked(host->IsOrignSyncCheck());
     ui->fleeBox->setChecked(host->IsFleeEn());
     ui->originBox->setChecked(host->IsOriginModeEn());

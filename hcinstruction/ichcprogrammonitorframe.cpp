@@ -74,8 +74,10 @@ ICHCProgramMonitorFrame::ICHCProgramMonitorFrame(QWidget *parent) :
             this,
             SLOT(LevelChanged(int)));
     LevelChanged(ICProgramHeadFrame::Instance()->CurrentLevel());
+#ifndef TEACH_PAGE
     ui->moldContentListWidget->hide();
     InitTableWidget();
+#endif
 //    ui->tSpeed->hide();
 //    ui->rsSpeed->hide();
 }
@@ -107,6 +109,7 @@ void ICHCProgramMonitorFrame::changeEvent(QEvent *e)
 
 void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
 {
+#ifndef TEACH_PAGE
     ui->verticalLayout->insertWidget(2,tableWidget);
     //隐藏列
     for(int i=0;i < AXIS_COUNTS;i++){
@@ -119,10 +122,9 @@ void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
         }
     }
 
-//    tableWidget->setColumnHidden(6,true);
-//    tableWidget->setColumnHidden(7,true);
     if(USE_SPACE_ROW)
         tableWidget->setRowHidden(tableWidget->rowCount() - 1,true);
+#endif
 
     //    ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
 //    int currentTuneType = ICKeyboard::Instace()->CurrentTuneSpeedType();
@@ -193,7 +195,7 @@ void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
 //    ui->speedEnableButton->setIcon(switchOff_);
 //    ui->speedEnableButton->setText(tr("Speed Disable"));
     SetProduct(ICMold::CurrentMold()->MoldParam(ICMold::Product));
-    currentMoldNum_ = host->HostStatus(ICVirtualHost::S).toInt();
+//    currentMoldNum_ = host->HostStatus(ICVirtualHost::S).toInt();
     UpdateHostParam();
 //    programListBackup_ = ICMold::CurrentMold()->ToUIItems();
 //    if(!isModify_)
@@ -510,47 +512,51 @@ void ICHCProgramMonitorFrame::SelectCurrentStep(int currentStep)
 //        //        modifyMap_.clear();
 //    }
     if(!this->isVisible()) return;
+#ifndef  TEACH_PAGE
     ICProgramPage::Instance_()->refreshCurrentRow(currentStep);
-//    oldStep_ = currentStep;
-//    if(currentStep < 0 || currentStep >= programList_.size())
-//    {
-//        qDebug()<<"current step wrong"<<currentStep;
-//        return;
-//    }
-//    if(!isFollow_)
-//    {
-//        return;
-//    }
-//    ui->moldContentListWidget->clearSelection();
-//    ICGroupMoldUIItem* gItem = &programList_[currentStep];
-//    currentStepItem_ = gItem;
-//    //    int selectedCount = gItem->ItemCount();
-//    startIndex_ = 0;
-//    for(int i = 0; i != currentStep; ++i)
-//    {
-//        startIndex_ += programList_.at(i).ItemCount();
-//    }
-//    if(startIndex_ < ui->moldContentListWidget->count())
-//    {
-//        ui->moldContentListWidget->scrollToItem(ui->moldContentListWidget->item(startIndex_));
-//    }
-//    const int topItemCount = gItem->TopItemCount();
-//    int nextTopItemIndex = startIndex_;
-//    for(int i = 0; i != topItemCount; ++i)
-//    {
-//        if(nextTopItemIndex < ui->moldContentListWidget->count())
-//        {
-//            ui->moldContentListWidget->item(nextTopItemIndex)->setSelected(true);
-//        }
-//        if(gItem->at(i).SubItemCount() != 0)
-//        {
-//            nextTopItemIndex += gItem->at(i).ItemCount();
-//        }
-//        else
-//        {
-//            ++nextTopItemIndex;
-//        }
-//    }
+#else
+
+#endif
+    oldStep_ = currentStep;
+    if(currentStep < 0 || currentStep >= programList_.size())
+    {
+        qDebug()<<"current step wrong"<<currentStep;
+        return;
+    }
+    if(!isFollow_)
+    {
+        return;
+    }
+    ui->moldContentListWidget->clearSelection();
+    ICGroupMoldUIItem* gItem = &programList_[currentStep];
+    currentStepItem_ = gItem;
+    //    int selectedCount = gItem->ItemCount();
+    startIndex_ = 0;
+    for(int i = 0; i != currentStep; ++i)
+    {
+        startIndex_ += programList_.at(i).ItemCount();
+    }
+    if(startIndex_ < ui->moldContentListWidget->count())
+    {
+        ui->moldContentListWidget->scrollToItem(ui->moldContentListWidget->item(startIndex_));
+    }
+    const int topItemCount = gItem->TopItemCount();
+    int nextTopItemIndex = startIndex_;
+    for(int i = 0; i != topItemCount; ++i)
+    {
+        if(nextTopItemIndex < ui->moldContentListWidget->count())
+        {
+            ui->moldContentListWidget->item(nextTopItemIndex)->setSelected(true);
+        }
+        if(gItem->at(i).SubItemCount() != 0)
+        {
+            nextTopItemIndex += gItem->at(i).ItemCount();
+        }
+        else
+        {
+            ++nextTopItemIndex;
+        }
+    }
 }
 
 void ICHCProgramMonitorFrame::SubStepChanged(uint8_t* subStep)

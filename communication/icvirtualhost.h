@@ -564,7 +564,9 @@ public:
         AUTOBIT   = 0x00000400,
         WAITBIT   = 0x00000800,
         PUNCHBIT = 0x000001000,
-        SAFEINFO  = 0x000002000
+        SAFEINFO  = 0x000002000,
+        PUNCHOUT  = 0x000004000
+
 
     };
 
@@ -638,6 +640,8 @@ public:
     void SetForcePunchModeEn(bool isEn);
     bool IsSafeInfoModeEn() const { return (SystemParameter((SYS_Function)).toInt() & SAFEINFO ) != 0;} //安全提示
     void SetSafeInfoModeEn(bool isEn);
+    bool IsPunchOutModeEn() const { return (SystemParameter((SYS_Function)).toInt() & PUNCHOUT ) != 0;} //冲压信号输出
+    void SetPunchOutModeEn(bool isEn);
 
     int CurrentStep() const { return (statusMap_.value(Step).toInt() & 0x00FF);}
     int CurrentStatus() const { return (statusMap_.value(Status).toUInt() & 0x0FFF);}
@@ -1131,6 +1135,15 @@ inline void ICVirtualHost::SetSafeInfoModeEn(bool isEn)
     int val = SystemParameter(SYS_Function).toInt();
     val &= (~SAFEINFO);
     (isEn ? val |= SAFEINFO : val &= (~SAFEINFO));
+    systemParamMap_.insert(SYS_Function, val);
+    isParamChanged_ = true;
+}
+
+inline void ICVirtualHost::SetPunchOutModeEn(bool isEn)
+{
+    int val = SystemParameter(SYS_Function).toInt();
+    val &= (~PUNCHOUT);
+    (isEn ? val |= PUNCHOUT : val &= (~PUNCHOUT));
     systemParamMap_.insert(SYS_Function, val);
     isParamChanged_ = true;
 }

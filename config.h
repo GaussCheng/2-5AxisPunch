@@ -36,5 +36,5 @@ static const char*  SHOW_VERSION =  SW_VERSION_PREFIX INCH"_"SW_VERSION;
 //#ifndef HC_SK_8
 //#define HC_SK_8
 //#endif
-
+//#define TEACH_PAGE
 #endif // CONFIG_H

@@ -12,6 +12,7 @@
 #include "icprogrampage.h"
 #include "icmainframe.h"
 #include "icinformationdialog.h"
+#include "config.h"
 
 class QStackedLayout;
 class QDialog;
@@ -116,8 +117,11 @@ private:
     QWidget * modifyPage_;
     QWidget * recordPage_;
     QWidget * monitorPage_;
+#ifdef TEACH_PAGE
+    ICHCInstructionPageFrame * instructPage_;
+#else
     ICProgramPage * instructPage_;
-
+#endif
     QWidget * baseFuncPage_;
     QWidget * axisPage_;
     QWidget * servoPage_;
