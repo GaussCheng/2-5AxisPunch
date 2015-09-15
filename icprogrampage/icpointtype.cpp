@@ -2,6 +2,7 @@
 #include "ui_icpointtype.h"
 #include "icparameterconversion.h"
 
+
 ICPointType* ICPointType::instance_;
 
 
@@ -20,15 +21,13 @@ ICPointType::ICPointType(QWidget *parent) :
     boxToType.insert(ui->checkbox_6,OUYY22_OFF);
     boxToType.insert(ui->checkbox_7,OUYY23_ON);
     boxToType.insert(ui->checkbox_8,OUYY23_OFF);
-    boxToType.insert(ui->checkbox_9,WAIT_X41);
-    boxToType.insert(ui->checkbox_10,WAIT_X42);
-    boxToType.insert(ui->checkbox_11,WAIT_X43);
-    boxToType.insert(ui->checkbox_12,WAIT_X44);
     boxToType.insert(ui->checkbox_13,RESEARVE);
     boxToType.insert(ui->checkbox_14,SMOOTH);
     boxToType.insert(ui->checkbox_15,WAITSAFE);
     boxToType.insert(ui->checkbox_16,PUNCHPERMIT);
 
+   c6Boxs << ui->checkbox_17 << ui->checkbox_18 << ui->checkbox_19 << ui->checkbox_20
+          << ui->checkbox_21 << ui->checkbox_22 << ui->checkbox_23 << ui->checkbox_24;
 
     foreach(QCheckBox *box,boxToType.keys()){
         box->setText(propertyToStr.value(boxToType.value(box)));
@@ -40,6 +39,32 @@ ICPointType::ICPointType(QWidget *parent) :
     ui->delayEdit->SetDecimalPlaces(1);
     ui->delayEdit->setValidator(validator);
     ui->delayEdit->SetThisIntToThisText(0);
+
+#ifdef IO_C6
+    boxToType.insert(ui->checkbox_9,WAIT_X40);
+    boxToType.insert(ui->checkbox_10,WAIT_X41);
+    boxToType.insert(ui->checkbox_11,WAIT_X42);
+    boxToType.insert(ui->checkbox_12,WAIT_X43);
+    ui->checkbox_12->hide();
+    ui->checkbox_3->hide();
+    ui->checkbox_4->hide();
+    this->resize(441,320);
+#else
+    boxToType.insert(ui->checkbox_9,WAIT_X41);
+    boxToType.insert(ui->checkbox_10,WAIT_X42);
+    boxToType.insert(ui->checkbox_11,WAIT_X43);
+    boxToType.insert(ui->checkbox_12,WAIT_X44);
+    foreach(QCheckBox * box,c6Boxs){
+        box->hide();
+    }
+    ui->gridLayout->addWidget(ui->checkbox_13,6,0);
+    ui->gridLayout->addWidget(ui->checkbox_14,6,1);
+    ui->gridLayout->addWidget(ui->checkbox_15,6,2);
+    ui->gridLayout->addWidget(ui->checkbox_16,7,0);
+    this->resize(441,300);
+
+#endif
+
 
 }
 
@@ -66,14 +91,21 @@ void ICPointType::Init_()
     propertyToStr.insert(OUYY22_OFF,tr("OUYY22_OFF"));
     propertyToStr.insert(OUYY23_ON,tr("OUYY23_ON"));
     propertyToStr.insert(OUYY23_OFF,tr("OUYY23_OFF"));
-    propertyToStr.insert(WAIT_X41,tr("WAIT_X41"));
-    propertyToStr.insert(WAIT_X42,tr("WAIT_X42"));
-    propertyToStr.insert(WAIT_X43,tr("WAIT_X43"));
-    propertyToStr.insert(WAIT_X44,tr("WAIT_X44"));
     propertyToStr.insert(RESEARVE,tr("NULL_Property"));
     propertyToStr.insert(SMOOTH,tr("SMOOTH"));
     propertyToStr.insert(WAITSAFE,tr("WAIT_SAFE"));
     propertyToStr.insert(PUNCHPERMIT,tr("PUNCH_PERMIT"));
+
+#ifdef IO_C6
+    propertyToStr.insert(WAIT_X40,tr("WAIT_X40"));
+    propertyToStr.insert(WAIT_X41,tr("WAIT_X41"));
+    propertyToStr.insert(WAIT_X42,tr("WAIT_X42"));
+#else
+    propertyToStr.insert(WAIT_X41,tr("WAIT_X41"));
+    propertyToStr.insert(WAIT_X42,tr("WAIT_X42"));
+    propertyToStr.insert(WAIT_X43,tr("WAIT_X43"));
+    propertyToStr.insert(WAIT_X44,tr("WAIT_X44"));
+#endif
 
 
 }

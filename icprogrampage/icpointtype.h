@@ -5,6 +5,7 @@
 #include <QCheckBox>
 #include <QMap>
 #include "icmold.h"
+#include "config.h"
 
 #define MAX_DEALY 60000
 
@@ -30,6 +31,7 @@ enum PointProperty{
     SMOOTH,
     WAITSAFE,
     PUNCHPERMIT,
+    WAIT_X40,
 
     NULL_Property = -1
 
@@ -96,6 +98,7 @@ private:
     QMap<QCheckBox*,PointProperty> boxToType;
     QList<QCheckBox*> boxs;
     QCheckBox* _box;
+    QList<QCheckBox*> c6Boxs;
 
     static ICPointType *instance_;
 

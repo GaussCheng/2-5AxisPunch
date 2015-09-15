@@ -7,8 +7,20 @@
     <x>0</x>
     <y>0</y>
     <width>441</width>
-    <height>277</height>
+    <height>376</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>320</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>376</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
@@ -41,42 +53,39 @@ QRadioButton::indicator:unchecked:disabled
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="2" column="1">
-      <widget class="QCheckBox" name="checkbox_6">
+     <item row="9" column="2">
+      <widget class="QCheckBox" name="checkbox_14">
        <property name="focusPolicy">
         <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
-        <string>CheckBox6</string>
-       </property>
-       <property name="checked">
-        <bool>false</bool>
+        <string>Smooth</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup</string>
        </attribute>
       </widget>
      </item>
-     <item row="0" column="1">
-      <widget class="QCheckBox" name="checkbox_2">
+     <item row="5" column="2">
+      <widget class="QCheckBox" name="checkbox_12">
        <property name="focusPolicy">
         <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
-        <string>CheckBox2</string>
+        <string>Wait X44</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup</string>
        </attribute>
       </widget>
      </item>
-     <item row="3" column="0">
+     <item row="4" column="0">
       <widget class="QCheckBox" name="checkbox_7">
        <property name="focusPolicy">
         <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
-        <string>CheckBox7</string>
+        <string>Reserve On</string>
        </property>
        <property name="checked">
         <bool>false</bool>
@@ -86,13 +95,49 @@ QRadioButton::indicator:unchecked:disabled
        </attribute>
       </widget>
      </item>
-     <item row="0" column="2">
-      <widget class="QCheckBox" name="checkbox_9">
+     <item row="4" column="1">
+      <widget class="QCheckBox" name="checkbox_8">
        <property name="focusPolicy">
         <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
-        <string>CheckBox9</string>
+        <string>Reserve Off</string>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QCheckBox" name="checkbox_21">
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="text">
+        <string>Y32 Off</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="1">
+      <widget class="QCheckBox" name="checkbox_22">
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="text">
+        <string>Y35 Off</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QCheckBox" name="checkbox_1">
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="text">
+        <string>Suck1 On</string>
        </property>
        <property name="checked">
         <bool>false</bool>
@@ -108,7 +153,43 @@ QRadioButton::indicator:unchecked:disabled
         <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
-        <string>CheckBox10</string>
+        <string>Wait X42</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item row="13" column="2">
+      <widget class="QCheckBox" name="checkbox_16">
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="text">
+        <string>Punch</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="QCheckBox" name="checkbox_20">
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="text">
+        <string>Y31 Off</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QCheckBox" name="checkbox_4">
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="text">
+        <string>Suck2 Off</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup</string>
@@ -116,51 +197,12 @@ QRadioButton::indicator:unchecked:disabled
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QCheckBox" name="checkbox_4">
+      <widget class="QCheckBox" name="checkbox_6">
        <property name="focusPolicy">
         <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
-        <string>CheckBox4</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">buttonGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item row="3" column="2">
-      <widget class="QCheckBox" name="checkbox_12">
-       <property name="focusPolicy">
-        <enum>Qt::NoFocus</enum>
-       </property>
-       <property name="text">
-        <string>CheckBox12</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">buttonGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item row="4" column="0">
-      <widget class="QCheckBox" name="checkbox_13">
-       <property name="focusPolicy">
-        <enum>Qt::NoFocus</enum>
-       </property>
-       <property name="text">
-        <string>CheckBox13</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">buttonGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item row="3" column="1">
-      <widget class="QCheckBox" name="checkbox_8">
-       <property name="focusPolicy">
-        <enum>Qt::NoFocus</enum>
-       </property>
-       <property name="text">
-        <string>CheckBox8</string>
+        <string>Clip Off</string>
        </property>
        <property name="checked">
         <bool>false</bool>
@@ -170,13 +212,29 @@ QRadioButton::indicator:unchecked:disabled
        </attribute>
       </widget>
      </item>
-     <item row="0" column="0">
-      <widget class="QCheckBox" name="checkbox_1">
+     <item row="0" column="2">
+      <widget class="QCheckBox" name="checkbox_9">
        <property name="focusPolicy">
         <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
-        <string>CheckBox1</string>
+        <string>Wait X41</string>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QCheckBox" name="checkbox_3">
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="text">
+        <string>Suck2 On</string>
        </property>
        <property name="checked">
         <bool>false</bool>
@@ -187,41 +245,12 @@ QRadioButton::indicator:unchecked:disabled
       </widget>
      </item>
      <item row="1" column="0">
-      <widget class="QCheckBox" name="checkbox_3">
-       <property name="focusPolicy">
-        <enum>Qt::NoFocus</enum>
-       </property>
-       <property name="text">
-        <string>CheckBox3</string>
-       </property>
-       <property name="checked">
-        <bool>false</bool>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">buttonGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item row="4" column="2">
-      <widget class="QCheckBox" name="checkbox_14">
-       <property name="focusPolicy">
-        <enum>Qt::NoFocus</enum>
-       </property>
-       <property name="text">
-        <string>CheckBox14</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">buttonGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item row="2" column="0">
       <widget class="QCheckBox" name="checkbox_5">
        <property name="focusPolicy">
         <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
-        <string>CheckBox5</string>
+        <string>Clip On</string>
        </property>
        <property name="checked">
         <bool>false</bool>
@@ -231,39 +260,102 @@ QRadioButton::indicator:unchecked:disabled
        </attribute>
       </widget>
      </item>
-     <item row="2" column="2">
+     <item row="9" column="0">
+      <widget class="QCheckBox" name="checkbox_19">
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="text">
+        <string>Y35 On</string>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="0">
+      <widget class="QCheckBox" name="checkbox_23">
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="text">
+        <string>Y36 On</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QCheckBox" name="checkbox_17">
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="text">
+        <string>Y31 On</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QCheckBox" name="checkbox_2">
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="text">
+        <string>Suck1 Off</string>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QCheckBox" name="checkbox_18">
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="text">
+        <string>Y32 On</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="2">
       <widget class="QCheckBox" name="checkbox_11">
        <property name="focusPolicy">
         <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
-        <string>CheckBox11</string>
+        <string>Wait X43</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup</string>
        </attribute>
       </widget>
      </item>
-     <item row="4" column="1">
+     <item row="8" column="2">
       <widget class="QCheckBox" name="checkbox_15">
        <property name="focusPolicy">
         <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
-        <string>CheckBox14</string>
+        <string>Wait Safe</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup</string>
        </attribute>
       </widget>
      </item>
-     <item row="5" column="0">
-      <widget class="QCheckBox" name="checkbox_16">
+     <item row="13" column="1">
+      <widget class="QCheckBox" name="checkbox_24">
        <property name="focusPolicy">
         <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
-        <string>CheckBox14</string>
+        <string>Y36 Off</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="2">
+      <widget class="QCheckBox" name="checkbox_13">
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="text">
+        <string>Reserve</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup</string>
@@ -323,6 +415,19 @@ height:40px ;</string>
       </widget>
      </item>
     </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
    </item>
   </layout>
  </widget>
