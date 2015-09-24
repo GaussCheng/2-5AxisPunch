@@ -30,7 +30,7 @@
 #define ROW_HIGHT 38
 
 //3D教导
-#define TEACH_3D
+//#define TEACH_3D
 
 namespace Ui {
 class ICProgramPage;
@@ -204,6 +204,20 @@ private:
     ICMoldItem waitX44;
 
     ICMoldItem outPermit2;
+
+#ifdef IO_C6
+    ICMoldItem outY30On;  //输出
+    ICMoldItem outY30Off;
+    ICMoldItem outY31On;
+    ICMoldItem outY31Off;
+    ICMoldItem outY35On;
+    ICMoldItem outY35Off;
+    ICMoldItem outY36On;
+    ICMoldItem outY36Off;
+#endif
+
+
+
 
 
     //遗弃

@@ -32,7 +32,14 @@ enum PointProperty{
     WAITSAFE,
     PUNCHPERMIT,
     WAIT_X40,
-
+    OUYY30_ON,
+    OUYY30_OFF,
+    OUYY31_ON,
+    OUYY31_OFF,
+    OUYY35_ON,
+    OUYY35_OFF,
+    OUYY36_ON,
+    OUYY36_OFF,
     NULL_Property = -1
 
 } ;

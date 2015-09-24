@@ -29,12 +29,7 @@ ICPointType::ICPointType(QWidget *parent) :
    c6Boxs << ui->checkbox_17 << ui->checkbox_18 << ui->checkbox_19 << ui->checkbox_20
           << ui->checkbox_21 << ui->checkbox_22 << ui->checkbox_23 << ui->checkbox_24;
 
-    foreach(QCheckBox *box,boxToType.keys()){
-        box->setText(propertyToStr.value(boxToType.value(box)));
-        connect(box,SIGNAL(stateChanged(int)),
-                SLOT(stateChanged(int)));
 
-    }
     QIntValidator * validator = new QIntValidator(0, MAX_DEALY, this);
     ui->delayEdit->SetDecimalPlaces(1);
     ui->delayEdit->setValidator(validator);
@@ -45,6 +40,15 @@ ICPointType::ICPointType(QWidget *parent) :
     boxToType.insert(ui->checkbox_10,WAIT_X41);
     boxToType.insert(ui->checkbox_11,WAIT_X42);
     boxToType.insert(ui->checkbox_12,WAIT_X43);
+    boxToType.insert(ui->checkbox_17,OUYY30_ON);
+    boxToType.insert(ui->checkbox_20,OUYY30_OFF);
+    boxToType.insert(ui->checkbox_18,OUYY31_ON);
+    boxToType.insert(ui->checkbox_21,OUYY31_OFF);
+    boxToType.insert(ui->checkbox_19,OUYY35_ON);
+    boxToType.insert(ui->checkbox_22,OUYY35_OFF);
+    boxToType.insert(ui->checkbox_23,OUYY36_ON);
+    boxToType.insert(ui->checkbox_24,OUYY36_OFF);
+
     ui->checkbox_12->hide();
     ui->checkbox_3->hide();
     ui->checkbox_4->hide();
@@ -65,7 +69,12 @@ ICPointType::ICPointType(QWidget *parent) :
 
 #endif
 
+    foreach(QCheckBox *box,boxToType.keys()){
+        box->setText(propertyToStr.value(boxToType.value(box)));
+        connect(box,SIGNAL(stateChanged(int)),
+                SLOT(stateChanged(int)));
 
+    }
 }
 
 void ICPointType::Init_()
@@ -100,6 +109,14 @@ void ICPointType::Init_()
     propertyToStr.insert(WAIT_X40,tr("WAIT_X40"));
     propertyToStr.insert(WAIT_X41,tr("WAIT_X41"));
     propertyToStr.insert(WAIT_X42,tr("WAIT_X42"));
+    propertyToStr.insert(OUYY31_ON,tr("OUYY31_ON"));
+    propertyToStr.insert(OUYY31_OFF,tr("OUYY31_OFF"));
+    propertyToStr.insert(OUYY30_ON,tr("OUYY30_ON"));
+    propertyToStr.insert(OUYY30_OFF,tr("OUYY30_OFF"));
+    propertyToStr.insert(OUYY35_ON,tr("OUYY35_ON"));
+    propertyToStr.insert(OUYY35_OFF,tr("OUYY35_OFF"));
+    propertyToStr.insert(OUYY36_ON,tr("OUYY36_ON"));
+    propertyToStr.insert(OUYY36_OFF,tr("OUYY36_OFF"));
 #else
     propertyToStr.insert(WAIT_X41,tr("WAIT_X41"));
     propertyToStr.insert(WAIT_X42,tr("WAIT_X42"));

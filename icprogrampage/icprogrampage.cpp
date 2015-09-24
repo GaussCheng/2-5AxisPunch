@@ -897,7 +897,16 @@ void ICProgramPage::InitPointToItem()
     propertyToItem.insert(WAIT_X43,waitX43);
     propertyToItem.insert(WAIT_X44,waitX44);
     propertyToItem.insert(PUNCHPERMIT,outPermit2);
-
+#ifdef IO_C6
+    propertyToItem.insert(OUYY30_ON,outY30On);
+    propertyToItem.insert(OUYY30_OFF,outY30Off);
+    propertyToItem.insert(OUYY31_ON,outY31On);
+    propertyToItem.insert(OUYY31_OFF,outY31Off);
+    propertyToItem.insert(OUYY35_ON,outY35On);
+    propertyToItem.insert(OUYY35_OFF,outY35Off);
+    propertyToItem.insert(OUYY36_ON,outY36On);
+    propertyToItem.insert(OUYY36_OFF,outY36Off);
+#endif
 
 
 }
@@ -998,6 +1007,17 @@ void ICProgramPage::InitFixMoldItems()
     outY22Off = MK_MoldItem(7,3,10,12,0,0,0,0,0,45);
     outY23On  = MK_MoldItem(7,3,11,12,0,1,0,0,0,45);
     outY23Off = MK_MoldItem(7,3,11,12,0,0,0,0,0,45);
+
+#ifdef IO_C6
+    outY30On  = MK_MoldItem(7,3,16,ICMold::GOutY,0,1,0,0,0,45);
+    outY30Off = MK_MoldItem(7,3,16,ICMold::GOutY,0,0,0,0,0,45);
+    outY31On  = MK_MoldItem(7,3,17,ICMold::GOutY,0,1,0,0,0,45);
+    outY31Off = MK_MoldItem(7,3,17,ICMold::GOutY,0,0,0,0,0,45);
+    outY35On  = MK_MoldItem(7,3,21,ICMold::GOutY,0,1,0,0,0,45);
+    outY35Off = MK_MoldItem(7,3,21,ICMold::GOutY,0,0,0,0,0,45);
+    outY36On  = MK_MoldItem(7,3,22,ICMold::GOutY,0,1,0,0,0,45);
+    outY36Off = MK_MoldItem(7,3,22,ICMold::GOutY,0,0,0,0,0,45);
+#endif
 
     waitX41   = MK_MoldItem(9,9,25,10,0,1,0,0,3000,54);
     waitX42   = MK_MoldItem(10,10,26,10,0,1,0,0,3000,57);
