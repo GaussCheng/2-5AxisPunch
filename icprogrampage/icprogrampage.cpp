@@ -168,7 +168,12 @@ void ICProgramPage::refreshCurrentRow(int step)
 
     int startIndex = 0,oldPoint = 0, pStart = 0;
     foreach(ICMoldItem item,allItems){
-        if(item.GMVal() < ICMold::GX || item.GMVal() > ICMold::GC ){
+#ifdef TEACH_3D
+        if(item.GMVal() !=  ICMold::GARC )
+#else
+        if(item.GMVal() < ICMold::GX || item.GMVal() > ICMold::GC )
+#endif
+        {
             //M值跟随上一个位置
             if((item.GMVal() >=ICMold::GMWait &&  item.GMVal()< ICMold::GEuOut )
                     || item.GMVal() == ICMold::GCondition
@@ -1276,7 +1281,12 @@ void ICProgramPage::GT_CalculateItem(QList<ICMoldItem>& items)
 #endif
         {
             items[i].SetNum(oldNum);
-            if(items.at(i).GMVal()  == GT_LastAxisNum()){
+#ifdef TEACH_3D
+            if(items.at(i).IFPos()  == GT_LastAxisNum())
+#else
+            if(items.at(i).GMVal()  == GT_LastAxisNum())
+#endif
+            {
                 oldNum ++;
             }
 

@@ -29,6 +29,9 @@
 #define ROW_COUNTS ui->tableWidget->rowCount() - USE_SPACE_ROW
 #define ROW_HIGHT 38
 
+//3D教导
+#define TEACH_3D
+
 namespace Ui {
 class ICProgramPage;
 }
