@@ -355,6 +355,16 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
 
     installEventFilter(this);
 
+#ifndef Q_WS_WIN32
+           int keyFD_ = open("/dev/input/event1", O_RDWR);
+           struct input_event inputEvent;
+           inputEvent.type = EV_SYN; //__set_bit
+           inputEvent.code = SYN_CONFIG;  //__set_bit
+           inputEvent.value = 1;
+           write(keyFD_,&inputEvent,sizeof(inputEvent));
+           ::close(keyFD_);
+#endif
+
 
 }
 
@@ -398,10 +408,11 @@ void MainFrame::changeEvent(QEvent *e)
 
 void MainFrame::keyPressEvent(QKeyEvent *e)
 {
-    SetHasInput(true);
+//    SetHasInput(true);
     if(keyMap.contains(e->key()))
     {
         int key = keyMap.value(e->key());
+//        qDebug()<<key;
         switch(key)
         {
         default:
@@ -447,18 +458,18 @@ void MainFrame::keyPressEvent(QKeyEvent *e)
             currentKeySeq.clear();
         }
 #ifndef Q_WS_WIN32
-        static bool isExeced = false;
-        if(!isExeced)
-        {
-            struct input_event inputEvent;
-            inputEvent.type = EV_SYN; //__set_bit
-            inputEvent.code = SYN_CONFIG;  //__set_bit
-            inputEvent.value = 1;
-            int keyFD_ = open("/dev/input/event1", O_RDWR);
-            write(keyFD_,&inputEvent,sizeof(inputEvent));
-            ::close(keyFD_);
-            isExeced = true;
-        }
+//        static bool isExeced = false;
+//        if(!isExeced)
+//        {
+//            struct input_event inputEvent;
+//            inputEvent.type = EV_SYN; //__set_bit
+//            inputEvent.code = SYN_CONFIG;  //__set_bit
+//            inputEvent.value = 1;
+//            int keyFD_ = open("/dev/input/event1", O_RDWR);
+//            write(keyFD_,&inputEvent,sizeof(inputEvent));
+//            ::close(keyFD_);
+//            isExeced = true;
+//        }
 #endif
         //        ICKeyboardHandler::Instance()->Keypressed(key);
     }

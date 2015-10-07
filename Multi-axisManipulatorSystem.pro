@@ -4,25 +4,39 @@
 TARGET = Multi-axisManipulatorSystem
 TEMPLATE = app
 QMAKE_CFLAGS += -std=c99
+QMAKE_CXX = ccache $${QMAKE_CXX}
 QT += sql
+
+DEFINES += IO_C6
 
 SK_SIZE = 8
 
-
-OBJECTS_DIR = temp_$${SK_SIZE}
-UI_DIR = temp_$${SK_SIZE}
-MOC_DIR = temp_$${SK_SIZE}
-RCC_DIR = temp_$${SK_SIZE}
-DESTDIR = bin
-QMAKE_CXX = ccache $${QMAKE_CXX}
-CONFIG(debug, debug|release) {
-#    LIBS += -lprofiler
-DESTDIR = bin_debug
-OBJECTS_DIR = temp_$${SK_SIZE}_d
-UI_DIR = temp_$${SK_SIZE}_d
-MOC_DIR = temp_$${SK_SIZE}_d
-RCC_DIR = temp_$${SK_SIZE}_d
+HW_VERSION = "1.3"
+SW_VERSION = "6.0.0"
+contains(DEFINES, IO_C6){
+HW_TYPE = "C6"
+}else{
+HW_TYPE = "C5"
 }
+
+S_VERSION = CYR$${SK_SIZE}_$${HW_TYPE}_$${SW_VERSION}
+VERSTR = '\\"$${S_VERSION}\\"'
+DEFINES += SHOW_VERSION=\"$${VERSTR}\"
+
+
+
+suffix = Size$${SK_SIZE}
+CONFIG(debug, debug|release) {
+suffix = $${suffix}_debug
+}
+else{
+suffix = $${suffix}_release
+}
+DESTDIR = bin_$${suffix}
+OBJECTS_DIR = temp_$${suffix}
+UI_DIR = temp_$${suffix}
+MOC_DIR = temp_$${suffix}
+RCC_DIR = temp_$${suffix}
 
 
 win32{INCLUDEPATH += ./}
@@ -152,19 +166,49 @@ OTHER_FILES += \
     版本日志.txt \
     问题.txt
 
-QMAKE_POST_LINK += "cp *.qm $$DESTDIR"
-CONFIG(debug, debug|release){
-#system("python rename_ui.py $$UI_DIR")
-#QMAKE_POST_LINK += "cp *.qm bin_debug"
-message($$SK_SIZE)
-}else{
-message($$SK_SIZE)
-#system("python rename_ui.py $${UI_DIR}")
-#QMAKE_POST_LINK += "&& arm-linux-gnueabihf-strip $$DESTDIR/$$TARGET && HCbcrypt.sh -r $$DESTDIR/$$TARGET"
-#QMAKE_POST_LINK += "&& chmod +x tools/make_target && tools/make_target"
-}
-
 FORMS += \
     icrecaldialog.ui \
     icbackupdialog.ui
 
+message($$DEFINES)
+
+
+QMAKE_POST_LINK += "cp *.qm $$DESTDIR"
+QMAKE_PRE_LINK += "lrelease $${TARGET}.pro"
+#message($${UI_DIR})
+system("python rename_ui.py $${UI_DIR}")
+contains(QMAKE_CXX, g++){
+#QMAKE_POST_LINK += "cp *.qm bin_debug"
+}else{
+#system("python rename_ui.py temp_$${SK_SIZE}")
+unix:QMAKE_POST_LINK += " && HCbcrypt.sh -r $$DESTDIR/$$TARGET"
+unix:QMAKE_POST_LINK += "&& chmod +x tools/make_target && tools/make_target $$PWD $$DESTDIR" $${S_VERSION}
+target.path = /opt/Qt/apps
+configsPathBase = tools/Reinstall
+translations.path = $${target.path}
+translations.files = *.qm
+records.path = /opt/Qt/apps/records
+records.files += $${configsPathBase}/$${SK_SIZE}records/*
+subs.path = /opt/Qt/apps/subs
+subs.files += $${configsPathBase}/subs/*
+sysconfig.path = /opt/Qt/apps/sysconfig
+sysconfig.files += $${configsPathBase}/$${SK_SIZE}sysconfig/*
+resource.path = /opt/Qt/apps/resource
+resource.files += $${configsPathBase}/$${SK_SIZE}resource/*
+stylesheet.path = /opt/Qt/apps/stylesheet
+stylesheet.files += $${configsPathBase}/stylesheet/*
+others.path = /opt/Qt/apps
+others.files += $${configsPathBase}/3-5AxisRobotDatabase
+scripts.path = /usr/bin
+scripts.files += $${configsPathBase}/$${SK_SIZE}RunApp/*
+keymap.path = /home/root
+keymap.files =$${configsPathBase}/$${SK_SIZE}-inch-qmap/*
+testApp.path = /opt/Qt/apps
+testApp.files += $${configsPathBase}/3a8HardwareTest-$${SK_SIZE}-inch
+testApp.files += $${configsPathBase}/3A8HardwareTest.en_CH.qm
+INSTALLS += target translations records subs sysconfig resource stylesheet others scripts keymap testApp
+for(sh, scripts.files){
+QMAKE_POST_LINK += " && chmod +x $${sh}"
+}
+message($$QMAKE_POST_LINK)
+}
