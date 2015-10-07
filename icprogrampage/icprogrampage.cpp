@@ -84,7 +84,12 @@ ICProgramPage::ICProgramPage(QWidget *parent,int _pageIndex,QString pageName) :
         connect(manualButtons.at(i),SIGNAL(clicked()),
                 this,SLOT(OnShortcutTriggered()));
         connect(manualButtons.at(i),SIGNAL(clicked()),
-                this,SLOT(OnShortcutReleased()));    }
+                this,SLOT(OnShortcutReleased()));
+    }
+
+#ifdef IO_C6
+    ui->manual2Button->hide();
+#endif
 
 //       ui->saveButton->hide();
 }
