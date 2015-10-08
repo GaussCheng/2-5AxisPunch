@@ -77,6 +77,8 @@ private slots:
 
     void on_limitFunctionBox_toggled(bool checked);
 
+    void on_mmcFix_clicked();
+
 private:
     bool CheckRestoreSystemFiles_();
     bool CheckRestoreMachineFiles_();

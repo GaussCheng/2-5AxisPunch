@@ -212,3 +212,4 @@ QMAKE_POST_LINK += " && chmod +x $${sh}"
 }
 message($$QMAKE_POST_LINK)
 }
+

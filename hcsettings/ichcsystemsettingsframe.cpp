@@ -767,14 +767,14 @@ bool ICHCSystemSettingsFrame::CheckRestoreMachineFiles_()
 //                QMessageBox::warning(this, tr("Warnning"), tr("Wrong Rotation config format!"));
 //                return false;
 //            }
-            for(int j = 0; j != cols.at(1).size(); ++j)
-            {
-                if(!cols.at(1).at(j).isDigit())
-                {
-                    QMessageBox::warning(this, tr("Warnning"), tr("Wrong Rotation config format!"));
-                    return false;
-                }
-            }
+//            for(int j = 0; j != cols.at(1).size(); ++j)
+//            {
+//                if(!cols.at(1).at(j).isDigit())
+//                {
+//                    QMessageBox::warning(this, tr("Warnning"), tr("Wrong Rotation config format!"));
+//                    return false;
+//                }
+//            }
 
         }
     }
@@ -791,4 +791,16 @@ void ICHCSystemSettingsFrame::on_clearButton_clicked()
 void ICHCSystemSettingsFrame::on_limitFunctionBox_toggled(bool checked)
 {
     ICParametersSave::Instance()->SetRegisterFunction(checked);
+}
+
+void ICHCSystemSettingsFrame::on_mmcFix_clicked()
+{
+    if(QMessageBox::warning(this, tr("MMC Fix"),
+                            tr("After fix will auto reboot. Continue?"),
+                            QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes)
+    {
+        ::system("e2fsck -p /dev/mmcblk0");
+    }
+
+
 }

@@ -4156,6 +4156,16 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="798"/>
+        <source>MMC Fix</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="799"/>
+        <source>After fix will auto reboot. Continue?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="660"/>
         <source>The system will be reboot to calibrate! Do you want to continue?</source>
         <translation type="unfinished"></translation>

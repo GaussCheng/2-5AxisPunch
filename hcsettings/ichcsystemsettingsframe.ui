@@ -430,6 +430,31 @@ QRadioButton::indicator:unchecked:disabled
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
+          <widget class="QPushButton" name="mmcFix">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>130</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>MMC Fix</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QLabel" name="versionLabel_2">
            <property name="text">
             <string/>
@@ -976,7 +1001,7 @@ QRadioButton::indicator:unchecked:disabled
  </resources>
  <connections/>
  <buttongroups>
-  <buttongroup name="buttonGroup_2"/>
   <buttongroup name="languageButtonGroup"/>
+  <buttongroup name="buttonGroup_2"/>
  </buttongroups>
 </ui>

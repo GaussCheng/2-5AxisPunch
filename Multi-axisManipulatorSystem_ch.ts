@@ -5803,6 +5803,16 @@ Reason</source>
         <translation>警告</translation>
     </message>
     <message>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="798"/>
+        <source>MMC Fix</source>
+        <translation>存储器修复</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="799"/>
+        <source>After fix will auto reboot. Continue?</source>
+        <translation>修复后会自动重启.继续吗?</translation>
+    </message>
+    <message>
         <source>Backup files is not exists!</source>
         <translation type="obsolete">备份文件不存在！</translation>
     </message>
