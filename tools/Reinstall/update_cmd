@@ -1,0 +1,18 @@
+#! /bin/sh
+
+cp Multi-axisManipulatorSystem* /opt/Qt/apps -f
+cp 3-5AxisRobotDatabase /opt/Qt/apps -f
+cp -rf records resource stylesheet subs sysconfig Alarm.log /opt/Qt/apps
+cp RunApp.sh /usr/bin -f
+cp bcrypt /usr/bin -f
+cp decrypt.sh /usr/bin -f
+cp 11-usb-mount.rules /etc/udev/rules.d -f
+rm -r /Settings/sysconfig
+cp 3a8.qmap /home/root -f
+cp QtAutorun.sh /usr/bin -f
+cp 3a8HardwareTest* /opt/Qt/apps -f
+cp test_robot.sh /opt/Qt/apps -f
+reboot
+#cd 3a8
+#cp -rf records subs sysconfig /mnt/database
+#reboot

@@ -1,0 +1,5 @@
+# Auto-mount any USB
+ACTION=="add", KERNEL=="sd[a-z]", SUBSYSTEM=="block", RUN+="/etc/udev/scripts/mount-usb.sh"
+ACTION=="remove", KERNEL=="sd[a-z]", SUBSYSTEM=="block", RUN+="/etc/udev/scripts/mount-usb.sh"
+ACTION=="add", KERNEL=="sd[a-z][1-9]*", SUBSYSTEM=="block", RUN+="/etc/udev/scripts/mount-usb.sh"
+ACTION=="remove", KERNEL=="sd[a-z][1-9]*", SUBSYSTEM=="block", RUN+="/etc/udev/scripts/mount-usb.sh"

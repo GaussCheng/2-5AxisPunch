@@ -1,0 +1,32 @@
+#! /usr/bin/python3
+
+import os
+import sys
+import re
+
+fileName = os.path.join("icconfigstring")
+includeFileContent = open(fileName+".h").read()
+pattern = re.compile(r'kCS_[A-Za-z0-9_]*,')
+configIDs = pattern.findall(includeFileContent)
+print(configIDs)
+
+toGen = "//#AUTO GEN BEGIN \nQString ICConfigString::ConfigString(int configID)\n{\n"
+toGen += "    switch (configID) \n    {\n"
+for id in configIDs:
+  toGen += '        case {0}: return tr(\"{0}\");\n'.format(id[:-1])
+toGen += '        default: return tr(\"No IMPL\");\n    }\n}\n'
+toGen += "//#AUTO GEN END"
+
+cppFileContent = open(fileName + ".cpp").read()
+
+flagBegin = cppFileContent.find("//#AUTO GEN BEGIN")
+
+toWrite = "";
+
+if flagBegin < 0:
+  toWrite = cppFileContent + toGen
+else:
+  flagEnd = cppFileContent.find("//#AUTO GEN END")
+  toWrite = cppFileContent[0: flagBegin] + toGen + cppFileContent[flagEnd + len("//#AUTO GEN END"):];
+
+open(fileName + ".cpp","w").write(toWrite);
