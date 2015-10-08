@@ -72,17 +72,17 @@ echo "Create reinstall done!"
 ####### 创建更新包
 
 echo ${swVersion}
-updateDir=${workDir}/${binDir}/Update/HCRobotPanel${swVersion}
+updateDir=${workDir}/${binDir}/Update/HCPunch${swVersion}
 rm -r ${workDir}/${binDir}/Update
 mkdir ${workDir}/${binDir}/Update
-mkdir ${workDir}/${binDir}/Update/HCRobotPanel${swVersion}
-cp -r ${workDir}/tools/Update/* ${workDir}/${binDir}/Update/HCRobotPanel${swVersion}
+mkdir ${workDir}/${binDir}/Update/HCPunch${swVersion}
+cp -r ${workDir}/tools/Update/* ${workDir}/${binDir}/Update/HCPunch${swVersion}
 cp ${workDir}/${binDir}/Multi-axisManipulatorSystem ${updateDir} -f
 cp ${workDir}/Multi-axisManipulatorSystem_ch.qm ${updateDir} -f
 cp ${workDir}/Multi-axisManipulatorSystem_en.qm ${updateDir} -f
 
 echo ${updateDir}.tar ${updateDir}
-cd ${workDir}/${binDir}/Update/ && tar -cf HCRobotPanel${swVersion}.tar HCRobotPanel${swVersion}
+cd ${workDir}/${binDir}/Update/ && tar -cf HCPunch${swVersion}.tar HCPunch${swVersion}
 HCbcrypt.sh ${updateDir}.tar
 
 echo "Create update done!"
