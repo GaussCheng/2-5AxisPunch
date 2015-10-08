@@ -799,7 +799,7 @@ void ICHCSystemSettingsFrame::on_mmcFix_clicked()
                             tr("After fix will auto reboot. Continue?"),
                             QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes)
     {
-        ::system("e2fsck -p /dev/mmcblk0");
+        ::system("e2fsck -p /dev/mmcblk0p2");
     }
 
 
