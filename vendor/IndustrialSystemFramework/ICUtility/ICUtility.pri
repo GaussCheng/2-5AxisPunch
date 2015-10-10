@@ -1,7 +1,7 @@
 INCLUDEPATH += $$PWD
 DEPENDPATH += $$PWD
 
-SOURCES += icutility.cpp \
+SOURCES += $$PWD/icutility.cpp \
     #$$PWD/ictimerpool.cpp \
     $$PWD/icupdatesystem.cpp \
     $$PWD/icobjectpool.cpp \
