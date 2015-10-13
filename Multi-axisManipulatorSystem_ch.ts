@@ -9965,52 +9965,52 @@ ModifyTime</source>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="1024"/>
         <source>Punch-9</source>
-        <translation>冲床9</translation>
+        <translation>机械手9</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="996"/>
         <source>Punch-8</source>
-        <translation>冲床8</translation>
+        <translation>机械手8</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="884"/>
         <source>Punch-1</source>
-        <translation>冲床1</translation>
+        <translation>机械手1</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="856"/>
         <source>Punch-2</source>
-        <translation>冲床2</translation>
+        <translation>机械手2</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="800"/>
         <source>Punch-4</source>
-        <translation>冲床4</translation>
+        <translation>机械手4</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="968"/>
         <source>Punch-5</source>
-        <translation>冲床5</translation>
+        <translation>机械手5</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="828"/>
         <source>Punch-3</source>
-        <translation>冲床3</translation>
+        <translation>机械手3</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="940"/>
         <source>Punch-6</source>
-        <translation>冲床6</translation>
+        <translation>机械手6</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="1052"/>
         <source>Punch-10</source>
-        <translation>冲床10</translation>
+        <translation>机械手10</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="912"/>
         <source>Punch-7</source>
-        <translation>冲床7</translation>
+        <translation>机械手7</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="217"/>
@@ -10183,37 +10183,37 @@ ModifyTime</source>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="764"/>
         <source>Select</source>
-        <translation>冲床选择</translation>
+        <translation>机械手选择</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="1080"/>
         <source>Punch-11</source>
-        <translation>冲床11</translation>
+        <translation>机械手11</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="1108"/>
         <source>Punch-12</source>
-        <translation>冲床12</translation>
+        <translation>机械手12</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="1136"/>
         <source>Punch-13</source>
-        <translation>冲床13</translation>
+        <translation>机械手13</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="1164"/>
         <source>Punch-14</source>
-        <translation>冲床14</translation>
+        <translation>机械手14</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="1192"/>
         <source>Punch-15</source>
-        <translation>冲床15</translation>
+        <translation>机械手15</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="1220"/>
         <source>Punch-16</source>
-        <translation>冲床16</translation>
+        <translation>机械手16</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="2318"/>
@@ -10504,7 +10504,7 @@ ModifyTime</source>
         <location filename="hcsettings/icstructdefineframe.ui" line="737"/>
         <location filename="hcsettings/icstructdefineframe.cpp" line="424"/>
         <source>Other Define</source>
-        <translation>冲床配置</translation>
+        <translation>机械手配置</translation>
     </message>
     <message>
         <source>Escape</source>
