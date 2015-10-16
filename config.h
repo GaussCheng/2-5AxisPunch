@@ -27,7 +27,7 @@
 
 //C6 IO板
 #define IO_C6
-//#define TEACH_PAGE
+#define TEACH_PAGE
 #ifdef IO_C6
 #define HW_TYPE "C6"
 #else
