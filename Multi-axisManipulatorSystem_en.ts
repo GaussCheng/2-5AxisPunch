@@ -4188,44 +4188,41 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="103"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="46"/>
         <source>Vertical-1</source>
         <oldsource>Vertical</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="60"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="33"/>
         <source>Horizontal-2</source>
         <oldsource>Horizontal</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="46"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="115"/>
         <source>Horizontal-1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="93"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="108"/>
         <source>Vertical-2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="151"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="143"/>
         <source>Punch Time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="158"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="129"/>
         <source>Fetch Time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichctimeframe.ui" line="39"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="53"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="67"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="113"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="144"/>
-        <location filename="hcsettings/ichctimeframe.ui" line="165"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="26"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="136"/>
+        <location filename="hcsettings/ichctimeframe.ui" line="153"/>
         <source>s</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6006,164 +6003,164 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="364"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="721"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="369"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="726"/>
         <source>UpDown</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="364"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="721"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="369"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="726"/>
         <source>Rotated</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="364"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="721"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="369"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="726"/>
         <source>Windup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="364"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="721"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="369"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="726"/>
         <source>Type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="365"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="722"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="370"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="727"/>
         <source>Rollovers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="445"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="464"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="480"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="503"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="529"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="562"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="584"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="596"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="603"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="638"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="682"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="450"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="469"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="485"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="508"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="534"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="567"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="589"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="601"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="608"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="643"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="687"/>
         <source>information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="481"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="486"/>
         <source>%1Can not Edit Point!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="445"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="503"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="562"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="596"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="450"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="508"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="567"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="601"/>
         <source>Input Error!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="464"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="529"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="584"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="603"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="469"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="534"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="589"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="608"/>
         <source>Input Value Not %1 To %2 Range!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="470"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="475"/>
         <source>s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="639"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="644"/>
         <source>%1Can not Setting Point!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="683"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="688"/>
         <source>%1Can not Test Point!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="365"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="722"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="370"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="727"/>
         <source>Delay</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="365"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="722"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="370"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="727"/>
         <source>Speed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1026"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1031"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1137"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1146"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1166"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1051"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1056"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1162"/>
         <location filename="icprogrampage/icprogrampage.cpp" line="1171"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1187"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1202"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1191"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1196"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1212"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1227"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1026"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1137"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1051"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1162"/>
         <source>Standard Mold Cannot Modify!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1031"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1056"/>
         <source>Max Point Count Beyond %1!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1050"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1075"/>
         <source>warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1051"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1076"/>
         <source>Not wait point Can Set Smooth!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1146"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1171"/>
         <source>IS Delete %1 Smooth Action !</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1166"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1191"/>
         <source>Canot Delete %1 action!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1171"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1196"/>
         <source>If Delete current Row?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1187"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1212"/>
         <source>Canot Delete Space Row!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1202"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1227"/>
         <source>Save success!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="1322"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="1347"/>
         <source>(SMOOTH)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="364"/>
-        <location filename="icprogrampage/icprogrampage.cpp" line="721"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="369"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="726"/>
         <source>FrontBack</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6179,12 +6176,12 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="692"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="697"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icprogrampage/icprogrampage.cpp" line="693"/>
+        <location filename="icprogrampage/icprogrampage.cpp" line="698"/>
         <source>Has not been origin!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6536,14 +6533,14 @@ Please enter an digit between </source>
     <name>ICStructDefineFrame</name>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="14"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="366"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="370"/>
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="44"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="56"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="367"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="371"/>
         <source>Arm Define</source>
         <oldsource>Signal Define</oldsource>
         <translation type="unfinished"></translation>
@@ -6563,7 +6560,6 @@ Please enter an digit between </source>
         <location filename="hcsettings/icstructdefineframe.ui" line="1955"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="2002"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="2042"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="369"/>
         <location filename="hcsettings/icstructdefineframe.cpp" line="373"/>
         <location filename="hcsettings/icstructdefineframe.cpp" line="377"/>
         <location filename="hcsettings/icstructdefineframe.cpp" line="381"/>
@@ -6571,6 +6567,7 @@ Please enter an digit between </source>
         <location filename="hcsettings/icstructdefineframe.cpp" line="389"/>
         <location filename="hcsettings/icstructdefineframe.cpp" line="393"/>
         <location filename="hcsettings/icstructdefineframe.cpp" line="397"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="401"/>
         <source>None</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6682,7 +6679,6 @@ Please enter an digit between </source>
         <location filename="hcsettings/icstructdefineframe.ui" line="243"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="268"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="307"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="370"/>
         <location filename="hcsettings/icstructdefineframe.cpp" line="374"/>
         <location filename="hcsettings/icstructdefineframe.cpp" line="378"/>
         <location filename="hcsettings/icstructdefineframe.cpp" line="382"/>
@@ -6690,6 +6686,7 @@ Please enter an digit between </source>
         <location filename="hcsettings/icstructdefineframe.cpp" line="390"/>
         <location filename="hcsettings/icstructdefineframe.cpp" line="394"/>
         <location filename="hcsettings/icstructdefineframe.cpp" line="398"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="402"/>
         <source>Pneumatic</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6702,7 +6699,6 @@ Please enter an digit between </source>
         <location filename="hcsettings/icstructdefineframe.ui" line="248"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="273"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="312"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="371"/>
         <location filename="hcsettings/icstructdefineframe.cpp" line="375"/>
         <location filename="hcsettings/icstructdefineframe.cpp" line="379"/>
         <location filename="hcsettings/icstructdefineframe.cpp" line="383"/>
@@ -6710,6 +6706,7 @@ Please enter an digit between </source>
         <location filename="hcsettings/icstructdefineframe.cpp" line="391"/>
         <location filename="hcsettings/icstructdefineframe.cpp" line="395"/>
         <location filename="hcsettings/icstructdefineframe.cpp" line="399"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="403"/>
         <source>Servo</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6825,7 +6822,7 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="737"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="424"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="428"/>
         <source>Other Define</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6912,7 +6909,7 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="1805"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="309"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="313"/>
         <source>Start</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7111,23 +7108,23 @@ Please enter an digit between </source>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="4626"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="425"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="522"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="429"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="526"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="299"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="303"/>
         <source>Origining</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="519"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="523"/>
         <source>Tips</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="519"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="523"/>
         <source>Save Sucessfully!</source>
         <translation type="unfinished"></translation>
     </message>

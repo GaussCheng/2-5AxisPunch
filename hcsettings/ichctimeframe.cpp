@@ -33,6 +33,19 @@ ICHCTimeFrame::ICHCTimeFrame(QWidget *parent) :
     ui->label_10->hide();
     ui->horizontal2LineEdit->hide();
     ui->label_28->hide();
+
+    ui->label_2->hide();
+    ui->mainArmDownEdit->hide();
+//    ui->label_18->hide();
+
+    ui->label_7->hide();
+    ui->mainArmForwardEdit->hide();
+//    ui->label_25->hide();
+
+    ui->label_8->hide();
+    ui->mainArmBackwardEdit->hide();
+//    ui->label_26->hide();
+
     InitInterFace();
 }
 

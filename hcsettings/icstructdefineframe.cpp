@@ -241,6 +241,10 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
 
     ICLogInit
 
+#ifdef IO_C6
+            ui->x40Box->hide();
+#endif
+
 
 
 #ifndef TEACH_PAGE

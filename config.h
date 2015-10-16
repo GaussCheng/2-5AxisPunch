@@ -23,10 +23,10 @@
 #define INCH "5"
 #endif
 #define HW_VERSION "1.3"
-#define SW_VERSION "5.1.5"
+#define SW_VERSION "5.1.8"
 
 //C6 IO板
-//#define IO_C6
+#define IO_C6
 //#define TEACH_PAGE
 #ifdef IO_C6
 #define HW_TYPE "C6"
