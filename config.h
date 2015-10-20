@@ -26,8 +26,8 @@
 #define SW_VERSION "5.1.8"
 
 //C6 IO板
-#define IO_C6
-#define TEACH_PAGE
+//#define IO_C6
+//#define TEACH_PAGE
 #ifdef IO_C6
 #define HW_TYPE "C6"
 #else

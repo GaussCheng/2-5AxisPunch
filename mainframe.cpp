@@ -895,30 +895,27 @@ void MainFrame::StatusRefreshed()
     }
     ICProgramHeadFrame::Instance()->ChangePunchOrigin(virtualHost->IsInputOn(72));
     int hintCode = virtualHost->HintNum();
-    if(alarmString->PriorAlarmNum() != static_cast<int>(errCode_) || hintCode != oldHintCode_)
+    if(alarmString->PriorAlarmNum() != static_cast<int>(errCode_))
     {
-        oldHintCode_ = hintCode;
-        qDebug()<<"hint code"<<hintCode<<alarmString->HintInfo(hintCode);
         alarmString->SetPriorAlarmNum(errCode_);
         if(errCode_ != 0)
         {
-            if(hintCode != 5)
-            {
-                ui->cycleTimeAndFinistWidget->SetAlarmInfo("Err" + QString::number(errCode_) + ":" + alarmString->AlarmInfo(errCode_));
-            }
-            else
-            {
-                ui->cycleTimeAndFinistWidget->SetHintInfo(tr("Hint") + QString::number(errCode_) + ":" + alarmString->AlarmInfo(errCode_));
-
-            }
+            ui->cycleTimeAndFinistWidget->SetAlarmInfo("Err" + QString::number(errCode_) + ":" + alarmString->AlarmInfo(errCode_));
             QTimer::singleShot(5000, this, SLOT(checkAlarmModify()));
         }
-        else if(hintCode != 0)
+        else{
+            ui->cycleTimeAndFinistWidget->SetAlarmInfo("");
+        }
+    }
+    else if(errCode_ == 0 && hintCode != oldHintCode_)
+    {
+        oldHintCode_ = hintCode;
+        qDebug()<<"hint code"<<hintCode<<alarmString->HintInfo(hintCode);
+        if(hintCode != 0)
         {
             ui->cycleTimeAndFinistWidget->SetHintInfo(tr("Hint") + QString::number(hintCode) + ":" + alarmString->HintInfo(hintCode));
         }
-        else
-        {
+        else{
             ui->cycleTimeAndFinistWidget->SetAlarmInfo("");
         }
     }
