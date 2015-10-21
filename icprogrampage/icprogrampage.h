@@ -198,6 +198,7 @@ private:
     ICMoldItem outY23On;
     ICMoldItem outY23Off;
 
+    ICMoldItem waitX40;
     ICMoldItem waitX41;  //等待
     ICMoldItem waitX42;
     ICMoldItem waitX43;

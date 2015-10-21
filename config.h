@@ -27,7 +27,7 @@
 
 //C6 IO板
 //#define IO_C6
-
+//#define TEACH_PAGE
 //#ifdef IO_C6
 //#define HW_TYPE "C6"
 //#else
@@ -37,6 +37,7 @@
 //static const char*  SHOW_VERSION =  SW_VERSION_PREFIX INCH"_"HW_TYPE"_"SW_VERSION;
 #define UPDATE_PREFIX "HCPunch"
 
+
 //#ifndef HC_SK_5
 //#define HC_SK_5
 //#endif
@@ -44,5 +45,4 @@
 //#ifndef HC_SK_8
 //#define HC_SK_8
 //#endif
-//#define TEACH_PAGE
 #endif // CONFIG_H

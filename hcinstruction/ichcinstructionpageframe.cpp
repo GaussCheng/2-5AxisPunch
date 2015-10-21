@@ -990,13 +990,13 @@ void ICHCInstructionPageFrame::on_upButton_clicked()
             if(item->MoldItemAt(i)->Action() != ICMold::ACTCOMMENT)
                 ++runableCount;
         }
-        for(int i = 0; i != item->ItemCount(); ++i)
-        {
-            if(item->MoldItemAt(i)->Action() <= 8)
-            {
-                return;
-            }
-        }
+//        for(int i = 0; i != item->ItemCount(); ++i)
+//        {
+//            if(item->MoldItemAt(i)->Action() <= 8)
+//            {
+//                return;
+//            }
+//        }
         if(runableCount < 2 || item->TopItemCount() == 1) //group up
         {
             item->SetStepNum( gIndex - 1);

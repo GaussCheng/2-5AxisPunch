@@ -205,9 +205,12 @@ void ActionSettingFrame::showEvent(QShowEvent *e)
     posMaxs_[6] = host->SystemParameter(ICVirtualHost::SYS_B_Length).toInt();
     posMaxs_[7] = host->SystemParameter(ICVirtualHost::SYS_C_Length).toInt();
 
-    posMins_[0] = host->SystemParameter(ICVirtualHost::SYS_X_Maxium).toInt();
-    posMins_[1] = host->SystemParameter(ICVirtualHost::SYS_Y_Maxium).toInt();
-    posMins_[2] = host->SystemParameter(ICVirtualHost::SYS_Z_Maxium).toInt();
+    int16_t tmp =  host->SystemParameter(ICVirtualHost::SYS_X_Maxium).toInt();
+    posMins_[0] = tmp;
+    tmp =  host->SystemParameter(ICVirtualHost::SYS_Y_Maxium).toInt();
+    posMins_[1] =tmp;
+    tmp =  host->SystemParameter(ICVirtualHost::SYS_Z_Maxium).toUInt();
+    posMins_[2] = tmp;
     posMins_[3] = host->SystemParameter(ICVirtualHost::SYS_P_Maxium).toInt();
     posMins_[4] = host->SystemParameter(ICVirtualHost::SYS_Q_Maxium).toInt();
     posMins_[5] = host->SystemParameter(ICVirtualHost::SYS_A_Maxium).toInt();

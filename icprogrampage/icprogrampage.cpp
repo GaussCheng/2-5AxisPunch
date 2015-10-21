@@ -429,6 +429,7 @@ void ICProgramPage::itemClicked(QTableWidgetItem *item)
             ICMoldItem moldItem = propertyToItem.value((PointProperty)pointConfigs[item->row()].Property());
 
             if((moldItem.GMVal() == ICMold::GOneXOneY ||
+                moldItem.GMVal() == ICMold::GOutY ||
                moldItem.GMVal() == ICMold::GCheckX) && item->column() == 1)
 
             {
@@ -897,6 +898,8 @@ void ICProgramPage::InitPointToItem()
     propertyToItem.insert(OUYY22_OFF,outY22Off);
     propertyToItem.insert(OUYY23_ON,outY23On);
     propertyToItem.insert(OUYY23_OFF,outY23Off);
+
+    propertyToItem.insert(WAIT_X40,waitX40);
     propertyToItem.insert(WAIT_X41,waitX41);
     propertyToItem.insert(WAIT_X42,waitX42);
     propertyToItem.insert(WAIT_X43,waitX43);
@@ -1024,6 +1027,7 @@ void ICProgramPage::InitFixMoldItems()
     outY36Off = MK_MoldItem(7,3,22,ICMold::GOutY,0,0,0,0,0,45);
 #endif
 
+    waitX40   = MK_MoldItem(9,9,24,10,0,1,0,0,3000,54);
     waitX41   = MK_MoldItem(9,9,25,10,0,1,0,0,3000,54);
     waitX42   = MK_MoldItem(10,10,26,10,0,1,0,0,3000,57);
     waitX43   = MK_MoldItem(9,9,27,10,0,1,0,0,3000,54);
@@ -1095,7 +1099,7 @@ void ICProgramPage::on_newButton_clicked()
                 if(i==0){
                     ui->tableWidget->item(index,i+1)->setText(QString("%1s")
                                                         .arg(ICParameterConversion::TransThisIntToThisText(pointConfigs[index].Delay(), DELAY_DECIMAL)));
-
+//                    ui->tableWidget->item(index,i+1)->setText(QString("-"));
 
                 }
                 else{
@@ -1113,6 +1117,10 @@ void ICProgramPage::on_newButton_clicked()
             if(_typeDialog->currentPropertyType() != RESEARVE &&
                _typeDialog->currentPropertyType() != WAITSAFE){
                     item->setText("-");
+//                    item->setText(ICParameterConversion::TransThisIntToThisText(pointConfigs[index].Delay(), DELAY_DECIMAL) +"s");
+//                    if(i == AXIS_COUNTS+1 ){
+//                        item->setText(ICParameterConversion::TransThisIntToThisText(pointConfigs[index].Delay(), DELAY_DECIMAL) +"s");
+//                    }
             }
             else{
                 if(i == AXIS_COUNTS+1 ){
