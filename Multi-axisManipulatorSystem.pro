@@ -49,7 +49,8 @@ SOURCES += main.cpp \
     icrecaldialog.cpp \
     icfile.cpp \
     icbackupdialog.cpp \
-    version.cpp
+    version.cpp \
+    icalarmdetailsdialog.cpp
 HEADERS += mainframe.h \
     icaxispositionlabel.h \
     #icalarmdescriptiondialog.h \
@@ -73,7 +74,8 @@ HEADERS += mainframe.h \
     icrecaldialog.h \
     icfile.h \
     icbackupdialog.h \
-    version.h
+    version.h \
+    icalarmdetailsdialog.h
 
 
 AXIS_COUNT = 5
@@ -166,5 +168,6 @@ message($$SK_SIZE)
 
 FORMS += \
     icrecaldialog.ui \
-    icbackupdialog.ui
+    icbackupdialog.ui \
+    icalarmdetailsdialog.ui
 

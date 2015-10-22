@@ -71,6 +71,7 @@ private:
     int currentAxis_;
     ICStructDefineFrame* structPage_;
     QWidget* timePage_;
+    QWidget* servoPage_;
     QIntValidator* maxMoveValidator_;
     QIntValidator* rotateValidator_;
     QIntValidator* maximumValidator_;
@@ -88,6 +89,8 @@ private slots:
     void OnConfigChanged(int v);
     void OnConfigChanged(int v, int ov);
     void OnConfigChanged(bool b);
+    void on_servoToolButton_clicked();
+
 private:
     QMap<QObject*, int> editorToConfigIDs_;
 };

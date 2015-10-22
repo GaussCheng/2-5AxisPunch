@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1056</width>
-    <height>355</height>
+    <height>365</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,7 +22,16 @@
 </string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
-   <property name="margin">
+   <property name="leftMargin">
+    <number>2</number>
+   </property>
+   <property name="topMargin">
+    <number>2</number>
+   </property>
+   <property name="rightMargin">
+    <number>2</number>
+   </property>
+   <property name="bottomMargin">
     <number>2</number>
    </property>
    <item>
@@ -34,7 +43,7 @@
       <widget class="QPushButton" name="axisXToolButton">
        <property name="minimumSize">
         <size>
-         <width>100</width>
+         <width>95</width>
          <height>50</height>
         </size>
        </property>
@@ -57,7 +66,7 @@ height:30px;</string>
       <widget class="QPushButton" name="axisYToolButton">
        <property name="minimumSize">
         <size>
-         <width>100</width>
+         <width>95</width>
          <height>50</height>
         </size>
        </property>
@@ -80,7 +89,7 @@ height:30px;</string>
       <widget class="QPushButton" name="axisZToolButton">
        <property name="minimumSize">
         <size>
-         <width>100</width>
+         <width>95</width>
          <height>50</height>
         </size>
        </property>
@@ -103,7 +112,7 @@ height:30px;</string>
       <widget class="QPushButton" name="axisPToolButton">
        <property name="minimumSize">
         <size>
-         <width>100</width>
+         <width>95</width>
          <height>50</height>
         </size>
        </property>
@@ -126,7 +135,7 @@ height:30px;</string>
       <widget class="QPushButton" name="axisQToolButton">
        <property name="minimumSize">
         <size>
-         <width>100</width>
+         <width>95</width>
          <height>50</height>
         </size>
        </property>
@@ -149,7 +158,7 @@ height:30px;</string>
       <widget class="QPushButton" name="axisAToolButton">
        <property name="minimumSize">
         <size>
-         <width>100</width>
+         <width>95</width>
          <height>50</height>
         </size>
        </property>
@@ -172,7 +181,7 @@ height:30px;</string>
       <widget class="QPushButton" name="axisBToolButton">
        <property name="minimumSize">
         <size>
-         <width>100</width>
+         <width>95</width>
          <height>50</height>
         </size>
        </property>
@@ -195,7 +204,7 @@ height:30px;</string>
       <widget class="QPushButton" name="axisCToolButton">
        <property name="minimumSize">
         <size>
-         <width>100</width>
+         <width>95</width>
          <height>50</height>
         </size>
        </property>
@@ -218,7 +227,30 @@ height:30px;</string>
       <widget class="QPushButton" name="structDefButton">
        <property name="minimumSize">
         <size>
-         <width>100</width>
+         <width>95</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">width:60px ;
+height:30px;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup</string>
+       </attribute>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="servoToolButton">
+       <property name="minimumSize">
+        <size>
+         <width>95</width>
          <height>50</height>
         </size>
        </property>
@@ -241,7 +273,7 @@ height:30px;</string>
       <widget class="QPushButton" name="timeLimitButton">
        <property name="minimumSize">
         <size>
-         <width>100</width>
+         <width>95</width>
          <height>50</height>
         </size>
        </property>

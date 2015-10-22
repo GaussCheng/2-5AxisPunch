@@ -80,12 +80,12 @@ ICPointType::ICPointType(QWidget *parent) :
 void ICPointType::Init_()
 {
     typeToStr.insert(Get_Wait,tr("Get_Wait"));
-    typeToStr.insert(Get_Wait2,tr("Get_Wait"));
+    typeToStr.insert(Get_Wait2,tr("Get_Finish"));
     typeToStr.insert(Get_Wait3,tr("Get_Wait"));
     typeToStr.insert(Get_Up,tr("Get_Up"));
     typeToStr.insert(Get,tr("Get"));
     typeToStr.insert(Put_Wait,tr("Put_Wait"));
-    typeToStr.insert(Put_Wait2,tr("Put_Wait"));
+    typeToStr.insert(Put_Wait2,tr("Put_Finish"));
     typeToStr.insert(Put_Up,tr("Put_Up"));
     typeToStr.insert(Put,tr("Put"));
     typeToStr.insert(Reserve,tr("Reserve"));

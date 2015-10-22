@@ -10,16 +10,20 @@
 #include "ichctimeframe.h"
 #include "icactioncommand.h"
 #include "icmodifyframe.h"
+#include "icmachineconfigpage.h"
 
 ICMachineStructPage::ICMachineStructPage(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ICMachineStructPage),
     structPage_(NULL),
     timePage_(NULL),
+    servoPage_(NULL),
     axisDefine_(-1)
 {
     ui->setupUi(this);
     InitInterface();
+    ui->servoToolButton->hide();
+
     buttonGroup_ = new QButtonGroup();
 
     ui->axisXToolButton->setText(tr("X Axis"));
@@ -32,6 +36,8 @@ ICMachineStructPage::ICMachineStructPage(QWidget *parent) :
     ui->axisCToolButton->setText(tr("C Axis"));
     ui->structDefButton->setText(tr("Struct Define"));
     ui->timeLimitButton->setText(tr("Time"));
+    ui->servoToolButton->setText(tr("Servo"));
+
     buttonGroup_->addButton(ui->axisXToolButton);
     buttonGroup_->addButton(ui->axisYToolButton);
     buttonGroup_->addButton(ui->axisZToolButton);
@@ -42,6 +48,7 @@ ICMachineStructPage::ICMachineStructPage(QWidget *parent) :
     buttonGroup_->addButton(ui->axisCToolButton);
     buttonGroup_->addButton(ui->structDefButton);
     buttonGroup_->addButton(ui->timeLimitButton);
+    buttonGroup_->addButton(ui->servoToolButton);
     buttonGroup_->setExclusive(true);
     QAbstractButton* button;
     foreach(button, buttonGroup_->buttons())
@@ -87,6 +94,8 @@ void ICMachineStructPage::changeEvent(QEvent *e)
         ui->axisCToolButton->setText(tr("C Axis"));
         ui->structDefButton->setText(tr("Struct Define"));
         ui->timeLimitButton->setText(tr("Time"));
+        ui->servoToolButton->setText(tr("Servo"));
+
         break;
     default:
         break;
@@ -996,4 +1005,14 @@ void ICMachineStructPage::OnConfigChanged(bool b)
     QString oldVal = b ? QObject::tr("Not Used") : QObject::tr("Used");
     QString newVal = b ? QObject::tr("Used") : QObject::tr("Not Used");
     OnConfigChanged(edit, newVal, oldVal);
+}
+
+void ICMachineStructPage::on_servoToolButton_clicked()
+{
+    if(servoPage_ == NULL)
+    {
+        servoPage_ = new ICMachineConfigPage();
+        ui->content->addWidget(servoPage_);
+    }
+    ui->content->setCurrentWidget(servoPage_);
 }
