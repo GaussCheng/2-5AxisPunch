@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>640</width>
-    <height>25</height>
+    <height>37</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -32,13 +32,35 @@
    <enum>QFrame::Raised</enum>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout_2">
-   <property name="margin">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
     <number>0</number>
    </property>
    <item>
     <widget class="QLabel" name="alarmLabel">
      <property name="text">
       <string/>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QToolButton" name="toolButton">
+     <property name="minimumSize">
+      <size>
+       <width>80</width>
+       <height>35</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Detail</string>
      </property>
     </widget>
    </item>

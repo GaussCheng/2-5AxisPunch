@@ -381,6 +381,7 @@ void ICVirtualHost::RefreshStatus()
                 clipLBits_ = -1;
                 clipHBits_ = -1;
 //                statusMap_.insert(DbgP0, (2 << 8));
+                statusMap_.insert(ErrCode, 500);
 #else
                 statusMap_.insert(ErrCode, 500);
 #endif

@@ -75,6 +75,12 @@ ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     ui->return0Button->hide();
     ui->singleButton->hide();
     ui->serveControl->hide();
+
+#ifndef TEACH_PAGE
+    ui->label_11->hide();
+    ui->moldStep->hide();
+#endif
+
 }
 
 ICHCManualOperationPageFrame::~ICHCManualOperationPageFrame()

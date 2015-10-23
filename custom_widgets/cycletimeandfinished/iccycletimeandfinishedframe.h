@@ -9,6 +9,8 @@ namespace Ui {
     class ICCycleTimeAndFinishedFrame;
 }
 
+class ICAlarmDetailsDialog;
+
 class ICCycleTimeAndFinishedFrame : public QFrame
 {
     Q_OBJECT
@@ -32,12 +34,17 @@ public:
 
 protected:
     void changeEvent(QEvent *);
+private slots:
+    void on_toolButton_clicked();
+
 private:
     void InitInterface();
 
 private:
     Ui::ICCycleTimeAndFinishedFrame *ui;
 //    static ICCycleTimeAndFinishedFrame * instance_;
+    ICAlarmDetailsDialog *alarmDetailsDialog_;
+    QString alarmInfo_;
 };
 
 #endif // ICCYCLETIMEANDFINISHEDFRAME_H

@@ -16,14 +16,14 @@
 #define SECTION_DECIMAL 1
 #define STACK_DECIMAL 2
 
-#define SW_VERSION_PREFIX "CYR"
-#ifdef HC_SK_8
-#define INCH "8"
-#else
-#define INCH "5"
-#endif
+//#define SW_VERSION_PREFIX "CYR"
+//#ifdef HC_SK_8
+//#define INCH "8"
+//#else
+//#define INCH "5"
+//#endif
 #define HW_VERSION "1.3"
-#define SW_VERSION "6.0.0"
+//#define SW_VERSION "6.0.2"
 
 //C6 IO板
 //#define IO_C6
