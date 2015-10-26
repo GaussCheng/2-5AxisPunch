@@ -12,7 +12,7 @@ ICCycleTimeAndFinishedFrame::ICCycleTimeAndFinishedFrame(QWidget *parent) :
     ui->setupUi(this);
     InitInterface();
     alarmDetailsDialog_ = new ICAlarmDetailsDialog(this);
-
+    ui->toolButton->hide();
 }
 
 ICCycleTimeAndFinishedFrame::~ICCycleTimeAndFinishedFrame()

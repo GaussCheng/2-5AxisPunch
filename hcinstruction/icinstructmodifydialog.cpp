@@ -164,10 +164,10 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
             speedValidator_->setRange(0, 100);
 //            ui->speedEdit->SetThisIntToThisText(item->SVal());
 //            posValidator_->setTop(host->SystemParameter(addr).toInt() * qPow(10, SECTION_DECIMAL));
-            posValidator_->setTop(host->SystemParameter(ICVirtualHost::ICSystemParameter(addr - 1)).toInt());
-            posValidator_->setBottom(host->SystemParameter(addr).toInt());
+            posValidator_->setTop(qint16(host->SystemParameter(ICVirtualHost::ICSystemParameter(addr - 1)).toInt()));
+            posValidator_->setBottom(qint16(host->SystemParameter(addr).toInt()));
 
-            ifposValidator_->setTop(host->SystemParameter(ICVirtualHost::ICSystemParameter(addr - 1)).toInt() / 10);
+            ifposValidator_->setTop(qint16(host->SystemParameter(ICVirtualHost::ICSystemParameter(addr - 1)).toInt() / 10));
             validator->setTop(100);
             
             if(!item->IsBadProduct())

@@ -27,11 +27,15 @@
 
 //C6 IO板
 //#define IO_C6
-//#define TEACH_PAGE
+#define TEACH_PAGE
 #ifdef IO_C6
 #define HW_TYPE "C6"
 #else
+#ifdef TEACH_PAGE
+#define HW_TYPE "C5_T"
+#else
 #define HW_TYPE "C5"
+#endif
 #endif
 
 static const char*  SHOW_VERSION =  SW_VERSION_PREFIX INCH"_"HW_TYPE"_"SW_VERSION;
