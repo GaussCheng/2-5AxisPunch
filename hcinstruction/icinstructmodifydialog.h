@@ -2,6 +2,7 @@
 #define ICINSTRUCTMODIFYDIALOG_H
 
 #include <QDialog>
+#include "icvirtualhost.h"
 
 class ICMoldItem;
 class QIntValidator;
@@ -19,6 +20,9 @@ public:
     ~ICInstructModifyDialog();
 
     bool ShowModifyItem(ICMoldItem* item);
+    quint32 GetPointValue(quint16 pos);
+    qint32 GetPosValue(ICVirtualHost::ICStatus pos);
+
 
 protected:
     void changeEvent(QEvent *e);

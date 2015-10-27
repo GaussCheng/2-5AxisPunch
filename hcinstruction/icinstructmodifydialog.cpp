@@ -105,7 +105,7 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
     ui->limitTimeEdit->hide();
     ui->limitUnitLabel->hide();
 
-    ui->delayTimeEdit->SetDecimalPlaces(1);
+    ui->delayTimeEdit->SetDecimalPlaces(2);
     if(item->IsAction())
     {
 
@@ -120,37 +120,37 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
             switch(action)
             {
             case ICMold::GX:
-                addr = ICVirtualHost::SYS_X_Maxium;
+                addr = ICVirtualHost::SYS_X_Length;
                 posValidator_->setBottom(0);
                 ifposValidator_->setBottom(0);
                 break;
             case ICMold::GY:
-                addr = ICVirtualHost::SYS_Y_Maxium;
+                addr = ICVirtualHost::SYS_Y_Length;
                 posValidator_->setBottom(0);
                 ifposValidator_->setBottom(0);
                 break;
             case ICMold::GZ:
-                addr = ICVirtualHost::SYS_Z_Maxium;
+                addr = ICVirtualHost::SYS_Z_Length;
                 posValidator_->setBottom(0);
                 ifposValidator_->setBottom(0);
                 break;
             case ICMold::GP:
-                addr = ICVirtualHost::SYS_P_Maxium;
+                addr = ICVirtualHost::SYS_P_Length;
                 posValidator_->setBottom(0);
                 ifposValidator_->setBottom(0);
                 break;
             case ICMold::GQ:
-                addr = ICVirtualHost::SYS_Q_Maxium;
+                addr = ICVirtualHost::SYS_Q_Length;
                 posValidator_->setBottom(0);
                 ifposValidator_->setBottom(0);
                 break;
             case ICMold::GA:
-                addr = ICVirtualHost::SYS_C_Length;
-                posValidator_->setBottom(-50);
-                ifposValidator_->setBottom(-50);
+                addr = ICVirtualHost::SYS_A_Length;
+                posValidator_->setBottom(0);
+                ifposValidator_->setBottom(0);
                 break;
             case ICMold::GB:
-                addr = ICVirtualHost::SYS_C_Length;
+                addr = ICVirtualHost::SYS_B_Length;
                 posValidator_->setBottom(-50);
                 ifposValidator_->setBottom(-50);
                 break;
@@ -167,7 +167,13 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
             posValidator_->setTop(qint16(host->SystemParameter(ICVirtualHost::ICSystemParameter(addr - 1)).toInt()));
             posValidator_->setBottom(qint16(host->SystemParameter(addr).toInt()));
 
-            ifposValidator_->setTop(qint16(host->SystemParameter(ICVirtualHost::ICSystemParameter(addr - 1)).toInt() / 10));
+//            posValidator_->setBottom(host->SystemParameter(addr).toInt());
+//            ifposValidator_->setTop(host->SystemParameter(ICVirtualHost::ICSystemParameter(addr - 1)).toInt() / 10);
+            posValidator_->setTop(host->SystemParameter(ICVirtualHost::ICSystemParameter(addr)).toInt() * 10);
+            posValidator_->setBottom(qint16(host->SystemParameter(ICVirtualHost::ICSystemParameter(addr+1)).toInt()) * 10);
+            ifposValidator_->setTop(host->SystemParameter(ICVirtualHost::ICSystemParameter(addr)).toInt() / 10);
+
+
             validator->setTop(100);
             
             if(!item->IsBadProduct())
@@ -324,6 +330,33 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
     return isok;
 }
 
+
+quint32 ICInstructModifyDialog::GetPointValue(quint16 pos)
+{
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    quint32 s  = host->HostStatus(ICVirtualHost::DbgB0).toUInt() << 16;
+    s = s + host->HostStatus(ICVirtualHost::DbgA1).toUInt();
+
+    return ( (s >>( (pos -  ICVirtualHost::XPos)* 4 ) )& 0xF);
+}
+
+
+
+qint32 ICInstructModifyDialog::GetPosValue(ICVirtualHost::ICStatus status)
+{
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    qint16  p =  host->HostStatus(status).toInt() ;
+    if(p < 0){
+        qint32 v = p * 10 -  GetPointValue(status) ;
+        return v;
+    }
+    else{
+        qint32 v = p * 10 + GetPointValue(status) ;
+        return v;
+    }
+}
+
+
 void ICInstructModifyDialog::on_setButton_clicked()
 {
     if(currentItem == NULL)
@@ -331,41 +364,29 @@ void ICInstructModifyDialog::on_setButton_clicked()
         return;
     }
     int currentPos = 0;
-    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+//    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
 //    uint axisLast = host->HostStatus(ICVirtualHost::AxisLastPos1).toUInt() |
 //            (host->HostStatus(ICVirtualHost::AxisLastPos2).toUInt() << 16);
-    uint axisLast = 0;
+//    uint axisLast = 0;
     if(currentItem->Action() == ICMold::GX)
     {
-        currentPos = host->GetActualPos(ICVirtualHost::ICAxis_AxisX1, axisLast);
+        currentPos = GetPosValue(ICVirtualHost::XPos);
     }
     else if(currentItem->Action() == ICMold::GY)
     {
-        currentPos = host->GetActualPos(ICVirtualHost::ICAxis_AxisY1, axisLast);
+        currentPos = GetPosValue(ICVirtualHost::YPos);
     }
     else if(currentItem->Action() == ICMold::GZ)
     {
-        currentPos = host->GetActualPos(ICVirtualHost::ICAxis_AxisZ, axisLast);
+        currentPos = GetPosValue(ICVirtualHost::ZPos);
     }
     else if(currentItem->Action() == ICMold::GP)
     {
-        currentPos = host->GetActualPos(ICVirtualHost::ICAxis_AxisX2, axisLast);
+        currentPos = GetPosValue(ICVirtualHost::PPos);
     }
     else if(currentItem->Action() == ICMold::GQ)
     {
-        currentPos = host->GetActualPos(ICVirtualHost::ICAxis_AxisY2, axisLast);
-    }
-    else if(currentItem->Action() == ICMold::GA)
-    {
-        currentPos = host->GetActualPos(ICVirtualHost::ICAxis_AxisA, axisLast);
-    }
-    else if(currentItem->Action() == ICMold::GB)
-    {
-        currentPos = host->GetActualPos(ICVirtualHost::ICAxis_AxisB, axisLast);
-    }
-    else if(currentItem->Action() == ICMold::GC)
-    {
-        currentPos = host->GetActualPos(ICVirtualHost::ICAxis_AxisC, axisLast);
+        currentPos = GetPosValue(ICVirtualHost::QPos);
     }
     ui->posEdit->SetThisIntToThisText(currentPos);
 }
