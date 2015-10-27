@@ -136,9 +136,11 @@ public:
     void SetActualPos(int pos)
     {
         int p = pos / 10;
+        if(pos < 0)
+            pos = -pos;
         int d = pos % 10;
         SetPos(p);
-        ifPos_ &= 0xFFFF00FF;
+        ifPos_ &= 0xFFF00FF;
         ifPos_ |= (d << 8); //ifPos High 8 bits
     }
 
