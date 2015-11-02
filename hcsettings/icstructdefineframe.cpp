@@ -147,8 +147,8 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
 
     ui->aBox->hide();
     ui->bBox->hide();
-    ui->cBox->hide();
-    ui->label_14->hide();
+//    ui->cBox->hide();
+//    ui->label_14->hide();
     ui->label_15->hide();
     ui->label_16->hide();
 
