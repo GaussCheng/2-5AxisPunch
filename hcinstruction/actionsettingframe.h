@@ -5,6 +5,7 @@
 //#include "icframe.h"
 #include "icinstructioneditorbase.h"
 #include "config.h"
+#include "icvirtualhost.h"
 
 #include <QIntValidator>
  #include <QMessageBox>
@@ -38,6 +39,8 @@ private:
     void UpdateAxisDefine_();
     void ShowWidgets_(QList<QWidget*> & widgets);
     void HideWidgets_(QList<QWidget*> & widgets);
+    quint32 GetPointValue(quint16 pos);
+    qint32 GetPosValue(ICVirtualHost::ICStatus pos);
 
 private:
     Ui::ActionSettingFrame *ui;

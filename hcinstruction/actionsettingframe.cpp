@@ -62,6 +62,7 @@ ActionSettingFrame::ActionSettingFrame(QWidget *parent) :
     UpdateAxisDefine_();
 #endif
     //    ui->x1SpeedLineEdit->hide();
+    ui->curveBox->hide();
 }
 
 ActionSettingFrame::~ActionSettingFrame()
@@ -124,12 +125,13 @@ void ActionSettingFrame::on_inputButton_clicked()
     //    {
     //        ui->gxComboBox->setCurrentIndex(1);
     //    }
-    ui->x1PosLineEdit->setText(QString().sprintf("%.1f", oXP_ / 10.0));
-    ui->y1PosLineEdit->setText(QString().sprintf("%.1f", oYP_ / 10.0));
+    ui->x1PosLineEdit->setText(QString::number(oXP_ / 100.0, 'f', 2));
+    ui->y1PosLineEdit->setText(QString::number(oYP_ / 100.0, 'f', 2));
 #ifdef HC_AXIS_COUNT_5
-    ui->zPosLineEdit->setText(QString().sprintf("%.1f", oZP_ / 10.0));
-    ui->tPosLineEdit->setText(QString().sprintf("%.1f", oTP_ / 10.0));
-    ui->pPosLineEdit->setText(QString().sprintf("%.1f", oPP_ / 10.0));
+    ui->zPosLineEdit->setText(QString::number(oZP_ / 100.0, 'f', 2));
+    ui->tPosLineEdit->setText(QString::number(oTP_ / 100.0, 'f', 2));
+    ui->pPosLineEdit->setText(QString::number(oPP_ / 100.0, 'f', 2));
+
 #endif
 
     //do someting
@@ -196,39 +198,32 @@ void ActionSettingFrame::showEvent(QShowEvent *e)
         ui->gtButton->hide();ui->tPosLineEdit->hide();ui->label_13->hide();
     }
 
-    posMaxs_[0] = host->SystemParameter(ICVirtualHost::SYS_X_Length).toInt();
-    posMaxs_[1] = host->SystemParameter(ICVirtualHost::SYS_Y_Length).toInt();
-    posMaxs_[2] = host->SystemParameter(ICVirtualHost::SYS_Z_Length).toInt();
-    posMaxs_[3] = host->SystemParameter(ICVirtualHost::SYS_P_Length).toInt();
-    posMaxs_[4] = host->SystemParameter(ICVirtualHost::SYS_Q_Length).toInt();
-    posMaxs_[5] = host->SystemParameter(ICVirtualHost::SYS_A_Length).toInt();
-    posMaxs_[6] = host->SystemParameter(ICVirtualHost::SYS_B_Length).toInt();
-    posMaxs_[7] = host->SystemParameter(ICVirtualHost::SYS_C_Length).toInt();
+    posMaxs_[0] = (qint16)host->SystemParameter(ICVirtualHost::SYS_X_Length).toInt();
+    posMaxs_[1] = (qint16)host->SystemParameter(ICVirtualHost::SYS_Y_Length).toInt();
+    posMaxs_[2] = (qint16)host->SystemParameter(ICVirtualHost::SYS_Z_Length).toInt();
+    posMaxs_[3] = (qint16)host->SystemParameter(ICVirtualHost::SYS_P_Length).toInt();
+    posMaxs_[4] = (qint16)host->SystemParameter(ICVirtualHost::SYS_Q_Length).toInt();
+    posMaxs_[5] = (qint16)host->SystemParameter(ICVirtualHost::SYS_A_Length).toInt();
+    posMaxs_[6] = (qint16)host->SystemParameter(ICVirtualHost::SYS_B_Length).toInt();
+    posMaxs_[7] = (qint16)host->SystemParameter(ICVirtualHost::SYS_C_Length).toInt();
 
-    int16_t tmp =  host->SystemParameter(ICVirtualHost::SYS_X_Maxium).toInt();
-    posMins_[0] = tmp;
-    tmp =  host->SystemParameter(ICVirtualHost::SYS_Y_Maxium).toInt();
-    posMins_[1] =tmp;
-    tmp =  host->SystemParameter(ICVirtualHost::SYS_Z_Maxium).toUInt();
-    posMins_[2] = tmp;
-    posMins_[3] = host->SystemParameter(ICVirtualHost::SYS_P_Maxium).toInt();
-    posMins_[4] = host->SystemParameter(ICVirtualHost::SYS_Q_Maxium).toInt();
-    posMins_[5] = host->SystemParameter(ICVirtualHost::SYS_A_Maxium).toInt();
-    posMins_[6] = host->SystemParameter(ICVirtualHost::SYS_B_Maxium).toInt();
-    posMins_[7] = host->SystemParameter(ICVirtualHost::SYS_C_Maxium).toInt();
-    posLength_[0] = host->SystemParameter(ICVirtualHost::SYS_A_Length).toInt();
-    posLength_[1] = host->SystemParameter(ICVirtualHost::SYS_A_Length).toInt();
-    posLength_[2] = host->SystemParameter(ICVirtualHost::SYS_A_Length).toInt();
+    posMins_[0] = (qint16)host->SystemParameter(ICVirtualHost::SYS_X_Maxium).toInt();
+    posMins_[1] = (qint16)host->SystemParameter(ICVirtualHost::SYS_Y_Maxium).toInt();
+    posMins_[2] = (qint16)host->SystemParameter(ICVirtualHost::SYS_Z_Maxium).toInt();
+    posMins_[3] = (qint16)host->SystemParameter(ICVirtualHost::SYS_P_Maxium).toInt();
+    posMins_[4] = (qint16)host->SystemParameter(ICVirtualHost::SYS_Q_Maxium).toInt();
+    posMins_[5] = (qint16)host->SystemParameter(ICVirtualHost::SYS_A_Maxium).toInt();
+    posMins_[6] = (qint16)host->SystemParameter(ICVirtualHost::SYS_B_Maxium).toInt();
+    posMins_[7] = (qint16)host->SystemParameter(ICVirtualHost::SYS_C_Maxium).toInt();
+    posLength_[0] = (qint16)host->SystemParameter(ICVirtualHost::SYS_A_Length).toInt();
+    posLength_[1] = (qint16)host->SystemParameter(ICVirtualHost::SYS_B_Length).toInt();
+    posLength_[2] = (qint16)host->SystemParameter(ICVirtualHost::SYS_C_Length).toInt();
 
     int mutil = qPow(10, SECTION_DECIMAL);
     for(int i = 0; i != 8; ++i)
     {
-        posValidators_[i].setTop(posMaxs_[i]);
-        posValidators_[i].setBottom(posMins_[i]);
-    }
-    for(int i = 0; i != 3; ++i)
-    {
-        posValidator[i].setTop(posLength_[i] * mutil);
+        posValidators_[i].setTop(posMaxs_[i] * mutil);
+        posValidators_[i].setBottom(posMins_[i] * mutil);
     }
 
     QFrame::showEvent(e);
@@ -242,37 +237,56 @@ void ActionSettingFrame::SyncStatusImpl(const QList<ICMoldItem> &items)
 {
     Q_UNUSED(items)
 }
+quint32 ActionSettingFrame::GetPointValue(quint16 pos)
+{
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    quint32 s  = host->HostStatus(ICVirtualHost::DbgB0).toUInt() << 16;
+    s = s + host->HostStatus(ICVirtualHost::DbgA1).toUInt();
+
+    return ( (s >>( (pos -  ICVirtualHost::XPos)* 4 ) )& 0xF);
+}
+
+qint32 ActionSettingFrame::GetPosValue(ICVirtualHost::ICStatus status)
+{
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    qint16  p =  host->HostStatus(status).toInt() ;
+    if(p < 0){
+        qint32 v = p * 10 -  GetPointValue(status) ;
+        return v;
+    }
+    else{
+        qint32 v = p * 10 + GetPointValue(status) ;
+        return v;
+    }
+}
+
 
 void ActionSettingFrame::StatusRefresh()
 {
-    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-    //    uint axisLast = host->HostStatus(ICVirtualHost::AxisLastPos1).toUInt() |
-    //                    (host->HostStatus(ICVirtualHost::AxisLastPos2).toUInt() << 16);
-    uint axisLast = 0;
-    int pos = host->GetActualPos(ICVirtualHost::ICAxis_AxisY1, axisLast);
+     int pos = GetPosValue(ICVirtualHost::YPos);
     if(pos != oYP_)
     {
         oYP_ = pos;
     }
-    pos = host->GetActualPos(ICVirtualHost::ICAxis_AxisZ, axisLast);
+    pos = GetPosValue(ICVirtualHost::ZPos);
     if(pos != oZP_)
     {
         oZP_ = pos;
     }
 
-    pos = host->GetActualPos(ICVirtualHost::ICAxis_AxisX1, axisLast);
+    pos = GetPosValue(ICVirtualHost::XPos);
     if(pos != oXP_)
     {
         oXP_ = pos;
     }
 
 #ifdef HC_AXIS_COUNT_5
-    pos = host->GetActualPos(ICVirtualHost::ICAxis_AxisX2, axisLast);
+    pos = GetPosValue(ICVirtualHost::PPos);
     if(pos != oPP_)
     {
         oPP_ = pos;
     }
-    pos = host->GetActualPos(ICVirtualHost::ICAxis_AxisY2, axisLast);
+    pos = GetPosValue(ICVirtualHost::QPos);
     if(pos != oTP_)
     {
         oTP_ = pos;
@@ -305,7 +319,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
             item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
             item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
             //        item.SetIFVal(0);
-            item.SetActualIfPos(0);
+//            item.SetActualIfPos(0);
             ret.append(item);
         }
         if(ui->gyButton->isChecked() && (!ui->gyButton->isHidden()))
@@ -315,7 +329,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
             item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
             item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
             //        item.SetIFVal(0);
-            item.SetActualIfPos(0);
+//            item.SetActualIfPos(0);
             ret.append(item);
         }
 #ifdef HC_AXIS_COUNT_5
@@ -326,7 +340,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
             item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
             item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
             //        item.SetIFVal(0);
-            item.SetActualIfPos(0);
+//            item.SetActualIfPos(0);
             ret.append(item);
         }
         if(ui->gPButton->isChecked() && (!ui->gPButton->isHidden()))
@@ -336,7 +350,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
             item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
             item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
             //        item.SetIFVal(0);
-            item.SetActualIfPos(0);
+//            item.SetActualIfPos(0);
             ret.append(item);
         }
         if(ui->gtButton->isChecked() && (!ui->gtButton->isHidden()))
@@ -346,7 +360,7 @@ QList<ICMoldItem> ActionSettingFrame::CreateCommandImpl() const
             item.SetSVal(ui->speedEdit->TransThisTextToThisInt());
             item.SetDVal(ui->delayEdit->TransThisTextToThisInt());
             //        item.SetIFVal(0);
-            item.SetActualIfPos(0);
+//            item.SetActualIfPos(0);
             ret.append(item);
         }
 

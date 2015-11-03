@@ -12,18 +12,18 @@
 #endif
 
 #define IFPOS_DECIMAL 0
-#define POS_DECIMAL 1
+#define POS_DECIMAL 2
 #define SECTION_DECIMAL 1
 #define STACK_DECIMAL 2
 
-//#define SW_VERSION_PREFIX "CYR"
-//#ifdef HC_SK_8
-//#define INCH "8"
-//#else
-//#define INCH "5"
-//#endif
+#define SW_VERSION_PREFIX "CYR"
+#ifdef HC_SK_8
+#define INCH "8"
+#else
+#define INCH "5"
+#endif
 #define HW_VERSION "1.3"
-//#define SW_VERSION "6.0.2"
+#define SW_VERSION "5.2.0"
 
 //C6 IO板
 //#define IO_C6
@@ -31,7 +31,11 @@
 //#ifdef IO_C6
 //#define HW_TYPE "C6"
 //#else
+//#ifdef TEACH_PAGE
+//#define HW_TYPE "C5_T"
+//#else
 //#define HW_TYPE "C5"
+//#endif
 //#endif
 
 //static const char*  SHOW_VERSION =  SW_VERSION_PREFIX INCH"_"HW_TYPE"_"SW_VERSION;

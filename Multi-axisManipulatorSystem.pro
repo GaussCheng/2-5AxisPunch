@@ -7,7 +7,8 @@ QMAKE_CFLAGS += -std=c99
 QMAKE_CXX = ccache $${QMAKE_CXX}
 QT += sql
 
-DEFINES += IO_C5
+DEFINES += IO_C6
+#DEFINES += TEACH_PAGE
 
 SK_SIZE = 8
 
@@ -18,9 +19,9 @@ HW_TYPE = "C6"
 }else{
 HW_TYPE = "C5"
 }
-
-#DEFINES += TEACH_PAGE
-
+contains(DEFINES, TEACH_PAGE){
+HW_TYPE = $${HW_TYPE}_T
+}
 
 S_VERSION = CYR$${SK_SIZE}_$${HW_TYPE}_$${SW_VERSION}
 VERSTR = '\\"$${S_VERSION}\\"'

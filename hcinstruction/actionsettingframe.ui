@@ -20,7 +20,16 @@
    <enum>QFrame::Raised</enum>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
-   <property name="margin">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
     <number>0</number>
    </property>
    <item>
@@ -170,7 +179,7 @@
         <bool>true</bool>
        </property>
        <property name="checked">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
       </widget>
      </item>
@@ -231,7 +240,7 @@
         </size>
        </property>
        <property name="text">
-        <string>0.0</string>
+        <string>0.00</string>
        </property>
       </widget>
      </item>
@@ -304,7 +313,7 @@
         </size>
        </property>
        <property name="text">
-        <string>0.0</string>
+        <string>0.00</string>
        </property>
       </widget>
      </item>
@@ -377,7 +386,7 @@
         </size>
        </property>
        <property name="text">
-        <string>0.0</string>
+        <string>0.00</string>
        </property>
       </widget>
      </item>
@@ -450,7 +459,7 @@
         </size>
        </property>
        <property name="text">
-        <string>0.0</string>
+        <string>0.00</string>
        </property>
       </widget>
      </item>
@@ -523,7 +532,7 @@
         </size>
        </property>
        <property name="text">
-        <string>0.0</string>
+        <string>0.00</string>
        </property>
       </widget>
      </item>

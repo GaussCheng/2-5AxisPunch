@@ -130,16 +130,18 @@ public:
 
     int ActualPos() const
     {
-        return Pos();
 //        return (QString::number(Pos()) + QString::number(IFPos() & 0xF)).toInt();
+        return (QString::number(Pos()) + QString::number((IFPos() >> 8) & 0xF)).toInt();
     }
     void SetActualPos(int pos)
     {
-//        int p = pos / 10;
-//        int d = pos % 10;
-        SetPos(pos);
-//        ifPos_ &= 0xFFFFFFF0;
-//        ifPos_ |= d;
+        int p = pos / 10;
+        if(pos < 0)
+            pos = -pos;
+        int d = pos % 10;
+        SetPos(p);
+        ifPos_ &= 0xFFF00FF;
+        ifPos_ |= (d << 8); //ifPos High 8 bits
     }
 
     int ActualIfPos() const

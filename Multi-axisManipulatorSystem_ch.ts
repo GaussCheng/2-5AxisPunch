@@ -10,17 +10,12 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="692"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="701"/>
         <location filename="hcinstruction/actionsettingframe_5.ui" line="612"/>
         <source>s</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="234"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="307"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="380"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="453"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="526"/>
         <location filename="hcinstruction/actionsettingframe_5.ui" line="221"/>
         <location filename="hcinstruction/actionsettingframe_5.ui" line="294"/>
         <location filename="hcinstruction/actionsettingframe_5.ui" line="367"/>
@@ -30,25 +25,25 @@
         <translation>0.0</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="650"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="659"/>
         <location filename="hcinstruction/actionsettingframe_5.ui" line="682"/>
         <source>%</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="126"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="135"/>
         <location filename="hcinstruction/actionsettingframe_5.ui" line="110"/>
         <source>Abs</source>
         <translation>位置</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="574"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="583"/>
         <location filename="hcinstruction/actionsettingframe_5.ui" line="561"/>
         <source>Rel</source>
         <translation>点位</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="355"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="364"/>
         <location filename="hcinstruction/actionsettingframe_5.ui" line="342"/>
         <source>S</source>
         <translation></translation>
@@ -62,7 +57,7 @@
         <translation type="obsolete">T</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="167"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="176"/>
         <location filename="hcinstruction/actionsettingframe_5.ui" line="151"/>
         <source>3D</source>
         <translation>3D</translation>
@@ -88,8 +83,8 @@
         <translation type="obsolete">点位</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="247"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="320"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="256"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="329"/>
         <location filename="hcinstruction/actionsettingframe_5.ui" line="234"/>
         <location filename="hcinstruction/actionsettingframe_5.ui" line="307"/>
         <source>mm</source>
@@ -112,13 +107,18 @@
         <translation type="obsolete">延时</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="637"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="646"/>
         <location filename="hcinstruction/actionsettingframe_5.ui" line="669"/>
         <source>80</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="679"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="243"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="316"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="389"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="462"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="535"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="688"/>
         <location filename="hcinstruction/actionsettingframe_5.ui" line="634"/>
         <source>0.00</source>
         <translation></translation>
@@ -229,7 +229,7 @@
         <translation type="obsolete">S</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="84"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="93"/>
         <source>Axis Board</source>
         <translation>轴键盘</translation>
     </message>
@@ -238,21 +238,21 @@
         <translation type="obsolete">3D</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="209"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="218"/>
         <location filename="hcinstruction/actionsettingframe_5.ui" line="196"/>
         <source>X</source>
         <translation>X</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="282"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="291"/>
         <location filename="hcinstruction/actionsettingframe_5.ui" line="269"/>
         <source>Y</source>
         <translation>Y</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="393"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="466"/>
-        <location filename="hcinstruction/actionsettingframe.ui" line="539"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="402"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="475"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="548"/>
         <location filename="hcinstruction/actionsettingframe_5.ui" line="380"/>
         <location filename="hcinstruction/actionsettingframe_5.ui" line="453"/>
         <location filename="hcinstruction/actionsettingframe_5.ui" line="526"/>
@@ -260,13 +260,13 @@
         <translation>度</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="501"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="510"/>
         <location filename="hcinstruction/actionsettingframe_5.ui" line="488"/>
         <source>T</source>
         <translation>T</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="428"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="437"/>
         <location filename="hcinstruction/actionsettingframe_5.ui" line="415"/>
         <source>R</source>
         <translation>R</translation>
@@ -276,7 +276,7 @@
         <translation type="obsolete">X2</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="62"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="71"/>
         <location filename="hcinstruction/actionsettingframe_5.ui" line="65"/>
         <source>Serve On</source>
         <translation>伺服开</translation>
@@ -307,7 +307,7 @@
         <translation type="obsolete">设定值</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="660"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="669"/>
         <location filename="hcinstruction/actionsettingframe_5.ui" line="599"/>
         <source>Delay</source>
         <translation>延时</translation>
@@ -317,7 +317,7 @@
         <translation type="obsolete">路径</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="615"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="624"/>
         <location filename="hcinstruction/actionsettingframe_5.ui" line="647"/>
         <source>Speed</source>
         <translation>速度</translation>
@@ -327,7 +327,7 @@
         <translation type="obsolete">姿势</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.ui" line="43"/>
+        <location filename="hcinstruction/actionsettingframe.ui" line="52"/>
         <location filename="hcinstruction/actionsettingframe_5.ui" line="46"/>
         <source>Set=&gt;</source>
         <translation>设入</translation>
@@ -357,12 +357,12 @@
         <translation type="obsolete">副臂后退</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.cpp" line="632"/>
+        <location filename="hcinstruction/actionsettingframe.cpp" line="646"/>
         <source>Servo OFF</source>
         <translation>伺服关</translation>
     </message>
     <message>
-        <location filename="hcinstruction/actionsettingframe.cpp" line="637"/>
+        <location filename="hcinstruction/actionsettingframe.cpp" line="651"/>
         <source>Servo On</source>
         <translation>伺服开</translation>
     </message>
@@ -5453,7 +5453,7 @@ Reason</source>
         <location filename="hcsettings/ichcsystemsettingsframe.ui" line="453"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="798"/>
         <source>MMC Fix</source>
-        <translation type="unfinished"></translation>
+        <translation>存储修复</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.ui" line="485"/>
@@ -5756,7 +5756,7 @@ Reason</source>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="691"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="692"/>
         <source>%1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="208"/>
@@ -5853,7 +5853,7 @@ Reason</source>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="799"/>
         <source>After fix will auto reboot. Continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>修复后会重启.继续吗?</translation>
     </message>
     <message>
         <source>Backup files is not exists!</source>
@@ -6381,12 +6381,12 @@ Reason</source>
         <translation>时间</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="186"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="192"/>
         <source>speed</source>
         <translation>速度</translation>
     </message>
     <message>
-        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="209"/>
+        <location filename="hcinstruction/icinstructmodifydialog.cpp" line="215"/>
         <source>Return</source>
         <translation>返回</translation>
     </message>
