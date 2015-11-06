@@ -2,7 +2,22 @@
 #include "iclineeditwrapper.h"
 #include "icmold.h"
 #include "icvirtualhost.h"
+#include <qmath.h>
+
 #include <QDebug>
+
+QString IntToString(int num, int decimals)
+{
+    return QString::number(qreal(num) / qPow(10, decimals), 'f', decimals);
+}
+
+int StringToInt(const QString &numString, int decimals)
+{
+    double num = numString.toDouble();
+    double diff = 5 / qPow(10, decimals + 1);
+    num += diff;
+    return num * qPow(10, decimals);
+}
 
 ICLineEditWrapper::ICLineEditWrapper(QLineEdit *edit,
                                      int addr,
@@ -34,13 +49,14 @@ ICLineEditWrapper::ICLineEditWrapper(QLineEdit *edit,
     }
     else
     {
-        QString fString = "%." + QString::number(static_cast<int>(format_)) + "f";
-        qreal base = 1;
-        for(int i = 0; i != format_; ++i)
-        {
-            base *= 10;
-        }
-        wrappedWidget_->setText(QString().sprintf(fString.toAscii(), initValue / base));
+//        QString fString = "%." + QString::number(static_cast<int>(format_)) + "f";
+//        qreal base = 1;
+//        for(int i = 0; i != format_; ++i)
+//        {
+//            base *= 10;
+//        }
+//        wrappedWidget_->setText(QString().sprintf(fString.toAscii(), initValue / base));
+        wrappedWidget_->setText(IntToString(initValue, format));
     }
     connect(wrappedWidget_,
             SIGNAL(textChanged(QString)),
@@ -64,13 +80,15 @@ void ICLineEditWrapper::UpdateParam()
         }
         else
         {
-            QString fString = "%." + QString::number(static_cast<int>(format_)) + "f";
-            qreal base = 1;
-            for(int i = 0; i != format_; ++i)
-            {
-                base *= 10;
-            }
-            wrappedWidget_->setText(QString().sprintf(fString.toAscii(), initValue / base));
+//            QString fString = "%." + QString::number(static_cast<int>(format_)) + "f";
+//            qreal base = 1;
+//            for(int i = 0; i != format_; ++i)
+//            {
+//                base *= 10;
+//            }
+//            wrappedWidget_->setText(QString().sprintf(fString.toAscii(), initValue / base));
+            wrappedWidget_->setText(IntToString(initValue, format_));
+
         }
     }
     connect(wrappedWidget_,
@@ -81,20 +99,20 @@ void ICLineEditWrapper::UpdateParam()
 
 void ICLineEditWrapper::EditFinished(const QString &text)
 {
-    int value;
-    if(format_ == Integer)
-    {
-        value = text.toInt();
-    }
-    else
-    {
-        int base = 1;
-        for(int i = 0; i != format_; ++i)
-        {
-            base *= 10;
-        }
-        value = text.toDouble() * base;
-    }
+    int value = StringToInt(text, format_);
+//    if(format_ == Integer)
+//    {
+//        value = text.toInt();
+//    }
+//    else
+//    {
+//        int base = 1;
+//        for(int i = 0; i != format_; ++i)
+//        {
+//            base *= 10;
+//        }
+//        value = text.toDouble() * base;
+//    }
     if(type_ == Mold)
     {
         ICMold::CurrentMold()->SetMoldParam(static_cast<ICMold::ICMoldParam>(addr_), value);

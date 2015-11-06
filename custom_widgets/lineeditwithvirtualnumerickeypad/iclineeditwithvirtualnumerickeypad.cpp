@@ -157,28 +157,28 @@ bool ICLineEditWithVirtualNumericKeypad::SetCurrentText(const QString &currentTe
             return false;
         }
 
-        QString valueStr = currentText;
-        if(this->DecimalPlaces() != 0)
-        {
-            int diff = 0;
-            if(currentText.contains("."))
-            {
-                diff = this->DecimalPlaces() - currentText.split(".").at(1).count();
-            }
-            else
-            {
-                diff = this->DecimalPlaces();
-                valueStr += ".";
-            }
+//        QString valueStr = currentText;
+//        if(this->DecimalPlaces() != 0)
+//        {
+//            int diff = 0;
+//            if(currentText.contains("."))
+//            {
+//                diff = this->DecimalPlaces() - currentText.split(".").at(1).count();
+//            }
+//            else
+//            {
+//                diff = this->DecimalPlaces();
+//                valueStr += ".";
+//            }
 
-            if(diff > 0)
-            {
-                for(int i = 0; i < diff; ++i)
-                {
-                    valueStr += "0";
-                }
-            }
-        }
+//            if(diff > 0)
+//            {
+//                for(int i = 0; i < diff; ++i)
+//                {
+//                    valueStr += "0";
+//                }
+//            }
+//        }
 
         this->setText(ICParameterConversion::TransThisIntToThisText(currentValue, DecimalPlaces()));
 //        this->setText(valueStr);

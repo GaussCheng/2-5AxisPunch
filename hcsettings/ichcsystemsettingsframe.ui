@@ -55,7 +55,7 @@
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="systemSettingPage">
       <attribute name="title">
@@ -997,6 +997,7 @@ QRadioButton::indicator:unchecked:disabled
   </customwidget>
  </customwidgets>
  <resources>
+  <include location="../resource.qrc"/>
   <include location="../resource.qrc"/>
  </resources>
  <connections/>

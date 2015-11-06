@@ -9,11 +9,12 @@ SOURCES += \
     $$PWD/virtualkeyboarddialog.cpp \
     $$PWD/iclineeditwithvirtualkeyboard.cpp
 
-contains(DEFINES, HC_SK_8){
-FORMS += \
-    $$PWD/virtualkeyboarddialog.ui
-}else{
-FORMS += \
-    $$PWD/virtualkeyboarddialog_5.ui
-}
+#FORMS +=
+#    virtualkeyboarddialog.ui
 
+contains(DEFINES, HC_SK_8){
+FORMS += $$PWD/virtualkeyboarddialog.ui
+}
+contains(DEFINES, HC_SK_5){
+FORMS += $$PWD/virtualkeyboarddialog_5.ui
+}

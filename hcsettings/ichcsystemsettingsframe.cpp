@@ -178,6 +178,7 @@ void ICHCSystemSettingsFrame::on_saveButton_clicked()
     ICModifyFrame::Instance()->OnActionTriggered(ICConfigString::kCS_PANEL_Config_Save,
                                                 tr("Save"),
                                                 "");
+    ::system("sync");
 }
 
 void ICHCSystemSettingsFrame::on_keyToneButton_toggled(bool checked)

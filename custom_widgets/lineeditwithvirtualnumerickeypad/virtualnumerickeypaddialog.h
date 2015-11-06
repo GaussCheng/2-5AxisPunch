@@ -15,11 +15,11 @@ class VirtualNumericKeypadDialog : public QDialog {
 public:
     static VirtualNumericKeypadDialog* Instance()
     {
-        if(!instance_)
+        if(instance_.isNull())
         {
-            instance_ = new VirtualNumericKeypadDialog();
+            instance_.reset(new VirtualNumericKeypadDialog());
         }
-        return instance_;
+        return instance_.data();
     }
     ~VirtualNumericKeypadDialog();
 
@@ -37,7 +37,7 @@ public slots:
     void KeyboardClicked(QString buttonNum);
 
 private:
-    static VirtualNumericKeypadDialog *instance_;
+    static QScopedPointer<VirtualNumericKeypadDialog> instance_;
     QSignalMapper * numerickSignalMapper_;
     VirtualNumericKeypadDialog(QWidget * parent = 0);
 

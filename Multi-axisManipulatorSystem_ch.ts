@@ -5451,7 +5451,7 @@ Reason</source>
     </message>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.ui" line="453"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="798"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="799"/>
         <source>MMC Fix</source>
         <translation>存储修复</translation>
     </message>
@@ -5739,119 +5739,119 @@ Reason</source>
     </message>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="91"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="187"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="188"/>
         <source>Key Tone(ON)</source>
         <translation>按键音(开)</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="96"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="194"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="195"/>
         <source>Key Tone(OFF)</source>
         <translation>按键音(关)</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="176"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="677"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="678"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="691"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="679"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="692"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="693"/>
         <source>%1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="208"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="235"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="331"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="335"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="209"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="236"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="332"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="336"/>
         <source>Information</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="209"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="210"/>
         <source>Please enter the old password and new password!</source>
         <oldsource>Please enter the olp password and new password!</oldsource>
         <translation>请输入旧密码和新密码！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="227"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="290"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="312"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="369"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="409"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="443"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="589"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="659"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="228"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="291"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="313"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="370"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="410"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="444"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="590"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="660"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="228"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="229"/>
         <source>Old password is wrong!</source>
         <translation>旧密码错误！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="236"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="237"/>
         <source>Change password successfully!</source>
         <translation>变更密码成功!</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="290"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="312"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="369"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="409"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="443"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="589"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="291"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="313"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="370"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="410"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="444"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="590"/>
         <source>USB is not connected!</source>
         <translation>没有检测到U盘！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="293"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="315"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="372"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="294"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="316"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="373"/>
         <source>Backuping, please wait...</source>
         <translation>备份中，请稍后...</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="331"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="332"/>
         <source>Operation finished!</source>
         <translation>操作完成！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="335"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="336"/>
         <source>Operation fail!</source>
         <translation>操作失败！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="412"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="446"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="592"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="413"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="447"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="593"/>
         <source>Restoring, please wait...</source>
         <translation>还原中，请稍后...</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="422"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="454"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="616"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="423"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="455"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="617"/>
         <source>Backup files is broken!</source>
         <translation>备份文件不完整！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="653"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="654"/>
         <source>App %1;Libs:4.7.3; Host:</source>
         <translation>手控版本:%1;主控版本:</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="707"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="712"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="734"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="739"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="751"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="762"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="708"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="713"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="735"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="740"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="752"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="763"/>
         <source>Warnning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="799"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="800"/>
         <source>After fix will auto reboot. Continue?</source>
         <translation>修复后会重启.继续吗?</translation>
     </message>
@@ -5888,25 +5888,25 @@ Reason</source>
         <translation type="obsolete">离开原点位置</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="660"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="661"/>
         <source>The system will be reboot to calibrate! Do you want to continue?</source>
         <translation>系统需要重启来校准屏幕!要继续吗?</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="707"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="712"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="708"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="713"/>
         <source>Wrong system config format!</source>
         <translation>错误的系统参数格式！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="734"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="739"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="735"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="740"/>
         <source>Wrong Axis config format!</source>
         <translation>错误的轴参数格式！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="751"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="762"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="752"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="763"/>
         <source>Wrong Rotation config format!</source>
         <translation>错误的每转距离参数格式！</translation>
     </message>
@@ -11084,13 +11084,13 @@ Would you want to restart now?</source>
         <location filename="hcmaintains/icupdatesystempage.ui" line="89"/>
         <location filename="hcmaintains/icupdatesystempage_5.ui" line="112"/>
         <source>Scan Panel</source>
-        <translation>扫描手控更新</translation>
+        <translation>扫描更新包</translation>
     </message>
     <message>
         <location filename="hcmaintains/icupdatesystempage.ui" line="111"/>
         <location filename="hcmaintains/icupdatesystempage_5.ui" line="140"/>
         <source>Update HMI</source>
-        <translation>更新手控</translation>
+        <translation>开始更新</translation>
     </message>
     <message>
         <location filename="hcmaintains/icupdatesystempage.ui" line="130"/>
@@ -13006,300 +13006,52 @@ Admin</source>
         <translation>键盘</translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="64"/>
         <source>Home</source>
-        <translation type="unfinished">起点</translation>
+        <translation type="obsolete">起点</translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="98"/>
-        <source>&lt;&lt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="132"/>
-        <source>&gt;&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="166"/>
         <source>End</source>
-        <translation type="unfinished">结束</translation>
+        <translation type="obsolete">结束</translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="73"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="209"/>
-        <source>V</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="107"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="243"/>
-        <source>H</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="141"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="277"/>
-        <source>O</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="175"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="311"/>
-        <source>B</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="209"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="345"/>
-        <source>E</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="243"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="379"/>
-        <source>P</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="277"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="413"/>
-        <source>R</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="311"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="447"/>
-        <source>W</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="345"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="481"/>
-        <source>I</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="515"/>
-        <source>/</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="379"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="549"/>
         <source>7</source>
         <oldsource>/</oldsource>
-        <translation>7</translation>
+        <translation type="obsolete">7</translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="413"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="583"/>
-        <source>A</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="447"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="617"/>
-        <source>F</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="481"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="651"/>
-        <source>J</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="515"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="685"/>
-        <source>Y</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="549"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="719"/>
-        <source>2</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="583"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="753"/>
-        <source>0</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="617"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="787"/>
-        <source>N</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="651"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="821"/>
-        <source>5</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="685"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="855"/>
-        <source>C</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="719"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="889"/>
-        <source>L</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="753"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="923"/>
-        <source>S</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="787"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="957"/>
-        <source>8</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="821"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="991"/>
-        <source>6</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="1025"/>
-        <source>;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="889"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="1093"/>
-        <source>Z</source>
-        <oldsource>;</oldsource>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1405"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="1405"/>
         <source>(</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1439"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="1439"/>
         <source>)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="855"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="1059"/>
-        <source>3</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="923"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="1127"/>
-        <source>M</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="957"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="1161"/>
-        <source>T</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="991"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="1195"/>
-        <source>1</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1025"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="1229"/>
-        <source>Q</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1059"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="1263"/>
-        <source>9</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="1297"/>
-        <source>.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="1331"/>
-        <source>,</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1161"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="1433"/>
         <source>4</source>
         <oldsource>.</oldsource>
-        <translation>4</translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1195"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="1467"/>
-        <source>U</source>
-        <oldsource>,</oldsource>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1093"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="1365"/>
-        <source>G</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1127"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="1399"/>
-        <source>K</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1229"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="1501"/>
-        <source>X</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1263"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="1535"/>
-        <source>D</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="1593"/>
-        <source>Space</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">4</translation>
     </message>
     <message>
         <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1335"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="1609"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="1335"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
         <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1299"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="1561"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="1299"/>
         <source>Backspace</source>
         <translation>退格</translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="1577"/>
         <source>Del</source>
-        <translation type="unfinished">删除</translation>
+        <translation type="obsolete">删除</translation>
     </message>
     <message>
         <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.ui" line="1371"/>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="1625"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog_5.ui" line="1371"/>
         <source>OK</source>
         <translation>确定</translation>
     </message>
@@ -13313,98 +13065,42 @@ Admin</source>
     <name>VirtualNumericKeypadDialog</name>
     <message>
         <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="14"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog_5.ui" line="14"/>
         <source>Keyboard</source>
         <translation>键盘</translation>
     </message>
     <message>
         <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="45"/>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="390"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog_5.ui" line="45"/>
         <source>0</source>
         <translation></translation>
     </message>
     <message>
         <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="458"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog_5.ui" line="458"/>
         <source>+</source>
         <translation></translation>
     </message>
     <message>
         <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="486"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog_5.ui" line="486"/>
         <source>-</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="83"/>
-        <source>7</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="86"/>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="117"/>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="148"/>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="179"/>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="210"/>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="241"/>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="272"/>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="303"/>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="334"/>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="393"/>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="424"/>
-        <source>numericButtonGroup</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="114"/>
-        <source>8</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="145"/>
-        <source>9</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="176"/>
-        <source>4</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="207"/>
-        <source>5</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="238"/>
-        <source>6</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="269"/>
-        <source>1</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="300"/>
-        <source>2</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="331"/>
-        <source>3</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="362"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog_5.ui" line="362"/>
         <source>CE</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="421"/>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.cpp" line="83"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog_5.ui" line="421"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.cpp" line="84"/>
         <source>.</source>
         <translation></translation>
     </message>
     <message>
         <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="516"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog_5.ui" line="516"/>
         <source>Backspace</source>
         <translation>退格</translation>
     </message>
@@ -13414,11 +13110,13 @@ Admin</source>
     </message>
     <message>
         <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="544"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog_5.ui" line="544"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
         <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.ui" line="572"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog_5.ui" line="572"/>
         <source>OK</source>
         <translation>确定</translation>
     </message>

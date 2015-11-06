@@ -6,7 +6,7 @@
 
 #include <QDebug>
 
-VirtualNumericKeypadDialog* VirtualNumericKeypadDialog::instance_;
+QScopedPointer<VirtualNumericKeypadDialog> VirtualNumericKeypadDialog::instance_;
 VirtualNumericKeypadDialog::VirtualNumericKeypadDialog(QWidget *parent) :
     QDialog(parent),
     numerickSignalMapper_(new QSignalMapper(this)),
@@ -37,6 +37,8 @@ VirtualNumericKeypadDialog::VirtualNumericKeypadDialog(QWidget *parent) :
             this,
             SLOT(KeyboardClicked(QString)));
     ui->displayLineEdit->installEventFilter(this);
+    this->setWindowFlags(Qt::WindowTitleHint | Qt::CustomizeWindowHint);
+    this->setFixedSize(420, 298);
 
 //    ui->displayLineEdit->setValidator(new QDoubleValidator(ui->displayLineEdit));
 }
@@ -67,7 +69,6 @@ bool VirtualNumericKeypadDialog::eventFilter(QObject *o, QEvent *e)
     }
 #endif
     return QDialog::eventFilter(o, e);
-
 }
 
 void VirtualNumericKeypadDialog::ResetDisplay()

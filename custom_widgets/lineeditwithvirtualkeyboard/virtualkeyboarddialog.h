@@ -13,11 +13,11 @@ class VirtualKeyboardDialog : public QDialog {
 public:
     static VirtualKeyboardDialog* Instance()
     {
-        if(!instance_)
+        if(instance_.isNull())
         {
-            instance_ = new VirtualKeyboardDialog();
+            instance_.reset(new VirtualKeyboardDialog());
         }
-        return instance_;
+        return instance_.data();
     }
 
     ~VirtualKeyboardDialog();
@@ -29,6 +29,7 @@ public:
 protected:
     void changeEvent(QEvent *e);
     bool eventFilter(QObject *o, QEvent *e);
+
 
 private:
     Ui::VirtualKeyboardDialog *ui;
@@ -42,10 +43,8 @@ private slots:
     void on_ok_clicked();
 
     void KeyboardClicked();
-//    void on_del_clicked();
-
 private:
-    static VirtualKeyboardDialog * instance_;
+    static QScopedPointer<VirtualKeyboardDialog> instance_;
     VirtualKeyboardDialog(QWidget *parent = 0);
 };
 

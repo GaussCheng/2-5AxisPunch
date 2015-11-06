@@ -6,7 +6,7 @@
 
 #include <QDebug>
 
-VirtualKeyboardDialog *VirtualKeyboardDialog::instance_;
+QScopedPointer<VirtualKeyboardDialog> VirtualKeyboardDialog::instance_;
 
 VirtualKeyboardDialog::VirtualKeyboardDialog(QWidget *parent) :
     QDialog(parent),
@@ -32,6 +32,8 @@ VirtualKeyboardDialog::VirtualKeyboardDialog(QWidget *parent) :
                 SLOT(KeyboardClicked()));
     }
     ui->display->installEventFilter(this);
+    this->setWindowFlags(Qt::WindowTitleHint | Qt::CustomizeWindowHint);
+    this->setFixedSize(800, 356);
 }
 
 VirtualKeyboardDialog::~VirtualKeyboardDialog()
@@ -62,7 +64,6 @@ bool VirtualKeyboardDialog::eventFilter(QObject *o, QEvent *e)
     return QDialog::eventFilter(o, e);
 
 }
-
 
 //public slots:
 void VirtualKeyboardDialog::ResetDisplay()
@@ -118,8 +119,3 @@ QString VirtualKeyboardDialog::GetCurrentText() const
 {
     return ui->display->text();
 }
-
-//void VirtualKeyboardDialog::on_del_clicked()
-//{
-//    ui->display->del();
-//}

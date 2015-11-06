@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>710</width>
+    <width>800</width>
     <height>356</height>
    </rect>
   </property>
@@ -22,7 +22,7 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>621</width>
+     <width>779</width>
      <height>51</height>
     </rect>
    </property>
@@ -42,10 +42,10 @@
    <widget class="QPushButton" name="letterV">
     <property name="geometry">
      <rect>
-      <x>240</x>
+      <x>270</x>
       <y>193</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -56,30 +56,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>57</width>
+      <height>50</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>V</string>
+     <string notr="true">V</string>
     </property>
    </widget>
    <widget class="QPushButton" name="letterH">
     <property name="geometry">
      <rect>
-      <x>330</x>
+      <x>390</x>
       <y>133</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -90,30 +90,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>57</width>
+      <height>50</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>H</string>
+     <string notr="true">H</string>
     </property>
    </widget>
    <widget class="QPushButton" name="letterO">
     <property name="geometry">
      <rect>
-      <x>500</x>
+      <x>580</x>
       <y>73</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -124,30 +124,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>57</width>
+      <height>50</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>O</string>
+     <string notr="true">O</string>
     </property>
    </widget>
    <widget class="QPushButton" name="letterB">
     <property name="geometry">
      <rect>
-      <x>300</x>
+      <x>340</x>
       <y>193</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -158,30 +158,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>57</width>
+      <height>50</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>B</string>
+     <string notr="true">B</string>
     </property>
    </widget>
    <widget class="QPushButton" name="letterE">
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>160</x>
       <y>73</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -192,30 +192,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>57</width>
+      <height>50</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>E</string>
+     <string notr="true">E</string>
     </property>
    </widget>
    <widget class="QPushButton" name="letterP">
     <property name="geometry">
      <rect>
-      <x>560</x>
+      <x>650</x>
       <y>73</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -226,30 +226,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>57</width>
+      <height>50</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>P</string>
+     <string notr="true">P</string>
     </property>
    </widget>
    <widget class="QPushButton" name="letterR">
     <property name="geometry">
      <rect>
-      <x>200</x>
+      <x>230</x>
       <y>73</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -260,30 +260,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>57</width>
+      <height>50</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>R</string>
+     <string notr="true">R</string>
     </property>
    </widget>
    <widget class="QPushButton" name="letterW">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>90</x>
       <y>73</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -294,30 +294,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>57</width>
+      <height>50</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>W</string>
+     <string notr="true">W</string>
     </property>
    </widget>
    <widget class="QPushButton" name="letterI">
     <property name="geometry">
      <rect>
-      <x>440</x>
+      <x>510</x>
       <y>73</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -328,30 +328,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>57</width>
+      <height>50</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>I</string>
+     <string notr="true">I</string>
     </property>
    </widget>
    <widget class="QPushButton" name="num7">
     <property name="geometry">
      <rect>
-      <x>370</x>
+      <x>430</x>
       <y>10</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -362,30 +362,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>7</string>
+     <string notr="true">7</string>
     </property>
    </widget>
    <widget class="QPushButton" name="letterA">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>41</x>
       <y>133</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -396,30 +396,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>57</width>
+      <height>50</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>A</string>
+     <string notr="true">A</string>
     </property>
    </widget>
    <widget class="QPushButton" name="letterF">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>250</x>
       <y>133</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -430,30 +430,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>57</width>
+      <height>50</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>F</string>
+     <string notr="true">F</string>
     </property>
    </widget>
    <widget class="QPushButton" name="letterJ">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>460</x>
       <y>133</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -464,30 +464,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>57</width>
+      <height>50</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>J</string>
+     <string notr="true">J</string>
     </property>
    </widget>
    <widget class="QPushButton" name="letterY">
     <property name="geometry">
      <rect>
-      <x>320</x>
+      <x>370</x>
       <y>73</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -498,30 +498,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>57</width>
+      <height>50</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>Y</string>
+     <string notr="true">Y</string>
     </property>
    </widget>
    <widget class="QPushButton" name="num2">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>80</x>
       <y>10</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -532,30 +532,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>2</string>
+     <string notr="true">2</string>
     </property>
    </widget>
    <widget class="QPushButton" name="num0">
     <property name="geometry">
      <rect>
-      <x>550</x>
+      <x>640</x>
       <y>10</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -566,30 +566,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>0</string>
+     <string notr="true">0</string>
     </property>
    </widget>
    <widget class="QPushButton" name="letterN">
     <property name="geometry">
      <rect>
-      <x>360</x>
+      <x>410</x>
       <y>193</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -600,30 +600,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>57</width>
+      <height>50</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>N</string>
+     <string notr="true">N</string>
     </property>
    </widget>
    <widget class="QPushButton" name="num5">
     <property name="geometry">
      <rect>
-      <x>250</x>
+      <x>290</x>
       <y>10</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -634,30 +634,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>5</string>
+     <string notr="true">5</string>
     </property>
    </widget>
    <widget class="QPushButton" name="letterC">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>200</x>
       <y>193</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -668,30 +668,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>57</width>
+      <height>50</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>C</string>
+     <string notr="true">C</string>
     </property>
    </widget>
    <widget class="QPushButton" name="letterL">
     <property name="geometry">
      <rect>
-      <x>510</x>
+      <x>600</x>
       <y>133</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -702,30 +702,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>57</width>
+      <height>50</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>L</string>
+     <string notr="true">L</string>
     </property>
    </widget>
    <widget class="QPushButton" name="letterS">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>110</x>
       <y>133</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -736,30 +736,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>57</width>
+      <height>50</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>S</string>
+     <string notr="true">S</string>
     </property>
    </widget>
    <widget class="QPushButton" name="num8">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>500</x>
       <y>10</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -770,30 +770,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>8</string>
+     <string notr="true">8</string>
     </property>
    </widget>
    <widget class="QPushButton" name="num6">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>360</x>
       <y>10</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -804,30 +804,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>6</string>
+     <string notr="true">6</string>
     </property>
    </widget>
    <widget class="QPushButton" name="mum3">
     <property name="geometry">
      <rect>
-      <x>130</x>
+      <x>150</x>
       <y>10</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -838,21 +838,21 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>3</string>
+     <string notr="true">3</string>
     </property>
    </widget>
    <widget class="QPushButton" name="letterZ">
@@ -860,8 +860,8 @@
      <rect>
       <x>61</x>
       <y>193</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -872,30 +872,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>57</width>
+      <height>50</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>Z</string>
+     <string notr="true">Z</string>
     </property>
    </widget>
    <widget class="QPushButton" name="letterM">
     <property name="geometry">
      <rect>
-      <x>420</x>
+      <x>480</x>
       <y>193</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -906,30 +906,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>57</width>
+      <height>50</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>M</string>
+     <string notr="true">M</string>
     </property>
    </widget>
    <widget class="QPushButton" name="letterT">
     <property name="geometry">
      <rect>
-      <x>260</x>
+      <x>300</x>
       <y>73</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -940,21 +940,21 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>57</width>
+      <height>50</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>T</string>
+     <string notr="true">T</string>
     </property>
    </widget>
    <widget class="QPushButton" name="num1">
@@ -962,8 +962,8 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -974,21 +974,21 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>1</string>
+     <string notr="true">1</string>
     </property>
    </widget>
    <widget class="QPushButton" name="letterQ">
@@ -996,8 +996,8 @@
      <rect>
       <x>20</x>
       <y>73</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -1008,30 +1008,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>57</width>
+      <height>50</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>Q</string>
+     <string notr="true">Q</string>
     </property>
    </widget>
    <widget class="QPushButton" name="num9">
     <property name="geometry">
      <rect>
-      <x>490</x>
+      <x>570</x>
       <y>10</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -1042,30 +1042,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>9</string>
+     <string notr="true">9</string>
     </property>
    </widget>
    <widget class="QPushButton" name="letterG">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>320</x>
       <y>133</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -1076,30 +1076,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>57</width>
+      <height>50</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>G</string>
+     <string notr="true">G</string>
     </property>
    </widget>
    <widget class="QPushButton" name="letterK">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>530</x>
       <y>133</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -1110,30 +1110,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>57</width>
+      <height>50</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>K</string>
+     <string notr="true">K</string>
     </property>
    </widget>
    <widget class="QPushButton" name="num4">
     <property name="geometry">
      <rect>
-      <x>190</x>
+      <x>220</x>
       <y>10</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -1144,30 +1144,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>4</string>
+     <string notr="true">4</string>
     </property>
    </widget>
    <widget class="QPushButton" name="letterU">
     <property name="geometry">
      <rect>
-      <x>380</x>
+      <x>440</x>
       <y>73</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -1178,30 +1178,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>57</width>
+      <height>50</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>U</string>
+     <string notr="true">U</string>
     </property>
    </widget>
    <widget class="QPushButton" name="letterX">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>130</x>
       <y>193</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -1212,30 +1212,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>57</width>
+      <height>50</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>X</string>
+     <string notr="true">X</string>
     </property>
    </widget>
    <widget class="QPushButton" name="letterD">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>180</x>
       <y>133</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -1246,30 +1246,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>57</width>
+      <height>50</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>D</string>
+     <string notr="true">D</string>
     </property>
    </widget>
    <widget class="QToolButton" name="backspace">
     <property name="geometry">
      <rect>
-      <x>610</x>
+      <x>710</x>
       <y>10</y>
       <width>80</width>
-      <height>45</height>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -1302,10 +1302,10 @@
    <widget class="QToolButton" name="cancel">
     <property name="geometry">
      <rect>
-      <x>620</x>
+      <x>720</x>
       <y>73</y>
       <width>70</width>
-      <height>45</height>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -1338,10 +1338,10 @@
    <widget class="QToolButton" name="ok">
     <property name="geometry">
      <rect>
-      <x>570</x>
+      <x>670</x>
       <y>133</y>
-      <width>121</width>
-      <height>45</height>
+      <width>120</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -1374,10 +1374,10 @@
    <widget class="QPushButton" name="letterM_3">
     <property name="geometry">
      <rect>
-      <x>480</x>
+      <x>550</x>
       <y>193</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -1388,30 +1388,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>57</width>
+      <height>50</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>(</string>
+     <string notr="true">(</string>
     </property>
    </widget>
    <widget class="QPushButton" name="letterM_4">
     <property name="geometry">
      <rect>
-      <x>540</x>
+      <x>620</x>
       <y>193</y>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -1422,26 +1422,30 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>60</width>
+      <height>55</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>50</width>
-      <height>45</height>
+      <width>57</width>
+      <height>50</height>
      </size>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>)</string>
+     <string notr="true">)</string>
     </property>
    </widget>
   </widget>
  </widget>
  <resources>
+  <include location="../../resource.qrc"/>
+  <include location="../../resource.qrc"/>
+  <include location="../../resource.qrc"/>
+  <include location="../../resource.qrc"/>
   <include location="../../resource.qrc"/>
  </resources>
  <connections/>
