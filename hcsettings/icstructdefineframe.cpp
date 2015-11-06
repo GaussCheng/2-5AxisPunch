@@ -266,7 +266,7 @@ void ICStructDefineFrame::changeEvent(QEvent *e)
     switch (e->type()) {
 
     case QEvent::LanguageChange:{
-        QList<QComboBox*> boxs = boxToAxis_.keys();
+        QList<QComboBox*> boxs = findChildren<QComboBox*>();
         for(int i=0;i<boxs.size();i++){
             boxs.at(i)->blockSignals(true);
         }
@@ -274,8 +274,8 @@ void ICStructDefineFrame::changeEvent(QEvent *e)
         for(int i=0;i<boxs.size();i++){
             boxs.at(i)->blockSignals(false);
         }
-        retranslateUi_();
-        InitCombobox();
+//        retranslateUi_();
+//        InitCombobox();
 
     }
 

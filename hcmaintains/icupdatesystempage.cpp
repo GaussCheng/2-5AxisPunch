@@ -84,6 +84,7 @@ ICUpdateSystemPage::ICUpdateSystemPage(QWidget *parent) :
     ui->packetTable->setModel(model_);
     ui->scanHost->hide();
     ui->connectHostButton->hide();
+    ui->groupBox_2->hide();
 }
 
 ICUpdateSystemPage::~ICUpdateSystemPage()

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>593</width>
-    <height>447</height>
+    <width>1196</width>
+    <height>463</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -28,23 +28,8 @@
    <enum>QFrame::Plain</enum>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
-   <property name="spacing">
-    <number>2</number>
-   </property>
-   <property name="leftMargin">
-    <number>0</number>
-   </property>
-   <property name="topMargin">
-    <number>2</number>
-   </property>
-   <property name="rightMargin">
-    <number>0</number>
-   </property>
-   <property name="bottomMargin">
-    <number>2</number>
-   </property>
    <item>
-    <widget class="ICTabWidget" name="systemConfigPages">
+    <widget class="QTabWidget" name="systemConfigPages">
      <property name="minimumSize">
       <size>
        <width>0</width>
@@ -55,7 +40,7 @@
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="systemSettingPage">
       <attribute name="title">
@@ -67,6 +52,76 @@
        </property>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_15">
+         <item>
+          <widget class="QPushButton" name="keyToneButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>130</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>130</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Key Tone(On)</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_13">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="calibrationBtn">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>130</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>130</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Calibration</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
           <widget class="QLabel" name="label">
            <property name="text">
@@ -148,7 +203,7 @@ QRadioButton::indicator:unchecked:disabled
           </widget>
          </item>
          <item>
-          <spacer name="horizontalSpacer_13">
+          <spacer name="horizontalSpacer">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
@@ -159,31 +214,6 @@ QRadioButton::indicator:unchecked:disabled
             </size>
            </property>
           </spacer>
-         </item>
-         <item>
-          <widget class="QPushButton" name="calibrationBtn">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>130</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>130</width>
-             <height>32</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>Calibration</string>
-           </property>
-          </widget>
          </item>
         </layout>
        </item>
@@ -247,6 +277,9 @@ QRadioButton::indicator:unchecked:disabled
            <property name="displayFormat">
             <string>yyyy / MM  /  dd   hh : mm</string>
            </property>
+           <property name="calendarPopup">
+            <bool>false</bool>
+           </property>
           </widget>
          </item>
          <item>
@@ -262,33 +295,39 @@ QRadioButton::indicator:unchecked:disabled
            </property>
           </spacer>
          </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
          <item>
-          <widget class="QPushButton" name="keyToneButton">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>130</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>130</width>
-             <height>32</height>
-            </size>
-           </property>
+          <widget class="QLabel" name="label_14">
            <property name="text">
-            <string>Key Tone(On)</string>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
+            <string>Back Light Time:</string>
            </property>
           </widget>
+         </item>
+         <item>
+          <widget class="ICLineEditWithVirtualNumericKeypad" name="backLightTimeEdit"/>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_15">
+           <property name="text">
+            <string>min</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
         </layout>
        </item>
@@ -378,84 +417,9 @@ QRadioButton::indicator:unchecked:disabled
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_7">
-         <item>
-          <widget class="QLabel" name="label_14">
-           <property name="text">
-            <string>Back Light Time:</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="ICLineEditWithVirtualNumericKeypad" name="backLightTimeEdit"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_15">
-           <property name="text">
-            <string>min</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_4">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <widget class="QLabel" name="versionLabel">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>48</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="wordWrap">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
-          <widget class="QPushButton" name="mmcFix">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>80</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>130</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>MMC Fix</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="versionLabel_2">
+          <widget class="QLabel" name="versionLabel">
            <property name="text">
             <string/>
            </property>
@@ -477,7 +441,7 @@ QRadioButton::indicator:unchecked:disabled
            </property>
            <property name="maximumSize">
             <size>
-             <width>130</width>
+             <width>80</width>
              <height>48</height>
             </size>
            </property>
@@ -496,7 +460,7 @@ QRadioButton::indicator:unchecked:disabled
          <property name="sizeHint" stdset="0">
           <size>
            <width>20</width>
-           <height>47</height>
+           <height>40</height>
           </size>
          </property>
         </spacer>
@@ -624,6 +588,9 @@ QRadioButton::indicator:unchecked:disabled
            <height>32</height>
           </size>
          </property>
+         <property name="text">
+          <string notr="true"/>
+         </property>
          <property name="echoMode">
           <enum>QLineEdit::Password</enum>
          </property>
@@ -646,6 +613,9 @@ QRadioButton::indicator:unchecked:disabled
            <width>0</width>
            <height>32</height>
           </size>
+         </property>
+         <property name="text">
+          <string notr="true"/>
          </property>
          <property name="echoMode">
           <enum>QLineEdit::Password</enum>
@@ -711,40 +681,58 @@ QRadioButton::indicator:unchecked:disabled
       <attribute name="title">
        <string>Admin Settings</string>
       </attribute>
-      <layout class="QFormLayout" name="formLayout_2">
-       <property name="fieldGrowthPolicy">
-        <enum>QFormLayout::FieldsStayAtSizeHint</enum>
+      <widget class="ICLineEditWithVirtualKeyboard" name="pwdEdit">
+       <property name="enabled">
+        <bool>true</bool>
        </property>
-       <item row="0" column="1">
-        <widget class="ICLineEditWithVirtualKeyboard" name="pwdEdit">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="echoMode">
-          <enum>QLineEdit::Password</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="extentLabel">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="text">
-          <string>Extent Function</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QCheckBox" name="extentFunctionCheckBox">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">::indicator {
+       <property name="geometry">
+        <rect>
+         <x>109</x>
+         <y>9</y>
+         <width>125</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string notr="true"/>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+      </widget>
+      <widget class="QLabel" name="extentLabel">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>38</y>
+         <width>94</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Extent Function</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="extentFunctionCheckBox">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>109</x>
+         <y>38</y>
+         <width>131</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">::indicator {
      width: 32px;
      height: 32px;
  }
@@ -767,39 +755,57 @@ QRadioButton::indicator:unchecked:disabled
 {
  image: url(:/resource/check_unchecked_disable.png);
 }</string>
-         </property>
-         <property name="text">
-          <string>Use</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QPushButton" name="verifyButton">
-         <property name="text">
-          <string>Verify</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="limitFunctionLabel">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="text">
-          <string>Limit Function</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QCheckBox" name="limitFunctionBox">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">::indicator {
+       </property>
+       <property name="text">
+        <string>Use</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="verifyButton">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>9</y>
+         <width>80</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Verify</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="limitFunctionLabel">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>76</y>
+         <width>85</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Limit Function</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="limitFunctionBox">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>109</x>
+         <y>76</y>
+         <width>121</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">::indicator {
      width: 32px;
      height: 32px;
  }
@@ -822,13 +828,202 @@ QRadioButton::indicator:unchecked:disabled
 {
  image: url(:/resource/check_unchecked_disable.png);
 }</string>
-         </property>
-         <property name="text">
-          <string>Use</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+       </property>
+       <property name="text">
+        <string>Use</string>
+       </property>
+      </widget>
+      <widget class="QWidget" name="registerContainer" native="true">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>130</y>
+         <width>541</width>
+         <height>191</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_36">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Register</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLabel" name="tipLabel">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_37">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>MachineCode:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QPushButton" name="generateBtn">
+          <property name="text">
+           <string>Generate</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_38">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>RegisterCode:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="ICLineEditWithVirtualNumericKeypad" name="registerCode">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QPushButton" name="registerBtn">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>27</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>84</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Register</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3">
+         <widget class="QLabel" name="label_39">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>29</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>84</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <property name="text">
+           <string>RestTime:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="4">
+         <widget class="QLabel" name="restTime">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QPushButton" name="verifySupperButton">
+          <property name="text">
+           <string>Verify</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="ICLineEditWithVirtualKeyboard" name="supperPwdEdit">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="text">
+           <string notr="true"/>
+          </property>
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_41">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Factory Code:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="ICLineEditWithVirtualNumericKeypad" name="factoryCode">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2" colspan="2">
+         <widget class="QLabel" name="machineCode">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
      </widget>
      <widget class="QWidget" name="tab">
       <attribute name="title">
@@ -848,7 +1043,7 @@ QRadioButton::indicator:unchecked:disabled
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>48</height>
+                <height>32</height>
                </size>
               </property>
               <property name="text">
@@ -861,7 +1056,7 @@ QRadioButton::indicator:unchecked:disabled
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>48</height>
+                <height>32</height>
                </size>
               </property>
               <property name="text">
@@ -874,7 +1069,7 @@ QRadioButton::indicator:unchecked:disabled
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>48</height>
+                <height>32</height>
                </size>
               </property>
               <property name="text">
@@ -896,7 +1091,7 @@ QRadioButton::indicator:unchecked:disabled
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>48</height>
+                <height>32</height>
                </size>
               </property>
               <property name="text">
@@ -909,7 +1104,7 @@ QRadioButton::indicator:unchecked:disabled
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>48</height>
+                <height>32</height>
                </size>
               </property>
               <property name="text">
@@ -922,7 +1117,7 @@ QRadioButton::indicator:unchecked:disabled
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>48</height>
+                <height>32</height>
                </size>
               </property>
               <property name="text">
@@ -983,12 +1178,6 @@ QRadioButton::indicator:unchecked:disabled
    <class>ICLineEditWithVirtualNumericKeypad</class>
    <extends>QLineEdit</extends>
    <header>iclineeditwithvirtualnumerickeypad.h</header>
-  </customwidget>
-  <customwidget>
-   <class>ICTabWidget</class>
-   <extends>QTabWidget</extends>
-   <header>ictabwidget.h</header>
-   <container>1</container>
   </customwidget>
   <customwidget>
    <class>ICLineEditWithVirtualKeyboard</class>

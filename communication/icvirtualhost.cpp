@@ -238,6 +238,11 @@ void ICVirtualHost::RefreshStatus()
                 {
                 case ICKeyboard::KS_AutoStatu:
                 {
+                    int restTime = ICParametersSave::Instance()->RestTime(0);
+                    if(restTime == 1)
+                    {
+                        return;
+                    }
                     ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnAuto,
                                                                      0,
                                                                      ICMold::CurrentMold()->SyncAct() + ICMacroSubroutine::Instance()->SyncAct(),

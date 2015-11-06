@@ -30,10 +30,10 @@ protected:
 
 private:
     void InitParameter();
-
 private:
     void Information(bool isSuccess, const QString &msg = QString());
     bool CheckIsUsbAttached() const;
+    void UpdateConfigShow_();
     Ui::ICHCSystemSettingsFrame *ui;
     QDialog *passwordDialog_;
     QButtonGroup* buttonGroup_;
@@ -77,12 +77,25 @@ private slots:
 
     void on_limitFunctionBox_toggled(bool checked);
 
-    void on_mmcFix_clicked();
+    void on_generateBtn_clicked();
+    void on_registerBtn_clicked();
+
+    void on_verifySupperButton_clicked();
+
+    void on_factoryCode_textChanged(const QString &arg1);
 
 private:
     bool CheckRestoreSystemFiles_();
     bool CheckRestoreMachineFiles_();
-//    void InitLanguageBox();
+
+private slots:
+    void OnConfigChanged(QObject* w, const QString& newV, const QString& oldV);
+    void OnConfigChanged(const QString& text);
+    void OnConfigChanged(int v);
+    void OnConfigChanged(int v, int ov);
+    void OnConfigChanged(bool b);
+private:
+    QMap<QObject*, int> editorToConfigIDs_;
 };
 
 #endif // ICHCSYSTEMSETTINGSFRAME_H

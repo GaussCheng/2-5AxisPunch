@@ -4,15 +4,16 @@
 #include <QString>
 #include <stdint.h>
 #include <QDir>
+#include "ICUtility_global.h"
 
-class ICUtility {
+class ICUTILITYSHARED_EXPORT ICUtility {
 public:
 	/**
-	 * ÆÁ±£Í¼Æ¬Â·¾¶
+	 * å±ä¿å›¾ç‰‡è·¯å¾„
 	 */
     static const QString ScreenSaverImgPath;
 	/**
-	 * ÆÁ±£½ø³Ì¸±±¾ËøÎÄ¼şÂ·¾¶
+	 * å±ä¿è¿›ç¨‹å‰¯æœ¬é”æ–‡ä»¶è·¯å¾„
 	 */
     static const QString ScreenSaverInstanceLockFile;
 	static bool LockFile(int fd);
@@ -21,10 +22,10 @@ public:
     static uint CountOneInNumber(uint x);
     static int readn(int fd, uint8_t* ptr, size_t n);
     static int writen(int fd, const uint8_t* ptr, size_t n);
-    static int Register(const QString& code, const QString& machineCode);
+    static int Register(const QString &fC, const QString &mC, const QString &code);
     static bool IsUsbAttached();
-    static int system(QByteArray cmd);
     static int ConvertFontPointSizeToEmbedded(int desktopPointSize);
+    static int system(QByteArray cmd);
     const static int RefreshTime = 20;
 private:
     static uint8_t crcTableLo_[256];
@@ -52,6 +53,7 @@ inline uint ICUtility::CountOneInNumber(uint x)
 inline bool ICUtility::IsUsbAttached()
 {
     QDir dir("/proc/scsi/usb-storage");
+    if(!dir.exists()) return false;
     return !(dir.entryList(QDir::Files).isEmpty());
 }
 
