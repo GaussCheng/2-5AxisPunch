@@ -1,6 +1,7 @@
 #! /bin/sh
 
-${PWD}/UpdateGUI update_cmd -qws
+chmod +x UpdateGUI
+./UpdateGUI update_cmd -qws
 
 hostPackages=`find . -name "rom.bin"`
 if [ "$hostPackages" != "" ] ; then

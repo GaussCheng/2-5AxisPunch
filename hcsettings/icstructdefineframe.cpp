@@ -267,12 +267,24 @@ void ICStructDefineFrame::changeEvent(QEvent *e)
 
     case QEvent::LanguageChange:{
         QList<QComboBox*> boxs = findChildren<QComboBox*>();
+        QList<int> boxIndex;
         for(int i=0;i<boxs.size();i++){
             boxs.at(i)->blockSignals(true);
+            boxIndex.append(boxs.at(i)->currentIndex());
         }
         ui->retranslateUi(this);
         for(int i=0;i<boxs.size();i++){
+            boxs[i]->setCurrentIndex(boxIndex.at(i));
             boxs.at(i)->blockSignals(false);
+        }
+        ICUserDefineConfigSPTR config = ICUserDefineConfig::Instance();
+        QString localeName = ICParametersSave::Instance()->Language() == QLocale::Chinese?
+                    "zh":"en";
+        for(int i=0;i < 32;i++){
+            QString input = config->XInfo(i).GetLocaleName(localeName);
+            QString ouput = config->YInfo(i).GetLocaleName(localeName);
+            inputBoxs.at(i)->setText(input);
+            ouputBoxs.at(i)->setText(ouput);
         }
 //        retranslateUi_();
 //        InitCombobox();
@@ -663,9 +675,11 @@ void ICStructDefineFrame::InitCombobox()
 void ICStructDefineFrame::InitEnfoce()
 {
     ICUserDefineConfigSPTR config = ICUserDefineConfig::Instance();
+    QString localeName = ICParametersSave::Instance()->Language() == QLocale::Chinese?
+                "zh":"en";
     for(int i=0;i < 32;i++){
-        QString input = config->XInfo(i).GetLocaleName("zh");
-        QString ouput = config->YInfo(i).GetLocaleName("zh");
+        QString input = config->XInfo(i).GetLocaleName(localeName);
+        QString ouput = config->YInfo(i).GetLocaleName(localeName);
         inputBoxs.at(i)->setText(input);
         ouputBoxs.at(i)->setText(ouput);
     }
