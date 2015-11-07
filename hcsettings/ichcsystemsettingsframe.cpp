@@ -799,7 +799,7 @@ void ICHCSystemSettingsFrame::StatusRefresh()
     QString os(osInfo_.release);
 #endif
     os += "; ";
-    ui->versionLabel->setText("Version: OS:" + os + QString(tr("\nApp %1; Host:")).arg(SW_VERSION) + ICVirtualHost::GlobalVirtualHost()->HostStatus(ICVirtualHost::Time).toString());
+    ui->versionLabel->setText("Version: OS:" + os + QString(tr("\nApp %1; Host:")).arg(SHOW_VERSION) + ICVirtualHost::GlobalVirtualHost()->HostStatus(ICVirtualHost::Time).toString());
 }
 
 void ICHCSystemSettingsFrame::on_calibrationBtn_clicked()
@@ -963,7 +963,7 @@ void ICHCSystemSettingsFrame::on_registerBtn_clicked()
         ui->tipLabel->setText(tr("Wrong Register Code!"));
         return;
     }
-    int hour = ICUtility::Register(ICParametersSave::Instance()->FactoryCode(), ui->registerCode->text(), ui->machineCode->text());
+    int hour = ICUtility::Register(ICParametersSave::Instance()->FactoryCode(), ui->machineCode->text(), ui->registerCode->text());
     if(hour == -1)
     {
         ui->tipLabel->setText(tr("Wrong Register Code!"));
