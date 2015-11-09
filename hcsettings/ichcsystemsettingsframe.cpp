@@ -206,7 +206,6 @@ void ICHCSystemSettingsFrame::showEvent(QShowEvent *e)
     ui->label_41->hide();
 
     int hour = ICParametersSave::Instance()->RestTime(0);
-    ui->tipLabel->setText(tr("Register Success!"));
     if(hour == 0)
     {
         ui->restTime->setText(tr("No Limit"));

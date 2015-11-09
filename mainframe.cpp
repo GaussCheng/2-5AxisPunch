@@ -281,23 +281,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     QString moldName = ICParametersSave::Instance()->MoldName("Default.act");
     qDebug()<<"Last mold:"<<moldName;
     ICProgramHeadFrame::Instance()->SetCurrentMoldName(moldName);
-    int restTime = ICParametersSave::Instance()->RestTime(0);
-    if(restTime != 0)
-    {
-        QDateTime last = ICParametersSave::Instance()->BootDatetime();
-        int overTime = QDateTime::currentDateTime().daysTo(last) * 24;
-        restTime -= qAbs(overTime);
-        if(restTime <= 1)
-            restTime = 1;
-//        QMessageBox::information(this, "rest time", QString("%1 %2 %3").arg(last.toString())
-//                                 .arg(overTime)
-//                                 .arg(restTime));
-        ICParametersSave::Instance()->SetRestTime(restTime);
-    }
-    ICParametersSave::Instance()->SetBootDatetime(QDateTime::currentDateTime());
-    isOverTime_ = (restTime == 1);
-    registe_timer.start(3600000);
-    refreshTimer_.start(ICTimerPool::RefreshTime);
+
 
     keyMap.insert(Qt::Key_F11, ICKeyboard::VFB_Run);
     keyMap.insert(Qt::Key_X, ICKeyboard::FB_Stop);
@@ -362,15 +346,32 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     installEventFilter(this);
 
 #ifndef Q_WS_WIN32
-           int keyFD_ = open("/dev/input/event1", O_RDWR);
-           struct input_event inputEvent;
-           inputEvent.type = EV_SYN; //__set_bit
-           inputEvent.code = SYN_CONFIG;  //__set_bit
-           inputEvent.value = 1;
-           write(keyFD_,&inputEvent,sizeof(inputEvent));
-           ::close(keyFD_);
+    int keyFD_ = open("/dev/input/event1", O_RDWR);
+    struct input_event inputEvent;
+    inputEvent.type = EV_SYN; //__set_bit
+    inputEvent.code = SYN_CONFIG;  //__set_bit
+    inputEvent.value = 1;
+    write(keyFD_,&inputEvent,sizeof(inputEvent));
+    ::close(keyFD_);
 #endif
 
+    int restTime = ICParametersSave::Instance()->RestTime(0);
+    if(restTime != 0)
+    {
+        QDateTime last = ICParametersSave::Instance()->BootDatetime();
+        qint64 overTime = QDateTime::currentDateTime().secsTo(last) / 3600;
+        restTime -= qAbs(overTime);
+        if(restTime <= 1)
+            restTime = 1;
+        //        QMessageBox::information(this, "rest time", QString("%1 %2 %3").arg(last.toString())
+        //                                 .arg(overTime)
+        //                                 .arg(restTime));
+        ICParametersSave::Instance()->SetRestTime(restTime);
+    }
+    ICParametersSave::Instance()->SetBootDatetime(QDateTime::currentDateTime());
+    isOverTime_ = (restTime == 1);
+    registe_timer.start(3600000);
+    refreshTimer_.start(ICTimerPool::RefreshTime);
 
 }
 
@@ -414,11 +415,11 @@ void MainFrame::changeEvent(QEvent *e)
 
 void MainFrame::keyPressEvent(QKeyEvent *e)
 {
-//    SetHasInput(true);
+    //    SetHasInput(true);
     if(keyMap.contains(e->key()))
     {
         int key = keyMap.value(e->key());
-//        qDebug()<<key;
+        //        qDebug()<<key;
         switch(key)
         {
         default:
@@ -464,18 +465,18 @@ void MainFrame::keyPressEvent(QKeyEvent *e)
             currentKeySeq.clear();
         }
 #ifndef Q_WS_WIN32
-//        static bool isExeced = false;
-//        if(!isExeced)
-//        {
-//            struct input_event inputEvent;
-//            inputEvent.type = EV_SYN; //__set_bit
-//            inputEvent.code = SYN_CONFIG;  //__set_bit
-//            inputEvent.value = 1;
-//            int keyFD_ = open("/dev/input/event1", O_RDWR);
-//            write(keyFD_,&inputEvent,sizeof(inputEvent));
-//            ::close(keyFD_);
-//            isExeced = true;
-//        }
+        //        static bool isExeced = false;
+        //        if(!isExeced)
+        //        {
+        //            struct input_event inputEvent;
+        //            inputEvent.type = EV_SYN; //__set_bit
+        //            inputEvent.code = SYN_CONFIG;  //__set_bit
+        //            inputEvent.value = 1;
+        //            int keyFD_ = open("/dev/input/event1", O_RDWR);
+        //            write(keyFD_,&inputEvent,sizeof(inputEvent));
+        //            ::close(keyFD_);
+        //            isExeced = true;
+        //        }
 #endif
         //        ICKeyboardHandler::Instance()->Keypressed(key);
     }
@@ -567,7 +568,7 @@ void MainFrame::InitCategoryPage()
     //    centerStackedLayout_->addWidget(settingsPage_);
 
     emit LoadMessage("Start to Initialize alarm pages");
-//    functionButtonToPage_.insert(ui->recordButton, NULL);
+    //    functionButtonToPage_.insert(ui->recordButton, NULL);
 
     alarmButtonToPage_.insert(ui->alarmReturn,NULL);
     alarmPage_ = ICAlarmFrame::Instance();
@@ -591,7 +592,7 @@ void MainFrame::InitCategoryPage()
     instructPage_ =  new ICHCInstructionPageFrame();//ICHCInstructionPageFrame  ICProgramMainPage
 #else
     instructPage_ =  ICProgramPage::Instance_();//ICHCInstructionPageFrame  ICProgramMainPage
- #endif
+#endif
 
     functionButtonToPage_.insert(ui->teachButton, instructPage_);
     centerStackedLayout_->addWidget(instructPage_);
@@ -627,11 +628,11 @@ void MainFrame::InitCategoryPage()
     emit LoadMessage("end to Initialize  pages");
 
 
-//    connect(manualPage_,SIGNAL(ChangeDelay(int)),
-//            instructPage_,SLOT(ChangeDelay(int)));
+    //    connect(manualPage_,SIGNAL(ChangeDelay(int)),
+    //            instructPage_,SLOT(ChangeDelay(int)));
 
-//    connect(manualPage_,SIGNAL(ChangeWaste(bool)),
-//            instructPage_,SLOT(ChangeWaste(bool)));
+    //    connect(manualPage_,SIGNAL(ChangeWaste(bool)),
+    //            instructPage_,SLOT(ChangeWaste(bool)));
 
 }
 
@@ -689,9 +690,9 @@ void MainFrame::BindShortcutKey()
 
 quint32 MainFrame::GetPointValue(quint16 pos)
 {
-     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-     quint32 s  = host->HostStatus(ICVirtualHost::DbgB0).toUInt() << 16;
-     s = s + host->HostStatus(ICVirtualHost::DbgA1).toUInt();
+    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
+    quint32 s  = host->HostStatus(ICVirtualHost::DbgB0).toUInt() << 16;
+    s = s + host->HostStatus(ICVirtualHost::DbgA1).toUInt();
 
     return ( (s >>( (pos -  ICVirtualHost::XPos)* 4 ) )& 0xF);
 }
@@ -701,12 +702,12 @@ qint32 MainFrame::GetPosValue(ICVirtualHost::ICStatus status)
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
     qint16  p =  host->HostStatus(status).toInt() ;
     if(p < 0){
-       qint32 v = p * 10 -  GetPointValue(status) ;
+        qint32 v = p * 10 -  GetPointValue(status) ;
         return v;
     }
     else{
         qint32 v = p * 10 + GetPointValue(status) ;
-         return v;
+        return v;
     }
 }
 
@@ -786,7 +787,7 @@ void MainFrame::StatusRefreshed()
     static ICVirtualHost* virtualHost = ICVirtualHost::GlobalVirtualHost();
     if(isOverTime_)
     {
-        ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
+        //ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
         errCode_ = 4000;
         alarmString->SetPriorAlarmNum(errCode_);
         ui->cycleTimeAndFinistWidget->SetAlarmInfo("Err" + QString::number(errCode_) + ":" + alarmString->AlarmInfo(errCode_));
@@ -982,11 +983,11 @@ void MainFrame::StatusRefreshed()
         ICProgramHeadFrame::Instance()->SetHanSelectEnable(false);
         //        ui->teachButton->setEnabled(false);
         if((virtualHost->HostStatus(ICVirtualHost::ClipL).toInt() >> 15)
-                     && ( (errCode_ == 2423)
+                && ( (errCode_ == 2423)
                      ||   (errCode_ == 2424)
                      ||   (errCode_ == 2410)
                      ||   (errCode_ == 2411)
-                        )
+                     )
                 )
         {
             if(actionDialog_->isHidden())
@@ -1410,38 +1411,38 @@ void MainFrame::LevelChanged(int level)
         }
 
     }
-//        if(ICVirtualHost::GlobalVirtualHost()->CurrentStatus() == ICVirtualHost::Stop)
-//        {
-//            ui->settingsButton->setEnabled(true);
-//#ifdef Q_WS_QWS
-//            ui->teachButton->setEnabled(false);
-//#endif
+        //        if(ICVirtualHost::GlobalVirtualHost()->CurrentStatus() == ICVirtualHost::Stop)
+        //        {
+        //            ui->settingsButton->setEnabled(true);
+        //#ifdef Q_WS_QWS
+        //            ui->teachButton->setEnabled(false);
+        //#endif
 
-//            //            settingsPage_->SetToShowAll(true);
-//            //            ui->functionPageButton->setEnabled(true);
-//        }
-//        else
-//        {
-//            ui->settingsButton->setEnabled(false);
-//            //            ui->functionPageButton->setEnabled(false);
-//        }
-//        if(ICVirtualHost::GlobalVirtualHost()->CurrentStatus() != ICVirtualHost::Auto)
-//        {
-//            if(ICVirtualHost::GlobalVirtualHost()->CurrentStatus() == ICVirtualHost::Manual){
-//                ui->teachButton->setEnabled(true);
-//                ui->stackedWidget->setCurrentWidget(ui->page);
-//            }
-//            //            ui->recordPageButton->setEnabled(true);
-//        }
-//        else
-//        {
-//#ifdef Q_WS_QWS
-//            ui->teachButton->setEnabled(false);
-//            ui->stackedWidget->setCurrentWidget(ui->page);
-//#endif
-//            //            ui->recordPageButton->setEnabled(false);
-//        }
-//    }
+        //            //            settingsPage_->SetToShowAll(true);
+        //            //            ui->functionPageButton->setEnabled(true);
+        //        }
+        //        else
+        //        {
+        //            ui->settingsButton->setEnabled(false);
+        //            //            ui->functionPageButton->setEnabled(false);
+        //        }
+        //        if(ICVirtualHost::GlobalVirtualHost()->CurrentStatus() != ICVirtualHost::Auto)
+        //        {
+        //            if(ICVirtualHost::GlobalVirtualHost()->CurrentStatus() == ICVirtualHost::Manual){
+        //                ui->teachButton->setEnabled(true);
+        //                ui->stackedWidget->setCurrentWidget(ui->page);
+        //            }
+        //            //            ui->recordPageButton->setEnabled(true);
+        //        }
+        //        else
+        //        {
+        //#ifdef Q_WS_QWS
+        //            ui->teachButton->setEnabled(false);
+        //            ui->stackedWidget->setCurrentWidget(ui->page);
+        //#endif
+        //            //            ui->recordPageButton->setEnabled(false);
+        //        }
+        //    }
         break;
     default:
     {
@@ -1636,6 +1637,7 @@ void MainFrame::CountRestTime()
     --restTime;
     ICParametersSave::Instance()->SetRestTime(restTime);
     ICParametersSave::Instance()->SetBootDatetime(QDateTime::currentDateTime());
+    ::system("sync");
 }
 
 

@@ -119,7 +119,7 @@ public:
     void SetRoot(bool isroot) { isRoot_ = isroot;}
 
     QDateTime BootDatetime() { return QDateTime::fromString(GetParameter(SystemMachine, "BootDateTime", QDateTime::currentDateTime().toString()).toString());}
-    void SetBootDatetime(QDateTime dt) { SaveParameter(SystemMachine, "BootDateTime", dt.toString());}
+    void SetBootDatetime(QDateTime dt) { SaveParameter(SystemMachine, "BootDateTime", dt.toString(), false);}
 
 signals:
     void CurrentLanguageChanged();
