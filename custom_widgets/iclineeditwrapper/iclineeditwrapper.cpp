@@ -14,7 +14,7 @@ QString IntToString(int num, int decimals)
 int StringToInt(const QString &numString, int decimals)
 {
     double num = numString.toDouble();
-    double diff = 5 / qPow(10, decimals + 1);
+    double diff = 5 * (num < 0 ? -1 : 1) / qPow(10, decimals + 1);
     num += diff;
     return num * qPow(10, decimals);
 }

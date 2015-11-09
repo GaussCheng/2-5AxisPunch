@@ -289,6 +289,9 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
         restTime -= qAbs(overTime);
         if(restTime <= 1)
             restTime = 1;
+//        QMessageBox::information(this, "rest time", QString("%1 %2 %3").arg(last.toString())
+//                                 .arg(overTime)
+//                                 .arg(restTime));
         ICParametersSave::Instance()->SetRestTime(restTime);
     }
     ICParametersSave::Instance()->SetBootDatetime(QDateTime::currentDateTime());

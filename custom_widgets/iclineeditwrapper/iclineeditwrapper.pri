@@ -1,6 +1,6 @@
 INCLUDEPATH += $$PWD
 DEPENDPATH += $$PWD
 
-HEADERS += iclineeditwrapper.h
+HEADERS += $$PWD/iclineeditwrapper.h
 
-SOURCES += iclineeditwrapper.cpp
+SOURCES += $$PWD/iclineeditwrapper.cpp
