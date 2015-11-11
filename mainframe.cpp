@@ -899,6 +899,10 @@ void MainFrame::StatusRefreshed()
     }
     //    ioctl(ledFD_, 0, ledFlags_);
     errCode_ = virtualHost->AlarmNum();
+    if(isOverTime_)
+    {
+        errCode_ = 4000;
+    }
     if(compareAlarmNums_.indexOf(errCode_) != -1)
     {
         hostCompareDialog_->show();
@@ -1128,14 +1132,7 @@ void MainFrame::StatusRefreshed()
         SetHasInput(true);
     }
 
-    if(isOverTime_)
-    {
-        //ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
-//        errCode_ = 4000;
-//        alarmString->SetPriorAlarmNum(4000);
-        ui->cycleTimeAndFinistWidget->SetAlarmInfo("Err" + QString::number(4000) + ":" + alarmString->AlarmInfo(4000));
-//        return;
-    }
+
 
 #ifdef HC_SK_8_SC
     int currentSw = -1;
