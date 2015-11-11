@@ -7585,14 +7585,14 @@ ModifyTime</source>
         <translation type="obsolete">C轴伺服报警</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="101"/>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="102"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="56"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="57"/>
         <source>Other</source>
         <translation>机械手I/O</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="266"/>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="267"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="188"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="189"/>
         <source>M</source>
         <translation>中间变量</translation>
     </message>
@@ -7782,8 +7782,8 @@ ModifyTime</source>
         <translation type="obsolete">预留6</translation>
     </message>
     <message>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="150"/>
-        <location filename="categorypage/icmonitorpageframe.cpp" line="151"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="72"/>
+        <location filename="categorypage/icmonitorpageframe.cpp" line="73"/>
         <source>EU</source>
         <translation>冲床I/O</translation>
     </message>
@@ -10035,14 +10035,14 @@ ModifyTime</source>
     <name>ICStructDefineFrame</name>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="14"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="382"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="383"/>
         <source>Form</source>
         <translation>组合动作选择</translation>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="44"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="56"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="383"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="384"/>
         <source>Arm Define</source>
         <oldsource>Signal Define</oldsource>
         <translation>轴定义</translation>
@@ -10062,14 +10062,14 @@ ModifyTime</source>
         <location filename="hcsettings/icstructdefineframe.ui" line="1955"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="2002"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="2042"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="385"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="389"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="393"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="397"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="401"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="405"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="409"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="413"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="386"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="390"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="394"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="398"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="402"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="406"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="410"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="414"/>
         <source>None</source>
         <translation>无</translation>
     </message>
@@ -10108,8 +10108,8 @@ ModifyTime</source>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="4626"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="441"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="538"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="442"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="539"/>
         <source>Save</source>
         <translation>保存</translation>
     </message>
@@ -10162,14 +10162,14 @@ ModifyTime</source>
         <location filename="hcsettings/icstructdefineframe.ui" line="243"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="268"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="307"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="386"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="390"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="394"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="398"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="402"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="406"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="410"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="414"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="387"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="391"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="395"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="399"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="403"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="407"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="411"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="415"/>
         <source>Pneumatic</source>
         <translation>气动轴</translation>
     </message>
@@ -10182,14 +10182,14 @@ ModifyTime</source>
         <location filename="hcsettings/icstructdefineframe.ui" line="248"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="273"/>
         <location filename="hcsettings/icstructdefineframe.ui" line="312"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="387"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="391"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="395"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="399"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="403"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="407"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="411"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="415"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="388"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="392"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="396"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="400"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="404"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="408"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="412"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="416"/>
         <source>Servo</source>
         <translation>伺服轴</translation>
     </message>
@@ -10407,7 +10407,7 @@ ModifyTime</source>
         <translation>送料程序</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1654"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1702"/>
         <source>safeInfo</source>
         <translation>安全提示</translation>
     </message>
@@ -10575,7 +10575,7 @@ ModifyTime</source>
         <translation>模内逃跑</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.ui" line="1689"/>
+        <location filename="hcsettings/icstructdefineframe.ui" line="1654"/>
         <source>PunchSelect</source>
         <translation>尾台冲压</translation>
     </message>
@@ -10672,7 +10672,7 @@ ModifyTime</source>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="1805"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="325"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="326"/>
         <source>Start</source>
         <translation>开始原点</translation>
     </message>
@@ -10748,7 +10748,7 @@ ModifyTime</source>
     </message>
     <message>
         <location filename="hcsettings/icstructdefineframe.ui" line="737"/>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="440"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="441"/>
         <source>Other Define</source>
         <translation>机械手配置</translation>
     </message>
@@ -10769,17 +10769,17 @@ ModifyTime</source>
         <translation type="obsolete">手臂结构选择</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="315"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="316"/>
         <source>Origining</source>
         <translation>原点中...</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="535"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="536"/>
         <source>Tips</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="hcsettings/icstructdefineframe.cpp" line="535"/>
+        <location filename="hcsettings/icstructdefineframe.cpp" line="536"/>
         <source>Save Sucessfully!</source>
         <translation>保存成功!</translation>
     </message>
@@ -11755,7 +11755,7 @@ Would you want to restart now?</source>
         <translation>返回</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="1212"/>
+        <location filename="mainframe.cpp" line="1214"/>
         <source>Notic Arm %1 Is in Safe Area?</source>
         <oldsource>Notic Arm 
 %1 
@@ -11763,13 +11763,13 @@ Is in Safe Area?</oldsource>
         <translation>注意机械手%1是否在安全位置?</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="1242"/>
-        <location filename="mainframe.cpp" line="1319"/>
+        <location filename="mainframe.cpp" line="1244"/>
+        <location filename="mainframe.cpp" line="1321"/>
         <source>Controlled, Can&apos;t modify!</source>
         <translation>联机中，不能设定！</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="933"/>
+        <location filename="mainframe.cpp" line="926"/>
         <source>Hint</source>
         <translation>提示</translation>
     </message>
@@ -11778,8 +11778,8 @@ Is in Safe Area?</oldsource>
         <translation type="obsolete">手动</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="1241"/>
-        <location filename="mainframe.cpp" line="1318"/>
+        <location filename="mainframe.cpp" line="1243"/>
+        <location filename="mainframe.cpp" line="1320"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>

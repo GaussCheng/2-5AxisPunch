@@ -293,9 +293,9 @@ void ICVirtualHost::RefreshStatus()
         if(queryStatusCommand_.NeedToReconfig())
         {
             qDebug("reconfigure");
-            QMessageBox::warning(NULL,
-                                 tr("Reconfig"),
-                                 tr("Need to reconfig"));
+//            QMessageBox::warning(NULL,
+//                                 tr("Reconfig"),
+//                                 tr("Need to reconfig"));
             ReConfigure();
             flag_ = true;
 //#ifdef HC_ARMV6

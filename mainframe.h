@@ -66,6 +66,8 @@ public Q_SLOTS:
 
     void OpenBackLight();
     void CloseBackLight();
+
+    void OnRegisterChanged();
 //    void SetBackLightOff();
 //    void SetBackLightOn();
 

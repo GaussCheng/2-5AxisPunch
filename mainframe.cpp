@@ -785,14 +785,6 @@ void MainFrame::StatusRefreshed()
 
     static ICAlarmString* alarmString = ICAlarmString::Instance();
     static ICVirtualHost* virtualHost = ICVirtualHost::GlobalVirtualHost();
-    if(isOverTime_)
-    {
-        //ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
-        errCode_ = 4000;
-        alarmString->SetPriorAlarmNum(errCode_);
-        ui->cycleTimeAndFinistWidget->SetAlarmInfo("Err" + QString::number(errCode_) + ":" + alarmString->AlarmInfo(errCode_));
-        return;
-    }
 
     ICVirtualHost* host = virtualHost;
 
@@ -1136,6 +1128,15 @@ void MainFrame::StatusRefreshed()
         SetHasInput(true);
     }
 
+    if(isOverTime_)
+    {
+        //ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
+//        errCode_ = 4000;
+//        alarmString->SetPriorAlarmNum(4000);
+        ui->cycleTimeAndFinistWidget->SetAlarmInfo("Err" + QString::number(4000) + ":" + alarmString->AlarmInfo(4000));
+//        return;
+    }
+
 #ifdef HC_SK_8_SC
     int currentSw = -1;
     int currentKey = -1;
@@ -1337,9 +1338,14 @@ void MainFrame::RecordButtonClicked()
 void MainFrame::LevelChanged(int level)
 {
 
-    //    static int oldLevel;
-    //    if(oldLevel == level) return;
-    //    oldLevel = level;
+    static int oldLevel;
+    static int oldStatus;
+
+    if((oldLevel == level) && (oldStatus == runningStatus_)) return;
+    oldLevel = level;
+    oldStatus = runningStatus_;
+    ui->axisButton->setEnabled(false);
+    ui->servoButton->setEnabled(false);
     switch(level)
     {
     case ICParametersSave::MachineOperator:
@@ -1364,6 +1370,8 @@ void MainFrame::LevelChanged(int level)
     case ICParametersSave::MachineAdmin:
     {
         ui->settingsButton->setEnabled(true);
+        ui->axisButton->setEnabled(false);
+        ui->servoButton->setEnabled(false);
 
         if(ICVirtualHost::GlobalVirtualHost()->CurrentStatus() == ICVirtualHost::Stop){
             ui->settingsButton->setEnabled(true);
@@ -1390,8 +1398,11 @@ void MainFrame::LevelChanged(int level)
     {
         ui->settingsButton->setEnabled(true);
 
-        if(ICVirtualHost::GlobalVirtualHost()->CurrentStatus() == ICVirtualHost::Stop){
+        if(ICVirtualHost::GlobalVirtualHost()->CurrentStatus() == ICVirtualHost::Stop)
+        {
             ui->settingsButton->setEnabled(true);
+            ui->axisButton->setEnabled(true);
+            ui->servoButton->setEnabled(true);
 #ifdef Q_WS_QWS
             ui->teachButton->setEnabled(false);
 #endif
@@ -1409,6 +1420,11 @@ void MainFrame::LevelChanged(int level)
             ui->teachButton->setEnabled(true);
             ui->stackedWidget->setCurrentWidget(ui->page);
         }
+//        else
+//        {
+//            ui->axisButton->setEnabled(true);
+//            ui->servoButton->setEnabled(true);
+//        }
 
     }
         //        if(ICVirtualHost::GlobalVirtualHost()->CurrentStatus() == ICVirtualHost::Stop)
@@ -1656,4 +1672,21 @@ void MainFrame::OnMoldButtonClicked()
 void MainFrame::ShowInfoDialog()
 {
     showInfoDialog_ = 1;
+}
+
+void MainFrame::OnRegisterChanged()
+{
+    int restTime = ICParametersSave::Instance()->RestTime(0);
+    if(restTime < 1)
+    {
+        return;
+    }
+    if(restTime == 1)
+    {
+        isOverTime_ = true;
+        return;
+    }
+    isOverTime_ = false;
+    ICParametersSave::Instance()->SetBootDatetime(QDateTime::currentDateTime());
+    ::system("sync");
 }

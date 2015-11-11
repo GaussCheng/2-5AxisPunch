@@ -997,6 +997,7 @@ void ICHCSystemSettingsFrame::on_registerBtn_clicked()
 
         //        ICDALHelper::UpdateConfigValue(ICAddr_System_OtherUsedTime, hour);
     }
+    icMainFrame->OnRegisterChanged();
 //    ICProgramHeadFrame::Instance()->ReashRestTime();
 }
 

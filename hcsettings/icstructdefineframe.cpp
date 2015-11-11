@@ -249,6 +249,7 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
 
 #ifndef TEACH_PAGE
     ui->tabWidget->removeTab(1);
+    ui->autoBox->hide();
 #endif
     ui->label_23->hide();
     ui->orignStatus->hide();
