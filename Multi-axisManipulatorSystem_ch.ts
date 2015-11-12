@@ -11326,16 +11326,6 @@ Would you want to restart now?</source>
         <source>Notic Arm %1 Is in Safe Area?</source>
         <translation type="obsolete">注意机械手%1是否在安全位置?</translation>
     </message>
-    <message>
-        <location filename="communication/icvirtualhost.cpp" line="297"/>
-        <source>Reconfig</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="communication/icvirtualhost.cpp" line="298"/>
-        <source>Need to reconfig</source>
-        <translation></translation>
-    </message>
 </context>
 <context>
     <name>ICWaitConditionEditor</name>
@@ -11755,7 +11745,7 @@ Would you want to restart now?</source>
         <translation>返回</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="1214"/>
+        <location filename="mainframe.cpp" line="1211"/>
         <source>Notic Arm %1 Is in Safe Area?</source>
         <oldsource>Notic Arm 
 %1 
@@ -11763,13 +11753,13 @@ Is in Safe Area?</oldsource>
         <translation>注意机械手%1是否在安全位置?</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="1244"/>
-        <location filename="mainframe.cpp" line="1321"/>
+        <location filename="mainframe.cpp" line="1241"/>
+        <location filename="mainframe.cpp" line="1318"/>
         <source>Controlled, Can&apos;t modify!</source>
         <translation>联机中，不能设定！</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="926"/>
+        <location filename="mainframe.cpp" line="930"/>
         <source>Hint</source>
         <translation>提示</translation>
     </message>
@@ -11778,8 +11768,8 @@ Is in Safe Area?</oldsource>
         <translation type="obsolete">手动</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="1243"/>
-        <location filename="mainframe.cpp" line="1320"/>
+        <location filename="mainframe.cpp" line="1240"/>
+        <location filename="mainframe.cpp" line="1317"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>

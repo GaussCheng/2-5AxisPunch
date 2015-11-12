@@ -187,6 +187,12 @@ void ICHCManualOperationPageFrame::showEvent(QShowEvent *e)
         ui->tRun->hide();ui->label_8->hide();ui->tPos->hide();ui->label_10->hide();
         ui->tSpeed->hide();ui->tSpeedLabel->hide();ui->label_18->hide();
     }
+    ICManualRun cmd;
+    cmd.SetSlave(1);
+    cmd.SetGM(ICMold::GOutY);
+    cmd.SetPoint(10);
+    cmd.SetIFVal(1);
+    ICCommandProcessor::Instance()->ExecuteCommand(cmd);
     //    button->setChecked(false);
 
     //    timerID_ = ICTimerPool::Instance()->Start(ICTimerPool::RefreshTime, this, SLOT(StatusRefreshed()));

@@ -7664,16 +7664,6 @@ Please enter an digit between </source>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="communication/icvirtualhost.cpp" line="297"/>
-        <source>Reconfig</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="communication/icvirtualhost.cpp" line="298"/>
-        <source>Need to reconfig</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>ICWaitConditionEditor</name>
@@ -7904,7 +7894,7 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="1214"/>
+        <location filename="mainframe.cpp" line="1211"/>
         <source>Notic Arm %1 Is in Safe Area?</source>
         <oldsource>Notic Arm 
 %1 
@@ -7912,19 +7902,19 @@ Is in Safe Area?</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="1243"/>
-        <location filename="mainframe.cpp" line="1320"/>
+        <location filename="mainframe.cpp" line="1240"/>
+        <location filename="mainframe.cpp" line="1317"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="1244"/>
-        <location filename="mainframe.cpp" line="1321"/>
+        <location filename="mainframe.cpp" line="1241"/>
+        <location filename="mainframe.cpp" line="1318"/>
         <source>Controlled, Can&apos;t modify!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="926"/>
+        <location filename="mainframe.cpp" line="930"/>
         <source>Hint</source>
         <translation type="unfinished"></translation>
     </message>

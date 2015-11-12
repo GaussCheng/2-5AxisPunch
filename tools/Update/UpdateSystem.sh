@@ -3,6 +3,8 @@
 chmod +x UpdateGUI
 ./UpdateGUI update_cmd -qws
 
+sync
+sync
 hostPackages=`find . -name "rom.bin"`
 if [ "$hostPackages" != "" ] ; then
     chmod +x ModbusUartProgramer
