@@ -4,6 +4,7 @@
 #include <QList>
 #include <QApplication>
 #include <QDebug>
+#include "mainframe.h"
 
 ICMessageBox::ICMessageBox(QWidget *parent) :
     QMessageBox(parent)
@@ -14,13 +15,18 @@ void ICMessageBox::keyPressEvent(QKeyEvent *e)
 {
 //    e->ignore();
     QKeyEvent* ke = new QKeyEvent(*e);
-    qApp->postEvent(this->parentWidget(), ke);
+    qApp->postEvent(icMainFrame, ke);
+    qDebug("messabox key");
+
     this->close();
 }
 
 int ICMessageBox::ICWarning(QWidget *parent, const QString &title, const QString &text, StandardButtons buttons, StandardButton defaultButton)
 {
+////    if(parent == NULL)
+//        parent = icMainFrame;
     ICMessageBox *box = new ICMessageBox(parent);
+    box->setWindowFlags(box->windowFlags()  | Qt::WindowStaysOnTopHint);
     box->setStandardButtons(buttons);
     box->setDefaultButton(defaultButton);
     box->setWindowTitle(title);
@@ -36,5 +42,6 @@ int ICMessageBox::ICWarning(QWidget *parent, const QString &title, const QString
     box->show();
 //    if(parent != NULL)
 //        parent->activateWindow();
+    qDebug("messabox");
     return box->standardButton(box->clickedButton());
 }

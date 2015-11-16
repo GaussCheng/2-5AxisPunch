@@ -1,7 +1,7 @@
 #include "icbackupdialog.h"
 #include "ui_icbackupdialog.h"
 #include <QKeyEvent>
-#include <QMessageBox>
+#include "icmessagebox.h"
 #include "ictipswidget.h"
 #include "icutility.h"
 #include "icbackuputility.h"
@@ -50,7 +50,7 @@ void ICBackupDialog::keyPressEvent(QKeyEvent *e)
 //        ICUtility::system("touch /home/root/recal && sync && reboot");if(!CheckIsUsbAttached())
         if(!ICUtility::IsUsbAttached())
         {
-            QMessageBox::warning(this, tr("Warning"), tr("USB is not connected!"));
+            ICMessageBox::ICWarning(this, tr("Warning"), tr("USB is not connected!"));
             return;
         }
         ICTipsWidget tipsWidget(tr("Backuping, please wait..."));
@@ -72,11 +72,11 @@ void ICBackupDialog::keyPressEvent(QKeyEvent *e)
                                              QStringList()<<"sub[0-7].prg");
         if(ret)
         {
-            QMessageBox::information(this, tr("Backup"), tr("Backup all configs successfully!"));
+            ICMessageBox::ICWarning(this, tr("Backup"), tr("Backup all configs successfully!"));
         }
         else
         {
-            QMessageBox::information(this, tr("Backup"), tr("Backup all configs fail!"));
+            ICMessageBox::ICWarning(this, tr("Backup"), tr("Backup all configs fail!"));
         }
 
         this->accept();

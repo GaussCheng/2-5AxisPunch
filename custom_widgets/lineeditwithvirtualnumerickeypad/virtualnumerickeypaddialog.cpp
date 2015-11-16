@@ -3,8 +3,9 @@
 
 #include <QToolButton>
 #include <QSignalMapper>
-
+#include <QKeyEvent>
 #include <QDebug>
+#include "mainframe.h"
 
 QScopedPointer<VirtualNumericKeypadDialog> VirtualNumericKeypadDialog::instance_;
 VirtualNumericKeypadDialog::VirtualNumericKeypadDialog(QWidget *parent) :
@@ -60,11 +61,22 @@ void VirtualNumericKeypadDialog::changeEvent(QEvent *e)
     }
 }
 
+void VirtualNumericKeypadDialog::keyPressEvent(QKeyEvent *e)
+{
+    QKeyEvent* ke = new QKeyEvent(*e);
+    qApp->postEvent(icMainFrame, ke);
+    this->reject();
+}
+
 bool VirtualNumericKeypadDialog::eventFilter(QObject *o, QEvent *e)
 {
 #ifdef Q_WS_QWS
     if(o == ui->displayLineEdit && e->type() == QEvent::KeyPress)
     {
+//        QKeyEvent* tmp = static_cast<QKeyEvent*>(e);
+//        QKeyEvent* ke = new QKeyEvent(*tmp);
+//        qApp->postEvent(this->parentWidget(), ke);
+//        this->reject();
         return true;
     }
 #endif

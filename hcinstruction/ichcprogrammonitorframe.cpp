@@ -10,7 +10,7 @@
 #include "icmacrosubroutine.h"
 #include "icvirtualkey.h"
 #include "ickeyboard.h"
-#include <QMessageBox>
+#include "icmessagebox.h"
 #include "icprogramheadframe.h"
 #include "icparameterssave.h"
 #include "icprogrampage.h"
@@ -269,13 +269,13 @@ void ICHCProgramMonitorFrame::showEvent(QShowEvent *e)
     }
     if(!checkResult.isEmpty())
     {
-        QMessageBox::warning(this,
+        ICMessageBox::ICWarning(this,
                              tr("Warning"),
                              checkResult);
     }
     //    if(needWarn)
     //    {
-    //        if(QMessageBox::warning(this,
+    //        if(ICMessageBox::ICWarning(this,
     //                             tr("Warning"),
     //                             checkResult + tr("Do you want to ignor this warning?"),
     //                             QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes)
@@ -658,7 +658,7 @@ void ICHCProgramMonitorFrame::InitSignal()
 //    /************BUG#201**********/
 //    if(programList_.at(gIndex).StepNum() == 0)  //表示待机点位置（自动运行时待机点位置不能删除）
 //    {
-//        QMessageBox::warning(this,
+//        ICMessageBox::ICWarning(this,
 //                             tr("Warning"),
 //                             tr("Can not edit standby position program"));
 //        return;

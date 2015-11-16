@@ -14,7 +14,7 @@
 #include <QBoxLayout>
 #include <QButtonGroup>
 #include <QKeyEvent>
-#include <QMessageBox>
+#include "icmessagebox.h"
 #include <QRunnable>
 #include <QStackedLayout>
 #include <QThreadPool>
@@ -157,7 +157,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
             configDir.remove(backupFiles.at(i).left(backupFiles.at(i).size() - 1));
             configDir.rename(backupFiles.at(i), backupFiles.at(i).left(backupFiles.at(i).size() - 1));
         }
-        //        QMessageBox::critical(this, tr("Warning"), tr("System Configs has been recover, please check the configs first!"));
+        //        ICMessageBox::ICWarning(this, tr("Warning"), tr("System Configs has been recover, please check the configs first!"));
     }
     configDir.cd("../records/");
     backupFiles = configDir.entryList(QStringList()<<"*~");
@@ -168,7 +168,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
             configDir.remove(backupFiles.at(i).left(backupFiles.at(i).size() - 1));
             configDir.rename(backupFiles.at(i), backupFiles.at(i).left(backupFiles.at(i).size() - 1));
         }
-        //        QMessageBox::critical(this, tr("Warning"), tr("Record has been recover, please check the record first!"));
+        //        ICMessageBox::ICWarning(this, tr("Warning"), tr("Record has been recover, please check the record first!"));
     }
     configDir.cd("../subs/");
     backupFiles = configDir.entryList(QStringList()<<"*~");
@@ -179,7 +179,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
             configDir.remove(backupFiles.at(i).left(backupFiles.at(i).size() - 1));
             configDir.rename(backupFiles.at(i), backupFiles.at(i).left(backupFiles.at(i).size() - 1));
         }
-        //        QMessageBox::critical(this, tr("Warning"), tr("Sub has been recover, please check the sub first!"));
+        //        ICMessageBox::ICWarning(this, tr("Warning"), tr("Sub has been recover, please check the sub first!"));
     }
     icMainFrame = this;
     screenSaver_->hide();
@@ -363,7 +363,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
         restTime -= qAbs(overTime);
         if(restTime <= 1)
             restTime = 1;
-        //        QMessageBox::information(this, "rest time", QString("%1 %2 %3").arg(last.toString())
+        //        ICMessageBox::ICWarning(this, "rest time", QString("%1 %2 %3").arg(last.toString())
         //                                 .arg(overTime)
         //                                 .arg(restTime));
         ICParametersSave::Instance()->SetRestTime(restTime);
@@ -557,6 +557,9 @@ void MainFrame::InitCategoryPage()
     emit LoadMessage("Start to Initialize manual pages");
     manualPage_ = new ICHCManualOperationPageFrame();//ICHCManualOperationPageFrame
     centerStackedLayout_->addWidget(manualPage_);
+    connect(manualPage_,
+            SIGNAL(clearProductButtonClicked()),
+            SLOT(ClearProduct()));
 
 
     emit LoadMessage("Start to Initialize auto pages");
@@ -1178,7 +1181,7 @@ void MainFrame::ShowManualPage()
     nullButton_->click();
     //    if(!IsOrigined())
     //    {
-    //        QMessageBox::warning(this, tr("Warning"), tr("Need to origin!"));
+    //        ICMessageBox::ICWarning(this, tr("Warning"), tr("Need to origin!"));
     //    }
     //    ui->recordPageButton->setText(tr("Instruct"));
     //    ui->recordPageButton->setEnabled(true);
@@ -1194,7 +1197,7 @@ void MainFrame::ShowAutoPage()
         return;
     //    if(!IsOrigined())
     //    {
-    //        QMessageBox::warning(this, tr("Warning"), tr("Need to origin!"));
+    //        ICMessageBox::ICWarning(this, tr("Warning"), tr("Need to origin!"));
     //    }
     ICVirtualHost *host = ICVirtualHost::GlobalVirtualHost();
     CanConfig canConfig;
@@ -1236,7 +1239,7 @@ void MainFrame::ShowFunctionPage()
 {
     if(ICVirtualHost::GlobalVirtualHost()->DoseControled())
     {
-        QMessageBox::warning(this,
+        ICMessageBox::ICWarning(this,
                              tr("Warning"),
                              tr("Controlled, Can't modify!"));
         return;
@@ -1313,7 +1316,7 @@ void MainFrame::RecordButtonClicked()
     //    int status = ICVirtualHost::GlobalVirtualHost()->CurrentStatus();
     if(ICVirtualHost::GlobalVirtualHost()->DoseControled())
     {
-        QMessageBox::warning(this,
+        ICMessageBox::ICWarning(this,
                              tr("Warning"),
                              tr("Controlled, Can't modify!"));
         return;
@@ -1686,4 +1689,9 @@ void MainFrame::OnRegisterChanged()
     isOverTime_ = false;
     ICParametersSave::Instance()->SetBootDatetime(QDateTime::currentDateTime());
     ::system("sync");
+}
+
+void MainFrame::ClearProduct()
+{
+    ui->cycleTimeAndFinistWidget->SetFinished(0);
 }

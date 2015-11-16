@@ -5,6 +5,7 @@
 #include <QFont>
 
 #include <QDebug>
+#include "mainframe.h"
 
 QScopedPointer<VirtualKeyboardDialog> VirtualKeyboardDialog::instance_;
 
@@ -51,6 +52,13 @@ void VirtualKeyboardDialog::changeEvent(QEvent *e)
     default:
         break;
     }
+}
+
+void VirtualKeyboardDialog::keyPressEvent(QKeyEvent *e)
+{
+    QKeyEvent* ke = new QKeyEvent(*e);
+    qApp->postEvent(icMainFrame, ke);
+    this->reject();
 }
 
 bool VirtualKeyboardDialog::eventFilter(QObject *o, QEvent *e)

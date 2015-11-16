@@ -32,7 +32,8 @@ private:
 
 
 
-
+signals:
+    void clearProductButtonClicked();
 
 private slots:
     void StatusRefreshed();

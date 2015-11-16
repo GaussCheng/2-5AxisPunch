@@ -23,6 +23,7 @@ Q_SIGNALS:
 protected:
     void showEvent(QShowEvent *e);
     void changeEvent(QEvent *e);
+    void keyPressEvent(QKeyEvent *e);
 
 private slots:
     void on_buttonBox_accepted();

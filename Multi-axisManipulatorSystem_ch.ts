@@ -4068,7 +4068,7 @@ Reason</source>
         <translation>回零步</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="949"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="955"/>
         <source>Servo On</source>
         <translation>伺服开</translation>
     </message>
@@ -4434,7 +4434,7 @@ Reason</source>
         <translation type="obsolete">吸</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="527"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="533"/>
         <source>Single(%1/%2)</source>
         <translation>单步(%1/%2)</translation>
     </message>
@@ -4455,27 +4455,27 @@ Reason</source>
         <translation type="obsolete">是否强制允许冲压？</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="758"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="779"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="801"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="822"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="843"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="898"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="764"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="785"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="807"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="828"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="849"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="904"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="759"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="780"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="802"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="823"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="844"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="899"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="765"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="786"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="808"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="829"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="850"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="905"/>
         <source>Has not been origin!</source>
         <translation>还没原点复归!</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="889"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="895"/>
         <source>Product clear</source>
         <translation>产品清零</translation>
     </message>
@@ -4488,7 +4488,7 @@ Reason</source>
         <translation type="obsolete">料感运行</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="944"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="950"/>
         <source>Servo OFF</source>
         <translation>伺服关</translation>
     </message>

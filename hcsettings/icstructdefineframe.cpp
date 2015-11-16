@@ -7,7 +7,7 @@
 #include "icparameterssave.h"
 
 #include <QVector>
-#include <QMessageBox>
+#include "icmessagebox.h"
 #include <QDebug>
 #include "mainframe.h"
 #include "icactioncommand.h"
@@ -533,7 +533,7 @@ void ICStructDefineFrame::on_saveButton_clicked()
         }
         //        host->SystemParameter(ICVirtualHost::SYS_Function);
         host->SaveSystemConfig();
-        QMessageBox::information(this, tr("Tips"), tr("Save Sucessfully!"));
+        ICMessageBox::ICWarning(this, tr("Tips"), tr("Save Sucessfully!"));
         emit StructChanged();
         icMainFrame->UpdateAxisDefine_();
         ICModifyFrame::Instance()->OnActionTriggered(ICConfigString::kCS_STRUCT_Config_Save, tr("Save"), "");

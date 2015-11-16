@@ -2,7 +2,7 @@
 #include <QString>
 #include <QStringList>
 #include <QTimer>
-#include <QMessageBox>
+#include "icmessagebox.h"
 
 #ifndef Q_WS_WIN32
 #include <unistd.h>
@@ -107,7 +107,7 @@ ICVirtualHost::ICVirtualHost(QObject *parent) :
     //    ICMold::CurrentMold()->Modify(items);
     if(!isInitSuccess_)
     {
-        QMessageBox::critical(NULL, tr("Error"), "Init host fail!");
+        ICMessageBox::ICWarning(NULL, tr("Error"), "Init host fail!");
         return;
     }
 //    timer_ = new QTimer();
@@ -293,7 +293,7 @@ void ICVirtualHost::RefreshStatus()
         if(queryStatusCommand_.NeedToReconfig())
         {
             qDebug("reconfigure");
-//            QMessageBox::warning(NULL,
+//            ICMessageBox::ICWarning(NULL,
 //                                 tr("Reconfig"),
 //                                 tr("Need to reconfig"));
             ReConfigure();

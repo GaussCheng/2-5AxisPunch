@@ -3,7 +3,7 @@
 
 #include <QSettings>
 #include <QDir>
-#include <QMessageBox>
+#include "icmessagebox.h"
 #include <QCloseEvent>
 #include <QProcess>
 #include <QKeyEvent>
@@ -301,12 +301,12 @@ void ICUpdateSystemPage::updateHostButton()
                 }
                 else
                 {
-                    QMessageBox::warning(this, tr("Warning"), tr("Update Host fail!"));
+                    ICMessageBox::ICWarning(this, tr("Warning"), tr("Update Host fail!"));
                     return ;
                 }
             }
             qDebug("tran successful");
-//            QMessageBox::information(this, tr("Congratulations"),
+//            ICMessageBox::ICWarning(this, tr("Congratulations"),
 //                                     tr("Send to  Host finished!"));
 //            ui->writeHostButton->setEnabled(true);
 
@@ -315,7 +315,7 @@ void ICUpdateSystemPage::updateHostButton()
 //            ICUpdateHostFinishCommand finishCommand;
 //            if(processor->ExecuteCommand(finishCommand).toBool())
 //            {
-//                QMessageBox::information(this, tr("Congratulations"),
+//                ICMessageBox::ICWarning(this, tr("Congratulations"),
 //                                         tr("Update Host finished!"));
 
 //                return;
@@ -323,7 +323,7 @@ void ICUpdateSystemPage::updateHostButton()
 
         }
     }
-    QMessageBox::warning(this, tr("Warning"), tr("Update Host fail!"));
+    ICMessageBox::ICWarning(this, tr("Warning"), tr("Update Host fail!"));
 }
 
 void ICUpdateSystemPage::QueryStatus()
@@ -350,7 +350,7 @@ void ICUpdateSystemPage::QueryStatus()
         if(connectHostFlag == FALSE)
         {
             timer_.stop();
-            QMessageBox::information(this, tr("tips"), tr("Update Host Successful!"));
+            ICMessageBox::ICWarning(this, tr("tips"), tr("Update Host Successful!"));
         }
         break;
 
@@ -380,9 +380,9 @@ void ICUpdateSystemPage::rebootButton()
     ICCommandProcessor::Instance()->ExecuteCommand(rebootCommand);
 //    while(!ICCommandProcessor::Instance()->ExecuteCommand(rebootCommand).toBool())
 //    {
-////        QMessageBox::information(this, tr("tips"), tr("Reboot Successful!"));
+////        ICMessageBox::ICWarning(this, tr("tips"), tr("Reboot Successful!"));
 //        QString ss = ICCommandProcessor::Instance()->ExecuteCommand(rebootCommand).toString();
-//        QMessageBox::information(this, tr("tips"),ss);
+//        ICMessageBox::ICWarning(this, tr("tips"),ss);
 //    }
 }
 
@@ -407,7 +407,7 @@ void ICUpdateSystemPage::writeHostButton()
 ////        {
 ////            timer_.start(100);
 ////        }
-////        QMessageBox::information(this, tr("Congratulations"),
+////        ICMessageBox::ICWarning(this, tr("Congratulations"),
 ////                                 tr("Update Host finished!"));
 //        return;
 //    }
@@ -418,7 +418,7 @@ void ICUpdateSystemPage::on_updateLogoButton_clicked()
  #ifndef Q_WS_X11
     if(!CheckIsUsbAttached())
     {
-        QMessageBox::warning(this,tr("warning"),tr("USB is not exist!"));
+        ICMessageBox::ICWarning(this,tr("warning"),tr("USB is not exist!"));
         return;
     }
 #endif
@@ -658,7 +658,7 @@ void ICUpdateSystemPage::on_updatePasswardButton_clicked()
         }
         else
         {
-            QMessageBox::warning(this,
+            ICMessageBox::ICWarning(this,
                                  tr("Warning"),
                                  tr("Old password is wrong"));
         }

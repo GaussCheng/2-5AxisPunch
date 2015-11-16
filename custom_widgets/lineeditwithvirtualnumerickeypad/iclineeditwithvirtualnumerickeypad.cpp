@@ -1,7 +1,7 @@
 #include "iclineeditwithvirtualnumerickeypad.h"
 
 #include <QIntValidator>
-#include <QMessageBox>
+#include "icmessagebox.h"
 #include <QWheelEvent>
 #include <math.h>
 
@@ -121,7 +121,7 @@ bool ICLineEditWithVirtualNumericKeypad::SetCurrentText(const QString &currentTe
                 && currentText.contains(QChar('.'))
                 && currentText.split(".").at(1).count() > this->DecimalPlaces())
         {
-            QMessageBox::warning(this, tr("Input Error"),
+            ICMessageBox::ICWarning(this, tr("Input Error"),
                                  tr("There are only ")
                                  + QString::number(this->DecimalPlaces())
                                  + tr(" decimal place\n")
@@ -134,7 +134,7 @@ bool ICLineEditWithVirtualNumericKeypad::SetCurrentText(const QString &currentTe
         }
         else if(this->DecimalPlaces() == 0 && currentText.contains(QChar('.')) )
         {
-            QMessageBox::warning(this, tr("Input Error"),
+            ICMessageBox::ICWarning(this, tr("Input Error"),
                                  tr("The value must be an integer\n"
                                     "Please enter an integer between ")
                                  + ICParameterConversion::TransThisIntToThisText(intValidator->bottom(), this->DecimalPlaces()) + '~'
@@ -147,7 +147,7 @@ bool ICLineEditWithVirtualNumericKeypad::SetCurrentText(const QString &currentTe
         int currentValue = ICParameterConversion::TransTextToThisInt(currentText, this->DecimalPlaces());
         if(currentValue > intValidator->top() || currentValue < intValidator->bottom())
         {
-            QMessageBox::warning(this, tr("Out of range"),
+            ICMessageBox::ICWarning(this, tr("Out of range"),
                                  tr("The value you entered out of range.\n"
                                     "Please enter an digit between ")
                                  + ICParameterConversion::TransThisIntToThisText(intValidator->bottom(), this->DecimalPlaces()) + '~'

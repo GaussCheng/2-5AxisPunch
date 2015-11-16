@@ -1,4 +1,4 @@
-#include <QMessageBox>
+#include "icmessagebox.h"
 #include "axissettingsframe.h"
 #include "ui_axissettingsframe.h"
 
@@ -408,7 +408,7 @@ void AxisSettingsFrame::on_saveToolButton_clicked()
         ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
         host->SaveAxisParam(currentAxis_);
 //        host->ReConfigure();
-        QMessageBox::information(this, tr("Information"), tr("Save Successfully!"));
+        ICMessageBox::ICWarning(this, tr("Information"), tr("Save Successfully!"));
     }
 }
 

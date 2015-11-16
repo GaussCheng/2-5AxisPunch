@@ -29,6 +29,8 @@ public:
 protected:
     void changeEvent(QEvent *e);
     bool eventFilter(QObject *o, QEvent *e);
+    void keyPressEvent(QKeyEvent* e);
+
 
 
 private:

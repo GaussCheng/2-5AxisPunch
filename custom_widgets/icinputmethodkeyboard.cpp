@@ -3,6 +3,7 @@
 #include <QSqlQuery>
 #include <QDebug>
 #include <QLineEdit>
+#include "mainframe.h"
 
 
 ICInputMethodKeyboard::ICInputMethodKeyboard(QWidget *parent) :
@@ -11,7 +12,7 @@ ICInputMethodKeyboard::ICInputMethodKeyboard(QWidget *parent) :
     currentMachingGroup(0)
 {
     ui->setupUi(this);
-    this->setWindowFlags(this->windowFlags() | Qt::Tool);
+//    this->setWindowFlags(this->windowFlags() | Qt::Tool);
 //    setWindowFlags(Qt::X11BypassWindowManagerHint | Qt::Tool);
     setFocusPolicy(Qt::NoFocus);
     QList<QToolButton*> inputButtons = findChildren<QToolButton*>();
@@ -39,6 +40,13 @@ ICInputMethodKeyboard::ICInputMethodKeyboard(QWidget *parent) :
 ICInputMethodKeyboard::~ICInputMethodKeyboard()
 {
     delete ui;
+}
+
+void ICInputMethodKeyboard::keyPressEvent(QKeyEvent *e)
+{
+    QKeyEvent* ke = new QKeyEvent(*e);
+    qApp->postEvent(icMainFrame, ke);
+    this->close();
 }
 
 void ICInputMethodKeyboard::changeEvent(QEvent *e)
@@ -70,7 +78,7 @@ QStringList ICInputMethodKeyboard::Matching(const QString& py)
 
 void ICInputMethodKeyboard::on_btn_ent_clicked()
 {
-    this->accept();
+    this->hide();
 }
 
 

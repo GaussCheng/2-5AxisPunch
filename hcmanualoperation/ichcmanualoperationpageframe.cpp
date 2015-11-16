@@ -15,7 +15,7 @@
 #include "icsystemconfig.h"
 #include "icvirtualkey.h"
 #include "icmodifyframe.h"
-#include <QMessageBox>
+#include "icmessagebox.h"
 
 #ifdef HC_SK_8_SC
 #include "icaxiskeyboard.h"
@@ -688,7 +688,7 @@ void ICHCManualOperationPageFrame::OnShortcutTriggered(int id)
 //        if(infoDialog_->exec() == QDialog::Accepted){
             if(!ICCommandProcessor::Instance()->ExecuteCommand(cmd).toBool())
             {
-        //        QMessageBox::warning(this,
+        //        ICMessageBox::ICWarning(this,
         //                                 tr("warning"),
         //                                 tr("err"));
             }
@@ -698,7 +698,7 @@ void ICHCManualOperationPageFrame::OnShortcutTriggered(int id)
     else{
         if(!ICCommandProcessor::Instance()->ExecuteCommand(cmd).toBool())
         {
-    //        QMessageBox::warning(this,
+    //        ICMessageBox::ICWarning(this,
     //                                 tr("warning"),
     //                                 tr("err"));
         }
@@ -719,7 +719,7 @@ void ICHCManualOperationPageFrame::OnShortcutReleased(int id)
     cmd.SetIFVal(0);
     if(!ICCommandProcessor::Instance()->ExecuteCommand(cmd).toBool())
     {
-//        QMessageBox::warning(this,
+//        ICMessageBox::ICWarning(this,
 //                                 tr("warning"),
 //                                 tr("err"));
     }
@@ -760,7 +760,7 @@ void ICHCManualOperationPageFrame::on_xRun_clicked()
     }
     if(!ICVirtualHost::GlobalVirtualHost()->IsOrigined())
     {
-        QMessageBox::warning(this,
+        ICMessageBox::ICWarning(this,
                              tr("Warning"),
                              tr("Has not been origin!"));
         return;
@@ -781,7 +781,7 @@ void ICHCManualOperationPageFrame::on_yRun_clicked()
     }
     if(!ICVirtualHost::GlobalVirtualHost()->IsOrigined())
     {
-        QMessageBox::warning(this,
+        ICMessageBox::ICWarning(this,
                              tr("Warning"),
                              tr("Has not been origin!"));
         return;
@@ -803,7 +803,7 @@ void ICHCManualOperationPageFrame::on_zRun_clicked()
     }
     if(!ICVirtualHost::GlobalVirtualHost()->IsOrigined())
     {
-        QMessageBox::warning(this,
+        ICMessageBox::ICWarning(this,
                              tr("Warning"),
                              tr("Has not been origin!"));
         return;
@@ -824,7 +824,7 @@ void ICHCManualOperationPageFrame::on_rRun_clicked()
     }
     if(!ICVirtualHost::GlobalVirtualHost()->IsOrigined())
     {
-        QMessageBox::warning(this,
+        ICMessageBox::ICWarning(this,
                              tr("Warning"),
                              tr("Has not been origin!"));
         return;
@@ -845,7 +845,7 @@ void ICHCManualOperationPageFrame::on_tRun_clicked()
     }
     if(!ICVirtualHost::GlobalVirtualHost()->IsOrigined())
     {
-        QMessageBox::warning(this,
+        ICMessageBox::ICWarning(this,
                              tr("Warning"),
                              tr("Has not been origin!"));
         return;
@@ -894,13 +894,14 @@ void ICHCManualOperationPageFrame::on_productClear_clicked()
     ICModifyFrame::Instance()->OnActionTriggered(ICConfigString::kCS_PRD_Product_Clear,
                                                 tr("Product clear"),
                                                 "");
+    emit clearProductButtonClicked();
 }
 
 void ICHCManualOperationPageFrame::on_singleButton_clicked()
 {
     if(!ICVirtualHost::GlobalVirtualHost()->IsOrigined())
     {
-        QMessageBox::warning(this,
+        ICMessageBox::ICWarning(this,
                              tr("Warning"),
                              tr("Has not been origin!"));
         return;

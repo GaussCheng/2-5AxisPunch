@@ -1,7 +1,7 @@
 #include "icupdatelogodialog.h"
 #include "ui_icupdatelogodialog.h"
 #include "icutility.h"
-#include <QMessageBox>
+#include "icmessagebox.h"
 
 ICUpdateLogoDialog::ICUpdateLogoDialog(QWidget *parent) :
     QDialog(parent),
@@ -40,7 +40,7 @@ void ICUpdateLogoDialog::on_setToStartup_clicked()
 {
     if(ui->picView->CurrentSelectedPicture().isEmpty())
     {
-        QMessageBox::warning(this,tr("warning"),tr("No select picture!"));
+        ICMessageBox::ICWarning(this,tr("warning"),tr("No select picture!"));
         return;
     }
     startupPage_ = ui->picView->CurrentSelectedPicture();
@@ -55,7 +55,7 @@ void ICUpdateLogoDialog::on_setToStartup_clicked()
         QFile::copy(startupPage_, "/opt/Qt/apps/resource/startup_page.png");
 #endif
     }
-    QMessageBox::information(this,tr("Tips"),tr("Setting success,In operation after reboot!"));
+    ICMessageBox::ICWarning(this,tr("Tips"),tr("Setting success,In operation after reboot!"));
     ICUtility::system("sync");
 }
 
@@ -63,7 +63,7 @@ void ICUpdateLogoDialog::on_setToStandby_clicked()
 {
     if(ui->picView->CurrentSelectedPicture().isEmpty())
     {
-        QMessageBox::warning(this,tr("warning"),tr("No select picture!"));
+        ICMessageBox::ICWarning(this,tr("warning"),tr("No select picture!"));
         return;
     }
     standbyPage_ = ui->picView->CurrentSelectedPicture();
@@ -78,7 +78,7 @@ void ICUpdateLogoDialog::on_setToStandby_clicked()
         QFile::copy(standbyPage_, "/opt/Qt/apps/resource/Standby.png");
 #endif
     }
-    QMessageBox::information(this,tr("Tips"),tr("Setting success,In operation after reboot!"));
+    ICMessageBox::ICWarning(this,tr("Tips"),tr("Setting success,In operation after reboot!"));
      ICUtility::system("sync");
 }
 

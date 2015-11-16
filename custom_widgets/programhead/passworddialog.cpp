@@ -1,7 +1,8 @@
-#include <QMessageBox>
+#include "icmessagebox.h"
 #include "passworddialog.h"
 #include "ui_passworddialog.h"
 #include "icparameterssave.h"
+#include <QKeyEvent>
 
 PasswordDialog::PasswordDialog(QWidget *parent) :
     QDialog(parent),
@@ -28,7 +29,7 @@ void PasswordDialog::on_buttonBox_accepted()
     }
     else
     {
-        QMessageBox::warning(this, tr("Error"), tr("Password is wrong!"));
+        ICMessageBox::ICWarning(this, tr("Error"), tr("Password is wrong!"));
     }
 }
 
@@ -49,6 +50,13 @@ void PasswordDialog::showEvent(QShowEvent *e)
     ui->pwdEdit->clear();
     QDialog::showEvent(e);
 }
+
+void PasswordDialog::keyPressEvent(QKeyEvent *e)
+{
+    QKeyEvent* ke = new QKeyEvent(*e);
+    qApp->postEvent(this->parentWidget(), ke);
+}
+
 
 void PasswordDialog::changeEvent(QEvent *e)
 {

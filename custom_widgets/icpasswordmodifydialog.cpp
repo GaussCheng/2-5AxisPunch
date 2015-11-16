@@ -1,6 +1,6 @@
 #include "icpasswordmodifydialog.h"
 #include "ui_icpasswordmodifydialog.h"
-#include <QMessageBox>
+#include "icmessagebox.h"
 
 ICPasswordModifyDialog::ICPasswordModifyDialog(QWidget *parent) :
     QDialog(parent),
@@ -30,7 +30,7 @@ void ICPasswordModifyDialog::on_okButton_clicked()
 {
     if(ui->newPassword->text() != ui->newPassword_2->text())
     {
-        QMessageBox::warning(this,
+        ICMessageBox::ICWarning(this,
                              tr("warning"),
                              tr("Two password is not the same!"));
         return;

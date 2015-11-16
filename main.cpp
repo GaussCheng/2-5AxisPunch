@@ -6,7 +6,7 @@
 #include "icparameterssave.h"
 #include "icsystemconfig.h"
 #include <QSqlDatabase>
-#include <QMessageBox>
+#include "icmessagebox.h"
 #include <QTextCodec>
 
 //#ifdef Q_WS_WIN
@@ -23,12 +23,12 @@ int main(int argc, char *argv[])
     if(!db.isValid())
     {
         qCritical("Open Database fail!!");
-        QMessageBox::critical(NULL, QT_TR_NOOP("Error"), QT_TR_NOOP("Database is error!!"));
+        ICMessageBox::ICWarning(NULL, QT_TR_NOOP("Error"), QT_TR_NOOP("Database is error!!"));
     }
     if(!db.open())
     {
         qCritical("Open Database fail!!");
-        QMessageBox::critical(NULL, QT_TR_NOOP("Error"), QT_TR_NOOP("Open Database fail!!"));
+        ICMessageBox::ICWarning(NULL, QT_TR_NOOP("Error"), QT_TR_NOOP("Open Database fail!!"));
     }
 #ifndef Q_WS_QWS
     QFile file("./stylesheet/global.qss");

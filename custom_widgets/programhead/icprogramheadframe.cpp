@@ -1,7 +1,7 @@
 #include <QDateTime>
 #include "icprogramheadframe.h"
 #include "ui_icprogramheadframe.h"
-#include <QMessageBox>
+#include "icmessagebox.h"
 
 #include "icparameterssave.h"
 #include "operatingratiosetdialog.h"

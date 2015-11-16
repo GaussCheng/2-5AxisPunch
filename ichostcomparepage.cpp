@@ -1,7 +1,7 @@
 #include "ichostcomparepage.h"
 #include "ui_ichostcomparepage.h"
 
-#include <QMessageBox>
+#include "icmessagebox.h"
 #include "icvirtualhost.h"
 #include "icparameterssave.h"
 
@@ -31,7 +31,7 @@ void ICHostComparePage::changeEvent(QEvent *e)
 
 void ICHostComparePage::on_hostBtn_clicked()
 {
-    int ret = QMessageBox::warning(this,
+    int ret = ICMessageBox::ICWarning(this,
                                    tr("Warning"),
                                    tr("Do you really want to check out all the host machine configures?"),
                                    QMessageBox::No | QMessageBox::Yes);
@@ -68,7 +68,7 @@ void ICHostComparePage::on_hostBtn_clicked()
         }
         else
         {
-            QMessageBox::critical(this,
+            ICMessageBox::ICWarning(this,
                                   tr("Critical"),
                                   tr("Operator fail! Please reboot system"));
             break;
@@ -80,7 +80,7 @@ void ICHostComparePage::on_hostBtn_clicked()
 
 void ICHostComparePage::on_hmiBtn_clicked()
 {
-    int ret = QMessageBox::warning(this,
+    int ret = ICMessageBox::ICWarning(this,
                                    tr("Warning"),
                                    tr("Do you really want to rewrite all the machine configures to host?"),
                                    QMessageBox::No | QMessageBox::Yes);
@@ -110,7 +110,7 @@ void ICHostComparePage::on_hmiBtn_clicked()
         command.SetDataBuffer(buffer.toVector());
         if(!processor->ExecuteCommand(command).toBool())
         {
-            QMessageBox::critical(this,
+            ICMessageBox::ICWarning(this,
                                   tr("Critical"),
                                   tr("Operator fail! Please reboot system"));
             break;

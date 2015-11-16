@@ -3,7 +3,7 @@
 #include <QDebug>
 #include "icparameterssave.h"
 #include "icmold.h"
-#include <QMessageBox>
+#include "icmessagebox.h"
 #include "moldinformation.h"
 #include "icparameterconversion.h"
 #include "QtCore/qmath.h"
@@ -448,7 +448,7 @@ void ICProgramPage::itemClicked(QTableWidgetItem *item)
                     if(text.contains(QChar('.'))){
                         pointSize = text.split(".").at(1).size();
                         if(pointSize > DELAY_DECIMAL || pointSize==0){
-                            QMessageBox::information(this,tr("information"),tr("Input Error!"));
+                            ICMessageBox::ICWarning(this,tr("information"),tr("Input Error!"));
                             _dialog->ResetDisplay();
                             return;
                         }
@@ -467,7 +467,7 @@ void ICProgramPage::itemClicked(QTableWidgetItem *item)
                         QString bottom =   QString().sprintf(format.toAscii(), dValidator->bottom() / static_cast<qreal>(qPow(10, DELAY_DECIMAL)));
                         QString top =   QString().sprintf(format.toAscii(), dValidator->top() / static_cast<qreal>(qPow(10, DELAY_DECIMAL)));
 
-                        QMessageBox::information(this,tr("information"),tr("Input Value Not %1 To %2 Range!")
+                        ICMessageBox::ICWarning(this,tr("information"),tr("Input Value Not %1 To %2 Range!")
                                                  .arg(bottom)
                                                  .arg(top));
                         _dialog->ResetDisplay();
@@ -483,7 +483,7 @@ void ICProgramPage::itemClicked(QTableWidgetItem *item)
 
             }
             else{
-                QMessageBox::information(this,tr("information"),
+                ICMessageBox::ICWarning(this,tr("information"),
                                          tr("%1Can not Edit Point!")
                                          .arg(_typeDialog->toString((PointProperty)pointConfigs[item->row()].Property())));
 
@@ -506,7 +506,7 @@ void ICProgramPage::itemClicked(QTableWidgetItem *item)
             if(text.contains(QChar('.'))){
                 int pointSize = text.split(".").at(1).size();
                 if(pointSize > POINT_SIZE || pointSize==0){
-                    QMessageBox::information(this,tr("information"),tr("Input Error!"));
+                    ICMessageBox::ICWarning(this,tr("information"),tr("Input Error!"));
                     _dialog->ResetDisplay();
                     return;
                 }
@@ -532,7 +532,7 @@ void ICProgramPage::itemClicked(QTableWidgetItem *item)
                 QString bottom =   QString().sprintf(format.toAscii(), v->bottom() / static_cast<qreal>(qPow(10, POINT_SIZE)));
                 QString top =   QString().sprintf(format.toAscii(), v->top() / static_cast<qreal>(qPow(10, POINT_SIZE)));
 
-                QMessageBox::information(this,tr("information"),tr("Input Value Not %1 To %2 Range!")
+                ICMessageBox::ICWarning(this,tr("information"),tr("Input Value Not %1 To %2 Range!")
                                          .arg(bottom)
                                          .arg(top));
                 _dialog->ResetDisplay();
@@ -565,7 +565,7 @@ void ICProgramPage::itemClicked(QTableWidgetItem *item)
                 if(text.contains(QChar('.'))){
                     int pointSize = text.split(".").at(1).size();
                     if(pointSize > DELAY_DECIMAL || pointSize==0){
-                        QMessageBox::information(this,tr("information"),tr("Input Error!"));
+                        ICMessageBox::ICWarning(this,tr("information"),tr("Input Error!"));
                         _dialog->ResetDisplay();
                         return;
                     }
@@ -587,7 +587,7 @@ void ICProgramPage::itemClicked(QTableWidgetItem *item)
                 QString bottom =   QString().sprintf(format.toAscii(), dValidator->bottom() / static_cast<qreal>(qPow(10, DELAY_DECIMAL)));
                 QString top =   QString().sprintf(format.toAscii(), dValidator->top() / static_cast<qreal>(qPow(10, DELAY_DECIMAL)));
 
-                QMessageBox::information(this,tr("information"),tr("Input Value Not %1 To %2 Range!")
+                ICMessageBox::ICWarning(this,tr("information"),tr("Input Value Not %1 To %2 Range!")
                                          .arg(bottom)
                                          .arg(top));
                 _dialog->ResetDisplay();
@@ -599,14 +599,14 @@ void ICProgramPage::itemClicked(QTableWidgetItem *item)
         }
         else  if(item->column() == SPEED_COLUMN){
                 if(text.contains(QChar('.'))){
-                        QMessageBox::information(this,tr("information"),tr("Input Error!"));
+                        ICMessageBox::ICWarning(this,tr("information"),tr("Input Error!"));
                         _dialog->ResetDisplay();
                         return;
                  }
                 else{
                      int value = text.toInt();
                      if(value <1 || value > 100){
-                         QMessageBox::information(this,tr("information"),tr("Input Value Not %1 To %2 Range!")
+                         ICMessageBox::ICWarning(this,tr("information"),tr("Input Value Not %1 To %2 Range!")
                                                   .arg(1)
                                                   .arg(100));
                          return;
@@ -641,7 +641,7 @@ void ICProgramPage::saveButtonsCliked()
     }
 
     if(pointConfigs[index].Type() == Point_Property){
-        QMessageBox::information(this,tr("information"),
+        ICMessageBox::ICWarning(this,tr("information"),
                                  tr("%1Can not Setting Point!")
                                  .arg(_typeDialog->toString((PointProperty)pointConfigs[index].Property())));
         return;
@@ -679,13 +679,13 @@ void ICProgramPage::testButonsPressed()
             cmd.SetIFVal(moldItem.IFVal());
             if(!ICCommandProcessor::Instance()->ExecuteCommand(cmd).toBool())
             {
-//                QMessageBox::warning(this,
+//                ICMessageBox::ICWarning(this,
 //                                         tr("warning"),
 //                                         tr("Execute Manual Cmd failed!"));
             }
         }
         else{
-            QMessageBox::information(this,tr("information"),
+            ICMessageBox::ICWarning(this,tr("information"),
                                      tr("%1Can not Test Point!")
                                      .arg(_typeDialog->toString((PointProperty)pointConfigs[index].Property())));
         }
@@ -694,7 +694,7 @@ void ICProgramPage::testButonsPressed()
     }
     if(!ICVirtualHost::GlobalVirtualHost()->IsOrigined())
     {
-        QMessageBox::warning(this,
+        ICMessageBox::ICWarning(this,
                              tr("Warning"),
                              tr("Has not been origin!"));
         return;
@@ -1052,12 +1052,12 @@ void ICProgramPage::on_newButton_clicked()
     if(index == -1 ) index ++;
     QString moldName = ICMold::CurrentMold()->MoldName().split("/")[2];
     if(standPrograms_.contains(moldName)){
-        QMessageBox::information(this,tr("Information"),tr("Standard Mold Cannot Modify!"));
+        ICMessageBox::ICWarning(this,tr("Information"),tr("Standard Mold Cannot Modify!"));
         return;
     }
     if(_typeDialog->exec() == QDialog::Accepted){
         if(GT_PointCount() == MAX_ROWCOUNT && _typeDialog->currentPropertyIsPoint()){
-            QMessageBox::information(this,tr("Information"),tr("Max Point Count Beyond %1!").arg(MAX_ROWCOUNT));
+            ICMessageBox::ICWarning(this,tr("Information"),tr("Max Point Count Beyond %1!").arg(MAX_ROWCOUNT));
             return;
         }
 
@@ -1076,7 +1076,7 @@ void ICProgramPage::on_newButton_clicked()
                 SetRowSMooth(index,true);
             }
             else{
-                QMessageBox::warning(this,tr("warning"),
+                ICMessageBox::ICWarning(this,tr("warning"),
                                      tr("Not wait point Can Set Smooth!"));
                 return;
             }
@@ -1167,7 +1167,7 @@ void ICProgramPage::on_deleteButton_clicked()
 
     QString moldName = ICMold::CurrentMold()->MoldName().split("/")[2];
     if(standPrograms_.contains(moldName)){
-        QMessageBox::information(this,tr("Information"),tr("Standard Mold Cannot Modify!"));
+        ICMessageBox::ICWarning(this,tr("Information"),tr("Standard Mold Cannot Modify!"));
         return;
     }
 
@@ -1176,7 +1176,7 @@ void ICProgramPage::on_deleteButton_clicked()
     quint32 d = pointConfigs[index].Smooth();
 
     if(t != Point_Property  && d){
-        if(QMessageBox::information(this,tr("Information"),tr("IS Delete %1 Smooth Action !")
+        if(ICMessageBox::ICWarning(this,tr("Information"),tr("IS Delete %1 Smooth Action !")
                         .arg( _typeDialog->toString(t)),
                         QMessageBox::Ok | QMessageBox::Cancel) != QMessageBox::Ok){
             return;
@@ -1196,12 +1196,12 @@ void ICProgramPage::on_deleteButton_clicked()
         pointConfigs[index].Type() == Put ||
         pointConfigs[index].Type() == Put_Up ||
         pointConfigs[index].Type() == Put_Wait2 ){
-        QMessageBox::information(this,tr("Information"),tr("Canot Delete %1 action!").arg( _typeDialog->toString((PointType)pointConfigs[index].Property() )));
+        ICMessageBox::ICWarning(this,tr("Information"),tr("Canot Delete %1 action!").arg( _typeDialog->toString((PointType)pointConfigs[index].Property() )));
         return;
     }
 //#endif
 
-    if(QMessageBox::information(this,tr("Information"),tr("If Delete current Row?"),
+    if(ICMessageBox::ICWarning(this,tr("Information"),tr("If Delete current Row?"),
                                 QMessageBox::Ok | QMessageBox::Cancel) != QMessageBox::Ok)
     {
         return;
@@ -1217,7 +1217,7 @@ void ICProgramPage::on_deleteButton_clicked()
 
     }
     else{
-        QMessageBox::information(this,tr("Information"),tr("Canot Delete Space Row!"));
+        ICMessageBox::ICWarning(this,tr("Information"),tr("Canot Delete Space Row!"));
         return;
     }
     ui->tableWidget->hide();
@@ -1232,7 +1232,7 @@ void ICProgramPage::on_saveButton_clicked()
     SaveConfigPoint();
     ReConfigure();
     EnableTestButtons();
-    QMessageBox::information(this,tr("Information"),tr("Save success!"));
+    ICMessageBox::ICWarning(this,tr("Information"),tr("Save success!"));
 }
 
 void ICProgramPage::MoldChanged(QString s)
@@ -1275,7 +1275,7 @@ void ICProgramPage::OnShortcutTriggered()
     //    cmd.SetIFVal(info.dir);
     if(!ICCommandProcessor::Instance()->ExecuteCommand(cmd).toBool())
     {
-//        QMessageBox::warning(this,
+//        ICMessageBox::ICWarning(this,
 //                                 tr("warning"),
 //                                 tr("err"));
     }
@@ -1295,7 +1295,7 @@ void ICProgramPage::OnShortcutReleased()
     cmd.SetIFVal(0);
     if(!ICCommandProcessor::Instance()->ExecuteCommand(cmd).toBool())
     {
-//        QMessageBox::warning(this,
+//        ICMessageBox::ICWarning(this,
 //                                 tr("warning"),
 //                                 tr("err"));
     }

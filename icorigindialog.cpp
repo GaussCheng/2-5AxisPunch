@@ -122,6 +122,10 @@ void ICOriginDialog::keyPressEvent(QKeyEvent *e)
     {
         ICKeyboardHandler::Instance()->Keypressed(ICKeyboard::VFB_Run);
     }
+    else if(e->key() == Qt::Key_X)
+    {
+        ICKeyboardHandler::Instance()->Keypressed(ICKeyboard::FB_Stop);
+    }
     else
     {
         QKeyEvent* ke = new QKeyEvent(*e);

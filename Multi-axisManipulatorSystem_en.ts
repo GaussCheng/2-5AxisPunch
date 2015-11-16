@@ -2984,7 +2984,7 @@ Infomation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="949"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="955"/>
         <source>Servo On</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3226,37 +3226,37 @@ Infomation</source>
         <translation type="obsolete">Manipulator I/O</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="527"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="533"/>
         <source>Single(%1/%2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="758"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="779"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="801"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="822"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="843"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="898"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="764"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="785"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="807"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="828"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="849"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="904"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="759"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="780"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="802"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="823"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="844"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="899"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="765"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="786"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="808"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="829"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="850"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="905"/>
         <source>Has not been origin!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="889"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="895"/>
         <source>Product clear</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="944"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="950"/>
         <source>Servo OFF</source>
         <translation type="unfinished"></translation>
     </message>
