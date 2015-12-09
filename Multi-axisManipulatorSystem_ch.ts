@@ -4068,7 +4068,7 @@ Reason</source>
         <translation>回零步</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="955"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="956"/>
         <source>Servo On</source>
         <translation>伺服开</translation>
     </message>
@@ -4460,7 +4460,7 @@ Reason</source>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="807"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="828"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="849"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="904"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="905"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -4470,7 +4470,7 @@ Reason</source>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="808"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="829"/>
         <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="850"/>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="905"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="906"/>
         <source>Has not been origin!</source>
         <translation>还没原点复归!</translation>
     </message>
@@ -4488,7 +4488,7 @@ Reason</source>
         <translation type="obsolete">料感运行</translation>
     </message>
     <message>
-        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="950"/>
+        <location filename="hcmanualoperation/ichcmanualoperationpageframe.cpp" line="951"/>
         <source>Servo OFF</source>
         <translation>伺服关</translation>
     </message>
@@ -5818,7 +5818,7 @@ Reason</source>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="471"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="505"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="654"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="818"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="819"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -5883,32 +5883,42 @@ Reason</source>
         <translation>%1错误的程序格式!跳过该模号!</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="812"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="783"/>
+        <source>Tips</source>
+        <translation type="unfinished">提示</translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="783"/>
+        <source>You can remove your usb!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="813"/>
         <source>
 App %1; Host:</source>
         <translation>手控版本:%1
 主控版本:</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="973"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="979"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="974"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="980"/>
         <source>Wrong Register Code!</source>
         <translation>注册码错误！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="985"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="986"/>
         <source>Register Success!</source>
         <translation>注册成功！</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="211"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="988"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="989"/>
         <source>No Limit</source>
         <translation>无限制</translation>
     </message>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="215"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="992"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="993"/>
         <source>hour</source>
         <translation>小时</translation>
     </message>
@@ -5919,12 +5929,12 @@ App %1; Host:</source>
     <message>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="697"/>
         <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="739"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="869"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="874"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="896"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="901"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="913"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="924"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="870"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="875"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="897"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="902"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="914"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="925"/>
         <source>Warnning</source>
         <translation>警告</translation>
     </message>
@@ -5965,40 +5975,40 @@ App %1; Host:</source>
         <translation type="obsolete">离开原点位置</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="819"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="820"/>
         <source>The system will be reboot to calibrate! Do you want to continue?</source>
         <translation>系统需要重启来校准屏幕!要继续吗?</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="823"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="824"/>
         <source>Recal</source>
         <translation>触摸校准</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="840"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="841"/>
         <source>Tune down to %1</source>
         <translation>调低为%1</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="854"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="855"/>
         <source>Tune up to %1</source>
         <translation>调高为%1</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="869"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="874"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="870"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="875"/>
         <source>Wrong system config format!</source>
         <translation>错误的系统参数格式！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="896"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="901"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="897"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="902"/>
         <source>Wrong Axis config format!</source>
         <translation>错误的轴参数格式！</translation>
     </message>
     <message>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="913"/>
-        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="924"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="914"/>
+        <location filename="hcsettings/ichcsystemsettingsframe.cpp" line="925"/>
         <source>Wrong Rotation config format!</source>
         <translation>错误的每转距离参数格式！</translation>
     </message>
@@ -6352,13 +6362,13 @@ App %1; Host:</source>
     <message>
         <location filename="custom_widgets/icinputmethodkeyboard.ui" line="659"/>
         <location filename="custom_widgets/icinputmethodkeyboard_5.ui" line="659"/>
-        <location filename="custom_widgets/icinputmethodkeyboard.cpp" line="122"/>
+        <location filename="custom_widgets/icinputmethodkeyboard.cpp" line="130"/>
         <source>EN</source>
         <translation>英</translation>
     </message>
     <message>
-        <location filename="custom_widgets/icinputmethodkeyboard.cpp" line="127"/>
-        <location filename="custom_widgets/icinputmethodkeyboard.cpp" line="134"/>
+        <location filename="custom_widgets/icinputmethodkeyboard.cpp" line="135"/>
+        <location filename="custom_widgets/icinputmethodkeyboard.cpp" line="142"/>
         <source>CH</source>
         <translation>中</translation>
     </message>
@@ -7938,23 +7948,23 @@ ModifyTime</source>
     <name>ICOriginDialog</name>
     <message>
         <location filename="icorigindialog.cpp" line="85"/>
-        <location filename="icorigindialog.cpp" line="148"/>
+        <location filename="icorigindialog.cpp" line="152"/>
         <source>Please press the start button to start execute origin action</source>
         <translation>请按启动键执行原点复归</translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="144"/>
+        <location filename="icorigindialog.cpp" line="148"/>
         <source>Originning...</source>
         <translation>原点复归中...</translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="178"/>
+        <location filename="icorigindialog.cpp" line="182"/>
         <source>Do you need to auto position?</source>
         <translation>需要自动侧姿吗?</translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="231"/>
-        <location filename="icorigindialog.cpp" line="237"/>
+        <location filename="icorigindialog.cpp" line="235"/>
+        <location filename="icorigindialog.cpp" line="241"/>
         <source>Originning</source>
         <translation>原点执行中</translation>
     </message>
@@ -11745,7 +11755,7 @@ Would you want to restart now?</source>
         <translation>返回</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="1211"/>
+        <location filename="mainframe.cpp" line="1214"/>
         <source>Notic Arm %1 Is in Safe Area?</source>
         <oldsource>Notic Arm 
 %1 
@@ -11753,13 +11763,13 @@ Is in Safe Area?</oldsource>
         <translation>注意机械手%1是否在安全位置?</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="1241"/>
-        <location filename="mainframe.cpp" line="1318"/>
+        <location filename="mainframe.cpp" line="1244"/>
+        <location filename="mainframe.cpp" line="1321"/>
         <source>Controlled, Can&apos;t modify!</source>
         <translation>联机中，不能设定！</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="930"/>
+        <location filename="mainframe.cpp" line="933"/>
         <source>Hint</source>
         <translation>提示</translation>
     </message>
@@ -11768,8 +11778,8 @@ Is in Safe Area?</oldsource>
         <translation type="obsolete">手动</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="1240"/>
-        <location filename="mainframe.cpp" line="1317"/>
+        <location filename="mainframe.cpp" line="1243"/>
+        <location filename="mainframe.cpp" line="1320"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -12480,12 +12490,12 @@ Admin</source>
         <translation>密码</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/passworddialog.cpp" line="31"/>
+        <location filename="custom_widgets/programhead/passworddialog.cpp" line="32"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="custom_widgets/programhead/passworddialog.cpp" line="31"/>
+        <location filename="custom_widgets/programhead/passworddialog.cpp" line="32"/>
         <source>Password is wrong!</source>
         <translation>密码错误！</translation>
     </message>
@@ -13138,7 +13148,7 @@ Admin</source>
         <translation>确定</translation>
     </message>
     <message>
-        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.cpp" line="18"/>
+        <location filename="custom_widgets/lineeditwithvirtualkeyboard/virtualkeyboarddialog.cpp" line="19"/>
         <source>VirtualKeyboard</source>
         <translation></translation>
     </message>
@@ -13176,7 +13186,7 @@ Admin</source>
     </message>
     <message>
         <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog_5.ui" line="421"/>
-        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.cpp" line="84"/>
+        <location filename="custom_widgets/lineeditwithvirtualnumerickeypad/virtualnumerickeypaddialog.cpp" line="96"/>
         <source>.</source>
         <translation></translation>
     </message>
