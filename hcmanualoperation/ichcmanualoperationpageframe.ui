@@ -2709,6 +2709,9 @@
           <string>Binary</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout">
+          <property name="spacing">
+           <number>2</number>
+          </property>
           <property name="leftMargin">
            <number>0</number>
           </property>
@@ -2730,6 +2733,9 @@
              </sizepolicy>
             </property>
             <layout class="QGridLayout" name="gridLayout_4">
+             <property name="spacing">
+              <number>4</number>
+             </property>
              <item row="0" column="0">
               <widget class="QPushButton" name="b1">
                <property name="sizePolicy">
@@ -4347,8 +4353,8 @@ color: rgb(97, 97, 97);
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="shortcutGroup"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="shortcutGroup"/>
   <buttongroup name="actionGroup"/>
   <buttongroup name="buttonGroup_2"/>
  </buttongroups>

@@ -362,11 +362,12 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
         QDateTime last = ICParametersSave::Instance()->BootDatetime();
         qint64 overTime = QDateTime::currentDateTime().secsTo(last) / 3600;
         restTime -= qAbs(overTime);
-        if(restTime <= 1)
+        if(restTime <= 1){
             restTime = 1;
-        //        ICMessageBox::ICWarning(this, "rest time", QString("%1 %2 %3").arg(last.toString())
-        //                                 .arg(overTime)
-        //                                 .arg(restTime));
+//            ICMessageBox::ICWarning(this, "rest time", QString("%1 %2 %3").arg(last.toString())
+//                                    .arg(overTime)
+//                                    .arg(restTime));
+        }
         ICParametersSave::Instance()->SetRestTime(restTime);
     }
     ICParametersSave::Instance()->SetBootDatetime(QDateTime::currentDateTime());
@@ -906,6 +907,8 @@ void MainFrame::StatusRefreshed()
     if(isOverTime_)
     {
         errCode_ = 4000;
+        ui->cycleTimeAndFinistWidget->SetAlarmInfo("Err" + QString::number(errCode_) + ":" + alarmString->AlarmInfo(errCode_));
+
     }
     if(compareAlarmNums_.indexOf(errCode_) != -1)
     {

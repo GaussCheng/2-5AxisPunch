@@ -52,6 +52,8 @@ ICPointType::ICPointType(QWidget *parent) :
     ui->checkbox_12->hide();
     ui->checkbox_3->hide();
     ui->checkbox_4->hide();
+    ui->checkbox_18->hide();
+    ui->checkbox_21->hide();
     this->resize(441,320);
 #else
     boxToType.insert(ui->checkbox_9,WAIT_X41);

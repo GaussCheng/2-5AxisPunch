@@ -69,14 +69,12 @@ ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     ui->runButton->hide();
     ui->uncheckRunButton->hide();
 
-
+#ifndef TEACH_PAGE
     ui->groupBox->hide();
     ui->groupBox_2->hide();
     ui->return0Button->hide();
     ui->singleButton->hide();
     ui->serveControl->hide();
-
-#ifndef TEACH_PAGE
     ui->label_11->hide();
     ui->moldStep->hide();
 #endif
@@ -242,14 +240,14 @@ void ICHCManualOperationPageFrame::InitInterface()
     //    ui->xCurrentPos->setAttribute(Qt::P);
     ui->productEdit->setValidator(new QIntValidator(0, 65530, this));
     ui->moldStep->setValidator(new QIntValidator(0, 65530, this));
-    ui->xPos->SetDecimalPlaces(1);
-    ui->yPos->SetDecimalPlaces(1);
+    ui->xPos->SetDecimalPlaces(2);
+    ui->yPos->SetDecimalPlaces(2);
 #ifdef HC_AXIS_COUNT_5
-    ui->zPos->SetDecimalPlaces(1);
-    ui->rPos->SetDecimalPlaces(1);
-    ui->tPos->SetDecimalPlaces(1);
+    ui->zPos->SetDecimalPlaces(2);
+    ui->rPos->SetDecimalPlaces(2);
+    ui->tPos->SetDecimalPlaces(2);
 #endif
-    ui->xPos->setValidator(new QIntValidator(-32760, 32760, this));
+    ui->xPos->setValidator(new QIntValidator(-32760000, 32760000, this));
     ui->yPos->setValidator(ui->xPos->validator());
     //    ui->zPos->setValidator(ui->xPos->validator());
     ui->buttonGroup->setId(ui->point1, 0);
@@ -618,12 +616,17 @@ void ICHCManualOperationPageFrame::OnPointSelected(int id)
     //    ui->xPos->blockSignals(true);
     //    ui->yPos->blockSignals(true);
     //    ui->zPos->blockSignals(true);
-    ui->xPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 6 )));
-    ui->yPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 6 + 1)));
+    ui->xPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 12 )) |
+                                   (currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 12 + 1 )) << 16));
+    ui->yPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 12 + 2)) |
+                                   (currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 12 + 3 )) << 16));
 #ifdef HC_AXIS_COUNT_5
-    ui->zPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 6 + 2)));
-    ui->rPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 6 + 3)));
-    ui->tPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 6 + 4)));
+    ui->zPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 12 + 4)) |
+                                   (currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 12 + 5 )) << 16));
+    ui->rPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 12 + 6)) |
+                                   (currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 12 + 7 )) << 16));
+    ui->tPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 12 + 8)) |
+                                   (currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(id * 12 + 9 )) << 16));
 
 #endif
     //    ui->xPos->setEnabled(true);
@@ -738,17 +741,22 @@ void ICHCManualOperationPageFrame::on_setButton_clicked()
     p.y = ui->yPos->TransThisTextToThisInt();
 #ifdef HC_AXIS_COUNT_5
     p.z = ui->zPos->TransThisTextToThisInt();
-    p.p = currentMold->MoldParam((static_cast<ICMold::ICMoldParam>(p.pointID * 6 + 3)));
-    p.q = currentMold->MoldParam((static_cast<ICMold::ICMoldParam>(p.pointID * 6 + 4)));
+    p.p = ui->rPos->TransThisTextToThisInt();
+    p.q = ui->tPos->TransThisTextToThisInt();
 #endif
     modifyDialog_->StartModify(p);
     OnPointSelected(p.pointID);
-    ui->xPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 6)));
-    ui->yPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 6 + 1)));
+    ui->xPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 12)) |
+                                   (currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 12 + 1)) << 16));
+    ui->yPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 12 + 2)) |
+                                   (currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 12 + 3)) << 16));
 #ifdef HC_AXIS_COUNT_5
-    ui->zPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 6 + 2)));
-    ui->rPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 6 + 3)));
-    ui->tPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 6 + 4)));
+    ui->zPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 12 + 4)) |
+                                   (currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 12 + 5)) << 16));
+    ui->rPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 12 + 6)) |
+                                   (currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 12 + 7)) << 16));
+    ui->tPos->SetThisIntToThisText(currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 12 + 8)) |
+                                   (currentMold->MoldParam(static_cast<ICMold::ICMoldParam>(p.pointID * 12 + 9)) << 16));
 #endif
 }
 

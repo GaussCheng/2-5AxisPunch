@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QIntValidator>
+#include "icvirtualhost.h"
 
 namespace Ui {
 class AxisModifyDialog;
@@ -34,6 +35,8 @@ private slots:
 
 
     void on_setButton_clicked();
+    quint32 GetPointValue(quint16 pos);
+    qint32 GetPosValue(ICVirtualHost::ICStatus pos);
 
 private:
     Ui::AxisModifyDialog *ui;

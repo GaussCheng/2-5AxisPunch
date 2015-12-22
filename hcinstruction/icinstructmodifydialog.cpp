@@ -235,7 +235,8 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
         }
         else if(item->Action() == ICMold::GWait ||
                 item->Action() == ICMold::GMWait ||
-                item->Action() == ICMold::GCondition )
+                item->Action() == ICMold::GCondition ||
+                item->Action() == ICMold::GCheckX)
         {
             ui->delayTimeEdit->SetDecimalPlaces(1);
         }
@@ -244,7 +245,7 @@ bool ICInstructModifyDialog::ShowModifyItem(ICMoldItem *item)
                 item->Action() == ICMold::GEuOut ||
                 item->Action() == ICMold::GMOut)
         {
-            ui->delayTimeEdit->SetDecimalPlaces(2);
+            ui->delayTimeEdit->SetDecimalPlaces(1);
         }
         else if(item->Action() >= ICMold::GOutY && item->Action() <= ICMold::GTwoXTwoY)
         {
