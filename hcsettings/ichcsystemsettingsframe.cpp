@@ -787,14 +787,14 @@ void ICHCSystemSettingsFrame::OnLevelChanged(int level)
 {
     if(level == ICParametersSave::AdvanceAdmin)
     {
-        for(int i = 1; i != ui->systemConfigPages->count(); ++i)
+        for(int i = 3; i != ui->systemConfigPages->count(); ++i)
         {
             ui->systemConfigPages->setTabEnabled(i, true);
         }
     }
     else
     {
-        for(int i = 1; i != ui->systemConfigPages->count(); ++i)
+        for(int i = 3; i != ui->systemConfigPages->count(); ++i)
         {
             ui->systemConfigPages->setTabEnabled(i, false);
         }
