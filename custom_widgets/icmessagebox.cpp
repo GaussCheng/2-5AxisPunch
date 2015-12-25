@@ -39,7 +39,8 @@ int ICMessageBox::ICWarning(QWidget *parent, const QString &title, const QString
     box->setWindowModality(Qt::NonModal);
     box->setAttribute(Qt::WA_DeleteOnClose);
 
-    box->show();
+//    box->show();
+    return box->exec();
 //    if(parent != NULL)
 //        parent->activateWindow();
     qDebug("messabox");

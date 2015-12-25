@@ -637,7 +637,7 @@ bool ICMachineStructPage::SetCurrentStatus_(const QList<uint> &status)
     command.SetSlave(processor->SlaveID());
     command.SetAxis(axis);
     command.SetDataBuffer(status.toVector());
-#ifndef Q_WS_X11
+#ifdef Q_WS_QWS
     if(processor->ExecuteCommand(command).toBool())
 #endif
     {

@@ -512,7 +512,7 @@ void MainFrame::keyReleaseEvent(QKeyEvent *e)
 
 bool MainFrame::eventFilter(QObject *obj, QEvent *event)
 {
-    QKeyEvent *e = dynamic_cast<QKeyEvent*>(event);
+    QKeyEvent *e = static_cast<QKeyEvent*>(event);
     if(e){
         //        qDebug() << e->type();
         if(keyToMap.values().contains(e->key()) && e->type() == QKeyEvent::KeyRelease)

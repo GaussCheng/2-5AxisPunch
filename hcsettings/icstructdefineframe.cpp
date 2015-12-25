@@ -498,7 +498,7 @@ void ICStructDefineFrame::on_saveButton_clicked()
     command.SetSlave(process->SlaveID());
     command.SetDataBuffer(dataBuffer);
     command.SetAxis(8);
-#ifndef Q_WS_X11
+#ifdef Q_WS_QWS
     if(process->ExecuteCommand(command).toBool())
 #endif
     {

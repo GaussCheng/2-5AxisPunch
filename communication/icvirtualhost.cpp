@@ -315,7 +315,7 @@ void ICVirtualHost::RefreshStatus()
         }
         else
         {
-#ifdef Q_WS_X11
+#ifndef Q_WS_QWS
 //            statusMap_.insert(Status, rand());
 //            statusMap_.insert(Step, rand()  % 100);
 //            statusMap_.insert(Input2, rand());
@@ -340,7 +340,8 @@ void ICVirtualHost::RefreshStatus()
 //            statusMap_.insert(EuIn, rand());
 //            statusMap_.insert(EuOut, rand());
 //            statusMap_.insert(ErrCode, rand());
-            statusMap_.insert(DbgA0, 1);
+            statusMap_.insert(DbgA0, 0);
+            statusMap_.insert(DbgB0,0);
 //            statusMap_.insert(DbgX1, rand());
 //            statusMap_.insert(DbgY0, 1);
 //            statusMap_.insert(DbgY1, rand());
@@ -374,19 +375,19 @@ void ICVirtualHost::RefreshStatus()
             if(tryTimes_  >= 200)
             {
 //                qCritical("Connect to host fail!!");
-#ifdef Q_WS_X11
+#ifndef Q_WS_QWS
                 statusMap_.insert(ErrCode, 0);
-                statusMap_.insert(XPos, 65530);
-                statusMap_.insert(YPos, 65530);
-                statusMap_.insert(ZPos, 65530);
-                statusMap_.insert(PPos, 65530);
-                statusMap_.insert(QPos, 65530);
+//                statusMap_.insert(XPos, 65530);
+//                statusMap_.insert(YPos, 65530);
+//                statusMap_.insert(ZPos, 65530);
+//                statusMap_.insert(PPos, 65530);
+//                statusMap_.insert(QPos, 65530);
                 statusMap_.insert(DbgY0, 0);
 //                statusMap_.insert(APos, rand());
                 clipLBits_ = -1;
                 clipHBits_ = -1;
 //                statusMap_.insert(DbgP0, (2 << 8));
-                statusMap_.insert(ErrCode, 500);
+//                statusMap_.insert(ErrCode, 500);
 #else
                 statusMap_.insert(ErrCode, 500);
 #endif

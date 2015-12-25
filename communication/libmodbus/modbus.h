@@ -30,6 +30,10 @@
 #include <stdint.h>
 #endif
 
+//#ifdef Q_WS_WIN
+//#define NATIVE_WIN32
+//#endif
+
 #ifdef NATIVE_WIN32
 #include <windows.h>
 #else /* NATIVE_WIN32 */
