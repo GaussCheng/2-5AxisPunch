@@ -97,6 +97,9 @@ ICHCSystemSettingsFrame::ICHCSystemSettingsFrame(QWidget *parent) :
     editorToConfigIDs_.insert(ui->extentFunctionCheckBox, ICConfigString::kCS_PANEL_Function_Extent);
     editorToConfigIDs_.insert(ui->limitFunctionBox, ICConfigString::kCS_PANEL_Register_Extent);
     ICLogInit
+
+            ui->limitFunctionBox->hide();
+    ui->limitFunctionLabel->hide();
 }
 
 ICHCSystemSettingsFrame::~ICHCSystemSettingsFrame()
@@ -658,99 +661,100 @@ void ICHCSystemSettingsFrame::on_restoreAllButton_clicked()
 #endif
     ICTipsWidget tipsWidget(tr("Restoring, please wait..."));
     tipsWidget.show();qApp->processEvents();
-    bool ret = CheckRestoreSystemFiles_();
-    ret = ret && CheckRestoreMachineFiles_();
-    QDir dir(getFileDir + "/HC5ABackup/records");
-    if(!dir.exists())
-    {
-        ret = false;
-        return;
-    }
-    QStringList acts = dir.entryList(QStringList()<<"*.act");
-    QStringList fncs = dir.entryList(QStringList()<<"*.fnc");
-    QStringList workReocrds;
-    QString temp;
-    int count = qMin(acts.size(), fncs.size());
-    for(int i = 0; i != count; ++i)
-    {
-        temp = acts.at(i);
-        temp.chop(4);
-        if(fncs.contains(temp + ".fnc"))
-            workReocrds.append(temp);
-    }
+    bool ret;
+//    bool ret = CheckRestoreSystemFiles_();
+//    ret = ret && CheckRestoreMachineFiles_();
+//    QDir dir(getFileDir + "/HC5ABackup/records");
+//    if(!dir.exists())
+//    {
+//        ret = false;
+//        return;
+//    }
+//    QStringList acts = dir.entryList(QStringList()<<"*.act");
+//    QStringList fncs = dir.entryList(QStringList()<<"*.fnc");
+//    QStringList workReocrds;
+//    QString temp;
+//    int count = qMin(acts.size(), fncs.size());
+//    for(int i = 0; i != count; ++i)
+//    {
+//        temp = acts.at(i);
+//        temp.chop(4);
+//        if(fncs.contains(temp + ".fnc"))
+//            workReocrds.append(temp);
+//    }
 
-    QStringList skipRecords;
-    QFile file;
-    QString actContent;
-    ICProgramFormatChecker programChecker;
-    ICConfigFormatChecker configFormatChecker;
+//    QStringList skipRecords;
+//    QFile file;
+//    QString actContent;
+//    ICProgramFormatChecker programChecker;
+//    ICConfigFormatChecker configFormatChecker;
 
-    for(int i = 0; i != workReocrds.size(); ++i)
-    {
-        file.setFileName(dir.absoluteFilePath(workReocrds.at(i) + ".act"));
-        actContent.clear();
-        file.open(QFile::ReadOnly | QFile::Text);
-        actContent = file.readAll();
-        file.close();
-        if(!programChecker.Check(actContent))
-        {
-            ICMessageBox::ICWarning(this, tr("Warnning"), QString(tr("%1 wrong program format! Will skip this record!").arg(workReocrds.at(i))));
-            //            ret = false;
-            skipRecords.append(workReocrds.at(i));
-            continue;
-        }
-
-        file.setFileName(dir.absoluteFilePath(workReocrds.at(i) + ".fnc"));
-        actContent.clear();
-        file.open(QFile::ReadOnly | QFile::Text);
-        actContent = file.readAll();
-        file.close();
-//        if(!configFormatChecker.CheckRowCount(actContent, ICMold,ICDataFormatChecker::kCompareEqual))
+//    for(int i = 0; i != workReocrds.size(); ++i)
+//    {
+//        file.setFileName(dir.absoluteFilePath(workReocrds.at(i) + ".act"));
+//        actContent.clear();
+//        file.open(QFile::ReadOnly | QFile::Text);
+//        actContent = file.readAll();
+//        file.close();
+//        if(!programChecker.Check(actContent))
 //        {
-//            ICMessageBox::ICWarning(this, tr("Warnning"), QString(tr("%1 wrong config format! Will skip this record!").arg(workReocrds.at(i))));
+//            ICMessageBox::ICWarning(this, tr("Warnning"), QString(tr("%1 wrong program format! Will skip this record!").arg(workReocrds.at(i))));
 //            //            ret = false;
 //            skipRecords.append(workReocrds.at(i));
 //            continue;
 //        }
-//        if(!configFormatChecker.Check(actContent))
-//        {
-//            ICMessageBox::ICWarning(this, tr("Warnning"), QString(tr("%1 wrong config format! Will skip this record!").arg(workReocrds.at(i))));
-//            //            ret = false;
-//            skipRecords.append(workReocrds.at(i));
-//        }
-    }
-    for(int i = 0; i != skipRecords.size(); ++i)
-    {
-        workReocrds.removeOne(skipRecords.at(i));
-    }
-    dir.cdUp();
-    dir.cd("subs");
-    skipRecords.clear();
-    QStringList subs = dir.entryList(QStringList()<<"sub[0-7]");
-    for(int i = 0; i != subs.size(); ++i)
-    {
-        file.setFileName(dir.absoluteFilePath(subs.at(i)));
-        actContent.clear();
-        file.open(QFile::ReadOnly | QFile::Text);
-        actContent = file.readAll();
-        file.close();
-        if(!programChecker.Check(actContent))
-        {
-            ICMessageBox::ICWarning(this, tr("Warnning"), QString(tr("%1 wrong program format! Will skip this sub!").arg(subs.at(i))));
-            skipRecords.append(subs.at(i));
-            //            ret = false;
-            //            return;
-        }
-    }
-    for(int i = 0; i != skipRecords.size(); ++i)
-    {
-        subs.removeOne(skipRecords.at(i));
-    }
 
-    for(int i = 0; i != workReocrds.size(); ++i)
-    {
-        workReocrds[i] += ".*";
-    }
+//        file.setFileName(dir.absoluteFilePath(workReocrds.at(i) + ".fnc"));
+//        actContent.clear();
+//        file.open(QFile::ReadOnly | QFile::Text);
+//        actContent = file.readAll();
+//        file.close();
+////        if(!configFormatChecker.CheckRowCount(actContent, ICMold,ICDataFormatChecker::kCompareEqual))
+////        {
+////            ICMessageBox::ICWarning(this, tr("Warnning"), QString(tr("%1 wrong config format! Will skip this record!").arg(workReocrds.at(i))));
+////            //            ret = false;
+////            skipRecords.append(workReocrds.at(i));
+////            continue;
+////        }
+////        if(!configFormatChecker.Check(actContent))
+////        {
+////            ICMessageBox::ICWarning(this, tr("Warnning"), QString(tr("%1 wrong config format! Will skip this record!").arg(workReocrds.at(i))));
+////            //            ret = false;
+////            skipRecords.append(workReocrds.at(i));
+////        }
+//    }
+//    for(int i = 0; i != skipRecords.size(); ++i)
+//    {
+//        workReocrds.removeOne(skipRecords.at(i));
+//    }
+//    dir.cdUp();
+//    dir.cd("subs");
+//    skipRecords.clear();
+//    QStringList subs = dir.entryList(QStringList()<<"sub[0-7]");
+//    for(int i = 0; i != subs.size(); ++i)
+//    {
+//        file.setFileName(dir.absoluteFilePath(subs.at(i)));
+//        actContent.clear();
+//        file.open(QFile::ReadOnly | QFile::Text);
+//        actContent = file.readAll();
+//        file.close();
+//        if(!programChecker.Check(actContent))
+//        {
+//            ICMessageBox::ICWarning(this, tr("Warnning"), QString(tr("%1 wrong program format! Will skip this sub!").arg(subs.at(i))));
+//            skipRecords.append(subs.at(i));
+//            //            ret = false;
+//            //            return;
+//        }
+//    }
+//    for(int i = 0; i != skipRecords.size(); ++i)
+//    {
+//        subs.removeOne(skipRecords.at(i));
+//    }
+
+//    for(int i = 0; i != workReocrds.size(); ++i)
+//    {
+//        workReocrds[i] += ".*";
+//    }
 
     ICBackupUtility backupUtility;
     ret = backupUtility.RestoreDir(getFileDir + "/HC5ABackup/sysconfig",
@@ -762,11 +766,11 @@ void ICHCSystemSettingsFrame::on_restoreAllButton_clicked()
 
     ret = ret && backupUtility.RestoreDir(getFileDir +  "/HC5ABackup/records",
                                           "./records",
-                                          workReocrds);
+                                          QStringList()<<"*.act"<<"*.fnc"<<"*.cfg"<<"*.pt"<<"*.sub"<<"*.reserve*");
 
-    ret = ret && backupUtility.RestoreDir(getFileDir + "/HC5ABackup/subs",
-                                          "./subs",
-                                          subs);
+//    ret = ret && backupUtility.RestoreDir(getFileDir + "/HC5ABackup/subs",
+//                                          "./subs",
+//                                          subs);
 
     Information(ret);
     if(ret)
@@ -779,6 +783,11 @@ void ICHCSystemSettingsFrame::on_restoreAllButton_clicked()
 
 void ICHCSystemSettingsFrame::on_umountButton_clicked()
 {
+    if(!CheckIsUsbAttached())
+    {
+        ICMessageBox::ICWarning(this, tr("Tips"), tr("No usb attached!"));
+        return;
+    }
     system("umount /mnt/udisk");
     ICMessageBox::ICWarning(this, tr("Tips"), tr("You can remove your usb!"));
 }

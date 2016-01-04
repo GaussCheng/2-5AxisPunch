@@ -71,7 +71,7 @@ private slots:
 
     void on_singleCycle_clicked();
 
-    void on_punchPause_clicked(bool checked);
+    void on_punchPause_clicked();
 
 private:
     void InitSignal();

@@ -4633,14 +4633,14 @@ QRadioButton::indicator:unchecked:disabled
  </widget>
  <customwidgets>
   <customwidget>
-   <class>ICLineEditWithVirtualNumericKeypad</class>
-   <extends>QLineEdit</extends>
-   <header>iclineeditwithvirtualnumerickeypad.h</header>
-  </customwidget>
-  <customwidget>
    <class>ICComboBox</class>
    <extends>QComboBox</extends>
    <header>iccombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ICLineEditWithVirtualNumericKeypad</class>
+   <extends>QLineEdit</extends>
+   <header>iclineeditwithvirtualnumerickeypad.h</header>
   </customwidget>
   <customwidget>
    <class>ICTabWidget</class>

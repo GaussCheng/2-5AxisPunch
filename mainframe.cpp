@@ -964,6 +964,8 @@ void MainFrame::StatusRefreshed()
         //        statusStr_ = tr("Manual");
         ICProgramHeadFrame::Instance()->ChangStatusmoldNameLabelOperation(false);
         ICProgramHeadFrame::Instance()->SetHanSelectEnable(true);
+        ui->cycleTimeAndFinistWidget->SetFinished(host->FinishProductCount());
+
         //        ui->teachButton->setEnabled(true);
     }
     else if(runningStatus_ == ICVirtualHost::Stop)
@@ -971,6 +973,8 @@ void MainFrame::StatusRefreshed()
         speed_ = "0";
         ICProgramHeadFrame::Instance()->ChangStatusmoldNameLabelOperation(true);
         ICProgramHeadFrame::Instance()->SetHanSelectEnable(false);
+        ui->cycleTimeAndFinistWidget->SetFinished(host->FinishProductCount());
+
         if(!actionDialog_->isHidden()){
             actionDialog_->hide();
         }

@@ -15,6 +15,10 @@
 #include "icparameterssave.h"
 #include "icprogrampage.h"
 
+static QString pauseBtnOldStyle;
+static QString pauseBtnPauseStyle = "background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(39, 26, 247, 255), stop:1 rgba(114, 171, 213, 255));";
+
+
 ICHCProgramMonitorFrame::ICHCProgramMonitorFrame(QWidget *parent) :
     QFrame(parent),
     ui(new Ui::ICHCProgramMonitorFrame),
@@ -78,6 +82,7 @@ ICHCProgramMonitorFrame::ICHCProgramMonitorFrame(QWidget *parent) :
     ui->moldContentListWidget->hide();
     InitTableWidget();
 #endif
+    pauseBtnOldStyle = ui->punchPause->styleSheet();
 //    ui->tSpeed->hide();
 //    ui->rsSpeed->hide();
 }
@@ -374,6 +379,7 @@ static uint16_t oldZ = 0;
 static uint16_t oldQ = 0;
 static uint16_t oldP = 0;
 static int64_t oldS = -1;
+
 void ICHCProgramMonitorFrame::StatusRefreshed()
 {
     ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
@@ -382,39 +388,6 @@ void ICHCProgramMonitorFrame::StatusRefreshed()
     if(runningStatus_ == ICVirtualHost::Stop){
         ui->cycle->setChecked(true);
     }
-//    int16_t pos = host->HostStatus(ICVirtualHost::XPos).toInt();
-//    if(pos != oldX)
-//    {
-//        oldX = pos;
-//        ui->xCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
-//    }
-//    int16_t posy = host->HostStatus(ICVirtualHost::YPos).toInt();
-//    if(posy != oldY)
-//    {
-//        oldY = posy;
-//        ui->yCurrentPos->setText(QString::number(posy / 10.0, 'f', 1));
-//    }
-//#ifdef HC_AXIS_COUNT_5
-//    int16_t posz = host->HostStatus(ICVirtualHost::ZPos).toInt();
-//    if(posz != oldZ)
-//    {
-//        oldZ = posz;
-//        ui->zCurrentPos->setText(QString::number(posz / 10.0, 'f', 1));
-//    }
-//    pos = host->HostStatus(ICVirtualHost::QPos).toInt();
-//    if(pos != oldQ)
-//    {
-//        oldQ = pos;
-//        ui->tCurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
-//    }
-
-//    pos = host->HostStatus(ICVirtualHost::PPos).toInt();
-//    if(pos != oldP)
-//    {
-//        oldP = pos;
-//        ui->x2CurrentPos->setText(QString::number(pos / 10.0, 'f', 1));
-//    }
-//#endif
     int64_t speed = host->GlobalSpeed();
     if(speed != oldS)
     {
@@ -427,65 +400,8 @@ void ICHCProgramMonitorFrame::StatusRefreshed()
         ui->tSpeedLabel->setText(QString::number((speed >> 32) & 0xFF));
 #endif
     }
+    ui->punchPause->setStyleSheet(host->HintNum() == 1 ? pauseBtnPauseStyle : pauseBtnOldStyle);
 
-//    ICVirtualHost* host = ICVirtualHost::GlobalVirtualHost();
-//    newTime_ = host->HostStatus(ICVirtualHost::DbgZ0).toUInt();
-
-//    if(newTime_ != oldTime_)
-//    {
-
-//        oldTime_ = newTime_;
-//        SetTime(newTime_);
-//    }
-//    ui->getTime->setText(ICParameterConversion::TransThisIntToThisText(host->HostStatus(ICVirtualHost::DbgY1).toUInt(), 2));
-//    newTimes_ = host->HostStatus(ICVirtualHost::DbgX1).toUInt();
-//    if(newCycleTimes_ != oldCycleTimes_)
-//    {
-
-//        oldCycleTimes_ = newCycleTimes_;
-//        //        ui->cycleTimes->setText(QString::number(oldCycleTimes_));
-//    }
-//    newGoodP_ = host->HostStatus(ICVirtualHost::DbgY0).toUInt();
-//    if(newGoodP_ != oldGoodP_)
-//    {
-//        oldGoodP_ = newGoodP_;
-//        ui->goodProducts->setText(QString::number(oldGoodP_));
-//    }
-//    newStackedP_ = host->HostStatus(ICVirtualHost::DbgZ1).toUInt();
-//    if(newStackedP_ != oldStackedP_)
-//    {
-//        oldStackedP_ = newStackedP_;
-//        ui->stackedProducts->setText(QString::number(oldStackedP_));
-//    }
-//    int status = host->HostStatus(ICVirtualHost::DbgP0).toInt();
-//    int mode = host->HostStatus(ICVirtualHost::DbgX0).toInt();
-//    if(status == 2 && mode != ICVirtualHost::AutoSingleCycle)
-//    {
-//        ui->infoLabel->setText(tr("Single run ready"));
-//    }
-//    else if(status == 4 && mode != ICVirtualHost::AutoOneCycle && mode != ICVirtualHost::AutoStopping)
-//    {
-//        ui->infoLabel->setText(tr("Single cycle ready"));
-//    }
-//    else
-//    {
-//        ui->infoLabel->setText("");
-//    }
-
-//    ui->stackedProducts->setText(QString::number(host->HostStatus(ICVirtualHost::S).toInt()));
-    //    if(host->CurrentStatus() != ICVirtualHost::Auto)
-    //    {
-    //        qDebug("isModify change to false in auto");
-    //        isModify_ = false;
-    //        modifyMap_.clear();
-    //    }
-    //    if(host->HostStatus(ICVirtualHost::DbgX0) != ICVirtualHost::AutoRunning &&
-    //            host->HostStatus(ICVirtualHost::DbgX0) != ICVirtualHost::AutoStopping)
-    //    {
-    //        qDebug("isModify change to false in autoRunning");
-    //        isModify_ = false;
-    //        modifyMap_.clear();
-    //    }
 }
 
 void ICHCProgramMonitorFrame::SelectCurrentStep(int currentStep)
@@ -1123,12 +1039,14 @@ void ICHCProgramMonitorFrame::on_singleCycle_clicked()
 
 }
 
-void ICHCProgramMonitorFrame::on_punchPause_clicked(bool checked)
+void ICHCProgramMonitorFrame::on_punchPause_clicked()
 {
-    if(checked){
-        ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_SOFTPAUSE);
-    }
-    else{
+    if(ICVirtualHost::GlobalVirtualHost()->HintNum() == 1)
+    {
         ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_SOFTSTART);
+    }
+    else
+    {
+        ICCommandProcessor::Instance()->ExecuteVirtualKeyCommand(IC::VKEY_SOFTPAUSE);
     }
 }

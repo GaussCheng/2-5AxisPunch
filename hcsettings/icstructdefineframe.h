@@ -25,6 +25,7 @@ public:
 protected:
     void changeEvent(QEvent *e);
     void hideEvent(QHideEvent *);
+    void showEvent(QShowEvent* e);
     void timerEvent(QTimerEvent *);
 signals:
     void StructChanged();

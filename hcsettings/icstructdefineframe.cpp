@@ -193,16 +193,6 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     ui->waitMode->setCurrentIndex(host->IsWaitModeEn());
 
 
-
-    quint32 check1,check2;
-    check1 = ICMold::CurrentMold()->MoldParam(ICMold::check1);
-    check2 = ICMold::CurrentMold()->MoldParam(ICMold::check2);
-
-    ui->x37Box->setChecked(check2&(1 << (23 - 16)));
-    ui->x40Box->setChecked(check2&(1 << (24 - 16)));
-    ui->x22Box->setChecked(check1&(1 << 10));
-    ui->x23Box->setChecked(check1&(1 << 11));
-
     InitEnfoce();
 
     editorToConfigIDs_.insert(ui->x1Box, ICConfigString::kCS_STRUCT_Axis_Define_X1);
@@ -304,6 +294,20 @@ void ICStructDefineFrame::hideEvent(QHideEvent *e)
     ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
     ui->tabWidget->setCurrentIndex(0);
     QWidget::hideEvent(e);
+}
+
+void ICStructDefineFrame::showEvent(QShowEvent *e)
+{
+    quint32 check1,check2;
+    check1 = ICMold::CurrentMold()->MoldParam(ICMold::check1);
+    check2 = ICMold::CurrentMold()->MoldParam(ICMold::check2);
+
+    ui->x37Box->setChecked(check2&(1 << (23 - 16)));
+    ui->x40Box->setChecked(check2&(1 << (24 - 16)));
+    ui->x22Box->setChecked(check1&(1 << 10));
+    ui->x23Box->setChecked(check1&(1 << 11));
+    QWidget::showEvent(e);
+
 }
 
 void ICStructDefineFrame::timerEvent(QTimerEvent *)

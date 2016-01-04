@@ -707,7 +707,7 @@ QRadioButton::indicator:unchecked:disabled
        <property name="geometry">
         <rect>
          <x>9</x>
-         <y>38</y>
+         <y>44</y>
          <width>94</width>
          <height>16</height>
         </rect>
@@ -780,7 +780,7 @@ QRadioButton::indicator:unchecked:disabled
        <property name="geometry">
         <rect>
          <x>9</x>
-         <y>76</y>
+         <y>81</y>
          <width>85</width>
          <height>16</height>
         </rect>
@@ -1191,7 +1191,7 @@ QRadioButton::indicator:unchecked:disabled
  </resources>
  <connections/>
  <buttongroups>
-  <buttongroup name="languageButtonGroup"/>
   <buttongroup name="buttonGroup_2"/>
+  <buttongroup name="languageButtonGroup"/>
  </buttongroups>
 </ui>

@@ -4,6 +4,7 @@ cp Multi-axisManipulatorSystem* /opt/Qt/apps -f
 cp Base.* /opt/Qt/apps/records -f
 cp *-ch /opt/Qt/apps/sysconfig
 cp hwclock.sh /etc/init.d -f
+cp user_* /opt/Qt/apps/sysconfig
 #cd 3a8
 #cp -rf records subs sysconfig /mnt/database
 #reboot

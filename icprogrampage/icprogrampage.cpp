@@ -355,6 +355,8 @@ void ICProgramPage::hideEvent(QHideEvent *e)
     ReConfigure();
     EnableTestButtons();
 
+    ui->seveoEdit->setChecked(false);
+
     QWidget::hideEvent(e);
 
 }

@@ -13,7 +13,7 @@ DEFINES += IO_C6
 SK_SIZE = 8
 
 HW_VERSION = "1.3"
-SW_VERSION = "6.0.6"
+SW_VERSION = "6.0.9"
 contains(DEFINES, IO_C6){
 HW_TYPE = "C6"
 }else{
