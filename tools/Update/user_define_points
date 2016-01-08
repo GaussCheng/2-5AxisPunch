@@ -1,0 +1,6 @@
+0,取料位,Point1
+1,放料位,Point2
+2,取料待机,Point3
+3,放料待机,Point4
+4,取料上方,Point5
+5,放料上方,Point6

@@ -9472,7 +9472,7 @@ ModifyTime</source>
     <message>
         <location filename="icprogrampage/icprogrampage.cpp" line="1201"/>
         <source>Canot Delete %1 action!</source>
-        <translation>不能删除%1操作！</translation>
+        <translation>不能删除该动作！</translation>
     </message>
     <message>
         <location filename="icprogrampage/icprogrampage.cpp" line="1206"/>

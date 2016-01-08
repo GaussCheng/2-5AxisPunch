@@ -446,7 +446,7 @@ void ICHCSystemSettingsFrame::on_backupAllButton_clicked()
 
     ret = ret && backupUtility.BackupDir("./records/",
                                          getFileDir + "/HC5ABackup/records/",
-                                         QStringList()<<"*.act"<<"*.fnc"<<"*.sub"<<"*.reserve*");
+                                         QStringList()<<"*.act"<<"*.fnc"<<"*.cfg"<<"*.pt"<<"*.sub"<<"*.reserve*");
 
 //    ret = ret && backupUtility.BackupDir("./subs",
 //                                         getFileDir + "/HC5ABackup/subs",
