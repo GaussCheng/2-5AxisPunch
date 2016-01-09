@@ -16,6 +16,9 @@ public:
     void setInfo(QString info);
     ~ICInformationDialog();
 
+protected:
+    void keyPressEvent(QKeyEvent* e);
+
 private:
     Ui::ICInformationDialog *ui;
 };
