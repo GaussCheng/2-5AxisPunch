@@ -7,6 +7,7 @@
 #include "ickeyboardhandler.h"
 #include "ickeyboard.h"
 #include "icvirtualkey.h"
+#include "mainframe.h"
 
 
 ICOriginDialog::ICOriginDialog(QWidget *parent) :
@@ -129,8 +130,8 @@ void ICOriginDialog::keyPressEvent(QKeyEvent *e)
     else
     {
         QKeyEvent* ke = new QKeyEvent(*e);
-        qApp->postEvent(this->parentWidget(), ke);
-//        this->accept();
+        qApp->postEvent(icMainFrame, ke);
+        this->reject();
     }
 }
 

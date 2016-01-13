@@ -241,6 +241,7 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
     //    axisWidgets_.append(QList<QWidget*>()<<ui->zLabel<<ui->zmmLabel<<ui->zPosLabel);
     compareAlarmNums_<<210<<211<<212<<213<<214<<215<<216<<217<<218;
     hostCompareDialog_ = new ICHostComparePage(this);
+    hostCompareDialog_->move(50,50);
     recordPage_ =  NULL;
     UpdateAxisDefine_();
     ICKeyboard::Instace()->Receive();
@@ -1254,7 +1255,9 @@ void MainFrame::ShowFunctionPage()
 
 void MainFrame::ShowOrigin()
 {
-    if(!originExecutingPage_->isVisible() && !isblockOriginShow_)
+    if(!originExecutingPage_->isVisible() &&
+            !isblockOriginShow_ &&
+            (ICKeyboard::Instace()->CurrentSwitchStatus() == ICKeyboard::KS_StopStatu))
     {
         //        ui->systemStatusFrame->SetOriginStatus(StatusLabel::ONSTATUS);
         //        isOriginShown_ = true;

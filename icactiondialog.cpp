@@ -32,6 +32,7 @@ void ICActionDialog::keyPressEvent(QKeyEvent *e)
 {
     QKeyEvent* ke = new QKeyEvent(*e);
     qApp->postEvent(this->parentWidget(), ke);
+//    this->reject();
 }
 
 void ICActionDialog::keyReleaseEvent(QKeyEvent *e)
