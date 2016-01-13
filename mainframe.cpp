@@ -925,7 +925,7 @@ void MainFrame::StatusRefreshed()
             ui->cycleTimeAndFinistWidget->SetAlarmInfo("");
         }
     }
-    else if(errCode_ == 0 && hintCode != oldHintCode_)
+    else if((errCode_ == 0) && (hintCode != oldHintCode_))
     {
         oldHintCode_ = hintCode;
         qDebug()<<"hint code"<<hintCode<<alarmString->HintInfo(hintCode);
