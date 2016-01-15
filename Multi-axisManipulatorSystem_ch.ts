@@ -7949,24 +7949,24 @@ ModifyTime</source>
 <context>
     <name>ICOriginDialog</name>
     <message>
-        <location filename="icorigindialog.cpp" line="85"/>
-        <location filename="icorigindialog.cpp" line="152"/>
+        <location filename="icorigindialog.cpp" line="86"/>
+        <location filename="icorigindialog.cpp" line="153"/>
         <source>Please press the start button to start execute origin action</source>
         <translation>请按启动键执行原点复归</translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="148"/>
+        <location filename="icorigindialog.cpp" line="149"/>
         <source>Originning...</source>
         <translation>原点复归中...</translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="182"/>
+        <location filename="icorigindialog.cpp" line="183"/>
         <source>Do you need to auto position?</source>
         <translation>需要自动侧姿吗?</translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="235"/>
-        <location filename="icorigindialog.cpp" line="241"/>
+        <location filename="icorigindialog.cpp" line="236"/>
+        <location filename="icorigindialog.cpp" line="242"/>
         <source>Originning</source>
         <translation>原点执行中</translation>
     </message>
@@ -11757,7 +11757,7 @@ Would you want to restart now?</source>
         <translation>返回</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="1218"/>
+        <location filename="mainframe.cpp" line="1219"/>
         <source>Notic Arm %1 Is in Safe Area?</source>
         <oldsource>Notic Arm 
 %1 
@@ -11765,13 +11765,13 @@ Is in Safe Area?</oldsource>
         <translation>注意机械手%1是否在安全位置?</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="1248"/>
-        <location filename="mainframe.cpp" line="1325"/>
+        <location filename="mainframe.cpp" line="1249"/>
+        <location filename="mainframe.cpp" line="1328"/>
         <source>Controlled, Can&apos;t modify!</source>
         <translation>联机中，不能设定！</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="933"/>
+        <location filename="mainframe.cpp" line="934"/>
         <source>Hint</source>
         <translation>提示</translation>
     </message>
@@ -11780,8 +11780,8 @@ Is in Safe Area?</oldsource>
         <translation type="obsolete">手动</translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="1247"/>
-        <location filename="mainframe.cpp" line="1324"/>
+        <location filename="mainframe.cpp" line="1248"/>
+        <location filename="mainframe.cpp" line="1327"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>

@@ -5371,24 +5371,24 @@ Please enter an digit between </source>
 <context>
     <name>ICOriginDialog</name>
     <message>
-        <location filename="icorigindialog.cpp" line="85"/>
-        <location filename="icorigindialog.cpp" line="152"/>
+        <location filename="icorigindialog.cpp" line="86"/>
+        <location filename="icorigindialog.cpp" line="153"/>
         <source>Please press the start button to start execute origin action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="148"/>
+        <location filename="icorigindialog.cpp" line="149"/>
         <source>Originning...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="182"/>
+        <location filename="icorigindialog.cpp" line="183"/>
         <source>Do you need to auto position?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="235"/>
-        <location filename="icorigindialog.cpp" line="241"/>
+        <location filename="icorigindialog.cpp" line="236"/>
+        <location filename="icorigindialog.cpp" line="242"/>
         <source>Originning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7898,7 +7898,7 @@ Please enter an digit between </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="1218"/>
+        <location filename="mainframe.cpp" line="1219"/>
         <source>Notic Arm %1 Is in Safe Area?</source>
         <oldsource>Notic Arm 
 %1 
@@ -7906,19 +7906,19 @@ Is in Safe Area?</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="1247"/>
-        <location filename="mainframe.cpp" line="1324"/>
+        <location filename="mainframe.cpp" line="1248"/>
+        <location filename="mainframe.cpp" line="1327"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="1248"/>
-        <location filename="mainframe.cpp" line="1325"/>
+        <location filename="mainframe.cpp" line="1249"/>
+        <location filename="mainframe.cpp" line="1328"/>
         <source>Controlled, Can&apos;t modify!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainframe.cpp" line="933"/>
+        <location filename="mainframe.cpp" line="934"/>
         <source>Hint</source>
         <translation type="unfinished"></translation>
     </message>
