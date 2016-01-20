@@ -1637,6 +1637,7 @@ void MainFrame::ClearPosColor()
 
 void MainFrame::checkAlarmModify()
 {
+//    ICAlarmFrame::Instance()->AlarmModifyTime();
     if(errCode_ == 0)
     {
         ICAlarmFrame::Instance()->AlarmModifyTime();
