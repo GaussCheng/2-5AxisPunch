@@ -314,7 +314,7 @@ public:
         DbgA0,
         DbgA1,
         DbgB0,
-        DbgB1,
+        DbgMasterId,
         DbgC0,
         DbgC1,
 
@@ -563,9 +563,10 @@ public:
         ORIGINBIT  = 0x00000200,
         AUTOBIT   = 0x00000400,
         WAITBIT   = 0x00000800,
-        PUNCHBIT = 0x000001000,
-        SAFEINFO  = 0x000002000,
-        PUNCHOUT  = 0x000004000
+        PUNCHBIT = 0x00001000,
+        SAFEINFO  = 0x00002000,
+        PUNCHOUT  = 0x00004000,
+        RESERVEBIT = 0x00008000
 
 
     };
@@ -630,6 +631,8 @@ public:
     void SetCloseMoldEn(bool isEn);
     bool IsFleeEn() const { return (SystemParameter((SYS_Function)).toInt() & FLEEBIT ) != 0;}   //逃跑
     void SetFleeEn(bool isEn);
+    bool IsReverseEn() const { return (SystemParameter((SYS_Function)).toInt() & RESERVEBIT ) != 0;}   //反向运行
+    void SetReverseEn(bool isEn);
     bool IsOriginModeEn() const { return (SystemParameter((SYS_Function)).toInt() & ORIGINBIT ) != 0;} //原点信号
     void SetOriginModeEn(bool isEn);
     bool IsAutoModeEn() const { return (SystemParameter((SYS_Function)).toInt() & AUTOBIT ) != 0;} //全自动信号
@@ -1092,6 +1095,16 @@ inline void ICVirtualHost::SetFleeEn(bool isEn)
     systemParamMap_.insert(SYS_Function, val);
     isParamChanged_ = true;
 }
+
+inline void ICVirtualHost::SetReverseEn(bool isEn)
+{
+    int val = SystemParameter(SYS_Function).toInt();
+    val &= (~RESERVEBIT);
+    (isEn ? val |= RESERVEBIT : val &= (~RESERVEBIT));
+    systemParamMap_.insert(SYS_Function, val);
+    isParamChanged_ = true;
+}
+
 
 inline void ICVirtualHost::SetOriginModeEn(bool isEn)
 {

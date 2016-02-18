@@ -147,8 +147,10 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
 
     ui->aBox->hide();
     ui->bBox->hide();
-//    ui->cBox->hide();
-//    ui->label_14->hide();
+#ifndef TEACH_PAGE
+    ui->cBox->hide();
+    ui->label_14->hide();
+#endif
     ui->label_15->hide();
     ui->label_16->hide();
 
@@ -184,6 +186,8 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
     ui->tryRunBox->setChecked(host->IsMidMoldCheck());
     ui->syncBox->setChecked(host->IsOrignSyncCheck());
     ui->downModeBox->setChecked(host->IsCloseMoldEn());
+    ui->reserveBox->setChecked(host->IsReverseEn());
+
     ui->safeInfoBox->setChecked(host->IsSafeInfoModeEn());
     ui->punchOutBox->setChecked(host->IsPunchOutModeEn());
     ui->fleeBox->setChecked(host->IsFleeEn());
@@ -194,6 +198,7 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
 
 
     InitEnfoce();
+    InitCheckedBox();
 
     editorToConfigIDs_.insert(ui->x1Box, ICConfigString::kCS_STRUCT_Axis_Define_X1);
     editorToConfigIDs_.insert(ui->y1Box, ICConfigString::kCS_STRUCT_Axis_Define_Y1);
@@ -243,11 +248,18 @@ ICStructDefineFrame::ICStructDefineFrame(QWidget *parent) :
 #endif
     ui->label_23->hide();
     ui->orignStatus->hide();
+    ui->downModeBox->hide();
 }
 
 ICStructDefineFrame::~ICStructDefineFrame()
 {
     delete ui;
+}
+
+void ICStructDefineFrame::showEvent(QShowEvent *e)
+{
+    InitCheckedBox();
+    QWidget::showEvent(e);
 }
 
 
@@ -296,19 +308,19 @@ void ICStructDefineFrame::hideEvent(QHideEvent *e)
     QWidget::hideEvent(e);
 }
 
-void ICStructDefineFrame::showEvent(QShowEvent *e)
-{
-    quint32 check1,check2;
-    check1 = ICMold::CurrentMold()->MoldParam(ICMold::check1);
-    check2 = ICMold::CurrentMold()->MoldParam(ICMold::check2);
+//void ICStructDefineFrame::showEvent(QShowEvent *e)
+//{
+//    quint32 check1,check2;
+//    check1 = ICMold::CurrentMold()->MoldParam(ICMold::check1);
+//    check2 = ICMold::CurrentMold()->MoldParam(ICMold::check2);
 
-    ui->x37Box->setChecked(check2&(1 << (23 - 16)));
-    ui->x40Box->setChecked(check2&(1 << (24 - 16)));
-    ui->x22Box->setChecked(check1&(1 << 10));
-    ui->x23Box->setChecked(check1&(1 << 11));
-    QWidget::showEvent(e);
+//    ui->x37Box->setChecked(check2&(1 << (23 - 16)));
+//    ui->x40Box->setChecked(check2&(1 << (24 - 16)));
+//    ui->x22Box->setChecked(check1&(1 << 10));
+//    ui->x23Box->setChecked(check1&(1 << 11));
+//    QWidget::showEvent(e);
 
-}
+//}
 
 void ICStructDefineFrame::timerEvent(QTimerEvent *)
 {
@@ -523,6 +535,8 @@ void ICStructDefineFrame::on_saveButton_clicked()
         host->SetSystemParameter(ICVirtualHost::Sys_EnforceOutput1, (enforceOutputs() >> 16) & 0xFFFF);
         host->SetMidMoldCheck(ui->tryRunBox->isChecked());
         host->SetCloseMoldEn(ui->downModeBox->isChecked());
+        host->SetReverseEn(ui->reserveBox->isChecked());
+
         host->SetOrignSyncCheck(ui->syncBox->isChecked());
         host->SetPunchCheckMode(ui->punchType->currentIndex());
         host->SetFleeEn(ui->fleeBox->isChecked());
@@ -666,6 +680,7 @@ void ICStructDefineFrame::InitCombobox()
 
     ui->tryRunBox->setChecked(host->IsMidMoldCheck());
     ui->downModeBox->setChecked(host->IsCloseMoldEn());
+    ui->reserveBox->setChecked(host->IsReverseEn());
     ui->safeInfoBox->setChecked(host->IsSafeInfoModeEn());
     ui->punchOutBox->setChecked(host->IsPunchOutModeEn());
     ui->syncBox->setChecked(host->IsOrignSyncCheck());
@@ -713,6 +728,19 @@ void ICStructDefineFrame::InitEnforceOutput()
     for(int i =0;i < ouputBoxs.size();i++){
         ouputBoxs.at(i)->setChecked( outputs & ( 1 << i));
     }
+}
+
+void ICStructDefineFrame::InitCheckedBox()
+{
+    quint32 check1,check2;
+    check1 = ICMold::CurrentMold()->MoldParam(ICMold::check1);
+    check2 = ICMold::CurrentMold()->MoldParam(ICMold::check2);
+
+    ui->x37Box->setChecked(check2&(1 << (23 - 16)));
+    ui->x40Box->setChecked(check2&(1 << (24 - 16)));
+    ui->x22Box->setChecked(check1&(1 << 10));
+    ui->x23Box->setChecked(check1&(1 << 11));
+
 }
 
 quint32 ICStructDefineFrame::enforceInputs()

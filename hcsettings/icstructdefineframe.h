@@ -73,6 +73,7 @@ private:
     void InitEnfoce();
     void InitEnforceInput();
     void InitEnforceOutput();
+    void InitCheckedBox();
     quint32 enforceInputs();
     quint32 enforceOutputs();
     QList<QPushButton*> punchButtons_;
