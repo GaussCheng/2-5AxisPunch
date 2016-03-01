@@ -8,7 +8,7 @@ QMAKE_CXX = ccache $${QMAKE_CXX}
 QT += sql
 
 DEFINES += IO_C6
-#DEFINES += TEACH_PAGE
+DEFINES += TEACH_PAGE
 
 SK_SIZE = 8
 
