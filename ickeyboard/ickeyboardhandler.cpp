@@ -284,15 +284,15 @@ void ICKeyboardHandler::Keypressed(int keyValue)
     {
     case ICKeyboard::FB_Origin:
     {
-//        if(status != ICVirtualHost::Stop)
-//        {
-//            return;
-//        }
-//        //            commandProcessor->ExecuteVirtualKeyCommand(virtualKeyMap_.value(keyValue));
-//        if(commandProcessor->ExecuteHCCommand(IC::CMD_TurnZero, virtualKeyMap_.value(keyValue)))
-//        {
-//            //                icMainFrame->ShowOrigin();
-//        }
+        if(status != ICVirtualHost::Stop)
+        {
+            return;
+        }
+        //            commandProcessor->ExecuteVirtualKeyCommand(virtualKeyMap_.value(keyValue));
+        if(commandProcessor->ExecuteHCCommand(IC::CMD_TurnZero, virtualKeyMap_.value(keyValue)))
+        {
+            //                icMainFrame->ShowOrigin();
+        }
     }
         break;
     case ICKeyboard::FB_Reset:
