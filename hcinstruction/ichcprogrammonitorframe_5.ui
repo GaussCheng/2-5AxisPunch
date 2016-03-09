@@ -6,15 +6,9 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
-    <height>400</height>
+    <width>812</width>
+    <height>491</height>
    </rect>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>640</width>
-    <height>400</height>
-   </size>
   </property>
   <property name="windowTitle">
    <string>Frame</string>
@@ -34,6 +28,21 @@
    <enum>QFrame::Plain</enum>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>2</number>
+   </property>
+   <property name="leftMargin">
+    <number>2</number>
+   </property>
+   <property name="topMargin">
+    <number>2</number>
+   </property>
+   <property name="rightMargin">
+    <number>2</number>
+   </property>
+   <property name="bottomMargin">
+    <number>2</number>
+   </property>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
@@ -53,15 +62,12 @@
       <widget class="QPushButton" name="cycle">
        <property name="minimumSize">
         <size>
-         <width>120</width>
-         <height>32</height>
+         <width>0</width>
+         <height>38</height>
         </size>
        </property>
-       <property name="maximumSize">
-        <size>
-         <width>120</width>
-         <height>16777215</height>
-        </size>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
         <string>CheckRun</string>
@@ -74,9 +80,6 @@
        </property>
        <property name="checkable">
         <bool>true</bool>
-       </property>
-       <property name="checked">
-        <bool>false</bool>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup</string>
@@ -100,15 +103,12 @@
       <widget class="QPushButton" name="uncheckRun">
        <property name="minimumSize">
         <size>
-         <width>120</width>
-         <height>32</height>
+         <width>0</width>
+         <height>38</height>
         </size>
        </property>
-       <property name="maximumSize">
-        <size>
-         <width>120</width>
-         <height>16777215</height>
-        </size>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
         <string>UncheckRun</string>
@@ -147,15 +147,12 @@
       <widget class="QPushButton" name="allowGet">
        <property name="minimumSize">
         <size>
-         <width>120</width>
-         <height>32</height>
+         <width>0</width>
+         <height>38</height>
         </size>
        </property>
-       <property name="maximumSize">
-        <size>
-         <width>120</width>
-         <height>16777215</height>
-        </size>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
         <string>allowGet</string>
@@ -167,9 +164,6 @@
         </size>
        </property>
        <property name="checkable">
-        <bool>false</bool>
-       </property>
-       <property name="checked">
         <bool>false</bool>
        </property>
       </widget>
@@ -191,15 +185,12 @@
       <widget class="QPushButton" name="allowSet">
        <property name="minimumSize">
         <size>
-         <width>120</width>
-         <height>32</height>
+         <width>0</width>
+         <height>38</height>
         </size>
        </property>
-       <property name="maximumSize">
-        <size>
-         <width>120</width>
-         <height>16777215</height>
-        </size>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
         <string>allowSet</string>
@@ -213,8 +204,34 @@
        <property name="checkable">
         <bool>false</bool>
        </property>
-       <property name="checked">
-        <bool>false</bool>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_7">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="singleCycle">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>38</height>
+        </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="text">
+        <string>Single Cycle</string>
        </property>
       </widget>
      </item>
@@ -231,16 +248,39 @@
        </property>
       </spacer>
      </item>
+     <item>
+      <widget class="QPushButton" name="punchPause">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>38</height>
+        </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="text">
+        <string>Punch Pause</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_6">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
     </layout>
    </item>
    <item>
     <widget class="QListWidget" name="moldContentListWidget">
-     <property name="minimumSize">
-      <size>
-       <width>300</width>
-       <height>0</height>
-      </size>
-     </property>
      <property name="styleSheet">
       <string notr="true">QListView{
 background-color: darkgray;
@@ -270,30 +310,6 @@ padding:5px;
     </widget>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_3">
-     <item>
-      <spacer name="horizontalSpacer_6">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QPushButton" name="singleCycle">
-       <property name="text">
-        <string>singleCycle</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <property name="spacing">
       <number>2</number>
@@ -317,6 +333,9 @@ padding:5px;
          <width>80</width>
          <height>16777215</height>
         </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
         <string>X.Speed</string>
@@ -802,6 +821,9 @@ padding:5px;
          <height>16777215</height>
         </size>
        </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
        <property name="text">
         <string>Y.Speed</string>
        </property>
@@ -1285,6 +1307,9 @@ padding:5px;
          <width>80</width>
          <height>16777215</height>
         </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
         <string>S.Speed</string>
@@ -1770,6 +1795,9 @@ padding:5px;
          <height>16777215</height>
         </size>
        </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
        <property name="text">
         <string>R.Speed</string>
        </property>
@@ -2253,6 +2281,9 @@ padding:5px;
          <width>80</width>
          <height>16777215</height>
         </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
         <string>T.Speed</string>
