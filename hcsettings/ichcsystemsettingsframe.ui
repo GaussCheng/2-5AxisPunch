@@ -48,7 +48,19 @@
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <property name="spacing">
-        <number>20</number>
+        <number>10</number>
+       </property>
+       <property name="leftMargin">
+        <number>2</number>
+       </property>
+       <property name="topMargin">
+        <number>2</number>
+       </property>
+       <property name="rightMargin">
+        <number>2</number>
+       </property>
+       <property name="bottomMargin">
+        <number>2</number>
        </property>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_15">
@@ -63,7 +75,7 @@
            <property name="minimumSize">
             <size>
              <width>130</width>
-             <height>48</height>
+             <height>32</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -837,12 +849,27 @@ QRadioButton::indicator:unchecked:disabled
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>130</y>
-         <width>541</width>
-         <height>191</height>
+         <y>110</y>
+         <width>640</width>
+         <height>161</height>
         </rect>
        </property>
        <layout class="QGridLayout" name="gridLayout">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <property name="spacing">
+         <number>4</number>
+        </property>
         <item row="0" column="0">
          <widget class="QLabel" name="label_36">
           <property name="sizePolicy">
