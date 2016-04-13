@@ -7,13 +7,13 @@ QMAKE_CFLAGS += -std=c99
 QMAKE_CXX = ccache $${QMAKE_CXX}
 QT += sql
 
-DEFINES += IO_C5
-DEFINES += TEACH_PAGE
+DEFINES += IO_C6
+#DEFINES += TEACH_PAGE
 
 SK_SIZE = 8
 
 HW_VERSION = "1.3"
-SW_VERSION = "6.1.4"
+SW_VERSION = "6.1.4.1"
 contains(DEFINES, IO_C6){
 HW_TYPE = "C6"
 }else{

@@ -127,11 +127,17 @@ void ICOriginDialog::keyPressEvent(QKeyEvent *e)
     {
         ICKeyboardHandler::Instance()->Keypressed(ICKeyboard::FB_Stop);
     }
-    else
+    else if(e->key() == Qt::Key_F4 ||
+            e->key() == Qt::Key_F7 ||
+            e->key() == Qt::Key_F5)
     {
         QKeyEvent* ke = new QKeyEvent(*e);
         qApp->postEvent(icMainFrame, ke);
         this->reject();
+    }
+    else
+    {
+        QDialog::keyPressEvent(e);
     }
 }
 
