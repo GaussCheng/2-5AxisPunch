@@ -11,6 +11,7 @@ AxisModifyDialog::AxisModifyDialog(QWidget *parent) :
     ui->yPos->SetDecimalPlaces(2);
     xValidator_ = new QIntValidator(-32760000, 32760000, this);
     yValidator_ = new QIntValidator(-32760000, 32760000, this);
+
     ui->xPos->setValidator(xValidator_);
     ui->yPos->setValidator(yValidator_);
 #ifdef HC_AXIS_COUNT_5
@@ -118,22 +119,28 @@ void AxisModifyDialog::StartModify(ICPoint point)
         ui->label_9->hide();ui->tPos->hide();ui->label_10->hide();
     }
 
-    xValidator_->setRange(host->SystemParameter(ICVirtualHost::SYS_X_Maxium).toInt() * 10,
+    qint16 tmp = host->SystemParameter(ICVirtualHost::SYS_X_Maxium).toInt();
+
+    xValidator_->setRange(tmp * 10,
                           host->SystemParameter(ICVirtualHost::SYS_X_Length).toInt() * 10);
-    yValidator_->setRange(host->SystemParameter(ICVirtualHost::SYS_Y_Maxium).toInt() * 10,
+    tmp = host->SystemParameter(ICVirtualHost::SYS_Y_Maxium).toInt();
+    yValidator_->setRange(tmp * 10,
                           host->SystemParameter(ICVirtualHost::SYS_Y_Length).toInt() * 10);
     ui->xPos->SetThisIntToThisText(point.x);
     ui->yPos->SetThisIntToThisText(point.y);
 #ifdef HC_AXIS_COUNT_5
-    zValidator_->setRange(host->SystemParameter(ICVirtualHost::SYS_Z_Maxium).toInt() * 10,
+    tmp = host->SystemParameter(ICVirtualHost::SYS_Z_Maxium).toInt();
+    zValidator_->setRange(tmp * 10,
                           host->SystemParameter(ICVirtualHost::SYS_Z_Length).toInt() * 10);
     ui->zPos->SetThisIntToThisText(point.z);
 
-    pValidator_->setRange(host->SystemParameter(ICVirtualHost::SYS_P_Maxium).toInt() * 10,
+    tmp = host->SystemParameter(ICVirtualHost::SYS_P_Maxium).toInt();
+    pValidator_->setRange(tmp * 10,
                           host->SystemParameter(ICVirtualHost::SYS_P_Length).toInt() * 10);
     ui->pPos->SetThisIntToThisText(point.p);
 
-    tValidator_->setRange(host->SystemParameter(ICVirtualHost::SYS_Q_Maxium).toInt() * 10,
+    tmp = host->SystemParameter(ICVirtualHost::SYS_Q_Maxium).toInt();
+    tValidator_->setRange(tmp * 10,
                           host->SystemParameter(ICVirtualHost::SYS_Q_Length).toInt() * 10);
     ui->tPos->SetThisIntToThisText(point.q);
 #endif
