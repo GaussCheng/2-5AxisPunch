@@ -125,9 +125,11 @@ void ICHCManualOperationPageFrame::showEvent(QShowEvent *e)
     ui->productEdit->blockSignals(true);
     ui->productEdit->SetThisIntToThisText(ICMold::CurrentMold()->MoldParam(ICMold::Product));
     ui->productEdit->blockSignals(false);
+#ifdef HC_SK_8
     ui->moldStep->blockSignals(true);
     ui->moldStep->SetThisIntToThisText(ICMold::CurrentMold()->MoldParam(ICMold::reserve));
     ui->moldStep->blockSignals(false);
+#endif
     ReserveProgConfig progConfig;
     progConfig.all =  ICVirtualHost::GlobalVirtualHost()->SystemParameter(ICVirtualHost::SYS_Config_Resv2).toInt();
 
@@ -239,7 +241,9 @@ void ICHCManualOperationPageFrame::InitInterface()
 {
     //    ui->xCurrentPos->setAttribute(Qt::P);
     ui->productEdit->setValidator(new QIntValidator(0, 65530, this));
+#ifdef HC_SK_8
     ui->moldStep->setValidator(new QIntValidator(0, 65530, this));
+#endif
     ui->xPos->SetDecimalPlaces(2);
     ui->yPos->SetDecimalPlaces(2);
 #ifdef HC_AXIS_COUNT_5
@@ -1121,5 +1125,7 @@ void ICHCManualOperationPageFrame::on_checkBox_toggled(bool checked)
 
 void ICHCManualOperationPageFrame::on_moldStep_textChanged(const QString &arg1)
 {
+#ifdef HC_SK_8
     ICMold::CurrentMold()->SetMoldParam(ICMold::reserve, ui->moldStep->TransThisTextToThisInt());
+#endif
 }

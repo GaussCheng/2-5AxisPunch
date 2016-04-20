@@ -34,7 +34,11 @@ VirtualKeyboardDialog::VirtualKeyboardDialog(QWidget *parent) :
     }
     ui->display->installEventFilter(this);
     this->setWindowFlags(Qt::WindowTitleHint | Qt::CustomizeWindowHint);
+#ifdef HC_SK_8
     this->setFixedSize(800, 356);
+#else
+    this->setFixedSize(640, 356);
+#endif
 }
 
 VirtualKeyboardDialog::~VirtualKeyboardDialog()

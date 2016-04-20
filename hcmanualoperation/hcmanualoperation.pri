@@ -16,11 +16,13 @@ SOURCES += \
     #hcmanualoperation/hcpneumaticaxiscontrolframe.cpp \
     #hcmanualoperation/hcmanualfunctionframe.cpp \
 
+FORMS += \
+    hcmanualoperation/icinformationdialog.ui
+
 contains(DEFINES, HC_SK_8){
 FORMS += \
     hcmanualoperation/ichcmanualoperationpageframe.ui \
-    hcmanualoperation/axismodifydialog.ui   \
-    hcmanualoperation/icinformationdialog.ui
+    hcmanualoperation/axismodifydialog.ui
     #hcmanualoperation/hcmanualalternateioframe.ui \
     #hcmanualoperation/hcpneumaticaxiscontrolframe.ui \
     #hcmanualoperation/hcmanualfunctionframe.ui \

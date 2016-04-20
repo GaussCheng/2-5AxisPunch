@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1056</width>
+    <width>1106</width>
     <height>365</height>
    </rect>
   </property>
@@ -314,6 +314,21 @@ height:30px;</string>
      </property>
      <widget class="QWidget" name="securityPage">
       <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
        <item>
         <widget class="QGroupBox" name="securityPointGroupBox">
          <property name="enabled">
@@ -323,6 +338,21 @@ height:30px;</string>
           <string>Security Point</string>
          </property>
          <layout class="QGridLayout" name="gridLayout">
+          <property name="leftMargin">
+           <number>2</number>
+          </property>
+          <property name="topMargin">
+           <number>2</number>
+          </property>
+          <property name="rightMargin">
+           <number>2</number>
+          </property>
+          <property name="bottomMargin">
+           <number>2</number>
+          </property>
+          <property name="spacing">
+           <number>4</number>
+          </property>
           <item row="0" column="3">
            <spacer name="horizontalSpacer_2">
             <property name="orientation">

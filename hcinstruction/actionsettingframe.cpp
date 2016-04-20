@@ -62,7 +62,7 @@ ActionSettingFrame::ActionSettingFrame(QWidget *parent) :
     UpdateAxisDefine_();
 #endif
     //    ui->x1SpeedLineEdit->hide();
-    ui->curveBox->hide();
+//    ui->curveBox->hide();
 }
 
 ActionSettingFrame::~ActionSettingFrame()

@@ -24,7 +24,6 @@ include (iccheckedbutton/iccheckedbutton.pri)
 
 contains(DEFINES, HC_SK_8){
     FORMS += custom_widgets/icinputmethodkeyboard.ui
-    FORMS += custom_widgets/icwidgetitemkeyboard.ui
 
 }
 
@@ -33,7 +32,9 @@ contains(DEFINES, HC_SK_5){
 }
 
 FORMS += \
-    custom_widgets/icpasswordmodifydialog.ui
+    custom_widgets/icpasswordmodifydialog.ui \
+    custom_widgets/icwidgetitemkeyboard.ui
+
 
 
 HEADERS += \
