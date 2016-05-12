@@ -5368,23 +5368,23 @@ Please enter an digit between </source>
     <name>ICOriginDialog</name>
     <message>
         <location filename="icorigindialog.cpp" line="86"/>
-        <location filename="icorigindialog.cpp" line="153"/>
+        <location filename="icorigindialog.cpp" line="159"/>
         <source>Please press the start button to start execute origin action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="149"/>
+        <location filename="icorigindialog.cpp" line="155"/>
         <source>Originning...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="183"/>
+        <location filename="icorigindialog.cpp" line="189"/>
         <source>Do you need to auto position?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="236"/>
         <location filename="icorigindialog.cpp" line="242"/>
+        <location filename="icorigindialog.cpp" line="248"/>
         <source>Originning</source>
         <translation type="unfinished"></translation>
     </message>

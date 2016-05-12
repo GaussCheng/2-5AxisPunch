@@ -7950,23 +7950,23 @@ ModifyTime</source>
     <name>ICOriginDialog</name>
     <message>
         <location filename="icorigindialog.cpp" line="86"/>
-        <location filename="icorigindialog.cpp" line="153"/>
+        <location filename="icorigindialog.cpp" line="159"/>
         <source>Please press the start button to start execute origin action</source>
         <translation>请按启动键执行原点复归</translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="149"/>
+        <location filename="icorigindialog.cpp" line="155"/>
         <source>Originning...</source>
         <translation>原点复归中...</translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="183"/>
+        <location filename="icorigindialog.cpp" line="189"/>
         <source>Do you need to auto position?</source>
         <translation>需要自动侧姿吗?</translation>
     </message>
     <message>
-        <location filename="icorigindialog.cpp" line="236"/>
         <location filename="icorigindialog.cpp" line="242"/>
+        <location filename="icorigindialog.cpp" line="248"/>
         <source>Originning</source>
         <translation>原点执行中</translation>
     </message>
