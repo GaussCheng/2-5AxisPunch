@@ -6,42 +6,69 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>255</width>
-    <height>66</height>
+    <width>384</width>
+    <height>336</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout">
+  <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QPushButton" name="manualButton">
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>48</height>
-      </size>
-     </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="manualButton">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Manual</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="stopButton">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Stop</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="autoButton">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Auto</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="label">
      <property name="text">
-      <string>Manual</string>
+      <string>Online Machine:</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="stopButton">
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>48</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>Stop</string>
-     </property>
-    </widget>
+    <widget class="QListWidget" name="onlineMachineList"/>
    </item>
    <item>
-    <widget class="QPushButton" name="autoButton">
+    <widget class="QPushButton" name="scanButton">
      <property name="minimumSize">
       <size>
        <width>0</width>
@@ -49,7 +76,7 @@
       </size>
      </property>
      <property name="text">
-      <string>Auto</string>
+      <string>Scan</string>
      </property>
     </widget>
    </item>

@@ -2,6 +2,7 @@
 #define SIMULATEKNOB_H
 
 #include <QDialog>
+#include <QTcpServer>
 
 namespace Ui {
 class SimulateKnob;
@@ -20,8 +21,15 @@ signals:
     void stopButtonClicked();
     void autoButtonClicked();
     
+private slots:
+    void on_scanButton_clicked();
+    void onClientServerUp();
+    void onClientServerDown();
+
 private:
     Ui::SimulateKnob *ui;
+    QTcpServer server_;
+    QList<QHostAddress> onlineClients_;
 };
 
 #endif // SIMULATEKNOB_H
