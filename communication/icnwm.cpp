@@ -126,7 +126,8 @@ void ICNWM::PostPanelConfig(QTcpSocket *socket, const QString &name, const QStri
 
 void ICNWM::ServerUp()
 {
-    server_.listen(QHostAddress::Any, 8888);
+    if(!server_.isListening())
+        server_.listen(QHostAddress::Any, 8888);
 }
 
 void ICNWM::OnClientConnected()
