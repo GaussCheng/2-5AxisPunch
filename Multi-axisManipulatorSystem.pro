@@ -13,7 +13,7 @@ DEFINES += TEACH_PAGE
 SK_SIZE = 8
 
 HW_VERSION = "1.3"
-SW_VERSION = "6.1.4.1"
+SW_VERSION = "6.1.4.1-nwm"
 contains(DEFINES, IO_C6){
 HW_TYPE = "C6"
 }else{

@@ -85,17 +85,7 @@ private slots:
 
     void on_factoryCode_textChanged(const QString &arg1);
 
-    void on_nwmSave_clicked();
 
-    void on_connectHost_clicked();
-
-    void RefreshIPInfo();
-    void OnScanAPFinished();
-    void OnObtainIP();
-    void on_sanAPBtn_clicked();
-    void on_connectWifiBtn_clicked();
-
-    void on_saveNetwork_clicked();
 
 private:
     bool CheckRestoreSystemFiles_();
