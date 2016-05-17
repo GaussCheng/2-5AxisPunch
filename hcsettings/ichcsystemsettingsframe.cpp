@@ -3,6 +3,7 @@
 #include <QFile>
 #include "icmessagebox.h"
 #include <QFileDialog>
+#include <QNetworkInterface>
 
 #include "ichcsystemsettingsframe.h"
 #include "ui_ichcsystemsettingsframe.h"
@@ -20,6 +21,7 @@
 #include "icutility.h"
 #include "icconfigstring.h"
 #include "icmodifyframe.h"
+#include "icnwm.h"
 
 static void BuildShiftMap(int beg, int* map)
 {
@@ -87,7 +89,7 @@ ICHCSystemSettingsFrame::ICHCSystemSettingsFrame(QWidget *parent) :
 #endif
 
     testvalue = FALSE;
-    ui->systemConfigPages->removeTab(4);
+//    ui->systemConfigPages->removeTab(4);
     ui->factoryCode->blockSignals(true);
     ui->factoryCode->setText(ICParametersSave::Instance()->FactoryCode());
     ui->factoryCode->blockSignals(false);
@@ -100,6 +102,9 @@ ICHCSystemSettingsFrame::ICHCSystemSettingsFrame(QWidget *parent) :
 
             ui->limitFunctionBox->hide();
     ui->limitFunctionLabel->hide();
+
+    connect(&scanAPProcess, SIGNAL(readyReadStandardOutput()), SLOT(OnScanAPFinished()));
+    connect(&connectAPProcess, SIGNAL(readyReadStandardOutput()), SLOT(OnObtainIP()));
 }
 
 ICHCSystemSettingsFrame::~ICHCSystemSettingsFrame()
@@ -1136,6 +1141,12 @@ void ICHCSystemSettingsFrame::on_connectWifiBtn_clicked()
 
     connectAPProcess.close();
     connectAPProcess.start("ifup wlan0");
+}
+
+
+void ICHCSystemSettingsFrame::on_saveNetwork_clicked()
+{
+    ICParametersSave::Instance()->SaveNet(ui->wifiBox->currentText());
 }
 
 ICLogFunctions(ICHCSystemSettingsFrame)

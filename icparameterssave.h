@@ -132,6 +132,9 @@ public:
     QDateTime BootDatetime() { return QDateTime::fromString(GetParameter(SystemMachine, "BootDateTime", QDateTime::currentDateTime().toString()).toString());}
     void SetBootDatetime(QDateTime dt) { SaveParameter(SystemMachine, "BootDateTime", dt.toString(), false);}
 
+    QString SavedNet()  { return GetParameter(SystemMachine, QString("SavedNet"), "").toString();}
+    void SaveNet(const QString& net) { SaveParameter(SystemMachine, QString("SavedNet"), net);}
+
 signals:
     void CurrentLanguageChanged();
 

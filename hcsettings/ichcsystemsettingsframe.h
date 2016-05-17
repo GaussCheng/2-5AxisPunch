@@ -3,6 +3,7 @@
 
 #include <QFrame>
 #include <QMap>
+#include <QProcess>
 #ifndef Q_WS_WIN32
 #include <sys/utsname.h>
 #include <QButtonGroup>
@@ -88,6 +89,14 @@ private slots:
 
     void on_connectHost_clicked();
 
+    void RefreshIPInfo();
+    void OnScanAPFinished();
+    void OnObtainIP();
+    void on_sanAPBtn_clicked();
+    void on_connectWifiBtn_clicked();
+
+    void on_saveNetwork_clicked();
+
 private:
     bool CheckRestoreSystemFiles_();
     bool CheckRestoreMachineFiles_();
@@ -99,6 +108,8 @@ private slots:
     void OnConfigChanged(int v, int ov);
     void OnConfigChanged(bool b);
 private:
+    QProcess scanAPProcess;
+    QProcess connectAPProcess;
     QMap<QObject*, int> editorToConfigIDs_;
 };
 

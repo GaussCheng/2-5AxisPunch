@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QList>
 #include <QScopedPointer>
+#include <QStringList>
 
 #include "icmold.h"
 

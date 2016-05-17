@@ -10,7 +10,7 @@ QT += sql network
 DEFINES += IO_C6
 DEFINES += TEACH_PAGE
 
-SK_SIZE = 5
+SK_SIZE = 8
 
 HW_VERSION = "1.3"
 SW_VERSION = "6.1.4.1"

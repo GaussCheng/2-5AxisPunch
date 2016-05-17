@@ -3,6 +3,7 @@
 #include <QApplication>
 #include <QFile>
 #include <QTextStream>
+#include <QUuid>
 #include <QDebug>
 #include "icfile.h"
 #include "icutility.h"
@@ -247,3 +248,15 @@ void ICParametersSave::SetBrightness(uint brightness, bool isSync)
     if(isSync)
         SaveParameter(ProductConfig, "Brightness", brightness, isSync);
 }
+
+QString ICParametersSave::Uuid()
+{
+    QString ret = GetParameter(SystemMachine, "Uuid", "").toString();
+    if(ret.isEmpty())
+    {
+        ret = QUuid::createUuid().toString();
+        SaveParameter(SystemMachine, "Uuid", ret);
+    }
+    return ret;
+}
+
