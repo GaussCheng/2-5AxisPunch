@@ -5,7 +5,9 @@
 #include <QHostAddress>
 #include <QUuid>
 #include <QTcpSocket>
+#include <QTcpServer>
 #include <QObject>
+#include <QSignalMapper>
 
 class ICNWM;
 typedef ICNWM* ICNWMPTR;
@@ -30,28 +32,33 @@ public:
         return instance_;
     }
 
-    void DevConnect(ICUuid uuid, const QString& ip, quint16 port);
     bool IsConnected() const { return isConnected_; }
 
-    void SendStatusToHost(const QMap<int , int> status);
-    void SendStatusToHost(int status, int value);
-    void PostMoldAct(const QString& name, const QString& act);
-    void PostMoldFnc(const QString& name, const QString& fnc);
-    void PostMoldSubs(const QString& name, const QStringList& subs);
-    void PostAxisConfig(const QString& name, const QString& configs);
-    void PostAxisDR(const QString& name, const QString& configs);
-    void PostSystemConfig(const QString& name, const QString& configs);
-    void PostPanelConfig(const QString& name, const QString& configs);
+    void SendStatusToHost(QTcpSocket* socket, const QMap<int , int> status);
+    void SendStatusToHost(QTcpSocket* socket, int status, int value);
+    void PostMoldAct(QTcpSocket* socket, const QString& name, const QString& act);
+    void PostMoldFnc(QTcpSocket* socket, const QString& name, const QString& fnc);
+    void PostMoldSubs(QTcpSocket* socket, const QString& name, const QStringList& subs);
+    void PostAxisConfig(QTcpSocket* socket, const QString& name, const QString& configs);
+    void PostAxisDR(QTcpSocket* socket, const QString& name, const QString& configs);
+    void PostSystemConfig(QTcpSocket* socket, const QString& name, const QString& configs);
+    void PostPanelConfig(QTcpSocket* socket, const QString& name, const QString& configs);
+
+    void ServerUp();
 
 signals:
     void DevConnected();
 private slots:
-    void OnConnectedHost();
+    void OnConnectedHost(QTcpSocket* socket);
+    void OnClientConnected();
+    void OnClientRequest(QObject* socket);
 
 private:
     ICNWM();
     static ICNWMPTR instance_;
-    QTcpSocket socket_;
+//    QList<QTcpSocket*> clientList_;
+    QTcpServer server_;
+    QSignalMapper signalMapper_;
     ICUuid uuid_;
     bool isConnected_;
 //    QString ip_;

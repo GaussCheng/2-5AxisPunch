@@ -9,6 +9,7 @@ QT += sql network
 
 DEFINES += IO_C6
 DEFINES += TEACH_PAGE
+DEFINES += HC_NWM
 
 SK_SIZE = 8
 
@@ -151,6 +152,7 @@ include (icprogrampage/icprogrampage.pri)
 
 include (vendor/IndustrialSystemFramework/ICUtility/ICUtility.pri)
 include (vendor/ICCustomWidgets/icupdatepackmodel/icupdatepackmodel.pri)
+include (vendor/QJson/QJson.pri)
 
 RESOURCES += \
     resource.qrc \
