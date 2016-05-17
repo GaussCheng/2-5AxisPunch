@@ -1047,7 +1047,7 @@ void ICHCSystemSettingsFrame::on_nwmSave_clicked()
 void ICHCSystemSettingsFrame::on_connectHost_clicked()
 {
     ICParametersSave* ps = ICParametersSave::Instance();
-    ICNWM::Instance()->DevConnect(ps->Uuid(),
+    ICNWM::Instance()->ConnectToHost(
                                   ps->NWMServerAddr(),
                                   ps->NWMServerPort());
 }

@@ -32,6 +32,7 @@ public:
         return instance_;
     }
 
+    void ConnectToHost( const QString& ip, quint16 port);
     bool IsConnected() const { return isConnected_; }
 
     void SendStatusToHost(QTcpSocket* socket, const QMap<int , int> status);
@@ -57,6 +58,7 @@ private:
     ICNWM();
     static ICNWMPTR instance_;
 //    QList<QTcpSocket*> clientList_;
+    QTcpSocket socket_;
     QTcpServer server_;
     QSignalMapper signalMapper_;
     ICUuid uuid_;

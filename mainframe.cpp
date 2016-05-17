@@ -378,7 +378,12 @@ MainFrame::MainFrame(QSplashScreen *splashScreen, QWidget *parent) :
 
 #ifdef HC_NWM
     if(ICParametersSave::Instance()->AutoStartNWM())
+    {
         ICNWM::Instance()->ServerUp();
+        ICNWM::Instance()->ConnectToHost(ICParametersSave::Instance()->NWMServerAddr(),
+                                         ICParametersSave::Instance()->NWMServerPort());
+    }
+
 #endif
 
 }

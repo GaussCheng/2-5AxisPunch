@@ -18,6 +18,12 @@ ICNWM::ICNWM()
 
 }
 
+void ICNWM::ConnectToHost(const QString &ip, quint16 port)
+{
+    socket_.close();
+    socket_.connectToHost(ip, port);
+}
+
 inline QByteArray ReadFileHelper(const QString& file)
 {
     QFile f(file);
