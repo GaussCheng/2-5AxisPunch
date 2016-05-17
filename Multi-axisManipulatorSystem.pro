@@ -5,7 +5,7 @@ TARGET = Multi-axisManipulatorSystem
 TEMPLATE = app
 QMAKE_CFLAGS += -std=c99
 QMAKE_CXX = ccache $${QMAKE_CXX}
-QT += sql
+QT += sql network
 
 DEFINES += IO_C6
 DEFINES += TEACH_PAGE

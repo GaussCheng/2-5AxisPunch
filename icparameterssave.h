@@ -115,6 +115,17 @@ public:
     QString FactoryCode() { return GetParameter(SystemMachine, "FactoryCode", "888888").toString();}
     void SetFactoryCode(const QString& code) {SaveParameter(SystemMachine, "FactoryCode", code);}
 
+    QString NWMServerAddr() { return GetParameter(SystemMachine, "NWMServerAddr","0.0.0.0").toString();}
+    void SetNWMServerAddr(const QString& addr) { SaveParameter(SystemMachine, "NWMServerAddr", addr);}
+
+    quint16 NWMServerPort() { return GetParameter(SystemMachine, "NWMServerPort", 8888).toUInt();}
+    void SetNWMServerPort(quint16 port) { SaveParameter(SystemMachine, "NWMServerPort", port);}
+
+    bool AutoStartNWM() { return GetParameter(SystemMachine, "AutoStartNWM", false).toBool();}
+    void SetAutoStartNWM(bool autoStart) { SaveParameter(SystemMachine, "AutoStartNWM", autoStart);}
+
+    QString Uuid();
+
     bool IsRoot() { return isRoot_;}
     void SetRoot(bool isroot) { isRoot_ = isroot;}
 

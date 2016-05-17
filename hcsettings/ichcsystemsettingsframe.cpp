@@ -1027,4 +1027,115 @@ void ICHCSystemSettingsFrame::on_factoryCode_textChanged(const QString &arg1)
     ICParametersSave::Instance()->SetFactoryCode(arg1);
 }
 
+void ICHCSystemSettingsFrame::on_nwmSave_clicked()
+{
+    ICParametersSave* ps = ICParametersSave::Instance();
+    ps->SetNWMServerAddr(QString("%1.%2.%3.%4")
+                         .arg(ui->ip1->TransThisTextToThisInt())
+                         .arg(ui->ip2->TransThisTextToThisInt())
+                         .arg(ui->ip3->TransThisTextToThisInt())
+                         .arg(ui->ip4->TransThisTextToThisInt()));
+    ps->SetNWMServerPort(ui->port->TransThisTextToThisInt());
+    ps->SetAutoStartNWM(ui->autoConnect->isChecked());
+}
+
+void ICHCSystemSettingsFrame::on_connectHost_clicked()
+{
+    ICParametersSave* ps = ICParametersSave::Instance();
+    ICNWM::Instance()->DevConnect(ps->Uuid(),
+                                  ps->NWMServerAddr(),
+                                  ps->NWMServerPort());
+}
+
+void ICHCSystemSettingsFrame::OnScanAPFinished()
+{
+    QString result = scanAPProcess.readAllStandardOutput();
+    QRegExp reg("Cell [0-9][0-9]");
+    QStringList cells = result.split(reg, QString::SkipEmptyParts);
+    QStringList openWifis;
+    if(cells.size() > 0) cells.pop_front();
+    QString essid;
+    QRegExp essidExp("ESSID:\".*\"");
+    for(int i = 0; i < cells.size(); ++i)
+    {
+        if(cells.at(i).contains("Encryption key:off"))
+        {
+            if(essidExp.indexIn(cells.at(i)) != -1)
+            {
+                essid = essidExp.cap(0);
+                essid = essid.mid(7);
+                essid.chop(1);
+                openWifis.append(essid);
+
+            }
+        }
+    }
+    ui->wifiBox->clear();
+    ui->wifiBox->addItems(openWifis);
+    ui->sanAPBtn->setText(tr("Scan"));
+
+}
+
+void ICHCSystemSettingsFrame::on_sanAPBtn_clicked()
+{
+    QProcess p;
+    p.start("ifconfig wlan0 up");
+    p.waitForFinished(-1);
+    scanAPProcess.start("iwlist wlan0 scanning");
+    ui->sanAPBtn->setText(tr("Scanning..."));
+}
+
+void ICHCSystemSettingsFrame::RefreshIPInfo()
+{
+    QList<QNetworkInterface> addrs = QNetworkInterface::allInterfaces();
+    QString ipInfo;
+    for(int i = 0; i < addrs.size(); i++)
+    {
+        qDebug()<<addrs.at(i).humanReadableName();
+        QList<QNetworkAddressEntry> ae = addrs.at(i).addressEntries();
+        for(int j = 0 ; j !=ae.size(); ++j)
+        {
+            if (ae.at(j).ip().protocol() == QAbstractSocket::IPv4Protocol)
+            {
+                ipInfo += addrs.at(i).humanReadableName() + ":" + ae.at(j).ip().toString();
+                //                    qDebug() << ae.at(i).toString();
+            }
+        }
+        ipInfo += "\n";
+    }
+    ui->localIP->setText(ipInfo);
+    ui->localIP->setWordWrap(true);
+}
+
+void ICHCSystemSettingsFrame::OnObtainIP()
+{
+    QString result = connectAPProcess.readAllStandardOutput();
+    QRegExp rx("\\d+\.\\d+\.\\d+\.\\d+");
+    if(rx.indexIn(result) != -1)
+    {
+        QProcess p;
+        p.start(QString("ifconfig wlan0 %1").arg(rx.cap(0)));
+        p.waitForFinished(-1);
+        RefreshIPInfo();
+//        rx.cap(0);
+    }
+}
+
+void ICHCSystemSettingsFrame::on_connectWifiBtn_clicked()
+{
+    QProcess p;
+    p.start("ifdown wlan0");
+    p.waitForFinished(-1);
+
+    QString cmd = QString("iwconfig wlan0 essid \"%1\"").arg(ui->wifiBox->currentText());
+    p.start(cmd);
+    p.waitForFinished(-1);
+
+    p.start("iwconfig wlan0 key off");
+    p.waitForFinished(-1);
+
+    connectAPProcess.close();
+    connectAPProcess.start("ifup wlan0");
+}
+
 ICLogFunctions(ICHCSystemSettingsFrame)

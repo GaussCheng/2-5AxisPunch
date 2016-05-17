@@ -84,6 +84,10 @@ private slots:
 
     void on_factoryCode_textChanged(const QString &arg1);
 
+    void on_nwmSave_clicked();
+
+    void on_connectHost_clicked();
+
 private:
     bool CheckRestoreSystemFiles_();
     bool CheckRestoreMachineFiles_();

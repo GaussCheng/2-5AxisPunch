@@ -85,6 +85,9 @@ public:
     uint SyncAct() const;
     uint SyncSum() const;
 
+    QStringList RawSubs() const { return rawSubs_;}
+
+
     int LastStep(int group) const;
 
 signals:
@@ -93,6 +96,7 @@ public slots:
 private:
     ICMacroAllSubroutine subroutines_;
     QString subsDir_;
+    QStringList rawSubs_;
 
     static QScopedPointer<ICMacroSubroutine> instance_;
     explicit ICMacroSubroutine(QObject *parent = 0);

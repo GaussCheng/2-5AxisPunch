@@ -579,6 +579,9 @@ public:
     int StackParam(int group, ICStatckParam param) const;
     void SetStackParam(int group, ICStatckParam param, int value);
 
+    QString RawMoldContent() const { return rawMoldContent_;}
+    QString RawMoldFnc() const { return rawMoldFnc_;}
+
     int LastStep() const;
 signals:
     void MoldPramChanged(int, int);
@@ -598,6 +601,8 @@ private:
 
     QString moldParamName_;
     int  versoin_;
+    QString rawMoldContent_;
+    QString rawMoldFnc_;
 //    QList<ACTGROUP> axisActions_;
     static ICMold* currentMold_;
 
