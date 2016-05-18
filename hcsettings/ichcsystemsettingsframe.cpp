@@ -103,6 +103,23 @@ ICHCSystemSettingsFrame::ICHCSystemSettingsFrame(QWidget *parent) :
             ui->limitFunctionBox->hide();
     ui->limitFunctionLabel->hide();
 
+    ICParametersSave* ps = ICParametersSave::Instance();
+    QString serverIP = ps->NWMServerAddr();
+    QStringList ipSecs = serverIP.split(".", QString::SkipEmptyParts);
+    ui->ip1->SetThisIntToThisText(ipSecs.at(0).toInt());
+    ui->ip2->SetThisIntToThisText(ipSecs.at(1).toInt());
+    ui->ip3->SetThisIntToThisText(ipSecs.at(2).toInt());
+    ui->ip4->SetThisIntToThisText(ipSecs.at(3).toInt());
+    ui->port->SetThisIntToThisText(ps->NWMServerPort());
+    ui->autoConnect->setChecked(ps->AutoStartNWM());
+    QIntValidator *ipRange = new QIntValidator(0, 255, this);
+    ui->ip1->setValidator(ipRange);
+    ui->ip2->setValidator(ipRange);
+    ui->ip3->setValidator(ipRange);
+    ui->ip4->setValidator(ipRange);
+    ui->port->setValidator(new QIntValidator(0, 65530, this));
+    ui->wifiBox->addItem(ps->SavedNet());
+
     connect(&scanAPProcess, SIGNAL(readyReadStandardOutput()), SLOT(OnScanAPFinished()));
     connect(&connectAPProcess, SIGNAL(readyReadStandardOutput()), SLOT(OnObtainIP()));
 }
