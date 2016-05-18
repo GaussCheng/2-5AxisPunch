@@ -31,13 +31,16 @@ private slots:
 
     void on_onlineMachineList_itemDoubleClicked(QListWidgetItem *item);
     void OnConnectedClient();
+    void OnDisconnectedClient();
     void OnReadyReadClient();
 
 private:
     Ui::SimulateKnob *ui;
     QTcpServer server_;
     QTcpSocket connectedSocket_;
-    QMap<QString, QHostAddress> onlineClients_;
+//    QMap<QString, QHostAddress> onlineClients_;
+    QMap<QListWidgetItem*, QHostAddress> onlineClients_;
+    QMap<QString, QListWidgetItem*> addrToItems_;
 };
 
 #endif // SIMULATEKNOB_H

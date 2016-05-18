@@ -6,6 +6,7 @@
 #include <QUuid>
 #include <QTcpSocket>
 #include <QObject>
+#include <QMetaMethod>
 
 #ifdef HC_NWM
 #define NWM_INIT \

@@ -9,6 +9,7 @@ QT += sql network
 
 DEFINES += IO_C6
 DEFINES += TEACH_PAGE
+DEFINES += HC_NWM
 
 SK_SIZE = 8
 

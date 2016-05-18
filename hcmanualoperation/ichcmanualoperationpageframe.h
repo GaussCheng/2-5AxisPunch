@@ -99,7 +99,7 @@ private slots:
 
 private:
     Ui::ICHCManualOperationPageFrame *ui;
-    int timerID_;
+//    int timerID_;
 
     QSignalMapper buttonSignalMapper_;
     QSignalMapper actionSignalMapper_;
@@ -108,6 +108,16 @@ private:
     QPushButton* nullButton_;
     AxisModifyDialog* modifyDialog_;
     ICInformationDialog* infoDialog_;
+
+public slots:
+    void CustomRefreshConfigs();
+//    void CustomShow();
+//    void CustomHide();
+    void RefreshConfigs();
+private:
+    int refreshConfigTimerID_;
+    QMap<QWidget*, int> editorToMoldAddr_;
+    QMap<QWidget*, int> editorToSystemAddr_;
 
 };
 

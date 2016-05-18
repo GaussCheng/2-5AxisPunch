@@ -16,6 +16,7 @@
 #include "icvirtualkey.h"
 #include "icmodifyframe.h"
 #include "icmessagebox.h"
+#include "icnwm.h"
 
 #ifdef HC_SK_8_SC
 #include "icaxiskeyboard.h"
@@ -79,6 +80,10 @@ ICHCManualOperationPageFrame::ICHCManualOperationPageFrame(QWidget *parent) :
     ui->moldStep->hide();
 #endif
 
+    editorToMoldAddr_.insert(ui->productEdit, ICMold::Product);
+
+    NWM_INIT
+
 }
 
 ICHCManualOperationPageFrame::~ICHCManualOperationPageFrame()
@@ -92,22 +97,7 @@ ICHCManualOperationPageFrame::~ICHCManualOperationPageFrame()
 
 void ICHCManualOperationPageFrame::showEvent(QShowEvent *e)
 {
-//    int currentTuneType = ICKeyboard::Instace()->CurrentTuneSpeedType();
-//    if(currentTuneType < 0)
-//    {
-//        ui->xSpeed->setChecked(false);
-//        ui->ySpeed->setChecked(false);
-//    }
-//    else if(currentTuneType == 0)
-//    {
-//        ui->ySpeed->setChecked(false);
-//        ui->xSpeed->setChecked(true);
-//    }
-//    else
-//    {
-//        ui->xSpeed->setChecked(false);
-//        ui->ySpeed->setChecked(true);
-//    }
+    NWM_SHOW();
     QFrame::showEvent(e);
 
 
@@ -115,7 +105,7 @@ void ICHCManualOperationPageFrame::showEvent(QShowEvent *e)
 
     ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnManual, 0);
 //    currentStep = 0;
-    timerID_ = startTimer(100);
+//    timerID_ = startTimer(100);
     nullButton_->click();
     ui->xPos->clear();
     ui->yPos->clear();
@@ -200,8 +190,9 @@ void ICHCManualOperationPageFrame::showEvent(QShowEvent *e)
 
 void ICHCManualOperationPageFrame::hideEvent(QHideEvent *e)
 {
+    NWM_HIDE();
     QFrame::hideEvent(e);
-    killTimer(timerID_);
+//    killTimer(timerID_);
     //    ICTimerPool::Instance()->Stop(timerID_, this, SLOT(StatusRefreshed()));
     ICMold::CurrentMold()->SaveMoldParamsFile();
     ICVirtualHost::GlobalVirtualHost()->SetSingleRun(false);
@@ -232,10 +223,11 @@ void ICHCManualOperationPageFrame::changeEvent(QEvent *e)
     }
 }
 
-void ICHCManualOperationPageFrame::timerEvent(QTimerEvent *e)
-{
-    StatusRefreshed();
-}
+//void ICHCManualOperationPageFrame::timerEvent(QTimerEvent *e)
+//{
+//    StatusRefreshed();
+//    RefreshConfigs();
+//}
 
 void ICHCManualOperationPageFrame::InitInterface()
 {
@@ -1129,3 +1121,50 @@ void ICHCManualOperationPageFrame::on_moldStep_textChanged(const QString &arg1)
     ICMold::CurrentMold()->SetMoldParam(ICMold::reserve, ui->moldStep->TransThisTextToThisInt());
 #endif
 }
+
+
+void ICHCManualOperationPageFrame::CustomRefreshConfigs()
+{
+    StatusRefreshed();
+}
+
+//void ICHCManualOperationPageFrame::CustomShow()
+//{
+//    ui->detectFixture1ComboBox->blockSignals(true);
+//    ui->detectFixture1ComboBox->blockSignals(true);
+//    ui->detectFixture1ComboBox->blockSignals(true);
+//    ui->detectFixture1ComboBox->blockSignals(true);
+//    ui->standbyPositionBox->blockSignals(true);
+//    ui->detectPressureComboBox->blockSignals(true);
+//    ui->detectSecurityComboBox->blockSignals(true);
+//    ui->detectMidMoldComboBox->blockSignals(true);
+//    ui->ejectionLinkLockBox->blockSignals(true);
+//    ui->detectOriginBox->blockSignals(true);
+//    ui->detectPositionBox->blockSignals(true);
+//    ui->originPositionBox->blockSignals(true);
+//    ui->detectSucker1ComboBox->blockSignals(true);
+//    ui->detectSucker2ComboBox->blockSignals(true);
+//}
+
+//void ICHCManualOperationPageFrame::CustomHide()
+//{
+
+//    ui->detectFixture1ComboBox->blockSignals(false);
+//    ui->detectFixture1ComboBox->blockSignals(false);
+//    ui->detectFixture1ComboBox->blockSignals(false);
+//    ui->detectFixture1ComboBox->blockSignals(false);
+//    ui->standbyPositionBox->blockSignals(false);
+//    ui->detectPressureComboBox->blockSignals(false);
+//    ui->detectSecurityComboBox->blockSignals(false);
+//    ui->detectMidMoldComboBox->blockSignals(false);
+//    ui->ejectionLinkLockBox->blockSignals(false);
+//    ui->detectOriginBox->blockSignals(false);
+//    ui->detectPositionBox->blockSignals(false);
+//    ui->originPositionBox->blockSignals(false);
+//    ui->detectSucker1ComboBox->blockSignals(false);
+//    ui->detectSucker2ComboBox->blockSignals(false);
+//}
+
+
+
+NWM_FUNCTION(ICHCManualOperationPageFrame)

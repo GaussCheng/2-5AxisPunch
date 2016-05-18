@@ -24,6 +24,7 @@ SimulateKnob::SimulateKnob(QWidget *parent) :
     server_.listen(QHostAddress::Any, 8888);
     connect(&server_, SIGNAL(newConnection()), SLOT(onClientServerUp()));
     connect(&connectedSocket_, SIGNAL(connected()), SLOT(OnConnectedClient()));
+    connect(&connectedSocket_, SIGNAL(disconnected()), SLOT(OnDisconnectedClient()));
     connect(&connectedSocket_, SIGNAL(readyRead()), SLOT(OnReadyReadClient()));
 }
 
@@ -43,10 +44,11 @@ void SimulateKnob::onClientServerUp()
     QTcpSocket* socket = server_.nextPendingConnection();
 //    connect(socket, SIGNAL(disconnected()),SLOT(onClientServerDown()));
     QHostAddress clientAddr = socket->peerAddress();
-    if(onlineClients_.contains(clientAddr.toString()))
+    if(addrToItems_.contains(clientAddr.toString()))
         return;
-    onlineClients_.insert(clientAddr.toString(), clientAddr);
     ui->onlineMachineList->addItem(clientAddr.toString());
+    onlineClients_.insert(ui->onlineMachineList->item(ui->onlineMachineList->count() - 1), clientAddr);
+    addrToItems_.insert(clientAddr.toString(), ui->onlineMachineList->item(ui->onlineMachineList->count() - 1));
     socket->close();
 }
 
@@ -58,13 +60,25 @@ void SimulateKnob::onClientServerDown()
 void SimulateKnob::on_onlineMachineList_itemDoubleClicked(QListWidgetItem *item)
 {
     connectedSocket_.close();
-    qDebug()<<"hostAddr:"<<onlineClients_.value(item->text());
-    connectedSocket_.connectToHost(onlineClients_.value(item->text()), 9999);
+    qDebug()<<"hostAddr:"<<onlineClients_.value(item);
+    connectedSocket_.connectToHost(onlineClients_.value(item), 9999);
 }
 
 void SimulateKnob::OnConnectedClient()
 {
     connectedSocket_.write(ICNWMProtocol::RequestInitPackage());
+    ICVirtualHost::GlobalVirtualHost()->SetClientConnected(true);
+    QListWidgetItem* item = addrToItems_.value(connectedSocket_.peerAddress().toString());
+    item->setText(item->text() + "|" + tr("Connected"));
+}
+
+void SimulateKnob::OnDisconnectedClient()
+{
+    QHostAddress addr = connectedSocket_.peerAddress();
+    QListWidgetItem* item = addrToItems_.value(addr.toString());
+    onlineClients_.remove(item);
+    addrToItems_.remove(addr.toString());
+    ui->onlineMachineList->removeItemWidget(item);
 }
 
 void SimulateKnob::OnReadyReadClient()

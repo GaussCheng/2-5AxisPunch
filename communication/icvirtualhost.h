@@ -713,6 +713,10 @@ public:
 
     void RecvClientData(const QVariantMap& dObject);
 
+    bool ClientConnected() const { return isConnectedToMonitor_;}
+
+    void SetClientConnected(bool isConnected) {isConnectedToMonitor_ = isConnected;}
+
 public Q_SLOTS:
     void SetMoldParam(int param, int value);
 Q_SIGNALS:
@@ -784,6 +788,8 @@ private:
     static ICVirtualHost* globalVirtualHost_;
     bool flag;
     bool isSingleRun_;
+
+    bool isConnectedToMonitor_;
 };
 #define icGlobalVirtuallHost ICVirtualHost::GlobalVirtualHost()
 
