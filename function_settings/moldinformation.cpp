@@ -16,6 +16,10 @@
 #include "icconfigformatchecker.h"
 #include "icmacrosubroutine.h"
 #include "icmodifyframe.h"
+
+#ifdef HC_NWM
+#include "icnwm.h"
+#endif
 #include <QFileDialog>
 
 
@@ -496,6 +500,11 @@ void MoldInformation::on_loadToolButton_clicked()
             ICParametersSave::Instance()->SetMoldName(moldName);
             ICProgramHeadFrame::Instance()->SetCurrentMoldName(moldName);
             emit MoldChanged(moldName);
+#ifdef HC_NWM
+            ICNWM::Instance()->PostMoldAct(newMoldName, ICMold::CurrentMold()->RawMoldContent(), ICMold::CurrentMold()->RawMoldCfg(), ICMold::CurrentMold()->RawMoldPt());
+            ICNWM::Instance()->PostMoldFnc(newMoldName + ".fnc ", ICMold::CurrentMold()->RawMoldFnc());
+            ICNWM::Instance()->PostMoldSubs(newMoldName, ICMacroSubroutine::Instance()->RawSubs());
+#endif
             //            ICMessageBox::ICWarning(this, tr("Tips"), tr("Load Mold Successful!"));
         }
         ICVirtualHost::GlobalVirtualHost()->SetFixtureCheck(true);

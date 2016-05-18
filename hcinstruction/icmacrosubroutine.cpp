@@ -6,6 +6,12 @@
 #include "icfile.h"
 #include "icmold.h"
 
+#ifdef HC_NWM
+#include "icnwm.h"
+#endif
+
+#include "icparameterssave.h"
+
 QScopedPointer<ICMacroSubroutine> ICMacroSubroutine::instance_;
 ICMacroSubroutine::ICMacroSubroutine(QObject *parent) :
     QObject(parent)
@@ -20,6 +26,7 @@ bool ICMacroSubroutine::ReadMacroSubroutieFiles(const QString &dir)
         return false;
     }
     subsDir_ = dir;
+
     qDebug()<<fileDir.absoluteFilePath("sub7.prg");
 //    QStringList fileList = fileDir.entryList(QStringList()<<"sub*");
     QStringList fileList(QStringList()<<"sub0.prg"<<"sub1.prg"<<"sub2.prg"<<"sub3.prg"<<"sub4.prg"<<"sub5.prg"<<"sub6.prg"<<"sub7.prg");
@@ -32,6 +39,9 @@ bool ICMacroSubroutine::ReadMacroSubroutieFiles(const QString &dir)
     QList<ICMoldItem> sub;
     ICMoldItem subItem;
     subroutines_.clear();
+#ifdef HC_NWM
+    rawSubs_.clear();
+#endif
     foreach(fileName, fileList)
     {
         file.setFileName(fileDir.filePath(fileName));
@@ -42,6 +52,9 @@ bool ICMacroSubroutine::ReadMacroSubroutieFiles(const QString &dir)
         }
         fileContent = QString::fromUtf8(file.readAll());
         file.close();
+#ifdef HC_NWM
+        rawSubs_.append(fileContent);
+#endif
 
         records = fileContent.split('\n', QString::SkipEmptyParts);
 //        qDebug()<<records;
@@ -94,6 +107,12 @@ bool ICMacroSubroutine::SaveMacroSubroutieFile(int group)
     }
     ICFile file(subsDir_ + "/sub" + QString::number(group) + ".prg");
     ret = file.ICWrite(toWrite);
+#ifdef HC_NWM
+    QString name = ICParametersSave::Instance()->MoldName("Default");
+    name.chop(4);
+    rawSubs_[group] = toWrite;
+    ICNWM::Instance()->PostMoldSubs(name, rawSubs_);
+#endif
 //    QFile file(subsDir_ + "/sub" + QString::number(group) + ".prg");
 //    if(!file.open(QFile::ReadWrite | QFile::Text))
 //    {

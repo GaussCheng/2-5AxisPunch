@@ -13,7 +13,7 @@ public:
 
     static QByteArray DevConnectedPackage(const QString& ip, const QString& uuid);
     static QByteArray RefreshStatusPackage(const QMap<int, int> status);
-    static QByteArray PostMoldActPackage(const QString& name, const QString& act);
+    static QByteArray PostMoldActPackage(const QString& name, const QString& act, const QString& cfg, const QString& pt);
     static QByteArray PostMoldFncPackage(const QString& name, const QString& fnc);
     static QByteArray PostMoldSubsPackage(const QString& name, const QStringList& subs);
     static QByteArray PostAxisConfigPackage(const QString& name, const QString& configs);

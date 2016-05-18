@@ -5,6 +5,10 @@
 #include "icinstructparam.h"
 #include "icfile.h"
 #include "version.h"
+#ifdef HC_NWM
+#include "icnwm.h"
+#endif
+
 
 struct MoldStepData
 {
@@ -192,6 +196,7 @@ bool ICMold::ReadMoldFile(const QString &fileName, bool isLoadParams)
 //    moldName_ = fileName;
     QString content = QString::fromUtf8(file.readAll());
     file.close();
+    rawMoldContent_ = content;
     //    content = content.remove('\r');
 
     if(content.isNull())
@@ -265,6 +270,9 @@ bool ICMold::ReadConfigFile(const QString &fileName)
     moldNativeParams_.clear();
     QString content = QString::fromUtf8(file.readAll());
     file.close();
+#ifdef HC_NWM
+    rawMoldCfg_ = content;
+#endif
     //    content = content.remove('\r');
 
     if(content.isNull())
@@ -304,7 +312,9 @@ bool ICMold::ReadPointConfigFile(const QString &fileName)
     pointConfigs.clear();
     QString content = QString::fromUtf8(file.readAll());
     file.close();
-
+#ifdef HC_NWM
+    rawMoldPt_ = content;
+#endif
     if(content.isNull())
     {
         qDebug("mold point configure is  null");
@@ -336,6 +346,8 @@ bool ICMold::ReadMoldParamsFile(const QString &fileName)
     }
     QString fileContent = file.readAll();
     file.close();
+    rawMoldFnc_ = fileContent;
+
     //    fileContent = fileContent.remove('\r');
 
 
@@ -398,6 +410,13 @@ bool ICMold::SaveMoldFile(bool isSaveParams)
     }
     ICFile file(moldName_);
     ret = file.ICWrite(toWrite);
+#ifdef HC_NWM
+    QString actName = moldName_;
+    actName = actName.mid(actName.lastIndexOf("/") + 1);
+    actName.chop(4);
+    rawMoldContent_ = toWrite;
+    ICNWM::Instance()->PostMoldAct(actName, toWrite, rawMoldCfg_, rawMoldPt_);
+#endif
 //    QFile file(moldName_);
 //    if(!file.open(QFile::ReadWrite | QFile::Text))
 //    {
@@ -433,6 +452,11 @@ bool ICMold::SaveMoldParamsFile()
     }
     ICFile file(moldParamName_);
     ret = file.ICWrite(toWrite);
+#ifdef HC_NWM
+    QString fncName = moldParamName_;
+    rawMoldFnc_ = toWrite;
+    ICNWM::Instance()->PostMoldFnc(fncName.mid(fncName.lastIndexOf("/") + 1), toWrite);
+#endif
 //    QFile file(moldParamName_);
 //    if(!file.open(QFile::ReadWrite | QFile::Text))
 //    {
@@ -462,7 +486,9 @@ bool ICMold::SaveMoldConfigFile()
     }
     ICFile file(moldConfigName_);
     ret = file.ICWrite(toWrite);
-
+#ifdef HC_NWM
+    rawMoldCfg_ = toWrite;
+#endif
     return ret;
 }
 
@@ -476,7 +502,9 @@ bool ICMold::SaveMoldPointFile()
     }
     ICFile file(moldPointName_);
     ret = file.ICWrite(toWrite);
-
+#ifdef HC_NWM
+    rawMoldPt_ = toWrite;
+#endif
     return ret;
 }
 

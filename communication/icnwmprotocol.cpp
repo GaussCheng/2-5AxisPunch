@@ -2,7 +2,7 @@
 
 static const QString DEV_CONNECTED_TEMPLATE = "{\"commandType\":\"DevConnected\",\"devUUID\":\"%1\",\"ipAddr\":\"%2\"}";
 static const QString REFRESH_STATUS_TEMPLATE = "{\"commandType\":\"RefreshStatus\",\"status\":{%1}}";
-static const QString POST_MOLD_ACT_TEMPLATE = "{\"commandType\":\"PostMoldAct\",\"name\":\"%1\", \"act\":\"%2\"}";
+static const QString POST_MOLD_ACT_TEMPLATE = "{\"commandType\":\"PostMoldAct\",\"name\":\"%1\", \"act\":\"%2\", \"cfg\":\"%3\", \"pt\":\"%4\"}";
 static const QString POST_MOLD_FNC_TEMPLATE = "{\"commandType\":\"PostMoldFnc\",\"name\":\"%1\", \"fnc\":\"%2\"}";
 static const QString POST_MOLD_SUBS_TEMPLATE = "{\"commandType\":\"PostMoldSubs\",\"name\":\"%1\", %2}";
 static const QString POST_AXIS_CONFIG_TEMPLATE = "{\"commandType\":\"PostAxisConfig\",\"name\":\"%1\", \"configs\":\"%2\"}";
@@ -35,9 +35,9 @@ QByteArray ICNWMProtocol::RefreshStatusPackage(const QMap<int, int> status)
     return ret;
 }
 
-QByteArray ICNWMProtocol::PostMoldActPackage(const QString &name, const QString &act)
+QByteArray ICNWMProtocol::PostMoldActPackage(const QString &name, const QString &act, const QString& cfg, const QString& pt)
 {
-    QByteArray ret = QString(POST_MOLD_ACT_TEMPLATE).arg(name).arg(act).toUtf8();
+    QByteArray ret = QString(POST_MOLD_ACT_TEMPLATE).arg(name).arg(act).arg(cfg).arg(pt).toUtf8();
     return ret;
 }
 

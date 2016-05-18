@@ -33,6 +33,7 @@ public:
 
     ~MoldInformation();
 
+
 protected:
     void changeEvent(QEvent *);
     void showEvent(QShowEvent *e);

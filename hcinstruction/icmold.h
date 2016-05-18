@@ -581,6 +581,8 @@ public:
 
     QString RawMoldContent() const { return rawMoldContent_;}
     QString RawMoldFnc() const { return rawMoldFnc_;}
+    QString RawMoldCfg() const { return rawMoldCfg_;}
+    QString RawMoldPt() const { return rawMoldPt_;}
 
     int LastStep() const;
 signals:
@@ -603,6 +605,8 @@ private:
     int  versoin_;
     QString rawMoldContent_;
     QString rawMoldFnc_;
+    QString rawMoldCfg_;
+    QString rawMoldPt_;
 //    QList<ACTGROUP> axisActions_;
     static ICMold* currentMold_;
 
