@@ -711,6 +711,8 @@ public:
 
     bool DoseControled() const { return ((statusMap_.value(Status).toUInt() >> 14) & 1) == 1; }
 
+    void RecvClientData(const QVariantMap& dObject);
+
 public Q_SLOTS:
     void SetMoldParam(int param, int value);
 Q_SIGNALS:

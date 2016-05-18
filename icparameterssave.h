@@ -135,6 +135,10 @@ public:
     QString SavedNet()  { return GetParameter(SystemMachine, QString("SavedNet"), "").toString();}
     void SaveNet(const QString& net) { SaveParameter(SystemMachine, QString("SavedNet"), net);}
 
+
+    void ReloadAxisDR();
+
+
 signals:
     void CurrentLanguageChanged();
 

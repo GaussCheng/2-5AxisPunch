@@ -33,6 +33,9 @@ public:
 
     ~MoldInformation();
 
+    void MoldChang(QString name) { emit MoldChanged(name);}
+
+
 protected:
     void changeEvent(QEvent *);
     void showEvent(QShowEvent *e);

@@ -151,6 +151,7 @@ include (icprogrampage/icprogrampage.pri)
 
 include (vendor/IndustrialSystemFramework/ICUtility/ICUtility.pri)
 include (vendor/ICCustomWidgets/icupdatepackmodel/icupdatepackmodel.pri)
+include (vendor/QJson/QJson.pri)
 
 RESOURCES += \
     resource.qrc \

@@ -21,6 +21,8 @@ public:
     static QByteArray PostAxisDRPackage(const QString& name, const QString& configs);
     static QByteArray PostPanelConfigPackage(const QString& name, const QString& configs);
 
+    static QByteArray RequestInitPackage();
+
 };
 
 #endif // ICNWMPROTOCOL_H

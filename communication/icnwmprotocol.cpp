@@ -82,3 +82,8 @@ QByteArray ICNWMProtocol::PostPanelConfigPackage(const QString &name, const QStr
     QByteArray ret = QString(POST_PANEL_CONFIG_TEMPLATE).arg(name).arg(configs).toUtf8();
     return ret;
 }
+
+QByteArray ICNWMProtocol::RequestInitPackage()
+{
+    return  "{\"cmd\":\"Init\"}";
+}

@@ -3,6 +3,9 @@
 
 #include <QDialog>
 #include <QTcpServer>
+#include <QTcpSocket>
+
+class QListWidgetItem;
 
 namespace Ui {
 class SimulateKnob;
@@ -26,10 +29,15 @@ private slots:
     void onClientServerUp();
     void onClientServerDown();
 
+    void on_onlineMachineList_itemDoubleClicked(QListWidgetItem *item);
+    void OnConnectedClient();
+    void OnReadyReadClient();
+
 private:
     Ui::SimulateKnob *ui;
     QTcpServer server_;
-    QList<QHostAddress> onlineClients_;
+    QTcpSocket connectedSocket_;
+    QMap<QString, QHostAddress> onlineClients_;
 };
 
 #endif // SIMULATEKNOB_H

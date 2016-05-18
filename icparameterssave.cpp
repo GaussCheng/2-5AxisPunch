@@ -260,3 +260,19 @@ QString ICParametersSave::Uuid()
     return ret;
 }
 
+void ICParametersSave::ReloadAxisDR()
+{
+    QFile file(QDir::toNativeSeparators("./sysconfig/DistanceRotation"));
+    if(file.open(QFile::ReadOnly | QFile::Text))
+    {
+        QTextStream in(&file);
+        QString tmpAxis;
+        double tmpDR;
+        while(!(in>>tmpAxis>>tmpDR).atEnd())
+        {
+            axisToRotate_.insert(tmpAxis, tmpDR);
+        }
+    }
+    file.close();
+}
+

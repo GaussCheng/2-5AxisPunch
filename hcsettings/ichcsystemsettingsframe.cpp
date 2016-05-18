@@ -103,8 +103,8 @@ ICHCSystemSettingsFrame::ICHCSystemSettingsFrame(QWidget *parent) :
             ui->limitFunctionBox->hide();
     ui->limitFunctionLabel->hide();
 
-    connect(&scanAPProcess, SIGNAL(readyReadStandardOutput()), SLOT(OnScanAPFinished()));
-    connect(&connectAPProcess, SIGNAL(readyReadStandardOutput()), SLOT(OnObtainIP()));
+//    connect(&scanAPProcess, SIGNAL(readyReadStandardOutput()), SLOT(OnScanAPFinished()));
+//    connect(&connectAPProcess, SIGNAL(readyReadStandardOutput()), SLOT(OnObtainIP()));
 }
 
 ICHCSystemSettingsFrame::~ICHCSystemSettingsFrame()

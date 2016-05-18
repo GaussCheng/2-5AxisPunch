@@ -27,6 +27,8 @@
 #include "icfile.h"
 #include "icprogramheadframe.h"
 
+#include "moldinformation.h"
+
 #define REFRESH_TIME 10
 static QTime testTime;
 
@@ -78,7 +80,7 @@ ICVirtualHost::ICVirtualHost(QObject *parent) :
     InitMold_();
     InitMoldParam_();
     InitSystem_();
-//    SetGlobalSpeed(20);
+    //    SetGlobalSpeed(20);
     //    exit(-1);
 
     ICMold::SetCurrentMold(currentMold_.data());
@@ -108,9 +110,9 @@ ICVirtualHost::ICVirtualHost(QObject *parent) :
     if(!isInitSuccess_)
     {
         ICMessageBox::ICWarning(NULL, tr("Error"), "Init host fail!");
-        return;
+//        return;
     }
-//    timer_ = new QTimer();
+    //    timer_ = new QTimer();
     connect(currentMold_.data(),
             SIGNAL(MoldPramChanged(int,int)),
             this,
@@ -123,7 +125,7 @@ ICVirtualHost::ICVirtualHost(QObject *parent) :
     //    RefreshStatus();
     //    RefreshStatus();
 #ifndef Q_WS_WIN32
-//    watchdogFd_ = open("/dev/watchdog",O_RDONLY );
+    //    watchdogFd_ = open("/dev/watchdog",O_RDONLY );
 #else
     watchdogFd_ = 0;
 #endif
@@ -131,26 +133,26 @@ ICVirtualHost::ICVirtualHost(QObject *parent) :
     {
         qWarning("open watchdog fail!");
     }
-//#ifndef Q_WS_X11
-//#ifdef HC_ARMV6
-//    QTimer::singleShot(REFRESH_TIME, this, SLOT(RefreshStatus()));
-//#else
-//#ifndef HC_ARMV6
-//    timer_.start(20);
-//#else
+    //#ifndef Q_WS_X11
+    //#ifdef HC_ARMV6
+    //    QTimer::singleShot(REFRESH_TIME, this, SLOT(RefreshStatus()));
+    //#else
+    //#ifndef HC_ARMV6
+    //    timer_.start(20);
+    //#else
     timer_.start(15);
-//#endif
-//#endif
-//#endif
+    //#endif
+    //#endif
+    //#endif
 
 }
 
 //slots:
 void ICVirtualHost::SetMoldParam(int param, int value)
 {
-//    Q_ASSERT_X(moldParamToAddrPos_.contains(param),
-//               "ICVirtualHost::SetMoldParam();",
-//               (QString::number(param) + " is not a corrent param").toAscii());
+    //    Q_ASSERT_X(moldParamToAddrPos_.contains(param),
+    //               "ICVirtualHost::SetMoldParam();",
+    //               (QString::number(param) + " is not a corrent param").toAscii());
     ICCommandProcessor::Instance()->ModifyMoldParam(moldParamToAddrPos_.value(param), value);
     Q_UNUSED(param)
     Q_UNUSED(value)
@@ -185,10 +187,10 @@ void ICVirtualHost::RefreshStatus()
     static ICKeyboard* keyboard = ICKeyboard::Instace();
 
     //    emit StepChanged(rand() % 10);
-//    qDebug("refresh");
+    //    qDebug("refresh");
     if(flag_)
     {
-//        qDebug("flag");
+        //        qDebug("flag");
         int key = keyboard->TakeKeyValue();
         if(keyboard->IsPressed())
         {
@@ -197,42 +199,42 @@ void ICVirtualHost::RefreshStatus()
         if(key == ICKeyboard::VFB_X1Add || key == ICKeyboard::VFB_X1Sub)
         {
             ICProgramHeadFrame::Instance()->ChangeHandSelect(0);
-//            OperatingRatioSetDialog::Instance()->SetCurrentHandwheelAxis(OperatingRatioSetDialog::Axis_X);
+            //            OperatingRatioSetDialog::Instance()->SetCurrentHandwheelAxis(OperatingRatioSetDialog::Axis_X);
 
         }
         else if(key == ICKeyboard::VFB_Y1Add || key == ICKeyboard::VFB_Y1Sub)
         {
             ICProgramHeadFrame::Instance()->ChangeHandSelect(1);
-//            OperatingRatioSetDialog::Instance()->SetCurrentHandwheelAxis(OperatingRatioSetDialog::Axis_Y);
+            //            OperatingRatioSetDialog::Instance()->SetCurrentHandwheelAxis(OperatingRatioSetDialog::Axis_Y);
         }
         else if(key == ICKeyboard::VFB_ZAdd || key == ICKeyboard::VFB_ZSub)
         {
             ICProgramHeadFrame::Instance()->ChangeHandSelect(2);
-//            OperatingRatioSetDialog::Instance()->SetCurrentHandwheelAxis(OperatingRatioSetDialog::Axis_Z);
+            //            OperatingRatioSetDialog::Instance()->SetCurrentHandwheelAxis(OperatingRatioSetDialog::Axis_Z);
         }
         else if(key == ICKeyboard::VFB_X2Add || key == ICKeyboard::VFB_X2Sub)
         {
             ICProgramHeadFrame::Instance()->ChangeHandSelect(3);
-//            OperatingRatioSetDialog::Instance()->SetCurrentHandwheelAxis(OperatingRatioSetDialog::Axis_Z);
+            //            OperatingRatioSetDialog::Instance()->SetCurrentHandwheelAxis(OperatingRatioSetDialog::Axis_Z);
         }
         else if(key == ICKeyboard::VFB_Y2Add || key == ICKeyboard::VFB_Y2Sub)
         {
             ICProgramHeadFrame::Instance()->ChangeHandSelect(4);
-//            OperatingRatioSetDialog::Instance()->SetCurrentHandwheelAxis(OperatingRatioSetDialog::Axis_Z);
+            //            OperatingRatioSetDialog::Instance()->SetCurrentHandwheelAxis(OperatingRatioSetDialog::Axis_Z);
         }
         int swKey = keyboard->TakeSwitchValue();
         if(swKey == -1)
         {
             swKey = keyboard->CurrentSwitchStatus();
-//            qDebug()<<"swKey"<<swKey<<CurrentStatus();
+            //            qDebug()<<"swKey"<<swKey<<CurrentStatus();
             CanConfig canConfig;
             canConfig.all = SystemParameter(ICVirtualHost::SYS_Config_Resv1).toInt();
             bool isSingle = !IsEjectionLink();
             if(StatusToKey(CurrentStatus()) != swKey &&
                     ((canConfig.b.canType) < 2  ||
                      (canConfig.b.canType == 2 && isSingle)
+                     )
                     )
-              )
             {
                 switch(swKey)
                 {
@@ -258,7 +260,7 @@ void ICVirtualHost::RefreshStatus()
                 default:
                     if(CurrentStatus() != Stop)
                     {
-//                        qDebug("Turn Stop Auto");
+                        //                        qDebug("Turn Stop Auto");
                         ICCommandProcessor::Instance()->ExecuteHCCommand(IC::CMD_TurnStop, 0);
                     }
                 }
@@ -268,7 +270,7 @@ void ICVirtualHost::RefreshStatus()
         {
             keyboardHandler->SwitchChanged(swKey);
         }
-//        keyboardHandler->SwitchChanged(keyboard->TakeSwitchValue());
+        //        keyboardHandler->SwitchChanged(keyboard->TakeSwitchValue());
         keyboardHandler->Keypressed(key);
         keyboardHandler->PulleyChanged(keyboard->TakePulleyValue());
         flag_ = false;
@@ -276,7 +278,7 @@ void ICVirtualHost::RefreshStatus()
     }
     else
     {
-//        qDebug("!flag");
+        //        qDebug("!flag");
         //        qDebug()<<"refresh statys start";
         ICCommunicationCommandBase::ResultVector result;
         currentAddr_ %= 10;
@@ -285,22 +287,22 @@ void ICVirtualHost::RefreshStatus()
             currentStatus_ = 0;
         }
         queryStatusCommand_.SetStartAddr(currentAddr_);
-//        qDebug()<<"Query Time:"<<testTime.restart();
+        //        qDebug()<<"Query Time:"<<testTime.restart();
 
-   //     qApp->processEvents();
+        //     qApp->processEvents();
 
         result = commandProcess->ExecuteCommand(queryStatusCommand_).value<ICCommunicationCommandBase::ResultVector>();
         if(queryStatusCommand_.NeedToReconfig())
         {
             qDebug("reconfigure");
-//            ICMessageBox::ICWarning(NULL,
-//                                 tr("Reconfig"),
-//                                 tr("Need to reconfig"));
+            //            ICMessageBox::ICWarning(NULL,
+            //                                 tr("Reconfig"),
+            //                                 tr("Need to reconfig"));
             ReConfigure();
             flag_ = true;
-//#ifdef HC_ARMV6
-//            QTimer::singleShot(REFRESH_TIME, this, SLOT(RefreshStatus()));
-//#endif
+            //#ifdef HC_ARMV6
+            //            QTimer::singleShot(REFRESH_TIME, this, SLOT(RefreshStatus()));
+            //#endif
             return;
         }
         if(!result.isEmpty())  //Success,return to status
@@ -316,92 +318,92 @@ void ICVirtualHost::RefreshStatus()
         else
         {
 #ifndef Q_WS_QWS
-//            statusMap_.insert(Status, rand());
-//            statusMap_.insert(Step, rand()  % 100);
-//            statusMap_.insert(Input2, rand());
-//            statusMap_.insert(Input3, rand());
-//            statusMap_.insert(Output2, rand());
-//            statusMap_.insert(Output3, rand());
-//            statusMap_.insert(ActL, rand());
-//            statusMap_.insert(ActH, rand());
-//            statusMap_.insert(ClipL, rand());
-//            statusMap_.insert(ClipH, rand());
-//            statusMap_.insert(Time, rand());
-//            statusMap_.insert(XPos, rand());
-//            statusMap_.insert(YPos, rand());
-//            statusMap_.insert(ZPos, rand());
-//            statusMap_.insert(PPos, rand());
-//            statusMap_.insert(QPos, rand());
-//            statusMap_.insert(S, rand());
-//            statusMap_.insert(Input0, rand());
-//            statusMap_.insert(Input1, rand());
-//            statusMap_.insert(Output0, rand());
-//            statusMap_.insert(Output1, rand());
-//            statusMap_.insert(EuIn, rand());
-//            statusMap_.insert(EuOut, rand());
-//            statusMap_.insert(ErrCode, rand());
+            //            statusMap_.insert(Status, rand());
+            //            statusMap_.insert(Step, rand()  % 100);
+            //            statusMap_.insert(Input2, rand());
+            //            statusMap_.insert(Input3, rand());
+            //            statusMap_.insert(Output2, rand());
+            //            statusMap_.insert(Output3, rand());
+            //            statusMap_.insert(ActL, rand());
+            //            statusMap_.insert(ActH, rand());
+            //            statusMap_.insert(ClipL, rand());
+            //            statusMap_.insert(ClipH, rand());
+            //            statusMap_.insert(Time, rand());
+            //            statusMap_.insert(XPos, rand());
+            //            statusMap_.insert(YPos, rand());
+            //            statusMap_.insert(ZPos, rand());
+            //            statusMap_.insert(PPos, rand());
+            //            statusMap_.insert(QPos, rand());
+            //            statusMap_.insert(S, rand());
+            //            statusMap_.insert(Input0, rand());
+            //            statusMap_.insert(Input1, rand());
+            //            statusMap_.insert(Output0, rand());
+            //            statusMap_.insert(Output1, rand());
+            //            statusMap_.insert(EuIn, rand());
+            //            statusMap_.insert(EuOut, rand());
+            //            statusMap_.insert(ErrCode, rand());
             statusMap_.insert(DbgA0, 0);
             statusMap_.insert(DbgB0,0);
-//            statusMap_.insert(DbgX1, rand());
-//            statusMap_.insert(DbgY0, 1);
-//            statusMap_.insert(DbgY1, rand());
-//            statusMap_.insert(DbgZ0, rand());
-//            statusMap_.insert(DbgZ1, rand());
-//            statusMap_.insert(DbgP0, rand());
-//            statusMap_.insert(DbgP1, rand());
-//            statusMap_.insert(DbgQ0, rand());
-//            statusMap_.insert(DbgQ1, rand());
+            //            statusMap_.insert(DbgX1, rand());
+            //            statusMap_.insert(DbgY0, 1);
+            //            statusMap_.insert(DbgY1, rand());
+            //            statusMap_.insert(DbgZ0, rand());
+            //            statusMap_.insert(DbgZ1, rand());
+            //            statusMap_.insert(DbgP0, rand());
+            //            statusMap_.insert(DbgP1, rand());
+            //            statusMap_.insert(DbgQ0, rand());
+            //            statusMap_.insert(DbgQ1, rand());
             emit StepChanged(statusMap_.value(Step).toInt());
-//            if(flag)
-//            {
-//                statusMap_.insert(ErrCode, 304);
-//                flag = FALSE;
-//            }
-//            else
-//            {
-//                statusMap_.insert(ErrCode, 0);
-//                flag = TRUE ;
-//            }
+            //            if(flag)
+            //            {
+            //                statusMap_.insert(ErrCode, 304);
+            //                flag = FALSE;
+            //            }
+            //            else
+            //            {
+            //                statusMap_.insert(ErrCode, 0);
+            //                flag = TRUE ;
+            //            }
 
 
 #endif
-//            statusMap_.insert(
-//            statusMap_.insert(Input0, 1025);
-//            statusMap_.insert(YPos, 0);
-//            qDebug()<<"Resend time:"<<testTime.restart();
+            //            statusMap_.insert(
+            //            statusMap_.insert(Input0, 1025);
+            //            statusMap_.insert(YPos, 0);
+            //            qDebug()<<"Resend time:"<<testTime.restart();
             ++tryTimes_;
-//            qCritical()<<"connect to host fail in refresh status"<<tryTimes_;
-//            static int test = 0;
+            //            qCritical()<<"connect to host fail in refresh status"<<tryTimes_;
+            //            static int test = 0;
             if(tryTimes_  >= 200)
             {
-//                qCritical("Connect to host fail!!");
+                //                qCritical("Connect to host fail!!");
 #ifndef Q_WS_QWS
                 statusMap_.insert(ErrCode, 0);
-//                statusMap_.insert(XPos, 65530);
-//                statusMap_.insert(YPos, 65530);
-//                statusMap_.insert(ZPos, 65530);
-//                statusMap_.insert(PPos, 65530);
-//                statusMap_.insert(QPos, 65530);
+                //                statusMap_.insert(XPos, 65530);
+                //                statusMap_.insert(YPos, 65530);
+                //                statusMap_.insert(ZPos, 65530);
+                //                statusMap_.insert(PPos, 65530);
+                //                statusMap_.insert(QPos, 65530);
                 statusMap_.insert(DbgY0, 0);
-//                statusMap_.insert(APos, rand());
+                //                statusMap_.insert(APos, rand());
                 clipLBits_ = -1;
                 clipHBits_ = -1;
-//                statusMap_.insert(DbgP0, (2 << 8));
-//                statusMap_.insert(ErrCode, 500);
+                //                statusMap_.insert(DbgP0, (2 << 8));
+                //                statusMap_.insert(ErrCode, 500);
 #else
                 statusMap_.insert(ErrCode, 500);
 #endif
                 tryTimes_ = 0;
                 statusMap_.insert(Status, ICVirtualHost::Stop);
-//                statusMap_.insert(DbgX0, ICVirtualHost::AutoRunning);
+                //                statusMap_.insert(DbgX0, ICVirtualHost::AutoRunning);
                 emit StatusRefreshed();
-//                emit StepChanged(test++ % 10);
+                //                emit StepChanged(test++ % 10);
             }
-//            flag_ =true;
-//            QTimer::singleShot(5, this, SLOT(RefreshStatus()));
-//#ifdef HC_ARMV6
-//            QTimer::singleShot(REFRESH_TIME, this, SLOT(RefreshStatus()));
-//#endif
+            //            flag_ =true;
+            //            QTimer::singleShot(5, this, SLOT(RefreshStatus()));
+            //#ifdef HC_ARMV6
+            //            QTimer::singleShot(REFRESH_TIME, this, SLOT(RefreshStatus()));
+            //#endif
             return;
         }
         freshCount_ = (freshCount_ + 1) % 2;
@@ -429,18 +431,18 @@ void ICVirtualHost::RefreshStatus()
                 emit MoldNumChanged(moldNum);
             }
             int tmpStep = CurrentStep();
-//            int queriedSubStep[] = {HostStatus(Sub0).toInt(),
-//                                    HostStatus(Sub1).toInt(),
-//                                    HostStatus(Sub2).toInt(),
-//                                    HostStatus(Sub3).toInt()};
-//            uint8_t tmpSubStep[] = {queriedSubStep[0] & 0x00FF,
-//                                    queriedSubStep[0] >> 8,
-//                                    queriedSubStep[1] & 0x00FF,
-//                                    queriedSubStep[1] >> 8,
-//                                    queriedSubStep[2] & 0x00FF,
-//                                    queriedSubStep[2] >> 8,
-//                                    queriedSubStep[3] & 0x00FF,
-//                                    queriedSubStep[3] >> 8};
+            //            int queriedSubStep[] = {HostStatus(Sub0).toInt(),
+            //                                    HostStatus(Sub1).toInt(),
+            //                                    HostStatus(Sub2).toInt(),
+            //                                    HostStatus(Sub3).toInt()};
+            //            uint8_t tmpSubStep[] = {queriedSubStep[0] & 0x00FF,
+            //                                    queriedSubStep[0] >> 8,
+            //                                    queriedSubStep[1] & 0x00FF,
+            //                                    queriedSubStep[1] >> 8,
+            //                                    queriedSubStep[2] & 0x00FF,
+            //                                    queriedSubStep[2] >> 8,
+            //                                    queriedSubStep[3] & 0x00FF,
+            //                                    queriedSubStep[3] >> 8};
 
             if(tmpStep != oldStep_)
             {
@@ -449,35 +451,35 @@ void ICVirtualHost::RefreshStatus()
                 emit StepChanged(tmpStep);
             }
 
-//            if(memcmp(oldSubStep, tmpSubStep, 8) != 0)
-//            {
-//                memcpy(oldSubStep, tmpSubStep, 8);
-//                emit SubStepChanged(tmpSubStep);
-//            }
+            //            if(memcmp(oldSubStep, tmpSubStep, 8) != 0)
+            //            {
+            //                memcpy(oldSubStep, tmpSubStep, 8);
+            //                emit SubStepChanged(tmpSubStep);
+            //            }
 
 
             emit StatusRefreshed();
 #ifndef Q_WS_WIN32
-//            ioctl(watchdogFd_, WDIOC_KEEPALIVE);
+            //            ioctl(watchdogFd_, WDIOC_KEEPALIVE);
 #endif
             flag_ = true;
             //            qDebug("Run query");
         }
     }
 
-//#ifdef HC_ARMV6
-//            QTimer::singleShot(REFRESH_TIME, this, SLOT(RefreshStatus()));
-//#endif
+    //#ifdef HC_ARMV6
+    //            QTimer::singleShot(REFRESH_TIME, this, SLOT(RefreshStatus()));
+    //#endif
 }
 
 void ICVirtualHost::SaveSystemConfig()
 {
-//    QFile file("./sysconfig/system.txt");
-//    if(!file.open(QFile::WriteOnly | QFile::Text))
-//    {
-//        qCritical("open system file fail when save!");
-//        return;
-//    }
+    //    QFile file("./sysconfig/system.txt");
+    //    if(!file.open(QFile::WriteOnly | QFile::Text))
+    //    {
+    //        qCritical("open system file fail when save!");
+    //        return;
+    //    }
     int sum = 0;
     for(ICSystemParameter i = SYS_Function; i != SYS_CheckSum; i = static_cast<ICSystemParameter>(i + 1))
     {
@@ -493,11 +495,11 @@ void ICVirtualHost::SaveSystemConfig()
     }
     ICFile file("./sysconfig/system.txt");
     file.ICWrite(toWrite);
-//    QFile::copy("./sysconfig/system.txt", "./sysconfig/system.txt~");
-//    file.write(toWrite);
-//    file.close();
-////    system("rm ./sysconfig/system.txt~");
-//    QFile::remove("./sysconfig/system.txt~");
+    //    QFile::copy("./sysconfig/system.txt", "./sysconfig/system.txt~");
+    //    file.write(toWrite);
+    //    file.close();
+    ////    system("rm ./sysconfig/system.txt~");
+    //    QFile::remove("./sysconfig/system.txt~");
 }
 
 void ICVirtualHost::SaveAxisParam(int axis)
@@ -667,7 +669,7 @@ void ICVirtualHost::InitSystem_()
     {
         tempItemValues.resize(systemParamMap_.size());
     }
-//    tempItemValues.append(0);
+    //    tempItemValues.append(0);
 
     GetAxisParam_("./sysconfig/paramx.txt",
                   SYS_X_Length,
@@ -857,15 +859,15 @@ void ICVirtualHost::InitMold_()
     QString configPath = path;
     configPath.chop(3);
     configPath += "fnc";
-//    Q_ASSERT_X(QFile::exists(path), "ICVirtualHost::InitMold_", "act is not exits");
-//    Q_ASSERT_X(QFile::exists(configPath), "ICVirtualHost::InitMold_", "fnc is not exits");
+    //    Q_ASSERT_X(QFile::exists(path), "ICVirtualHost::InitMold_", "act is not exits");
+    //    Q_ASSERT_X(QFile::exists(configPath), "ICVirtualHost::InitMold_", "fnc is not exits");
     if(!QFile::exists(path) || !QFile::exists(configPath))
     {
         path = "./records/ERRRT.act";
         isInitSuccess_ = false;
     }
     // TODO remove it
-//    currentMold_->SaveMoldParamsFile();
+    //    currentMold_->SaveMoldParamsFile();
     if(!currentMold_->ReadMoldFile(path))
     {
         qDebug("Init Mold fail!");
@@ -971,8 +973,8 @@ void ICVirtualHost::InitMoldParam_()
 
     QVector<uint8_t> dataSection;
     QList<int> tempItemValues = currentMold_->AllParams();
-//    int finishedCount = FinishProductCount();
-//    tempItemValues[ICMold::Product] -=
+    //    int finishedCount = FinishProductCount();
+    //    tempItemValues[ICMold::Product] -=
 
     const int count = tempItemValues.size();
     if(count % 4 != 0)
@@ -1068,18 +1070,18 @@ void ICVirtualHost::InitAddrToSysPosMap_()
     addrToSysPos_.insert(SM_LMTVC, SYS_LMT_vC);
     addrToSysPos_.insert(SM_ARM_CONFIG, SYS_ARM_CONFIG);
     addrToSysPos_.insert(SM_YEarlyEnd, SYS_YEarlyEnd);
-//    addrToSysPos_.insert(SM_ZEarlyEnd, SYS_ZEarlyEnd);
+    //    addrToSysPos_.insert(SM_ZEarlyEnd, SYS_ZEarlyEnd);
     addrToSysPos_.insert(SM_WaitMoldOpenLimit, ACT_WaitMoldOpened);
     addrToSysPos_.insert(SM_TIMEMFOR, ACT_MainForward);
     addrToSysPos_.insert(SM_TIMEMBACK, ACT_MainBackward);
     addrToSysPos_.insert(SM_TIMEMUP, ACT_MainUp);
     addrToSysPos_.insert(SM_TIMEMDOWN, ACT_MainDown);
     addrToSysPos_.insert(SM_PullPushDistance, SYS_PullPushDistance);
-//    addrToSysPos_.insert(SM_X_SEC1, ACT_X_Sec2);
-//    addrToSysPos_.insert(SM_X_SEC2, ACT_X_Sec2);
-//    addrToSysPos_.insert(SM_X_SEC3, ACT_X_Sec3);
-//    addrToSysPos_.insert(SM_X_SEC4, ACT_X_Sec4);
-//    addrToSysPos_.insert(SM_Y_SEC1, ACT_Y_Sec1);
+    //    addrToSysPos_.insert(SM_X_SEC1, ACT_X_Sec2);
+    //    addrToSysPos_.insert(SM_X_SEC2, ACT_X_Sec2);
+    //    addrToSysPos_.insert(SM_X_SEC3, ACT_X_Sec3);
+    //    addrToSysPos_.insert(SM_X_SEC4, ACT_X_Sec4);
+    //    addrToSysPos_.insert(SM_Y_SEC1, ACT_Y_Sec1);
     addrToSysPos_.insert(SM_Y_SEC2, ACT_Y_Sec2);
     addrToSysPos_.insert(SM_Y_SEC3, ACT_Y_Sec3);
     addrToSysPos_.insert(SM_Y_SEC4, ACT_Y_Sec4);
@@ -1111,21 +1113,21 @@ void ICVirtualHost::InitAddrToSysPosMap_()
     {
         moldParamToAddrPos_.insert(ICMold::point0 + i, static_cast<ICSystemParameterAddr>(SM_Position_DOWN + i));
     }
-//    moldParamToAddrPos_.insert(ICMold::CheckClip2, SM_CHKCLIP2);
-//    moldParamToAddrPos_.insert(ICMold::CheckClip3, SM_CHKCLIP3);
-//    moldParamToAddrPos_.insert(ICMold::CheckClip4, SM_CHKCLIP4);
-//    moldParamToAddrPos_.insert(ICMold::CheckClip5, SM_CHKCLIP5);
-//    moldParamToAddrPos_.insert(ICMold::CheckClip6, SM_CHKCLIP6);
-//    moldParamToAddrPos_.insert(ICMold::CheckClip7, SM_CHKCLIP7);
-//    moldParamToAddrPos_.insert(ICMold::CheckClip8, SM_CHKCLIP8);
+    //    moldParamToAddrPos_.insert(ICMold::CheckClip2, SM_CHKCLIP2);
+    //    moldParamToAddrPos_.insert(ICMold::CheckClip3, SM_CHKCLIP3);
+    //    moldParamToAddrPos_.insert(ICMold::CheckClip4, SM_CHKCLIP4);
+    //    moldParamToAddrPos_.insert(ICMold::CheckClip5, SM_CHKCLIP5);
+    //    moldParamToAddrPos_.insert(ICMold::CheckClip6, SM_CHKCLIP6);
+    //    moldParamToAddrPos_.insert(ICMold::CheckClip7, SM_CHKCLIP7);
+    //    moldParamToAddrPos_.insert(ICMold::CheckClip8, SM_CHKCLIP8);
     moldParamToAddrPos_.insert(ICMold::Product,  static_cast<ICSystemParameterAddr>(SM_Position_DOWN + ICMold::point19 + 1 ));			//设定产量
     moldParamToAddrPos_.insert(ICMold::reserve, static_cast<ICSystemParameterAddr>(SM_Position_DOWN + ICMold::point19 + 2 ));
-//    moldParamToAddrPos_.insert(ICMold::CountUnit, SM_Position_DOWN);
+    //    moldParamToAddrPos_.insert(ICMold::CountUnit, SM_Position_DOWN);
 
-//    moldParamToAddrPos_.insert(ICMold::StandbyPose, SM_StandBy);  //待机姿势
-//    moldParamToAddrPos_.insert(ICMold::TryProduct, SM_TryProduct); //试产
-//    moldParamToAddrPos_.insert(ICMold::Sampling, SM_Sampling); //取样
-//    moldParamToAddrPos_.insert(ICMold::)
+    //    moldParamToAddrPos_.insert(ICMold::StandbyPose, SM_StandBy);  //待机姿势
+    //    moldParamToAddrPos_.insert(ICMold::TryProduct, SM_TryProduct); //试产
+    //    moldParamToAddrPos_.insert(ICMold::Sampling, SM_Sampling); //取样
+    //    moldParamToAddrPos_.insert(ICMold::)
 
     //    addrToSysPos_.insert(SM_MAINUP, ACT_MainUp);			//主上限制
     //    addrToSysPos_.insert(SM_MAINDOWN, ACT_MainDown);		//主下限制
@@ -1175,28 +1177,28 @@ void ICVirtualHost::SaveAxisParamHelper_(const QString &fileName, int start, int
     }
     ICFile file("./sysconfig/" + fileName);
     file.ICWrite(toWrite.toAscii());
-//    QFile file("./sysconfig/" + fileName);
-//    if(file.open(QFile::WriteOnly | QFile::Text))
-//    {
-//        QFile::copy("./sysconfig/" + fileName, "./sysconfig/" + fileName + "~");
-//        file.write(toWrite);
-//        file.close();
-////        system(QString("rm ./sysconfig/%1~").arg(fileName).toAscii());
-//        QFile::remove("./sysconfig/" + fileName + "~");
-//    }
+    //    QFile file("./sysconfig/" + fileName);
+    //    if(file.open(QFile::WriteOnly | QFile::Text))
+    //    {
+    //        QFile::copy("./sysconfig/" + fileName, "./sysconfig/" + fileName + "~");
+    //        file.write(toWrite);
+    //        file.close();
+    ////        system(QString("rm ./sysconfig/%1~").arg(fileName).toAscii());
+    //        QFile::remove("./sysconfig/" + fileName + "~");
+    //    }
 }
 
 void ICVirtualHost::StopRefreshStatus()
 {
-//    timer_.blockSignals(true);
-//    timer_.stop();
+    //    timer_.blockSignals(true);
+    //    timer_.stop();
     this->blockSignals(true);
 }
 
 void ICVirtualHost::RestartRefreshStatus()
 {
-//    timer_.blockSignals(false);
-//    timer_.start(15);
+    //    timer_.blockSignals(false);
+    //    timer_.start(15);
     this->blockSignals(false);
 }
 
@@ -1209,6 +1211,199 @@ int ICVirtualHost::FinishProductCount() const
     }
     return (statusMap_.value(DbgX1).toUInt() );
 
+}
+
+inline bool SaveFileHelper(const QString& file, const QByteArray& content)
+{
+    QFile f(QDir::toNativeSeparators(file));
+    if(f.open(QFile::WriteOnly | QFile::Text))
+    {
+//        qDebug("true");
+        f.write(content);
+        f.close();
+        return true;
+    }
+    return false;
+}
+
+void ICVirtualHost::RecvClientData(const QVariantMap &dObject)
+{
+    QString commandType = dObject.value("commandType").toString();
+    if(commandType == "RefreshStatus")
+    {
+        QVariantMap sM = dObject.value("status").toMap();
+        QVariantMap::const_iterator p = sM.constBegin();
+        while(p != sM.constEnd())
+        {
+            statusMap_.insert(static_cast<ICStatus>(p.key().toInt()), p.value());
+            ++p;
+        }
+        input0Bits_ = statusMap_.value(Input0).toUInt();
+        input1Bits_ = statusMap_.value(Input1).toUInt();
+        output0Bits_ = statusMap_.value(Output0).toUInt();
+        output1Bits_ = statusMap_.value(Output1).toUInt();
+        euInputBits_ = statusMap_.value(EuIn).toUInt();
+        euOutputBits_ = statusMap_.value(EuOut).toUInt();
+        clipLBits_ = statusMap_.value(ClipL).toUInt();
+        clipHBits_ = statusMap_.value(ClipH).toUInt();
+        actionLBits_ = statusMap_.value(ActL).toUInt();
+        actionHBits_ = statusMap_.value(ActH).toUInt();
+
+        int moldNum = HostStatus(S).toInt();
+        if(moldNum != oldMoldNum_)
+        {
+            oldMoldNum_ = moldNum;
+            emit MoldNumChanged(moldNum);
+        }
+        int tmpStep = CurrentStep();
+
+        if(tmpStep != oldStep_)
+        {
+            statusMap_.insert(Step, tmpStep);
+            oldStep_ = tmpStep;
+            emit StepChanged(tmpStep);
+        }
+
+
+        emit StatusRefreshed();
+    }
+    else if(commandType == "PostMoldAct")
+    {
+        QString moldName = dObject.value("name").toString();
+
+        if(SaveFileHelper(QString("records/%1.act").arg(moldName), dObject.value("act").toByteArray()))
+        {
+            SaveFileHelper(QString("records/%1.cfg").arg(moldName), dObject.value("cfg").toByteArray());
+            SaveFileHelper(QString("records/%1.pt").arg(moldName), dObject.value("pt").toByteArray());
+
+            if(ICMold::CurrentMold()->ReadMoldFile(QString("records/%1.act").arg(moldName),false))
+            {
+                ICParametersSave::Instance()->SetMoldName(moldName + ".act");
+                ICProgramHeadFrame::Instance()->SetCurrentMoldName(moldName + ".act");
+                emit MoldNumChanged(8);
+                MoldInformation::Instance()->MoldChang(moldName + ".act");
+            }
+        }
+    }
+    else if(commandType == "PostMoldFnc")
+    {
+        //        qDebug()<<dObject.value("name")<<dObject.value("act");
+        QString moldName = dObject.value("name").toString();
+        if(SaveFileHelper(QString("records/%1").arg(moldName), dObject.value("fnc").toByteArray()))
+        {
+            ICMold::CurrentMold()->ReadMoldParamsFile(QString("records/%1").arg(moldName));
+        }
+    }
+    else if(commandType == "PostMoldSubs")
+    {
+        QString moldName = dObject.value("name").toString();
+        for(int i = 0; i != 8; ++i)
+        {
+            if(i == 7)
+            {
+                if(SaveFileHelper(QString("records/%1.sub").arg(moldName),
+                                  dObject.value(QString("sub%1").arg(i)).toByteArray()))
+                {
+                    //                    nwmDebuger_->AppendText(QString("End to save %1").arg(QString("records/%1.sub%2").arg(moldName).arg(i)));
+
+
+                    QFile::remove(QString("subs/sub%1.prg").arg(i));
+                    QFile::copy(QString("records/%1.sub").arg(moldName), QString("subs/sub%1.prg").arg(i));
+
+                }
+            }
+            else
+            {
+                if(SaveFileHelper(QString("records/%1.reserve%2").arg(moldName).arg(i + 1),
+                                  dObject.value(QString("sub%1").arg(i)).toByteArray()))
+                {
+                    //                    nwmDebuger_->AppendText(QString("End to save %1").arg(QString("records/%1.sub%2").arg(moldName).arg(i)));
+
+
+                    QFile::remove(QString("subs/sub%1.prg").arg(i));
+                    QFile::copy(QString("records/%1.reserve%2").arg(moldName).arg(i + 1), QString("subs/sub%1.prg").arg(i));
+
+                }
+            }
+        }
+        ICMacroSubroutine::Instance()->ReadMacroSubroutieFiles("./subs");
+    }
+    else if(commandType == "PostSystemConfig")
+    {
+        QString name = dObject.value("name").toString();
+        QString content = dObject.value("configs").toString();
+        if(SaveFileHelper(QString("sysconfig/%1").arg(name), content.toLatin1()))
+        {
+            QStringList items = content.split("\n", QString::SkipEmptyParts);
+            for(int i = 0; i != items.size(); ++i)
+            {
+                systemParamMap_.insert(static_cast<ICSystemParameter>(i), items.at(i).toInt());
+            }
+        }
+    }
+    else if(commandType == "PostAxisConfig")
+    {
+        QString name = dObject.value("name").toString();
+        QString content = dObject.value("configs").toByteArray();
+        if(SaveFileHelper(QString("sysconfig/%1").arg(name), content.toLatin1()))
+        {
+            QStringList items = content.split("\n", QString::SkipEmptyParts);
+            int start;
+            if(name == "paramx.txt")
+            {
+                start = SYS_X_Length;
+            }
+            else if(name == "paramy.txt")
+            {
+                start = SYS_Y_Length;
+            }
+            else if(name == "paramz.txt")
+            {
+                start = SYS_Z_Length;
+            }
+            else if(name == "paramp.txt")
+            {
+                start = SYS_P_Length;
+            }
+            else if(name == "paramq.txt")
+            {
+                start = SYS_Q_Length;
+            }
+            else if(name == "parama.txt")
+            {
+                start = SYS_A_Length;
+            }
+            else if(name == "paramb.txt")
+            {
+                start = SYS_B_Length;
+            }
+            else if(name == "paramc.txt")
+            {
+                start = SYS_C_Length;
+            }
+            for(int i = 0; i != items.size(); ++i)
+            {
+                systemParamMap_.insert(static_cast<ICSystemParameter>(i + start), items.at(i).toInt());
+            }
+        }
+    }
+    else if(commandType == "PostAxisDR")
+    {
+        QString name = dObject.value("name").toString();
+        QString content = dObject.value("configs").toString();
+        if(SaveFileHelper(QString("sysconfig/%1").arg(name), content.toLatin1()))
+        {
+            ICParametersSave::Instance()->ReloadAxisDR();
+        }
+    }
+    else if(commandType == "PostPanelConfig")
+    {
+        QString name = dObject.value("name").toString();
+        QString content = dObject.value("configs").toString();
+        if(SaveFileHelper(QString("sysconfig/%1").arg(name), content.toLatin1()))
+        {
+        }
+    }
 }
 
 ICVirtualHost::~ICVirtualHost(){}

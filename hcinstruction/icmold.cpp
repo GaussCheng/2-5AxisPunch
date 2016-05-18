@@ -187,6 +187,7 @@ bool ICMold::ReadMoldFile(const QString &fileName, bool isLoadParams)
     QFile file(fileName);
     if(!file.open(QFile::ReadOnly | QFile::Text))
     {
+        qDebug()<<"read mold fail!"<<fileName;
         return false;
     }
 //    moldName_ = fileName;
